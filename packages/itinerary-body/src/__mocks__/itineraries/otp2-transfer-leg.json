@@ -1,0 +1,864 @@
+{
+  "accessibilityScore": null,
+  "duration": 3504,
+  "endTime": 1721497077000,
+  "legs": [
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 711.73,
+      "dropOffBookingInfo": {
+        "latestBookingTime": null
+      },
+      "dropoffType": "SCHEDULED",
+      "duration": 650,
+      "endTime": 1721494223000,
+      "fareProducts": [],
+      "from": {
+        "lat": 39.8761111,
+        "lon": -75.2452778,
+        "name": "Airport Terminal A (SEPTA)",
+        "rentalVehicle": null,
+        "stop": null,
+        "vertexType": "NORMAL"
+      },
+      "headsign": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 46,
+        "points": "ghkrFzigjMPpAPEEYk@}EAQG]AECYQqAIe@?EQgAG]Ic@QgADAZKKk@WJy@^C@EBQHcAd@a@T@B@HBDGBIWMHMJYTGSGMEKKQVWHIBCDEBE?A{AqBIL"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": {
+        "latestBookingTime": {
+          "daysPrior": 0
+        }
+      },
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
+      "startTime": 1721493573000,
+      "steps": [
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": false,
+          "distance": 36.5,
+          "elevationProfile": [],
+          "lat": 39.8760426,
+          "lon": -75.245254,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "Departures Road"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 11.2,
+          "elevationProfile": [],
+          "lat": 39.875958,
+          "lon": -75.2456672,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "service road"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 314.88,
+          "elevationProfile": [],
+          "lat": 39.8758609,
+          "lon": -75.2456323,
+          "relativeDirection": "LEFT",
+          "stayOn": true,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 19.73,
+          "elevationProfile": [],
+          "lat": 39.8764326,
+          "lon": -75.2422434,
+          "relativeDirection": "LEFT",
+          "stayOn": true,
+          "streetName": "steps"
+        },
+        {
+          "absoluteDirection": "NORTH",
+          "alerts": [],
+          "area": false,
+          "distance": 138.27,
+          "elevationProfile": [],
+          "lat": 39.8764956,
+          "lon": -75.2420272,
+          "relativeDirection": "LEFT",
+          "stayOn": true,
+          "streetName": "footbridge"
+        },
+        {
+          "absoluteDirection": "NORTHWEST",
+          "alerts": [],
+          "area": false,
+          "distance": 52.41,
+          "elevationProfile": [],
+          "lat": 39.8775186,
+          "lon": -75.2427263,
+          "relativeDirection": "RIGHT",
+          "stayOn": true,
+          "streetName": "service road"
+        },
+        {
+          "absoluteDirection": "NORTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 33.71,
+          "elevationProfile": [],
+          "lat": 39.8778732,
+          "lon": -75.2428468,
+          "relativeDirection": "RIGHT",
+          "stayOn": true,
+          "streetName": "parking aisle"
+        },
+        {
+          "absoluteDirection": "SOUTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 34.63,
+          "elevationProfile": [],
+          "lat": 39.8780467,
+          "lon": -75.2425239,
+          "relativeDirection": "RIGHT",
+          "stayOn": true,
+          "streetName": "service road"
+        },
+        {
+          "absoluteDirection": "NORTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 70.4,
+          "elevationProfile": [],
+          "lat": 39.877806,
+          "lon": -75.2422682,
+          "relativeDirection": "LEFT",
+          "stayOn": true,
+          "streetName": "parking aisle"
+        }
+      ],
+      "to": {
+        "lat": 39.878315,
+        "lon": -75.241768,
+        "name": "Philadelphia Airport Terminal D",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "17105",
+          "gtfsId": "SEPTA:17105",
+          "id": "U3RvcDpTRVBUQToxNzEwNQ",
+          "lat": 39.878315,
+          "lon": -75.241768
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "17105",
+        "stopId": "SEPTA:17105"
+      },
+      "transitLeg": false,
+      "trip": null,
+      "alightRule": "scheduled",
+      "boardRule": "scheduled",
+      "routeColor": "333333"
+    },
+    {
+      "accessibilityScore": null,
+      "agency": {
+        "alerts": [],
+        "gtfsId": "SEPTA:1",
+        "id": "SEPTA:1",
+        "name": "SEPTA",
+        "timezone": "America/New_York",
+        "url": "https://www5.septa.org/"
+      },
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 5341.45,
+      "dropOffBookingInfo": {
+        "latestBookingTime": null
+      },
+      "dropoffType": "SCHEDULED",
+      "duration": 517,
+      "endTime": 1721494740000,
+      "fareProducts": [],
+      "from": {
+        "lat": 39.878315,
+        "lon": -75.241768,
+        "name": "Philadelphia Airport Terminal D",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "17105",
+          "gtfsId": "SEPTA:17105",
+          "id": "U3RvcDpTRVBUQToxNzEwNQ",
+          "lat": 39.878315,
+          "lon": -75.241768
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "17105",
+        "stopId": "SEPTA:17105"
+      },
+      "headsign": "69th Street Transportation Center",
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": [
+        {
+          "lat": 39.879037,
+          "locationType": "STOP",
+          "lon": -75.241377,
+          "name": "Philadelphia Airport Terminals E & F",
+          "stopCode": "633",
+          "stopId": "U3RvcDpTRVBUQTo2MzM"
+        },
+        {
+          "lat": 39.88503,
+          "locationType": "STOP",
+          "lon": -75.25015,
+          "name": "Bartram Av & 90th St",
+          "stopCode": "19549",
+          "stopId": "U3RvcDpTRVBUQToxOTU0OQ"
+        },
+        {
+          "lat": 39.886027,
+          "locationType": "STOP",
+          "lon": -75.24885,
+          "name": "89th St & Bartram Av - FS",
+          "stopCode": "19550",
+          "stopId": "U3RvcDpTRVBUQToxOTU1MA"
+        }
+      ],
+      "legGeometry": {
+        "length": 213,
+        "points": "uvkrFntfjMGGKK[So@Wa@QGC??_A]eAa@s@QMCq@OKCMCQCSA_@GgBK_BGgAAO@kAFODy@Pe@Ng@PWH]N[JUJQHSFYL]FM@SBQ@U?QAA?Y?GAQAq@Gw@Ii@EYAS?k@AWCK@GBGDEHEJCJAD?J?JBPDP@DB@BBJF^LXLhAf@j@VrAh@rAf@|Ah@vAd@rE~A`DfANFJDv@^RLl@\\r@d@n@f@n@h@n@l@l@p@l@r@^h@l@|@^n@h@|@Xd@Zl@z@dB`AzBVl@f@pAjAbDXx@z@rCXbAXjAr@zCZ|ABNBNH\\Jl@V~ABNDRp@rEFXH~@BTFl@DXD\\h@`H?L@V@T@^@NDjABfA@pA?t@AjBC~B?VExAAFCFEFCHABCDEFEBKFGBa@GSEUIOE[W[UMKIMKKGIGMEKK[Sy@WaAc@}AWcAQm@Uy@g@wA_@cA]{@w@eB[q@Uc@Wg@_@q@s@iA[e@]e@[c@Ya@W[_@c@a@e@q@u@s@s@u@q@u@o@y@u@{@s@w@s@kA_Aw@s@qCcCOO_Ay@eA}@qAiA}BqB??WSoAiAkC}BBIRMN_@??jAqCHQDCDADGBE@I?IAKGM`AuBaFiE??"
+      },
+      "mode": "BUS",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": null,
+      "rideHailingEstimate": null,
+      "route": "108",
+      "startTime": 1721494223000,
+      "steps": [],
+      "to": {
+        "lat": 39.886344,
+        "lon": -75.246006,
+        "name": "PNC Center",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "617",
+          "gtfsId": "SEPTA:617",
+          "id": "U3RvcDpTRVBUQTo2MTc",
+          "lat": 39.886344,
+          "lon": -75.246006
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "617",
+        "stopId": "SEPTA:617"
+      },
+      "transitLeg": true,
+      "trip": {
+        "arrivalStoptime": {
+          "stop": {
+            "gtfsId": "SEPTA:1148",
+            "id": "U3RvcDpTRVBUQToxMTQ4"
+          },
+          "stopPosition": 78
+        },
+        "departureStoptime": {
+          "stop": {
+            "gtfsId": "SEPTA:1160",
+            "id": "U3RvcDpTRVBUQToxMTYw"
+          },
+          "stopPosition": 1
+        },
+        "gtfsId": "SEPTA:833551",
+        "id": "VHJpcDpTRVBUQTo4MzM1NTE"
+      },
+      "origColor": "000000",
+      "agencyBrandingUrl": "https://www5.septa.org/",
+      "agencyId": "SEPTA:1",
+      "agencyName": "SEPTA",
+      "agencyUrl": "https://www5.septa.org/",
+      "alightRule": "scheduled",
+      "boardRule": "scheduled",
+      "routeColor": "000000",
+      "routeId": "SEPTA:108",
+      "routeLongName": "UPS or Airport to 69th St TC",
+      "routeShortName": "108",
+      "routeTextColor": "FFFFFF",
+      "tripId": "SEPTA:833551"
+    },
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 0,
+      "dropOffBookingInfo": {
+        "latestBookingTime": null
+      },
+      "dropoffType": "SCHEDULED",
+      "duration": 300,
+      "endTime": 1721495040000,
+      "fareProducts": [],
+      "from": {
+        "lat": 39.886344,
+        "lon": -75.246006,
+        "name": "PNC Center",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "617",
+          "gtfsId": "SEPTA:617",
+          "id": "U3RvcDpTRVBUQTo2MTc",
+          "lat": 39.886344,
+          "lon": -75.246006
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "617",
+        "stopId": "SEPTA:617"
+      },
+      "headsign": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 2,
+        "points": "shmrFpngjM??"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": null,
+      "rideHailingEstimate": null,
+      "startTime": 1721494740000,
+      "steps": [],
+      "to": {
+        "lat": 39.886344,
+        "lon": -75.246006,
+        "name": "PNC Center",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "617",
+          "gtfsId": "SEPTA:617",
+          "id": "U3RvcDpTRVBUQTo2MTc",
+          "lat": 39.886344,
+          "lon": -75.246006
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "617",
+        "stopId": "SEPTA:617"
+      },
+      "transitLeg": false,
+      "trip": null,
+      "alightRule": "scheduled",
+      "boardRule": "scheduled",
+      "routeColor": "333333"
+    },
+    {
+      "accessibilityScore": null,
+      "agency": {
+        "alerts": [],
+        "gtfsId": "SEPTA:1",
+        "id": "SEPTA:1",
+        "name": "SEPTA",
+        "timezone": "America/New_York",
+        "url": "https://www5.septa.org/"
+      },
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 10683.57,
+      "dropOffBookingInfo": {
+        "latestBookingTime": null
+      },
+      "dropoffType": "SCHEDULED",
+      "duration": 1200,
+      "endTime": 1721496240000,
+      "fareProducts": [],
+      "from": {
+        "lat": 39.886344,
+        "lon": -75.246006,
+        "name": "PNC Center",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "617",
+          "gtfsId": "SEPTA:617",
+          "id": "U3RvcDpTRVBUQTo2MTc",
+          "lat": 39.886344,
+          "lon": -75.246006
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "617",
+        "stopId": "SEPTA:617"
+      },
+      "headsign": "Broad-Oregon",
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": [
+        {
+          "lat": 39.886996,
+          "locationType": "STOP",
+          "lon": -75.246417,
+          "name": "Tinicum Blvd & 88th St - FS",
+          "stopCode": "32119",
+          "stopId": "U3RvcDpTRVBUQTozMjExOQ"
+        },
+        {
+          "lat": 39.888717,
+          "locationType": "STOP",
+          "lon": -75.244879,
+          "name": "Tinicum Blvd & 86th St - MBFS",
+          "stopCode": "32120",
+          "stopId": "U3RvcDpTRVBUQTozMjEyMA"
+        },
+        {
+          "lat": 39.890732,
+          "locationType": "STOP",
+          "lon": -75.244012,
+          "name": "Bartram Av & 84th St - MBNS",
+          "stopCode": "30159",
+          "stopId": "U3RvcDpTRVBUQTozMDE1OQ"
+        },
+        {
+          "lat": 39.893154,
+          "locationType": "STOP",
+          "lon": -75.239806,
+          "name": "Bartram Av & 84th St - MBFS",
+          "stopCode": "29438",
+          "stopId": "U3RvcDpTRVBUQToyOTQzOA"
+        },
+        {
+          "lat": 39.8912,
+          "locationType": "STOP",
+          "lon": -75.23482,
+          "name": "Island Av & Penrose Av - MBNS",
+          "stopCode": "24612",
+          "stopId": "U3RvcDpTRVBUQToyNDYxMg"
+        },
+        {
+          "lat": 39.888467,
+          "locationType": "STOP",
+          "lon": -75.233187,
+          "name": "Island Av & Penrose Av - MBFS",
+          "stopCode": "29439",
+          "stopId": "U3RvcDpTRVBUQToyOTQzOQ"
+        },
+        {
+          "lat": 39.886466,
+          "locationType": "STOP",
+          "lon": -75.232084,
+          "name": "Island Av & Escort Av - MBNS",
+          "stopCode": "30190",
+          "stopId": "U3RvcDpTRVBUQTozMDE5MA"
+        },
+        {
+          "lat": 39.883965,
+          "locationType": "STOP",
+          "lon": -75.230864,
+          "name": "Island Av & Escort Av",
+          "stopCode": "31475",
+          "stopId": "U3RvcDpTRVBUQTozMTQ3NQ"
+        },
+        {
+          "lat": 39.882518,
+          "locationType": "STOP",
+          "lon": -75.230172,
+          "name": "Island Av & Escort Av - MBFS",
+          "stopCode": "29440",
+          "stopId": "U3RvcDpTRVBUQToyOTQ0MA"
+        },
+        {
+          "lat": 39.882165,
+          "locationType": "STOP",
+          "lon": -75.226633,
+          "name": "Enterprise Av & Executive Av",
+          "stopCode": "29441",
+          "stopId": "U3RvcDpTRVBUQToyOTQ0MQ"
+        },
+        {
+          "lat": 39.882771,
+          "locationType": "STOP",
+          "lon": -75.226183,
+          "name": "Executive Av & Enterprise Av - FS",
+          "stopCode": "995",
+          "stopId": "U3RvcDpTRVBUQTo5OTU"
+        },
+        {
+          "lat": 39.884703,
+          "locationType": "STOP",
+          "lon": -75.228939,
+          "name": "Executive Av & Escort Av",
+          "stopCode": "24608",
+          "stopId": "U3RvcDpTRVBUQToyNDYwOA"
+        },
+        {
+          "lat": 39.884036,
+          "locationType": "STOP",
+          "lon": -75.230427,
+          "name": "Escort Av & Island Av",
+          "stopCode": "24610",
+          "stopId": "U3RvcDpTRVBUQToyNDYxMA"
+        },
+        {
+          "lat": 39.887939,
+          "locationType": "STOP",
+          "lon": -75.23254,
+          "name": "Island Av & Penrose Av - MBNS",
+          "stopCode": "30284",
+          "stopId": "U3RvcDpTRVBUQTozMDI4NA"
+        },
+        {
+          "lat": 39.888832,
+          "locationType": "STOP",
+          "lon": -75.233009,
+          "name": "Island Av & Penrose Av - MBNS",
+          "stopCode": "31322",
+          "stopId": "U3RvcDpTRVBUQTozMTMyMg"
+        },
+        {
+          "lat": 39.904859,
+          "locationType": "STOP",
+          "lon": -75.195461,
+          "name": "Penrose Av & 26th St - MBNS",
+          "stopCode": "32641",
+          "stopId": "U3RvcDpTRVBUQTozMjY0MQ"
+        },
+        {
+          "lat": 39.906815,
+          "locationType": "STOP",
+          "lon": -75.191371,
+          "name": "Penrose & Pattison Av - MBNS",
+          "stopCode": "29444",
+          "stopId": "U3RvcDpTRVBUQToyOTQ0NA"
+        },
+        {
+          "lat": 39.907722,
+          "locationType": "STOP",
+          "lon": -75.189751,
+          "name": "Penrose & Pattison Av - FS",
+          "stopCode": "31452",
+          "stopId": "U3RvcDpTRVBUQTozMTQ1Mg"
+        },
+        {
+          "lat": 39.912554,
+          "locationType": "STOP",
+          "lon": -75.182725,
+          "name": "Penrose Av & 20th St",
+          "stopCode": "31323",
+          "stopId": "U3RvcDpTRVBUQTozMTMyMw"
+        },
+        {
+          "lat": 39.913035,
+          "locationType": "STOP",
+          "lon": -75.181802,
+          "name": "Penrose Av & 20th St - FS",
+          "stopCode": "998",
+          "stopId": "U3RvcDpTRVBUQTo5OTg"
+        },
+        {
+          "lat": 39.913905,
+          "locationType": "STOP",
+          "lon": -75.179533,
+          "name": "Moyamensing Av & Pollock St",
+          "stopCode": "24614",
+          "stopId": "U3RvcDpTRVBUQToyNDYxNA"
+        },
+        {
+          "lat": 39.914739,
+          "locationType": "STOP",
+          "lon": -75.177418,
+          "name": "Moyamensing Av & 18th St",
+          "stopCode": "10851",
+          "stopId": "U3RvcDpTRVBUQToxMDg1MQ"
+        },
+        {
+          "lat": 39.915299,
+          "locationType": "STOP",
+          "lon": -75.176058,
+          "name": "Moyamensing Av & 17th St",
+          "stopCode": "10849",
+          "stopId": "U3RvcDpTRVBUQToxMDg0OQ"
+        },
+        {
+          "lat": 39.915832,
+          "locationType": "STOP",
+          "lon": -75.174699,
+          "name": "Moyamensing Av & 16th St",
+          "stopCode": "24615",
+          "stopId": "U3RvcDpTRVBUQToyNDYxNQ"
+        },
+        {
+          "lat": 39.916382,
+          "locationType": "STOP",
+          "lon": -75.173281,
+          "name": "Moyamensing Av & 15th St",
+          "stopCode": "24616",
+          "stopId": "U3RvcDpTRVBUQToyNDYxNg"
+        }
+      ],
+      "legGeometry": {
+        "length": 417,
+        "points": "yhmrF|ngjM]YiAfC[Y??wIsH??{@u@SE[UKEKEKAO?O@OBMDKFMHOLgAz@]}@o@oBEM??s@yBM_@M]K]CIO[AEKUYm@EGKQs@qAIMGKUc@}@_BWg@}@_Bk@cA[k@?A??a@w@ISKUYk@Yu@Uq@Ws@M_@K_@Qm@WgASu@Sw@IYp@]r@_@~Ay@h@Yl@[`@QZORKFC^QVMPIJGTMJGVM|Ay@j@[DC??h@YPIDCBCr@_@TKVK~@g@XOFCVMLIZQr@_@p@]jAk@FCDCTK??d@U^QbCgA~DeBFC??lHsCdE_B??RIhFsB`@Q??f@SLENKXOd@[t@q@b@e@`@g@Ze@HOFKBK@IAMCKEKGIEEGEGCGCW[OQi@q@GIEKKSKUMY{@cC??w@{Bq@f@??i@`@eCjBe@^WVSTMPS\\_@v@]zAW`BCZ??E`@TTTTLNNPLVHVNd@Hb@Np@?D??H`@uEhByMpFIBcBr@??u@\\}Ar@[N??w@\\]HG@G@EAIAGCECEECECEEGEIAKEO@MFm@HqA@M@O?G@O@k@?a@A]?WASCOE_@E[I]ESISIWUg@Ui@Ym@Q[Wg@OYGMIQEIAEM[I[Ia@CWCKAKAWCe@Am@ASAKA]Ec@AAGe@ESMo@Ke@Oe@Uq@Uo@CGWu@[}@GOGSg@sA_@eAK]Qc@Sg@Um@Sk@Oa@Wq@M_@eAuCe@oA_@gAm@eBUm@_@eAk@}Aq@iB]_Ay@}Bc@mAk@_Bw@yBu@oB_@gAk@_BkA}Ca@eACGuB{FwAeEcBeFWw@{FeQkKa\\{CoJCGCGAEy@eCs@{Bm@kBcDsJ[y@cAgDOc@e@uA????m@eBw@uBGOIWIQKWEKMWe@sAQg@KYkA{CSg@}@yBCI??Ui@KYi@sASe@WMM[CGCEEKc@_A??IOIUIMGOGMIMS_@m@mAQ]Ua@qA}BeBmC}@qASYKOKOMOKOEGKOMSIIEGEEIIGIMOiAkBMQOUo@y@aCqDU]QYe@{@Q[A[Sc@????IU[u@Ui@IQKUM]????[w@Ok@Oi@EUGUEOCK}@aD[mA??IYqAqE_@oAk@iB??Og@GSWw@a@oA[mA??I[Su@W}@IWa@mAIY??I_@m@wBW{@Us@EQ??Qi@k@yAEMOOKa@FaAHqA"
+      },
+      "mode": "BUS",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": null,
+      "rideHailingEstimate": null,
+      "route": "68",
+      "startTime": 1721495040000,
+      "steps": [],
+      "to": {
+        "lat": 39.916762,
+        "lon": -75.171603,
+        "name": "Oregon Av & Broad St",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "31308",
+          "gtfsId": "SEPTA:31308",
+          "id": "U3RvcDpTRVBUQTozMTMwOA",
+          "lat": 39.916762,
+          "lon": -75.171603
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "31308",
+        "stopId": "SEPTA:31308"
+      },
+      "transitLeg": true,
+      "trip": {
+        "arrivalStoptime": {
+          "stop": {
+            "gtfsId": "SEPTA:31308",
+            "id": "U3RvcDpTRVBUQTozMTMwOA"
+          },
+          "stopPosition": 27
+        },
+        "departureStoptime": {
+          "stop": {
+            "gtfsId": "SEPTA:617",
+            "id": "U3RvcDpTRVBUQTo2MTc"
+          },
+          "stopPosition": 1
+        },
+        "gtfsId": "SEPTA:878354",
+        "id": "VHJpcDpTRVBUQTo4NzgzNTQ"
+      },
+      "origColor": "FFFFFF",
+      "agencyBrandingUrl": "https://www5.septa.org/",
+      "agencyId": "SEPTA:1",
+      "agencyName": "SEPTA",
+      "agencyUrl": "https://www5.septa.org/",
+      "alightRule": "scheduled",
+      "boardRule": "scheduled",
+      "routeColor": "000000",
+      "routeId": "SEPTA:68",
+      "routeLongName": "Broad-Oregon to UPS & 69th St TC",
+      "routeShortName": "68",
+      "routeTextColor": "000000",
+      "tripId": "SEPTA:878354"
+    },
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 1004.27,
+      "dropOffBookingInfo": {
+        "latestBookingTime": null
+      },
+      "dropoffType": "SCHEDULED",
+      "duration": 837,
+      "endTime": 1721497077000,
+      "fareProducts": [],
+      "from": {
+        "lat": 39.916762,
+        "lon": -75.171603,
+        "name": "Oregon Av & Broad St",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "31308",
+          "gtfsId": "SEPTA:31308",
+          "id": "U3RvcDpTRVBUQTozMTMwOA",
+          "lat": 39.916762,
+          "lon": -75.171603
+        },
+        "vertexType": "TRANSIT",
+        "stopCode": "31308",
+        "stopId": "SEPTA:31308"
+      },
+      "headsign": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 57,
+        "points": "wfsrFp}xiMGC@MNBBU@U?SFg@??t@J\\WPQFG@IBMDGLELBT?R@PHPHTHX?XCPBRDLDFALGLGHMNUHSN]L[HOTYDGHAJ_@DSJ@@IDc@@UJ@b@}GdAqO@G@G?CBWB@H@rEl@hAN"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
+      "startTime": 1721496240000,
+      "steps": [
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 6.23,
+          "elevationProfile": [],
+          "lat": 39.9168089,
+          "lon": -75.1715886,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "Oregon Avenue"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 9.1,
+          "elevationProfile": [],
+          "lat": 39.9167961,
+          "lon": -75.1715175,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 45.02,
+          "elevationProfile": [],
+          "lat": 39.9167149,
+          "lon": -75.1715312,
+          "relativeDirection": "LEFT",
+          "stayOn": true,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 334.44,
+          "elevationProfile": [],
+          "lat": 39.9166447,
+          "lon": -75.1710129,
+          "relativeDirection": "RIGHT",
+          "stayOn": true,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "SOUTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 31.73,
+          "elevationProfile": [],
+          "lat": 39.9141295,
+          "lon": -75.169956,
+          "relativeDirection": "LEFT",
+          "stayOn": true,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 29.74,
+          "elevationProfile": [],
+          "lat": 39.9139717,
+          "lon": -75.1697059,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "Bigler Street"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 6.25,
+          "elevationProfile": [],
+          "lat": 39.9139228,
+          "lon": -75.1693631,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "alley"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 372.17,
+          "elevationProfile": [],
+          "lat": 39.9138676,
+          "lon": -75.1693769,
+          "relativeDirection": "LEFT",
+          "stayOn": true,
+          "streetName": "sidewalk"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 169.59,
+          "elevationProfile": [],
+          "lat": 39.9132964,
+          "lon": -75.165079,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "South 10th Street"
+        }
+      ],
+      "to": {
+        "lat": 39.9117945,
+        "lon": -75.1654253,
+        "name": "39.91179, -75.16543",
+        "rentalVehicle": null,
+        "stop": null,
+        "vertexType": "NORMAL"
+      },
+      "transitLeg": false,
+      "trip": null,
+      "alightRule": "scheduled",
+      "boardRule": "scheduled",
+      "routeColor": "333333"
+    }
+  ],
+  "startTime": 1721493573000,
+  "transfers": 1,
+  "waitingTime": 0,
+  "walkTime": 1787,
+  "index": 0,
+  "rank": 876.9,
+  "totalFare": 1.7976931348623157e308
+}

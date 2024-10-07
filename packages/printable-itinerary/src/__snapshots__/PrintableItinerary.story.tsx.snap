@@ -3095,10 +3095,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 cxAPro">
       <span class="styled__AccessLegDescription-sc-1fqxr7x-6 hzAKWe">
-        Walk to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 kJzpP">
-          W Burnside &amp; SW 6th
-        </span>
+        Transfer, wait 1 min
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 gElXxk">
       </div>
@@ -3161,10 +3158,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 cxAPro">
       <span class="styled__AccessLegDescription-sc-1fqxr7x-6 hzAKWe">
-        Walk to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 kJzpP">
-          East Burnside Street
-        </span>
+        Transfer, wait 1 min
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 gElXxk">
       </div>
