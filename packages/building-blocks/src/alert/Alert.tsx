@@ -4,7 +4,8 @@ import AnimateHeight from "react-animate-height";
 import { ChevronUp } from "@styled-icons/bootstrap/ChevronUp";
 import { Bell } from "@styled-icons/bootstrap/Bell";
 import { StyledIcon } from "@styled-icons/styled-icon";
-import blue from "./colors/blue";
+import { useIntl } from "react-intl";
+import blue from "../colors/blue";
 
 interface Props {
   alertHeader: string;
@@ -90,6 +91,11 @@ const Alert = ({
   Icon = Bell
 }: Props): JSX.Element => {
   const [expandAlert, setExpandAlert] = useState(false);
+  const intl = useIntl();
+  const label = intl.formatMessage({
+    id: "otpUi.buildingBlocks.alert.expand",
+    defaultMessage: "Expand"
+  });
   return (
     <AlertContainer
       backgroundColor={backgroundColor}
@@ -100,7 +106,12 @@ const Alert = ({
       <AlertHeader>{alertHeader}</AlertHeader>
       <ButtonContainer>
         {collapsible && (
-          <button type="button" onClick={() => setExpandAlert(!expandAlert)}>
+          <button
+            type="button"
+            onClick={() => setExpandAlert(!expandAlert)}
+            aria-label={label}
+            title={label}
+          >
             <ChevronUp size={16} />
           </button>
         )}

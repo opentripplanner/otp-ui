@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { Meta } from "@storybook/react";
 import { ExclamationTriangle } from "@styled-icons/bootstrap/ExclamationTriangle";
-import Alert from "../Alert";
+import Alert from "../alert/Alert";
 import red from "../colors/red";
 
 const meta: Meta<typeof Alert> = {
