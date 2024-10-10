@@ -63,7 +63,7 @@ interface Props {
    *
    * { location: {...location}, reverseGeocode: true, type: "from/to" }
    */
-  setLocation: (arg: MapLocationActionArg) => void;
+  setLocation?: (arg: MapLocationActionArg) => void;
   /**
    * Whether or not to show the user settings popup when an endpoint is clicked.
    */
@@ -120,7 +120,7 @@ const EndpointsOverlay = ({
   locations = [],
   MapMarkerIcon = DefaultMapMarkerIcon,
   rememberPlace = noop,
-  setLocation,
+  setLocation = noop,
   showUserSettings,
   toLocation
 }: Props): ReactElement => (

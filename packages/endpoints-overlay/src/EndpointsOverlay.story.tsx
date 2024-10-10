@@ -46,11 +46,7 @@ export default {
 } as ComponentMeta<typeof EndpointsOverlay>;
 
 export const EndpointsOverlayWithoutUserSettings: ComponentStory<typeof EndpointsOverlay> = () => (
-  <EndpointsOverlay
-    fromLocation={fromLocation}
-    setLocation={setLocation}
-    toLocation={toLocation}
-  />
+  <EndpointsOverlay fromLocation={fromLocation} toLocation={toLocation} />
 );
 
 export const EndpointsOverlayWithUserSettings: ComponentStory<typeof EndpointsOverlay> = () => (
