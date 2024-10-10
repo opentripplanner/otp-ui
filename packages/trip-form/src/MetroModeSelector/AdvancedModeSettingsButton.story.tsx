@@ -12,7 +12,7 @@ import {
   defaultModeButtonDefinitions,
   getIcon,
   modeSettingDefinitionsWithDropdown
-} from "./mockButtons";
+} from "../__mocks__/mode-selector-buttons";
 
 const initialState = {
   enabledModeButtons: ["transit"],
@@ -26,11 +26,13 @@ function pipe<T>(...fns: Array<(arg: T) => T>) {
 const MetroModeSubsettingsComponent = ({
   fillModeIcons,
   modeButtonDefinitions,
+  onAllSubmodesDisabled,
   onSetModeSettingValue,
   onToggleModeButton
 }: {
   fillModeIcons?: boolean;
   modeButtonDefinitions: Array<ModeButtonDefinition>;
+  onAllSubmodesDisabled?: (modeButton: ModeButtonDefinition) => void;
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string, newState: boolean) => void;
 }): ReactElement => {
@@ -74,6 +76,12 @@ const MetroModeSubsettingsComponent = ({
     onToggleModeButton(key, newState);
   };
 
+  const onAllSubmodesDisabledAction = (modeButton: ModeButtonDefinition) => {
+    toggleModeButtonAction(modeButton.key, false);
+    // Storybook Action:
+    onAllSubmodesDisabled?.(modeButton);
+  };
+
   const setModeSettingValueAction = (event: QueryParamChangeEvent) => {
     setModeSettingValues({ ...modeSettingValues, ...event });
     // Storybook Action:
@@ -86,6 +94,7 @@ const MetroModeSubsettingsComponent = ({
         fillModeIcons={fillModeIcons}
         label="Select a transit mode"
         modeButtons={processedModeButtons}
+        onAllSubmodesDisabled={onAllSubmodesDisabledAction}
         onSettingsUpdate={setModeSettingValueAction}
         onToggleModeButton={toggleModeButtonAction}
       />
@@ -111,7 +120,8 @@ export default {
   argTypes: {
     fillModeIcons: { control: "boolean" },
     onSetModeSettingValue: { action: "set mode setting value" },
-    onToggleModeButton: { action: "toggle button" }
+    onToggleModeButton: { action: "toggle button" },
+    onAllSubmodesDisabled: { action: "all submodes disabled" }
   },
   component: MetroModeSubsettingsComponent,
   title: "Trip Form Components/Advanced Mode Settings Buttons"

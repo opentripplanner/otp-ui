@@ -5933,10 +5933,7 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
               -
             </span>
             <span>
-              Walk to
-              <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 kJzpP">
-                W Burnside &amp; SW 6th
-              </span>
+              Transfer, wait 1 min
             </span>
             <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 kMvDdO hYCcxI">
               <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
@@ -5945,46 +5942,6 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
             </button>
           </span>
         </div>
-        <span class="styled__LegDetails-sc-1q8npbl-39 dpNNWd">
-          <span class="styled__StepsHeaderAndMapLink-sc-1q8npbl-60 bqRtfg">
-            <button aria-expanded="false"
-                    class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 kMvDdO kvSXgs"
-            >
-              1 min
-              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
-                (Expand details)
-              </span>
-            </button>
-            <a aria-label="Show street imagery at this location"
-               role="link"
-               title="Show street imagery at this location"
-               class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
-            >
-              <svg viewbox="0 0 512 512"
-                   aria-hidden="true"
-                   focusable="false"
-                   fill="currentColor"
-                   xmlns="http://www.w3.org/2000/svg"
-                   class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
-                   style="padding-bottom: 1px;"
-              >
-                <path fill="currentColor"
-                      d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
-                >
-                </path>
-              </svg>
-            </a>
-          </span>
-          <div aria-hidden="true"
-               class="rah-static rah-static--height-zero "
-               style="grid-column: 1 / span 2; height: 0px; overflow: hidden;"
-          >
-            <div style="display: none;">
-              <ol class="styled__Steps-sc-1q8npbl-58 gKCBQH">
-              </ol>
-            </div>
-          </div>
-        </span>
       </div>
     </div>
   </li>
@@ -6296,10 +6253,7 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
               -
             </span>
             <span>
-              Walk to
-              <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 kJzpP">
-                East Burnside Street
-              </span>
+              Transfer, wait 1 min
             </span>
             <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 kMvDdO hYCcxI">
               <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
@@ -6308,46 +6262,6 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
             </button>
           </span>
         </div>
-        <span class="styled__LegDetails-sc-1q8npbl-39 dpNNWd">
-          <span class="styled__StepsHeaderAndMapLink-sc-1q8npbl-60 bqRtfg">
-            <button aria-expanded="false"
-                    class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 kMvDdO kvSXgs"
-            >
-              1 min
-              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
-                (Expand details)
-              </span>
-            </button>
-            <a aria-label="Show street imagery at this location"
-               role="link"
-               title="Show street imagery at this location"
-               class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
-            >
-              <svg viewbox="0 0 512 512"
-                   aria-hidden="true"
-                   focusable="false"
-                   fill="currentColor"
-                   xmlns="http://www.w3.org/2000/svg"
-                   class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
-                   style="padding-bottom: 1px;"
-              >
-                <path fill="currentColor"
-                      d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
-                >
-                </path>
-              </svg>
-            </a>
-          </span>
-          <div aria-hidden="true"
-               class="rah-static rah-static--height-zero "
-               style="grid-column: 1 / span 2; height: 0px; overflow: hidden;"
-          >
-            <div style="display: none;">
-              <ol class="styled__Steps-sc-1q8npbl-58 gKCBQH">
-              </ol>
-            </div>
-          </div>
-        </span>
       </div>
     </div>
   </li>
@@ -7891,97 +7805,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
             </button>
           </span>
         </div>
-        <span class="styled__LegDetails-sc-1q8npbl-39 dpNNWd">
-          <span class="styled__StepsHeaderAndMapLink-sc-1q8npbl-60 bqRtfg">
-            <button aria-expanded="false"
-                    class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 kMvDdO kvSXgs"
-            >
-              0 min
-              <span class="styled__CaretToggle-sc-1q8npbl-16 jCINlv">
-                <svg viewbox="0 0 320 512"
-                     height="15"
-                     width="15"
-                     aria-hidden="true"
-                     focusable="false"
-                     fill="currentColor"
-                     xmlns="http://www.w3.org/2000/svg"
-                     class="StyledIconBase-ea9ulj-0 hPhvO"
-                >
-                  <path fill="currentColor"
-                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
-                  >
-                  </path>
-                </svg>
-              </span>
-              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
-                (Expand details)
-              </span>
-            </button>
-            <a aria-label="Show street imagery at this location"
-               role="link"
-               title="Show street imagery at this location"
-               class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
-            >
-              <svg viewbox="0 0 512 512"
-                   aria-hidden="true"
-                   focusable="false"
-                   fill="currentColor"
-                   xmlns="http://www.w3.org/2000/svg"
-                   class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
-                   style="padding-bottom: 1px;"
-              >
-                <path fill="currentColor"
-                      d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
-                >
-                </path>
-              </svg>
-            </a>
-          </span>
-          <div aria-hidden="true"
-               class="rah-static rah-static--height-zero "
-               style="grid-column: 1 / span 2; height: 0px; overflow: hidden;"
-          >
-            <div style="display: none;">
-              <ol class="styled__Steps-sc-1q8npbl-58 gKCBQH">
-                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
-                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
-                    <svg viewbox="0 0 261 261">
-                      <path d="M146.5 140.5l100-70.86L146.5.5v40h-70c-30 0-50 20-50 50v170h60v-160h60v40z">
-                      </path>
-                    </svg>
-                  </div>
-                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
-                    <span>
-                      Right on
-                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
-                        street transit link
-                      </span>
-                    </span>
-                    <a aria-label="Show street imagery at this location"
-                       role="link"
-                       title="Show street imagery at this location"
-                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
-                    >
-                      <svg viewbox="0 0 512 512"
-                           aria-hidden="true"
-                           focusable="false"
-                           fill="currentColor"
-                           xmlns="http://www.w3.org/2000/svg"
-                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
-                           style="padding-bottom: 1px;"
-                      >
-                        <path fill="currentColor"
-                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
-                        >
-                        </path>
-                      </svg>
-                    </a>
-                  </div>
-                </li>
-              </ol>
-            </div>
-          </div>
-        </span>
       </div>
     </div>
   </li>
@@ -21345,46 +21168,6 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
             </button>
           </span>
         </div>
-        <span class="styled__LegDetails-sc-1q8npbl-39 dpNNWd">
-          <span class="styled__StepsHeaderAndMapLink-sc-1q8npbl-60 bqRtfg">
-            <button aria-expanded="false"
-                    class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 kMvDdO kvSXgs"
-            >
-              1 min
-              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
-                (Expand details)
-              </span>
-            </button>
-            <a aria-label="Show street imagery at this location"
-               role="link"
-               title="Show street imagery at this location"
-               class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
-            >
-              <svg viewbox="0 0 512 512"
-                   aria-hidden="true"
-                   focusable="false"
-                   fill="currentColor"
-                   xmlns="http://www.w3.org/2000/svg"
-                   class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
-                   style="padding-bottom: 1px;"
-              >
-                <path fill="currentColor"
-                      d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
-                >
-                </path>
-              </svg>
-            </a>
-          </span>
-          <div aria-hidden="true"
-               class="rah-static rah-static--height-zero "
-               style="grid-column: 1 / span 2; height: 0px; overflow: hidden;"
-          >
-            <div style="display: none;">
-              <ol class="styled__Steps-sc-1q8npbl-58 gKCBQH">
-              </ol>
-            </div>
-          </div>
-        </span>
       </div>
     </div>
   </li>
@@ -21681,46 +21464,6 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
             </button>
           </span>
         </div>
-        <span class="styled__LegDetails-sc-1q8npbl-39 dpNNWd">
-          <span class="styled__StepsHeaderAndMapLink-sc-1q8npbl-60 bqRtfg">
-            <button aria-expanded="false"
-                    class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 kMvDdO kvSXgs"
-            >
-              1 min
-              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
-                (Expand details)
-              </span>
-            </button>
-            <a aria-label="Show street imagery at this location"
-               role="link"
-               title="Show street imagery at this location"
-               class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
-            >
-              <svg viewbox="0 0 512 512"
-                   aria-hidden="true"
-                   focusable="false"
-                   fill="currentColor"
-                   xmlns="http://www.w3.org/2000/svg"
-                   class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
-                   style="padding-bottom: 1px;"
-              >
-                <path fill="currentColor"
-                      d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
-                >
-                </path>
-              </svg>
-            </a>
-          </span>
-          <div aria-hidden="true"
-               class="rah-static rah-static--height-zero "
-               style="grid-column: 1 / span 2; height: 0px; overflow: hidden;"
-          >
-            <div style="display: none;">
-              <ol class="styled__Steps-sc-1q8npbl-58 gKCBQH">
-              </ol>
-            </div>
-          </div>
-        </span>
       </div>
     </div>
   </li>
@@ -21869,6 +21612,1772 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
       Arrive at 407 NE 12th Ave, Portland
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details ">
+    </div>
+  </li>
+</ol>
+`;
+
+exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 bquSlg itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jhmzVM">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 VoBOd place-row-wrapper ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 cJQcPY">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 hDXzfV leg-line">
+      </div>
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 fEkbGq">
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 dFSJJb hSjtGc"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 512 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-ea9ulj-0 hPhvO styled__FromIcon-sc-n5xcvc-0 jTjMOf line-column-content__StyledLocationIcon-sc-1wcbb7o-4 cVyKLp"
+        >
+          <path fill="currentColor"
+                d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 foGJoQ">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 kSfxGv"
+      >
+        Airport Terminal A (SEPTA)
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 hZcOVK">
+      9:39 AM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+      from Airport Terminal A (SEPTA)
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details ">
+      <div class="styled__LegBody-sc-1q8npbl-23 gwGkqk">
+        <div class="styled__LegClickable-sc-1q8npbl-24 gBsxij">
+          <span class="styled__LegDescription-sc-1q8npbl-26 laCHcH">
+            <span class="styled__LegIconAndRouteShortName-sc-1q8npbl-35 goOIbD">
+              <span class="styled__LegIconContainer-sc-1q8npbl-34 elLwWq">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     version="1.0"
+                     x="0px"
+                     y="0px"
+                     viewbox="0 0 55.74 100"
+                     height="100%"
+                     width="100%"
+                     leg="[object Object]"
+                >
+                  <path d="M31.269,13.769c3.862,0,6.884-3.025,6.884-6.885C38.153,3.022,35.131,0,31.269,0c-3.86,0-6.885,3.022-6.885,6.884  C24.384,10.744,27.409,13.769,31.269,13.769z">
+                  </path>
+                  <path d="M1.249,51.724l4.512-0.421L5.863,35.25l8.224-5.204c0,0-1.333,10.545-1.333,16.085c0,4.831-0.172,8.736-0.172,8.736  L2.054,96.918L9.489,100L21.28,61.549l8.195,10.424l9.339,26.337l8.394-3.355l-9.425-27.965L27.446,50.665l2.901-21.399l6.46,13.544  l16.622,5.708l2.311-4.199l-15.234-8.887c0,0-3.691-9.819-6.711-15.962c-1.027-2.091-5.196-2.774-6.894-2.901  c-4.896-0.362-7.428,1.296-11.488,3.432C11.358,22.131,0,30.728,0,30.728L1.249,51.724z">
+                  </path>
+                </svg>
+              </span>
+            </span>
+            <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+              -
+            </span>
+            <span>
+              Walk 0.4 miles to
+              <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 kJzpP">
+                Philadelphia Airport Terminal D
+              </span>
+            </span>
+            <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 kMvDdO hYCcxI">
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                Zoom to leg on map
+              </span>
+            </button>
+          </span>
+        </div>
+        <span class="styled__LegDetails-sc-1q8npbl-39 dpNNWd">
+          <span class="styled__StepsHeaderAndMapLink-sc-1q8npbl-60 bqRtfg">
+            <button aria-expanded="false"
+                    class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 kMvDdO kvSXgs"
+            >
+              10 min
+              <span class="styled__CaretToggle-sc-1q8npbl-16 jCINlv">
+                <svg viewbox="0 0 320 512"
+                     height="15"
+                     width="15"
+                     aria-hidden="true"
+                     focusable="false"
+                     fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg"
+                     class="StyledIconBase-ea9ulj-0 hPhvO"
+                >
+                  <path fill="currentColor"
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  >
+                  </path>
+                </svg>
+              </span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                (Expand details)
+              </span>
+            </button>
+            <a aria-label="Show street imagery at this location"
+               role="link"
+               title="Show street imagery at this location"
+               class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+            >
+              <svg viewbox="0 0 512 512"
+                   aria-hidden="true"
+                   focusable="false"
+                   fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg"
+                   class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                   style="padding-bottom: 1px;"
+              >
+                <path fill="currentColor"
+                      d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                >
+                </path>
+              </svg>
+            </a>
+          </span>
+          <div aria-hidden="true"
+               class="rah-static rah-static--height-zero "
+               style="grid-column: 1 / span 2; height: 0px; overflow: hidden;"
+          >
+            <div style="display: none;">
+              <ol class="styled__Steps-sc-1q8npbl-58 gKCBQH">
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M100.5 110.5v150h60v-150h40l-70-110-70 110h40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Head west on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        Departures Road
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        120 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M114.5 100.5h60v160h60v-170c0-30-20-50-50-50h-70V.5l-100 69.14 100 70.86v-40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Left on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        service road
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        37 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M114.5 100.5h60v160h60v-170c0-30-20-50-50-50h-70V.5l-100 69.14 100 70.86v-40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Left on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        Unnamed Path
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        0.2 miles
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M114.5 100.5h60v160h60v-170c0-30-20-50-50-50h-70V.5l-100 69.14 100 70.86v-40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Left on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        steps
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        65 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M114.5 100.5h60v160h60v-170c0-30-20-50-50-50h-70V.5l-100 69.14 100 70.86v-40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Left on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        footbridge
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        454 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M146.5 140.5l100-70.86L146.5.5v40h-70c-30 0-50 20-50 50v170h60v-160h60v40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Right on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        service road
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        172 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M146.5 140.5l100-70.86L146.5.5v40h-70c-30 0-50 20-50 50v170h60v-160h60v40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Right on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        parking aisle
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        111 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M146.5 140.5l100-70.86L146.5.5v40h-70c-30 0-50 20-50 50v170h60v-160h60v40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Right on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        service road
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        114 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M114.5 100.5h60v160h60v-170c0-30-20-50-50-50h-70V.5l-100 69.14 100 70.86v-40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Left on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        parking aisle
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        231 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="styled__PreviewContainer-sc-1q8npbl-41 jddLEY">
+            <button role="button"
+                    tabindex="0"
+                    title="Toggle elevation chart"
+                    class="styled__TransparentButton-sc-1q8npbl-1 styled__PreviewDiagram-sc-1q8npbl-50 kMvDdO MpphZ"
+            >
+              <div class="styled__PreviewDiagramTitle-sc-1q8npbl-54 caTRzh">
+                Elevation chart
+                <span class="styled__PreviewDiagramElevationChange-sc-1q8npbl-51 styled__PreviewDiagramElevationGain-sc-1q8npbl-52 dmAGLl kEHqnh">
+                  ↑0'
+                </span>
+                <span class="styled__PreviewDiagramElevationChange-sc-1q8npbl-51 styled__PreviewDiagramElevationLoss-sc-1q8npbl-53 dmAGLl iHaYdm">
+                  ↓0'
+                </span>
+              </div>
+              No elevation data available.
+              <div>
+              </div>
+            </button>
+          </div>
+        </span>
+      </div>
+    </div>
+  </li>
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 VoBOd place-row-wrapper transit">
+    <div class="styled__LineColumn-sc-1q8npbl-38 cJQcPY">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 fzWlJd leg-line">
+      </div>
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 fEkbGq">
+        <svg viewbox="0 0 512 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="black"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 dFSJJb"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 dFSJJb hSjtGc"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 foGJoQ">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 kSfxGv"
+      >
+        Philadelphia Airport Terminal D
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 hZcOVK">
+      9:50 AM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+      from Philadelphia Airport Terminal D
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details transit">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-49 foIWAW transit-leg-subheader">
+        Stop ID 17105
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 kMvDdO fJbIyq iXoiZX"
+        >
+          Stop Viewer
+        </button>
+      </div>
+      <div class="styled__LegBody-sc-1q8npbl-23 gwGkqk">
+        <div class="styled__LegClickable-sc-1q8npbl-24 gBsxij">
+          <span class="styled__LegDescription-sc-1q8npbl-26 laCHcH">
+            <span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                - Ride
+              </span>
+              <span class="styled__LegDescription-sc-1q8npbl-26 styled__LegDescriptionForTransit-sc-1q8npbl-33 laCHcH bZCrTn">
+                <span class="styled__LegIconAndRouteShortName-sc-1q8npbl-35 goOIbD">
+                  <span class="styled__LegIconContainer-sc-1q8npbl-34 elLwWq">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         version="1.0"
+                         viewbox="0 0 81.59 99.992"
+                         height="100%"
+                         width="100%"
+                         leg="[object Object]"
+                         aria-label="BUS"
+                    >
+                      <path d="M68.848,68.51">
+                      </path>
+                      <path d="M12.687,68.51">
+                      </path>
+                      <g>
+                        <path d="M77.619,14.775c-1.098-5.528-4.622-7.731-9.931-9.93C62.499,2.668,50.02,0.079,40.794,0 c-9.243,0.079-21.722,2.668-26.948,4.846c-5.271,2.199-8.795,4.402-9.875,9.93L0,45.284v42.091h6.84v6.564 c-0.027,8.071,11.745,8.071,11.75,0v-6.564h21.737h0.054H63v6.564c-0.014,8.071,11.759,8.071,11.75,0v-6.564h6.84V45.284 L77.619,14.775z M23.996,7.715h16.385h17.212c3.286-0.009,3.286,4.949,0,4.965H40.327H23.996 C20.694,12.664,20.694,7.706,23.996,7.715z M12.687,74.191c-3.101-0.015-5.631-2.542-5.627-5.682 c-0.004-3.099,2.526-5.627,5.627-5.627c3.136,0,5.665,2.528,5.683,5.627C18.352,71.649,15.823,74.177,12.687,74.191z M40.381,48.482H10.426c-2.925,0.028-3.54-2.081-3.253-4.192l3.088-22.177c0.425-2.67,1.336-4.443,4.854-4.468h25.213h26.149 c3.498,0.025,4.412,1.797,4.854,4.468l3.09,22.177c0.266,2.112-0.348,4.22-3.256,4.192H40.381z M68.848,74.191 c-3.1-0.015-5.628-2.542-5.628-5.682c0-3.099,2.528-5.627,5.628-5.627c3.137,0,5.667,2.528,5.681,5.627 C74.515,71.649,71.985,74.177,68.848,74.191z">
+                        </path>
+                        <path d="M40.381-0.007c0.135,0,0.277,0.006,0.414,0.007c0.137-0.001,0.278-0.007,0.414-0.007H40.381z">
+                        </path>
+                      </g>
+                    </svg>
+                  </span>
+                  <span class="styled__LegDescriptionRouteShortName-sc-1q8npbl-32 jYEoDm">
+                    108
+                  </span>
+                </span>
+                <span class="styled__LegDescriptionRouteLongName-sc-1q8npbl-31 eaaVYt">
+                  <span>
+                    69th Street Transportation Center
+                  </span>
+                </span>
+              </span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                - Disembark at PNC Center
+              </span>
+            </span>
+            <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 kMvDdO hYCcxI transit-leg-button">
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                Zoom to leg on map
+              </span>
+            </button>
+          </span>
+        </div>
+        <div class="transit-leg-details-wrapper"
+             aria-label="Leg details"
+             role="group"
+        >
+          <div class="styled__AgencyInfo-sc-1q8npbl-86 ghiwok agency-info">
+            Service operated by
+            <a aria-label="SEPTA (External Link)"
+               href="https://www5.septa.org/"
+               rel="noopener noreferrer"
+               target="_blank"
+            >
+              SEPTA
+              <img alt
+                   src="https://www5.septa.org/"
+                   height="25"
+              >
+            </a>
+          </div>
+          <div aria-hidden="false"
+               class="rah-static rah-static--height-auto "
+               style="height: auto; overflow: visible;"
+          >
+            <div>
+              <ul class="styled__TransitAlerts-sc-1q8npbl-77 cBoXNt alert-body">
+              </ul>
+            </div>
+          </div>
+          <div class="styled__TransitLegDetails-sc-1q8npbl-79 hnyeXC transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 mFuQb">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 kMvDdO kYLkmR">
+                Ride 8 min / 4 stops
+                <span class="styled__CaretToggle-sc-1q8npbl-16 jCINlv">
+                  <svg viewbox="0 0 320 512"
+                       height="15"
+                       width="15"
+                       aria-hidden="true"
+                       focusable="false"
+                       fill="currentColor"
+                       xmlns="http://www.w3.org/2000/svg"
+                       class="StyledIconBase-ea9ulj-0 hPhvO"
+                  >
+                    <path fill="currentColor"
+                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    >
+                    </path>
+                  </svg>
+                </span>
+                <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                  (Expand details)
+                </span>
+              </button>
+              <button role="link"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 kMvDdO fJbIyq iXoiZX"
+              >
+                Trip Viewer
+              </button>
+            </div>
+            <div aria-hidden="true"
+                 class="rah-static rah-static--height-zero "
+                 style="height: 0px; overflow: hidden;"
+            >
+              <div style="display: none;">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 jrUaZg">
+                  <ol class="styled__IntermediateStops-sc-1q8npbl-21 fqzSmC">
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Philadelphia Airport Terminals E &amp; F
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Bartram Av &amp; 90th St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        89th St &amp; Bartram Av - FS
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 VoBOd place-row-wrapper ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 cJQcPY">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 hDXzfV leg-line">
+      </div>
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 fEkbGq">
+        <svg viewbox="0 0 512 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="black"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 dFSJJb"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 dFSJJb hSjtGc"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 foGJoQ">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 kSfxGv"
+      >
+        PNC Center
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 hZcOVK">
+      9:59 AM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+      from PNC Center
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-49 foIWAW transit-leg-subheader">
+        Stop ID 617
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 kMvDdO fJbIyq iXoiZX"
+        >
+          Stop Viewer
+        </button>
+      </div>
+      <div class="styled__LegBody-sc-1q8npbl-23 gwGkqk">
+        <div class="styled__LegClickable-sc-1q8npbl-24 gBsxij">
+          <span class="styled__LegDescription-sc-1q8npbl-26 laCHcH">
+            <span class="styled__LegIconAndRouteShortName-sc-1q8npbl-35 goOIbD">
+              <span class="styled__LegIconContainer-sc-1q8npbl-34 elLwWq">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     version="1.0"
+                     x="0px"
+                     y="0px"
+                     viewbox="0 0 55.74 100"
+                     height="100%"
+                     width="100%"
+                     leg="[object Object]"
+                >
+                  <path d="M31.269,13.769c3.862,0,6.884-3.025,6.884-6.885C38.153,3.022,35.131,0,31.269,0c-3.86,0-6.885,3.022-6.885,6.884  C24.384,10.744,27.409,13.769,31.269,13.769z">
+                  </path>
+                  <path d="M1.249,51.724l4.512-0.421L5.863,35.25l8.224-5.204c0,0-1.333,10.545-1.333,16.085c0,4.831-0.172,8.736-0.172,8.736  L2.054,96.918L9.489,100L21.28,61.549l8.195,10.424l9.339,26.337l8.394-3.355l-9.425-27.965L27.446,50.665l2.901-21.399l6.46,13.544  l16.622,5.708l2.311-4.199l-15.234-8.887c0,0-3.691-9.819-6.711-15.962c-1.027-2.091-5.196-2.774-6.894-2.901  c-4.896-0.362-7.428,1.296-11.488,3.432C11.358,22.131,0,30.728,0,30.728L1.249,51.724z">
+                  </path>
+                </svg>
+              </span>
+            </span>
+            <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+              -
+            </span>
+            <span>
+              Transfer, wait 5 min
+            </span>
+            <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 kMvDdO hYCcxI">
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                Zoom to leg on map
+              </span>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 VoBOd place-row-wrapper transit">
+    <div class="styled__LineColumn-sc-1q8npbl-38 cJQcPY">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 fzWlJd leg-line">
+      </div>
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 fEkbGq">
+        <svg viewbox="0 0 512 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="black"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 dFSJJb"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 dFSJJb hSjtGc"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 foGJoQ">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 kSfxGv"
+      >
+        PNC Center
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 hZcOVK">
+      10:04 AM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+      from PNC Center
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details transit">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-49 foIWAW transit-leg-subheader">
+        Stop ID 617
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 kMvDdO fJbIyq iXoiZX"
+        >
+          Stop Viewer
+        </button>
+      </div>
+      <div class="styled__LegBody-sc-1q8npbl-23 gwGkqk">
+        <div class="styled__LegClickable-sc-1q8npbl-24 gBsxij">
+          <span class="styled__LegDescription-sc-1q8npbl-26 laCHcH">
+            <span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                - Ride
+              </span>
+              <span class="styled__LegDescription-sc-1q8npbl-26 styled__LegDescriptionForTransit-sc-1q8npbl-33 laCHcH bZCrTn">
+                <span class="styled__LegIconAndRouteShortName-sc-1q8npbl-35 goOIbD">
+                  <span class="styled__LegIconContainer-sc-1q8npbl-34 elLwWq">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         version="1.0"
+                         viewbox="0 0 81.59 99.992"
+                         height="100%"
+                         width="100%"
+                         leg="[object Object]"
+                         aria-label="BUS"
+                    >
+                      <path d="M68.848,68.51">
+                      </path>
+                      <path d="M12.687,68.51">
+                      </path>
+                      <g>
+                        <path d="M77.619,14.775c-1.098-5.528-4.622-7.731-9.931-9.93C62.499,2.668,50.02,0.079,40.794,0 c-9.243,0.079-21.722,2.668-26.948,4.846c-5.271,2.199-8.795,4.402-9.875,9.93L0,45.284v42.091h6.84v6.564 c-0.027,8.071,11.745,8.071,11.75,0v-6.564h21.737h0.054H63v6.564c-0.014,8.071,11.759,8.071,11.75,0v-6.564h6.84V45.284 L77.619,14.775z M23.996,7.715h16.385h17.212c3.286-0.009,3.286,4.949,0,4.965H40.327H23.996 C20.694,12.664,20.694,7.706,23.996,7.715z M12.687,74.191c-3.101-0.015-5.631-2.542-5.627-5.682 c-0.004-3.099,2.526-5.627,5.627-5.627c3.136,0,5.665,2.528,5.683,5.627C18.352,71.649,15.823,74.177,12.687,74.191z M40.381,48.482H10.426c-2.925,0.028-3.54-2.081-3.253-4.192l3.088-22.177c0.425-2.67,1.336-4.443,4.854-4.468h25.213h26.149 c3.498,0.025,4.412,1.797,4.854,4.468l3.09,22.177c0.266,2.112-0.348,4.22-3.256,4.192H40.381z M68.848,74.191 c-3.1-0.015-5.628-2.542-5.628-5.682c0-3.099,2.528-5.627,5.628-5.627c3.137,0,5.667,2.528,5.681,5.627 C74.515,71.649,71.985,74.177,68.848,74.191z">
+                        </path>
+                        <path d="M40.381-0.007c0.135,0,0.277,0.006,0.414,0.007c0.137-0.001,0.278-0.007,0.414-0.007H40.381z">
+                        </path>
+                      </g>
+                    </svg>
+                  </span>
+                  <span class="styled__LegDescriptionRouteShortName-sc-1q8npbl-32 jYEoDm">
+                    68
+                  </span>
+                </span>
+                <span class="styled__LegDescriptionRouteLongName-sc-1q8npbl-31 eaaVYt">
+                  <span>
+                    Broad-Oregon
+                  </span>
+                </span>
+              </span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                - Disembark at Oregon Av &amp; Broad St
+              </span>
+            </span>
+            <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 kMvDdO hYCcxI transit-leg-button">
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                Zoom to leg on map
+              </span>
+            </button>
+          </span>
+        </div>
+        <div class="transit-leg-details-wrapper"
+             aria-label="Leg details"
+             role="group"
+        >
+          <div class="styled__AgencyInfo-sc-1q8npbl-86 ghiwok agency-info">
+            Service operated by
+            <a aria-label="SEPTA (External Link)"
+               href="https://www5.septa.org/"
+               rel="noopener noreferrer"
+               target="_blank"
+            >
+              SEPTA
+              <img alt
+                   src="https://www5.septa.org/"
+                   height="25"
+              >
+            </a>
+          </div>
+          <div aria-hidden="false"
+               class="rah-static rah-static--height-auto "
+               style="height: auto; overflow: visible;"
+          >
+            <div>
+              <ul class="styled__TransitAlerts-sc-1q8npbl-77 cBoXNt alert-body">
+              </ul>
+            </div>
+          </div>
+          <div class="styled__TransitLegDetails-sc-1q8npbl-79 hnyeXC transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 mFuQb">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 kMvDdO kYLkmR">
+                Ride 20 min / 26 stops
+                <span class="styled__CaretToggle-sc-1q8npbl-16 jCINlv">
+                  <svg viewbox="0 0 320 512"
+                       height="15"
+                       width="15"
+                       aria-hidden="true"
+                       focusable="false"
+                       fill="currentColor"
+                       xmlns="http://www.w3.org/2000/svg"
+                       class="StyledIconBase-ea9ulj-0 hPhvO"
+                  >
+                    <path fill="currentColor"
+                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    >
+                    </path>
+                  </svg>
+                </span>
+                <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                  (Expand details)
+                </span>
+              </button>
+              <button role="link"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 kMvDdO fJbIyq iXoiZX"
+              >
+                Trip Viewer
+              </button>
+            </div>
+            <div aria-hidden="true"
+                 class="rah-static rah-static--height-zero "
+                 style="height: 0px; overflow: hidden;"
+            >
+              <div style="display: none;">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 jrUaZg">
+                  <ol class="styled__IntermediateStops-sc-1q8npbl-21 fqzSmC">
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Tinicum Blvd &amp; 88th St - FS
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Tinicum Blvd &amp; 86th St - MBFS
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Bartram Av &amp; 84th St - MBNS
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Bartram Av &amp; 84th St - MBFS
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Island Av &amp; Penrose Av - MBNS
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Island Av &amp; Penrose Av - MBFS
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Island Av &amp; Escort Av - MBNS
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Island Av &amp; Escort Av
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Island Av &amp; Escort Av - MBFS
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Enterprise Av &amp; Executive Av
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Executive Av &amp; Enterprise Av - FS
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Executive Av &amp; Escort Av
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Escort Av &amp; Island Av
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Island Av &amp; Penrose Av - MBNS
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Island Av &amp; Penrose Av - MBNS
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Penrose Av &amp; 26th St - MBNS
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Penrose &amp; Pattison Av - MBNS
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Penrose &amp; Pattison Av - FS
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Penrose Av &amp; 20th St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Penrose Av &amp; 20th St - FS
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Moyamensing Av &amp; Pollock St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Moyamensing Av &amp; 18th St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Moyamensing Av &amp; 17th St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Moyamensing Av &amp; 16th St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Moyamensing Av &amp; 15th St
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 VoBOd place-row-wrapper ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 cJQcPY">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 hDXzfV leg-line">
+      </div>
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 fEkbGq">
+        <svg viewbox="0 0 512 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="black"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 dFSJJb"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 dFSJJb hSjtGc"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 foGJoQ">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 kSfxGv"
+      >
+        Oregon Av &amp; Broad St
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 hZcOVK">
+      10:24 AM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+      from Oregon Av &amp; Broad St
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-49 foIWAW transit-leg-subheader">
+        Stop ID 31308
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 kMvDdO fJbIyq iXoiZX"
+        >
+          Stop Viewer
+        </button>
+      </div>
+      <div class="styled__LegBody-sc-1q8npbl-23 gwGkqk">
+        <div class="styled__LegClickable-sc-1q8npbl-24 gBsxij">
+          <span class="styled__LegDescription-sc-1q8npbl-26 laCHcH">
+            <span class="styled__LegIconAndRouteShortName-sc-1q8npbl-35 goOIbD">
+              <span class="styled__LegIconContainer-sc-1q8npbl-34 elLwWq">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     version="1.0"
+                     x="0px"
+                     y="0px"
+                     viewbox="0 0 55.74 100"
+                     height="100%"
+                     width="100%"
+                     leg="[object Object]"
+                >
+                  <path d="M31.269,13.769c3.862,0,6.884-3.025,6.884-6.885C38.153,3.022,35.131,0,31.269,0c-3.86,0-6.885,3.022-6.885,6.884  C24.384,10.744,27.409,13.769,31.269,13.769z">
+                  </path>
+                  <path d="M1.249,51.724l4.512-0.421L5.863,35.25l8.224-5.204c0,0-1.333,10.545-1.333,16.085c0,4.831-0.172,8.736-0.172,8.736  L2.054,96.918L9.489,100L21.28,61.549l8.195,10.424l9.339,26.337l8.394-3.355l-9.425-27.965L27.446,50.665l2.901-21.399l6.46,13.544  l16.622,5.708l2.311-4.199l-15.234-8.887c0,0-3.691-9.819-6.711-15.962c-1.027-2.091-5.196-2.774-6.894-2.901  c-4.896-0.362-7.428,1.296-11.488,3.432C11.358,22.131,0,30.728,0,30.728L1.249,51.724z">
+                  </path>
+                </svg>
+              </span>
+            </span>
+            <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+              -
+            </span>
+            <span>
+              Walk 0.6 miles to
+              <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 kJzpP">
+                39.91179, -75.16543
+              </span>
+            </span>
+            <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 kMvDdO hYCcxI">
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                Zoom to leg on map
+              </span>
+            </button>
+          </span>
+        </div>
+        <span class="styled__LegDetails-sc-1q8npbl-39 dpNNWd">
+          <span class="styled__StepsHeaderAndMapLink-sc-1q8npbl-60 bqRtfg">
+            <button aria-expanded="false"
+                    class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 kMvDdO kvSXgs"
+            >
+              13 min
+              <span class="styled__CaretToggle-sc-1q8npbl-16 jCINlv">
+                <svg viewbox="0 0 320 512"
+                     height="15"
+                     width="15"
+                     aria-hidden="true"
+                     focusable="false"
+                     fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg"
+                     class="StyledIconBase-ea9ulj-0 hPhvO"
+                >
+                  <path fill="currentColor"
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  >
+                  </path>
+                </svg>
+              </span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                (Expand details)
+              </span>
+            </button>
+            <a aria-label="Show street imagery at this location"
+               role="link"
+               title="Show street imagery at this location"
+               class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+            >
+              <svg viewbox="0 0 512 512"
+                   aria-hidden="true"
+                   focusable="false"
+                   fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg"
+                   class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                   style="padding-bottom: 1px;"
+              >
+                <path fill="currentColor"
+                      d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                >
+                </path>
+              </svg>
+            </a>
+          </span>
+          <div aria-hidden="true"
+               class="rah-static rah-static--height-zero "
+               style="grid-column: 1 / span 2; height: 0px; overflow: hidden;"
+          >
+            <div style="display: none;">
+              <ol class="styled__Steps-sc-1q8npbl-58 gKCBQH">
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M100.5 110.5v150h60v-150h40l-70-110-70 110h40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Head east on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        Oregon Avenue
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        20 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M146.5 140.5l100-70.86L146.5.5v40h-70c-30 0-50 20-50 50v170h60v-160h60v40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Right on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        Unnamed Path
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        30 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M114.5 100.5h60v160h60v-170c0-30-20-50-50-50h-70V.5l-100 69.14 100 70.86v-40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Left on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        Unnamed Path
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        148 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M146.5 140.5l100-70.86L146.5.5v40h-70c-30 0-50 20-50 50v170h60v-160h60v40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Right on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        Unnamed Path
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        0.2 miles
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M114.5 100.5h60v160h60v-170c0-30-20-50-50-50h-70V.5l-100 69.14 100 70.86v-40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Left on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        Unnamed Path
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        104 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M114.5 100.5h60v160h60v-170c0-30-20-50-50-50h-70V.5l-100 69.14 100 70.86v-40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Left on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        Bigler Street
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        98 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M146.5 140.5l100-70.86L146.5.5v40h-70c-30 0-50 20-50 50v170h60v-160h60v40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Right on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        alley
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        21 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M114.5 100.5h60v160h60v-170c0-30-20-50-50-50h-70V.5l-100 69.14 100 70.86v-40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Left on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        sidewalk
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        0.2 miles
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M146.5 140.5l100-70.86L146.5.5v40h-70c-30 0-50 20-50 50v170h60v-160h60v40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Right on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        South 10th Street
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        0.1 miles
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="styled__PreviewContainer-sc-1q8npbl-41 jddLEY">
+            <button role="button"
+                    tabindex="0"
+                    title="Toggle elevation chart"
+                    class="styled__TransparentButton-sc-1q8npbl-1 styled__PreviewDiagram-sc-1q8npbl-50 kMvDdO MpphZ"
+            >
+              <div class="styled__PreviewDiagramTitle-sc-1q8npbl-54 caTRzh">
+                Elevation chart
+                <span class="styled__PreviewDiagramElevationChange-sc-1q8npbl-51 styled__PreviewDiagramElevationGain-sc-1q8npbl-52 dmAGLl kEHqnh">
+                  ↑0'
+                </span>
+                <span class="styled__PreviewDiagramElevationChange-sc-1q8npbl-51 styled__PreviewDiagramElevationLoss-sc-1q8npbl-53 dmAGLl iHaYdm">
+                  ↓0'
+                </span>
+              </div>
+              No elevation data available.
+              <div>
+              </div>
+            </button>
+          </div>
+        </span>
+      </div>
+    </div>
+  </li>
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 VoBOd place-row-wrapper ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 cJQcPY">
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 fEkbGq">
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 dFSJJb hSjtGc"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 384 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-ea9ulj-0 hPhvO styled__ToIcon-sc-n5xcvc-2 ipFnZE line-column-content__StyledLocationIcon-sc-1wcbb7o-4 cVyKLp"
+        >
+          <path fill="currentColor"
+                d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 foGJoQ">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 kSfxGv"
+      >
+        39.91179, -75.16543
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 hZcOVK">
+      10:37 AM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+      Arrive at 39.91179, -75.16543
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details ">
     </div>
@@ -27267,46 +28776,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
             </button>
           </span>
         </div>
-        <span class="styled__LegDetails-sc-1q8npbl-39 dpNNWd">
-          <span class="styled__StepsHeaderAndMapLink-sc-1q8npbl-60 bqRtfg">
-            <button aria-expanded="false"
-                    class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 kMvDdO kvSXgs"
-            >
-              0 min
-              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
-                (Expand details)
-              </span>
-            </button>
-            <a aria-label="Show street imagery at this location"
-               role="link"
-               title="Show street imagery at this location"
-               class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
-            >
-              <svg viewbox="0 0 512 512"
-                   aria-hidden="true"
-                   focusable="false"
-                   fill="currentColor"
-                   xmlns="http://www.w3.org/2000/svg"
-                   class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
-                   style="padding-bottom: 1px;"
-              >
-                <path fill="currentColor"
-                      d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
-                >
-                </path>
-              </svg>
-            </a>
-          </span>
-          <div aria-hidden="true"
-               class="rah-static rah-static--height-zero "
-               style="grid-column: 1 / span 2; height: 0px; overflow: hidden;"
-          >
-            <div style="display: none;">
-              <ol class="styled__Steps-sc-1q8npbl-58 gKCBQH">
-              </ol>
-            </div>
-          </div>
-        </span>
       </div>
     </div>
   </li>
@@ -32935,46 +34404,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
             </button>
           </span>
         </div>
-        <span class="styled__LegDetails-sc-1q8npbl-39 dpNNWd">
-          <span class="styled__StepsHeaderAndMapLink-sc-1q8npbl-60 bqRtfg">
-            <button aria-expanded="false"
-                    class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 kMvDdO kvSXgs"
-            >
-              0 min
-              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
-                (Expand details)
-              </span>
-            </button>
-            <a aria-label="Show street imagery at this location"
-               role="link"
-               title="Show street imagery at this location"
-               class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
-            >
-              <svg viewbox="0 0 512 512"
-                   aria-hidden="true"
-                   focusable="false"
-                   fill="currentColor"
-                   xmlns="http://www.w3.org/2000/svg"
-                   class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
-                   style="padding-bottom: 1px;"
-              >
-                <path fill="currentColor"
-                      d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
-                >
-                </path>
-              </svg>
-            </a>
-          </span>
-          <div aria-hidden="true"
-               class="rah-static rah-static--height-zero "
-               style="grid-column: 1 / span 2; height: 0px; overflow: hidden;"
-          >
-            <div style="display: none;">
-              <ol class="styled__Steps-sc-1q8npbl-58 gKCBQH">
-              </ol>
-            </div>
-          </div>
-        </span>
       </div>
     </div>
   </li>
@@ -34758,46 +36187,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
             </button>
           </span>
         </div>
-        <span class="styled__LegDetails-sc-1q8npbl-39 dpNNWd">
-          <span class="styled__StepsHeaderAndMapLink-sc-1q8npbl-60 bqRtfg">
-            <button aria-expanded="false"
-                    class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 kMvDdO kvSXgs"
-            >
-              0 min
-              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
-                (Expand details)
-              </span>
-            </button>
-            <a aria-label="Show street imagery at this location"
-               role="link"
-               title="Show street imagery at this location"
-               class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
-            >
-              <svg viewbox="0 0 512 512"
-                   aria-hidden="true"
-                   focusable="false"
-                   fill="currentColor"
-                   xmlns="http://www.w3.org/2000/svg"
-                   class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
-                   style="padding-bottom: 1px;"
-              >
-                <path fill="currentColor"
-                      d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
-                >
-                </path>
-              </svg>
-            </a>
-          </span>
-          <div aria-hidden="true"
-               class="rah-static rah-static--height-zero "
-               style="grid-column: 1 / span 2; height: 0px; overflow: hidden;"
-          >
-            <div style="display: none;">
-              <ol class="styled__Steps-sc-1q8npbl-58 gKCBQH">
-              </ol>
-            </div>
-          </div>
-        </span>
       </div>
     </div>
   </li>
@@ -36581,46 +37970,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
             </button>
           </span>
         </div>
-        <span class="styled__LegDetails-sc-1q8npbl-39 dpNNWd">
-          <span class="styled__StepsHeaderAndMapLink-sc-1q8npbl-60 bqRtfg">
-            <button aria-expanded="false"
-                    class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 kMvDdO kvSXgs"
-            >
-              0 min
-              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
-                (Expand details)
-              </span>
-            </button>
-            <a aria-label="Show street imagery at this location"
-               role="link"
-               title="Show street imagery at this location"
-               class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
-            >
-              <svg viewbox="0 0 512 512"
-                   aria-hidden="true"
-                   focusable="false"
-                   fill="currentColor"
-                   xmlns="http://www.w3.org/2000/svg"
-                   class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
-                   style="padding-bottom: 1px;"
-              >
-                <path fill="currentColor"
-                      d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
-                >
-                </path>
-              </svg>
-            </a>
-          </span>
-          <div aria-hidden="true"
-               class="rah-static rah-static--height-zero "
-               style="grid-column: 1 / span 2; height: 0px; overflow: hidden;"
-          >
-            <div style="display: none;">
-              <ol class="styled__Steps-sc-1q8npbl-58 gKCBQH">
-              </ol>
-            </div>
-          </div>
-        </span>
       </div>
     </div>
   </li>

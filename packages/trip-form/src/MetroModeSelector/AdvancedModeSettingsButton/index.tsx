@@ -91,6 +91,7 @@ interface Props {
   fillModeIcons: boolean;
   id: string;
   modeButton: ModeButtonDefinition;
+  onAllSubmodesDisabled?: (modeButton: ModeButtonDefinition) => void;
   onSettingsUpdate: (event: QueryParamChangeEvent) => void;
   onToggle: () => void;
 }
@@ -101,6 +102,7 @@ const AdvancedModeSettingsButton = ({
   id,
   modeButton,
   onSettingsUpdate,
+  onAllSubmodesDisabled,
   onToggle
 }: Props): JSX.Element => {
   const intl = useIntl();
@@ -134,6 +136,7 @@ const AdvancedModeSettingsButton = ({
             <SubSettingsPane
               onSettingUpdate={onSettingsUpdate}
               modeButton={modeButton}
+              onAllSubmodesDisabled={onAllSubmodesDisabled}
             />
           </StyledSettingsContainer>
         </AnimateHeight>

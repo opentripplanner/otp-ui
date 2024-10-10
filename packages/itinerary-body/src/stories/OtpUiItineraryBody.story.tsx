@@ -30,6 +30,7 @@ const fareProductsItinerary = require("../__mocks__/itineraries/leg-fare-product
 const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json");
 const otp2ScooterItinerary = require("../__mocks__/itineraries/otp2-scooter.json");
 const flexItinerary = require("../__mocks__/itineraries/flex-itinerary.json");
+const transferLegItinerary = require("../__mocks__/itineraries/otp2-transfer-leg.json");
 
 const a11yOverrideParameters = {
   a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
@@ -237,4 +238,8 @@ export const ApproximatePrefixItinerary = (): ReactElement => (
     itinerary={parkAndRideItinerary}
     showApproximateAccessLegTravelTimes
   />
+);
+
+export const TransferLegItinerary = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper itinerary={transferLegItinerary} />
 );
