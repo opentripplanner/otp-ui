@@ -669,7 +669,7 @@ const LocationField = ({
       return (
         <>
           {/* Only include the header if there are features to show */}
-          {(title === GeocoderResultsConstants.other ||
+          {(title === GeocoderResultsConstants.OTHER ||
             transitFeaturesPresent) && <Header />}
           {featuresArray.map(feature => renderFeature(itemIndex++, feature))}
         </>

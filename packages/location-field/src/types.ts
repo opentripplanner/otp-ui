@@ -114,6 +114,7 @@ export interface LocationFieldProps {
     type: string;
   };
   /** Order of geocoder results to display */
+  /** TODO: grab these types from the object */
   geocoderResultsOrder?: Array<"STATIONS" | "STOPS" | "OTHER">;
   /**
    * This is dispatched when the current position is null. This indicates that
