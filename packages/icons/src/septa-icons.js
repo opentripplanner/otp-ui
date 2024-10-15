@@ -22,6 +22,7 @@ function SeptaModeIcon({ mode, ...props }) {
     case "tram":
     case "transit":
     case "subway":
+    case "metro":
       return <Metro {...props} />;
     case "walk":
       return <Walk {...props} />;
