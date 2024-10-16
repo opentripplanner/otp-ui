@@ -16,6 +16,7 @@ import { generateLayerPaint, ROUTE_COLOR_EXPRESSION } from "./util"
 
 const SOURCE_ID = "otp2-tiles"
 const AREA_TYPES = ["areaStops"]
+const STOPS_AND_STATIONS_TYPE = "OTP-UI-stopsAndStations"
 
 const OTP2TileLayerWithPopup = ({
   color,
@@ -130,10 +131,18 @@ const OTP2TileLayerWithPopup = ({
     map?.on("mouseleave", id, onLayerLeave)
     map?.on("click", id, onMapClick || defaultClickHandler)
 
+    map?.on("mouseenter", `${id}-secondary`, onLayerEnter)
+    map?.on("mouseleave", `${id}-secondary`, onLayerLeave)
+    map?.on("click", `${id}-secondary`, onMapClick || defaultClickHandler)
+
     return () => {
       map?.off("mouseenter", id, onLayerEnter);
       map?.off("mouseleave", id, onLayerLeave);
       map?.off("click", id, onMapClick || defaultClickHandler);
+
+      map?.off("mouseenter", `${id}-secondary`, onLayerEnter);
+      map?.off("mouseleave", `${id}-secondary`, onLayerLeave);
+      map?.off("click", `${id}-secondary`, onMapClick || defaultClickHandler)
     };
   }, [id, map])
 
@@ -141,7 +150,7 @@ const OTP2TileLayerWithPopup = ({
   if (network) {
     filter = ["all", ["==", "network", network]]
   }
-  if (type === "stops" || type === "areaStops") {
+  if (type === "stops" || type === "areaStops" || type === STOPS_AND_STATIONS_TYPE) {
     filter = ["all", ["!", ["has", "parentStation"]], ["!=", ["get", "routes"], ["literal", "[]"]]]
   }
   if (stopsWhitelist) {
@@ -149,6 +158,7 @@ const OTP2TileLayerWithPopup = ({
   }
 
   const isArea = AREA_TYPES.includes(type)
+  const isStopsAndStations = type === STOPS_AND_STATIONS_TYPE
   return (
     <>
       {isArea && <Layer
@@ -177,7 +187,27 @@ const OTP2TileLayerWithPopup = ({
         source={SOURCE_ID}
         type="line"
       />}
-      {!isArea && <Layer
+      {isStopsAndStations && <Layer
+        filter={filter}
+        id={id}
+        key={`${id}-stops`}
+        paint={generateLayerPaint(color).stops}
+        source={SOURCE_ID}
+        minzoom={stopsWhitelist ? 2 : 14}
+        source-layer="stops"
+        type="circle"
+      />}
+      {isStopsAndStations && <Layer
+        filter={filter}
+        id={`${id}-secondary`}
+        key={`${id}-stations`}
+        paint={generateLayerPaint(color).stops}
+        source={SOURCE_ID}
+        minzoom={stopsWhitelist ? 2 : 14}
+        source-layer="stations"
+        type="circle"
+      />}
+      {!isArea && !isStopsAndStations && <Layer
         filter={filter}
         id={id}
         key={id}
@@ -224,7 +254,7 @@ const OTP2TileLayerWithPopup = ({
  * @returns               Array of <Source> and <OTP2TileLayerWithPopup> components
  */
 const generateOTP2TileLayers = (
-  layers: { color?: string; name?: string; network?: string; type: string, initiallyVisible?: boolean }[],
+  layers: { color?: string; name?: string; network?: string; type: string, initiallyVisible?: boolean, overrideType?: string }[],
   endpoint: string,
   setLocation?: (location: MapLocationActionArg) => void,
   setViewedStop?: (stop: Stop) => void,
@@ -232,6 +262,11 @@ const generateOTP2TileLayers = (
   configCompanies?: ConfiguredCompany[],
   getEntityPrefix?: (entity: Stop | Station) => JSX.Element
 ): JSX.Element[] => {
+  const fakeOtpUiLayerIndex = layers.findIndex(l=>l.type === STOPS_AND_STATIONS_TYPE)
+  if (fakeOtpUiLayerIndex > -1) {
+    layers[fakeOtpUiLayerIndex].overrideType = "stops,stations"
+  }
+
   return [
     <Source
       // @ts-expect-error we use a nonstandard prop
@@ -240,7 +275,7 @@ const generateOTP2TileLayers = (
       key={SOURCE_ID}
       type="vector"
       // Only grab the data we need based on layers defined
-      url={`${endpoint}/${layers.map((l) => l.type).join(",")}/tilejson.json`}
+      url={`${endpoint}/${layers.map((l) => l.overrideType || l.type).join(",")}/tilejson.json`}
     />,
     ...layers.map((layer) => {
       const { color, name, network, type, initiallyVisible } = layer
