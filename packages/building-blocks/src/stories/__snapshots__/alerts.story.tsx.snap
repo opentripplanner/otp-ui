@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Building-Blocks/Alert BasicAlert smoke-test 1`] = `
+<div class="Alert__AlertContainer-sc-2vlo3n-0 gPtodQ">
+  <svg viewbox="0 0 16 16"
+       height="24"
+       width="24"
+       aria-hidden="true"
+       focusable="false"
+       fill="currentColor"
+       xmlns="http://www.w3.org/2000/svg"
+       class="StyledIconBase-sc-ea9ulj-0 kcHuPT"
+  >
+    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z">
+    </path>
+  </svg>
+  <span class="Alert__AlertHeader-sc-2vlo3n-2 eDIciz">
+    Next trip starts on Wednesday April 17th
+  </span>
+  <span class="Alert__ButtonContainer-sc-2vlo3n-1 jSUXYc">
+  </span>
+  <span class="Alert__AlertHeader-sc-2vlo3n-2 Alert__AlertSubheader-sc-2vlo3n-3 eDIciz dtxEUe">
+    Trip is due to begin at 7:43 AM (Realtime monitoring will being at 7:13 AM)
+  </span>
+  <div class="Alert__AlertContent-sc-2vlo3n-4 hzBuor">
+    <div aria-hidden="false"
+         class="rah-static rah-static--height-auto "
+         style="height: auto; overflow: visible;"
+    >
+      <div>
+        <div class="Alert__ContentPadding-sc-2vlo3n-5 guzSYn">
+          Here is more content
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Building-Blocks/Alert CollapsibleAlertWithTransitAlerts smoke-test 1`] = `
+<div class="Alert__AlertContainer-sc-2vlo3n-0 dxIAKf">
+  <svg viewbox="0 0 16 16"
+       height="24"
+       width="24"
+       aria-hidden="true"
+       focusable="false"
+       fill="currentColor"
+       xmlns="http://www.w3.org/2000/svg"
+       class="StyledIconBase-sc-ea9ulj-0 kcHuPT"
+  >
+    <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z">
+    </path>
+    <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z">
+    </path>
+  </svg>
+  <span class="Alert__AlertHeader-sc-2vlo3n-2 eDIciz">
+    Your trip has alerts
+  </span>
+  <span class="Alert__ButtonContainer-sc-2vlo3n-1 jSUXYc">
+    <button type="button"
+            aria-label="Expand"
+            title="Expand"
+    >
+      <svg viewbox="0 0 16 16"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 kcHuPT"
+      >
+        <path fill-rule="evenodd"
+              d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+        >
+        </path>
+      </svg>
+    </button>
+  </span>
+  <div class="Alert__AlertContent-sc-2vlo3n-4 hzBuor">
+    <div aria-hidden="true"
+         class="rah-static rah-static--height-zero "
+         style="height: 0px; overflow: hidden;"
+    >
+      <div style="display: none;">
+        <div class="Alert__ContentPadding-sc-2vlo3n-5 frerzB">
+          <div>
+            1) TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
+          </div>
+          <br>
+          <div>
+            2) The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
+          </div>
+          <br>
+          <div>
+            3) The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
