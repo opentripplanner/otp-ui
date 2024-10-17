@@ -251,3 +251,22 @@ export const WithUserSettings = (): JSX.Element => (
     userLocationsAndRecentPlaces={userLocationsAndRecentPlaces}
   />
 );
+
+export const WithCustomResultsOrder = (): JSX.Element => (
+  <LocationField
+    currentPosition={currentPosition}
+    geocoderConfig={geocoderConfig}
+    getCurrentPosition={getCurrentPosition}
+    preferredLayers={["example_layer"]}
+    initialSearchResults={mockedGeocoderResponse.features}
+    inputPlaceholder="Select from location"
+    layerColorMap={layerColorMap}
+    locationType="from"
+    onLocationSelected={onLocationSelected}
+    geocoderResultsOrder={["OTHER", "STATIONS", "STOPS"]}
+    sortByDistance
+    style={{ fontFamily: "sans-serif" }}
+  />
+);
+
+WithCustomResultsOrder.parameters = a11yOverrideParameters;

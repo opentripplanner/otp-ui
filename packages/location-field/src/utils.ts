@@ -120,3 +120,11 @@ export function getMatchingLocations(
 
   return [];
 }
+
+export const GeocoderResultsConstants: {
+  [key: string]: "STATIONS" | "STOPS" | "OTHER";
+} = {
+  STATIONS: "STATIONS",
+  STOPS: "STOPS",
+  OTHER: "OTHER"
+};
