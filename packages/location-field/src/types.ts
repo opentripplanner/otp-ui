@@ -113,6 +113,9 @@ export interface LocationFieldProps {
     maxNearbyStops?: number;
     type: string;
   };
+  /** Order of geocoder results to display */
+  /** TODO: grab these types from the object */
+  geocoderResultsOrder?: Array<"STATIONS" | "STOPS" | "OTHER">;
   /**
    * This is dispatched when the current position is null. This indicates that
    * the user has requested to use the current position, but that the current

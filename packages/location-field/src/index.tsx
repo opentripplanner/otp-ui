@@ -28,6 +28,7 @@ import { LocationFieldProps, ResultType } from "./types";
 import {
   addInParentheses,
   generateLabel,
+  GeocoderResultsConstants,
   getCombinedLabel,
   getGeocoderErrorMessage,
   getMatchingLocations
@@ -159,6 +160,11 @@ const LocationField = ({
   GeocodedOptionIconComponent = GeocodedOptionIcon,
   geocoderConfig,
   getCurrentPosition,
+  geocoderResultsOrder = [
+    GeocoderResultsConstants.STATIONS,
+    GeocoderResultsConstants.STOPS,
+    GeocoderResultsConstants.OTHER
+  ],
   hideExistingValue = false,
   initialSearchResults = null,
   inputPlaceholder = null,
@@ -644,46 +650,93 @@ const LocationField = ({
     const transitFeaturesPresent =
       stopFeatures.length > 0 || stationFeatures.length > 0;
 
+    const FeaturesElements = ({
+      bgColor,
+      title,
+      HeaderMessage,
+      featuresArray
+    }: {
+      bgColor: string;
+      title: string;
+      HeaderMessage: JSX.Element;
+      featuresArray: JSX.Element[];
+    }) => {
+      const Header = () => (
+        <S.MenuGroupHeader as={headingType} bgColor={bgColor} key={title}>
+          {HeaderMessage}
+        </S.MenuGroupHeader>
+      );
+      return (
+        <>
+          {/* Only include the header if there are features to show */}
+          {(title === GeocoderResultsConstants.OTHER ||
+            transitFeaturesPresent) && <Header />}
+          {featuresArray.map(feature => renderFeature(itemIndex++, feature))}
+        </>
+      );
+    };
+
+    // Create an array of results to display based on the geocoderResultsOrder
+    const featuresElementsArray = geocoderResultsOrder.map(result => {
+      let Element;
+      switch (result) {
+        case GeocoderResultsConstants.OTHER:
+          Element = (
+            <FeaturesElements
+              bgColor="#333"
+              HeaderMessage={
+                <FormattedMessage
+                  id="otpUi.LocationField.other"
+                  description="Text for header above the 'other' category of geocoder results"
+                />
+              }
+              key="other-header"
+              featuresArray={otherFeatures}
+              title="other"
+            />
+          );
+          break;
+        case GeocoderResultsConstants.STATIONS:
+          Element = (
+            <FeaturesElements
+              bgColor={layerColorMap.stations}
+              HeaderMessage={
+                <FormattedMessage
+                  id="otpUi.LocationField.stations"
+                  description="Text for header above the 'stations' category of geocoder results"
+                />
+              }
+              key="gtfs-stations-header"
+              featuresArray={stationFeatures}
+              title="stations"
+            />
+          );
+          break;
+        case GeocoderResultsConstants.STOPS:
+          Element = (
+            <FeaturesElements
+              bgColor={layerColorMap.stops}
+              HeaderMessage={
+                <FormattedMessage
+                  id="otpUi.LocationField.stops"
+                  description="Text for header above the 'stops' category of geocoder results"
+                />
+              }
+              key="gtfs-stops-header"
+              featuresArray={stopFeatures}
+              title="stops"
+            />
+          );
+          break;
+        default:
+          Element = null;
+          break;
+      }
+      return Element;
+    });
+
     // Iterate through the geocoder results
-    menuItems = menuItems.concat(
-      stationFeatures.length > 0 && (
-        <S.MenuGroupHeader
-          as={headingType}
-          bgColor={layerColorMap.stations}
-          key="gtfs-stations-header"
-        >
-          <FormattedMessage
-            description="Text for header above Stations"
-            id="otpUi.LocationField.stations"
-          />
-        </S.MenuGroupHeader>
-      ),
-      stationFeatures.map(feature => renderFeature(itemIndex++, feature)),
-
-      stopFeatures.length > 0 && (
-        <S.MenuGroupHeader
-          as={headingType}
-          bgColor={layerColorMap.stops}
-          key="gtfs-stops-header"
-        >
-          <FormattedMessage
-            description="Text for header above Stops"
-            id="otpUi.LocationField.stops"
-          />
-        </S.MenuGroupHeader>
-      ),
-      stopFeatures.map(feature => renderFeature(itemIndex++, feature)),
-
-      transitFeaturesPresent && otherFeatures.length > 0 && (
-        <S.MenuGroupHeader as={headingType} bgColor="#333" key="other-header">
-          <FormattedMessage
-            description="Text for header above the 'other'"
-            id="otpUi.LocationField.other"
-          />
-        </S.MenuGroupHeader>
-      ),
-      otherFeatures.map(feature => renderFeature(itemIndex++, feature))
-    );
+    menuItems = menuItems.concat(featuresElementsArray);
   }
 
   /* 2) Process nearby transit stop options */
