@@ -197,6 +197,7 @@ export default function SubSettingsPane({
 
   const handleSettingChange = useCallback(
     (setting: ModeSetting) => (evt: QueryParamChangeEvent) => {
+      let time = 0;
       // check if setting is a transport mode setting
       if (settingsWithTransportMode.find(s => s.key === setting.key)) {
         // check if all submodes are disabled
@@ -210,10 +211,14 @@ export default function SubSettingsPane({
             evt[s.key] = Object.keys(evt).includes(s.key) || !s.value;
           });
           onAllSubmodesDisabled(modeButton);
+          time = 500;
         }
       }
 
-      onSettingUpdate(evt);
+      setTimeout(() => {
+        // This is a hack to make sure the setting is updated before the next render
+        onSettingUpdate(evt);
+      }, time);
     },
     [onSettingUpdate]
   );
