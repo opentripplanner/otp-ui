@@ -645,11 +645,6 @@ const LocationField = ({
       preferredLayers
     );
 
-    // If no categories of features are returned, this variable is used to
-    // avoid displaying headers
-    const transitFeaturesPresent =
-      stopFeatures.length > 0 || stationFeatures.length > 0;
-
     const FeaturesElements = ({
       bgColor,
       title,
@@ -668,9 +663,7 @@ const LocationField = ({
       );
       return (
         <>
-          {/* Only include the header if there are features to show */}
-          {(title === GeocoderResultsConstants.OTHER ||
-            transitFeaturesPresent) && <Header />}
+          <Header />
           {featuresArray.map(feature => renderFeature(itemIndex++, feature))}
         </>
       );
@@ -681,7 +674,7 @@ const LocationField = ({
       let Element;
       switch (result) {
         case GeocoderResultsConstants.OTHER:
-          Element = (
+          Element = otherFeatures.length > 0 && (
             <FeaturesElements
               bgColor="#333"
               HeaderMessage={
@@ -697,7 +690,7 @@ const LocationField = ({
           );
           break;
         case GeocoderResultsConstants.STATIONS:
-          Element = (
+          Element = stationFeatures.length > 0 && (
             <FeaturesElements
               bgColor={layerColorMap.stations}
               HeaderMessage={
@@ -713,7 +706,7 @@ const LocationField = ({
           );
           break;
         case GeocoderResultsConstants.STOPS:
-          Element = (
+          Element = stopFeatures.length > 0 && (
             <FeaturesElements
               bgColor={layerColorMap.stops}
               HeaderMessage={
