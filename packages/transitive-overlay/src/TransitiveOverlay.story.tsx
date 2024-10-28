@@ -23,6 +23,7 @@ const walkTransitWalkItineraryNoIntermediateStops = require("@opentripplanner/it
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 const flexItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
 const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
+const otp2TransitItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-transit-leg.json");
 
 const companies = [
   {
@@ -189,6 +190,13 @@ FlexItinerary.args = {
 export const OTP2ScooterItinerary = Template.bind({});
 OTP2ScooterItinerary.args = {
   itinerary: otp2ScooterItinerary,
+  mapCoords: [33.749, -84.388],
+  mapZoom: 11
+};
+
+export const OTP2TransitItinerary = Template.bind({});
+OTP2TransitItinerary.args = {
+  itinerary: otp2TransitItinerary,
   mapCoords: [33.749, -84.388],
   mapZoom: 11
 };

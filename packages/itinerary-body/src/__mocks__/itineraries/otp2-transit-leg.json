@@ -1,0 +1,462 @@
+{
+  "accessibilityScore": null,
+  "duration": 545,
+  "endTime": 1729868831000,
+  "legs": [
+    {
+      "accessibilityScore": null,
+      "agency": {
+        "alerts": [
+          {
+            "alertDescriptionText": "Attention Route 70 Riders - Effective October 7, 2024, Route 70 will relocate bus stop # 7000 from Wisteria Drive @ Main Street to Wisteria Drive and Highway 78.  ",
+            "alertHeaderText": "Attention Route 70 Riders - Effective October 7, 2024, Route 70 will relocate bus stop # 7000 from Wisteria Drive @ Main Street to Wisteria Drive and Highway 78.  ",
+            "alertUrl": null,
+            "effectiveStartDate": 1727222400,
+            "id": "QWxlcnQ6R3dpbm5ldHRDb3VudHlUcmFuc2l0OjMzMTQ"
+          },
+          {
+            "alertDescriptionText": "AM Service Alert- Route 103 at 6:30am from Sugarloaf Mills Park and Ride will be a missed trip.  We apologize for the inconvenience",
+            "alertHeaderText": "AM Service Alert- Route 103 at 6:30am from Sugarloaf Mills Park and Ride will be a missed trip.  We apologize for the inconvenience",
+            "alertUrl": null,
+            "effectiveStartDate": 1729814400,
+            "id": "QWxlcnQ6R3dpbm5ldHRDb3VudHlUcmFuc2l0OjM0ODI"
+          },
+          {
+            "alertDescriptionText": "Attention Route 50 Riders: The following outbound bus stops are not active on Route 50.  \n-\tWoodward Crossing Blvd & The Complex – Stop 5051\n-\tMall of GA Blvd & Nature Pkwy OB – Stop 5054",
+            "alertHeaderText": "Attention Route 50 Riders: The following outbound bus stops are not active on Route 50.  \n-\tWoodward Crossing Blvd & The Complex – Stop 5051\n-\tMall of GA Blvd & Nature Pkwy OB – Stop 5054",
+            "alertUrl": null,
+            "effectiveStartDate": 1707350400,
+            "id": "QWxlcnQ6R3dpbm5ldHRDb3VudHlUcmFuc2l0OjI1ODk"
+          },
+          {
+            "alertDescriptionText": "AM Service Alert- Route 101 at 7:00am from I-985 Park and Ride will be a missed trip.  We apologize for the inconvenience",
+            "alertHeaderText": "AM Service Alert- Route 101 at 7:00am from I-985 Park and Ride will be a missed trip.  We apologize for the inconvenience",
+            "alertUrl": null,
+            "effectiveStartDate": 1729814400,
+            "id": "QWxlcnQ6R3dpbm5ldHRDb3VudHlUcmFuc2l0OjM0ODM"
+          },
+          {
+            "alertDescriptionText": "AM Service Alert - Route 110 outbound from Sugarloaf Mills Park and Ride at 8:10am will be a missed trip.  We apologize for the inconvenience.\n",
+            "alertHeaderText": "AM Service Alert - Route 110 outbound from Sugarloaf Mills Park and Ride at 8:10am will be a missed trip.  We apologize for the inconvenience.\n",
+            "alertUrl": null,
+            "effectiveStartDate": 1729814400,
+            "id": "QWxlcnQ6R3dpbm5ldHRDb3VudHlUcmFuc2l0OjM0ODQ"
+          },
+          {
+            "alertDescriptionText": "Attention Route 40 Riders – Effective October 9, 2024 Stop # 4058 on Stone Mountain St. & Piedmont Bank (OB) has temporarily relocated to a location about 250 feet away due to construction in the area.  We apologize for any inconvenience.",
+            "alertHeaderText": "Attention Route 40 Riders – Effective October 9, 2024 Stop # 4058 on Stone Mountain St. & Piedmont Bank (OB) has temporarily relocated to a location about 250 feet away due to construction in the area.  We apologize for any inconvenience.",
+            "alertUrl": null,
+            "effectiveStartDate": 1728432000,
+            "id": "QWxlcnQ6R3dpbm5ldHRDb3VudHlUcmFuc2l0OjMzOTA"
+          }
+        ],
+        "gtfsId": "GwinnettCountyTransit:GCT",
+        "id": "GwinnettCountyTransit:GCT",
+        "name": "Gwinnett County Transit",
+        "timezone": "America/New_York",
+        "url": "https://www.ridegwinnett.com/"
+      },
+      "alerts": [
+        {
+          "alertDescriptionText": "Attention Route 70 Riders - Effective October 7, 2024, Route 70 will relocate bus stop # 7000 from Wisteria Drive @ Main Street to Wisteria Drive and Highway 78.  ",
+          "alertHeaderText": "Attention Route 70 Riders - Effective October 7, 2024, Route 70 will relocate bus stop # 7000 from Wisteria Drive @ Main Street to Wisteria Drive and Highway 78.  ",
+          "alertUrl": null,
+          "effectiveStartDate": 1727222400,
+          "id": "QWxlcnQ6R3dpbm5ldHRDb3VudHlUcmFuc2l0OjMzMTQ"
+        },
+        {
+          "alertDescriptionText": "Attention Route 50 Riders: The following outbound bus stops are not active on Route 50.  \n-\tWoodward Crossing Blvd & The Complex – Stop 5051\n-\tMall of GA Blvd & Nature Pkwy OB – Stop 5054",
+          "alertHeaderText": "Attention Route 50 Riders: The following outbound bus stops are not active on Route 50.  \n-\tWoodward Crossing Blvd & The Complex – Stop 5051\n-\tMall of GA Blvd & Nature Pkwy OB – Stop 5054",
+          "alertUrl": null,
+          "effectiveStartDate": 1707350400,
+          "id": "QWxlcnQ6R3dpbm5ldHRDb3VudHlUcmFuc2l0OjI1ODk"
+        },
+        {
+          "alertDescriptionText": "Attention Route 40 Riders – Effective October 9, 2024 Stop # 4058 on Stone Mountain St. & Piedmont Bank (OB) has temporarily relocated to a location about 250 feet away due to construction in the area.  We apologize for any inconvenience.",
+          "alertHeaderText": "Attention Route 40 Riders – Effective October 9, 2024 Stop # 4058 on Stone Mountain St. & Piedmont Bank (OB) has temporarily relocated to a location about 250 feet away due to construction in the area.  We apologize for any inconvenience.",
+          "alertUrl": null,
+          "effectiveStartDate": 1728432000,
+          "id": "QWxlcnQ6R3dpbm5ldHRDb3VudHlUcmFuc2l0OjMzOTA"
+        }
+      ],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 4716.45,
+      "dropoffType": "SCHEDULED",
+      "duration": 522,
+      "endTime": 1729868808000,
+      "fareProducts": [
+        {
+          "id": "55a84984-7687-39e8-9a41-ee6e6dbc23ed",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "atlanta:electronicRegular",
+            "medium": null,
+            "name": "electronicRegular",
+            "riderCategory": null,
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "01689082-2707-31ee-8d91-203eda3a29be",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "atlanta:electronicYouth",
+            "medium": null,
+            "name": "electronicYouth",
+            "riderCategory": null,
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "02bf6764-589e-38fe-8b89-e07d7203237d",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "atlanta:regular",
+            "medium": null,
+            "name": "regular",
+            "riderCategory": null,
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "9002d499-a1f7-3696-88de-3854ed39b883",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "atlanta:electronicSenior",
+            "medium": null,
+            "name": "electronicSenior",
+            "riderCategory": null,
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "c25f4197-3483-3364-b447-f5f9adf421da",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "atlanta:youth",
+            "medium": null,
+            "name": "youth",
+            "riderCategory": null,
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "889ffb31-2e8f-3c4d-bda4-df7c6add1026",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "atlanta:senior",
+            "medium": null,
+            "name": "senior",
+            "riderCategory": null,
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "bb9d929b-5ce6-3bcf-8b38-6eaf4eaa2c22",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "atlanta:electronicSpecial",
+            "medium": null,
+            "name": "electronicSpecial",
+            "riderCategory": null,
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        }
+      ],
+      "from": {
+        "lat": 33.916913,
+        "lon": -84.22609,
+        "name": "Best Friend Rd & Nancy Hanks Dr OB",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "115",
+          "gtfsId": "GwinnettCountyTransit:115",
+          "id": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6MTE1",
+          "lat": 33.916913,
+          "lon": -84.22609
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": "Doraville MARTA",
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": [
+        {
+          "lat": 33.916055,
+          "locationType": "STOP",
+          "lon": -84.229996,
+          "name": "Best Friend Rd & Skyland Ct OB",
+          "stopCode": "119",
+          "stopId": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6MTE5"
+        },
+        {
+          "lat": 33.915618,
+          "locationType": "STOP",
+          "lon": -84.233462,
+          "name": "Best Friend Rd & Royal Palm Ct OB",
+          "stopCode": "117",
+          "stopId": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6MTE3"
+        },
+        {
+          "lat": 33.913848,
+          "locationType": "STOP",
+          "lon": -84.236614,
+          "name": "Best Friend Rd & Button Gwinnett Dr OB",
+          "stopCode": "318",
+          "stopId": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6MzE4"
+        },
+        {
+          "lat": 33.914705,
+          "locationType": "STOP",
+          "lon": -84.238103,
+          "name": "Button Gwinnett & TOPSA",
+          "stopCode": "880",
+          "stopId": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6ODgw"
+        },
+        {
+          "lat": 33.917448,
+          "locationType": "STOP",
+          "lon": -84.240083,
+          "name": "Button Gwinnett Dr & Mimms Dr",
+          "stopCode": "122",
+          "stopId": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6MTIy"
+        },
+        {
+          "lat": 33.919495,
+          "locationType": "STOP",
+          "lon": -84.241523,
+          "name": "Button Gwinnett Dr & RUSH Truck Ctr",
+          "stopCode": "278",
+          "stopId": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6Mjc4"
+        },
+        {
+          "lat": 33.924089,
+          "locationType": "STOP",
+          "lon": -84.244794,
+          "name": "Button Gwinnett Rd & Ryder",
+          "stopCode": "280",
+          "stopId": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6Mjgw"
+        },
+        {
+          "lat": 33.925893,
+          "locationType": "STOP",
+          "lon": -84.247838,
+          "name": "Buford Hwy & Jones Mills Rd",
+          "stopCode": "191",
+          "stopId": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6MTkx"
+        },
+        {
+          "lat": 33.923945,
+          "locationType": "STOP",
+          "lon": -84.250991,
+          "name": "Buford Hwy & Amwiler OB",
+          "stopCode": "180",
+          "stopId": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6MTgw"
+        },
+        {
+          "lat": 33.922996,
+          "locationType": "STOP",
+          "lon": -84.25242,
+          "name": "Buford Hwy & East Lake Dr (across) OB",
+          "stopCode": "186",
+          "stopId": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6MTg2"
+        },
+        {
+          "lat": 33.920743,
+          "locationType": "STOP",
+          "lon": -84.255512,
+          "name": "Buford Hwy & Steve Dr OB",
+          "stopCode": "202",
+          "stopId": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6MjAy"
+        },
+        {
+          "lat": 33.919256,
+          "locationType": "STOP",
+          "lon": -84.257175,
+          "name": "Buford Hwy at Global Forum OB",
+          "stopCode": "215",
+          "stopId": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6MjE1"
+        },
+        {
+          "lat": 33.917962,
+          "locationType": "STOP",
+          "lon": -84.258413,
+          "name": "Buford Hwy & Reyes Auto OB",
+          "stopCode": "225",
+          "stopId": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6MjI1"
+        }
+      ],
+      "legGeometry": {
+        "length": 54,
+        "points": "kk_nEzkaaO?@hDnW????pAnKDdH??DlBt@jChHlJ??@@FH|ArBwGbEA@??a@V_OnJC@??w@f@_JtFA@??uVjOwC~B?B??oDvGkFvDx@lB@B??fCrFxFbK??@@h@|@rCzE??LP`FhIpEhG??@@dHjI??@@zFxF????jTlS"
+      },
+      "mode": "BUS",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": null,
+      "rideHailingEstimate": null,
+      "route": {
+        "alerts": [],
+        "color": "00BCF2",
+        "gtfsId": "GwinnettCountyTransit:20",
+        "id": "GwinnettCountyTransit:20",
+        "longName": "Beaver Ruin - Doraville",
+        "shortName": "20",
+        "textColor": "000000",
+        "type": 3
+      },
+      "startTime": 1729868286000,
+      "steps": [],
+      "to": {
+        "lat": 33.914541,
+        "lon": -84.261696,
+        "name": "Buford Hwy & Andy Glass OB",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "184",
+          "gtfsId": "GwinnettCountyTransit:184",
+          "id": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6MTg0",
+          "lat": 33.914541,
+          "lon": -84.261696
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": true,
+      "trip": {
+        "arrivalStoptime": {
+          "stop": {
+            "gtfsId": "GwinnettCountyTransit:6",
+            "id": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6Ng"
+          },
+          "stopPosition": 3060
+        },
+        "departureStoptime": {
+          "stop": {
+            "gtfsId": "GwinnettCountyTransit:7",
+            "id": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6Nw"
+          },
+          "stopPosition": 0
+        },
+        "gtfsId": "GwinnettCountyTransit:t3FC-bCB-sl6",
+        "id": "VHJpcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6dDNGQy1iQ0Itc2w2"
+      }
+    },
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 25.22,
+      "dropoffType": "SCHEDULED",
+      "duration": 23,
+      "endTime": 1729868831000,
+      "fareProducts": [],
+      "from": {
+        "lat": 33.914541,
+        "lon": -84.261696,
+        "name": "Buford Hwy & Andy Glass OB",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "184",
+          "gtfsId": "GwinnettCountyTransit:184",
+          "id": "U3RvcDpHd2lubmV0dENvdW50eVRyYW5zaXQ6MTg0",
+          "lat": 33.914541,
+          "lon": -84.261696
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 3,
+        "points": "{|~mErjhaO@Ac@a@"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
+      "route": null,
+      "startTime": 1729868808000,
+      "steps": [
+        {
+          "absoluteDirection": "NORTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 25.22,
+          "elevationProfile": [],
+          "lat": 33.9145331,
+          "lon": -84.2616838,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "Buford Highway☆☆☆ tmp r0.384 l25.221"
+        }
+      ],
+      "to": {
+        "lat": 33.9150078,
+        "lon": -84.2619698,
+        "name": "6020 Buford Highway, Doraville, GA, USA",
+        "rentalVehicle": null,
+        "stop": null,
+        "vertexType": "NORMAL"
+      },
+      "transitLeg": false,
+      "trip": null
+    }
+  ],
+  "startTime": 1729868286000,
+  "transfers": 0,
+  "waitingTime": 0,
+  "walkTime": 23
+}
