@@ -70,133 +70,99 @@ export default {
   }
 };
 
-const Template = injectIntl(
-  ({ itinerary, mapCoords, mapZoom, intl, ...args }) => (
-    <>
-      <EndpointsOverlay
-        fromLocation={getFromLocation(itinerary)}
-        setLocation={setLocation}
-        toLocation={getToLocation(itinerary)}
-        visible
-      />
-      <TransitiveOverlay
-        transitiveData={itineraryToTransitive(itinerary, { companies, intl })}
-        {...args}
-      />
-    </>
-  )
-);
+const Template = injectIntl(({ itinerary, intl, ...args }) => (
+  <>
+    <EndpointsOverlay
+      fromLocation={getFromLocation(itinerary)}
+      setLocation={setLocation}
+      toLocation={getToLocation(itinerary)}
+      visible
+    />
+    <TransitiveOverlay
+      transitiveData={itineraryToTransitive(itinerary, { companies, intl })}
+      {...args}
+    />
+  </>
+));
 
 export const WalkingItinerary = Template.bind({});
 WalkingItinerary.args = {
-  itinerary: walkOnlyItinerary,
-  mapCoords: [45.518841, -122.679302],
-  mapZoom: 19
+  itinerary: walkOnlyItinerary
 };
 
 export const BikeOnlyItinerary = Template.bind({});
 BikeOnlyItinerary.args = {
-  itinerary: bikeOnlyItinerary,
-  mapCoords: [45.520441, -122.68302],
-  mapZoom: 16
+  itinerary: bikeOnlyItinerary
 };
 
 export const WalkTransitWalkItinerary = Template.bind({});
 WalkTransitWalkItinerary.args = {
-  itinerary: walkTransitWalkItinerary,
-  mapCoords: [45.520441, -122.68302],
-  mapZoom: 16
+  itinerary: walkTransitWalkItinerary
 };
 
 export const WalkTransitWalkItineraryWithNoIntermediateStops = Template.bind(
   {}
 );
 WalkTransitWalkItineraryWithNoIntermediateStops.args = {
-  itinerary: walkTransitWalkItineraryNoIntermediateStops,
-  mapCoords: [45.525841, -122.649302],
-  mapZoom: 13
+  itinerary: walkTransitWalkItineraryNoIntermediateStops
 };
 
 export const BikeTransitBikeItinerary = Template.bind({});
 BikeTransitBikeItinerary.args = {
-  itinerary: bikeTransitBikeItinerary,
-  mapCoords: [45.520441, -122.68302],
-  mapZoom: 16
+  itinerary: bikeTransitBikeItinerary
 };
 
 export const WalkInterlinedTransitItinerary = Template.bind({});
 WalkInterlinedTransitItinerary.args = {
-  itinerary: walkInterlinedTransitItinerary,
-  mapCoords: [47.703022, -122.328041],
-  mapZoom: 12.5
+  itinerary: walkInterlinedTransitItinerary
 };
 
 export const WalkTransitTransferItinerary = Template.bind({});
 WalkTransitTransferItinerary.args = {
-  itinerary: walkTransitWalkTransitWalkItinerary,
-  mapCoords: [45.505841, -122.631302],
-  mapZoom: 14
+  itinerary: walkTransitWalkTransitWalkItinerary
 };
 
 export const BikeRentalItinerary = Template.bind({});
 BikeRentalItinerary.args = {
-  itinerary: bikeRentalItinerary,
-  mapCoords: [45.508841, -122.631302],
-  mapZoom: 14
+  itinerary: bikeRentalItinerary
 };
 
 export const EScooterRentalItinerary = Template.bind({});
 EScooterRentalItinerary.args = {
-  itinerary: eScooterRentalItinerary,
-  mapCoords: [45.52041, -122.675302],
-  mapZoom: 16
+  itinerary: eScooterRentalItinerary
 };
 
 export const ParkAndRideItinerary = Template.bind({});
 ParkAndRideItinerary.args = {
-  itinerary: parkAndRideItinerary,
-  mapCoords: [45.515841, -122.75302],
-  mapZoom: 13
+  itinerary: parkAndRideItinerary
 };
 
 export const BikeRentalTransitItinerary = Template.bind({});
 BikeRentalTransitItinerary.args = {
-  itinerary: bikeRentalTransitBikeRentalItinerary,
-  mapCoords: [45.538841, -122.6302],
-  mapZoom: 12
+  itinerary: bikeRentalTransitBikeRentalItinerary
 };
 
 export const EScooterRentalTransitItinerary = Template.bind({});
 EScooterRentalTransitItinerary.args = {
-  itinerary: eScooterRentalTransiteScooterRentalItinerary,
-  mapCoords: [45.538841, -122.6302],
-  mapZoom: 12
+  itinerary: eScooterRentalTransiteScooterRentalItinerary
 };
 
 export const TncTransitItinerary = Template.bind({});
 TncTransitItinerary.args = {
-  itinerary: tncTransitTncItinerary,
-  mapCoords: [45.538841, -122.6302],
-  mapZoom: 12
+  itinerary: tncTransitTncItinerary
 };
 
 export const FlexItinerary = Template.bind({});
 FlexItinerary.args = {
-  itinerary: flexItinerary,
-  mapCoords: [40.038487, -105.0529011],
-  mapZoom: 11
+  itinerary: flexItinerary
 };
 
 export const OTP2ScooterItinerary = Template.bind({});
 OTP2ScooterItinerary.args = {
-  itinerary: otp2ScooterItinerary,
-  mapCoords: [33.749, -84.388],
-  mapZoom: 11
+  itinerary: otp2ScooterItinerary
 };
 
 export const OTP2TransitItinerary = Template.bind({});
 OTP2TransitItinerary.args = {
-  itinerary: otp2TransitItinerary,
-  mapCoords: [33.749, -84.388],
-  mapZoom: 11
+  itinerary: otp2TransitItinerary
 };
