@@ -9,7 +9,6 @@ import distance from "@turf/distance";
 
 import {
   getLegBounds,
-  getLegRouteLongName,
   getLegRouteShortName,
   isAccessMode,
   isFlex,
@@ -55,6 +54,13 @@ function stopToTransitive(
 }
 
 /**
+ * Helper function to obtain the stop ID for an OTP2 or OTP1 place.
+ */
+function getStopId(place: Place) {
+  return typeof place.stop === "object" ? place.stop.id : place.stopId;
+}
+
+/**
  * Helper function to add a stop, checking whether a stop id and name has already been added.
  */
 function addStop(
@@ -62,7 +68,7 @@ function addStop(
   stops: Record<string, TransitiveStop>,
   knownStopNames: Record<string, Place>
 ) {
-  const stopId = typeof place.stop === "object" ? place.stop?.id : place.stopId;
+  const stopId = getStopId(place);
   if (!stops[stopId]) {
     stops[stopId] = stopToTransitive(place, stopId, knownStopNames);
   }
@@ -197,7 +203,6 @@ export function itineraryToTransitive(
     routes: [],
     stops: []
   };
-  console.log("Itinerary", itin);
   const routes = {};
   const knownStopNames = {};
   let patternId = 0;
@@ -352,14 +357,8 @@ export function itineraryToTransitive(
 
       // Add the "from" end of transit legs to the list of stops.
       const fromStop = makeStop(leg.from, hasLegGeometry && legCoords[0]);
-      console.log("fromStop", fromStop);
       addStop(fromStop, newStops, knownStopNames);
-      pattern.stops.push({
-        stop_id:
-          typeof leg.from.stop === "object"
-            ? leg.from.stop?.id
-            : leg.from.stopId
-      });
+      pattern.stops.push({ stop_id: getStopId(leg.from) });
 
       // add intermediate stops to stops dictionary and pattern object
       // If there is no intermediateStopGeometry, do not add the intermediate stops
@@ -385,11 +384,9 @@ export function itineraryToTransitive(
       // (Do not label stop names if they repeat.)
       const lastCoord = hasLegGeometry && legCoords[legCoords.length - 1];
       const toStop = makeStop(leg.to, lastCoord);
-      console.log("toStop", toStop);
       addStop(toStop, newStops, knownStopNames);
       pattern.stops.push({
-        stop_id:
-          typeof leg.to.stop === "object" ? leg.to.stop?.id : leg.to.stopId,
+        stop_id: getStopId(leg.to),
         geometry:
           // Some legs don't have intermediateStopGeometry, but do have valid legGeometry
           (hasInterStopGeometry || hasLegGeometry) &&
@@ -401,23 +398,31 @@ export function itineraryToTransitive(
       // add route to the route dictionary
       // with a custom route label if specified.
       const routeLabel =
-        typeof getRouteLabel === "function"
+        (typeof getRouteLabel === "function"
           ? getRouteLabel(leg)
-          : getLegRouteShortName(leg);
-      routes[routeId] = {
-        agency_id: leg.agencyId,
-        route_id: routeId,
-        route_short_name: routeLabel || "",
-        route_long_name: getLegRouteLongName(leg) || "",
-        route_type:
-          typeof leg.route === "object" ? leg?.route?.type : leg.routeType,
-        route_color:
-          typeof leg.route === "object" ? leg?.route?.color : leg.routeColor,
-        route_text_color:
-          typeof leg.route === "object"
-            ? leg?.route?.textColor
-            : leg.routeTextColor
-      };
+          : getLegRouteShortName(leg)) || "";
+
+      if (typeof leg.route === "object") {
+        routes[routeId] = {
+          agency_id: leg.agencyId,
+          route_id: routeId,
+          route_short_name: routeLabel,
+          route_long_name: leg.route.longName || "",
+          route_type: leg.route.type,
+          route_color: leg.route.color,
+          route_text_color: leg.route.textColor
+        };
+      } else {
+        routes[routeId] = {
+          agency_id: leg.agencyId,
+          route_id: routeId,
+          route_short_name: routeLabel,
+          route_long_name: leg.routeLongName || "",
+          route_type: leg.routeType,
+          route_color: leg.routeColor,
+          route_text_color: leg.routeTextColor
+        };
+      }
 
       // add the pattern to the tdata patterns array
       tdata.patterns.push(pattern);
@@ -450,7 +455,7 @@ export function itineraryToTransitive(
   tdata.journeys.push(journey);
   tdata.places = newPlaces;
 
-  console.log("derived tdata", tdata);
+  // console.log("derived tdata", tdata);
   return tdata;
 }
 
