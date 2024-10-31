@@ -715,13 +715,7 @@ exports[`LocationField/Desktop Context WithCustomResultColorsAndIcons smoke-test
 </div>
 `;
 
-exports[`LocationField/Desktop Context WithOtherFirst smoke-test 1`] = `
-<label for="other-input">
-  renderOtherFirst?
-  <input id="other-input"
-         type="checkbox"
-  >
-</label>
+exports[`LocationField/Desktop Context WithCustomResultsOrder smoke-test 1`] = `
 <div class="styled__InputGroup-sc-xahsq2-7 cgVWic"
      role="group"
 >
@@ -768,11 +762,113 @@ exports[`LocationField/Desktop Context WithOtherFirst smoke-test 1`] = `
       role="listbox"
       class="styled__MenuItemList-sc-xahsq2-5 bMzPj"
   >
+    <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 bznUet">
+      Other
+    </h2>
+    <li aria-live="off"
+        id="otpui-locf-option-1"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr source-openstreetmap layer-example_layer">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 288 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M112 316.94v156.69l22.02 33.02c4.75 7.12 15.22 7.12 19.97 0L176 473.63V316.94c-10.39 1.92-21.06 3.06-32 3.06s-21.61-1.14-32-3.06zM144 0C64.47 0 0 64.47 0 144s64.47 144 144 144 144-64.47 144-144S223.53 0 144 0zm0 76c-37.5 0-68 30.5-68 68 0 6.62-5.38 12-12 12s-12-5.38-12-12c0-50.73 41.28-92 92-92 6.62 0 12 5.38 12 12s-5.38 12-12 12z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Whole Foods that is far away, but prioritized
+        </span>
+      </span>
+    </li>
+    <li aria-live="off"
+        id="otpui-locf-option-2"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr source-openstreetmap layer-venue">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 288 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M112 316.94v156.69l22.02 33.02c4.75 7.12 15.22 7.12 19.97 0L176 473.63V316.94c-10.39 1.92-21.06 3.06-32 3.06s-21.61-1.14-32-3.06zM144 0C64.47 0 0 64.47 0 144s64.47 144 144 144 144-64.47 144-144S223.53 0 144 0zm0 76c-37.5 0-68 30.5-68 68 0 6.62-5.38 12-12 12s-12-5.38-12-12c0-50.73 41.28-92 92-92 6.62 0 12 5.38 12 12s-5.38 12-12 12z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Whole Foods Market
+          <span class="styled__OptionSubTitle-sc-xahsq2-11 dmKYiB">
+            <span class="styled__HiddenContent-sc-xahsq2-0 MJNFZ">
+              ,
+            </span>
+            Broadway, First Hill, Seattle, WA
+          </span>
+        </span>
+      </span>
+    </li>
+    <li aria-live="off"
+        id="otpui-locf-option-3"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr source-openstreetmap layer-address">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 288 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M112 316.94v156.69l22.02 33.02c4.75 7.12 15.22 7.12 19.97 0L176 473.63V316.94c-10.39 1.92-21.06 3.06-32 3.06s-21.61-1.14-32-3.06zM144 0C64.47 0 0 64.47 0 144s64.47 144 144 144 144-64.47 144-144S223.53 0 144 0zm0 76c-37.5 0-68 30.5-68 68 0 6.62-5.38 12-12 12s-12-5.38-12-12c0-50.73 41.28-92 92-92 6.62 0 12 5.38 12 12s-5.38 12-12 12z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          2200 Westlake Avenue
+          <span class="styled__OptionSubTitle-sc-xahsq2-11 dmKYiB">
+            <span class="styled__HiddenContent-sc-xahsq2-0 MJNFZ">
+              ,
+            </span>
+            Downtown Seattle, WA
+          </span>
+        </span>
+      </span>
+    </li>
     <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 bzHnHp">
       Stations
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-3"
+        id="otpui-locf-option-4"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -806,7 +902,7 @@ exports[`LocationField/Desktop Context WithOtherFirst smoke-test 1`] = `
       Stops
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-4"
+        id="otpui-locf-option-5"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -855,7 +951,7 @@ exports[`LocationField/Desktop Context WithOtherFirst smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-5"
+        id="otpui-locf-option-6"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -886,7 +982,7 @@ exports[`LocationField/Desktop Context WithOtherFirst smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-6"
+        id="otpui-locf-option-7"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -916,110 +1012,8 @@ exports[`LocationField/Desktop Context WithOtherFirst smoke-test 1`] = `
         </span>
       </span>
     </li>
-    <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 bznUet">
-      Other
-    </h2>
     <li aria-live="off"
         id="otpui-locf-option-0"
-        role="option"
-        aria-selected="false"
-        tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
-    >
-      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr source-openstreetmap layer-example_layer">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
-          <svg viewbox="0 0 288 512"
-               height="13"
-               width="13"
-               aria-hidden="true"
-               focusable="false"
-               fill="currentColor"
-               xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-ea9ulj-0 hPhvO"
-          >
-            <path fill="currentColor"
-                  d="M112 316.94v156.69l22.02 33.02c4.75 7.12 15.22 7.12 19.97 0L176 473.63V316.94c-10.39 1.92-21.06 3.06-32 3.06s-21.61-1.14-32-3.06zM144 0C64.47 0 0 64.47 0 144s64.47 144 144 144 144-64.47 144-144S223.53 0 144 0zm0 76c-37.5 0-68 30.5-68 68 0 6.62-5.38 12-12 12s-12-5.38-12-12c0-50.73 41.28-92 92-92 6.62 0 12 5.38 12 12s-5.38 12-12 12z"
-            >
-            </path>
-          </svg>
-        </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
-          Whole Foods that is far away, but prioritized
-        </span>
-      </span>
-    </li>
-    <li aria-live="off"
-        id="otpui-locf-option-1"
-        role="option"
-        aria-selected="false"
-        tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
-    >
-      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr source-openstreetmap layer-venue">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
-          <svg viewbox="0 0 288 512"
-               height="13"
-               width="13"
-               aria-hidden="true"
-               focusable="false"
-               fill="currentColor"
-               xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-ea9ulj-0 hPhvO"
-          >
-            <path fill="currentColor"
-                  d="M112 316.94v156.69l22.02 33.02c4.75 7.12 15.22 7.12 19.97 0L176 473.63V316.94c-10.39 1.92-21.06 3.06-32 3.06s-21.61-1.14-32-3.06zM144 0C64.47 0 0 64.47 0 144s64.47 144 144 144 144-64.47 144-144S223.53 0 144 0zm0 76c-37.5 0-68 30.5-68 68 0 6.62-5.38 12-12 12s-12-5.38-12-12c0-50.73 41.28-92 92-92 6.62 0 12 5.38 12 12s-5.38 12-12 12z"
-            >
-            </path>
-          </svg>
-        </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
-          Whole Foods Market
-          <span class="styled__OptionSubTitle-sc-xahsq2-11 dmKYiB">
-            <span class="styled__HiddenContent-sc-xahsq2-0 MJNFZ">
-              ,
-            </span>
-            Broadway, First Hill, Seattle, WA
-          </span>
-        </span>
-      </span>
-    </li>
-    <li aria-live="off"
-        id="otpui-locf-option-2"
-        role="option"
-        aria-selected="false"
-        tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
-    >
-      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr source-openstreetmap layer-address">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
-          <svg viewbox="0 0 288 512"
-               height="13"
-               width="13"
-               aria-hidden="true"
-               focusable="false"
-               fill="currentColor"
-               xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-ea9ulj-0 hPhvO"
-          >
-            <path fill="currentColor"
-                  d="M112 316.94v156.69l22.02 33.02c4.75 7.12 15.22 7.12 19.97 0L176 473.63V316.94c-10.39 1.92-21.06 3.06-32 3.06s-21.61-1.14-32-3.06zM144 0C64.47 0 0 64.47 0 144s64.47 144 144 144 144-64.47 144-144S223.53 0 144 0zm0 76c-37.5 0-68 30.5-68 68 0 6.62-5.38 12-12 12s-12-5.38-12-12c0-50.73 41.28-92 92-92 6.62 0 12 5.38 12 12s-5.38 12-12 12z"
-            >
-            </path>
-          </svg>
-        </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
-          2200 Westlake Avenue
-          <span class="styled__OptionSubTitle-sc-xahsq2-11 dmKYiB">
-            <span class="styled__HiddenContent-sc-xahsq2-0 MJNFZ">
-              ,
-            </span>
-            Downtown Seattle, WA
-          </span>
-        </span>
-      </span>
-    </li>
-    <li aria-live="off"
-        id="otpui-locf-option-7"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1102,7 +1096,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       Stations
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-3"
+        id="otpui-locf-option-1"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1136,7 +1130,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       Stops
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-4"
+        id="otpui-locf-option-2"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1185,7 +1179,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-5"
+        id="otpui-locf-option-3"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1216,7 +1210,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-6"
+        id="otpui-locf-option-4"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1250,7 +1244,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       Other
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="otpui-locf-option-5"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1279,7 +1273,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-1"
+        id="otpui-locf-option-6"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1314,7 +1308,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-2"
+        id="otpui-locf-option-7"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1349,7 +1343,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-7"
+        id="otpui-locf-option-0"
         role="option"
         aria-selected="false"
         tabindex="-1"
