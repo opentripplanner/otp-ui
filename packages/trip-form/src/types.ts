@@ -107,11 +107,14 @@ export interface ModeSelectorOptionSet {
   tertiary?: ModeSelectorOption[];
 }
 
-type SimpleStyledDiv = StyledComponent<"div", any>;
+type SimpleStyledDiv = StyledComponent<
+  "div",
+  any,
+  { baseColor?: string | undefined }
+>;
 
 export type DateTimeSelectorAndSubComponents = SimpleStyledDiv & {
   DateTimeRow?: SimpleStyledDiv;
-  DepartureRow?: SimpleStyledDiv;
 };
 
 export type ModeSelectorAndSubComponents = SimpleStyledDiv & {
