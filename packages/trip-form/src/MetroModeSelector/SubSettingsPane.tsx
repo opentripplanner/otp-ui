@@ -211,7 +211,7 @@ export default function SubSettingsPane({
             evt[s.key] = Object.keys(evt).includes(s.key) || !s.value;
           });
           onAllSubmodesDisabled(modeButton);
-          time = 500;
+          time = 700;
         }
       }
 
