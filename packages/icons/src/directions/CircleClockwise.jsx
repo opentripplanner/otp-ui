@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgCircleClockwise = ({ title, ...props }) => (
+const CircleClockwise = ({ title, ...props }) => (
   <svg viewBox="0 0 261 261" {...props}>
     {title ? <title>{title}</title> : null}
     <path d="M30.5 120.5h60a40 40 0 0180 0c0 20.22-10.51 37.32-30 40 15 5 25 20 25 50 37.37-14.48 65-47.51 65-90a100 100 0 00-200 0z" />
@@ -8,4 +8,4 @@ const SvgCircleClockwise = ({ title, ...props }) => (
   </svg>
 );
 
-export default SvgCircleClockwise;
+export default CircleClockwise;

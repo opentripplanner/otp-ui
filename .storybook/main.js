@@ -65,6 +65,18 @@ module.exports = {
       }
     })
 
+    // Add fallback for querystring
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      querystring: require.resolve('querystring-es3')
+    };
+
+    // Configure module resolution for workspace packages
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@opentripplanner': path.resolve(__dirname, '../packages')
+    };
+
     // Return the altered config
     return config;
   },

@@ -9,11 +9,11 @@
   "module": "esm/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/location-icon": "^1.4.1",
+    "@opentripplanner/location-icon": "workspace:*",
     "flat": "^5.0.2"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^6.5.2"
+    "@opentripplanner/types": "workspace:*"
   },
   "peerDependencies": {
     "react": "^18.2.0",

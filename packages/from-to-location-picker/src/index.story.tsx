@@ -15,17 +15,33 @@ const onFromClick = action("onFromClick");
 const onToClick = action("onToClick");
 
 export const fromTo = (): ReactElement => (
-  <FromToLocationPicker onFromClick={onFromClick} onToClick={onToClick} />
+  <IntlProvider
+    locale="en-US"
+    messages={{
+      "otpUi.FromToLocationPicker.from": "Start here",
+      "otpUi.FromToLocationPicker.to": "Go here"
+    }}
+  >
+    <FromToLocationPicker onFromClick={onFromClick} onToClick={onToClick} />
+  </IntlProvider>
 );
 
 export const smallTextSansSerif = (): ReactElement => (
-  <span style={{ fontSize: "75%", fontFamily: "sans-serif" }}>
-    <FromToLocationPicker
-      label
-      onFromClick={onFromClick}
-      onToClick={onToClick}
-    />
-  </span>
+  <IntlProvider
+    locale="en-US"
+    messages={{
+      "otpUi.FromToLocationPicker.from": "Start here",
+      "otpUi.FromToLocationPicker.to": "Go here"
+    }}
+  >
+    <span style={{ fontSize: "75%", fontFamily: "sans-serif" }}>
+      <FromToLocationPicker
+        label
+        onFromClick={onFromClick}
+        onToClick={onToClick}
+      />
+    </span>
+  </IntlProvider>
 );
 
 export const customStyleAndText = (): React.ReactElement => (
