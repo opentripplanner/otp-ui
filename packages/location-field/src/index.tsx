@@ -147,6 +147,157 @@ function makeUserOption(userLocation, index, key, activeIndex, selectHandlers) {
   );
 }
 
+const renderFeature = (
+  itemIndex,
+  layerColorMap,
+  feature,
+  operatorIconMap,
+  setLocation,
+  addLocationSearch,
+  showSecondaryLabels,
+  locationSelectedLookup,
+  activeIndex,
+  GeocodedOptionIconComponent,
+  geocoderConfig
+) => {
+  // generate the friendly labels for this feature
+  const { main, secondary } = generateLabel(feature.properties);
+
+  // Create the selection handler
+  const locationSelected = () => {
+    getGeocoder(geocoderConfig)
+      .getLocationFromGeocodedFeature(feature)
+      .then(geocodedLocation => {
+        // add the friendly location labels for use later on
+        geocodedLocation.main = main;
+        geocodedLocation.secondary = secondary;
+        geocodedLocation.name = getCombinedLabel(feature.properties);
+        // Set the current location
+        setLocation(geocodedLocation, "GEOCODE");
+        // Add to the location search history. This is intended to
+        // populate the sessionSearches array.
+        addLocationSearch({ location: geocodedLocation });
+      });
+  };
+
+  // Add to the selection handler lookup (for use in onKeyDown)
+  locationSelectedLookup[itemIndex] = locationSelected;
+
+  // Extract GTFS/POI info and assign to class
+  const { id, layer, secondaryLabels, source } = feature.properties;
+  const classNames = [];
+  let operatorIcon;
+  // Operator only exists on transit features
+  const featureIdComponents = source === "transit" && id.split("::");
+  if (featureIdComponents.length > 1 && featureIdComponents?.[1].length > 0) {
+    const operatorName = featureIdComponents[1]
+      .replace(/ /g, "-")
+      .toLowerCase();
+    classNames.push(`operator-${operatorName}`);
+    operatorIcon = operatorIconMap[operatorName];
+  }
+
+  classNames.push(`source-${source}`);
+  classNames.push(`layer-${layer}`);
+
+  // Create and return the option menu item
+  return (
+    <Option
+      classes={classNames.join(" ")}
+      color={layerColorMap[layer]}
+      icon={operatorIcon || <GeocodedOptionIconComponent feature={feature} />}
+      id={getOptionId(itemIndex)}
+      isActive={itemIndex === activeIndex}
+      key={optionKey++}
+      onClick={locationSelected}
+      title={main}
+      subTitle={secondary}
+      secondaryLabels={secondaryLabels}
+      showSecondaryLabels={showSecondaryLabels}
+    />
+  );
+};
+
+const FeatureHeader = ({
+  title,
+  bgColor,
+  HeaderMessage,
+  headingType
+}: {
+  title: string;
+  bgColor: string;
+  HeaderMessage: JSX.Element;
+  headingType: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+}) => (
+  <S.MenuGroupHeader as={headingType} bgColor={bgColor} key={title}>
+    {HeaderMessage}
+  </S.MenuGroupHeader>
+);
+
+const FeaturesElements = ({
+  bgColor,
+  title,
+  HeaderMessage,
+  headingType,
+  featuresArray,
+  itemIndex,
+  operatorIconMap,
+  setLocation,
+  addLocationSearch,
+  showSecondaryLabels,
+  locationSelectedLookup,
+  activeIndex,
+  GeocodedOptionIconComponent,
+  layerColorMap,
+  geocoderConfig
+}: {
+  bgColor: string;
+  title: string;
+  HeaderMessage: JSX.Element;
+  headingType: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  featuresArray: JSX.Element[];
+  itemIndex: number;
+  operatorIconMap: any;
+  setLocation: (newLocation: Location, resultType: ResultType) => void;
+  addLocationSearch: ({
+    location: GeocodedLocation
+  }: {
+    location: any;
+  }) => void;
+  showSecondaryLabels: boolean;
+  locationSelectedLookup: any;
+  activeIndex: number;
+  GeocodedOptionIconComponent: any;
+  layerColorMap: any;
+  geocoderConfig: any;
+}) => {
+  return (
+    <>
+      <FeatureHeader
+        HeaderMessage={HeaderMessage}
+        headingType={headingType}
+        bgColor={bgColor}
+        title={title}
+      />
+      {featuresArray.map(feature =>
+        renderFeature(
+          itemIndex++,
+          layerColorMap,
+          feature,
+          operatorIconMap,
+          setLocation,
+          addLocationSearch,
+          showSecondaryLabels,
+          locationSelectedLookup,
+          activeIndex,
+          GeocodedOptionIconComponent,
+          geocoderConfig
+        )
+      )}
+    </>
+  );
+};
+
 const LocationField = ({
   addLocationSearch = () => {},
   autoFocus = false,
@@ -532,65 +683,6 @@ const LocationField = ({
       });
   };
 
-  const renderFeature = (itemIndex, feature) => {
-    // generate the friendly labels for this feature
-    const { main, secondary } = generateLabel(feature.properties);
-
-    // Create the selection handler
-    const locationSelected = () => {
-      getGeocoder(geocoderConfig)
-        .getLocationFromGeocodedFeature(feature)
-        .then(geocodedLocation => {
-          // add the friendly location labels for use later on
-          geocodedLocation.main = main;
-          geocodedLocation.secondary = secondary;
-          geocodedLocation.name = getCombinedLabel(feature.properties);
-          // Set the current location
-          setLocation(geocodedLocation, "GEOCODE");
-          // Add to the location search history. This is intended to
-          // populate the sessionSearches array.
-          addLocationSearch({ location: geocodedLocation });
-        });
-    };
-
-    // Add to the selection handler lookup (for use in onKeyDown)
-    locationSelectedLookup[itemIndex] = locationSelected;
-
-    // Extract GTFS/POI info and assign to class
-    const { id, layer, secondaryLabels, source } = feature.properties;
-    const classNames = [];
-    let operatorIcon;
-    // Operator only exists on transit features
-    const featureIdComponents = source === "transit" && id.split("::");
-    if (featureIdComponents.length > 1 && featureIdComponents?.[1].length > 0) {
-      const operatorName = featureIdComponents[1]
-        .replace(/ /g, "-")
-        .toLowerCase();
-      classNames.push(`operator-${operatorName}`);
-      operatorIcon = operatorIconMap[operatorName];
-    }
-
-    classNames.push(`source-${source}`);
-    classNames.push(`layer-${layer}`);
-
-    // Create and return the option menu item
-    return (
-      <Option
-        classes={classNames.join(" ")}
-        color={layerColorMap[layer]}
-        icon={operatorIcon || <GeocodedOptionIconComponent feature={feature} />}
-        id={getOptionId(itemIndex)}
-        isActive={itemIndex === activeIndex}
-        key={optionKey++}
-        onClick={locationSelected}
-        title={main}
-        subTitle={secondary}
-        secondaryLabels={secondaryLabels}
-        showSecondaryLabels={showSecondaryLabels}
-      />
-    );
-  };
-
   const message = stateMessage;
   const geocodedFeatures = stateGeocodedFeatures;
 
@@ -645,33 +737,23 @@ const LocationField = ({
       preferredLayers
     );
 
-    const FeaturesElements = ({
-      bgColor,
-      title,
-      HeaderMessage,
-      featuresArray
-    }: {
-      bgColor: string;
-      title: string;
-      HeaderMessage: JSX.Element;
-      featuresArray: JSX.Element[];
-    }) => {
-      const Header = () => (
-        <S.MenuGroupHeader as={headingType} bgColor={bgColor} key={title}>
-          {HeaderMessage}
-        </S.MenuGroupHeader>
-      );
-      return (
-        <>
-          <Header />
-          {featuresArray.map(feature => renderFeature(itemIndex++, feature))}
-        </>
-      );
-    };
-
     // Create an array of results to display based on the geocoderResultsOrder
     const featuresElementsArray = geocoderResultsOrder.map(result => {
       let Element;
+
+      const FeaturesElementProps = {
+        headingType,
+        itemIndex,
+        operatorIconMap,
+        setLocation,
+        addLocationSearch,
+        showSecondaryLabels,
+        locationSelectedLookup,
+        activeIndex,
+        GeocodedOptionIconComponent,
+        layerColorMap,
+        geocoderConfig
+      };
       switch (result) {
         case GeocoderResultsConstants.OTHER:
           Element = otherFeatures.length > 0 && (
@@ -686,6 +768,8 @@ const LocationField = ({
               key="other-header"
               featuresArray={otherFeatures}
               title="other"
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...FeaturesElementProps}
             />
           );
           break;
@@ -702,6 +786,8 @@ const LocationField = ({
               key="gtfs-stations-header"
               featuresArray={stationFeatures}
               title="stations"
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...FeaturesElementProps}
             />
           );
           break;
@@ -718,6 +804,8 @@ const LocationField = ({
               key="gtfs-stops-header"
               featuresArray={stopFeatures}
               title="stops"
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...FeaturesElementProps}
             />
           );
           break;
