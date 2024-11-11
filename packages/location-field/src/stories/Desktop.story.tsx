@@ -214,12 +214,12 @@ export const WithPrefilledSearch = (): JSX.Element => (
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
     getCurrentPosition={getCurrentPosition}
-    preferredLayers={["example_layer"]}
     initialSearchResults={mockedGeocoderResponse.features}
     inputPlaceholder="Select from location"
     layerColorMap={layerColorMap}
     locationType="from"
     onLocationSelected={onLocationSelected}
+    preferredLayers={["example_layer"]}
     sortByDistance
     style={{ fontFamily: "sans-serif" }}
   />
@@ -256,14 +256,14 @@ export const WithCustomResultsOrder = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
     geocoderConfig={geocoderConfig}
+    geocoderResultsOrder={["OTHER", "STATIONS", "STOPS"]}
     getCurrentPosition={getCurrentPosition}
-    preferredLayers={["example_layer"]}
     initialSearchResults={mockedGeocoderResponse.features}
     inputPlaceholder="Select from location"
     layerColorMap={layerColorMap}
     locationType="from"
     onLocationSelected={onLocationSelected}
-    geocoderResultsOrder={["OTHER", "STATIONS", "STOPS"]}
+    preferredLayers={["example_layer"]}
     sortByDistance
     style={{ fontFamily: "sans-serif" }}
   />

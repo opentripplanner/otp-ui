@@ -239,7 +239,7 @@ const FeaturesElements = ({
   title,
   HeaderMessage,
   headingType,
-  featuresArray,
+  features,
   itemIndex,
   operatorIconMap,
   setLocation,
@@ -255,7 +255,7 @@ const FeaturesElements = ({
   title: string;
   HeaderMessage: JSX.Element;
   headingType: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  featuresArray: JSX.Element[];
+  features: JSX.Element[];
   itemIndex: number;
   operatorIconMap: any;
   setLocation: (newLocation: Location, resultType: ResultType) => void;
@@ -279,7 +279,7 @@ const FeaturesElements = ({
         bgColor={bgColor}
         title={title}
       />
-      {featuresArray.map(feature =>
+      {features.map(feature =>
         renderFeature(
           itemIndex++,
           layerColorMap,
@@ -310,12 +310,12 @@ const LocationField = ({
   findNearbyStops = () => {},
   GeocodedOptionIconComponent = GeocodedOptionIcon,
   geocoderConfig,
-  getCurrentPosition,
   geocoderResultsOrder = [
     GeocoderResultsConstants.STATIONS,
     GeocoderResultsConstants.STOPS,
     GeocoderResultsConstants.OTHER
   ],
+  getCurrentPosition,
   hideExistingValue = false,
   initialSearchResults = null,
   inputPlaceholder = null,
@@ -739,7 +739,7 @@ const LocationField = ({
 
     // Create an array of results to display based on the geocoderResultsOrder
     const featuresElementsArray = geocoderResultsOrder.map(result => {
-      let Element;
+      let element;
 
       const FeaturesElementProps = {
         headingType,
@@ -756,9 +756,10 @@ const LocationField = ({
       };
       switch (result) {
         case GeocoderResultsConstants.OTHER:
-          Element = otherFeatures.length > 0 && (
+          element = otherFeatures.length > 0 && (
             <FeaturesElements
               bgColor="#333"
+              features={otherFeatures}
               HeaderMessage={
                 <FormattedMessage
                   id="otpUi.LocationField.other"
@@ -766,7 +767,6 @@ const LocationField = ({
                 />
               }
               key="other-header"
-              featuresArray={otherFeatures}
               title="other"
               // eslint-disable-next-line react/jsx-props-no-spreading
               {...FeaturesElementProps}
@@ -774,9 +774,10 @@ const LocationField = ({
           );
           break;
         case GeocoderResultsConstants.STATIONS:
-          Element = stationFeatures.length > 0 && (
+          element = stationFeatures.length > 0 && (
             <FeaturesElements
               bgColor={layerColorMap.stations}
+              features={stationFeatures}
               HeaderMessage={
                 <FormattedMessage
                   id="otpUi.LocationField.stations"
@@ -784,7 +785,6 @@ const LocationField = ({
                 />
               }
               key="gtfs-stations-header"
-              featuresArray={stationFeatures}
               title="stations"
               // eslint-disable-next-line react/jsx-props-no-spreading
               {...FeaturesElementProps}
@@ -792,9 +792,10 @@ const LocationField = ({
           );
           break;
         case GeocoderResultsConstants.STOPS:
-          Element = stopFeatures.length > 0 && (
+          element = stopFeatures.length > 0 && (
             <FeaturesElements
               bgColor={layerColorMap.stops}
+              features={stopFeatures}
               HeaderMessage={
                 <FormattedMessage
                   id="otpUi.LocationField.stops"
@@ -802,7 +803,6 @@ const LocationField = ({
                 />
               }
               key="gtfs-stops-header"
-              featuresArray={stopFeatures}
               title="stops"
               // eslint-disable-next-line react/jsx-props-no-spreading
               {...FeaturesElementProps}
@@ -810,10 +810,10 @@ const LocationField = ({
           );
           break;
         default:
-          Element = null;
+          element = null;
           break;
       }
-      return Element;
+      return element;
     });
 
     // Iterate through the geocoder results
