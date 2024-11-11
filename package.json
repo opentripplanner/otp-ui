@@ -258,7 +258,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "pnpm check-eslint-config && yarn lint"
+      "pre-push": "pnpm check-eslint-config && pnpm lint"
     }
   },
   "lint-staged": {
@@ -273,7 +273,7 @@
     ],
     "*.graphql": [
       "prettier --write",
-      "yarn lint:graphql --fix",
+      "pnpm lint:graphql --fix",
       "git add"
     ],
     "!(.github/**).{yml,yaml}": [

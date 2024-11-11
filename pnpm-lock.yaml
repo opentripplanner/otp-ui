@@ -435,8 +435,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0
       react-intl:
-        specifier: ^5.20.4
-        version: 5.25.1(react@18.2.0)(typescript@4.9.5)
+        specifier: ^6.8.4
+        version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       styled-components:
         specifier: ^5.3.0
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -2366,10 +2366,6 @@ packages:
     resolution:
       integrity: >-
         sha512-O4ywpkdJybrjFc9zyL8qK5aklleIAi5O4nYhBVJaOFtCkNrnU+lKFeJOFC48zpsZQmR8Aok2V79hGpHnzbmFpg==
-  "@formatjs/fast-memoize@1.2.1":
-    resolution:
-      integrity: >-
-        sha512-Rg0e76nomkz3vF9IPlKeV+Qynok0r7YZjL6syLz4/urSg0IbjPZCB/iYUMNsYA643gh4mgrX3T7KEIFIxJBQeg==
   "@formatjs/fast-memoize@2.2.2":
     resolution:
       integrity: >-
@@ -2390,18 +2386,10 @@ packages:
     resolution:
       integrity: >-
         sha512-zRZ/e3B5qY2+JCLs7puTzWS1Jb+t/K+8Jur/gEZpA2EjWeLDE17nsx8thyo9P48Mno7UmafnPupV2NCJXX17Dg==
-  "@formatjs/intl-displaynames@5.4.3":
-    resolution:
-      integrity: >-
-        sha512-4r12A3mS5dp5hnSaQCWBuBNfi9Amgx2dzhU4lTFfhSxgb5DOAiAbMpg6+7gpWZgl4ahsj3l2r/iHIjdmdXOE2Q==
   "@formatjs/intl-displaynames@6.8.1":
     resolution:
       integrity: >-
         sha512-nyWfJk4BZ1+GzLq9a40BgVPSRpBkRAVzrSpql+92i0i+lX11m9eS1trSRf/h3j/XcQ+h1h+ntA4Ra4jETK7nNg==
-  "@formatjs/intl-listformat@6.5.3":
-    resolution:
-      integrity: >-
-        sha512-ozpz515F/+3CU+HnLi5DYPsLa6JoCfBggBSSg/8nOB5LYSFW9+ZgNQJxJ8tdhKYeODT+4qVHX27EeJLoxLGLNg==
   "@formatjs/intl-listformat@7.7.1":
     resolution:
       integrity: >-
@@ -2423,15 +2411,6 @@ packages:
     resolution:
       integrity: >-
         sha512-FNLZjzE1QRlv1Wf0oinnM97AbvZU1zQnQMHI0Oza2F7PxzrPf6bYFRs0ugapq/O4FrvNwDt9F9nyRNwsMM118g==
-  "@formatjs/intl@2.2.1":
-    peerDependencies:
-      typescript: ^4.5
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    resolution:
-      integrity: >-
-        sha512-vgvyUOOrzqVaOFYzTf2d3+ToSkH2JpR7x/4U1RyoHQLmvEaTQvXJ7A2qm1Iy3brGNXC/+/7bUlc3lpH+h/LOJA==
   "@formatjs/ts-transformer@3.9.4":
     peerDependencies:
       ts-jest: "27"
@@ -9634,10 +9613,6 @@ packages:
     resolution:
       integrity: >-
         sha512-AAo/3oyh7ROfPhDuh7DxTTydh97OC+lv7h1Eq5LuHWuLsUMKOhtzTYuyXlUReuwZ9vANDHo4CS1bGRrn7TZRtg==
-  intl-messageformat@9.13.0:
-    resolution:
-      integrity: >-
-        sha512-7sGC7QnSQGa5LZP7bXLDhVDtQOeKGeBFGHF2Y8LVBwYZoQZCgWeKoPGTa5GMG8g/TzDgeXuYJQis7Ggiw2xTOw==
   into-stream@6.0.0:
     engines:
       node: ">=10"
@@ -13364,16 +13339,6 @@ packages:
     resolution:
       integrity: >-
         sha512-fEGOdDf4k4bcveArbEpj01pJcH8pOCKLxmSj2POFdGvEk5YK0NZVnH6BXpW/PzACHPRsuh1YKAhNZyFnD28oxg==
-  react-intl@5.25.1:
-    peerDependencies:
-      react: 18.2.0
-      typescript: ^4.5
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    resolution:
-      integrity: >-
-        sha512-pkjdQDvpJROoXLMltkP/5mZb0/XqrqLoPGKUCfbdkP8m6U9xbK40K51Wu+a4aQqTEvEK5lHBk0fWzUV72SJ3Hg==
   react-intl@6.8.4:
     peerDependencies:
       react: 18.2.0
@@ -17158,9 +17123,6 @@ snapshots:
       "@formatjs/fast-memoize": 2.2.2
       "@formatjs/intl-localematcher": 0.5.6
       tslib: 2.8.0
-  "@formatjs/fast-memoize@1.2.1":
-    dependencies:
-      tslib: 2.8.0
   "@formatjs/fast-memoize@2.2.2":
     dependencies:
       tslib: 2.8.0
@@ -17182,20 +17144,10 @@ snapshots:
     dependencies:
       "@formatjs/ecma402-abstract": 2.2.1
       tslib: 2.8.0
-  "@formatjs/intl-displaynames@5.4.3":
-    dependencies:
-      "@formatjs/ecma402-abstract": 1.11.4
-      "@formatjs/intl-localematcher": 0.2.25
-      tslib: 2.8.0
   "@formatjs/intl-displaynames@6.8.1":
     dependencies:
       "@formatjs/ecma402-abstract": 2.2.1
       "@formatjs/intl-localematcher": 0.5.6
-      tslib: 2.8.0
-  "@formatjs/intl-listformat@6.5.3":
-    dependencies:
-      "@formatjs/ecma402-abstract": 1.11.4
-      "@formatjs/intl-localematcher": 0.2.25
       tslib: 2.8.0
   "@formatjs/intl-listformat@7.7.1":
     dependencies:
@@ -17216,17 +17168,6 @@ snapshots:
       "@formatjs/intl-displaynames": 6.8.1
       "@formatjs/intl-listformat": 7.7.1
       intl-messageformat: 10.7.3
-      tslib: 2.8.0
-    optionalDependencies:
-      typescript: 4.9.5
-  "@formatjs/intl@2.2.1(typescript@4.9.5)":
-    dependencies:
-      "@formatjs/ecma402-abstract": 1.11.4
-      "@formatjs/fast-memoize": 1.2.1
-      "@formatjs/icu-messageformat-parser": 2.1.0
-      "@formatjs/intl-displaynames": 5.4.3
-      "@formatjs/intl-listformat": 6.5.3
-      intl-messageformat: 9.13.0
       tslib: 2.8.0
     optionalDependencies:
       typescript: 4.9.5
@@ -23182,12 +23123,6 @@ snapshots:
       "@formatjs/fast-memoize": 2.2.2
       "@formatjs/icu-messageformat-parser": 2.9.1
       tslib: 2.8.0
-  intl-messageformat@9.13.0:
-    dependencies:
-      "@formatjs/ecma402-abstract": 1.11.4
-      "@formatjs/fast-memoize": 1.2.1
-      "@formatjs/icu-messageformat-parser": 2.1.0
-      tslib: 2.8.0
   into-stream@6.0.0:
     dependencies:
       from2: 2.3.0
@@ -25887,21 +25822,6 @@ snapshots:
       exenv: 1.2.2
       react: 18.2.0
       react-from-dom: 0.6.2(react@18.2.0)
-  react-intl@5.25.1(react@18.2.0)(typescript@4.9.5):
-    dependencies:
-      "@formatjs/ecma402-abstract": 1.11.4
-      "@formatjs/icu-messageformat-parser": 2.1.0
-      "@formatjs/intl": 2.2.1(typescript@4.9.5)
-      "@formatjs/intl-displaynames": 5.4.3
-      "@formatjs/intl-listformat": 6.5.3
-      "@types/hoist-non-react-statics": 3.3.5
-      "@types/react": 18.3.12
-      hoist-non-react-statics: 3.3.2
-      intl-messageformat: 9.13.0
-      react: 18.2.0
-      tslib: 2.8.0
-    optionalDependencies:
-      typescript: 4.9.5
   react-intl@6.8.4(react@18.2.0)(typescript@4.9.5):
     dependencies:
       "@formatjs/ecma402-abstract": 2.2.1
