@@ -15,6 +15,7 @@ import { Search } from "@styled-icons/fa-solid/Search";
 import { Times } from "@styled-icons/fa-solid/Times";
 import { debounce } from "throttle-debounce";
 
+import flatten from "flat";
 import {
   GeocodedOptionIcon,
   ICON_SIZE,
@@ -33,6 +34,7 @@ import {
   getGeocoderErrorMessage,
   getMatchingLocations
 } from "./utils";
+import defaultEnglishMessages from "../i18n/en-US.yml";
 
 const optionIdPrefix = "otpui-locf-option";
 
@@ -68,6 +70,8 @@ function filter(
     .filter(feature => layers.includes(feature.properties.layer) === include)
     .slice(0, limit);
 }
+
+const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 /**
  * Puts the given geocoded features into several categories with upper bounds.
@@ -762,8 +766,9 @@ const LocationField = ({
               features={otherFeatures}
               HeaderMessage={
                 <FormattedMessage
-                  id="otpUi.LocationField.other"
+                  defaultMessage={defaultMessages["otpUi.LocationField.other"]}
                   description="Text for header above the 'other' category of geocoder results"
+                  id="otpUi.LocationField.other"
                 />
               }
               key="other-header"
@@ -780,8 +785,11 @@ const LocationField = ({
               features={stationFeatures}
               HeaderMessage={
                 <FormattedMessage
-                  id="otpUi.LocationField.stations"
+                  defaultMessage={
+                    defaultMessages["otpUi.LocationField.stations"]
+                  }
                   description="Text for header above the 'stations' category of geocoder results"
+                  id="otpUi.LocationField.stations"
                 />
               }
               key="gtfs-stations-header"
@@ -798,8 +806,9 @@ const LocationField = ({
               features={stopFeatures}
               HeaderMessage={
                 <FormattedMessage
-                  id="otpUi.LocationField.stops"
+                  defaultMessage={defaultMessages["otpUi.LocationField.stops"]}
                   description="Text for header above the 'stops' category of geocoder results"
+                  id="otpUi.LocationField.stops"
                 />
               }
               key="gtfs-stops-header"
@@ -826,6 +835,7 @@ const LocationField = ({
     menuItems.push(
       <S.MenuGroupHeader as={headingType} key="ns-header">
         <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.LocationField.nearby"]}
           description="Text for header above nearby stops"
           id="otpUi.LocationField.nearby"
         />
@@ -875,6 +885,9 @@ const LocationField = ({
     menuItems.push(
       <S.MenuGroupHeader as={headingType} key="ss-header">
         <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.LocationField.recentlySearched"]
+          }
           description="Text for header above recently searched items"
           id="otpUi.LocationField.recentlySearched"
         />
@@ -916,6 +929,7 @@ const LocationField = ({
     menuItems.push(
       <S.MenuGroupHeader as={headingType} key="mp-header">
         <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.LocationField.myPlaces"]}
           description="Text for header above user-saved places"
           id="otpUi.LocationField.myPlaces"
         />
@@ -1103,7 +1117,9 @@ const LocationField = ({
           ) : (
             <S.MenuGroupHeader as="div">
               <FormattedMessage
-                defaultMessage="Begin typing to search for locations"
+                defaultMessage={
+                  defaultMessages["otpUi.LocationField.beginTypingPrompt"]
+                }
                 description="Text to show as initial placeholder in location search field"
                 id="otpUi.LocationField.beginTypingPrompt"
               />
