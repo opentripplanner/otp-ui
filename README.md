@@ -24,18 +24,7 @@ See:
 
 You can chat with the main OTP-RR developers in our [Gitter chat](https://gitter.im/opentripplanner/otp-react-redux). Support is not guaranteed, but we may be able to answer questions and assist people wishing to make contributions.
 
-Some packages in otp-ui depend on sibling packages (e.g., `@opentripplanner/core-utils` is used by many of its siblings). In order to test a package with local changes you have made to its sibling, you can run the following find/replace operations to make sure you're depending on your latest work (and not the released version):
-
-1. In the `package.json` files for packages in which you want to test the sibling, find and replace (package-to-test being the package with local changes -- make sure these are committed to first to avoid the find/replace operations below polluting your work):
-
-   > "@opentripplanner/package-to-test": **"current-version"**
-
-   with
-
-   > "@opentripplanner/package-to-test": **"file:../package-to-test"**
-
-2. Run:
-   `yarn && yarn dev`
+Some packages in otp-ui depend on sibling packages (e.g., `@opentripplanner/core-utils` is used by many of its siblings). Internal dependencies are handled with the `workspace:*` version, which is a notation provided by pnpm. This allows us to always reference the current internal dependency version. Therefore, before the storybook can be run, it's necessary to run `pnpm prepublish` so that all internal packages are built.
 
 If the Storybook addon bar (a bar of controls at the bottom of the story) does not appear, you may need to clear localStorage by opening the browser console and typing `localStorage.clear()`.
 
@@ -48,7 +37,7 @@ This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows
 > A Monorepo with multiple packages and a shared build, test, and release process.
 
 - 🐉 [Lerna](https://lernajs.io/)  - The Monorepo manager
-- 📦 [Yarn Workspaces](https://yarnpkg.com/lang/en/docs/workspaces/)  -  Sane multi-package management
+- 📦 [PNPM Workspaces](https://pnpm.io/workspaces)  -  Sane multi-package management
 - 🚀 [React](https://reactjs.org/)  -  JavaScript library for user interfaces
 - 💅 [styled-components](https://www.styled-components.com/)  -  CSS in JS elegance
 - 🛠 [Babel](https://babeljs.io/)  -  Compiles next-gen JavaScript
@@ -57,11 +46,12 @@ This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows
 
 ## Usage
 
-- `yarn dev` - This starts Storybook for viewing all the components locally.
-- `yarn bootstrap` - This installs all of the packages and links dependent packages together.
-- `yarn preppublish` - This babelfies all of the packages and creates `/lib` folders for each one.
-- `yarn unit` - Run jest unit tests.
-- `yarn coverage` - Shows jest unit coverage.
+- `pnpm dev` - This starts Storybook for viewing all the components locally.
+- `pnpm install` - This installs all of the packages and links dependent packages together.
+- `pnpm preppublish` - This babelfies all of the packages and creates `/lib` and `/esm` folders for each one.
+- `pnpm unit` - Run jest unit tests.
+- `pnpm coverage` - Shows jest unit coverage.
+- `pnpm clean` - Deletes all files in the gitignore (note: this can delete local editor settings)
 - `npx lerna changed` - Show which packages have changed.
 - `npx lerna diff` - Show specifically what files have cause the packages to change.
 - `npx lerna create <packageName>` - Creates new package and walks through setting up package.json
