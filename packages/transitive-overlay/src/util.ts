@@ -402,11 +402,15 @@ export function itineraryToTransitive(
           ? getRouteLabel(leg)
           : getLegRouteShortName(leg)) || "";
 
+      const basicRouteAttributes = {
+        agency_id: leg.agencyId,
+        route_id: routeId,
+        route_short_name: routeLabel
+      };
+
       if (typeof leg.route === "object") {
         routes[routeId] = {
-          agency_id: leg.agencyId,
-          route_id: routeId,
-          route_short_name: routeLabel,
+          ...basicRouteAttributes,
           route_long_name: leg.route.longName || "",
           route_type: leg.route.type,
           route_color: leg.route.color,
@@ -414,9 +418,7 @@ export function itineraryToTransitive(
         };
       } else {
         routes[routeId] = {
-          agency_id: leg.agencyId,
-          route_id: routeId,
-          route_short_name: routeLabel,
+          ...basicRouteAttributes,
           route_long_name: leg.routeLongName || "",
           route_type: leg.routeType,
           route_color: leg.routeColor,
