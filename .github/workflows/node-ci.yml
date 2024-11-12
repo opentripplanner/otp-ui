@@ -18,7 +18,7 @@ jobs:
       - name: Build packages
         run: pnpm prepublish
       - name: Install Playwright
-        run: npx playwright install --with-deps
+        run: pnpm exec playwright install --with-deps
       - name: Lint code
         run: pnpm run lint:js
       - name: Lint styles

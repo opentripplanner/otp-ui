@@ -3,16 +3,16 @@
 exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
 <div>
   <div aria-label="Travel Preferences"
-       class="styled__SettingsSelectorPanel-sc-122ziys-20 cHOFdL"
+       class="styled__SettingsSelectorPanel-sc-122ziys-20 gyXkAz"
        role="group"
   >
-    <div class="styled__ModeSelector-sc-122ziys-7 kUleUC"
+    <div class="styled__ModeSelector-sc-122ziys-7 iAriZO"
          style="margin: 0px -5px; padding-bottom: 8px;"
     >
-      <div class="styled__MainRow-sc-122ziys-8 kIuztG">
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+      <div class="styled__MainRow-sc-122ziys-8 kudpPb">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="true"
-                  class="styled__Button-sc-122ziys-16 dxnCjq active "
+                  class="styled__Button-sc-122ziys-16 bXGxDk active "
                   title="Take Transit"
           >
             <span>
@@ -46,132 +46,132 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
           </button>
         </div>
       </div>
-      <div class="styled__SecondaryRow-sc-122ziys-9 hBmEla">
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+      <div class="styled__SecondaryRow-sc-122ziys-9 ggDwWN">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="true"
-                  class="styled__Button-sc-122ziys-16 dxnCjq active "
+                  class="styled__Button-sc-122ziys-16 bXGxDk active "
                   title="Saunter"
           >
             <span>
               Loading...
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv active "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU active "
                title="Saunter"
           >
             Saunter
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Transit + Personal Bike"
           >
             <span>
               Loading...
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
                title="Transit + Personal Bike"
           >
             Transit + Personal Bike
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Transit + Biketown"
           >
             <span>
               Loading...
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
                title="Transit + Biketown"
           >
             Transit + Biketown
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Transit + E-scooter"
           >
             <span>
               Loading...
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
                title="Transit + E-scooter"
           >
             Transit + E-scooter
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Park &amp; Ride"
           >
             <span>
               Loading...
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
                title="Park &amp; Ride"
           >
             Park &amp; Ride
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Transit + Uber"
           >
             <span>
               +Uber
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
                title="Transit + Uber"
           >
             Transit + Uber
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Transit + ReachNow"
           >
             <span>
               +ReachNow
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
                title="Transit + ReachNow"
           >
             Transit + ReachNow
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Transit + Car2Go"
           >
             <span>
               +Car2Go
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
                title="Transit + Car2Go"
           >
             Transit + Car2Go
           </div>
         </div>
       </div>
-      <div class="styled__TertiaryRow-sc-122ziys-10 enlXGA">
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+      <div class="styled__TertiaryRow-sc-122ziys-10 lljpzT">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Walk Only"
           >
             <span>
@@ -183,9 +183,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Bike Only"
           >
             <span>
@@ -199,9 +199,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="E-scooter Only"
           >
             <span>
@@ -215,22 +215,22 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
         </div>
       </div>
     </div>
-    <div class="styled__SettingsHeader-sc-122ziys-0 kGehGV">
+    <div class="styled__SettingsHeader-sc-122ziys-0 lbYPWF">
       Travel Preferences
     </div>
     <div aria-label="Use"
-         class="styled__SettingsSection-sc-122ziys-1 styled__SubmodeSelector-sc-122ziys-11 ilyYai dliLpR"
+         class="styled__SettingsSection-sc-122ziys-1 styled__SubmodeSelector-sc-122ziys-11 jBROkq eKHvJ"
          role="group"
     >
       <span aria-hidden="true"
-            class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+            class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
       >
         Use
       </span>
-      <div class="styled__submodeRow-sc-122ziys-12 gItmJF">
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+      <div class="styled__submodeRow-sc-122ziys-12 hRUguB">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Buses"
           >
             <span>
@@ -242,9 +242,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="MAX and Portland Streetcar"
           >
             <span>
@@ -256,9 +256,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="WES Commuter Rail"
           >
             <span>
@@ -280,9 +280,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Aerial Tram"
           >
             <span>
@@ -296,11 +296,11 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
         </div>
       </div>
     </div>
-    <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hKJhWi">
-      <div class="styled__DropdownSelector-sc-122ziys-17 kiQdDP">
+    <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hiaMvK">
+      <div class="styled__DropdownSelector-sc-122ziys-17 cyxcog">
         <div>
           <label for="id-query-param-maxWalkDistance"
-                 class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+                 class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
           >
             Maximum Walk
           </label>
@@ -339,16 +339,16 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanel smoke-test 1`] = `
 exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test 1`] = `
 <div>
   <div aria-label="Travel Preferences"
-       class="styled__SettingsSelectorPanel-sc-122ziys-20 cHOFdL"
+       class="styled__SettingsSelectorPanel-sc-122ziys-20 gyXkAz"
        role="group"
   >
-    <div class="styled__ModeSelector-sc-122ziys-7 kUleUC"
+    <div class="styled__ModeSelector-sc-122ziys-7 iAriZO"
          style="margin: 0px -5px; padding-bottom: 8px;"
     >
-      <div class="styled__MainRow-sc-122ziys-8 kIuztG">
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+      <div class="styled__MainRow-sc-122ziys-8 kudpPb">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="true"
-                  class="styled__Button-sc-122ziys-16 dxnCjq active "
+                  class="styled__Button-sc-122ziys-16 bXGxDk active "
                   title="Take Transit"
           >
             <span>
@@ -374,132 +374,132 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
           </button>
         </div>
       </div>
-      <div class="styled__SecondaryRow-sc-122ziys-9 hBmEla">
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+      <div class="styled__SecondaryRow-sc-122ziys-9 ggDwWN">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="true"
-                  class="styled__Button-sc-122ziys-16 dxnCjq active "
+                  class="styled__Button-sc-122ziys-16 bXGxDk active "
                   title="Saunter"
           >
             <span>
               Loading...
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv active "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU active "
                title="Saunter"
           >
             Saunter
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Transit + Personal Bike"
           >
             <span>
               Loading...
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
                title="Transit + Personal Bike"
           >
             Transit + Personal Bike
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Transit + Biketown"
           >
             <span>
               Loading...
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
                title="Transit + Biketown"
           >
             Transit + Biketown
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Transit + E-scooter"
           >
             <span>
               Loading...
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
                title="Transit + E-scooter"
           >
             Transit + E-scooter
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Park &amp; Ride"
           >
             <span>
               Loading...
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
                title="Park &amp; Ride"
           >
             Park &amp; Ride
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Transit + Uber"
           >
             <span>
               +Uber
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
                title="Transit + Uber"
           >
             Transit + Uber
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Transit + ReachNow"
           >
             <span>
               +ReachNow
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
                title="Transit + ReachNow"
           >
             Transit + ReachNow
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Transit + Car2Go"
           >
             <span>
               +Car2Go
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 gZuthv  "
+          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
                title="Transit + Car2Go"
           >
             Transit + Car2Go
           </div>
         </div>
       </div>
-      <div class="styled__TertiaryRow-sc-122ziys-10 enlXGA">
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+      <div class="styled__TertiaryRow-sc-122ziys-10 lljpzT">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Walk Only"
           >
             <span>
@@ -520,9 +520,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Bike Only"
           >
             <span>
@@ -539,9 +539,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="E-scooter Only"
           >
             <span>
@@ -559,22 +559,22 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
         </div>
       </div>
     </div>
-    <div class="styled__SettingsHeader-sc-122ziys-0 kGehGV">
+    <div class="styled__SettingsHeader-sc-122ziys-0 lbYPWF">
       Travel Preferences
     </div>
     <div aria-label="Use"
-         class="styled__SettingsSection-sc-122ziys-1 styled__SubmodeSelector-sc-122ziys-11 ilyYai dliLpR"
+         class="styled__SettingsSection-sc-122ziys-1 styled__SubmodeSelector-sc-122ziys-11 jBROkq eKHvJ"
          role="group"
     >
       <span aria-hidden="true"
-            class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+            class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
       >
         Use
       </span>
-      <div class="styled__submodeRow-sc-122ziys-12 gItmJF">
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+      <div class="styled__submodeRow-sc-122ziys-12 hRUguB">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Buses"
           >
             <span>
@@ -599,9 +599,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="MAX and Portland Streetcar"
           >
             <span>
@@ -622,9 +622,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="WES Commuter Rail"
           >
             <span>
@@ -645,9 +645,9 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 dxnCjq  "
+                  class="styled__Button-sc-122ziys-16 bXGxDk  "
                   title="Aerial Tram"
           >
             <span>
@@ -672,11 +672,11 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
         </div>
       </div>
     </div>
-    <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hKJhWi">
-      <div class="styled__DropdownSelector-sc-122ziys-17 kiQdDP">
+    <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hiaMvK">
+      <div class="styled__DropdownSelector-sc-122ziys-17 cyxcog">
         <div>
           <label for="id-query-param-maxWalkDistance"
-                 class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+                 class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
           >
             Maximum Walk
           </label>
@@ -715,16 +715,16 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithCustomIcons smoke-test
 exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithUndefinedParams smoke-test 1`] = `
 <div>
   <div aria-label="Travel Preferences"
-       class="styled__SettingsSelectorPanel-sc-122ziys-20 cHOFdL"
+       class="styled__SettingsSelectorPanel-sc-122ziys-20 gyXkAz"
        role="group"
   >
-    <div class="styled__ModeSelector-sc-122ziys-7 kUleUC"
+    <div class="styled__ModeSelector-sc-122ziys-7 iAriZO"
          style="margin: 0px -5px; padding-bottom: 8px;"
     >
-      <div class="styled__MainRow-sc-122ziys-8 kIuztG">
-        <div class="styled__ModeButton-sc-122ziys-14 bNGAA-D">
+      <div class="styled__MainRow-sc-122ziys-8 kudpPb">
+        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
           <button aria-pressed="true"
-                  class="styled__Button-sc-122ziys-16 dxnCjq active "
+                  class="styled__Button-sc-122ziys-16 bXGxDk active "
                   title="Take Transit"
           >
             <span>
@@ -758,17 +758,17 @@ exports[`SeṯtingsSelectorPanel settingsSelectorPanelWithUndefinedParams smoke-
           </button>
         </div>
       </div>
-      <div class="styled__TertiaryRow-sc-122ziys-10 enlXGA">
+      <div class="styled__TertiaryRow-sc-122ziys-10 lljpzT">
       </div>
     </div>
-    <div class="styled__SettingsHeader-sc-122ziys-0 kGehGV">
+    <div class="styled__SettingsHeader-sc-122ziys-0 lbYPWF">
       Travel Preferences
     </div>
-    <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hKJhWi">
-      <div class="styled__DropdownSelector-sc-122ziys-17 kiQdDP">
+    <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hiaMvK">
+      <div class="styled__DropdownSelector-sc-122ziys-17 cyxcog">
         <div>
           <label for="id-query-param-maxWalkDistance"
-                 class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
+                 class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
           >
             Maximum Walk
           </label>
