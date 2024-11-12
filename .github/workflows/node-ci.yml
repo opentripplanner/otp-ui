@@ -9,6 +9,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 21.x
+          cache: "pnpm"
       - name: Install Playwright
         run: npx playwright install --with-deps
       - name: Lint code
