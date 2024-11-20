@@ -168,7 +168,7 @@ const renderFeature = (
   const { main, secondary } = generateLabel(feature.properties);
 
   // Create the selection handler
-  const locationSelected = () => {
+  const locationSelected = useCallback(() => {
     getGeocoder(geocoderConfig)
       .getLocationFromGeocodedFeature(feature)
       .then(geocodedLocation => {
@@ -182,7 +182,7 @@ const renderFeature = (
         // populate the sessionSearches array.
         addLocationSearch({ location: geocodedLocation });
       });
-  };
+  }, []);
 
   // Add to the selection handler lookup (for use in onKeyDown)
   locationSelectedLookup[itemIndex] = locationSelected;
@@ -223,64 +223,64 @@ const renderFeature = (
 };
 
 const FeatureHeader = ({
-  title,
   bgColor,
-  HeaderMessage,
-  headingType
+  headerMessage,
+  headingType,
+  title
 }: {
-  title: string;
   bgColor: string;
-  HeaderMessage: JSX.Element;
+  headerMessage: JSX.Element;
   headingType: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  title: string;
 }) => (
   <S.MenuGroupHeader as={headingType} bgColor={bgColor} key={title}>
-    {HeaderMessage}
+    {headerMessage}
   </S.MenuGroupHeader>
 );
 
 const FeaturesElements = ({
+  activeIndex,
+  addLocationSearch,
   bgColor,
-  title,
-  HeaderMessage,
-  headingType,
   features,
+  GeocodedOptionIconComponent,
+  geocoderConfig,
+  headerMessage,
+  headingType,
   itemIndex,
+  layerColorMap,
+  locationSelectedLookup,
   operatorIconMap,
   setLocation,
-  addLocationSearch,
   showSecondaryLabels,
-  locationSelectedLookup,
-  activeIndex,
-  GeocodedOptionIconComponent,
-  layerColorMap,
-  geocoderConfig
+  title
 }: {
-  bgColor: string;
-  title: string;
-  HeaderMessage: JSX.Element;
-  headingType: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  features: JSX.Element[];
-  itemIndex: number;
-  operatorIconMap: any;
-  setLocation: (newLocation: Location, resultType: ResultType) => void;
+  activeIndex: number;
   addLocationSearch: ({
     location: GeocodedLocation
   }: {
     location: any;
   }) => void;
-  showSecondaryLabels: boolean;
-  locationSelectedLookup: any;
-  activeIndex: number;
+  bgColor: string;
+  features: JSX.Element[];
   GeocodedOptionIconComponent: any;
-  layerColorMap: any;
   geocoderConfig: any;
+  headerMessage: JSX.Element;
+  headingType: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  itemIndex: number;
+  layerColorMap: any;
+  locationSelectedLookup: any;
+  operatorIconMap: any;
+  setLocation: (newLocation: Location, resultType: ResultType) => void;
+  showSecondaryLabels: boolean;
+  title: string;
 }) => {
   return (
     <>
       <FeatureHeader
-        HeaderMessage={HeaderMessage}
-        headingType={headingType}
         bgColor={bgColor}
+        headerMessage={headerMessage}
+        headingType={headingType}
         title={title}
       />
       {features.map(feature =>
@@ -764,7 +764,7 @@ const LocationField = ({
             <FeaturesElements
               bgColor="#333"
               features={otherFeatures}
-              HeaderMessage={
+              headerMessage={
                 <FormattedMessage
                   defaultMessage={defaultMessages["otpUi.LocationField.other"]}
                   description="Text for header above the 'other' category of geocoder results"
@@ -783,7 +783,7 @@ const LocationField = ({
             <FeaturesElements
               bgColor={layerColorMap.stations}
               features={stationFeatures}
-              HeaderMessage={
+              headerMessage={
                 <FormattedMessage
                   defaultMessage={
                     defaultMessages["otpUi.LocationField.stations"]
@@ -804,7 +804,7 @@ const LocationField = ({
             <FeaturesElements
               bgColor={layerColorMap.stops}
               features={stopFeatures}
-              HeaderMessage={
+              headerMessage={
                 <FormattedMessage
                   defaultMessage={defaultMessages["otpUi.LocationField.stops"]}
                   description="Text for header above the 'stops' category of geocoder results"
@@ -855,9 +855,9 @@ const LocationField = ({
         };
 
         // Create the location selected handler
-        const locationSelected = () => {
+        const locationSelected = useCallback(() => {
           setLocation(stopLocation, "STOP");
-        };
+        }, []);
 
         // Add to the selection handler lookup (for use in onKeyDown)
         locationSelectedLookup[itemIndex] = locationSelected;
@@ -898,9 +898,9 @@ const LocationField = ({
     menuItems = menuItems.concat(
       sessionSearches.map(sessionLocation => {
         // Create the location-selected handler
-        const locationSelected = () => {
+        const locationSelected = useCallback(() => {
           setLocation(sessionLocation, "SESSION");
-        };
+        }, []);
 
         // Add to the selection handler lookup (for use in onKeyDown)
         locationSelectedLookup[itemIndex] = locationSelected;
