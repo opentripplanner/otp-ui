@@ -168,7 +168,7 @@ const renderFeature = (
   const { main, secondary } = generateLabel(feature.properties);
 
   // Create the selection handler
-  const locationSelected = useCallback(() => {
+  const locationSelected = () => {
     getGeocoder(geocoderConfig)
       .getLocationFromGeocodedFeature(feature)
       .then(geocodedLocation => {
@@ -182,7 +182,7 @@ const renderFeature = (
         // populate the sessionSearches array.
         addLocationSearch({ location: geocodedLocation });
       });
-  }, []);
+  };
 
   // Add to the selection handler lookup (for use in onKeyDown)
   locationSelectedLookup[itemIndex] = locationSelected;
@@ -855,9 +855,9 @@ const LocationField = ({
         };
 
         // Create the location selected handler
-        const locationSelected = useCallback(() => {
+        const locationSelected = () => {
           setLocation(stopLocation, "STOP");
-        }, []);
+        };
 
         // Add to the selection handler lookup (for use in onKeyDown)
         locationSelectedLookup[itemIndex] = locationSelected;
@@ -898,9 +898,9 @@ const LocationField = ({
     menuItems = menuItems.concat(
       sessionSearches.map(sessionLocation => {
         // Create the location-selected handler
-        const locationSelected = useCallback(() => {
+        const locationSelected = () => {
           setLocation(sessionLocation, "SESSION");
-        }, []);
+        };
 
         // Add to the selection handler lookup (for use in onKeyDown)
         locationSelectedLookup[itemIndex] = locationSelected;
