@@ -15,6 +15,7 @@ import { Search } from "@styled-icons/fa-solid/Search";
 import { Times } from "@styled-icons/fa-solid/Times";
 import { debounce } from "throttle-debounce";
 
+import flatten from "flat";
 import {
   GeocodedOptionIcon,
   ICON_SIZE,
@@ -28,10 +29,12 @@ import { LocationFieldProps, ResultType } from "./types";
 import {
   addInParentheses,
   generateLabel,
+  GeocoderResultsConstants,
   getCombinedLabel,
   getGeocoderErrorMessage,
   getMatchingLocations
 } from "./utils";
+import defaultEnglishMessages from "../i18n/en-US.yml";
 
 const optionIdPrefix = "otpui-locf-option";
 
@@ -67,6 +70,8 @@ function filter(
     .filter(feature => layers.includes(feature.properties.layer) === include)
     .slice(0, limit);
 }
+
+const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 /**
  * Puts the given geocoded features into several categories with upper bounds.
@@ -146,6 +151,157 @@ function makeUserOption(userLocation, index, key, activeIndex, selectHandlers) {
   );
 }
 
+const renderFeature = (
+  itemIndex,
+  layerColorMap,
+  feature,
+  operatorIconMap,
+  setLocation,
+  addLocationSearch,
+  showSecondaryLabels,
+  locationSelectedLookup,
+  activeIndex,
+  GeocodedOptionIconComponent,
+  geocoderConfig
+) => {
+  // generate the friendly labels for this feature
+  const { main, secondary } = generateLabel(feature.properties);
+
+  // Create the selection handler
+  const locationSelected = useCallback(() => {
+    getGeocoder(geocoderConfig)
+      .getLocationFromGeocodedFeature(feature)
+      .then(geocodedLocation => {
+        // add the friendly location labels for use later on
+        geocodedLocation.main = main;
+        geocodedLocation.secondary = secondary;
+        geocodedLocation.name = getCombinedLabel(feature.properties);
+        // Set the current location
+        setLocation(geocodedLocation, "GEOCODE");
+        // Add to the location search history. This is intended to
+        // populate the sessionSearches array.
+        addLocationSearch({ location: geocodedLocation });
+      });
+  }, []);
+
+  // Add to the selection handler lookup (for use in onKeyDown)
+  locationSelectedLookup[itemIndex] = locationSelected;
+
+  // Extract GTFS/POI info and assign to class
+  const { id, layer, secondaryLabels, source } = feature.properties;
+  const classNames = [];
+  let operatorIcon;
+  // Operator only exists on transit features
+  const featureIdComponents = source === "transit" && id.split("::");
+  if (featureIdComponents.length > 1 && featureIdComponents?.[1].length > 0) {
+    const operatorName = featureIdComponents[1]
+      .replace(/ /g, "-")
+      .toLowerCase();
+    classNames.push(`operator-${operatorName}`);
+    operatorIcon = operatorIconMap[operatorName];
+  }
+
+  classNames.push(`source-${source}`);
+  classNames.push(`layer-${layer}`);
+
+  // Create and return the option menu item
+  return (
+    <Option
+      classes={classNames.join(" ")}
+      color={layerColorMap[layer]}
+      icon={operatorIcon || <GeocodedOptionIconComponent feature={feature} />}
+      id={getOptionId(itemIndex)}
+      isActive={itemIndex === activeIndex}
+      key={optionKey++}
+      onClick={locationSelected}
+      title={main}
+      subTitle={secondary}
+      secondaryLabels={secondaryLabels}
+      showSecondaryLabels={showSecondaryLabels}
+    />
+  );
+};
+
+const FeatureHeader = ({
+  bgColor,
+  headerMessage,
+  headingType,
+  title
+}: {
+  bgColor: string;
+  headerMessage: JSX.Element;
+  headingType: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  title: string;
+}) => (
+  <S.MenuGroupHeader as={headingType} bgColor={bgColor} key={title}>
+    {headerMessage}
+  </S.MenuGroupHeader>
+);
+
+const FeaturesElements = ({
+  activeIndex,
+  addLocationSearch,
+  bgColor,
+  features,
+  GeocodedOptionIconComponent,
+  geocoderConfig,
+  headerMessage,
+  headingType,
+  itemIndex,
+  layerColorMap,
+  locationSelectedLookup,
+  operatorIconMap,
+  setLocation,
+  showSecondaryLabels,
+  title
+}: {
+  activeIndex: number;
+  addLocationSearch: ({
+    location: GeocodedLocation
+  }: {
+    location: any;
+  }) => void;
+  bgColor: string;
+  features: JSX.Element[];
+  GeocodedOptionIconComponent: any;
+  geocoderConfig: any;
+  headerMessage: JSX.Element;
+  headingType: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  itemIndex: number;
+  layerColorMap: any;
+  locationSelectedLookup: any;
+  operatorIconMap: any;
+  setLocation: (newLocation: Location, resultType: ResultType) => void;
+  showSecondaryLabels: boolean;
+  title: string;
+}) => {
+  return (
+    <>
+      <FeatureHeader
+        bgColor={bgColor}
+        headerMessage={headerMessage}
+        headingType={headingType}
+        title={title}
+      />
+      {features.map(feature =>
+        renderFeature(
+          itemIndex++,
+          layerColorMap,
+          feature,
+          operatorIconMap,
+          setLocation,
+          addLocationSearch,
+          showSecondaryLabels,
+          locationSelectedLookup,
+          activeIndex,
+          GeocodedOptionIconComponent,
+          geocoderConfig
+        )
+      )}
+    </>
+  );
+};
+
 const LocationField = ({
   addLocationSearch = () => {},
   autoFocus = false,
@@ -158,6 +314,11 @@ const LocationField = ({
   findNearbyStops = () => {},
   GeocodedOptionIconComponent = GeocodedOptionIcon,
   geocoderConfig,
+  geocoderResultsOrder = [
+    GeocoderResultsConstants.STATIONS,
+    GeocoderResultsConstants.STOPS,
+    GeocoderResultsConstants.OTHER
+  ],
   getCurrentPosition,
   hideExistingValue = false,
   initialSearchResults = null,
@@ -526,65 +687,6 @@ const LocationField = ({
       });
   };
 
-  const renderFeature = (itemIndex, feature) => {
-    // generate the friendly labels for this feature
-    const { main, secondary } = generateLabel(feature.properties);
-
-    // Create the selection handler
-    const locationSelected = () => {
-      getGeocoder(geocoderConfig)
-        .getLocationFromGeocodedFeature(feature)
-        .then(geocodedLocation => {
-          // add the friendly location labels for use later on
-          geocodedLocation.main = main;
-          geocodedLocation.secondary = secondary;
-          geocodedLocation.name = getCombinedLabel(feature.properties);
-          // Set the current location
-          setLocation(geocodedLocation, "GEOCODE");
-          // Add to the location search history. This is intended to
-          // populate the sessionSearches array.
-          addLocationSearch({ location: geocodedLocation });
-        });
-    };
-
-    // Add to the selection handler lookup (for use in onKeyDown)
-    locationSelectedLookup[itemIndex] = locationSelected;
-
-    // Extract GTFS/POI info and assign to class
-    const { id, layer, secondaryLabels, source } = feature.properties;
-    const classNames = [];
-    let operatorIcon;
-    // Operator only exists on transit features
-    const featureIdComponents = source === "transit" && id.split("::");
-    if (featureIdComponents.length > 1 && featureIdComponents?.[1].length > 0) {
-      const operatorName = featureIdComponents[1]
-        .replace(/ /g, "-")
-        .toLowerCase();
-      classNames.push(`operator-${operatorName}`);
-      operatorIcon = operatorIconMap[operatorName];
-    }
-
-    classNames.push(`source-${source}`);
-    classNames.push(`layer-${layer}`);
-
-    // Create and return the option menu item
-    return (
-      <Option
-        classes={classNames.join(" ")}
-        color={layerColorMap[layer]}
-        icon={operatorIcon || <GeocodedOptionIconComponent feature={feature} />}
-        id={getOptionId(itemIndex)}
-        isActive={itemIndex === activeIndex}
-        key={optionKey++}
-        onClick={locationSelected}
-        title={main}
-        subTitle={secondary}
-        secondaryLabels={secondaryLabels}
-        showSecondaryLabels={showSecondaryLabels}
-      />
-    );
-  };
-
   const message = stateMessage;
   const geocodedFeatures = stateGeocodedFeatures;
 
@@ -639,51 +741,92 @@ const LocationField = ({
       preferredLayers
     );
 
-    // If no categories of features are returned, this variable is used to
-    // avoid displaying headers
-    const transitFeaturesPresent =
-      stopFeatures.length > 0 || stationFeatures.length > 0;
+    // Create an array of results to display based on the geocoderResultsOrder
+    const featuresElementsArray = geocoderResultsOrder.map(result => {
+      let element;
+
+      const FeaturesElementProps = {
+        headingType,
+        itemIndex,
+        operatorIconMap,
+        setLocation,
+        addLocationSearch,
+        showSecondaryLabels,
+        locationSelectedLookup,
+        activeIndex,
+        GeocodedOptionIconComponent,
+        layerColorMap,
+        geocoderConfig
+      };
+      switch (result) {
+        case GeocoderResultsConstants.OTHER:
+          element = otherFeatures.length > 0 && (
+            <FeaturesElements
+              bgColor="#333"
+              features={otherFeatures}
+              headerMessage={
+                <FormattedMessage
+                  defaultMessage={defaultMessages["otpUi.LocationField.other"]}
+                  description="Text for header above the 'other' category of geocoder results"
+                  id="otpUi.LocationField.other"
+                />
+              }
+              key="other-header"
+              title="other"
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...FeaturesElementProps}
+            />
+          );
+          break;
+        case GeocoderResultsConstants.STATIONS:
+          element = stationFeatures.length > 0 && (
+            <FeaturesElements
+              bgColor={layerColorMap.stations}
+              features={stationFeatures}
+              headerMessage={
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.LocationField.stations"]
+                  }
+                  description="Text for header above the 'stations' category of geocoder results"
+                  id="otpUi.LocationField.stations"
+                />
+              }
+              key="gtfs-stations-header"
+              title="stations"
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...FeaturesElementProps}
+            />
+          );
+          break;
+        case GeocoderResultsConstants.STOPS:
+          element = stopFeatures.length > 0 && (
+            <FeaturesElements
+              bgColor={layerColorMap.stops}
+              features={stopFeatures}
+              headerMessage={
+                <FormattedMessage
+                  defaultMessage={defaultMessages["otpUi.LocationField.stops"]}
+                  description="Text for header above the 'stops' category of geocoder results"
+                  id="otpUi.LocationField.stops"
+                />
+              }
+              key="gtfs-stops-header"
+              title="stops"
+              // eslint-disable-next-line react/jsx-props-no-spreading
+              {...FeaturesElementProps}
+            />
+          );
+          break;
+        default:
+          element = null;
+          break;
+      }
+      return element;
+    });
 
     // Iterate through the geocoder results
-    menuItems = menuItems.concat(
-      stationFeatures.length > 0 && (
-        <S.MenuGroupHeader
-          as={headingType}
-          bgColor={layerColorMap.stations}
-          key="gtfs-stations-header"
-        >
-          <FormattedMessage
-            description="Text for header above Stations"
-            id="otpUi.LocationField.stations"
-          />
-        </S.MenuGroupHeader>
-      ),
-      stationFeatures.map(feature => renderFeature(itemIndex++, feature)),
-
-      stopFeatures.length > 0 && (
-        <S.MenuGroupHeader
-          as={headingType}
-          bgColor={layerColorMap.stops}
-          key="gtfs-stops-header"
-        >
-          <FormattedMessage
-            description="Text for header above Stops"
-            id="otpUi.LocationField.stops"
-          />
-        </S.MenuGroupHeader>
-      ),
-      stopFeatures.map(feature => renderFeature(itemIndex++, feature)),
-
-      transitFeaturesPresent && otherFeatures.length > 0 && (
-        <S.MenuGroupHeader as={headingType} bgColor="#333" key="other-header">
-          <FormattedMessage
-            description="Text for header above the 'other'"
-            id="otpUi.LocationField.other"
-          />
-        </S.MenuGroupHeader>
-      ),
-      otherFeatures.map(feature => renderFeature(itemIndex++, feature))
-    );
+    menuItems = menuItems.concat(featuresElementsArray);
   }
 
   /* 2) Process nearby transit stop options */
@@ -692,6 +835,7 @@ const LocationField = ({
     menuItems.push(
       <S.MenuGroupHeader as={headingType} key="ns-header">
         <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.LocationField.nearby"]}
           description="Text for header above nearby stops"
           id="otpUi.LocationField.nearby"
         />
@@ -711,9 +855,9 @@ const LocationField = ({
         };
 
         // Create the location selected handler
-        const locationSelected = () => {
+        const locationSelected = useCallback(() => {
           setLocation(stopLocation, "STOP");
-        };
+        }, []);
 
         // Add to the selection handler lookup (for use in onKeyDown)
         locationSelectedLookup[itemIndex] = locationSelected;
@@ -741,6 +885,9 @@ const LocationField = ({
     menuItems.push(
       <S.MenuGroupHeader as={headingType} key="ss-header">
         <FormattedMessage
+          defaultMessage={
+            defaultMessages["otpUi.LocationField.recentlySearched"]
+          }
           description="Text for header above recently searched items"
           id="otpUi.LocationField.recentlySearched"
         />
@@ -751,9 +898,9 @@ const LocationField = ({
     menuItems = menuItems.concat(
       sessionSearches.map(sessionLocation => {
         // Create the location-selected handler
-        const locationSelected = () => {
+        const locationSelected = useCallback(() => {
           setLocation(sessionLocation, "SESSION");
-        };
+        }, []);
 
         // Add to the selection handler lookup (for use in onKeyDown)
         locationSelectedLookup[itemIndex] = locationSelected;
@@ -782,6 +929,7 @@ const LocationField = ({
     menuItems.push(
       <S.MenuGroupHeader as={headingType} key="mp-header">
         <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.LocationField.myPlaces"]}
           description="Text for header above user-saved places"
           id="otpUi.LocationField.myPlaces"
         />
@@ -969,7 +1117,9 @@ const LocationField = ({
           ) : (
             <S.MenuGroupHeader as="div">
               <FormattedMessage
-                defaultMessage="Begin typing to search for locations"
+                defaultMessage={
+                  defaultMessages["otpUi.LocationField.beginTypingPrompt"]
+                }
                 description="Text to show as initial placeholder in location search field"
                 id="otpUi.LocationField.beginTypingPrompt"
               />
