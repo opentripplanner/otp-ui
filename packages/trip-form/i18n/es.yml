@@ -21,7 +21,7 @@ otpUi:
       carTolerance-label: Tolerancia para el coche
       carTolerance-labelHigh: Más coche
       carTolerance-labelLow: Menos coche
-      ferry-label: Ferri
+      ferry-label: Transbordador
       rail-label: Tren
       subway-label: Metro
       tram-label: Tranvía
