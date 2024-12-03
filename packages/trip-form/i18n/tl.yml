@@ -12,7 +12,7 @@ otpUi:
       car: Nagmamaneho
       rent: Magrenta
       transit: Pampublikong Transportasyon
-      walk: Naglalakad
+      walk: Paglalakad
     settings:
       bikeTolerance-label: Tolerance sa Pagbibisikleta
       bikeTolerance-labelHigh: Mas Maraming Pagbibisikleta
