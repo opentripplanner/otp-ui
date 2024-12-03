@@ -12,7 +12,7 @@ otpUi:
       car: Coche
       rent: Alquiler
       transit: Transportes
-      walk: Caminar
+      walk: Andar
     settings:
       bikeTolerance-label: Tolerancia para la bicicleta
       bikeTolerance-labelHigh: Más bicicleta
