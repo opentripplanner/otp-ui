@@ -201,7 +201,7 @@ interface ItineraryBodySharedProps {
   setViewedTrip: SetViewedTripFunction;
   /** If true, will show agency information in transit legs */
   showAgencyInfo?: boolean;
-  /** If true, will show the effect date/time text in the alert body */
+  /** If false, will not show the effective as of date/time text in the alert body */
   showAlertEffectiveDateTimeText?: boolean;
   /** Whether to prefix non transit legs with 'About' text */
   showApproximateAccessLegTravelTimes?: boolean;

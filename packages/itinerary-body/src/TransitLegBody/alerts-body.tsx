@@ -107,9 +107,9 @@ export default function AlertsBody({
                   <S.TransitAlertHeader>{header}</S.TransitAlertHeader>
                 )}
                 <S.TransitAlertBody>{description}</S.TransitAlertBody>
-                <S.TransitAlertEffectiveDate>
-                  {showAlertEffectiveDateTimeText &&
-                    (Math.abs(dayDiff) <= 1 ? (
+                {showAlertEffectiveDateTimeText && (
+                  <S.TransitAlertEffectiveDate>
+                    {Math.abs(dayDiff) <= 1 ? (
                       <FormattedMessage
                         defaultMessage={
                           defaultMessages[
@@ -136,40 +136,44 @@ export default function AlertsBody({
                           dateTime: effectiveStartDate * 1000
                         }}
                       />
-                    ))}
-                  {alertUrl?.trim() && (
-                    <S.TransitAlertExternalLink href={alertUrl} target="_blank">
-                      <ExternalLinkAlt height={10} />
-                      {agencyName ? (
-                        <FormattedMessage
-                          defaultMessage={
-                            defaultMessages[
-                              "otpUi.TransitLegBody.AlertsBody.alertLinkText"
-                            ]
-                          }
-                          description="Describes how link directs to agency website"
-                          id="otpUi.TransitLegBody.AlertsBody.alertLinkText"
-                          values={{ agency: agencyName }}
-                        />
-                      ) : (
-                        <FormattedMessage
-                          defaultMessage={
-                            defaultMessages[
-                              "otpUi.TransitLegBody.AlertsBody.noAgencyAlertLinkText"
-                            ]
-                          }
-                          description="Describes how link directs to agency website, but does not name agency"
-                          id="otpUi.TransitLegBody.AlertsBody.noAgencyAlertLinkText"
-                        />
-                      )}
+                    )}
+                    {alertUrl?.trim() && (
+                      <S.TransitAlertExternalLink
+                        href={alertUrl}
+                        target="_blank"
+                      >
+                        <ExternalLinkAlt height={10} />
+                        {agencyName ? (
+                          <FormattedMessage
+                            defaultMessage={
+                              defaultMessages[
+                                "otpUi.TransitLegBody.AlertsBody.alertLinkText"
+                              ]
+                            }
+                            description="Describes how link directs to agency website"
+                            id="otpUi.TransitLegBody.AlertsBody.alertLinkText"
+                            values={{ agency: agencyName }}
+                          />
+                        ) : (
+                          <FormattedMessage
+                            defaultMessage={
+                              defaultMessages[
+                                "otpUi.TransitLegBody.AlertsBody.noAgencyAlertLinkText"
+                              ]
+                            }
+                            description="Describes how link directs to agency website, but does not name agency"
+                            id="otpUi.TransitLegBody.AlertsBody.noAgencyAlertLinkText"
+                          />
+                        )}
 
-                      <S.InvisibleAdditionalDetails>
-                        {" "}
-                        <FormattedMessage id="otpUi.TransitLegBody.AlertsBody.linkOpensNewWindow" />
-                      </S.InvisibleAdditionalDetails>
-                    </S.TransitAlertExternalLink>
-                  )}
-                </S.TransitAlertEffectiveDate>
+                        <S.InvisibleAdditionalDetails>
+                          {" "}
+                          <FormattedMessage id="otpUi.TransitLegBody.AlertsBody.linkOpensNewWindow" />
+                        </S.InvisibleAdditionalDetails>
+                      </S.TransitAlertExternalLink>
+                    )}
+                  </S.TransitAlertEffectiveDate>
+                )}
               </S.TransitAlert>
             );
           }
