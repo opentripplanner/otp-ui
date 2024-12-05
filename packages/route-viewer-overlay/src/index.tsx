@@ -128,6 +128,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
             bounds || new LngLatBounds(coordsArray[0], coordsArray[0])
           );
         } else if (geoJson?.type === "GeometryCollection") {
+          // @ts-expect-error geoJson in this case is not a Polygon! See check above
           const { geometries } = geoJson;
           geometries.forEach(geometry => {
             let { coordinates } = geometry;
