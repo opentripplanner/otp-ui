@@ -15,6 +15,7 @@ interface Props {
   agencyName?: string;
   alerts: Alert[];
   AlertIcon?: FunctionComponent;
+  showAlertEffectiveDateTimeText?: boolean;
   timeZone?: string;
 }
 
@@ -67,6 +68,7 @@ export default function AlertsBody({
   agencyName,
   alerts,
   AlertIcon = S.DefaultAlertBodyIcon,
+  showAlertEffectiveDateTimeText = true,
   timeZone = getUserTimezone()
 }: Props): ReactElement {
   if (typeof alerts !== "object") return null;
@@ -105,68 +107,73 @@ export default function AlertsBody({
                   <S.TransitAlertHeader>{header}</S.TransitAlertHeader>
                 )}
                 <S.TransitAlertBody>{description}</S.TransitAlertBody>
-                <S.TransitAlertEffectiveDate>
-                  {Math.abs(dayDiff) <= 1 ? (
-                    <FormattedMessage
-                      defaultMessage={
-                        defaultMessages[
-                          "otpUi.TransitLegBody.AlertsBody.effectiveTimeAndDate"
-                        ]
-                      }
-                      description="Text with the time and date an alert takes effect"
-                      id="otpUi.TransitLegBody.AlertsBody.effectiveTimeAndDate"
-                      values={{
-                        dateTime: effectiveStartDate * 1000,
-                        day: <AlertDay dayDiff={dayDiff} />
-                      }}
-                    />
-                  ) : (
-                    <FormattedMessage
-                      defaultMessage={
-                        defaultMessages[
-                          "otpUi.TransitLegBody.AlertsBody.effectiveDate"
-                        ]
-                      }
-                      description="Text with the date an alert takes effect"
-                      id="otpUi.TransitLegBody.AlertsBody.effectiveDate"
-                      values={{
-                        dateTime: effectiveStartDate * 1000
-                      }}
-                    />
-                  )}
-                  {alertUrl?.trim() && (
-                    <S.TransitAlertExternalLink href={alertUrl} target="_blank">
-                      <ExternalLinkAlt height={10} />
-                      {agencyName ? (
-                        <FormattedMessage
-                          defaultMessage={
-                            defaultMessages[
-                              "otpUi.TransitLegBody.AlertsBody.alertLinkText"
-                            ]
-                          }
-                          description="Describes how link directs to agency website"
-                          id="otpUi.TransitLegBody.AlertsBody.alertLinkText"
-                          values={{ agency: agencyName }}
-                        />
-                      ) : (
-                        <FormattedMessage
-                          defaultMessage={
-                            defaultMessages[
-                              "otpUi.TransitLegBody.AlertsBody.noAgencyAlertLinkText"
-                            ]
-                          }
-                          description="Describes how link directs to agency website, but does not name agency"
-                          id="otpUi.TransitLegBody.AlertsBody.noAgencyAlertLinkText"
-                        />
-                      )}
+                {showAlertEffectiveDateTimeText && (
+                  <S.TransitAlertEffectiveDate>
+                    {Math.abs(dayDiff) <= 1 ? (
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages[
+                            "otpUi.TransitLegBody.AlertsBody.effectiveTimeAndDate"
+                          ]
+                        }
+                        description="Text with the time and date an alert takes effect"
+                        id="otpUi.TransitLegBody.AlertsBody.effectiveTimeAndDate"
+                        values={{
+                          dateTime: effectiveStartDate * 1000,
+                          day: <AlertDay dayDiff={dayDiff} />
+                        }}
+                      />
+                    ) : (
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages[
+                            "otpUi.TransitLegBody.AlertsBody.effectiveDate"
+                          ]
+                        }
+                        description="Text with the date an alert takes effect"
+                        id="otpUi.TransitLegBody.AlertsBody.effectiveDate"
+                        values={{
+                          dateTime: effectiveStartDate * 1000
+                        }}
+                      />
+                    )}
+                    {alertUrl?.trim() && (
+                      <S.TransitAlertExternalLink
+                        href={alertUrl}
+                        target="_blank"
+                      >
+                        <ExternalLinkAlt height={10} />
+                        {agencyName ? (
+                          <FormattedMessage
+                            defaultMessage={
+                              defaultMessages[
+                                "otpUi.TransitLegBody.AlertsBody.alertLinkText"
+                              ]
+                            }
+                            description="Describes how link directs to agency website"
+                            id="otpUi.TransitLegBody.AlertsBody.alertLinkText"
+                            values={{ agency: agencyName }}
+                          />
+                        ) : (
+                          <FormattedMessage
+                            defaultMessage={
+                              defaultMessages[
+                                "otpUi.TransitLegBody.AlertsBody.noAgencyAlertLinkText"
+                              ]
+                            }
+                            description="Describes how link directs to agency website, but does not name agency"
+                            id="otpUi.TransitLegBody.AlertsBody.noAgencyAlertLinkText"
+                          />
+                        )}
 
-                      <S.InvisibleAdditionalDetails>
-                        {" "}
-                        <FormattedMessage id="otpUi.TransitLegBody.AlertsBody.linkOpensNewWindow" />
-                      </S.InvisibleAdditionalDetails>
-                    </S.TransitAlertExternalLink>
-                  )}
-                </S.TransitAlertEffectiveDate>
+                        <S.InvisibleAdditionalDetails>
+                          {" "}
+                          <FormattedMessage id="otpUi.TransitLegBody.AlertsBody.linkOpensNewWindow" />
+                        </S.InvisibleAdditionalDetails>
+                      </S.TransitAlertExternalLink>
+                    )}
+                  </S.TransitAlertEffectiveDate>
+                )}
               </S.TransitAlert>
             );
           }

@@ -61,6 +61,7 @@ interface StoryWrapperProps {
   defaultFareSelector?: FareProductSelector;
   hideDrivingDirections?: boolean;
   itinerary: Itinerary;
+  showAlertEffectiveDateTimeText?: boolean;
   showApproximateAccessLegTravelTimes?: boolean;
   TimeColumnContent?: FunctionComponent<TimeColumnContentProps>;
 }
@@ -70,6 +71,7 @@ function OtpRRItineraryBodyWrapper({
   defaultFareSelector,
   hideDrivingDirections = false,
   itinerary,
+  showAlertEffectiveDateTimeText = true,
   showApproximateAccessLegTravelTimes = false,
   TimeColumnContent
 }: StoryWrapperProps): ReactElement {
@@ -84,6 +86,7 @@ function OtpRRItineraryBodyWrapper({
       PlaceName={OtpRRPlaceName}
       RouteDescription={OtpRRRouteDescription}
       showAgencyInfo
+      showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
       showApproximateAccessLegTravelTimes={showApproximateAccessLegTravelTimes}
       showLegIcon
       showMapButtonColumn={false}
@@ -262,4 +265,11 @@ export const ApproximatePrefixItinerary = (): ReactElement => (
 
 export const TransferLegItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={transferLegItinerary} />
+);
+
+export const AlertNoEffectiveAsOfItinerary = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkItinerary}
+    showAlertEffectiveDateTimeText={false}
+  />
 );

@@ -40,6 +40,7 @@ export default function PlaceRow({
   setLegDiagram,
   setViewedTrip,
   showAgencyInfo,
+  showAlertEffectiveDateTimeText,
   showApproximateAccessLegTravelTimes,
   showElevationProfile,
   showLegIcon,
@@ -158,6 +159,7 @@ export default function PlaceRow({
               setActiveLeg={setActiveLeg}
               setViewedTrip={setViewedTrip}
               showAgencyInfo={showAgencyInfo}
+              showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
               showViewTripButton={showViewTripButton}
               timeZone={config.homeTimezone}
               TransitLegSubheader={TransitLegSubheader}
