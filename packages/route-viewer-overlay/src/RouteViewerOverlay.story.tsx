@@ -6,6 +6,7 @@ import routeDataOtp2 from "../__mocks__/mock-route-otp2.json";
 import flexRouteData from "../__mocks__/mock-flex-route.json";
 import flexRouteData2 from "../__mocks__/mock-flex-route2.json";
 import flexRouteData3 from "../__mocks__/mock-flex-route3.json";
+import flexRouteData4 from "../__mocks__/mock-flex-route4.json";
 
 import StopsOverlay from "../../stops-overlay/src";
 import { withMap } from "../../../.storybook/base-map-wrapper";
@@ -143,4 +144,9 @@ FlexRoute3.args = {
     />
   ),
   routeData: flexRouteData3
+};
+
+export const FlexMultiPolygonRoute = Template.bind({});
+FlexMultiPolygonRoute.args = {
+  routeData: flexRouteData4
 };
