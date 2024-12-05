@@ -58,10 +58,11 @@ const TriMetStyled = styled.div`
       text-decoration: underline;
     }
   }
+  ${TripFormClasses.DateTimeSelector} {
+    max-width: 550px;
+  }
   ${TripFormClasses.DateTimeSelector.DateTimeRow} {
-    margin: 15px 0px;
     input {
-      padding: 6px 12px;
       text-align: center;
       font-size: inherit;
       font-family: inherit;
