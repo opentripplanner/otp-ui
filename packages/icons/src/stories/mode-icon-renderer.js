@@ -9,6 +9,7 @@ const exampleModes = [
   "CAR",
   "CAR_PARK",
   "FERRY",
+  "FLEX",
   "GONDOLA",
   "MICROMOBILITY",
   "MICROMOBILITY_RENT",

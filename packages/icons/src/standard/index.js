@@ -5,6 +5,7 @@ import StandardRail from "./standard-rail";
 import StandardStreetcar from "./standard-streetcar";
 import StandardTram from "./standard-tram";
 import StandardWalk from "./standard-walk";
+import StandardFlex from "./standard-flex";
 
 export {
   StandardBike,
@@ -13,5 +14,6 @@ export {
   StandardRail,
   StandardStreetcar,
   StandardTram,
-  StandardWalk
+  StandardWalk,
+  StandardFlex
 };
