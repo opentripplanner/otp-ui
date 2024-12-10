@@ -71,6 +71,7 @@ otpUi:
       car: Sasakyan
       escooter: E-scooter
       vehicle: Sasakyan
+    transfer: Paglilipat{duration, select, undefined {} other {, wait {duration}}}
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} (na) minuto"
@@ -91,6 +92,8 @@ otpUi:
       likelyAccessible: malamang na naa-access
       unclear: hindi alam
     viewOnMap: Tingnan sa mapa
+    flexAdvanceNotice: ' kahit na mas maaga nang {leadDays, plural, one {# day} other
+      {# days}}'
   TransitLegBody:
     AlertsBody:
       effectiveDate: May bisa simula {dateTime, date, long}
@@ -98,6 +101,9 @@ otpUi:
       today: Ngayong Araw
       tomorrow: Bukas
       yesterday: Kahapon
+      alertLinkText: Tingnan ang alerto sa website ng {agency}
+      linkOpensNewWindow: (Magbubukas sa bagong window)
+      noAgencyAlertLinkText: Tingnan ang alerto sa website ng ahensya
     agencyExternalLink: "{agencyName} (External na Link)"
     alertsHeader: "{alertCount, plural, =1 {# alert} other {# alerts}}"
     arriveAt: Darating nang {place}
