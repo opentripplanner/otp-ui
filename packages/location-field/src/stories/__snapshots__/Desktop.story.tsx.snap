@@ -40,6 +40,7 @@ exports[`LocationField/Desktop Context AutoFocusWithMultipleControls smoke-test 
            aria-label="Select from location"
            aria-required="false"
            class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+           spellcheck="false"
            placeholder="Select from location"
            role="combobox"
            value
@@ -92,6 +93,7 @@ exports[`LocationField/Desktop Context Blank smoke-test 1`] = `
          aria-label="Select from location"
          aria-required="false"
          class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
          placeholder="Select from location"
          role="combobox"
          value
@@ -143,6 +145,7 @@ exports[`LocationField/Desktop Context GeocoderNoResults smoke-test 1`] = `
          aria-label="Select from location"
          aria-required="false"
          class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
          placeholder="Select from location"
          role="combobox"
          value
@@ -194,6 +197,7 @@ exports[`LocationField/Desktop Context GeocoderUnreachable smoke-test 1`] = `
          aria-label="Select from location"
          aria-required="false"
          class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
          placeholder="Select from location"
          role="combobox"
          value
@@ -245,6 +249,7 @@ exports[`LocationField/Desktop Context HereGeocoder smoke-test 1`] = `
          aria-label="Select from location"
          aria-required="false"
          class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
          placeholder="Select from location"
          role="combobox"
          value
@@ -296,6 +301,7 @@ exports[`LocationField/Desktop Context LocationUnavailable smoke-test 1`] = `
          aria-label="Select from location"
          aria-required="false"
          class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
          placeholder="Select from location"
          role="combobox"
          value
@@ -354,6 +360,7 @@ exports[`LocationField/Desktop Context NoAutoFocusWithMultipleControls smoke-tes
            aria-label="Select from location"
            aria-required="false"
            class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+           spellcheck="false"
            placeholder="Select from location"
            role="combobox"
            value
@@ -406,6 +413,7 @@ exports[`LocationField/Desktop Context RequiredAndInvalidState smoke-test 1`] = 
          aria-label="Select from location"
          aria-required="true"
          class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
          placeholder="Select from location"
          role="combobox"
          value
@@ -457,6 +465,7 @@ exports[`LocationField/Desktop Context SelectedLocation smoke-test 1`] = `
          aria-label="to"
          aria-required="false"
          class="styled__Input-sc-xahsq2-6 naPtq to-form-control"
+         spellcheck="false"
          placeholder="to"
          role="combobox"
          value="123 Main St"
@@ -526,6 +535,7 @@ exports[`LocationField/Desktop Context SelectedLocationCustomClear smoke-test 1`
          aria-label="to"
          aria-required="false"
          class="styled__Input-sc-xahsq2-6 naPtq to-form-control"
+         spellcheck="false"
          placeholder="to"
          role="combobox"
          value="123 Main St"
@@ -595,6 +605,7 @@ exports[`LocationField/Desktop Context SlowGeocoder smoke-test 1`] = `
          aria-label="Select from location"
          aria-required="false"
          class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
          placeholder="Select from location"
          role="combobox"
          value
@@ -646,6 +657,7 @@ exports[`LocationField/Desktop Context WithBadApiKeyHandlesBadAutocomplete smoke
          aria-label="Select from location"
          aria-required="false"
          class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
          placeholder="Select from location"
          role="combobox"
          value
@@ -697,6 +709,7 @@ exports[`LocationField/Desktop Context WithCustomResultColorsAndIcons smoke-test
          aria-label="Select from location"
          aria-required="false"
          class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
          placeholder="Select from location"
          role="combobox"
          value
@@ -748,6 +761,7 @@ exports[`LocationField/Desktop Context WithCustomResultsOrder smoke-test 1`] = `
          aria-label="Select from location"
          aria-required="false"
          class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
          placeholder="Select from location"
          role="combobox"
          value
@@ -1078,6 +1092,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
          aria-label="Select from location"
          aria-required="false"
          class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
          placeholder="Select from location"
          role="combobox"
          value
@@ -1408,6 +1423,7 @@ exports[`LocationField/Desktop Context WithUserSettings smoke-test 1`] = `
          aria-label="Select from location"
          aria-required="false"
          class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
          placeholder="Select from location"
          role="combobox"
          value
