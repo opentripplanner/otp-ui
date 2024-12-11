@@ -1,6 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { FareProductSelector } from "@opentripplanner/types";
-import React, { ReactElement } from "react";
+import React, { ReactElement, ReactNode } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
 import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
@@ -24,7 +24,7 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
-function CO2DescriptionLink(contents: ReactElement): ReactElement {
+function CO2DescriptionLink(contents: ReactNode): ReactElement {
   return (
     <a
       href="https://www.itf-oecd.org/sites/default/files/life-cycle-assessment-calculations-2020.xlsx"
