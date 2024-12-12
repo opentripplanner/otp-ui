@@ -5,7 +5,7 @@ import { Alert } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
-import { ExternalLinkAlt } from "@styled-icons/fa-solid";
+import { ExternalLinkAlt } from "@styled-icons/fa-solid/ExternalLinkAlt";
 import * as S from "../styled";
 import { defaultMessages } from "../util";
 
