@@ -23,3 +23,4 @@ otpUi:
     suggestedLocationsLong: 顯示/不顯示建議位置清單
     useCurrentLocation: 使用目前位置
     workLocation: 工作
+    geocoderUnreachable: 無法獲取建議
