@@ -1044,6 +1044,7 @@ const LocationField = ({
       className={formControlClassname}
       onChange={onTextInputChange}
       onClick={handleTextInputClick}
+      spellCheck={false}
       onKeyDown={onKeyDown}
       placeholder={placeholder}
       ref={inputRef}
