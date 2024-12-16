@@ -1,0 +1,1909 @@
+{
+  "id": "6:68456f6e-2a04-4fcb-971b-fd57348e2ed7",
+  "desc": "The Current serving the Port of Vancouver",
+  "agency": {
+    "id": "6:a8b6ef46-7d4d-45f8-8200-cf4f5ce9d5a6",
+    "name": "C-TRAN",
+    "url": "https://www.ridethecurrent.com",
+    "timezone": "US/Pacific",
+    "lang": null,
+    "phone": null
+  },
+  "bikesAllowed": "NO_INFORMATION",
+  "color": null,
+  "longName": "Port of Vancouver",
+  "mode": "BUS",
+  "routeBikesAllowed": "NO_INFORMATION",
+  "shortName": null,
+  "sortOrder": null,
+  "textColor": null,
+  "type": 3,
+  "url": null,
+  "patterns": [
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MTA",
+      "headsign": null,
+      "name": "Port of Vancouver to Port of Vancouver Downtown Stops (6:location_group_id__50bf4e79-9a4b-48c1-a74f-d4c8308929e6) from Port of Vancouver Downtown Stops (6:location_group_id__50bf4e79-9a4b-48c1-a74f-d4c8308929e6)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_group_id__50bf4e79-9a4b-48c1-a74f-d4c8308929e6",
+          "lat": 45.6318553,
+          "lon": -122.6716338,
+          "name": "Port of Vancouver Downtown Stops",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.670448, 45.639679]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.670418, 45.630688]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.672848, 45.626214]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.672821, 45.63084]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MTE",
+      "headsign": null,
+      "name": "Port of Vancouver to Vancouver Amtrak (6:location_group_id__c94387e3-1ac2-412e-8371-a2646b3d037e) from Port of Vancouver Downtown Stops (6:location_group_id__50bf4e79-9a4b-48c1-a74f-d4c8308929e6)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_group_id__50bf4e79-9a4b-48c1-a74f-d4c8308929e6",
+          "lat": 45.6318553,
+          "lon": -122.6716338,
+          "name": "Port of Vancouver Downtown Stops",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.670448, 45.639679]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.670418, 45.630688]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.672848, 45.626214]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.672821, 45.63084]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        },
+        {
+          "code": null,
+          "id": "6:location_group_id__c94387e3-1ac2-412e-8371-a2646b3d037e",
+          "lat": 45.6289266,
+          "lon": -122.6865306,
+          "name": "Vancouver Amtrak",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.686531, 45.628927]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MDE",
+      "headsign": null,
+      "name": "Port of Vancouver to Port of Vancouver Industrial Area Stops (6:location_group_id__af8ed7b5-0db2-4872-b8e1-c9ca6922d39b) from Port of Vancouver Industrial Area Stops (6:location_group_id__af8ed7b5-0db2-4872-b8e1-c9ca6922d39b)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_group_id__af8ed7b5-0db2-4872-b8e1-c9ca6922d39b",
+          "lat": 45.6435864,
+          "lon": -122.7115801,
+          "name": "Port of Vancouver Industrial Area Stops",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.736633, 45.653201]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.687039, 45.63111]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.71928, 45.649042]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.692534, 45.633123]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.724544, 45.647166]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.699305, 45.640868]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.727142, 45.645845]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.703575, 45.643755]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.714167, 45.648168]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MTI",
+      "headsign": null,
+      "name": "Port of Vancouver to Port of Vancouver Downtown Stops (6:location_group_id__50bf4e79-9a4b-48c1-a74f-d4c8308929e6) from Vancouver Amtrak (6:location_group_id__c94387e3-1ac2-412e-8371-a2646b3d037e)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_group_id__c94387e3-1ac2-412e-8371-a2646b3d037e",
+          "lat": 45.6289266,
+          "lon": -122.6865306,
+          "name": "Vancouver Amtrak",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.686531, 45.628927]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        },
+        {
+          "code": null,
+          "id": "6:location_group_id__50bf4e79-9a4b-48c1-a74f-d4c8308929e6",
+          "lat": 45.6318553,
+          "lon": -122.6716338,
+          "name": "Port of Vancouver Downtown Stops",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.670448, 45.639679]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.670418, 45.630688]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.672848, 45.626214]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.672821, 45.63084]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MDI",
+      "headsign": null,
+      "name": "Port of Vancouver to Port of Vancouver (6:location_id__11f830d0-adec-468a-a8d6-513184e476a1) from Port of Vancouver Downtown Stops (6:location_group_id__50bf4e79-9a4b-48c1-a74f-d4c8308929e6)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_group_id__50bf4e79-9a4b-48c1-a74f-d4c8308929e6",
+          "lat": 45.6318553,
+          "lon": -122.6716338,
+          "name": "Port of Vancouver Downtown Stops",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.670448, 45.639679]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.670418, 45.630688]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.672848, 45.626214]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.672821, 45.63084]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        },
+        {
+          "code": null,
+          "id": "6:location_id__11f830d0-adec-468a-a8d6-513184e476a1",
+          "lat": 45.6417213,
+          "lon": -122.6969768,
+          "name": "Port of Vancouver",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "MultiPolygon",
+              "coordinates": [
+                [
+                  [
+                    [-122.719479, 45.650185],
+                    [-122.715818, 45.649031],
+                    [-122.719476, 45.65019],
+                    [-122.719479, 45.650185]
+                  ]
+                ],
+                [
+                  [
+                    [-122.708632, 45.646752],
+                    [-122.705435, 45.645644],
+                    [-122.703692, 45.644023],
+                    [-122.702514, 45.642899],
+                    [-122.70185, 45.642219],
+                    [-122.701122, 45.641801],
+                    [-122.69994, 45.641302],
+                    [-122.699567, 45.64111],
+                    [-122.699255, 45.641024],
+                    [-122.698996, 45.64077],
+                    [-122.699675, 45.638726],
+                    [-122.700015, 45.638199],
+                    [-122.699761, 45.637973],
+                    [-122.697965, 45.636874],
+                    [-122.695551, 45.635147],
+                    [-122.694344, 45.634264],
+                    [-122.693377, 45.633711],
+                    [-122.692352, 45.633505],
+                    [-122.691688, 45.633473],
+                    [-122.691691, 45.633358],
+                    [-122.691606, 45.633413],
+                    [-122.691428, 45.633408],
+                    [-122.691375, 45.633361],
+                    [-122.691117, 45.633376],
+                    [-122.690862, 45.633373],
+                    [-122.690369, 45.633373],
+                    [-122.689391, 45.633371],
+                    [-122.688403, 45.633311],
+                    [-122.68779, 45.633071],
+                    [-122.687364, 45.632747],
+                    [-122.687191, 45.632214],
+                    [-122.686875, 45.631215],
+                    [-122.68684, 45.631007],
+                    [-122.68673, 45.630514],
+                    [-122.686684, 45.630261],
+                    [-122.686688, 45.630123],
+                    [-122.686886, 45.629441],
+                    [-122.687573, 45.628418],
+                    [-122.688648, 45.627569],
+                    [-122.688372, 45.627339],
+                    [-122.690801, 45.624915],
+                    [-122.696311, 45.628114],
+                    [-122.690784, 45.624885],
+                    [-122.688001, 45.627639],
+                    [-122.686628, 45.628453],
+                    [-122.685488, 45.628729],
+                    [-122.686649, 45.628467],
+                    [-122.687883, 45.627729],
+                    [-122.687986, 45.627828],
+                    [-122.687553, 45.628309],
+                    [-122.686969, 45.629059],
+                    [-122.68664, 45.62977],
+                    [-122.686546, 45.630771],
+                    [-122.686593, 45.63214],
+                    [-122.686131, 45.632206],
+                    [-122.685595, 45.631318],
+                    [-122.681942, 45.628021],
+                    [-122.681931, 45.628016],
+                    [-122.685595, 45.631329],
+                    [-122.686247, 45.632407],
+                    [-122.686635, 45.633633],
+                    [-122.687349, 45.64035],
+                    [-122.694419, 45.64035],
+                    [-122.69709, 45.640732],
+                    [-122.69635, 45.643548],
+                    [-122.698361, 45.643768],
+                    [-122.697003, 45.648365],
+                    [-122.70284, 45.651208],
+                    [-122.705123, 45.652732],
+                    [-122.707958, 45.646539],
+                    [-122.708632, 45.646752]
+                  ]
+                ],
+                [
+                  [
+                    [-122.706517, 45.633929],
+                    [-122.703415, 45.632239],
+                    [-122.703563, 45.632325],
+                    [-122.706517, 45.633929]
+                  ]
+                ],
+                [
+                  [
+                    [-122.693012, 45.633338],
+                    [-122.692965, 45.633329],
+                    [-122.692633, 45.63333],
+                    [-122.692569, 45.633335],
+                    [-122.693012, 45.633338]
+                  ]
+                ],
+                [
+                  [
+                    [-122.685416, 45.628746],
+                    [-122.684258, 45.62877],
+                    [-122.68299, 45.628516],
+                    [-122.683025, 45.628533],
+                    [-122.684239, 45.628776],
+                    [-122.685397, 45.62875],
+                    [-122.685416, 45.628746]
+                  ]
+                ]
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MTM",
+      "headsign": null,
+      "name": "Port of Vancouver to Vancouver Amtrak (6:location_group_id__c94387e3-1ac2-412e-8371-a2646b3d037e) from Vancouver Amtrak (6:location_group_id__c94387e3-1ac2-412e-8371-a2646b3d037e)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_group_id__c94387e3-1ac2-412e-8371-a2646b3d037e",
+          "lat": 45.6289266,
+          "lon": -122.6865306,
+          "name": "Vancouver Amtrak",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.686531, 45.628927]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MDM",
+      "headsign": null,
+      "name": "Port of Vancouver to Vancouver Amtrak (6:location_group_id__c94387e3-1ac2-412e-8371-a2646b3d037e) from Port of Vancouver Industrial Area Stops (6:location_group_id__af8ed7b5-0db2-4872-b8e1-c9ca6922d39b)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_group_id__af8ed7b5-0db2-4872-b8e1-c9ca6922d39b",
+          "lat": 45.6435864,
+          "lon": -122.7115801,
+          "name": "Port of Vancouver Industrial Area Stops",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.736633, 45.653201]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.687039, 45.63111]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.71928, 45.649042]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.692534, 45.633123]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.724544, 45.647166]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.699305, 45.640868]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.727142, 45.645845]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.703575, 45.643755]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.714167, 45.648168]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        },
+        {
+          "code": null,
+          "id": "6:location_group_id__c94387e3-1ac2-412e-8371-a2646b3d037e",
+          "lat": 45.6289266,
+          "lon": -122.6865306,
+          "name": "Vancouver Amtrak",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.686531, 45.628927]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MTQ",
+      "headsign": null,
+      "name": "Port of Vancouver to Port of Vancouver Industrial Area Stops (6:location_group_id__af8ed7b5-0db2-4872-b8e1-c9ca6922d39b) from Port of Vancouver Downtown Stops (6:location_group_id__50bf4e79-9a4b-48c1-a74f-d4c8308929e6)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_group_id__50bf4e79-9a4b-48c1-a74f-d4c8308929e6",
+          "lat": 45.6318553,
+          "lon": -122.6716338,
+          "name": "Port of Vancouver Downtown Stops",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.670448, 45.639679]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.670418, 45.630688]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.672848, 45.626214]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.672821, 45.63084]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        },
+        {
+          "code": null,
+          "id": "6:location_group_id__af8ed7b5-0db2-4872-b8e1-c9ca6922d39b",
+          "lat": 45.6435864,
+          "lon": -122.7115801,
+          "name": "Port of Vancouver Industrial Area Stops",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.736633, 45.653201]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.687039, 45.63111]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.71928, 45.649042]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.692534, 45.633123]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.724544, 45.647166]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.699305, 45.640868]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.727142, 45.645845]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.703575, 45.643755]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.714167, 45.648168]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MDQ",
+      "headsign": null,
+      "name": "Port of Vancouver to Port of Vancouver Industrial Area Stops (6:location_group_id__af8ed7b5-0db2-4872-b8e1-c9ca6922d39b) from Port of Vancouver (6:location_id__11f830d0-adec-468a-a8d6-513184e476a1)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_id__11f830d0-adec-468a-a8d6-513184e476a1",
+          "lat": 45.6417213,
+          "lon": -122.6969768,
+          "name": "Port of Vancouver",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "MultiPolygon",
+              "coordinates": [
+                [
+                  [
+                    [-122.719479, 45.650185],
+                    [-122.715818, 45.649031],
+                    [-122.719476, 45.65019],
+                    [-122.719479, 45.650185]
+                  ]
+                ],
+                [
+                  [
+                    [-122.708632, 45.646752],
+                    [-122.705435, 45.645644],
+                    [-122.703692, 45.644023],
+                    [-122.702514, 45.642899],
+                    [-122.70185, 45.642219],
+                    [-122.701122, 45.641801],
+                    [-122.69994, 45.641302],
+                    [-122.699567, 45.64111],
+                    [-122.699255, 45.641024],
+                    [-122.698996, 45.64077],
+                    [-122.699675, 45.638726],
+                    [-122.700015, 45.638199],
+                    [-122.699761, 45.637973],
+                    [-122.697965, 45.636874],
+                    [-122.695551, 45.635147],
+                    [-122.694344, 45.634264],
+                    [-122.693377, 45.633711],
+                    [-122.692352, 45.633505],
+                    [-122.691688, 45.633473],
+                    [-122.691691, 45.633358],
+                    [-122.691606, 45.633413],
+                    [-122.691428, 45.633408],
+                    [-122.691375, 45.633361],
+                    [-122.691117, 45.633376],
+                    [-122.690862, 45.633373],
+                    [-122.690369, 45.633373],
+                    [-122.689391, 45.633371],
+                    [-122.688403, 45.633311],
+                    [-122.68779, 45.633071],
+                    [-122.687364, 45.632747],
+                    [-122.687191, 45.632214],
+                    [-122.686875, 45.631215],
+                    [-122.68684, 45.631007],
+                    [-122.68673, 45.630514],
+                    [-122.686684, 45.630261],
+                    [-122.686688, 45.630123],
+                    [-122.686886, 45.629441],
+                    [-122.687573, 45.628418],
+                    [-122.688648, 45.627569],
+                    [-122.688372, 45.627339],
+                    [-122.690801, 45.624915],
+                    [-122.696311, 45.628114],
+                    [-122.690784, 45.624885],
+                    [-122.688001, 45.627639],
+                    [-122.686628, 45.628453],
+                    [-122.685488, 45.628729],
+                    [-122.686649, 45.628467],
+                    [-122.687883, 45.627729],
+                    [-122.687986, 45.627828],
+                    [-122.687553, 45.628309],
+                    [-122.686969, 45.629059],
+                    [-122.68664, 45.62977],
+                    [-122.686546, 45.630771],
+                    [-122.686593, 45.63214],
+                    [-122.686131, 45.632206],
+                    [-122.685595, 45.631318],
+                    [-122.681942, 45.628021],
+                    [-122.681931, 45.628016],
+                    [-122.685595, 45.631329],
+                    [-122.686247, 45.632407],
+                    [-122.686635, 45.633633],
+                    [-122.687349, 45.64035],
+                    [-122.694419, 45.64035],
+                    [-122.69709, 45.640732],
+                    [-122.69635, 45.643548],
+                    [-122.698361, 45.643768],
+                    [-122.697003, 45.648365],
+                    [-122.70284, 45.651208],
+                    [-122.705123, 45.652732],
+                    [-122.707958, 45.646539],
+                    [-122.708632, 45.646752]
+                  ]
+                ],
+                [
+                  [
+                    [-122.706517, 45.633929],
+                    [-122.703415, 45.632239],
+                    [-122.703563, 45.632325],
+                    [-122.706517, 45.633929]
+                  ]
+                ],
+                [
+                  [
+                    [-122.693012, 45.633338],
+                    [-122.692965, 45.633329],
+                    [-122.692633, 45.63333],
+                    [-122.692569, 45.633335],
+                    [-122.693012, 45.633338]
+                  ]
+                ],
+                [
+                  [
+                    [-122.685416, 45.628746],
+                    [-122.684258, 45.62877],
+                    [-122.68299, 45.628516],
+                    [-122.683025, 45.628533],
+                    [-122.684239, 45.628776],
+                    [-122.685397, 45.62875],
+                    [-122.685416, 45.628746]
+                  ]
+                ]
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        },
+        {
+          "code": null,
+          "id": "6:location_group_id__af8ed7b5-0db2-4872-b8e1-c9ca6922d39b",
+          "lat": 45.6435864,
+          "lon": -122.7115801,
+          "name": "Port of Vancouver Industrial Area Stops",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.736633, 45.653201]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.687039, 45.63111]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.71928, 45.649042]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.692534, 45.633123]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.724544, 45.647166]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.699305, 45.640868]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.727142, 45.645845]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.703575, 45.643755]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.714167, 45.648168]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MTU",
+      "headsign": null,
+      "name": "Port of Vancouver to Port of Vancouver Downtown Stops (6:location_group_id__50bf4e79-9a4b-48c1-a74f-d4c8308929e6) from Port of Vancouver (6:location_id__11f830d0-adec-468a-a8d6-513184e476a1)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_id__11f830d0-adec-468a-a8d6-513184e476a1",
+          "lat": 45.6417213,
+          "lon": -122.6969768,
+          "name": "Port of Vancouver",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "MultiPolygon",
+              "coordinates": [
+                [
+                  [
+                    [-122.719479, 45.650185],
+                    [-122.715818, 45.649031],
+                    [-122.719476, 45.65019],
+                    [-122.719479, 45.650185]
+                  ]
+                ],
+                [
+                  [
+                    [-122.708632, 45.646752],
+                    [-122.705435, 45.645644],
+                    [-122.703692, 45.644023],
+                    [-122.702514, 45.642899],
+                    [-122.70185, 45.642219],
+                    [-122.701122, 45.641801],
+                    [-122.69994, 45.641302],
+                    [-122.699567, 45.64111],
+                    [-122.699255, 45.641024],
+                    [-122.698996, 45.64077],
+                    [-122.699675, 45.638726],
+                    [-122.700015, 45.638199],
+                    [-122.699761, 45.637973],
+                    [-122.697965, 45.636874],
+                    [-122.695551, 45.635147],
+                    [-122.694344, 45.634264],
+                    [-122.693377, 45.633711],
+                    [-122.692352, 45.633505],
+                    [-122.691688, 45.633473],
+                    [-122.691691, 45.633358],
+                    [-122.691606, 45.633413],
+                    [-122.691428, 45.633408],
+                    [-122.691375, 45.633361],
+                    [-122.691117, 45.633376],
+                    [-122.690862, 45.633373],
+                    [-122.690369, 45.633373],
+                    [-122.689391, 45.633371],
+                    [-122.688403, 45.633311],
+                    [-122.68779, 45.633071],
+                    [-122.687364, 45.632747],
+                    [-122.687191, 45.632214],
+                    [-122.686875, 45.631215],
+                    [-122.68684, 45.631007],
+                    [-122.68673, 45.630514],
+                    [-122.686684, 45.630261],
+                    [-122.686688, 45.630123],
+                    [-122.686886, 45.629441],
+                    [-122.687573, 45.628418],
+                    [-122.688648, 45.627569],
+                    [-122.688372, 45.627339],
+                    [-122.690801, 45.624915],
+                    [-122.696311, 45.628114],
+                    [-122.690784, 45.624885],
+                    [-122.688001, 45.627639],
+                    [-122.686628, 45.628453],
+                    [-122.685488, 45.628729],
+                    [-122.686649, 45.628467],
+                    [-122.687883, 45.627729],
+                    [-122.687986, 45.627828],
+                    [-122.687553, 45.628309],
+                    [-122.686969, 45.629059],
+                    [-122.68664, 45.62977],
+                    [-122.686546, 45.630771],
+                    [-122.686593, 45.63214],
+                    [-122.686131, 45.632206],
+                    [-122.685595, 45.631318],
+                    [-122.681942, 45.628021],
+                    [-122.681931, 45.628016],
+                    [-122.685595, 45.631329],
+                    [-122.686247, 45.632407],
+                    [-122.686635, 45.633633],
+                    [-122.687349, 45.64035],
+                    [-122.694419, 45.64035],
+                    [-122.69709, 45.640732],
+                    [-122.69635, 45.643548],
+                    [-122.698361, 45.643768],
+                    [-122.697003, 45.648365],
+                    [-122.70284, 45.651208],
+                    [-122.705123, 45.652732],
+                    [-122.707958, 45.646539],
+                    [-122.708632, 45.646752]
+                  ]
+                ],
+                [
+                  [
+                    [-122.706517, 45.633929],
+                    [-122.703415, 45.632239],
+                    [-122.703563, 45.632325],
+                    [-122.706517, 45.633929]
+                  ]
+                ],
+                [
+                  [
+                    [-122.693012, 45.633338],
+                    [-122.692965, 45.633329],
+                    [-122.692633, 45.63333],
+                    [-122.692569, 45.633335],
+                    [-122.693012, 45.633338]
+                  ]
+                ],
+                [
+                  [
+                    [-122.685416, 45.628746],
+                    [-122.684258, 45.62877],
+                    [-122.68299, 45.628516],
+                    [-122.683025, 45.628533],
+                    [-122.684239, 45.628776],
+                    [-122.685397, 45.62875],
+                    [-122.685416, 45.628746]
+                  ]
+                ]
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        },
+        {
+          "code": null,
+          "id": "6:location_group_id__50bf4e79-9a4b-48c1-a74f-d4c8308929e6",
+          "lat": 45.6318553,
+          "lon": -122.6716338,
+          "name": "Port of Vancouver Downtown Stops",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.670448, 45.639679]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.670418, 45.630688]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.672848, 45.626214]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.672821, 45.63084]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MDU",
+      "headsign": null,
+      "name": "Port of Vancouver to Port of Vancouver Downtown Stops (6:location_group_id__50bf4e79-9a4b-48c1-a74f-d4c8308929e6) from Port of Vancouver Industrial Area Stops (6:location_group_id__af8ed7b5-0db2-4872-b8e1-c9ca6922d39b)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_group_id__af8ed7b5-0db2-4872-b8e1-c9ca6922d39b",
+          "lat": 45.6435864,
+          "lon": -122.7115801,
+          "name": "Port of Vancouver Industrial Area Stops",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.736633, 45.653201]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.687039, 45.63111]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.71928, 45.649042]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.692534, 45.633123]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.724544, 45.647166]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.699305, 45.640868]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.727142, 45.645845]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.703575, 45.643755]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.714167, 45.648168]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        },
+        {
+          "code": null,
+          "id": "6:location_group_id__50bf4e79-9a4b-48c1-a74f-d4c8308929e6",
+          "lat": 45.6318553,
+          "lon": -122.6716338,
+          "name": "Port of Vancouver Downtown Stops",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.670448, 45.639679]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.670418, 45.630688]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.672848, 45.626214]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.672821, 45.63084]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MTY",
+      "headsign": null,
+      "name": "Port of Vancouver to Port of Vancouver Industrial Area Stops (6:location_group_id__af8ed7b5-0db2-4872-b8e1-c9ca6922d39b) from Vancouver Amtrak (6:location_group_id__c94387e3-1ac2-412e-8371-a2646b3d037e)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_group_id__c94387e3-1ac2-412e-8371-a2646b3d037e",
+          "lat": 45.6289266,
+          "lon": -122.6865306,
+          "name": "Vancouver Amtrak",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.686531, 45.628927]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        },
+        {
+          "code": null,
+          "id": "6:location_group_id__af8ed7b5-0db2-4872-b8e1-c9ca6922d39b",
+          "lat": 45.6435864,
+          "lon": -122.7115801,
+          "name": "Port of Vancouver Industrial Area Stops",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.736633, 45.653201]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.687039, 45.63111]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.71928, 45.649042]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.692534, 45.633123]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.724544, 45.647166]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.699305, 45.640868]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.727142, 45.645845]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.703575, 45.643755]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.714167, 45.648168]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MDY",
+      "headsign": null,
+      "name": "Port of Vancouver to Port of Vancouver (6:location_id__11f830d0-adec-468a-a8d6-513184e476a1) from Port of Vancouver Industrial Area Stops (6:location_group_id__af8ed7b5-0db2-4872-b8e1-c9ca6922d39b)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_group_id__af8ed7b5-0db2-4872-b8e1-c9ca6922d39b",
+          "lat": 45.6435864,
+          "lon": -122.7115801,
+          "name": "Port of Vancouver Industrial Area Stops",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.736633, 45.653201]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.687039, 45.63111]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.71928, 45.649042]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.692534, 45.633123]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.724544, 45.647166]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.699305, 45.640868]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.727142, 45.645845]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.703575, 45.643755]
+                },
+                {
+                  "type": "Point",
+                  "coordinates": [-122.714167, 45.648168]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        },
+        {
+          "code": null,
+          "id": "6:location_id__11f830d0-adec-468a-a8d6-513184e476a1",
+          "lat": 45.6417213,
+          "lon": -122.6969768,
+          "name": "Port of Vancouver",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "MultiPolygon",
+              "coordinates": [
+                [
+                  [
+                    [-122.719479, 45.650185],
+                    [-122.715818, 45.649031],
+                    [-122.719476, 45.65019],
+                    [-122.719479, 45.650185]
+                  ]
+                ],
+                [
+                  [
+                    [-122.708632, 45.646752],
+                    [-122.705435, 45.645644],
+                    [-122.703692, 45.644023],
+                    [-122.702514, 45.642899],
+                    [-122.70185, 45.642219],
+                    [-122.701122, 45.641801],
+                    [-122.69994, 45.641302],
+                    [-122.699567, 45.64111],
+                    [-122.699255, 45.641024],
+                    [-122.698996, 45.64077],
+                    [-122.699675, 45.638726],
+                    [-122.700015, 45.638199],
+                    [-122.699761, 45.637973],
+                    [-122.697965, 45.636874],
+                    [-122.695551, 45.635147],
+                    [-122.694344, 45.634264],
+                    [-122.693377, 45.633711],
+                    [-122.692352, 45.633505],
+                    [-122.691688, 45.633473],
+                    [-122.691691, 45.633358],
+                    [-122.691606, 45.633413],
+                    [-122.691428, 45.633408],
+                    [-122.691375, 45.633361],
+                    [-122.691117, 45.633376],
+                    [-122.690862, 45.633373],
+                    [-122.690369, 45.633373],
+                    [-122.689391, 45.633371],
+                    [-122.688403, 45.633311],
+                    [-122.68779, 45.633071],
+                    [-122.687364, 45.632747],
+                    [-122.687191, 45.632214],
+                    [-122.686875, 45.631215],
+                    [-122.68684, 45.631007],
+                    [-122.68673, 45.630514],
+                    [-122.686684, 45.630261],
+                    [-122.686688, 45.630123],
+                    [-122.686886, 45.629441],
+                    [-122.687573, 45.628418],
+                    [-122.688648, 45.627569],
+                    [-122.688372, 45.627339],
+                    [-122.690801, 45.624915],
+                    [-122.696311, 45.628114],
+                    [-122.690784, 45.624885],
+                    [-122.688001, 45.627639],
+                    [-122.686628, 45.628453],
+                    [-122.685488, 45.628729],
+                    [-122.686649, 45.628467],
+                    [-122.687883, 45.627729],
+                    [-122.687986, 45.627828],
+                    [-122.687553, 45.628309],
+                    [-122.686969, 45.629059],
+                    [-122.68664, 45.62977],
+                    [-122.686546, 45.630771],
+                    [-122.686593, 45.63214],
+                    [-122.686131, 45.632206],
+                    [-122.685595, 45.631318],
+                    [-122.681942, 45.628021],
+                    [-122.681931, 45.628016],
+                    [-122.685595, 45.631329],
+                    [-122.686247, 45.632407],
+                    [-122.686635, 45.633633],
+                    [-122.687349, 45.64035],
+                    [-122.694419, 45.64035],
+                    [-122.69709, 45.640732],
+                    [-122.69635, 45.643548],
+                    [-122.698361, 45.643768],
+                    [-122.697003, 45.648365],
+                    [-122.70284, 45.651208],
+                    [-122.705123, 45.652732],
+                    [-122.707958, 45.646539],
+                    [-122.708632, 45.646752]
+                  ]
+                ],
+                [
+                  [
+                    [-122.706517, 45.633929],
+                    [-122.703415, 45.632239],
+                    [-122.703563, 45.632325],
+                    [-122.706517, 45.633929]
+                  ]
+                ],
+                [
+                  [
+                    [-122.693012, 45.633338],
+                    [-122.692965, 45.633329],
+                    [-122.692633, 45.63333],
+                    [-122.692569, 45.633335],
+                    [-122.693012, 45.633338]
+                  ]
+                ],
+                [
+                  [
+                    [-122.685416, 45.628746],
+                    [-122.684258, 45.62877],
+                    [-122.68299, 45.628516],
+                    [-122.683025, 45.628533],
+                    [-122.684239, 45.628776],
+                    [-122.685397, 45.62875],
+                    [-122.685416, 45.628746]
+                  ]
+                ]
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MDc",
+      "headsign": null,
+      "name": "Port of Vancouver to Port of Vancouver (6:location_id__11f830d0-adec-468a-a8d6-513184e476a1) from Port of Vancouver (6:location_id__11f830d0-adec-468a-a8d6-513184e476a1)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_id__11f830d0-adec-468a-a8d6-513184e476a1",
+          "lat": 45.6417213,
+          "lon": -122.6969768,
+          "name": "Port of Vancouver",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "MultiPolygon",
+              "coordinates": [
+                [
+                  [
+                    [-122.719479, 45.650185],
+                    [-122.715818, 45.649031],
+                    [-122.719476, 45.65019],
+                    [-122.719479, 45.650185]
+                  ]
+                ],
+                [
+                  [
+                    [-122.708632, 45.646752],
+                    [-122.705435, 45.645644],
+                    [-122.703692, 45.644023],
+                    [-122.702514, 45.642899],
+                    [-122.70185, 45.642219],
+                    [-122.701122, 45.641801],
+                    [-122.69994, 45.641302],
+                    [-122.699567, 45.64111],
+                    [-122.699255, 45.641024],
+                    [-122.698996, 45.64077],
+                    [-122.699675, 45.638726],
+                    [-122.700015, 45.638199],
+                    [-122.699761, 45.637973],
+                    [-122.697965, 45.636874],
+                    [-122.695551, 45.635147],
+                    [-122.694344, 45.634264],
+                    [-122.693377, 45.633711],
+                    [-122.692352, 45.633505],
+                    [-122.691688, 45.633473],
+                    [-122.691691, 45.633358],
+                    [-122.691606, 45.633413],
+                    [-122.691428, 45.633408],
+                    [-122.691375, 45.633361],
+                    [-122.691117, 45.633376],
+                    [-122.690862, 45.633373],
+                    [-122.690369, 45.633373],
+                    [-122.689391, 45.633371],
+                    [-122.688403, 45.633311],
+                    [-122.68779, 45.633071],
+                    [-122.687364, 45.632747],
+                    [-122.687191, 45.632214],
+                    [-122.686875, 45.631215],
+                    [-122.68684, 45.631007],
+                    [-122.68673, 45.630514],
+                    [-122.686684, 45.630261],
+                    [-122.686688, 45.630123],
+                    [-122.686886, 45.629441],
+                    [-122.687573, 45.628418],
+                    [-122.688648, 45.627569],
+                    [-122.688372, 45.627339],
+                    [-122.690801, 45.624915],
+                    [-122.696311, 45.628114],
+                    [-122.690784, 45.624885],
+                    [-122.688001, 45.627639],
+                    [-122.686628, 45.628453],
+                    [-122.685488, 45.628729],
+                    [-122.686649, 45.628467],
+                    [-122.687883, 45.627729],
+                    [-122.687986, 45.627828],
+                    [-122.687553, 45.628309],
+                    [-122.686969, 45.629059],
+                    [-122.68664, 45.62977],
+                    [-122.686546, 45.630771],
+                    [-122.686593, 45.63214],
+                    [-122.686131, 45.632206],
+                    [-122.685595, 45.631318],
+                    [-122.681942, 45.628021],
+                    [-122.681931, 45.628016],
+                    [-122.685595, 45.631329],
+                    [-122.686247, 45.632407],
+                    [-122.686635, 45.633633],
+                    [-122.687349, 45.64035],
+                    [-122.694419, 45.64035],
+                    [-122.69709, 45.640732],
+                    [-122.69635, 45.643548],
+                    [-122.698361, 45.643768],
+                    [-122.697003, 45.648365],
+                    [-122.70284, 45.651208],
+                    [-122.705123, 45.652732],
+                    [-122.707958, 45.646539],
+                    [-122.708632, 45.646752]
+                  ]
+                ],
+                [
+                  [
+                    [-122.706517, 45.633929],
+                    [-122.703415, 45.632239],
+                    [-122.703563, 45.632325],
+                    [-122.706517, 45.633929]
+                  ]
+                ],
+                [
+                  [
+                    [-122.693012, 45.633338],
+                    [-122.692965, 45.633329],
+                    [-122.692633, 45.63333],
+                    [-122.692569, 45.633335],
+                    [-122.693012, 45.633338]
+                  ]
+                ],
+                [
+                  [
+                    [-122.685416, 45.628746],
+                    [-122.684258, 45.62877],
+                    [-122.68299, 45.628516],
+                    [-122.683025, 45.628533],
+                    [-122.684239, 45.628776],
+                    [-122.685397, 45.62875],
+                    [-122.685416, 45.628746]
+                  ]
+                ]
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MDg",
+      "headsign": null,
+      "name": "Port of Vancouver to Port of Vancouver (6:location_id__11f830d0-adec-468a-a8d6-513184e476a1) from Vancouver Amtrak (6:location_group_id__c94387e3-1ac2-412e-8371-a2646b3d037e)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_group_id__c94387e3-1ac2-412e-8371-a2646b3d037e",
+          "lat": 45.6289266,
+          "lon": -122.6865306,
+          "name": "Vancouver Amtrak",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.686531, 45.628927]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        },
+        {
+          "code": null,
+          "id": "6:location_id__11f830d0-adec-468a-a8d6-513184e476a1",
+          "lat": 45.6417213,
+          "lon": -122.6969768,
+          "name": "Port of Vancouver",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "MultiPolygon",
+              "coordinates": [
+                [
+                  [
+                    [-122.719479, 45.650185],
+                    [-122.715818, 45.649031],
+                    [-122.719476, 45.65019],
+                    [-122.719479, 45.650185]
+                  ]
+                ],
+                [
+                  [
+                    [-122.708632, 45.646752],
+                    [-122.705435, 45.645644],
+                    [-122.703692, 45.644023],
+                    [-122.702514, 45.642899],
+                    [-122.70185, 45.642219],
+                    [-122.701122, 45.641801],
+                    [-122.69994, 45.641302],
+                    [-122.699567, 45.64111],
+                    [-122.699255, 45.641024],
+                    [-122.698996, 45.64077],
+                    [-122.699675, 45.638726],
+                    [-122.700015, 45.638199],
+                    [-122.699761, 45.637973],
+                    [-122.697965, 45.636874],
+                    [-122.695551, 45.635147],
+                    [-122.694344, 45.634264],
+                    [-122.693377, 45.633711],
+                    [-122.692352, 45.633505],
+                    [-122.691688, 45.633473],
+                    [-122.691691, 45.633358],
+                    [-122.691606, 45.633413],
+                    [-122.691428, 45.633408],
+                    [-122.691375, 45.633361],
+                    [-122.691117, 45.633376],
+                    [-122.690862, 45.633373],
+                    [-122.690369, 45.633373],
+                    [-122.689391, 45.633371],
+                    [-122.688403, 45.633311],
+                    [-122.68779, 45.633071],
+                    [-122.687364, 45.632747],
+                    [-122.687191, 45.632214],
+                    [-122.686875, 45.631215],
+                    [-122.68684, 45.631007],
+                    [-122.68673, 45.630514],
+                    [-122.686684, 45.630261],
+                    [-122.686688, 45.630123],
+                    [-122.686886, 45.629441],
+                    [-122.687573, 45.628418],
+                    [-122.688648, 45.627569],
+                    [-122.688372, 45.627339],
+                    [-122.690801, 45.624915],
+                    [-122.696311, 45.628114],
+                    [-122.690784, 45.624885],
+                    [-122.688001, 45.627639],
+                    [-122.686628, 45.628453],
+                    [-122.685488, 45.628729],
+                    [-122.686649, 45.628467],
+                    [-122.687883, 45.627729],
+                    [-122.687986, 45.627828],
+                    [-122.687553, 45.628309],
+                    [-122.686969, 45.629059],
+                    [-122.68664, 45.62977],
+                    [-122.686546, 45.630771],
+                    [-122.686593, 45.63214],
+                    [-122.686131, 45.632206],
+                    [-122.685595, 45.631318],
+                    [-122.681942, 45.628021],
+                    [-122.681931, 45.628016],
+                    [-122.685595, 45.631329],
+                    [-122.686247, 45.632407],
+                    [-122.686635, 45.633633],
+                    [-122.687349, 45.64035],
+                    [-122.694419, 45.64035],
+                    [-122.69709, 45.640732],
+                    [-122.69635, 45.643548],
+                    [-122.698361, 45.643768],
+                    [-122.697003, 45.648365],
+                    [-122.70284, 45.651208],
+                    [-122.705123, 45.652732],
+                    [-122.707958, 45.646539],
+                    [-122.708632, 45.646752]
+                  ]
+                ],
+                [
+                  [
+                    [-122.706517, 45.633929],
+                    [-122.703415, 45.632239],
+                    [-122.703563, 45.632325],
+                    [-122.706517, 45.633929]
+                  ]
+                ],
+                [
+                  [
+                    [-122.693012, 45.633338],
+                    [-122.692965, 45.633329],
+                    [-122.692633, 45.63333],
+                    [-122.692569, 45.633335],
+                    [-122.693012, 45.633338]
+                  ]
+                ],
+                [
+                  [
+                    [-122.685416, 45.628746],
+                    [-122.684258, 45.62877],
+                    [-122.68299, 45.628516],
+                    [-122.683025, 45.628533],
+                    [-122.684239, 45.628776],
+                    [-122.685397, 45.62875],
+                    [-122.685416, 45.628746]
+                  ]
+                ]
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "UGF0dGVybjo2OjY4NDU2ZjZlLTJhMDQtNGZjYi05NzFiLWZkNTczNDhlMmVkNzo6MDk",
+      "headsign": null,
+      "name": "Port of Vancouver to Vancouver Amtrak (6:location_group_id__c94387e3-1ac2-412e-8371-a2646b3d037e) from Port of Vancouver (6:location_id__11f830d0-adec-468a-a8d6-513184e476a1)",
+      "patternGeometry": null,
+      "stops": [
+        {
+          "code": null,
+          "id": "6:location_id__11f830d0-adec-468a-a8d6-513184e476a1",
+          "lat": 45.6417213,
+          "lon": -122.6969768,
+          "name": "Port of Vancouver",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "MultiPolygon",
+              "coordinates": [
+                [
+                  [
+                    [-122.719479, 45.650185],
+                    [-122.715818, 45.649031],
+                    [-122.719476, 45.65019],
+                    [-122.719479, 45.650185]
+                  ]
+                ],
+                [
+                  [
+                    [-122.708632, 45.646752],
+                    [-122.705435, 45.645644],
+                    [-122.703692, 45.644023],
+                    [-122.702514, 45.642899],
+                    [-122.70185, 45.642219],
+                    [-122.701122, 45.641801],
+                    [-122.69994, 45.641302],
+                    [-122.699567, 45.64111],
+                    [-122.699255, 45.641024],
+                    [-122.698996, 45.64077],
+                    [-122.699675, 45.638726],
+                    [-122.700015, 45.638199],
+                    [-122.699761, 45.637973],
+                    [-122.697965, 45.636874],
+                    [-122.695551, 45.635147],
+                    [-122.694344, 45.634264],
+                    [-122.693377, 45.633711],
+                    [-122.692352, 45.633505],
+                    [-122.691688, 45.633473],
+                    [-122.691691, 45.633358],
+                    [-122.691606, 45.633413],
+                    [-122.691428, 45.633408],
+                    [-122.691375, 45.633361],
+                    [-122.691117, 45.633376],
+                    [-122.690862, 45.633373],
+                    [-122.690369, 45.633373],
+                    [-122.689391, 45.633371],
+                    [-122.688403, 45.633311],
+                    [-122.68779, 45.633071],
+                    [-122.687364, 45.632747],
+                    [-122.687191, 45.632214],
+                    [-122.686875, 45.631215],
+                    [-122.68684, 45.631007],
+                    [-122.68673, 45.630514],
+                    [-122.686684, 45.630261],
+                    [-122.686688, 45.630123],
+                    [-122.686886, 45.629441],
+                    [-122.687573, 45.628418],
+                    [-122.688648, 45.627569],
+                    [-122.688372, 45.627339],
+                    [-122.690801, 45.624915],
+                    [-122.696311, 45.628114],
+                    [-122.690784, 45.624885],
+                    [-122.688001, 45.627639],
+                    [-122.686628, 45.628453],
+                    [-122.685488, 45.628729],
+                    [-122.686649, 45.628467],
+                    [-122.687883, 45.627729],
+                    [-122.687986, 45.627828],
+                    [-122.687553, 45.628309],
+                    [-122.686969, 45.629059],
+                    [-122.68664, 45.62977],
+                    [-122.686546, 45.630771],
+                    [-122.686593, 45.63214],
+                    [-122.686131, 45.632206],
+                    [-122.685595, 45.631318],
+                    [-122.681942, 45.628021],
+                    [-122.681931, 45.628016],
+                    [-122.685595, 45.631329],
+                    [-122.686247, 45.632407],
+                    [-122.686635, 45.633633],
+                    [-122.687349, 45.64035],
+                    [-122.694419, 45.64035],
+                    [-122.69709, 45.640732],
+                    [-122.69635, 45.643548],
+                    [-122.698361, 45.643768],
+                    [-122.697003, 45.648365],
+                    [-122.70284, 45.651208],
+                    [-122.705123, 45.652732],
+                    [-122.707958, 45.646539],
+                    [-122.708632, 45.646752]
+                  ]
+                ],
+                [
+                  [
+                    [-122.706517, 45.633929],
+                    [-122.703415, 45.632239],
+                    [-122.703563, 45.632325],
+                    [-122.706517, 45.633929]
+                  ]
+                ],
+                [
+                  [
+                    [-122.693012, 45.633338],
+                    [-122.692965, 45.633329],
+                    [-122.692633, 45.63333],
+                    [-122.692569, 45.633335],
+                    [-122.693012, 45.633338]
+                  ]
+                ],
+                [
+                  [
+                    [-122.685416, 45.628746],
+                    [-122.684258, 45.62877],
+                    [-122.68299, 45.628516],
+                    [-122.683025, 45.628533],
+                    [-122.684239, 45.628776],
+                    [-122.685397, 45.62875],
+                    [-122.685416, 45.628746]
+                  ]
+                ]
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        },
+        {
+          "code": null,
+          "id": "6:location_group_id__c94387e3-1ac2-412e-8371-a2646b3d037e",
+          "lat": 45.6289266,
+          "lon": -122.6865306,
+          "name": "Vancouver Amtrak",
+          "locationType": "STOP",
+          "geometries": {
+            "geoJson": {
+              "type": "GeometryCollection",
+              "geometries": [
+                {
+                  "type": "Point",
+                  "coordinates": [-122.686531, 45.628927]
+                }
+              ]
+            }
+          },
+          "routes": [
+            {
+              "textColor": null,
+              "color": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
