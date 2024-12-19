@@ -117,7 +117,7 @@ const loadImages = (map: MapRef, images: MapImage[]) => {
 const TransitiveCanvasOverlay = ({
   activeLeg,
   accessLegColorOverride,
-  boundsFitting,
+  boundsFitting = true,
   showRouteArrows,
   transitiveData
 }: Props): JSX.Element => {
