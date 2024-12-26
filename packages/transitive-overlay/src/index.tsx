@@ -89,6 +89,7 @@ const accessLegFilter = [
 type Props = {
   activeLeg?: Leg;
   accessLegColorOverride?: string;
+  boundsFitting?: boolean;
   showRouteArrows?: boolean;
   transitiveData?: TransitiveData;
 };
@@ -116,6 +117,7 @@ const loadImages = (map: MapRef, images: MapImage[]) => {
 const TransitiveCanvasOverlay = ({
   activeLeg,
   accessLegColorOverride,
+  boundsFitting = true,
   showRouteArrows,
   transitiveData
 }: Props): JSX.Element => {
@@ -227,6 +229,7 @@ const TransitiveCanvasOverlay = ({
   };
 
   const zoomToGeoJSON = geoJson => {
+    if (!boundsFitting) return;
     const b = bbox(geoJson);
     const bounds: [number, number, number, number] = [b[0], b[1], b[2], b[3]];
 
