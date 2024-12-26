@@ -67,6 +67,7 @@ otpUi:
       car: 汽車
       escooter: 騎電動滑板車
       vehicle: 車輛
+    transfer: 轉乘{duration, select, undefined {} other {, 等候 {duration}}}
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {#小時}}{minutes}分鐘"
@@ -96,6 +97,8 @@ otpUi:
       today: 今天
       tomorrow: 明天
       yesterday: 昨天
+      noAgencyAlertLinkText: 請參閱機構網站上的警示
+      alertLinkText: 請參閱 {agency} 網站上的警示
     agencyExternalLink: "{agencyName} (外部連結)"
     alertsHeader: "{alertCount}則警示"
     expandDetails: (展開詳細資訊)
@@ -112,3 +115,5 @@ otpUi:
     tripViewer: 行程檢視器
     typicalWait: 一般等待時間：{waitTime}
     zoomToLeg: 縮放至地圖上的路段
+    arriveAt: 抵達 {place}
+    disembarkAt: 在 {legDestination} 下車
