@@ -95,3 +95,18 @@ export const EndpointsOverlayWithUnnamedPlace: ComponentStory<typeof EndpointsOv
     toLocation={unnamedToLocation}
   />
 );
+
+export const EndpointsOverlayWithStopLink: ComponentStory<typeof EndpointsOverlay> = () => (
+  <EndpointsOverlay
+    clearLocation={clearLocation}
+    forgetPlace={forgetPlace}
+    fromLocation={fromLocation}
+    fromIsStop
+    locations={locations}
+    rememberPlace={rememberPlace}
+    setLocation={setLocation}
+    setViewedStop={() => {}}
+    showUserSettings
+    toLocation={toLocation}
+  />
+);
