@@ -1,5 +1,6 @@
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
 import { Popup } from "@opentripplanner/base-map";
+import { Search } from "@styled-icons/fa-solid";
 import {
   ClearLocationArg,
   Location,
@@ -25,11 +26,13 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 interface Props {
   clearLocation: (arg: ClearLocationArg) => void;
   forgetPlace: (type: string) => void;
+  isStop?: boolean;
   location?: Location;
   locations: Location[];
   MapMarkerIcon: ComponentType<UserLocationAndType>;
   rememberPlace: (arg: UserLocationAndType) => void;
   setLocation: (arg: MapLocationActionArg) => void;
+  setViewedStop?: () => void;
   showUserSettings: boolean;
   type: string;
 }
@@ -60,6 +63,8 @@ function UserLocationInnerIcon({ type }: IconProps) {
       return <Sync size={12} />;
     case "times":
       return <Times size={12} />;
+    case "stop":
+      return <Search size={12} />;
     default:
       return null;
   }
@@ -150,7 +155,15 @@ const Endpoint = (props: Props): JSX.Element => {
   };
 
   const [showPopup, setShowPopup] = useState(false);
-  const { location, locations, MapMarkerIcon, showUserSettings, type } = props;
+  const {
+    isStop,
+    location,
+    locations,
+    MapMarkerIcon,
+    setViewedStop,
+    showUserSettings,
+    type
+  } = props;
   if (!(location && location.lat && location.lon)) return null;
   const match = locations.find(l => coreUtils.map.matchLatLon(l, location));
   const isWork = match && match.type === "work";
@@ -273,6 +286,20 @@ const Endpoint = (props: Props): JSX.Element => {
                 />
               </S.Button>
             </div>
+            {isStop && (
+              <div>
+                <S.Button onClick={() => setViewedStop()}>
+                  <UserLocationIcon type="stop" />
+                  <FormattedMessage
+                    defaultMessage={
+                      defaultMessages["otpUi.EndpointsOverlay.viewStop"]
+                    }
+                    description="Button text to view the stop"
+                    id="otpUi.EndpointsOverlay.viewStop"
+                  />
+                </S.Button>
+              </div>
+            )}
           </FocusTrapWrapper>
         </Popup>
       )}
