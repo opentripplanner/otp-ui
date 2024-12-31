@@ -1,5 +1,6 @@
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
 import { Popup } from "@opentripplanner/base-map";
+import { Search } from "@styled-icons/fa-solid";
 import {
   ClearLocationArg,
   Location,
@@ -62,6 +63,8 @@ function UserLocationInnerIcon({ type }: IconProps) {
       return <Sync size={12} />;
     case "times":
       return <Times size={12} />;
+    case "stop":
+      return <Search size={12} />;
     default:
       return null;
   }
@@ -151,17 +154,13 @@ const Endpoint = (props: Props): JSX.Element => {
     setLocation({ locationType: type, location, reverseGeocode: true });
   };
 
-  const viewStop = (): void => {
-    const { setViewedStop } = props;
-    setViewedStop();
-  };
-
   const [showPopup, setShowPopup] = useState(false);
   const {
     isStop,
     location,
     locations,
     MapMarkerIcon,
+    setViewedStop,
     showUserSettings,
     type
   } = props;
@@ -289,7 +288,8 @@ const Endpoint = (props: Props): JSX.Element => {
             </div>
             {isStop && (
               <div>
-                <S.Button onClick={viewStop}>
+                <S.Button onClick={() => setViewedStop()}>
+                  <UserLocationIcon type="stop" />
                   <FormattedMessage
                     defaultMessage={
                       defaultMessages["otpUi.EndpointsOverlay.viewStop"]

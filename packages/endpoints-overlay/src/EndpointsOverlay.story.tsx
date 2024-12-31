@@ -14,6 +14,7 @@ const clearLocation = action("clearLocation");
 const forgetPlace = action("forgetPlace");
 const rememberPlace = action("rememberPlace");
 const setLocation = action("setLocation");
+const setViewedStop = action("setViewedStop");
 const unnamedFromLocation = {
   lat: 45.522497,
   lon: -122.676029,
@@ -105,7 +106,7 @@ export const EndpointsOverlayWithStopLink: ComponentStory<typeof EndpointsOverla
     locations={locations}
     rememberPlace={rememberPlace}
     setLocation={setLocation}
-    setViewedStop={() => {}}
+    setViewedStop={setViewedStop}
     showUserSettings
     toLocation={toLocation}
   />
