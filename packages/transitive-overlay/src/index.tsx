@@ -125,7 +125,7 @@ const TransitiveCanvasOverlay = ({
 
   const mapImages: MapImage[] = [];
   // This is used to render arrows along the route
-  // Only load if that option is enabled to save bandwidth
+  // Only load if that option is enabled to save the bandwidth
   if (showRouteArrows) {
     mapImages.push({
       id: "arrow-icon",
