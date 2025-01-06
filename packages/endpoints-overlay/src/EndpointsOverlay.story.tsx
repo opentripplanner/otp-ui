@@ -102,11 +102,10 @@ export const EndpointsOverlayWithStopLink: ComponentStory<typeof EndpointsOverla
     clearLocation={clearLocation}
     forgetPlace={forgetPlace}
     fromLocation={fromLocation}
-    fromIsStop
     locations={locations}
     rememberPlace={rememberPlace}
     setLocation={setLocation}
-    setViewedStop={setViewedStop}
+    viewNearbyDestination={setViewedStop}
     showUserSettings
     toLocation={toLocation}
   />

@@ -26,13 +26,12 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 interface Props {
   clearLocation: (arg: ClearLocationArg) => void;
   forgetPlace: (type: string) => void;
-  isStop?: boolean;
   location?: Location;
   locations: Location[];
   MapMarkerIcon: ComponentType<UserLocationAndType>;
   rememberPlace: (arg: UserLocationAndType) => void;
   setLocation: (arg: MapLocationActionArg) => void;
-  setViewedStop?: () => void;
+  viewNearby?: () => void;
   showUserSettings: boolean;
   type: string;
 }
@@ -63,7 +62,7 @@ function UserLocationInnerIcon({ type }: IconProps) {
       return <Sync size={12} />;
     case "times":
       return <Times size={12} />;
-    case "stop":
+    case "nearby":
       return <Search size={12} />;
     default:
       return null;
@@ -156,11 +155,10 @@ const Endpoint = (props: Props): JSX.Element => {
 
   const [showPopup, setShowPopup] = useState(false);
   const {
-    isStop,
     location,
     locations,
     MapMarkerIcon,
-    setViewedStop,
+    viewNearby,
     showUserSettings,
     type
   } = props;
@@ -286,20 +284,18 @@ const Endpoint = (props: Props): JSX.Element => {
                 />
               </S.Button>
             </div>
-            {isStop && (
-              <div>
-                <S.Button onClick={() => setViewedStop()}>
-                  <UserLocationIcon type="stop" />
-                  <FormattedMessage
-                    defaultMessage={
-                      defaultMessages["otpUi.EndpointsOverlay.viewStop"]
-                    }
-                    description="Button text to view the stop"
-                    id="otpUi.EndpointsOverlay.viewStop"
-                  />
-                </S.Button>
-              </div>
-            )}
+            <div>
+              <S.Button onClick={viewNearby}>
+                <UserLocationIcon type="nearby" />
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.EndpointsOverlay.viewStop"]
+                  }
+                  description="Button text to view the coordinates in the nearby view"
+                  id="otpUi.EndpointsOverlay.viewNearby"
+                />
+              </S.Button>
+            </div>
           </FocusTrapWrapper>
         </Popup>
       )}

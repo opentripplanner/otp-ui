@@ -66,9 +66,13 @@ interface Props {
    */
   setLocation?: (arg: MapLocationActionArg) => void;
   /**
+   * Opens the nearby view from the location coordinates
+   */
+  viewNearbyOrigin?: () => void;
+  viewNearbyDestination?: () => void;
+  /**
    * Whether or not to show the user settings popup when an endpoint is clicked.
    */
-  setViewedStop?: () => void;
   showUserSettings?: boolean;
   toIsStop?: boolean;
   /**
@@ -118,29 +122,27 @@ function DefaultMapMarkerIcon({
 const EndpointsOverlay = ({
   clearLocation = noop,
   forgetPlace = noop,
-  fromIsStop = false,
   fromLocation,
   intermediatePlaces = [],
   locations = [],
   MapMarkerIcon = DefaultMapMarkerIcon,
   rememberPlace = noop,
   setLocation = noop,
-  setViewedStop = noop,
+  viewNearbyOrigin = noop,
+  viewNearbyDestination = noop,
   showUserSettings,
-  toIsStop = false,
   toLocation
 }: Props): ReactElement => (
   <div>
     <Endpoint
       clearLocation={clearLocation}
       forgetPlace={forgetPlace}
-      isStop={fromIsStop}
       location={fromLocation}
       locations={locations}
       MapMarkerIcon={MapMarkerIcon}
       rememberPlace={rememberPlace}
       setLocation={setLocation}
-      setViewedStop={setViewedStop}
+      viewNearby={viewNearbyOrigin}
       showUserSettings={showUserSettings}
       type="from"
     />
@@ -163,13 +165,13 @@ const EndpointsOverlay = ({
     <Endpoint
       clearLocation={clearLocation}
       forgetPlace={forgetPlace}
-      isStop={toIsStop}
       location={toLocation}
       locations={locations}
       MapMarkerIcon={MapMarkerIcon}
       rememberPlace={rememberPlace}
       setLocation={setLocation}
       showUserSettings={showUserSettings}
+      viewNearby={viewNearbyDestination}
       type="to"
     />
   </div>
