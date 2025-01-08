@@ -1,6 +1,6 @@
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
 import { Popup } from "@opentripplanner/base-map";
-import { Search } from "@styled-icons/fa-solid";
+import { Search } from "@styled-icons/fa-solid/Search";
 import {
   ClearLocationArg,
   Location,
