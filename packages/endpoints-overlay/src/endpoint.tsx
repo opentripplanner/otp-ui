@@ -31,7 +31,7 @@ interface Props {
   MapMarkerIcon: ComponentType<UserLocationAndType>;
   rememberPlace: (arg: UserLocationAndType) => void;
   setLocation: (arg: MapLocationActionArg) => void;
-  viewNearby?: () => void;
+  viewNearby?: (arg: Location) => void;
   showUserSettings: boolean;
   type: string;
 }
@@ -285,7 +285,7 @@ const Endpoint = (props: Props): JSX.Element => {
               </S.Button>
             </div>
             <div>
-              <S.Button onClick={viewNearby}>
+              <S.Button onClick={() => viewNearby(location)}>
                 <UserLocationIcon type="nearby" />
                 <FormattedMessage
                   defaultMessage={

@@ -24,7 +24,6 @@ interface Props {
    * string argument representing the type of saved location.
    */
   forgetPlace?: (type: string) => void;
-  fromIsStop?: boolean;
   /**
    * The from location.
    */
@@ -68,13 +67,11 @@ interface Props {
   /**
    * Opens the nearby view from the location coordinates
    */
-  viewNearbyOrigin?: () => void;
-  viewNearbyDestination?: () => void;
+  setViewNearby?: (arg: Location) => void;
   /**
    * Whether or not to show the user settings popup when an endpoint is clicked.
    */
   showUserSettings?: boolean;
-  toIsStop?: boolean;
   /**
    * To to location
    */
@@ -128,8 +125,7 @@ const EndpointsOverlay = ({
   MapMarkerIcon = DefaultMapMarkerIcon,
   rememberPlace = noop,
   setLocation = noop,
-  viewNearbyOrigin = noop,
-  viewNearbyDestination = noop,
+  setViewNearby = noop,
   showUserSettings,
   toLocation
 }: Props): ReactElement => (
@@ -142,7 +138,7 @@ const EndpointsOverlay = ({
       MapMarkerIcon={MapMarkerIcon}
       rememberPlace={rememberPlace}
       setLocation={setLocation}
-      viewNearby={viewNearbyOrigin}
+      viewNearby={setViewNearby}
       showUserSettings={showUserSettings}
       type="from"
     />
@@ -171,7 +167,7 @@ const EndpointsOverlay = ({
       rememberPlace={rememberPlace}
       setLocation={setLocation}
       showUserSettings={showUserSettings}
-      viewNearby={viewNearbyDestination}
+      viewNearby={setViewNearby}
       type="to"
     />
   </div>
