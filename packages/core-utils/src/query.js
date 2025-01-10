@@ -231,13 +231,18 @@ export function isNotDefaultQuery(query, config) {
  * Geocode utility for returning the first result for the provided place name text.
  * @param  {string} text - text to search
  * @param  {Object} geocoderConfig
+ * @param  {string} geocoderMethod - an alternate geocoder api method to use. Defaults to `search`
  * @return {Location}
  */
-async function getFirstGeocodeResult(text, geocoderConfig) {
+async function getFirstGeocodeResult(
+  text,
+  geocoderConfig,
+  geocoderMethod = "search"
+) {
   const geocoder = getGeocoder(geocoderConfig);
   // Attempt to geocode search text and return first result if found.
   // TODO: Import geocoder from @opentripplanner
-  return geocoder.search({ text }).then(result => {
+  return geocoder[geocoderMethod]({ text }).then(result => {
     const firstResult = result.features && result.features[0];
     if (firstResult) {
       return geocoder.getLocationFromGeocodedFeature(firstResult);
@@ -282,7 +287,11 @@ async function queryParamToLocation(value, geocoderConfig) {
   if (!location && value && geocoderConfig) {
     // If a valid location was not found, but the place name text exists,
     // attempt to geocode the name.
-    location = await getFirstGeocodeResult(value, geocoderConfig);
+    location = await getFirstGeocodeResult(
+      value,
+      geocoderConfig,
+      geocoderConfig.autoMethod
+    );
   }
   return location;
 }

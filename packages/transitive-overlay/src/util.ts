@@ -9,7 +9,6 @@ import distance from "@turf/distance";
 
 import {
   getLegBounds,
-  getLegRouteLongName,
   getLegRouteShortName,
   isAccessMode,
   isFlex,
@@ -36,6 +35,7 @@ const CAR_PARK_ITIN_PREFIX = "itin_car_";
  */
 function stopToTransitive(
   stop: Place,
+  id: string,
   knownStopNames: Record<string, Place>
 ): TransitiveStop {
   // Collapse case and spaces for comparison.
@@ -45,7 +45,7 @@ function stopToTransitive(
   const stopNameExists = knownStopNames[normalizedStopNameKey];
   if (!stopNameExists) knownStopNames[normalizedStopNameKey] = stop;
   return {
-    stop_id: stop.stopId,
+    stop_id: id,
     // Don't render this stop name if another one or similar exists.
     stop_name: stopNameExists ? null : normalizedStopName,
     stop_lat: stop.lat,
@@ -54,16 +54,23 @@ function stopToTransitive(
 }
 
 /**
+ * Helper function to obtain the stop ID for an OTP2 or OTP1 place.
+ */
+function getStopId(place: Place) {
+  return typeof place.stop === "object" ? place.stop.id : place.stopId;
+}
+
+/**
  * Helper function to add a stop, checking whether a stop id and name has already been added.
  */
 function addStop(
-  stop: Place,
+  place: Place,
   stops: Record<string, TransitiveStop>,
   knownStopNames: Record<string, Place>
 ) {
-  const { stopId } = stop;
+  const stopId = getStopId(place);
   if (!stops[stopId]) {
-    stops[stopId] = stopToTransitive(stop, knownStopNames);
+    stops[stopId] = stopToTransitive(place, stopId, knownStopNames);
   }
 }
 
@@ -316,7 +323,11 @@ export function itineraryToTransitive(
       // Flex routes sometimes have the same from and to IDs, but
       // these stops still need to be rendered separately!
       if (isFlex(leg)) {
-        leg.to.stopId = `${leg.to.stopId}_flexed_to`;
+        if (typeof leg.to.stop === "object") {
+          leg.to.stop.id = `${leg.to.stop.id}_flexed_to`;
+        } else {
+          leg.to.stopId = `${leg.to.stopId}_flexed_to`;
+        }
       }
 
       // determine if we have valid inter-stop geometry
@@ -331,20 +342,23 @@ export function itineraryToTransitive(
       // otherwise the logical stop is often times off the line.
       const legCoords = getLegBounds(leg);
 
+      const routeId =
+        typeof leg.route === "object" ? leg?.route?.id : leg.routeId;
+
       // create leg-specific pattern
       const ptnId = `ptn_${patternId}`;
       const pattern = {
         pattern_id: ptnId,
         // This string is not shown in the UI
         pattern_name: `Pattern ${patternId}`,
-        route_id: leg.routeId,
+        route_id: routeId,
         stops: []
       };
 
       // Add the "from" end of transit legs to the list of stops.
       const fromStop = makeStop(leg.from, hasLegGeometry && legCoords[0]);
       addStop(fromStop, newStops, knownStopNames);
-      pattern.stops.push({ stop_id: leg.from.stopId });
+      pattern.stops.push({ stop_id: getStopId(leg.from) });
 
       // add intermediate stops to stops dictionary and pattern object
       // If there is no intermediateStopGeometry, do not add the intermediate stops
@@ -358,6 +372,7 @@ export function itineraryToTransitive(
           // FIXME: line up the coordinates of the stops so they appear on the line.
           addStop(stop, newStops, knownStopNames);
           pattern.stops.push({
+            // Intermediate stops are still exclusively using stopId.
             stop_id: stop.stopId,
             geometry:
               hasIntermediateStopGeometry && leg.interStopGeometry[i].points
@@ -371,7 +386,7 @@ export function itineraryToTransitive(
       const toStop = makeStop(leg.to, lastCoord);
       addStop(toStop, newStops, knownStopNames);
       pattern.stops.push({
-        stop_id: leg.to.stopId,
+        stop_id: getStopId(leg.to),
         geometry:
           // Some legs don't have intermediateStopGeometry, but do have valid legGeometry
           (hasInterStopGeometry || hasLegGeometry) &&
@@ -383,18 +398,33 @@ export function itineraryToTransitive(
       // add route to the route dictionary
       // with a custom route label if specified.
       const routeLabel =
-        typeof getRouteLabel === "function"
+        (typeof getRouteLabel === "function"
           ? getRouteLabel(leg)
-          : getLegRouteShortName(leg);
-      routes[leg.routeId] = {
+          : getLegRouteShortName(leg)) || "";
+
+      const basicRouteAttributes = {
         agency_id: leg.agencyId,
-        route_id: leg.routeId,
-        route_short_name: routeLabel || "",
-        route_long_name: getLegRouteLongName(leg) || "",
-        route_type: leg.routeType,
-        route_color: leg.routeColor,
-        route_text_color: leg.routeTextColor
+        route_id: routeId,
+        route_short_name: routeLabel
       };
+
+      if (typeof leg.route === "object") {
+        routes[routeId] = {
+          ...basicRouteAttributes,
+          route_long_name: leg.route.longName || "",
+          route_type: leg.route.type,
+          route_color: leg.route.color,
+          route_text_color: leg.route.textColor
+        };
+      } else {
+        routes[routeId] = {
+          ...basicRouteAttributes,
+          route_long_name: leg.routeLongName || "",
+          route_type: leg.routeType,
+          route_color: leg.routeColor,
+          route_text_color: leg.routeTextColor
+        };
+      }
 
       // add the pattern to the tdata patterns array
       tdata.patterns.push(pattern);

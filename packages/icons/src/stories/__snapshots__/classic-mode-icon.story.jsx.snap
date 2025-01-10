@@ -133,6 +133,15 @@ exports[`Icons/ClassicModeIcon ClassicModeIconExamples smoke-test 1`] = `
     </tr>
     <tr>
       <td>
+        FLEX
+      </td>
+      <td>
+        <div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
         GONDOLA
       </td>
       <td>
