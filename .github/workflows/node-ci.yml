@@ -15,8 +15,6 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Build packages
-        run: pnpm prepublish
       - name: Install Playwright
         run: pnpm exec playwright install --with-deps
       - name: Lint code
