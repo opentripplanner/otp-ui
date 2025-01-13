@@ -117,7 +117,7 @@
     "coverage": "jest --coverage",
     "deploy-storybook": "storybook-to-ghpages",
     "dev": "storybook dev -p 5555",
-    "pnpm:devPreinstall": "pnpm prepublish",
+    "postinstall": "pnpm prepublish",
     "predev": "pnpm install",
     "build-storybook": "storybook build",
     "lint:js": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-pattern esm --ignore-pattern lib --ignore-pattern node_modules --ignore-pattern storybook-static --quiet",
