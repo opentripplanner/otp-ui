@@ -143,7 +143,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
               ? bounds.extend(coordinates)
               : new LngLatBounds(coordinates, coordinates);
           });
-        } else if (geoJson.type === "MultiPolygon") {
+        } else if (geoJson?.type === "MultiPolygon") {
           // We can't currently render this, so let's fix that before fixing the bounds behavior
           // TODO: handle this case
         } else if (geoJson) {
