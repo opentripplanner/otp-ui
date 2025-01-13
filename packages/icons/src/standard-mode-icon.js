@@ -7,7 +7,8 @@ import {
   StandardGondola,
   StandardRail,
   StandardTram,
-  StandardWalk
+  StandardWalk,
+  StandardFlex
 } from "./standard";
 
 /**
@@ -49,6 +50,8 @@ function StandardModeIcon({ mode, ...props }) {
       return <StandardBus {...props} />;
     case "walk":
       return <StandardWalk {...props} />;
+    case "flex":
+      return <StandardFlex {...props} />;
     default:
       return null;
   }

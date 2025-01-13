@@ -53,6 +53,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       RouteDescription,
       RouteDescriptionFooter = undefined,
       showAgencyInfo,
+      showAlertEffectiveDateTimeText = true,
       showApproximateAccessLegTravelTimes = false,
       showLegIcon,
       showMapButtonColumn = true,
@@ -105,6 +106,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         setLegDiagram={this.setLegDiagram}
         setViewedTrip={action("setViewedTrip")}
         showAgencyInfo={showAgencyInfo}
+        showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
         showApproximateAccessLegTravelTimes={
           showApproximateAccessLegTravelTimes
         }

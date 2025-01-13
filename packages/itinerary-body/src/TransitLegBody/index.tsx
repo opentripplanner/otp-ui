@@ -47,6 +47,7 @@ interface Props {
   setActiveLeg: SetActiveLegFunction;
   setViewedTrip: SetViewedTripFunction;
   showAgencyInfo: boolean;
+  showAlertEffectiveDateTimeText?: boolean;
   showViewTripButton: boolean;
   timeZone: string;
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
@@ -140,6 +141,7 @@ class TransitLegBody extends Component<Props, State> {
       RouteDescriptionFooter,
       setViewedTrip,
       showAgencyInfo,
+      showAlertEffectiveDateTimeText,
       showViewTripButton,
       timeZone,
       TransitLegSubheader,
@@ -332,6 +334,7 @@ class TransitLegBody extends Component<Props, State> {
                 agencyName={agencyName}
                 alerts={leg.alerts}
                 AlertIcon={AlertBodyIcon}
+                showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
                 timeZone={timeZone}
               />
             </AnimateHeight>
