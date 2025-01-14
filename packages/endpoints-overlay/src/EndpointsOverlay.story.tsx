@@ -14,7 +14,7 @@ const clearLocation = action("clearLocation");
 const forgetPlace = action("forgetPlace");
 const rememberPlace = action("rememberPlace");
 const setLocation = action("setLocation");
-const setViewedStop = action("setViewedStop");
+const setViewNearby = action("setViewNearby");
 const unnamedFromLocation = {
   lat: 45.522497,
   lon: -122.676029,
@@ -58,6 +58,7 @@ export const EndpointsOverlayWithUserSettings: ComponentStory<typeof EndpointsOv
     locations={locations}
     rememberPlace={rememberPlace}
     setLocation={setLocation}
+    setViewNearby={setViewNearby}
     showUserSettings
     toLocation={toLocation}
   />
@@ -92,21 +93,8 @@ export const EndpointsOverlayWithUnnamedPlace: ComponentStory<typeof EndpointsOv
   <EndpointsOverlay
     fromLocation={unnamedFromLocation}
     setLocation={setLocation}
+    setViewNearby={setViewNearby}
     showUserSettings
     toLocation={unnamedToLocation}
-  />
-);
-
-export const EndpointsOverlayWithStopLink: ComponentStory<typeof EndpointsOverlay> = () => (
-  <EndpointsOverlay
-    clearLocation={clearLocation}
-    forgetPlace={forgetPlace}
-    fromLocation={fromLocation}
-    locations={locations}
-    rememberPlace={rememberPlace}
-    setLocation={setLocation}
-    viewNearbyDestination={setViewedStop}
-    showUserSettings
-    toLocation={toLocation}
   />
 );
