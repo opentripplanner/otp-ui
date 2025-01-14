@@ -138,7 +138,7 @@ const EndpointsOverlay = ({
       MapMarkerIcon={MapMarkerIcon}
       rememberPlace={rememberPlace}
       setLocation={setLocation}
-      viewNearby={setViewNearby}
+      setViewNearby={setViewNearby}
       showUserSettings={showUserSettings}
       type="from"
     />
@@ -167,7 +167,7 @@ const EndpointsOverlay = ({
       rememberPlace={rememberPlace}
       setLocation={setLocation}
       showUserSettings={showUserSettings}
-      viewNearby={setViewNearby}
+      setViewNearby={setViewNearby}
       type="to"
     />
   </div>
