@@ -1,8 +1,11 @@
+// Prettier does not support typescript annotation
+// eslint-disable-next-line prettier/prettier
+import type { FeatureCollection, Point } from "geojson"
 import Geocoder from "./abstract-geocoder";
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
 import type { AutocompleteQuery, SearchQuery } from "..";
-import type { SingleOrMultiGeocoderResponse } from "./types";
+import type { MultiGeocoderResponse, SingleOrMultiGeocoderResponse } from "./types";
 
 const DEFAULT_LAYERS = "address,venue,street,intersection"
 
@@ -91,5 +94,18 @@ export default class PeliasGeocoder extends Geocoder {
       name: firstFeature.label,
       rawGeocodedFeature: firstFeature
     };
+  }
+
+  /**
+   * Remove duplicates based on name, which Pelias sometimes creates
+   */
+  rewriteAutocompleteResponse(response: unknown): MultiGeocoderResponse {
+    const features = (response as FeatureCollection)?.features
+
+    const filtered = features?.filter((feature, index) => 
+      !features.slice(index + 1).some(f => f?.properties?.name === feature?.properties?.name && JSON.stringify((feature?.geometry as Point)?.coordinates) === JSON.stringify((f?.geometry as Point)?.coordinates))     
+    )
+
+    return { ...(response as FeatureCollection), features: filtered } as MultiGeocoderResponse;
   }
 }
