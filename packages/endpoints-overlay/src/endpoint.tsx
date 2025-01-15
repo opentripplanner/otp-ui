@@ -1,5 +1,6 @@
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
 import { Popup } from "@opentripplanner/base-map";
+import { Search } from "@styled-icons/fa-solid/Search";
 import {
   ClearLocationArg,
   Location,
@@ -30,6 +31,7 @@ interface Props {
   MapMarkerIcon: ComponentType<UserLocationAndType>;
   rememberPlace: (arg: UserLocationAndType) => void;
   setLocation: (arg: MapLocationActionArg) => void;
+  setViewNearby?: (arg: Location) => void;
   showUserSettings: boolean;
   type: string;
 }
@@ -60,6 +62,8 @@ function UserLocationInnerIcon({ type }: IconProps) {
       return <Sync size={12} />;
     case "times":
       return <Times size={12} />;
+    case "nearby":
+      return <Search size={12} />;
     default:
       return null;
   }
@@ -150,7 +154,14 @@ const Endpoint = (props: Props): JSX.Element => {
   };
 
   const [showPopup, setShowPopup] = useState(false);
-  const { location, locations, MapMarkerIcon, showUserSettings, type } = props;
+  const {
+    location,
+    locations,
+    MapMarkerIcon,
+    setViewNearby,
+    showUserSettings,
+    type
+  } = props;
   if (!(location && location.lat && location.lon)) return null;
   const match = locations.find(l => coreUtils.map.matchLatLon(l, location));
   const isWork = match && match.type === "work";
@@ -270,6 +281,18 @@ const Endpoint = (props: Props): JSX.Element => {
                   description="Button text to swap the from/to location"
                   id="otpUi.EndpointsOverlay.swapLocation"
                   values={{ locationType: otherType }}
+                />
+              </S.Button>
+            </div>
+            <div>
+              <S.Button onClick={() => setViewNearby(location)}>
+                <UserLocationIcon type="nearby" />
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.EndpointsOverlay.viewStop"]
+                  }
+                  description="Button text to view the coordinates in the nearby view"
+                  id="otpUi.EndpointsOverlay.viewNearby"
                 />
               </S.Button>
             </div>

@@ -7,3 +7,4 @@ otpUi:
     saveAsHome: Save as home
     saveAsWork: Save as work
     swapLocation: Change to {locationType} location
+    viewNearby: View nearby
