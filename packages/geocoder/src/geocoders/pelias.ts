@@ -7,7 +7,7 @@ import Geocoder from "./abstract-geocoder";
 import type { AutocompleteQuery, SearchQuery } from "..";
 import type { MultiGeocoderResponse, SingleOrMultiGeocoderResponse } from "./types";
 
-const DEFAULT_LAYERS = "address,venue,street,intersection"
+const DEFAULT_LAYERS = "address,venue,street,intersection";
 
 /**
  * Geocoder implementation for the Pelias geocoder.
@@ -20,7 +20,7 @@ export default class PeliasGeocoder extends Geocoder {
    * Generate an autocomplete query specifically for the Pelias API. The
    * `sources` parameter is a Pelias-specific option.
    * This function fills in some more fields of the query
-   * from the existing values in the GeocoderConfig. 
+   * from the existing values in the GeocoderConfig.
    */
   getAutocompleteQuery(query: AutocompleteQuery): AutocompleteQuery {
     const {
@@ -51,7 +51,7 @@ export default class PeliasGeocoder extends Geocoder {
    * Generate a search query specifically for the Pelias API. The
    * `sources` parameter is a Pelias-specific option.
    * This function fills in some more fields of the query
-   * from the existing values in the GeocoderConfig. 
+   * from the existing values in the GeocoderConfig.
    */
   getSearchQuery(query: SearchQuery): SearchQuery {
     const {
@@ -84,7 +84,7 @@ export default class PeliasGeocoder extends Geocoder {
    * first feature returned from the geocoder.
    */
   rewriteReverseResponse(response): SingleOrMultiGeocoderResponse {
-    if (this.geocoderConfig?.reverseUseFeatureCollection) return response
+    if (this.geocoderConfig?.reverseUseFeatureCollection) return response;
     const { lat, lon } = response.isomorphicMapzenSearchQuery.point;
 
     const firstFeature = response[0];
@@ -100,12 +100,24 @@ export default class PeliasGeocoder extends Geocoder {
    * Remove duplicates based on name, which Pelias sometimes creates
    */
   rewriteAutocompleteResponse(response: unknown): MultiGeocoderResponse {
-    const features = (response as FeatureCollection)?.features
+    const features = (response as FeatureCollection)?.features;
 
-    const filtered = features?.filter((feature, index) => 
-      !features.slice(index + 1).some(f => f?.properties?.name === feature?.properties?.name && JSON.stringify((feature?.geometry as Point)?.coordinates) === JSON.stringify((f?.geometry as Point)?.coordinates))     
-    )
+    const filtered = features?.filter(
+      (feature, index) =>
+        !features
+          .slice(index + 1)
+          .some(
+            f =>
+              f?.properties?.name === feature?.properties?.name &&
+              // This is unclean, but we know geometry will never contain objects
+              JSON.stringify((feature?.geometry as Point)?.coordinates) ===
+                JSON.stringify((f?.geometry as Point)?.coordinates)
+          )
+    );
 
-    return { ...(response as FeatureCollection), features: filtered } as MultiGeocoderResponse;
+    return {
+      ...(response as FeatureCollection),
+      features: filtered
+    } as MultiGeocoderResponse;
   }
 }
