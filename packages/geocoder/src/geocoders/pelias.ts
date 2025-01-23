@@ -99,7 +99,7 @@ export default class PeliasGeocoder extends Geocoder {
   /**
    * Remove duplicates based on name, which Pelias sometimes creates
    */
-  rewriteAutocompleteResponse(response: unknown): MultiGeocoderResponse {
+  rewriteAutocompleteResponse(response: MultiGeocoderResponse): MultiGeocoderResponse {
     const features = (response as FeatureCollection)?.features;
 
     const filtered = features?.filter(
