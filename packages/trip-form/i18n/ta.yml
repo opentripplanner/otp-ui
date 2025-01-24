@@ -1,1 +1,68 @@
-{}
+otpUi:
+  DateTimeSelector:
+    arrive: மூலம் வந்து
+    date: திகதி
+    dateTimeSelector: தேதி/நேர தேர்வாளர்
+    depart: புறப்படுங்கள்
+    now: இப்போது விடுங்கள்
+    time: நேரம்
+  ModeSelector:
+    labels:
+      bicycle: பைக்
+      car: ஓட்டு
+      rent: வாடகை
+      transit: போக்குவரத்து
+      walk: நடை
+    settings:
+      bikeTolerance-label: பைக்கிங் சகிப்புத்தன்மை
+      bikeTolerance-labelHigh: மேலும் பைக்கிங்
+      bikeTolerance-labelLow: குறைவான பைக்கிங்
+      bus-label: பச்
+      carTolerance-label: ஓட்டுநர் சகிப்புத்தன்மை
+      carTolerance-labelHigh: மேலும் வண்டி ஓட்டுதல்
+      carTolerance-labelLow: குறைவான வண்டி
+      ferry-label: படகு
+      rail-label: ரயில்
+      subway-label: சுரங்கப்பாதை
+      tram-label: டிராம்
+      walkReluctance-label: நடைபயிற்சி தவிர்க்கவும்
+      walkTolerance-label: நடைபயிற்சி சகிப்புத்தன்மை
+      walkTolerance-labelHigh: மேலும் நடைபயிற்சி
+      walkTolerance-labelLow: குறைவான நடைபயிற்சி
+      wheelchair-label: அணுகக்கூடிய ரூட்டிங்
+  SettingsSelectorPanel:
+    bikeOnly: பைக் மட்டும்
+    escooterOnly: மின்-ச்கூட்டர் மட்டுமே
+    takeTransit: போக்குவரத்து எடுத்துக் கொள்ளுங்கள்
+    travelPreferences: பயண விருப்பத்தேர்வுகள்
+    use: பயன்படுத்தவும்
+    useCompanies: நிறுவனங்களைப் பயன்படுத்துங்கள்
+    walkOnly: மட்டுமே நடக்க
+  TripOptions:
+    openApp: திறந்த பயன்பாடு
+    transitOnly: போக்குவரத்து மூலம் செல்லுங்கள்
+  queryParameters:
+    bikeSpeed: சைக்கிள் விரைவு
+    walkReluctanceHigh: மேலும் போக்குவரத்து
+    walkReluctanceLow: மேலும் நடைபயிற்சி
+    walkSpeed: நடை விரைவு
+    watts: மின்-ச்கூட்டர் ஆற்றல்
+    watts125kidsHoverboard: கிட்ச் ஓவர் போர்டு (6 மைல்)
+    watts1500powerfulEscooter: சக்திவாய்ந்த இ-ச்கூட்டர் (24 எம்.பி.எச்)
+    watts250entryLevelEscooter: நுழைவு-நிலை ச்கூட்டர் (11 எம்.பி.எச்)
+    watts500robustEscooter: வலுவான மின்-ச்கூட்டர் (18 மைல்)
+    wheelchair: சக்கர நாற்காலி அணுகக்கூடிய வழிகளை விரும்புங்கள்
+    maxEScooterDistance: அதிகபட்ச மின்-ச்கூட்டர் தூரம்
+    distanceInMiles: "{சென்டிமில்கள், தேர்ந்தெடுக்கவும்,\n 10 {1/10 மைல்}\n 25 {1/4
+      மைல்}\n 50 {1/2 மைல்}\n 75 {3/4 மைல்}\n பிற {{மைல்கள், எண், :: யூனிட்/மைல் யூனிட்
+      அகலம்-முழு-பெயர்}}\n }\n"
+    maxBikeDistance: அதிகபட்ச பைக்
+    maxBikeTime: அதிகபட்ச பைக் நேரம்
+    maxWalkDistance: அதிகபட்ச நடை
+    maxWalkTime: அதிகபட்ச நடை நேரம்
+    optimizeBikeFlat: தட்டையான பயணம்
+    optimizeBikeFriendly: பைக் நட்பு பயணம்
+    optimizeBikeSpeed: வேகம்
+    optimizeFor: மேம்படுத்தவும்
+    speedInMilesPerHour: '{mph} mph'
+    walkReluctance: நடைபயிற்சி தவிர்ப்பு
