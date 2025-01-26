@@ -1,1 +1,5 @@
-{}
+otpUi:
+  FromToLocationPicker:
+    planATrip: 'ஒரு பயணத்தைத் திட்டமிடுங்கள்:'
+    to: இங்கே
+    from: இங்கிருந்து
