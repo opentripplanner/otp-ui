@@ -70,7 +70,6 @@ interface DateTimeSelectorProps {
 }
 
 interface DepartArriveOption {
-  isSelected?: boolean;
   text: string;
   type: DepartArriveValue;
 }
@@ -147,9 +146,6 @@ export default function DateTimeSelector({
       text: intl.formatMessage({ id: "otpUi.DateTimeSelector.arrive" })
     }
   ];
-  departureOptions.forEach(opt => {
-    opt.isSelected = departArrive === opt.type;
-  });
 
   const handleQueryParamChange = useCallback(
     (queryParam: QueryParamChangeEvent): void => {
@@ -199,13 +195,13 @@ export default function DateTimeSelector({
           departArrive: "NOW",
           time: getCurrentTime(timeZone)
         });
-      } else if (!option.isSelected) {
+      } else if (!(option.type === departArrive)) {
         handleQueryParamChange({
           departArrive: option.type
         });
       }
     },
-    [onQueryParamChange, option.type, option.isSelected, timeZone]
+    [onQueryParamChange, option.type, timeZone]
   );
 
 
@@ -220,10 +216,10 @@ export default function DateTimeSelector({
       style={style}
       baseColor={baseColor}
     >
-        <Dropdown alignMenuLeft id="date-time-depart-arrive" text={departureOptions.find(opt => opt.isSelected).text} buttonStyle={{ backgroundColor: S.baseColor() || blue[900], borderRadius: "3px 0px 0px 3px", color: "white", height: "45px", border: "0px", padding:"5px 7px" }}>
+        <Dropdown alignMenuLeft id="date-time-depart-arrive" text={departureOptions.find(opt => opt.type === departArrive).text} buttonStyle={{ backgroundColor: S.baseColor() || blue[900], borderRadius: "3px 0px 0px 3px", color: "white", height: "45px", border: "0px" }}>
         {departureOptions.map(opt => (
           <button
-            aria-pressed={opt.isSelected}
+            aria-pressed={opt.type === departArrive}
             key={opt.type}
             onClick={setDepartArrive(opt)}
             type="button"
