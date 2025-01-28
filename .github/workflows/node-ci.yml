@@ -11,6 +11,8 @@ jobs:
           node-version: 21.x
       - name: Install npm packages using cache
         uses: bahmutov/npm-install@v1
+      - name: Install Peers
+        run: npx install-peers
       - name: Install Playwright
         run: npx playwright install --with-deps
       - name: Lint code
