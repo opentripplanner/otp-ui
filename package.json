@@ -107,6 +107,7 @@
   },
   "scripts": {
     "bootstrap": "pnpm install",
+    "preinstall": "npx only-allow pnpm",
     "build:cjs": "lerna exec --parallel -- babel --extensions '.js,.ts,.tsx,.snap' --ignore **/*.story.js,**/*.story.ts,**/*.story.d.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,**/__unpublished__/**,**/*.snap  --ignore **/__tests__/** -D --no-copy-ignored --root-mode upward --source-maps true src -d lib",
     "build:esm": "lerna exec --parallel -- cross-env BABEL_ENV=esm babel --extensions '.js,.ts,.tsx,.snap' --ignore **/*.story.js,**/*.story.ts,**/*.story.d.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,**/__unpublished__/**,**/*.snap --ignore **/__tests__/** -D --no-copy-ignored --root-mode upward --source-maps true src -d esm",
     "check:i18n-all": "node packages/scripts/lib/run-validate-i18n.js packages/**/src packages/**/i18n",
