@@ -126,7 +126,7 @@ const AdvancedModeSettingsButton = ({
         />
         <label htmlFor={checkboxId}>
           <modeButton.Icon />
-          <span>{modeButton?.label}</span>
+          <span>{label}</span>
           {modeButton.enabled && <Check2 />}
         </label>
       </StyledModeSettingsButton>
