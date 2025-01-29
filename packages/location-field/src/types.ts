@@ -1,3 +1,4 @@
+import { SingleGeocoderResponse } from "@opentripplanner/geocoder/lib/geocoders/types";
 import { Location, Stop, UserLocation, UserPosition } from "@opentripplanner/types";
 import React, { ComponentType, ReactNode } from "react";
 // eslint-disable-next-line prettier/prettier
@@ -31,7 +32,7 @@ export interface LocationFieldProps {
    * { location: geocodedLocation }
    * ```
    */
-  addLocationSearch?: ({ location: GeocodedLocation }) => void;
+  addLocationSearch?: ({ location }: { location: SingleGeocoderResponse }) => void;
   /**
    * Determines whether the input field of this component should auto-focus on first display.
    */
@@ -52,7 +53,7 @@ export interface LocationFieldProps {
    * { locationType: string }
    * ```
    */
-  clearLocation?: ({ locationType: LocationType }) => void;
+  clearLocation?: ({ locationType }: { locationType: LocationType }) => void;
   /**
    * The current position of the user if it is available.
    */
