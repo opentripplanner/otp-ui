@@ -17,7 +17,8 @@ See:
 
 ```bash
  git checkout https://github.com/opentripplanner/otp-ui.git
- yarn dev # (installs packages, transpiles files, opens storybook to running component library on localhost:5555)
+ pnpm install
+ pnpm dev
 ```
 
 ## Development
@@ -30,7 +31,7 @@ If the Storybook addon bar (a bar of controls at the bottom of the story) does n
 
 ### Storyshot testing
 
-This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows/snapshot-testing) Storybook addon to perform snapshot tests of every story in this monorepo. Whenever the script `yarn unit` is ran, the Storyshot addon will be included along with all the other tests. It will compare the initial output of every story to the saved snapshot of that story. This provides a quick way to make sure nothing drastic has changed and that every single story is able to initially render without an error. Storyshot doesn't snapshot all possible changes that can be done while interacting with story components. Often times these snapshots will need to be updated and that can be accomplished by running `yarn unit -u`.
+This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows/snapshot-testing) Storybook addon to perform snapshot tests of every story in this monorepo. Whenever the script `pnpm unit` is ran, the Storyshot addon will be included along with all the other tests. It will compare the initial output of every story to the saved snapshot of that story. This provides a quick way to make sure nothing drastic has changed and that every single story is able to initially render without an error. Storyshot doesn't snapshot all possible changes that can be done while interacting with story components. Often times these snapshots will need to be updated and that can be accomplished by running `pnpm update-snapshots`.
 
 ## Stack
 
@@ -60,7 +61,9 @@ This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows
 
 This project uses semantic-release to create releases to NPM. It is expect that contributors create [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) messages. These are then parsed by semantic-release which will automatically create an appropriate release for each package whenever a branch is merged to master.
 
-Sometimes when creating new releases, it will be necessary to update numerous packages within this repo at once to a newer internal package version. For this purpose there is the `update-internal-dependencies` script. This should be ran manually as needed. By default, `yarn update-internal-dependencies` will update all dependencies with the `@opentripplanner` scope in all packages within this project. To only update specific dependencies, it is possible to run something like `yarn update-internal-dependencies core-utils base-map`. This would update all dependencies on either the `@opentripplanner/base-map` or the `@opentripplanner/core-utils` in all packages in this project.
+Internal package dependencies are referenced using the `workspace` [protocol provided by pnpm](https://pnpm.io/workspaces). This allows us to depend on our internal packages without keeping versions up to date, but these versions must be replaced with the actual version numbers prior to release. pnpm handles this when publishing automatically. However, if you wish to rely on an otp-ui package in a local filesystem project using the `file` protocol, you need to use `pnpm pack` to create a tarball of the package, then reference that tarball in the other project's package.json.
+
+For example, to depend on core-utils locally, you can run `pnpm pack` from within the `packages/core-utils`. Next, in the other project, use a line like this to reference the resulting tarball. `"@opentripplanner/core-utils": "file:../otp-ui/packages/core-utils/opentripplanner-core-utils-12.0.2.tgz",`
 
 ## Raster Tile Versions
 
