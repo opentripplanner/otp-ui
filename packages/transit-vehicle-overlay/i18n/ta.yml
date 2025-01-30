@@ -1,0 +1,8 @@
+otpUi:
+  TransitVehicleOverlay:
+    durationWithSeconds: '{மணிநேரம், பன்மை, = 0 {} பிற {# hr}} {நிமிடங்கள், பன்மை,
+      = 0 {{விநாடிகள், பன்மை, = 0 {# நிமிடம்} பிற {}}} பிற {# நிமிடம்}} {வினாடிகள்,
+      பன்மை, = 0 {} பிற { # நொடி}}'
+    routeTitle: '{type} {name}'
+    transitLine: வரி
+    defaultTooltip: '{route}: {duration} முன்பு'

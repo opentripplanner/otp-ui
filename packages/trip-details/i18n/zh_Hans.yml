@@ -26,3 +26,5 @@ otpUi:
     transitFare: 公共交通费
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: 这个行程包括灵活的路线. {extraMessage}
+    legMissingFareInfo: 无此行程段的票价信息
+    missingFareTotal: 无票价总额

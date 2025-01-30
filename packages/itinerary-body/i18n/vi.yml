@@ -18,7 +18,8 @@ otpUi:
       bookRide: Đặt trước một chuyến đi
       bookRideLater: Chờ cho đến {timeMillis, time, short} để đặt chỗ
       estimatedCost: "Chi phí ước tính: {minFare} - {maxFare}"
-      estimatedTravelTime: "Thời gian di chuyển ước tính: {duration} (không tính đến giao thông)"
+      estimatedTravelTime: "Thời gian di chuyển ước tính: {duration} (không tính đến
+        giao thông)"
       waitForPickup: "Chờ{minutes, plural, =0 {} other { # phút}} cho {company} đón"
     mapillaryTooltip: Hiển thị hình ảnh đường phố tại vị trí này
     step:
@@ -67,6 +68,7 @@ otpUi:
       car: Xe hơi
       escooter: Xe tay ga điện
       vehicle: Xe
+    transfer: Chuyển{duration, select, undefined {} other {, wait {duration}}}
   ItineraryBody:
     common:
       durationShort: >-
@@ -85,8 +87,8 @@ otpUi:
       walk: bằng cách đi bộ
     tripAccessibility:
       inaccessible: không thể tiếp cận
-      itineraryAccessibility: "Khả năng tiếp cận của xe lăn trong chuyến đi này:\_"
-      legAccessibility: "Khả năng tiếp cận của xe lăn trong đoạn này của chuyến đi:\_"
+      itineraryAccessibility: "Khả năng tiếp cận của xe lăn trong chuyến đi này: "
+      legAccessibility: "Khả năng tiếp cận của xe lăn trong đoạn này của chuyến đi: "
       likelyAccessible: có thể tiếp cận
       unclear: không rõ
     viewOnMap: Xem trên bản đồ
@@ -97,6 +99,9 @@ otpUi:
       today: Hôm nay
       tomorrow: Ngày mai
       yesterday: Hôm qua
+      alertLinkText: Xem cảnh báo trên trang web {agency}
+      linkOpensNewWindow: (Mở cửa sổ mới)
+      noAgencyAlertLinkText: Xem cảnh báo trên trang web cơ quan
     agencyExternalLink: "{agencyName} (Liên kết bên ngoài)"
     alertsHeader: "{alertCount} cảnh báo"
     arriveAt: Đến {place}
@@ -107,7 +112,8 @@ otpUi:
     legDetails: Chi tiết sân khấu
     operatedBy: Dịch vụ được điều hành bởi {agencyLink}
     ride: Đi đường
-    rideDurationAndStops: "Đi {duration}{numStops, plural, =1 {} other { / # điểm dừng}}"
+    rideDurationAndStops: "Đi {duration}{numStops, plural, =1 {} other { / # điểm
+      dừng}}"
     routeDescription: "{routeName} <toPrefix>hướng</toPrefix> {headsign}"
     stopId: Điểm dừng số {stopId}
     stopIdBasic: Điểm dừng số {stopId}

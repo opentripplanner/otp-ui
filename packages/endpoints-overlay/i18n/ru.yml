@@ -7,3 +7,4 @@ otpUi:
     clearLocation: Удалить как местоположение «{locationType}»
     saveAsHome: Сохранить как местоположение дома
     coordinates: '{lat, number, ::.00000}; {lon, number, ::.00000}'
+    viewNearby: Смотреть поблизости

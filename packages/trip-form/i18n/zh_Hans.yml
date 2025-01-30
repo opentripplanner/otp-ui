@@ -62,3 +62,6 @@ otpUi:
     watts250entryLevelEscooter: 入门级踏板车 (18 km/h)
     watts500robustEscooter: 坚固的电动滑板车 (30 km/h)
     wheelchair: 倾向于选择轮椅无障碍路线
+  TripOptions:
+    transitOnly: 乘坐公共交通
+    openApp: 打开应用

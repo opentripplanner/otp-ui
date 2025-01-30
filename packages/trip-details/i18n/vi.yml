@@ -30,3 +30,5 @@ otpUi:
     transitFare: Giá vé xe công cộng
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: Chuyến đi này bao gồm các tuyến đường linh hoạt. {extraMessage}
+    legMissingFareInfo: Không có thông tin giá vé cho chân này
+    missingFareTotal: Không có sẵn tổng giá vé

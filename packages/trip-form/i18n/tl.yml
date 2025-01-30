@@ -12,7 +12,7 @@ otpUi:
       car: Nagmamaneho
       rent: Magrenta
       transit: Pampublikong Transportasyon
-      walk: Naglalakad
+      walk: Paglalakad
     settings:
       bikeTolerance-label: Tolerance sa Pagbibisikleta
       bikeTolerance-labelHigh: Mas Maraming Pagbibisikleta
@@ -62,3 +62,6 @@ otpUi:
     watts250entryLevelEscooter: Entry-level na scooter (11 mph)
     watts500robustEscooter: Robust na E-scooter (18 mph)
     wheelchair: Mas Gusto ang Mga Ruta Kung Saan Accessible ang Wheelchair
+  TripOptions:
+    openApp: Открыть приложение
+    transitOnly: Воспользуйтесь общественным транспортом

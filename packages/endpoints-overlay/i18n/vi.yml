@@ -7,3 +7,4 @@ otpUi:
     saveAsWork: Lưu làm vị trí cơ quan
     coordinates: "{lat, number, ::.00000}; {lon, number, ::.00000}"
     swapLocation: Thay đổi thành địa điểm {locationType}
+    viewNearby: Xem gần đây

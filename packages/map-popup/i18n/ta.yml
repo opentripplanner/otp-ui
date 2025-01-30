@@ -1,0 +1,11 @@
+otpUi:
+  MapPopup:
+    availableBikes: 'கிடைக்கும் பைக்குகள்: {value}'
+    availableDocks: 'கிடைக்கும் கப்பல்துறைகள்: {value}'
+    floatingBike: 'இலவச-மிதக்கும் பைக்: {name}'
+    floatingCar: 'கார்: {name}'
+    floatingEScooter: 'மின்-ச்கூட்டர்: {name}'
+    popupTitle: '{ச்டேசனெட்ட்வொர்க், தேர்ந்தெடுக்கவும், பொய் {{name}} பிற {{stationNetwork}
+      {name}}}}'
+    stopId: 'ஐடியை நிறுத்து: {stopId}'
+    stopViewer: பார்வையாளரை நிறுத்துங்கள்
