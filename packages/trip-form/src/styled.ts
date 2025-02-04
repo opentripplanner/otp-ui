@@ -9,7 +9,7 @@ import type {
   SubmodeSelectorAndSubComponents
 } from "./types";
 
-const { blue } = colors;
+const { grey } = colors;
 
 export const baseColor = () => getComputedStyle(document.documentElement).getPropertyValue(
   "--main-base-color"
@@ -29,7 +29,7 @@ export const FloatingSettingLabel = styled(SettingLabel)`
 `;
 
 export const DateTimeSelector: DateTimeSelectorAndSubComponents = styled.div<{ baseColor: string | undefined }>`
-border: 2px solid ${(props) => props.baseColor || blue[900]};
+border: 2px solid ${(props) => props.baseColor || grey[700]};
 border-radius: 5px;
 height: 45px;
 `;

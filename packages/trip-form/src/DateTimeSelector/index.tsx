@@ -19,7 +19,7 @@ const {
   OTP_API_TIME_FORMAT
 } = coreUtils.time;
 
-const { blue } = colors;
+const { grey } = colors;
 
 type DepartArriveValue = "NOW" | "DEPART" | "ARRIVE";
 
@@ -216,7 +216,7 @@ export default function DateTimeSelector({
       style={style}
       baseColor={baseColor}
     >
-        <Dropdown alignMenuLeft id="date-time-depart-arrive" text={departureOptions.find(opt => opt.type === departArrive).text} buttonStyle={{ backgroundColor: S.baseColor() || blue[900], borderRadius: "3px 0px 0px 3px", color: "white", height: "45px", border: "0px" }}>
+        <Dropdown alignMenuLeft id="date-time-depart-arrive" text={departureOptions.find(opt => opt.type === departArrive).text} buttonStyle={{ backgroundColor: S.baseColor() || grey[700], borderRadius: "3px 0px 0px 3px", color: "white", height: "45px", border: "0px" }}>
         {departureOptions.map(opt => (
           <button
             aria-pressed={opt.type === departArrive}
