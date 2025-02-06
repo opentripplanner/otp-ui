@@ -414,6 +414,30 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
                   <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
+                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
+                    <a href="http://trimet.org/alerts/"
+                       target="_blank"
+                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           height="10"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO"
+                      >
+                        <path fill="currentColor"
+                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
+                        >
+                        </path>
+                      </svg>
+                      See alert on TriMet website
+                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                        (Opens new window)
+                      </span>
+                    </a>
+                  </div>
                 </li>
                 <li class="styled__TransitAlert-sc-1q8npbl-71 dCIwGA">
                   <div class="styled__TransitAlertIconContainer-sc-1q8npbl-76 Xalv">
@@ -435,6 +459,30 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
                   <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
+                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
+                    <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
+                       target="_blank"
+                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           height="10"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO"
+                      >
+                        <path fill="currentColor"
+                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
+                        >
+                        </path>
+                      </svg>
+                      See alert on TriMet website
+                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                        (Opens new window)
+                      </span>
+                    </a>
+                  </div>
                 </li>
                 <li class="styled__TransitAlert-sc-1q8npbl-71 dCIwGA">
                   <div class="styled__TransitAlertIconContainer-sc-1q8npbl-76 Xalv">
@@ -455,6 +503,30 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
                   </div>
                   <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
+                  </div>
+                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
+                    <a href="http://trimet.org/alerts/"
+                       target="_blank"
+                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           height="10"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO"
+                      >
+                        <path fill="currentColor"
+                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
+                        >
+                        </path>
+                      </svg>
+                      See alert on TriMet website
+                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                        (Opens new window)
+                      </span>
+                    </a>
                   </div>
                 </li>
               </ul>
