@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Map, MapProps } from "react-map-gl";
+import { Map, MapProps } from "react-map-gl/maplibre";
 import maplibregl, { Event } from "maplibre-gl";
 
 import { useIntl } from "react-intl";

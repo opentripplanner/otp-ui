@@ -2,11 +2,21 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import styled from "styled-components";
 import { Station, Stop } from "@opentripplanner/types";
+import { IntlProvider } from "react-intl";
+import { Meta } from "@storybook/react";
 import MapPopupContents from "./index";
 
+// HOC to wrap components with IntlProvider
+const withIntl = (Story: () => JSX.Element) => (
+  <IntlProvider messages={{}} locale="en">
+    <Story />
+  </IntlProvider>
+);
+
 export default {
-  title: "Map Popup"
-};
+  title: "Map Popup",
+  decorators: [withIntl]
+} as Meta;
 
 const STOP = {
   flex: false,
