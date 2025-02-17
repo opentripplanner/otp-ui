@@ -414,10 +414,10 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
                   <div class="styled__TransitAlertBody-sc-1q8npbl-73 erXsMI">
                     TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
                   </div>
-                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
+                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 KFTxx">
                     <a href="http://trimet.org/alerts/"
                        target="_blank"
-                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
+                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dWDbIm"
                     >
                       <svg viewbox="0 0 512 512"
                            height="10"
@@ -425,15 +425,15 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
                            focusable="false"
                            fill="currentColor"
                            xmlns="http://www.w3.org/2000/svg"
-                           class="StyledIconBase-ea9ulj-0 hPhvO"
+                           class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
                       >
                         <path fill="currentColor"
-                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
+                              d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112v320c0 44.2 35.8 80 80 80h320c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v112c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h112c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
                         >
                         </path>
                       </svg>
                       See alert on TriMet website
-                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
                         (Opens new window)
                       </span>
                     </a>
@@ -459,10 +459,10 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
                   <div class="styled__TransitAlertBody-sc-1q8npbl-73 erXsMI">
                     The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
                   </div>
-                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
+                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 KFTxx">
                     <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
                        target="_blank"
-                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
+                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dWDbIm"
                     >
                       <svg viewbox="0 0 512 512"
                            height="10"
@@ -470,15 +470,15 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
                            focusable="false"
                            fill="currentColor"
                            xmlns="http://www.w3.org/2000/svg"
-                           class="StyledIconBase-ea9ulj-0 hPhvO"
+                           class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
                       >
                         <path fill="currentColor"
-                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
+                              d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112v320c0 44.2 35.8 80 80 80h320c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v112c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h112c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
                         >
                         </path>
                       </svg>
                       See alert on TriMet website
-                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
                         (Opens new window)
                       </span>
                     </a>
@@ -504,10 +504,10 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
                   <div class="styled__TransitAlertBody-sc-1q8npbl-73 erXsMI">
                     The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
                   </div>
-                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
+                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 KFTxx">
                     <a href="http://trimet.org/alerts/"
                        target="_blank"
-                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
+                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dWDbIm"
                     >
                       <svg viewbox="0 0 512 512"
                            height="10"
@@ -515,15 +515,15 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
                            focusable="false"
                            fill="currentColor"
                            xmlns="http://www.w3.org/2000/svg"
-                           class="StyledIconBase-ea9ulj-0 hPhvO"
+                           class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
                       >
                         <path fill="currentColor"
-                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
+                              d="M352 0c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9L370.7 96 201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L416 141.3l41.4 41.4c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V32c0-17.7-14.3-32-32-32H352zM80 32C35.8 32 0 67.8 0 112v320c0 44.2 35.8 80 80 80h320c44.2 0 80-35.8 80-80V320c0-17.7-14.3-32-32-32s-32 14.3-32 32v112c0 8.8-7.2 16-16 16H80c-8.8 0-16-7.2-16-16V112c0-8.8 7.2-16 16-16h112c17.7 0 32-14.3 32-32s-14.3-32-32-32H80z"
                         >
                         </path>
                       </svg>
                       See alert on TriMet website
-                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
                         (Opens new window)
                       </span>
                     </a>
