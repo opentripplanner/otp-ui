@@ -1,0 +1,19 @@
+otpUi:
+  PrintableItinerary:
+    TncLeg:
+      estimatedTravelTime: >-
+        மதிப்பிடப்பட்ட பயண நேரம்: <strong> {duration} </strong>
+        (போக்குவரத்துக்கு கணக்கிடாது)
+      estimatedWaitTime: "இடும் காத்திருப்பு நேரம்: <strong> {duration} </strong>"
+      header: >-
+        <strong> {company} </strong> ஐ <strong> {place} </strong> க்கு எடுத்துக்
+        கொள்ளுங்கள்
+    TransitLeg:
+      alight: >-
+        <strong> {place} </strong> ({stopId}) <strong> {நேரம், நேரம், குறுகிய}
+        </strong> இல் இறங்குங்கள்
+      board: >-
+        <strong> {place} </strong> ({stopId}) <strong> {நேரம், நேரம், குறுகிய}
+        </strong> இல் பலகை
+      continuesAs: "{routeDescription}"
+    depart: <strong> புறப்படுதல் </strong> <strong> {place} </strong> இலிருந்து

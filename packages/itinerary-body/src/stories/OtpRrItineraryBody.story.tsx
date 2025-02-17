@@ -2,6 +2,7 @@ import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/
 import { FareProductSelector, Itinerary } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
 
+import { Meta } from "@storybook/react";
 import ItineraryBody from "..";
 import {
   CustomTimeColumnContent,
@@ -10,7 +11,7 @@ import {
 import OtpRRLineColumnContent from "../otp-react-redux/line-column-content";
 import { PlaceName as OtpRRPlaceName } from "../otp-react-redux";
 import OtpRRRouteDescription from "../otp-react-redux/route-description";
-import { isRunningJest } from "../../../../.storybook/react-intl";
+import { isTestRunner } from "../../../../.storybook/react-intl";
 import { TimeColumnContentProps } from "../types";
 
 import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
@@ -34,6 +35,7 @@ const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itinerarie
 const otp2ScooterItinerary = require("../__mocks__/itineraries/otp2-scooter.json");
 const flexItinerary = require("../__mocks__/itineraries/flex-itinerary.json");
 const otp24Itinerary = require("../__mocks__/itineraries/otp2.4-transit-itinerary.json");
+const transferLegItinerary = require("../__mocks__/itineraries/otp2-transfer-leg.json");
 
 function withLegacyLegs(itinerary) {
   return {
@@ -42,7 +44,7 @@ function withLegacyLegs(itinerary) {
   };
 }
 
-if (!isRunningJest()) {
+if (!isTestRunner()) {
   // Generate same-day/next day alerts at a fixed time for the walk-transit-walk itinerary
   // for illustration outside of the CI environment.
   const alerts = walkTransitWalkItinerary.legs[1].alerts;
@@ -59,6 +61,8 @@ interface StoryWrapperProps {
   defaultFareSelector?: FareProductSelector;
   hideDrivingDirections?: boolean;
   itinerary: Itinerary;
+  showAlertEffectiveDateTimeText?: boolean;
+  showApproximateAccessLegTravelTimes?: boolean;
   TimeColumnContent?: FunctionComponent<TimeColumnContentProps>;
 }
 
@@ -67,6 +71,8 @@ function OtpRRItineraryBodyWrapper({
   defaultFareSelector,
   hideDrivingDirections = false,
   itinerary,
+  showAlertEffectiveDateTimeText = true,
+  showApproximateAccessLegTravelTimes = false,
   TimeColumnContent
 }: StoryWrapperProps): ReactElement {
   return (
@@ -80,6 +86,8 @@ function OtpRRItineraryBodyWrapper({
       PlaceName={OtpRRPlaceName}
       RouteDescription={OtpRRRouteDescription}
       showAgencyInfo
+      showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
+      showApproximateAccessLegTravelTimes={showApproximateAccessLegTravelTimes}
       showLegIcon
       showMapButtonColumn={false}
       showViewTripButton
@@ -92,8 +100,12 @@ function OtpRRItineraryBodyWrapper({
 
 export default {
   title: "ItineraryBody/otp-react-redux",
-  component: ItineraryBody
-};
+  component: ItineraryBody,
+  parameters: {
+    // date: new Date("March 10, 2021 10:00:00"),
+    a11y: { config: { rules: [{ id: "link-in-text-block", enabled: false }] } }
+  }
+} as Meta;
 
 export const WalkOnlyItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkOnlyItinerary} />
@@ -241,5 +253,23 @@ export const HideDrivingDirections = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     hideDrivingDirections
     itinerary={parkAndRideItinerary}
+  />
+);
+
+export const ApproximatePrefixItinerary = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkItinerary}
+    showApproximateAccessLegTravelTimes
+  />
+);
+
+export const TransferLegItinerary = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={transferLegItinerary} />
+);
+
+export const AlertNoEffectiveAsOfItinerary = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkItinerary}
+    showAlertEffectiveDateTimeText={false}
   />
 );

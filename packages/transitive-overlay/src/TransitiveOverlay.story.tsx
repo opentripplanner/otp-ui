@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import EndpointsOverlay from "@opentripplanner/endpoints-overlay";
 import React from "react";
 import { action } from "@storybook/addon-actions";
@@ -22,6 +23,7 @@ const walkTransitWalkItineraryNoIntermediateStops = require("@opentripplanner/it
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 const flexItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
 const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
+const otp2TransitItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-transit-leg.json");
 
 const companies = [
   {
@@ -49,291 +51,118 @@ function getToLocation(itinerary) {
 export default {
   title: "TransitiveOverlay",
   decorators: [withMap()],
-  component: TransitiveOverlay
+  component: TransitiveOverlay,
+  parameters: { storyshots: { disable: true } },
+  argTypes: {
+    showRouteArrows: {
+      control: "boolean",
+      description: "Toggle to show or hide route arrows on the map"
+    },
+    accessLegColorOverride: {
+      control: "color",
+      description: "Override the color of the route"
+    }
+  },
+  args: {
+    showRouteArrows: false,
+    accessLegColorOverride: null,
+    visible: true
+  }
 };
 
-export const Empty = (): JSX.Element => (
-  <TransitiveOverlay transitiveData={null} visible />
-);
-
-export const WalkingItinerary = (): JSX.Element => (
+const Template = injectIntl(({ itinerary, intl, ...args }) => (
   <>
     <EndpointsOverlay
-      fromLocation={getFromLocation(walkOnlyItinerary)}
+      fromLocation={getFromLocation(itinerary)}
       setLocation={setLocation}
-      toLocation={getToLocation(walkOnlyItinerary)}
+      toLocation={getToLocation(itinerary)}
       visible
     />
     <TransitiveOverlay
-      transitiveData={itineraryToTransitive(walkOnlyItinerary, {
-        companies
-      })}
-      visible
-    />
-  </>
-);
-WalkingItinerary.decorators = [withMap([45.518841, -122.679302], 19)];
-
-export const BikeOnlyItinerary = (): JSX.Element => (
-  <>
-    <EndpointsOverlay
-      fromLocation={getFromLocation(bikeOnlyItinerary)}
-      setLocation={setLocation}
-      toLocation={getToLocation(bikeOnlyItinerary)}
-      visible
-    />
-    <TransitiveOverlay
-      transitiveData={itineraryToTransitive(bikeOnlyItinerary, { companies })}
-      visible
-    />
-  </>
-);
-BikeOnlyItinerary.decorators = [withMap([45.520441, -122.68302], 16)];
-
-export const WalkTransitWalkItinerary = (): JSX.Element => (
-  <>
-    <EndpointsOverlay
-      fromLocation={getFromLocation(walkTransitWalkItinerary)}
-      setLocation={setLocation}
-      toLocation={getToLocation(walkTransitWalkItinerary)}
-      visible
-    />
-    <TransitiveOverlay
-      transitiveData={itineraryToTransitive(walkTransitWalkItinerary, {
-        companies
-      })}
-      visible
-    />
-  </>
-);
-WalkTransitWalkItinerary.decorators = [withMap([45.520441, -122.68302], 16)];
-
-export const WalkTransitWalkItineraryWithNoIntermediateStops = (): JSX.Element => (
-  <>
-    <EndpointsOverlay
-      fromLocation={getFromLocation(
-        walkTransitWalkItineraryNoIntermediateStops
-      )}
-      setLocation={setLocation}
-      toLocation={getToLocation(walkTransitWalkItineraryNoIntermediateStops)}
-      visible
-    />
-    <TransitiveOverlay
-      transitiveData={itineraryToTransitive(
-        walkTransitWalkItineraryNoIntermediateStops,
-        { companies }
-      )}
-      visible
-    />
-  </>
-);
-WalkTransitWalkItineraryWithNoIntermediateStops.decorators = [
-  withMap([45.525841, -122.649302], 13)
-];
-
-export const BikeTransitBikeItinerary = (): JSX.Element => (
-  <>
-    <EndpointsOverlay
-      fromLocation={getFromLocation(bikeTransitBikeItinerary)}
-      setLocation={setLocation}
-      toLocation={getToLocation(bikeTransitBikeItinerary)}
-      visible
-    />
-    <TransitiveOverlay
-      transitiveData={itineraryToTransitive(bikeTransitBikeItinerary, {
-        companies
-      })}
-      visible
-    />
-  </>
-);
-BikeTransitBikeItinerary.decorators = [withMap([45.520441, -122.68302], 16)];
-
-export const WalkInterlinedTransitItinerary = (): JSX.Element => (
-  <>
-    <EndpointsOverlay
-      fromLocation={getFromLocation(walkInterlinedTransitItinerary)}
-      setLocation={setLocation}
-      toLocation={getToLocation(walkInterlinedTransitItinerary)}
-      visible
-    />
-    <TransitiveOverlay
-      transitiveData={itineraryToTransitive(walkInterlinedTransitItinerary, {
-        companies
-      })}
-      visible
-    />
-  </>
-);
-WalkInterlinedTransitItinerary.decorators = [
-  withMap([47.703022, -122.328041], 12.5)
-];
-
-export const WalkTransitTransferItinerary = (): JSX.Element => (
-  <>
-    <EndpointsOverlay
-      fromLocation={getFromLocation(walkTransitWalkTransitWalkItinerary)}
-      setLocation={setLocation}
-      toLocation={getToLocation(walkTransitWalkTransitWalkItinerary)}
-      visible
-    />
-    <TransitiveOverlay
-      transitiveData={itineraryToTransitive(
-        walkTransitWalkTransitWalkItinerary,
-        { companies }
-      )}
-      visible
-    />
-  </>
-);
-WalkTransitTransferItinerary.decorators = [
-  withMap([45.505841, -122.631302], 14)
-];
-
-export const BikeRentalItinerary = (): JSX.Element => (
-  <>
-    <EndpointsOverlay
-      fromLocation={getFromLocation(bikeRentalItinerary)}
-      setLocation={setLocation}
-      toLocation={getToLocation(bikeRentalItinerary)}
-      visible
-    />
-    <TransitiveOverlay
-      transitiveData={itineraryToTransitive(bikeRentalItinerary, { companies })}
-      visible
-    />
-  </>
-);
-BikeRentalItinerary.decorators = [withMap([45.508841, -122.631302], 14)];
-
-export const EScooterRentalItinerary = injectIntl(({ intl }) => (
-  <>
-    <EndpointsOverlay
-      fromLocation={getFromLocation(eScooterRentalItinerary)}
-      setLocation={setLocation}
-      toLocation={getToLocation(eScooterRentalItinerary)}
-      visible
-    />
-    <TransitiveOverlay
-      transitiveData={itineraryToTransitive(eScooterRentalItinerary, {
-        companies,
-        intl
-      })}
-      visible
+      transitiveData={itineraryToTransitive(itinerary, { companies, intl })}
+      {...args}
     />
   </>
 ));
-EScooterRentalItinerary.decorators = [withMap([45.52041, -122.675302], 16)];
 
-export const ParkAndRideItinerary = (): JSX.Element => (
-  <>
-    <EndpointsOverlay
-      fromLocation={getFromLocation(parkAndRideItinerary)}
-      setLocation={setLocation}
-      toLocation={getToLocation(parkAndRideItinerary)}
-      visible
-    />
-    <TransitiveOverlay
-      transitiveData={itineraryToTransitive(parkAndRideItinerary, {
-        companies
-      })}
-      visible
-    />
-  </>
+export const WalkingItinerary = Template.bind({});
+WalkingItinerary.args = {
+  itinerary: walkOnlyItinerary
+};
+
+export const BikeOnlyItinerary = Template.bind({});
+BikeOnlyItinerary.args = {
+  itinerary: bikeOnlyItinerary
+};
+
+export const WalkTransitWalkItinerary = Template.bind({});
+WalkTransitWalkItinerary.args = {
+  itinerary: walkTransitWalkItinerary
+};
+
+export const WalkTransitWalkItineraryWithNoIntermediateStops = Template.bind(
+  {}
 );
-ParkAndRideItinerary.decorators = [withMap([45.515841, -122.75302], 13)];
+WalkTransitWalkItineraryWithNoIntermediateStops.args = {
+  itinerary: walkTransitWalkItineraryNoIntermediateStops
+};
 
-export const BikeRentalTransitItinerary = (): JSX.Element => (
-  <>
-    <EndpointsOverlay
-      fromLocation={getFromLocation(bikeRentalTransitBikeRentalItinerary)}
-      setLocation={setLocation}
-      toLocation={getToLocation(bikeRentalTransitBikeRentalItinerary)}
-      visible
-    />
-    <TransitiveOverlay
-      transitiveData={itineraryToTransitive(
-        bikeRentalTransitBikeRentalItinerary,
-        { companies }
-      )}
-      visible
-    />
-  </>
-);
-BikeRentalTransitItinerary.decorators = [withMap([45.538841, -122.6302], 12)];
+export const BikeTransitBikeItinerary = Template.bind({});
+BikeTransitBikeItinerary.args = {
+  itinerary: bikeTransitBikeItinerary
+};
 
-export const EScooterRentalTransitItinerary = injectIntl(({ intl }) => (
-  <>
-    <EndpointsOverlay
-      fromLocation={getFromLocation(
-        eScooterRentalTransiteScooterRentalItinerary
-      )}
-      setLocation={setLocation}
-      toLocation={getToLocation(eScooterRentalTransiteScooterRentalItinerary)}
-      visible
-    />
-    <TransitiveOverlay
-      transitiveData={itineraryToTransitive(
-        eScooterRentalTransiteScooterRentalItinerary,
-        { companies, intl }
-      )}
-      visible
-    />
-  </>
-));
-EScooterRentalTransitItinerary.decorators = [
-  withMap([45.538841, -122.6302], 12)
-];
+export const WalkInterlinedTransitItinerary = Template.bind({});
+WalkInterlinedTransitItinerary.args = {
+  itinerary: walkInterlinedTransitItinerary
+};
 
-export const TncTransitItinerary = (): JSX.Element => (
-  <>
-    <EndpointsOverlay
-      fromLocation={getFromLocation(tncTransitTncItinerary)}
-      setLocation={setLocation}
-      toLocation={getToLocation(tncTransitTncItinerary)}
-      visible
-    />
-    <TransitiveOverlay
-      transitiveData={itineraryToTransitive(tncTransitTncItinerary, {
-        companies
-      })}
-      visible
-    />
-  </>
-);
-TncTransitItinerary.decorators = [withMap([45.538841, -122.6302], 12)];
+export const WalkTransitTransferItinerary = Template.bind({});
+WalkTransitTransferItinerary.args = {
+  itinerary: walkTransitWalkTransitWalkItinerary
+};
 
-export const FlexItinerary = (): JSX.Element => (
-  <>
-    <EndpointsOverlay
-      fromLocation={getFromLocation(flexItinerary)}
-      setLocation={setLocation}
-      toLocation={getToLocation(flexItinerary)}
-      visible
-    />
-    <TransitiveOverlay
-      transitiveData={itineraryToTransitive(flexItinerary, { companies })}
-      visible
-    />
-  </>
-);
-FlexItinerary.decorators = [withMap([40.038487, -105.0529011], 11)];
+export const BikeRentalItinerary = Template.bind({});
+BikeRentalItinerary.args = {
+  itinerary: bikeRentalItinerary
+};
 
-export const OTP2ScooterItinerary = injectIntl(({ intl }) => (
-  <>
-    <EndpointsOverlay
-      fromLocation={getFromLocation(otp2ScooterItinerary)}
-      setLocation={setLocation}
-      toLocation={getToLocation(otp2ScooterItinerary)}
-      visible
-    />
-    <TransitiveOverlay
-      transitiveData={itineraryToTransitive(otp2ScooterItinerary, {
-        companies,
-        intl
-      })}
-      visible
-    />
-  </>
-));
-OTP2ScooterItinerary.decorators = [withMap([33.749, -84.388], 11)];
+export const EScooterRentalItinerary = Template.bind({});
+EScooterRentalItinerary.args = {
+  itinerary: eScooterRentalItinerary
+};
+
+export const ParkAndRideItinerary = Template.bind({});
+ParkAndRideItinerary.args = {
+  itinerary: parkAndRideItinerary
+};
+
+export const BikeRentalTransitItinerary = Template.bind({});
+BikeRentalTransitItinerary.args = {
+  itinerary: bikeRentalTransitBikeRentalItinerary
+};
+
+export const EScooterRentalTransitItinerary = Template.bind({});
+EScooterRentalTransitItinerary.args = {
+  itinerary: eScooterRentalTransiteScooterRentalItinerary
+};
+
+export const TncTransitItinerary = Template.bind({});
+TncTransitItinerary.args = {
+  itinerary: tncTransitTncItinerary
+};
+
+export const FlexItinerary = Template.bind({});
+FlexItinerary.args = {
+  itinerary: flexItinerary
+};
+
+export const OTP2ScooterItinerary = Template.bind({});
+OTP2ScooterItinerary.args = {
+  itinerary: otp2ScooterItinerary
+};
+
+export const OTP2TransitItinerary = Template.bind({});
+OTP2TransitItinerary.args = {
+  itinerary: otp2TransitItinerary
+};

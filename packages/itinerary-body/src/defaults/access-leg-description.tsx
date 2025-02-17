@@ -2,6 +2,7 @@ import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { Config, Leg } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
 import { FormattedMessage, IntlShape, useIntl } from "react-intl";
+import coreUtils from "@opentripplanner/core-utils";
 import * as S from "../styled";
 
 import { defaultMessages, getPlaceName } from "../util";
@@ -88,6 +89,9 @@ export default function AccessLegDescription({
     </S.LegDescriptionPlace>
   );
 
+  // TODO: is this causing issues with TNC legs? Do walk legs leading to a TNC
+  // trip really have the same `to.stopId` as `from.stopId`?
+  const isTransferLeg = leg.to.stopId === leg.from.stopId;
   return (
     // Return an HTML element which is passed a className (and style props)
     // for styled-components support.
@@ -100,8 +104,32 @@ export default function AccessLegDescription({
           values={{
             // TODO: Implement metric vs imperial (up until now it's just imperial).
             distance: humanizeDistanceString(leg.distance, false, intl),
+            // This is not used by the default string,
+            // but supplying it allows a user who is overriding the string to use it
+            // This relies on `formatDuration` being passed into the itinerary body config.
+            // That method is used to generate the duration string
+            duration:
+              config?.formatDuration &&
+              config.formatDuration(leg.duration, intl, false),
             mode: modeContent,
             place: placeContent
+          }}
+        />
+      ) : isTransferLeg ? (
+        <FormattedMessage
+          defaultMessage="Transfer, wait {duration}"
+          description="Summarizes a transfer leg"
+          id="otpUi.AccessLegBody.transfer"
+          values={{
+            duration: intl.formatMessage(
+              {
+                id: "otpUi.ItineraryBody.common.durationShort"
+              },
+              {
+                approximatePrefix: false,
+                ...coreUtils.time.toHoursMinutesSeconds(leg.duration)
+              }
+            )
           }}
         />
       ) : (

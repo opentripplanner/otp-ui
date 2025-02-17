@@ -1,0 +1,1475 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LocationField/Mobile Context Blank smoke-test 1`] = `
+<div class="styled__InputGroup-sc-xahsq2-7 cgVWic"
+     role="group"
+>
+  <button aria-controls="from-listbox"
+          aria-expanded="true"
+          aria-label="Toggle displaying the list of suggested locations"
+          tabindex="-1"
+          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 cowprk eGxygT"
+  >
+    <svg viewbox="0 0 512 512"
+         height="13"
+         width="13"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO styled__FromIcon-sc-n5xcvc-0 jTjMOf"
+    >
+      <path fill="currentColor"
+            d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
+      >
+      </path>
+    </svg>
+  </button>
+  <input aria-autocomplete="list"
+         aria-controls="from-listbox"
+         aria-expanded="true"
+         aria-haspopup="listbox"
+         aria-invalid="false"
+         aria-label="from"
+         aria-required="false"
+         class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
+         placeholder="from"
+         role="combobox"
+         value
+  >
+  <span role="status"
+        class="styled__HiddenContent-sc-xahsq2-0 MJNFZ"
+  >
+  </span>
+  <ul aria-hidden="true"
+      aria-label="Suggested locations"
+      id="from-listbox"
+      role="listbox"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 bMzPj eECpsp"
+  >
+    <li aria-live="off"
+        id="otpui-locf-option-0"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 512 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M444.52 3.52 28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Use Current Location
+        </span>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`LocationField/Mobile Context GeocoderNoResults smoke-test 1`] = `
+<div class="styled__InputGroup-sc-xahsq2-7 cgVWic"
+     role="group"
+>
+  <button aria-controls="from-listbox"
+          aria-expanded="true"
+          aria-label="Toggle displaying the list of suggested locations"
+          tabindex="-1"
+          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 cowprk eGxygT"
+  >
+    <svg viewbox="0 0 512 512"
+         height="13"
+         width="13"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO styled__FromIcon-sc-n5xcvc-0 jTjMOf"
+    >
+      <path fill="currentColor"
+            d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
+      >
+      </path>
+    </svg>
+  </button>
+  <input aria-autocomplete="list"
+         aria-controls="from-listbox"
+         aria-expanded="true"
+         aria-haspopup="listbox"
+         aria-invalid="false"
+         aria-label="from"
+         aria-required="false"
+         class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
+         placeholder="from"
+         role="combobox"
+         value
+  >
+  <span role="status"
+        class="styled__HiddenContent-sc-xahsq2-0 MJNFZ"
+  >
+  </span>
+  <ul aria-hidden="true"
+      aria-label="Suggested locations"
+      id="from-listbox"
+      role="listbox"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 bMzPj eECpsp"
+  >
+    <li aria-live="off"
+        id="otpui-locf-option-0"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 512 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M444.52 3.52 28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Use Current Location
+        </span>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`LocationField/Mobile Context GeocoderUnreachable smoke-test 1`] = `
+<div class="styled__InputGroup-sc-xahsq2-7 cgVWic"
+     role="group"
+>
+  <button aria-controls="from-listbox"
+          aria-expanded="true"
+          aria-label="Toggle displaying the list of suggested locations"
+          tabindex="-1"
+          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 cowprk eGxygT"
+  >
+    <svg viewbox="0 0 512 512"
+         height="13"
+         width="13"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO styled__FromIcon-sc-n5xcvc-0 jTjMOf"
+    >
+      <path fill="currentColor"
+            d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
+      >
+      </path>
+    </svg>
+  </button>
+  <input aria-autocomplete="list"
+         aria-controls="from-listbox"
+         aria-expanded="true"
+         aria-haspopup="listbox"
+         aria-invalid="false"
+         aria-label="from"
+         aria-required="false"
+         class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
+         placeholder="from"
+         role="combobox"
+         value
+  >
+  <span role="status"
+        class="styled__HiddenContent-sc-xahsq2-0 MJNFZ"
+  >
+  </span>
+  <ul aria-hidden="true"
+      aria-label="Suggested locations"
+      id="from-listbox"
+      role="listbox"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 bMzPj eECpsp"
+  >
+    <li aria-live="off"
+        id="otpui-locf-option-0"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 512 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M444.52 3.52 28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Use Current Location
+        </span>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`LocationField/Mobile Context LocationUnavailable smoke-test 1`] = `
+<div class="styled__InputGroup-sc-xahsq2-7 cgVWic"
+     role="group"
+>
+  <button aria-controls="from-listbox"
+          aria-expanded="true"
+          aria-label="Toggle displaying the list of suggested locations"
+          tabindex="-1"
+          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 cowprk eGxygT"
+  >
+    <svg viewbox="0 0 512 512"
+         height="13"
+         width="13"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO styled__FromIcon-sc-n5xcvc-0 jTjMOf"
+    >
+      <path fill="currentColor"
+            d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
+      >
+      </path>
+    </svg>
+  </button>
+  <input aria-autocomplete="list"
+         aria-controls="from-listbox"
+         aria-expanded="true"
+         aria-haspopup="listbox"
+         aria-invalid="false"
+         aria-label="from"
+         aria-required="false"
+         class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
+         placeholder="from"
+         role="combobox"
+         value
+  >
+  <span role="status"
+        class="styled__HiddenContent-sc-xahsq2-0 MJNFZ"
+  >
+    Current location not available
+  </span>
+  <ul aria-hidden="true"
+      aria-label="Suggested locations"
+      id="from-listbox"
+      role="listbox"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 bMzPj eECpsp"
+  >
+    <li aria-hidden="true"
+        aria-live="off"
+        id="otpui-locf-option-0"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 512 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M256 8C119.034 8 8 119.033 8 256s111.034 248 248 248 248-111.034 248-248S392.967 8 256 8zm130.108 117.892c65.448 65.448 70 165.481 20.677 235.637L150.47 105.216c70.204-49.356 170.226-44.735 235.638 20.676zM125.892 386.108c-65.448-65.448-70-165.481-20.677-235.637L361.53 406.784c-70.203 49.356-170.226 44.736-235.638-20.676z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Current location not available
+        </span>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`LocationField/Mobile Context SelectedLocation smoke-test 1`] = `
+<div class="styled__InputGroup-sc-xahsq2-7 cgVWic"
+     role="group"
+>
+  <button aria-controls="to-listbox"
+          aria-expanded="true"
+          aria-label="Toggle displaying the list of suggested locations"
+          tabindex="-1"
+          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 cowprk eGxygT"
+  >
+    <svg viewbox="0 0 384 512"
+         height="13"
+         width="13"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO styled__ToIcon-sc-n5xcvc-2 ipFnZE"
+    >
+      <path fill="currentColor"
+            d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+      >
+      </path>
+    </svg>
+  </button>
+  <input aria-autocomplete="list"
+         aria-controls="to-listbox"
+         aria-expanded="true"
+         aria-haspopup="listbox"
+         aria-invalid="false"
+         aria-label="to"
+         aria-required="false"
+         class="styled__Input-sc-xahsq2-6 naPtq to-form-control"
+         spellcheck="false"
+         placeholder="to"
+         role="combobox"
+         value="123 Main St"
+  >
+  <button aria-label="Clear location"
+          class="styled__BaseButton-sc-xahsq2-1 styled__ClearButton-sc-xahsq2-2 cowprk cyXeZf"
+  >
+    <svg viewbox="0 0 352 512"
+         height="13"
+         width="13"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO"
+    >
+      <path fill="currentColor"
+            d="m242.72 256 100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"
+      >
+      </path>
+    </svg>
+  </button>
+  <span role="status"
+        class="styled__HiddenContent-sc-xahsq2-0 MJNFZ"
+  >
+  </span>
+  <ul aria-hidden="true"
+      aria-label="Suggested locations"
+      id="to-listbox"
+      role="listbox"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 bMzPj eECpsp"
+  >
+    <li aria-live="off"
+        id="otpui-locf-option-0"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 512 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M444.52 3.52 28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Use Current Location
+        </span>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`LocationField/Mobile Context SelectedLocationCustomClear smoke-test 1`] = `
+<div class="styled__InputGroup-sc-xahsq2-7 cgVWic"
+     role="group"
+>
+  <button aria-controls="to-listbox"
+          aria-expanded="true"
+          aria-label="Toggle displaying the list of suggested locations"
+          tabindex="-1"
+          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 cowprk eGxygT"
+  >
+    <svg viewbox="0 0 384 512"
+         height="13"
+         width="13"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO styled__ToIcon-sc-n5xcvc-2 ipFnZE"
+    >
+      <path fill="currentColor"
+            d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+      >
+      </path>
+    </svg>
+  </button>
+  <input aria-autocomplete="list"
+         aria-controls="to-listbox"
+         aria-expanded="true"
+         aria-haspopup="listbox"
+         aria-invalid="false"
+         aria-label="to"
+         aria-required="false"
+         class="styled__Input-sc-xahsq2-6 naPtq to-form-control"
+         spellcheck="false"
+         placeholder="to"
+         role="combobox"
+         value="123 Main St"
+  >
+  <button aria-label="Clear location"
+          class="styled__BaseButton-sc-xahsq2-1 styled__ClearButton-sc-xahsq2-2 cowprk cyXeZf"
+  >
+    <svg viewbox="0 0 512 512"
+         height="13"
+         width="13"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO"
+    >
+      <path fill="currentColor"
+            d="M488 128h-8V80c0-44.8-99.2-80-224-80S32 35.2 32 80v48h-8c-13.25 0-24 10.74-24 24v80c0 13.25 10.75 24 24 24h8v160c0 17.67 14.33 32 32 32v32c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-32h192v32c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-32h6.4c16 0 25.6-12.8 25.6-25.6V256h8c13.25 0 24-10.75 24-24v-80c0-13.26-10.75-24-24-24zM112 400c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm16-112c-17.67 0-32-14.33-32-32V128c0-17.67 14.33-32 32-32h256c17.67 0 32 14.33 32 32v128c0 17.67-14.33 32-32 32H128zm272 112c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"
+      >
+      </path>
+    </svg>
+  </button>
+  <span role="status"
+        class="styled__HiddenContent-sc-xahsq2-0 MJNFZ"
+  >
+  </span>
+  <ul aria-hidden="true"
+      aria-label="Suggested locations"
+      id="to-listbox"
+      role="listbox"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 bMzPj eECpsp"
+  >
+    <li aria-live="off"
+        id="otpui-locf-option-0"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 512 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M444.52 3.52 28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Use Current Location
+        </span>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`LocationField/Mobile Context SlowGeocoder smoke-test 1`] = `
+<div class="styled__InputGroup-sc-xahsq2-7 cgVWic"
+     role="group"
+>
+  <button aria-controls="from-listbox"
+          aria-expanded="true"
+          aria-label="Toggle displaying the list of suggested locations"
+          tabindex="-1"
+          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 cowprk eGxygT"
+  >
+    <svg viewbox="0 0 512 512"
+         height="13"
+         width="13"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO styled__FromIcon-sc-n5xcvc-0 jTjMOf"
+    >
+      <path fill="currentColor"
+            d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
+      >
+      </path>
+    </svg>
+  </button>
+  <input aria-autocomplete="list"
+         aria-controls="from-listbox"
+         aria-expanded="true"
+         aria-haspopup="listbox"
+         aria-invalid="false"
+         aria-label="from"
+         aria-required="false"
+         class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
+         placeholder="from"
+         role="combobox"
+         value
+  >
+  <span role="status"
+        class="styled__HiddenContent-sc-xahsq2-0 MJNFZ"
+  >
+  </span>
+  <ul aria-hidden="true"
+      aria-label="Suggested locations"
+      id="from-listbox"
+      role="listbox"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 bMzPj eECpsp"
+  >
+    <li aria-live="off"
+        id="otpui-locf-option-0"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 512 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M444.52 3.52 28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Use Current Location
+        </span>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`LocationField/Mobile Context Styled smoke-test 1`] = `
+<div class="styled__InputGroup-sc-xahsq2-7 cgVWic Mobilestory__StyledLocationField-sc-1kqdrv5-0 cJkboN"
+     role="group"
+>
+  <button aria-controls="from-listbox"
+          aria-expanded="true"
+          aria-label="Toggle displaying the list of suggested locations"
+          tabindex="-1"
+          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 cowprk eGxygT"
+  >
+    <svg viewbox="0 0 512 512"
+         height="13"
+         width="13"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO styled__FromIcon-sc-n5xcvc-0 jTjMOf"
+    >
+      <path fill="currentColor"
+            d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
+      >
+      </path>
+    </svg>
+  </button>
+  <input aria-autocomplete="list"
+         aria-controls="from-listbox"
+         aria-expanded="true"
+         aria-haspopup="listbox"
+         aria-invalid="false"
+         aria-label="from"
+         aria-required="false"
+         class="styled__Input-sc-xahsq2-6 naPtq from-form-control"
+         spellcheck="false"
+         placeholder="from"
+         role="combobox"
+         value
+  >
+  <span role="status"
+        class="styled__HiddenContent-sc-xahsq2-0 MJNFZ"
+  >
+  </span>
+  <ul aria-hidden="true"
+      aria-label="Suggested locations"
+      id="from-listbox"
+      role="listbox"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 bMzPj eECpsp"
+  >
+    <li aria-live="off"
+        id="otpui-locf-option-0"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 512 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M444.52 3.52 28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Use Current Location
+        </span>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
+<div class="styled__InputGroup-sc-xahsq2-7 cgVWic"
+     role="group"
+>
+  <button aria-controls="to-listbox"
+          aria-expanded="true"
+          aria-label="Toggle displaying the list of suggested locations"
+          tabindex="-1"
+          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 cowprk eGxygT"
+  >
+    <svg viewbox="0 0 640 512"
+         height="13"
+         width="13"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO"
+    >
+      <path fill="currentColor"
+            d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM44.81 205.66l88.74 80a62.607 62.607 0 0 0 25.47 13.93l287.6 78.35c26.48 7.21 54.56 8.72 81 1.36 29.67-8.27 43.44-21.21 47.25-35.71 3.83-14.5-1.73-32.71-23.37-54.96-19.28-19.82-44.35-32.79-70.83-40l-97.51-26.56L282.8 30.22c-1.51-5.81-5.95-10.35-11.66-11.91L206.05.58c-10.56-2.88-20.9 5.32-20.71 16.44l47.92 164.21-102.2-27.84-27.59-67.88c-1.93-4.89-6.01-8.57-11.02-9.93L52.72 64.75c-10.34-2.82-20.53 5-20.72 15.88l.23 101.78c.19 8.91 6.03 17.34 12.58 23.25z"
+      >
+      </path>
+    </svg>
+  </button>
+  <input aria-autocomplete="list"
+         aria-controls="to-listbox"
+         aria-expanded="true"
+         aria-haspopup="listbox"
+         aria-invalid="false"
+         aria-label="to"
+         aria-required="false"
+         class="styled__Input-sc-xahsq2-6 naPtq to-form-control"
+         spellcheck="false"
+         placeholder="to"
+         role="combobox"
+         value
+  >
+  <span role="status"
+        class="styled__HiddenContent-sc-xahsq2-0 MJNFZ"
+  >
+  </span>
+  <ul aria-hidden="true"
+      aria-label="Suggested locations"
+      id="to-listbox"
+      role="listbox"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 bMzPj eECpsp"
+  >
+    <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 bznUet">
+      Nearby Stops
+    </h2>
+    <li aria-live="off"
+        id="otpui-locf-option-0"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__StopIconAndDistanceContainer-sc-xahsq2-19 jOBOtm">
+        <svg viewbox="0 0 512 512"
+             height="13"
+             width="13"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-ea9ulj-0 hPhvO"
+        >
+          <path fill="currentColor"
+                d="M507.31 84.69 464 41.37c-6-6-14.14-9.37-22.63-9.37H288V16c0-8.84-7.16-16-16-16h-32c-8.84 0-16 7.16-16 16v16H56c-13.25 0-24 10.75-24 24v80c0 13.25 10.75 24 24 24h385.37c8.49 0 16.62-3.37 22.63-9.37l43.31-43.31c6.25-6.26 6.25-16.38 0-22.63zM224 496c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16V384h-64v112zm232-272H288v-32h-64v32H70.63c-8.49 0-16.62 3.37-22.63 9.37L4.69 276.69c-6.25 6.25-6.25 16.38 0 22.63L48 342.63c6 6 14.14 9.37 22.63 9.37H456c13.25 0 24-10.75 24-24v-80c0-13.25-10.75-24-24-24z"
+          >
+          </path>
+        </svg>
+        <span class="styled__StopDistance-sc-xahsq2-18 gwKNBI">
+          404 ft
+        </span>
+      </span>
+      <span class="styled__StopContentContainer-sc-xahsq2-17 geQYvO">
+        <span class="styled__StopName-sc-xahsq2-20 dleXeb">
+          1st &amp; Main (1)
+        </span>
+        <span class="styled__StopRoutes-sc-xahsq2-21 QVxUL">
+          <span class="styled__RouteName-sc-xahsq2-15 emQpBA">
+            1
+          </span>
+        </span>
+      </span>
+      <div class="styled__ClearBoth-sc-xahsq2-3 kNhfIp">
+      </div>
+    </li>
+    <li aria-live="off"
+        id="otpui-locf-option-1"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__StopIconAndDistanceContainer-sc-xahsq2-19 jOBOtm">
+        <svg viewbox="0 0 512 512"
+             height="13"
+             width="13"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-ea9ulj-0 hPhvO"
+        >
+          <path fill="currentColor"
+                d="M507.31 84.69 464 41.37c-6-6-14.14-9.37-22.63-9.37H288V16c0-8.84-7.16-16-16-16h-32c-8.84 0-16 7.16-16 16v16H56c-13.25 0-24 10.75-24 24v80c0 13.25 10.75 24 24 24h385.37c8.49 0 16.62-3.37 22.63-9.37l43.31-43.31c6.25-6.26 6.25-16.38 0-22.63zM224 496c0 8.84 7.16 16 16 16h32c8.84 0 16-7.16 16-16V384h-64v112zm232-272H288v-32h-64v32H70.63c-8.49 0-16.62 3.37-22.63 9.37L4.69 276.69c-6.25 6.25-6.25 16.38 0 22.63L48 342.63c6 6 14.14 9.37 22.63 9.37H456c13.25 0 24-10.75 24-24v-80c0-13.25-10.75-24-24-24z"
+          >
+          </path>
+        </svg>
+        <span class="styled__StopDistance-sc-xahsq2-18 gwKNBI">
+          0.2 mi
+        </span>
+      </span>
+      <span class="styled__StopContentContainer-sc-xahsq2-17 geQYvO">
+        <span class="styled__StopName-sc-xahsq2-20 dleXeb">
+          Main &amp; 2nd (2)
+        </span>
+        <span class="styled__StopRoutes-sc-xahsq2-21 QVxUL">
+          <span class="styled__RouteName-sc-xahsq2-15 emQpBA">
+            2
+          </span>
+        </span>
+      </span>
+      <div class="styled__ClearBoth-sc-xahsq2-3 kNhfIp">
+      </div>
+    </li>
+    <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 bznUet">
+      Recently Searched
+    </h2>
+    <li aria-live="off"
+        id="otpui-locf-option-2"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 512 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm92.49 313-20 25a16 16 0 0 1-22.49 2.5l-67-49.72a40 40 0 0 1-15-31.23V112a16 16 0 0 1 16-16h32a16 16 0 0 1 16 16v144l58 42.5a16 16 0 0 1 2.49 22.5z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          123 Main St
+        </span>
+      </span>
+    </li>
+    <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 bznUet">
+      My Places
+    </h2>
+    <li aria-live="off"
+        id="otpui-locf-option-3"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 576 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M259.3 17.8 194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Home (456 Suburb St)
+        </span>
+      </span>
+    </li>
+    <li aria-live="off"
+        id="otpui-locf-option-4"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 448 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M436 480h-20V24c0-13.255-10.745-24-24-24H56C42.745 0 32 10.745 32 24v456H12c-6.627 0-12 5.373-12 12v20h448v-20c0-6.627-5.373-12-12-12zM128 76c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12V76zm0 96c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12v-40zm52 148h-40c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40c0 6.627-5.373 12-12 12zm76 160h-64v-84c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v84zm64-172c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40zm0-96c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12v-40c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40zm0-96c0 6.627-5.373 12-12 12h-40c-6.627 0-12-5.373-12-12V76c0-6.627 5.373-12 12-12h40c6.627 0 12 5.373 12 12v40z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Work (789 Busy St)
+        </span>
+      </span>
+    </li>
+    <li aria-live="off"
+        id="otpui-locf-option-5"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 576 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M259.3 17.8 194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Coffee Roasters Shop, 55 Coffee Street
+        </span>
+      </span>
+    </li>
+    <li aria-live="off"
+        id="otpui-locf-option-6"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 576 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M259.3 17.8 194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          123 Main St
+        </span>
+      </span>
+    </li>
+    <li aria-live="off"
+        id="otpui-locf-option-7"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 512 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M500 224h-30.364C455.724 130.325 381.675 56.276 288 42.364V12c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v30.364C130.325 56.276 56.276 130.325 42.364 224H12c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h30.364C56.276 381.675 130.325 455.724 224 469.636V500c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12v-30.364C381.675 455.724 455.724 381.675 469.636 288H500c6.627 0 12-5.373 12-12v-40c0-6.627-5.373-12-12-12zM288 404.634V364c0-6.627-5.373-12-12-12h-40c-6.627 0-12 5.373-12 12v40.634C165.826 392.232 119.783 346.243 107.366 288H148c6.627 0 12-5.373 12-12v-40c0-6.627-5.373-12-12-12h-40.634C119.768 165.826 165.757 119.783 224 107.366V148c0 6.627 5.373 12 12 12h40c6.627 0 12-5.373 12-12v-40.634C346.174 119.768 392.217 165.757 404.634 224H364c-6.627 0-12 5.373-12 12v40c0 6.627 5.373 12 12 12h40.634C392.232 346.174 346.243 392.217 288 404.634zM288 256c0 17.673-14.327 32-32 32s-32-14.327-32-32c0-17.673 14.327-32 32-32s32 14.327 32 32z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Use Current Location
+        </span>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
+<div class="styled__InputGroup-sc-xahsq2-7 cgVWic"
+     role="group"
+>
+  <button aria-controls="to-listbox"
+          aria-expanded="true"
+          aria-label="Toggle displaying the list of suggested locations"
+          tabindex="-1"
+          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 cowprk eGxygT"
+  >
+    <svg viewbox="0 0 384 512"
+         height="13"
+         width="13"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO styled__ToIcon-sc-n5xcvc-2 ipFnZE"
+    >
+      <path fill="currentColor"
+            d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+      >
+      </path>
+    </svg>
+  </button>
+  <input aria-autocomplete="list"
+         aria-controls="to-listbox"
+         aria-expanded="true"
+         aria-haspopup="listbox"
+         aria-invalid="false"
+         aria-label="to"
+         aria-required="false"
+         class="styled__Input-sc-xahsq2-6 naPtq to-form-control"
+         spellcheck="false"
+         placeholder="to"
+         role="combobox"
+         value
+  >
+  <span role="status"
+        class="styled__HiddenContent-sc-xahsq2-0 MJNFZ"
+  >
+  </span>
+  <ul aria-hidden="true"
+      aria-label="Suggested locations"
+      id="to-listbox"
+      role="listbox"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 bMzPj eECpsp"
+  >
+    <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 bznUet">
+      Nearby Stops
+    </h2>
+    <li aria-live="off"
+        id="otpui-locf-option-0"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__StopIconAndDistanceContainer-sc-xahsq2-19 jOBOtm">
+        <svg viewbox="0 0 512 512"
+             height="13"
+             width="13"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-ea9ulj-0 hPhvO"
+        >
+          <path fill="currentColor"
+                d="M488 128h-8V80c0-44.8-99.2-80-224-80S32 35.2 32 80v48h-8c-13.25 0-24 10.74-24 24v80c0 13.25 10.75 24 24 24h8v160c0 17.67 14.33 32 32 32v32c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-32h192v32c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-32h6.4c16 0 25.6-12.8 25.6-25.6V256h8c13.25 0 24-10.75 24-24v-80c0-13.26-10.75-24-24-24zM112 400c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm16-112c-17.67 0-32-14.33-32-32V128c0-17.67 14.33-32 32-32h256c17.67 0 32 14.33 32 32v128c0 17.67-14.33 32-32 32H128zm272 112c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"
+          >
+          </path>
+        </svg>
+        <span class="styled__StopDistance-sc-xahsq2-18 gwKNBI">
+          404 ft
+        </span>
+      </span>
+      <span class="styled__StopContentContainer-sc-xahsq2-17 geQYvO">
+        <span class="styled__StopName-sc-xahsq2-20 dleXeb">
+          1st &amp; Main (1)
+        </span>
+        <span class="styled__StopRoutes-sc-xahsq2-21 QVxUL">
+          <span class="styled__RouteName-sc-xahsq2-15 emQpBA">
+            1
+          </span>
+        </span>
+      </span>
+      <div class="styled__ClearBoth-sc-xahsq2-3 kNhfIp">
+      </div>
+    </li>
+    <li aria-live="off"
+        id="otpui-locf-option-1"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__StopIconAndDistanceContainer-sc-xahsq2-19 jOBOtm">
+        <svg viewbox="0 0 512 512"
+             height="13"
+             width="13"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-ea9ulj-0 hPhvO"
+        >
+          <path fill="currentColor"
+                d="M488 128h-8V80c0-44.8-99.2-80-224-80S32 35.2 32 80v48h-8c-13.25 0-24 10.74-24 24v80c0 13.25 10.75 24 24 24h8v160c0 17.67 14.33 32 32 32v32c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-32h192v32c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32v-32h6.4c16 0 25.6-12.8 25.6-25.6V256h8c13.25 0 24-10.75 24-24v-80c0-13.26-10.75-24-24-24zM112 400c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm16-112c-17.67 0-32-14.33-32-32V128c0-17.67 14.33-32 32-32h256c17.67 0 32 14.33 32 32v128c0 17.67-14.33 32-32 32H128zm272 112c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"
+          >
+          </path>
+        </svg>
+        <span class="styled__StopDistance-sc-xahsq2-18 gwKNBI">
+          0.2 mi
+        </span>
+      </span>
+      <span class="styled__StopContentContainer-sc-xahsq2-17 geQYvO">
+        <span class="styled__StopName-sc-xahsq2-20 dleXeb">
+          Main &amp; 2nd (2)
+        </span>
+        <span class="styled__StopRoutes-sc-xahsq2-21 QVxUL">
+          <span class="styled__RouteName-sc-xahsq2-15 emQpBA">
+            2
+          </span>
+        </span>
+      </span>
+      <div class="styled__ClearBoth-sc-xahsq2-3 kNhfIp">
+      </div>
+    </li>
+    <li aria-live="off"
+        id="otpui-locf-option-2"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 512 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M444.52 3.52 28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Use Current Location
+        </span>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
+<div class="styled__InputGroup-sc-xahsq2-7 cgVWic"
+     role="group"
+>
+  <button aria-controls="to-listbox"
+          aria-expanded="true"
+          aria-label="Toggle displaying the list of suggested locations"
+          tabindex="-1"
+          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 cowprk eGxygT"
+  >
+    <svg viewbox="0 0 384 512"
+         height="13"
+         width="13"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO styled__ToIcon-sc-n5xcvc-2 ipFnZE"
+    >
+      <path fill="currentColor"
+            d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+      >
+      </path>
+    </svg>
+  </button>
+  <input aria-autocomplete="list"
+         aria-controls="to-listbox"
+         aria-expanded="true"
+         aria-haspopup="listbox"
+         aria-invalid="false"
+         aria-label="to"
+         aria-required="false"
+         class="styled__Input-sc-xahsq2-6 naPtq to-form-control"
+         spellcheck="false"
+         placeholder="to"
+         role="combobox"
+         value
+  >
+  <span role="status"
+        class="styled__HiddenContent-sc-xahsq2-0 MJNFZ"
+  >
+  </span>
+  <ul aria-hidden="true"
+      aria-label="Suggested locations"
+      id="to-listbox"
+      role="listbox"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 bMzPj eECpsp"
+  >
+    <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 bznUet">
+      Recently Searched
+    </h2>
+    <li aria-live="off"
+        id="otpui-locf-option-0"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 512 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M505 442.7 405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          123 Main St
+        </span>
+      </span>
+    </li>
+    <li aria-live="off"
+        id="otpui-locf-option-1"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 512 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M444.52 3.52 28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Use Current Location
+        </span>
+      </span>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
+<div class="styled__InputGroup-sc-xahsq2-7 cgVWic"
+     role="group"
+>
+  <button aria-controls="to-listbox"
+          aria-expanded="true"
+          aria-label="Toggle displaying the list of suggested locations"
+          tabindex="-1"
+          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 cowprk eGxygT"
+  >
+    <svg viewbox="0 0 384 512"
+         height="13"
+         width="13"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-ea9ulj-0 hPhvO styled__ToIcon-sc-n5xcvc-2 ipFnZE"
+    >
+      <path fill="currentColor"
+            d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+      >
+      </path>
+    </svg>
+  </button>
+  <input aria-autocomplete="list"
+         aria-controls="to-listbox"
+         aria-expanded="true"
+         aria-haspopup="listbox"
+         aria-invalid="false"
+         aria-label="to"
+         aria-required="false"
+         class="styled__Input-sc-xahsq2-6 naPtq to-form-control"
+         spellcheck="false"
+         placeholder="to"
+         role="combobox"
+         value
+  >
+  <span role="status"
+        class="styled__HiddenContent-sc-xahsq2-0 MJNFZ"
+  >
+  </span>
+  <ul aria-hidden="true"
+      aria-label="Suggested locations"
+      id="to-listbox"
+      role="listbox"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 bMzPj eECpsp"
+  >
+    <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 bznUet">
+      My Places
+    </h2>
+    <li aria-live="off"
+        id="otpui-locf-option-0"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 576 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M280.37 148.26 96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47 488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Home (456 Suburb St)
+        </span>
+      </span>
+    </li>
+    <li aria-live="off"
+        id="otpui-locf-option-1"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 512 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M320 336c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-48H0v144c0 25.6 22.4 48 48 48h416c25.6 0 48-22.4 48-48V288H320v48zm144-208h-80V80c0-25.6-22.4-48-48-48H176c-25.6 0-48 22.4-48 48v48H48c-25.6 0-48 22.4-48 48v80h512v-80c0-25.6-22.4-48-48-48zm-144 0H192V96h128v32z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Work (789 Busy St)
+        </span>
+      </span>
+    </li>
+    <li aria-live="off"
+        id="otpui-locf-option-2"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 384 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Coffee Roasters Shop, 55 Coffee Street
+        </span>
+      </span>
+    </li>
+    <li aria-live="off"
+        id="otpui-locf-option-3"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 384 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          123 Main St
+        </span>
+      </span>
+    </li>
+    <li aria-live="off"
+        id="otpui-locf-option-4"
+        role="option"
+        aria-selected="false"
+        tabindex="-1"
+        class="styled__MenuItemLi-sc-xahsq2-9 gDVIUA"
+    >
+      <span class="styled__OptionContainer-sc-xahsq2-10 kWnUkr">
+        <span class="styled__OptionIconContainer-sc-xahsq2-14 hBmEeg">
+          <svg viewbox="0 0 512 512"
+               height="13"
+               width="13"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-ea9ulj-0 hPhvO"
+          >
+            <path fill="currentColor"
+                  d="M444.52 3.52 28.74 195.42c-47.97 22.39-31.98 92.75 19.19 92.75h175.91v175.91c0 51.17 70.36 67.17 92.75 19.19l191.9-415.78c15.99-38.39-25.59-79.97-63.97-63.97z"
+            >
+            </path>
+          </svg>
+        </span>
+        <span class="styled__OptionContent-sc-xahsq2-13 eSPfYC">
+          Use Current Location
+        </span>
+      </span>
+    </li>
+  </ul>
+</div>
+`;

@@ -113,6 +113,9 @@ export interface LocationFieldProps {
     maxNearbyStops?: number;
     type: string;
   };
+  /** Order of geocoder results to display */
+  /** TODO: grab these types from the object */
+  geocoderResultsOrder?: Array<"STATIONS" | "STOPS" | "OTHER">;
   /**
    * This is dispatched when the current position is null. This indicates that
    * the user has requested to use the current position, but that the current
@@ -228,6 +231,10 @@ export interface LocationFieldProps {
    * Whether or not to show the clear button
    */
   showClearButton?: boolean;
+  /**
+   * Whether to show alternate stop names when they are provided
+   */
+  showSecondaryLabels?: boolean;
   /**
    * Whether or not to show user settings dialog
    */

@@ -13,6 +13,8 @@ import StandardModeIcon from "./standard-mode-icon";
 import TriMetLegIcon from "./trimet-leg-icon";
 import TriMetModeIcon from "./trimet-mode-icon";
 import TriMetModeIcon2021 from "./trimet-mode-icon-2021";
+import SeptaIcon from "./septa-icons";
+import * as septa from "./septa";
 
 const {
   ClassicBike,
@@ -104,6 +106,8 @@ const {
   ZoomAngle
 } = trimet;
 
+const { Metro } = septa;
+
 export {
   Accessible,
   AerialTram,
@@ -153,6 +157,7 @@ export {
   MapMarkerSolid,
   Max,
   MaxCircle,
+  Metro,
   Micromobility,
   Parking,
   Phone,
@@ -160,6 +165,7 @@ export {
   Refresh,
   Right,
   Schedule,
+  SeptaIcon,
   SlightLeft,
   SlightRight,
   Snow,

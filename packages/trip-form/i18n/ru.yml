@@ -12,7 +12,7 @@ otpUi:
       car: Поездка в транспортном средстве
       rent: Прокат
       transit: Общественный транспорт
-      walk: Пешком
+      walk: Прогулка
     settings:
       bikeTolerance-label: Выносливость для езды на велосипеде
       bikeTolerance-labelHigh: Больше на велосипеде
@@ -30,7 +30,6 @@ otpUi:
       walkTolerance-labelHigh: Больше ходьбы пешком
       walkTolerance-labelLow: Меньше ходьбы пешком
       wheelchair-label: Доступная маршрутизация
-    settingsLabel: "{mode} настройки"
   SettingsSelectorPanel:
     bikeOnly: Только велосипед
     escooterOnly: Только электросамокат
@@ -39,6 +38,9 @@ otpUi:
     use: Воспользоваться
     useCompanies: Воспользоваться услугами компаний
     walkOnly: Только пешком
+  TripOptions:
+    openApp: Открыть приложение
+    transitOnly: Воспользуйтесь общественным транспортом
   queryParameters:
     bikeSpeed: Скорость велосипеда
     distanceInMiles: |

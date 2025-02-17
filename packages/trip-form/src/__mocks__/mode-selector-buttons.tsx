@@ -7,10 +7,12 @@ import {
   TrainTram
 } from "@styled-icons/fa-solid";
 
+import { ModeButtonDefinition, ModeSetting } from "@opentripplanner/types";
+
 import { ClassicBike } from "@opentripplanner/icons/src/classic";
 import React from "react";
 
-export const defaultModeButtonDefinitions = [
+export const defaultModeButtonDefinitions: ModeButtonDefinition[] = [
   {
     Icon: Bus,
     iconName: "bus",
@@ -41,9 +43,8 @@ export const defaultModeButtonDefinitions = [
     modes: [{ mode: "CAR" }]
   }
 ];
-
 // TODO: add more test settings?
-export const modeSettingDefinitionsWithDropdown = [
+export const modeSettingDefinitionsWithDropdown: ModeSetting[] = [
   {
     applicableMode: "TRANSIT",
     default: "blue",

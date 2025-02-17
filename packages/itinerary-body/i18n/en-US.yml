@@ -58,6 +58,7 @@ otpUi:
       carHail: Ride
       escooter: Ride
       walk: Walk
+    transfer: Transfer{duration, select, undefined {} other {, wait {duration}}}
     unnamedPath: Unnamed Path
     unnamedRoad: Unnamed Road
     vehicleTitle: "{company} {vehicleType}"
@@ -69,7 +70,9 @@ otpUi:
       vehicle: Vehicle
   ItineraryBody:
     common:
-      durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} min"
+      durationShort: >-
+        {approximatePrefix, select, true {About } other {}}{hours, plural, =0 {}
+        other {# hr }}{minutes} min
     flexAdvanceNotice: " at least {leadDays, plural, one {# day} other {# days}} in advance"
     flexCallAhead: call ahead
     flexCallNumber: call {phoneNumber}

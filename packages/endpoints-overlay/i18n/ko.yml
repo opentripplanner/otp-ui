@@ -7,3 +7,4 @@ otpUi:
     saveAsHome: 집으로 저장
     saveAsWork: 직장으로 저장
     swapLocation: "{locationType} 위치로 변경"
+    viewNearby: 근처 보기

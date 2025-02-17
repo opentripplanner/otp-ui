@@ -1,0 +1,10 @@
+otpUi:
+  EndpointsOverlay:
+    clearLocation: "{locationType} இருப்பிடமாக அகற்று"
+    coordinates: "{lat, எண், ::. 00000}, {lon, எண், ::. 00000}"
+    forgetHome: வீட்டை மறந்து விடுங்கள்
+    forgetWork: வேலையை மறந்து விடுங்கள்
+    saveAsHome: வீட்டாக சேமிக்கவும்
+    saveAsWork: வேலையாக சேமிக்கவும்
+    swapLocation: "{locationType} இருப்பிடமாக மாற்றவும்"
+    viewNearby: அருகிலேயே காண்க

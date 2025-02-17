@@ -12,7 +12,7 @@ otpUi:
       car: Nagmamaneho
       rent: Magrenta
       transit: Pampublikong Transportasyon
-      walk: Naglalakad
+      walk: Paglalakad
     settings:
       bikeTolerance-label: Tolerance sa Pagbibisikleta
       bikeTolerance-labelHigh: Mas Maraming Pagbibisikleta
@@ -30,7 +30,6 @@ otpUi:
       walkTolerance-labelHigh: Mas Maraming Paglalakad
       walkTolerance-labelLow: Mas Kaunting Paglalakad
       wheelchair-label: Accessible na Pagruruta
-    settingsLabel: "{mode} mga setting"
   SettingsSelectorPanel:
     bikeOnly: Bisikleta Lang
     escooterOnly: E-scooter Lang
@@ -39,6 +38,9 @@ otpUi:
     use: Gamitin
     useCompanies: Gumamit ng mga kumpanya
     walkOnly: Maglakad Lang
+  TripOptions:
+    openApp: Открыть приложение
+    transitOnly: Воспользуйтесь общественным транспортом
   queryParameters:
     bikeSpeed: Bilis ng Bisikleta
     distanceInMiles: |

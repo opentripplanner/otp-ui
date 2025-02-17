@@ -1,0 +1,123 @@
+otpUi:
+  AccessLegBody:
+    LegDiagramPreview:
+      elevationChart: உயர விளக்கப்படம்
+      noElevationData: உயர தரவு எதுவும் கிடைக்கவில்லை.
+      toggleElevationChart: உயர விளக்கப்படத்தை மாற்றவும்
+    RentedVehicleSubheader:
+      pickupRental: "{company} {vehicleType} {vehicleName}"
+      resumeRentalRide: வாடகையைப் பயன்படுத்துவதைத் தொடரவும்
+      vehicleType:
+        bike: பைக்
+        bikeshare: பகிரப்பட்ட பைக்
+        car: கார்
+        escooter: மின்-ச்கூட்டர்
+        vehicle: வண்டி
+      walkVehicle: "{place} உடன் வண்டி நடந்து செல்லுங்கள்"
+    TncLeg:
+      bookRide: புத்தக சவாரி
+      bookRideLater: "{Timemillis, time, short} புத்தகத்திற்கு காத்திருங்கள்"
+      estimatedCost: "மதிப்பிடப்பட்ட செலவு: {minFare} - {maxFare}"
+      estimatedTravelTime: "மதிப்பிடப்பட்ட பயண நேரம்: {duration} (போக்குவரத்துக்கு கணக்கிடாது)"
+      waitForPickup: "{நிமிடங்கள், பன்மை, = 0 {} பிற { # நிமிடங்கள்}} {company} இடும்"
+    mapillaryTooltip: இந்த இடத்தில் தெரு படங்களைக் காட்டு
+    step:
+      circleClockwise: வட்டத்தை கடிகார திசையில் பின்தொடரவும்
+      circleCounterClockwise: வட்டம் எதிரெதிர் திசையில் பின்தொடரவும்
+      continue: தொடரவும்
+      enterStation: நிலையத்தை உள்ளிடவும்
+      exitStation: வெளியேறும் நிலையம்
+      hardLeft: கடினமான இடது
+      hardRight: கடின உரிமை
+      left: இடது
+      right: வலது
+      slightlyLeft: லேசான இடது
+      slightlyRight: லேசான வலது
+      uTurnLeft: இடது யு-டர்ன்
+      uTurnRight: வலது யு-டர்ன்
+    stepDepart: "{தெருவில் தலை {heading}"
+    stepElevator: "{தெரு க்கு க்கு லிஃப்ட் எடுத்துக் கொள்ளுங்கள்"
+    stepFollowSigns: "{தெரு க்கு க்கு அறிகுறிகளைப் பின்பற்றவும்"
+    stepGeneric: "{step} {street}"
+    stepHeading:
+      east: கிழக்கு
+      north: வடக்கு
+      northeast: வடகிழக்கு
+      northwest: வடமேற்கு
+      south: தெற்கு
+      southeast: தென்கிழக்கு
+      southwest: தென்மேற்கு
+      west: மேற்கு
+    stepStation: "{step} {street}"
+    summary: "{mode} முதல் {place}"
+    summaryAndDistance: "{mode} {distance} முதல் {place}"
+    summaryMode:
+      bike: சைக்கிள்
+      bikeshare: பிக்ச்ரே
+      carDrive: ஓட்டு
+      carHail: சவாரி
+      escooter: சவாரி
+      walk: நடை
+    transfer: >-
+      மாற்றவும் {காலம், தேர்ந்தெடுக்கப்படாதது {} பிற {, காத்திருங்கள்
+      {duration}}}
+    unnamedPath: பெயரிடப்படாத பாதை
+    unnamedRoad: பெயரிடப்படாத சாலை
+    vehicleTitle: "{company} {vehicleType}"
+    vehicleType:
+      bike: பைக்
+      bikeshare: பகிரப்பட்ட பைக்
+      car: கார்
+      escooter: மின்-ச்கூட்டர்
+      vehicle: வண்டி
+  ItineraryBody:
+    common:
+      durationShort: >-
+        {தோராயமான பிரீஃபிக்ச், தேர்ந்தெடு, உண்மை {About } பிற {}} {மணிநேரம்,
+        பன்மை, = 0 {} பிற {# hr}} {minutes} min
+    flexAdvanceNotice: " குறைந்தது {லீட் டேச், பன்மை, ஒன்று {# நாள்} மற்ற {# நாட்கள்}} முன்கூட்டியே"
+    flexCallAhead: முன்னால் அழைக்கவும்
+    flexCallNumber: "{phoneNumber} ஐ அழைக்கவும்"
+    flexPickupMessage: இந்த வழியை எடுக்க, நீங்கள் {செயல் {{action} வேண்டும்.
+    stayOnBoard: "{place} இல் போர்டில் இருங்கள்"
+    travelBy: பயணம் {mode}
+    travelByMode:
+      bike: மூலம் சைக்கிள்
+      car: கார் மூலம்
+      escooter: வழங்கியவர் இ-ச்கூட்டர்
+      walk: நடைபயிற்சி மூலம்
+    tripAccessibility:
+      inaccessible: அணுக முடியாதது
+      itineraryAccessibility: "இந்த பயணத்தின் சக்கர நாற்காலி அணுகல்: "
+      legAccessibility: "இந்த பயணக் காலின் சக்கர நாற்காலி அணுகல்: "
+      likelyAccessible: அணுகக்கூடியது
+      unclear: தெரியவில்லை
+    viewOnMap: வரைபடத்தில் காண்க
+  TransitLegBody:
+    AlertsBody:
+      alertLinkText: "{agency} இணையதளத்தில் எச்சரிக்கையைப் பார்க்கவும்"
+      effectiveDate: "{தேதிநேரம், தேதி, நீண்ட}"
+      effectiveTimeAndDate: "{தேதிநேரம், நேரம், குறுகிய}, {day}"
+      linkOpensNewWindow: (புதிய சாளரத்தைத் திறக்கிறது)
+      noAgencyAlertLinkText: ஏசென்சி இணையதளத்தில் எச்சரிக்கையைப் பார்க்கவும்
+      today: இன்று
+      tomorrow: நாளை
+      yesterday: நேற்று
+    agencyExternalLink: "{agencyName} (வெளிப்புற இணைப்பு)"
+    alertsHeader: "{எச்சரிக்கை, பன்மை, = 1 {# எச்சரிக்கை} பிற {# எச்சரிக்கைகள்}}"
+    arriveAt: "{place} க்கு வந்து சேருங்கள்"
+    disembarkAt: "{லெக்டெச்டினேசன் at இல் இறங்குங்கள்"
+    expandDetails: (விவரங்களை விரிவாக்கு)
+    fare: "செய்: {fare}"
+    fromLocation: "{location}"
+    legDetails: கால் விவரங்கள்
+    operatedBy: "{{Angencylink by ஆல் இயக்கப்படும் பணி"
+    ride: சவாரி
+    rideDurationAndStops: "சவாரி {duration} {numstops, பன்மை, = 1 {} பிற { / # நிறுத்தங்கள்}}"
+    routeDescription: "{routeName} <toprefix> பெறுநர் </porrefix> {headsign}"
+    stopId: ஐடி {stopId}
+    stopIdBasic: ஐடி {stopId}
+    stopViewer: பார்வையாளரை நிறுத்துங்கள்
+    tripViewer: பயண பார்வையாளர்
+    typicalWait: "வழக்கமான காத்திருப்பு: {waitTime}"
+    zoomToLeg: வரைபடத்தில் காலுக்கு பெரிதாக்கவும்

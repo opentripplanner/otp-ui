@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgBuscircle = ({ title, ...props }) => (
+const BusCircle = ({ title, ...props }) => (
   <svg viewBox="0 0 390 390" {...props}>
     {title ? <title>{title}</title> : null}
     <path d="M158.5 96h73c3.9 0 7-3.1 7-7s-3.1-7-7-7h-73c-3.9 0-7 3.1-7 7s3.1 7 7 7z" />
@@ -11,4 +11,4 @@ const SvgBuscircle = ({ title, ...props }) => (
   </svg>
 );
 
-export default SvgBuscircle;
+export default BusCircle;

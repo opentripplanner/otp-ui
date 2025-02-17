@@ -30,7 +30,6 @@ otpUi:
       walkTolerance-labelHigh: 多走路
       walkTolerance-labelLow: 少走路
       wheelchair-label: 无障碍路由
-    settingsLabel: "{mode} 设置"
   SettingsSelectorPanel:
     bikeOnly: 仅限单车
     escooterOnly: 仅限电动滑板车
@@ -39,6 +38,9 @@ otpUi:
     use: 使用
     useCompanies: 使用公司
     walkOnly: 仅步行
+  TripOptions:
+    openApp: 打开应用
+    transitOnly: 乘坐公共交通
   queryParameters:
     bikeSpeed: 自行车速度
     distanceInMiles: |

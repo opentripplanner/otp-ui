@@ -214,21 +214,11 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
  * @returns A fully formed query+variables ready to be sent to GraphQL backend
  */
 export function generateOtp2Query(
-  {
-    arriveBy,
-    banned,
-    date,
-    from,
-    modes,
-    modeSettings,
-    numItineraries,
-    preferred,
-    time,
-    to,
-    unpreferred
-  }: OTPQueryParams,
+  otpQueryParams: OTPQueryParams,
   planQuery = DefaultPlanQuery
 ): GraphQLQuery {
+  const { from, modeSettings, to, ...otherOtpQueryParams } = otpQueryParams;
+
   // This extracts the values from the mode settings to key value pairs
   const modeSettingValues = modeSettings.reduce((prev, cur) => {
     if (cur.type === "SLIDER" && cur.inverseKey) {
@@ -247,26 +237,19 @@ export function generateOtp2Query(
   const {
     bikeReluctance,
     carReluctance,
-    walkSpeed,
     walkReluctance,
+    walkSpeed,
     wheelchair
   } = modeSettingValues;
 
   return {
     query: print(planQuery),
     variables: {
-      arriveBy,
-      banned,
+      ...otherOtpQueryParams,
       bikeReluctance,
       carReluctance,
-      date,
-      fromPlace: `${from.name}::${from.lat},${from.lon}}`,
-      modes,
-      numItineraries,
-      preferred,
-      time,
-      toPlace: `${to.name}::${to.lat},${to.lon}}`,
-      unpreferred,
+      fromPlace: `${from.name}::${from.lat},${from.lon}`,
+      toPlace: `${to.name}::${to.lat},${to.lon}`,
       walkReluctance,
       walkSpeed,
       wheelchair

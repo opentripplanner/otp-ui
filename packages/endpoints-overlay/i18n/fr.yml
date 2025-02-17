@@ -11,3 +11,4 @@ otpUi:
     swapLocation: >-
       En faire {locationType, select, from {le point de départ} to {la
       destination} other {{locationType}}}
+    viewNearby: À proximité

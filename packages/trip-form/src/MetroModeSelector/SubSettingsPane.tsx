@@ -1,6 +1,11 @@
 import { flatten } from "flat";
-import { ModeButtonDefinition, ModeSetting } from "@opentripplanner/types";
-import React, { ReactElement } from "react";
+import {
+  ModeButtonDefinition,
+  ModeSetting,
+  ModeSettingBase,
+  TransitSubmodeCheckboxOption
+} from "@opentripplanner/types";
+import React, { ReactElement, useCallback } from "react";
 import { useIntl } from "react-intl";
 import styled from "styled-components";
 
@@ -10,6 +15,7 @@ import SliderSelector from "../SliderSelector";
 import generateModeButtonLabel, { generateModeSettingLabels } from "./i18n";
 
 import defaultEnglishMessages from "../../i18n/en-US.yml";
+import { QueryParamChangeEvent } from "../types";
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
 // - the yaml loader for webpack returns a nested object,
@@ -152,10 +158,12 @@ export const ModeSettingRenderer = ({
 
 interface Props {
   modeButton: ModeButtonDefinition;
+  onAllSubmodesDisabled?: (modeButton: ModeButtonDefinition) => void;
   onSettingUpdate: (QueryParamChangeEvent) => void;
 }
 export default function SubSettingsPane({
   modeButton,
+  onAllSubmodesDisabled,
   onSettingUpdate
 }: Props): ReactElement {
   const intl = useIntl();
@@ -166,7 +174,10 @@ export default function SubSettingsPane({
   const {
     settingsNoSubmodes,
     settingsOnlySubmodes
-  } = modeButton.modeSettings.reduce(
+  } = modeButton.modeSettings.reduce<{
+    settingsNoSubmodes: ModeSetting[];
+    settingsOnlySubmodes: (TransitSubmodeCheckboxOption & ModeSettingBase)[];
+  }>(
     (accumulator, cur) => {
       if (cur.type === "SUBMODE") {
         accumulator.settingsOnlySubmodes.push(cur);
@@ -176,6 +187,40 @@ export default function SubSettingsPane({
       return accumulator;
     },
     { settingsNoSubmodes: [], settingsOnlySubmodes: [] }
+  );
+
+  // rental mode settings do not have type "SUBMODE"
+  const settingsWithTransportMode = modeButton.modeSettings.filter(
+    (s: ModeSetting) =>
+      (s.type === "CHECKBOX" || s.type === "SUBMODE") && s.addTransportMode
+  );
+
+  const handleSettingChange = useCallback(
+    (setting: ModeSetting) => (evt: QueryParamChangeEvent) => {
+      let time = 0;
+      // check if setting is a transport mode setting
+      if (settingsWithTransportMode.find(s => s.key === setting.key)) {
+        // check if all submodes are disabled
+        if (
+          settingsWithTransportMode.every(
+            s => Object.keys(evt).includes(s.key) || s.value === false
+          ) &&
+          onAllSubmodesDisabled
+        ) {
+          settingsWithTransportMode.forEach(s => {
+            evt[s.key] = Object.keys(evt).includes(s.key) || !s.value;
+          });
+          onAllSubmodesDisabled(modeButton);
+          time = 700;
+        }
+      }
+
+      setTimeout(() => {
+        // This is a hack to make sure the setting is updated before the next render
+        onSettingUpdate(evt);
+      }, time);
+    },
+    [onSettingUpdate]
   );
 
   return (
@@ -189,7 +234,7 @@ export default function SubSettingsPane({
         {settingsOnlySubmodes.map(setting => (
           <ModeSettingRenderer
             key={setting.key}
-            onChange={onSettingUpdate}
+            onChange={handleSettingChange(setting)}
             setting={setting}
           />
         ))}
@@ -197,7 +242,7 @@ export default function SubSettingsPane({
       {settingsNoSubmodes.map(setting => (
         <ModeSettingRenderer
           key={setting.key}
-          onChange={onSettingUpdate}
+          onChange={handleSettingChange(setting)}
           setting={setting}
         />
       ))}

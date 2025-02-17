@@ -63,7 +63,11 @@ interface Props {
    *
    * { location: {...location}, reverseGeocode: true, type: "from/to" }
    */
-  setLocation: (arg: MapLocationActionArg) => void;
+  setLocation?: (arg: MapLocationActionArg) => void;
+  /**
+   * Opens the nearby view from the location coordinates
+   */
+  setViewNearby?: (arg: Location) => void;
   /**
    * Whether or not to show the user settings popup when an endpoint is clicked.
    */
@@ -120,7 +124,8 @@ const EndpointsOverlay = ({
   locations = [],
   MapMarkerIcon = DefaultMapMarkerIcon,
   rememberPlace = noop,
-  setLocation,
+  setLocation = noop,
+  setViewNearby = noop,
   showUserSettings,
   toLocation
 }: Props): ReactElement => (
@@ -133,6 +138,7 @@ const EndpointsOverlay = ({
       MapMarkerIcon={MapMarkerIcon}
       rememberPlace={rememberPlace}
       setLocation={setLocation}
+      setViewNearby={setViewNearby}
       showUserSettings={showUserSettings}
       type="from"
     />
@@ -161,6 +167,7 @@ const EndpointsOverlay = ({
       rememberPlace={rememberPlace}
       setLocation={setLocation}
       showUserSettings={showUserSettings}
+      setViewNearby={setViewNearby}
       type="to"
     />
   </div>

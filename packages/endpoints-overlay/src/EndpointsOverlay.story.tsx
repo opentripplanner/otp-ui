@@ -14,6 +14,7 @@ const clearLocation = action("clearLocation");
 const forgetPlace = action("forgetPlace");
 const rememberPlace = action("rememberPlace");
 const setLocation = action("setLocation");
+const setViewNearby = action("setViewNearby");
 const unnamedFromLocation = {
   lat: 45.522497,
   lon: -122.676029,
@@ -41,15 +42,12 @@ function CatDogIcon({ type }: UserLocationAndType) {
 export default {
   component: EndpointsOverlay,
   decorators: [withMap()],
-  title: "EndpointsOverlay"
+  title: "EndpointsOverlay",
+  parameters: { storyshots: { disable: true } }
 } as ComponentMeta<typeof EndpointsOverlay>;
 
 export const EndpointsOverlayWithoutUserSettings: ComponentStory<typeof EndpointsOverlay> = () => (
-  <EndpointsOverlay
-    fromLocation={fromLocation}
-    setLocation={setLocation}
-    toLocation={toLocation}
-  />
+  <EndpointsOverlay fromLocation={fromLocation} toLocation={toLocation} />
 );
 
 export const EndpointsOverlayWithUserSettings: ComponentStory<typeof EndpointsOverlay> = () => (
@@ -60,6 +58,7 @@ export const EndpointsOverlayWithUserSettings: ComponentStory<typeof EndpointsOv
     locations={locations}
     rememberPlace={rememberPlace}
     setLocation={setLocation}
+    setViewNearby={setViewNearby}
     showUserSettings
     toLocation={toLocation}
   />
@@ -94,6 +93,7 @@ export const EndpointsOverlayWithUnnamedPlace: ComponentStory<typeof EndpointsOv
   <EndpointsOverlay
     fromLocation={unnamedFromLocation}
     setLocation={setLocation}
+    setViewNearby={setViewNearby}
     showUserSettings
     toLocation={unnamedToLocation}
   />

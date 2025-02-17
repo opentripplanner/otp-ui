@@ -62,6 +62,7 @@ otpUi:
       carHail: Ride
       escooter: E-Scooter
       walk: Naglalakad
+    transfer: Paglilipat{duration, select, undefined {} other {, wait {duration}}}
     unnamedPath: Unnamed Path
     unnamedRoad: Unnamed Road
     vehicleTitle: "{company} {vehicleType}"
@@ -74,6 +75,7 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} (na) minuto"
+    flexAdvanceNotice: " kahit na mas maaga nang {leadDays, plural, one {# day} other {# days}}"
     flexCallAhead: tumawag nang maaga
     flexCallNumber: tumawag sa {phoneNumber}
     flexPickupMessage: Para gamitin ang rutang ito, {action}{advanceNotice}.
@@ -93,8 +95,11 @@ otpUi:
     viewOnMap: Tingnan sa mapa
   TransitLegBody:
     AlertsBody:
+      alertLinkText: Tingnan ang alerto sa website ng {agency}
       effectiveDate: May bisa simula {dateTime, date, long}
       effectiveTimeAndDate: May bisa simula {dateTime, time, short}, {day}
+      linkOpensNewWindow: (Magbubukas sa bagong window)
+      noAgencyAlertLinkText: Tingnan ang alerto sa website ng ahensya
       today: Ngayong Araw
       tomorrow: Bukas
       yesterday: Kahapon

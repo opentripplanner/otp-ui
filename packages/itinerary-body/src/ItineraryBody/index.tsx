@@ -34,6 +34,8 @@ const ItineraryBody = ({
   setLegDiagram,
   setViewedTrip,
   showAgencyInfo,
+  showAlertEffectiveDateTimeText,
+  showApproximateAccessLegTravelTimes,
   showElevationProfile,
   showLegIcon,
   showMapButtonColumn = true,
@@ -82,7 +84,11 @@ const ItineraryBody = ({
           setActiveLeg={setActiveLeg}
           setLegDiagram={setLegDiagram}
           setViewedTrip={setViewedTrip}
+          showApproximateAccessLegTravelTimes={
+            showApproximateAccessLegTravelTimes
+          }
           showAgencyInfo={showAgencyInfo}
+          showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
           showElevationProfile={showElevationProfile}
           showLegIcon={showLegIcon}
           showMapButtonColumn={showMapButtonColumn}

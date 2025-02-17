@@ -1,5 +1,6 @@
 import { Briefcase } from "@styled-icons/fa-solid/Briefcase";
 import { Popup } from "@opentripplanner/base-map";
+import { Search } from "@styled-icons/fa-solid/Search";
 import {
   ClearLocationArg,
   Location,
@@ -13,6 +14,7 @@ import { Marker, MarkerDragEvent } from "react-map-gl";
 import { Sync } from "@styled-icons/fa-solid/Sync";
 import { Times } from "@styled-icons/fa-solid/Times";
 import coreUtils from "@opentripplanner/core-utils";
+import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import flatten from "flat";
 import React, { ComponentType, useState } from "react";
 
@@ -29,6 +31,7 @@ interface Props {
   MapMarkerIcon: ComponentType<UserLocationAndType>;
   rememberPlace: (arg: UserLocationAndType) => void;
   setLocation: (arg: MapLocationActionArg) => void;
+  setViewNearby?: (arg: Location) => void;
   showUserSettings: boolean;
   type: string;
 }
@@ -59,6 +62,8 @@ function UserLocationInnerIcon({ type }: IconProps) {
       return <Sync size={12} />;
     case "times":
       return <Times size={12} />;
+    case "nearby":
+      return <Search size={12} />;
     default:
       return null;
   }
@@ -149,7 +154,14 @@ const Endpoint = (props: Props): JSX.Element => {
   };
 
   const [showPopup, setShowPopup] = useState(false);
-  const { location, locations, MapMarkerIcon, showUserSettings, type } = props;
+  const {
+    location,
+    locations,
+    MapMarkerIcon,
+    setViewNearby,
+    showUserSettings,
+    type
+  } = props;
   if (!(location && location.lat && location.lon)) return null;
   const match = locations.find(l => coreUtils.map.matchLatLon(l, location));
   const isWork = match && match.type === "work";
@@ -165,82 +177,87 @@ const Endpoint = (props: Props): JSX.Element => {
       draggable
       latitude={location.lat}
       longitude={location.lon}
+      onClick={e => {
+        // prevent Popup onClose from triggering immediately
+        e.originalEvent.stopPropagation();
+        setShowPopup(true);
+      }}
       onDragEnd={onDragEnd}
       onDragStart={() => setShowPopup(false)}
-      onClick={() => setShowPopup(true)}
     >
       {iconHtml}
       {showPopup && showUserSettings && (
         <Popup
-          onClose={() => setShowPopup(false)}
           latitude={location.lat}
           longitude={location.lon}
+          onClose={() => setShowPopup(false)}
         >
-          <div>
+          <FocusTrapWrapper
+            closePopup={() => setShowPopup(false)}
+            id="endpoint-overlay"
+          >
             <strong>
               <UserLocationIcon type={icon} />
               {location.name}
             </strong>
-            <div>
-              <S.Button
-                disabled={isWork}
-                onClick={isHome ? forgetHome : rememberAsHome}
-              >
-                {isHome ? (
-                  <>
-                    <UserLocationIcon type="times" />
-                    <FormattedMessage
-                      defaultMessage={
-                        defaultMessages["otpUi.EndpointsOverlay.forgetHome"]
-                      }
-                      description="Button text to forget the home location"
-                      id="otpUi.EndpointsOverlay.forgetHome"
-                    />
-                  </>
-                ) : (
-                  <>
-                    <UserLocationIcon type="home" />
-                    <FormattedMessage
-                      defaultMessage={
-                        defaultMessages["otpUi.EndpointsOverlay.saveAsHome"]
-                      }
-                      description="Button text to save the location as home location"
-                      id="otpUi.EndpointsOverlay.saveAsHome"
-                    />
-                  </>
-                )}
-              </S.Button>
-            </div>
-            <div>
-              <S.Button
-                disabled={isHome}
-                onClick={isWork ? forgetWork : rememberAsWork}
-              >
-                {isWork ? (
-                  <>
-                    <UserLocationIcon type="times" />
-                    <FormattedMessage
-                      defaultMessage={
-                        defaultMessages["otpUi.EndpointsOverlay.forgetWork"]
-                      }
-                      description="Button text to forget the work location"
-                      id="otpUi.EndpointsOverlay.forgetWork"
-                    />
-                  </>
-                ) : (
-                  <>
-                    <UserLocationIcon type="briefcase" />
-                    <FormattedMessage
-                      defaultMessage={
-                        defaultMessages["otpUi.EndpointsOverlay.saveAsWork"]
-                      }
-                      description="Button text to save the location as work location"
-                      id="otpUi.EndpointsOverlay.saveAsWork"
-                    />
-                  </>
-                )}
-              </S.Button>
-            </div>
+            {!isWork && (
+              <div>
+                <S.Button onClick={isHome ? forgetHome : rememberAsHome}>
+                  {isHome ? (
+                    <>
+                      <UserLocationIcon type="times" />
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.EndpointsOverlay.forgetHome"]
+                        }
+                        description="Button text to forget the home location"
+                        id="otpUi.EndpointsOverlay.forgetHome"
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <UserLocationIcon type="home" />
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.EndpointsOverlay.saveAsHome"]
+                        }
+                        description="Button text to save the location as home location"
+                        id="otpUi.EndpointsOverlay.saveAsHome"
+                      />
+                    </>
+                  )}
+                </S.Button>
+              </div>
+            )}
+            {!isHome && (
+              <div>
+                <S.Button onClick={isWork ? forgetWork : rememberAsWork}>
+                  {isWork ? (
+                    <>
+                      <UserLocationIcon type="times" />
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.EndpointsOverlay.forgetWork"]
+                        }
+                        description="Button text to forget the work location"
+                        id="otpUi.EndpointsOverlay.forgetWork"
+                      />
+                    </>
+                  ) : (
+                    <>
+                      <UserLocationIcon type="briefcase" />
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.EndpointsOverlay.saveAsWork"]
+                        }
+                        description="Button text to save the location as work location"
+                        id="otpUi.EndpointsOverlay.saveAsWork"
+                      />
+                    </>
+                  )}
+                </S.Button>
+              </div>
+            )}
             <div>
               <S.Button onClick={clearLocation}>
                 <UserLocationIcon type="times" />
@@ -267,7 +284,19 @@ const Endpoint = (props: Props): JSX.Element => {
                 />
               </S.Button>
             </div>
-          </div>
+            <div>
+              <S.Button onClick={() => setViewNearby(location)}>
+                <UserLocationIcon type="nearby" />
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.EndpointsOverlay.viewStop"]
+                  }
+                  description="Button text to view the coordinates in the nearby view"
+                  id="otpUi.EndpointsOverlay.viewNearby"
+                />
+              </S.Button>
+            </div>
+          </FocusTrapWrapper>
         </Popup>
       )}
     </Marker>

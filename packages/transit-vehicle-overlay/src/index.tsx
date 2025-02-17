@@ -83,11 +83,12 @@ const TransitVehicleOverlay = ({
   VehicleIcon = DefaultVehicleIcon,
   vehicles
 }: Props): ReactNode => {
+  const dateSeconds = Date.now() / 1000;
   const validVehicles = vehicles?.filter(
     vehicle =>
       !!vehicle?.lat &&
       !!vehicle?.lon &&
-      Date.now() - (vehicle?.lastUpdated || Date.now()) < maxVehicleAge
+      dateSeconds - (vehicle?.lastUpdated || dateSeconds) < maxVehicleAge
   );
   // Don't render if no map or no vehicles are defined.
   // (ZoomBasedMarkers will also not render below the minimum zoom threshold defined in the symbols prop.)

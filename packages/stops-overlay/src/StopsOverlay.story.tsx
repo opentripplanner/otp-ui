@@ -30,9 +30,10 @@ const Example = ({
 };
 
 export default {
-  title: "StopsOverlay",
   component: StopsOverlay,
-  decorators: [withMap(center)]
+  decorators: [withMap(center)],
+  parameters: { storyshots: { disable: true } },
+  title: "StopsOverlay"
 };
 
 export const Default = () => <Example />;

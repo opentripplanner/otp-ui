@@ -5,5 +5,4 @@ otpUi:
     forgetHome: Удалить местоположение дома
     forgetWork: Удалить местоположение работы
     saveAsHome: Сохранить как местоположение дома
-    saveAsWork: Сохранить как местоположение работы
-    swapLocation: Изменить на местоположение «{locationType}»
+    viewNearby: Смотреть поблизости

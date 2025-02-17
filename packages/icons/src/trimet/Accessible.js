@@ -1,6 +1,6 @@
 import React from "react";
 
-const SvgAccessible = ({ title, ...props }) => (
+const Accessible = ({ title, ...props }) => (
   <svg viewBox="0 0 390 390" {...props}>
     {title ? <title>{title}</title> : null}
     <path d="M222.5 34.3c0 19-15.4 34.3-34.3 34.3-19 0-34.4-15.4-34.4-34.3 0-19 15.4-34.3 34.4-34.3 18.9 0 34.3 15.4 34.3 34.3zM98.6 207.2a88.361 88.361 0 00-31.2 67.5c0 48.9 39.7 88.6 88.6 88.6s88.6-39.7 88.6-88.6l21.4 34.5C251.3 356 207.6 390 156 390c-63.7 0-115.3-51.6-115.3-115.3 0-45.2 26.1-84.4 64-103.3l-6.1 35.8z" />
@@ -8,4 +8,4 @@ const SvgAccessible = ({ title, ...props }) => (
   </svg>
 );
 
-export default SvgAccessible;
+export default Accessible;

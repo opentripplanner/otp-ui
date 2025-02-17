@@ -2,6 +2,7 @@ import React, { ReactElement } from "react";
 import { Bomb } from "@styled-icons/fa-solid/Bomb";
 import { Bolt } from "@styled-icons/fa-solid/Bolt";
 import styled from "styled-components";
+import { Meta } from "@storybook/react";
 import RouteDescriptionFooterWithWaitTimes from "./footer-with-wait-times";
 
 import ItineraryBody from "..";
@@ -29,6 +30,7 @@ const fareProductsItinerary = require("../__mocks__/itineraries/leg-fare-product
 const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json");
 const otp2ScooterItinerary = require("../__mocks__/itineraries/otp2-scooter.json");
 const flexItinerary = require("../__mocks__/itineraries/flex-itinerary.json");
+const transferLegItinerary = require("../__mocks__/itineraries/otp2-transfer-leg.json");
 
 const a11yOverrideParameters = {
   a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
@@ -36,8 +38,12 @@ const a11yOverrideParameters = {
 
 export default {
   title: "ItineraryBody/otp-ui",
-  component: ItineraryBody
-};
+  component: ItineraryBody,
+  parameters: {
+    date: new Date("March 10, 2021 10:00:00"),
+    a11y: { config: { rules: [{ id: "link-in-text-block", enabled: false }] } }
+  }
+} as Meta;
 
 export const WalkOnlyItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={walkOnlyItinerary} />
@@ -225,4 +231,15 @@ export const HideDrivingDirections = (): ReactElement => (
     hideDrivingDirections
     itinerary={parkAndRideItinerary}
   />
+);
+
+export const ApproximatePrefixItinerary = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={parkAndRideItinerary}
+    showApproximateAccessLegTravelTimes
+  />
+);
+
+export const TransferLegItinerary = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper itinerary={transferLegItinerary} />
 );

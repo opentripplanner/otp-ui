@@ -1,16 +1,37 @@
 jobs:
   test-build-release:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
-      - name: Use Node.js 16.x
+      - name: Use Node.js 21.x
         uses: actions/setup-node@v1
         with:
-          node-version: 16.x
+          node-version: 21.x
       - name: Install npm packages using cache
         uses: bahmutov/npm-install@v1
+      - name: Install Playwright
+        run: npx playwright install --with-deps
+      - name: Lint code
+        run: yarn lint:js
+      - name: Lint styles
+        run: yarn lint:styles
+      - name: i18n check (en-US, fr only)
+        run: yarn check:i18n-en-fr
+      - name: Type check
+        run: yarn typescript
+      - name: Run unit tests
+        run: yarn unit
+      - name: Build Storybook
+        run: yarn build-storybook --quiet
+      - name: Serve Storybook and run test runner
+        # env: 
+        #   ONLY_RUN: SNAPSHOTS
+        run: |
+          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "npx http-server storybook-static --port 5555 --silent" \
+            "npx wait-on tcp:5555 && yarn test-storybook --ci"
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

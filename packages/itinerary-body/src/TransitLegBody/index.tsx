@@ -47,6 +47,7 @@ interface Props {
   setActiveLeg: SetActiveLegFunction;
   setViewedTrip: SetViewedTripFunction;
   showAgencyInfo: boolean;
+  showAlertEffectiveDateTimeText?: boolean;
   showViewTripButton: boolean;
   timeZone: string;
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
@@ -140,6 +141,7 @@ class TransitLegBody extends Component<Props, State> {
       RouteDescriptionFooter,
       setViewedTrip,
       showAgencyInfo,
+      showAlertEffectiveDateTimeText,
       showViewTripButton,
       timeZone,
       TransitLegSubheader,
@@ -218,7 +220,10 @@ class TransitLegBody extends Component<Props, State> {
                   />
                 </S.InvisibleAdditionalDetails>
               </span>
-              <S.LegClickableButton onClick={this.onSummaryClick}>
+              <S.LegClickableButton
+                className="transit-leg-button"
+                onClick={this.onSummaryClick}
+              >
                 <S.InvisibleAdditionalDetails>
                   <FormattedMessage
                     defaultMessage={
@@ -233,6 +238,7 @@ class TransitLegBody extends Component<Props, State> {
           </S.LegClickable>
           {RouteDescriptionFooter && <RouteDescriptionFooter leg={leg} />}
           <div
+            className="transit-leg-details-wrapper"
             // Creates a group of leg details for screenreaders after the initial leg description.
             aria-label={intl.formatMessage({
               defaultMessage:
@@ -244,7 +250,7 @@ class TransitLegBody extends Component<Props, State> {
           >
             {/* Agency information */}
             {showAgencyInfo && (
-              <S.AgencyInfo>
+              <S.AgencyInfo className="agency-info">
                 <FormattedMessage
                   defaultMessage={
                     defaultMessages["otpUi.TransitLegBody.operatedBy"]
@@ -289,6 +295,7 @@ class TransitLegBody extends Component<Props, State> {
             {/* Alerts toggle */}
             {alerts?.length > 0 && (
               <S.TransitAlertToggle
+                className="alert-toggle"
                 isButton={!shouldOnlyShowAlertsExpanded}
                 as={shouldOnlyShowAlertsExpanded && "div"}
                 onClick={this.onToggleAlertsClick}
@@ -327,12 +334,13 @@ class TransitLegBody extends Component<Props, State> {
                 agencyName={agencyName}
                 alerts={leg.alerts}
                 AlertIcon={AlertBodyIcon}
+                showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
                 timeZone={timeZone}
               />
             </AnimateHeight>
             {/* The "Ride X Min / X Stops" Row, including IntermediateStops body */}
             {leg.intermediateStops && leg.intermediateStops.length > 0 && (
-              <S.TransitLegDetails>
+              <S.TransitLegDetails className="transit-leg-details">
                 {/* The header summary row, clickable to expand intermediate stops */}
                 <S.TransitLegDetailsHeader>
                   <TransitLegSummary

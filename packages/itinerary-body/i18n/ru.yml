@@ -58,6 +58,7 @@ otpUi:
       carHail: Поездка
       escooter: Электросамокат
       walk: Пешком
+    transfer: Пересадка{duration, select, undefined {} other {, wait {duration}}}
     unnamedPath: Неизвестный путь
     unnamedRoad: Неизвестная дорога
     vehicleTitle: "{vehicleType} «{company}»"
@@ -69,7 +70,10 @@ otpUi:
       vehicle: Транспортное средство
   ItineraryBody:
     common:
-      durationShort: "{hours, plural, =0 {} other {# ч }}{minutes} мин"
+      durationShort: >-
+        {approximatePrefix, select, true {Около } other {}}{hours, plural, =0 {}
+        other {# ч }}{minutes} мин
+    flexAdvanceNotice: " не менее чем за {leadDays, plural, one {# day} other {# days}}"
     flexCallAhead: звоните заранее
     flexCallNumber: звоните {phoneNumber}
     flexPickupMessage: Чтобы воспользоваться этим маршрутом, {action}{advanceNotice}.
@@ -83,14 +87,17 @@ otpUi:
     tripAccessibility:
       inaccessible: недоступно
       itineraryAccessibility: "Доступность для инвалидных колясок на этом отрезке поездки: \_"
-      legAccessibility: "Доступность для инвалидных колясок на этом отрезке поездки: \_"
+      legAccessibility: "Доступность для инвалидных колясок на этом отрезке поездки: "
       likelyAccessible: Скорее всего доступно
       unclear: неизвестно
     viewOnMap: Просмотреть на карте
   TransitLegBody:
     AlertsBody:
+      alertLinkText: См. предупреждение на сайте {agency}
       effectiveDate: Актуально на {dateTime, date, long}
       effectiveTimeAndDate: Актуально на {dateTime, time, short}, {day}
+      linkOpensNewWindow: (Открывает новое окно)
+      noAgencyAlertLinkText: См. предупреждение на сайте агентства
       today: Сегодня
       tomorrow: Завтра
       yesterday: Вчера
