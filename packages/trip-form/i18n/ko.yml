@@ -62,3 +62,6 @@ otpUi:
     watts250entryLevelEscooter: 초급형 스쿠터 (18 km/h)
     watts500robustEscooter: 견고한 전동스쿠터 (30 km/h)
     wheelchair: 휠체어 접근이 가능한 경로 선호
+  TripOptions:
+    openApp: 앱 열기
+    transitOnly: 대중교통으로 이동

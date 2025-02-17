@@ -31,3 +31,5 @@ otpUi:
     transitFare: Pamasahe sa Pampublikong Transportasyon
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: May mga flexible na ruta ang biyaheng ito. {extraMessage}
+    missingFareTotal: Walang available na kabuuang pamasahe
+    legMissingFareInfo: Walang impormasyon sa pamasahe para sa leg na ito

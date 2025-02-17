@@ -67,6 +67,7 @@ otpUi:
       car: 汽车
       escooter: 电动滑板车
       vehicle: 车辆
+    transfer: 换乘{duration, select, undefined {} other {, wait {duration}}}
   ItineraryBody:
     common:
       durationShort: >-
@@ -97,6 +98,9 @@ otpUi:
       today: 今天
       tomorrow: 明天
       yesterday: 昨天
+      alertLinkText: 查看 {agency} 网站上的提醒
+      linkOpensNewWindow: （将在新窗口打开）
+      noAgencyAlertLinkText: 查看机构网站上的提醒
     agencyExternalLink: "{agencyName} (外部链接)"
     alertsHeader: "{alertCount} 个警报"
     arriveAt: 到达

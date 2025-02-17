@@ -12,7 +12,7 @@ otpUi:
       car: Поездка в транспортном средстве
       rent: Прокат
       transit: Общественный транспорт
-      walk: Пешком
+      walk: Прогулка
     settings:
       bikeTolerance-label: Выносливость для езды на велосипеде
       bikeTolerance-labelHigh: Больше на велосипеде
@@ -57,8 +57,11 @@ otpUi:
     walkReluctanceLow: Больше этапов пешком
     walkSpeed: Скорость ходьбы
     watts: Мощность электросамоката
-    watts125kidsHoverboard: "Детский ховерборд (6\_миль в час)"
-    watts1500powerfulEscooter: "Мощный электросамокат (24\_мили в час)"
-    watts250entryLevelEscooter: "Самокат начального уровня (11\_миль в час)"
-    watts500robustEscooter: "Электросамокат среднего уровня (18\_миль в час)"
+    watts125kidsHoverboard: "Детский ховерборд (6 миль в час)"
+    watts1500powerfulEscooter: "Мощный электросамокат (24 мили в час)"
+    watts250entryLevelEscooter: "Самокат начального уровня (11 миль в час)"
+    watts500robustEscooter: "Электросамокат среднего уровня (18 миль в час)"
     wheelchair: Предпочитать маршруты с возможностью передвижения на инвалидной коляске
+  TripOptions:
+    transitOnly: Воспользуйтесь общественным транспортом
+    openApp: Открыть приложение
