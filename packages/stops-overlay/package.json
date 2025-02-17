@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/stops-overlay",
-  "version": "6.0.0",
+  "version": "6.1.0-alpha.1",
   "description": "A map overlay to show transit stops",
   "main": "lib/index.js",
   "module": "esm/index.js",
