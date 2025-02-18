@@ -9,15 +9,15 @@
   "module": "esm/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/location-icon": "^1.4.1",
+    "@opentripplanner/location-icon": "workspace:*",
     "flat": "^5.0.2"
   },
   "devDependencies": {
-    "@opentripplanner/types": "^6.5.2"
+    "@opentripplanner/types": "workspace:*"
   },
   "peerDependencies": {
     "react": "^18.2.0",
-    "react-intl": "^5.20.4",
+    "react-intl": "^6.8.4",
     "styled-components": "^5.3.0"
   },
   "repository": {
