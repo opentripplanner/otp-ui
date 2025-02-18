@@ -3,9 +3,9 @@
   "plugins": [
     "@semantic-release/commit-analyzer",
     "@semantic-release/github",
-    "@semantic-release/npm",
     "@semantic-release/git",
-    "@semantic-release/release-notes-generator"
+    "@semantic-release/release-notes-generator",
+    "semantic-release-pnpm"
   ],
   "repositoryUrl": "https://github.com/opentripplanner/otp-ui.git",
   "success": []
