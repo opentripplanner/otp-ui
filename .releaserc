@@ -5,7 +5,7 @@
     "@semantic-release/github",
     "@semantic-release/git",
     "@semantic-release/release-notes-generator",
-    "semantic-release-pnpm"
+    "@anolilab/semantic-release-pnpm"
   ],
   "repositoryUrl": "https://github.com/opentripplanner/otp-ui.git",
   "success": []
