@@ -55,8 +55,8 @@ importers:
         version: >-
           3.20.1(@babel/core@7.26.0)(@types/node@15.14.9)(encoding@0.1.13)(graphql@16.9.0)
       "@semantic-release/git":
-        specifier: ^9.0.0
-        version: 9.0.1(semantic-release@24.2.3(typescript@4.9.5))
+        specifier: ^10.0.1
+        version: 10.0.1(semantic-release@24.2.3(typescript@4.9.5))
       "@storybook/addon-a11y":
         specifier: 7.6.17
         version: 7.6.17
@@ -251,8 +251,8 @@ importers:
         specifier: ^24.2.3
         version: 24.2.3(typescript@4.9.5)
       semantic-release-monorepo:
-        specifier: ^7.0.2
-        version: 7.0.8(semantic-release@24.2.3(typescript@4.9.5))
+        specifier: ^8.0.2
+        version: 8.0.2(semantic-release@24.2.3(typescript@4.9.5))
       semantic-release-pnpm:
         specifier: ^1.0.2
         version: 1.0.2(semantic-release@24.2.3(typescript@4.9.5))
@@ -3902,24 +3902,26 @@ packages:
     resolution:
       integrity: >-
         sha512-wdnBPHKkr9HhNhXOhZD5a2LNl91+hs8CC2vsAVYxtZH3y0dV3wKn+uZSN61rdJQZ8EGxzWB3inWocBHV9+u/CQ==
-  "@semantic-release/error@2.2.0":
+  "@semantic-release/error@3.0.0":
+    engines:
+      node: ">=14.17"
     resolution:
       integrity: >-
-        sha512-9Tj/qn+y2j+sjCI3Jd+qseGtHjOAeg7dU2/lVcqIQ9TV3QDaDXDYXcoOHU+7o2Hwh8L8ymL4gfuO7KxDs3q2zg==
+        sha512-5hiM4Un+tpl4cKw3lV4UgzJj+SmfNIDCLLw0TepzQxz9ZGV5ixnqkzIVF+3tp0ZHgcMKE+VNGHJjEeyFG2dcSw==
   "@semantic-release/error@4.0.0":
     engines:
       node: ">=18"
     resolution:
       integrity: >-
         sha512-mgdxrHTLOjOddRVYIYDo0fR3/v61GNN1YGkfbrjuIKg/uMgCd+Qzo3UAXJ+woLQQpos4pl5Esuw5A7AoNlzjUQ==
-  "@semantic-release/git@9.0.1":
+  "@semantic-release/git@10.0.1":
     engines:
-      node: ">=10.18"
+      node: ">=14.17"
     peerDependencies:
-      semantic-release: ">=16.0.0 <18.0.0"
+      semantic-release: ">=18.0.0"
     resolution:
       integrity: >-
-        sha512-75P03s9v0xfrH9ffhDVWRIX0fgWBvJMmXhUU0rMTKYz47oMXU5O95M/ocgIKnVJlWZYoC+LpIe4Ye6ev8CrlUQ==
+        sha512-eWrx5KguUcU2wUPaO6sfvZI0wPafUKAMNC18aXY4EnNcrZL86dEmpNVnC9uMpGZkmZJ9EfCVJBQx4pV4EMGT1w==
   "@semantic-release/github@11.0.1":
     engines:
       node: ">=20.8.1"
@@ -7277,10 +7279,6 @@ packages:
     resolution:
       integrity: >-
         sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==
-  cross-spawn@5.1.0:
-    resolution:
-      integrity: >-
-        sha512-pTgQJ5KC0d2hcY8eyL1IzlBPYjTkyH72XRZPnLyKus2mBfNjQs3klqbJU2VILqZryAZUt9JOb3h/mWMy23/f5A==
   cross-spawn@6.0.5:
     engines:
       node: ">=4.8"
@@ -8381,12 +8379,6 @@ packages:
     resolution:
       integrity: >-
         sha512-nQn+hI3yp+oD0huYhKwvYI32+JFeq+XkNcD1GAo3Y/MjxsfVGmrrzrnzjWiNY6f+pUCP440fThsFh5gZrRAU/w==
-  execa@0.8.0:
-    engines:
-      node: ">=4"
-    resolution:
-      integrity: >-
-        sha512-zDWS+Rb1E8BlqqhALSt9kUhss8Qq4nN3iof3gsOdyINksElaPyNBtKUMTR62qhvgVWR0CqCX7sdnKe4MnUbFEA==
   execa@1.0.0:
     engines:
       node: ">=6"
@@ -9086,12 +9078,6 @@ packages:
     resolution:
       integrity: >-
         sha512-zRKcywvrXlXsA0v0i9Io4KDRaAw7+a1ZpjRwl9Wox8PFlVCCHra7E9c4kqXCoCM9nR5tBkaTTZRBoCm60bFqTQ==
-  get-stream@3.0.0:
-    engines:
-      node: ">=4"
-    resolution:
-      integrity: >-
-        sha512-GlhdIUuVakc8SJ6kK0zAFbiGzRFzNnY4jUuEbV9UROo4Y+0Ny4fjvcZFVTeDA4odpFyOQzaw6hXukJSq/f28sQ==
   get-stream@4.1.0:
     engines:
       node: ">=6"
@@ -11485,10 +11471,6 @@ packages:
     resolution:
       integrity: >-
         sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==
-  lru-cache@4.1.5:
-    resolution:
-      integrity: >-
-        sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==
   lru-cache@5.1.1:
     resolution:
       integrity: >-
@@ -13215,6 +13197,12 @@ packages:
     resolution:
       integrity: >-
         sha512-fjAPuiws93rm7mPUu21RdBnkeZNrbfCFCwfAhPWY+rR3zG0ubpe5cEReHOw5fIbfmsxEV/g2kSxGTATY3Bpnwg==
+  pkg-up@3.1.0:
+    engines:
+      node: ">=8"
+    resolution:
+      integrity: >-
+        sha512-nDywThFk1i4BQK4twPQ6TA4RT8bDY96yeuCVBWL3ePARCiEKDRSrNGbFIgUJpLp+XeIR65v8ra7WuJOFUBtkMA==
   playwright-core@1.48.2:
     engines:
       node: ">=18"
@@ -13613,10 +13601,6 @@ packages:
     resolution:
       integrity: >-
         sha512-yPw4Sng1gWghHQWj0B3ZggWUm4qVbPwPFcRG8KyxiU7J2OHFSoEHKS+EZ3fv5l1t9CyCiop6l/ZYeWbrgoQejw==
-  pseudomap@1.0.2:
-    resolution:
-      integrity: >-
-        sha512-b/YwNhb8lk1Zz2+bXXpS/LK9OisiZZ1SNsSLxN1x2OXVEhW2Ckr/7mWE5vrC1ZTiJlD9g19jWszTmJsB+oEpFQ==
   psl@1.9.0:
     resolution:
       integrity: >-
@@ -13720,10 +13704,10 @@ packages:
     resolution:
       integrity: >-
         sha512-tQkJl2GRWh83ui2DiPTJz9wEiMN20syf+5oKfB03yYP7ioZcJwsIK8FjrtLwH1m7C7e+Tt2yYBlrOpdT+dyeIQ==
-  ramda@0.25.0:
+  ramda@0.27.2:
     resolution:
       integrity: >-
-        sha512-GXpfrYVPwx3K7RQ6aYT8KPS8XViSXUVJT1ONhoKPE9VAleW42YE+U+8VEyGWt41EnEQW7gwecYJriTI0pKoecQ==
+        sha512-SbiLPU40JuJniHexQSAgad32hfwd+DRUdwF2PlVuI5RZD0/vahUco7R8vD86J/tcEKKF9vZrUVwgtmGCqlCKyA==
   ramda@0.29.0:
     resolution:
       integrity: >-
@@ -14438,18 +14422,18 @@ packages:
     resolution:
       integrity: >-
         sha512-L0jRsrPpjdckP3oPug3/VxNKt2trR8TcabrM6FOAAlvC/9Phcmm+cuAgTlxBqdBR1WJx7Naj9WHw+aOmheSVbw==
-  semantic-release-monorepo@7.0.8:
+  semantic-release-monorepo@8.0.2:
     peerDependencies:
-      semantic-release: ">=15.11.x < 20"
+      semantic-release: ">=22.0.7"
     resolution:
       integrity: >-
-        sha512-L2n7FZEYvjxXop6C7svk8xZH1/2N58CV1dN+veeAGZ8363FG+AKNKLN1r4wAL86e5xIu1HiOOASm10X+rN6XWg==
-  semantic-release-plugin-decorators@3.0.3:
+        sha512-TQC6KKIA0ATjii1OT0ZmQqcVzBJoaetJaJBC8FmKkg1IbDR4wBsuX6gl6UHDdijRDl8YyXqahj2hkJNyV6m9Jg==
+  semantic-release-plugin-decorators@4.0.0:
     peerDependencies:
-      semantic-release: ">=11 < 20"
+      semantic-release: ">20"
     resolution:
       integrity: >-
-        sha512-YTB2z64yyqEzABJ3yFesV9s5izZ4oKdbYDTu/2whVdlGQYCwsWkw9XYRCnvXzPdWPSWYmCPdJwMJ5w433rncig==
+        sha512-5eqaITbgGJu7AWCqY/ZwDh3TCS84Q9i470AImwP9vw3YcFRyR8sEb499Zbnqa076bv02yFUn88GtloQMXQsBrg==
   semantic-release-pnpm@1.0.2:
     engines:
       node: ">=16 || ^14.17"
@@ -16640,10 +16624,6 @@ packages:
     resolution:
       integrity: >-
         sha512-0pfFzegeDWJHJIAmTLRP2DwHjdF5s7jo9tuztdQxAhINCdvS+3nGINqPd00AphqJR/0LhANUS6/+7SCb98YOfA==
-  yallist@2.1.2:
-    resolution:
-      integrity: >-
-        sha512-ncTzHV7NvsQZkYe1DW7cbDLm0YpzHmZF5r/iyP3ZnQtMiJ+pjzisCiMNI+Sj+xQF5pXhSHxSB3uDbsBTzY/c2A==
   yallist@3.1.1:
     resolution:
       integrity: >-
@@ -19186,11 +19166,11 @@ snapshots:
       semantic-release: 24.2.3(typescript@4.9.5)
     transitivePeerDependencies:
       - supports-color
-  "@semantic-release/error@2.2.0": {}
+  "@semantic-release/error@3.0.0": {}
   "@semantic-release/error@4.0.0": {}
-  "@semantic-release/git@9.0.1(semantic-release@24.2.3(typescript@4.9.5))":
+  "@semantic-release/git@10.0.1(semantic-release@24.2.3(typescript@4.9.5))":
     dependencies:
-      "@semantic-release/error": 2.2.0
+      "@semantic-release/error": 3.0.0
       aggregate-error: 3.1.0
       debug: 4.3.7(supports-color@5.5.0)
       dir-glob: 3.0.1
@@ -22097,11 +22077,6 @@ snapshots:
   cross-env@7.0.3:
     dependencies:
       cross-spawn: 7.0.3
-  cross-spawn@5.1.0:
-    dependencies:
-      lru-cache: 4.1.5
-      shebang-command: 1.2.0
-      which: 1.3.1
   cross-spawn@6.0.5:
     dependencies:
       nice-try: 1.0.5
@@ -22815,15 +22790,6 @@ snapshots:
       md5.js: 1.3.5
       safe-buffer: 5.2.1
   exec-sh@0.3.6: {}
-  execa@0.8.0:
-    dependencies:
-      cross-spawn: 5.1.0
-      get-stream: 3.0.0
-      is-stream: 1.1.0
-      npm-run-path: 2.0.2
-      p-finally: 1.0.0
-      signal-exit: 3.0.7
-      strip-eof: 1.0.0
   execa@1.0.0:
     dependencies:
       cross-spawn: 6.0.5
@@ -23319,7 +23285,6 @@ snapshots:
   get-stdin@5.0.1: {}
   get-stdin@6.0.0: {}
   get-stdin@7.0.0: {}
-  get-stream@3.0.0: {}
   get-stream@4.1.0:
     dependencies:
       pump: 3.0.2
@@ -25217,10 +25182,6 @@ snapshots:
     dependencies:
       tslib: 2.8.0
   lru-cache@10.4.3: {}
-  lru-cache@4.1.5:
-    dependencies:
-      pseudomap: 1.0.2
-      yallist: 2.1.2
   lru-cache@5.1.1:
     dependencies:
       yallist: 3.1.1
@@ -26233,6 +26194,9 @@ snapshots:
   pkg-up@2.0.0:
     dependencies:
       find-up: 2.1.0
+  pkg-up@3.1.0:
+    dependencies:
+      find-up: 3.0.0
   playwright-core@1.48.2: {}
   playwright@1.48.2:
     dependencies:
@@ -26419,7 +26383,6 @@ snapshots:
       ipaddr.js: 1.9.1
   proxy-from-env@1.1.0: {}
   prr@1.0.1: {}
-  pseudomap@1.0.2: {}
   psl@1.9.0: {}
   public-encrypt@4.0.3:
     dependencies:
@@ -26494,7 +26457,7 @@ snapshots:
   quick-lru@4.0.1: {}
   quickselect@2.0.0: {}
   raf-schd@4.0.3: {}
-  ramda@0.25.0: {}
+  ramda@0.27.2: {}
   ramda@0.29.0: {}
   randombytes@2.1.0:
     dependencies:
@@ -26997,25 +26960,25 @@ snapshots:
       ajv: 8.17.1
       ajv-formats: 2.1.1(ajv@8.17.1)
       ajv-keywords: 5.1.0(ajv@8.17.1)
-  semantic-release-monorepo@7.0.8(semantic-release@24.2.3(typescript@4.9.5)):
+  semantic-release-monorepo@8.0.2(semantic-release@24.2.3(typescript@4.9.5)):
     dependencies:
-      debug: 3.2.7
-      execa: 0.8.0
+      debug: 4.3.7(supports-color@5.5.0)
+      execa: 5.1.1
       file-url: 3.0.0
       fs-extra: 10.1.0
       get-stream: 6.0.1
       git-log-parser: 1.2.1
       p-each-series: 2.2.0
-      p-limit: 1.3.0
-      pkg-up: 2.0.0
-      ramda: 0.25.0
+      p-limit: 3.1.0
+      pkg-up: 3.1.0
+      ramda: 0.27.2
       read-pkg: 5.2.0
       semantic-release: 24.2.3(typescript@4.9.5)
-      semantic-release-plugin-decorators: 3.0.3(semantic-release@24.2.3(typescript@4.9.5))
+      semantic-release-plugin-decorators: 4.0.0(semantic-release@24.2.3(typescript@4.9.5))
       tempy: 1.0.1
     transitivePeerDependencies:
       - supports-color
-  semantic-release-plugin-decorators@3.0.3(semantic-release@24.2.3(typescript@4.9.5)):
+  semantic-release-plugin-decorators@4.0.0(semantic-release@24.2.3(typescript@4.9.5)):
     dependencies:
       semantic-release: 24.2.3(typescript@4.9.5)
   semantic-release-pnpm@1.0.2(semantic-release@24.2.3(typescript@4.9.5)):
@@ -28456,7 +28419,6 @@ snapshots:
   xtend@4.0.2: {}
   y18n@4.0.3: {}
   y18n@5.0.8: {}
-  yallist@2.1.2: {}
   yallist@3.1.1: {}
   yallist@4.0.0: {}
   yaml-jest@1.2.0:
