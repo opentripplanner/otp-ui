@@ -12,6 +12,7 @@
     "react-animate-height": "3.0.4"
   },
   "devDependencies": {
+    "@anolilab/semantic-release-pnpm": "^1.1.10",
     "@babel/cli": "^7.10",
     "@babel/core": "^7.10",
     "@babel/plugin-proposal-class-properties": "^7.10",

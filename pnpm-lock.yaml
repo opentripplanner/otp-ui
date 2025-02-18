@@ -5,6 +5,9 @@ importers:
         specifier: ^1.2.9
         version: 1.2.12(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
+      "@anolilab/semantic-release-pnpm":
+        specifier: ^1.1.10
+        version: 1.1.10(@types/node@15.14.9)(yaml@2.6.0)
       "@babel/cli":
         specifier: ^7.10
         version: 7.25.9(@babel/core@7.26.0)
@@ -1053,6 +1056,22 @@ packages:
     resolution:
       integrity: >-
         sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==
+  "@anolilab/rc@1.1.6":
+    engines:
+      node: ">=18.* <=23.*"
+    resolution:
+      integrity: >-
+        sha512-jqalzF9dYCN8EYVgqCeZG9IEMFIgi3A8xv8bIsXIxrBW9hapJIzpa0ZT0JS1XQUVxOh7mV51dLFHmjevCGu6xg==
+  "@anolilab/semantic-release-pnpm@1.1.10":
+    engines:
+      node: ">=18.* <=23.*"
+    resolution:
+      integrity: >-
+        sha512-gvZx4eKjDyAZF52pjiQc6ic8TKJ1IyT7UYy5dyIrx8rQhOC2mTL6EwNh9ayxS7TmPED5nK5qvz77u+1GH4f9fA==
+  "@antfu/install-pkg@1.0.0":
+    resolution:
+      integrity: >-
+        sha512-xvX6P/lo1B3ej0OsaErAjqgFYzYVcJpamjLAFLYh9vRJngBrMoUG7aVnrGTeqM7yxbyTD5p3F2+0/QUEh8Vzhw==
   "@ardatan/sync-fetch@0.0.1":
     engines:
       node: ">=14"
@@ -2583,12 +2602,40 @@ packages:
     resolution:
       integrity: >-
         sha512-6ycMm7k7NUApiMGfVc32yIPp28iPKxhGRMqoNDiUjq2RyTAkbs5Fx0TdzBqhabcKvniDdAAvHCmsRjnNfTsogw==
+  "@inquirer/confirm@5.1.6":
+    engines:
+      node: ">=18"
+    peerDependencies:
+      "@types/node": ">=18"
+    peerDependenciesMeta:
+      "@types/node":
+        optional: true
+    resolution:
+      integrity: >-
+        sha512-6ZXYK3M1XmaVBZX6FCfChgtponnL0R6I7k8Nu+kaoNkT828FVZTcca1MqmWQipaW2oNREQl5AaPCUOOCVNdRMw==
   "@inquirer/core@10.0.1":
     engines:
       node: ">=18"
     resolution:
       integrity: >-
         sha512-KKTgjViBQUi3AAssqjUFMnMO3CM3qwCHvePV9EW+zTKGKafFGFF01sc1yOIYjLJ7QU52G/FbzKc+c01WLzXmVQ==
+  "@inquirer/core@10.1.7":
+    engines:
+      node: ">=18"
+    peerDependencies:
+      "@types/node": ">=18"
+    peerDependenciesMeta:
+      "@types/node":
+        optional: true
+    resolution:
+      integrity: >-
+        sha512-AA9CQhlrt6ZgiSy6qoAigiA1izOa751ugX6ioSjqgJ+/Gd+tEN/TORk5sUYNjXuHWfW0r1n/a6ak4u/NqHHrtA==
+  "@inquirer/figures@1.0.10":
+    engines:
+      node: ">=18"
+    resolution:
+      integrity: >-
+        sha512-Ey6176gZmeqZuY/W/nZiUyvmb1/qInjcpiZjXWi6nON+nxJpD1bxtSoBxNliGISae32n6OwbY+TSXPZ1CfS4bw==
   "@inquirer/figures@1.0.7":
     engines:
       node: ">=18"
@@ -2603,6 +2650,17 @@ packages:
     resolution:
       integrity: >-
         sha512-YYykfbw/lefC7yKj7nanzQXILM7r3suIvyFlCcMskc99axmsSewXWkAfXKwMbgxL76iAFVmRwmYdwNZNc8gjog==
+  "@inquirer/type@3.0.4":
+    engines:
+      node: ">=18"
+    peerDependencies:
+      "@types/node": ">=18"
+    peerDependenciesMeta:
+      "@types/node":
+        optional: true
+    resolution:
+      integrity: >-
+        sha512-2MNFrDY8jkFYc9Il9DgLsHhMzuHnOYM1+CUYVWbzu9oT0hC7V7EcYvdCKeoll/Fcci04A+ERZ9wcc7cQ8lTkIA==
   "@isaacs/cliui@8.0.2":
     engines:
       node: ">=12"
@@ -5263,6 +5321,41 @@ packages:
     resolution:
       integrity: >-
         sha512-uqi/2aSz9g2ftcHWf8uLPJA70rUv6yuMW5Bohw+bwcuzaxQIHaKFZCKGoGXIrc9vkTJ3+0txM73K0Hq3d5wgIg==
+  "@visulima/fs@3.1.0":
+    engines:
+      node: ">=18.0.0 <=23.x"
+    os:
+      - darwin
+      - linux
+      - win32
+    peerDependencies:
+      yaml: ^2.7.0
+    peerDependenciesMeta:
+      yaml:
+        optional: true
+    resolution:
+      integrity: >-
+        sha512-KpM4yPvAtxmN/3XbdgWJwhOBvcRqJD+qGxzKpoSkZ6j/PM/0A2/yQVVLyOEGIMtstMca42io1DegISyq53Wn9w==
+  "@visulima/package@3.5.1":
+    engines:
+      node: ">=18.0.0 <=23.x"
+    os:
+      - darwin
+      - linux
+      - win32
+    resolution:
+      integrity: >-
+        sha512-Qpy5ytonRqt9OL84zreC2k5NweHNhHeOFegbUFGY4kPWz5UDFxapTiC4XojSs+5ua10jwaEoyYYbN5rxCG63Gg==
+  "@visulima/path@1.3.4":
+    engines:
+      node: ">=18.0.0 <=23.x"
+    os:
+      - darwin
+      - linux
+      - win32
+    resolution:
+      integrity: >-
+        sha512-aSSHjSMFK2/+TBbo029LpwVhi4+inZ/Q8AUiuBKE5T4vsXqQn/zQdGl2JViHBSjUWo7gEj5I1yF/iY3FdIupew==
   "@vue/compiler-core@3.5.12":
     resolution:
       integrity: >-
@@ -9774,6 +9867,12 @@ packages:
     resolution:
       integrity: >-
         sha512-X7rqawQBvfdjS10YU1y1YVreA3SsLrW9dX2CewP2EbBJM4ypVNLDkO5y04gejPwKIY9lR+7r9gn3rFPt/kmWFg==
+  ini@5.0.0:
+    engines:
+      node: ^18.17.0 || >=20.5.0
+    resolution:
+      integrity: >-
+        sha512-+N0ngpO3e7cRUWOJAS7qw0IZIVc6XPrW4MlFBdD066F2L4k1L6ker3hLqSq7iXxU5tgS4WGkIUElWn5vogAEnw==
   init-package-json@6.0.3:
     engines:
       node: ^16.14.0 || >=18.0.0
@@ -12065,6 +12164,12 @@ packages:
     resolution:
       integrity: >-
         sha512-V6gygoYb/5EmNI+MEGrWkC+e6+Rr7mTmfHrxDbLzxQogBkgzo76rkok0Am6thgSF7Mv2nLOajAJj5vDJZEFn7g==
+  normalize-package-data@7.0.0:
+    engines:
+      node: ^18.17.0 || >=20.5.0
+    resolution:
+      integrity: >-
+        sha512-k6U0gKRIuNCTkwHGZqblCfLfBRh+w1vI6tBo+IeJwq2M8FUiOqhX7GH+GArQGScA7azd1WfyRCvxoXDO3hQDIA==
   normalize-path@2.1.1:
     engines:
       node: ">=0.10.0"
@@ -12739,6 +12844,10 @@ packages:
     resolution:
       integrity: >-
         sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==
+  package-manager-detector@0.2.9:
+    resolution:
+      integrity: >-
+        sha512-+vYvA/Y31l8Zk8dwxHhL3JfTuHPm6tlxM2A3GeQyl7ovYnSp1+mzAxClxaOr0qO1TtPxbQxetI7v5XqKLJZk7Q==
   pacote@18.0.6:
     engines:
       node: ^16.14.0 || >=18.0.0
@@ -14373,6 +14482,13 @@ packages:
     resolution:
       integrity: >-
         sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==
+  semver@7.7.1:
+    engines:
+      node: ">=10"
+    hasBin: true
+    resolution:
+      integrity: >-
+        sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==
   send@0.19.0:
     engines:
       node: ">= 0.8.0"
@@ -15397,6 +15513,10 @@ packages:
     resolution:
       integrity: >-
         sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==
+  tinyexec@0.3.2:
+    resolution:
+      integrity: >-
+        sha512-KQQR9yN7R5+OSwaK0XQoj22pwHoTlgYqmUscPYoknOoWCWfj/5/ABTMRi69FrKU5ffPVh5QcFikpWJI/P1ocHA==
   tinyqueue@2.0.3:
     resolution:
       integrity: >-
@@ -15527,6 +15647,12 @@ packages:
     resolution:
       integrity: >-
         sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==
+  ts-deepmerge@7.0.2:
+    engines:
+      node: ">=14.13.1"
+    resolution:
+      integrity: >-
+        sha512-akcpDTPuez4xzULo5NwuoKwYRtjQJ9eoNfBACiBMaXwNAx7B1PKfe5wqUFJuW5uKzQ68YjDFwPaWHDG1KnFGsA==
   tsconfig-paths@3.15.0:
     resolution:
       integrity: >-
@@ -16625,6 +16751,33 @@ snapshots:
     dependencies:
       "@jridgewell/gen-mapping": 0.3.5
       "@jridgewell/trace-mapping": 0.3.25
+  "@anolilab/rc@1.1.6(yaml@2.6.0)":
+    dependencies:
+      "@visulima/fs": 3.1.0(yaml@2.6.0)
+      "@visulima/path": 1.3.4
+      ini: 5.0.0
+      ts-deepmerge: 7.0.2
+    transitivePeerDependencies:
+      - yaml
+  "@anolilab/semantic-release-pnpm@1.1.10(@types/node@15.14.9)(yaml@2.6.0)":
+    dependencies:
+      "@anolilab/rc": 1.1.6(yaml@2.6.0)
+      "@semantic-release/error": 4.0.0
+      "@visulima/fs": 3.1.0(yaml@2.6.0)
+      "@visulima/package": 3.5.1(@types/node@15.14.9)(yaml@2.6.0)
+      "@visulima/path": 1.3.4
+      execa: 9.5.2
+      ini: 5.0.0
+      normalize-url: 8.0.1
+      registry-auth-token: 5.1.0
+      semver: 7.7.1
+    transitivePeerDependencies:
+      - "@types/node"
+      - yaml
+  "@antfu/install-pkg@1.0.0":
+    dependencies:
+      package-manager-detector: 0.2.9
+      tinyexec: 0.3.2
   "@ardatan/sync-fetch@0.0.1(encoding@0.1.13)":
     dependencies:
       node-fetch: 2.7.0(encoding@0.1.13)
@@ -17828,6 +17981,12 @@ snapshots:
       "@inquirer/core": 10.0.1(@types/node@15.14.9)
       "@inquirer/type": 3.0.0(@types/node@15.14.9)
       "@types/node": 15.14.9
+  "@inquirer/confirm@5.1.6(@types/node@15.14.9)":
+    dependencies:
+      "@inquirer/core": 10.1.7(@types/node@15.14.9)
+      "@inquirer/type": 3.0.4(@types/node@15.14.9)
+    optionalDependencies:
+      "@types/node": 15.14.9
   "@inquirer/core@10.0.1(@types/node@15.14.9)":
     dependencies:
       "@inquirer/figures": 1.0.7
@@ -17841,9 +18000,25 @@ snapshots:
       yoctocolors-cjs: 2.1.2
     transitivePeerDependencies:
       - "@types/node"
+  "@inquirer/core@10.1.7(@types/node@15.14.9)":
+    dependencies:
+      "@inquirer/figures": 1.0.10
+      "@inquirer/type": 3.0.4(@types/node@15.14.9)
+      ansi-escapes: 4.3.2
+      cli-width: 4.1.0
+      mute-stream: 2.0.0
+      signal-exit: 4.1.0
+      wrap-ansi: 6.2.0
+      yoctocolors-cjs: 2.1.2
+    optionalDependencies:
+      "@types/node": 15.14.9
+  "@inquirer/figures@1.0.10": {}
   "@inquirer/figures@1.0.7": {}
   "@inquirer/type@3.0.0(@types/node@15.14.9)":
     dependencies:
+      "@types/node": 15.14.9
+  "@inquirer/type@3.0.4(@types/node@15.14.9)":
+    optionalDependencies:
       "@types/node": 15.14.9
   "@isaacs/cliui@8.0.2":
     dependencies:
@@ -18220,7 +18395,7 @@ snapshots:
       read-cmd-shim: 4.0.0
       resolve-from: 5.0.0
       rimraf: 4.4.1
-      semver: 7.6.3
+      semver: 7.7.1
       set-blocking: 2.0.0
       signal-exit: 3.0.7
       slash: 3.0.0
@@ -18353,7 +18528,7 @@ snapshots:
       promise-all-reject-late: 1.0.1
       promise-call-limit: 3.0.2
       read-package-json-fast: 3.0.2
-      semver: 7.6.3
+      semver: 7.7.1
       ssri: 10.0.6
       treeverse: 3.0.0
       walk-up-path: 3.0.1
@@ -18362,7 +18537,7 @@ snapshots:
       - supports-color
   "@npmcli/fs@3.1.1":
     dependencies:
-      semver: 7.6.3
+      semver: 7.7.1
   "@npmcli/git@5.0.8":
     dependencies:
       "@npmcli/promise-spawn": 7.0.2
@@ -18372,7 +18547,7 @@ snapshots:
       proc-log: 4.2.0
       promise-inflight: 1.0.1(bluebird@3.7.2)
       promise-retry: 2.0.1
-      semver: 7.6.3
+      semver: 7.7.1
       which: 4.0.0
     transitivePeerDependencies:
       - bluebird
@@ -18392,7 +18567,7 @@ snapshots:
       json-parse-even-better-errors: 3.0.2
       pacote: 18.0.6
       proc-log: 4.2.0
-      semver: 7.6.3
+      semver: 7.7.1
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -18406,7 +18581,7 @@ snapshots:
       json-parse-even-better-errors: 3.0.2
       normalize-package-data: 6.0.2
       proc-log: 4.2.0
-      semver: 7.6.3
+      semver: 7.7.1
     transitivePeerDependencies:
       - bluebird
   "@npmcli/promise-spawn@7.0.2":
@@ -18434,7 +18609,7 @@ snapshots:
       ignore: 5.3.2
       minimatch: 9.0.3
       nx: 20.0.7(@swc/core@1.7.42)
-      semver: 7.6.3
+      semver: 7.7.1
       tmp: 0.2.3
       tslib: 2.8.0
       yargs-parser: 21.1.1
@@ -19041,7 +19216,7 @@ snapshots:
       read-pkg: 9.0.1
       registry-auth-token: 5.1.0
       semantic-release: 24.2.3(typescript@4.9.5)
-      semver: 7.6.3
+      semver: 7.7.1
       tempy: 3.1.0
   "@semantic-release/release-notes-generator@14.0.3(semantic-release@24.2.3(typescript@4.9.5))":
     dependencies:
@@ -19396,7 +19571,7 @@ snapshots:
       magic-string: 0.30.12
       path-browserify: 1.0.1
       process: 0.11.10
-      semver: 7.6.3
+      semver: 7.7.1
       style-loader: 3.3.4(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.18.20))
       swc-loader: >-
         0.2.6(@swc/core@1.7.42)(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.18.20))
@@ -19473,7 +19648,7 @@ snapshots:
       prompts: 2.4.2
       puppeteer-core: 2.1.1
       read-pkg-up: 7.0.1
-      semver: 7.6.3
+      semver: 7.7.1
       strip-json-comments: 3.1.1
       tempy: 1.0.1
       ts-dedent: 2.2.0
@@ -19650,7 +19825,7 @@ snapshots:
       pretty-hrtime: 1.0.3
       prompts: 2.4.2
       read-pkg-up: 7.0.1
-      semver: 7.6.3
+      semver: 7.7.1
       telejson: 7.2.0
       tiny-invariant: 1.3.3
       ts-dedent: 2.2.0
@@ -19791,7 +19966,7 @@ snapshots:
       react-docgen: 7.1.0
       react-dom: 18.3.1(react@18.2.0)
       react-refresh: 0.14.2
-      semver: 7.6.3
+      semver: 7.7.1
       webpack: 5.96.0(@swc/core@1.7.42)(esbuild@0.18.20)
     optionalDependencies:
       "@babel/core": 7.26.0
@@ -20626,7 +20801,7 @@ snapshots:
       debug: 4.3.7(supports-color@5.5.0)
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.6.3
+      semver: 7.7.1
       tsutils: 3.21.0(typescript@4.9.5)
     optionalDependencies:
       typescript: 4.9.5
@@ -20636,6 +20811,22 @@ snapshots:
     dependencies:
       "@typescript-eslint/types": 4.33.0
       eslint-visitor-keys: 2.1.0
+  "@visulima/fs@3.1.0(yaml@2.6.0)":
+    dependencies:
+      "@visulima/path": 1.3.4
+    optionalDependencies:
+      yaml: 2.6.0
+  "@visulima/package@3.5.1(@types/node@15.14.9)(yaml@2.6.0)":
+    dependencies:
+      "@antfu/install-pkg": 1.0.0
+      "@inquirer/confirm": 5.1.6(@types/node@15.14.9)
+      "@visulima/fs": 3.1.0(yaml@2.6.0)
+      "@visulima/path": 1.3.4
+      normalize-package-data: 7.0.0
+    transitivePeerDependencies:
+      - "@types/node"
+      - yaml
+  "@visulima/path@1.3.4": {}
   "@vue/compiler-core@3.5.12":
     dependencies:
       "@babel/parser": 7.26.2
@@ -21770,14 +21961,14 @@ snapshots:
       handlebars: 4.7.8
       json-stringify-safe: 5.0.1
       meow: 8.1.2
-      semver: 7.6.3
+      semver: 7.7.1
       split: 1.0.1
   conventional-changelog-writer@8.0.1:
     dependencies:
       conventional-commits-filter: 5.0.0
       handlebars: 4.7.8
       meow: 13.2.0
-      semver: 7.6.3
+      semver: 7.7.1
   conventional-commits-filter@3.0.0:
     dependencies:
       lodash.ismatch: 4.4.0
@@ -21926,7 +22117,7 @@ snapshots:
       postcss-modules-scope: 3.2.0(postcss@8.4.47)
       postcss-modules-values: 4.0.0(postcss@8.4.47)
       postcss-value-parser: 4.2.0
-      semver: 7.6.3
+      semver: 7.7.1
     optionalDependencies:
       webpack: 5.96.0(@swc/core@1.7.42)(esbuild@0.18.20)
   css-select@4.3.0:
@@ -22971,7 +23162,7 @@ snapshots:
       minimatch: 3.1.2
       node-abort-controller: 3.1.1
       schema-utils: 3.3.0
-      semver: 7.6.3
+      semver: 7.7.1
       tapable: 2.2.1
       typescript: 4.9.5
       webpack: 5.96.0(@swc/core@1.7.42)(esbuild@0.18.20)
@@ -23147,7 +23338,7 @@ snapshots:
   git-semver-tags@5.0.1:
     dependencies:
       meow: 8.1.2
-      semver: 7.6.3
+      semver: 7.7.1
   git-up@6.0.0:
     dependencies:
       is-ssh: 1.4.0
@@ -23563,13 +23754,14 @@ snapshots:
   inherits@2.0.4: {}
   ini@1.3.8: {}
   ini@4.1.3: {}
+  ini@5.0.0: {}
   init-package-json@6.0.3:
     dependencies:
       "@npmcli/package-json": 5.2.0
       npm-package-arg: 11.0.2
       promzard: 1.0.2
       read: 3.0.1
-      semver: 7.6.3
+      semver: 7.7.1
       validate-npm-package-license: 3.0.4
       validate-npm-package-name: 5.0.1
     transitivePeerDependencies:
@@ -23857,7 +24049,7 @@ snapshots:
       "@babel/parser": 7.26.2
       "@istanbuljs/schema": 0.1.3
       istanbul-lib-coverage: 3.2.2
-      semver: 7.6.3
+      semver: 7.7.1
     transitivePeerDependencies:
       - supports-color
   istanbul-lib-processinfo@2.0.3:
@@ -24451,7 +24643,7 @@ snapshots:
       jest-util: 29.7.0
       natural-compare: 1.4.0
       pretty-format: 29.7.0
-      semver: 7.6.3
+      semver: 7.7.1
     transitivePeerDependencies:
       - supports-color
   jest-specific-snapshot@8.0.0(jest@24.9.0):
@@ -24827,7 +25019,7 @@ snapshots:
       npm-package-arg: 11.0.2
       npm-registry-fetch: 17.1.0
       proc-log: 4.2.0
-      semver: 7.6.3
+      semver: 7.7.1
       sigstore: 2.3.1
       ssri: 10.0.6
     transitivePeerDependencies:
@@ -25008,7 +25200,7 @@ snapshots:
       semver: 6.3.1
   make-dir@4.0.0:
     dependencies:
-      semver: 7.6.3
+      semver: 7.7.1
   make-fetch-happen@13.0.1:
     dependencies:
       "@npmcli/agent": 2.2.2
@@ -25408,7 +25600,7 @@ snapshots:
       make-fetch-happen: 13.0.1
       nopt: 7.2.1
       proc-log: 4.2.0
-      semver: 7.6.3
+      semver: 7.7.1
       tar: 6.2.1
       which: 4.0.0
     transitivePeerDependencies:
@@ -25464,12 +25656,17 @@ snapshots:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.15.1
-      semver: 7.6.3
+      semver: 7.7.1
       validate-npm-package-license: 3.0.4
   normalize-package-data@6.0.2:
     dependencies:
       hosted-git-info: 7.0.2
-      semver: 7.6.3
+      semver: 7.7.1
+      validate-npm-package-license: 3.0.4
+  normalize-package-data@7.0.0:
+    dependencies:
+      hosted-git-info: 8.0.2
+      semver: 7.7.1
       validate-npm-package-license: 3.0.4
   normalize-path@2.1.1:
     dependencies:
@@ -25484,13 +25681,13 @@ snapshots:
       npm-normalize-package-bin: 3.0.1
   npm-install-checks@6.3.0:
     dependencies:
-      semver: 7.6.3
+      semver: 7.7.1
   npm-normalize-package-bin@3.0.1: {}
   npm-package-arg@11.0.2:
     dependencies:
       hosted-git-info: 7.0.2
       proc-log: 4.2.0
-      semver: 7.6.3
+      semver: 7.7.1
       validate-npm-package-name: 5.0.1
   npm-packlist@8.0.2:
     dependencies:
@@ -25503,7 +25700,7 @@ snapshots:
       npm-install-checks: 6.3.0
       npm-normalize-package-bin: 3.0.1
       npm-package-arg: 11.0.2
-      semver: 7.6.3
+      semver: 7.7.1
   npm-registry-fetch@17.1.0:
     dependencies:
       "@npmcli/redact": 2.0.1
@@ -25568,7 +25765,7 @@ snapshots:
       npm-run-path: 4.0.1
       open: 8.4.2
       ora: 5.3.0
-      semver: 7.6.3
+      semver: 7.7.1
       string-width: 4.2.3
       tar-stream: 2.2.0
       tmp: 0.2.3
@@ -25813,6 +26010,7 @@ snapshots:
       lodash.flattendeep: 4.4.0
       release-zalgo: 1.0.0
   package-json-from-dist@1.0.1: {}
+  package-manager-detector@0.2.9: {}
   pacote@18.0.6:
     dependencies:
       "@npmcli/git": 5.0.8
@@ -26825,7 +27023,7 @@ snapshots:
       p-reduce: 3.0.0
       read-package-up: 11.0.0
       resolve-from: 5.0.0
-      semver: 7.6.3
+      semver: 7.7.1
       semver-diff: 4.0.0
       signale: 1.4.0
       yargs: 17.7.2
@@ -26835,11 +27033,12 @@ snapshots:
   semver-compare@1.0.0: {}
   semver-diff@4.0.0:
     dependencies:
-      semver: 7.6.3
+      semver: 7.7.1
   semver-regex@4.0.5: {}
   semver@5.7.2: {}
   semver@6.3.1: {}
   semver@7.6.3: {}
+  semver@7.7.1: {}
   send@0.19.0:
     dependencies:
       debug: 2.6.9
@@ -27592,6 +27791,7 @@ snapshots:
     dependencies:
       setimmediate: 1.0.5
   tiny-invariant@1.3.3: {}
+  tinyexec@0.3.2: {}
   tinyqueue@2.0.3: {}
   tmp@0.0.33:
     dependencies:
@@ -27641,6 +27841,7 @@ snapshots:
   trim@0.0.1: {}
   trough@1.0.5: {}
   ts-dedent@2.2.0: {}
+  ts-deepmerge@7.0.2: {}
   tsconfig-paths@3.15.0:
     dependencies:
       "@types/json5": 0.0.29
