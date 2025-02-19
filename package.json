@@ -129,7 +129,7 @@
     "lint:styles": "stylelint \"packages/**/!(*.d).{j,t}s{,x}\"",
     "lint": "pnpm lint:js && pnpm lint:styles && pnpm lint:graphql",
     "prettier": "prettier --write \"**/*.{json,md,yml}\"",
-    "semantic-release": "lerna exec --concurrency 1 -- semantic-release",
+    "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e $(pwd)/release.config.mjs",
     "test": "pnpm lint:js && pnpm lint:styles && pnpm check:i18n-en-fr && pnpm typescript && pnpm unit && pnpm test-storybook && pnpm a11y-test",
     "typescript": "lerna run tsc",
     "unit": "jest --testPathIgnorePatterns a11y .d.ts",
