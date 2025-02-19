@@ -1,12 +1,15 @@
-{
-  "fail": [],
-  "plugins": [
+/**
+ * @type {import('semantic-release').GlobalConfig}
+ */
+export default {
+  fail: [],
+  plugins: [
     "@semantic-release/commit-analyzer",
     "@semantic-release/github",
     "@semantic-release/git",
     "@semantic-release/release-notes-generator",
     "@anolilab/semantic-release-pnpm"
   ],
-  "repositoryUrl": "https://github.com/opentripplanner/otp-ui.git",
-  "success": []
-}
+  repositoryUrl: "https://github.com/opentripplanner/otp-ui.git",
+  success: []
+};
