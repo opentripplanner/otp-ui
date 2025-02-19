@@ -40,7 +40,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         name: Semantic Release
-        run: pnpm run semantic-release
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          echo "@OpenTripPlanner:registry=https://registry.npmjs.org/" >> ~/.npmrc
+          pnpm run semantic-release
 name: Node.js CI
 "on":
   pull_request: null
