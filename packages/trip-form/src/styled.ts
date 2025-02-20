@@ -28,7 +28,7 @@ export const FloatingSettingLabel = styled(SettingLabel)`
   float: left;
 `;
 
-export const DateTimeSelector: DateTimeSelectorAndSubComponents = styled.div<{ baseColor: string | undefined }>`
+export const DateTimeSelector: DateTimeSelectorAndSubComponents = styled.div<{ baseColor?: string }>`
 border: 2px solid ${(props) => props.baseColor || grey[700]};
 border-radius: 5px;
 height: 45px;
