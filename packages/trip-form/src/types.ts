@@ -110,7 +110,7 @@ export interface ModeSelectorOptionSet {
 type SimpleStyledDiv = StyledComponent<
   "div",
   any,
-  { baseColor?: string | undefined }
+  { baseColor?: string }
 >;
 
 export type DateTimeSelectorAndSubComponents = SimpleStyledDiv & {
