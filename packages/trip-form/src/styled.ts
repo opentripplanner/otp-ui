@@ -29,24 +29,24 @@ export const FloatingSettingLabel = styled(SettingLabel)`
 `;
 
 export const DateTimeSelector: DateTimeSelectorAndSubComponents = styled.div<{ baseColor: string | undefined }>`
-border: 2px solid ${(props) => props.baseColor || grey[700]};
-border-radius: 5px;
-height: 45px;
+  border: 2px solid ${(props) => props.baseColor || grey[700]};
+  border-radius: 5px;
+  height: 45px;
 `;
 
 DateTimeSelector.DateTimeRow = styled.div`
-display: flex;
-justify-content: space-around;
-align-items: center;
-height: 100%;
-padding: 0;
-background-color: white;
-border-radius: 0 3px 3px 0;
-
-input {
-  border: 0px;
+  align-items: center;
+  background-color: white;
+  border-radius: 0 3px 3px 0;
+  display: flex;
   height: 100%;
-  width: 100%;
+  justify-content: space-around;
+  padding: 0;
+
+  input {
+    border: 0px;
+    height: 100%;
+    width: 100%;
 }
 `;
 

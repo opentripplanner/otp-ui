@@ -91,6 +91,8 @@ function isInputTypeSupported(type: string): boolean {
 
 const supportsDateTimeInputs = isInputTypeSupported("date") && isInputTypeSupported("time");
 
+const buttonStyle = { backgroundColor: S.baseColor() || grey[700], border: "0px", borderRadius: "3px 0px 0px 3px", color: "white", height: "45px" }
+
 /**
  * Reference date for parsing.
  */
@@ -216,7 +218,7 @@ export default function DateTimeSelector({
       style={style}
       baseColor={baseColor}
     >
-        <Dropdown alignMenuLeft id="date-time-depart-arrive" text={departureOptions.find(opt => opt.type === departArrive).text} buttonStyle={{ backgroundColor: S.baseColor() || grey[700], borderRadius: "3px 0px 0px 3px", color: "white", height: "45px", border: "0px" }}>
+        <Dropdown alignMenuLeft id="date-time-depart-arrive" text={departureOptions.find(opt => opt.type === departArrive).text} buttonStyle={buttonStyle}>
         {departureOptions.map(opt => (
           <button
             aria-pressed={opt.type === departArrive}
