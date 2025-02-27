@@ -225,8 +225,8 @@ exports[`TripOptions CompanyFirstMixedCategory smoke-test 1`] = `
     </button>
   </div>
   <div class="styled__TripOptionsSubContainer-sc-18bsv9u-1 ddbfLo">
-    <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hKJhWi">
-      <div class="styled__DropdownSelector-sc-122ziys-17 kiQdDP">
+    <div class="styled__GeneralSettingsPanel-sc-122ziys-18 jcRROj">
+      <div class="styled__DropdownSelector-sc-122ziys-16 jBvmxW">
         <div>
           <label for="id-query-param-maxWalkDistance"
                  class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
@@ -564,8 +564,8 @@ exports[`TripOptions Default smoke-test 1`] = `
     </button>
   </div>
   <div class="styled__TripOptionsSubContainer-sc-18bsv9u-1 ddbfLo">
-    <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hKJhWi">
-      <div class="styled__DropdownSelector-sc-122ziys-17 kiQdDP">
+    <div class="styled__GeneralSettingsPanel-sc-122ziys-18 jcRROj">
+      <div class="styled__DropdownSelector-sc-122ziys-16 jBvmxW">
         <div>
           <label for="id-query-param-maxWalkDistance"
                  class="styled__SettingLabel-sc-122ziys-2 hlSjLd"
