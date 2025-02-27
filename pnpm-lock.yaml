@@ -310,6 +310,9 @@ importers:
       "@opentripplanner/types":
         specifier: workspace:*
         version: link:../types
+      mapbox-gl:
+        specifier: npm:empty-npm-package@1.0.0
+        version: empty-npm-package@1.0.0
       maplibre-gl:
         specifier: ^2.1.9
         version: 2.4.0
@@ -318,7 +321,8 @@ importers:
         version: 18.2.0
       react-map-gl:
         specifier: ^7.0.15
-        version: 7.1.7(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: >-
+          7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
         specifier: ^5.3.0
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -419,7 +423,8 @@ importers:
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
         specifier: ^7.0.15
-        version: 7.1.7(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: >-
+          7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
         specifier: ^5.3.0
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -633,7 +638,8 @@ importers:
         version: 18.2.0
       react-map-gl:
         specifier: ^7.0.15
-        version: 7.1.7(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: >-
+          7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
       "@opentripplanner/base-map":
         specifier: workspace:*
@@ -660,7 +666,8 @@ importers:
         version: 18.3.1(react@18.2.0)
       react-map-gl:
         specifier: ^7.0.15
-        version: 7.1.7(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: >-
+          7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
         specifier: ^5.3.0
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -733,7 +740,8 @@ importers:
         version: 18.2.0
       react-map-gl:
         specifier: ^7.0.15
-        version: 7.1.7(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: >-
+          7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
         specifier: workspace:*
@@ -760,7 +768,8 @@ importers:
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
         specifier: ^7.0.15
-        version: 7.1.7(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: >-
+          7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
         specifier: ^5.3.0
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -794,7 +803,8 @@ importers:
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
         specifier: ^7.0.15
-        version: 7.1.7(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: >-
+          7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
         specifier: ^5.3.0
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -842,7 +852,8 @@ importers:
         version: 18.2.0
       react-map-gl:
         specifier: ^7.0.15
-        version: 7.1.7(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: >-
+          7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
       "@opentripplanner/endpoints-overlay":
         specifier: workspace:*
@@ -958,7 +969,8 @@ importers:
         version: 18.2.0
       react-map-gl:
         specifier: ^7.0.15
-        version: 7.1.7(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: >-
+          7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
   packages/types: {}
   packages/vehicle-rental-overlay:
     dependencies:
@@ -995,7 +1007,8 @@ importers:
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
         specifier: ^7.0.15
-        version: 7.1.7(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: >-
+          7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
         specifier: ^5.3.0
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -1019,7 +1032,8 @@ importers:
         version: 18.2.0
       react-map-gl:
         specifier: ^7.0.15
-        version: 7.1.7(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: >-
+          7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
         specifier: ^5.3.0
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -7882,6 +7896,10 @@ packages:
     resolution:
       integrity: >-
         sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==
+  empty-npm-package@1.0.0:
+    resolution:
+      integrity: >-
+        sha512-q4Mq/+XO7UNDdMiPpR/LIBIW1Zl4V0Z6UT9aKGqIAnBCtCb3lvZJM1KbDbdzdC8fKflwflModfjR29Nt0EpcwA==
   encodeurl@1.0.2:
     engines:
       node: ">= 0.8"
@@ -22371,6 +22389,7 @@ snapshots:
   emoji-regex@9.2.2: {}
   emojilib@2.4.0: {}
   emojis-list@3.0.0: {}
+  empty-npm-package@1.0.0: {}
   encodeurl@1.0.2: {}
   encodeurl@2.0.0: {}
   encoding@0.1.13:
@@ -26532,13 +26551,14 @@ snapshots:
   react-is@17.0.2: {}
   react-is@18.1.0: {}
   react-is@18.3.1: {}
-  react-map-gl@7.1.7(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0):
+  react-map-gl@7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0):
     dependencies:
       "@maplibre/maplibre-gl-style-spec": 19.3.3
       "@types/mapbox-gl": 3.4.0
       react: 18.2.0
       react-dom: 18.3.1(react@18.2.0)
     optionalDependencies:
+      mapbox-gl: empty-npm-package@1.0.0
       maplibre-gl: 2.4.0
   react-refresh@0.14.2: {}
   react-remove-scroll-bar@2.3.6(@types/react@18.3.12)(react@18.2.0):
