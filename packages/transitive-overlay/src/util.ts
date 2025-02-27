@@ -408,7 +408,7 @@ export function itineraryToTransitive(
         route_short_name: routeLabel
       };
 
-      if (typeof leg.route === "object") {
+      if (typeof leg.route === "object" && leg.route !== null) {
         routes[routeId] = {
           ...basicRouteAttributes,
           route_long_name: leg.route.longName || "",
