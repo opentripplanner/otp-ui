@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/printable-itinerary",
-  "version": "3.0.2-alpha.3",
+  "version": "3.0.2-alpha.4",
   "description": "A component for displaying a printable itinerary body of a trip planning result",
   "main": "lib/index.js",
   "module": "esm/index.js",
