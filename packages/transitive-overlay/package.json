@@ -22,7 +22,6 @@
     "@mapbox/polyline": "^1.1.1",
     "@opentripplanner/base-map": "workspace:*",
     "@opentripplanner/core-utils": "workspace:*",
-    "@opentripplanner/itinerary-body": "workspace:*",
     "@turf/bbox": "^6.5.0",
     "@turf/bearing": "^6.5.0",
     "@turf/destination": "^6.5.0",

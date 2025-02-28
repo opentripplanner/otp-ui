@@ -823,9 +823,6 @@ importers:
       "@opentripplanner/core-utils":
         specifier: workspace:*
         version: link:../core-utils
-      "@opentripplanner/itinerary-body":
-        specifier: workspace:*
-        version: link:../itinerary-body
       "@turf/bbox":
         specifier: ^6.5.0
         version: 6.5.0
