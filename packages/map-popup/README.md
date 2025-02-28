@@ -1,8 +1,5 @@
-## Usage
+# map-popup
 
-```
-
-TBD
-```
+Package for OTP-UI.
 
 <!-- Updated for semantic release trigger -->

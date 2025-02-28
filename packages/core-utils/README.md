@@ -10,3 +10,5 @@ This package depends on the [date-fns library](https://date-fns.org), which reli
 
 TBD
 ```
+
+<!-- Updated for semantic release trigger -->

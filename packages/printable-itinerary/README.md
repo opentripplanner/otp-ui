@@ -1,8 +1,5 @@
-## Usage
+# printable-itinerary
 
-```
-
-TBD
-```
+Package for OTP-UI.
 
 <!-- Updated for semantic release trigger -->
