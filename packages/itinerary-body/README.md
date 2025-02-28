@@ -6,5 +6,3 @@ Includes components for rendering a narrative view for an OpenTripPlanner itiner
 
 TBD
 ```
-
-<!-- Updated for semantic release trigger -->
