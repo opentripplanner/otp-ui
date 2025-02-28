@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@opentripplanner/endpoints-overlay": "workspace:*",
+    "@opentripplanner/itinerary-body": "workspace:*",
     "@opentripplanner/types": "workspace:*"
   },
   "peerDependencies": {
