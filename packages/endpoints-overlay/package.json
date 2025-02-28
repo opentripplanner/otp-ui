@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/endpoints-overlay",
-  "version": "3.1.2-alpha.1",
+  "version": "3.1.2-alpha.2",
   "description": "A map overlay to show the from and to locations of an itinerary",
   "main": "lib/index.js",
   "module": "esm/index.js",
