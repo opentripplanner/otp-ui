@@ -858,6 +858,9 @@ importers:
       "@opentripplanner/endpoints-overlay":
         specifier: workspace:*
         version: link:../endpoints-overlay
+      "@opentripplanner/itinerary-body":
+        specifier: workspace:*
+        version: link:../itinerary-body
       "@opentripplanner/types":
         specifier: workspace:*
         version: link:../types
