@@ -39,3 +39,5 @@ const symbols = [{
 
 For other examples, including rendering symbols for different types of entities (e.g. bus vs. trains),
 or more advanced handling of symbols, please refer to the examples in the component Storybook.
+
+<!-- Updated for semantic release trigger -->
