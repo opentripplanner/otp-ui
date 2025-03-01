@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/location-icon",
-  "version": "1.4.2-alpha.2",
+  "version": "1.4.2-alpha.3",
   "description": "A component to display a location icon for either the to or from location",
   "main": "lib/index.js",
   "module": "esm/index.js",
