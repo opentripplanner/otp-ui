@@ -16,8 +16,8 @@ import {
 
 export const defaultParams = [
   "wheelchair",
-  "maxWalkDistance",
   "walkReluctance",
+  "walkSpeed",
   "maxWalkTime",
   "maxBikeDistance",
   "maxBikeTime",

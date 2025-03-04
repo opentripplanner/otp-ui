@@ -164,6 +164,33 @@ const queryParams = [
   },
 
   {
+    /* walkSpeed -- the user's walking speed in m/s */
+    name: "walkSpeed",
+    routingTypes: ["ITINERARY", "PROFILE"],
+    default: 1.34,
+    selector: "DROPDOWN",
+    label: "Walk Speed",
+    applicable: query =>
+      query.mode &&
+      !hasTransit(query.mode) && // Only applicable for walk-only trips (see walkTolerance for transit+walk)
+      query.mode.indexOf("WALK") !== -1,
+    options: [
+      {
+        text: "2 MPH",
+        value: 0.89
+      },
+      {
+        text: "3 MPH",
+        value: 1.34
+      },
+      {
+        text: "4 MPH",
+        value: 1.79
+      }
+    ]
+  },
+
+  {
     /* maxWalkDistance - the maximum distance in meters the user will walk to transit. */
     name: "maxWalkDistance",
     routingTypes: ["ITINERARY"],
@@ -365,6 +392,7 @@ const queryParams = [
       }
     ]
   },
+
   {
     name: "walkReluctance",
     routingTypes: ["ITINERARY", "PROFILE"],
@@ -382,6 +410,7 @@ const queryParams = [
        */
       !!query.otp2 && query.mode && query.mode.indexOf("WALK") !== -1
   },
+
   {
     /* maxBikeTime -- the maximum time the user will spend biking in minutes */
     name: "maxBikeTime",
