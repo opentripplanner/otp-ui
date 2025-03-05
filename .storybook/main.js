@@ -22,13 +22,14 @@ module.exports = {
       }
     },
     getAbsolutePath("@storybook/addon-viewport"),
-    "@danielhep/storybook-react-intl"
+    "@danielhep/storybook-react-intl",
+    getAbsolutePath("@storybook/addon-webpack5-compiler-babel")
   ],
 
   stories: [
-    "../packages/**/*.story.mdx",
     "../packages/*/src/**/*.story.@(js|jsx|ts|tsx)"
   ],
+
   staticDirs: ['../public'],
 
   webpackFinal: async (config, { configType }) => {
@@ -86,8 +87,10 @@ module.exports = {
     options: {}
   },
 
-  docs: {
-    autodocs: true
+  docs: {},
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript"
   }
 }
 
