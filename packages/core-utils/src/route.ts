@@ -350,14 +350,15 @@ export function makeStringValueComparator(
 }
 
 /**
- * OpenTripPlanner sets the routeSortOrder to -999 by default. So, if that value
+ * OTP1 sets the routeSortOrder to -999 by default. So, if that value
  * is encountered, assume that it actually means that the routeSortOrder is not
  * set in the GTFS.
  *
  * See https://github.com/opentripplanner/OpenTripPlanner/issues/2938
  * Also see https://github.com/opentripplanner/otp-react-redux/issues/122
+ * This was updated in OTP2 TO be empty by default. https://docs.opentripplanner.org/en/v2.3.0/OTP2-MigrationGuide/#:~:text=the%20Alerts-,Changes%20to%20the%20Index%20API,-Error%20handling%20is
  */
-function getRouteSortOrderValue(val: number): number {
+function getOTP1RouteSortOrderValue(val: number): number {
   return val === -999 ? undefined : val;
 }
 
@@ -420,7 +421,9 @@ export function makeRouteComparator(
 ): (a: number, b: number) => number {
   return makeMultiCriteriaSort(
     makeTransitOperatorComparator(transitOperators),
-    makeNumericValueComparator(obj => getRouteSortOrderValue(obj.sortOrder)),
+    makeNumericValueComparator(obj =>
+      getOTP1RouteSortOrderValue(obj.sortOrder)
+    ),
     routeTypeComparator,
     alphabeticShortNameComparator,
     makeNumericValueComparator(obj => parseInt(obj.shortName, 10)),
