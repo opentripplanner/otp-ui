@@ -282,6 +282,10 @@ function alphabeticShortNameComparator(a: Route, b: Route): number {
   return 0;
 }
 
+const undefinedNullOrNaN = (val: unknown): boolean =>
+  // eslint-disable-next-line no-restricted-globals
+  val === null || val === undefined || isNaN(val);
+
 /**
  * Checks whether an appropriate comparison of numeric values can be made for
  * sorting purposes. If both values are not valid numbers according to the
@@ -305,17 +309,19 @@ export function makeNumericValueComparator(
   objGetterFn?: (item: Route) => number
 ) {
   /* Note: Using the global version of isNaN (the Number version behaves differently. */
-  /* eslint-disable no-restricted-globals */
   return (a: number, b: number): number => {
     const { aVal, bVal } = getSortValues(objGetterFn, a, b);
-    if (typeof aVal !== "number" || typeof bVal !== "number") return 0;
 
     // if both values aren't valid numbers, use the next sort criteria
-    if (isNaN(aVal) && isNaN(bVal)) return 0;
+    if (undefinedNullOrNaN(aVal) && undefinedNullOrNaN(bVal)) {
+      return 0;
+    }
     // b is a valid number, b gets priority
-    if (isNaN(aVal)) return 1;
+    if (undefinedNullOrNaN(aVal)) return 1;
+
     // a is a valid number, a gets priority
-    if (isNaN(bVal)) return -1;
+    if (undefinedNullOrNaN(bVal)) return -1;
+
     // a and b are valid numbers, return the sort value
     return aVal - bVal;
   };
