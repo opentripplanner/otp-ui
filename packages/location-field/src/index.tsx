@@ -5,7 +5,13 @@ import getGeocoder from "@opentripplanner/geocoder";
 // @ts-ignore Not Typescripted Yet
 import LocationIcon from "@opentripplanner/location-icon";
 import { Location } from "@opentripplanner/types";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, {
+  ReactNode,
+  useCallback,
+  useEffect,
+  useRef,
+  useState
+} from "react";
 import { FormattedList, FormattedMessage, useIntl } from "react-intl";
 import { Ban } from "@styled-icons/fa-solid/Ban";
 import { Bus } from "@styled-icons/fa-solid/Bus";
@@ -256,11 +262,7 @@ const FeaturesElements = ({
   title
 }: {
   activeIndex: number;
-  addLocationSearch: ({
-    location: GeocodedLocation
-  }: {
-    location: any;
-  }) => void;
+  addLocationSearch: (props: { location: any }) => void;
   bgColor: string;
   features: JSX.Element[];
   GeocodedOptionIconComponent: any;
@@ -413,7 +415,7 @@ const LocationField = ({
           features: Location[];
           results: { error: { message: string } };
         }) => {
-          let message: string;
+          let message: string | ReactNode;
           // If no features found in response, default to empty array.
           let geocodedFeatures = result?.features;
           if (!geocodedFeatures) {

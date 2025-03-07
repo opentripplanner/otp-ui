@@ -5,38 +5,45 @@ jobs:
       - uses: actions/checkout@v2
         with:
           persist-credentials: false
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9
       - name: Use Node.js 21.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 21.x
-      - name: Install npm packages using cache
-        uses: bahmutov/npm-install@v1
+          cache: "pnpm"
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
       - name: Install Playwright
-        run: npx playwright install --with-deps
+        run: pnpm exec playwright install --with-deps
       - name: Lint code
-        run: yarn lint:js
+        run: pnpm run lint:js
       - name: Lint styles
-        run: yarn lint:styles
+        run: pnpm run lint:styles
       - name: i18n check (en-US, fr only)
-        run: yarn check:i18n-en-fr
+        run: pnpm run check:i18n-en-fr
       - name: Type check
-        run: yarn typescript
+        run: pnpm run typescript
       - name: Run unit tests
-        run: yarn unit
+        run: pnpm run unit
       - name: Build Storybook
-        run: yarn build-storybook --quiet
+        run: pnpm run build-storybook --quiet
       - name: Serve Storybook and run test runner
         # env: 
         #   ONLY_RUN: SNAPSHOTS
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 5555 --silent" \
-            "npx wait-on tcp:5555 && yarn test-storybook --ci"
+            "npx wait-on tcp:5555 && pnpm run test-storybook --ci"
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         name: Semantic Release
-        run: yarn semantic-release
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+          echo "@OpenTripPlanner:registry=https://registry.npmjs.org/" >> ~/.npmrc
+          pnpm run semantic-release
 name: Node.js CI
 "on":
   pull_request: null
