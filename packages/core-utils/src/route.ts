@@ -140,7 +140,9 @@ function getTransitOperatorComparatorValue(
  * Calculates the sort comparator value given two routes based off of the
  * route's agency and provided transitOperators config data.
  */
-function makeTransitOperatorComparator(transitOperators: TransitOperator[]) {
+export function makeTransitOperatorComparator(
+  transitOperators: TransitOperator[]
+) {
   return (a: Route, b: Route) => {
     const aVal = getTransitOperatorComparatorValue(a, transitOperators);
     const bVal = getTransitOperatorComparatorValue(b, transitOperators);
@@ -237,7 +239,7 @@ function getRouteTypeComparatorValue(route: Route): number {
  * Calculates the sort comparator value given two routes based off of route type
  * (OTP mode).
  */
-function routeTypeComparator(a: Route, b: Route): number {
+export function routeTypeComparator(a: Route, b: Route): number {
   return getRouteTypeComparatorValue(a) - getRouteTypeComparatorValue(b);
 }
 
@@ -261,7 +263,7 @@ function startsWithAlphabeticCharacter(val: unknown): boolean {
  * character. Routes with shortn that do start with an alphabetic character will
  * be prioritized over those that don't.
  */
-function alphabeticShortNameComparator(a: Route, b: Route): number {
+export function alphabeticShortNameComparator(a: Route, b: Route): number {
   const aStartsWithAlphabeticCharacter = startsWithAlphabeticCharacter(
     a.shortName
   );
@@ -367,7 +369,7 @@ export function makeStringValueComparator(
  * Also see https://github.com/opentripplanner/otp-react-redux/issues/122
  * This was updated in OTP2 TO be empty by default. https://docs.opentripplanner.org/en/v2.3.0/OTP2-MigrationGuide/#:~:text=the%20Alerts-,Changes%20to%20the%20Index%20API,-Error%20handling%20is
  */
-function getOTP1RouteSortOrderValue(val: number): number {
+export function getOTP1RouteSortOrderValue(val: number): number {
   return val === -999 ? undefined : val;
 }
 
@@ -378,7 +380,7 @@ function getOTP1RouteSortOrderValue(val: number): number {
  * returned. If all comparison functions return equivalence, then the values
  * are assumed to be equivalent.
  */
-function makeMultiCriteriaSort(
+export function makeMultiCriteriaSort(
   ...criteria: ((a: unknown, b: unknown) => number)[]
 ) {
   return (a: number, b: number): number => {
