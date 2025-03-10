@@ -140,7 +140,9 @@ function getTransitOperatorComparatorValue(
  * Calculates the sort comparator value given two routes based off of the
  * route's agency and provided transitOperators config data.
  */
-function makeTransitOperatorComparator(transitOperators: TransitOperator[]) {
+export function makeTransitOperatorComparator(
+  transitOperators: TransitOperator[]
+) {
   return (a: Route, b: Route) => {
     const aVal = getTransitOperatorComparatorValue(a, transitOperators);
     const bVal = getTransitOperatorComparatorValue(b, transitOperators);
@@ -237,7 +239,7 @@ function getRouteTypeComparatorValue(route: Route): number {
  * Calculates the sort comparator value given two routes based off of route type
  * (OTP mode).
  */
-function routeTypeComparator(a: Route, b: Route): number {
+export function routeTypeComparator(a: Route, b: Route): number {
   return getRouteTypeComparatorValue(a) - getRouteTypeComparatorValue(b);
 }
 
@@ -261,7 +263,7 @@ function startsWithAlphabeticCharacter(val: unknown): boolean {
  * character. Routes with shortn that do start with an alphabetic character will
  * be prioritized over those that don't.
  */
-function alphabeticShortNameComparator(a: Route, b: Route): number {
+export function alphabeticShortNameComparator(a: Route, b: Route): number {
   const aStartsWithAlphabeticCharacter = startsWithAlphabeticCharacter(
     a.shortName
   );
@@ -282,6 +284,13 @@ function alphabeticShortNameComparator(a: Route, b: Route): number {
   return 0;
 }
 
+const undefinedNullOrNaN = (val: any): boolean => {
+  /* Note: Using the global version of isNaN (the Number version behaves differently. */
+  // eslint-disable-next-line no-restricted-globals
+  if (typeof val === "number" && isNaN(val)) return true;
+
+  return val === null || val === undefined;
+};
 /**
  * Checks whether an appropriate comparison of numeric values can be made for
  * sorting purposes. If both values are not valid numbers according to the
@@ -304,19 +313,21 @@ function alphabeticShortNameComparator(a: Route, b: Route): number {
 export function makeNumericValueComparator(
   objGetterFn?: (item: Route) => number
 ) {
-  /* Note: Using the global version of isNaN (the Number version behaves differently. */
-  /* eslint-disable no-restricted-globals */
   return (a: number, b: number): number => {
     const { aVal, bVal } = getSortValues(objGetterFn, a, b);
-    if (typeof aVal !== "number" || typeof bVal !== "number") return 0;
 
     // if both values aren't valid numbers, use the next sort criteria
-    if (isNaN(aVal) && isNaN(bVal)) return 0;
+    if (undefinedNullOrNaN(aVal) && undefinedNullOrNaN(bVal)) {
+      return 0;
+    }
     // b is a valid number, b gets priority
-    if (isNaN(aVal)) return 1;
+    if (undefinedNullOrNaN(aVal)) return 1;
+
     // a is a valid number, a gets priority
-    if (isNaN(bVal)) return -1;
+    if (undefinedNullOrNaN(bVal)) return -1;
+
     // a and b are valid numbers, return the sort value
+    // @ts-expect-error We know from the checks above that both aVal and bVal are valid numbers.
     return aVal - bVal;
   };
 }
@@ -350,14 +361,15 @@ export function makeStringValueComparator(
 }
 
 /**
- * OpenTripPlanner sets the routeSortOrder to -999 by default. So, if that value
+ * OTP1 sets the routeSortOrder to -999 by default. So, if that value
  * is encountered, assume that it actually means that the routeSortOrder is not
  * set in the GTFS.
  *
  * See https://github.com/opentripplanner/OpenTripPlanner/issues/2938
  * Also see https://github.com/opentripplanner/otp-react-redux/issues/122
+ * This was updated in OTP2 TO be empty by default. https://docs.opentripplanner.org/en/v2.3.0/OTP2-MigrationGuide/#:~:text=the%20Alerts-,Changes%20to%20the%20Index%20API,-Error%20handling%20is
  */
-function getRouteSortOrderValue(val: number): number {
+export function getOTP1RouteSortOrderValue(val: number): number {
   return val === -999 ? undefined : val;
 }
 
@@ -368,7 +380,7 @@ function getRouteSortOrderValue(val: number): number {
  * returned. If all comparison functions return equivalence, then the values
  * are assumed to be equivalent.
  */
-function makeMultiCriteriaSort(
+export function makeMultiCriteriaSort(
   ...criteria: ((a: unknown, b: unknown) => number)[]
 ) {
   return (a: number, b: number): number => {
@@ -420,7 +432,9 @@ export function makeRouteComparator(
 ): (a: number, b: number) => number {
   return makeMultiCriteriaSort(
     makeTransitOperatorComparator(transitOperators),
-    makeNumericValueComparator(obj => getRouteSortOrderValue(obj.sortOrder)),
+    makeNumericValueComparator(obj =>
+      getOTP1RouteSortOrderValue(obj.sortOrder)
+    ),
     routeTypeComparator,
     alphabeticShortNameComparator,
     makeNumericValueComparator(obj => parseInt(obj.shortName, 10)),
