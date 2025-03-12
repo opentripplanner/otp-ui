@@ -284,12 +284,13 @@ export function alphabeticShortNameComparator(a: Route, b: Route): number {
   return 0;
 }
 
-const undefinedNullOrNaN = (val: any): boolean => {
+const isNullOrNaN = (val: any): boolean => {
+  // isNaN(null) returns false so we have to check for null explicitly.
   /* Note: Using the global version of isNaN (the Number version behaves differently. */
   // eslint-disable-next-line no-restricted-globals
-  if (typeof val === "number" && isNaN(val)) return true;
+  if (typeof val === null || isNaN(val)) return true;
 
-  return val === null || val === undefined;
+  return typeof val !== "number";
 };
 /**
  * Checks whether an appropriate comparison of numeric values can be made for
@@ -313,18 +314,18 @@ const undefinedNullOrNaN = (val: any): boolean => {
 export function makeNumericValueComparator(
   objGetterFn?: (item: Route) => number
 ) {
-  return (a: number, b: number): number => {
+  return (a: number, b: number): number | null => {
     const { aVal, bVal } = getSortValues(objGetterFn, a, b);
 
     // if both values aren't valid numbers, use the next sort criteria
-    if (undefinedNullOrNaN(aVal) && undefinedNullOrNaN(bVal)) {
+    if (isNullOrNaN(aVal) && isNullOrNaN(bVal)) {
       return 0;
     }
     // b is a valid number, b gets priority
-    if (undefinedNullOrNaN(aVal)) return 1;
+    if (isNullOrNaN(aVal)) return 1;
 
     // a is a valid number, a gets priority
-    if (undefinedNullOrNaN(bVal)) return -1;
+    if (isNullOrNaN(bVal)) return -1;
 
     // a and b are valid numbers, return the sort value
     // @ts-expect-error We know from the checks above that both aVal and bVal are valid numbers.

@@ -10,8 +10,8 @@ import {
   makeTransitOperatorComparator,
   routeTypeComparator
 } from "./route";
-import { routes } from "./fake-route-data.json";
-import { fakeTransitOperators } from "./fake-transit-operators.json";
+import { routes } from "./fake-route-data.story.json";
+import { fakeTransitOperators } from "./fake-transit-operators.story.json";
 
 export default {
   title: "core-utils"
@@ -162,12 +162,12 @@ export const RouteSortingLogic = (): JSX.Element => {
         <div>
           {sortedRoutes.map(r => {
             const operator = fakeTransitOperators.find(
-              x => x.agencyId === r.agency.id
+              x => x.agencyId === r.agency?.id
             );
             return (
               <RouteRow key={r.id}>
                 <GridCell>
-                  <img src={operator?.logo} alt={r.agency.name} />
+                  <img src={operator?.logo} alt={r.agency?.name || ""} />
                 </GridCell>
                 <GridCell>{r.mode}</GridCell>
                 <GridCell>{r.shortName}</GridCell>
