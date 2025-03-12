@@ -65,10 +65,10 @@ export function getTransitOperatorFromOtpRoute(
   const feedId = route.id.split(":")[0];
   let agencyId: string | number;
   if (route.agency) {
-    // This is returned in the OTP Route model
+    // This is returned in OTP2
     agencyId = route.agency.id;
   } else if (route.agencyId) {
-    // This is returned in the OTP RouteShort model (such as in the IBI fork)
+    // This is returned in OTP1
     agencyId = route.agencyId;
   } else {
     return null;
@@ -112,9 +112,9 @@ function getTransitOperatorComparatorValue(
   // if the transitOperators is undefined or has zero length, use the route's
   // agency name as the comparator value
   if (!transitOperators || transitOperators.length === 0) {
-    // OTP Route
+    // OTP2 Route
     if (route.agency) return route.agency.name;
-    // OTP RouteShort (base OTP repo or IBI fork)
+    // OTP1 Route
     if (route.agencyName) return route.agencyName;
     // shouldn't happen as agency names will be defined
     return "zzz";
@@ -361,16 +361,23 @@ export function makeStringValueComparator(
 }
 
 /**
- * OTP1 sets the routeSortOrder to -999 by default. So, if that value
- * is encountered, assume that it actually means that the routeSortOrder is not
- * set in the GTFS.
+ * OTP1 sets the routeSortOrder to -999 by default. If we're encountering that value in OTP1,
+ * assume that it actually means that the route sortOrder is not set in the GTFS. If we encounter
+ * it in OTP2, it's a valid value, so we should return it.
  *
  * See https://github.com/opentripplanner/OpenTripPlanner/issues/2938
  * Also see https://github.com/opentripplanner/otp-react-redux/issues/122
  * This was updated in OTP2 TO be empty by default. https://docs.opentripplanner.org/en/v2.3.0/OTP2-MigrationGuide/#:~:text=the%20Alerts-,Changes%20to%20the%20Index%20API,-Error%20handling%20is
  */
-export function getOTP1RouteSortOrderValue(val: number): number {
-  return val === -999 ? undefined : val;
+export function getRouteSortOrderValue(route: Route): number {
+  const isOTP1 = !!route.agencyId;
+  const { sortOrder } = route;
+
+  if ((isOTP1 && sortOrder === -999) || sortOrder === undefined) {
+    return null;
+  }
+
+  return sortOrder;
 }
 
 /**
@@ -432,9 +439,7 @@ export function makeRouteComparator(
 ): (a: number, b: number) => number {
   return makeMultiCriteriaSort(
     makeTransitOperatorComparator(transitOperators),
-    makeNumericValueComparator(obj =>
-      getOTP1RouteSortOrderValue(obj.sortOrder)
-    ),
+    makeNumericValueComparator(obj => getRouteSortOrderValue(obj)),
     routeTypeComparator,
     alphabeticShortNameComparator,
     makeNumericValueComparator(obj => parseInt(obj.shortName, 10)),

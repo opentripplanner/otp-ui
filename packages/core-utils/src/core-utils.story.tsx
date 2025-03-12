@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {
   alphabeticShortNameComparator,
   getMostReadableTextColor,
-  getOTP1RouteSortOrderValue,
+  getRouteSortOrderValue,
   makeMultiCriteriaSort,
   makeNumericValueComparator,
   makeStringValueComparator,
@@ -105,9 +105,7 @@ export const RouteSortingLogic = (): JSX.Element => {
     ? makeTransitOperatorComparator(fakeTransitOperators)
     : null;
   const sortOrderComparator = useSortOrderComparator
-    ? makeNumericValueComparator(obj =>
-        getOTP1RouteSortOrderValue(obj.sortOrder)
-      )
+    ? makeNumericValueComparator(obj => getRouteSortOrderValue(obj))
     : null;
   const routeComparator = useRouteComparator ? routeTypeComparator : null;
   const alphaShortName = useAlphaSortName
