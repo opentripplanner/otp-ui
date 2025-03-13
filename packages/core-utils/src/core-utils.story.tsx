@@ -10,8 +10,8 @@ import {
   makeTransitOperatorComparator,
   routeTypeComparator
 } from "./route";
-import { routes } from "./fake-route-data.story.json";
-import { fakeTransitOperators } from "./fake-transit-operators.story.json";
+import { routes } from "./__mocks__/fake-route-data.story.json";
+import { fakeTransitOperators } from "./__mocks__/fake-transit-operators.story.json";
 
 export default {
   title: "core-utils"
