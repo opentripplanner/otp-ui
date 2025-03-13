@@ -1,107 +1,236 @@
 {
-  "route1": {
-    "longName": "Across town",
-    "mode": "BUS",
-    "shortName": "10",
-    "sortOrder": 10
-  },
-  "route2": {
-    "longName": "Around town",
-    "mode": "BUS",
-    "shortName": "20",
-    "sortOrder": 2
-  },
-  "route3": {
-    "longName": "Around another town",
-    "shortName": "3",
-    "sortOrder": -999,
-    "type": 3
-  },
-  "route4": {
-    "longName": "Loop route",
-    "mode": "BUS",
-    "shortName": "2",
-    "sortOrder": -999
-  },
-  "route5": {
-    "longName": "A-line",
-    "mode": "BUS",
-    "shortName": "A",
-    "sortOrder": -999
-  },
-  "route6": {
-    "longName": "B-line",
-    "mode": "BUS",
-    "shortName": "B",
-    "sortOrder": -999
-  },
-  "route7": {
-    "longName": "A meandering route",
-    "mode": "BUS",
-    "sortOrder": -999
-  },
-  "route8": {
-    "longName": "Zig-zagging route",
-    "mode": "BUS",
-    "shortName": "30",
-    "sortOrder": 2
-  },
-  "route9": {
-    "longName": "Express route",
-    "mode": "BUS",
-    "shortName": "30",
-    "sortOrder": 2
-  },
-  "route10": {
-    "longName": "Variation of express route",
-    "mode": "BUS",
-    "shortName": "30",
-    "sortOrder": 2
-  },
-  "route11": {
-    "longName": "Local route",
-    "mode": "BUS",
-    "shortName": "6",
-    "sortOrder": 2
-  },
-  "route12": {
-    "longName": "Intercity Train",
-    "mode": "RAIL",
-    "shortName": "IC",
-    "sortOrder": 2
-  },
-  "route13": {
-    "longName": "Yellow line Subway",
-    "mode": "SUBWAY",
-    "shortName": "Yellow",
-    "sortOrder": 2
-  },
-  "route14": {
-    "longName": "Xpress route C",
-    "mode": "BUS",
-    "shortName": "30C",
-    "sortOrder": 2
-  },
-  "route15": {
-    "longName": "Express route X",
-    "mode": "BUS",
-    "shortName": "30X",
-    "sortOrder": 2
-  },
-  "route16": {
-    "agencyId": "abc",
-    "agencyName": "Agency 1",
-    "longName": "Intercity Train 2",
-    "mode": "RAIL",
-    "routeId": "1:it2",
-    "shortName": "IC"
-  },
-  "route17": {
-    "agencyId": "abc",
-    "agencyName": "Acclaimed agency 1",
-    "longName": "Express route X",
-    "mode": "BUS",
-    "routeId": "2:erx",
-    "shortName": "30X"
-  }
+  "otp1Routes": [
+    {
+      "agencyId": "bcd",
+      "longName": "Across town",
+      "mode": "BUS",
+      "shortName": "10",
+      "sortOrder": 10
+    },
+    {
+      "agencyId": "bcd",
+      "longName": "Around town",
+      "mode": "BUS",
+      "shortName": "20",
+      "sortOrder": 2
+    },
+    {
+      "agencyId": "bcd",
+      "longName": "Around another town",
+      "shortName": "3",
+      "sortOrder": -999,
+      "type": 3
+    },
+    {
+      "agencyId": "bcd",
+      "longName": "Loop route",
+      "mode": "BUS",
+      "shortName": "2",
+      "sortOrder": -999
+    },
+    {
+      "agencyId": "bcd",
+      "longName": "A-line",
+      "mode": "BUS",
+      "shortName": "A",
+      "sortOrder": -999
+    },
+    {
+      "agencyId": "bcd",
+      "longName": "B-line",
+      "mode": "BUS",
+      "shortName": "B",
+      "sortOrder": -999
+    },
+    {
+      "agencyId": "bcd",
+      "longName": "A meandering route",
+      "mode": "BUS",
+      "sortOrder": -999
+    },
+    {
+      "agencyId": "bcd",
+      "longName": "Zig-zagging route",
+      "mode": "BUS",
+      "shortName": "30",
+      "sortOrder": 2
+    },
+    {
+      "agencyId": "bcd",
+      "longName": "Express route",
+      "mode": "BUS",
+      "shortName": "30",
+      "sortOrder": 2
+    },
+    {
+      "agencyId": "bcd",
+      "longName": "Variation of express route",
+      "mode": "BUS",
+      "shortName": "30",
+      "sortOrder": 2
+    },
+    {
+      "agencyId": "bcd",
+      "longName": "Local route",
+      "mode": "BUS",
+      "shortName": "6",
+      "sortOrder": 2
+    },
+    {
+      "agencyId": "bcd",
+      "longName": "Intercity Train",
+      "mode": "RAIL",
+      "shortName": "IC",
+      "sortOrder": 2
+    },
+    {
+      "agencyId": "bcd",
+      "longName": "Yellow line Subway",
+      "mode": "SUBWAY",
+      "shortName": "Yellow",
+      "sortOrder": 2
+    },
+    {
+      "agencyId": "bcd",
+      "longName": "Xpress route C",
+      "mode": "BUS",
+      "shortName": "30C",
+      "sortOrder": 2
+    },
+    {
+      "agencyId": "bcd",
+      "longName": "Express route X",
+      "mode": "BUS",
+      "shortName": "30X"
+    },
+    {
+      "agencyId": "abc",
+      "agencyName": "Agency 1",
+      "longName": "Intercity Train 2",
+      "mode": "RAIL",
+      "routeId": "1:it2",
+      "shortName": "IC",
+      "sortOrder": 10
+    },
+    {
+      "agencyId": "abc",
+      "agencyName": "Acclaimed agency 1",
+      "longName": "Express route X",
+      "mode": "BUS",
+      "routeId": "2:erx",
+      "shortName": "30X",
+      "sortOrder": 10
+    }
+  ],
+  "otp2Routes": [
+    {
+      "longName": "Across town",
+      "mode": "BUS",
+      "shortName": "10",
+      "sortOrder": 10
+    },
+    {
+      "longName": "Around town",
+      "mode": "BUS",
+      "shortName": "20",
+      "sortOrder": 2
+    },
+    {
+      "longName": "Around another town",
+      "shortName": "3",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "longName": "Loop route",
+      "mode": "BUS",
+      "shortName": "2",
+      "sortOrder": -999
+    },
+    {
+      "longName": "A-line",
+      "mode": "BUS",
+      "shortName": "A",
+      "sortOrder": -999
+    },
+    {
+      "longName": "B-line",
+      "mode": "BUS",
+      "shortName": "B"
+    },
+    {
+      "longName": "A meandering route",
+      "mode": "BUS"
+    },
+    {
+      "longName": "Zig-zagging route",
+      "mode": "BUS",
+      "shortName": "30",
+      "sortOrder": 2
+    },
+    {
+      "longName": "Express route",
+      "mode": "BUS",
+      "shortName": "30",
+      "sortOrder": 2
+    },
+    {
+      "longName": "Variation of express route",
+      "mode": "BUS",
+      "shortName": "30",
+      "sortOrder": 2
+    },
+    {
+      "longName": "Local route",
+      "mode": "BUS",
+      "shortName": "6",
+      "sortOrder": 2
+    },
+    {
+      "longName": "Intercity Train",
+      "mode": "RAIL",
+      "shortName": "IC",
+      "sortOrder": 2
+    },
+    {
+      "longName": "Yellow line Subway",
+      "mode": "SUBWAY",
+      "shortName": "Yellow",
+      "sortOrder": 2
+    },
+    {
+      "longName": "Xpress route C",
+      "mode": "BUS",
+      "shortName": "30C",
+      "sortOrder": 2
+    },
+    {
+      "longName": "Express route X",
+      "mode": "BUS",
+      "shortName": "30X",
+      "sortOrder": 2
+    },
+    {
+      "agency": {
+        "name": "Agency 1",
+        "id": "abc"
+      },
+      "longName": "Intercity Train 2",
+      "mode": "RAIL",
+      "routeId": "1:it2",
+      "shortName": "IC",
+      "sortOrder": 2
+    },
+    {
+      "agency": {
+        "name": "Acclaimed agency 1",
+        "id": "abc"
+      },
+      "longName": "Express route X",
+      "mode": "BUS",
+      "routeId": "2:erx",
+      "shortName": "30X",
+      "sortOrder": 2
+    }
+  ]
 }
