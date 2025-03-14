@@ -36,6 +36,18 @@ function getLegPlaceName(
   };
 }
 
+function getLegDestination(
+  leg: Leg,
+  nextLeg: Leg,
+  PlaceName: FunctionComponent<PlaceNameProps>,
+  config: Config
+) {
+  const { placeName: nextPlaceName = undefined } = nextLeg
+    ? getLegPlaceName(nextLeg, false, PlaceName, config)
+    : {};
+  return nextPlaceName || <PlaceName config={config} place={leg.to} />;
+}
+
 /*
   TODO: Wondering if it's possible for us to destructure the time
   preferences from the config object and avoid making the props list so long
@@ -87,12 +99,6 @@ export default function PlaceRow({
     isDestination,
     PlaceName,
     config
-  );
-  const { placeName: nextPlaceName = undefined } = nextLeg
-    ? getLegPlaceName(nextLeg, false, PlaceName, config)
-    : {};
-  const legDestination = nextPlaceName || (
-    <PlaceName config={config} place={leg.to} />
   );
 
   // OTP2 marks both bikes and scooters as BIKESHARE in the vertextype
@@ -175,7 +181,12 @@ export default function PlaceRow({
               alwaysCollapseAlerts={alwaysCollapseAlerts}
               defaultFareSelector={defaultFareSelector}
               leg={leg}
-              legDestination={legDestination}
+              legDestination={getLegDestination(
+                leg,
+                nextLeg,
+                PlaceName,
+                config
+              )}
               LegIcon={LegIcon}
               legIndex={legIndex}
               nextLegInterlines={nextLeg?.interlineWithPreviousLeg}
