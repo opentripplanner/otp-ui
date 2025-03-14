@@ -72,10 +72,6 @@ export default function PlaceRow({
     id: "otpUi.ItineraryBody.viewOnMap"
   });
 
-  const formattedPlace = direction => (
-    <PlaceName config={config} interline={interline} place={direction} />
-  );
-
   return (
     <S.PlaceRowWrapper
       className={`place-row-wrapper ${leg.transitLeg ? "transit" : ""} ${
@@ -94,7 +90,6 @@ export default function PlaceRow({
           toRouteAbbreviation={toRouteAbbreviation}
         />
       </S.LineColumn>
-      {/* Dot separating interlined segments, if applicable */}
       <S.PlaceHeader>
         <S.PlaceName aria-hidden>
           <PlaceName config={config} interline={interline} place={place} />
@@ -120,7 +115,7 @@ export default function PlaceRow({
             description="Add starting location for access legs"
             id="otpUi.TransitLegBody.fromLocation"
             values={{
-              location: formattedPlace(leg.from)
+              location: <PlaceName config={config} place={leg.from} />
             }}
           />
         ) : (
@@ -128,7 +123,7 @@ export default function PlaceRow({
             id="otpUi.TransitLegBody.arriveAt"
             defaultMessage={defaultMessages["otpUi.TransitLegBody.arriveAt"]}
             description="Identifies end of the trip to screenreaders"
-            values={{ place: formattedPlace(leg.to) }}
+            values={{ place: <PlaceName config={config} place={leg.to} /> }}
           />
         )}
       </S.InvisibleAdditionalDetails>
@@ -145,7 +140,7 @@ export default function PlaceRow({
               alwaysCollapseAlerts={alwaysCollapseAlerts}
               defaultFareSelector={defaultFareSelector}
               leg={leg}
-              legDestination={formattedPlace(leg.to)}
+              legDestination={<PlaceName config={config} place={leg.to} />}
               LegIcon={LegIcon}
               legIndex={legIndex}
               RouteDescription={RouteDescription}
