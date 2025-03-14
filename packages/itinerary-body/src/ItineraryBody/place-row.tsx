@@ -88,9 +88,10 @@ export default function PlaceRow({
     PlaceName,
     config
   );
-  const { placeName: nextPlaceName = undefined } = nextLeg
-    ? getLegPlaceName(nextLeg, false, PlaceName, config)
-    : {};
+  const {
+    interline: nextLegInterlines = false,
+    placeName: nextPlaceName = undefined
+  } = nextLeg ? getLegPlaceName(nextLeg, false, PlaceName, config) : {};
   const legDestination = nextPlaceName || (
     <PlaceName config={config} place={leg.to} />
   );
@@ -178,7 +179,7 @@ export default function PlaceRow({
               legDestination={legDestination}
               LegIcon={LegIcon}
               legIndex={legIndex}
-              nextLegInterlines={nextLeg?.interlineWithPreviousLeg}
+              nextLegInterlines={nextLegInterlines}
               RouteDescription={RouteDescription}
               RouteDescriptionFooter={RouteDescriptionFooter}
               setActiveLeg={setActiveLeg}
