@@ -57,7 +57,6 @@ export default function PlaceRow({
   // on the stop viewer in this case, which they may want to do in order to
   // check the real-time arrival information for the next leg of their journey.
   const interline = !!(!isDestination && leg.interlineWithPreviousLeg);
-  // const hideBorder = interline || !legIndex;
   const place = isDestination ? { ...leg.to } : { ...leg.from };
   // OTP2 marks both bikes and scooters as BIKESHARE in the vertextype
   // To get the right label, we need to fix scooters to be "VEHICLERENTAL"
@@ -97,11 +96,6 @@ export default function PlaceRow({
       </S.LineColumn>
       {/* Dot separating interlined segments, if applicable */}
       <S.PlaceHeader>
-        {/*
-              TODO: Need to rework this -- Need to display a marker
-              for an interline place
-            */}
-        {interline && <S.InterlineDot>&bull;</S.InterlineDot>}
         <S.PlaceName aria-hidden>
           <PlaceName config={config} interline={interline} place={place} />
         </S.PlaceName>
