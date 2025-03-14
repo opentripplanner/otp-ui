@@ -42,6 +42,7 @@ interface Props {
   legDestination: string;
   LegIcon: LegIconComponent;
   legIndex: number;
+  nextLegInterlines?: boolean;
   RouteDescription: FunctionComponent<RouteDescriptionProps>;
   RouteDescriptionFooter: FunctionComponent<RouteDescriptionFooterProps>;
   setActiveLeg: SetActiveLegFunction;
@@ -137,6 +138,7 @@ class TransitLegBody extends Component<Props, State> {
       leg,
       legDestination,
       LegIcon,
+      nextLegInterlines,
       RouteDescription,
       RouteDescriptionFooter,
       setViewedTrip,
@@ -207,17 +209,20 @@ class TransitLegBody extends Component<Props, State> {
                 />
                 <S.InvisibleAdditionalDetails>
                   {" - "}
-                  <FormattedMessage
-                    // TODO: Accommodate interline itineraries with "Stay on board" instructions.
-                    defaultMessage={
-                      defaultMessages["otpUi.TransitLegBody.disembarkAt"]
-                    }
-                    description="Prompt to exit a transit vehicle."
-                    id="otpUi.TransitLegBody.disembarkAt"
-                    values={{
-                      legDestination
-                    }}
-                  />
+                  {nextLegInterlines ? (
+                    legDestination
+                  ) : (
+                    <FormattedMessage
+                      defaultMessage={
+                        defaultMessages["otpUi.TransitLegBody.disembarkAt"]
+                      }
+                      description="Prompt to exit a transit vehicle."
+                      id="otpUi.TransitLegBody.disembarkAt"
+                      values={{
+                        legDestination
+                      }}
+                    />
+                  )}
                 </S.InvisibleAdditionalDetails>
               </span>
               <S.LegClickableButton

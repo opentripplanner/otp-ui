@@ -1,0 +1,404 @@
+{
+  "accessibilityScore": null,
+  "duration": 1380,
+  "endTime": 1741961340000,
+  "legs": [
+    {
+      "accessibilityScore": null,
+      "agency": {
+        "alerts": [],
+        "gtfsId": "kcm:1",
+        "id": "kcm:1",
+        "name": "Metro Transit",
+        "timezone": "America/Los_Angeles",
+        "url": "https://kingcounty.gov/en/dept/metro"
+      },
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 3957.08,
+      "dropOffBookingInfo": null,
+      "dropoffType": "SCHEDULED",
+      "duration": 420,
+      "endTime": 1741960380000,
+      "fareProducts": [
+        {
+          "id": "4b451e7a-5dac-370d-8ddf-b3771c778a0e",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:regular",
+            "medium": null,
+            "name": "regular",
+            "riderCategory": null,
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "e0b41188-33e4-3d69-b48a-c8fc2adbf56a",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:cash",
+              "name": "cash"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:regular",
+              "name": "regular"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        }
+      ],
+      "from": {
+        "lat": 47.6519356,
+        "lon": -122.347809,
+        "name": "Aurora Ave N & N 38th St",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "6050",
+          "gtfsId": "kcm:6050",
+          "id": "U3RvcDprY206NjA1MA",
+          "lat": 47.6519356,
+          "lon": -122.347809
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": "Downtown Seattle Greenwood",
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": [
+        {
+          "lat": 47.642086,
+          "locationType": "STOP",
+          "lon": -122.347069,
+          "name": "Aurora Ave N & Halladay St",
+          "stopCode": "6060",
+          "stopId": "U3RvcDprY206NjA2MA"
+        },
+        {
+          "lat": 47.6389084,
+          "locationType": "STOP",
+          "lon": -122.345596,
+          "name": "Aurora Ave N & Lynn St",
+          "stopCode": "6070",
+          "stopId": "U3RvcDprY206NjA3MA"
+        },
+        {
+          "lat": 47.6367531,
+          "locationType": "STOP",
+          "lon": -122.344116,
+          "name": "Aurora Ave N & Crockett St",
+          "stopCode": "6080",
+          "stopId": "U3RvcDprY206NjA4MA"
+        },
+        {
+          "lat": 47.6321678,
+          "locationType": "STOP",
+          "lon": -122.343666,
+          "name": "Aurora Ave N & Galer St",
+          "stopCode": "6100",
+          "stopId": "U3RvcDprY206NjEwMA"
+        },
+        {
+          "lat": 47.6287308,
+          "locationType": "STOP",
+          "lon": -122.343697,
+          "name": "Aurora Ave N & Prospect St",
+          "stopCode": "6120",
+          "stopId": "U3RvcDprY206NjEyMA"
+        },
+        {
+          "lat": 47.6210556,
+          "locationType": "STOP",
+          "lon": -122.343842,
+          "name": "7th Ave N & Thomas St",
+          "stopCode": "6176",
+          "stopId": "U3RvcDprY206NjE3Ng"
+        }
+      ],
+      "legGeometry": {
+        "length": 109,
+        "points": "y_zaHh`wiVBCTWFEFGFAFCPCZEn@O`M@lM?xLAx@AV?ZC^?j@E|@Gb@EXCVEd@Ih@KZIXI??n@MjA[lA]fA]`A]v@[jAe@hAg@pAq@DA??bAo@pCcBdEkCPI??HIXMTQRIRKTGTGTGVENARCV?\\?lC?zFD`FBX???zH@|A?lA?bD@b@???jC?nDHv@@vBFtBBr@B^?~BFd@G`@@`@Db@Fv@Pp@RZJVFX@VAXGb@U\\ONGPERELELARCZ?b@?l@Bx@???^@fABbCC\\IHTlECPYj@hA~@tAnBpC"
+      },
+      "mode": "BUS",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": "SCHEDULED",
+      "rentedBike": null,
+      "rideHailingEstimate": null,
+      "route": {
+        "alerts": [],
+        "color": "FDB71A",
+        "gtfsId": "kcm:100229",
+        "id": "kcm:100229",
+        "longName": null,
+        "shortName": "5",
+        "textColor": "000000",
+        "type": 3
+      },
+      "startTime": 1741959960000,
+      "steps": [],
+      "to": {
+        "lat": 47.6175041,
+        "lon": -122.345268,
+        "name": "Wall St & 5th Ave",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "7430",
+          "gtfsId": "kcm:7430",
+          "id": "U3RvcDprY206NzQzMA",
+          "lat": 47.6175041,
+          "lon": -122.345268
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": true,
+      "trip": {
+        "arrivalStoptime": {
+          "stop": {
+            "gtfsId": "kcm:7430",
+            "id": "U3RvcDprY206NzQzMA"
+          },
+          "stopPosition": 423
+        },
+        "departureStoptime": {
+          "stop": {
+            "gtfsId": "kcm:5492",
+            "id": "U3RvcDprY206NTQ5Mg"
+          },
+          "stopPosition": 1
+        },
+        "gtfsId": "kcm:475804047",
+        "id": "VHJpcDprY206NDc1ODA0MDQ3"
+      }
+    },
+    {
+      "accessibilityScore": null,
+      "agency": {
+        "alerts": [],
+        "gtfsId": "kcm:1",
+        "id": "kcm:1",
+        "name": "Metro Transit",
+        "timezone": "America/Los_Angeles",
+        "url": "https://kingcounty.gov/en/dept/metro"
+      },
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 3957.34,
+      "dropOffBookingInfo": null,
+      "dropoffType": "SCHEDULED",
+      "duration": 960,
+      "endTime": 1741961340000,
+      "fareProducts": [
+        {
+          "id": "4b451e7a-5dac-370d-8ddf-b3771c778a0e",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:regular",
+            "medium": null,
+            "name": "regular",
+            "riderCategory": null,
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "84be7b98-70c4-34b9-a22a-85d00053e900",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:cash",
+              "name": "cash"
+            },
+            "name": "rideCost",
+            "riderCategory": {
+              "id": "orca:regular",
+              "name": "regular"
+            },
+            "price": {
+              "amount": 0,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "14d46862-8ad9-341c-89b5-a973fc1ec2d8",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "orca:farePayment",
+            "medium": {
+              "id": "orca:cash",
+              "name": "cash"
+            },
+            "name": "transfer",
+            "riderCategory": {
+              "id": "orca:regular",
+              "name": "regular"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        }
+      ],
+      "from": {
+        "lat": 47.6175041,
+        "lon": -122.345268,
+        "name": "Wall St & 5th Ave",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "7430",
+          "gtfsId": "kcm:7430",
+          "id": "U3RvcDprY206NzQzMA",
+          "lat": 47.6175041,
+          "lon": -122.345268
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": "Westwood Village Via 35th Ave SW",
+      "interlineWithPreviousLeg": true,
+      "intermediateStops": [
+        {
+          "lat": 47.6142998,
+          "locationType": "STOP",
+          "lon": -122.344269,
+          "name": "3rd Ave & Bell St",
+          "stopCode": "400",
+          "stopId": "U3RvcDprY206NDAw"
+        },
+        {
+          "lat": 47.6124382,
+          "locationType": "STOP",
+          "lon": -122.34111,
+          "name": "3rd Ave & Virginia St",
+          "stopCode": "420",
+          "stopId": "U3RvcDprY206NDIw"
+        },
+        {
+          "lat": 47.6097908,
+          "locationType": "STOP",
+          "lon": -122.337959,
+          "name": "3rd Ave & Pike St",
+          "stopCode": "431",
+          "stopId": "U3RvcDprY206NDMx"
+        },
+        {
+          "lat": 47.6064415,
+          "locationType": "STOP",
+          "lon": -122.3349,
+          "name": "3rd Ave & Seneca St",
+          "stopCode": "468",
+          "stopId": "U3RvcDprY206NDY4"
+        },
+        {
+          "lat": 47.6035805,
+          "locationType": "STOP",
+          "lon": -122.332275,
+          "name": "3rd Ave & Cherry St",
+          "stopCode": "490",
+          "stopId": "U3RvcDprY206NDkw"
+        },
+        {
+          "lat": 47.6002388,
+          "locationType": "STOP",
+          "lon": -122.330376,
+          "name": "3rd Ave S & S Main St",
+          "stopCode": "515",
+          "stopId": "U3RvcDprY206NTE1"
+        }
+      ],
+      "legGeometry": {
+        "length": 115,
+        "points": "ahsaHlpviVRZDDz@lA`AvA`AnAbAxAfBoDDKBGtCyFr@yAP_@??rAiCxCeGfCeF??N]`BaDNa@JSNWJUJQFIFGHGjCcCl@k@hC}B??LKfEsDdEwDlCcCrBeB??ZYlCaClCcCnCcCnBcBBA??XYdCyBHGHK|BqB`@]FMHIFQL_@X?lC?~B@??`@?D?d@?~BuBLMfB_BZY~@?tABX?z@@`D@L?H?F?xA?~A?X?jD?d@?N?N?P?jF?H?B?D?J?F?L?D?F?F?V?X?P?^`@x@Hv@BrC@L?H?D@BB@DDHBLL~B?bC?lC?bA?fBDxB?~@AvDhA?"
+      },
+      "mode": "BUS",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": "SCHEDULED",
+      "rentedBike": null,
+      "rideHailingEstimate": null,
+      "route": {
+        "alerts": [],
+        "color": "7BDF1A",
+        "gtfsId": "kcm:100101",
+        "id": "kcm:100101",
+        "longName": null,
+        "shortName": "21",
+        "textColor": "000000",
+        "type": 3
+      },
+      "startTime": 1741960380000,
+      "steps": [],
+      "to": {
+        "lat": 47.589901,
+        "lon": -122.334297,
+        "name": "1st Ave S & S Atlantic St",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "15201",
+          "gtfsId": "kcm:15201",
+          "id": "U3RvcDprY206MTUyMDE",
+          "lat": 47.589901,
+          "lon": -122.334297
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": true,
+      "trip": {
+        "arrivalStoptime": {
+          "stop": {
+            "gtfsId": "kcm:22557",
+            "id": "U3RvcDprY206MjI1NTc"
+          },
+          "stopPosition": 308
+        },
+        "departureStoptime": {
+          "stop": {
+            "gtfsId": "kcm:7430",
+            "id": "U3RvcDprY206NzQzMA"
+          },
+          "stopPosition": 1
+        },
+        "gtfsId": "kcm:605082507",
+        "id": "VHJpcDprY206NjA1MDgyNTA3"
+      }
+    }
+  ],
+  "startTime": 1741959960000,
+  "transfers": 0,
+  "waitingTime": 0,
+  "walkTime": 0
+}
