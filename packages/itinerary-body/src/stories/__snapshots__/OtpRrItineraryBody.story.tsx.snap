@@ -15125,7 +15125,7 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
       9:19 AM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
-      from Razor Shared bike
+      from Razor E-scooter
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details ">
       <div class="styled__PlaceSubheader-sc-1q8npbl-49 foIWAW">
@@ -19183,7 +19183,10 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
                 </span>
               </span>
               <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
-                - Disembark at Wall St &amp; 5th Ave
+                - Stay on Board at
+                <strong>
+                  Wall St &amp; 5th Ave
+                </strong>
               </span>
             </span>
             <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 kMvDdO hYCcxI transit-leg-button">
@@ -19337,7 +19340,7 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
       6:53 AM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
-      from Stay on Board at
+      Stay on Board at
       <strong>
         Wall St &amp; 5th Ave
       </strong>
@@ -19392,10 +19395,7 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
                 </span>
               </span>
               <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
-                - Disembark at Stay on Board at
-                <strong>
-                  1st Ave S &amp; S Atlantic St
-                </strong>
+                - Disembark at 1st Ave S &amp; S Atlantic St
               </span>
             </span>
             <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 kMvDdO hYCcxI transit-leg-button">
