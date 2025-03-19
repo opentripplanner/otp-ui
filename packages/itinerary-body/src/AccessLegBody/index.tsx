@@ -15,7 +15,7 @@ import MapillaryButton from "./mapillary-button";
 import RentedVehicleSubheader from "./rented-vehicle-subheader";
 import TNCLeg from "./tnc-leg";
 
-import { defaultMessages } from "../util";
+import { defaultMessages, roundDurationToMinute } from "../util";
 
 interface Props {
   config: Config & {
@@ -87,6 +87,8 @@ class AccessLegBody extends Component<Props, State> {
     const hideDrivingDirections =
       config?.itinerary?.hideDrivingDirections && leg.mode === "CAR";
 
+    const duration = roundDurationToMinute(leg.duration);
+
     if (leg.mode === "CAR" && leg.rideHailingEstimate) {
       return (
         <TNCLeg
@@ -130,7 +132,7 @@ class AccessLegBody extends Component<Props, State> {
               {hideDrivingDirections ? (
                 <S.StepsHeaderAndMapLink>
                   <S.StepsHeaderSpan>
-                    <Duration seconds={leg.duration} />
+                    <Duration seconds={duration} />
                   </S.StepsHeaderSpan>
                   {mapillary}
                 </S.StepsHeaderAndMapLink>
@@ -142,7 +144,7 @@ class AccessLegBody extends Component<Props, State> {
                       onClick={this.onStepsHeaderClick}
                     >
                       <Duration
-                        seconds={leg.duration}
+                        seconds={duration}
                         showApproximatePrefix={
                           showApproximateTravelTime && !isTransit(leg.mode)
                         }
