@@ -6,7 +6,11 @@ import { getCompanyForNetwork } from "@opentripplanner/core-utils/lib/itinerary"
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
-import { defaultMessages, parseOTP2Minute } from "../util";
+import {
+  defaultMessages,
+  parseOTP2Minute,
+  roundDurationToMinute
+} from "../util";
 
 import AccessLegSummary from "./access-leg-summary";
 
@@ -44,6 +48,7 @@ export default function TNCLeg({
     lyft: `https://lyft.com/ride?id=lyft&partner=${LYFT_CLIENT_ID}&pickup[latitude]=${leg.from.lat}&pickup[longitude]=${leg.from.lon}&destination[latitude]=${leg.to.lat}&destination[longitude]=${leg.to.lon}`
   };
   const { rideHailingEstimate } = leg;
+  const duration = roundDurationToMinute(leg.duration);
   if (!rideHailingEstimate) return null;
   return (
     <div>
@@ -127,7 +132,7 @@ export default function TNCLeg({
             description="Describes the estimated travel time."
             id="otpUi.AccessLegBody.TncLeg.estimatedTravelTime"
             values={{
-              duration: <Duration seconds={leg.duration} />
+              duration: <Duration seconds={duration} />
             }}
           />
         </S.TNCTravelTime>
