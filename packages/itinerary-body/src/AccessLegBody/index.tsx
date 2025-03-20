@@ -90,7 +90,7 @@ class AccessLegBody extends Component<Props, State> {
     const hideDrivingDirections =
       config?.itinerary?.hideDrivingDirections && leg.mode === "CAR";
 
-    const duration = ensureAtLeastOneMinute(leg.duration);
+    const durationSeconds = ensureAtLeastOneMinute(leg.duration);
 
     if (leg.mode === "CAR" && leg.rideHailingEstimate) {
       return (
@@ -135,7 +135,7 @@ class AccessLegBody extends Component<Props, State> {
               {hideDrivingDirections ? (
                 <S.StepsHeaderAndMapLink>
                   <S.StepsHeaderSpan>
-                    <Duration seconds={duration} />
+                    <Duration seconds={durationSeconds} />
                   </S.StepsHeaderSpan>
                   {mapillary}
                 </S.StepsHeaderAndMapLink>
@@ -147,7 +147,7 @@ class AccessLegBody extends Component<Props, State> {
                       onClick={this.onStepsHeaderClick}
                     >
                       <Duration
-                        seconds={duration}
+                        seconds={durationSeconds}
                         showApproximatePrefix={
                           showApproximateTravelTime && !isTransit(leg.mode)
                         }

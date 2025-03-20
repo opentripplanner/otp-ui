@@ -18,7 +18,7 @@ export default function TransitLegSummary({
   onClick,
   stopsExpanded
 }: TransitLegSummaryProps): ReactElement {
-  const duration = ensureAtLeastOneMinute(leg.duration);
+  const durationSeconds = ensureAtLeastOneMinute(leg.duration);
 
   return (
     <S.TransitLegSummary onClick={onClick}>
@@ -29,7 +29,7 @@ export default function TransitLegSummary({
         description="Describes ride duration and number of stops"
         id="otpUi.TransitLegBody.rideDurationAndStops"
         values={{
-          duration: <Duration seconds={duration} />,
+          duration: <Duration seconds={durationSeconds} />,
           numStops: (leg.intermediateStops?.length || 0) + 1
         }}
       />

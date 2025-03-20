@@ -91,7 +91,7 @@ export default function AccessLegDescription({
     </S.LegDescriptionPlace>
   );
 
-  const duration = ensureAtLeastOneMinute(leg.duration);
+  const durationSeconds = ensureAtLeastOneMinute(leg.duration);
 
   // TODO: is this causing issues with TNC legs? Do walk legs leading to a TNC
   // trip really have the same `to.stopId` as `from.stopId`?
@@ -114,7 +114,7 @@ export default function AccessLegDescription({
             // That method is used to generate the duration string
             duration:
               config?.formatDuration &&
-              config.formatDuration(duration, intl, false),
+              config.formatDuration(durationSeconds, intl, false),
             mode: modeContent,
             place: placeContent
           }}
@@ -131,7 +131,7 @@ export default function AccessLegDescription({
               },
               {
                 approximatePrefix: false,
-                ...toHoursMinutesSeconds(duration)
+                ...toHoursMinutesSeconds(durationSeconds)
               }
             )
           }}
