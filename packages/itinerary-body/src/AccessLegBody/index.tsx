@@ -3,6 +3,7 @@ import { isTransit } from "@opentripplanner/core-utils/lib/itinerary";
 import React, { Component, FunctionComponent, ReactElement } from "react";
 import AnimateHeight from "react-animate-height";
 import { FormattedMessage } from "react-intl";
+import coreUtils from "@opentripplanner/core-utils";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
@@ -15,7 +16,9 @@ import MapillaryButton from "./mapillary-button";
 import RentedVehicleSubheader from "./rented-vehicle-subheader";
 import TNCLeg from "./tnc-leg";
 
-import { defaultMessages, roundDurationToMinute } from "../util";
+import { defaultMessages } from "../util";
+
+const { ensureAtLeastOneMinute } = coreUtils.time;
 
 interface Props {
   config: Config & {
@@ -87,7 +90,7 @@ class AccessLegBody extends Component<Props, State> {
     const hideDrivingDirections =
       config?.itinerary?.hideDrivingDirections && leg.mode === "CAR";
 
-    const duration = roundDurationToMinute(leg.duration);
+    const duration = ensureAtLeastOneMinute(leg.duration);
 
     if (leg.mode === "CAR" && leg.rideHailingEstimate) {
       return (

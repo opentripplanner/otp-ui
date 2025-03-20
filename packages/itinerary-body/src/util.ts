@@ -24,13 +24,6 @@ export const toSafeRouteColor = (routeColor: string): string => {
   );
 };
 
-/**
- * If a duration is less than 60 seconds, round it to one minute, to avoid a duration
- * of 0 minutes on a leg.
- */
-export const roundDurationToMinute = (duration: number): number =>
-  duration < 60 ? 60 : duration;
-
 export const toModeColor = (mode: string, routeColor: string): string => {
   switch (mode) {
     case "WALK":

@@ -5,7 +5,9 @@ import { FormattedMessage, IntlShape, useIntl } from "react-intl";
 import coreUtils from "@opentripplanner/core-utils";
 import * as S from "../styled";
 
-import { defaultMessages, getPlaceName, roundDurationToMinute } from "../util";
+import { defaultMessages, getPlaceName } from "../util";
+
+const { ensureAtLeastOneMinute, toHoursMinutesSeconds } = coreUtils.time;
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   config: Config;
@@ -89,7 +91,7 @@ export default function AccessLegDescription({
     </S.LegDescriptionPlace>
   );
 
-  const duration = roundDurationToMinute(leg.duration);
+  const duration = ensureAtLeastOneMinute(leg.duration);
 
   // TODO: is this causing issues with TNC legs? Do walk legs leading to a TNC
   // trip really have the same `to.stopId` as `from.stopId`?
@@ -129,7 +131,7 @@ export default function AccessLegDescription({
               },
               {
                 approximatePrefix: false,
-                ...coreUtils.time.toHoursMinutesSeconds(duration)
+                ...toHoursMinutesSeconds(duration)
               }
             )
           }}
