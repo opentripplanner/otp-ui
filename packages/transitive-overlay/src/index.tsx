@@ -15,6 +15,9 @@ import bbox from "@turf/bbox";
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
 import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
 import routeArrow from "./images/route_arrow.png";
+import circle from "./images/circle.png";
+import rectangle from "./images/square.png";
+import debug from "./images/debug.png";
 
 export { itineraryToTransitive };
 
@@ -97,6 +100,7 @@ type Props = {
 type MapImage = {
   id: string;
   url: string;
+  options: { sdf?: boolean; content?: number[] };
 };
 
 const loadImages = (map: MapRef, images: MapImage[]) => {
@@ -108,7 +112,7 @@ const loadImages = (map: MapRef, images: MapImage[]) => {
         return;
       }
       if (!map.hasImage(img.id)) {
-        map.addImage(img.id, image, { sdf: true });
+        map.addImage(img.id, image, img.options);
       }
     });
   });
@@ -129,9 +133,47 @@ const TransitiveCanvasOverlay = ({
   if (showRouteArrows) {
     mapImages.push({
       id: "arrow-icon",
-      url: routeArrow
+      url: routeArrow,
+      options: { sdf: true }
     });
   }
+  mapImages.push({
+    id: "circle",
+    url: circle,
+    options: {
+      sdf: true,
+      content: [400, 390, 600, 610]
+    }
+  });
+
+  mapImages.push({
+    id: "rect",
+    url: rectangle,
+    options: {
+      sdf: true,
+      content: [200, 200, 800, 800]
+    }
+  });
+
+  mapImages.push({
+    id: "debug",
+    url: debug,
+    options: {
+      sdf: false,
+      // @ts-expect-error types are wrong
+      stretchX: [
+        [25, 55],
+        [85, 115]
+      ],
+      // The one (red) row of pixels that can be stretched vertically:
+      //   - the pixels between y: 25 and y: 100 can be stretched
+      stretchY: [[25, 100]],
+      // This part of the image that can contain text ([x1, y1, x2, y2]):
+      content: [25, 25, 115, 100],
+      // This is a high-dpi image:
+      pixelRatio: 2
+    }
+  });
 
   useEffect(() => {
     loadImages(map, mapImages);
@@ -374,24 +416,13 @@ const TransitiveCanvasOverlay = ({
         type="symbol"
       />
       <Layer
-        // Render a solid background of fixed height using the uppercase route name.
-        filter={routeFilter}
-        id="routes-labels-background"
-        layout={getRouteLayerLayout("nameUpper")}
-        paint={{
-          "text-color": ["get", "color"],
-          "text-halo-color": ["get", "color"],
-          "text-halo-width": 4 // Max value is 1/4 of text size per maplibre docs.
-        }}
-        type="symbol"
-      />
-      <Layer
         // This layer renders transit route names (foreground).
         filter={routeFilter}
         id="routes-labels"
         layout={getRouteLayerLayout("name")}
         paint={{
-          "text-color": ["get", "textColor"]
+          "text-color": ["get", "textColor"],
+          "icon-color": ["get", "color"]
         }}
         type="symbol"
       />
