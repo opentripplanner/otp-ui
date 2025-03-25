@@ -92,6 +92,13 @@ const GridCell = styled.span`
   border: 1px solid black;
   padding: 2px;
 `;
+
+/**
+ * This is based on the logic in the makeRouteComparator function in route.ts
+ * If another route comparator is added to makeRouteComparator, this component
+ * will need to be updated to reflect the new comparator.
+ */
+
 export const RouteSortingLogic = (): JSX.Element => {
   const [useOperatorComparator, setUseOperatorComparator] = useState(true);
   const [useSortOrderComparator, setUseSortOrderComparator] = useState(true);
