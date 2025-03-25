@@ -98,9 +98,9 @@ importers:
         specifier: ^2.8.10
         version: 2.8.16
       "@storybook/test-runner":
-        specifier: ^0.19.1
+        specifier: ^0.22.0
         version: >-
-          0.19.1(@types/node@15.14.9)(node-notifier@5.4.5)(storybook@8.6.4(prettier@1.19.1))
+          0.22.0(@types/node@15.14.9)(node-notifier@5.4.5)(storybook@8.6.4(prettier@1.19.1))
       "@types/jest":
         specifier: ^26.0.23
         version: 26.0.24
@@ -3597,12 +3597,6 @@ packages:
     resolution:
       integrity: >-
         sha512-91VEVFWOgHkEFoNFMk6gs1AuOE9Yp7N283BXQOW+AgP+atpzED6t/fIBPGqJ2ewAuzLJ+cFOrasSzoNwVfg3Jg==
-  "@storybook/core-common@8.6.4":
-    peerDependencies:
-      storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
-    resolution:
-      integrity: >-
-        sha512-5q7HE97xt0hHqk8PiJMmvAn9kxanX6uxhRsGpjM5lOUxFMKZ5/9ecnWGcAf0nMgmvRwyM4nn2ykVwu0cvscB5g==
   "@storybook/core-events@7.6.17":
     resolution:
       integrity: >-
@@ -3628,16 +3622,6 @@ packages:
     resolution:
       integrity: >-
         sha512-7UpEp4PFTy1iKjZiRaYMG7zvnpLIRPyD0+lUJUlLYG4UIemV3onvnIi1Je1tSZ4hfTup+ulom7JLztVSHZGRMg==
-  "@storybook/csf-tools@8.6.4":
-    peerDependencies:
-      storybook: ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0
-    resolution:
-      integrity: >-
-        sha512-+6g0oulksKaM42a4UxpQA1Bq+VjNq6vhC9OHnrDr2XVAn/R/6D0UhzRpG2HSa/c9XKPRW8mGL2qom0hmD65XMg==
-  "@storybook/csf@0.1.11":
-    resolution:
-      integrity: >-
-        sha512-dHYFQH3mA+EtnCkHXzicbLgsvzYjcDJ1JWsogbItZogkPHgSJM/Wr71uMkcvw8v9mmCyP4NpXJuu6bPoVsOnzg==
   "@storybook/csf@0.1.13":
     resolution:
       integrity: >-
@@ -3756,13 +3740,17 @@ packages:
     resolution:
       integrity: >-
         sha512-DRQrjyLKaRLXMYo7SNUznyGabtOLJ0b9yfBKNVMu6PsUHJifGPabXuNXmRPZ6qvyhHUSKLQgeLaX8L3Og6uFUg==
-  "@storybook/test-runner@0.19.1":
+  "@storybook/test-runner@0.22.0":
     engines:
       node: ^16.10.0 || ^18.0.0 || >=20.0.0
     hasBin: true
+    peerDependencies:
+      storybook: >-
+        ^0.0.0-0 || ^8.2.0 || ^8.3.0-0 || ^8.4.0-0 || ^8.5.0-0 || ^8.6.0-0 ||
+        ^9.0.0-0
     resolution:
       integrity: >-
-        sha512-Nc4djXw3Lv3AAXg6TJ7yVTeuMryjMsTDd8GCbE/PStU602rpe8syEqElz78GPoJqB1VYWQ3T9pcu93MKyHT+xQ==
+        sha512-fKY6MTE/bcvMaulKXy+z0fPmRXJx1REkYMOMcGn8zn6uffyBigGgaVf/sZ+AZfibwvjzg/StWhJ9HvAM8pc14g==
   "@storybook/test@8.6.4":
     peerDependencies:
       storybook: ^8.6.4
@@ -17713,9 +17701,6 @@ snapshots:
   "@storybook/components@8.6.4(storybook@8.6.4(prettier@1.19.1))":
     dependencies:
       storybook: 8.6.4(prettier@1.19.1)
-  "@storybook/core-common@8.6.4(storybook@8.6.4(prettier@1.19.1))":
-    dependencies:
-      storybook: 8.6.4(prettier@1.19.1)
   "@storybook/core-events@7.6.17":
     dependencies:
       ts-dedent: 2.2.0
@@ -17749,12 +17734,6 @@ snapshots:
       unplugin: 1.15.0(webpack-sources@3.2.3)
     transitivePeerDependencies:
       - webpack-sources
-  "@storybook/csf-tools@8.6.4(storybook@8.6.4(prettier@1.19.1))":
-    dependencies:
-      storybook: 8.6.4(prettier@1.19.1)
-  "@storybook/csf@0.1.11":
-    dependencies:
-      type-fest: 2.19.0
   "@storybook/csf@0.1.13":
     dependencies:
       type-fest: 2.19.0
@@ -17908,17 +17887,14 @@ snapshots:
       parse-repo: 1.0.4
       shelljs: 0.8.5
       yargs: 15.4.1
-  "@storybook/test-runner@0.19.1(@types/node@15.14.9)(node-notifier@5.4.5)(storybook@8.6.4(prettier@1.19.1))":
+  "@storybook/test-runner@0.22.0(@types/node@15.14.9)(node-notifier@5.4.5)(storybook@8.6.4(prettier@1.19.1))":
     dependencies:
       "@babel/core": 7.26.0
       "@babel/generator": 7.26.2
       "@babel/template": 7.25.9
       "@babel/types": 7.26.0
       "@jest/types": 29.6.3
-      "@storybook/core-common": 8.6.4(storybook@8.6.4(prettier@1.19.1))
-      "@storybook/csf": 0.1.11
-      "@storybook/csf-tools": 8.6.4(storybook@8.6.4(prettier@1.19.1))
-      "@storybook/preview-api": 8.6.4(storybook@8.6.4(prettier@1.19.1))
+      "@storybook/csf": 0.1.13
       "@swc/core": 1.7.42
       "@swc/jest": 0.2.37(@swc/core@1.7.42)
       expect-playwright: 0.8.0
@@ -17933,13 +17909,13 @@ snapshots:
       jest-watch-typeahead: 2.2.2(jest@29.7.0(@types/node@15.14.9)(node-notifier@5.4.5))
       nyc: 15.1.0
       playwright: 1.48.2
+      storybook: 8.6.4(prettier@1.19.1)
     transitivePeerDependencies:
       - "@swc/helpers"
       - "@types/node"
       - babel-plugin-macros
       - debug
       - node-notifier
-      - storybook
       - supports-color
       - ts-node
   "@storybook/test@8.6.4(storybook@8.6.4(prettier@1.19.1))":
