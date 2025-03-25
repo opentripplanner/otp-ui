@@ -121,8 +121,8 @@ importers:
         specifier: ^4.28.3
         version: 4.33.0(eslint@7.32.0)(typescript@4.9.5)
       axe-playwright:
-        specifier: ^2.0.1
-        version: 2.0.3(playwright@1.48.2)
+        specifier: ^2.1.0
+        version: 2.1.0(playwright@1.48.2)
       babel-eslint:
         specifier: ^10.0.3
         version: 10.1.0(eslint@7.32.0)
@@ -2052,12 +2052,12 @@ packages:
     resolution:
       integrity: >-
         sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
-  "@emotion/use-insertion-effect-with-fallbacks@1.1.0":
+  "@emotion/use-insertion-effect-with-fallbacks@1.2.0":
     peerDependencies:
       react: 18.2.0
     resolution:
       integrity: >-
-        sha512-+wBOcIV5snwGgI2ya3u99D7/FJquOIniQT1IKyDsBmEgwvpxMNeS65Oib7OnE2d2aY+3BU4OiH+0Wchf8yk3Hw==
+        sha512-yJMtVdH59sxi/aVJBpk9FQq+OR8ll5GT8oWd57UpeaKEVGab41JWaCFA7FRLoMLloOZF/c/wsPoe+bfGmRKgDg==
   "@esbuild/android-arm64@0.18.20":
     cpu:
       - arm64
@@ -3638,6 +3638,10 @@ packages:
     resolution:
       integrity: >-
         sha512-dHYFQH3mA+EtnCkHXzicbLgsvzYjcDJ1JWsogbItZogkPHgSJM/Wr71uMkcvw8v9mmCyP4NpXJuu6bPoVsOnzg==
+  "@storybook/csf@0.1.13":
+    resolution:
+      integrity: >-
+        sha512-7xOOwCLGB3ebM87eemep89MYRFTko+D8qE7EdAAq74lgdqRR5cOUtYWJLjO2dLtP94nqoOdHJo6MdLLKzg412Q==
   "@storybook/global@5.0.0":
     resolution:
       integrity: >-
@@ -4448,10 +4452,10 @@ packages:
     resolution:
       integrity: >-
         sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==
-  "@types/qs@6.9.16":
+  "@types/qs@6.9.18":
     resolution:
       integrity: >-
-        sha512-7i+zxXdPD0T4cKDuxCUXJ4wHcsJLwENa6Z3dCu8cfCK743OGy5Nu1RmAGqDPsoTDINVEcdXKRvR/zre+P2Ku1A==
+        sha512-kK7dgTYDyGqS+e2Q4aK9X3D7q234CIZ1Bv0q/7Z5IwRDoADNU81xXJK/YVyLbLTZCoIwUoDoffFeF+p/eIklAA==
   "@types/range-parser@1.2.7":
     resolution:
       integrity: >-
@@ -5397,12 +5401,12 @@ packages:
     resolution:
       integrity: >-
         sha512-WlF+xlNVgNVWiM6IdVrsh+N0Cw7qupe5HT9N6Uyi+aN7f6SSi92RDomiP1noW8OWIV85V6x404m5oKMeqRV3tQ==
-  axe-playwright@2.0.3:
+  axe-playwright@2.1.0:
     peerDependencies:
       playwright: ">1.0.0"
     resolution:
       integrity: >-
-        sha512-s7iI2okyHHsD3XZK4RMJtTy2UASkNWLQtnzLuaHiK3AWkERf+cqZJqkxb7O4b56fnbib9YnZVRByTl92ME3o6g==
+        sha512-tY48SX56XaAp16oHPyD4DXpybz8Jxdz9P7exTjF/4AV70EGUavk+1fUPWirM0OYBR+YyDx6hUeDvuHVA6fB9YA==
   axios@1.7.7:
     resolution:
       integrity: >-
@@ -5766,12 +5770,24 @@ packages:
     resolution:
       integrity: >-
         sha512-kpqOvwXnjjN44D89K5ccQC+RUrsy7jB/XLlRrx0D7/2HNcTPqzsb6XgYoErwko6QsV184CA2YgS1fxDiiDZMWA==
+  call-bind-apply-helpers@1.0.2:
+    engines:
+      node: ">= 0.4"
+    resolution:
+      integrity: >-
+        sha512-Sp1ablJ0ivDkSzjcaJdxEunN5/XvksFJ2sMBFfq6x0ryhQV/2b/KwFe21cMpmHtPOSij8K99/wSfoEuTObmuMQ==
   call-bind@1.0.7:
     engines:
       node: ">= 0.4"
     resolution:
       integrity: >-
         sha512-GHTSNSYICQ7scH7sZ+M2rFopRoLh8t2bLSW6BbgrtLsahOIB5iyAVJf9GjWK3cYTDaMj4XdBpM1cA6pIS0Kv2w==
+  call-bound@1.0.4:
+    engines:
+      node: ">= 0.4"
+    resolution:
+      integrity: >-
+        sha512-+ys997U96po4Kx/ABpBCqhA9EuxJaQWDQg7295H4hBphv3IZg0boBKuwYpt4YXp6MZ5AmZQnU/tyMTlRpaSejg==
   call-me-maybe@1.0.2:
     resolution:
       integrity: >-
@@ -6960,6 +6976,12 @@ packages:
     resolution:
       integrity: >-
         sha512-2QF/g9/zTaPDc3BjNcVTGoBbXBgYfMTTceLaYcFJ/W9kggFUkhxD/hMEeuLKbugyef9SqAx8cpgwlIP/jinUTA==
+  dunder-proto@1.0.1:
+    engines:
+      node: ">= 0.4"
+    resolution:
+      integrity: >-
+        sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==
   duplexer2@0.1.4:
     resolution:
       integrity: >-
@@ -7151,6 +7173,12 @@ packages:
     resolution:
       integrity: >-
         sha512-jxayLKShrEqqzJ0eumQbVhTYQM27CfT1T35+gCgDFoL82JLsXqTJ76zv6A0YLOgEnLUMvLzsDsGIrl8NFpT2gQ==
+  es-define-property@1.0.1:
+    engines:
+      node: ">= 0.4"
+    resolution:
+      integrity: >-
+        sha512-e3nRfgfUZ4rNGL232gUgX06QNyyez04KdjFrF+LTRoOXmrOgFKDg4BCdsjW8EnT69eqdYGmRpJwiPVYNrCaW3g==
   es-errors@1.3.0:
     engines:
       node: ">= 0.4"
@@ -7167,6 +7195,12 @@ packages:
     resolution:
       integrity: >-
         sha512-MZ4iQ6JwHOBQjahnjwaC1ZtIBH+2ohjamzAO3oaHcXYup7qxjF2fixyH+Q71voWHeOkI2q/TnJao/KfXYIZWbw==
+  es-object-atoms@1.1.1:
+    engines:
+      node: ">= 0.4"
+    resolution:
+      integrity: >-
+        sha512-FGgH2h8zKNim9ljj7dankFPcICIK9Cp5bm+c2gQSYePhpaG5+esrLODihIorn+Pe6FGJzWhXQotPv73jTaldXA==
   es-set-tostringtag@2.0.3:
     engines:
       node: ">= 0.4"
@@ -8091,6 +8125,12 @@ packages:
     resolution:
       integrity: >-
         sha512-5uYhsJH8VJBTv7oslg4BznJYhDoRI6waYCxMmCdnTrcCrHA/fCFKoTFz2JKKE0HdDFUF7/oQuhzumXJK7paBRQ==
+  get-intrinsic@1.3.0:
+    engines:
+      node: ">= 0.4"
+    resolution:
+      integrity: >-
+        sha512-9fSjSaos/fRIVIp+xSJlE6lfwhES7LNtKaCBIamHsjr2na1BiABJPo0mOjjz8GJDURarmCPGqaiVg5mfjb98CQ==
   get-own-enumerable-property-symbols@3.0.2:
     resolution:
       integrity: >-
@@ -8114,6 +8154,12 @@ packages:
     resolution:
       integrity: >-
         sha512-g/Q1aTSDOxFpchXC4i8ZWvxA1lnPqx/JHqcpIw0/LX9T8x/GBbi6YnlN5nhaKIFkT8oFsscUKgDJYxfwfS6QsQ==
+  get-proto@1.0.1:
+    engines:
+      node: ">= 0.4"
+    resolution:
+      integrity: >-
+        sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g==
   get-stdin@6.0.0:
     engines:
       node: ">=4"
@@ -8368,6 +8414,12 @@ packages:
     resolution:
       integrity: >-
         sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==
+  gopd@1.2.0:
+    engines:
+      node: ">= 0.4"
+    resolution:
+      integrity: >-
+        sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==
   graceful-fs@4.2.10:
     resolution:
       integrity: >-
@@ -8492,6 +8544,12 @@ packages:
     resolution:
       integrity: >-
         sha512-l3LCuF6MgDNwTDKkdYGEihYjt5pRPbEg46rtlmnSPlUbgmB8LOIrKJbYYFBSbnPaJexMKtiPO8hmeRjRz2Td+A==
+  has-symbols@1.1.0:
+    engines:
+      node: ">= 0.4"
+    resolution:
+      integrity: >-
+        sha512-1cDNdwJ2Jaohmb3sg4OmKaMBwuC48sYni5HUw2DvsC8LjGTLK9h+eb1X6RyuOHe4hT0ULCW68iomhjUoKUqlPQ==
   has-tostringtag@1.0.2:
     engines:
       node: ">= 0.4"
@@ -10548,6 +10606,12 @@ packages:
     resolution:
       integrity: >-
         sha512-+BmqxWIubKTRKNWx/ahnCkk3mG8m7OturVlqq6HiojGJTd5hVYbgZm6WzcYPCoB+KBT4Vd6R7WSRG2OADNaCjg==
+  math-intrinsics@1.1.0:
+    engines:
+      node: ">= 0.4"
+    resolution:
+      integrity: >-
+        sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==
   mathml-tag-names@2.1.3:
     resolution:
       integrity: >-
@@ -11393,6 +11457,12 @@ packages:
     resolution:
       integrity: >-
         sha512-IRZSRuzJiynemAXPYtPe5BoI/RESNYR7TYm50MC5Mqbd3Jmw5y790sErYw3V6SryFJD64b74qQQs9wn5Bg/k3g==
+  object-inspect@1.13.4:
+    engines:
+      node: ">= 0.4"
+    resolution:
+      integrity: >-
+        sha512-W67iLl4J2EXEGTbfeHCffrjDfitvLANg0UlX3wFUUSTx92KXRFegMHUVgSqE+wvhAbi4WqjGg9czysTV2Epbew==
   object-keys@1.1.1:
     engines:
       node: ">= 0.4"
@@ -12458,6 +12528,12 @@ packages:
     resolution:
       integrity: >-
         sha512-+38qI9SOr8tfZ4QmJNplMUxqjbe7LKvvZgWdExBOmd+egZTtjLB67Gu0HRX3u/XOq7UU2Nx6nsjvS16Z9uwfpg==
+  qs@6.14.0:
+    engines:
+      node: ">=0.6"
+    resolution:
+      integrity: >-
+        sha512-YWWTjgABSKcvs/nWBi9PycY/JiPJqOD4JA6o9Sej2AtvSGarXxKC3OQSk4pAarbdQlKAh5D4FCQkJNkW+GAn3w==
   qs@6.5.3:
     engines:
       node: ">=0.6"
@@ -13297,12 +13373,36 @@ packages:
     resolution:
       integrity: >-
         sha512-vFwSUfQvqybiICwZY5+DAWIPLKsWO31Q91JSKl3UYv+K5c2QRPzn0qzec6QPu1Qc9eHYItiP3NdJqNVqetYAww==
+  side-channel-list@1.0.0:
+    engines:
+      node: ">= 0.4"
+    resolution:
+      integrity: >-
+        sha512-FCLHtRD/gnpCiCHEiJLOwdmFP+wzCmDEkc9y7NsYxeF4u7Btsn1ZuwgwJGxImImHicJArLP4R0yX4c2KCrMrTA==
+  side-channel-map@1.0.1:
+    engines:
+      node: ">= 0.4"
+    resolution:
+      integrity: >-
+        sha512-VCjCNfgMsby3tTdo02nbjtM/ewra6jPHmpThenkTYh8pG9ucZ/1P8So4u4FGBek/BjpOVsDCMoLA/iuBKIFXRA==
+  side-channel-weakmap@1.0.2:
+    engines:
+      node: ">= 0.4"
+    resolution:
+      integrity: >-
+        sha512-WPS/HvHQTYnHisLo9McqBHOJk2FkHO/tlpvldyrnem4aeQp4hai3gythswg6p01oSoTl58rcpiFAjF2br2Ak2A==
   side-channel@1.0.6:
     engines:
       node: ">= 0.4"
     resolution:
       integrity: >-
         sha512-fDW/EZ6Q9RiO8eFG8Hj+7u/oW+XrPTIChwCOM2+th2A6OblDtYYIpve9m+KvI9Z4C9qSEXlaGR6bTEYHReuglA==
+  side-channel@1.1.0:
+    engines:
+      node: ">= 0.4"
+    resolution:
+      integrity: >-
+        sha512-ZX99e6tRweoUXqR+VBrslhda51Nh5MTQwou5tnUDgbtyM0dBgmhEDtWGP/xbKn6hqfPRHujUNwz5fy/wbbhnpw==
   signal-exit@3.0.7:
     resolution:
       integrity: >-
@@ -13598,10 +13698,10 @@ packages:
     resolution:
       integrity: >-
         sha512-ZnWpYnYugiOVEY5GkcuJK1io5V8QmNYChG62gSit9pQVGErXtrKuPC55ITaVSukmMta5qpMU7vqLt2Lnni4f/g==
-  store2@2.14.3:
+  store2@2.14.4:
     resolution:
       integrity: >-
-        sha512-4QcZ+yx7nzEFiV4BMLnr/pRa5HYzNITX2ri0Zh6sT9EyQHbBHacC6YigllUPU9X3D0f/22QCgfokpKs52YRrUg==
+        sha512-srTItn1GOvyvOycgxjAnPA63FZNwy0PTyUBFMHRM+hVFltAeoh0LmNBz9SZqUS9mMqGk8rfyWyXn3GH5ReJ8Zw==
   storybook-i18n@3.1.1:
     resolution:
       integrity: >-
@@ -16156,7 +16256,7 @@ snapshots:
   "@emotion/memoize@0.9.0": {}
   "@emotion/stylis@0.8.5": {}
   "@emotion/unitless@0.7.5": {}
-  "@emotion/use-insertion-effect-with-fallbacks@1.1.0(react@18.2.0)":
+  "@emotion/use-insertion-effect-with-fallbacks@1.2.0(react@18.2.0)":
     dependencies:
       react: 18.2.0
   "@esbuild/android-arm64@0.18.20":
@@ -17604,7 +17704,7 @@ snapshots:
       "@storybook/client-logger": 7.6.17
       "@storybook/core-events": 7.6.17
       "@storybook/global": 5.0.0
-      qs: 6.13.0
+      qs: 6.14.0
       telejson: 7.2.0
       tiny-invariant: 1.3.3
   "@storybook/client-logger@7.6.17":
@@ -17655,6 +17755,9 @@ snapshots:
   "@storybook/csf@0.1.11":
     dependencies:
       type-fest: 2.19.0
+  "@storybook/csf@0.1.13":
+    dependencies:
+      type-fest: 2.19.0
   "@storybook/global@5.0.0": {}
   "@storybook/icons@1.2.12(react-dom@18.3.1(react@18.2.0))(react@18.2.0)":
     dependencies:
@@ -17670,7 +17773,7 @@ snapshots:
       "@storybook/channels": 7.6.17
       "@storybook/client-logger": 7.6.17
       "@storybook/core-events": 7.6.17
-      "@storybook/csf": 0.1.11
+      "@storybook/csf": 0.1.13
       "@storybook/global": 5.0.0
       "@storybook/router": 7.6.17
       "@storybook/theming": 7.6.17(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
@@ -17678,7 +17781,7 @@ snapshots:
       dequal: 2.0.3
       lodash: 4.17.21
       memoizerific: 1.11.3
-      store2: 2.14.3
+      store2: 2.14.4
       telejson: 7.2.0
       ts-dedent: 2.2.0
     transitivePeerDependencies:
@@ -17719,14 +17822,14 @@ snapshots:
       "@storybook/channels": 7.6.17
       "@storybook/client-logger": 7.6.17
       "@storybook/core-events": 7.6.17
-      "@storybook/csf": 0.1.11
+      "@storybook/csf": 0.1.13
       "@storybook/global": 5.0.0
       "@storybook/types": 7.6.17
-      "@types/qs": 6.9.16
+      "@types/qs": 6.9.18
       dequal: 2.0.3
       lodash: 4.17.21
       memoizerific: 1.11.3
-      qs: 6.13.0
+      qs: 6.14.0
       synchronous-promise: 2.0.17
       ts-dedent: 2.2.0
       util-deprecate: 1.0.2
@@ -17791,7 +17894,7 @@ snapshots:
     dependencies:
       "@storybook/client-logger": 7.6.17
       memoizerific: 1.11.3
-      qs: 6.13.0
+      qs: 6.14.0
   "@storybook/source-loader@8.6.4(storybook@8.6.4(prettier@1.19.1))":
     dependencies:
       es-toolkit: 1.32.0
@@ -17851,7 +17954,7 @@ snapshots:
       storybook: 8.6.4(prettier@1.19.1)
   "@storybook/theming@7.6.17(react-dom@18.3.1(react@18.2.0))(react@18.2.0)":
     dependencies:
-      "@emotion/use-insertion-effect-with-fallbacks": 1.1.0(react@18.2.0)
+      "@emotion/use-insertion-effect-with-fallbacks": 1.2.0(react@18.2.0)
       "@storybook/client-logger": 7.6.17
       "@storybook/global": 5.0.0
       memoizerific: 1.11.3
@@ -18287,14 +18390,14 @@ snapshots:
   "@types/express-serve-static-core@4.19.6":
     dependencies:
       "@types/node": 15.14.9
-      "@types/qs": 6.9.16
+      "@types/qs": 6.9.18
       "@types/range-parser": 1.2.7
       "@types/send": 0.17.4
   "@types/express@4.17.21":
     dependencies:
       "@types/body-parser": 1.19.5
       "@types/express-serve-static-core": 4.19.6
-      "@types/qs": 6.9.16
+      "@types/qs": 6.9.18
       "@types/serve-static": 1.15.7
   "@types/flat@5.0.5": {}
   "@types/fs-extra@9.0.13":
@@ -18353,7 +18456,7 @@ snapshots:
   "@types/parse-json@4.0.2": {}
   "@types/pbf@3.0.5": {}
   "@types/prop-types@15.7.13": {}
-  "@types/qs@6.9.16": {}
+  "@types/qs@6.9.18": {}
   "@types/range-parser@1.2.7": {}
   "@types/react@18.3.12":
     dependencies:
@@ -18944,7 +19047,7 @@ snapshots:
     dependencies:
       axe-core: 4.10.2
       mustache: 4.2.0
-  axe-playwright@2.0.3(playwright@1.48.2):
+  axe-playwright@2.1.0(playwright@1.48.2):
     dependencies:
       "@types/junit-report-builder": 3.0.2
       axe-core: 4.10.2
@@ -19292,6 +19395,10 @@ snapshots:
       make-dir: 3.1.0
       package-hash: 4.0.0
       write-file-atomic: 3.0.3
+  call-bind-apply-helpers@1.0.2:
+    dependencies:
+      es-errors: 1.3.0
+      function-bind: 1.1.2
   call-bind@1.0.7:
     dependencies:
       es-define-property: 1.0.0
@@ -19299,6 +19406,10 @@ snapshots:
       function-bind: 1.1.2
       get-intrinsic: 1.2.4
       set-function-length: 1.2.2
+  call-bound@1.0.4:
+    dependencies:
+      call-bind-apply-helpers: 1.0.2
+      get-intrinsic: 1.3.0
   call-me-maybe@1.0.2: {}
   caller-callsite@2.0.0:
     dependencies:
@@ -19954,6 +20065,11 @@ snapshots:
       dotenv: 16.4.5
   dotenv@16.4.5: {}
   dset@3.1.4: {}
+  dunder-proto@1.0.1:
+    dependencies:
+      call-bind-apply-helpers: 1.0.2
+      es-errors: 1.3.0
+      gopd: 1.2.0
   duplexer2@0.1.4:
     dependencies:
       readable-stream: 2.3.8
@@ -20093,9 +20209,13 @@ snapshots:
   es-define-property@1.0.0:
     dependencies:
       get-intrinsic: 1.2.4
+  es-define-property@1.0.1: {}
   es-errors@1.3.0: {}
   es-module-lexer@1.5.4: {}
   es-object-atoms@1.0.0:
+    dependencies:
+      es-errors: 1.3.0
+  es-object-atoms@1.1.1:
     dependencies:
       es-errors: 1.3.0
   es-set-tostringtag@2.0.3:
@@ -20803,6 +20923,18 @@ snapshots:
       has-proto: 1.0.3
       has-symbols: 1.0.3
       hasown: 2.0.2
+  get-intrinsic@1.3.0:
+    dependencies:
+      call-bind-apply-helpers: 1.0.2
+      es-define-property: 1.0.1
+      es-errors: 1.3.0
+      es-object-atoms: 1.1.1
+      function-bind: 1.1.2
+      get-proto: 1.0.1
+      gopd: 1.2.0
+      has-symbols: 1.1.0
+      hasown: 2.0.2
+      math-intrinsics: 1.1.0
   get-own-enumerable-property-symbols@3.0.2: {}
   get-package-type@0.1.0: {}
   get-pkg-repo@4.2.1:
@@ -20812,6 +20944,10 @@ snapshots:
       through2: 2.0.5
       yargs: 16.2.0
   get-port@5.1.1: {}
+  get-proto@1.0.1:
+    dependencies:
+      dunder-proto: 1.0.1
+      es-object-atoms: 1.1.1
   get-stdin@6.0.0: {}
   get-stdin@7.0.0: {}
   get-stream@4.1.0:
@@ -20989,6 +21125,7 @@ snapshots:
   gopd@1.0.1:
     dependencies:
       get-intrinsic: 1.2.4
+  gopd@1.2.0: {}
   graceful-fs@4.2.10: {}
   graceful-fs@4.2.11: {}
   graphql-config@4.5.0(@types/node@15.14.9)(encoding@0.1.13)(graphql@16.9.0):
@@ -21049,6 +21186,7 @@ snapshots:
       es-define-property: 1.0.0
   has-proto@1.0.3: {}
   has-symbols@1.0.3: {}
+  has-symbols@1.1.0: {}
   has-tostringtag@1.0.2:
     dependencies:
       has-symbols: 1.0.3
@@ -22711,6 +22849,7 @@ snapshots:
   matcher@1.1.1:
     dependencies:
       escape-string-regexp: 1.0.5
+  math-intrinsics@1.1.0: {}
   mathml-tag-names@2.1.3: {}
   md5.js@1.3.5:
     dependencies:
@@ -23242,6 +23381,7 @@ snapshots:
       define-property: 0.2.5
       kind-of: 3.2.2
   object-inspect@1.13.2: {}
+  object-inspect@1.13.4: {}
   object-keys@1.1.1: {}
   object-visit@1.0.1:
     dependencies:
@@ -23805,6 +23945,9 @@ snapshots:
   qs@6.13.0:
     dependencies:
       side-channel: 1.0.6
+  qs@6.14.0:
+    dependencies:
+      side-channel: 1.1.0
   qs@6.5.3: {}
   querystring-es3@0.2.1: {}
   querystringify@2.2.0: {}
@@ -24390,12 +24533,36 @@ snapshots:
       interpret: 1.4.0
       rechoir: 0.6.2
   shellwords@0.1.1: {}
+  side-channel-list@1.0.0:
+    dependencies:
+      es-errors: 1.3.0
+      object-inspect: 1.13.4
+  side-channel-map@1.0.1:
+    dependencies:
+      call-bound: 1.0.4
+      es-errors: 1.3.0
+      get-intrinsic: 1.3.0
+      object-inspect: 1.13.4
+  side-channel-weakmap@1.0.2:
+    dependencies:
+      call-bound: 1.0.4
+      es-errors: 1.3.0
+      get-intrinsic: 1.3.0
+      object-inspect: 1.13.4
+      side-channel-map: 1.0.1
   side-channel@1.0.6:
     dependencies:
       call-bind: 1.0.7
       es-errors: 1.3.0
       get-intrinsic: 1.2.4
       object-inspect: 1.13.2
+  side-channel@1.1.0:
+    dependencies:
+      es-errors: 1.3.0
+      object-inspect: 1.13.4
+      side-channel-list: 1.0.0
+      side-channel-map: 1.0.1
+      side-channel-weakmap: 1.0.2
   signal-exit@3.0.7: {}
   signal-exit@4.1.0: {}
   signale@1.4.0:
@@ -24575,7 +24742,7 @@ snapshots:
       object-copy: 0.1.0
   statuses@2.0.1: {}
   stealthy-require@1.1.1: {}
-  store2@2.14.3: {}
+  store2@2.14.4: {}
   storybook-i18n@3.1.1: {}
   storybook-mock-date-decorator@2.0.6(@storybook/addons@7.6.17(react-dom@18.3.1(react@18.2.0))(react@18.2.0)):
     dependencies:
