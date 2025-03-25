@@ -30,9 +30,6 @@ const preview: Preview = {
 
   tags: ["autodocs"],
   initialGlobals: {
-    a11y: {
-      manual: true
-    },
     locale: reactIntl.defaultLocale,
     locales: {
       "en-US": { title: "English (US)" },
