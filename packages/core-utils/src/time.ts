@@ -27,6 +27,13 @@ export function toHoursMinutesSeconds(
 }
 
 /**
+ * If a duration is less than 60 seconds, round it to one minute, to avoid a duration
+ * of 0 minutes on a leg.
+ */
+export const ensureAtLeastOneMinute = (duration: number): number =>
+  duration < 60 ? 60 : duration;
+
+/**
  * @param  {[type]} config the OTP config object found in store
  * @return {string}        the config-defined time formatter or HH:mm (24-hr time)
  */

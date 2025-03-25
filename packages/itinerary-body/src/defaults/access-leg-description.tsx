@@ -7,6 +7,8 @@ import * as S from "../styled";
 
 import { defaultMessages, getPlaceName } from "../util";
 
+const { ensureAtLeastOneMinute, toHoursMinutesSeconds } = coreUtils.time;
+
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   config: Config;
   leg: Leg;
@@ -89,6 +91,8 @@ export default function AccessLegDescription({
     </S.LegDescriptionPlace>
   );
 
+  const durationSeconds = ensureAtLeastOneMinute(leg.duration);
+
   // TODO: is this causing issues with TNC legs? Do walk legs leading to a TNC
   // trip really have the same `to.stopId` as `from.stopId`?
   const isTransferLeg = leg.to.stopId === leg.from.stopId;
@@ -110,7 +114,7 @@ export default function AccessLegDescription({
             // That method is used to generate the duration string
             duration:
               config?.formatDuration &&
-              config.formatDuration(leg.duration, intl, false),
+              config.formatDuration(durationSeconds, intl, false),
             mode: modeContent,
             place: placeContent
           }}
@@ -127,7 +131,7 @@ export default function AccessLegDescription({
               },
               {
                 approximatePrefix: false,
-                ...coreUtils.time.toHoursMinutesSeconds(leg.duration)
+                ...toHoursMinutesSeconds(durationSeconds)
               }
             )
           }}

@@ -3,12 +3,15 @@ import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 import { getCompanyForNetwork } from "@opentripplanner/core-utils/lib/itinerary";
+
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
 import { defaultMessages, parseOTP2Minute } from "../util";
 
 import AccessLegSummary from "./access-leg-summary";
+
+const { ensureAtLeastOneMinute } = coreUtils.time;
 
 interface Props {
   config: Config;
@@ -44,6 +47,7 @@ export default function TNCLeg({
     lyft: `https://lyft.com/ride?id=lyft&partner=${LYFT_CLIENT_ID}&pickup[latitude]=${leg.from.lat}&pickup[longitude]=${leg.from.lon}&destination[latitude]=${leg.to.lat}&destination[longitude]=${leg.to.lon}`
   };
   const { rideHailingEstimate } = leg;
+  const durationSeconds = ensureAtLeastOneMinute(leg.duration);
   if (!rideHailingEstimate) return null;
   return (
     <div>
@@ -127,7 +131,7 @@ export default function TNCLeg({
             description="Describes the estimated travel time."
             id="otpUi.AccessLegBody.TncLeg.estimatedTravelTime"
             values={{
-              duration: <Duration seconds={leg.duration} />
+              duration: <Duration seconds={durationSeconds} />
             }}
           />
         </S.TNCTravelTime>
