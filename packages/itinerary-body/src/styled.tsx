@@ -241,11 +241,16 @@ export const InnerLine = styled.div<ModeRouteProps>`
 
 export const InterlineDot = styled.div`
   color: #fff;
-  flex: 0 0 15px;
-  margin-left: -33px;
-  margin-right: 18px;
-  position: relative;
   z-index: 30;
+
+  &::before {
+    content: "•";
+    /* Allows centering of the bullet within the line column. */
+    display: block;
+    /* Try to place bullet where the lines split (results vary by browser). */
+    padding-top: 0.5px;
+    text-align: center;
+  }
 `;
 
 export const InterlineName = styled.div`
