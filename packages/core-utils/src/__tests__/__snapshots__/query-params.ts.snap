@@ -77,6 +77,31 @@ Array [
   },
   Object {
     "applicable": [Function],
+    "default": 1.34,
+    "label": "Walk Speed",
+    "name": "walkSpeed",
+    "options": Array [
+      Object {
+        "text": "2 MPH",
+        "value": 0.89,
+      },
+      Object {
+        "text": "3 MPH",
+        "value": 1.34,
+      },
+      Object {
+        "text": "4 MPH",
+        "value": 1.79,
+      },
+    ],
+    "routingTypes": Array [
+      "ITINERARY",
+      "PROFILE",
+    ],
+    "selector": "DROPDOWN",
+  },
+  Object {
+    "applicable": [Function],
     "default": 1609,
     "label": "Max Walk Distance In Meters",
     "name": "maxWalkDistance",

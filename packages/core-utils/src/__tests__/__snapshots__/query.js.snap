@@ -24,6 +24,7 @@ Object {
   "startTime": "07:00",
   "time": "19:34",
   "to": null,
+  "walkSpeed": 1.34,
   "watts": 250,
   "wheelchair": false,
 }
@@ -53,6 +54,7 @@ Object {
   "startTime": "07:00",
   "time": "19:34",
   "to": null,
+  "walkSpeed": 1.34,
   "watts": 250,
   "wheelchair": false,
 }
@@ -86,6 +88,7 @@ Object {
   "showIntermediateStops": true,
   "time": "21:53",
   "toPlace": "Municipal Wharf St, Santa Cruz, CA, 95060, USA::36.961843106786766,-122.02402657342725",
+  "walkSpeed": 1.34,
 }
 `;
 
