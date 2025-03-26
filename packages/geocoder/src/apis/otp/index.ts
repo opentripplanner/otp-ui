@@ -59,8 +59,14 @@ async function autocomplete({
   url,
   text
 }: AutocompleteQuery): Promise<OTPGeocoderResponse> {
+  let shortenedText = text;
+  // If this magic string is found, don't send it to the geocoder. 
+  const IGNORED_MAGIC_STRING = "stop id "
+  if (text.toLowerCase().indexOf(IGNORED_MAGIC_STRING) > -1) {
+    shortenedText = text.split(IGNORED_MAGIC_STRING)[1]
+  }
   return run({
-    query: text,
+    query: shortenedText,
     url
   })
 }
