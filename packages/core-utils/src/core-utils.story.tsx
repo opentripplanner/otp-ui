@@ -88,9 +88,12 @@ const RouteRow = styled.div`
   }
 `;
 
-const GridCell = styled.span`
-  border: 1px solid black;
-  padding: 2px;
+const StyledTable = styled.table`
+  td,
+  th {
+    border: 1px solid black;
+    padding: 2px;
+  }
 `;
 
 /**
@@ -98,7 +101,6 @@ const GridCell = styled.span`
  * If another route comparator is added to makeRouteComparator, this component
  * will need to be updated to reflect the new comparator.
  */
-
 export const RouteSortingLogic = (): JSX.Element => {
   const [useOperatorComparator, setUseOperatorComparator] = useState(true);
   const [useSortOrderComparator, setUseSortOrderComparator] = useState(true);
@@ -150,42 +152,33 @@ export const RouteSortingLogic = (): JSX.Element => {
 
   return (
     <Columns>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-
-          width: "100%"
-        }}
-      >
+      <StyledTable>
         <RouteRow>
-          <GridCell>Logo</GridCell>
-          <GridCell>Mode</GridCell>
-          <GridCell>Short Name</GridCell>
-          <GridCell>Long Name</GridCell>
-          <GridCell>Agency Order</GridCell>
-          <GridCell>Sort Order</GridCell>
+          <th>Logo</th>
+          <th>Mode</th>
+          <th>Short Name</th>
+          <th>Long Name</th>
+          <th>Agency Order</th>
+          <th>Sort Order</th>
         </RouteRow>
-        <div>
-          {sortedRoutes.map(r => {
-            const operator = fakeTransitOperators.find(
-              x => x.agencyId === r.agency?.id
-            );
-            return (
-              <RouteRow key={r.id}>
-                <GridCell>
-                  <img src={operator?.logo} alt={r.agency?.name || ""} />
-                </GridCell>
-                <GridCell>{r.mode}</GridCell>
-                <GridCell>{r.shortName}</GridCell>
-                <GridCell>{r.longName}</GridCell>
-                <GridCell>{operator?.order}</GridCell>
-                <GridCell>{r.sortOrder}</GridCell>
-              </RouteRow>
-            );
-          })}
-        </div>
-      </div>
+        {sortedRoutes.map(r => {
+          const operator = fakeTransitOperators.find(
+            x => x.agencyId === r.agency?.id
+          );
+          return (
+            <RouteRow key={r.id}>
+              <td>
+                <img src={operator?.logo} alt={r.agency?.name || ""} />
+              </td>
+              <td>{r.mode}</td>
+              <td>{r.shortName}</td>
+              <td>{r.longName}</td>
+              <td>{operator?.order}</td>
+              <td>{r.sortOrder}</td>
+            </RouteRow>
+          );
+        })}
+      </StyledTable>
       <div
         style={{
           display: "flex",
