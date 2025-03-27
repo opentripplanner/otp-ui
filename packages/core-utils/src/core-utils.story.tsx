@@ -70,9 +70,9 @@ RouteColorTester.parameters = {
 // Route sort logic story:
 
 const Columns = styled.div`
-  position: relative;
   display: flex;
   flex-direction: row;
+  position: relative;
   width: 100%;
 `;
 
@@ -95,6 +95,12 @@ const StyledTable = styled.table`
     padding: 2px;
   }
 `;
+
+function makeRouteComparator(sortArray): (a: number, b: number) => number {
+  return makeMultiCriteriaSort(
+    ...(sortArray as Array<(a: any, b: any) => number>)
+  );
+}
 
 /**
  * This is based on the logic in the makeRouteComparator function in route.ts
@@ -140,14 +146,8 @@ export const RouteSortingLogic = (): JSX.Element => {
     stringLongName
   ].filter(x => x !== null);
 
-  function makeRouteComparator(): (a: number, b: number) => number {
-    return makeMultiCriteriaSort(
-      ...(sortArray as Array<(a: any, b: any) => number>)
-    );
-  }
-
   const sortedRoutes = Array.from(routes as Array<any>).sort(
-    makeRouteComparator()
+    makeRouteComparator(sortArray)
   );
 
   return (
@@ -190,10 +190,10 @@ export const RouteSortingLogic = (): JSX.Element => {
       >
         <label htmlFor="operator-comparator">
           <input
-            id="operator-comparator"
-            type="checkbox"
             checked={useOperatorComparator}
+            id="operator-comparator"
             onChange={() => setUseOperatorComparator(!useOperatorComparator)}
+            type="checkbox"
           />
           Transit Operator Comparator
         </label>

@@ -286,7 +286,7 @@ export function alphabeticShortNameComparator(a: Route, b: Route): number {
 
 const isNullOrNaN = (val: any): boolean => {
   // isNaN(null) returns false so we have to check for null explicitly.
-  /* Note: Using the global version of isNaN (the Number version behaves differently. */
+  // Note: Using the global version of isNaN (the Number version behaves differently.
   // eslint-disable-next-line no-restricted-globals
   if (typeof val === null || isNaN(val)) return true;
 
