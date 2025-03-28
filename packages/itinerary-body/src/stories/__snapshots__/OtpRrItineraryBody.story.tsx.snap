@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -950,7 +950,7 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
 `;
 
 exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -1902,7 +1902,7 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
 `;
 
 exports[`ItineraryBody/otp-react-redux BikeOnlyItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 iHjjOA leg-line">
@@ -2242,7 +2242,7 @@ exports[`ItineraryBody/otp-react-redux BikeOnlyItinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -3077,7 +3077,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -5207,7 +5207,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
 `;
 
 exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -6676,7 +6676,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
 `;
 
 exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
@@ -7407,7 +7407,7 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -7890,7 +7890,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
 `;
 
 exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -9707,7 +9707,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
 `;
 
 exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
@@ -10858,7 +10858,7 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -13357,7 +13357,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
 `;
 
 exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -14831,7 +14831,7 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -15125,7 +15125,7 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
       9:19 AM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
-      from Razor Shared bike
+      from Razor E-scooter
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-46 fhCdHh place-details ">
       <div class="styled__PlaceSubheader-sc-1q8npbl-49 fgfBub">
@@ -15638,7 +15638,7 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -17522,7 +17522,7 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
@@ -19082,8 +19082,505 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
 </ol>
 `;
 
+exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 giaaKO leg-line">
+      </div>
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 iTIsMm hPKTER"
+        >
+          <path fill="currentColor"
+                d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 512 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+        >
+          <path fill="currentColor"
+                d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 hDHNht">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 dGClkY"
+      >
+        Aurora Ave N &amp; N 38th St
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 eFBxHX">
+      6:46 AM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+      from Aurora Ave N &amp; N 38th St
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 fhCdHh place-details transit">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-49 fgfBub transit-leg-subheader">
+        Stop ID 6050
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd fupnZo cZUUHS"
+        >
+          Stop Viewer
+        </button>
+      </div>
+      <div class="styled__LegBody-sc-1q8npbl-23 eKSfhr">
+        <div class="styled__LegClickable-sc-1q8npbl-24 bwATsX">
+          <span class="styled__LegDescription-sc-1q8npbl-26 izZSiG">
+            <span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+                - Ride
+              </span>
+              <span class="styled__LegDescription-sc-1q8npbl-26 styled__LegDescriptionForTransit-sc-1q8npbl-33 izZSiG loorCI">
+                <span class="styled__LegIconAndRouteShortName-sc-1q8npbl-35 lhpYyp">
+                  <span class="styled__LegIconContainer-sc-1q8npbl-34 grDdVM">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         version="1.0"
+                         viewbox="0 0 81.59 99.992"
+                         height="100%"
+                         width="100%"
+                         leg="[object Object]"
+                         aria-label="BUS"
+                    >
+                      <path d="M68.848,68.51">
+                      </path>
+                      <path d="M12.687,68.51">
+                      </path>
+                      <g>
+                        <path d="M77.619,14.775c-1.098-5.528-4.622-7.731-9.931-9.93C62.499,2.668,50.02,0.079,40.794,0 c-9.243,0.079-21.722,2.668-26.948,4.846c-5.271,2.199-8.795,4.402-9.875,9.93L0,45.284v42.091h6.84v6.564 c-0.027,8.071,11.745,8.071,11.75,0v-6.564h21.737h0.054H63v6.564c-0.014,8.071,11.759,8.071,11.75,0v-6.564h6.84V45.284 L77.619,14.775z M23.996,7.715h16.385h17.212c3.286-0.009,3.286,4.949,0,4.965H40.327H23.996 C20.694,12.664,20.694,7.706,23.996,7.715z M12.687,74.191c-3.101-0.015-5.631-2.542-5.627-5.682 c-0.004-3.099,2.526-5.627,5.627-5.627c3.136,0,5.665,2.528,5.683,5.627C18.352,71.649,15.823,74.177,12.687,74.191z M40.381,48.482H10.426c-2.925,0.028-3.54-2.081-3.253-4.192l3.088-22.177c0.425-2.67,1.336-4.443,4.854-4.468h25.213h26.149 c3.498,0.025,4.412,1.797,4.854,4.468l3.09,22.177c0.266,2.112-0.348,4.22-3.256,4.192H40.381z M68.848,74.191 c-3.1-0.015-5.628-2.542-5.628-5.682c0-3.099,2.528-5.627,5.628-5.627c3.137,0,5.667,2.528,5.681,5.627 C74.515,71.649,71.985,74.177,68.848,74.191z">
+                        </path>
+                        <path d="M40.381-0.007c0.135,0,0.277,0.006,0.414,0.007c0.137-0.001,0.278-0.007,0.414-0.007H40.381z">
+                        </path>
+                      </g>
+                    </svg>
+                  </span>
+                  <span class="styled__LegDescriptionRouteShortName-sc-1q8npbl-32 jrKEA-d">
+                    5
+                  </span>
+                </span>
+                <span class="styled__LegDescriptionRouteLongName-sc-1q8npbl-31 eTwgXn">
+                  <span>
+                    Downtown Seattle Greenwood
+                  </span>
+                </span>
+              </span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+                - Stay on Board at
+                <strong>
+                  Wall St &amp; 5th Ave
+                </strong>
+              </span>
+            </span>
+            <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 jOzsRd fZKyAm transit-leg-button">
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+                Zoom to leg on map
+              </span>
+            </button>
+          </span>
+        </div>
+        <div class="transit-leg-details-wrapper"
+             aria-label="Leg details"
+             role="group"
+        >
+          <div class="styled__AgencyInfo-sc-1q8npbl-86 jmQKPb agency-info">
+            Service operated by
+            <a aria-label="Metro Transit (External Link)"
+               href="https://kingcounty.gov/en/dept/metro"
+               rel="noopener noreferrer"
+               target="_blank"
+            >
+              Metro Transit
+              <img alt
+                   src="https://kingcounty.gov/en/dept/metro"
+                   height="25"
+              >
+            </a>
+          </div>
+          <div aria-hidden="false"
+               class="rah-static rah-static--height-auto "
+               style="height: auto; overflow: visible;"
+          >
+            <div>
+              <ul class="styled__TransitAlerts-sc-1q8npbl-77 iESypd alert-body">
+              </ul>
+            </div>
+          </div>
+          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+                Ride 7 min / 7 stops
+                <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
+                  <svg viewbox="0 0 320 512"
+                       height="15"
+                       width="15"
+                       aria-hidden="true"
+                       focusable="false"
+                       fill="currentColor"
+                       xmlns="http://www.w3.org/2000/svg"
+                       class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+                  >
+                    <path fill="currentColor"
+                          d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9S301 191.9 288 191.9L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+                    >
+                    </path>
+                  </svg>
+                </span>
+                <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+                  (Expand details)
+                </span>
+              </button>
+              <button role="link"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd fupnZo cZUUHS"
+              >
+                Trip Viewer
+              </button>
+            </div>
+            <div aria-hidden="true"
+                 class="rah-static rah-static--height-zero "
+                 style="height: 0px; overflow: hidden;"
+            >
+              <div style="display: none;">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                  <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
+                    <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 hgQvaz">
+                        Aurora Ave N &amp; Halladay St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 hgQvaz">
+                        Aurora Ave N &amp; Lynn St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 hgQvaz">
+                        Aurora Ave N &amp; Crockett St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 hgQvaz">
+                        Aurora Ave N &amp; Galer St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 hgQvaz">
+                        Aurora Ave N &amp; Prospect St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 hgQvaz">
+                        7th Ave N &amp; Thomas St
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kZUAHe leg-line">
+      </div>
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
+        <div class="styled__InterlineDot-sc-1q8npbl-19 bYgleP">
+        </div>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 hDHNht">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 dGClkY"
+      >
+        Stay on Board at
+        <strong>
+          Wall St &amp; 5th Ave
+        </strong>
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 eFBxHX">
+      6:53 AM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+      Stay on Board at
+      <strong>
+        Wall St &amp; 5th Ave
+      </strong>
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 fhCdHh place-details transit">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-49 fgfBub transit-leg-subheader">
+        Stop ID 7430
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd fupnZo cZUUHS"
+        >
+          Stop Viewer
+        </button>
+      </div>
+      <div class="styled__LegBody-sc-1q8npbl-23 eKSfhr">
+        <div class="styled__LegClickable-sc-1q8npbl-24 bwATsX">
+          <span class="styled__LegDescription-sc-1q8npbl-26 izZSiG">
+            <span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+                - Ride
+              </span>
+              <span class="styled__LegDescription-sc-1q8npbl-26 styled__LegDescriptionForTransit-sc-1q8npbl-33 izZSiG loorCI">
+                <span class="styled__LegIconAndRouteShortName-sc-1q8npbl-35 lhpYyp">
+                  <span class="styled__LegIconContainer-sc-1q8npbl-34 grDdVM">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         version="1.0"
+                         viewbox="0 0 81.59 99.992"
+                         height="100%"
+                         width="100%"
+                         leg="[object Object]"
+                         aria-label="BUS"
+                    >
+                      <path d="M68.848,68.51">
+                      </path>
+                      <path d="M12.687,68.51">
+                      </path>
+                      <g>
+                        <path d="M77.619,14.775c-1.098-5.528-4.622-7.731-9.931-9.93C62.499,2.668,50.02,0.079,40.794,0 c-9.243,0.079-21.722,2.668-26.948,4.846c-5.271,2.199-8.795,4.402-9.875,9.93L0,45.284v42.091h6.84v6.564 c-0.027,8.071,11.745,8.071,11.75,0v-6.564h21.737h0.054H63v6.564c-0.014,8.071,11.759,8.071,11.75,0v-6.564h6.84V45.284 L77.619,14.775z M23.996,7.715h16.385h17.212c3.286-0.009,3.286,4.949,0,4.965H40.327H23.996 C20.694,12.664,20.694,7.706,23.996,7.715z M12.687,74.191c-3.101-0.015-5.631-2.542-5.627-5.682 c-0.004-3.099,2.526-5.627,5.627-5.627c3.136,0,5.665,2.528,5.683,5.627C18.352,71.649,15.823,74.177,12.687,74.191z M40.381,48.482H10.426c-2.925,0.028-3.54-2.081-3.253-4.192l3.088-22.177c0.425-2.67,1.336-4.443,4.854-4.468h25.213h26.149 c3.498,0.025,4.412,1.797,4.854,4.468l3.09,22.177c0.266,2.112-0.348,4.22-3.256,4.192H40.381z M68.848,74.191 c-3.1-0.015-5.628-2.542-5.628-5.682c0-3.099,2.528-5.627,5.628-5.627c3.137,0,5.667,2.528,5.681,5.627 C74.515,71.649,71.985,74.177,68.848,74.191z">
+                        </path>
+                        <path d="M40.381-0.007c0.135,0,0.277,0.006,0.414,0.007c0.137-0.001,0.278-0.007,0.414-0.007H40.381z">
+                        </path>
+                      </g>
+                    </svg>
+                  </span>
+                  <span class="styled__LegDescriptionRouteShortName-sc-1q8npbl-32 jrKEA-d">
+                    21
+                  </span>
+                </span>
+                <span class="styled__LegDescriptionRouteLongName-sc-1q8npbl-31 eTwgXn">
+                  <span>
+                    Westwood Village Via 35th Ave SW
+                  </span>
+                </span>
+              </span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+                - Disembark at 1st Ave S &amp; S Atlantic St
+              </span>
+            </span>
+            <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 jOzsRd fZKyAm transit-leg-button">
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+                Zoom to leg on map
+              </span>
+            </button>
+          </span>
+        </div>
+        <div class="transit-leg-details-wrapper"
+             aria-label="Leg details"
+             role="group"
+        >
+          <div class="styled__AgencyInfo-sc-1q8npbl-86 jmQKPb agency-info">
+            Service operated by
+            <a aria-label="Metro Transit (External Link)"
+               href="https://kingcounty.gov/en/dept/metro"
+               rel="noopener noreferrer"
+               target="_blank"
+            >
+              Metro Transit
+              <img alt
+                   src="https://kingcounty.gov/en/dept/metro"
+                   height="25"
+              >
+            </a>
+          </div>
+          <div aria-hidden="false"
+               class="rah-static rah-static--height-auto "
+               style="height: auto; overflow: visible;"
+          >
+            <div>
+              <ul class="styled__TransitAlerts-sc-1q8npbl-77 iESypd alert-body">
+              </ul>
+            </div>
+          </div>
+          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+                Ride 16 min / 7 stops
+                <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
+                  <svg viewbox="0 0 320 512"
+                       height="15"
+                       width="15"
+                       aria-hidden="true"
+                       focusable="false"
+                       fill="currentColor"
+                       xmlns="http://www.w3.org/2000/svg"
+                       class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+                  >
+                    <path fill="currentColor"
+                          d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9S301 191.9 288 191.9L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+                    >
+                    </path>
+                  </svg>
+                </span>
+                <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+                  (Expand details)
+                </span>
+              </button>
+              <button role="link"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd fupnZo cZUUHS"
+              >
+                Trip Viewer
+              </button>
+            </div>
+            <div aria-hidden="true"
+                 class="rah-static rah-static--height-zero "
+                 style="height: 0px; overflow: hidden;"
+            >
+              <div style="display: none;">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                  <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
+                    <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 hgQvaz">
+                        3rd Ave &amp; Bell St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 hgQvaz">
+                        3rd Ave &amp; Virginia St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 hgQvaz">
+                        3rd Ave &amp; Pike St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 hgQvaz">
+                        3rd Ave &amp; Seneca St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 hgQvaz">
+                        3rd Ave &amp; Cherry St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 hgQvaz">
+                        3rd Ave S &amp; S Main St
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 iTIsMm hPKTER"
+        >
+          <path fill="currentColor"
+                d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 384 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+        >
+          <path fill="currentColor"
+                d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 hDHNht">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 dGClkY"
+      >
+        1st Ave S &amp; S Atlantic St
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 eFBxHX">
+      7:09 AM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+      Arrive at 1st Ave S &amp; S Atlantic St
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 fhCdHh place-details transit">
+    </div>
+  </li>
+</ol>
+`;
+
 exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -20035,7 +20532,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
 `;
 
 exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -20987,7 +21484,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
 `;
 
 exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -21939,7 +22436,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
 `;
 
 exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
@@ -22569,7 +23066,7 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -24335,7 +24832,7 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
@@ -25915,7 +26412,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
 `;
 
 exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
@@ -27476,7 +27973,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
 `;
 
 exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
@@ -29037,7 +29534,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
 `;
 
 exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -30820,7 +31317,7 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
 `;
 
 exports[`ItineraryBody/otp-react-redux WalkOnlyItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -31091,7 +31588,7 @@ exports[`ItineraryBody/otp-react-redux WalkOnlyItinerary smoke-test 1`] = `
 `;
 
 exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -32340,7 +32837,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
 `;
 
 exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -33713,7 +34210,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
 `;
 
 exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -34665,7 +35162,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
 `;
 
 exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -36448,7 +36945,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
 `;
 
 exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
@@ -38231,7 +38728,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
 `;
 
 exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
-<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 kuQolp">
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
