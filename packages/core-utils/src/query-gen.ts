@@ -180,7 +180,7 @@ function isCombinationValid(
 
   return !!VALID_COMBOS.find(
     vc =>
-      simplifiedModes.every(m => vc.includes(m)) &&
+      simplifiedModes.length === vc.length &&
       vc.every(m => simplifiedModes.includes(m))
   );
 }
