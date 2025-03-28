@@ -1,0 +1,5425 @@
+{
+  "routes": [
+    {
+      "id": "3:3",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Lakewood / Tacoma",
+      "mode": "BUS",
+      "shortName": "3",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:2",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "S 19th St / Bridgeport",
+      "mode": "BUS",
+      "shortName": "2",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:1",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "6th Ave / Pacific Ave",
+      "mode": "BUS",
+      "shortName": "1",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:4",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Lakewood / South Hill",
+      "mode": "BUS",
+      "shortName": "4",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Skagit:101",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "6AFC54",
+      "longName": "Route 101",
+      "mode": "BUS",
+      "shortName": "101",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "19:12",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "5A8400",
+      "longName": "West Tumwater",
+      "mode": "BUS",
+      "shortName": "12",
+      "sortOrder": 1,
+      "type": 3
+    },
+    {
+      "id": "19:13",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "C9500E",
+      "longName": "East Tumwater",
+      "mode": "BUS",
+      "shortName": "13",
+      "sortOrder": 2,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:533",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "33cc84",
+      "longName": "Yew St",
+      "mode": "BUS",
+      "shortName": "533",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "19:14",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "C9500E",
+      "longName": "Capitol Campus",
+      "mode": "BUS",
+      "shortName": "14",
+      "sortOrder": 3,
+      "type": 3
+    },
+    {
+      "id": "19:21",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "613FA6",
+      "longName": "N Bethel/N Central",
+      "mode": "BUS",
+      "shortName": "21",
+      "sortOrder": 4,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:600",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Burley Worker/Driver",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 5000,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:607",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Long Lake Days Worker/Driver",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 5040,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:608",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Manchester Beach Worker/Driver",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 5050,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:602",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Tracyton Worker/Driver",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 5010,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:605",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Illahee Worker/Driver",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 5030,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:604",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Horseshoe Lake Worker/Driver",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 5020,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:540",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "5e00bb",
+      "longName": "Sunset&Downtown",
+      "mode": "BUS",
+      "shortName": "540",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:1621",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Point Defiance - Tahlequah",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "95:1518",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Orcas Island - Shaw Island",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "Skagit:208",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "F5732E",
+      "longName": "Route 208",
+      "mode": "BUS",
+      "shortName": "208",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:610",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Parkwood/Ponderosa Worker/Driver",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 5060,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:901",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Silver Firs - Lynnwood City Center Station",
+      "mode": "BUS",
+      "shortName": "901",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:612",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Phillips/Bielmeier Worker/Driver",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 5070,
+      "type": 3
+    },
+    {
+      "id": "Skagit:206",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "008B8B",
+      "longName": "Route 206",
+      "mode": "BUS",
+      "shortName": "206",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Skagit:207",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "00FFFF",
+      "longName": "Route 207",
+      "mode": "BUS",
+      "shortName": "207",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:905",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Stanwood Downtown - Lynnwood City Center Station",
+      "mode": "BUS",
+      "shortName": "905",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:904",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Marysville - Lynnwood City Center Station",
+      "mode": "BUS",
+      "shortName": "904",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:903",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Lake Stevens TC - Lynnwood City Center Station",
+      "mode": "BUS",
+      "shortName": "903",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:618",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Southworth Worker/Driver",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 5110,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:512",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "800080",
+      "longName": "Sudden Valley&Downtown",
+      "mode": "BUS",
+      "shortName": "512",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:1510",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Orcas Island - Friday Harbor",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "Kitsap:617",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Seabeck/Camp Union Worker/Driver",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 5100,
+      "type": 3
+    },
+    {
+      "id": "Skagit:204",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "8B4513",
+      "longName": "Route 204",
+      "mode": "BUS",
+      "shortName": "204",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:614",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Port Gamble Worker/Driver",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 5080,
+      "type": 3
+    },
+    {
+      "id": "Skagit:205",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "FA36FA",
+      "longName": "Route 205",
+      "mode": "BUS",
+      "shortName": "205",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:1513",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Orcas Island - Lopez Island",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "Kitsap:616",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Salmonberry Worker/Driver",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 5090,
+      "type": 3
+    },
+    {
+      "id": "Skagit:202",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "831D6D",
+      "longName": "Route 202",
+      "mode": "BUS",
+      "shortName": "202",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:105S",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "008080",
+      "longName": "WWU",
+      "mode": "BUS",
+      "shortName": "105S",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "19:41",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "B10086",
+      "longName": "Evergreen College/Nightline",
+      "mode": "BUS",
+      "shortName": "41",
+      "sortOrder": 5,
+      "type": 3
+    },
+    {
+      "id": "19:42",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "C9500E",
+      "longName": "Family Court",
+      "mode": "BUS",
+      "shortName": "42",
+      "sortOrder": 6,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:500",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "ff9900",
+      "longName": "Bremerton-Port Orchard Foot Ferry",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": 2000,
+      "type": 4
+    },
+    {
+      "id": "Kitsap:620",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Winslow Worker/Driver",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 5130,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:501",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "ff9900",
+      "longName": "Annapolis Foot Ferry",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": 2100,
+      "type": 4
+    },
+    {
+      "id": "Whatcom:525",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "a087e2",
+      "longName": "Barkley&Downtown",
+      "mode": "BUS",
+      "shortName": "525",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:624",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Fairgrounds Worker/Driver",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 5140,
+      "type": 3
+    },
+    {
+      "id": "Skagit:305",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "00CED1",
+      "longName": "Route 305",
+      "mode": "BUS",
+      "shortName": "305",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Skagit:300",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "40AAF8",
+      "longName": "Route 300",
+      "mode": "BUS",
+      "shortName": "300",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Skagit:301",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "B17AF1",
+      "longName": "Route 301",
+      "mode": "BUS",
+      "shortName": "301",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:331",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "e9aa16",
+      "longName": "Cordata/WCC&Downtown",
+      "mode": "BUS",
+      "shortName": "331",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "19:60",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "613FA6",
+      "longName": "St Peter Hospital",
+      "mode": "BUS",
+      "shortName": "60",
+      "sortOrder": 10,
+      "type": 3
+    },
+    {
+      "id": "19:64",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "337CBB",
+      "longName": "College St/Amtrak",
+      "mode": "BUS",
+      "shortName": "64",
+      "sortOrder": 14,
+      "type": 3
+    },
+    {
+      "id": "19:65",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "7B9D33",
+      "longName": "Hawks Prairie",
+      "mode": "BUS",
+      "shortName": "65",
+      "sortOrder": 15,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:5",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "60a24e",
+      "longName": "Sidney",
+      "mode": "BUS",
+      "shortName": "5",
+      "sortOrder": 3010,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:4",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "7FB3D5",
+      "longName": "Tremont",
+      "mode": "BUS",
+      "shortName": "4",
+      "sortOrder": 3000,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:107",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "ff00ff",
+      "longName": "WWU/Samish",
+      "mode": "BUS",
+      "shortName": "107",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Skagit:40X",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "000000",
+      "longName": "County Connector Island/Skagit",
+      "mode": "BUS",
+      "shortName": "40X",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:108",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "ff00ff",
+      "longName": "Samish/WWU",
+      "mode": "BUS",
+      "shortName": "108",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:105",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "c0dcc0",
+      "longName": "Fairhaven&Downtown",
+      "mode": "BUS",
+      "shortName": "105",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Skagit:410",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "800080",
+      "longName": "Route 410",
+      "mode": "BUS",
+      "shortName": "410",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "19:45",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "005BAA",
+      "longName": "Conger/Capital Mall",
+      "mode": "BUS",
+      "shortName": "45",
+      "sortOrder": 7,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:807",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "2FC72A",
+      "longName": "Sunday On-Demand",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 4300,
+      "type": 3
+    },
+    {
+      "id": "19:47",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "613FA6",
+      "longName": "Capital Medical Center",
+      "mode": "BUS",
+      "shortName": "47",
+      "sortOrder": 8,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:9",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "4A800C",
+      "longName": "East Port Orchard",
+      "mode": "BUS",
+      "shortName": "9",
+      "sortOrder": 3030,
+      "type": 3
+    },
+    {
+      "id": "19:48",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "C9500E",
+      "longName": "Capital Mall/Evergreen",
+      "mode": "BUS",
+      "shortName": "48",
+      "sortOrder": 9,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:801",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "2FC72A",
+      "longName": "SK Ride",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 4100,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:8",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "F83FEA",
+      "longName": "Bethel",
+      "mode": "BUS",
+      "shortName": "8",
+      "sortOrder": 3020,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:800",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "2FC72A",
+      "longName": "BI Ride",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 4000,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:803",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "2FC72A",
+      "longName": "Kingston Ride",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 4200,
+      "type": 3
+    },
+    {
+      "id": "95:1318",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Lopez Island - Shaw Island",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "3:501",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Milton / Federal Way",
+      "mode": "BUS",
+      "shortName": "501",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:500",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Federal Way",
+      "mode": "BUS",
+      "shortName": "500",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Skagit:409",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "4169E1",
+      "longName": "Route 409",
+      "mode": "BUS",
+      "shortName": "409",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:1310",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Lopez Island - Friday Harbor",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "95:1315",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Lopez Island - Orcas Island",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "96:SCM",
+      "agency": {
+        "id": "96:96",
+        "name": "Seattle Center Monorail"
+      },
+      "color": null,
+      "longName": "Seattle Center - Westlake",
+      "mode": "MONORAIL",
+      "shortName": "Monorail",
+      "sortOrder": null,
+      "type": 12
+    },
+    {
+      "id": "19:66",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "CE5504",
+      "longName": "Ruddell Road",
+      "mode": "BUS",
+      "shortName": "66",
+      "sortOrder": 16,
+      "type": 3
+    },
+    {
+      "id": "19:67",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "007bff",
+      "longName": "Tri Lake",
+      "mode": "BUS",
+      "shortName": "67",
+      "sortOrder": 17,
+      "type": 3
+    },
+    {
+      "id": "19:68",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "ff1414",
+      "longName": "Yelm Highway - Capital Mall",
+      "mode": "BUS",
+      "shortName": "68",
+      "sortOrder": 18,
+      "type": 3
+    },
+    {
+      "id": "Skagit:513",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "1E90FF",
+      "longName": "Route 513",
+      "mode": "BUS",
+      "shortName": "513",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "40:TLINE",
+      "agency": {
+        "id": "40:40",
+        "name": "Sound Transit"
+      },
+      "color": "F38B00",
+      "longName": "Tacoma Dome - St Joseph",
+      "mode": "TRAM",
+      "shortName": "T Line",
+      "sortOrder": null,
+      "type": 0
+    },
+    {
+      "id": "95:118",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Anacortes - Shaw Island",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "3:402",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Meridian",
+      "mode": "BUS",
+      "shortName": "402",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:400",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Puyallup / Downtown Tacoma",
+      "mode": "BUS",
+      "shortName": "400",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:115",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Anacortes - Orcas Island",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "CommTrans:166",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Edmonds Station - Silver Firs",
+      "mode": "BUS",
+      "shortName": "166",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:110",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Anacortes - Friday Harbor",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "3:409",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Puyallup / S 72nd St",
+      "mode": "BUS",
+      "shortName": "409",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:113",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Anacortes - Lopez Island",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "CommTrans:280",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Lake Stevens/Granite Falls P&R - Everett Station",
+      "mode": "BUS",
+      "shortName": "280",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Skagit:615",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "32CD32",
+      "longName": "Route 615",
+      "mode": "BUS",
+      "shortName": "615",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:128",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Kingston - Edmonds",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "CommTrans:270",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Gold Bar - Everett Station",
+      "mode": "BUS",
+      "shortName": "270",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "19:94",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "126844",
+      "longName": "Yelm via Boulevard Rd",
+      "mode": "BUS",
+      "shortName": "94",
+      "sortOrder": 19,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:271",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Gold Bar - Everett Station",
+      "mode": "BUS",
+      "shortName": "271",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "97:18",
+      "agency": {
+        "id": "97:97",
+        "name": "Everett Transit"
+      },
+      "color": "000000",
+      "longName": "N to Waterfront  - S to Everett Station",
+      "mode": "BUS",
+      "shortName": "6",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:80X",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "0080c0",
+      "longName": "Mt. Vernon&Bellingham",
+      "mode": "BUS",
+      "shortName": "80X",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:215",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "FF9900",
+      "longName": "McWilliams",
+      "mode": "BUS",
+      "shortName": "215",
+      "sortOrder": 3180,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:331",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "bc07fa",
+      "longName": "Poulsbo/Myhre",
+      "mode": "BUS",
+      "shortName": "331",
+      "sortOrder": 3350,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:333",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "FF8121",
+      "longName": "Silverdale/Bainbridge",
+      "mode": "BUS",
+      "shortName": "333",
+      "sortOrder": 3370,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:212",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "f70577",
+      "longName": "Bremerton/Silverdale West",
+      "mode": "BUS",
+      "shortName": "212",
+      "sortOrder": 3170,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:332",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "54cfff",
+      "longName": "Poulsbo/Ridgetop",
+      "mode": "BUS",
+      "shortName": "332",
+      "sortOrder": 3360,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:217",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "72939a",
+      "longName": "Bremerton/Silverdale East",
+      "mode": "BUS",
+      "shortName": "217",
+      "sortOrder": 3190,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:219",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "b2752d",
+      "longName": "Crossroads",
+      "mode": "BUS",
+      "shortName": "219",
+      "sortOrder": 3200,
+      "type": 3
+    },
+    {
+      "id": "95:131",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Lopez Island - Anacortes",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "40:SNDR_EV",
+      "agency": {
+        "id": "40:40",
+        "name": "Sound Transit"
+      },
+      "color": "9AB6D3",
+      "longName": "Everett - Seattle",
+      "mode": "RAIL",
+      "shortName": "N Line",
+      "sortOrder": null,
+      "type": 2
+    },
+    {
+      "id": "Kitsap:225",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "bb3099",
+      "longName": "Sheridan Park",
+      "mode": "BUS",
+      "shortName": "225",
+      "sortOrder": 3260,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:224",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Olympic College",
+      "mode": "BUS",
+      "shortName": "224",
+      "sortOrder": 3250,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:106",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "5960ED",
+      "longName": "Fletcher Bay",
+      "mode": "BUS",
+      "shortName": "106",
+      "sortOrder": 3140,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:226",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "fac48a",
+      "longName": "Bay Vista",
+      "mode": "BUS",
+      "shortName": "226",
+      "sortOrder": 3270,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:221",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "bc07fa",
+      "longName": "Perry",
+      "mode": "BUS",
+      "shortName": "221",
+      "sortOrder": 3220,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:220",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "13a224",
+      "longName": "Sunn Fjord",
+      "mode": "BUS",
+      "shortName": "220",
+      "sortOrder": 3210,
+      "type": 3
+    },
+    {
+      "id": "Skagit:70X",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "0E0E0E",
+      "longName": "Upriver Connector",
+      "mode": "BUS",
+      "shortName": "70X",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:223",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "4d6541",
+      "longName": "Kariotis",
+      "mode": "BUS",
+      "shortName": "223",
+      "sortOrder": 3240,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:344",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "f83fea",
+      "longName": "Poulsbo Central",
+      "mode": "BUS",
+      "shortName": "344",
+      "sortOrder": 3390,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:222",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "e399c5",
+      "longName": "Gateway Express",
+      "mode": "BUS",
+      "shortName": "222",
+      "sortOrder": 3230,
+      "type": 3
+    },
+    {
+      "id": "Skagit:717",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "2F4F4F",
+      "longName": "Route 717",
+      "mode": "BUS",
+      "shortName": "717",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:4",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "8129f5",
+      "longName": "Cordata&Downtown via Hospital",
+      "mode": "BUS",
+      "shortName": "4",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:229",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "7B52FC",
+      "longName": "Trenton",
+      "mode": "BUS",
+      "shortName": "229",
+      "sortOrder": 3290,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:228",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "ffa500",
+      "longName": "Marion",
+      "mode": "BUS",
+      "shortName": "228",
+      "sortOrder": 3280,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:3",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "38c7b9",
+      "longName": "Airport/Cordata&Airport/Downtown",
+      "mode": "BUS",
+      "shortName": "3",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:145",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Mukilteo - Clinton",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "Whatcom:1",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "a2021b",
+      "longName": "Fairhaven&Downtown",
+      "mode": "BUS",
+      "shortName": "1",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:37",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Bainbridge Island - Seattle",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "95:1815",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Shaw Island - Orcas Island",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "kcm:102719",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "161",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:1813",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Shaw Island - Lopez Island",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "Kitsap:633",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "a41b4a",
+      "longName": "Viking Express Worker/Driver",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 5150,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:72X",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "ff8040",
+      "longName": "Kendall&Bellingham",
+      "mode": "BUS",
+      "shortName": "72X",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102715",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "162",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102718",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "184",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:202",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "S 72nd St",
+      "mode": "BUS",
+      "shortName": "202",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102717",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "165",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:206",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Pacific Hwy / Tillcum / Madigan",
+      "mode": "BUS",
+      "shortName": "206",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:121",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Ash Way P&R - Canyon Park P&R/UW Bothell/Cascadia",
+      "mode": "BUS",
+      "shortName": "121",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:1810",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Shaw Island - Friday Harbor",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "95:151",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Orcas Island - Anacortes",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "CommTrans:120",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "UW Bothell/Cascadia - Lynnwood City Center Station",
+      "mode": "BUS",
+      "shortName": "120",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:240",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Stanwood Downtown - Smokey Point TC",
+      "mode": "BUS",
+      "shortName": "240",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Skagit:80X",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "20B2AA",
+      "longName": "County Connector Whatcom/Skagit",
+      "mode": "BUS",
+      "shortName": "80X",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:560",
+      "agency": {
+        "id": "3:40",
+        "name": "Sound Transit"
+      },
+      "color": "2b376e",
+      "longName": "Bellevue - Sea-Tac - W. Seattle",
+      "mode": "BUS",
+      "shortName": "560",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:47",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Bremerton - Seattle",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "Kitsap:401",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "6E6EFF",
+      "longName": "Kingston-Seattle Fast Ferry",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": 1200,
+      "type": 4
+    },
+    {
+      "id": "Kitsap:400",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "6E6EFF",
+      "longName": "Bremerton-Seattle Fast Ferry",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": 1000,
+      "type": 4
+    },
+    {
+      "id": "CommTrans:119",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Ash Way P&R - Mountlake Terrace Station",
+      "mode": "BUS",
+      "shortName": "119",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:403",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "6E6EFF",
+      "longName": "Seattle-Bremerton Fast Ferry",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": 1100,
+      "type": 4
+    },
+    {
+      "id": "Kitsap:402",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "6E6EFF",
+      "longName": "Southworth-Seattle Fast Ferry",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": 1400,
+      "type": 4
+    },
+    {
+      "id": "kcm:102729",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "322",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:112",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Mountlake Terrace Station - Ash Way P&R",
+      "mode": "BUS",
+      "shortName": "112",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:111",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Brier - Mountlake Terrace Station",
+      "mode": "BUS",
+      "shortName": "111",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:405",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "6E6EFF",
+      "longName": "Seattle-Southworth Fast Ferry",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": 1500,
+      "type": 4
+    },
+    {
+      "id": "CommTrans:117",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Mukilteo Ferry - Lynnwood City Center Station",
+      "mode": "BUS",
+      "shortName": "117",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:404",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "6E6EFF",
+      "longName": "Seattle-Kingston Fast Ferry",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": 1300,
+      "type": 4
+    },
+    {
+      "id": "kcm:100300",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "917",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102720",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "160",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:114",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Aurora Village TC - Lynnwood City Center Station",
+      "mode": "BUS",
+      "shortName": "114",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:230",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Darrington - Smokey Point TC",
+      "mode": "BUS",
+      "shortName": "230",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:586",
+      "agency": {
+        "id": "3:40",
+        "name": "Sound Transit"
+      },
+      "color": "2b376e",
+      "longName": "Tacoma - U. District",
+      "mode": "BUS",
+      "shortName": "586",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:73",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Seattle - Bainbridge Island",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "95:74",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Seattle - Bremerton",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "3:100",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Gig Harbor",
+      "mode": "BUS",
+      "shortName": "100",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100511",
+      "agency": {
+        "id": "kcm:40",
+        "name": "Sound Transit"
+      },
+      "color": "2B376E",
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "542",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100512",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "A Line",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:1711",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Port Townsend - Coupeville",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "Skagit:90X",
+      "agency": {
+        "id": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+        "name": "Skagit Transit"
+      },
+      "color": "006400",
+      "longName": "County Connector Snohomish/Skagit",
+      "mode": "BUS",
+      "shortName": "90X",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:71X",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "0000ff",
+      "longName": "Everson/Nooksack/Sumas&Cordata",
+      "mode": "BUS",
+      "shortName": "71X",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:302",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "bc07fa",
+      "longName": "Kingston/Suquamish Fast Ferry",
+      "mode": "BUS",
+      "shortName": "302",
+      "sortOrder": 3330,
+      "type": 3
+    },
+    {
+      "id": "3:212",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Steilacoom",
+      "mode": "BUS",
+      "shortName": "212",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:301",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "2bed2d",
+      "longName": "North Kitsap Fast Ferry Express",
+      "mode": "BUS",
+      "shortName": "301",
+      "sortOrder": 3320,
+      "type": 3
+    },
+    {
+      "id": "3:574",
+      "agency": {
+        "id": "3:40",
+        "name": "Sound Transit"
+      },
+      "color": "2b376e",
+      "longName": "Lakewood - SeaTac",
+      "mode": "BUS",
+      "shortName": "574",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102705",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "230",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:578",
+      "agency": {
+        "id": "3:40",
+        "name": "Sound Transit"
+      },
+      "color": "2b376e",
+      "longName": "Puyallup - Seattle",
+      "mode": "BUS",
+      "shortName": "578",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102704",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "250",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:577",
+      "agency": {
+        "id": "3:40",
+        "name": "Sound Transit"
+      },
+      "color": "2b376e",
+      "longName": "Federal Way - Seattle",
+      "mode": "BUS",
+      "shortName": "577",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:214",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Washington",
+      "mode": "BUS",
+      "shortName": "214",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102701",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "225",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102703",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "231",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102702",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "239",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:307",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "f4d244",
+      "longName": "Kingston/North Viking Fast Ferry",
+      "mode": "BUS",
+      "shortName": "307",
+      "sortOrder": 3340,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:130",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Edmonds Station - Lynnwood City Center Station",
+      "mode": "BUS",
+      "shortName": "130",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:181",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Shaw Island - Anacortes",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "CommTrans:209",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Smokey Point TC - Lake Stevens TC",
+      "mode": "BUS",
+      "shortName": "209",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:514",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Clinton - Mukilteo",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "kcm:102638",
+      "agency": {
+        "id": "kcm:23",
+        "name": "City of Seattle"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "TRAM",
+      "shortName": "First Hill Streetcar",
+      "sortOrder": null,
+      "type": 0
+    },
+    {
+      "id": "kcm:100219",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "4",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:201",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Smokey Point TC - Lynnwood City Center Station",
+      "mode": "BUS",
+      "shortName": "201",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100214",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "372",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102634",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "630",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100336",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "FERRY",
+      "shortName": "973",
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "kcm:100337",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "FERRY",
+      "shortName": "975",
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "kcm:102636",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "631",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100459",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "218",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100210",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "36",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:202",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Smokey Point TC - Lynnwood City Center Station",
+      "mode": "BUS",
+      "shortName": "202",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100340",
+      "agency": {
+        "id": "kcm:23",
+        "name": "City of Seattle"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "TRAM",
+      "shortName": "South Lake Union Streetcar",
+      "sortOrder": null,
+      "type": 0
+    },
+    {
+      "id": "3:11",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Point Defiance",
+      "mode": "BUS",
+      "shortName": "11",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100341",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "982",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:16",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "North End",
+      "mode": "BUS",
+      "shortName": "16",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:391",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "fac48a",
+      "longName": "Kingston/Bainbridge",
+      "mode": "BUS",
+      "shortName": "391",
+      "sortOrder": 3410,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:390",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "61802C",
+      "longName": "Poulsbo/Bainbridge",
+      "mode": "BUS",
+      "shortName": "390",
+      "sortOrder": 3400,
+      "type": 3
+    },
+    {
+      "id": "3:596",
+      "agency": {
+        "id": "3:40",
+        "name": "Sound Transit"
+      },
+      "color": "2b376e",
+      "longName": "Bonney Lake - Sumner",
+      "mode": "BUS",
+      "shortName": "596",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:595",
+      "agency": {
+        "id": "3:40",
+        "name": "Sound Transit"
+      },
+      "color": "2b376e",
+      "longName": "Gig Harbor - Seattle",
+      "mode": "BUS",
+      "shortName": "595",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:594",
+      "agency": {
+        "id": "3:40",
+        "name": "Sound Transit"
+      },
+      "color": "2b376e",
+      "longName": "Lakewood - Seattle",
+      "mode": "BUS",
+      "shortName": "594",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100229",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "5",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100346",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "988",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100104",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "212",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100225",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "45",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100347",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "989",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102647",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "635",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100228",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "48",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:10",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Pearl St",
+      "mode": "BUS",
+      "shortName": "10",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100101",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "21",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100344",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "986",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100223",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "43",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100345",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "987",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100224",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "44",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100230",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "50",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100473",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "981",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:592",
+      "agency": {
+        "id": "3:40",
+        "name": "Sound Transit"
+      },
+      "color": "2b376e",
+      "longName": "Olympia/DuPont - Seattle",
+      "mode": "BUS",
+      "shortName": "592",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:590",
+      "agency": {
+        "id": "3:40",
+        "name": "Sound Transit"
+      },
+      "color": "2b376e",
+      "longName": "Tacoma - Seattle",
+      "mode": "BUS",
+      "shortName": "590",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:109",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Ash Way P&R - Lake Stevens TC",
+      "mode": "BUS",
+      "shortName": "109",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102619",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "F Line",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:102",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Edmonds Station - Lynnwood City Center Station",
+      "mode": "BUS",
+      "shortName": "102",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102734",
+      "agency": {
+        "id": "kcm:40",
+        "name": "Sound Transit"
+      },
+      "color": "2B376E",
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "566",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:101",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Mariner P&R - Aurora Village TC",
+      "mode": "BUS",
+      "shortName": "101",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:222",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Marysville - Tulalip",
+      "mode": "BUS",
+      "shortName": "222",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102736",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "H Line",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102615",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "E Line",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:220",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Arlington - Smokey Point TC",
+      "mode": "BUS",
+      "shortName": "220",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:106",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Mariner P&R - UW Bothell/Cascadia College",
+      "mode": "BUS",
+      "shortName": "106",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:42",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "McKinley Ave",
+      "mode": "BUS",
+      "shortName": "42",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102732",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "79",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:41",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "S 56th St / Salishan",
+      "mode": "BUS",
+      "shortName": "41",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:103",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Hardeson Road - Lynnwood City Center Station",
+      "mode": "BUS",
+      "shortName": "103",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:196",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "ff00ff",
+      "longName": "WWU/Lincoln",
+      "mode": "BUS",
+      "shortName": "196",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:197",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "30a8cf",
+      "longName": "Lincoln/WWU",
+      "mode": "BUS",
+      "shortName": "197",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:190",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "4bb475",
+      "longName": "Lincoln St&Downtown",
+      "mode": "BUS",
+      "shortName": "190",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:497",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Lakeland Hills Express",
+      "mode": "BUS",
+      "shortName": "497",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102628",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "895",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100203",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "346",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102745",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "G Line",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:85",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "008080",
+      "longName": "Mullenix Express",
+      "mode": "BUS",
+      "shortName": "85",
+      "sortOrder": 3050,
+      "type": 3
+    },
+    {
+      "id": "kcm:102744",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "365",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100447",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "49",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100205",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "348",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102747",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "61",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:86",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "5B3B80",
+      "longName": "Southworth Shuttle",
+      "mode": "BUS",
+      "shortName": "86",
+      "sortOrder": 3060,
+      "type": 3
+    },
+    {
+      "id": "kcm:102746",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "333",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:81",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "71e569",
+      "longName": "Annapolis Commuter",
+      "mode": "BUS",
+      "shortName": "81",
+      "sortOrder": 3040,
+      "type": 3
+    },
+    {
+      "id": "kcm:100202",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "345",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100451",
+      "agency": {
+        "id": "kcm:40",
+        "name": "Sound Transit"
+      },
+      "color": "2B376E",
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "556",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:28",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "S 12th St",
+      "mode": "BUS",
+      "shortName": "28",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:184",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "7C8076",
+      "longName": "Harper Shuttle",
+      "mode": "BUS",
+      "shortName": "184",
+      "sortOrder": 3160,
+      "type": 3
+    },
+    {
+      "id": "40:1-SHUTTLE",
+      "agency": {
+        "id": "40:40",
+        "name": "Sound Transit"
+      },
+      "color": "FFB819",
+      "longName": "Capitol Hill-U District (Link Shuttle Bus)",
+      "mode": "BUS",
+      "shortName": "1 Line Shuttle",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100137",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "246",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100016",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "118",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100017",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "119",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102557",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "915",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100259",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "67",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100139",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "249",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100018",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "12",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100254",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "65",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100133",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "240",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102554",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "241",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100012",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "113",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100496",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "930",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102555",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "893",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100136",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "245",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102561",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "907",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:57",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Union / S 19th St / Hilltop",
+      "mode": "BUS",
+      "shortName": "57",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100263",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "7",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:55",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Tacoma Mall",
+      "mode": "BUS",
+      "shortName": "55",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100264",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "70",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:STCL",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "ffffff",
+      "longName": "Stream TDS / Spanaway TC",
+      "mode": "BUS",
+      "shortName": "STCL",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "40:100479",
+      "agency": {
+        "id": "40:40",
+        "name": "Sound Transit"
+      },
+      "color": "28813F",
+      "longName": "Lynnwood - Angle Lake",
+      "mode": "TRAM",
+      "shortName": "1 Line",
+      "sortOrder": null,
+      "type": 0
+    },
+    {
+      "id": "CommTrans:515",
+      "agency": {
+        "id": "CommTrans:40",
+        "name": "Sound Transit"
+      },
+      "color": "2B376E",
+      "longName": "Lynnwood City Center Station - Seattle",
+      "mode": "BUS",
+      "shortName": "515",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:209",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Southworth - Fauntleroy",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "kcm:100148",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "257",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100269",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "75",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100028",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "13",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100023",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "124",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:513",
+      "agency": {
+        "id": "CommTrans:40",
+        "name": "Sound Transit"
+      },
+      "color": "2B376E",
+      "longName": "Lynnwood City Center Station - Seaway TC",
+      "mode": "BUS",
+      "shortName": "513",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:54",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "S 38th St / Portland Ave",
+      "mode": "BUS",
+      "shortName": "54",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:512",
+      "agency": {
+        "id": "CommTrans:40",
+        "name": "Sound Transit"
+      },
+      "color": "2B376E",
+      "longName": "Everett Station - Lynnwood City Center Station",
+      "mode": "BUS",
+      "shortName": "512",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:53",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "University Place",
+      "mode": "BUS",
+      "shortName": "53",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100024",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "125",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:52",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Fircrest / TCC",
+      "mode": "BUS",
+      "shortName": "52",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100146",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "255",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100026",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "128",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:510",
+      "agency": {
+        "id": "CommTrans:40",
+        "name": "Sound Transit"
+      },
+      "color": "2B376E",
+      "longName": "Everett Station - Seattle",
+      "mode": "BUS",
+      "shortName": "510",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100030",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "131",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100272",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "773",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100031",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "132",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102574",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "40",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:45",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Yakima",
+      "mode": "BUS",
+      "shortName": "45",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100275",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "8",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "3:48",
+      "agency": {
+        "id": "3:3",
+        "name": "Pierce Transit"
+      },
+      "color": "6cb33f",
+      "longName": "Sheridan / M St",
+      "mode": "BUS",
+      "shortName": "48",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:377",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "2FC72A",
+      "longName": "Bainbridge Ferry Take Home",
+      "mode": "BUS",
+      "shortName": null,
+      "sortOrder": 3150,
+      "type": 3
+    },
+    {
+      "id": "kcm:100236",
+      "agency": {
+        "id": "kcm:40",
+        "name": "Sound Transit"
+      },
+      "color": "2B376E",
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "545",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100239",
+      "agency": {
+        "id": "kcm:40",
+        "name": "Sound Transit"
+      },
+      "color": "2B376E",
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "550",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100232",
+      "agency": {
+        "id": "kcm:40",
+        "name": "Sound Transit"
+      },
+      "color": "2B376E",
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "522",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100111",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "22",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102653",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "224",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:424",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Snohomish P&R - Seattle",
+      "mode": "BUS",
+      "shortName": "424",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102652",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "204",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100113",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "221",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100481",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "775",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100240",
+      "agency": {
+        "id": "kcm:40",
+        "name": "Sound Transit"
+      },
+      "color": "2B376E",
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "554",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100242",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "56",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "19:620",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "3397CA",
+      "longName": "Olympia/Lakewood Express",
+      "mode": "BUS",
+      "shortName": "620",
+      "sortOrder": 20,
+      "type": 3
+    },
+    {
+      "id": "19:621",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "A92023",
+      "longName": "Martin Way/NE Lacey",
+      "mode": "BUS",
+      "shortName": "62A",
+      "sortOrder": 12,
+      "type": 3
+    },
+    {
+      "id": "19:622",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "A92023",
+      "longName": "Martin Way - The Meadows",
+      "mode": "BUS",
+      "shortName": "62B",
+      "sortOrder": 13,
+      "type": 3
+    },
+    {
+      "id": "kcm:100009",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "11",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:265",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "8F5777",
+      "longName": "Silverdale Central",
+      "mode": "BUS",
+      "shortName": "265",
+      "sortOrder": 3300,
+      "type": 3
+    },
+    {
+      "id": "95:229",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Vashon Island - Fauntleroy",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "Kitsap:266",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "33c1cb",
+      "longName": "Silverdale Ridgetop",
+      "mode": "BUS",
+      "shortName": "266",
+      "sortOrder": 3310,
+      "type": 3
+    },
+    {
+      "id": "kcm:100489",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "156",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100005",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "106",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100006",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "107",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100249",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "60",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102548",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "B Line",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100001",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "1",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:535",
+      "agency": {
+        "id": "CommTrans:40",
+        "name": "Sound Transit"
+      },
+      "color": "2B376E",
+      "longName": "Lynnwood City Center Station - Bellevue",
+      "mode": "BUS",
+      "shortName": "535",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100002",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "10",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:101",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Friday Harbor - Anacortes",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "kcm:100487",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "102",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100003",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "101",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:532",
+      "agency": {
+        "id": "CommTrans:40",
+        "name": "Sound Transit"
+      },
+      "color": "2B376E",
+      "longName": "Everett Station - Bellevue",
+      "mode": "BUS",
+      "shortName": "532",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100246",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "57",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100004",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "105",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100252",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "62",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102552",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "226",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100011",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "111",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100132",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "24",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100495",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "193",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:190S",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "5b7ca4",
+      "longName": "Lincoln St&WWU",
+      "mode": "BUS",
+      "shortName": "190S",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100177",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "303",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100184",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "31",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100186",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "311",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100060",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "168",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100062",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "17",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:29",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "ff00ff",
+      "longName": "Cordata/Kline",
+      "mode": "BUS",
+      "shortName": "29",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:26",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "3e73c1",
+      "longName": "Lynden&Cordata/WCC",
+      "mode": "BUS",
+      "shortName": "26",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:27",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "000080",
+      "longName": "Ferndale&Cordata/WCC",
+      "mode": "BUS",
+      "shortName": "27",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:24",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "0d68f2",
+      "longName": "Cordata",
+      "mode": "BUS",
+      "shortName": "24",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:922",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Fauntleroy - Vashon Island",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "97:8",
+      "agency": {
+        "id": "97:97",
+        "name": "Everett Transit"
+      },
+      "color": "000000",
+      "longName": "N to College Station - S to Mall Station",
+      "mode": "BUS",
+      "shortName": "29",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "97:6",
+      "agency": {
+        "id": "97:97",
+        "name": "Everett Transit"
+      },
+      "color": "000000",
+      "longName": "W to Seaway TC - E to Mall Station",
+      "mode": "BUS",
+      "shortName": "12",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "97:7",
+      "agency": {
+        "id": "97:97",
+        "name": "Everett Transit"
+      },
+      "color": "000000",
+      "longName": "W to Mukilteo - E to Everett Station",
+      "mode": "BUS",
+      "shortName": "18",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "97:4",
+      "agency": {
+        "id": "97:97",
+        "name": "Everett Transit"
+      },
+      "color": "000000",
+      "longName": "S to Mall Station - N to College Station",
+      "mode": "BUS",
+      "shortName": "7",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "97:5",
+      "agency": {
+        "id": "97:97",
+        "name": "Everett Transit"
+      },
+      "color": "000000",
+      "longName": "S to Evergreen Center - N to Everett Station",
+      "mode": "BUS",
+      "shortName": "8",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:920",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Fauntleroy - Southworth",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "97:2",
+      "agency": {
+        "id": "97:97",
+        "name": "Everett Transit"
+      },
+      "color": "000000",
+      "longName": "S to Seaway TC - N to Everett Station",
+      "mode": "BUS",
+      "shortName": "3",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100068",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "177",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "97:3",
+      "agency": {
+        "id": "97:97",
+        "name": "Everett Transit"
+      },
+      "color": "000000",
+      "longName": "S to Everett Station - N to College Station",
+      "mode": "BUS",
+      "shortName": "4",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "97:1",
+      "agency": {
+        "id": "97:97",
+        "name": "Everett Transit"
+      },
+      "color": "000000",
+      "longName": "S to Mariner P&R - N to Mall Station",
+      "mode": "BUS",
+      "shortName": "2",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100074",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "183",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100196",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "331",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100072",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "181",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100193",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "32",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100073",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "182",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100194",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "33",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:812",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Edmonds - Kingston",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "kcm:100039",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "14",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102576",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "C Line",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:1117",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Coupeville  - Port Townsend",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "kcm:102699",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "SVT",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:232",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "48db24",
+      "longName": "Cordata/WCC&Downtown",
+      "mode": "BUS",
+      "shortName": "232",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102698",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "Duvall-Monroe Shuttle",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100162",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "271",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100042",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "148",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102581",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "D Line",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100160",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "269",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100161",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "27",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100045",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "150",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100289",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "9",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100169",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "28",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100048",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "153",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100173",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "3",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:102593",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "906",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100297",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "914",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100290",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "901",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:2220",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Vashon Island - Southworth",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "kcm:100292",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "903",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:15",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "e77261",
+      "longName": "Cordata/WCC&Downtown",
+      "mode": "BUS",
+      "shortName": "15",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:14",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "88ba1f",
+      "longName": "Fairhaven&Downtown",
+      "mode": "BUS",
+      "shortName": "14",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:75",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "ff00ff",
+      "longName": "Blaine/Birch Bay&Bellingham",
+      "mode": "BUS",
+      "shortName": "75",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:1015",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Friday Harbor - Orcas Island",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "Kitsap:96",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "803A66",
+      "longName": "Sunrise",
+      "mode": "BUS",
+      "shortName": "96",
+      "sortOrder": 3100,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:95",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "6d2f80",
+      "longName": "Battle Point",
+      "mode": "BUS",
+      "shortName": "95",
+      "sortOrder": 3090,
+      "type": 3
+    },
+    {
+      "id": "95:1013",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Friday Harbor - Lopez Island",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "Kitsap:98",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "ffa500",
+      "longName": "Fort Ward",
+      "mode": "BUS",
+      "shortName": "98",
+      "sortOrder": 3120,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:97",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "7C8076",
+      "longName": "Crystal Springs",
+      "mode": "BUS",
+      "shortName": "97",
+      "sortOrder": 3110,
+      "type": 3
+    },
+    {
+      "id": "95:1018",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Friday Harbor - Shaw Island",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "Kitsap:94",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "448038",
+      "longName": "Agate Point",
+      "mode": "BUS",
+      "shortName": "94",
+      "sortOrder": 3080,
+      "type": 3
+    },
+    {
+      "id": "Kitsap:93",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "008080",
+      "longName": "Manzanita",
+      "mode": "BUS",
+      "shortName": "93",
+      "sortOrder": 3070,
+      "type": 3
+    },
+    {
+      "id": "40:SNDR_TL",
+      "agency": {
+        "id": "40:40",
+        "name": "Sound Transit"
+      },
+      "color": "9AB6D3",
+      "longName": "Seattle - Tacoma/Lakewood",
+      "mode": "RAIL",
+      "shortName": "S Line",
+      "sortOrder": null,
+      "type": 2
+    },
+    {
+      "id": "95:2116",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Tahlequah - Point Defiance",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    },
+    {
+      "id": "Kitsap:99",
+      "agency": {
+        "id": "Kitsap:kt",
+        "name": "Kitsap Transit"
+      },
+      "color": "80471c",
+      "longName": "Bill Point",
+      "mode": "BUS",
+      "shortName": "99",
+      "sortOrder": 3130,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:909",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Edmonds Station - Mountlake Terrace Station",
+      "mode": "BUS",
+      "shortName": "909",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:907",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "0070C0",
+      "longName": "Stanwood I-5 P&R - Seaway TC",
+      "mode": "BUS",
+      "shortName": "907",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "40:2LINE",
+      "agency": {
+        "id": "40:40",
+        "name": "Sound Transit"
+      },
+      "color": "007CAD",
+      "longName": "South Bellevue - Redmond Tech",
+      "mode": "TRAM",
+      "shortName": "2 Line",
+      "sortOrder": null,
+      "type": 0
+    },
+    {
+      "id": "CommTrans:703",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "F24C21",
+      "longName": "Edmonds College - McCollum Park P&R",
+      "mode": "BUS",
+      "shortName": "Swift Orange",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:702",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "00AA00",
+      "longName": "Seaway TC - Canyon Park P&R",
+      "mode": "BUS",
+      "shortName": "Swift Green",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "CommTrans:701",
+      "agency": {
+        "id": "CommTrans:29",
+        "name": "Community Transit"
+      },
+      "color": "006CFF",
+      "longName": "Everett Station - Shoreline North/185th Station",
+      "mode": "BUS",
+      "shortName": "Swift Blue",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "97:857",
+      "agency": {
+        "id": "97:97",
+        "name": "Everett Transit"
+      },
+      "color": "000000",
+      "longName": "S to Everett Station - N to College Station",
+      "mode": "BUS",
+      "shortName": "19",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:50",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "d86543",
+      "longName": "LummiNation&Downtown",
+      "mode": "BUS",
+      "shortName": "50",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100078",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "187",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:14S",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "ff00ff",
+      "longName": "WWU&Billy Frank Jr",
+      "mode": "BUS",
+      "shortName": "14S",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "19:100",
+      "agency": {
+        "id": "19:0",
+        "name": "Intercity Transit"
+      },
+      "color": "F6AF65",
+      "longName": "The One",
+      "mode": "BUS",
+      "shortName": "ONE",
+      "sortOrder": 0,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:48",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "400000",
+      "longName": "Cordata/WCC&Bakerview Spur",
+      "mode": "BUS",
+      "shortName": "48",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:49",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "000080",
+      "longName": "Downtown&Bakerview Spur",
+      "mode": "BUS",
+      "shortName": "49",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:46",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "0000ff",
+      "longName": "Granary",
+      "mode": "BUS",
+      "shortName": "46",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "Whatcom:47",
+      "agency": {
+        "id": "Whatcom:14",
+        "name": "Whatcom Transportation Authority"
+      },
+      "color": "008000",
+      "longName": "Harbor&Downtown",
+      "mode": "BUS",
+      "shortName": "47",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100089",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "2",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "kcm:100099",
+      "agency": {
+        "id": "kcm:1",
+        "name": "Metro Transit"
+      },
+      "color": null,
+      "longName": null,
+      "mode": "BUS",
+      "shortName": "208",
+      "sortOrder": null,
+      "type": 3
+    },
+    {
+      "id": "95:2022",
+      "agency": {
+        "id": "95:95",
+        "name": "Washington State Ferries"
+      },
+      "color": null,
+      "longName": "Southworth - Vashon Island",
+      "mode": "FERRY",
+      "shortName": null,
+      "sortOrder": null,
+      "type": 4
+    }
+  ]
+}

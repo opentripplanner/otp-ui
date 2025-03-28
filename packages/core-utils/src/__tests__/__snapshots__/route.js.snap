@@ -1,14 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`util > route routeComparator should prioritize routes with integer shortNames over alphabetic shortNames 1`] = `
+exports[`util > route routeComparator should prioritize OTP1 routes with valid sortOrder 1`] = `
 Array [
   Object {
+    "agencyId": "bcd",
+    "longName": "Around town",
+    "mode": "BUS",
+    "shortName": "20",
+    "sortOrder": 2,
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "Around another town",
+    "shortName": "3",
+    "sortOrder": -999,
+    "type": 3,
+  },
+]
+`;
+
+exports[`util > route routeComparator should prioritize OTP2 routes with valid sortOrder 1`] = `
+Array [
+  Object {
+    "longName": "Loop route",
+    "mode": "BUS",
+    "shortName": "2",
+    "sortOrder": -999,
+  },
+  Object {
+    "longName": "Across town",
+    "mode": "BUS",
+    "shortName": "10",
+    "sortOrder": 10,
+  },
+  Object {
+    "longName": "Around another town",
+    "shortName": "3",
+    "sortOrder": null,
+    "type": 3,
+  },
+]
+`;
+
+exports[`util > route routeComparator should prioritize routes with alphabetic shortNames over integer shortNames 1`] = `
+Array [
+  Object {
+    "agencyId": "bcd",
     "longName": "A-line",
     "mode": "BUS",
     "shortName": "A",
     "sortOrder": -999,
   },
   Object {
+    "agencyId": "bcd",
     "longName": "Loop route",
     "mode": "BUS",
     "shortName": "2",
@@ -20,12 +64,14 @@ Array [
 exports[`util > route routeComparator should prioritize routes with shortNames over those with just longNames 1`] = `
 Array [
   Object {
+    "agencyId": "bcd",
     "longName": "B-line",
     "mode": "BUS",
     "shortName": "B",
     "sortOrder": -999,
   },
   Object {
+    "agencyId": "bcd",
     "longName": "A meandering route",
     "mode": "BUS",
     "sortOrder": -999,
@@ -33,41 +79,7 @@ Array [
 ]
 `;
 
-exports[`util > route routeComparator should prioritize routes with valid sortOrder 1`] = `
-Array [
-  Object {
-    "longName": "Around another town",
-    "shortName": "3",
-    "sortOrder": -999,
-    "type": 3,
-  },
-  Object {
-    "longName": "Around town",
-    "mode": "BUS",
-    "shortName": "20",
-    "sortOrder": 2,
-  },
-]
-`;
-
-exports[`util > route routeComparator should sort based off of route type 1`] = `
-Array [
-  Object {
-    "longName": "Yellow line Subway",
-    "mode": "SUBWAY",
-    "shortName": "Yellow",
-    "sortOrder": 2,
-  },
-  Object {
-    "longName": "Intercity Train",
-    "mode": "RAIL",
-    "shortName": "IC",
-    "sortOrder": 2,
-  },
-]
-`;
-
-exports[`util > route routeComparator should sort routes based off of agencyName 1`] = `
+exports[`util > route routeComparator should sort OTP1 routes on all of the criteria at once 1`] = `
 Array [
   Object {
     "agencyId": "abc",
@@ -76,6 +88,7 @@ Array [
     "mode": "BUS",
     "routeId": "2:erx",
     "shortName": "30X",
+    "sortOrder": 10,
   },
   Object {
     "agencyId": "abc",
@@ -84,46 +97,138 @@ Array [
     "mode": "RAIL",
     "routeId": "1:it2",
     "shortName": "IC",
+    "sortOrder": 10,
   },
-]
-`;
-
-exports[`util > route routeComparator should sort routes based off of integer shortName 1`] = `
-Array [
   Object {
-    "longName": "Loop route",
+    "agencyId": "bcd",
+    "longName": "Yellow line Subway",
+    "mode": "SUBWAY",
+    "shortName": "Yellow",
+    "sortOrder": 2,
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "Intercity Train",
+    "mode": "RAIL",
+    "shortName": "IC",
+    "sortOrder": 2,
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "Local route",
     "mode": "BUS",
-    "shortName": "2",
-    "sortOrder": -999,
+    "shortName": "6",
+    "sortOrder": 2,
   },
   Object {
-    "longName": "Around another town",
-    "shortName": "3",
-    "sortOrder": -999,
-    "type": 3,
+    "agencyId": "bcd",
+    "longName": "Around town",
+    "mode": "BUS",
+    "shortName": "20",
+    "sortOrder": 2,
   },
-]
-`;
-
-exports[`util > route routeComparator should sort routes based off of longNames 1`] = `
-Array [
   Object {
+    "agencyId": "bcd",
     "longName": "Express route",
     "mode": "BUS",
     "shortName": "30",
     "sortOrder": 2,
   },
   Object {
+    "agencyId": "bcd",
     "longName": "Variation of express route",
     "mode": "BUS",
     "shortName": "30",
     "sortOrder": 2,
   },
+  Object {
+    "agencyId": "bcd",
+    "longName": "Zig-zagging route",
+    "mode": "BUS",
+    "shortName": "30",
+    "sortOrder": 2,
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "Xpress route C",
+    "mode": "BUS",
+    "shortName": "30C",
+    "sortOrder": 2,
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "Across town",
+    "mode": "BUS",
+    "shortName": "10",
+    "sortOrder": 10,
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "A-line",
+    "mode": "BUS",
+    "shortName": "A",
+    "sortOrder": -999,
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "B-line",
+    "mode": "BUS",
+    "shortName": "B",
+    "sortOrder": -999,
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "Loop route",
+    "mode": "BUS",
+    "shortName": "2",
+    "sortOrder": -999,
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "Around another town",
+    "shortName": "3",
+    "sortOrder": -999,
+    "type": 3,
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "Express route X",
+    "mode": "BUS",
+    "shortName": "30X",
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "A meandering route",
+    "mode": "BUS",
+    "sortOrder": -999,
+  },
 ]
 `;
 
-exports[`util > route routeComparator should sort routes based off of shortNames 1`] = `
+exports[`util > route routeComparator should sort OTP2 routes on all of the criteria at once 1`] = `
 Array [
+  Object {
+    "agency": Object {
+      "id": "abc",
+      "name": "Acclaimed agency 1",
+    },
+    "longName": "Express route X",
+    "mode": "BUS",
+    "routeId": "2:erx",
+    "shortName": "30X",
+    "sortOrder": 2,
+  },
+  Object {
+    "agency": Object {
+      "id": "abc",
+      "name": "Agency 1",
+    },
+    "longName": "Intercity Train 2",
+    "mode": "RAIL",
+    "routeId": "1:it2",
+    "shortName": "IC",
+    "sortOrder": 2,
+  },
   Object {
     "longName": "A-line",
     "mode": "BUS",
@@ -131,54 +236,11 @@ Array [
     "sortOrder": -999,
   },
   Object {
-    "longName": "B-line",
+    "longName": "Loop route",
     "mode": "BUS",
-    "shortName": "B",
+    "shortName": "2",
     "sortOrder": -999,
   },
-]
-`;
-
-exports[`util > route routeComparator should sort routes based off of sortOrder 1`] = `
-Array [
-  Object {
-    "longName": "Around town",
-    "mode": "BUS",
-    "shortName": "20",
-    "sortOrder": 2,
-  },
-  Object {
-    "longName": "Across town",
-    "mode": "BUS",
-    "shortName": "10",
-    "sortOrder": 10,
-  },
-]
-`;
-
-exports[`util > route routeComparator should sort routes based off of transitOperators sort value when a match is found 1`] = `
-Array [
-  Object {
-    "agencyId": "abc",
-    "agencyName": "Agency 1",
-    "longName": "Intercity Train 2",
-    "mode": "RAIL",
-    "routeId": "1:it2",
-    "shortName": "IC",
-  },
-  Object {
-    "agencyId": "abc",
-    "agencyName": "Acclaimed agency 1",
-    "longName": "Express route X",
-    "mode": "BUS",
-    "routeId": "2:erx",
-    "shortName": "30X",
-  },
-]
-`;
-
-exports[`util > route routeComparator should sort routes on all of the criteria at once 1`] = `
-Array [
   Object {
     "longName": "Yellow line Subway",
     "mode": "SUBWAY",
@@ -190,30 +252,6 @@ Array [
     "mode": "RAIL",
     "shortName": "IC",
     "sortOrder": 2,
-  },
-  Object {
-    "longName": "A-line",
-    "mode": "BUS",
-    "shortName": "A",
-    "sortOrder": -999,
-  },
-  Object {
-    "longName": "B-line",
-    "mode": "BUS",
-    "shortName": "B",
-    "sortOrder": -999,
-  },
-  Object {
-    "longName": "Loop route",
-    "mode": "BUS",
-    "shortName": "2",
-    "sortOrder": -999,
-  },
-  Object {
-    "longName": "Around another town",
-    "shortName": "3",
-    "sortOrder": -999,
-    "type": 3,
   },
   Object {
     "longName": "Local route",
@@ -264,9 +302,160 @@ Array [
     "sortOrder": 10,
   },
   Object {
+    "longName": "B-line",
+    "mode": "BUS",
+    "shortName": "B",
+  },
+  Object {
+    "longName": "Around another town",
+    "shortName": "3",
+    "sortOrder": null,
+    "type": 3,
+  },
+  Object {
     "longName": "A meandering route",
     "mode": "BUS",
+  },
+]
+`;
+
+exports[`util > route routeComparator should sort based off of route type 1`] = `
+Array [
+  Object {
+    "agencyId": "bcd",
+    "longName": "Yellow line Subway",
+    "mode": "SUBWAY",
+    "shortName": "Yellow",
+    "sortOrder": 2,
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "Intercity Train",
+    "mode": "RAIL",
+    "shortName": "IC",
+    "sortOrder": 2,
+  },
+]
+`;
+
+exports[`util > route routeComparator should sort routes based off of agencyName if no transitOperators are defined 1`] = `
+Array [
+  Object {
+    "agencyId": "abc",
+    "agencyName": "Acclaimed agency 1",
+    "longName": "Express route X",
+    "mode": "BUS",
+    "routeId": "2:erx",
+    "shortName": "30X",
+    "sortOrder": 10,
+  },
+  Object {
+    "agencyId": "abc",
+    "agencyName": "Agency 1",
+    "longName": "Intercity Train 2",
+    "mode": "RAIL",
+    "routeId": "1:it2",
+    "shortName": "IC",
+    "sortOrder": 10,
+  },
+]
+`;
+
+exports[`util > route routeComparator should sort routes based off of integer shortName 1`] = `
+Array [
+  Object {
+    "agencyId": "bcd",
+    "longName": "Loop route",
+    "mode": "BUS",
+    "shortName": "2",
     "sortOrder": -999,
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "Around another town",
+    "shortName": "3",
+    "sortOrder": -999,
+    "type": 3,
+  },
+]
+`;
+
+exports[`util > route routeComparator should sort routes based off of longNames 1`] = `
+Array [
+  Object {
+    "agencyId": "bcd",
+    "longName": "Express route",
+    "mode": "BUS",
+    "shortName": "30",
+    "sortOrder": 2,
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "Variation of express route",
+    "mode": "BUS",
+    "shortName": "30",
+    "sortOrder": 2,
+  },
+]
+`;
+
+exports[`util > route routeComparator should sort routes based off of shortNames 1`] = `
+Array [
+  Object {
+    "agencyId": "bcd",
+    "longName": "A-line",
+    "mode": "BUS",
+    "shortName": "A",
+    "sortOrder": -999,
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "B-line",
+    "mode": "BUS",
+    "shortName": "B",
+    "sortOrder": -999,
+  },
+]
+`;
+
+exports[`util > route routeComparator should sort routes based off of sortOrder 1`] = `
+Array [
+  Object {
+    "agencyId": "bcd",
+    "longName": "Around town",
+    "mode": "BUS",
+    "shortName": "20",
+    "sortOrder": 2,
+  },
+  Object {
+    "agencyId": "bcd",
+    "longName": "Across town",
+    "mode": "BUS",
+    "shortName": "10",
+    "sortOrder": 10,
+  },
+]
+`;
+
+exports[`util > route routeComparator should sort routes based off of transitOperators sort value when a match is found 1`] = `
+Array [
+  Object {
+    "agencyId": "abc",
+    "agencyName": "Agency 1",
+    "longName": "Intercity Train 2",
+    "mode": "RAIL",
+    "routeId": "1:it2",
+    "shortName": "IC",
+    "sortOrder": 10,
+  },
+  Object {
+    "agencyId": "abc",
+    "agencyName": "Acclaimed agency 1",
+    "longName": "Express route X",
+    "mode": "BUS",
+    "routeId": "2:erx",
+    "shortName": "30X",
+    "sortOrder": 10,
   },
 ]
 `;
@@ -274,16 +463,17 @@ Array [
 exports[`util > route routeComparator should sort routes with alphanumeric shortNames 1`] = `
 Array [
   Object {
+    "agencyId": "bcd",
     "longName": "Xpress route C",
     "mode": "BUS",
     "shortName": "30C",
     "sortOrder": 2,
   },
   Object {
+    "agencyId": "bcd",
     "longName": "Express route X",
     "mode": "BUS",
     "shortName": "30X",
-    "sortOrder": 2,
   },
 ]
 `;
