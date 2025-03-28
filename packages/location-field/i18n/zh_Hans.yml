@@ -14,7 +14,7 @@ otpUi:
     other: 其他
     otherCount: "{count}个其他兴趣点"
     parenthesisFormat: "{main}（{detail}）"
-    recentlySearched: 最近搜索到的
+    recentPlaces: 最近去的地方
     resultsFound: 为 "{input}" 找到 {results}。
     stationCount: "{count}个站台"
     stations: 站台
