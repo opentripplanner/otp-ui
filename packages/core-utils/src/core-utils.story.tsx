@@ -76,23 +76,22 @@ const Columns = styled.div`
   width: 100%;
 `;
 
-const RouteRow = styled.div`
-  background-color: white;
-  display: grid;
-  grid-template-columns: 1fr 2fr 2fr 4fr 2fr 2fr;
-  width: 75%;
-
-  img {
-    height: 30px;
-    width: 30px;
-  }
-`;
-
 const StyledTable = styled.table`
   td,
   th {
     border: 1px solid black;
     padding: 2px;
+  }
+
+  tr {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 4fr 2fr 2fr;
+    width: 75%;
+    img {
+      height: 30px;
+      width: 30px;
+    }
   }
 `;
 
@@ -153,20 +152,20 @@ export const RouteSortingLogic = (): JSX.Element => {
   return (
     <Columns>
       <StyledTable>
-        <RouteRow>
+        <tr>
           <th>Logo</th>
           <th>Mode</th>
           <th>Short Name</th>
           <th>Long Name</th>
           <th>Agency Order</th>
           <th>Sort Order</th>
-        </RouteRow>
+        </tr>
         {sortedRoutes.map(r => {
           const operator = fakeTransitOperators.find(
             x => x.agencyId === r.agency?.id
           );
           return (
-            <RouteRow key={r.id}>
+            <tr key={r.id}>
               <td>
                 <img src={operator?.logo} alt={r.agency?.name || ""} />
               </td>
@@ -175,7 +174,7 @@ export const RouteSortingLogic = (): JSX.Element => {
               <td>{r.longName}</td>
               <td>{operator?.order}</td>
               <td>{r.sortOrder}</td>
-            </RouteRow>
+            </tr>
           );
         })}
       </StyledTable>
