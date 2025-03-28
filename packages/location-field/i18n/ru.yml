@@ -18,7 +18,7 @@ otpUi:
       {count, plural, =1 {# другой интересный момент} other {# другие интересные
       моменты}}
     parenthesisFormat: "{main} ({detail})"
-    recentlySearched: Недавние поисковые запросы
+    recentPlaces: недавние места
     resultsFound: "{results} найдено для \"{input}\"."
     stationCount: "{count, plural, =1 {# станция} other {# станции}}"
     stations: Станции

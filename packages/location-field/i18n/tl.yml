@@ -18,7 +18,7 @@ otpUi:
       {count, plural, =1 {# iba pang punto} other {# iba pang mga punto}} ng
       interes
     parenthesisFormat: "{main} ({detail})"
-    recentlySearched: Kamakailang Hinanap
+    recentPlaces: Kamakailang mga lugar
     resultsFound: "{results} natagpuan para sa \"{input}\"."
     stationCount: "{count, plural, =1 {# istasyon} other {# mga istasyon}}"
     stations: Mga Istasyon
