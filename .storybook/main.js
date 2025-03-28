@@ -22,13 +22,14 @@ module.exports = {
       }
     },
     getAbsolutePath("@storybook/addon-viewport"),
-    "@danielhep/storybook-react-intl"
+    "@danielhep/storybook-react-intl",
+    getAbsolutePath("@storybook/addon-webpack5-compiler-babel")
   ],
 
   stories: [
-    "../packages/**/*.story.mdx",
     "../packages/*/src/**/*.story.@(js|jsx|ts|tsx)"
   ],
+
   staticDirs: ['../public'],
 
   webpackFinal: async (config, { configType }) => {
@@ -65,6 +66,18 @@ module.exports = {
       }
     })
 
+    // Add fallback for querystring
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      querystring: require.resolve('querystring-es3')
+    };
+
+    // Configure module resolution for workspace packages
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@opentripplanner': path.resolve(__dirname, '../packages')
+    };
+
     // Return the altered config
     return config;
   },
@@ -74,8 +87,10 @@ module.exports = {
     options: {}
   },
 
-  docs: {
-    autodocs: true
+  docs: {},
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript"
   }
 }
 
