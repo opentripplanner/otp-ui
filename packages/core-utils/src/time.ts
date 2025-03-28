@@ -29,6 +29,8 @@ export function toHoursMinutesSeconds(
 /**
  * If a duration is less than 60 seconds, round it to one minute, to avoid a duration
  * of 0 minutes on a leg.
+ * @param {number} duration The leg or trip duration in seconds
+ * @returns a duration in seconds of at least 60 seconds.
  */
 export const ensureAtLeastOneMinute = (duration: number): number =>
   duration < 60 ? 60 : duration;
