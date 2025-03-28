@@ -885,11 +885,9 @@ const LocationField = ({
     menuItems.push(
       <S.MenuGroupHeader as={headingType} key="ss-header">
         <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.LocationField.recentlySearched"]
-          }
-          description="Text for header above recently searched items"
-          id="otpUi.LocationField.recentlySearched"
+          defaultMessage={defaultMessages["otpUi.LocationField.recentPlaces"]}
+          description="Text for header above recently searched places"
+          id="otpUi.LocationField.recentPlaces"
         />
       </S.MenuGroupHeader>
     );
