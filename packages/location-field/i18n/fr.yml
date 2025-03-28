@@ -16,7 +16,7 @@ otpUi:
     other: Autres
     otherCount: "{count, plural, =1 {# autre point} other {# autres points}} d'intérêt"
     parenthesisFormat: "{main} ({detail})"
-    recentlySearched: Recherches récentes
+    recentPlaces: Lieux récentes
     resultsFound: "{results} pour \"{input}\"."
     stationCount: "{count, plural, =1 {# station} other {# stations}}"
     stations: Stations

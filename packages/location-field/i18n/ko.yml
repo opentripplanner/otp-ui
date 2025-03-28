@@ -14,7 +14,7 @@ otpUi:
     other: 기타
     otherCount: "{count} 다른 위치 관심"
     parenthesisFormat: "{main}({detail})"
-    recentlySearched: 최근 검색 내역
+    recentPlaces: 최근 장소
     resultsFound: "\"{input}\" 에 대해 {results} 습니다."
     stationCount: "{count}역"
     stations: 역

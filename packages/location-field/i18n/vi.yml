@@ -16,7 +16,7 @@ otpUi:
     other: Khác
     otherCount: "{count} địa điểm quan tâm khác"
     parenthesisFormat: "{main} ({detail})"
-    recentlySearched: Gần đây đã tìm kiếm
+    recentPlaces: Địa điểm gần đây
     resultsFound: "{results} tìm cho \"{input}\"."
     stationCount: "{count} trạm"
     stations: Ga
