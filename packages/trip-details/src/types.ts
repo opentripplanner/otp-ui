@@ -71,11 +71,6 @@ export interface TripDetailsProps {
    */
   DepartureDetails?: React.ElementType<DepartureDetailsProps>;
   /**
-   * If this is set to true, a row will be added to the trip details displaying how
-   * many minutes in total the user will spend walking or biking.
-   */
-  displayTimeActive?: boolean;
-  /**
    * Slot for a custom component to render the expandable section for fares.
    */
   FareDetails?: React.ElementType<FareDetailsProps>;
@@ -93,10 +88,6 @@ export interface TripDetailsProps {
    * Itinerary that the user has selected to view, contains multiple legs.
    */
   itinerary: Itinerary;
-  /**
-   * show the '~' symbol in the trip details panel
-   */
-  showApproximateMinutesActive?: boolean;
   /**
    * Slot for a custom component to render the expandable section for time active.
    */
