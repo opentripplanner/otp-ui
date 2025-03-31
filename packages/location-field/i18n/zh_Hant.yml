@@ -5,6 +5,7 @@ otpUi:
     currentLocationUnavailable: 目前的位置無法使用
     fetchingLocation: 正在擷取位置……
     fetchingSuggestions: 正在擷取建議…
+    geocoderUnreachable: 無法獲取建議
     homeLocation: 住家
     howToAccessResults: 使用向下箭頭鍵瀏覽結果清單。若要選取結果，請使用Enter鍵。
     myPlaces: 我的地點
@@ -13,7 +14,7 @@ otpUi:
     other: 其他
     otherCount: "{count}興趣點"
     parenthesisFormat: "{main} ({detail})"
-    recentlySearched: 最近搜尋過
+    recentPlaces: 最近的地點
     resultsFound: 為 "{input}" 找到 {results}。
     stationCount: "{count}車站"
     stations: 車站
@@ -23,4 +24,3 @@ otpUi:
     suggestedLocationsLong: 顯示/不顯示建議位置清單
     useCurrentLocation: 使用目前位置
     workLocation: 工作
-    geocoderUnreachable: 無法獲取建議
