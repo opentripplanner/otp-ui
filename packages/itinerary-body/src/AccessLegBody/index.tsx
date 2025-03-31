@@ -3,6 +3,7 @@ import { isTransit } from "@opentripplanner/core-utils/lib/itinerary";
 import React, { Component, FunctionComponent, ReactElement } from "react";
 import AnimateHeight from "react-animate-height";
 import { FormattedMessage } from "react-intl";
+import coreUtils from "@opentripplanner/core-utils";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
@@ -16,6 +17,8 @@ import RentedVehicleSubheader from "./rented-vehicle-subheader";
 import TNCLeg from "./tnc-leg";
 
 import { defaultMessages } from "../util";
+
+const { ensureAtLeastOneMinute } = coreUtils.time;
 
 interface Props {
   config: Config & {
@@ -87,6 +90,8 @@ class AccessLegBody extends Component<Props, State> {
     const hideDrivingDirections =
       config?.itinerary?.hideDrivingDirections && leg.mode === "CAR";
 
+    const durationSeconds = ensureAtLeastOneMinute(leg.duration);
+
     if (leg.mode === "CAR" && leg.rideHailingEstimate) {
       return (
         <TNCLeg
@@ -130,7 +135,7 @@ class AccessLegBody extends Component<Props, State> {
               {hideDrivingDirections ? (
                 <S.StepsHeaderAndMapLink>
                   <S.StepsHeaderSpan>
-                    <Duration seconds={leg.duration} />
+                    <Duration seconds={durationSeconds} />
                   </S.StepsHeaderSpan>
                   {mapillary}
                 </S.StepsHeaderAndMapLink>
@@ -142,7 +147,7 @@ class AccessLegBody extends Component<Props, State> {
                       onClick={this.onStepsHeaderClick}
                     >
                       <Duration
-                        seconds={leg.duration}
+                        seconds={durationSeconds}
                         showApproximatePrefix={
                           showApproximateTravelTime && !isTransit(leg.mode)
                         }

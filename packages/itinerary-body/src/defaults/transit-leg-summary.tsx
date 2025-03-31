@@ -1,10 +1,13 @@
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
+import coreUtils from "@opentripplanner/core-utils";
 import * as S from "../styled";
 import { TransitLegSummaryProps } from "../types";
 import { defaultMessages } from "../util";
 import Duration from "./duration";
+
+const { ensureAtLeastOneMinute } = coreUtils.time;
 
 /**
  * This is a clickable component that summarizes the leg (travel time, stops
@@ -15,6 +18,8 @@ export default function TransitLegSummary({
   onClick,
   stopsExpanded
 }: TransitLegSummaryProps): ReactElement {
+  const durationSeconds = ensureAtLeastOneMinute(leg.duration);
+
   return (
     <S.TransitLegSummary onClick={onClick}>
       <FormattedMessage
@@ -24,7 +29,7 @@ export default function TransitLegSummary({
         description="Describes ride duration and number of stops"
         id="otpUi.TransitLegBody.rideDurationAndStops"
         values={{
-          duration: <Duration seconds={leg.duration} />,
+          duration: <Duration seconds={durationSeconds} />,
           numStops: (leg.intermediateStops?.length || 0) + 1
         }}
       />
