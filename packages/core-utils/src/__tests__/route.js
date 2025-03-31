@@ -5,25 +5,7 @@ import {
   makeRouteComparator
 } from "../route";
 
-const {
-  route1,
-  route2,
-  route3,
-  route4,
-  route5,
-  route6,
-  route7,
-  route8,
-  route9,
-  route10,
-  route11,
-  route12,
-  route13,
-  route14,
-  route15,
-  route16,
-  route17
-} = require("./__mocks__/routes.json");
+const { otp1Routes, otp2Routes } = require("./__mocks__/routes.json");
 
 function sortRoutes(...routes) {
   routes.sort(makeRouteComparator());
@@ -47,7 +29,7 @@ describe("util > route", () => {
     });
   });
 
-  describe("getTransitOperatorFromOtpRoute", () => {
+  describe("getTransitOperatorFromOtp1Route", () => {
     const otpRoute = { agencyId: "abc", id: "1:abc" };
     it("should get a transit operator", () => {
       const expectedTransitOperator = { agencyId: "abc", feedId: "1" };
@@ -65,8 +47,8 @@ describe("util > route", () => {
   });
 
   describe("routeComparator", () => {
-    it("should sort routes based off of agencyName", () => {
-      expect(sortRoutes(route16, route17)).toMatchSnapshot();
+    it("should sort routes based off of agencyName if no transitOperators are defined", () => {
+      expect(sortRoutes(otp1Routes[15], otp1Routes[16])).toMatchSnapshot();
     });
 
     it("should sort routes based off of transitOperators sort value when a match is found", () => {
@@ -74,66 +56,56 @@ describe("util > route", () => {
         { agencyId: "abc", feedId: "1", order: 2 },
         { agencyId: "abc", feedId: "2", order: 1 }
       ]);
-      const routes = [route16, route17];
+      const routes = [otp1Routes[15], otp1Routes[16]];
       expect(routes.sort(comparatorWithTransitOperators)).toMatchSnapshot();
     });
 
     it("should sort routes based off of sortOrder", () => {
-      expect(sortRoutes(route1, route2)).toMatchSnapshot();
+      expect(sortRoutes(otp1Routes[0], otp1Routes[1])).toMatchSnapshot();
     });
 
-    it("should prioritize routes with valid sortOrder", () => {
-      expect(sortRoutes(route2, route3)).toMatchSnapshot();
+    it("should prioritize OTP1 routes with valid sortOrder", () => {
+      expect(sortRoutes(otp1Routes[1], otp1Routes[2])).toMatchSnapshot();
     });
 
-    it("should sort routes based off of integer shortName", () => {
-      expect(sortRoutes(route3, route4)).toMatchSnapshot();
-    });
-
-    it("should prioritize routes with integer shortNames over alphabetic shortNames", () => {
-      expect(sortRoutes(route4, route5)).toMatchSnapshot();
-    });
-
-    it("should sort routes based off of shortNames", () => {
-      expect(sortRoutes(route5, route6)).toMatchSnapshot();
-    });
-
-    it("should sort routes with alphanumeric shortNames", () => {
-      expect(sortRoutes(route14, route15)).toMatchSnapshot();
-    });
-
-    it("should prioritize routes with shortNames over those with just longNames", () => {
-      expect(sortRoutes(route6, route7)).toMatchSnapshot();
-    });
-
-    it("should sort routes based off of longNames", () => {
-      expect(sortRoutes(route9, route10)).toMatchSnapshot();
-    });
-
-    it("should sort routes on all of the criteria at once", () => {
+    it("should prioritize OTP2 routes with valid sortOrder", () => {
       expect(
-        sortRoutes(
-          route1,
-          route2,
-          route3,
-          route4,
-          route5,
-          route6,
-          route7,
-          route8,
-          route9,
-          route10,
-          route11,
-          route12,
-          route13,
-          route14,
-          route15
-        )
+        sortRoutes(otp2Routes[0], otp2Routes[2], otp2Routes[3])
       ).toMatchSnapshot();
     });
 
+    it("should sort routes based off of integer shortName", () => {
+      expect(sortRoutes(otp1Routes[2], otp1Routes[3])).toMatchSnapshot();
+    });
+
+    it("should prioritize routes with alphabetic shortNames over integer shortNames", () => {
+      expect(sortRoutes(otp1Routes[3], otp1Routes[4])).toMatchSnapshot();
+    });
+
+    it("should sort routes based off of shortNames", () => {
+      expect(sortRoutes(otp1Routes[4], otp1Routes[5])).toMatchSnapshot();
+    });
+
+    it("should sort routes with alphanumeric shortNames", () => {
+      expect(sortRoutes(otp1Routes[13], otp1Routes[14])).toMatchSnapshot();
+    });
+
+    it("should prioritize routes with shortNames over those with just longNames", () => {
+      expect(sortRoutes(otp1Routes[5], otp1Routes[6])).toMatchSnapshot();
+    });
+
+    it("should sort routes based off of longNames", () => {
+      expect(sortRoutes(otp1Routes[8], otp1Routes[9])).toMatchSnapshot();
+    });
+    it("should sort OTP1 routes on all of the criteria at once", () => {
+      expect(sortRoutes(...otp1Routes)).toMatchSnapshot();
+    });
+    it("should sort OTP2 routes on all of the criteria at once", () => {
+      expect(sortRoutes(...otp2Routes)).toMatchSnapshot();
+    });
+
     it("should sort based off of route type", () => {
-      expect(sortRoutes(route12, route13)).toMatchSnapshot();
+      expect(sortRoutes(otp1Routes[11], otp1Routes[12])).toMatchSnapshot();
     });
   });
 

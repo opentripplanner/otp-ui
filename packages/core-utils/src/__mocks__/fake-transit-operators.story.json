@@ -1,0 +1,97 @@
+{
+  "fakeTransitOperators": [
+    {
+      "feedId": "kcm",
+      "agencyId": "kcm:23",
+      "name": "City of Seattle",
+      "logo": "https://s3.amazonaws.com/datatools-production/branding/agency_4_City_of_Seattle.png"
+    },
+    {
+      "feedId": "CommTrans",
+      "agencyId": "CommTrans:29",
+      "name": "Community Transit",
+      "logo": "https://s3.amazonaws.com/datatools-production/branding/agency_2_community_transit.png"
+    },
+    {
+      "feedId": "97",
+      "agencyId": "97:97",
+      "name": "Everett Transit",
+      "logo": "https://s3.amazonaws.com/datatools-production/branding/agency_2_Everett_Transit.png"
+    },
+    {
+      "feedId": "19",
+      "agencyId": "19:0",
+      "name": "Intercity Transit",
+      "logo": "https://s3.amazonaws.com/datatools-production/branding/intercity_transit_logo.jpg"
+    },
+    {
+      "feedId": "kcm",
+      "agencyId": "kcm:1",
+      "name": "King County Metro",
+      "logo": "https://s3.amazonaws.com/datatools-production/branding/agency_2_kcm.png"
+    },
+    {
+      "feedId": "Kitsap",
+      "agencyId": "Kitsap:kt",
+      "name": "Kitsap Transit",
+      "logo": "https://s3.amazonaws.com/datatools-production/branding/agency_2_Kitsap_Transit.png",
+      "order": 2
+    },
+    {
+      "feedId": "3",
+      "agencyId": "3:3",
+      "name": "Pierce Transit",
+      "logo": "https://s3.amazonaws.com/datatools-production/branding/agency_2_pierce_transit.png"
+    },
+    {
+      "feedId": "Skagit",
+      "agencyId": "Skagit:e0e4541a-2714-487b-b30c-f5c6cb4a310f",
+      "name": "Skagit Transit",
+      "logo": "https://s3.amazonaws.com/datatools-production/branding/agency_2_Skagit.png"
+    },
+    {
+      "feedId": "96",
+      "agencyId": "96:96",
+      "name": "Seattle Center Monorail",
+      "logo": "https://s3.amazonaws.com/datatools-production/branding/agency_2_seattle_monorail.png"
+    },
+    {
+      "feedId": "40",
+      "agencyId": "40:40",
+      "name": "Sound Transit",
+      "logo": "https://s3.amazonaws.com/datatools-production/branding/agency_2_sound_transit.png",
+      "order": 1
+    },
+    {
+      "feedId": "CommTrans",
+      "agencyId": "CommTrans:40",
+      "name": "Sound Transit",
+      "logo": "https://s3.amazonaws.com/datatools-production/branding/agency_2_sound_transit.png"
+    },
+    {
+      "feedId": "kcm",
+      "agencyId": "kcm:40",
+      "name": "Sound Transit",
+      "logo": "https://s3.amazonaws.com/datatools-production/branding/agency_2_sound_transit.png"
+    },
+    {
+      "feedId": "3",
+      "agencyId": "3:40",
+      "name": "Sound Transit",
+      "logo": "https://s3.amazonaws.com/datatools-production/branding/agency_2_sound_transit.png",
+      "order": 1
+    },
+    {
+      "feedId": "95",
+      "agencyId": "95:95",
+      "name": "Washington State Ferries",
+      "logo": "https://s3.amazonaws.com/datatools-production/branding/agency_2_wash_state_ferry.png"
+    },
+    {
+      "feedId": "Whatcom",
+      "agencyId": "Whatcom:14",
+      "name": "Whatcom Transportation Authority",
+      "logo": "https://s3.amazonaws.com/datatools-production/branding/agency_2_wta.png"
+    }
+  ]
+}

@@ -65,10 +65,10 @@ export function getTransitOperatorFromOtpRoute(
   const feedId = route.id.split(":")[0];
   let agencyId: string | number;
   if (route.agency) {
-    // This is returned in the OTP Route model
+    // This is returned in OTP2
     agencyId = route.agency.id;
   } else if (route.agencyId) {
-    // This is returned in the OTP RouteShort model (such as in the IBI fork)
+    // This is returned in OTP1
     agencyId = route.agencyId;
   } else {
     return null;
@@ -112,9 +112,9 @@ function getTransitOperatorComparatorValue(
   // if the transitOperators is undefined or has zero length, use the route's
   // agency name as the comparator value
   if (!transitOperators || transitOperators.length === 0) {
-    // OTP Route
+    // OTP2 Route
     if (route.agency) return route.agency.name;
-    // OTP RouteShort (base OTP repo or IBI fork)
+    // OTP1 Route
     if (route.agencyName) return route.agencyName;
     // shouldn't happen as agency names will be defined
     return "zzz";
@@ -140,7 +140,9 @@ function getTransitOperatorComparatorValue(
  * Calculates the sort comparator value given two routes based off of the
  * route's agency and provided transitOperators config data.
  */
-function makeTransitOperatorComparator(transitOperators: TransitOperator[]) {
+export function makeTransitOperatorComparator(
+  transitOperators: TransitOperator[]
+) {
   return (a: Route, b: Route) => {
     const aVal = getTransitOperatorComparatorValue(a, transitOperators);
     const bVal = getTransitOperatorComparatorValue(b, transitOperators);
@@ -237,7 +239,7 @@ function getRouteTypeComparatorValue(route: Route): number {
  * Calculates the sort comparator value given two routes based off of route type
  * (OTP mode).
  */
-function routeTypeComparator(a: Route, b: Route): number {
+export function routeTypeComparator(a: Route, b: Route): number {
   return getRouteTypeComparatorValue(a) - getRouteTypeComparatorValue(b);
 }
 
@@ -261,7 +263,7 @@ function startsWithAlphabeticCharacter(val: unknown): boolean {
  * character. Routes with shortn that do start with an alphabetic character will
  * be prioritized over those that don't.
  */
-function alphabeticShortNameComparator(a: Route, b: Route): number {
+export function alphabeticShortNameComparator(a: Route, b: Route): number {
   const aStartsWithAlphabeticCharacter = startsWithAlphabeticCharacter(
     a.shortName
   );
@@ -282,6 +284,14 @@ function alphabeticShortNameComparator(a: Route, b: Route): number {
   return 0;
 }
 
+const isNullOrNaN = (val: any): boolean => {
+  // isNaN(null) returns false so we have to check for null explicitly.
+  // Note: Using the global version of isNaN (the Number version behaves differently.
+  // eslint-disable-next-line no-restricted-globals
+  if (typeof val === null || isNaN(val)) return true;
+
+  return typeof val !== "number";
+};
 /**
  * Checks whether an appropriate comparison of numeric values can be made for
  * sorting purposes. If both values are not valid numbers according to the
@@ -304,19 +314,21 @@ function alphabeticShortNameComparator(a: Route, b: Route): number {
 export function makeNumericValueComparator(
   objGetterFn?: (item: Route) => number
 ) {
-  /* Note: Using the global version of isNaN (the Number version behaves differently. */
-  /* eslint-disable no-restricted-globals */
-  return (a: number, b: number): number => {
+  return (a: number, b: number): number | null => {
     const { aVal, bVal } = getSortValues(objGetterFn, a, b);
-    if (typeof aVal !== "number" || typeof bVal !== "number") return 0;
 
     // if both values aren't valid numbers, use the next sort criteria
-    if (isNaN(aVal) && isNaN(bVal)) return 0;
+    if (isNullOrNaN(aVal) && isNullOrNaN(bVal)) {
+      return 0;
+    }
     // b is a valid number, b gets priority
-    if (isNaN(aVal)) return 1;
+    if (isNullOrNaN(aVal)) return 1;
+
     // a is a valid number, a gets priority
-    if (isNaN(bVal)) return -1;
+    if (isNullOrNaN(bVal)) return -1;
+
     // a and b are valid numbers, return the sort value
+    // @ts-expect-error We know from the checks above that both aVal and bVal are valid numbers.
     return aVal - bVal;
   };
 }
@@ -350,15 +362,23 @@ export function makeStringValueComparator(
 }
 
 /**
- * OpenTripPlanner sets the routeSortOrder to -999 by default. So, if that value
- * is encountered, assume that it actually means that the routeSortOrder is not
- * set in the GTFS.
+ * OTP1 sets the routeSortOrder to -999 by default. If we're encountering that value in OTP1,
+ * assume that it actually means that the route sortOrder is not set in the GTFS. If we encounter
+ * it in OTP2, it's a valid value, so we should return it.
  *
  * See https://github.com/opentripplanner/OpenTripPlanner/issues/2938
  * Also see https://github.com/opentripplanner/otp-react-redux/issues/122
+ * This was updated in OTP2 TO be empty by default. https://docs.opentripplanner.org/en/v2.3.0/OTP2-MigrationGuide/#:~:text=the%20Alerts-,Changes%20to%20the%20Index%20API,-Error%20handling%20is
  */
-function getRouteSortOrderValue(val: number): number {
-  return val === -999 ? undefined : val;
+export function getRouteSortOrderValue(route: Route): number {
+  const isOTP1 = !!route.agencyId;
+  const { sortOrder } = route;
+
+  if ((isOTP1 && sortOrder === -999) || sortOrder === undefined) {
+    return null;
+  }
+
+  return sortOrder;
 }
 
 /**
@@ -368,7 +388,7 @@ function getRouteSortOrderValue(val: number): number {
  * returned. If all comparison functions return equivalence, then the values
  * are assumed to be equivalent.
  */
-function makeMultiCriteriaSort(
+export function makeMultiCriteriaSort(
   ...criteria: ((a: unknown, b: unknown) => number)[]
 ) {
   return (a: number, b: number): number => {
@@ -420,7 +440,7 @@ export function makeRouteComparator(
 ): (a: number, b: number) => number {
   return makeMultiCriteriaSort(
     makeTransitOperatorComparator(transitOperators),
-    makeNumericValueComparator(obj => getRouteSortOrderValue(obj.sortOrder)),
+    makeNumericValueComparator(obj => getRouteSortOrderValue(obj)),
     routeTypeComparator,
     alphabeticShortNameComparator,
     makeNumericValueComparator(obj => parseInt(obj.shortName, 10)),
