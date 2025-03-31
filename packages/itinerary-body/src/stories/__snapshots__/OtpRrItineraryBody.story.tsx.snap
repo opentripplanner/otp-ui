@@ -1,5 +1,954 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 1`] = `
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 bquSlg itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jhmzVM">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 VoBOd place-row-wrapper  ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 cJQcPY">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 hDXzfV leg-line">
+      </div>
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 fEkbGq">
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 dFSJJb hSjtGc"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 512 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-ea9ulj-0 hPhvO styled__FromIcon-sc-n5xcvc-0 jTjMOf line-column-content__StyledLocationIcon-sc-1wcbb7o-4 cVyKLp"
+        >
+          <path fill="currentColor"
+                d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 foGJoQ">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 kSfxGv"
+      >
+        KGW Studio on the Sq, Portland, OR, USA
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 hZcOVK">
+      3:44 PM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+      from KGW Studio on the Sq, Portland, OR, USA
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details ">
+      <div class="styled__LegBody-sc-1q8npbl-23 gwGkqk">
+        <div class="styled__LegClickable-sc-1q8npbl-24 gBsxij">
+          <span class="styled__LegDescription-sc-1q8npbl-26 laCHcH">
+            <span class="styled__LegIconAndRouteShortName-sc-1q8npbl-35 goOIbD">
+              <span class="styled__LegIconContainer-sc-1q8npbl-34 elLwWq">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     version="1.0"
+                     x="0px"
+                     y="0px"
+                     viewbox="0 0 55.74 100"
+                     height="100%"
+                     width="100%"
+                     leg="[object Object]"
+                >
+                  <path d="M31.269,13.769c3.862,0,6.884-3.025,6.884-6.885C38.153,3.022,35.131,0,31.269,0c-3.86,0-6.885,3.022-6.885,6.884  C24.384,10.744,27.409,13.769,31.269,13.769z">
+                  </path>
+                  <path d="M1.249,51.724l4.512-0.421L5.863,35.25l8.224-5.204c0,0-1.333,10.545-1.333,16.085c0,4.831-0.172,8.736-0.172,8.736  L2.054,96.918L9.489,100L21.28,61.549l8.195,10.424l9.339,26.337l8.394-3.355l-9.425-27.965L27.446,50.665l2.901-21.399l6.46,13.544  l16.622,5.708l2.311-4.199l-15.234-8.887c0,0-3.691-9.819-6.711-15.962c-1.027-2.091-5.196-2.774-6.894-2.901  c-4.896-0.362-7.428,1.296-11.488,3.432C11.358,22.131,0,30.728,0,30.728L1.249,51.724z">
+                  </path>
+                </svg>
+              </span>
+            </span>
+            <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+              -
+            </span>
+            <span>
+              Walk 269 feet to
+              <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 kJzpP">
+                Pioneer Square North MAX Station
+              </span>
+            </span>
+            <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 kMvDdO hYCcxI">
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                Zoom to leg on map
+              </span>
+            </button>
+          </span>
+        </div>
+        <span class="styled__LegDetails-sc-1q8npbl-39 dpNNWd">
+          <span class="styled__StepsHeaderAndMapLink-sc-1q8npbl-60 bqRtfg">
+            <button aria-expanded="false"
+                    class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 kMvDdO kvSXgs"
+            >
+              1 min
+              <span class="styled__CaretToggle-sc-1q8npbl-16 jCINlv">
+                <svg viewbox="0 0 320 512"
+                     height="15"
+                     width="15"
+                     aria-hidden="true"
+                     focusable="false"
+                     fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg"
+                     class="StyledIconBase-ea9ulj-0 hPhvO"
+                >
+                  <path fill="currentColor"
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  >
+                  </path>
+                </svg>
+              </span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                (Expand details)
+              </span>
+            </button>
+            <a aria-label="Show street imagery at this location"
+               role="link"
+               title="Show street imagery at this location"
+               class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+            >
+              <svg viewbox="0 0 512 512"
+                   aria-hidden="true"
+                   focusable="false"
+                   fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg"
+                   class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                   style="padding-bottom: 1px;"
+              >
+                <path fill="currentColor"
+                      d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                >
+                </path>
+              </svg>
+            </a>
+          </span>
+          <div aria-hidden="true"
+               class="rah-static rah-static--height-zero "
+               style="grid-column: 1 / span 2; height: 0px; overflow: hidden;"
+          >
+            <div style="display: none;">
+              <ol class="styled__Steps-sc-1q8npbl-58 gKCBQH">
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M100.5 110.5v150h60v-150h40l-70-110-70 110h40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Head northwest on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        Unnamed Path
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        167 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M114.5 100.5h60v160h60v-170c0-30-20-50-50-50h-70V.5l-100 69.14 100 70.86v-40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Left on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        Pioneer Sq N (path)
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        101 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+  </li>
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 VoBOd place-row-wrapper transit ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 cJQcPY">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 bzmzLy leg-line">
+      </div>
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 fEkbGq">
+        <svg viewbox="0 0 512 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="black"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 dFSJJb"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 dFSJJb hSjtGc"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 foGJoQ">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 kSfxGv"
+      >
+        Pioneer Square North MAX Station
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 hZcOVK">
+      3:46 PM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+      from Pioneer Square North MAX Station
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details transit">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-49 foIWAW transit-leg-subheader">
+        Stop ID 8383
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 kMvDdO fJbIyq iXoiZX"
+        >
+          Stop Viewer
+        </button>
+      </div>
+      <div class="styled__LegBody-sc-1q8npbl-23 gwGkqk">
+        <div class="styled__LegClickable-sc-1q8npbl-24 gBsxij">
+          <span class="styled__LegDescription-sc-1q8npbl-26 laCHcH">
+            <span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                - Ride
+              </span>
+              <span class="styled__LegDescription-sc-1q8npbl-26 styled__LegDescriptionForTransit-sc-1q8npbl-33 laCHcH bZCrTn">
+                <span class="styled__LegIconAndRouteShortName-sc-1q8npbl-35 goOIbD">
+                  <span class="styled__LegIconContainer-sc-1q8npbl-34 elLwWq">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         version="1.0"
+                         viewbox="0 0 66.461 100"
+                         height="100%"
+                         width="100%"
+                         leg="[object Object]"
+                         aria-label="TRAM"
+                    >
+                      <path d="M28.549,7.023c-1.933-0.007-3.508-1.582-3.512-3.511C25.041,1.555,26.616-0.021,28.549,0  c1.952-0.021,3.526,1.555,3.511,3.512C32.075,5.441,30.5,7.016,28.549,7.023L28.549,7.023z">
+                      </path>
+                      <path d="M37.913,7.023c1.936-0.007,3.512-1.582,3.512-3.511c0-1.957-1.576-3.532-3.512-3.512c-1.95-0.021-3.525,1.555-3.512,3.512  C34.388,5.441,35.963,7.016,37.913,7.023L37.913,7.023z">
+                      </path>
+                      <path d="M51.856,78.064c4.872-0.809,9.73-5.898,9.719-12.109V20.611C61.587,14.218,56.2,8.34,48.903,8.347H33.281H17.606  C10.265,8.34,4.878,14.218,4.885,20.611v45.344c-0.007,6.211,4.852,11.301,9.719,12.109L0,100h8.446l10.432-15.37H33.23h14.351  L58.063,100h8.397L51.856,78.064z M24.986,13.031c0.002-1.136,0.969-2.072,2.085-2.088h6.158h6.159  c1.117,0.016,2.088,0.952,2.088,2.088v3.559c0,1.133-0.916,2.092-2.088,2.088H33.23h-6.158c-1.167,0.004-2.083-0.955-2.085-2.088  V13.031z M17.301,71.45c-3.059-0.023-5.553-2.517-5.546-5.598c-0.007-3.071,2.487-5.562,5.546-5.547  c3.09-0.016,5.584,2.476,5.598,5.547C22.886,68.934,20.391,71.427,17.301,71.45z M18.014,41.986  c-3.508-0.021-6.369-2.421-6.362-6.363v-8.141c0.025-3.396,2.219-6.356,6.362-6.363H33.23h15.215  c4.148,0.007,6.343,2.967,6.363,6.363v8.141c0.011,3.942-2.85,6.343-6.363,6.363H33.23H18.014z M43.46,65.853  c-0.009-3.071,2.482-5.562,5.545-5.547c3.09-0.016,5.584,2.476,5.6,5.547c-0.016,3.081-2.51,5.574-5.6,5.598  C45.942,71.427,43.451,68.934,43.46,65.853z">
+                      </path>
+                    </svg>
+                  </span>
+                  <span class="styled__LegDescriptionRouteShortName-sc-1q8npbl-32 jYEoDm">
+                    MAX Blue Line
+                  </span>
+                </span>
+                <span class="styled__LegDescriptionRouteLongName-sc-1q8npbl-31 eaaVYt">
+                  <span>
+                    MAX Blue Line
+                    <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 eFyMla">
+                      to
+                    </span>
+                    Hillsboro
+                  </span>
+                </span>
+              </span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                - Disembark at Providence Park MAX Station
+              </span>
+            </span>
+            <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 kMvDdO hYCcxI transit-leg-button">
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                Zoom to leg on map
+              </span>
+            </button>
+          </span>
+        </div>
+        <div class="transit-leg-details-wrapper"
+             aria-label="Leg details"
+             role="group"
+        >
+          <div class="styled__AgencyInfo-sc-1q8npbl-86 ghiwok agency-info">
+            Service operated by
+            <a aria-label="TriMet (External Link)"
+               href="http://trimet.org/"
+               rel="noopener noreferrer"
+               target="_blank"
+            >
+              TriMet
+              <img alt
+                   src="http://news.trimet.org/wordpress/wp-content/uploads/2019/04/TriMet-logo-300x300.png"
+                   height="25"
+              >
+            </a>
+          </div>
+          <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 kMvDdO eQRVPw alert-toggle">
+            <svg viewbox="0 0 576 512"
+                 height="15"
+                 width="15"
+                 aria-hidden="true"
+                 focusable="false"
+                 fill="currentColor"
+                 xmlns="http://www.w3.org/2000/svg"
+                 class="StyledIconBase-ea9ulj-0 hPhvO styled__DefaultAlertToggleIcon-sc-1q8npbl-84 iegDvr"
+            >
+              <path fill="currentColor"
+                    d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+              >
+              </path>
+            </svg>
+            3 alerts
+            <span class="styled__CaretToggle-sc-1q8npbl-16 jCINlv">
+              <svg viewbox="0 0 320 512"
+                   height="15"
+                   width="15"
+                   aria-hidden="true"
+                   focusable="false"
+                   fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg"
+                   class="StyledIconBase-ea9ulj-0 hPhvO"
+              >
+                <path fill="currentColor"
+                      d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                >
+                </path>
+              </svg>
+            </span>
+            <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+              (Expand details)
+            </span>
+          </button>
+          <div aria-hidden="true"
+               class="rah-static rah-static--height-zero "
+               style="height: 0px; overflow: hidden;"
+          >
+            <div style="display: none;">
+              <ul class="styled__TransitAlerts-sc-1q8npbl-77 cBoXNt alert-body">
+                <li class="styled__TransitAlert-sc-1q8npbl-71 dCIwGA">
+                  <div class="styled__TransitAlertIconContainer-sc-1q8npbl-76 Xalv">
+                    <svg viewbox="0 0 576 512"
+                         height="18"
+                         width="18"
+                         aria-hidden="true"
+                         focusable="false"
+                         fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg"
+                         class="StyledIconBase-ea9ulj-0 hPhvO styled__DefaultAlertBodyIcon-sc-1q8npbl-85 cgxUCw"
+                    >
+                      <path fill="currentColor"
+                            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                      >
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
+                    TriMet Customer Service will be unavailable to serve text messages or Twitter responses from 9:00 p.m.- 11:30 p.m. For immediate assistance regarding safety or security concerns, please contact the police via 911.
+                  </div>
+                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
+                    <a href="http://trimet.org/alerts/"
+                       target="_blank"
+                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           height="10"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO"
+                      >
+                        <path fill="currentColor"
+                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
+                        >
+                        </path>
+                      </svg>
+                      See alert on TriMet website
+                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                        (Opens new window)
+                      </span>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__TransitAlert-sc-1q8npbl-71 dCIwGA">
+                  <div class="styled__TransitAlertIconContainer-sc-1q8npbl-76 Xalv">
+                    <svg viewbox="0 0 576 512"
+                         height="18"
+                         width="18"
+                         aria-hidden="true"
+                         focusable="false"
+                         fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg"
+                         class="StyledIconBase-ea9ulj-0 hPhvO styled__DefaultAlertBodyIcon-sc-1q8npbl-85 cgxUCw"
+                    >
+                      <path fill="currentColor"
+                            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                      >
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
+                    The Park and Ride garage elevator at Sunset Transit Center is closed for approximately 3 months for improvements. During this time garage users must use the stairs or find alternate parking. Visit trimet.org/parkandride for a complete list of Park and Ride garages.
+                  </div>
+                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
+                    <a href="https://news.trimet.org/2019/11/next-up-for-elevator-improvements-sunset-transit-center-park-ride/"
+                       target="_blank"
+                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           height="10"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO"
+                      >
+                        <path fill="currentColor"
+                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
+                        >
+                        </path>
+                      </svg>
+                      See alert on TriMet website
+                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                        (Opens new window)
+                      </span>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__TransitAlert-sc-1q8npbl-71 dCIwGA">
+                  <div class="styled__TransitAlertIconContainer-sc-1q8npbl-76 Xalv">
+                    <svg viewbox="0 0 576 512"
+                         height="18"
+                         width="18"
+                         aria-hidden="true"
+                         focusable="false"
+                         fill="currentColor"
+                         xmlns="http://www.w3.org/2000/svg"
+                         class="StyledIconBase-ea9ulj-0 hPhvO styled__DefaultAlertBodyIcon-sc-1q8npbl-85 cgxUCw"
+                    >
+                      <path fill="currentColor"
+                            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+                      >
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__TransitAlertBody-sc-1q8npbl-73 XSXTu">
+                    The west elevators at the Washington Park MAX Station are out of service. Please use east elevators to access street level and platforms.
+                  </div>
+                  <div class="styled__TransitAlertEffectiveDate-sc-1q8npbl-74 bscJLY">
+                    <a href="http://trimet.org/alerts/"
+                       target="_blank"
+                       class="styled__TransitAlertExternalLink-sc-1q8npbl-72 dUkjpi"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           height="10"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO"
+                      >
+                        <path fill="currentColor"
+                              d="M432 320h-32a16 16 0 0 0-16 16v112H64V128h144a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v352a48 48 0 0 0 48 48h352a48 48 0 0 0 48-48V336a16 16 0 0 0-16-16zM488 0H360c-21.37 0-32.05 25.91-17 41l35.73 35.73L135 320.37a24 24 0 0 0 0 34L157.67 377a24 24 0 0 0 34 0l243.61-243.68L471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z"
+                        >
+                        </path>
+                      </svg>
+                      See alert on TriMet website
+                      <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                        (Opens new window)
+                      </span>
+                    </a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="styled__TransitLegDetails-sc-1q8npbl-79 hnyeXC transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 mFuQb">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 kMvDdO kYLkmR">
+                Ride 3 min / 2 stops
+                <span class="styled__CaretToggle-sc-1q8npbl-16 jCINlv">
+                  <svg viewbox="0 0 320 512"
+                       height="15"
+                       width="15"
+                       aria-hidden="true"
+                       focusable="false"
+                       fill="currentColor"
+                       xmlns="http://www.w3.org/2000/svg"
+                       class="StyledIconBase-ea9ulj-0 hPhvO"
+                  >
+                    <path fill="currentColor"
+                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    >
+                    </path>
+                  </svg>
+                </span>
+                <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                  (Expand details)
+                </span>
+              </button>
+              <button role="link"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 kMvDdO fJbIyq iXoiZX"
+              >
+                Trip Viewer
+              </button>
+            </div>
+            <div aria-hidden="true"
+                 class="rah-static rah-static--height-zero "
+                 style="height: 0px; overflow: hidden;"
+            >
+              <div style="display: none;">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 jrUaZg">
+                  <ol class="styled__IntermediateStops-sc-1q8npbl-21 fqzSmC">
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Galleria/SW 10th Ave MAX Station
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+            <span>
+              Typical wait: 15 min
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 VoBOd place-row-wrapper  ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 cJQcPY">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 hDXzfV leg-line">
+      </div>
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 fEkbGq">
+        <svg viewbox="0 0 512 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="black"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 dFSJJb"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 dFSJJb hSjtGc"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 foGJoQ">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 kSfxGv"
+      >
+        Providence Park MAX Station
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 hZcOVK">
+      3:49 PM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+      from Providence Park MAX Station
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-49 foIWAW transit-leg-subheader">
+        Stop ID 9757
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 kMvDdO fJbIyq iXoiZX"
+        >
+          Stop Viewer
+        </button>
+      </div>
+      <div class="styled__LegBody-sc-1q8npbl-23 gwGkqk">
+        <div class="styled__LegClickable-sc-1q8npbl-24 gBsxij">
+          <span class="styled__LegDescription-sc-1q8npbl-26 laCHcH">
+            <span class="styled__LegIconAndRouteShortName-sc-1q8npbl-35 goOIbD">
+              <span class="styled__LegIconContainer-sc-1q8npbl-34 elLwWq">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     version="1.0"
+                     x="0px"
+                     y="0px"
+                     viewbox="0 0 55.74 100"
+                     height="100%"
+                     width="100%"
+                     leg="[object Object]"
+                >
+                  <path d="M31.269,13.769c3.862,0,6.884-3.025,6.884-6.885C38.153,3.022,35.131,0,31.269,0c-3.86,0-6.885,3.022-6.885,6.884  C24.384,10.744,27.409,13.769,31.269,13.769z">
+                  </path>
+                  <path d="M1.249,51.724l4.512-0.421L5.863,35.25l8.224-5.204c0,0-1.333,10.545-1.333,16.085c0,4.831-0.172,8.736-0.172,8.736  L2.054,96.918L9.489,100L21.28,61.549l8.195,10.424l9.339,26.337l8.394-3.355l-9.425-27.965L27.446,50.665l2.901-21.399l6.46,13.544  l16.622,5.708l2.311-4.199l-15.234-8.887c0,0-3.691-9.819-6.711-15.962c-1.027-2.091-5.196-2.774-6.894-2.901  c-4.896-0.362-7.428,1.296-11.488,3.432C11.358,22.131,0,30.728,0,30.728L1.249,51.724z">
+                  </path>
+                </svg>
+              </span>
+            </span>
+            <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+              -
+            </span>
+            <span>
+              Walk 249 feet to
+              <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 kJzpP">
+                1737 SW Morrison St, Portland, OR, USA 97205
+              </span>
+            </span>
+            <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 kMvDdO hYCcxI">
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                Zoom to leg on map
+              </span>
+            </button>
+          </span>
+        </div>
+        <span class="styled__LegDetails-sc-1q8npbl-39 dpNNWd">
+          <span class="styled__StepsHeaderAndMapLink-sc-1q8npbl-60 bqRtfg">
+            <button aria-expanded="false"
+                    class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 kMvDdO kvSXgs"
+            >
+              1 min
+              <span class="styled__CaretToggle-sc-1q8npbl-16 jCINlv">
+                <svg viewbox="0 0 320 512"
+                     height="15"
+                     width="15"
+                     aria-hidden="true"
+                     focusable="false"
+                     fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg"
+                     class="StyledIconBase-ea9ulj-0 hPhvO"
+                >
+                  <path fill="currentColor"
+                        d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                  >
+                  </path>
+                </svg>
+              </span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                (Expand details)
+              </span>
+            </button>
+            <a aria-label="Show street imagery at this location"
+               role="link"
+               title="Show street imagery at this location"
+               class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+            >
+              <svg viewbox="0 0 512 512"
+                   aria-hidden="true"
+                   focusable="false"
+                   fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg"
+                   class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                   style="padding-bottom: 1px;"
+              >
+                <path fill="currentColor"
+                      d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                >
+                </path>
+              </svg>
+            </a>
+          </span>
+          <div aria-hidden="true"
+               class="rah-static rah-static--height-zero "
+               style="grid-column: 1 / span 2; height: 0px; overflow: hidden;"
+          >
+            <div style="display: none;">
+              <ol class="styled__Steps-sc-1q8npbl-58 gKCBQH">
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M100.5 110.5v150h60v-150h40l-70-110-70 110h40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Head west on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        Providence Park (path)
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        19 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M146.5 140.5l100-70.86L146.5.5v40h-70c-30 0-50 20-50 50v170h60v-160h60v40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Right on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        Unnamed Path
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        104 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M146.5 140.5l100-70.86L146.5.5v40h-70c-30 0-50 20-50 50v170h60v-160h60v40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Right on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        Unnamed Path
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        27 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 hZAklt">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 pfBJI">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M146.5 140.5l100-70.86L146.5.5v40h-70c-30 0-50 20-50 50v170h60v-160h60v40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 frqoWk">
+                    <span>
+                      Right on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 elNGxw">
+                        SW Morrison St
+                      </span>
+                      <span class="styled__StepLength-sc-1q8npbl-66 AhGhp">
+                        99 feet
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 iVqTRj"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-ea9ulj-0 hPhvO mapillary-button__Icon-sc-l7gdsc-1 gLBduy"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M367.9 329.76c-4.62 5.3-9.78 10.1-15.9 13.65v22.94c66.52 9.34 112 28.05 112 49.65 0 30.93-93.12 56-208 56S48 446.93 48 416c0-21.6 45.48-40.3 112-49.65v-22.94c-6.12-3.55-11.28-8.35-15.9-13.65C58.87 345.34 0 378.05 0 416c0 53.02 114.62 96 256 96s256-42.98 256-96c0-37.95-58.87-70.66-144.1-86.24zM256 128c35.35 0 64-28.65 64-64S291.35 0 256 0s-64 28.65-64 64 28.65 64 64 64zm-64 192v96c0 17.67 14.33 32 32 32h64c17.67 0 32-14.33 32-32v-96c17.67 0 32-14.33 32-32v-96c0-26.51-21.49-48-48-48h-11.8c-11.07 5.03-23.26 8-36.2 8s-25.13-2.97-36.2-8H208c-26.51 0-48 21.49-48 48v96c0 17.67 14.33 32 32 32z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+  </li>
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 VoBOd place-row-wrapper  ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 cJQcPY">
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 fEkbGq">
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 dFSJJb hSjtGc"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 384 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-ea9ulj-0 hPhvO styled__ToIcon-sc-n5xcvc-2 ipFnZE line-column-content__StyledLocationIcon-sc-1wcbb7o-4 cVyKLp"
+        >
+          <path fill="currentColor"
+                d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 foGJoQ">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 kSfxGv"
+      >
+        1737 SW Morrison St, Portland, OR, USA 97205
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 hZcOVK">
+      3:50 PM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+      Arrive at 1737 SW Morrison St, Portland, OR, USA 97205
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details ">
+    </div>
+  </li>
+</ol>
+`;
+
 exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 bquSlg itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jhmzVM">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 VoBOd place-row-wrapper  ">
@@ -14176,7 +15125,7 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
       9:19 AM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
-      from Razor Shared bike
+      from Razor E-scooter
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details ">
       <div class="styled__PlaceSubheader-sc-1q8npbl-49 foIWAW">
@@ -18128,6 +19077,503 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
       Arrive at 205 SW Pine St, Portland, OR, USA 97204
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details ">
+    </div>
+  </li>
+</ol>
+`;
+
+exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 bquSlg itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jhmzVM">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 VoBOd place-row-wrapper transit ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 cJQcPY">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 bXFWQa leg-line">
+      </div>
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 fEkbGq">
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 dFSJJb hSjtGc"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 512 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-ea9ulj-0 hPhvO styled__FromIcon-sc-n5xcvc-0 jTjMOf line-column-content__StyledLocationIcon-sc-1wcbb7o-4 cVyKLp"
+        >
+          <path fill="currentColor"
+                d="M256 56c110.532 0 200 89.451 200 200 0 110.532-89.451 200-200 200-110.532 0-200-89.451-200-200 0-110.532 89.451-200 200-200m0-48C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 168c-44.183 0-80 35.817-80 80s35.817 80 80 80 80-35.817 80-80-35.817-80-80-80z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 foGJoQ">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 kSfxGv"
+      >
+        Aurora Ave N &amp; N 38th St
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 hZcOVK">
+      6:46 AM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+      from Aurora Ave N &amp; N 38th St
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details transit">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-49 foIWAW transit-leg-subheader">
+        Stop ID 6050
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 kMvDdO fJbIyq iXoiZX"
+        >
+          Stop Viewer
+        </button>
+      </div>
+      <div class="styled__LegBody-sc-1q8npbl-23 gwGkqk">
+        <div class="styled__LegClickable-sc-1q8npbl-24 gBsxij">
+          <span class="styled__LegDescription-sc-1q8npbl-26 laCHcH">
+            <span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                - Ride
+              </span>
+              <span class="styled__LegDescription-sc-1q8npbl-26 styled__LegDescriptionForTransit-sc-1q8npbl-33 laCHcH bZCrTn">
+                <span class="styled__LegIconAndRouteShortName-sc-1q8npbl-35 goOIbD">
+                  <span class="styled__LegIconContainer-sc-1q8npbl-34 elLwWq">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         version="1.0"
+                         viewbox="0 0 81.59 99.992"
+                         height="100%"
+                         width="100%"
+                         leg="[object Object]"
+                         aria-label="BUS"
+                    >
+                      <path d="M68.848,68.51">
+                      </path>
+                      <path d="M12.687,68.51">
+                      </path>
+                      <g>
+                        <path d="M77.619,14.775c-1.098-5.528-4.622-7.731-9.931-9.93C62.499,2.668,50.02,0.079,40.794,0 c-9.243,0.079-21.722,2.668-26.948,4.846c-5.271,2.199-8.795,4.402-9.875,9.93L0,45.284v42.091h6.84v6.564 c-0.027,8.071,11.745,8.071,11.75,0v-6.564h21.737h0.054H63v6.564c-0.014,8.071,11.759,8.071,11.75,0v-6.564h6.84V45.284 L77.619,14.775z M23.996,7.715h16.385h17.212c3.286-0.009,3.286,4.949,0,4.965H40.327H23.996 C20.694,12.664,20.694,7.706,23.996,7.715z M12.687,74.191c-3.101-0.015-5.631-2.542-5.627-5.682 c-0.004-3.099,2.526-5.627,5.627-5.627c3.136,0,5.665,2.528,5.683,5.627C18.352,71.649,15.823,74.177,12.687,74.191z M40.381,48.482H10.426c-2.925,0.028-3.54-2.081-3.253-4.192l3.088-22.177c0.425-2.67,1.336-4.443,4.854-4.468h25.213h26.149 c3.498,0.025,4.412,1.797,4.854,4.468l3.09,22.177c0.266,2.112-0.348,4.22-3.256,4.192H40.381z M68.848,74.191 c-3.1-0.015-5.628-2.542-5.628-5.682c0-3.099,2.528-5.627,5.628-5.627c3.137,0,5.667,2.528,5.681,5.627 C74.515,71.649,71.985,74.177,68.848,74.191z">
+                        </path>
+                        <path d="M40.381-0.007c0.135,0,0.277,0.006,0.414,0.007c0.137-0.001,0.278-0.007,0.414-0.007H40.381z">
+                        </path>
+                      </g>
+                    </svg>
+                  </span>
+                  <span class="styled__LegDescriptionRouteShortName-sc-1q8npbl-32 jYEoDm">
+                    5
+                  </span>
+                </span>
+                <span class="styled__LegDescriptionRouteLongName-sc-1q8npbl-31 eaaVYt">
+                  <span>
+                    Downtown Seattle Greenwood
+                  </span>
+                </span>
+              </span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                - Stay on Board at
+                <strong>
+                  Wall St &amp; 5th Ave
+                </strong>
+              </span>
+            </span>
+            <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 kMvDdO hYCcxI transit-leg-button">
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                Zoom to leg on map
+              </span>
+            </button>
+          </span>
+        </div>
+        <div class="transit-leg-details-wrapper"
+             aria-label="Leg details"
+             role="group"
+        >
+          <div class="styled__AgencyInfo-sc-1q8npbl-86 ghiwok agency-info">
+            Service operated by
+            <a aria-label="Metro Transit (External Link)"
+               href="https://kingcounty.gov/en/dept/metro"
+               rel="noopener noreferrer"
+               target="_blank"
+            >
+              Metro Transit
+              <img alt
+                   src="https://kingcounty.gov/en/dept/metro"
+                   height="25"
+              >
+            </a>
+          </div>
+          <div aria-hidden="false"
+               class="rah-static rah-static--height-auto "
+               style="height: auto; overflow: visible;"
+          >
+            <div>
+              <ul class="styled__TransitAlerts-sc-1q8npbl-77 cBoXNt alert-body">
+              </ul>
+            </div>
+          </div>
+          <div class="styled__TransitLegDetails-sc-1q8npbl-79 hnyeXC transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 mFuQb">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 kMvDdO kYLkmR">
+                Ride 7 min / 7 stops
+                <span class="styled__CaretToggle-sc-1q8npbl-16 jCINlv">
+                  <svg viewbox="0 0 320 512"
+                       height="15"
+                       width="15"
+                       aria-hidden="true"
+                       focusable="false"
+                       fill="currentColor"
+                       xmlns="http://www.w3.org/2000/svg"
+                       class="StyledIconBase-ea9ulj-0 hPhvO"
+                  >
+                    <path fill="currentColor"
+                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    >
+                    </path>
+                  </svg>
+                </span>
+                <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                  (Expand details)
+                </span>
+              </button>
+              <button role="link"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 kMvDdO fJbIyq iXoiZX"
+              >
+                Trip Viewer
+              </button>
+            </div>
+            <div aria-hidden="true"
+                 class="rah-static rah-static--height-zero "
+                 style="height: 0px; overflow: hidden;"
+            >
+              <div style="display: none;">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 jrUaZg">
+                  <ol class="styled__IntermediateStops-sc-1q8npbl-21 fqzSmC">
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Aurora Ave N &amp; Halladay St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Aurora Ave N &amp; Lynn St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Aurora Ave N &amp; Crockett St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Aurora Ave N &amp; Galer St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        Aurora Ave N &amp; Prospect St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        7th Ave N &amp; Thomas St
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 VoBOd place-row-wrapper transit ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 cJQcPY">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kzBpPK leg-line">
+      </div>
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 fEkbGq">
+        <div class="styled__InterlineDot-sc-1q8npbl-19 bIhFdC">
+        </div>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 foGJoQ">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 kSfxGv"
+      >
+        Stay on Board at
+        <strong>
+          Wall St &amp; 5th Ave
+        </strong>
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 hZcOVK">
+      6:53 AM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+      Stay on Board at
+      <strong>
+        Wall St &amp; 5th Ave
+      </strong>
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details transit">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-49 foIWAW transit-leg-subheader">
+        Stop ID 7430
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 kMvDdO fJbIyq iXoiZX"
+        >
+          Stop Viewer
+        </button>
+      </div>
+      <div class="styled__LegBody-sc-1q8npbl-23 gwGkqk">
+        <div class="styled__LegClickable-sc-1q8npbl-24 gBsxij">
+          <span class="styled__LegDescription-sc-1q8npbl-26 laCHcH">
+            <span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                - Ride
+              </span>
+              <span class="styled__LegDescription-sc-1q8npbl-26 styled__LegDescriptionForTransit-sc-1q8npbl-33 laCHcH bZCrTn">
+                <span class="styled__LegIconAndRouteShortName-sc-1q8npbl-35 goOIbD">
+                  <span class="styled__LegIconContainer-sc-1q8npbl-34 elLwWq">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         version="1.0"
+                         viewbox="0 0 81.59 99.992"
+                         height="100%"
+                         width="100%"
+                         leg="[object Object]"
+                         aria-label="BUS"
+                    >
+                      <path d="M68.848,68.51">
+                      </path>
+                      <path d="M12.687,68.51">
+                      </path>
+                      <g>
+                        <path d="M77.619,14.775c-1.098-5.528-4.622-7.731-9.931-9.93C62.499,2.668,50.02,0.079,40.794,0 c-9.243,0.079-21.722,2.668-26.948,4.846c-5.271,2.199-8.795,4.402-9.875,9.93L0,45.284v42.091h6.84v6.564 c-0.027,8.071,11.745,8.071,11.75,0v-6.564h21.737h0.054H63v6.564c-0.014,8.071,11.759,8.071,11.75,0v-6.564h6.84V45.284 L77.619,14.775z M23.996,7.715h16.385h17.212c3.286-0.009,3.286,4.949,0,4.965H40.327H23.996 C20.694,12.664,20.694,7.706,23.996,7.715z M12.687,74.191c-3.101-0.015-5.631-2.542-5.627-5.682 c-0.004-3.099,2.526-5.627,5.627-5.627c3.136,0,5.665,2.528,5.683,5.627C18.352,71.649,15.823,74.177,12.687,74.191z M40.381,48.482H10.426c-2.925,0.028-3.54-2.081-3.253-4.192l3.088-22.177c0.425-2.67,1.336-4.443,4.854-4.468h25.213h26.149 c3.498,0.025,4.412,1.797,4.854,4.468l3.09,22.177c0.266,2.112-0.348,4.22-3.256,4.192H40.381z M68.848,74.191 c-3.1-0.015-5.628-2.542-5.628-5.682c0-3.099,2.528-5.627,5.628-5.627c3.137,0,5.667,2.528,5.681,5.627 C74.515,71.649,71.985,74.177,68.848,74.191z">
+                        </path>
+                        <path d="M40.381-0.007c0.135,0,0.277,0.006,0.414,0.007c0.137-0.001,0.278-0.007,0.414-0.007H40.381z">
+                        </path>
+                      </g>
+                    </svg>
+                  </span>
+                  <span class="styled__LegDescriptionRouteShortName-sc-1q8npbl-32 jYEoDm">
+                    21
+                  </span>
+                </span>
+                <span class="styled__LegDescriptionRouteLongName-sc-1q8npbl-31 eaaVYt">
+                  <span>
+                    Westwood Village Via 35th Ave SW
+                  </span>
+                </span>
+              </span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                - Disembark at 1st Ave S &amp; S Atlantic St
+              </span>
+            </span>
+            <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 kMvDdO hYCcxI transit-leg-button">
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                Zoom to leg on map
+              </span>
+            </button>
+          </span>
+        </div>
+        <div class="transit-leg-details-wrapper"
+             aria-label="Leg details"
+             role="group"
+        >
+          <div class="styled__AgencyInfo-sc-1q8npbl-86 ghiwok agency-info">
+            Service operated by
+            <a aria-label="Metro Transit (External Link)"
+               href="https://kingcounty.gov/en/dept/metro"
+               rel="noopener noreferrer"
+               target="_blank"
+            >
+              Metro Transit
+              <img alt
+                   src="https://kingcounty.gov/en/dept/metro"
+                   height="25"
+              >
+            </a>
+          </div>
+          <div aria-hidden="false"
+               class="rah-static rah-static--height-auto "
+               style="height: auto; overflow: visible;"
+          >
+            <div>
+              <ul class="styled__TransitAlerts-sc-1q8npbl-77 cBoXNt alert-body">
+              </ul>
+            </div>
+          </div>
+          <div class="styled__TransitLegDetails-sc-1q8npbl-79 hnyeXC transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 mFuQb">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 kMvDdO kYLkmR">
+                Ride 16 min / 7 stops
+                <span class="styled__CaretToggle-sc-1q8npbl-16 jCINlv">
+                  <svg viewbox="0 0 320 512"
+                       height="15"
+                       width="15"
+                       aria-hidden="true"
+                       focusable="false"
+                       fill="currentColor"
+                       xmlns="http://www.w3.org/2000/svg"
+                       class="StyledIconBase-ea9ulj-0 hPhvO"
+                  >
+                    <path fill="currentColor"
+                          d="M31.3 192h257.3c17.8 0 26.7 21.5 14.1 34.1L174.1 354.8c-7.8 7.8-20.5 7.8-28.3 0L17.2 226.1C4.6 213.5 13.5 192 31.3 192z"
+                    >
+                    </path>
+                  </svg>
+                </span>
+                <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+                  (Expand details)
+                </span>
+              </button>
+              <button role="link"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 kMvDdO fJbIyq iXoiZX"
+              >
+                Trip Viewer
+              </button>
+            </div>
+            <div aria-hidden="true"
+                 class="rah-static rah-static--height-zero "
+                 style="height: 0px; overflow: hidden;"
+            >
+              <div style="display: none;">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 jrUaZg">
+                  <ol class="styled__IntermediateStops-sc-1q8npbl-21 fqzSmC">
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        3rd Ave &amp; Bell St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        3rd Ave &amp; Virginia St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        3rd Ave &amp; Pike St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        3rd Ave &amp; Seneca St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        3rd Ave &amp; Cherry St
+                      </div>
+                    </li>
+                    <li class="styled__StopRow-sc-1q8npbl-70 hHYFrC">
+                      <div class="styled__StopMarker-sc-1q8npbl-68 chPtJv">
+                        •
+                      </div>
+                      <div class="styled__StopName-sc-1q8npbl-69 TGQjr">
+                        3rd Ave S &amp; S Main St
+                      </div>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 VoBOd place-row-wrapper transit ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 cJQcPY">
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 fEkbGq">
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-ea9ulj-0 hPhvO line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 dFSJJb hSjtGc"
+        >
+          <path fill="currentColor"
+                d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 384 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-ea9ulj-0 hPhvO styled__ToIcon-sc-n5xcvc-2 ipFnZE line-column-content__StyledLocationIcon-sc-1wcbb7o-4 cVyKLp"
+        >
+          <path fill="currentColor"
+                d="M172.268 501.67C26.97 291.031 0 269.413 0 192 0 85.961 85.961 0 192 0s192 85.961 192 192c0 77.413-26.97 99.031-172.268 309.67-9.535 13.774-29.93 13.773-39.464 0zM192 272c44.183 0 80-35.817 80-80s-35.817-80-80-80-80 35.817-80 80 35.817 80 80 80z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 foGJoQ">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 kSfxGv"
+      >
+        1st Ave S &amp; S Atlantic St
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 hZcOVK">
+      7:09 AM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 lJrtw invisible-additional-details">
+      Arrive at 1st Ave S &amp; S Atlantic St
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 cDPmHA place-details transit">
     </div>
   </li>
 </ol>

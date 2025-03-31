@@ -5,7 +5,7 @@ import { Alert } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
-import { ExternalLinkAlt } from "@styled-icons/fa-solid";
+import { ExternalLinkAlt } from "@styled-icons/fa-solid/ExternalLinkAlt";
 import * as S from "../styled";
 import { defaultMessages } from "../util";
 
@@ -15,6 +15,7 @@ interface Props {
   agencyName?: string;
   alerts: Alert[];
   AlertIcon?: FunctionComponent;
+  showAlertEffectiveDateTimeText?: boolean;
   timeZone?: string;
 }
 
@@ -67,6 +68,7 @@ export default function AlertsBody({
   agencyName,
   alerts,
   AlertIcon = S.DefaultAlertBodyIcon,
+  showAlertEffectiveDateTimeText = true,
   timeZone = getUserTimezone()
 }: Props): ReactElement {
   if (typeof alerts !== "object") return null;
@@ -106,33 +108,37 @@ export default function AlertsBody({
                 )}
                 <S.TransitAlertBody>{description}</S.TransitAlertBody>
                 <S.TransitAlertEffectiveDate>
-                  {Math.abs(dayDiff) <= 1 ? (
-                    <FormattedMessage
-                      defaultMessage={
-                        defaultMessages[
-                          "otpUi.TransitLegBody.AlertsBody.effectiveTimeAndDate"
-                        ]
-                      }
-                      description="Text with the time and date an alert takes effect"
-                      id="otpUi.TransitLegBody.AlertsBody.effectiveTimeAndDate"
-                      values={{
-                        dateTime: effectiveStartDate * 1000,
-                        day: <AlertDay dayDiff={dayDiff} />
-                      }}
-                    />
-                  ) : (
-                    <FormattedMessage
-                      defaultMessage={
-                        defaultMessages[
-                          "otpUi.TransitLegBody.AlertsBody.effectiveDate"
-                        ]
-                      }
-                      description="Text with the date an alert takes effect"
-                      id="otpUi.TransitLegBody.AlertsBody.effectiveDate"
-                      values={{
-                        dateTime: effectiveStartDate * 1000
-                      }}
-                    />
+                  {showAlertEffectiveDateTimeText && (
+                    <>
+                      {Math.abs(dayDiff) <= 1 ? (
+                        <FormattedMessage
+                          defaultMessage={
+                            defaultMessages[
+                              "otpUi.TransitLegBody.AlertsBody.effectiveTimeAndDate"
+                            ]
+                          }
+                          description="Text with the time and date an alert takes effect"
+                          id="otpUi.TransitLegBody.AlertsBody.effectiveTimeAndDate"
+                          values={{
+                            dateTime: effectiveStartDate * 1000,
+                            day: <AlertDay dayDiff={dayDiff} />
+                          }}
+                        />
+                      ) : (
+                        <FormattedMessage
+                          defaultMessage={
+                            defaultMessages[
+                              "otpUi.TransitLegBody.AlertsBody.effectiveDate"
+                            ]
+                          }
+                          description="Text with the date an alert takes effect"
+                          id="otpUi.TransitLegBody.AlertsBody.effectiveDate"
+                          values={{
+                            dateTime: effectiveStartDate * 1000
+                          }}
+                        />
+                      )}
+                    </>
                   )}
                   {alertUrl?.trim() && (
                     <S.TransitAlertExternalLink href={alertUrl} target="_blank">

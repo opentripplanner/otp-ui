@@ -65,6 +65,10 @@ interface Props {
    */
   setLocation?: (arg: MapLocationActionArg) => void;
   /**
+   * Opens the nearby view from the location coordinates
+   */
+  setViewNearby?: (arg: Location) => void;
+  /**
    * Whether or not to show the user settings popup when an endpoint is clicked.
    */
   showUserSettings?: boolean;
@@ -121,6 +125,7 @@ const EndpointsOverlay = ({
   MapMarkerIcon = DefaultMapMarkerIcon,
   rememberPlace = noop,
   setLocation = noop,
+  setViewNearby = noop,
   showUserSettings,
   toLocation
 }: Props): ReactElement => (
@@ -133,6 +138,7 @@ const EndpointsOverlay = ({
       MapMarkerIcon={MapMarkerIcon}
       rememberPlace={rememberPlace}
       setLocation={setLocation}
+      setViewNearby={setViewNearby}
       showUserSettings={showUserSettings}
       type="from"
     />
@@ -161,6 +167,7 @@ const EndpointsOverlay = ({
       rememberPlace={rememberPlace}
       setLocation={setLocation}
       showUserSettings={showUserSettings}
+      setViewNearby={setViewNearby}
       type="to"
     />
   </div>

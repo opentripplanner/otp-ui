@@ -127,9 +127,35 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
             reduceBounds,
             bounds || new LngLatBounds(coordsArray[0], coordsArray[0])
           );
+        } else if (geoJson?.type === "GeometryCollection") {
+          // @ts-expect-error geoJson in this case is not a Polygon! See check above
+          const { geometries } = geoJson;
+          geometries.forEach(geometry => {
+            let { coordinates } = geometry;
+            // TODO: More intelligently handle collection. Refactor
+            // this entire block to have some nice recursion to handle the different types
+            // For now, this prevents a crash
+            if (coordinates?.[0]?.length) {
+              coordinates = coordinates[0];
+            }
+
+            bounds = bounds
+              ? bounds.extend(coordinates)
+              : new LngLatBounds(coordinates, coordinates);
+          });
+        } else if (geoJson?.type === "MultiPolygon") {
+          // We can't currently render this, so let's fix that before fixing the bounds behavior
+          // TODO: handle this case
         } else if (geoJson) {
           // Regular stops might be (well) outside of route pattern shapes, so add them.
           const coords = geoJson.coordinates;
+          if (coords.length !== 2) {
+            console.warn(
+              "Unexpected GEOJSON found! Avoiding crash, but not rendering anything"
+            );
+            console.warn(coords);
+            return;
+          }
           bounds = bounds
             ? bounds.extend(coords)
             : new LngLatBounds(coords, coords);

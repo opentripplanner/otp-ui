@@ -7,3 +7,4 @@ otpUi:
     saveAsWork: Guardar como ubicación de trabajo
     swapLocation: Cambio de lugar de {locationType}
     forgetWork: Olvidar lugar de trabajo
+    viewNearby: Ver cerca

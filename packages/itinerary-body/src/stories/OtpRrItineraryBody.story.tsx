@@ -32,6 +32,7 @@ const walkOnlyItinerary = require("../__mocks__/itineraries/walk-only.json");
 const walkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk.json");
 const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json");
+const stayOnBoardItinerary = require("../__mocks__/itineraries/stay-on-board.json");
 const otp2ScooterItinerary = require("../__mocks__/itineraries/otp2-scooter.json");
 const flexItinerary = require("../__mocks__/itineraries/flex-itinerary.json");
 const otp24Itinerary = require("../__mocks__/itineraries/otp2.4-transit-itinerary.json");
@@ -61,6 +62,7 @@ interface StoryWrapperProps {
   defaultFareSelector?: FareProductSelector;
   hideDrivingDirections?: boolean;
   itinerary: Itinerary;
+  showAlertEffectiveDateTimeText?: boolean;
   showApproximateAccessLegTravelTimes?: boolean;
   TimeColumnContent?: FunctionComponent<TimeColumnContentProps>;
 }
@@ -70,6 +72,7 @@ function OtpRRItineraryBodyWrapper({
   defaultFareSelector,
   hideDrivingDirections = false,
   itinerary,
+  showAlertEffectiveDateTimeText = true,
   showApproximateAccessLegTravelTimes = false,
   TimeColumnContent
 }: StoryWrapperProps): ReactElement {
@@ -84,6 +87,7 @@ function OtpRRItineraryBodyWrapper({
       PlaceName={OtpRRPlaceName}
       RouteDescription={OtpRRRouteDescription}
       showAgencyInfo
+      showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
       showApproximateAccessLegTravelTimes={showApproximateAccessLegTravelTimes}
       showLegIcon
       showMapButtonColumn={false}
@@ -137,6 +141,10 @@ export const WalkTransitTransferWithA11yItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     itinerary={walkTransitWalkTransitWalkA11yItinerary}
   />
+);
+
+export const StayOnBoardItinerary = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={withLegacyLegs(stayOnBoardItinerary)} />
 );
 
 export const BikeRentalItinerary = (): ReactElement => (
@@ -262,4 +270,11 @@ export const ApproximatePrefixItinerary = (): ReactElement => (
 
 export const TransferLegItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={transferLegItinerary} />
+);
+
+export const AlertNoEffectiveAsOfItinerary = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkItinerary}
+    showAlertEffectiveDateTimeText={false}
+  />
 );

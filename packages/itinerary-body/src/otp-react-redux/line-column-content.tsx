@@ -6,6 +6,7 @@ import styled, { css } from "styled-components";
 import { Circle } from "@styled-icons/fa-solid/Circle";
 
 import { LineColumnContentProps } from "../types";
+import { InterlineDot } from "../styled";
 
 interface LegLineProps {
   leg: Leg;
@@ -156,8 +157,8 @@ export default function LineColumnContent({
 }: LineColumnContentProps): ReactElement {
   let legBadge;
   if (interline) {
-    // Interlined. Don't create a leg badge as a stop marker should be inserted
-    // from the place name
+    // Interlined. Place a small dot at the junction of the two lines.
+    legBadge = <InterlineDot />;
   } else if (isDestination) {
     // Destination
     legBadge = (

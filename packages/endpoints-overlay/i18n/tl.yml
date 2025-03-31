@@ -7,3 +7,4 @@ otpUi:
     clearLocation: Alisin ang lokasyon ng {locationType}
     saveAsHome: I-save bilang tirahan
     coordinates: '{lat, number, ::.00000}, {lon, number, ::.00000}'
+    viewNearby: Tingnan ang malapit

@@ -1,0 +1,27 @@
+otpUi:
+  LocationField:
+    beginTypingPrompt: இருப்பிடங்களைத் தேட தட்டச்சு செய்யத் தொடங்குங்கள்
+    clearLocation: தெளிவான இடம்
+    currentLocationUnavailable: தற்போதைய இடம் கிடைக்கவில்லை
+    fetchingLocation: இருப்பிடத்தைப் பெறுதல்…
+    fetchingSuggestions: பரிந்துரைகளைப் பெறுதல்…
+    geocoderUnreachable: பரிந்துரைகளைப் பெற முடியவில்லை
+    homeLocation: வீடு
+    howToAccessResults: முடிவுகள் பட்டியலை உலவ பேரூர் அம்பு விசையைப் பயன்படுத்தவும்.
+      ஒரு முடிவைத் தேர்ந்தெடுக்க, ENTER விசையைப் பயன்படுத்தவும்.
+    myPlaces: என் இடங்கள்
+    nearby: அருகிலுள்ள நிறுத்தங்கள்
+    noResults: முடிவுகள் இல்லை
+    other: மற்றொன்று
+    otherCount: '{எண்ணிக்கை, பன்மை, = 1 {# பிற புள்ளி} பிற {# பிற புள்ளிகள்} the வட்டி'
+    parenthesisFormat: '{main} ({detail})'
+    recentlySearched: அண்மைக் காலத்தில் தேடப்பட்டது
+    resultsFound: '{results} "{input}" க்கு காணப்படுகிறது.'
+    stationCount: '{எண்ணிக்கை, பன்மை, = 1 {# நிலையம்} பிற {# நிலையங்கள்}}'
+    stations: நிலையங்கள்
+    stopCount: '{எண்ணிக்கை, பன்மை, = 1 {# நிறுத்து} பிற {# நிறுத்தங்கள்}}'
+    stops: நிறுத்தங்கள்
+    suggestedLocations: பரிந்துரைக்கப்பட்ட இடங்கள்
+    suggestedLocationsLong: பரிந்துரைக்கப்பட்ட இடங்களின் பட்டியலைக் காண்பிப்பதை மாற்றவும்
+    useCurrentLocation: தற்போதைய இருப்பிடத்தைப் பயன்படுத்தவும்
+    workLocation: வேலை
