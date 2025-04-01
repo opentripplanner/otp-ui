@@ -816,7 +816,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
       </div>
     </li>
     <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 bznUet">
-      Recently Searched
+      Recent places
     </h2>
     <li aria-live="off"
         id="otpui-locf-option-2"
@@ -1210,7 +1210,7 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
       class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 bMzPj eECpsp"
   >
     <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 bznUet">
-      Recently Searched
+      Recent places
     </h2>
     <li aria-live="off"
         id="otpui-locf-option-0"
