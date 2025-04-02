@@ -185,11 +185,23 @@ describe("query", () => {
       ).toBe(false);
     });
 
-    it("should return true for query with modified maxWalkDistance", () => {
+    it("should return true for query with modified walkSpeed", () => {
       setDefaultTestTime();
       const query = getDefaultQuery(config);
-      // Double the max walk distance
-      query.maxWalkDistance *= 2;
+      // Set the mode to walk only so walkSpeed is applicable
+      query.mode = "WALK";
+      // Double the walk speed
+      query.walkSpeed *= 2;
+      expect(isNotDefaultQuery(query, config)).toBe(true);
+    });
+
+    it("should return true for query with modified bikeSpeed", () => {
+      setDefaultTestTime();
+      const query = getDefaultQuery(config);
+      // Set the mode to bicycle
+      query.mode = "BICYCLE";
+      // Double the bike speed
+      query.bikeSpeed *= 2;
       expect(isNotDefaultQuery(query, config)).toBe(true);
     });
 
