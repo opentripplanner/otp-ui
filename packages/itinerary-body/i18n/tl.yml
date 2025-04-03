@@ -26,7 +26,7 @@ otpUi:
         pag-pick up ng {company}
     mapillaryTooltip: Ipakita ang larawan ng kalye sa lokasyong ito
     step:
-      circleClockwise: Follow circle clockwise
+      circleClockwise: Sundan ang bilog nang clockwise
       circleCounterClockwise: Follow circle counterclockwise
       continue: Continue
       enterStation: I-enter ang istasyon
