@@ -25,7 +25,11 @@ if (typeof global.process === "undefined") {
 
 const preview: Preview = {
   decorators: [mockDateDecorator],
-  globals: {
+
+  parameters,
+
+  tags: ["autodocs"],
+  initialGlobals: {
     locale: reactIntl.defaultLocale,
     locales: {
       "en-US": { title: "English (US)" },
@@ -36,8 +40,7 @@ const preview: Preview = {
       zh: { title: "中文" },
       unknown: { title: "Unsupported locale" }
     }
-  },
-  parameters
+  }
 }
 
 export default preview
