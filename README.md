@@ -53,6 +53,7 @@ This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows
 - `pnpm unit` - Run jest unit tests.
 - `pnpm coverage` - Shows jest unit coverage.
 - `pnpm clean` - Deletes all files in the gitignore (note: this can delete local editor settings)
+- `pnpm pack-all` - Creates tarball packages for all non-private packages and displays their locations.
 - `npx lerna changed` - Show which packages have changed.
 - `npx lerna diff` - Show specifically what files have cause the packages to change.
 - `npx lerna create <packageName>` - Creates new package and walks through setting up package.json
@@ -61,9 +62,17 @@ This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows
 
 This project uses semantic-release to create releases to NPM. It is expect that contributors create [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) messages. These are then parsed by semantic-release which will automatically create an appropriate release for each package whenever a branch is merged to master.
 
+## Local Testing
+
 Internal package dependencies are referenced using the `workspace` [protocol provided by pnpm](https://pnpm.io/workspaces). This allows us to depend on our internal packages without keeping versions up to date, but these versions must be replaced with the actual version numbers prior to release. pnpm handles this when publishing automatically. However, if you wish to rely on an otp-ui package in a local filesystem project using the `file` protocol, you need to use `pnpm pack` to create a tarball of the package, then reference that tarball in the other project's package.json.
 
 For example, to depend on core-utils locally, you can run `pnpm pack` from within the `packages/core-utils`. Next, in the other project, use a line like this to reference the resulting tarball. `"@opentripplanner/core-utils": "file:../otp-ui/packages/core-utils/opentripplanner-core-utils-12.0.2.tgz",`
+
+### Package Tarball Creation
+
+The `pnpm pack-all` command creates tarball packages for all non-private packages in the monorepo and displays their locations. This is useful for testing packages locally in another project.
+
+When executed, this command runs `pnpm pack` for each non-private package and outputs the path to the generated tarball file. You can then reference these tarballs directly in other projects using the file protocol in your other project's package.json.
 
 ## Raster Tile Versions
 

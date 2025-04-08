@@ -1,5 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
-import React, { ReactElement } from "react";
+import { Config, Leg } from "@opentripplanner/types";
+import React, { FunctionComponent, ReactElement } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 
 import DefaultTimeColumnContent from "../defaults/time-column-content";
@@ -8,8 +9,32 @@ import * as S from "../styled";
 import TransitLegBody from "../TransitLegBody";
 
 import AccessibilityRating from "./accessibility-rating";
-import { PlaceRowProps } from "../types";
+import { PlaceNameProps, PlaceRowProps } from "../types";
 import { defaultMessages } from "../util";
+
+function getLegPlaceName(
+  leg: Leg,
+  isDestination: boolean,
+  PlaceName: FunctionComponent<PlaceNameProps>,
+  config: Config
+) {
+  // NOTE: Previously there was a check for itineraries that changed vehicles
+  // at a single stop, which would render the stop place the same as the
+  // interline stop. However, this prevents the user from being able to click
+  // on the stop viewer in this case, which they may want to do in order to
+  // check the real-time arrival information for the next leg of their journey.
+  const interline = !!(!isDestination && leg.interlineWithPreviousLeg);
+  const place = isDestination ? { ...leg.to } : { ...leg.from };
+  const placeName = (
+    <PlaceName config={config} interline={interline} place={place} />
+  );
+
+  return {
+    interline,
+    place,
+    placeName
+  };
+}
 
 /*
   TODO: Wondering if it's possible for us to destructure the time
@@ -33,6 +58,7 @@ export default function PlaceRow({
   LineColumnContent,
   mapillaryCallback,
   mapillaryKey,
+  nextLeg,
   PlaceName,
   RouteDescription,
   RouteDescriptionFooter,
@@ -56,9 +82,20 @@ export default function PlaceRow({
   // interline stop. However, this prevents the user from being able to click
   // on the stop viewer in this case, which they may want to do in order to
   // check the real-time arrival information for the next leg of their journey.
-  const interline = !!(!isDestination && leg.interlineWithPreviousLeg);
-  // const hideBorder = interline || !legIndex;
-  const place = isDestination ? { ...leg.to } : { ...leg.from };
+  const { interline, place, placeName } = getLegPlaceName(
+    leg,
+    isDestination,
+    PlaceName,
+    config
+  );
+  const {
+    interline: nextLegInterlines = false,
+    placeName: nextPlaceName = undefined
+  } = nextLeg ? getLegPlaceName(nextLeg, false, PlaceName, config) : {};
+  const legDestination = nextPlaceName || (
+    <PlaceName config={config} place={leg.to} />
+  );
+
   // OTP2 marks both bikes and scooters as BIKESHARE in the vertextype
   // To get the right label, we need to fix scooters to be "VEHICLERENTAL"
   place.vertexType =
@@ -72,10 +109,6 @@ export default function PlaceRow({
     description: "Text describing the view-on-map button",
     id: "otpUi.ItineraryBody.viewOnMap"
   });
-
-  const formattedPlace = direction => (
-    <PlaceName config={config} interline={interline} place={direction} />
-  );
 
   return (
     <S.PlaceRowWrapper
@@ -95,16 +128,8 @@ export default function PlaceRow({
           toRouteAbbreviation={toRouteAbbreviation}
         />
       </S.LineColumn>
-      {/* Dot separating interlined segments, if applicable */}
       <S.PlaceHeader>
-        {/*
-              TODO: Need to rework this -- Need to display a marker
-              for an interline place
-            */}
-        {interline && <S.InterlineDot>&bull;</S.InterlineDot>}
-        <S.PlaceName aria-hidden>
-          <PlaceName config={config} interline={interline} place={place} />
-        </S.PlaceName>
+        <S.PlaceName aria-hidden>{placeName}</S.PlaceName>
       </S.PlaceHeader>
       <S.TimeColumn>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
@@ -121,20 +146,20 @@ export default function PlaceRow({
           )}
       </S.TimeColumn>
       <S.InvisibleAdditionalDetails>
-        {!isDestination ? (
+        {interline ? (
+          placeName
+        ) : !isDestination ? (
           <FormattedMessage
             description="Add starting location for access legs"
             id="otpUi.TransitLegBody.fromLocation"
-            values={{
-              location: formattedPlace(leg.from)
-            }}
+            values={{ location: placeName }}
           />
         ) : (
           <FormattedMessage
             id="otpUi.TransitLegBody.arriveAt"
             defaultMessage={defaultMessages["otpUi.TransitLegBody.arriveAt"]}
             description="Identifies end of the trip to screenreaders"
-            values={{ place: formattedPlace(leg.to) }}
+            values={{ place: placeName }}
           />
         )}
       </S.InvisibleAdditionalDetails>
@@ -151,9 +176,10 @@ export default function PlaceRow({
               alwaysCollapseAlerts={alwaysCollapseAlerts}
               defaultFareSelector={defaultFareSelector}
               leg={leg}
-              legDestination={formattedPlace(leg.to)}
+              legDestination={legDestination}
               LegIcon={LegIcon}
               legIndex={legIndex}
+              nextLegInterlines={nextLegInterlines}
               RouteDescription={RouteDescription}
               RouteDescriptionFooter={RouteDescriptionFooter}
               setActiveLeg={setActiveLeg}

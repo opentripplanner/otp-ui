@@ -11,11 +11,6 @@ const StyledItineraryBody = styled(ItineraryBody)`
     font-family: Hind, sans-serif;
   }
 
-  ${ItineraryBodyClasses.InterlineDot} {
-    margin-left: -18px;
-    margin-right: 3px;
-  }
-
   ${ItineraryBodyClasses.LegDescriptionRouteShortName} {
     background-color: rgb(15, 106, 172);
     border-color: white;

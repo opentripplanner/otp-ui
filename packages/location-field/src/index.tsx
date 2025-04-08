@@ -415,7 +415,7 @@ const LocationField = ({
           features: Location[];
           results: { error: { message: string } };
         }) => {
-          let message: string | ReactNode;
+          let message: ReactNode;
           // If no features found in response, default to empty array.
           let geocodedFeatures = result?.features;
           if (!geocodedFeatures) {

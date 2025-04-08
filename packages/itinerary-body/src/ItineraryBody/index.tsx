@@ -53,7 +53,11 @@ const ItineraryBody = ({
   const rows = [];
   let followsTransit = false;
   let lastLeg;
+  let nextLeg;
   itinerary.legs.forEach((leg, i) => {
+    const isLastLeg = i === itinerary.legs.length - 1;
+    nextLeg = isLastLeg ? undefined : itinerary.legs[i + 1];
+
     function createPlaceRow(isDestination) {
       // Create a row containing this leg's start place and leg traversal details
       rows.push(
@@ -77,6 +81,7 @@ const ItineraryBody = ({
           LineColumnContent={LineColumnContent}
           mapillaryCallback={mapillaryCallback}
           mapillaryKey={mapillaryKey}
+          nextLeg={nextLeg}
           PlaceName={PlaceName}
           RouteDescription={RouteDescription}
           RouteDescriptionFooter={RouteDescriptionFooter}
@@ -103,7 +108,7 @@ const ItineraryBody = ({
 
     createPlaceRow(false);
     // If this is the last leg, create a special PlaceRow for the destination only.
-    if (i === itinerary.legs.length - 1) {
+    if (isLastLeg) {
       createPlaceRow(true);
     }
     if (leg.transitLeg) followsTransit = true;
