@@ -5300,7 +5300,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
             <button aria-expanded="false"
                     class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 jOzsRd jhYtnR"
             >
-              0 min
+              1 min
               <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                 <svg viewbox="0 0 320 512"
                      height="15"
@@ -5780,7 +5780,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
             <button aria-expanded="false"
                     class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 jOzsRd jhYtnR"
             >
-              0 min
+              1 min
               <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                 <svg viewbox="0 0 320 512"
                      height="15"
@@ -6273,7 +6273,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
             <button aria-expanded="false"
                     class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 jOzsRd jhYtnR"
             >
-              0 min
+              1 min
               <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                 <svg viewbox="0 0 320 512"
                      height="15"
@@ -6454,7 +6454,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
             <button aria-expanded="false"
                     class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 jOzsRd jhYtnR"
             >
-              0 min
+              1 min
               <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                 <svg viewbox="0 0 320 512"
                      height="15"
@@ -12207,7 +12207,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
             <button aria-expanded="false"
                     class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 jOzsRd jhYtnR"
             >
-              0 min
+              1 min
               <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                 <svg viewbox="0 0 320 512"
                      height="15"
@@ -12626,7 +12626,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
             <button aria-expanded="false"
                     class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 jOzsRd jhYtnR"
             >
-              0 min
+              1 min
               <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                 <svg viewbox="0 0 320 512"
                      height="15"
@@ -14514,7 +14514,7 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
             <button aria-expanded="false"
                     class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 jOzsRd jhYtnR"
             >
-              0 min
+              1 min
               <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                 <svg viewbox="0 0 320 512"
                      height="15"
