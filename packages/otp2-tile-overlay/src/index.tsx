@@ -24,6 +24,7 @@ const OTP2TileLayerWithPopup = ({
   getEntityPrefix,
   id,
   network,
+  minZoom = 14,
   onMapClick,
   setLocation,
   setViewedStop,
@@ -45,6 +46,10 @@ const OTP2TileLayerWithPopup = ({
    * that network
    */
   network?: string
+  /**
+   * The minimum zoom to show the layer at. Defaults to 14
+   */
+  minZoom?: number
   /**
    * An optional method to override the map click handler. If a method is passed, NO POPUPS
    * WILL APPEAR ON CLICK. The implementer will be responsible for handling all click events
@@ -170,14 +175,14 @@ const OTP2TileLayerWithPopup = ({
         }}
         source-layer={type}
         source={SOURCE_ID}
-        minzoom={stopsWhitelist ? 2 : 14}
+        minzoom={stopsWhitelist ? 2 : minZoom}
         type="fill"
       />}
       {isArea && <Layer
         filter={filter}
         id={`${id}-outline`}
         layout={{ "line-join": "round", "line-cap": "round" }}
-        minzoom={stopsWhitelist ? 2 : 14}
+        minzoom={stopsWhitelist ? 2 : minZoom}
         paint={{
           "line-color": ROUTE_COLOR_EXPRESSION,
           "line-opacity": 0.8,
@@ -193,7 +198,7 @@ const OTP2TileLayerWithPopup = ({
         key={`${id}-stops`}
         paint={generateLayerPaint(color).stops}
         source={SOURCE_ID}
-        minzoom={stopsWhitelist ? 2 : 14}
+        minzoom={stopsWhitelist ? 2 : minZoom}
         source-layer="stops"
         type="circle"
       />}
@@ -203,7 +208,7 @@ const OTP2TileLayerWithPopup = ({
         key={`${id}-stations`}
         paint={generateLayerPaint(color).stops}
         source={SOURCE_ID}
-        minzoom={stopsWhitelist ? 2 : 14}
+        minzoom={stopsWhitelist ? 2 : minZoom}
         source-layer="stations"
         type="circle"
       />}
@@ -213,7 +218,7 @@ const OTP2TileLayerWithPopup = ({
         key={id}
         paint={generateLayerPaint(color)[type]}
         source={SOURCE_ID}
-        minzoom={stopsWhitelist ? 2 : 14}
+        minzoom={stopsWhitelist ? 2 : minZoom}
         source-layer={type}
         type="circle"
       />}
@@ -254,7 +259,7 @@ const OTP2TileLayerWithPopup = ({
  * @returns               Array of <Source> and <OTP2TileLayerWithPopup> components
  */
 const generateOTP2TileLayers = (
-  layers: { color?: string; name?: string; network?: string; type: string, initiallyVisible?: boolean, overrideType?: string }[],
+  layers: { color?: string; name?: string; network?: string; type: string, initiallyVisible?: boolean, minZoom?: number, overrideType?: string }[],
   endpoint: string,
   setLocation?: (location: MapLocationActionArg) => void,
   setViewedStop?: (stop: Stop) => void,
@@ -278,7 +283,7 @@ const generateOTP2TileLayers = (
       url={`${endpoint}/${layers.map((l) => l.overrideType || l.type).join(",")}/tilejson.json`}
     />,
     ...layers.map((layer) => {
-      const { color, name, network, type, initiallyVisible } = layer
+      const { color, name, network, type, minZoom, initiallyVisible } = layer
 
       const id = `${type}${network ? `-${network}` : ""}`
       return (
@@ -290,6 +295,7 @@ const generateOTP2TileLayers = (
           key={id}
           name={name || id}
           network={network}
+          minZoom={minZoom}
           setLocation={setLocation}
           setViewedStop={setViewedStop}
           stopsWhitelist={stopsWhitelist}
