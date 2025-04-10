@@ -133,7 +133,7 @@
     "update-internal-dependencies": "node scripts/update-internal-dependencies.js",
     "test-storybook": "test-storybook --url http://localhost:5555",
     "update-snapshots": "pnpm build-storybook; npx concurrently -k -s first -n \"SB,TEST\" \"npx http-server storybook-static --port 5555 --silent\" \"npx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555 -u\"",
-    "pack-all": "lerna exec --no-private -- 'pnpm pack && echo \"Package tarball: $(pwd)/$(ls *.tgz)\"'"
+    "pack-all": "pnpm prepublish && lerna exec --no-private -- 'pnpm pack && echo \"Package tarball: $(pwd)/$(ls *.tgz)\"'"
   },
   "eslintConfig": {
     "env": {
