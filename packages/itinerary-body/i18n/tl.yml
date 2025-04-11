@@ -39,7 +39,7 @@ otpUi:
       slightlyRight: Slight right
       uTurnLeft: Left U-turn
       uTurnRight: Right U-turn
-    stepDepart: Head {heading} on {street}
+    stepDepart: Pumunta {heading} sa {street}
     stepElevator: Take elevator to {street}
     stepFollowSigns: Sundin ang mga palatandaan sa {street}
     stepGeneric: "{step} on {street}"
