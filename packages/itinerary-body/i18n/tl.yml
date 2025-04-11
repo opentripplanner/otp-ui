@@ -26,7 +26,7 @@ otpUi:
         pag-pick up ng {company}
     mapillaryTooltip: Ipakita ang larawan ng kalye sa lokasyong ito
     step:
-      circleClockwise: Follow circle clockwise
+      circleClockwise: Sundan ang bilog nang clockwise
       circleCounterClockwise: Follow circle counterclockwise
       continue: Continue
       enterStation: I-enter ang istasyon
@@ -39,7 +39,7 @@ otpUi:
       slightlyRight: Slight right
       uTurnLeft: Left U-turn
       uTurnRight: Right U-turn
-    stepDepart: Head {heading} on {street}
+    stepDepart: Pumunta {heading} sa {street}
     stepElevator: Take elevator to {street}
     stepFollowSigns: Sundin ang mga palatandaan sa {street}
     stepGeneric: "{step} on {street}"
