@@ -1,3 +1,11 @@
+catalogs:
+  default:
+    react:
+      specifier: ^18.2.0
+      version: 18.2.0
+    styled-components:
+      specifier: ^5.3.11
+      version: 5.3.11
 importers:
   .:
     dependencies:
@@ -7,7 +15,7 @@ importers:
     devDependencies:
       "@anolilab/semantic-release-pnpm":
         specifier: ^1.1.10
-        version: 1.1.10(@types/node@15.14.9)(yaml@2.6.0)
+        version: 1.1.10(@types/node@15.14.9)
       "@babel/cli":
         specifier: ^7.10
         version: 7.25.9(@babel/core@7.26.0)
@@ -99,8 +107,7 @@ importers:
         version: 2.8.16
       "@storybook/test-runner":
         specifier: ^0.22.0
-        version: >-
-          0.22.0(@types/node@15.14.9)(node-notifier@5.4.5)(storybook@8.6.4(prettier@1.19.1))
+        version: 0.22.0(@types/node@15.14.9)(storybook@8.6.4(prettier@1.19.1))
       "@types/jest":
         specifier: ^26.0.23
         version: 26.0.24
@@ -154,7 +161,7 @@ importers:
       eslint-config-airbnb-typescript:
         specifier: ^12.3.1
         version: >-
-          12.3.1(eslint-plugin-import@2.23.3(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.11.1)(eslint@7.32.0))(eslint-plugin-jsx-a11y@6.2.3(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.2(eslint@7.32.0))(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)(typescript@4.9.5)
+          12.3.1(eslint-plugin-import@2.23.3)(eslint-plugin-jsx-a11y@6.2.3(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.2(eslint@7.32.0))(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)(typescript@4.9.5)
       eslint-config-prettier:
         specifier: ^4.3.0
         version: 4.3.0(eslint@7.32.0)
@@ -231,7 +238,7 @@ importers:
         specifier: ^0.2.1
         version: 0.2.1
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-dom:
         specifier: ^18.2.0
@@ -312,14 +319,14 @@ importers:
         specifier: ^2.1.9
         version: 2.4.0
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-map-gl:
         specifier: ^7.0.15
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
   packages/building-blocks:
     dependencies:
@@ -328,13 +335,13 @@ importers:
         version: >-
           10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-animate-height:
-        specifier: 3.0.4
+        specifier: ^3.0.4
         version: 3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/core-utils":
@@ -408,7 +415,7 @@ importers:
         specifier: ^5.0.2
         version: 5.0.2
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-dom:
         specifier: ^18.2.0
@@ -421,7 +428,7 @@ importers:
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -439,13 +446,13 @@ importers:
         specifier: ^5.0.2
         version: 5.0.2
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-intl:
         specifier: ^6.8.4
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -482,7 +489,7 @@ importers:
         specifier: ^15.7.2
         version: 15.8.1
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
   packages/itinerary-body:
     dependencies:
@@ -516,10 +523,10 @@ importers:
         specifier: ^5.0.2
         version: 5.0.2
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-animate-height:
-        specifier: 3.0.4
+        specifier: ^3.0.4
         version: 3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       react-resize-detector:
         specifier: ^4.2.1
@@ -528,7 +535,7 @@ importers:
         specifier: ^4.0.4
         version: 4.0.4
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -559,13 +566,13 @@ importers:
         version: >-
           10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-intl:
         specifier: ^6.8.4
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
       throttle-debounce:
         specifier: ^2.1.0
@@ -588,10 +595,10 @@ importers:
         version: >-
           10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
   packages/map-popup:
     dependencies:
@@ -611,13 +618,13 @@ importers:
         specifier: ^5.0.2
         version: 5.0.2
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-intl:
         specifier: ^6.8.4
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -629,7 +636,7 @@ importers:
         specifier: workspace:*
         version: link:../map-popup
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-map-gl:
         specifier: ^7.0.15
@@ -654,7 +661,7 @@ importers:
         specifier: workspace:*
         version: link:../types
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-dom:
         specifier: ^18.2.0
@@ -664,7 +671,7 @@ importers:
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
   packages/printable-itinerary:
     dependencies:
@@ -675,10 +682,10 @@ importers:
         specifier: workspace:*
         version: link:../itinerary-body
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/icons":
@@ -699,7 +706,7 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
     devDependencies:
       "@opentripplanner/types":
@@ -731,7 +738,7 @@ importers:
         specifier: workspace:*
         version: link:../core-utils
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-map-gl:
         specifier: ^7.0.15
@@ -756,7 +763,7 @@ importers:
         specifier: ^5.0.2
         version: 5.0.2
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-intl:
         specifier: ^6.8.4
@@ -766,7 +773,7 @@ importers:
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -791,7 +798,7 @@ importers:
         specifier: ^5.0.2
         version: 5.0.2
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-intl:
         specifier: ^6.8.4
@@ -801,7 +808,7 @@ importers:
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -843,7 +850,7 @@ importers:
         specifier: ^4.5.0
         version: 4.5.0
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-map-gl:
         specifier: ^7.0.15
@@ -869,16 +876,16 @@ importers:
         specifier: ^5.0.2
         version: 5.0.2
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-animate-height:
-        specifier: 3.0.4
+        specifier: ^3.0.4
         version: 3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       react-intl:
         specifier: ^6.8.4
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -924,10 +931,10 @@ importers:
         specifier: ^5.0.2
         version: 5.0.2
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-animate-height:
-        specifier: 3.0.4
+        specifier: ^3.0.4
         version: 3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       react-indiana-drag-scroll:
         specifier: ^2.0.1
@@ -939,7 +946,7 @@ importers:
         specifier: ^6.8.4
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -960,7 +967,7 @@ importers:
         specifier: workspace:*
         version: link:../core-utils
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-map-gl:
         specifier: ^7.0.15
@@ -992,7 +999,7 @@ importers:
         specifier: ^4.1.2
         version: 4.1.2
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-dom:
         specifier: ^18.2.0
@@ -1005,7 +1012,7 @@ importers:
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -1023,23 +1030,20 @@ importers:
         specifier: workspace:*
         version: link:../icons
       react:
-        specifier: 18.2.0
+        specifier: "catalog:"
         version: 18.2.0
       react-map-gl:
         specifier: ^7.0.15
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
         specifier: workspace:*
         version: link:../types
 lockfileVersion: "9.0"
-overrides:
-  react: 18.2.0
-  react-animate-height: 3.0.4
 packages:
   "@adobe/css-tools@4.4.0":
     resolution:
@@ -2054,7 +2058,7 @@ packages:
         sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
   "@emotion/use-insertion-effect-with-fallbacks@1.2.0":
     peerDependencies:
-      react: 18.2.0
+      react: ">=16.8.0"
     resolution:
       integrity: >-
         sha512-yJMtVdH59sxi/aVJBpk9FQq+OR8ll5GT8oWd57UpeaKEVGab41JWaCFA7FRLoMLloOZF/c/wsPoe+bfGmRKgDg==
@@ -2294,14 +2298,14 @@ packages:
         sha512-NP83c0HjokcGVEMeoStg317VD9W7eDlGK7457dMBANbKA6GJZdc7rjujdgqzTaz93jkGgc5P/jeWbaCHnMNc+w==
   "@floating-ui/react-dom@1.3.0":
     peerDependencies:
-      react: 18.2.0
+      react: ">=16.8.0"
       react-dom: ">=16.8.0"
     resolution:
       integrity: >-
         sha512-htwHm67Ji5E/pROEAr7f8IKFShuiCKHwUC/UY4vC3I5jiSvGFAYnSYiZO5MlGmads+QqvUkR9ANHEguGrDv72g==
   "@floating-ui/react@0.19.2":
     peerDependencies:
-      react: 18.2.0
+      react: ">=16.8.0"
       react-dom: ">=16.8.0"
     resolution:
       integrity: >-
@@ -2868,7 +2872,7 @@ packages:
   "@mdx-js/react@3.1.0":
     peerDependencies:
       "@types/react": ">=16"
-      react: 18.2.0
+      react: ">=16"
     resolution:
       integrity: >-
         sha512-QjHtSaoameoalGnKDT3FoIl4+9RwyTmo9ZJGBdLOks/YOiWHoRDI3PUwEzOE7kEmGcV3AFcp9K6dYu9rEuKLAQ==
@@ -3512,7 +3516,7 @@ packages:
         sha512-jFREXnSE/7VuBR8kbluN+DBVkMXEV7MGuCe8Ytb1/D2Q0ohgJe395dfVgEgSMXErOwsn//NV/NgJp6JNXH2DrA==
   "@storybook/addon-links@8.6.4":
     peerDependencies:
-      react: 18.2.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       storybook: ^8.6.4
     peerDependenciesMeta:
       react:
@@ -3562,7 +3566,7 @@ packages:
         sha512-Ok18Y698Ccyg++MoUNJNHY0cXUvo8ETFIRLJk1g9ElJ70j6kPgNnzW2pAtZkBNmswHtofZ7pT156cj96k/LgfA==
   "@storybook/blocks@8.6.4":
     peerDependencies:
-      react: 18.2.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       storybook: ^8.6.4
     peerDependenciesMeta:
@@ -3634,7 +3638,7 @@ packages:
     engines:
       node: ">=14.0.0"
     peerDependencies:
-      react: 18.2.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     resolution:
       integrity: >-
@@ -3659,7 +3663,7 @@ packages:
     engines:
       node: ">=18.0.0"
     peerDependencies:
-      react: 18.2.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       storybook: ^8.6.4
       typescript: "*"
@@ -3688,7 +3692,7 @@ packages:
         sha512-KUqXC3oa9JuQ0kZJLBhVdS4lOneKTOopnNBK4tUAgoxWQ3u/IjzdueZjFr7gyBrXMoU6duutk3RQR9u8ZpYJ4Q==
   "@storybook/react-dom-shim@8.6.4":
     peerDependencies:
-      react: 18.2.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       storybook: ^8.6.4
     resolution:
@@ -3698,7 +3702,7 @@ packages:
     engines:
       node: ">=18.0.0"
     peerDependencies:
-      react: 18.2.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       storybook: ^8.6.4
       typescript: ">= 4.2.x"
@@ -3713,7 +3717,7 @@ packages:
       node: ">=18.0.0"
     peerDependencies:
       "@storybook/test": 8.6.4
-      react: 18.2.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
       storybook: ^8.6.4
       typescript: ">= 4.2.x"
@@ -3759,7 +3763,7 @@ packages:
         sha512-JPjfbaMMuCBT47pg3/MDD9vYFF5OGPAOWEB9nJWJ9IjYAb2Nd8OYJQIDoYJQNT+aLkTVLtvzGnVNwdxpouAJcQ==
   "@storybook/theming@7.6.17":
     peerDependencies:
-      react: 18.2.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     resolution:
       integrity: >-
@@ -3776,259 +3780,259 @@ packages:
         sha512-GRY0xEJQ0PrL7DY2qCNUdIfUOE0Gsue6N+GBJw9ku1IUDFLJRDOF+4Dx2BvYcVCPI5XPqdWKlEyZdMdKjiQN7Q==
   "@styled-icons/bootstrap@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-xpnPdrLhAhpTRE4iljQIEK73twVj7VPglwHSL+8nQdH7EsW5RJIOWsmlkZMyqhQHN0H7fGmT10F3/6OQhSpfGg==
   "@styled-icons/boxicons-logos@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-eDZfiTjBth4MsCX83ZfiWIoYGU494NxZgAxyf7S0ky2ZRsJnq/Cs7crH4hKWUTaLvCo0XRJmLeA3Us2tZFiItg==
   "@styled-icons/boxicons-regular@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-z8KczDp4VArXvOn8i2j66Xs4oX9oiiJEhMoHydY3uC9kdtImcxhZ/xHPrgTJLkbK6f5ikwB4CKVnSqQGzzAJNw==
   "@styled-icons/boxicons-solid@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-M795TXYtSJCpfr+ukHZfH9mA0j5MPlB5vwRCnU3O+dojAYla/zoaSashjhUbmlgzKNwALWNfzOqicSCAzU2fhg==
   "@styled-icons/crypto@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-2hSOo1yb3ZEEOJAv9OBZLf3KQ8ujJrLw1uVDINJa7zLGuSfEWawnlkv/T2B0zQkOm0Hb6gikTRTAkLr4gyIS4Q==
   "@styled-icons/entypo-social@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-DWbUK7JkuAu4TPIBeeYfxys3cP8M4/q/XG2JVruDHa18viCEcDR1JXfn1p3TVYZCvlciKev+Vr1yrgcamTwVkg==
   "@styled-icons/entypo@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-0ChIqx3EMlMeout4Aa5AwEYtKsgTqrY/NnVQGvhlGfMYq9mC7jq7JuaKvt5SJ9/0cEnVhgW5zwAe4LeyrsJl5g==
   "@styled-icons/evaicons-outline@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-+tHb/Ir6G1e+rSJ2YKgm2vzjF80JoXWEmoC48exFrQEKQkJPSWtsqKdROkfANKrY9AFnRKhJQ+9fHhnjS+V/OA==
   "@styled-icons/evaicons-solid@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-tRw2/TkmRNV4N2badKPFnnRy+WbVtUkrloNo94CgF5rpxoL0eK+ki3OYZYqbl0T66bJ07hqduqTc3rbxvT/vfw==
   "@styled-icons/evil@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-r1g2jZmz84XGLgJbAPkMDmuToUF+KyNWkS6GNoP+ygzriNgzgoHkcEvIb/bx/I2/UUHeotRMOknvhvh5C2CwFg==
   "@styled-icons/fa-brands@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-w+G31+61nBnjxzCwMs+H9rNm9jl+HhtRgZYvNd+2NKQn1dRbHbBVXzQEHCOL6hksvkDbIa0iPrenqMU6pB+wZQ==
   "@styled-icons/fa-regular@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-UL/MwhwlJ5SbcioI+UBR8KocYt6i+20akKn1ZNj0Pjgm2kv2odEJSWWkHCxh8J7T7s0q/Wvs3CMsBTMrKdKDpQ==
   "@styled-icons/fa-solid@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-8AJjbOAkvPlB/ypFzWo++CZxRDlFQfvWQSjWzVU/v/4kjGRWIiVB+rJrTB7joDUd5Oas/se4cSiDkSA+XR/Fqg==
   "@styled-icons/feather@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-w6F3s1B4DaQGLr4AZZ0PffZQOnPSRqr3npHoTvk4Juz4uTjw9/oHolcrTxPyJas9gXAV1kCLbeiaxTR6JVxJPw==
   "@styled-icons/fluentui-system-filled@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-jAO8bs9SY/5Xu2vxg5sJmnD5YA966G2m2qU4ezlDbLDIXSaX/1qUBUivBFSWCDn4q5rslegzD1rhc9FncgPbSw==
   "@styled-icons/fluentui-system-regular@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-x1TmxKS6mpX+QJw8ismT3rNa6TPvKYftmQRy57LbdNE9L5FkyWldrumPboZGKWi/oNiBn6SBelPeqv8LPFXNHQ==
   "@styled-icons/foundation@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-RZqNVxStjvboGg6+X1By9pE0j7FuzUkfgbu9SgOkSzMrHTvnTOu0JiQ7nNw+CY46rXhT8JTwRCgk2OLTk+anGA==
   "@styled-icons/heroicons-outline@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-C7bcJ/YPVKACoQLSBDM9DkgmrO1HmqAaru9kqYK2V+GaGUW5raf6dyTLo7GUYt/CJ7p3qWxsBz3SX6djzdaODQ==
   "@styled-icons/heroicons-solid@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-j+tJx2NzLG2tc91IXJVwKNjsI/osxmak+wmLfnfBsB+49srpxMYjuLPMtl9ZY/xgbNsWO36O+/N5Zf5bkgiKcQ==
   "@styled-icons/icomoon@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-3KcTTuswDrC03byyr9G9v5aWDTrhO6PbbN5O7CtU4/NXY4AaOkTQ8GUfvRjZ8yG/aEYRH4VYkWFpYu1CdsZxNg==
   "@styled-icons/ionicons-outline@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-BEFEBGQDhPssEshbHyrsAXbEb7hNsrsHa0Zh0zLlfCIB3Vxc2GrQU9Qibto443ZRVw5qgF7iBdSwQHiwY8dQJw==
   "@styled-icons/ionicons-sharp@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-ZMkS+zBe04odi/4llkKMZkNEz8K3whta7Chzk81vvCTtR7jMnGEyw+tMUZbARliOOyaELBeTbgeUwNRNTibiSA==
   "@styled-icons/ionicons-solid@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-agiuzQzqrrRWHrGfswC6EciKVjt/XSZuQFbvP/s6qU2oYkQuJRdhmAZQldTaj9Xb2GyAmEjM0cmkWG3+JzV7CQ==
   "@styled-icons/material-outlined@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-/QeDSGXlfRoIsgx4g4Hb//xhsucD4mJJsNPk/e1XzckxkNG+YHCIjbAHzDwxwNfSCJYcTDcOp2SZcoS7iyNGlw==
   "@styled-icons/material-rounded@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-+ByhDd1FJept3k8iBDxMWSzmIh29UrgZTIzh2pADWldGrsD/2JKdsC7knQghSj9uCevHNMKEeVaYBQMLoNUjvw==
   "@styled-icons/material-sharp@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-U9bjvur/vawfiBhE75efNOF4WkSAygn26bQvHFJPc71ZCisvgJncnlSmR0rUgWnu7Cp/qg6faDH5CKDXBmGWCA==
   "@styled-icons/material-twotone@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-c4Q1r0EJaDEI1/IsBWo0Mo8lZZvtA/3Or1ScUcmjwKBZxpR8960uGy4CReLzBPALC4L6aPiM1H168fz39fm4oQ==
   "@styled-icons/material@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-6fwoLPHg3P9O/iXSblQ67mchgURJvhU7mfba29ICfpg62zJ/loEalUgspm1GGtYVSPtkejshVWUtV99dXpcQfg==
   "@styled-icons/octicons@10.47.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-JOqEbwbh23u/AdaINod8ZeVN5MEcOvkSeMTwGIPaPgz5PNuWRj/+1LpixmBeZjAr/WhB0pxZBBwA+e91BelQCA==
   "@styled-icons/open-iconic@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-v7wrHcUACQeSfJrLan/jXxgz7RSlJJXSc2u33UR82ewkOSBhaXp/zZxKF1tFCT2spvth0NBl6OkZUCw9ctgyrA==
   "@styled-icons/remix-editor@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-oOrt6wj5//4LrZkm40bXcsFpTgXbdOkixu6RHuE3O82+Hqtw1bYR/smm5MbLOJ+Kz62SEjDF3sxqFO23ITDeUQ==
   "@styled-icons/remix-fill@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-D2rWGJ9/7BR+3TMvmIoWGASMfyhWT4lTF+we8h9Pya5Ye+69cftvp817DMuaR/6czCugXTrB++HTQX0XJfoBFw==
   "@styled-icons/remix-line@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-TkbtXdgcuM7VpE/51k8+sxfReFjSQpAFVnjJi8/gxwcTzjdOG7Plkgsaixi2+hiLk/Coj/+67KbntBoSevROsw==
   "@styled-icons/simple-icons@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-zHkbGqAqFOwpqDjbhKTKsAXNxtBOXb7Ot2eKoDaDFckJGr2shAXRchclUS6wSixSPwQIPGAUcdO7Cq744Ollng==
   "@styled-icons/styled-icon@10.7.1":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: ">=4.1.0"
     resolution:
       integrity: >-
         sha512-WLYaeMTMhMkSxE+v+of+r2ovIk0tceDGfv8iqWHRMxvbm+6zxngVcQ4ELx6Zt/LFxqckmmoAdvo6ehiiYj6I6A==
   "@styled-icons/typicons@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
         sha512-yCJnVggGsbxOyuIPEmD+9IYRvB5w41hpJKdpI0ErasYG9Izt/lGqUaaDaxR39u9s28Q54Fq/v+Ni17dFCs8FOw==
   "@styled-icons/zondicons@10.46.0":
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: "*"
     resolution:
       integrity: >-
@@ -10366,10 +10370,16 @@ packages:
       integrity: >-
         sha512-uHaJFihxmJcEX3kT4I23ABqKKalJ/zDrDg0lsFtc1h+3uw49SIJ5beyhx5ExVRti3AvKoOJngIj7xz3oylPdWQ==
   lodash.get@4.4.2:
+    deprecated: >-
+      This package is deprecated. Use the optional chaining (?.) operator
+      instead.
     resolution:
       integrity: >-
         sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==
   lodash.isequal@4.5.0:
+    deprecated: >-
+      This package is deprecated. Use require('node:util').isDeepStrictEqual
+      instead.
     resolution:
       integrity: >-
         sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==
@@ -12593,7 +12603,7 @@ packages:
     engines:
       node: ">= 12.0.0"
     peerDependencies:
-      react: 18.2.0
+      react: ">=16.8.0"
       react-dom: ">=16.8.0"
     resolution:
       integrity: >-
@@ -12612,13 +12622,13 @@ packages:
         sha512-APPU8HB2uZnpl6Vt/+0AFoVYgSRtfiP6FLrZgPPTDmqSb2R4qZRbgd0A3VzIFxDt5e+Fozjx79WjLWnF69DK8g==
   react-dom@18.3.1:
     peerDependencies:
-      react: 18.2.0
+      react: ^18.3.1
     resolution:
       integrity: >-
         sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==
   react-from-dom@0.6.2:
     peerDependencies:
-      react: 18.2.0
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
     resolution:
       integrity: >-
         sha512-qvWWTL/4xw4k/Dywd41RBpLQUSq97csuv15qrxN+izNeLYlD9wn5W8LspbfYe5CWbaSdkZ72BsaYBPQf2x4VbQ==
@@ -12627,20 +12637,20 @@ packages:
       node: ">=8"
       npm: ">=5"
     peerDependencies:
-      react: 18.2.0
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
       react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
     resolution:
       integrity: >-
         sha512-+W/3B2OQV0FrbdnsoIo4dww/xpH0MUQJz6ziQb7H+oBko3OCbXuzDFYnho6v6yhGrYDNWYPuFUewb89IONEl/A==
   react-inlinesvg@2.3.0:
     peerDependencies:
-      react: 18.2.0
+      react: ^16.8.0 || ^17.0.0
     resolution:
       integrity: >-
         sha512-fEGOdDf4k4bcveArbEpj01pJcH8pOCKLxmSj2POFdGvEk5YK0NZVnH6BXpW/PzACHPRsuh1YKAhNZyFnD28oxg==
   react-intl@6.8.4:
     peerDependencies:
-      react: 18.2.0
+      react: ^16.6.0 || 17 || 18
       typescript: ^4.7 || 5
     peerDependenciesMeta:
       typescript:
@@ -12664,7 +12674,7 @@ packages:
     peerDependencies:
       mapbox-gl: ">=1.13.0"
       maplibre-gl: ">=1.13.0"
-      react: 18.2.0
+      react: ">=16.3.0"
       react-dom: ">=16.3.0"
     peerDependenciesMeta:
       mapbox-gl:
@@ -12676,14 +12686,14 @@ packages:
         sha512-mwjc0obkBJOXCcoXQr3VoLqmqwo9vS4bXfbGsdxXzEgVCv/PM0v+1QggL7W0d/ccIy+VCjbXNlGij+PENz6VNg==
   react-resize-detector@4.2.3:
     peerDependencies:
-      react: 18.2.0
+      react: ^16.0.0
       react-dom: ^16.0.0
     resolution:
       integrity: >-
         sha512-4AeS6lxdz2KOgDZaOVt1duoDHrbYwSrUX32KeM9j6t9ISyRphoJbTRCMS1aPFxZHFqcCGLT1gMl3lEcSWZNW0A==
   react-test-renderer@16.14.0:
     peerDependencies:
-      react: 18.2.0
+      react: ^16.14.0
     resolution:
       integrity: >-
         sha512-L8yPjqPE5CZO6rKsKXRO/rVPiaCOy0tQQJbC+UjPNlobl5mad59lvPjwFsQHTvL03caVDIVr9x9/OSgDe6I5Eg==
@@ -13958,7 +13968,7 @@ packages:
     engines:
       node: ">=10"
     peerDependencies:
-      react: 18.2.0
+      react: ">= 16.8.0"
       react-dom: ">= 16.8.0"
       react-is: ">= 16.8.0"
     resolution:
@@ -13966,7 +13976,7 @@ packages:
         sha512-uuzIIfnVkagcVHv9nE0VPlHPSCmXIUGKfJ42LNjxCCTDTL5sgnJ8Z7GZBq0EnLYGln77tPpEpExt2+qa+cZqSw==
   styled-icons@10.47.1:
     peerDependencies:
-      react: 18.2.0
+      react: "*"
       styled-components: ">=4.1.0"
     resolution:
       integrity: >-
@@ -15418,20 +15428,20 @@ snapshots:
     dependencies:
       "@jridgewell/gen-mapping": 0.3.5
       "@jridgewell/trace-mapping": 0.3.25
-  "@anolilab/rc@1.1.6(yaml@2.6.0)":
+  "@anolilab/rc@1.1.6":
     dependencies:
-      "@visulima/fs": 3.1.0(yaml@2.6.0)
+      "@visulima/fs": 3.1.0
       "@visulima/path": 1.3.4
       ini: 5.0.0
       ts-deepmerge: 7.0.2
     transitivePeerDependencies:
       - yaml
-  "@anolilab/semantic-release-pnpm@1.1.10(@types/node@15.14.9)(yaml@2.6.0)":
+  "@anolilab/semantic-release-pnpm@1.1.10(@types/node@15.14.9)":
     dependencies:
-      "@anolilab/rc": 1.1.6(yaml@2.6.0)
+      "@anolilab/rc": 1.1.6
       "@semantic-release/error": 4.0.0
-      "@visulima/fs": 3.1.0(yaml@2.6.0)
-      "@visulima/package": 3.5.1(@types/node@15.14.9)(yaml@2.6.0)
+      "@visulima/fs": 3.1.0
+      "@visulima/package": 3.5.1(@types/node@15.14.9)
       "@visulima/path": 1.3.4
       execa: 9.5.2
       ini: 5.0.0
@@ -16713,10 +16723,10 @@ snapshots:
       - bufferutil
       - supports-color
       - utf-8-validate
-  "@jest/core@29.7.0(node-notifier@5.4.5)":
+  "@jest/core@29.7.0":
     dependencies:
       "@jest/console": 29.7.0
-      "@jest/reporters": 29.7.0(node-notifier@5.4.5)
+      "@jest/reporters": 29.7.0
       "@jest/test-result": 29.7.0
       "@jest/transform": 29.7.0
       "@jest/types": 29.6.3
@@ -16743,8 +16753,6 @@ snapshots:
       pretty-format: 29.7.0
       slash: 3.0.0
       strip-ansi: 6.0.1
-    optionalDependencies:
-      node-notifier: 5.4.5
     transitivePeerDependencies:
       - babel-plugin-macros
       - supports-color
@@ -16823,7 +16831,7 @@ snapshots:
       string-length: 2.0.0
     transitivePeerDependencies:
       - supports-color
-  "@jest/reporters@29.7.0(node-notifier@5.4.5)":
+  "@jest/reporters@29.7.0":
     dependencies:
       "@bcoe/v8-coverage": 0.2.3
       "@jest/console": 29.7.0
@@ -16849,8 +16857,6 @@ snapshots:
       string-length: 4.0.2
       strip-ansi: 6.0.1
       v8-to-istanbul: 9.3.0
-    optionalDependencies:
-      node-notifier: 5.4.5
     transitivePeerDependencies:
       - supports-color
   "@jest/schemas@29.6.3":
@@ -16884,9 +16890,7 @@ snapshots:
       jest-runner: 24.9.0
       jest-runtime: 24.9.0
     transitivePeerDependencies:
-      - bufferutil
       - supports-color
-      - utf-8-validate
   "@jest/test-sequencer@29.7.0":
     dependencies:
       "@jest/test-result": 29.7.0
@@ -17887,7 +17891,7 @@ snapshots:
       parse-repo: 1.0.4
       shelljs: 0.8.5
       yargs: 15.4.1
-  "@storybook/test-runner@0.22.0(@types/node@15.14.9)(node-notifier@5.4.5)(storybook@8.6.4(prettier@1.19.1))":
+  "@storybook/test-runner@0.22.0(@types/node@15.14.9)(storybook@8.6.4(prettier@1.19.1))":
     dependencies:
       "@babel/core": 7.26.0
       "@babel/generator": 7.26.2
@@ -17898,15 +17902,15 @@ snapshots:
       "@swc/core": 1.7.42
       "@swc/jest": 0.2.37(@swc/core@1.7.42)
       expect-playwright: 0.8.0
-      jest: 29.7.0(@types/node@15.14.9)(node-notifier@5.4.5)
+      jest: 29.7.0(@types/node@15.14.9)
       jest-circus: 29.7.0
       jest-environment-node: 29.7.0
       jest-junit: 16.0.0
       jest-playwright-preset: >-
-        4.0.0(jest-circus@29.7.0)(jest-environment-node@29.7.0)(jest-runner@29.7.0)(jest@29.7.0(@types/node@15.14.9)(node-notifier@5.4.5))
+        4.0.0(jest-circus@29.7.0)(jest-environment-node@29.7.0)(jest-runner@29.7.0)(jest@29.7.0(@types/node@15.14.9))
       jest-runner: 29.7.0
       jest-serializer-html: 7.1.0
-      jest-watch-typeahead: 2.2.2(jest@29.7.0(@types/node@15.14.9)(node-notifier@5.4.5))
+      jest-watch-typeahead: 2.2.2(jest@29.7.0(@types/node@15.14.9))
       nyc: 15.1.0
       playwright: 1.48.2
       storybook: 8.6.4(prettier@1.19.1)
@@ -18551,16 +18555,14 @@ snapshots:
     dependencies:
       "@typescript-eslint/types": 4.33.0
       eslint-visitor-keys: 2.1.0
-  "@visulima/fs@3.1.0(yaml@2.6.0)":
+  "@visulima/fs@3.1.0":
     dependencies:
       "@visulima/path": 1.3.4
-    optionalDependencies:
-      yaml: 2.6.0
-  "@visulima/package@3.5.1(@types/node@15.14.9)(yaml@2.6.0)":
+  "@visulima/package@3.5.1(@types/node@15.14.9)":
     dependencies:
       "@antfu/install-pkg": 1.0.0
       "@inquirer/confirm": 5.1.6(@types/node@15.14.9)
-      "@visulima/fs": 3.1.0(yaml@2.6.0)
+      "@visulima/fs": 3.1.0
       "@visulima/path": 1.3.4
       normalize-package-data: 7.0.0
     transitivePeerDependencies:
@@ -20253,7 +20255,7 @@ snapshots:
       optionator: 0.8.3
     optionalDependencies:
       source-map: 0.6.1
-  eslint-config-airbnb-base@14.2.1(eslint-plugin-import@2.23.3(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.11.1)(eslint@7.32.0))(eslint@7.32.0):
+  eslint-config-airbnb-base@14.2.1(eslint-plugin-import@2.23.3)(eslint@7.32.0):
     dependencies:
       confusing-browser-globals: 1.0.11
       eslint: 7.32.0
@@ -20261,13 +20263,12 @@ snapshots:
         2.23.3(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.11.1)(eslint@7.32.0)
       object.assign: 4.1.5
       object.entries: 1.1.8
-  eslint-config-airbnb-typescript@12.3.1(eslint-plugin-import@2.23.3(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.11.1)(eslint@7.32.0))(eslint-plugin-jsx-a11y@6.2.3(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.2(eslint@7.32.0))(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)(typescript@4.9.5):
+  eslint-config-airbnb-typescript@12.3.1(eslint-plugin-import@2.23.3)(eslint-plugin-jsx-a11y@6.2.3(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.2(eslint@7.32.0))(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)(typescript@4.9.5):
     dependencies:
       "@typescript-eslint/parser": 4.33.0(eslint@7.32.0)(typescript@4.9.5)
       eslint-config-airbnb: >-
-        18.2.1(eslint-plugin-import@2.23.3(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.11.1)(eslint@7.32.0))(eslint-plugin-jsx-a11y@6.2.3(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.2(eslint@7.32.0))(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)
-      eslint-config-airbnb-base: >-
-        14.2.1(eslint-plugin-import@2.23.3(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.11.1)(eslint@7.32.0))(eslint@7.32.0)
+        18.2.1(eslint-plugin-import@2.23.3)(eslint-plugin-jsx-a11y@6.2.3(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.2(eslint@7.32.0))(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)
+      eslint-config-airbnb-base: 14.2.1(eslint-plugin-import@2.23.3)(eslint@7.32.0)
     transitivePeerDependencies:
       - eslint
       - eslint-plugin-import
@@ -20276,11 +20277,10 @@ snapshots:
       - eslint-plugin-react-hooks
       - supports-color
       - typescript
-  eslint-config-airbnb@18.2.1(eslint-plugin-import@2.23.3(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.11.1)(eslint@7.32.0))(eslint-plugin-jsx-a11y@6.2.3(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.2(eslint@7.32.0))(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0):
+  eslint-config-airbnb@18.2.1(eslint-plugin-import@2.23.3)(eslint-plugin-jsx-a11y@6.2.3(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.2(eslint@7.32.0))(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0):
     dependencies:
       eslint: 7.32.0
-      eslint-config-airbnb-base: >-
-        14.2.1(eslint-plugin-import@2.23.3(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.11.1)(eslint@7.32.0))(eslint@7.32.0)
+      eslint-config-airbnb-base: 14.2.1(eslint-plugin-import@2.23.3)(eslint@7.32.0)
       eslint-plugin-import: >-
         2.23.3(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@4.9.5))(eslint-import-resolver-webpack@0.11.1)(eslint@7.32.0)
       eslint-plugin-jsx-a11y: 6.2.3(eslint@7.32.0)
@@ -20320,7 +20320,7 @@ snapshots:
       webpack: 4.47.0
     transitivePeerDependencies:
       - supports-color
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@4.9.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-webpack@0.11.1(eslint-plugin-import@2.23.3)(webpack@4.47.0))(eslint@7.32.0):
+  eslint-module-utils@2.12.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@4.9.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-webpack@0.11.1)(eslint@7.32.0):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
@@ -20339,7 +20339,7 @@ snapshots:
       eslint: 7.32.0
       eslint-import-resolver-node: 0.3.9
       eslint-module-utils: >-
-        2.12.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@4.9.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-webpack@0.11.1(eslint-plugin-import@2.23.3)(webpack@4.47.0))(eslint@7.32.0)
+        2.12.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@4.9.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-webpack@0.11.1)(eslint@7.32.0)
       find-up: 2.1.0
       has: 1.0.4
       is-core-module: 2.15.1
@@ -21761,9 +21761,9 @@ snapshots:
       - bufferutil
       - supports-color
       - utf-8-validate
-  jest-cli@29.7.0(@types/node@15.14.9)(node-notifier@5.4.5):
+  jest-cli@29.7.0(@types/node@15.14.9):
     dependencies:
-      "@jest/core": 29.7.0(node-notifier@5.4.5)
+      "@jest/core": 29.7.0
       "@jest/test-result": 29.7.0
       "@jest/types": 29.6.3
       chalk: 4.1.2
@@ -21774,8 +21774,6 @@ snapshots:
       jest-util: 29.7.0
       jest-validate: 29.7.0
       yargs: 17.7.2
-    optionalDependencies:
-      node-notifier: 5.4.5
     transitivePeerDependencies:
       - "@types/node"
       - babel-plugin-macros
@@ -22016,10 +22014,10 @@ snapshots:
       "@jest/types": 29.6.3
       "@types/node": 15.14.9
       jest-util: 29.7.0
-  jest-playwright-preset@4.0.0(jest-circus@29.7.0)(jest-environment-node@29.7.0)(jest-runner@29.7.0)(jest@29.7.0(@types/node@15.14.9)(node-notifier@5.4.5)):
+  jest-playwright-preset@4.0.0(jest-circus@29.7.0)(jest-environment-node@29.7.0)(jest-runner@29.7.0)(jest@29.7.0(@types/node@15.14.9)):
     dependencies:
       expect-playwright: 0.8.0
-      jest: 29.7.0(@types/node@15.14.9)(node-notifier@5.4.5)
+      jest: 29.7.0(@types/node@15.14.9)
       jest-circus: 29.7.0
       jest-environment-node: 29.7.0
       jest-process-manager: 0.4.0
@@ -22279,11 +22277,11 @@ snapshots:
       jest-get-type: 29.6.3
       leven: 3.1.0
       pretty-format: 29.7.0
-  jest-watch-typeahead@2.2.2(jest@29.7.0(@types/node@15.14.9)(node-notifier@5.4.5)):
+  jest-watch-typeahead@2.2.2(jest@29.7.0(@types/node@15.14.9)):
     dependencies:
       ansi-escapes: 6.2.1
       chalk: 5.4.1
-      jest: 29.7.0(@types/node@15.14.9)(node-notifier@5.4.5)
+      jest: 29.7.0(@types/node@15.14.9)
       jest-regex-util: 29.6.3
       jest-watcher: 29.7.0
       slash: 5.1.0
@@ -22333,14 +22331,12 @@ snapshots:
       - bufferutil
       - supports-color
       - utf-8-validate
-  jest@29.7.0(@types/node@15.14.9)(node-notifier@5.4.5):
+  jest@29.7.0(@types/node@15.14.9):
     dependencies:
-      "@jest/core": 29.7.0(node-notifier@5.4.5)
+      "@jest/core": 29.7.0
       "@jest/types": 29.6.3
       import-local: 3.2.0
-      jest-cli: 29.7.0(@types/node@15.14.9)(node-notifier@5.4.5)
-    optionalDependencies:
-      node-notifier: 5.4.5
+      jest-cli: 29.7.0(@types/node@15.14.9)
     transitivePeerDependencies:
       - "@types/node"
       - babel-plugin-macros
