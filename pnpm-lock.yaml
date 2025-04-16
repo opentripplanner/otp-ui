@@ -3,8 +3,11 @@ catalogs:
     react:
       specifier: ^18.2.0
       version: 18.2.0
+    react-map-gl:
+      specifier: ^7.0.15
+      version: 7.1.7
     styled-components:
-      specifier: ^5.3.11
+      specifier: ^5.3.0
       version: 5.3.11
 importers:
   .:
@@ -269,7 +272,7 @@ importers:
         version: >-
           2.0.6(@storybook/addons@7.6.17(react-dom@18.3.1(react@18.2.0))(react@18.2.0))
       styled-components:
-        specifier: ^5.3.0
+        specifier: "catalog:"
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
       stylelint:
         specifier: ^10.1.0
@@ -322,7 +325,7 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-map-gl:
-        specifier: ^7.0.15
+        specifier: "catalog:"
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
@@ -424,7 +427,7 @@ importers:
         specifier: ^6.8.4
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
-        specifier: ^7.0.15
+        specifier: "catalog:"
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
@@ -639,7 +642,7 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-map-gl:
-        specifier: ^7.0.15
+        specifier: "catalog:"
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
@@ -667,7 +670,7 @@ importers:
         specifier: ^18.2.0
         version: 18.3.1(react@18.2.0)
       react-map-gl:
-        specifier: ^7.0.15
+        specifier: "catalog:"
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
@@ -741,7 +744,7 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-map-gl:
-        specifier: ^7.0.15
+        specifier: "catalog:"
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
@@ -769,7 +772,7 @@ importers:
         specifier: ^6.8.4
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
-        specifier: ^7.0.15
+        specifier: "catalog:"
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
@@ -804,7 +807,7 @@ importers:
         specifier: ^6.8.4
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
-        specifier: ^7.0.15
+        specifier: "catalog:"
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
@@ -853,7 +856,7 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-map-gl:
-        specifier: ^7.0.15
+        specifier: "catalog:"
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
@@ -970,7 +973,7 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-map-gl:
-        specifier: ^7.0.15
+        specifier: "catalog:"
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
   packages/types: {}
@@ -1008,7 +1011,7 @@ importers:
         specifier: ^6.8.4
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
-        specifier: ^7.0.15
+        specifier: "catalog:"
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
@@ -1033,7 +1036,7 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-map-gl:
-        specifier: ^7.0.15
+        specifier: "catalog:"
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
@@ -16890,7 +16893,9 @@ snapshots:
       jest-runner: 24.9.0
       jest-runtime: 24.9.0
     transitivePeerDependencies:
+      - bufferutil
       - supports-color
+      - utf-8-validate
   "@jest/test-sequencer@29.7.0":
     dependencies:
       "@jest/test-result": 29.7.0
@@ -21954,9 +21959,7 @@ snapshots:
       pretty-format: 24.9.0
       throat: 4.1.0
     transitivePeerDependencies:
-      - bufferutil
       - supports-color
-      - utf-8-validate
   jest-junit@16.0.0:
     dependencies:
       mkdirp: 1.0.4

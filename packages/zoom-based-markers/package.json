@@ -28,7 +28,7 @@
   },
   "peerDependencies": {
     "react": "catalog:",
-    "react-map-gl": "^7.0.15",
+    "react-map-gl": "catalog:",
     "styled-components": "catalog:"
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"

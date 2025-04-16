@@ -10,7 +10,7 @@
   "private": false,
   "dependencies": {
     "maplibre-gl": "^2.1.9",
-    "react-map-gl": "^7.0.15",
+    "react-map-gl": "catalog:",
     "mapbox-gl": "npm:empty-npm-package@1.0.0",
     "@opentripplanner/building-blocks": "workspace:*"
   },
