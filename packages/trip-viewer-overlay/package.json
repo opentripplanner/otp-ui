@@ -24,7 +24,7 @@
     "@opentripplanner/core-utils": "workspace:*"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
+    "react": "catalog:",
     "react-map-gl": "^7.0.15"
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"

@@ -1,2 +1,4 @@
+catalog:
+  react: ^18.2.0
 packages:
   - packages/*

@@ -17,7 +17,7 @@
     "@opentripplanner/icons": "workspace:*"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
+    "react": "catalog:",
     "styled-components": "^5.3.0"
   },
   "bugs": {
