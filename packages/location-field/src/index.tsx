@@ -710,7 +710,7 @@ const LocationField = ({
 
   const statusMessages = [];
   let menuItems = []; // array of menu items for display (may include non-selectable items e.g. dividers/headings)
-  const indexedOptionLookup = []; // array of menu item ids and locationSelected handlers for reference (does not include non-selectable items e.g. dividers/headings)
+  const indexedOptionLookup = []; // array of menu item ids and associated locationSelected handlers for onKeyDown (does not include non-selectable items e.g. dividers/headings)
   const userLocationRenderData = showUserSettings
     ? userLocationsAndRecentPlaces.map(loc =>
         getRenderData(loc, setLocation, UserLocationIconComponent, intl)
