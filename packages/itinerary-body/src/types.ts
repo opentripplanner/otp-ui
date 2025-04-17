@@ -49,6 +49,8 @@ export interface LegSharedProps extends LegDestination {
   lastLeg?: Leg;
   /** The index value of this specific leg within the itinerary */
   legIndex: number;
+  /** Contains details about the leg object that follows the current one */
+  nextLeg?: Leg;
 }
 
 export interface LineColumnContentProps extends LegSharedProps {

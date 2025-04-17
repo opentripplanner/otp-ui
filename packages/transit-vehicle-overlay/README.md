@@ -38,4 +38,4 @@ Only input in the form of https://github.com/opentripplanner/otp-ui/blob/master/
 ## TODO:
 
 1.  more / better unit tests
-1.  mapbox gl
+2.  mapbox gl

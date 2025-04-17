@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/transitive-overlay",
-  "version": "4.0.3",
+  "version": "5.0.1",
   "description": "A map overlay to show an itinerary based on transitive.js",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -20,9 +20,9 @@
   },
   "dependencies": {
     "@mapbox/polyline": "^1.1.1",
-    "@opentripplanner/base-map": "^4.0.0",
-    "@opentripplanner/core-utils": "^12.0.0",
-    "@opentripplanner/itinerary-body": "^6.0.0",
+    "@opentripplanner/base-map": "workspace:*",
+    "@opentripplanner/core-utils": "workspace:*",
+    "@opentripplanner/itinerary-body": "workspace:*",
     "@turf/bbox": "^6.5.0",
     "@turf/bearing": "^6.5.0",
     "@turf/destination": "^6.5.0",
@@ -32,8 +32,8 @@
     "lodash.isequal": "^4.5.0"
   },
   "devDependencies": {
-    "@opentripplanner/endpoints-overlay": "^3.0.0",
-    "@opentripplanner/types": "^6.5.2"
+    "@opentripplanner/endpoints-overlay": "workspace:*",
+    "@opentripplanner/types": "workspace:*"
   },
   "peerDependencies": {
     "react": "^18.2.0",

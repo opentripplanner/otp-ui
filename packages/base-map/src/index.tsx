@@ -139,6 +139,7 @@ const BaseMap = ({
       latitude={viewState.latitude}
       locale={generateMapControlTranslations(intl)}
       longitude={viewState.longitude}
+      // @ts-expect-error wrong type because we're using maplibre-gl
       mapLib={maplibregl}
       mapStyle={activeBaseLayer}
       maxZoom={maxZoom}

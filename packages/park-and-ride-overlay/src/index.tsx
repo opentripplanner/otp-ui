@@ -3,7 +3,6 @@ import {
   MarkerWithPopup
 } from "@opentripplanner/base-map";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Location } from "@opentripplanner/types";
 import React from "react";
 import ParkAndRideMarker from "./park-and-ride-marker";
@@ -13,10 +12,13 @@ type Props = {
   keyboard?: boolean;
   parkAndRideLocations: { name: string; x: number; y: number }[];
   setLocation: ({
-    // eslint-disable-next-line @typescript-eslint/no-shadow
-    location: Location,
-    locationType: string,
-    reverseGeocode: boolean
+    location,
+    locationType,
+    reverseGeocode
+  }: {
+    location: Location;
+    locationType: string;
+    reverseGeocode: boolean;
   }) => void;
 };
 

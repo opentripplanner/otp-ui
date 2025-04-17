@@ -1,6 +1,6 @@
 import { getLegRouteLongName } from "@opentripplanner/core-utils/lib/itinerary";
 import { Leg } from "@opentripplanner/types";
-import React, { HTMLAttributes, ReactElement } from "react";
+import React, { HTMLAttributes, ReactElement, ReactNode } from "react";
 import { FormattedMessage } from "react-intl";
 import { compareTwoStrings } from "string-similarity";
 
@@ -14,7 +14,7 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
 /**
  * Helper function to format the "to" separator.
  */
-function toPrefix(contents: ReactElement): ReactElement {
+function toPrefix(contents: ReactNode): ReactElement {
   return (
     <S.LegDescriptionHeadsignPrefix>{contents}</S.LegDescriptionHeadsignPrefix>
   );
