@@ -19,7 +19,7 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@mapbox/polyline": "^1.1.0",
+    "@mapbox/polyline": "catalog:",
     "@opentripplanner/base-map": "workspace:*",
     "@opentripplanner/core-utils": "workspace:*",
     "point-in-polygon": "^1.1.0"

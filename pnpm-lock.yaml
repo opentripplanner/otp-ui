@@ -6,6 +6,9 @@ settings:
 
 catalogs:
   default:
+    '@mapbox/polyline':
+      specifier: ^1.1.1
+      version: 1.2.1
     '@styled-icons/bootstrap':
       specifier: ^10.34.0
       version: 10.47.0
@@ -392,7 +395,7 @@ importers:
         specifier: ^1.4.1
         version: 1.4.1
       '@mapbox/polyline':
-        specifier: ^1.1.0
+        specifier: 'catalog:'
         version: 1.2.1
       '@opentripplanner/geocoder':
         specifier: workspace:*
@@ -733,7 +736,7 @@ importers:
   packages/route-viewer-overlay:
     dependencies:
       '@mapbox/polyline':
-        specifier: ^1.1.0
+        specifier: 'catalog:'
         version: 1.2.1
       '@opentripplanner/base-map':
         specifier: workspace:*
@@ -857,7 +860,7 @@ importers:
   packages/transitive-overlay:
     dependencies:
       '@mapbox/polyline':
-        specifier: ^1.1.1
+        specifier: 'catalog:'
         version: 1.2.1
       '@opentripplanner/base-map':
         specifier: workspace:*
@@ -995,7 +998,7 @@ importers:
   packages/trip-viewer-overlay:
     dependencies:
       '@mapbox/polyline':
-        specifier: ^1.1.0
+        specifier: 'catalog:'
         version: 1.2.1
       '@opentripplanner/base-map':
         specifier: workspace:*

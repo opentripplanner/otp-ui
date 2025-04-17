@@ -13,7 +13,7 @@
   "private": false,
   "dependencies": {
     "@conveyal/lonlat": "^1.4.1",
-    "@mapbox/polyline": "^1.1.0",
+    "@mapbox/polyline": "catalog:",
     "@opentripplanner/geocoder": "workspace:*",
     "@styled-icons/foundation": "catalog:",
     "@turf/along": "^6.0.1",

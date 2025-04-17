@@ -19,7 +19,7 @@
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "dependencies": {
-    "@mapbox/polyline": "^1.1.1",
+    "@mapbox/polyline": "catalog:",
     "@opentripplanner/base-map": "workspace:*",
     "@opentripplanner/core-utils": "workspace:*",
     "@opentripplanner/itinerary-body": "workspace:*",
