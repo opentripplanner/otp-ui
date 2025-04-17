@@ -36,6 +36,8 @@ import {
 } from "./utils";
 import defaultEnglishMessages from "../i18n/en-US.yml";
 
+type IndexedOptionLookup = Array<{ id: string; locationSelected: () => void }>;
+
 const optionIdPrefix = "otpui-locf-option";
 
 /**
@@ -271,7 +273,7 @@ const FeaturesElements = ({
   setLocation: (newLocation: Location, resultType: ResultType) => void;
   showSecondaryLabels: boolean;
   title: string;
-  indexedOptionLookup: any;
+  indexedOptionLookup: IndexedOptionLookup;
 }) => {
   return (
     <>
@@ -710,7 +712,7 @@ const LocationField = ({
 
   const statusMessages = [];
   let menuItems = []; // array of menu items for display (may include non-selectable items e.g. dividers/headings)
-  const indexedOptionLookup = []; // array of menu item ids and associated locationSelected handlers for onKeyDown (does not include non-selectable items e.g. dividers/headings)
+  const indexedOptionLookup: IndexedOptionLookup = []; // array of menu item ids and associated locationSelected handlers for onKeyDown (does not include non-selectable items e.g. dividers/headings)
   const userLocationRenderData = showUserSettings
     ? userLocationsAndRecentPlaces.map(loc =>
         getRenderData(loc, setLocation, UserLocationIconComponent, intl)
