@@ -46,7 +46,7 @@ function getOptionId(index: number): string {
   return `${optionIdPrefix}-${index}`;
 }
 
-function generateOptionId(feature, indexedLocationLookup) {
+function generateOptionId(feature, indexedOptionLookup) {
   // Use a default id if the feature does not have an id.
   let id = "000";
 
@@ -62,7 +62,7 @@ function generateOptionId(feature, indexedLocationLookup) {
 
   // There are some cases, such as when we're using user-saved locations, where
   // the id is not unique. In this case, append a number to the end of the id.
-  if (indexedLocationLookup.find(item => item.id === id)) {
+  if (indexedOptionLookup.find(item => item.id === id)) {
     id = `${id}0`;
   }
   return id;
@@ -158,17 +158,17 @@ function makeUserOption(
   userLocation,
   id,
   activeIndex,
-  pushToIndexedLocations,
-  indexedLocationLookup
+  pushToIndexedOptions,
+  indexedOptionLookup
 ) {
   const { displayName, icon, locationSelected } = userLocation;
   // Add to the selection handler lookup (for use in onKeyDown)
-  pushToIndexedLocations(locationSelected, id);
+  pushToIndexedOptions(locationSelected, id);
   return (
     <Option
       icon={icon}
       id={id}
-      isActive={indexedLocationLookup[activeIndex]?.id === id}
+      isActive={indexedOptionLookup[activeIndex]?.id === id}
       key={id}
       onClick={locationSelected}
       title={displayName}
@@ -183,7 +183,7 @@ const renderFeature = (
   showSecondaryLabels,
   activeIndex,
   GeocodedOptionIconComponent,
-  indexedLocationLookup
+  indexedOptionLookup
 ) => {
   // generate the friendly labels for this feature
   const { main, secondary } = generateLabel(feature.properties);
@@ -214,7 +214,7 @@ const renderFeature = (
       color={layerColorMap[layer]}
       icon={operatorIcon || <GeocodedOptionIconComponent feature={feature} />}
       id={feature.id}
-      isActive={indexedLocationLookup[activeIndex]?.id === feature.id}
+      isActive={indexedOptionLookup[activeIndex]?.id === feature.id}
       key={feature.id}
       onClick={feature.locationSelected}
       title={main}
@@ -252,7 +252,7 @@ const FeaturesElements = ({
   operatorIconMap,
   showSecondaryLabels,
   title,
-  indexedLocationLookup
+  indexedOptionLookup
 }: {
   activeIndex: number;
   addLocationSearch: ({
@@ -271,7 +271,7 @@ const FeaturesElements = ({
   setLocation: (newLocation: Location, resultType: ResultType) => void;
   showSecondaryLabels: boolean;
   title: string;
-  indexedLocationLookup: any;
+  indexedOptionLookup: any;
 }) => {
   return (
     <>
@@ -289,7 +289,7 @@ const FeaturesElements = ({
           showSecondaryLabels,
           activeIndex,
           GeocodedOptionIconComponent,
-          indexedLocationLookup
+          indexedOptionLookup
         )
       )}
     </>
@@ -633,7 +633,7 @@ const LocationField = ({
           // Menu is active
           // Retrieve location selection handler from lookup object and invoke
           const locationSelected =
-            indexedLocationLookup[activeIndex]?.locationSelected;
+            indexedOptionLookup[activeIndex]?.locationSelected;
           if (locationSelected) locationSelected();
 
           closeMenu();
@@ -710,17 +710,16 @@ const LocationField = ({
 
   const statusMessages = [];
   let menuItems = []; // array of menu items for display (may include non-selectable items e.g. dividers/headings)
-  const indexedLocationLookup = []; // array of menu items for reference (does not include non-selectable items e.g. dividers/headings)
+  const indexedOptionLookup = []; // array of menu item ids and locationSelected handlers for reference (does not include non-selectable items e.g. dividers/headings)
   const userLocationRenderData = showUserSettings
     ? userLocationsAndRecentPlaces.map(loc =>
         getRenderData(loc, setLocation, UserLocationIconComponent, intl)
       )
     : [];
 
-  // Function that creates a
-  const pushToIndexedLocations = (locationSelected, id) => {
+  const pushToIndexedOptions = (locationSelected, id) => {
     const obj = { id, locationSelected };
-    indexedLocationLookup.push(obj);
+    indexedOptionLookup.push(obj);
   };
 
   /* 0) Include user saved locations if the typed text contains those locations name. */
@@ -733,16 +732,13 @@ const LocationField = ({
       // Iterate through any saved locations
       menuItems = menuItems.concat(
         matchingLocations.map(userLocation => {
-          const featureId = generateOptionId(
-            userLocation,
-            indexedLocationLookup
-          );
+          const featureId = generateOptionId(userLocation, indexedOptionLookup);
           return makeUserOption(
             userLocation,
             featureId,
             activeIndex,
-            pushToIndexedLocations,
-            indexedLocationLookup
+            pushToIndexedOptions,
+            indexedOptionLookup
           );
         })
       );
@@ -751,10 +747,16 @@ const LocationField = ({
 
   /* 1) Process geocode search result option(s) */
   if (geocodedFeatures.length > 0) {
+    /**
+     * Since the results are not guaranteed to be displayed in the same order
+     * as the original order of results, generate the ids and handlers for each
+     * feature beforehand, and then push them to the indexedOptionLookup array
+     * after sorting.
+     */
     const geocodedFeaturesWithId = geocodedFeatures.map(feature => {
       return {
         ...feature,
-        id: generateOptionId(feature, indexedLocationLookup),
+        id: generateOptionId(feature, indexedOptionLookup),
         locationSelected: () => setLocationSelected(feature)
       };
     });
@@ -783,7 +785,7 @@ const LocationField = ({
         GeocodedOptionIconComponent,
         layerColorMap,
         geocoderConfig,
-        indexedLocationLookup
+        indexedOptionLookup
       };
       switch (result) {
         case GeocoderResultsConstants.OTHER:
@@ -852,9 +854,10 @@ const LocationField = ({
       return element;
     });
 
+    // Push the ids and handlers to the indexedOptionLookup in the correct order
     featuresElementsArray?.forEach(category =>
       category.props?.features?.forEach(feat => {
-        pushToIndexedLocations(feat.locationSelected, feat.id);
+        pushToIndexedOptions(feat.locationSelected, feat.id);
       })
     );
 
@@ -893,13 +896,13 @@ const LocationField = ({
         };
 
         // Add to the selection handler lookup (for use in onKeyDown)
-        pushToIndexedLocations(locationSelected, stopId);
+        pushToIndexedOptions(locationSelected, stopId);
 
         // Create and return the option menu item
         const option = (
           <TransitStopOption
             id={stopId}
-            isActive={indexedLocationLookup[activeIndex]?.id === stopId}
+            isActive={indexedOptionLookup[activeIndex]?.id === stopId}
             key={stopId}
             onClick={locationSelected}
             stop={stop}
@@ -936,17 +939,17 @@ const LocationField = ({
 
         const locationId = generateOptionId(
           sessionLocation,
-          indexedLocationLookup
+          indexedOptionLookup
         );
 
         // Add to the selection handler lookup (for use in onKeyDown)
-        pushToIndexedLocations(locationSelected, locationId);
+        pushToIndexedOptions(locationSelected, locationId);
         // Create and return the option menu item
         const option = (
           <Option
             icon={sessionOptionIcon}
             id={locationId}
-            isActive={indexedLocationLookup[activeIndex]?.id === locationId}
+            isActive={indexedOptionLookup[activeIndex]?.id === locationId}
             key={locationId}
             onClick={locationSelected}
             subTitle={sessionLocation.secondary || ""}
@@ -975,16 +978,13 @@ const LocationField = ({
     // Iterate through any saved locations
     menuItems = menuItems.concat(
       userLocationRenderData.map(userLocation => {
-        const locationId = generateOptionId(
-          userLocation,
-          indexedLocationLookup
-        );
+        const locationId = generateOptionId(userLocation, indexedOptionLookup);
         return makeUserOption(
           userLocation,
           locationId,
           activeIndex,
-          pushToIndexedLocations,
-          indexedLocationLookup
+          pushToIndexedOptions,
+          indexedOptionLookup
         );
       })
     );
@@ -1026,7 +1026,7 @@ const LocationField = ({
   const optionId = `current-position`;
 
   // Add to the selection handler lookup (for use in onKeyDown
-  pushToIndexedLocations(locationSelected, optionId);
+  pushToIndexedOptions(locationSelected, optionId);
 
   if (!suppressNearby) {
     // Create and add the option item to the menu items array
@@ -1035,7 +1035,7 @@ const LocationField = ({
         disabled={positionUnavailable}
         icon={optionIcon}
         id={optionId}
-        isActive={indexedLocationLookup[activeIndex]?.id === optionId}
+        isActive={indexedOptionLookup[activeIndex]?.id === optionId}
         key={optionId}
         onClick={locationSelected}
         title={optionTitle}
@@ -1057,7 +1057,7 @@ const LocationField = ({
   }
 
   // Store the number of location-associated items for reference in the onKeyDown method
-  let menuItemCount = indexedLocationLookup.length;
+  let menuItemCount = indexedOptionLookup.length;
 
   /** the text input element * */
   // Use this text for aria-label below.
