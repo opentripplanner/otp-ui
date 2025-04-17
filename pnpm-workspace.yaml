@@ -1,4 +1,8 @@
 catalog:
+  "@styled-icons/bootstrap": ^10.34.0
+  "@styled-icons/fa-regular": ^10.34.0
+  "@styled-icons/fa-solid": ^10.34.0
+  "@styled-icons/foundation": ^10.34.0
   "@types/flat": ^5.0.2
   flat: ^5.0.2
   react: ^18.2.0
@@ -7,5 +11,6 @@ catalog:
   react-intl: ^6.8.4
   react-map-gl: ^7.0.15
   styled-components: ^5.3.0
+  styled-icons: ^10.34.0
 packages:
   - packages/*

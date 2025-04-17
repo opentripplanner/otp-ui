@@ -6,6 +6,18 @@ settings:
 
 catalogs:
   default:
+    '@styled-icons/bootstrap':
+      specifier: ^10.34.0
+      version: 10.47.0
+    '@styled-icons/fa-regular':
+      specifier: ^10.34.0
+      version: 10.47.0
+    '@styled-icons/fa-solid':
+      specifier: ^10.34.0
+      version: 10.47.0
+    '@styled-icons/foundation':
+      specifier: ^10.34.0
+      version: 10.46.0
     '@types/flat':
       specifier: ^5.0.2
       version: 5.0.5
@@ -30,6 +42,9 @@ catalogs:
     styled-components:
       specifier: ^5.3.0
       version: 5.3.11
+    styled-icons:
+      specifier: ^10.34.0
+      version: 10.47.1
 
 importers:
 
@@ -377,7 +392,7 @@ importers:
         specifier: workspace:*
         version: link:../geocoder
       '@styled-icons/foundation':
-        specifier: ^10.34.0
+        specifier: 'catalog:'
         version: 10.46.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
       '@turf/along':
         specifier: ^6.0.1
@@ -423,7 +438,7 @@ importers:
         specifier: workspace:*
         version: link:../location-icon
       '@styled-icons/fa-solid':
-        specifier: ^10.34.0
+        specifier: 'catalog:'
         version: 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
       flat:
         specifier: 'catalog:'
@@ -524,10 +539,10 @@ importers:
         specifier: workspace:*
         version: link:../location-icon
       '@styled-icons/fa-solid':
-        specifier: ^10.34.0
+        specifier: 'catalog:'
         version: 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
       '@styled-icons/foundation':
-        specifier: ^10.34.0
+        specifier: 'catalog:'
         version: 10.46.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
       date-fns:
         specifier: ^2.28.0
@@ -579,7 +594,7 @@ importers:
         specifier: workspace:*
         version: link:../location-icon
       '@styled-icons/fa-solid':
-        specifier: ^10.34.0
+        specifier: 'catalog:'
         version: 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
       react:
         specifier: 'catalog:'
@@ -604,10 +619,10 @@ importers:
   packages/location-icon:
     dependencies:
       '@styled-icons/fa-regular':
-        specifier: ^10.34.0
+        specifier: 'catalog:'
         version: 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
       '@styled-icons/fa-solid':
-        specifier: ^10.34.0
+        specifier: 'catalog:'
         version: 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
       react:
         specifier: 'catalog:'
@@ -799,7 +814,7 @@ importers:
         specifier: workspace:*
         version: link:../types
       styled-icons:
-        specifier: ^10.34.0
+        specifier: 'catalog:'
         version: 10.47.1(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
 
   packages/transit-vehicle-overlay:
@@ -888,7 +903,7 @@ importers:
         specifier: workspace:*
         version: link:../core-utils
       '@styled-icons/fa-solid':
-        specifier: ^10.34.0
+        specifier: 'catalog:'
         version: 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
       flat:
         specifier: 'catalog:'
@@ -928,7 +943,7 @@ importers:
         specifier: workspace:*
         version: link:../icons
       '@styled-icons/bootstrap':
-        specifier: ^10.34.0
+        specifier: 'catalog:'
         version: 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
       '@styled-icons/boxicons-regular':
         specifier: ^10.38.0
@@ -1006,7 +1021,7 @@ importers:
         specifier: workspace:*
         version: link:../map-popup
       '@styled-icons/fa-solid':
-        specifier: ^10.34.0
+        specifier: 'catalog:'
         version: 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
       flat:
         specifier: 'catalog:'

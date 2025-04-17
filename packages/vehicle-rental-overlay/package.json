@@ -23,7 +23,7 @@
     "@opentripplanner/core-utils": "workspace:*",
     "@opentripplanner/from-to-location-picker": "workspace:*",
     "@opentripplanner/map-popup": "workspace:*",
-    "@styled-icons/fa-solid": "^10.34.0",
+    "@styled-icons/fa-solid": "catalog:",
     "flat": "catalog:",
     "lodash.memoize": "^4.1.2"
   },

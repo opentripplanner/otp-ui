@@ -12,7 +12,7 @@
   "private": false,
   "dependencies": {
     "@opentripplanner/core-utils": "workspace:*",
-    "@styled-icons/fa-solid": "^10.34.0",
+    "@styled-icons/fa-solid": "catalog:",
     "flat": "catalog:",
     "react-animate-height": "catalog:"
   },
