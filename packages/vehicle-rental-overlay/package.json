@@ -24,7 +24,7 @@
     "@opentripplanner/from-to-location-picker": "workspace:*",
     "@opentripplanner/map-popup": "workspace:*",
     "@styled-icons/fa-solid": "^10.34.0",
-    "flat": "^5.0.2",
+    "flat": "catalog:",
     "lodash.memoize": "^4.1.2"
   },
   "devDependencies": {

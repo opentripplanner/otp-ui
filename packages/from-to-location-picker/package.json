@@ -10,7 +10,7 @@
   "private": false,
   "dependencies": {
     "@opentripplanner/location-icon": "workspace:*",
-    "flat": "^5.0.2"
+    "flat": "catalog:"
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*"

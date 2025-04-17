@@ -12,7 +12,7 @@
     "@opentripplanner/base-map": "workspace:*",
     "@opentripplanner/core-utils": "workspace:*",
     "@opentripplanner/icons": "workspace:*",
-    "flat": "^5.0.2"
+    "flat": "catalog:"
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*"

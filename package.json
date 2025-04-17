@@ -61,7 +61,7 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "7.14.3",
-    "flat": "^5.0.2",
+    "flat": "catalog:",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
     "husky": "^2.4.1",

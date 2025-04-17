@@ -22,13 +22,13 @@
     "@opentripplanner/base-map": "workspace:*",
     "@opentripplanner/location-icon": "workspace:*",
     "@opentripplanner/core-utils": "workspace:*",
-    "flat": "^5.0.2",
+    "flat": "catalog:",
     "@styled-icons/fa-solid": "^10.34.0",
     "@opentripplanner/building-blocks": "workspace:*"
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*",
-    "@types/flat": "^5.0.2"
+    "@types/flat": "catalog:"
   },
   "peerDependencies": {
     "react": "catalog:",

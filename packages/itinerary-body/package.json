@@ -18,14 +18,14 @@
     "@styled-icons/foundation": "^10.34.0",
     "date-fns": "^2.28.0",
     "date-fns-tz": "^1.2.2",
-    "flat": "^5.0.2",
+    "flat": "catalog:",
     "react-animate-height": "catalog:",
     "react-resize-detector": "^4.2.1",
     "string-similarity": "^4.0.4"
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*",
-    "@types/flat": "^5.0.2"
+    "@types/flat": "catalog:"
   },
   "peerDependencies": {
     "react": "catalog:",
