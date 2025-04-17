@@ -22,7 +22,7 @@
   },
   "peerDependencies": {
     "react": "catalog:",
-    "react-intl": "^6.8.4",
+    "react-intl": "catalog:",
     "styled-components": "catalog:"
   },
   "bugs": {

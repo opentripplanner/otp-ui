@@ -14,7 +14,7 @@
   },
   "peerDependencies": {
     "react": "catalog:",
-    "react-animate-height": "^3.0.4",
+    "react-animate-height": "catalog:",
     "styled-components": "catalog:"
   },
   "repository": {

@@ -32,8 +32,8 @@
   },
   "peerDependencies": {
     "react": "catalog:",
-    "react-dom": "^18.2.0",
-    "react-intl": "^6.8.4",
+    "react-dom": "catalog:",
+    "react-intl": "catalog:",
     "react-map-gl": "catalog:",
     "styled-components": "catalog:"
   }

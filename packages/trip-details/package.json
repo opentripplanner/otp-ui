@@ -14,7 +14,7 @@
     "@opentripplanner/core-utils": "workspace:*",
     "@styled-icons/fa-solid": "^10.34.0",
     "flat": "^5.0.2",
-    "react-animate-height": "^3.0.4"
+    "react-animate-height": "catalog:"
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*",
@@ -22,7 +22,7 @@
   },
   "peerDependencies": {
     "react": "catalog:",
-    "react-intl": "^6.8.4",
+    "react-intl": "catalog:",
     "styled-components": "catalog:"
   },
   "bugs": {

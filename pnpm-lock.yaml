@@ -3,6 +3,15 @@ catalogs:
     react:
       specifier: ^18.2.0
       version: 18.2.0
+    react-animate-height:
+      specifier: ^3.0.4
+      version: 3.0.4
+    react-dom:
+      specifier: ^18.2.0
+      version: 18.3.1
+    react-intl:
+      specifier: ^6.8.4
+      version: 6.8.4
     react-map-gl:
       specifier: ^7.0.15
       version: 7.1.7
@@ -244,10 +253,10 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-dom:
-        specifier: ^18.2.0
+        specifier: 'catalog:'
         version: 18.3.1(react@18.2.0)
       react-intl:
-        specifier: ^6.8.4
+        specifier: 'catalog:'
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-test-renderer:
         specifier: ^16.14.0
@@ -341,7 +350,7 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-animate-height:
-        specifier: ^3.0.4
+        specifier: "catalog:"
         version: 3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
         specifier: "catalog:"
@@ -421,17 +430,17 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-dom:
-        specifier: ^18.2.0
+        specifier: 'catalog:'
         version: 18.3.1(react@18.2.0)
       react-intl:
-        specifier: ^6.8.4
+        specifier: "catalog:"
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
         specifier: "catalog:"
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
-        specifier: "catalog:"
+        specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -452,10 +461,10 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-intl:
-        specifier: ^6.8.4
+        specifier: "catalog:"
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       styled-components:
-        specifier: "catalog:"
+        specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -481,7 +490,7 @@ importers:
   packages/humanize-distance:
     dependencies:
       react-intl:
-        specifier: ^6.8.4
+        specifier: "catalog:"
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
   packages/icons:
     dependencies:
@@ -492,7 +501,7 @@ importers:
         specifier: ^15.7.2
         version: 15.8.1
       react:
-        specifier: "catalog:"
+        specifier: 'catalog:'
         version: 18.2.0
   packages/itinerary-body:
     dependencies:
@@ -529,7 +538,7 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-animate-height:
-        specifier: ^3.0.4
+        specifier: "catalog:"
         version: 3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       react-resize-detector:
         specifier: ^4.2.1
@@ -572,10 +581,10 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-intl:
-        specifier: ^6.8.4
+        specifier: "catalog:"
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       styled-components:
-        specifier: "catalog:"
+        specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
       throttle-debounce:
         specifier: ^2.1.0
@@ -624,10 +633,10 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-intl:
-        specifier: ^6.8.4
+        specifier: "catalog:"
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       styled-components:
-        specifier: "catalog:"
+        specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -667,7 +676,7 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-dom:
-        specifier: ^18.2.0
+        specifier: "catalog:"
         version: 18.3.1(react@18.2.0)
       react-map-gl:
         specifier: "catalog:"
@@ -688,7 +697,7 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       styled-components:
-        specifier: "catalog:"
+        specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/icons":
@@ -769,14 +778,14 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-intl:
-        specifier: ^6.8.4
+        specifier: "catalog:"
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
         specifier: "catalog:"
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
-        specifier: "catalog:"
+        specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -804,14 +813,14 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-intl:
-        specifier: ^6.8.4
+        specifier: "catalog:"
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
         specifier: "catalog:"
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
-        specifier: "catalog:"
+        specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -882,13 +891,13 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-animate-height:
-        specifier: ^3.0.4
+        specifier: "catalog:"
         version: 3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       react-intl:
-        specifier: ^6.8.4
+        specifier: "catalog:"
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       styled-components:
-        specifier: "catalog:"
+        specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -937,7 +946,7 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-animate-height:
-        specifier: ^3.0.4
+        specifier: "catalog:"
         version: 3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       react-indiana-drag-scroll:
         specifier: ^2.0.1
@@ -946,10 +955,10 @@ importers:
         specifier: ^2.3.0
         version: 2.3.0(react@18.2.0)
       react-intl:
-        specifier: ^6.8.4
+        specifier: "catalog:"
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       styled-components:
-        specifier: "catalog:"
+        specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -1005,17 +1014,17 @@ importers:
         specifier: "catalog:"
         version: 18.2.0
       react-dom:
-        specifier: ^18.2.0
+        specifier: 'catalog:'
         version: 18.3.1(react@18.2.0)
       react-intl:
-        specifier: ^6.8.4
+        specifier: "catalog:"
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
         specifier: "catalog:"
         version: >-
           7.1.7(empty-npm-package@1.0.0)(maplibre-gl@2.4.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
-        specifier: "catalog:"
+        specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       "@opentripplanner/types":
@@ -11308,16 +11317,16 @@ packages:
       - text-table
       - tiny-relative-date
       - treeverse
+    resolution:
+      integrity: >-
+        sha512-iriPEPIkoMYUy3F6f3wwSZAU93E0Eg6cHwIR6jzzOXWSy+SD/rOODEs74cVONHKSx2obXtuUoyidVEhISrisgQ==
+  npm@8.19.4:
       - validate-npm-package-name
       - which
       - write-file-atomic
     engines:
       node: ^18.17.0 || >=20.5.0
     hasBin: true
-    resolution:
-      integrity: >-
-        sha512-iriPEPIkoMYUy3F6f3wwSZAU93E0Eg6cHwIR6jzzOXWSy+SD/rOODEs74cVONHKSx2obXtuUoyidVEhISrisgQ==
-  npm@8.19.4:
     bundledDependencies:
       - "@isaacs/string-locale-compare"
       - "@npmcli/arborist"
@@ -16893,9 +16902,7 @@ snapshots:
       jest-runner: 24.9.0
       jest-runtime: 24.9.0
     transitivePeerDependencies:
-      - bufferutil
       - supports-color
-      - utf-8-validate
   "@jest/test-sequencer@29.7.0":
     dependencies:
       "@jest/test-result": 29.7.0
@@ -19474,13 +19481,13 @@ snapshots:
       braces: 2.3.2
       glob-parent: 3.1.0
       inherits: 2.0.4
+    optional: true
       is-binary-path: 1.0.1
       is-glob: 4.0.3
       normalize-path: 3.0.0
       path-is-absolute: 1.0.1
       readdirp: 2.2.1
       upath: 1.2.0
-    optional: true
     optionalDependencies:
       fsevents: 1.2.13
     transitivePeerDependencies:
@@ -21959,7 +21966,9 @@ snapshots:
       pretty-format: 24.9.0
       throat: 4.1.0
     transitivePeerDependencies:
+      - bufferutil
       - supports-color
+      - utf-8-validate
   jest-junit@16.0.0:
     dependencies:
       mkdirp: 1.0.4
@@ -24092,13 +24101,13 @@ snapshots:
     dependencies:
       inherits: 2.0.4
       string_decoder: 1.3.0
+    optional: true
       util-deprecate: 1.0.2
   readdirp@2.2.1:
     dependencies:
       graceful-fs: 4.2.11
       micromatch: 3.1.10
       readable-stream: 2.3.8
-    optional: true
     transitivePeerDependencies:
       - supports-color
   readdirp@3.6.0:
@@ -25536,13 +25545,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
   walk-up-path@3.0.1: {}
+    optional: true
   walker@1.0.8:
     dependencies:
       makeerror: 1.0.12
   watchpack-chokidar2@2.0.1:
     dependencies:
       chokidar: 2.1.8
-    optional: true
     transitivePeerDependencies:
       - supports-color
   watchpack@1.7.5:

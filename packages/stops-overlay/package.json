@@ -30,7 +30,7 @@
   },
   "peerDependencies": {
     "react": "catalog:",
-    "react-intl": "^6.8.4",
+    "react-intl": "catalog:",
     "react-map-gl": "catalog:",
     "styled-components": "catalog:"
   },

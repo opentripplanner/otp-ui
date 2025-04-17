@@ -80,8 +80,8 @@
     "puppeteer": "^10.2.0",
     "querystring-es3": "^0.2.1",
     "react": "catalog:",
-    "react-dom": "^18.2.0",
-    "react-intl": "^6.8.4",
+    "react-dom": "catalog:",
+    "react-intl": "catalog:",
     "react-test-renderer": "^16.14.0",
     "semantic-release": "^24.2.3",
     "semantic-release-monorepo": "^8.0.2",
@@ -274,7 +274,7 @@
       "pnpm lint:graphql --fix",
       "git add"
     ],
-    "!(.github/**).{yml,yaml}": [
+    "!({.github/**,pnpm-lock.yaml}).{yml,yaml}": [
       "prettier --write",
       "yaml-sort --quotingStyle double --input",
       "git add"
