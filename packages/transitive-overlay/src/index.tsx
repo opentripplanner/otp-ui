@@ -16,8 +16,8 @@ import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
 import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
 import routeArrow from "./images/route_arrow.png";
 import circle from "./images/circle.png";
+import pill from "./images/pill.png";
 import rectangle from "./images/square.png";
-import debug from "./images/debug.png";
 
 export { itineraryToTransitive };
 
@@ -100,7 +100,7 @@ type Props = {
 type MapImage = {
   id: string;
   url: string;
-  options: { sdf?: boolean; content?: number[] };
+  options: { sdf?: boolean; content?: [number, number, number, number] };
 };
 
 const loadImages = (map: MapRef, images: MapImage[]) => {
@@ -138,11 +138,27 @@ const TransitiveCanvasOverlay = ({
     });
   }
   mapImages.push({
-    id: "circle",
+    id: "circle-1",
     url: circle,
     options: {
       sdf: true,
-      content: [400, 390, 600, 610]
+      content: [440, 370, 560, 630]
+    }
+  });
+  mapImages.push({
+    id: "circle-2",
+    url: circle,
+    options: {
+      sdf: true,
+      content: [380, 370, 620, 630]
+    }
+  });
+  mapImages.push({
+    id: "circle-3",
+    url: pill,
+    options: {
+      sdf: true,
+      content: [80, 50, 248, 180]
     }
   });
 
@@ -151,27 +167,7 @@ const TransitiveCanvasOverlay = ({
     url: rectangle,
     options: {
       sdf: true,
-      content: [200, 200, 800, 800]
-    }
-  });
-
-  mapImages.push({
-    id: "debug",
-    url: debug,
-    options: {
-      sdf: false,
-      // @ts-expect-error types are wrong
-      stretchX: [
-        [25, 55],
-        [85, 115]
-      ],
-      // The one (red) row of pixels that can be stretched vertically:
-      //   - the pixels between y: 25 and y: 100 can be stretched
-      stretchY: [[25, 100]],
-      // This part of the image that can contain text ([x1, y1, x2, y2]):
-      content: [25, 25, 115, 100],
-      // This is a high-dpi image:
-      pixelRatio: 2
+      content: [95, 200, 905, 800]
     }
   });
 
