@@ -1,7 +1,7 @@
-import { SymbolLayout } from "mapbox-gl";
+import { FilterSpecification } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
 import React, { useEffect } from "react";
-import { Layer, MapRef, Source, useMap } from "react-map-gl";
+import { Layer, MapRef, Source, useMap } from "react-map-gl/maplibre";
 import polyline from "@mapbox/polyline";
 import {
   Leg,
@@ -40,7 +40,7 @@ const defaultTextPaintParams = {
 /**
  * Common text settings.
  */
-const commonTextLayoutParams: SymbolLayout = {
+const commonTextLayoutParams = {
   "symbol-placement": "point",
   "text-allow-overlap": false,
   "text-field": ["get", "name"],
@@ -52,7 +52,7 @@ const commonTextLayoutParams: SymbolLayout = {
 /**
  * Text size and layout that lets maplibre relocate text space permitting.
  */
-const defaultTextLayoutParams: SymbolLayout = {
+const defaultTextLayoutParams = {
   ...commonTextLayoutParams,
   "text-variable-anchor": [
     "left",
@@ -76,9 +76,9 @@ const defaultBoldTextLayoutParams = {
   "text-overlap": "never"
 };
 
-const routeFilter = ["==", "type", "route"];
-const stopFilter = ["==", "type", "stop"];
-const accessLegFilter = [
+const routeFilter: FilterSpecification = ["==", "type", "route"];
+const stopFilter: FilterSpecification = ["==", "type", "stop"];
+const accessLegFilter: FilterSpecification = [
   "match",
   ["get", "type"],
   ["BICYCLE", "SCOOTER", "MICROMOBILITY", "MICROMOBILITY_RENT", "CAR"],
@@ -101,16 +101,17 @@ type MapImage = {
 
 const loadImages = (map: MapRef, images: MapImage[]) => {
   images.forEach(img => {
-    map.loadImage(img.url, (error, image) => {
-      if (error) {
+    map
+      .loadImage(img.url)
+      .then(response => {
+        if (!map.hasImage(img.id)) {
+          map.addImage(img.id, response.data, { sdf: true });
+        }
+      })
+      .catch(error => {
         // eslint-disable-next-line no-console
         console.error(`Error loading image ${img.id}:`, error);
-        return;
-      }
-      if (!map.hasImage(img.id)) {
-        map.addImage(img.id, image, { sdf: true });
-      }
-    });
+      });
   });
 };
 
@@ -362,6 +363,7 @@ const TransitiveCanvasOverlay = ({
       <Layer
         filter={accessLegFilter}
         id="access-leg-labels"
+        // @ts-expect-error TODO: use parts of SymbolLayerSpecification
         layout={defaultTextLayoutParams}
         paint={defaultTextPaintParams}
         type="symbol"
@@ -369,6 +371,7 @@ const TransitiveCanvasOverlay = ({
       <Layer
         filter={stopFilter}
         id="stops-labels"
+        // @ts-expect-error TODO: use parts of SymbolLayerSpecification
         layout={defaultTextLayoutParams}
         paint={defaultTextPaintParams}
         type="symbol"
@@ -398,6 +401,7 @@ const TransitiveCanvasOverlay = ({
       <Layer
         filter={["==", "type", "from"]}
         id="from-label"
+        // @ts-expect-error TODO: use parts of SymbolLayerSpecification
         layout={{
           ...defaultBoldTextLayoutParams,
           "text-anchor": fromAnchor
@@ -408,6 +412,7 @@ const TransitiveCanvasOverlay = ({
       <Layer
         filter={["==", "type", "to"]}
         id="to-label"
+        // @ts-expect-error TODO: use parts of SymbolLayerSpecification
         layout={{
           ...defaultBoldTextLayoutParams,
           "text-anchor": toAnchor

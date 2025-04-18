@@ -1,4 +1,4 @@
-import { Popup as MapGlPopup } from "react-map-gl";
+import { Popup as MapGlPopup } from "react-map-gl/maplibre";
 import styled from "styled-components";
 
 /**

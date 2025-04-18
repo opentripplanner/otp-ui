@@ -4,8 +4,8 @@ import {
   Stop,
   StopEventHandler
 } from "@opentripplanner/types";
-import { EventData } from "mapbox-gl";
-import { Layer, Source, useMap } from "react-map-gl";
+import { MapLayerMouseEvent } from "maplibre-gl";
+import { Layer, Source, useMap } from "react-map-gl/maplibre";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 import StopPopup from "@opentripplanner/map-popup";
@@ -83,14 +83,14 @@ const StopsOverlay = (props: Props): JSX.Element => {
   }, [map]);
 
   const onLayerClick = useCallback(
-    (event: EventData) => {
+    (event: MapLayerMouseEvent) => {
       setClickedStop(event.features?.[0].properties);
     },
     [setClickedStop]
   );
 
   const onZoomEnd = useCallback(
-    (event: EventData) => {
+    event => {
       if (event.viewState.zoom < minZoom) setClickedStop(null);
     },
     [setClickedStop, minZoom]

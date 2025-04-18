@@ -1,5 +1,3 @@
-import { Anchor } from "mapbox-gl";
-
 import lineArc from "@turf/line-arc";
 import lineDistance from "@turf/line-distance";
 import midpoint from "@turf/midpoint";
@@ -26,6 +24,18 @@ import {
   TransitiveStop
 } from "@opentripplanner/types";
 import { IntlShape } from "react-intl";
+
+// TODO: Find an existing type.
+export type Anchor =
+  | "center"
+  | "left"
+  | "right"
+  | "top"
+  | "bottom"
+  | "top-left"
+  | "top-right"
+  | "bottom-left"
+  | "bottom-right";
 
 const CAR_PARK_ITIN_PREFIX = "itin_car_";
 

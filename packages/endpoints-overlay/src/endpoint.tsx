@@ -10,7 +10,7 @@ import {
 import { FormattedMessage, useIntl } from "react-intl";
 import { Home } from "@styled-icons/fa-solid/Home";
 import { MapMarkerAlt } from "@styled-icons/fa-solid/MapMarkerAlt";
-import { Marker, MarkerDragEvent } from "react-map-gl";
+import { Marker, MarkerDragEvent } from "react-map-gl/maplibre";
 import { Sync } from "@styled-icons/fa-solid/Sync";
 import { Times } from "@styled-icons/fa-solid/Times";
 import coreUtils from "@opentripplanner/core-utils";

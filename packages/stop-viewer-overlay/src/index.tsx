@@ -1,5 +1,5 @@
 import { Stop } from "@opentripplanner/types";
-import { useMap } from "react-map-gl";
+import { useMap } from "react-map-gl/maplibre";
 import React, { useEffect } from "react";
 
 export type StopContainer = { stop: Stop };

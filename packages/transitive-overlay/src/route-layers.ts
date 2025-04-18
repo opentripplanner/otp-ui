@@ -1,5 +1,4 @@
 import polyline from "@mapbox/polyline";
-import { SymbolLayout } from "mapbox-gl";
 import { TransitivePattern, TransitiveRoute } from "@opentripplanner/types";
 
 import { drawArc } from "./util";
@@ -58,7 +57,16 @@ export function patternToRouteFeature(
 /**
  * Obtains common layout options for route label layers.
  */
-export function getRouteLayerLayout(textField: string): SymbolLayout {
+export function getRouteLayerLayout(
+  textField: string
+): {
+  "symbol-placement": "line-center";
+  "text-allow-overlap": boolean;
+  "text-field": ["get", string];
+  "text-ignore-placement": boolean;
+  "text-rotation-alignment": "viewport";
+  "text-size": number;
+} {
   return {
     "symbol-placement": "line-center",
     "text-allow-overlap": true,
