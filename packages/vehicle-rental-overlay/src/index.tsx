@@ -6,7 +6,12 @@ import {
   Station
 } from "@opentripplanner/types";
 import React, { useEffect, useState } from "react";
-import { Layer, Source, useMap } from "react-map-gl/maplibre";
+import {
+  Layer,
+  Source,
+  useMap,
+  ViewStateChangeEvent
+} from "react-map-gl/maplibre";
 
 import StationPopup from "@opentripplanner/map-popup";
 import { BaseBikeRentalIcon, StationMarker } from "./styled";
@@ -122,9 +127,8 @@ const VehicleRentalOverlay = ({
         setClickedVehicle(event.features?.[0].properties);
       });
     });
-    map.on("zoom", e => {
+    map.on("zoom", (e: ViewStateChangeEvent) => {
       // Avoid too many re-renders by only updating state if we are a whole number value different
-      // @ts-expect-error viewState not declared
       const { zoom: newZoom } = e.viewState;
       if (Math.floor(zoom / 2) !== Math.floor(newZoom / 2)) {
         setZoom(newZoom);
