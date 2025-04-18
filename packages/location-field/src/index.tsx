@@ -65,7 +65,7 @@ function generateOptionId(feature, indexedOptionLookup) {
   // There are some cases, such as when we're using user-saved locations, where
   // the id is not unique. In this case, append a number to the end of the id.
   if (indexedOptionLookup.find(item => item.id === id)) {
-    id = `${id}0`;
+    id = `${id}-0`;
   }
   return id;
 }
