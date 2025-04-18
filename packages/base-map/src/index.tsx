@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
 import { Map, MapProps } from "react-map-gl/maplibre";
-import maplibregl, { Event } from "maplibre-gl";
+import maplibregl, { MapLayerMouseEvent } from "maplibre-gl";
 
 import { useIntl } from "react-intl";
 
@@ -38,10 +38,9 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   /** The maximum zoom level the map should allow */
   maxZoom?: number;
   /** A callback method which is fired when the map is clicked with the left mouse button/tapped */
-  onClick?: (evt: Event) => void;
+  onClick?: (e: MapLayerMouseEvent) => void;
   /** A callback method which is fired when the map is clicked with the right mouse button/long tapped */
-  // Unknown is used here because of a maplibre/mapbox issue with the true type, MapLayerMouseEvent
-  onContextMenu?: (e: unknown) => void;
+  onContextMenu?: (e: MapLayerMouseEvent) => void;
   /** A callback method which is fired when the map zoom or map bounds change */
   onViewportChanged?: (e: State) => void;
   /** When set to true, all hidden layers will be removed. No layers will be uncheckable until
@@ -154,7 +153,13 @@ const BaseMap = ({
         // If the user is pinching the map or does other multi-touch actions, cancel long-press detection.
         const touchPointCount = e.points.length;
         if (touchPointCount === 1) {
-          setLongPressTimer(setTimeout(() => onContextMenu(e), 600));
+          setLongPressTimer(
+            setTimeout(
+              // TODO: Check that the type conversion is still correct.
+              () => onContextMenu((e as unknown) as MapLayerMouseEvent),
+              600
+            )
+          );
         } else {
           clearLongPressTimer();
         }

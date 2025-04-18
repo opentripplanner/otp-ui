@@ -5,8 +5,7 @@ import styled from "styled-components";
  * Adds a box shadow and tweaks border radius to make popups easier to read.
  */
 export const Popup = styled(MapGlPopup)`
-  & > .maplibregl-popup-content,
-  & > .mapboxgl-popup-content {
+  & > .maplibregl-popup-content {
     border-radius: 10px;
     box-shadow: 0 3px 14px 4px rgb(0 0 0 / 20%);
   }
