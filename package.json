@@ -6,7 +6,7 @@
     "node": ">=12",
     "pnpm": ">=8"
   },
-  "packageManager": "pnpm@10.6.5",
+  "packageManager": "pnpm@10.9.0",
   "devDependencies": {
     "@anolilab/semantic-release-pnpm": "^1.1.10",
     "@babel/cli": "^7.10",
