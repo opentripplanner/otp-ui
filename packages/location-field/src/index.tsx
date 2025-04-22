@@ -52,14 +52,14 @@ function generateOptionId(feature, indexedOptionLookup) {
   // Use a default id if the feature does not have an id.
   let id = "000";
 
-  // User saved locations do not have an id, so use the label.
-  if (feature.displayName) {
-    id = feature.displayName.replace(/\s/g, "");
-  }
-
   // Some geocoders will return an id. Use that if it exists.
   if (feature.properties) {
     id = feature.properties.id || feature.properties.label.replace(/\s/g, "");
+  }
+
+  // User saved locations do not have an id, so use the label.
+  if (feature.displayName) {
+    id = feature.displayName.replace(/\s/g, "");
   }
 
   // There are some cases, such as when we're using user-saved locations, where
@@ -712,8 +712,8 @@ const LocationField = ({
 
   const statusMessages = [];
   let menuItems = []; // array of menu items for display (may include non-selectable items e.g. dividers/headings)
-  /* array of menu item ids and associated locationSelected handlers for onKeyDown
-  (does not include non-selectable items e.g. dividers/headings) */
+  // array of menu item ids and associated locationSelected handlers for onKeyDown
+  // (does not include non-selectable items e.g. dividers/headings)
   const indexedOptionLookup: IndexedOptionLookup = [];
   const userLocationRenderData = showUserSettings
     ? userLocationsAndRecentPlaces.map(loc =>
