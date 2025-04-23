@@ -162,6 +162,7 @@ const BaseMap = ({
       }}
       onTouchCancel={clearLongPressTimer}
       onTouchEnd={clearLongPressTimer}
+      preserveDrawingBuffer
       style={style}
       zoom={viewState.zoom}
     >
