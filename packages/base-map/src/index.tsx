@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Map, MapProps } from "react-map-gl/maplibre";
 import maplibregl, { MapLayerMouseEvent } from "maplibre-gl";
 
@@ -72,33 +72,12 @@ const BaseMap = ({
   style,
   zoom: initZoom = 12
 }: Props): JSX.Element => {
-  const [viewState, setViewState] = React.useState<State>({
-    latitude: center?.[0],
-    longitude: center?.[1],
-    zoom: initZoom
-  });
-
   const intl = useIntl();
 
   // Firefox and Safari on iOS: hover is not triggered when the user touches the layer selector
   // (unlike Firefox or Chromium on Android), so we have to detect touch and trigger hover ourselves.
   const [fakeMobileHover, setFakeHover] = useState(false);
   const [longPressTimer, setLongPressTimer] = useState(null);
-
-  useEffect(() => {
-    if (typeof onViewportChanged === "function") {
-      onViewportChanged(viewState);
-    }
-  }, [viewState]);
-  useEffect(() => {
-    if (center?.[0] === null || center?.[1] === null) return;
-
-    setViewState({
-      ...viewState,
-      latitude: center?.[0],
-      longitude: center?.[1]
-    });
-  }, [center]);
 
   const toggleableLayers = Array.isArray(children)
     ? children
@@ -130,8 +109,17 @@ const BaseMap = ({
     longPressTimer
   ]);
 
+  const handleViewportChange = useCallback(
+    evt => {
+      onViewportChanged && onViewportChanged(evt.viewState);
+      clearLongPressTimer();
+    },
+    [clearLongPressTimer, onViewportChanged]
+  );
+
   return (
     <Map
+      // TODO: extend props from maplibreProps.
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...mapLibreProps}
       canvasContextAttributes={{
@@ -145,18 +133,18 @@ const BaseMap = ({
         preserveDrawingBuffer: true
       }}
       id={id}
-      latitude={viewState.latitude}
+      initialViewState={{
+        latitude: center?.[0],
+        longitude: center?.[1],
+        zoom: initZoom
+      }}
       locale={generateMapControlTranslations(intl)}
-      longitude={viewState.longitude}
       mapLib={maplibregl}
       mapStyle={activeBaseLayer}
       maxZoom={maxZoom}
       onClick={onClick}
       onContextMenu={onContextMenu}
-      onMove={evt => {
-        setViewState(evt.viewState);
-        clearLongPressTimer();
-      }}
+      onMove={handleViewportChange}
       onTouchStart={e => {
         setFakeHover(false);
         // Start detecting long presses on screens when there is only one touch point.
@@ -176,8 +164,8 @@ const BaseMap = ({
       }}
       onTouchCancel={clearLongPressTimer}
       onTouchEnd={clearLongPressTimer}
+      onZoom={handleViewportChange}
       style={style}
-      zoom={viewState.zoom}
     >
       {(toggleableLayers.length > 0 ||
         (!!baseLayer &&
