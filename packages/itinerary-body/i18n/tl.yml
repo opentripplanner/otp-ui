@@ -26,32 +26,32 @@ otpUi:
         pag-pick up ng {company}
     mapillaryTooltip: Ipakita ang larawan ng kalye sa lokasyong ito
     step:
-      circleClockwise: Follow circle clockwise
-      circleCounterClockwise: Follow circle counterclockwise
-      continue: Continue
+      circleClockwise: Sundan ang bilog nang clockwise
+      circleCounterClockwise: Sundan ang bilog nang counterclockwise
+      continue: Magpatuloy
       enterStation: I-enter ang istasyon
       exitStation: Lumabas sa Istasyon
-      hardLeft: Hard left
-      hardRight: Hard right
-      left: Left
-      right: Right
-      slightlyLeft: Slight left
-      slightlyRight: Slight right
-      uTurnLeft: Left U-turn
-      uTurnRight: Right U-turn
-    stepDepart: Head {heading} on {street}
-    stepElevator: Take elevator to {street}
+      hardLeft: Liko sa Kaliwa
+      hardRight: Liko sa kanan
+      left: Kaliwa
+      right: Kanan
+      slightlyLeft: Bahagyang Kaliwa
+      slightlyRight: Bahagyang kanan
+      uTurnLeft: U-turn sa Kaliwa
+      uTurnRight: U-turn sa Kanan
+    stepDepart: Pumunta {heading} sa {street}
+    stepElevator: Sumakay ng elevator papunta sa {street}
     stepFollowSigns: Sundin ang mga palatandaan sa {street}
-    stepGeneric: "{step} on {street}"
+    stepGeneric: "{step} sa {street}"
     stepHeading:
-      east: east
-      north: north
-      northeast: northeast
-      northwest: northwest
-      south: south
-      southeast: southeast
-      southwest: southwest
-      west: west
+      east: silangan
+      north: hilaga
+      northeast: hilagang-silangan
+      northwest: hilagang-kanluran
+      south: timog
+      southeast: timog-silangan
+      southwest: timog-kanluran
+      west: kanluran
     stepStation: "{step} sa {street}"
     summary: "{mode} to {place}"
     summaryAndDistance: "{mode} {distance} to {place}"
