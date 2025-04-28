@@ -379,6 +379,7 @@ const LocationField = ({
     // location could be null if none is set
     setValue(location?.name || "");
     setGeocodedFeatures([]);
+    setMessage(null);
   }, [location]);
 
   useEffect(() => {
