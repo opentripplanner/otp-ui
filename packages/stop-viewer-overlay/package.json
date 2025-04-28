@@ -26,7 +26,7 @@
     "@opentripplanner/types": "workspace:*"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-map-gl": "^7.0.15"
+    "react": "catalog:",
+    "react-map-gl": "catalog:"
   }
 }

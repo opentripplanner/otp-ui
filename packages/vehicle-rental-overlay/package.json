@@ -23,18 +23,18 @@
     "@opentripplanner/core-utils": "workspace:*",
     "@opentripplanner/from-to-location-picker": "workspace:*",
     "@opentripplanner/map-popup": "workspace:*",
-    "@styled-icons/fa-solid": "^10.34.0",
-    "flat": "^5.0.2",
+    "@styled-icons/fa-solid": "catalog:",
+    "flat": "catalog:",
     "lodash.memoize": "^4.1.2"
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-intl": "^6.8.4",
-    "react-map-gl": "^7.0.15",
-    "styled-components": "^5.3.0"
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-intl": "catalog:",
+    "react-map-gl": "catalog:",
+    "styled-components": "catalog:"
   }
 }

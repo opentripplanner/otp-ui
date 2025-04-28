@@ -12,7 +12,7 @@
   "private": false,
   "dependencies": {
     "@formatjs/cli": "^4.2.33",
-    "flat": "^5.0.2",
+    "flat": "catalog:",
     "glob": "^8.0.3",
     "glob-promise": "^4.2.2",
     "js-yaml": "^4.1.0"

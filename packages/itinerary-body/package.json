@@ -14,22 +14,22 @@
     "@opentripplanner/humanize-distance": "workspace:*",
     "@opentripplanner/icons": "workspace:*",
     "@opentripplanner/location-icon": "workspace:*",
-    "@styled-icons/fa-solid": "^10.34.0",
-    "@styled-icons/foundation": "^10.34.0",
-    "date-fns": "^2.28.0",
-    "date-fns-tz": "^1.2.2",
-    "flat": "^5.0.2",
-    "react-animate-height": "^3.0.4",
+    "@styled-icons/fa-solid": "catalog:",
+    "@styled-icons/foundation": "catalog:",
+    "date-fns": "catalog:",
+    "date-fns-tz": "catalog:",
+    "flat": "catalog:",
+    "react-animate-height": "catalog:",
     "react-resize-detector": "^4.2.1",
     "string-similarity": "^4.0.4"
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*",
-    "@types/flat": "^5.0.2"
+    "@types/flat": "catalog:"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "styled-components": "^5.3.0"
+    "react": "catalog:",
+    "styled-components": "catalog:"
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
