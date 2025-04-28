@@ -38,16 +38,6 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 
 type IndexedOptionLookup = Array<{ id: string; locationSelected: () => void }>;
 
-const optionIdPrefix = "otpui-locf-option";
-
-/**
- * Formats the option id based on its given index position.
- * This assumes only one location dropdown is shown at a time.
- */
-function getOptionId(index: number): string {
-  return `${optionIdPrefix}-${index}`;
-}
-
 function generateOptionId(optionPrefix, feature) {
   // Use a default id if the feature does not have an id.
   const featureId =
@@ -726,7 +716,7 @@ const LocationField = ({
         matchingLocations.map(userLocation =>
           makeUserOption(
             userLocation,
-            generateOptionId("userLocationResults", userLocation),
+            generateOptionId("user-saved-results", userLocation),
             activeIndex,
             pushToIndexedOptions,
             indexedOptionLookup
@@ -747,7 +737,7 @@ const LocationField = ({
     const geocodedFeaturesWithId = geocodedFeatures.map(feature => {
       return {
         ...feature,
-        id: generateOptionId("geocodedResults", feature),
+        id: generateOptionId("geocoder", feature),
         locationSelected: () => setLocationSelected(feature)
       };
     });
@@ -927,10 +917,7 @@ const LocationField = ({
           setLocation(sessionLocation, "SESSION");
         };
 
-        const locationId = generateOptionId(
-          "recentSearchResults",
-          sessionLocation
-        );
+        const locationId = generateOptionId("recent", sessionLocation);
 
         // Add to the selection handler lookup (for use in onKeyDown)
         pushToIndexedOptions(locationSelected, locationId);
@@ -970,7 +957,7 @@ const LocationField = ({
       userLocationRenderData.map(userLocation =>
         makeUserOption(
           userLocation,
-          generateOptionId("userLocations", userLocation),
+          generateOptionId("user-saved", userLocation),
           activeIndex,
           pushToIndexedOptions,
           indexedOptionLookup
@@ -1061,7 +1048,7 @@ const LocationField = ({
   const textControl = (
     <S.Input
       aria-activedescendant={
-        activeIndex !== null ? getOptionId(activeIndex) : null
+        activeIndex !== null ? indexedOptionLookup[activeIndex]?.id : null
       }
       aria-autocomplete="list"
       aria-controls={listBoxId}
