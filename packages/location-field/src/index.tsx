@@ -48,25 +48,14 @@ function getOptionId(index: number): string {
   return `${optionIdPrefix}-${index}`;
 }
 
-function generateOptionId(feature, indexedOptionLookup) {
+function generateOptionId(optionPrefix, feature) {
   // Use a default id if the feature does not have an id.
-  let id = "000";
-
-  // Some geocoders will return an id. Use that if it exists.
-  if (feature.properties) {
-    id = feature.properties.id || feature.properties.label.replace(/\s/g, "");
-  }
-
-  // User saved locations do not have an id, so use the label.
-  if (feature.displayName) {
-    id = feature.displayName.replace(/\s/g, "");
-  }
-
-  // There are some cases, such as when we're using user-saved locations, where
-  // the id is not unique. In this case, append a number to the end of the id.
-  if (indexedOptionLookup.find(item => item.id === id)) {
-    id = `${id}-0`;
-  }
+  const featureId =
+    feature.properties?.id ||
+    feature.properties?.label ||
+    feature.displayName ||
+    "000";
+  const id = `${optionPrefix}-${featureId.replace(/\s/g, "-")}`;
   return id;
 }
 
@@ -737,7 +726,7 @@ const LocationField = ({
         matchingLocations.map(userLocation =>
           makeUserOption(
             userLocation,
-            generateOptionId(userLocation, indexedOptionLookup),
+            generateOptionId("userLocationResults", userLocation),
             activeIndex,
             pushToIndexedOptions,
             indexedOptionLookup
@@ -758,7 +747,7 @@ const LocationField = ({
     const geocodedFeaturesWithId = geocodedFeatures.map(feature => {
       return {
         ...feature,
-        id: generateOptionId(feature, indexedOptionLookup),
+        id: generateOptionId("geocodedResults", feature),
         locationSelected: () => setLocationSelected(feature)
       };
     });
@@ -939,8 +928,8 @@ const LocationField = ({
         };
 
         const locationId = generateOptionId(
-          sessionLocation,
-          indexedOptionLookup
+          "recentSearchResults",
+          sessionLocation
         );
 
         // Add to the selection handler lookup (for use in onKeyDown)
@@ -981,7 +970,7 @@ const LocationField = ({
       userLocationRenderData.map(userLocation =>
         makeUserOption(
           userLocation,
-          generateOptionId(userLocation, indexedOptionLookup),
+          generateOptionId("userLocations", userLocation),
           activeIndex,
           pushToIndexedOptions,
           indexedOptionLookup
