@@ -392,9 +392,10 @@ const LocationField = ({
   // TODO: is it possible to restore the useCallback while also setting
   // a new abort controller?
   const geocodeAutocomplete = debounce(300, (text: string) => {
-    if (!text) {
+    if (!text || text === "") {
       console.warn("No text entry provided for geocode autocomplete search.");
       setMessage(null);
+      setGeocodedFeatures([]);
       return;
     }
     setFetching(true);
