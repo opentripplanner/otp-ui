@@ -38,13 +38,14 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 
 type IndexedOptionLookup = Array<{ id: string; locationSelected: () => void }>;
 
-function generateOptionId(optionPrefix, feature) {
+function generateOptionId(optionPrefix, feature, featureIndex) {
   // Use a default id if the feature does not have an id.
   const featureId =
     feature.properties?.id ||
     feature.properties?.label ||
     feature.displayName ||
-    "000";
+    // As a last resort, use the index of the feature in the category
+    featureIndex;
   const id = `${optionPrefix}-${featureId.replace(/\s/g, "-")}`;
   return id;
 }
@@ -713,10 +714,10 @@ const LocationField = ({
     if (matchingLocations.length) {
       // Iterate through any saved locations
       menuItems = menuItems.concat(
-        matchingLocations.map(userLocation =>
+        matchingLocations.map((userLocation, index) =>
           makeUserOption(
             userLocation,
-            generateOptionId("user-saved-results", userLocation),
+            generateOptionId("user-saved-results", userLocation, index),
             activeIndex,
             pushToIndexedOptions,
             indexedOptionLookup
@@ -734,10 +735,10 @@ const LocationField = ({
      * feature beforehand, and then push them to the indexedOptionLookup array
      * after sorting.
      */
-    const geocodedFeaturesWithId = geocodedFeatures.map(feature => {
+    const geocodedFeaturesWithId = geocodedFeatures.map((feature, index) => {
       return {
         ...feature,
-        id: generateOptionId("geocoder", feature),
+        id: generateOptionId("geocoder", feature, index),
         locationSelected: () => setLocationSelected(feature)
       };
     });
@@ -911,13 +912,13 @@ const LocationField = ({
 
     // Iterate through any saved locations
     menuItems = menuItems.concat(
-      sessionSearches.map(sessionLocation => {
+      sessionSearches.map((sessionLocation, index) => {
         // Create the location-selected handler
         const locationSelected = () => {
           setLocation(sessionLocation, "SESSION");
         };
 
-        const locationId = generateOptionId("recent", sessionLocation);
+        const locationId = generateOptionId("recent", sessionLocation, index);
 
         // Add to the selection handler lookup (for use in onKeyDown)
         pushToIndexedOptions(locationSelected, locationId);
@@ -954,10 +955,10 @@ const LocationField = ({
 
     // Iterate through any saved locations
     menuItems = menuItems.concat(
-      userLocationRenderData.map(userLocation =>
+      userLocationRenderData.map((userLocation, index) =>
         makeUserOption(
           userLocation,
-          generateOptionId("user-saved", userLocation),
+          generateOptionId("user-saved", userLocation, index),
           activeIndex,
           pushToIndexedOptions,
           indexedOptionLookup
