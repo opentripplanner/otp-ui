@@ -6,7 +6,6 @@ import midpoint from "@turf/midpoint";
 import destination from "@turf/destination";
 import bearing from "@turf/bearing";
 import distance from "@turf/distance";
-import { cloneDeep } from "lodash";
 
 import {
   getLegBounds,
@@ -179,6 +178,27 @@ function makeStop(stop: Place, coordinate?: number[]) {
 }
 
 /**
+ * Helper function that clones the 'to' stop and applies flex logic
+ */
+function cloneToStop(leg: Leg): Place {
+  const toStop = { ...leg.to };
+
+  if (typeof toStop.stop === "object") {
+    toStop.stop = { ...toStop.stop };
+  }
+
+  if (isFlex(leg)) {
+    if (typeof toStop.stop === "object") {
+      toStop.stop.id = `${toStop.stop.id}_flexed_to`;
+    } else {
+      toStop.stopId = `${toStop.stopId}_flexed_to`;
+    }
+  }
+
+  return toStop;
+}
+
+/**
  * Converts an OTP itinerary object to a transtive.js itinerary object.
  * @param {*} itin Required OTP itinerary (see @opentripplanner/core-utils/types#itineraryType) to convert.
  * @param {*} companies Optional list of companies, used for labeling vehicle rental locations.
@@ -222,6 +242,10 @@ export function itineraryToTransitive(
   newPlaces.push(makeFromToPlace(itin.legs[itin.legs.length - 1].to, "to"));
 
   itin.legs.forEach((leg, idx) => {
+    // Create shallow copy of the leg
+    const mutableLeg = { ...leg };
+    const modifiedToStop = cloneToStop(mutableLeg);
+
     // OTP2 puts "BIKESHARE" as the vertexType for scooter share legs.
     // Here we fix that by looking ahead at the next leg to find out if it is a scooter.
     const toVertexType =
@@ -319,35 +343,32 @@ export function itineraryToTransitive(
         geometry: leg.legGeometry
       });
     }
-    const mutableLeg = cloneDeep(leg);
-    if (mutableLeg.transitLeg || isTransit(mutableLeg.mode)) {
+
+    if (leg.transitLeg || isTransit(leg.mode)) {
       // Flex routes sometimes have the same from and to IDs, but
       // these stops still need to be rendered separately!
-      if (isFlex(mutableLeg)) {
-        if (typeof mutableLeg.to.stop === "object") {
-          mutableLeg.to.stop.id = `${mutableLeg.to.stop.id}_flexed_to`;
+      if (isFlex(leg)) {
+        if (typeof modifiedToStop.stop === "object") {
+          modifiedToStop.stop.id = `${modifiedToStop.stop.id}_flexed_to`;
         } else {
-          mutableLeg.to.stopId = `${mutableLeg.to.stopId}_flexed_to`;
+          modifiedToStop.stopId = `${modifiedToStop.stopId}_flexed_to`;
         }
       }
 
       // determine if we have valid inter-stop geometry
-      const hasInterStopGeometry = !!mutableLeg.interStopGeometry;
-      const hasLegGeometry = !!mutableLeg.legGeometry?.points;
+      const hasInterStopGeometry = !!leg.interStopGeometry;
+      const hasLegGeometry = !!leg.legGeometry?.points;
       const hasIntermediateStopGeometry =
         hasInterStopGeometry &&
-        mutableLeg.intermediateStops &&
-        mutableLeg.interStopGeometry.length ===
-          mutableLeg.intermediateStops.length + 1;
+        leg.intermediateStops &&
+        leg.interStopGeometry.length === leg.intermediateStops.length + 1;
 
       // Coordinates of the leg geometry, used to draw the stop marker on the line,
       // otherwise the logical stop is often times off the line.
-      const legCoords = getLegBounds(mutableLeg);
+      const legCoords = getLegBounds(leg);
 
       const routeId =
-        typeof mutableLeg.route === "object"
-          ? mutableLeg?.route?.id
-          : mutableLeg.routeId;
+        typeof leg.route === "object" ? leg?.route?.id : leg.routeId;
 
       // create leg-specific pattern
       const ptnId = `ptn_${patternId}`;
@@ -360,30 +381,26 @@ export function itineraryToTransitive(
       };
 
       // Add the "from" end of transit legs to the list of stops.
-      const fromStop = makeStop(
-        mutableLeg.from,
-        hasLegGeometry && legCoords[0]
-      );
+      const fromStop = makeStop(leg.from, hasLegGeometry && legCoords[0]);
       addStop(fromStop, newStops, knownStopNames);
-      pattern.stops.push({ stop_id: getStopId(mutableLeg.from) });
+      pattern.stops.push({ stop_id: getStopId(leg.from) });
 
       // add intermediate stops to stops dictionary and pattern object
       // If there is no intermediateStopGeometry, do not add the intermediate stops
       // as it will be straight lines instead of the nice legGeometry (but only if
       // the legGeometry exists).
       if (
-        mutableLeg.intermediateStops &&
+        leg.intermediateStops &&
         (hasIntermediateStopGeometry || !hasLegGeometry)
       ) {
-        mutableLeg.intermediateStops.forEach((stop, i) => {
+        leg.intermediateStops.forEach((stop, i) => {
           // FIXME: line up the coordinates of the stops so they appear on the line.
           addStop(stop, newStops, knownStopNames);
           pattern.stops.push({
             // Intermediate stops are still exclusively using stopId.
             stop_id: stop.stopId,
             geometry:
-              hasIntermediateStopGeometry &&
-              mutableLeg.interStopGeometry[i].points
+              hasIntermediateStopGeometry && leg.interStopGeometry[i].points
           });
         });
       }
@@ -391,48 +408,46 @@ export function itineraryToTransitive(
       // Add the "to" end of transit legs to the list of stops.
       // (Do not label stop names if they repeat.)
       const lastCoord = hasLegGeometry && legCoords[legCoords.length - 1];
-      const toStop = makeStop(mutableLeg.to, lastCoord);
+      const toStop = makeStop(leg.to, lastCoord);
       addStop(toStop, newStops, knownStopNames);
       pattern.stops.push({
-        stop_id: getStopId(mutableLeg.to),
+        stop_id: getStopId(leg.to),
         geometry:
           // Some legs don't have intermediateStopGeometry, but do have valid legGeometry
           (hasInterStopGeometry || hasLegGeometry) &&
           (hasIntermediateStopGeometry
-            ? mutableLeg.interStopGeometry[
-                mutableLeg.interStopGeometry.length - 1
-              ].points
-            : mutableLeg.legGeometry.points)
+            ? leg.interStopGeometry[leg.interStopGeometry.length - 1].points
+            : leg.legGeometry.points)
       });
 
       // add route to the route dictionary
       // with a custom route label if specified.
       const routeLabel =
         (typeof getRouteLabel === "function"
-          ? getRouteLabel(mutableLeg)
-          : getLegRouteShortName(mutableLeg)) || "";
+          ? getRouteLabel(leg)
+          : getLegRouteShortName(leg)) || "";
 
       const basicRouteAttributes = {
-        agency_id: mutableLeg.agencyId,
+        agency_id: leg.agencyId,
         route_id: routeId,
         route_short_name: routeLabel
       };
 
-      if (typeof mutableLeg.route === "object" && mutableLeg.route !== null) {
+      if (typeof leg.route === "object" && leg.route !== null) {
         routes[routeId] = {
           ...basicRouteAttributes,
-          route_long_name: mutableLeg.route.longName || "",
-          route_type: mutableLeg.route.type,
-          route_color: mutableLeg.route.color,
-          route_text_color: mutableLeg.route.textColor
+          route_long_name: leg.route.longName || "",
+          route_type: leg.route.type,
+          route_color: leg.route.color,
+          route_text_color: leg.route.textColor
         };
       } else {
         routes[routeId] = {
           ...basicRouteAttributes,
-          route_long_name: mutableLeg.routeLongName || "",
-          route_type: mutableLeg.routeType,
-          route_color: mutableLeg.routeColor,
-          route_text_color: mutableLeg.routeTextColor
+          route_long_name: leg.routeLongName || "",
+          route_type: leg.routeType,
+          route_color: leg.routeColor,
+          route_text_color: leg.routeTextColor
         };
       }
 
@@ -442,16 +457,14 @@ export function itineraryToTransitive(
       // add the pattern reference to the journey object
       journey.segments.push({
         arc:
-          typeof disableFlexArc === "undefined"
-            ? isFlex(mutableLeg)
-            : !disableFlexArc,
+          typeof disableFlexArc === "undefined" ? isFlex(leg) : !disableFlexArc,
         type: "TRANSIT",
         patterns: [
           {
             pattern_id: ptnId,
             from_stop_index: 0,
             to_stop_index: hasIntermediateStopGeometry
-              ? mutableLeg.intermediateStops.length + 2 - 1
+              ? leg.intermediateStops.length + 2 - 1
               : 1
           }
         ]

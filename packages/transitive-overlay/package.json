@@ -29,8 +29,7 @@
     "@turf/line-arc": "^6.5.0",
     "@turf/line-distance": "^4.7.3",
     "@turf/midpoint": "^6.5.0",
-    "lodash.isequal": "^4.5.0",
-    "lodash.clonedeep": "^4.5.0"
+    "lodash.isequal": "^4.5.0"
   },
   "devDependencies": {
     "@opentripplanner/endpoints-overlay": "workspace:*",
