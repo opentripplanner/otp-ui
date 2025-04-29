@@ -44,7 +44,7 @@ function generateOptionId(optionPrefix, feature, featureIndex) {
     feature.properties?.label ||
     feature.displayName ||
     // As a last resort, use the index of the feature in the category
-    featureIndex;
+    featureIndex.toString();
   const id = `${optionPrefix}-${featureId.replace(/\s/g, "-")}`;
   return id;
 }

@@ -819,7 +819,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
       Recently Searched
     </h2>
     <li aria-live="off"
-        id="recent-000"
+        id="recent-0"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1213,7 +1213,7 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
       Recently Searched
     </h2>
     <li aria-live="off"
-        id="recent-000"
+        id="recent-0"
         role="option"
         aria-selected="false"
         tabindex="-1"
