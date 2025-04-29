@@ -39,7 +39,6 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 type IndexedOptionLookup = Array<{ id: string; locationSelected: () => void }>;
 
 function generateOptionId(optionPrefix, feature, featureIndex) {
-  // Use a default id if the feature does not have an id.
   const featureId =
     feature.properties?.id ||
     feature.properties?.label ||
