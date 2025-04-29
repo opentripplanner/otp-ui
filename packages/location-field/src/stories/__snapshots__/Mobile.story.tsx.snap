@@ -819,7 +819,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
       Recently Searched
     </h2>
     <li aria-live="off"
-        id="000"
+        id="recent-000"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -851,7 +851,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
       My Places
     </h2>
     <li aria-live="off"
-        id="Home(456SuburbSt)"
+        id="user-saved-Home-(456-Suburb-St)"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -880,7 +880,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="Work(789BusySt)"
+        id="user-saved-Work-(789-Busy-St)"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -909,7 +909,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="CoffeeRoastersShop,55CoffeeStreet"
+        id="user-saved-Coffee-Roasters-Shop,-55-Coffee-Street"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -938,7 +938,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="123MainSt"
+        id="user-saved-123-Main-St"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1213,7 +1213,7 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
       Recently Searched
     </h2>
     <li aria-live="off"
-        id="000"
+        id="recent-000"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1326,7 +1326,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
       My Places
     </h2>
     <li aria-live="off"
-        id="Home(456SuburbSt)"
+        id="user-saved-Home-(456-Suburb-St)"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1355,7 +1355,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="Work(789BusySt)"
+        id="user-saved-Work-(789-Busy-St)"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1384,7 +1384,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="CoffeeRoastersShop,55CoffeeStreet"
+        id="user-saved-Coffee-Roasters-Shop,-55-Coffee-Street"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1413,7 +1413,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="123MainSt"
+        id="user-saved-123-Main-St"
         role="option"
         aria-selected="false"
         tabindex="-1"
