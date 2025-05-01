@@ -341,16 +341,14 @@ export function itineraryToTransitive(
       // Coordinates of the leg geometry, used to draw the stop marker on the line,
       // otherwise the logical stop is often times off the line.
       const legCoords = getLegBounds(leg);
-      // `leg.route` is `string | LegRoute | null` in OTP1/OTP2 data.
       // Guard below narrows the union; falls back to `leg.routeId` when route is null
-      // so each transit leg keeps a unique `routeId` key (no more clobbering).
       // `routes` is typed `Record<string, any>` to satisfy index-signature rules. ~ line 206
       const routeId =
         typeof leg.route === "object" && leg.route !== null
-          ? leg.route.id // LegRoute object
-          : typeof leg.route === "string" // OTP-1 string case
+          ? leg.route.id
+          : typeof leg.route === "string"
           ? leg.route
-          : leg.routeId; // ✅ OTP-2 fallback
+          : leg.routeId;
 
       if (!routeId) return;
 
