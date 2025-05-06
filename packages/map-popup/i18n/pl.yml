@@ -1,1 +1,10 @@
-{}
+otpUi:
+  MapPopup:
+    popupTitle: '{stationNetwork, select, false {{name}} other {{stationNetwork} {name}}}'
+    availableBikes: 'Dostępne rowery: {value}'
+    availableDocks: 'Dostępne stanowiska: {value}'
+    floatingBike: 'Wolnostojące rowery: {name}'
+    floatingCar: 'Samochód: {name}'
+    floatingEScooter: 'Hulajnoga elektryczna: {name}'
+    stopId: 'Numer przystanku: {stopId}'
+    stopViewer: Podgląd przystanku
