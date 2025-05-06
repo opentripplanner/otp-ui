@@ -13,9 +13,9 @@
     "@opentripplanner/core-utils": "workspace:*"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-animate-height": "^3.0.4",
-    "styled-components": "^5.3.0"
+    "react": "catalog:",
+    "react-animate-height": "catalog:",
+    "styled-components": "catalog:"
   },
   "repository": {
     "type": "git",

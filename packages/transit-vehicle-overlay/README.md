@@ -38,5 +38,4 @@ Only input in the form of https://github.com/opentripplanner/otp-ui/blob/master/
 ## TODO:
 
 1.  more / better unit tests
-1.  mapbox gl
-    <!-- Updated for semantic release trigger -->
+2.  mapbox gl

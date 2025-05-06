@@ -6,11 +6,7 @@
     "node": ">=12",
     "pnpm": ">=8"
   },
-  "packageManager": "pnpm@9.0.6",
-  "resolutions": {
-    "react": "18.2.0",
-    "react-animate-height": "3.0.4"
-  },
+  "packageManager": "pnpm@10.9.0",
   "devDependencies": {
     "@anolilab/semantic-release-pnpm": "^1.1.10",
     "@babel/cli": "^7.10",
@@ -65,7 +61,7 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "7.14.3",
-    "flat": "^5.0.2",
+    "flat": "catalog:",
     "graphql": "^16.6.0",
     "graphql-tag": "^2.12.6",
     "husky": "^2.4.1",
@@ -83,9 +79,9 @@
     "prettier": "^1.19.1",
     "puppeteer": "^10.2.0",
     "querystring-es3": "^0.2.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-intl": "^6.8.4",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "react-intl": "catalog:",
     "react-test-renderer": "^16.14.0",
     "semantic-release": "^24.2.3",
     "semantic-release-monorepo": "^8.0.2",
@@ -93,7 +89,7 @@
     "semver": "^7.3.2",
     "storybook": "^8.6.4",
     "storybook-mock-date-decorator": "^2.0.6",
-    "styled-components": "^5.3.0",
+    "styled-components": "catalog:",
     "stylelint": "^10.1.0",
     "stylelint-config-prettier": "^5.2.0",
     "stylelint-config-recommended": "^2.2.0",
@@ -133,7 +129,7 @@
     "update-internal-dependencies": "node scripts/update-internal-dependencies.js",
     "test-storybook": "test-storybook --url http://localhost:5555",
     "update-snapshots": "pnpm build-storybook; npx concurrently -k -s first -n \"SB,TEST\" \"npx http-server storybook-static --port 5555 --silent\" \"npx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555 -u\"",
-    "pack-all": "lerna exec --no-private -- 'pnpm pack && echo \"Package tarball: $(pwd)/$(ls *.tgz)\"'"
+    "pack-all": "pnpm prepublish && lerna exec --no-private -- 'pnpm pack && echo \"Package tarball: $(pwd)/$(ls *.tgz)\"'"
   },
   "eslintConfig": {
     "env": {
@@ -278,7 +274,7 @@
       "pnpm lint:graphql --fix",
       "git add"
     ],
-    "!(.github/**).{yml,yaml}": [
+    "!({.github/**,pnpm-lock.yaml}).{yml,yaml}": [
       "prettier --write",
       "yaml-sort --quotingStyle double --input",
       "git add"

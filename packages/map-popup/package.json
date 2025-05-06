@@ -15,15 +15,15 @@
     "@opentripplanner/building-blocks": "workspace:*",
     "@opentripplanner/core-utils": "workspace:*",
     "@opentripplanner/from-to-location-picker": "workspace:*",
-    "flat": "^5.0.2"
+    "flat": "catalog:"
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-intl": "^6.8.4",
-    "styled-components": "^5.3.0"
+    "react": "catalog:",
+    "react-intl": "catalog:",
+    "styled-components": "catalog:"
   },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
