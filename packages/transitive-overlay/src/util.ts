@@ -182,7 +182,7 @@ function makeStop(stop: Place, coordinate?: number[]) {
  * Flex routes sometimes have the same from and to IDs, but
  * these stops still need to be rendered separately!
  */
-function makeStopWithFlexSupport(leg: Leg): Place {
+function renameLegFlexStops(leg: Leg): Place {
   const flexSupportStop = { ...leg.to };
 
   if (typeof flexSupportStop.stop === "object") {
@@ -396,7 +396,7 @@ export function itineraryToTransitive(
       // Add the "to" end of transit legs to the list of stops.
       // (Do not label stop names if they repeat.)
       const lastCoord = hasLegGeometry && legCoords[legCoords.length - 1];
-      const modifiedToStop = makeStop(makeStopWithFlexSupport(leg), lastCoord);
+      const modifiedToStop = makeStop(renameLegFlexStops(leg), lastCoord);
       addStop(modifiedToStop, newStops, knownStopNames);
       pattern.stops.push({
         stop_id: getStopId(modifiedToStop),
