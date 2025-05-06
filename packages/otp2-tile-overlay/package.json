@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/otp2-tile-overlay",
-  "version": "3.0.3",
+  "version": "3.0.4-alpha.1",
   "description": "Render data from OTP2's vector tile server",
   "main": "lib/index.js",
   "module": "esm/index.js",
