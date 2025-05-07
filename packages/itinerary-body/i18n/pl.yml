@@ -22,9 +22,8 @@ otpUi:
     fare: 'Opłata za przejazd: {fare}'
     fromLocation: z {location}
     legDetails: Szczegóły odcinka
-    operatedBy: Usługa obsługiwana przez {agencyLink}
-    rideDurationAndStops: 'Przejedź {duration}{numStops, plural, =1 {} other { / #
-      przystanków}}'
+    operatedBy: Obsługiwane przez {agencyLink}
+    rideDurationAndStops: 'Jedź {duration}{numStops, plural, =1 {} other { / # przystanków}}'
     disembarkAt: Wysiądź na {legDestination}
     stopViewer: Informacje o przystanku
     tripViewer: Informacje o podróży
@@ -80,10 +79,10 @@ otpUi:
     summaryMode:
       bike: Rower
       bikeshare: Rower miejski
-      carHail: Jechać
-      escooter: Jechać
-      walk: Chodzić
-      carDrive: Jechać
+      carHail: Jedź
+      escooter: Jedź
+      walk: Idź
+      carDrive: Jedź
     stepFollowSigns: Podążaj za znakami do {street}
     stepStation: '{step} na {street}'
     vehicleType:
