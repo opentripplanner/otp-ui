@@ -1,1 +1,124 @@
-{}
+otpUi:
+  TransitLegBody:
+    agencyExternalLink: '{agencyName} (Link zewnętrzny)'
+    stopIdBasic: Numer {stopId}
+    routeDescription: '{routeName} <toPrefix>do</toPrefix> {headsign}'
+    typicalWait: 'Typowy czas oczekiwania: {waitTime}'
+    zoomToLeg: Pokaż odcinek na mapie
+    AlertsBody:
+      today: Dzisiaj
+      tomorrow: Jutro
+      yesterday: Wczoraj
+      effectiveDate: Obowiązuje od {dateTime, date, long}
+      effectiveTimeAndDate: Obowiązuje od {dateTime, time, short}, {day}
+      alertLinkText: Zobacz alert na stronie internetowej {agency}
+      linkOpensNewWindow: (Otwiera nowe okno)
+      noAgencyAlertLinkText: Zobacz alert na stronie internetowej przewoźnika
+    ride: Jedź
+    alertsHeader: '{alertCount, plural, =1 {# alert} other {# alerty}}'
+    arriveAt: Przybycie do {place}
+    stopId: Numer przystanku {stopId}
+    expandDetails: (Rozwiń szczegóły)
+    fare: 'Opłata za przejazd: {fare}'
+    fromLocation: z {location}
+    legDetails: Szczegóły odcinka
+    operatedBy: Usługa obsługiwana przez {agencyLink}
+    rideDurationAndStops: 'Przejedź {duration}{numStops, plural, =1 {} other { / #
+      przystanków}}'
+    disembarkAt: Wysiądź na {legDestination}
+    stopViewer: Informacje o przystanku
+    tripViewer: Informacje o podróży
+  AccessLegBody:
+    step:
+      hardRight: Ostro w prawo
+      circleClockwise: Podążaj zgodnie z ruchem wskazówek zegara
+      circleCounterClockwise: Podążaj przeciwnie do ruchu wskazówek zegara
+      continue: Kontynuuj
+      left: W lewo
+      right: W prawo
+      slightlyLeft: Lekko w lewo
+      hardLeft: Ostro w lewo
+      slightlyRight: Lekko w prawo
+      uTurnLeft: Zawróć w lewo
+      uTurnRight: Zawróć w prawo
+      enterStation: Wejdź na stację
+      exitStation: Wyjdź ze stacji
+    TncLeg:
+      estimatedTravelTime: 'Szacowany czas podróży: {duration} (nie uwzględnia natężenia
+        ruchu)'
+      bookRide: Zarezerwuj przejazd
+      bookRideLater: Poczekaj do {timeMillis, time, short}, aby dokonać rezerwacji
+      estimatedCost: 'Szacowany koszt: {minFare} - {maxFare}'
+      waitForPickup: 'Poczekaj{minutes, plural, =0 { # minuty} other { # minut}} na
+        odbiór przez firmę {company}'
+    stepHeading:
+      north: północ
+      east: wschód
+      northeast: północny wschód
+      northwest: północny zachód
+      west: zachód
+      south: południe
+      southeast: południowy wschód
+      southwest: południowy zachód
+    transfer: Transfer{duration, select, undefined {} other {, czekaj {duration}}}
+    RentedVehicleSubheader:
+      vehicleType:
+        escooter: hulajnoga elektryczna
+        vehicle: pojazd
+        bike: rower
+        bikeshare: rower miejski
+        car: samochód
+      walkVehicle: Przeprowadź pojazd wzdłuż {place}
+      pickupRental: Odbierz {vehicleType} {company} {vehicleName}
+      resumeRentalRide: Kontynuuj wypożyczonym pojazdem
+    mapillaryTooltip: Pokaż zdjęcia uliczne w tej lokalizacji
+    stepDepart: Kieruj się w stronę {heading} na {street}
+    stepElevator: Wjedź windą na {street}
+    stepGeneric: '{step} na {street}'
+    summary: '{mode} do {place}'
+    summaryAndDistance: '{mode}{distance} do {place}'
+    summaryMode:
+      bike: Rower
+      bikeshare: Rower miejski
+      carHail: Jechać
+      escooter: Jechać
+      walk: Chodzić
+      carDrive: Jechać
+    stepFollowSigns: Podążaj za znakami do {street}
+    stepStation: '{step} na {street}'
+    vehicleType:
+      car: Samochód
+      escooter: Hulajnoga elektryczna
+      vehicle: Pojazd
+      bike: Rower
+      bikeshare: Rower miejski
+    vehicleTitle: '{company} {vehicleType}'
+    unnamedPath: Nienazwana ścieżka
+    unnamedRoad: Droga bez nazwy
+    LegDiagramPreview:
+      elevationChart: Wykres wysokości
+      noElevationData: Dane dotyczące wysokości nie są dostępne.
+      toggleElevationChart: Przełącz wykres wysokości
+  ItineraryBody:
+    flexPickupMessage: Aby skorzystać z tej trasy, musisz {action}{advanceNotice}.
+    stayOnBoard: Zostań w pojeździe na {place}
+    travelBy: Podróż {mode}
+    travelByMode:
+      bike: rowerem
+      car: samochodem
+      escooter: hulajnogą elektryczną
+      walk: pieszo
+    common:
+      durationShort: '{approximatePrefix, select, true {Około } other {}}{hours, plural,
+        =0 {} other {# h }}{minutes} min'
+    viewOnMap: Zobacz na mapie
+    flexAdvanceNotice: ' co najmniej {leadDays, plural, one {# dni} other {# dni}}
+      wcześniej'
+    flexCallAhead: zadzwoń wcześniej
+    flexCallNumber: zadzwoń pod {phoneNumber}
+    tripAccessibility:
+      itineraryAccessibility: 'Dostępność dla osób niepełnosprawnych na tej wycieczce: '
+      legAccessibility: 'Dostępność dla wózków inwalidzkich na tym etapie podróży: '
+      inaccessible: niedostępny
+      unclear: nieznany
+      likelyAccessible: prawdopodobnie dostępny
