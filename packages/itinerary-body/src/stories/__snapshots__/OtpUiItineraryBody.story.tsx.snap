@@ -2,7 +2,7 @@
 
 exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="CAR"
@@ -526,7 +526,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -817,7 +817,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -1141,7 +1141,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -1476,7 +1476,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -1539,7 +1539,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui BikeOnlyItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BICYCLE"
@@ -1823,7 +1823,7 @@ exports[`ItineraryBody/otp-ui BikeOnlyItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -1886,7 +1886,7 @@ exports[`ItineraryBody/otp-ui BikeOnlyItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -2101,7 +2101,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  rented-bike">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   rented-bike">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BICYCLE"
@@ -2452,7 +2452,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -2705,7 +2705,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -2768,7 +2768,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -3021,7 +3021,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  rented-bike">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   rented-bike">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BICYCLE"
@@ -3486,7 +3486,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -3739,7 +3739,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -4095,7 +4095,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -4316,7 +4316,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  rented-bike">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   rented-bike">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BICYCLE"
@@ -4667,7 +4667,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -4882,7 +4882,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -4945,7 +4945,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -5122,7 +5122,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BICYCLE"
@@ -5415,7 +5415,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -5592,7 +5592,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -5860,7 +5860,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -6043,7 +6043,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BICYCLE"
@@ -6298,7 +6298,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -6361,7 +6361,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -6576,7 +6576,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -6912,7 +6912,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -7209,7 +7209,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -7272,7 +7272,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -7487,7 +7487,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="MICROMOBILITY"
@@ -7705,7 +7705,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -7768,7 +7768,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -8088,7 +8088,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="MICROMOBILITY"
@@ -8563,7 +8563,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -8646,7 +8646,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -8859,7 +8859,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -9147,7 +9147,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="MICROMOBILITY"
@@ -9508,7 +9508,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -9571,7 +9571,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="CAR"
@@ -9685,7 +9685,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -9976,7 +9976,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -10300,7 +10300,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -10635,7 +10635,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -10698,7 +10698,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -11313,7 +11313,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -11487,7 +11487,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -11664,7 +11664,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -11826,7 +11826,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -12003,7 +12003,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -12181,7 +12181,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -12358,7 +12358,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -12567,7 +12567,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -12878,7 +12878,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -12941,7 +12941,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -13252,7 +13252,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -13489,7 +13489,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -13710,7 +13710,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -13915,7 +13915,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -14136,7 +14136,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -14247,7 +14247,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -14316,7 +14316,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -14569,7 +14569,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  rented-bike">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   rented-bike">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="SCOOTER"
@@ -15074,7 +15074,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  rented-bike">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   rented-bike">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -15137,7 +15137,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="CAR"
@@ -15661,7 +15661,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -15952,7 +15952,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -16276,7 +16276,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -16611,7 +16611,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -16674,7 +16674,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf demos__StyledItineraryBody-sc-1ckuiy0-0 gocYvb">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -16889,7 +16889,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -17225,7 +17225,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -17522,7 +17522,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -17585,7 +17585,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -17800,7 +17800,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -18136,7 +18136,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -18433,7 +18433,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -18496,7 +18496,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -18711,7 +18711,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -19047,7 +19047,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -19344,7 +19344,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -19407,7 +19407,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -19622,7 +19622,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -19958,7 +19958,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -20255,7 +20255,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -20318,7 +20318,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
 
 exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="CAR"
@@ -20425,7 +20425,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -20505,7 +20505,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -20657,7 +20657,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -20737,7 +20737,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="CAR"
@@ -20853,7 +20853,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -20916,7 +20916,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -21417,7 +21417,7 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -21588,7 +21588,7 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -21674,7 +21674,7 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -22021,7 +22021,7 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -22528,7 +22528,7 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -22591,7 +22591,7 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="CAR"
@@ -23115,7 +23115,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -23406,7 +23406,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -23730,7 +23730,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -24065,7 +24065,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -24128,7 +24128,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="CAR"
@@ -24652,7 +24652,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -24943,7 +24943,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -25286,7 +25286,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -25621,7 +25621,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -25684,7 +25684,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="CAR"
@@ -26208,7 +26208,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -26499,7 +26499,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -26823,7 +26823,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -27158,7 +27158,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -27221,7 +27221,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -27588,7 +27588,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -27773,7 +27773,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -27862,7 +27862,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -28062,7 +28062,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -28321,7 +28321,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -28593,7 +28593,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -28814,7 +28814,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -28877,7 +28877,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui WalkOnlyItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -29086,7 +29086,7 @@ exports[`ItineraryBody/otp-ui WalkOnlyItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -29149,7 +29149,7 @@ exports[`ItineraryBody/otp-ui WalkOnlyItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -29364,7 +29364,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -29545,7 +29545,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -29804,7 +29804,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -29985,7 +29985,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -30244,7 +30244,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -30307,7 +30307,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -30553,7 +30553,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -30768,7 +30768,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -31027,7 +31027,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -31242,7 +31242,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -31532,7 +31532,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -31595,7 +31595,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
 
 exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -31810,7 +31810,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -32149,7 +32149,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -32446,7 +32446,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -32509,7 +32509,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -32724,7 +32724,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -33074,7 +33074,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -33371,7 +33371,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -33434,7 +33434,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
 
 exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameComponent smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -33649,7 +33649,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -33976,7 +33976,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -34267,7 +34267,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -34330,7 +34330,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
 
 exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummaryComponent smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -34545,7 +34545,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -34883,7 +34883,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -35180,7 +35180,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -35243,7 +35243,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
 
 exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonActivatedAndCustomRouteAbbreviation smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -35458,7 +35458,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="TRAM"
@@ -35798,7 +35798,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -36095,7 +36095,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -36158,7 +36158,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
 
 exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -36525,7 +36525,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -36710,7 +36710,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -36799,7 +36799,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -36999,7 +36999,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -37258,7 +37258,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -37530,7 +37530,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -37751,7 +37751,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -37814,7 +37814,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -38181,7 +38181,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -38366,7 +38366,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -38455,7 +38455,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -38655,7 +38655,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -38914,7 +38914,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -39186,7 +39186,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -39407,7 +39407,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
@@ -39470,7 +39470,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
 
 exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -39837,7 +39837,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -40022,7 +40022,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -40111,7 +40111,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -40311,7 +40311,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -40570,7 +40570,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="BUS"
@@ -40842,7 +40842,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div mode="WALK"
@@ -41063,7 +41063,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
       <div class="styled__LegLine-sc-1q8npbl-36 hFoJph">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-37 dEELRu">
