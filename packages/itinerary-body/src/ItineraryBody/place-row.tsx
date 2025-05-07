@@ -113,8 +113,8 @@ export default function PlaceRow({
   return (
     <S.PlaceRowWrapper
       className={`place-row-wrapper ${leg.transitLeg ? "transit" : ""} ${
-        leg.rentedBike ? "rented-bike" : ""
-      }`}
+        interline ? "interline" : ""
+      } ${leg.rentedBike ? "rented-bike" : ""}`}
       key={legIndex || "destination-place"}
     >
       <S.LineColumn>
