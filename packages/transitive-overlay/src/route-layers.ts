@@ -50,7 +50,6 @@ export function patternToRouteFeature(
  */
 export function getRouteLayerLayout(textField: string): SymbolLayout {
   return {
-    // "icon-image": "debug",
     "icon-image": [
       "case",
       ["==", ["length", ["get", textField]], 1],
@@ -92,19 +91,18 @@ export function getRouteLayerLayout(textField: string): SymbolLayout {
     "icon-optional": false,
     // @ts-expect-error maplibre is not typed correctly
     "icon-overlap": "always",
+    "icon-rotation-alignment": "viewport",
+    "icon-text-fit-padding": [0, 0, 0, 0],
     "icon-text-fit": "both",
     "symbol-placement": "line-center",
-    "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+    "text-allow-overlap": true,
     "text-field": ["get", textField],
+    "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
     "text-ignore-placement": true,
     "text-justify": "center",
     "text-overlap": "always",
-    "text-rotation-alignment": "viewport",
-    "icon-rotation-alignment": "viewport",
     "text-padding": 0,
-    "text-allow-overlap": true,
-    "icon-text-fit-padding": [0, 0, 0, 0],
-    // "font-scale": 1.0,
+    "text-rotation-alignment": "viewport",
     "text-size": 16
   };
 }
