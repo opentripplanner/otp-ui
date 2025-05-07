@@ -15,8 +15,22 @@ import bbox from "@turf/bbox";
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
 import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
 import routeArrow from "./images/route_arrow.png";
-import circle from "./images/circle.png";
-import pill from "./images/pill.png";
+import one from "./images/01.png";
+import three from "./images/03.png";
+import four from "./images/04.png";
+import five from "./images/05.png";
+import six from "./images/06.png";
+import seven from "./images/07.png";
+import eight from "./images/08.png";
+import nine from "./images/09.png";
+import ten from "./images/10.png";
+import eleven from "./images/11.png";
+import twelve from "./images/12.png";
+import thirteen from "./images/13.png";
+import fourteen from "./images/14.png";
+import fifteen from "./images/15.png";
+import sixteen from "./images/16.png";
+import seventeen from "./images/17.png";
 import rectangle from "./images/square.png";
 
 export { itineraryToTransitive };
@@ -137,31 +151,179 @@ const TransitiveCanvasOverlay = ({
       options: { sdf: true }
     });
   }
+
   mapImages.push({
-    id: "circle-1",
-    url: circle,
+    id: "01",
+    url: one,
     options: {
       sdf: true,
-      content: [440, 370, 560, 630]
+      content: [175, 110, 305, 390]
     }
   });
   mapImages.push({
-    id: "circle-2",
-    url: circle,
+    id: "02",
+    url: one,
     options: {
       sdf: true,
-      content: [380, 370, 620, 630]
-    }
-  });
-  mapImages.push({
-    id: "circle-3",
-    url: pill,
-    options: {
-      sdf: true,
-      content: [80, 50, 248, 180]
+      content: [130, 115, 370, 385]
     }
   });
 
+  const L = 180;
+  const T = 120;
+  const PAD = 33 / 2;
+
+  mapImages.push({
+    id: "03",
+    url: three,
+    options: {
+      sdf: true,
+      content: [L + PAD, T + PAD, 750 - L, 500 + PAD - T]
+    }
+  });
+  // At 4, we design for letters over numbers
+  mapImages.push({
+    id: "04",
+    url: four,
+    options: {
+      sdf: true,
+      content: [L + 3 * PAD, T + PAD, 950 - L - 3 * PAD, 500 + PAD - T]
+    }
+  });
+  mapImages.push({
+    id: "05",
+    url: five,
+    options: {
+      sdf: true,
+      content: [L + 5 * PAD, T + PAD, 1117 - L - PAD * 5, 500 + PAD - T]
+    }
+  });
+  mapImages.push({
+    id: "06",
+    url: six,
+    options: {
+      sdf: true,
+      content: [L + 6 * PAD, T + PAD, 1250 - L - 4 * PAD, 500 + PAD - T]
+    }
+  });
+  mapImages.push({
+    id: "07",
+    url: seven,
+    options: {
+      sdf: true,
+      content: [L + 7 * PAD, T + PAD, 1450 - L - PAD * 9, 500 + PAD - T]
+    }
+  });
+  mapImages.push({
+    id: "08",
+    url: eight,
+    options: {
+      sdf: true,
+      content: [L + 9 * PAD, T + PAD, 1617 - L - PAD * 11, 500 + PAD - T]
+    }
+  });
+  mapImages.push({
+    id: "09",
+    url: nine,
+    options: {
+      sdf: true,
+      content: [L + 9 * PAD, T + PAD, 1783 - L - PAD * 11, 500 + PAD - T]
+    }
+  });
+  mapImages.push({
+    id: "10",
+    url: ten,
+    options: {
+      sdf: true,
+      content: [L + 9 * PAD, T + PAD, 1950 - L - PAD * 11, 500 + PAD - T]
+    }
+  });
+  mapImages.push({
+    id: "11",
+    url: eleven,
+    options: {
+      sdf: true,
+      content: [L + 6 * PAD, T + PAD, 2117 - L - PAD * 7, 500 + PAD - T]
+    }
+  });
+  mapImages.push({
+    id: "12",
+    url: twelve,
+    options: {
+      sdf: true,
+      content: [
+        L + 7 * PAD,
+        T + 1.5 * PAD,
+        2283 - L - PAD * 8,
+        500 + 1.5 * PAD - T
+      ]
+    }
+  });
+  mapImages.push({
+    id: "13",
+    url: thirteen,
+    options: {
+      sdf: true,
+      content: [
+        L + 8 * PAD,
+        T + PAD * 1.5,
+        2450 - L - PAD * 9,
+        500 + PAD / 1.5 - T
+      ]
+    }
+  });
+  mapImages.push({
+    id: "14",
+    url: fourteen,
+    options: {
+      sdf: true,
+      content: [
+        L + 9 * PAD,
+        T + 1.5 * PAD,
+        2617 - L - PAD * 10,
+        500 + 1.5 * PAD - T
+      ]
+    }
+  });
+  mapImages.push({
+    id: "15",
+    url: fifteen,
+    options: {
+      sdf: true,
+      content: [
+        L + 10 * PAD,
+        T + 1.5 * PAD,
+        2783 - L - PAD * 11,
+        500 + 1.5 * PAD - T
+      ]
+    }
+  });
+  mapImages.push({
+    id: "16",
+    url: sixteen,
+    options: {
+      sdf: true,
+      content: [
+        L + 12 * PAD,
+        T + 1.5 * PAD,
+        2950 - L - PAD * 13,
+        500 + 1.5 * PAD - T
+      ]
+    }
+  });
+  mapImages.push({
+    id: "17",
+    url: seventeen,
+    options: {
+      sdf: true,
+      content: [
+        L + 13 * PAD,
+        T + 1.5 * PAD,
+        3117 - L - PAD * 14,
+        500 + 1.5 * PAD - T
+      ]
+    }
+  });
   mapImages.push({
     id: "rect",
     url: rectangle,
