@@ -156,180 +156,129 @@ const TransitiveCanvasOverlay = ({
     id: "01",
     url: one,
     options: {
-      sdf: true,
-      content: [175, 110, 305, 390]
+      content: [0, 15, 500, 485],
+      sdf: true
     }
   });
   mapImages.push({
     id: "02",
     url: one,
     options: {
-      sdf: true,
-      content: [130, 115, 370, 385]
+      content: [0, 40, 500, 460],
+      sdf: true
     }
   });
-
-  const L = 180;
-  const T = 120;
-  const PAD = 33 / 2;
 
   mapImages.push({
     id: "03",
     url: three,
     options: {
-      sdf: true,
-      content: [L + PAD, T + PAD, 750 - L, 500 + PAD - T]
+      sdf: true
     }
   });
-  // At 4, we design for letters over numbers
   mapImages.push({
     id: "04",
     url: four,
     options: {
-      sdf: true,
-      content: [L + 3 * PAD, T + PAD, 950 - L - 3 * PAD, 500 + PAD - T]
+      sdf: true
     }
   });
   mapImages.push({
     id: "05",
     url: five,
     options: {
-      sdf: true,
-      content: [L + 5 * PAD, T + PAD, 1117 - L - PAD * 5, 500 + PAD - T]
+      sdf: true
     }
   });
   mapImages.push({
     id: "06",
     url: six,
     options: {
-      sdf: true,
-      content: [L + 6 * PAD, T + PAD, 1250 - L - 4 * PAD, 500 + PAD - T]
+      sdf: true
     }
   });
   mapImages.push({
     id: "07",
     url: seven,
     options: {
-      sdf: true,
-      content: [L + 7 * PAD, T + PAD, 1450 - L - PAD * 9, 500 + PAD - T]
+      sdf: true
     }
   });
   mapImages.push({
     id: "08",
     url: eight,
     options: {
-      sdf: true,
-      content: [L + 9 * PAD, T + PAD, 1617 - L - PAD * 11, 500 + PAD - T]
+      sdf: true
     }
   });
   mapImages.push({
     id: "09",
     url: nine,
     options: {
-      sdf: true,
-      content: [L + 9 * PAD, T + PAD, 1783 - L - PAD * 11, 500 + PAD - T]
+      sdf: true
     }
   });
   mapImages.push({
     id: "10",
     url: ten,
     options: {
-      sdf: true,
-      content: [L + 9 * PAD, T + PAD, 1950 - L - PAD * 11, 500 + PAD - T]
+      sdf: true
     }
   });
   mapImages.push({
     id: "11",
     url: eleven,
     options: {
-      sdf: true,
-      content: [L + 6 * PAD, T + PAD, 2117 - L - PAD * 7, 500 + PAD - T]
+      sdf: true
     }
   });
   mapImages.push({
     id: "12",
     url: twelve,
     options: {
-      sdf: true,
-      content: [
-        L + 7 * PAD,
-        T + 1.5 * PAD,
-        2283 - L - PAD * 8,
-        500 + 1.5 * PAD - T
-      ]
+      sdf: true
     }
   });
   mapImages.push({
     id: "13",
     url: thirteen,
     options: {
-      sdf: true,
-      content: [
-        L + 8 * PAD,
-        T + PAD * 1.5,
-        2450 - L - PAD * 9,
-        500 + PAD / 1.5 - T
-      ]
+      sdf: true
     }
   });
   mapImages.push({
     id: "14",
     url: fourteen,
     options: {
-      sdf: true,
-      content: [
-        L + 9 * PAD,
-        T + 1.5 * PAD,
-        2617 - L - PAD * 10,
-        500 + 1.5 * PAD - T
-      ]
+      sdf: true
     }
   });
   mapImages.push({
     id: "15",
     url: fifteen,
     options: {
-      sdf: true,
-      content: [
-        L + 10 * PAD,
-        T + 1.5 * PAD,
-        2783 - L - PAD * 11,
-        500 + 1.5 * PAD - T
-      ]
+      sdf: true
     }
   });
   mapImages.push({
     id: "16",
     url: sixteen,
     options: {
-      sdf: true,
-      content: [
-        L + 12 * PAD,
-        T + 1.5 * PAD,
-        2950 - L - PAD * 13,
-        500 + 1.5 * PAD - T
-      ]
+      sdf: true
     }
   });
   mapImages.push({
     id: "17",
     url: seventeen,
     options: {
-      sdf: true,
-      content: [
-        L + 13 * PAD,
-        T + 1.5 * PAD,
-        3117 - L - PAD * 14,
-        500 + 1.5 * PAD - T
-      ]
+      sdf: true
     }
   });
   mapImages.push({
     id: "rect",
     url: rectangle,
     options: {
-      sdf: true,
-      content: [95, 200, 905, 800]
+      sdf: true
     }
   });
 
