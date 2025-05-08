@@ -15,6 +15,23 @@ import bbox from "@turf/bbox";
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
 import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
 import routeArrow from "./images/route_arrow.png";
+import one from "./images/01.png";
+import three from "./images/03.png";
+import four from "./images/04.png";
+import five from "./images/05.png";
+import six from "./images/06.png";
+import seven from "./images/07.png";
+import eight from "./images/08.png";
+import nine from "./images/09.png";
+import ten from "./images/10.png";
+import eleven from "./images/11.png";
+import twelve from "./images/12.png";
+import thirteen from "./images/13.png";
+import fourteen from "./images/14.png";
+import fifteen from "./images/15.png";
+import sixteen from "./images/16.png";
+import seventeen from "./images/17.png";
+import rectangle from "./images/square.png";
 
 export { itineraryToTransitive };
 
@@ -97,6 +114,7 @@ type Props = {
 type MapImage = {
   id: string;
   url: string;
+  options: { sdf?: boolean; content?: [number, number, number, number] };
 };
 
 const loadImages = (map: MapRef, images: MapImage[]) => {
@@ -108,7 +126,7 @@ const loadImages = (map: MapRef, images: MapImage[]) => {
         return;
       }
       if (!map.hasImage(img.id)) {
-        map.addImage(img.id, image, { sdf: true });
+        map.addImage(img.id, image, img.options);
       }
     });
   });
@@ -129,9 +147,140 @@ const TransitiveCanvasOverlay = ({
   if (showRouteArrows) {
     mapImages.push({
       id: "arrow-icon",
-      url: routeArrow
+      url: routeArrow,
+      options: { sdf: true }
     });
   }
+
+  mapImages.push({
+    id: "01",
+    url: one,
+    options: {
+      content: [0, 15, 500, 485],
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "02",
+    url: one,
+    options: {
+      content: [0, 40, 500, 460],
+      sdf: true
+    }
+  });
+
+  mapImages.push({
+    id: "03",
+    url: three,
+    options: {
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "04",
+    url: four,
+    options: {
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "05",
+    url: five,
+    options: {
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "06",
+    url: six,
+    options: {
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "07",
+    url: seven,
+    options: {
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "08",
+    url: eight,
+    options: {
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "09",
+    url: nine,
+    options: {
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "10",
+    url: ten,
+    options: {
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "11",
+    url: eleven,
+    options: {
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "12",
+    url: twelve,
+    options: {
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "13",
+    url: thirteen,
+    options: {
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "14",
+    url: fourteen,
+    options: {
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "15",
+    url: fifteen,
+    options: {
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "16",
+    url: sixteen,
+    options: {
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "17",
+    url: seventeen,
+    options: {
+      sdf: true
+    }
+  });
+  mapImages.push({
+    id: "rect",
+    url: rectangle,
+    options: {
+      sdf: true
+    }
+  });
 
   useEffect(() => {
     loadImages(map, mapImages);
@@ -374,24 +523,13 @@ const TransitiveCanvasOverlay = ({
         type="symbol"
       />
       <Layer
-        // Render a solid background of fixed height using the uppercase route name.
-        filter={routeFilter}
-        id="routes-labels-background"
-        layout={getRouteLayerLayout("nameUpper")}
-        paint={{
-          "text-color": ["get", "color"],
-          "text-halo-color": ["get", "color"],
-          "text-halo-width": 4 // Max value is 1/4 of text size per maplibre docs.
-        }}
-        type="symbol"
-      />
-      <Layer
         // This layer renders transit route names (foreground).
         filter={routeFilter}
         id="routes-labels"
         layout={getRouteLayerLayout("name")}
         paint={{
-          "text-color": ["get", "textColor"]
+          "text-color": ["get", "textColor"],
+          "icon-color": ["get", "color"]
         }}
         type="symbol"
       />
