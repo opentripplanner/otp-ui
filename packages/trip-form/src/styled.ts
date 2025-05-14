@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import colors from "@opentripplanner/building-blocks"
 
 // eslint-disable-next-line prettier/prettier
 import type {
@@ -7,6 +8,12 @@ import type {
   ModeSelectorAndSubComponents,
   SubmodeSelectorAndSubComponents
 } from "./types";
+
+const { grey } = colors;
+
+export const baseColor = () => getComputedStyle(document.documentElement).getPropertyValue(
+  "--main-base-color"
+)
 
 export const SettingsHeader = styled.div``;
 
@@ -21,30 +28,27 @@ export const FloatingSettingLabel = styled(SettingLabel)`
   float: left;
 `;
 
-export const DateTimeSelector: DateTimeSelectorAndSubComponents = styled.div``;
+export const DateTimeSelector: DateTimeSelectorAndSubComponents = styled.div`
+  border-radius: 5px;
+  background: ${grey[50]};
+  height: 45px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
-DateTimeSelector.DepartureRow = styled.div`
-  box-sizing: border-box;
-  > * {
-    box-sizing: border-box;
-    width: 33.333333%;
-    padding: 0px 5px;
-  }
-`;
-
-DateTimeSelector.DateTimeRow = styled.div`
-  box-sizing: border-box;
-  > * {
-    box-sizing: border-box;
-    width: 50%;
-    padding: 0px 5px;
-    display: inline-block;
-  }
   input {
-    box-sizing: border-box;
+    border: 0px;
+    height: 100%;
     width: 100%;
+    background: transparent;
   }
 `;
+
+export const DepartArriveContainer = styled.div`
+    span {
+      float: none;
+    }
+`
 
 export const ModeSelector: ModeSelectorAndSubComponents = styled.div``;
 

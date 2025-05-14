@@ -138,6 +138,24 @@ export const dateTimeSelector = makeStory(Core.DateTimeSelector, {
   timeZone: "America/New_York"
 });
 
+export const dateTimeSelectorNoDepartArrive = makeStory(Core.DateTimeSelector, {
+  date: "2020-02-15",
+  dateFormatLegacy: "YY-M-d",
+  departArrive: "NOW",
+  forceLegacy: false,
+  externalDepartArriveSelector: true,
+  onQueryParamChange,
+  time: "14:17",
+  timeFormatLegacy: "HH:mm",
+  timeZone: "America/New_York"
+});
+
+export const departArriveDropdown = makeStory(Core.DepartArriveDropdown, {
+  departArrive: "NOW",
+  timeZone: "America/New_York",
+  onQueryParamChange
+});
+
 export const dropdownSelector = makeStory(Core.DropdownSelector, {
   label: "Pick an option:",
   name: "MyParam",
