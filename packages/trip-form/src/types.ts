@@ -111,7 +111,6 @@ type SimpleStyledDiv = StyledComponent<"div", any>;
 
 export type DateTimeSelectorAndSubComponents = SimpleStyledDiv & {
   DateTimeRow?: SimpleStyledDiv;
-  DepartureRow?: SimpleStyledDiv;
 };
 
 export type ModeSelectorAndSubComponents = SimpleStyledDiv & {
