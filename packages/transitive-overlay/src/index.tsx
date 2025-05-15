@@ -194,84 +194,96 @@ const TransitiveCanvasOverlay = ({
     id: "06",
     url: six,
     options: {
-      sdf: true
+      sdf: true,
+      content: [100, 0, 1283 - 100, 533]
     }
   });
   mapImages.push({
     id: "07",
     url: seven,
     options: {
-      sdf: true
+      sdf: true,
+      content: [150, 0, 1450 - 150, 533]
     }
   });
   mapImages.push({
     id: "08",
     url: eight,
     options: {
-      sdf: true
+      sdf: true,
+      content: [150, 0, 1617 - 150, 533]
     }
   });
   mapImages.push({
     id: "09",
     url: nine,
     options: {
-      sdf: true
+      sdf: true,
+      content: [150, 0, 1783 - 150, 533]
     }
   });
   mapImages.push({
     id: "10",
     url: ten,
     options: {
-      sdf: true
+      sdf: true,
+      content: [150, 0, 1950 - 150, 533]
     }
   });
   mapImages.push({
     id: "11",
     url: eleven,
     options: {
-      sdf: true
+      sdf: true,
+      content: [150, 0, 2117 - 150, 533]
     }
   });
   mapImages.push({
     id: "12",
     url: twelve,
     options: {
-      sdf: true
+      sdf: true,
+      content: [150, 0, 2283 - 150, 533]
     }
   });
   mapImages.push({
     id: "13",
     url: thirteen,
     options: {
-      sdf: true
+      sdf: true,
+      content: [150, 0, 2450 - 150, 533]
     }
   });
   mapImages.push({
     id: "14",
     url: fourteen,
     options: {
-      sdf: true
+      sdf: true,
+      content: [175, 0, 2617 - 175, 533]
     }
   });
   mapImages.push({
     id: "15",
     url: fifteen,
     options: {
-      sdf: true
+      sdf: true,
+      content: [175, 0, 2783 - 175, 533]
     }
   });
   mapImages.push({
     id: "16",
     url: sixteen,
     options: {
-      sdf: true
+      sdf: true,
+      content: [175, 0, 2950 - 175, 533]
     }
   });
   mapImages.push({
     id: "17",
     url: seventeen,
     options: {
-      sdf: true
+      sdf: true,
+      content: [175, 0, 3117 - 175, 533]
     }
   });
   mapImages.push({
