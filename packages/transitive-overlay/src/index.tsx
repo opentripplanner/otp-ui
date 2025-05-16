@@ -15,23 +15,57 @@ import bbox from "@turf/bbox";
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
 import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
 import routeArrow from "./images/route_arrow.png";
-import one from "./images/01.png";
-import three from "./images/03.png";
-import four from "./images/04.png";
-import five from "./images/05.png";
-import six from "./images/06.png";
-import seven from "./images/07.png";
-import eight from "./images/08.png";
-import nine from "./images/09.png";
-import ten from "./images/10.png";
-import eleven from "./images/11.png";
-import twelve from "./images/12.png";
-import thirteen from "./images/13.png";
-import fourteen from "./images/14.png";
-import fifteen from "./images/15.png";
-import sixteen from "./images/16.png";
-import seventeen from "./images/17.png";
+import capsule1 from "./images/01.png";
+import capsule3 from "./images/03.png";
+import capsule4 from "./images/04.png";
+import capsule5 from "./images/05.png";
+import capsule6 from "./images/06.png";
+import capsule7 from "./images/07.png";
+import capsule8 from "./images/08.png";
+import capsule9 from "./images/09.png";
+import capsule10 from "./images/10.png";
+import capsule11 from "./images/11.png";
+import capsule12 from "./images/12.png";
+import capsule13 from "./images/13.png";
+import capsule14 from "./images/14.png";
+import capsule15 from "./images/15.png";
+import capsule16 from "./images/16.png";
+import capsule17 from "./images/17.png";
 import rectangle from "./images/square.png";
+
+const CAPSULES = {
+  3: capsule3,
+  4: capsule4,
+  5: capsule5,
+  6: capsule6,
+  7: capsule7,
+  8: capsule8,
+  9: capsule9,
+  10: capsule10,
+  11: capsule11,
+  12: capsule12,
+  13: capsule13,
+  14: capsule14,
+  15: capsule15,
+  16: capsule16,
+  17: capsule17
+};
+
+// These are based on the sprites in the image folder
+const WIDTH_IMAGE_SIZES = {
+  6: 1283,
+  7: 1450,
+  8: 1617,
+  9: 1783,
+  10: 1950,
+  11: 2117,
+  12: 2283,
+  13: 2450,
+  14: 2617,
+  15: 2783,
+  16: 2950,
+  17: 3117
+};
 
 export { itineraryToTransitive };
 
@@ -152,140 +186,66 @@ const TransitiveCanvasOverlay = ({
     });
   }
 
+  function generateCapsulePadding(
+    width: number
+  ): [number, number, number, number] {
+    // Low widths have no padding
+    if (!WIDTH_IMAGE_SIZES[width]) {
+      return undefined;
+    }
+
+    // This could be more efficient, but this makes it very clear what is happening.
+    // Higher widths require more padding
+    let topPad = 0;
+    if (width === 6) {
+      topPad = 100;
+    }
+
+    if (width > 6) {
+      topPad = 150;
+    }
+
+    if (width > 12) {
+      topPad = 175;
+    }
+
+    // Each image has height 533
+    return [topPad, 0, WIDTH_IMAGE_SIZES[width] - topPad, 533];
+  }
+
   mapImages.push({
-    id: "01",
-    url: one,
+    id: "1",
+    url: capsule1,
     options: {
+      // These paddings are specifically set so that the circle appears circular
+      // despite non-circular padding
       content: [0, 15, 500, 485],
       sdf: true
     }
   });
   mapImages.push({
-    id: "02",
-    url: one,
+    id: "2",
+    url: capsule1,
     options: {
+      // These paddings are specifically set so that the circle appears circular
+      // despite non-circular padding
       content: [0, 40, 500, 460],
       sdf: true
     }
   });
 
-  mapImages.push({
-    id: "03",
-    url: three,
-    options: {
-      sdf: true
-    }
-  });
-  mapImages.push({
-    id: "04",
-    url: four,
-    options: {
-      sdf: true
-    }
-  });
-  mapImages.push({
-    id: "05",
-    url: five,
-    options: {
-      sdf: true
-    }
-  });
-  mapImages.push({
-    id: "06",
-    url: six,
-    options: {
-      sdf: true,
-      content: [100, 0, 1283 - 100, 533]
-    }
-  });
-  mapImages.push({
-    id: "07",
-    url: seven,
-    options: {
-      sdf: true,
-      content: [150, 0, 1450 - 150, 533]
-    }
-  });
-  mapImages.push({
-    id: "08",
-    url: eight,
-    options: {
-      sdf: true,
-      content: [150, 0, 1617 - 150, 533]
-    }
-  });
-  mapImages.push({
-    id: "09",
-    url: nine,
-    options: {
-      sdf: true,
-      content: [150, 0, 1783 - 150, 533]
-    }
-  });
-  mapImages.push({
-    id: "10",
-    url: ten,
-    options: {
-      sdf: true,
-      content: [150, 0, 1950 - 150, 533]
-    }
-  });
-  mapImages.push({
-    id: "11",
-    url: eleven,
-    options: {
-      sdf: true,
-      content: [150, 0, 2117 - 150, 533]
-    }
-  });
-  mapImages.push({
-    id: "12",
-    url: twelve,
-    options: {
-      sdf: true,
-      content: [150, 0, 2283 - 150, 533]
-    }
-  });
-  mapImages.push({
-    id: "13",
-    url: thirteen,
-    options: {
-      sdf: true,
-      content: [150, 0, 2450 - 150, 533]
-    }
-  });
-  mapImages.push({
-    id: "14",
-    url: fourteen,
-    options: {
-      sdf: true,
-      content: [175, 0, 2617 - 175, 533]
-    }
-  });
-  mapImages.push({
-    id: "15",
-    url: fifteen,
-    options: {
-      sdf: true,
-      content: [175, 0, 2783 - 175, 533]
-    }
-  });
-  mapImages.push({
-    id: "16",
-    url: sixteen,
-    options: {
-      sdf: true,
-      content: [175, 0, 2950 - 175, 533]
-    }
-  });
-  mapImages.push({
-    id: "17",
-    url: seventeen,
-    options: {
-      sdf: true,
-      content: [175, 0, 3117 - 175, 533]
-    }
-  });
+  // Generate each capsule image from 3 - 17
+  for (let i = 3; i < 18; i++) {
+    mapImages.push({
+      id: `${i}`,
+      url: CAPSULES[i],
+      options: {
+        content: generateCapsulePadding(i),
+        sdf: true
+      }
+    });
+  }
+
   mapImages.push({
     id: "rect",
     url: rectangle,
@@ -540,8 +500,8 @@ const TransitiveCanvasOverlay = ({
         id="routes-labels"
         layout={getRouteLayerLayout("name")}
         paint={{
-          "text-color": ["get", "textColor"],
-          "icon-color": ["get", "color"]
+          "icon-color": ["get", "color"],
+          "text-color": ["get", "textColor"]
         }}
         type="symbol"
       />
