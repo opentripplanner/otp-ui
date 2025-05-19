@@ -184,6 +184,20 @@ class TransitLegBody extends Component<Props, State> {
         defaultFareSelector.riderCategoryId
       );
 
+    const alertLabelContents = (
+      <>
+        <AlertToggleIcon />{" "}
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.TransitLegBody.alertsHeader"]}
+          description="Number of alerts header"
+          id="otpUi.TransitLegBody.alertsHeader"
+          values={{
+            alertCount: alerts?.length
+          }}
+        />
+      </>
+    );
+
     return (
       <>
         {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
@@ -298,40 +312,36 @@ class TransitLegBody extends Component<Props, State> {
               </S.CallAheadWarning>
             )}
             {/* Alerts toggle */}
-            {alerts?.length > 0 && (
-              <S.TransitAlertToggle
-                className="alert-toggle"
-                isButton={!shouldOnlyShowAlertsExpanded}
-                as={shouldOnlyShowAlertsExpanded && "div"}
-                onClick={this.onToggleAlertsClick}
-              >
-                <AlertToggleIcon />{" "}
-                <FormattedMessage
-                  defaultMessage={
-                    defaultMessages["otpUi.TransitLegBody.alertsHeader"]
-                  }
-                  description="Number of alerts header"
-                  id="otpUi.TransitLegBody.alertsHeader"
-                  values={{
-                    alertCount: alerts.length
-                  }}
-                />
-                {!shouldOnlyShowAlertsExpanded && (
-                  <>
-                    <S.CaretToggle expanded={alertsExpanded} />
-                    <S.InvisibleAdditionalDetails>
-                      <FormattedMessage
-                        defaultMessage={
-                          defaultMessages["otpUi.TransitLegBody.expandDetails"]
-                        }
-                        description="Screen reader text added to expand steps"
-                        id="otpUi.TransitLegBody.expandDetails"
-                      />
-                    </S.InvisibleAdditionalDetails>
-                  </>
-                )}
-              </S.TransitAlertToggle>
-            )}
+            {alerts?.length > 0 &&
+              (shouldOnlyShowAlertsExpanded ? (
+                <S.TransitAlertDiv className="alert-toggle">
+                  {alertLabelContents}
+                </S.TransitAlertDiv>
+              ) : (
+                <S.TransitAlertToggle
+                  aria-expanded={expandAlerts}
+                  className="alert-toggle"
+                  onClick={this.onToggleAlertsClick}
+                >
+                  {alertLabelContents}
+                  {!shouldOnlyShowAlertsExpanded && (
+                    <>
+                      <S.CaretToggle expanded={alertsExpanded} />
+                      <S.InvisibleAdditionalDetails>
+                        <FormattedMessage
+                          defaultMessage={
+                            defaultMessages[
+                              "otpUi.TransitLegBody.expandDetails"
+                            ]
+                          }
+                          description="Screen reader text added to expand steps"
+                          id="otpUi.TransitLegBody.expandDetails"
+                        />
+                      </S.InvisibleAdditionalDetails>
+                    </>
+                  )}
+                </S.TransitAlertToggle>
+              ))}
 
             {/* The Alerts body, if visible */}
             <AnimateHeight duration={500} height={expandAlerts ? "auto" : 0}>
