@@ -1,63 +1,28 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { FareProductSelector } from "@opentripplanner/types";
-import React, { ReactElement, ReactNode } from "react";
-import { FormattedMessage, FormattedNumber } from "react-intl";
+import React, { ReactElement } from "react";
+import { FormattedMessage } from "react-intl";
 import { CalendarAlt } from "@styled-icons/fa-solid/CalendarAlt";
-import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { MoneyBillAlt } from "@styled-icons/fa-solid/MoneyBillAlt";
-import { Leaf } from "@styled-icons/fa-solid/Leaf";
-import { Route } from "@styled-icons/fa-solid/Route";
 import { flatten } from "flat";
 import * as S from "./styled";
 import TripDetail from "./trip-detail";
-import FareLegTable from "./fare-table";
+import FareLegTable from "./components/fare-table";
 import { boldText, renderFare } from "./utils";
 
-import { TimeActiveDetailsProps, TripDetailsProps } from "./types";
+import { TripDetailsProps } from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
+import FlexBookingInfo from "./components/flex-booking-info";
+import Emissions from "./components/emissions";
+import TimeActive, { DefaultTimeActiveDetails } from "./components/time-active";
 
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
 // - the yaml loader for webpack returns a nested object,
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
-
-function CO2DescriptionLink(contents: ReactNode): ReactElement {
-  return (
-    <a
-      href="https://www.itf-oecd.org/sites/default/files/life-cycle-assessment-calculations-2020.xlsx"
-      rel="noopener noreferrer"
-      target="_blank"
-    >
-      {contents}
-    </a>
-  );
-}
-/**
- * Default rendering if no component is provided for the TimeActiveDetails
- * slot in the TripDetails component.
- */
-function DefaultTimeActiveDetails({
-  bikeMinutes,
-  walkMinutes
-}: TimeActiveDetailsProps): ReactElement {
-  return (
-    <FormattedMessage
-      defaultMessage={
-        defaultMessages["otpUi.TripDetails.timeActiveDescription"]
-      }
-      description="Text describing the walking and biking durations of a trip."
-      id="otpUi.TripDetails.timeActiveDescription"
-      values={{
-        bikeMinutes,
-        strong: boldText,
-        walkMinutes
-      }}
-    />
-  );
-}
 
 /**
  * Renders trip details such as departure instructions, fare amount, and minutes active.
@@ -67,7 +32,6 @@ export function TripDetails({
   co2Config,
   defaultFareType,
   DepartureDetails = null,
-  displayTimeActive = true,
   FareDetails = null,
   fareDetailsLayout,
   fareKeyNameMap = {},
@@ -209,42 +173,6 @@ export function TripDetails({
 
   const departureDate = new Date(itinerary.startTime);
 
-  // Compute total time spent active.
-
-  // TODO: separate into two reducers
-  let walkDurationSeconds = 0;
-  let bikeDurationSeconds = 0;
-  itinerary.legs.forEach(leg => {
-    if (leg.mode.startsWith("WALK")) walkDurationSeconds += leg.duration;
-    if (leg.mode.startsWith("BICYCLE")) bikeDurationSeconds += leg.duration;
-  });
-  const bikeMinutes = Math.round(bikeDurationSeconds / 60);
-  const walkMinutes = Math.round(walkDurationSeconds / 60);
-  const minutesActive = bikeMinutes + walkMinutes;
-
-  // Calculate CO₂ if it's not provided by the itinerary
-  const co2 =
-    itinerary.co2 ||
-    (co2Config?.enabled &&
-      coreUtils.itinerary.calculateEmissions(
-        itinerary,
-        co2Config?.carbonIntensity,
-        co2Config?.units
-      ));
-
-  // Parse flex info and generate appropriate strings
-  const containsFlex = itinerary.legs.some(coreUtils.itinerary.isFlex);
-  const pickupBookingInfo = itinerary.legs
-    .map(leg => leg.pickupBookingInfo)
-    .filter(info => !!info);
-  const dropOffBookingInfo = itinerary.legs
-    .map(leg => leg.dropOffBookingInfo)
-    .filter(info => !!info);
-  const totalDistance = itinerary.legs.reduce(
-    (total, leg) => total + leg.distance,
-    0
-  );
-
   return (
     <S.TripDetails className={className}>
       {/* this can be presentation as S.TripDetails is already labeled by this */}
@@ -310,96 +238,13 @@ export function TripDetails({
             summary={tncFare}
           />
         )}
-        {displayTimeActive && minutesActive > 0 && (
-          <TripDetail
-            icon={<Heartbeat size={17} />}
-            summary={
-              <FormattedMessage
-                defaultMessage={
-                  defaultMessages["otpUi.TripDetails.minutesActive"]
-                }
-                description="Text showing the number of minutes spent walking or biking throughout trip."
-                id="otpUi.TripDetails.minutesActive"
-                values={{
-                  approximatePrefix: showApproximateMinutesActive,
-                  minutes: minutesActive,
-                  strong: boldText
-                }}
-              />
-            }
-            description={
-              TimeActiveDetails && (
-                <TimeActiveDetails
-                  bikeMinutes={bikeMinutes}
-                  walkMinutes={walkMinutes}
-                />
-              )
-            }
-          />
-        )}
-        {co2 > 0 && co2Config?.enabled && (
-          <TripDetail
-            icon={<Leaf size={17} />}
-            summary={
-              <S.CO2Summary>
-                <FormattedMessage
-                  defaultMessage={defaultMessages["otpUi.TripDetails.co2"]}
-                  description="Text showing the quantity of CO₂ emitted by this trip."
-                  id="otpUi.TripDetails.co2"
-                  values={{
-                    co2: (
-                      <FormattedNumber
-                        value={Math.round(co2)}
-                        // eslint-disable-next-line react/style-prop-object
-                        style="unit"
-                        unit={co2Config?.units || "gram"}
-                        unitDisplay="narrow"
-                      />
-                    ),
-                    strong: boldText
-                  }}
-                />
-              </S.CO2Summary>
-            }
-            description={
-              <FormattedMessage
-                defaultMessage={
-                  defaultMessages["otpUi.TripDetails.co2description"]
-                }
-                description="Text explaining how the CO₂ emissions are calculated."
-                id="otpUi.TripDetails.co2description"
-                values={{
-                  link: CO2DescriptionLink,
-                  totalDistance
-                }}
-              />
-            }
-          />
-        )}
-        {containsFlex && (
-          <TripDetail
-            summary={
-              <S.FlexSummary>
-                <FormattedMessage
-                  defaultMessage={
-                    defaultMessages["otpUi.TripDetails.tripIncludesFlex"]
-                  }
-                  description="Text stating that portions of the trip include a flex (on-demand) transit service."
-                  id="otpUi.TripDetails.tripIncludesFlex"
-                  values={{
-                    extraMessage: [
-                      ...new Set([
-                        ...pickupBookingInfo.map(info => info.message),
-                        ...dropOffBookingInfo.map(info => info.message)
-                      ])
-                    ].join(" ")
-                  }}
-                />
-              </S.FlexSummary>
-            }
-            icon={<Route size={17} />}
-          />
-        )}
+        <TimeActive
+          itinerary={itinerary}
+          TimeActiveDetails={TimeActiveDetails}
+          showApproximateMinutesActive={showApproximateMinutesActive}
+        />
+        <FlexBookingInfo itinerary={itinerary} />
+        <Emissions itinerary={itinerary} co2Config={co2Config} />
       </S.TripDetailsBody>
     </S.TripDetails>
   );
