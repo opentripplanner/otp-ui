@@ -899,7 +899,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
              aria-label="Leg details"
              role="group"
         >
-          <div class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd fsdPaF alert-toggle">
+          <div class="styled__TransitAlertDiv-sc-1q8npbl-79 fzDBCo alert-toggle">
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -907,7 +907,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -931,7 +931,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -977,7 +977,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -1017,9 +1017,9 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 21 min / 9 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -1047,7 +1047,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -3821,7 +3821,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
              aria-label="Leg details"
              role="group"
         >
-          <div class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd fsdPaF alert-toggle">
+          <div class="styled__TransitAlertDiv-sc-1q8npbl-79 fzDBCo alert-toggle">
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -3829,7 +3829,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -3853,7 +3853,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -3899,7 +3899,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -3939,9 +3939,9 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 12 min / 13 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -3969,7 +3969,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -5674,7 +5674,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
              aria-label="Leg details"
              role="group"
         >
-          <div class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd fsdPaF alert-toggle">
+          <div class="styled__TransitAlertDiv-sc-1q8npbl-79 fzDBCo alert-toggle">
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -5682,7 +5682,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -5706,7 +5706,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -5752,7 +5752,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -5792,9 +5792,9 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -5822,7 +5822,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -6658,7 +6658,9 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
              aria-label="Leg details"
              role="group"
         >
-          <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd gqjoyQ alert-toggle">
+          <button aria-expanded="false"
+                  class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd iuGvOx alert-toggle"
+          >
             <svg viewbox="0 0 448 512"
                  height="15"
                  width="15"
@@ -6841,9 +6843,9 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -6871,7 +6873,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -8735,9 +8737,9 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 8 min / 9 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -8765,7 +8767,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -10058,7 +10060,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
              aria-label="Leg details"
              role="group"
         >
-          <div class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd fsdPaF alert-toggle">
+          <div class="styled__TransitAlertDiv-sc-1q8npbl-79 fzDBCo alert-toggle">
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -10066,7 +10068,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -10090,7 +10092,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -10136,7 +10138,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -10176,9 +10178,9 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 21 min / 9 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -10206,7 +10208,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -11395,9 +11397,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 1 hr 0 min / 5 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -11425,7 +11427,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -11742,9 +11744,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 26 min / 4 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -11772,7 +11774,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -12081,9 +12083,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 25 min / 6 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -12111,7 +12113,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -12435,9 +12437,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 11 min / 10 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -12465,7 +12467,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -13341,9 +13343,9 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 18 min / 12 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -13371,7 +13373,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -13799,9 +13801,9 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 9 min / 8 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -13829,7 +13831,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -16034,7 +16036,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
              aria-label="Leg details"
              role="group"
         >
-          <div class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd fsdPaF alert-toggle">
+          <div class="styled__TransitAlertDiv-sc-1q8npbl-79 fzDBCo alert-toggle">
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -16042,7 +16044,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -16066,7 +16068,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -16112,7 +16114,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -16152,9 +16154,9 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 21 min / 9 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -16182,7 +16184,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -16971,7 +16973,9 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
              aria-label="Leg details"
              role="group"
         >
-          <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd gqjoyQ alert-toggle">
+          <button aria-expanded="false"
+                  class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd iuGvOx alert-toggle"
+          >
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -16979,7 +16983,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -17022,7 +17026,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -17068,7 +17072,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -17114,7 +17118,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -17154,9 +17158,9 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -17184,7 +17188,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -17882,7 +17886,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
              aria-label="Leg details"
              role="group"
         >
-          <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd gqjoyQ alert-toggle">
+          <button aria-expanded="false"
+                  class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd iuGvOx alert-toggle"
+          >
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -17890,7 +17896,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -17933,7 +17939,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -17979,7 +17985,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -18025,7 +18031,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -18065,9 +18071,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -18095,7 +18101,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -18793,7 +18799,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
              aria-label="Leg details"
              role="group"
         >
-          <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd gqjoyQ alert-toggle">
+          <button aria-expanded="false"
+                  class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd iuGvOx alert-toggle"
+          >
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -18801,7 +18809,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -18844,7 +18852,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -18890,7 +18898,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -18936,7 +18944,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -18976,9 +18984,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -19006,7 +19014,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -19704,7 +19712,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
              aria-label="Leg details"
              role="group"
         >
-          <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd gqjoyQ alert-toggle">
+          <button aria-expanded="false"
+                  class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd iuGvOx alert-toggle"
+          >
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -19712,7 +19722,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -19755,7 +19765,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -19801,7 +19811,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -19847,7 +19857,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -19887,9 +19897,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -19917,7 +19927,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -20581,9 +20591,9 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 6 min / 3 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -20611,7 +20621,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -21504,9 +21514,9 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 8 min / 4 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -21534,7 +21544,7 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -21761,9 +21771,9 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 20 min / 26 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -21791,7 +21801,7 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -23488,7 +23498,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
              aria-label="Leg details"
              role="group"
         >
-          <div class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd fsdPaF alert-toggle">
+          <div class="styled__TransitAlertDiv-sc-1q8npbl-79 fzDBCo alert-toggle">
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -23496,7 +23506,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -23520,7 +23530,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -23566,7 +23576,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -23606,9 +23616,9 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 21 min / 9 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -23636,7 +23646,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -25025,7 +25035,9 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
              aria-label="Leg details"
              role="group"
         >
-          <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd gqjoyQ alert-toggle">
+          <button aria-expanded="false"
+                  class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd iuGvOx alert-toggle"
+          >
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -25033,7 +25045,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -25076,7 +25088,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -25122,7 +25134,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -25162,9 +25174,9 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 21 min / 9 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -25192,7 +25204,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -26581,7 +26593,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
              aria-label="Leg details"
              role="group"
         >
-          <div class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd fsdPaF alert-toggle">
+          <div class="styled__TransitAlertDiv-sc-1q8npbl-79 fzDBCo alert-toggle">
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -26589,7 +26601,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -26613,7 +26625,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -26659,7 +26671,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -26699,9 +26711,9 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 21 min / 9 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -26729,7 +26741,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -27673,9 +27685,9 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 47 min / 6 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -27703,7 +27715,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -27946,9 +27958,9 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 11 min / 8 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -27976,7 +27988,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -28405,9 +28417,9 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 31 min / 17 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -28435,7 +28447,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -29453,9 +29465,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 4 min / 5 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -29483,7 +29495,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -29893,9 +29905,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 4 min / 5 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -29923,7 +29935,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -30676,9 +30688,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 4 min / 5 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -30706,7 +30718,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -31150,9 +31162,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 4 min / 5 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -31180,7 +31192,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -31895,7 +31907,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
              aria-label="Leg details"
              role="group"
         >
-          <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd gqjoyQ alert-toggle">
+          <button aria-expanded="false"
+                  class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd iuGvOx alert-toggle"
+          >
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -31903,7 +31917,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -31946,7 +31960,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -31992,7 +32006,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -32038,7 +32052,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -32078,9 +32092,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -32108,7 +32122,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -32806,7 +32820,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
              aria-label="Leg details"
              role="group"
         >
-          <div class="styled__AgencyInfo-sc-1q8npbl-86 jmQKPb agency-info">
+          <div class="styled__AgencyInfo-sc-1q8npbl-87 hvClZi agency-info">
             Service operated by
             <a aria-label="TriMet (External Link)"
                href="http://trimet.org/"
@@ -32820,7 +32834,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
               >
             </a>
           </div>
-          <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd gqjoyQ alert-toggle">
+          <button aria-expanded="false"
+                  class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd iuGvOx alert-toggle"
+          >
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -32828,7 +32844,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -32871,7 +32887,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -32917,7 +32933,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -32963,7 +32979,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -33003,9 +33019,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -33033,7 +33049,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -33722,7 +33738,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
              aria-label="Leg details"
              role="group"
         >
-          <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd gqjoyQ alert-toggle">
+          <button aria-expanded="false"
+                  class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd iuGvOx alert-toggle"
+          >
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -33730,7 +33748,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -33773,7 +33791,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -33819,7 +33837,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -33865,7 +33883,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -33905,9 +33923,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -33935,7 +33953,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -34627,7 +34645,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
              aria-label="Leg details"
              role="group"
         >
-          <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd gqjoyQ alert-toggle">
+          <button aria-expanded="false"
+                  class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd iuGvOx alert-toggle"
+          >
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -34635,7 +34655,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -34678,7 +34698,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -34724,7 +34744,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -34770,7 +34790,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -34810,8 +34830,8 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
               <div>
                 <span>
                   Ride for a custom duration of 3.583 minutes
@@ -34842,7 +34862,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -35539,7 +35559,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
              aria-label="Leg details"
              role="group"
         >
-          <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd gqjoyQ alert-toggle">
+          <button aria-expanded="false"
+                  class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitAlertToggle-sc-1q8npbl-78 jOzsRd iuGvOx alert-toggle"
+          >
             <svg viewbox="0 0 512 512"
                  height="15"
                  width="15"
@@ -35547,7 +35569,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-84 eZInUT"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertToggleIcon-sc-1q8npbl-85 beOqfW"
             >
               <path fill="currentColor"
                     d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -35590,7 +35612,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -35636,7 +35658,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -35682,7 +35704,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-85 eHDyvs"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__DefaultAlertBodyIcon-sc-1q8npbl-86 kUpPMT"
                     >
                       <path fill="currentColor"
                             d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224c0-17.7-14.3-32-32-32s-32 14.3-32 32 14.3 32 32 32 32-14.3 32-32z"
@@ -35722,9 +35744,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
               </ul>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -35757,7 +35779,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -36610,9 +36632,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 47 min / 6 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -36640,7 +36662,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -36883,9 +36905,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 11 min / 8 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -36913,7 +36935,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -37342,9 +37364,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 31 min / 17 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -37372,7 +37394,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -38266,9 +38288,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 47 min / 6 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -38296,7 +38318,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -38539,9 +38561,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 11 min / 8 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -38569,7 +38591,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -38998,9 +39020,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 31 min / 17 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -39028,7 +39050,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -39922,9 +39944,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 47 min / 6 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -39952,7 +39974,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -40195,9 +40217,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 11 min / 8 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -40225,7 +40247,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
@@ -40654,9 +40676,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
             <div>
             </div>
           </div>
-          <div class="styled__TransitLegDetails-sc-1q8npbl-79 gdafgC transit-leg-details">
-            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-80 cPvzOB">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-83 jOzsRd eyBBfx">
+          <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
+            <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
+              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
                 Ride 31 min / 17 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -40684,7 +40706,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
                  style="height: 0px; overflow: hidden;"
             >
               <div style="display: none;">
-                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-81 iwJuVz">
+                <div class="styled__TransitLegExpandedBody-sc-1q8npbl-82 ckfCnc">
                   <ol class="styled__IntermediateStops-sc-1q8npbl-21 dgUotX">
                     <li class="styled__StopRow-sc-1q8npbl-70 bkTUuN">
                       <div class="styled__StopMarker-sc-1q8npbl-68 hozPYt">
