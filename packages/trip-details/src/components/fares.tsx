@@ -167,6 +167,7 @@ export default function Fares({
     <>
       {!!fare && (
         <TripDetail
+          className="fares"
           // Any custom description for the transit fare needs to be handled by the slot.
           description={
             FareDetails && (
@@ -183,6 +184,7 @@ export default function Fares({
       )}
       {!!tncFare && (
         <TripDetail
+          className="tnc-fare"
           // Any custom description for the transit fare needs to be handled by the slot.
           description={
             FareDetails && (

@@ -29,6 +29,7 @@ export default function DepartureDate({
   const departureDate = new Date(itinerary.startTime);
   return (
     <TripDetail
+      className="departure-date"
       // Any custom description for the Departure message needs to be handled by the slot.
       description={
         DepartureDetails && <DepartureDetails departureDate={departureDate} />

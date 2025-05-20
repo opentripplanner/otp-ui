@@ -31,6 +31,7 @@ export default function FlexBookingInfo({
     .filter(info => !!info);
   return (
     <TripDetail
+      className="flex-booking-info"
       summary={
         <S.FlexSummary>
           <FormattedMessage

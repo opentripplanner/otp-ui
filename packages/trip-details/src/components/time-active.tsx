@@ -54,6 +54,7 @@ export default function TimeActive({
 
   return (
     <TripDetail
+      className="time-active"
       icon={<Heartbeat size={17} />}
       summary={
         <FormattedMessage

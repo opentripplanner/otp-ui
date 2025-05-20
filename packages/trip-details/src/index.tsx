@@ -19,6 +19,10 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
+function cn(className: string, arg1: string): string {
+  return className ? `${className} ${arg1}` : arg1;
+}
+
 /**
  * Renders trip details such as departure instructions, fare amount, and minutes active.
  */
@@ -33,7 +37,7 @@ export function TripDetails({
   TimeActiveDetails = DefaultTimeActiveDetails
 }: TripDetailsProps): ReactElement {
   return (
-    <S.TripDetails className={className}>
+    <S.TripDetails className={cn(className, "trip-details")}>
       {/* this can be presentation as S.TripDetails is already labeled by this */}
       <S.TripDetailsHeader id="trip-details-header">
         <FormattedMessage

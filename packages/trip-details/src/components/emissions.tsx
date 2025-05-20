@@ -49,6 +49,7 @@ export default function Emissions({
 
   return (
     <TripDetail
+      className="emissions"
       icon={<Leaf size={17} />}
       summary={
         <S.CO2Summary>
