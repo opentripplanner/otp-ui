@@ -139,7 +139,6 @@ interface ModeButtonProps {
   // Optional properties for styling
   accentColor?: string;
   activeHoverColor?: string;
-
   fillModeIcons?: boolean;
   id: string;
   modeButton: ModeButtonDefinition;
