@@ -4,7 +4,7 @@ import coreUtils from "@opentripplanner/core-utils";
 import React, { ChangeEvent, ReactElement, useCallback } from "react";
 import { useIntl } from "react-intl";
 
-import { Dropdown } from "@opentripplanner/building-blocks";
+import colors, { Dropdown } from "@opentripplanner/building-blocks";
 import * as S from "../styled";
 
 // eslint-disable-next-line prettier/prettier
@@ -18,6 +18,8 @@ const {
   OTP_API_DATE_FORMAT,
   OTP_API_TIME_FORMAT
 } = coreUtils.time;
+
+const { grey } = colors
 
 type DepartArriveValue = "NOW" | "DEPART" | "ARRIVE";
 
@@ -239,9 +241,12 @@ export default function DateTimeSelector({
 
   const isLegacy = forceLegacy || !supportsDateTimeInputs;
 
+  const baseColor = S.baseColor() || grey[900]
+
   return (
     <S.DateTimeSelector
       aria-label={intl.formatMessage({ id: "otpUi.DateTimeSelector.dateTimeSelector" })}
+      baseColor={baseColor}
       className={className}
       role="group"
       style={style}

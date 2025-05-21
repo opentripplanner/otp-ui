@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import colors from "@opentripplanner/building-blocks"
-
 // eslint-disable-next-line prettier/prettier
 import type {
   DateTimeSelectorAndSubComponents,
@@ -9,12 +7,9 @@ import type {
   SubmodeSelectorAndSubComponents
 } from "./types";
 
-const { grey } = colors;
-
 export const baseColor = () => getComputedStyle(document.documentElement).getPropertyValue(
   "--main-base-color"
 )
-
 export const SettingsHeader = styled.div``;
 
 export const SettingsSection = styled.div``;
@@ -28,9 +23,10 @@ export const FloatingSettingLabel = styled(SettingLabel)`
   float: left;
 `;
 
-export const DateTimeSelector: DateTimeSelectorAndSubComponents = styled.div`
+export const DateTimeSelector: DateTimeSelectorAndSubComponents = styled.div<{ baseColor: string }>`
   border-radius: 5px;
-  background: ${grey[50]};
+  background: ${props => props.baseColor}1a;
+  color: inherit;
   height: 45px;
   display: flex;
   justify-content: space-around;
