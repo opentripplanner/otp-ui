@@ -2,10 +2,19 @@ import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
 import { Itinerary } from "@opentripplanner/types";
+import flatten from "flat";
 import TripDetail from "../trip-detail";
-import { defaultMessages } from "../i18n/en-US.yml";
 import { boldText } from "../utils";
 import { TimeActiveDetailsProps } from "../types";
+
+// Load the default messages.
+import defaultEnglishMessages from "../../i18n/en-US.yml";
+
+// HACK: We should flatten the messages loaded above because
+// the YAML loaders behave differently between webpack and our version of jest:
+// - the yaml loader for webpack returns a nested object,
+// - the yaml loader for jest returns messages with flattened ids.
+const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 /**
  * Default rendering if no component is provided for the TimeActiveDetails

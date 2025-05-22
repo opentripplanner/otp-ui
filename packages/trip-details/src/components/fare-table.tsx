@@ -15,7 +15,7 @@ import { boldText, renderFare } from "../utils";
 import { FareLegTableProps, FareTableLayout } from "../types";
 
 // Load the default messages.
-import defaultEnglishMessages from "../i18n/en-US.yml";
+import defaultEnglishMessages from "../../i18n/en-US.yml";
 import { InvisibleA11yLabel } from "../styled";
 
 // HACK: We should flatten the messages loaded above because

@@ -1,12 +1,7 @@
 import flatten from "flat";
 import React, { ReactElement } from "react";
 import { FormattedDate } from "react-intl";
-import {
-  ComponentStory,
-  Meta,
-  Parameters,
-  StoryContext
-} from "@storybook/react";
+import { Meta, Parameters, StoryContext, StoryObj } from "@storybook/react";
 import styled from "styled-components";
 import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/itinerary";
 // The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
@@ -144,11 +139,14 @@ const defaultCo2Config = {
 };
 
 const CustomFareDetails = ({
-  transitFares
+  legs,
+  maxTNCFare,
+  minTNCFare
 }: FareDetailsProps): ReactElement => (
   <>
-    Custom details about fares (transitFares: {JSON.stringify(transitFares)}){" "}
-    (cents), can be constructed dynamically using any markup.
+    Custom details about fares (legs: {JSON.stringify(legs)}, maxTNCFare:{" "}
+    {maxTNCFare}, minTNCFare: {minTNCFare}) (cents), can be constructed
+    dynamically using any markup.
   </>
 );
 
@@ -182,13 +180,12 @@ const CustomTimeActiveDetails = ({
  */
 function createTripDetailsTemplate(
   Component: typeof TripDetails = TripDetails
-): ComponentStory<typeof TripDetails> {
+): StoryObj<typeof TripDetails> {
   const TripDetailsTemplate = (
     {
-      defaultFareType,
       DepartureDetails,
       FareDetails,
-      fareDetailsLayout,
+      fareConfig = {},
       itinerary,
       TimeActiveDetails,
       showApproximateMinutesActive
@@ -197,21 +194,18 @@ function createTripDetailsTemplate(
   ): ReactElement => {
     const { locale } = globals;
     const { useCustomFareKeyMap } = parameters;
-    const fareKeyNameMap = useCustomFareKeyMap
-      ? locale === "en-US"
-        ? englishFareKeyMap
-        : frenchFareKeyMap
-      : {};
+    if (useCustomFareKeyMap) {
+      fareConfig.fareKeyNameMap =
+        locale === "en-US" ? englishFareKeyMap : frenchFareKeyMap;
+    }
     return (
       <Component
         TimeActiveDetails={TimeActiveDetails}
         DepartureDetails={DepartureDetails}
         FareDetails={FareDetails}
-        fareDetailsLayout={fareDetailsLayout}
-        fareKeyNameMap={fareKeyNameMap}
+        fareConfig={fareConfig}
         itinerary={itinerary}
         co2Config={defaultCo2Config}
-        defaultFareType={defaultFareType}
         showApproximateMinutesActive={showApproximateMinutesActive}
       />
     );
@@ -226,7 +220,7 @@ function makeStory(
   args: TripDetailsProps,
   parameters?: Parameters,
   Component?: typeof TripDetails
-): ComponentStory<typeof TripDetails> {
+): StoryObj<typeof TripDetails> {
   const BoundTripDetails = createTripDetailsTemplate(Component).bind({});
   BoundTripDetails.args = args;
   BoundTripDetails.parameters = parameters;
@@ -271,13 +265,15 @@ export const StyledItinerary = makeStory(
   {
     itinerary: walkTransitWalkItinerary
   },
-  null,
+  undefined,
   StyledTripDetails
 );
 
 export const LegFareProductsItinerary = makeStory({
-  defaultFareType: orcaDefaultFareType,
-  fareDetailsLayout: orcaFareByLegLayout,
+  fareConfig: {
+    defaultFareType: orcaDefaultFareType,
+    fareDetailsLayout: orcaFareByLegLayout
+  },
   itinerary: otp2FareProducts
 });
 
@@ -299,10 +295,12 @@ export const TncTransitItinerary = makeStory(
 
 export const TncTransitItineraryWithCustomMessages = makeStory(
   {
-    defaultFareType: {
-      headerKey: "electronicRegular",
-      mediumId: "orca:electronic",
-      riderCategoryId: "orca:regular"
+    fareConfig: {
+      defaultFareType: {
+        headerKey: "electronicRegular",
+        mediumId: "orca:electronic",
+        riderCategoryId: "orca:regular"
+      }
     },
     DepartureDetails: CustomDepartureDetails,
     itinerary: tncTransitTncItinerary,

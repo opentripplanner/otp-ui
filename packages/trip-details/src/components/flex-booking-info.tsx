@@ -8,7 +8,7 @@ import TripDetail from "../trip-detail";
 import * as S from "../styled";
 
 // Load the default messages.
-import defaultEnglishMessages from "../i18n/en-US.yml";
+import defaultEnglishMessages from "../../i18n/en-US.yml";
 
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:

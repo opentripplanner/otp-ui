@@ -11,7 +11,7 @@ import { FareConfig, FareDetailsProps } from "../types";
 import FareLegTable from "./fare-table";
 
 // Load the default messages.
-import defaultEnglishMessages from "../i18n/en-US.yml";
+import defaultEnglishMessages from "../../i18n/en-US.yml";
 
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
@@ -95,7 +95,8 @@ export default function Fares({
               id="otpUi.TripDetails.transitFareEntry"
               values={{
                 name:
-                  fareKeyNameMap[defaultFareType.headerKey] || fareNameFallback,
+                  fareKeyNameMap?.[defaultFareType.headerKey] ||
+                  fareNameFallback,
                 strong: boldText,
                 value: renderFare(
                   defaultFareTotal.currency?.code || "USD",
@@ -124,7 +125,7 @@ export default function Fares({
                   key={Object.values(fareType).join("-")}
                   values={{
                     name:
-                      fareKeyNameMap[defaultFareType.headerKey] ||
+                      fareKeyNameMap?.[defaultFareType.headerKey] ||
                       fareNameFallback,
                     strong: boldText,
                     value: renderFare(
