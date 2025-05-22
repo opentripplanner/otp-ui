@@ -18,6 +18,12 @@ fi
 # Define and create the target temporary directory
 TEMP_DIR_BASE="/tmp/otp-ui-pkg"
 TEMP_DIR="$TEMP_DIR_BASE/$PACKAGE_NAME"
+
+if [ -d "$TEMP_DIR" ]; then 
+  echo "Cleaning up $TEMP_DIR"
+  rm -rf "$TEMP_DIR"
+fi
+
 mkdir -p "$TEMP_DIR"
 
 # Extract the tarball to the temporary directory
