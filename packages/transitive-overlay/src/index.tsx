@@ -66,6 +66,7 @@ const WIDTH_IMAGE_SIZES = {
   16: 2950,
   17: 3117
 };
+const HEIGHT_IMAGE_SIZE = 533;
 
 export { itineraryToTransitive };
 
@@ -209,8 +210,8 @@ const TransitiveCanvasOverlay = ({
       topPad = 175;
     }
 
-    // Each image has height 533
-    return [topPad, 0, WIDTH_IMAGE_SIZES[width] - topPad, 533];
+    // Each image has same height
+    return [topPad, 0, WIDTH_IMAGE_SIZES[width] - topPad, HEIGHT_IMAGE_SIZE];
   }
 
   mapImages.push({
