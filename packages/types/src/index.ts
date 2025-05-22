@@ -251,6 +251,7 @@ export type Place = {
   name: string;
   networks?: string[];
   rentalVehicle?: { network: string };
+  vehicleRentalStation?: { rentalNetwork: { networkId: string } };
   stop?: Stop;
   /**
    * @deprecated Only for OTP1 support, removal is immenent
