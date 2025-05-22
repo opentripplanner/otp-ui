@@ -244,6 +244,9 @@ export function getCompanyFromLeg(leg: Leg): string {
   if (from.rentalVehicle) {
     return from.rentalVehicle.network;
   }
+  if (from.vehicleRentalStation && from.vehicleRentalStation.rentalNetwork) {
+    return from.vehicleRentalStation.rentalNetwork.networkId;
+  }
   if (
     (mode === "MICROMOBILITY" || mode === "SCOOTER") &&
     rentedVehicle &&
