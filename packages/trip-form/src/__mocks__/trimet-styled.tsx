@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
+import colors from "@opentripplanner/building-blocks";
 import * as TripFormClasses from "../styled";
-
 /**
  * This file is provided as an illustrative example for custom styling.
  */
 
 import "./trimet-mock.css"; // Downloads the font.
+
+const { red } = colors;
 
 const TriMetStyled = styled.div`
   font-family: Hind, sans-serif;
@@ -58,16 +60,14 @@ const TriMetStyled = styled.div`
       text-decoration: underline;
     }
   }
-  ${TripFormClasses.DateTimeSelector.DateTimeRow} {
-    margin: 15px 0px;
-    input {
-      padding: 6px 12px;
-      text-align: center;
-      font-size: inherit;
-      font-family: inherit;
-      font-weight: inherit;
-      border: 0;
-      border-bottom: 1px solid #000;
+  ${TripFormClasses.DateTimeSelector} {
+    background: ${red[50]};
+    max-width: 550px;
+  }
+  ${TripFormClasses.DepartArriveContainer} {
+    #date-time-depart-arrive-label {
+      background: ${red[50]} !important;
+      color: ${red[900]} !important;
     }
   }
   ${TripFormClasses.DropdownSelector} {
@@ -115,16 +115,6 @@ const TriMetStyled = styled.div`
   }
   ${TripFormClasses.SubmodeSelector.InlineRow} {
     margin: -3px 0px;
-  }
-  ${TripFormClasses.DateTimeSelector} {
-    div {
-      button {
-        color: #eee;
-      }
-      button.active {
-        background-color: navy;
-      }
-    }
   }
   ${TripFormClasses.ModeSelector.MainRow} {
     padding: 0px 5px;
