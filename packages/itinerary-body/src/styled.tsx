@@ -714,15 +714,24 @@ export const TransitAlerts = styled.ul`
   padding: 0;
 `;
 
-export const TransitAlertToggle = styled(TransparentButton)<{
-  isButton?: boolean;
-}>`
+const alertToggleStyling = css`
   color: #d14727;
-  cursor: ${props => (props.isButton ? "cursor" : "auto")};
-  display: inline-block;
+  display: flex;
   font-weight: 400;
   margin-top: 8px;
   padding: 0;
+
+  svg {
+    margin-right: 0.5em;
+  }
+`;
+export const TransitAlertToggle = styled(TransparentButton)`
+  cursor: "cursor";
+  ${alertToggleStyling}
+`;
+
+export const TransitAlertDiv = styled.div`
+  ${alertToggleStyling}
 `;
 
 export const TransitLegDetails = styled.div`
