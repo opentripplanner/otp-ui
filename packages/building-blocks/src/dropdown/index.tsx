@@ -129,7 +129,7 @@ const Dropdown = ({
           id={id}
           onClick={toggleOpen}
           alignLeft={alignMenuLeft}
-          role={isList && "list"}
+          role={isList && "listbox"}
           tabIndex={-1}
         >
           {children}
