@@ -694,6 +694,7 @@ const LocationField = ({
   // geocoder search results; (3) nearby transit stops; and (4) saved searches
 
   const statusMessages = [];
+
   let menuItems = []; // array of menu items for display (may include non-selectable items e.g. dividers/headings)
   // array of menu item ids and associated locationSelected handlers for onKeyDown
   // (does not include non-selectable items e.g. dividers/headings)
