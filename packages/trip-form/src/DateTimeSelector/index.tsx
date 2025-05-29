@@ -2,7 +2,7 @@ import CSS from "csstype";
 import { format, parse } from "date-fns";
 import coreUtils from "@opentripplanner/core-utils";
 import React, { ChangeEvent, ReactElement, useCallback } from "react";
-import { useIntl } from "react-intl";
+import { IntlShape, useIntl } from "react-intl";
 
 import colors, { Dropdown } from "@opentripplanner/building-blocks";
 import * as S from "../styled";
@@ -43,7 +43,7 @@ interface DateTimeSelectorProps {
   /**
    * If true, only render the date/time inputs. The depart/arrive selector will be handled by the parent component.
    */
-  externalDepartArriveSelector?: boolean;
+  departArriveDropdown?: boolean;
   /**
    * If true, forces legacy mode and uses `<input type="text">`
    * instead of the native date/time pickers found on modern browsers.
@@ -102,7 +102,7 @@ const buttonStyle = { backgroundColor: "transparent", border: "0px", color: "inh
  */
 const referenceDate = new Date();
 
-const departureOptions = (intl): DepartArriveOption[] => [
+const departureOptions = (intl: IntlShape): DepartArriveOption[] => [
   {
     // Default option.
     type: "NOW",
@@ -118,13 +118,6 @@ const departureOptions = (intl): DepartArriveOption[] => [
   }
 ];
 
-const handleQueryParamChange = (onQueryParamChange, queryParam) => {
-    if (typeof onQueryParamChange === "function") {
-     return onQueryParamChange(queryParam);
-    }
-    return null;
-  };
-
 export const DepartArriveDropdown = ({ departArrive, timeZone, onQueryParamChange }: {
   departArrive: DepartArriveValue,
   timeZone: string,
@@ -133,16 +126,16 @@ export const DepartArriveDropdown = ({ departArrive, timeZone, onQueryParamChang
 
   const intl = useIntl()
 
-  const setDepartArrive = (option: DepartArriveOption ): any => useCallback(
+  const setDepartArrive = (option: DepartArriveOption ) => useCallback(
     () => {
       if (option.type === "NOW") {
-        handleQueryParamChange(onQueryParamChange, {
+        onQueryParamChange({
           date: getCurrentDate(timeZone),
           departArrive: "NOW",
           time: getCurrentTime(timeZone)
         });
-      } else if (!(option.type === departArrive)) {
-        handleQueryParamChange(onQueryParamChange, {
+      } else {
+        onQueryParamChange({
           departArrive: option.type
         });
       }
@@ -192,7 +185,7 @@ export default function DateTimeSelector({
   date = null,
   dateFormatLegacy = OTP_API_DATE_FORMAT,
   departArrive = "NOW",
-  externalDepartArriveSelector = false,
+  departArriveDropdown = false,
   forceLegacy = false,
   onQueryParamChange = null,
   style = null,
@@ -202,16 +195,12 @@ export default function DateTimeSelector({
 }: DateTimeSelectorProps): ReactElement {
   const intl = useIntl()
 
-
-
-
-
   const handleInputChange = (key: string) => useCallback(
     (evt: ChangeEvent<HTMLInputElement>): void => {
-      handleQueryParamChange(onQueryParamChange, { [key]: evt.target.value });
+      onQueryParamChange({ [key]: evt.target.value });
       // If the user changes the time, it doesn't make sense for them to be departing now.
       if (departArrive === "NOW") {
-        handleQueryParamChange(onQueryParamChange, { departArrive: "DEPART" });
+        onQueryParamChange({ departArrive: "DEPART" });
       }
     },
     [onQueryParamChange, key, departArrive]
@@ -224,7 +213,7 @@ export default function DateTimeSelector({
   const handleTimeChangeLegacy = useCallback(
     (evt: ChangeEvent<HTMLInputElement>): void => {
       const newTime = format(parse(evt.target.value, timeFormatLegacy, referenceDate), OTP_API_TIME_FORMAT);
-      handleQueryParamChange(onQueryParamChange, { newTime });
+      onQueryParamChange({ newTime });
     },
     [onQueryParamChange]
   );
@@ -232,7 +221,7 @@ export default function DateTimeSelector({
   const handleDateChangeLegacy = useCallback(
     (evt: ChangeEvent<HTMLInputElement>): void => {
       const newDate = format(parse(evt.target.value, dateFormatLegacy, referenceDate), OTP_API_DATE_FORMAT);
-      handleQueryParamChange(onQueryParamChange, { newDate });
+      onQueryParamChange({ newDate });
     },
     [onQueryParamChange]
   );
@@ -251,7 +240,7 @@ export default function DateTimeSelector({
       role="group"
       style={style}
     >
-          {!externalDepartArriveSelector && 
+          {departArriveDropdown && 
             <DepartArriveDropdown 
               departArrive={departArrive} 
               timeZone={timeZone} 

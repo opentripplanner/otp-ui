@@ -44,7 +44,7 @@ export const DepartArriveContainer = styled.div`
     span {
       float: none;
     }
-`
+`;
 
 export const ModeSelector: ModeSelectorAndSubComponents = styled.div``;
 
