@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 // eslint-disable-next-line prettier/prettier
 import type {
   DateTimeSelectorAndSubComponents,
@@ -8,6 +7,9 @@ import type {
   SubmodeSelectorAndSubComponents
 } from "./types";
 
+export const baseColor = () => getComputedStyle(document.documentElement).getPropertyValue(
+  "--main-base-color"
+)
 export const SettingsHeader = styled.div``;
 
 export const SettingsSection = styled.div``;
@@ -21,29 +23,27 @@ export const FloatingSettingLabel = styled(SettingLabel)`
   float: left;
 `;
 
-export const DateTimeSelector: DateTimeSelectorAndSubComponents = styled.div``;
+export const DateTimeSelector: DateTimeSelectorAndSubComponents = styled.div<{ baseColor: string }>`
+  border-radius: 5px;
+  background: ${props => props.baseColor}1a;
+  color: inherit;
+  height: 45px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
-DateTimeSelector.DepartureRow = styled.div`
-  box-sizing: border-box;
-  > * {
-    box-sizing: border-box;
-    width: 33.333333%;
-    padding: 0px 5px;
+  input {
+    border: 0px;
+    height: 100%;
+    width: 100%;
+    background: transparent;
   }
 `;
 
-DateTimeSelector.DateTimeRow = styled.div`
-  box-sizing: border-box;
-  > * {
-    box-sizing: border-box;
-    width: 50%;
-    padding: 0px 5px;
-    display: inline-block;
-  }
-  input {
-    box-sizing: border-box;
-    width: 100%;
-  }
+export const DepartArriveContainer = styled.div`
+    span {
+      float: none;
+    }
 `;
 
 export const ModeSelector: ModeSelectorAndSubComponents = styled.div``;
