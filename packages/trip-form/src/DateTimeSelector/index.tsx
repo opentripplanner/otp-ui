@@ -53,7 +53,7 @@ interface DateTimeSelectorProps {
    * Triggered when a query parameter is changed.
    * @param params A { param1: value1, param2, value2, ... } object that contains the new values for the parameter(s) that has (have) changed.
    */
-  onQueryParamChange: (e: QueryParamChangeEvent) => void; // FIXME: add types, see interface TransitFareData.
+  onQueryParamChange: (e: QueryParamChangeEvent) => void;
   /**
    * Standard React inline style prop.
    */
@@ -187,7 +187,7 @@ export default function DateTimeSelector({
   departArrive = "NOW",
   departArriveDropdown = false,
   forceLegacy = false,
-  onQueryParamChange = null,
+  onQueryParamChange,
   style = null,
   time = null,
   timeFormatLegacy = OTP_API_TIME_FORMAT,
