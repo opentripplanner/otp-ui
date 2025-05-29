@@ -47,7 +47,7 @@ const OTP2TileLayerWithPopup = ({
   /**
    * The minimum zoom to show the layer at. Defaults to 14
    */
-  minZoom?: number
+  minZoom?: number;
   /**
    * An optional method to override the map click handler. If a method is passed, NO POPUPS
    * WILL APPEAR ON CLICK. The implementer will be responsible for handling all click events
@@ -331,7 +331,7 @@ const generateOTP2TileLayers = (
         .map(l => l.overrideType || l.type)
         .join(",")}/tilejson.json`}
     />,
-    ...layers.map((layer) => {
+    ...layers.map(layer => {
       const { color, name, network, type, minZoom, initiallyVisible } = layer;
 
       const id = `${type}${network ? `-${network}` : ""}`;
