@@ -1084,6 +1084,7 @@ const LocationField = ({
           id: "otpUi.LocationField.clearLocation"
         })}
         onClick={onClearButtonClick}
+        type="button"
       >
         {clearButtonIcon}
       </S.ClearButton>
