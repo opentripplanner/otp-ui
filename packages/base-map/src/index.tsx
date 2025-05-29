@@ -134,6 +134,16 @@ const BaseMap = ({
     <Map
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...mapLibreProps}
+      canvasContextAttributes={{
+        // Copy of defaults at https://maplibre.org/maplibre-gl-js/docs/API/type-aliases/MapOptions/#default-value_5,
+        // except for contextType = undefined (from the source code)
+        // and preserveDrawingBuffer = true to support printing.
+        antialias: false,
+        desynchronized: false,
+        failIfMajorPerformanceCaveat: false,
+        powerPreference: "high-performance",
+        preserveDrawingBuffer: true
+      }}
       id={id}
       latitude={viewState.latitude}
       locale={generateMapControlTranslations(intl)}
@@ -166,7 +176,6 @@ const BaseMap = ({
       }}
       onTouchCancel={clearLongPressTimer}
       onTouchEnd={clearLongPressTimer}
-      preserveDrawingBuffer
       style={style}
       zoom={viewState.zoom}
     >
