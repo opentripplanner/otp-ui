@@ -41,7 +41,7 @@ exports[`Trip Form Components dateTimeSelector smoke-test 1`] = `
 </p>
 <div>
   <div aria-label="Date/Time Selector"
-       class="styled__DateTimeSelector-sc-122ziys-4 lnDcsH"
+       class="styled__DateTimeSelector-sc-122ziys-4 ehsfjV"
        role="group"
   >
     <div class="styled__DepartArriveContainer-sc-122ziys-5 kqvuAJ">
@@ -86,7 +86,7 @@ exports[`Trip Form Components dateTimeSelector smoke-test 1`] = `
 <div>
   <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
     <div aria-label="Date/Time Selector"
-         class="styled__DateTimeSelector-sc-122ziys-4 lnDcsH"
+         class="styled__DateTimeSelector-sc-122ziys-4 ehsfjV"
          role="group"
     >
       <div class="styled__DepartArriveContainer-sc-122ziys-5 kqvuAJ">
@@ -134,7 +134,7 @@ exports[`Trip Form Components dateTimeSelectorNoDepartArrive smoke-test 1`] = `
 </p>
 <div>
   <div aria-label="Date/Time Selector"
-       class="styled__DateTimeSelector-sc-122ziys-4 lnDcsH"
+       class="styled__DateTimeSelector-sc-122ziys-4 ehsfjV"
        role="group"
   >
     <div>
@@ -159,7 +159,7 @@ exports[`Trip Form Components dateTimeSelectorNoDepartArrive smoke-test 1`] = `
 <div>
   <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
     <div aria-label="Date/Time Selector"
-         class="styled__DateTimeSelector-sc-122ziys-4 lnDcsH"
+         class="styled__DateTimeSelector-sc-122ziys-4 ehsfjV"
          role="group"
     >
       <div>
