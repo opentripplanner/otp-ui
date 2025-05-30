@@ -129,7 +129,6 @@ const VehicleRentalOverlay = ({
     });
     map.on("zoom", (e: ViewStateChangeEvent) => {
       // Avoid too many re-renders by only updating state if we are a whole number value different
-      // @ts-expect-error viewState not declared
       const { zoom: newZoom } = e.viewState;
       if (Math.floor(zoom / 2) !== Math.floor(newZoom / 2)) {
         setZoom(newZoom);
