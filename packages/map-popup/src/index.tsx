@@ -115,7 +115,7 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
 
   const bikesAvailablePresent = entityIsStation(entity)
   const entityIsStationHub = bikesAvailablePresent && entity?.bikesAvailable !== undefined && !entity?.isFloatingBike;
-  const stopId = !bikesAvailablePresent && entity?.code || null;
+  const stopId = !bikesAvailablePresent && entity?.code;
   console.log("STOP ID::::", stopId);
   // Double quotes make the query invalid, so remove them from the id just in case
   const id = `focus-${encodeURIComponent(entity.id).replace(/%/g, "")}-popup`
