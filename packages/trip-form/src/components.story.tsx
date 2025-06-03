@@ -63,7 +63,7 @@ export default {
     // (there are no args that the user can interactively change for this component).
     controls: {
       hideNoControlsWarning: true,
-      include: ["timeZone"]
+      include: ["timeZone", "departArriveDropdown"]
     }
   },
   title: "Trip Form Components"
@@ -131,11 +131,18 @@ export const dateTimeSelector = makeStory(Core.DateTimeSelector, {
   date: "2020-02-15",
   dateFormatLegacy: "YY-M-d",
   departArrive: "NOW",
+  departArriveDropdown: true,
   forceLegacy: false,
   onQueryParamChange,
   time: "14:17",
   timeFormatLegacy: "HH:mm",
   timeZone: "America/New_York"
+});
+
+export const departArriveDropdown = makeStory(Core.DepartArriveDropdown, {
+  departArrive: "NOW",
+  timeZone: "America/New_York",
+  onQueryParamChange
 });
 
 export const dropdownSelector = makeStory(Core.DropdownSelector, {

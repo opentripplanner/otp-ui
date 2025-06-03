@@ -20,7 +20,7 @@ exports[`Trip Form Components checkboxSelector smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 fLumVL">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
     <div style="display: inline-block; width: 250px;">
       <input id="id-query-param-MyParam"
              type="checkbox"
@@ -41,31 +41,42 @@ exports[`Trip Form Components dateTimeSelector smoke-test 1`] = `
 </p>
 <div>
   <div aria-label="Date/Time Selector"
-       class="styled__DateTimeSelector-sc-122ziys-4 fOCxsn"
+       class="styled__DateTimeSelector-sc-122ziys-4 ehsfjV"
        role="group"
   >
-    <div class="styled__DepartureRow-sc-122ziys-5 gdaZFj">
-      <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
-        <button aria-pressed="true"
-                class="styled__Button-sc-122ziys-16 bXGxDk active "
+    <div class="styled__DepartArriveContainer-sc-122ziys-5 kqvuAJ">
+      <span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS"
+            id="date-time-depart-arrive-wrapper"
+      >
+        <button aria-expanded="false"
+                aria-haspopup="listbox"
+                id="date-time-depart-arrive-label"
+                class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
+                style="background-color: transparent; border: 0px; color: inherit;"
         >
-          Leave now
+          <span>
+            Leave now
+          </span>
+          <span class="caret"
+                role="presentation"
+          >
+          </span>
         </button>
-      </div>
-      <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
-        <button aria-pressed="false"
-                class="styled__Button-sc-122ziys-16 bXGxDk  "
-        >
-          Depart at
-        </button>
-      </div>
-      <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
-        <button aria-pressed="false"
-                class="styled__Button-sc-122ziys-16 bXGxDk  "
-        >
-          Arrive by
-        </button>
-      </div>
+      </span>
+    </div>
+    <div>
+      <input aria-label="Time"
+             required
+             type="time"
+             value="14:17"
+      >
+    </div>
+    <div>
+      <input aria-label="Date"
+             required
+             type="date"
+             value="2020-02-15"
+      >
     </div>
   </div>
 </div>
@@ -73,34 +84,100 @@ exports[`Trip Form Components dateTimeSelector smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 fLumVL">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
     <div aria-label="Date/Time Selector"
-         class="styled__DateTimeSelector-sc-122ziys-4 fOCxsn"
+         class="styled__DateTimeSelector-sc-122ziys-4 ehsfjV"
          role="group"
     >
-      <div class="styled__DepartureRow-sc-122ziys-5 gdaZFj">
-        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
-          <button aria-pressed="true"
-                  class="styled__Button-sc-122ziys-16 bXGxDk active "
+      <div class="styled__DepartArriveContainer-sc-122ziys-5 kqvuAJ">
+        <span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS"
+              id="date-time-depart-arrive-wrapper"
+        >
+          <button aria-expanded="false"
+                  aria-haspopup="listbox"
+                  id="date-time-depart-arrive-label"
+                  class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
+                  style="background-color: transparent; border: 0px; color: inherit;"
           >
-            Leave now
+            <span>
+              Leave now
+            </span>
+            <span class="caret"
+                  role="presentation"
+            >
+            </span>
           </button>
-        </div>
-        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
-          <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 bXGxDk  "
-          >
-            Depart at
-          </button>
-        </div>
-        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
-          <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 bXGxDk  "
-          >
-            Arrive by
-          </button>
-        </div>
+        </span>
       </div>
+      <div>
+        <input aria-label="Time"
+               required
+               type="time"
+               value="14:17"
+        >
+      </div>
+      <div>
+        <input aria-label="Date"
+               required
+               type="date"
+               value="2020-02-15"
+        >
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Trip Form Components departArriveDropdown smoke-test 1`] = `
+<p>
+  Plain
+</p>
+<div>
+  <div class="styled__DepartArriveContainer-sc-122ziys-5 kqvuAJ">
+    <span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS"
+          id="date-time-depart-arrive-wrapper"
+    >
+      <button aria-expanded="false"
+              aria-haspopup="listbox"
+              id="date-time-depart-arrive-label"
+              class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
+              style="background-color: transparent; border: 0px; color: inherit;"
+      >
+        <span>
+          Leave now
+        </span>
+        <span class="caret"
+              role="presentation"
+        >
+        </span>
+      </button>
+    </span>
+  </div>
+</div>
+<p>
+  Styled
+</p>
+<div>
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
+    <div class="styled__DepartArriveContainer-sc-122ziys-5 kqvuAJ">
+      <span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS"
+            id="date-time-depart-arrive-wrapper"
+      >
+        <button aria-expanded="false"
+                aria-haspopup="listbox"
+                id="date-time-depart-arrive-label"
+                class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
+                style="background-color: transparent; border: 0px; color: inherit;"
+        >
+          <span>
+            Leave now
+          </span>
+          <span class="caret"
+                role="presentation"
+          >
+          </span>
+        </button>
+      </span>
     </div>
   </div>
 </div>
@@ -111,7 +188,7 @@ exports[`Trip Form Components dropdownSelector smoke-test 1`] = `
   Plain
 </p>
 <div>
-  <div class="styled__DropdownSelector-sc-122ziys-17 cyxcog"
+  <div class="styled__DropdownSelector-sc-122ziys-16 eIFxPB"
        style="display: inline-block; width: 250px;"
   >
     <div>
@@ -137,8 +214,8 @@ exports[`Trip Form Components dropdownSelector smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 fLumVL">
-    <div class="styled__DropdownSelector-sc-122ziys-17 cyxcog"
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
+    <div class="styled__DropdownSelector-sc-122ziys-16 eIFxPB"
          style="display: inline-block; width: 250px;"
     >
       <div>
@@ -168,8 +245,8 @@ exports[`Trip Form Components generalSettingsPanel smoke-test 1`] = `
   Plain
 </p>
 <div>
-  <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hiaMvK">
-    <div class="styled__DropdownSelector-sc-122ziys-17 cyxcog">
+  <div class="styled__GeneralSettingsPanel-sc-122ziys-18 iIUyUr">
+    <div class="styled__DropdownSelector-sc-122ziys-16 eIFxPB">
       <div>
         <label for="id-query-param-maxWalkDistance"
                class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
@@ -209,9 +286,9 @@ exports[`Trip Form Components generalSettingsPanel smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 fLumVL">
-    <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hiaMvK">
-      <div class="styled__DropdownSelector-sc-122ziys-17 cyxcog">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
+    <div class="styled__GeneralSettingsPanel-sc-122ziys-18 iIUyUr">
+      <div class="styled__DropdownSelector-sc-122ziys-16 eIFxPB">
         <div>
           <label for="id-query-param-maxWalkDistance"
                  class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
@@ -255,8 +332,8 @@ exports[`Trip Form Components generalSettingsPanelWithCustomMessages smoke-test 
   Plain
 </p>
 <div>
-  <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hiaMvK">
-    <div class="styled__DropdownSelector-sc-122ziys-17 cyxcog">
+  <div class="styled__GeneralSettingsPanel-sc-122ziys-18 iIUyUr">
+    <div class="styled__DropdownSelector-sc-122ziys-16 eIFxPB">
       <div>
         <label for="id-query-param-maxWalkDistance"
                class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
@@ -281,9 +358,9 @@ exports[`Trip Form Components generalSettingsPanelWithCustomMessages smoke-test 
   Styled
 </p>
 <div>
-  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 fLumVL">
-    <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hiaMvK">
-      <div class="styled__DropdownSelector-sc-122ziys-17 cyxcog">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
+    <div class="styled__GeneralSettingsPanel-sc-122ziys-18 iIUyUr">
+      <div class="styled__DropdownSelector-sc-122ziys-16 eIFxPB">
         <div>
           <label for="id-query-param-maxWalkDistance"
                  class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
@@ -312,9 +389,9 @@ exports[`Trip Form Components generalSettingsPanelWithOtp2 smoke-test 1`] = `
   Plain
 </p>
 <div>
-  <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hiaMvK">
+  <div class="styled__GeneralSettingsPanel-sc-122ziys-18 iIUyUr">
     <div aria-label="walk reluctance"
-         class="styled__SliderSelector-sc-122ziys-18 AJvbj"
+         class="styled__SliderSelector-sc-122ziys-17 ffPSmY"
          role="group"
     >
       <div>
@@ -345,10 +422,10 @@ exports[`Trip Form Components generalSettingsPanelWithOtp2 smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 fLumVL">
-    <div class="styled__GeneralSettingsPanel-sc-122ziys-19 hiaMvK">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
+    <div class="styled__GeneralSettingsPanel-sc-122ziys-18 iIUyUr">
       <div aria-label="walk reluctance"
-           class="styled__SliderSelector-sc-122ziys-18 AJvbj"
+           class="styled__SliderSelector-sc-122ziys-17 ffPSmY"
            role="group"
       >
         <div>
@@ -385,9 +462,9 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
 <div>
   <div>
     <div>
-      <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="false"
-                class="styled__Button-sc-122ziys-16 bXGxDk  "
+                class="styled__Button-sc-122ziys-15 bQUWjj  "
                 title="Normal"
         >
           <svg viewbox="0 0 390 390">
@@ -409,7 +486,7 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
           </span>
           bike
         </button>
-        <div class="styled__Title-sc-122ziys-15 eGGIkU  "
+        <div class="styled__Title-sc-122ziys-14 cTCYyx  "
              title="Normal"
         >
           Normal
@@ -417,9 +494,9 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
       </div>
       <span style="display: inline-block; width: 1em;">
       </span>
-      <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="true"
-                class="styled__Button-sc-122ziys-16 bXGxDk active "
+                class="styled__Button-sc-122ziys-15 bQUWjj active "
                 title="Active"
         >
           <svg viewbox="0 0 390 390">
@@ -428,7 +505,7 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
           </svg>
           Train
         </button>
-        <div class="styled__Title-sc-122ziys-15 eGGIkU active "
+        <div class="styled__Title-sc-122ziys-14 cTCYyx active "
              title="Active"
         >
           Active
@@ -436,9 +513,9 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
       </div>
       <span style="display: inline-block; width: 1em;">
       </span>
-      <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="false"
-                class="styled__Button-sc-122ziys-16 bXGxDk  disabled"
+                class="styled__Button-sc-122ziys-15 bQUWjj  disabled"
                 disabled
                 title="Disabled"
         >
@@ -459,7 +536,7 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
             </path>
           </svg>
         </button>
-        <div class="styled__Title-sc-122ziys-15 eGGIkU  disabled"
+        <div class="styled__Title-sc-122ziys-14 cTCYyx  disabled"
              title="Disabled"
         >
           Disabled
@@ -467,9 +544,9 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
       </div>
     </div>
     <div>
-      <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="false"
-                class="styled__Button-sc-122ziys-16 bXGxDk  "
+                class="styled__Button-sc-122ziys-15 bQUWjj  "
                 title="Walk Only"
         >
           <svg viewbox="0 0 390 390">
@@ -486,12 +563,12 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 fLumVL">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
     <div>
       <div>
-        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 bXGxDk  "
+                  class="styled__Button-sc-122ziys-15 bQUWjj  "
                   title="Normal"
           >
             <svg viewbox="0 0 390 390">
@@ -513,7 +590,7 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
             </span>
             bike
           </button>
-          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
+          <div class="styled__Title-sc-122ziys-14 cTCYyx  "
                title="Normal"
           >
             Normal
@@ -521,9 +598,9 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
         </div>
         <span style="display: inline-block; width: 1em;">
         </span>
-        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="true"
-                  class="styled__Button-sc-122ziys-16 bXGxDk active "
+                  class="styled__Button-sc-122ziys-15 bQUWjj active "
                   title="Active"
           >
             <svg viewbox="0 0 390 390">
@@ -532,7 +609,7 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
             </svg>
             Train
           </button>
-          <div class="styled__Title-sc-122ziys-15 eGGIkU active "
+          <div class="styled__Title-sc-122ziys-14 cTCYyx active "
                title="Active"
           >
             Active
@@ -540,9 +617,9 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
         </div>
         <span style="display: inline-block; width: 1em;">
         </span>
-        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 bXGxDk  disabled"
+                  class="styled__Button-sc-122ziys-15 bQUWjj  disabled"
                   disabled
                   title="Disabled"
           >
@@ -563,7 +640,7 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
               </path>
             </svg>
           </button>
-          <div class="styled__Title-sc-122ziys-15 eGGIkU  disabled"
+          <div class="styled__Title-sc-122ziys-14 cTCYyx  disabled"
                title="Disabled"
           >
             Disabled
@@ -571,9 +648,9 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
         </div>
       </div>
       <div>
-        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 bXGxDk  "
+                  class="styled__Button-sc-122ziys-15 bQUWjj  "
                   title="Walk Only"
           >
             <svg viewbox="0 0 390 390">
@@ -594,11 +671,11 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
   Plain
 </p>
 <div>
-  <div class="styled__ModeSelector-sc-122ziys-7 iAriZO">
-    <div class="styled__MainRow-sc-122ziys-8 kudpPb">
-      <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+  <div class="styled__ModeSelector-sc-122ziys-6 fguJhP">
+    <div class="styled__MainRow-sc-122ziys-7 jDYhDw">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="false"
-                class="styled__Button-sc-122ziys-16 bXGxDk  "
+                class="styled__Button-sc-122ziys-15 bQUWjj  "
                 title="Primary Choice"
         >
           <span>
@@ -613,17 +690,17 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
             Primary Choice
           </span>
         </button>
-        <div class="styled__Title-sc-122ziys-15 eGGIkU  "
+        <div class="styled__Title-sc-122ziys-14 cTCYyx  "
              title="Primary Choice"
         >
           Primary Choice
         </div>
       </div>
     </div>
-    <div class="styled__SecondaryRow-sc-122ziys-9 ggDwWN">
-      <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+    <div class="styled__SecondaryRow-sc-122ziys-8 dIUAaM">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="false"
-                class="styled__Button-sc-122ziys-16 bXGxDk  "
+                class="styled__Button-sc-122ziys-15 bQUWjj  "
                 title="Secondary 1"
         >
           <span>
@@ -638,15 +715,15 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
             Sec. #1
           </span>
         </button>
-        <div class="styled__Title-sc-122ziys-15 eGGIkU  "
+        <div class="styled__Title-sc-122ziys-14 cTCYyx  "
              title="Secondary 1"
         >
           Secondary 1
         </div>
       </div>
-      <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="true"
-                class="styled__Button-sc-122ziys-16 bXGxDk active "
+                class="styled__Button-sc-122ziys-15 bQUWjj active "
                 title="Secondary 2"
         >
           <span>
@@ -659,17 +736,17 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
         </button>
       </div>
     </div>
-    <div class="styled__TertiaryRow-sc-122ziys-10 lljpzT">
-      <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+    <div class="styled__TertiaryRow-sc-122ziys-9 eKHob">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="false"
-                class="styled__Button-sc-122ziys-16 bXGxDk  "
+                class="styled__Button-sc-122ziys-15 bQUWjj  "
                 title="Other Mode"
         >
           <span>
             Tertiary Mode
           </span>
         </button>
-        <div class="styled__Title-sc-122ziys-15 eGGIkU  "
+        <div class="styled__Title-sc-122ziys-14 cTCYyx  "
              title="Other Mode"
         >
           Other Mode
@@ -682,12 +759,12 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 fLumVL">
-    <div class="styled__ModeSelector-sc-122ziys-7 iAriZO">
-      <div class="styled__MainRow-sc-122ziys-8 kudpPb">
-        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
+    <div class="styled__ModeSelector-sc-122ziys-6 fguJhP">
+      <div class="styled__MainRow-sc-122ziys-7 jDYhDw">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 bXGxDk  "
+                  class="styled__Button-sc-122ziys-15 bQUWjj  "
                   title="Primary Choice"
           >
             <span>
@@ -702,17 +779,17 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
               Primary Choice
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
+          <div class="styled__Title-sc-122ziys-14 cTCYyx  "
                title="Primary Choice"
           >
             Primary Choice
           </div>
         </div>
       </div>
-      <div class="styled__SecondaryRow-sc-122ziys-9 ggDwWN">
-        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+      <div class="styled__SecondaryRow-sc-122ziys-8 dIUAaM">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 bXGxDk  "
+                  class="styled__Button-sc-122ziys-15 bQUWjj  "
                   title="Secondary 1"
           >
             <span>
@@ -727,15 +804,15 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
               Sec. #1
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
+          <div class="styled__Title-sc-122ziys-14 cTCYyx  "
                title="Secondary 1"
           >
             Secondary 1
           </div>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="true"
-                  class="styled__Button-sc-122ziys-16 bXGxDk active "
+                  class="styled__Button-sc-122ziys-15 bQUWjj active "
                   title="Secondary 2"
           >
             <span>
@@ -748,17 +825,17 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
           </button>
         </div>
       </div>
-      <div class="styled__TertiaryRow-sc-122ziys-10 lljpzT">
-        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+      <div class="styled__TertiaryRow-sc-122ziys-9 eKHob">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 bXGxDk  "
+                  class="styled__Button-sc-122ziys-15 bQUWjj  "
                   title="Other Mode"
           >
             <span>
               Tertiary Mode
             </span>
           </button>
-          <div class="styled__Title-sc-122ziys-15 eGGIkU  "
+          <div class="styled__Title-sc-122ziys-14 cTCYyx  "
                title="Other Mode"
           >
             Other Mode
@@ -776,7 +853,7 @@ exports[`Trip Form Components sliderSelector smoke-test 1`] = `
 </p>
 <div>
   <div aria-label="Drag me."
-       class="styled__SliderSelector-sc-122ziys-18 AJvbj"
+       class="styled__SliderSelector-sc-122ziys-17 ffPSmY"
        role="group"
        style="display: inline-block; width: 250px;"
   >
@@ -807,9 +884,9 @@ exports[`Trip Form Components sliderSelector smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 fLumVL">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
     <div aria-label="Drag me."
-         class="styled__SliderSelector-sc-122ziys-18 AJvbj"
+         class="styled__SliderSelector-sc-122ziys-17 ffPSmY"
          role="group"
          style="display: inline-block; width: 250px;"
     >
@@ -845,7 +922,7 @@ exports[`Trip Form Components submodeSelector smoke-test 1`] = `
 </p>
 <div>
   <div aria-label="Submodes:"
-       class="styled__SettingsSection-sc-122ziys-1 styled__SubmodeSelector-sc-122ziys-11 jBROkq eKHvJ"
+       class="styled__SettingsSection-sc-122ziys-1 styled__SubmodeSelector-sc-122ziys-10 jBROkq ePiaKM"
        role="group"
   >
     <span aria-hidden="true"
@@ -853,10 +930,10 @@ exports[`Trip Form Components submodeSelector smoke-test 1`] = `
     >
       Submodes:
     </span>
-    <div class="styled__submodeRow-sc-122ziys-12 hRUguB">
-      <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+    <div class="styled__submodeRow-sc-122ziys-11 iYaXmO">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="false"
-                class="styled__Button-sc-122ziys-16 bXGxDk  "
+                class="styled__Button-sc-122ziys-15 bQUWjj  "
                 title="Use the bus"
         >
           <span>
@@ -868,9 +945,9 @@ exports[`Trip Form Components submodeSelector smoke-test 1`] = `
           </span>
         </button>
       </div>
-      <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="true"
-                class="styled__Button-sc-122ziys-16 bXGxDk active "
+                class="styled__Button-sc-122ziys-15 bQUWjj active "
                 title="Use the streetcar"
         >
           <span>
@@ -882,9 +959,9 @@ exports[`Trip Form Components submodeSelector smoke-test 1`] = `
           </span>
         </button>
       </div>
-      <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="true"
-                class="styled__Button-sc-122ziys-16 bXGxDk active "
+                class="styled__Button-sc-122ziys-15 bQUWjj active "
                 title="Uber"
         >
           <span>
@@ -913,9 +990,9 @@ exports[`Trip Form Components submodeSelector smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 fLumVL">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
     <div aria-label="Submodes:"
-         class="styled__SettingsSection-sc-122ziys-1 styled__SubmodeSelector-sc-122ziys-11 jBROkq eKHvJ"
+         class="styled__SettingsSection-sc-122ziys-1 styled__SubmodeSelector-sc-122ziys-10 jBROkq ePiaKM"
          role="group"
     >
       <span aria-hidden="true"
@@ -923,10 +1000,10 @@ exports[`Trip Form Components submodeSelector smoke-test 1`] = `
       >
         Submodes:
       </span>
-      <div class="styled__submodeRow-sc-122ziys-12 hRUguB">
-        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+      <div class="styled__submodeRow-sc-122ziys-11 iYaXmO">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="false"
-                  class="styled__Button-sc-122ziys-16 bXGxDk  "
+                  class="styled__Button-sc-122ziys-15 bQUWjj  "
                   title="Use the bus"
           >
             <span>
@@ -938,9 +1015,9 @@ exports[`Trip Form Components submodeSelector smoke-test 1`] = `
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="true"
-                  class="styled__Button-sc-122ziys-16 bXGxDk active "
+                  class="styled__Button-sc-122ziys-15 bQUWjj active "
                   title="Use the streetcar"
           >
             <span>
@@ -952,9 +1029,9 @@ exports[`Trip Form Components submodeSelector smoke-test 1`] = `
             </span>
           </button>
         </div>
-        <div class="styled__ModeButton-sc-122ziys-14 dXlnx">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="true"
-                  class="styled__Button-sc-122ziys-16 bXGxDk active "
+                  class="styled__Button-sc-122ziys-15 bQUWjj active "
                   title="Uber"
           >
             <span>
