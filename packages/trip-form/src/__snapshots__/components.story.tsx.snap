@@ -128,59 +128,6 @@ exports[`Trip Form Components dateTimeSelector smoke-test 1`] = `
 </div>
 `;
 
-exports[`Trip Form Components dateTimeSelectorNoDepartArrive smoke-test 1`] = `
-<p>
-  Plain
-</p>
-<div>
-  <div aria-label="Date/Time Selector"
-       class="styled__DateTimeSelector-sc-122ziys-4 ehsfjV"
-       role="group"
-  >
-    <div>
-      <input aria-label="Time"
-             required
-             type="time"
-             value="14:17"
-      >
-    </div>
-    <div>
-      <input aria-label="Date"
-             required
-             type="date"
-             value="2020-02-15"
-      >
-    </div>
-  </div>
-</div>
-<p>
-  Styled
-</p>
-<div>
-  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
-    <div aria-label="Date/Time Selector"
-         class="styled__DateTimeSelector-sc-122ziys-4 ehsfjV"
-         role="group"
-    >
-      <div>
-        <input aria-label="Time"
-               required
-               type="time"
-               value="14:17"
-        >
-      </div>
-      <div>
-        <input aria-label="Date"
-               required
-               type="date"
-               value="2020-02-15"
-        >
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
 exports[`Trip Form Components departArriveDropdown smoke-test 1`] = `
 <p>
   Plain
