@@ -63,7 +63,7 @@ const StationHubDetails = ({ station }: { station: Station }) => {
 const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => void; }) => {
   return (
     <Styled.PopupRow>
-      { id &&
+      {id &&
         <strong>
           <FormattedMessage
             defaultMessage={defaultMessages["otpUi.MapPopup.stopId"]}
@@ -115,7 +115,7 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
 
   const bikesAvailablePresent = entityIsStation(entity)
   const entityIsStationHub = bikesAvailablePresent && entity?.bikesAvailable !== undefined && !entity?.isFloatingBike;
-  const stopId = !bikesAvailablePresent && entity?.code;  // Double quotes make the query invalid, so remove them from the id just in case
+  const stopId = !bikesAvailablePresent && entity?.code;
   const id = `focus-${encodeURIComponent(entity.id).replace(/%/g, "")}-popup`
 
   return (
