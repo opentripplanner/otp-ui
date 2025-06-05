@@ -1,4 +1,4 @@
-import { FilterSpecification } from "maplibre-gl";
+import { FilterSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
 import React, { useEffect } from "react";
 import { Layer, MapRef, Source, useMap } from "react-map-gl/maplibre";
@@ -92,7 +92,7 @@ const defaultTextPaintParams = {
 /**
  * Common text settings.
  */
-const commonTextLayoutParams = {
+const commonTextLayoutParams: SymbolLayerSpecification["layout"] = {
   "symbol-placement": "point",
   "text-allow-overlap": false,
   "text-field": ["get", "name"],
@@ -104,7 +104,7 @@ const commonTextLayoutParams = {
 /**
  * Text size and layout that lets maplibre relocate text space permitting.
  */
-const defaultTextLayoutParams = {
+const defaultTextLayoutParams: SymbolLayerSpecification["layout"] = {
   ...commonTextLayoutParams,
   "text-variable-anchor": [
     "left",
@@ -121,7 +121,7 @@ const defaultTextLayoutParams = {
 /**
  * Default text + bold default fonts
  */
-const defaultBoldTextLayoutParams = {
+const defaultBoldTextLayoutParams: SymbolLayerSpecification["layout"] = {
   ...commonTextLayoutParams,
   // FIXME: find a better way to set a bold font
   "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
@@ -265,7 +265,6 @@ const TransitiveCanvasOverlay = ({
     Record<string, unknown>
   > = {
     type: "FeatureCollection",
-    // @ts-expect-error TODO: fix the type above for geojson
     features: transitiveData
       ? [
           ...(transitiveData.places || []).flatMap((place: TransitivePlace) => {
@@ -280,7 +279,7 @@ const TransitiveCanvasOverlay = ({
                 type: "Point",
                 coordinates: [place.place_lon, place.place_lat]
               }
-            };
+            } as GeoJSON.Feature;
           }),
           ...(transitiveData.journeys || []).flatMap(
             (journey: TransitiveJourney) =>
@@ -310,7 +309,7 @@ const TransitiveCanvasOverlay = ({
                         mode: segment.type
                       },
                       geometry: segment.arc ? drawArc(straight) : straight
-                    };
+                    } as GeoJSON.Feature;
                   });
                 })
           ),
@@ -334,14 +333,17 @@ const TransitiveCanvasOverlay = ({
               // pStop (from pattern.stops) only has an id (and sometimes line geometry)
               transitiveData.stops.find(stop => stop.stop_id === pStop.stop_id)
             )
-            .map(stop => ({
-              type: "Feature",
-              properties: { name: stop.stop_name, type: "stop" },
-              geometry: {
-                type: "Point",
-                coordinates: [stop.stop_lon, stop.stop_lat]
-              }
-            })),
+            .map(
+              stop =>
+                ({
+                  type: "Feature",
+                  properties: { name: stop.stop_name, type: "stop" },
+                  geometry: {
+                    type: "Point",
+                    coordinates: [stop.stop_lon, stop.stop_lat]
+                  }
+                } as GeoJSON.Feature)
+            ),
           ...(
             transitiveData.patterns || []
           ).flatMap((pattern: TransitivePattern) =>
@@ -485,7 +487,6 @@ const TransitiveCanvasOverlay = ({
       <Layer
         filter={accessLegFilter}
         id="access-leg-labels"
-        // @ts-expect-error TODO: use parts of SymbolLayerSpecification
         layout={defaultTextLayoutParams}
         paint={defaultTextPaintParams}
         type="symbol"
@@ -493,7 +494,6 @@ const TransitiveCanvasOverlay = ({
       <Layer
         filter={stopFilter}
         id="stops-labels"
-        // @ts-expect-error TODO: use parts of SymbolLayerSpecification
         layout={defaultTextLayoutParams}
         paint={defaultTextPaintParams}
         type="symbol"
@@ -512,7 +512,6 @@ const TransitiveCanvasOverlay = ({
       <Layer
         filter={["==", "type", "from"]}
         id="from-label"
-        // @ts-expect-error TODO: use parts of SymbolLayerSpecification
         layout={{
           ...defaultBoldTextLayoutParams,
           "text-anchor": fromAnchor
@@ -523,7 +522,6 @@ const TransitiveCanvasOverlay = ({
       <Layer
         filter={["==", "type", "to"]}
         id="to-label"
-        // @ts-expect-error TODO: use parts of SymbolLayerSpecification
         layout={{
           ...defaultBoldTextLayoutParams,
           "text-anchor": toAnchor
