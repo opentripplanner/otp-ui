@@ -1,5 +1,8 @@
 import polyline from "@mapbox/polyline";
-import { Expression, SymbolLayout } from "mapbox-gl";
+import {
+  DataDrivenPropertyValueSpecification,
+  SymbolLayerSpecification
+} from "maplibre-gl";
 import { TransitivePattern, TransitiveRoute } from "@opentripplanner/types";
 
 import { drawArc } from "./util";
@@ -48,14 +51,16 @@ export function patternToRouteFeature(
 /**
  * Obtains common layout options for route label layers.
  */
-export function getRouteLayerLayout(textField: string): SymbolLayout {
+export function getRouteLayerLayout(
+  textField: string
+): SymbolLayerSpecification["layout"] {
   // Generates a single icon based on the string length
   function generateIcon(length: number) {
     return [["==", ["length", ["get", textField]], length], `${length}`];
   }
 
   // Generates every icon length from 1-17. Anything higher renders a rectangle
-  const iconImage: Expression = [
+  const iconImage = [
     "case",
     ...Array(17)
       .fill(0)
@@ -65,7 +70,7 @@ export function getRouteLayerLayout(textField: string): SymbolLayout {
   ];
 
   return {
-    "icon-image": iconImage,
+    "icon-image": iconImage as DataDrivenPropertyValueSpecification<string>,
     "icon-optional": false,
     "icon-allow-overlap": true,
     "icon-rotation-alignment": "viewport",
