@@ -1,5 +1,5 @@
 import CheckboxSelector from "./CheckboxSelector";
-import DateTimeSelector from "./DateTimeSelector";
+import DateTimeSelector, { DepartArriveDropdown } from "./DateTimeSelector";
 import DropdownSelector from "./DropdownSelector";
 import GeneralSettingsPanel from "./GeneralSettingsPanel";
 import ModeButton from "./ModeButton";
@@ -28,6 +28,7 @@ export {
   CheckboxSelector,
   convertModeSettingValue,
   DateTimeSelector,
+  DepartArriveDropdown,
   defaultModeSettings,
   DropdownSelector,
   GeneralSettingsPanel,
