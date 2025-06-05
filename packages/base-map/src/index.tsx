@@ -119,13 +119,13 @@ const BaseMap = ({
 
   return (
     <Map
-      // TODO: extend props from maplibreProps.
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...mapLibreProps}
       canvasContextAttributes={{
-        // Copy of defaults at https://maplibre.org/maplibre-gl-js/docs/API/type-aliases/MapOptions/#default-value_5,
-        // except for contextType = undefined (from the source code)
-        // and preserveDrawingBuffer = true to support printing.
+        // This is a copy of the defaults shown at https://maplibre.org/maplibre-gl-js/docs/API/type-aliases/MapOptions/#default-value_5,
+        // except for:
+        //   contextType = undefined (from the source code)
+        //   preserveDrawingBuffer = true to support printing.
         antialias: false,
         desynchronized: false,
         failIfMajorPerformanceCaveat: false,
@@ -188,8 +188,7 @@ const BaseMap = ({
               baseLayer.map((layer: string, index: number) => {
                 return (
                   <li key={index}>
-                    {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                    <label>
+                    <label htmlFor={layer}>
                       <input
                         checked={activeBaseLayer === layer}
                         id={layer}
@@ -206,8 +205,7 @@ const BaseMap = ({
             {toggleableLayers.map((layer: LayerProps, index: number) => {
               return (
                 <li key={index}>
-                  {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                  <label>
+                  <label htmlFor={layer.id}>
                     <input
                       checked={!computedHiddenLayers.includes(layer.id)}
                       disabled={showEverything}
