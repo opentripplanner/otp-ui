@@ -908,6 +908,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      maplibre-gl:
+        specifier: 'catalog:'
+        version: 5.6.0
 
   packages/trip-details:
     dependencies:
