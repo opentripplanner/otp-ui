@@ -352,14 +352,14 @@ importers:
         specifier: workspace:*
         version: link:../types
       maplibre-gl:
-        specifier: ^5.5.0
-        version: 5.5.0
+        specifier: ^5.6.0
+        version: 5.6.0
       react:
         specifier: 'catalog:'
         version: 18.2.0
       react-map-gl:
         specifier: 'catalog:'
-        version: 8.0.4(maplibre-gl@5.5.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: 8.0.4(maplibre-gl@5.6.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
         specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -460,7 +460,7 @@ importers:
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
         specifier: 'catalog:'
-        version: 8.0.4(maplibre-gl@5.5.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: 8.0.4(maplibre-gl@5.6.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
         specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -678,7 +678,7 @@ importers:
         version: 18.2.0
       react-map-gl:
         specifier: 'catalog:'
-        version: 8.0.4(maplibre-gl@5.5.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: 8.0.4(maplibre-gl@5.6.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@opentripplanner/base-map':
         specifier: workspace:*
@@ -706,7 +706,7 @@ importers:
         version: 18.3.1(react@18.2.0)
       react-map-gl:
         specifier: 'catalog:'
-        version: 8.0.4(maplibre-gl@5.5.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: 8.0.4(maplibre-gl@5.6.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
         specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -783,7 +783,7 @@ importers:
         version: 18.2.0
       react-map-gl:
         specifier: 'catalog:'
-        version: 8.0.4(maplibre-gl@5.5.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: 8.0.4(maplibre-gl@5.6.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@opentripplanner/types':
         specifier: workspace:*
@@ -811,7 +811,7 @@ importers:
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
         specifier: 'catalog:'
-        version: 8.0.4(maplibre-gl@5.5.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: 8.0.4(maplibre-gl@5.6.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
         specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -845,7 +845,7 @@ importers:
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
         specifier: 'catalog:'
-        version: 8.0.4(maplibre-gl@5.5.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: 8.0.4(maplibre-gl@5.6.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
         specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -894,7 +894,7 @@ importers:
         version: 18.2.0
       react-map-gl:
         specifier: 'catalog:'
-        version: 8.0.4(maplibre-gl@5.5.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: 8.0.4(maplibre-gl@5.6.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@opentripplanner/endpoints-overlay':
         specifier: workspace:*
@@ -1008,7 +1008,7 @@ importers:
         version: 18.2.0
       react-map-gl:
         specifier: 'catalog:'
-        version: 8.0.4(maplibre-gl@5.5.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: 8.0.4(maplibre-gl@5.6.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
 
   packages/types: {}
 
@@ -1046,7 +1046,7 @@ importers:
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
       react-map-gl:
         specifier: 'catalog:'
-        version: 8.0.4(maplibre-gl@5.5.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: 8.0.4(maplibre-gl@5.6.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
         specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -1071,7 +1071,7 @@ importers:
         version: 18.2.0
       react-map-gl:
         specifier: 'catalog:'
-        version: 8.0.4(maplibre-gl@5.5.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+        version: 8.0.4(maplibre-gl@5.6.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       styled-components:
         specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -7926,8 +7926,8 @@ packages:
     resolution: {integrity: sha512-4y7uGv8bd2WdM9vpQsiQNo41Ln1NvhvDRuVt0k2JZQ+ezN2uaQes7lZeZ+QQUHOLQAtDaBJ+7wCbi+ab/KFs+w==}
     engines: {node: '>=0.10.0'}
 
-  maplibre-gl@5.5.0:
-    resolution: {integrity: sha512-p8AOPuzzqn1ZA9gcXxKw0IED715we/2Owa/YUr6PANmgMvNMe/JG+V/C1hRra43Wm62Biz+Aa8AgbOLJimA8tA==}
+  maplibre-gl@5.6.0:
+    resolution: {integrity: sha512-7TuHMozUC4rlIp08bSsxCixFn18P24otrlZU/7UGCO5RufFTJadFzauTrvBHr9FB67MbJ6nvFXEftGd0bUl4Iw==}
     engines: {node: '>=16.14.0', npm: '>=8.1.0'}
 
   markdown-escapes@1.0.4:
@@ -15047,13 +15047,13 @@ snapshots:
       react: 18.2.0
       react-dom: 18.3.1(react@18.2.0)
 
-  '@vis.gl/react-maplibre@8.0.4(maplibre-gl@5.5.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)':
+  '@vis.gl/react-maplibre@8.0.4(maplibre-gl@5.6.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@maplibre/maplibre-gl-style-spec': 19.3.3
       react: 18.2.0
       react-dom: 18.3.1(react@18.2.0)
     optionalDependencies:
-      maplibre-gl: 5.5.0
+      maplibre-gl: 5.6.0
 
   '@visulima/fs@3.1.0':
     dependencies:
@@ -20363,7 +20363,7 @@ snapshots:
     dependencies:
       object-visit: 1.0.1
 
-  maplibre-gl@5.5.0:
+  maplibre-gl@5.6.0:
     dependencies:
       '@mapbox/geojson-rewind': 0.5.2
       '@mapbox/jsonlint-lines-primitives': 2.0.2
@@ -21930,14 +21930,14 @@ snapshots:
 
   react-is@18.3.1: {}
 
-  react-map-gl@8.0.4(maplibre-gl@5.5.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0):
+  react-map-gl@8.0.4(maplibre-gl@5.6.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0):
     dependencies:
       '@vis.gl/react-mapbox': 8.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
-      '@vis.gl/react-maplibre': 8.0.4(maplibre-gl@5.5.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+      '@vis.gl/react-maplibre': 8.0.4(maplibre-gl@5.6.0)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       react: 18.2.0
       react-dom: 18.3.1(react@18.2.0)
     optionalDependencies:
-      maplibre-gl: 5.5.0
+      maplibre-gl: 5.6.0
 
   react-resize-detector@4.2.3(react-dom@18.3.1(react@18.2.0))(react@18.2.0):
     dependencies:
