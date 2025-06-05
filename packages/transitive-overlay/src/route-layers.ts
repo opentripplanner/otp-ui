@@ -1,8 +1,5 @@
 import polyline from "@mapbox/polyline";
-import {
-  DataDrivenPropertyValueSpecification,
-  SymbolLayerSpecification
-} from "maplibre-gl";
+import { ExpressionSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { TransitivePattern, TransitiveRoute } from "@opentripplanner/types";
 
 import { drawArc } from "./util";
@@ -70,7 +67,7 @@ export function getRouteLayerLayout(
   ];
 
   return {
-    "icon-image": iconImage as DataDrivenPropertyValueSpecification<string>,
+    "icon-image": iconImage as ExpressionSpecification,
     "icon-optional": false,
     "icon-allow-overlap": true,
     "icon-rotation-alignment": "viewport",
