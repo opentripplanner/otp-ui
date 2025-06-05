@@ -9,7 +9,7 @@
   "module": "esm/index.js",
   "private": false,
   "dependencies": {
-    "maplibre-gl": "^5.6.0",
+    "maplibre-gl": "catalog:",
     "react-map-gl": "catalog:",
     "@opentripplanner/building-blocks": "workspace:*"
   },
