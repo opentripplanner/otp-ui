@@ -1,3 +1,5 @@
+import { DataDrivenPropertyValueSpecification } from "maplibre-gl";
+
 const generateFloatingVehicleColor = (formFactor: string) => [
   "case",
   ["==", ["get", formFactor], "SCOOTER"],
@@ -7,7 +9,7 @@ const generateFloatingVehicleColor = (formFactor: string) => [
   "#333"
 ];
 
-export const ROUTE_COLOR_EXPRESSION = [
+export const ROUTE_COLOR_EXPRESSION: DataDrivenPropertyValueSpecification<string> = [
   "concat",
   "#",
   [

@@ -180,7 +180,6 @@ const OTP2TileLayerWithPopup = ({
           filter={filter}
           id={`${id}-fill`}
           paint={{
-            // @ts-expect-error TODO Find the correct type
             "fill-color": ROUTE_COLOR_EXPRESSION,
             "fill-opacity": 0.2
           }}
@@ -197,7 +196,6 @@ const OTP2TileLayerWithPopup = ({
           layout={{ "line-join": "round", "line-cap": "round" }}
           minzoom={stopsWhitelist ? 2 : minZoom}
           paint={{
-            // @ts-expect-error TODO Find the correct type
             "line-color": ROUTE_COLOR_EXPRESSION,
             "line-opacity": 0.8,
             "line-width": 3
