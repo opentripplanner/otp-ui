@@ -153,7 +153,10 @@ const BaseMap = ({
         if (touchPointCount === 1) {
           setLongPressTimer(
             setTimeout(
-              // TODO: Check that the type conversion is still correct.
+              // In practice, MapLayerTouchEvent and MapTouchEvent behave as if they were
+              // subclasses of MapLayerMouseEvent and MapMouseEvent, respectively,
+              // so the conversion from touch to mouse event works, with the caveat that
+              // the `type` prop takes different string values between mouse and touch events.
               () => onContextMenu((e as unknown) as MapLayerMouseEvent),
               600
             )
