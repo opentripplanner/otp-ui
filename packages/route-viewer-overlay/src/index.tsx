@@ -1,7 +1,7 @@
 import { util } from "@opentripplanner/base-map";
 import { Stop } from "@opentripplanner/types";
 import { LngLatBounds } from "maplibre-gl";
-import { Layer, LngLatLike, Source, useMap } from "react-map-gl";
+import { Layer, LngLatLike, Source, useMap } from "react-map-gl/maplibre";
 import React, { useEffect } from "react";
 
 import polyline from "@mapbox/polyline";
@@ -125,6 +125,8 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
           const coordsArray = geoJson.coordinates[0];
           bounds = coordsArray.reduce(
             reduceBounds,
+            // Per https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.1, GeoJson points should have 2+ dimensions.
+            // @ts-expect-error LngLatBounds requires number[2+], which GoeJson points should provide.
             bounds || new LngLatBounds(coordsArray[0], coordsArray[0])
           );
         } else if (geoJson?.type === "GeometryCollection") {
@@ -158,7 +160,9 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
           }
           bounds = bounds
             ? bounds.extend(coords)
-            : new LngLatBounds(coords, coords);
+            : // Per https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.1, GeoJson points should have 2+ dimensions.
+              // @ts-expect-error LngLatBounds requires number[2+], which GoeJson points should provide.
+              new LngLatBounds(coords, coords);
         }
       });
     });

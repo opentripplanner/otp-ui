@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import React, { useState } from "react";
-import { Marker, PopupProps } from "react-map-gl";
+import { Marker, PopupProps } from "react-map-gl/maplibre";
 import { LeafletStyleMarker, Popup } from "./styled";
 
 type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
