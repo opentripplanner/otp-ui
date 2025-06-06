@@ -63,17 +63,18 @@ const StationHubDetails = ({ station }: { station: Station }) => {
 const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => void; }) => {
   return (
     <Styled.PopupRow>
-      <strong>
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.MapPopup.stopId"]}
-          description="Displays the stop id"
-          id="otpUi.MapPopup.stopId"
-          values={{
-            stopId: id
-          }}
-        />
-      </strong>
-      <ViewStopButton onClick={setViewedStop}>
+      {id &&
+        <strong>
+          <FormattedMessage
+            defaultMessage={defaultMessages["otpUi.MapPopup.stopId"]}
+            description="Displays the stop id"
+            id="otpUi.MapPopup.stopId"
+            values={{
+              stopId: id
+            }}
+          />
+        </strong>}
+      <ViewStopButton onClick={setViewedStop} stopId={id}> 
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.MapPopup.stopViewer"]}
           description="Text for link that opens the stop viewer"
@@ -114,9 +115,7 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
 
   const bikesAvailablePresent = entityIsStation(entity)
   const entityIsStationHub = bikesAvailablePresent && entity?.bikesAvailable !== undefined && !entity?.isFloatingBike;
-  const stopId = !bikesAvailablePresent && entity?.code || entity.id.split(":")[1] || entity.id
-
-  // Double quotes make the query invalid, so remove them from the id just in case
+  const stopId = !bikesAvailablePresent && entity?.code;
   const id = `focus-${encodeURIComponent(entity.id).replace(/%/g, "")}-popup`
 
   return (
