@@ -10,13 +10,13 @@ import {
 } from "@opentripplanner/core-utils/lib/itinerary";
 import { FormattedMessage, useIntl } from "react-intl";
 import { flatten } from "flat";
-import { boldText, renderFare } from "./utils";
+import { boldText, renderFare } from "../utils";
 
-import { FareLegTableProps, FareTableLayout } from "./types";
+import { FareLegTableProps, FareTableLayout } from "../types";
 
 // Load the default messages.
-import defaultEnglishMessages from "../i18n/en-US.yml";
-import { InvisibleA11yLabel } from "./styled";
+import defaultEnglishMessages from "../../i18n/en-US.yml";
+import { InvisibleA11yLabel } from "../styled";
 
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
