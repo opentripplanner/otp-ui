@@ -8,6 +8,9 @@ import polyline from "@mapbox/polyline";
 import pointInPolygon from "point-in-polygon";
 import { objectExistsAndPopulated } from "./util";
 
+// Type guard to ensure Position has at least 2 coordinates as per RFC 7946
+// https://github.com/DefinitelyTyped/DefinitelyTyped/pull/21590
+// DefinitelyTyped will never fix this, so we need the type guard.
 const isValidPosition = (
   position: GeoJSON.Position
 ): position is [number, number] => {
