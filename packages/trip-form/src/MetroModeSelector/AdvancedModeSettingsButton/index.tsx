@@ -108,14 +108,17 @@ const AdvancedModeSettingsButton = ({
   const intl = useIntl();
   const label = generateModeButtonLabel(modeButton.key, intl, modeButton.label);
   const checkboxId = `metro-submode-selector-mode-${id}`;
+  const containsSubsettings = modeButton.modeSettings.length > 0;
+
   return (
     <SettingsContainer className="advanced-submode-container">
       <StyledModeSettingsButton
         accentColor={accentColor}
+        aria-expanded={containsSubsettings ? !!modeButton.enabled : undefined}
         className="advanced-submode-mode-button"
         fillModeIcons={fillModeIcons}
         id={modeButton.key}
-        subsettings={modeButton.modeSettings.length > 0}
+        subsettings={containsSubsettings}
       >
         <input
           aria-label={label}
@@ -130,7 +133,7 @@ const AdvancedModeSettingsButton = ({
           {modeButton.enabled && <Check2 />}
         </label>
       </StyledModeSettingsButton>
-      {modeButton.modeSettings.length > 0 && (
+      {containsSubsettings && (
         <AnimateHeight duration={300} height={modeButton.enabled ? "auto" : 0}>
           <StyledSettingsContainer className="subsettings-container">
             <SubSettingsPane
