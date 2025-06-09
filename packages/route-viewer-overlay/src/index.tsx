@@ -213,7 +213,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
   const patterns = Object.values(routeData.patterns);
   useEffect(() => {
     // if pattern geometry updated, update the map points
-    let bounds: LngLatBounds | null = null;
+    let bounds: LngLatBounds | undefined;
     let timeout: NodeJS.Timeout | undefined;
 
     if (isGeometryComplete(routeData)) {
