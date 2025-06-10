@@ -8,6 +8,15 @@ import polyline from "@mapbox/polyline";
 import pointInPolygon from "point-in-polygon";
 import { objectExistsAndPopulated } from "./util";
 
+// Type guard to ensure Position has at least 2 coordinates as per RFC 7946
+// https://github.com/DefinitelyTyped/DefinitelyTyped/pull/21590
+// DefinitelyTyped will never fix this, so we need the type guard.
+const isValidPosition = (
+  position: GeoJSON.Position
+): position is [number, number] => {
+  return position.length >= 2;
+};
+
 type RouteData = {
   color?: string;
   patterns: Record<
@@ -52,6 +61,111 @@ const isGeometryComplete = (routeData: RouteData) =>
   Object.values(routeData.patterns).every(
     ptn => typeof ptn?.geometry !== "undefined"
   );
+
+/**
+ * Recursively extracts all coordinate pairs from any GeoJSON geometry type
+ * @param geometry - Any GeoJSON geometry object
+ * @returns Array of [lng, lat] coordinate pairs
+ */
+const extractCoordinatesFromGeometry = (
+  geometry: GeoJSON.Geometry
+): [number, number][] => {
+  const coordinates: [number, number][] = [];
+
+  switch (geometry.type) {
+    case "Point":
+      if (isValidPosition(geometry.coordinates)) {
+        coordinates.push([geometry.coordinates[0], geometry.coordinates[1]]);
+      }
+      break;
+
+    case "MultiPoint":
+      geometry.coordinates.forEach(coord => {
+        if (isValidPosition(coord)) {
+          coordinates.push([coord[0], coord[1]]);
+        }
+      });
+      break;
+
+    case "LineString":
+      geometry.coordinates.forEach(coord => {
+        if (isValidPosition(coord)) {
+          coordinates.push([coord[0], coord[1]]);
+        }
+      });
+      break;
+
+    case "MultiLineString":
+      geometry.coordinates.forEach(lineString => {
+        lineString.forEach(coord => {
+          if (isValidPosition(coord)) {
+            coordinates.push([coord[0], coord[1]]);
+          }
+        });
+      });
+      break;
+
+    case "Polygon":
+      geometry.coordinates.forEach(ring => {
+        ring.forEach(coord => {
+          if (isValidPosition(coord)) {
+            coordinates.push([coord[0], coord[1]]);
+          }
+        });
+      });
+      break;
+
+    case "MultiPolygon":
+      geometry.coordinates.forEach(polygon => {
+        polygon.forEach(ring => {
+          ring.forEach(coord => {
+            if (isValidPosition(coord)) {
+              coordinates.push([coord[0], coord[1]]);
+            }
+          });
+        });
+      });
+      break;
+
+    case "GeometryCollection":
+      // Recursively extract coordinates from all geometries in the collection
+      geometry.geometries.forEach(subGeometry => {
+        coordinates.push(...extractCoordinatesFromGeometry(subGeometry));
+      });
+      break;
+
+    default:
+      console.warn(`Unsupported geometry type: ${(geometry as any).type}`);
+  }
+
+  return coordinates;
+};
+
+/**
+ * Extends bounds with coordinates from any GeoJSON geometry
+ * @param bounds - Current bounds object (or null)
+ * @param geometry - GeoJSON geometry to extract bounds from
+ * @returns Extended bounds object
+ */
+const extendBoundsWithGeometry = (
+  bounds: LngLatBounds | null,
+  geometry: GeoJSON.Geometry
+): LngLatBounds => {
+  const coordinates = extractCoordinatesFromGeometry(geometry);
+
+  if (coordinates.length === 0) {
+    return bounds || new LngLatBounds([0, 0], [0, 0]);
+  }
+
+  let newBounds = bounds;
+  coordinates.forEach(coord => {
+    newBounds = newBounds
+      ? newBounds.extend(coord)
+      : new LngLatBounds(coord, coord);
+  });
+
+  return newBounds;
+};
 
 /**
  * helper function that removes all points from array of points that are
@@ -99,8 +213,9 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
   const patterns = Object.values(routeData.patterns);
   useEffect(() => {
     // if pattern geometry updated, update the map points
-    let bounds;
-    let timeout;
+    let bounds: LngLatBounds | undefined;
+    let timeout: NodeJS.Timeout | undefined;
+
     if (isGeometryComplete(routeData)) {
       const allPoints: LngLatLike[] = patterns.reduce((acc, ptn) => {
         return acc.concat(polyline.decode(ptn.geometry.points));
@@ -120,54 +235,13 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
     patterns.forEach(ptn => {
       ptn.stops?.forEach(stop => {
         const { geoJson } = stop.geometries || {};
-        if (geoJson?.type === "Polygon") {
-          // If flex location, add the polygon (the first and only entry in coordinates) to the route bounds.
-          const coordsArray = geoJson.coordinates[0];
-          bounds = coordsArray.reduce(
-            reduceBounds,
-            // Per https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.1, GeoJson points should have 2+ dimensions.
-            // @ts-expect-error LngLatBounds requires number[2+], which GoeJson points should provide.
-            bounds || new LngLatBounds(coordsArray[0], coordsArray[0])
-          );
-        } else if (geoJson?.type === "GeometryCollection") {
-          // @ts-expect-error geoJson in this case is not a Polygon! See check above
-          const { geometries } = geoJson;
-          geometries.forEach(geometry => {
-            let { coordinates } = geometry;
-            // TODO: More intelligently handle collection. Refactor
-            // this entire block to have some nice recursion to handle the different types
-            // For now, this prevents a crash
-            if (coordinates?.[0]?.length) {
-              coordinates = coordinates[0];
-            }
-
-            bounds = bounds
-              ? bounds.extend(coordinates)
-              : new LngLatBounds(coordinates, coordinates);
-          });
-        } else if (geoJson?.type === "MultiPolygon") {
-          // We can't currently render this, so let's fix that before fixing the bounds behavior
-          // TODO: handle this case
-        } else if (geoJson) {
-          // Regular stops might be (well) outside of route pattern shapes, so add them.
-          const coords = geoJson.coordinates;
-          if (coords.length !== 2) {
-            console.warn(
-              "Unexpected GEOJSON found! Avoiding crash, but not rendering anything"
-            );
-            console.warn(coords);
-            return;
-          }
-          bounds = bounds
-            ? bounds.extend(coords)
-            : // Per https://datatracker.ietf.org/doc/html/rfc7946#section-3.1.1, GeoJson points should have 2+ dimensions.
-              // @ts-expect-error LngLatBounds requires number[2+], which GoeJson points should provide.
-              new LngLatBounds(coords, coords);
+        if (geoJson) {
+          bounds = extendBoundsWithGeometry(bounds, geoJson);
         }
       });
     });
 
-    if (objectExistsAndPopulated(bounds) && current) {
+    if (bounds && current) {
       // Try to fit the map to route bounds immediately. If other overlays are still populating contents
       // and/or the map skips/aborts fitting for any reason, try fitting bounds again after a short delay.
       const fitBounds = () => util.fitMapBounds(current, bounds);
