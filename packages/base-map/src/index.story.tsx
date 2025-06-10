@@ -6,7 +6,7 @@ import {
   NavigationControl,
   ScaleControl,
   useMap
-} from "react-map-gl";
+} from "react-map-gl/maplibre";
 import { action } from "@storybook/addon-actions";
 import { ComponentStory } from "@storybook/react";
 
@@ -57,6 +57,8 @@ const a11yOverrideParameters = {
 export const clickAndViewportchangedEvents = Template.bind({});
 clickAndViewportchangedEvents.args = {
   center,
+  // Note: Although onClick and onContextMenu are correctly triggered,
+  // the parameter returned by these events contains a cyclical reference that prevents Storybook from printing them.
   onClick,
   onContextMenu,
   onViewportChanged

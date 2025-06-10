@@ -1,5 +1,3 @@
-import { Anchor } from "mapbox-gl";
-
 import lineArc from "@turf/line-arc";
 import lineDistance from "@turf/line-distance";
 import midpoint from "@turf/midpoint";
@@ -26,6 +24,7 @@ import {
   TransitiveStop
 } from "@opentripplanner/types";
 import { IntlShape } from "react-intl";
+import { PositionAnchor } from "maplibre-gl";
 
 const CAR_PARK_ITIN_PREFIX = "itin_car_";
 
@@ -90,8 +89,8 @@ function makeFromToPlace(place: Place, id: "from" | "to"): TransitivePlace {
 export function getFromToAnchors(
   transitiveData: TransitiveData
 ): {
-  fromAnchor?: Anchor;
-  toAnchor?: Anchor;
+  fromAnchor?: PositionAnchor;
+  toAnchor?: PositionAnchor;
 } {
   const fromPlace = transitiveData.places.find(pl => pl.placeId === "from");
   const toPlace = transitiveData.places.find(pl => pl.placeId === "to");

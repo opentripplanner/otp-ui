@@ -500,7 +500,7 @@ export type Stop = {
   code?: string;
   color?: string;
   dist?: number;
-  geometries?: { geoJson?: GeoJSON.Polygon };
+  geometries?: { geoJson?: GeoJSON.GeometryObject };
   gtfsId: string;
   id: string;
   lat?: number;
