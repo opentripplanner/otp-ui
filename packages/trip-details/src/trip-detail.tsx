@@ -7,6 +7,7 @@ import { useIntl } from "react-intl";
 import * as S from "./styled";
 
 type Props = {
+  className?: string;
   description?: ReactElement | string;
   icon: ReactElement;
   summary: ReactElement | string;
@@ -32,7 +33,12 @@ function uuidv4(): string {
   });
 }
 
-const TripDetail = ({ icon, summary, description }: Props): JSX.Element => {
+const TripDetail = ({
+  icon,
+  summary,
+  description,
+  className
+}: Props): JSX.Element => {
   const intl = useIntl();
   const [expanded, setExpanded] = useState(false);
 
@@ -43,7 +49,7 @@ const TripDetail = ({ icon, summary, description }: Props): JSX.Element => {
   };
 
   return (
-    <S.TripDetail role="group">
+    <S.TripDetail role="group" className={className}>
       <S.TripDetailIcon role="presentation">{icon}</S.TripDetailIcon>
       {/* TODO: Adjust the summary and description to be a `summary`/`details` pair, therefore semantically correct */}
       {/* https://github.com/opentripplanner/otp-ui/pull/530#discussion_r1074006057 */}
