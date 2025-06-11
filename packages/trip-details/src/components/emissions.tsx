@@ -47,7 +47,7 @@ export default function Emissions({
         co2Config?.units
       ));
 
-  if (co2 < 0 && !co2Config?.enabled) {
+  if (!co2 || co2 < 0 || !co2Config?.enabled) {
     return null;
   }
 
