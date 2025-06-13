@@ -4,6 +4,9 @@ otpUi:
       MacHelpText: Use ⌘ + scroll to zoom the map
       MobileHelpText: Use two fingers to move the map
       WindowsHelpText: Use Ctrl + scroll to zoom the map
+    GeolocateControl:
+      FindMyLocation: Find my location
+      LocationNotAvailable: Location not available
     NavigationControl:
       ResetBearing: Reset bearing to north
       ZoomIn: Zoom in

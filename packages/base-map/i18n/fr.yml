@@ -4,6 +4,9 @@ otpUi:
       MacHelpText: Utilisez ⌘ + défil pour zoomer sur la carte
       MobileHelpText: Utilisez deux doigts pour déplacer la carte
       WindowsHelpText: Utilisez Ctrl + défil pour zoomer sur la carte
+    GeolocateControl:
+      FindMyLocation: Trouver ma position
+      LocationNotAvailable: Lieu non disponible
     NavigationControl:
       ResetBearing: Repositioner le nord en haut de la carte
       ZoomIn: Zoom avant
