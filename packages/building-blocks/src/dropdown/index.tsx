@@ -117,6 +117,7 @@ const Dropdown = ({
         onClick={toggleOpen}
         style={buttonStyle}
         title={label}
+        type="button"
       >
         <span>{text}</span>
         <span className="caret" role="presentation" />
