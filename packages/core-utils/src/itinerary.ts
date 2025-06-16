@@ -620,7 +620,6 @@ export function getLegCost(
   riderCategoryId: string | null
 ): {
   price?: Money;
-  transferAmount?: Money | undefined;
   productUseId?: string;
 } {
   if (!leg.fareProducts) return { price: undefined };
@@ -628,24 +627,20 @@ export function getLegCost(
     // riderCategory and medium can be specifically defined as null to handle
     // generic GTFS based fares from OTP when there is no fare model
     return (
-      (product.riderCategory === null ? null : product.riderCategory.id) ===
-        riderCategoryId &&
-      (product.medium === null ? null : product.medium.id) === mediumId
+      // Remove (optional) agency scoping
+      (product.riderCategory?.id?.split(":")?.[1] ||
+        product.riderCategory?.id ||
+        null) === riderCategoryId &&
+      (product.medium?.id?.split(":")?.[1] || product.medium?.id || null) ===
+        mediumId
     );
   });
 
-  // Custom fare models return "rideCost", generic GTFS fares return "regular"
-  const totalCostProduct = relevantFareProducts.find(
-    fp => fp.product.name === "rideCost" || fp.product.name === "regular"
-  );
-  const transferFareProduct = relevantFareProducts.find(
-    fp => fp.product.name === "transfer"
-  );
+  // We honor the first product, respecting OTP's order
 
   return {
-    price: totalCostProduct?.product.price,
-    transferAmount: transferFareProduct?.product.price,
-    productUseId: totalCostProduct?.id
+    price: relevantFareProducts?.[0]?.product.price,
+    productUseId: relevantFareProducts?.[0]?.id
   };
 }
 
