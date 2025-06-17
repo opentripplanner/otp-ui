@@ -246,7 +246,7 @@ export default function DateTimeSelector({
               timeZone={timeZone} 
               onQueryParamChange={onQueryParamChange} 
           />}
-          {/* The <div> elements below are used for layout, see S.DateTimeSelector. */}
+          {/* The <div> elements below are used for layout, see S.DateTimeSelector */}
           
 
       {/* Backup controls (for older browsers) */}
