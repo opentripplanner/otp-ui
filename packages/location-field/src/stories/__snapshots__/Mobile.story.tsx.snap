@@ -8,6 +8,7 @@ exports[`LocationField/Mobile Context Blank smoke-test 1`] = `
           aria-expanded="true"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -49,7 +50,7 @@ exports[`LocationField/Mobile Context Blank smoke-test 1`] = `
       class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
   >
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -89,6 +90,7 @@ exports[`LocationField/Mobile Context GeocoderNoResults smoke-test 1`] = `
           aria-expanded="true"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -130,7 +132,7 @@ exports[`LocationField/Mobile Context GeocoderNoResults smoke-test 1`] = `
       class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
   >
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -170,6 +172,7 @@ exports[`LocationField/Mobile Context GeocoderUnreachable smoke-test 1`] = `
           aria-expanded="true"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -211,7 +214,7 @@ exports[`LocationField/Mobile Context GeocoderUnreachable smoke-test 1`] = `
       class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
   >
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -251,6 +254,7 @@ exports[`LocationField/Mobile Context LocationUnavailable smoke-test 1`] = `
           aria-expanded="true"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -294,7 +298,7 @@ exports[`LocationField/Mobile Context LocationUnavailable smoke-test 1`] = `
   >
     <li aria-hidden="true"
         aria-live="off"
-        id="otpui-locf-option-0"
+        id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -334,6 +338,7 @@ exports[`LocationField/Mobile Context SelectedLocation smoke-test 1`] = `
           aria-expanded="true"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 384 512"
@@ -365,6 +370,7 @@ exports[`LocationField/Mobile Context SelectedLocation smoke-test 1`] = `
          value="123 Main St"
   >
   <button aria-label="Clear location"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__ClearButton-sc-xahsq2-2 hoozke cCkuXw"
   >
     <svg viewbox="0 0 320 512"
@@ -393,7 +399,7 @@ exports[`LocationField/Mobile Context SelectedLocation smoke-test 1`] = `
       class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
   >
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -433,6 +439,7 @@ exports[`LocationField/Mobile Context SelectedLocationCustomClear smoke-test 1`]
           aria-expanded="true"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 384 512"
@@ -464,6 +471,7 @@ exports[`LocationField/Mobile Context SelectedLocationCustomClear smoke-test 1`]
          value="123 Main St"
   >
   <button aria-label="Clear location"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__ClearButton-sc-xahsq2-2 hoozke cCkuXw"
   >
     <svg viewbox="0 0 512 512"
@@ -492,7 +500,7 @@ exports[`LocationField/Mobile Context SelectedLocationCustomClear smoke-test 1`]
       class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
   >
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -532,6 +540,7 @@ exports[`LocationField/Mobile Context SlowGeocoder smoke-test 1`] = `
           aria-expanded="true"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -573,7 +582,7 @@ exports[`LocationField/Mobile Context SlowGeocoder smoke-test 1`] = `
       class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
   >
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -613,6 +622,7 @@ exports[`LocationField/Mobile Context Styled smoke-test 1`] = `
           aria-expanded="true"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -654,7 +664,7 @@ exports[`LocationField/Mobile Context Styled smoke-test 1`] = `
       class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
   >
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -694,6 +704,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
           aria-expanded="true"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 640 512"
@@ -738,7 +749,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
       Nearby Stops
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="1"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -777,7 +788,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
       </div>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-1"
+        id="2"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -819,7 +830,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
       Recently Searched
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-2"
+        id="recent-0"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -851,7 +862,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
       My Places
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-3"
+        id="user-saved-Home-(456-Suburb-St)"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -880,7 +891,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-4"
+        id="user-saved-Work-(789-Busy-St)"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -909,7 +920,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-5"
+        id="user-saved-Coffee-Roasters-Shop,-55-Coffee-Street"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -938,7 +949,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-6"
+        id="user-saved-123-Main-St"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -967,7 +978,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-7"
+        id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1007,6 +1018,7 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
           aria-expanded="true"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 384 512"
@@ -1051,7 +1063,7 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
       Nearby Stops
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="1"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1090,7 +1102,7 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
       </div>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-1"
+        id="2"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1129,7 +1141,7 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
       </div>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-2"
+        id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1169,6 +1181,7 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
           aria-expanded="true"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 384 512"
@@ -1213,7 +1226,7 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
       Recently Searched
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="recent-0"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1242,7 +1255,7 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-1"
+        id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1282,6 +1295,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
           aria-expanded="true"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 384 512"
@@ -1326,7 +1340,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
       My Places
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="user-saved-Home-(456-Suburb-St)"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1355,7 +1369,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-1"
+        id="user-saved-Work-(789-Busy-St)"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1384,7 +1398,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-2"
+        id="user-saved-Coffee-Roasters-Shop,-55-Coffee-Street"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1413,7 +1427,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-3"
+        id="user-saved-123-Main-St"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1442,7 +1456,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-4"
+        id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"

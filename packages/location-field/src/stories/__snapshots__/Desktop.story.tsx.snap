@@ -15,6 +15,7 @@ exports[`LocationField/Desktop Context AutoFocusWithMultipleControls smoke-test 
             aria-expanded="false"
             aria-label="Toggle displaying the list of suggested locations"
             tabindex="-1"
+            type="button"
             class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
     >
       <svg viewbox="0 0 512 512"
@@ -68,6 +69,7 @@ exports[`LocationField/Desktop Context Blank smoke-test 1`] = `
           aria-expanded="false"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -120,6 +122,7 @@ exports[`LocationField/Desktop Context GeocoderNoResults smoke-test 1`] = `
           aria-expanded="false"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -172,6 +175,7 @@ exports[`LocationField/Desktop Context GeocoderUnreachable smoke-test 1`] = `
           aria-expanded="false"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -224,6 +228,7 @@ exports[`LocationField/Desktop Context HereGeocoder smoke-test 1`] = `
           aria-expanded="false"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -276,6 +281,7 @@ exports[`LocationField/Desktop Context LocationUnavailable smoke-test 1`] = `
           aria-expanded="false"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -335,6 +341,7 @@ exports[`LocationField/Desktop Context NoAutoFocusWithMultipleControls smoke-tes
             aria-expanded="false"
             aria-label="Toggle displaying the list of suggested locations"
             tabindex="-1"
+            type="button"
             class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
     >
       <svg viewbox="0 0 512 512"
@@ -388,6 +395,7 @@ exports[`LocationField/Desktop Context RequiredAndInvalidState smoke-test 1`] = 
           aria-expanded="false"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -440,6 +448,7 @@ exports[`LocationField/Desktop Context SelectedLocation smoke-test 1`] = `
           aria-expanded="false"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 384 512"
@@ -471,6 +480,7 @@ exports[`LocationField/Desktop Context SelectedLocation smoke-test 1`] = `
          value="123 Main St"
   >
   <button aria-label="Clear location"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__ClearButton-sc-xahsq2-2 hoozke cCkuXw"
   >
     <svg viewbox="0 0 320 512"
@@ -510,6 +520,7 @@ exports[`LocationField/Desktop Context SelectedLocationCustomClear smoke-test 1`
           aria-expanded="false"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 384 512"
@@ -541,6 +552,7 @@ exports[`LocationField/Desktop Context SelectedLocationCustomClear smoke-test 1`
          value="123 Main St"
   >
   <button aria-label="Clear location"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__ClearButton-sc-xahsq2-2 hoozke cCkuXw"
   >
     <svg viewbox="0 0 512 512"
@@ -580,6 +592,7 @@ exports[`LocationField/Desktop Context SlowGeocoder smoke-test 1`] = `
           aria-expanded="false"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -632,6 +645,7 @@ exports[`LocationField/Desktop Context WithBadApiKeyHandlesBadAutocomplete smoke
           aria-expanded="false"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -684,6 +698,7 @@ exports[`LocationField/Desktop Context WithCustomResultColorsAndIcons smoke-test
           aria-expanded="false"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -736,6 +751,7 @@ exports[`LocationField/Desktop Context WithCustomResultsOrder smoke-test 1`] = `
           aria-expanded="true"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -780,7 +796,7 @@ exports[`LocationField/Desktop Context WithCustomResultsOrder smoke-test 1`] = `
       Other
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="geocoder-way/555892536"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -809,7 +825,7 @@ exports[`LocationField/Desktop Context WithCustomResultsOrder smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-1"
+        id="geocoder-node/5662026889"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -844,7 +860,7 @@ exports[`LocationField/Desktop Context WithCustomResultsOrder smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-2"
+        id="geocoder-node/1934511929"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -882,7 +898,7 @@ exports[`LocationField/Desktop Context WithCustomResultsOrder smoke-test 1`] = `
       Stations
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="geocoder-TL_US::Sound-Transit::stations"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -916,7 +932,7 @@ exports[`LocationField/Desktop Context WithCustomResultsOrder smoke-test 1`] = `
       Stops
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="geocoder-5::WA-State-Ferry::stops"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -965,7 +981,7 @@ exports[`LocationField/Desktop Context WithCustomResultsOrder smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-1"
+        id="geocoder-1::Community-Transit::stops"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -996,7 +1012,7 @@ exports[`LocationField/Desktop Context WithCustomResultsOrder smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-2"
+        id="geocoder-7::Community-Transit::stops"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1027,7 +1043,7 @@ exports[`LocationField/Desktop Context WithCustomResultsOrder smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1067,6 +1083,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
           aria-expanded="true"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -1111,7 +1128,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       Stations
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="geocoder-TL_US::Sound-Transit::stations"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1145,7 +1162,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       Stops
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="geocoder-5::WA-State-Ferry::stops"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1194,7 +1211,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-1"
+        id="geocoder-1::Community-Transit::stops"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1225,7 +1242,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-2"
+        id="geocoder-7::Community-Transit::stops"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1259,7 +1276,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       Other
     </h2>
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="geocoder-way/555892536"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1288,7 +1305,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-1"
+        id="geocoder-node/5662026889"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1323,7 +1340,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-2"
+        id="geocoder-node/1934511929"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1358,7 +1375,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
       </span>
     </li>
     <li aria-live="off"
-        id="otpui-locf-option-0"
+        id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
@@ -1398,6 +1415,7 @@ exports[`LocationField/Desktop Context WithUserSettings smoke-test 1`] = `
           aria-expanded="false"
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"

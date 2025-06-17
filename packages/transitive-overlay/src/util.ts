@@ -178,6 +178,29 @@ function makeStop(stop: Place, coordinate?: number[]) {
 }
 
 /**
+ * Helper function that clones the 'to' stop and applies flex logic
+ * Flex routes sometimes have the same from and to IDs, but
+ * these stops still need to be rendered separately!
+ */
+function renameLegFlexStops(leg: Leg): Place {
+  const flexSupportStop = { ...leg.to };
+
+  if (typeof flexSupportStop.stop === "object") {
+    flexSupportStop.stop = { ...flexSupportStop.stop };
+  }
+
+  if (isFlex(leg)) {
+    if (typeof flexSupportStop.stop === "object") {
+      flexSupportStop.stop.id = `${flexSupportStop.stop.id}_flexed_to`;
+    } else {
+      flexSupportStop.stopId = `${flexSupportStop.stopId}_flexed_to`;
+    }
+  }
+
+  return flexSupportStop;
+}
+
+/**
  * Converts an OTP itinerary object to a transtive.js itinerary object.
  * @param {*} itin Required OTP itinerary (see @opentripplanner/core-utils/types#itineraryType) to convert.
  * @param {*} companies Optional list of companies, used for labeling vehicle rental locations.
@@ -320,16 +343,6 @@ export function itineraryToTransitive(
     }
 
     if (leg.transitLeg || isTransit(leg.mode)) {
-      // Flex routes sometimes have the same from and to IDs, but
-      // these stops still need to be rendered separately!
-      if (isFlex(leg)) {
-        if (typeof leg.to.stop === "object") {
-          leg.to.stop.id = `${leg.to.stop.id}_flexed_to`;
-        } else {
-          leg.to.stopId = `${leg.to.stopId}_flexed_to`;
-        }
-      }
-
       // determine if we have valid inter-stop geometry
       const hasInterStopGeometry = !!leg.interStopGeometry;
       const hasLegGeometry = !!leg.legGeometry?.points;
@@ -390,10 +403,10 @@ export function itineraryToTransitive(
       // Add the "to" end of transit legs to the list of stops.
       // (Do not label stop names if they repeat.)
       const lastCoord = hasLegGeometry && legCoords[legCoords.length - 1];
-      const toStop = makeStop(leg.to, lastCoord);
-      addStop(toStop, newStops, knownStopNames);
+      const modifiedToStop = makeStop(renameLegFlexStops(leg), lastCoord);
+      addStop(modifiedToStop, newStops, knownStopNames);
       pattern.stops.push({
-        stop_id: getStopId(leg.to),
+        stop_id: getStopId(modifiedToStop),
         geometry:
           // Some legs don't have intermediateStopGeometry, but do have valid legGeometry
           (hasInterStopGeometry || hasLegGeometry) &&

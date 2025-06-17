@@ -1,24 +1,15 @@
 import CSS from "csstype";
 import { format, parse } from "date-fns";
-import flatten from "flat";
 import coreUtils from "@opentripplanner/core-utils";
-import React, { ChangeEvent, ReactElement, ReactNode, useCallback } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
+import React, { ChangeEvent, ReactElement, useCallback } from "react";
+import { IntlShape, useIntl } from "react-intl";
 
-import ModeButton from "../ModeButton";
+import colors, { Dropdown } from "@opentripplanner/building-blocks";
 import * as S from "../styled";
 
 // eslint-disable-next-line prettier/prettier
 import type { QueryParamChangeEvent } from "../types";
 
-// Load the default messages.
-import defaultEnglishMessages from "../../i18n/en-US.yml";
-
-// HACK: We should flatten the messages loaded above because
-// the YAML loaders behave differently between webpack and our version of jest:
-// - the yaml loader for webpack returns a nested object,
-// - the yaml loader for jest returns messages with flattened ids.
-const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 const {
   getCurrentDate,
@@ -27,6 +18,8 @@ const {
   OTP_API_DATE_FORMAT,
   OTP_API_TIME_FORMAT
 } = coreUtils.time;
+
+const { grey } = colors
 
 type DepartArriveValue = "NOW" | "DEPART" | "ARRIVE";
 
@@ -48,6 +41,10 @@ interface DateTimeSelectorProps {
    */
   departArrive?: DepartArriveValue;
   /**
+   * If true, only render the date/time inputs. The depart/arrive selector will be handled by the parent component.
+   */
+  departArriveDropdown?: boolean;
+  /**
    * If true, forces legacy mode and uses `<input type="text">`
    * instead of the native date/time pickers found on modern browsers.
    */
@@ -56,7 +53,7 @@ interface DateTimeSelectorProps {
    * Triggered when a query parameter is changed.
    * @param params A { param1: value1, param2, value2, ... } object that contains the new values for the parameter(s) that has (have) changed.
    */
-  onQueryParamChange: (e: QueryParamChangeEvent) => void; // FIXME: add types, see interface TransitFareData.
+  onQueryParamChange: (e: QueryParamChangeEvent) => void;
   /**
    * Standard React inline style prop.
    */
@@ -77,8 +74,7 @@ interface DateTimeSelectorProps {
 }
 
 interface DepartArriveOption {
-  isSelected?: boolean;
-  text: ReactNode;
+  text: string;
   type: DepartArriveValue;
 }
 
@@ -99,10 +95,70 @@ function isInputTypeSupported(type: string): boolean {
 
 const supportsDateTimeInputs = isInputTypeSupported("date") && isInputTypeSupported("time");
 
+const buttonStyle = { backgroundColor: "transparent", border: "0px", color: "inherit" }
+
 /**
  * Reference date for parsing.
  */
 const referenceDate = new Date();
+
+const departureOptions = (intl: IntlShape): DepartArriveOption[] => [
+  {
+    // Default option.
+    type: "NOW",
+    text: intl.formatMessage({ id: "otpUi.DateTimeSelector.now" })
+  },
+  {
+    type: "DEPART",
+    text: intl.formatMessage({ id: "otpUi.DateTimeSelector.depart" })
+  },
+  {
+    type: "ARRIVE",
+    text: intl.formatMessage({ id: "otpUi.DateTimeSelector.arrive" })
+  }
+];
+
+export const DepartArriveDropdown = ({ departArrive, timeZone, onQueryParamChange }: {
+  departArrive: DepartArriveValue,
+  timeZone: string,
+  onQueryParamChange: (e: QueryParamChangeEvent) => void
+}): JSX.Element => {
+
+  const intl = useIntl()
+
+  const setDepartArrive = (option: DepartArriveOption ) => useCallback(
+    () => {
+      if (option.type === "NOW") {
+        onQueryParamChange({
+          date: getCurrentDate(timeZone),
+          departArrive: "NOW",
+          time: getCurrentTime(timeZone)
+        });
+      } else {
+        onQueryParamChange({
+          departArrive: option.type
+        });
+      }
+    },
+    [onQueryParamChange, option.type, timeZone]
+  );
+  return (
+    <S.DepartArriveContainer>
+      <Dropdown alignMenuLeft id="date-time-depart-arrive" text={departureOptions(intl).find(opt => opt.type === departArrive).text} buttonStyle={buttonStyle}>
+        {departureOptions(intl).map(opt => (
+          <button
+            aria-pressed={opt.type === departArrive}
+            key={opt.type}
+            onClick={setDepartArrive(opt)}
+            type="button"
+          >
+            {opt.text}
+          </button>))}
+        </Dropdown>
+    </S.DepartArriveContainer>
+      
+      )
+}
 
 /**
  * The `DateTimeSelector` component lets the OTP user chose a departure or arrival date/time.
@@ -129,8 +185,9 @@ export default function DateTimeSelector({
   date = null,
   dateFormatLegacy = OTP_API_DATE_FORMAT,
   departArrive = "NOW",
+  departArriveDropdown = false,
   forceLegacy = false,
-  onQueryParamChange = null,
+  onQueryParamChange,
   style = null,
   time = null,
   timeFormatLegacy = OTP_API_TIME_FORMAT,
@@ -138,20 +195,15 @@ export default function DateTimeSelector({
 }: DateTimeSelectorProps): ReactElement {
   const intl = useIntl()
 
-  const handleQueryParamChange = useCallback(
-    (queryParam: QueryParamChangeEvent): void => {
-      if (typeof onQueryParamChange === "function") {
-        onQueryParamChange(queryParam);
-      }
-    },
-    [onQueryParamChange]
-  );
-
   const handleInputChange = (key: string) => useCallback(
     (evt: ChangeEvent<HTMLInputElement>): void => {
-      handleQueryParamChange({ [key]: evt.target.value });
+      onQueryParamChange({ [key]: evt.target.value });
+      // If the user changes the time, it doesn't make sense for them to be departing now.
+      if (departArrive === "NOW") {
+        onQueryParamChange({ departArrive: "DEPART" });
+      }
     },
-    [onQueryParamChange, key]
+    [onQueryParamChange, key, departArrive]
   );
 
   const handleDateChange = handleInputChange("date");
@@ -161,7 +213,7 @@ export default function DateTimeSelector({
   const handleTimeChangeLegacy = useCallback(
     (evt: ChangeEvent<HTMLInputElement>): void => {
       const newTime = format(parse(evt.target.value, timeFormatLegacy, referenceDate), OTP_API_TIME_FORMAT);
-      handleQueryParamChange({ newTime });
+      onQueryParamChange({ newTime });
     },
     [onQueryParamChange]
   );
@@ -169,115 +221,38 @@ export default function DateTimeSelector({
   const handleDateChangeLegacy = useCallback(
     (evt: ChangeEvent<HTMLInputElement>): void => {
       const newDate = format(parse(evt.target.value, dateFormatLegacy, referenceDate), OTP_API_DATE_FORMAT);
-      handleQueryParamChange({ newDate });
+      onQueryParamChange({ newDate });
     },
     [onQueryParamChange]
   );
 
-  const setDepartArrive = (option: DepartArriveOption) => useCallback(
-    () => {
-      if (option.type === "NOW") {
-        handleQueryParamChange({
-          date: getCurrentDate(timeZone),
-          departArrive: "NOW",
-          time: getCurrentTime(timeZone)
-        });
-      } else if (!option.isSelected) {
-        handleQueryParamChange({
-          departArrive: option.type
-        });
-      }
-    },
-    [onQueryParamChange, option.type, option.isSelected, timeZone]
-  );
 
-  const departureOptions: DepartArriveOption[] = [
-    {
-      // Default option.
-      type: "NOW",
-      text: (
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.DateTimeSelector.now"]}
-          description="Text indicating that the traveler wants to depart as soon as possible (i.e. 'now')"
-          id="otpUi.DateTimeSelector.now"
-        />
-      )
-    },
-    {
-      type: "DEPART",
-      text: (
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.DateTimeSelector.depart"]}
-          description="Text indicating that the traveler wants to depart at a given date/time"
-          id="otpUi.DateTimeSelector.depart"
-        />
-      )
-    },
-    {
-      type: "ARRIVE",
-      text: (
-        <FormattedMessage
-          defaultMessage={defaultMessages["otpUi.DateTimeSelector.arrive"]}
-          description="Text indicating that the traveler wants to arrive by a certain date/time"
-          id="otpUi.DateTimeSelector.arrive"
-        />
-      )
-    }
-  ];
-  departureOptions.forEach(opt => {
-    opt.isSelected = departArrive === opt.type;
-  });
 
   const isLegacy = forceLegacy || !supportsDateTimeInputs;
+
+  const baseColor = S.baseColor() || grey[900]
 
   return (
     <S.DateTimeSelector
       aria-label={intl.formatMessage({ id: "otpUi.DateTimeSelector.dateTimeSelector" })}
+      baseColor={baseColor}
       className={className}
       role="group"
       style={style}
     >
-      <S.DateTimeSelector.DepartureRow>
-        {departureOptions.map(opt => (
-          <ModeButton
-            aria-pressed={opt.isSelected}
-            key={opt.type}
-            onClick={setDepartArrive(opt)}
-            selected={opt.isSelected}
-          >
-            {opt.text}
-          </ModeButton>
-        ))}
-      </S.DateTimeSelector.DepartureRow>
-
-      {departArrive !== "NOW" && !isLegacy && (
-        <S.DateTimeSelector.DateTimeRow>
+          {departArriveDropdown && 
+            <DepartArriveDropdown 
+              departArrive={departArrive} 
+              timeZone={timeZone} 
+              onQueryParamChange={onQueryParamChange} 
+          />}
           {/* The <div> elements below are used for layout, see S.DateTimeSelector. */}
-          <div>
-            <input
-              aria-label={intl.formatMessage({ id: "otpUi.DateTimeSelector.time" })}
-              onChange={handleTimeChange}
-              required
-              type="time"
-              value={time}
-            />
-          </div>
-          <div>
-            <input
-              aria-label={intl.formatMessage({ id: "otpUi.DateTimeSelector.date" })}
-              onChange={handleDateChange}
-              required
-              type="date"
-              value={date}
-            />
-          </div>
-        </S.DateTimeSelector.DateTimeRow>
-      )}
+          
 
       {/* Backup controls (for older browsers) */}
-      {departArrive !== "NOW" && isLegacy && (
-        <S.DateTimeSelector.DateTimeRow>
-          <div>
+      {isLegacy ?  (
+        <>
+        <div>
             <input
               defaultValue={format(parse(time, OTP_API_TIME_FORMAT, referenceDate), timeFormatLegacy)}
               onChange={handleTimeChangeLegacy}
@@ -293,8 +268,29 @@ export default function DateTimeSelector({
               type="text"
             />
           </div>
-        </S.DateTimeSelector.DateTimeRow>
-      )}
+        </>
+      ) : 
+      ( 
+      <>
+        <div>
+          <input
+            aria-label={intl.formatMessage({ id: "otpUi.DateTimeSelector.time" })}
+            onChange={handleTimeChange}
+            required
+            type="time"
+            value={time}
+            />
+        </div>
+        <div>
+          <input
+            aria-label={intl.formatMessage({ id: "otpUi.DateTimeSelector.date" })}
+            onChange={handleDateChange}
+            required
+            type="date"
+            value={date}
+          />
+        </div>
+      </>)}
     </S.DateTimeSelector>
   );
 }
