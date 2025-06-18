@@ -1,13 +1,11 @@
 import React, { useCallback } from "react";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
-import coreUtils from "@opentripplanner/core-utils";
 
 // eslint-disable-next-line prettier/prettier
 import type {
   Company,
   ConfiguredCompany,
   Location,
-  Station,
   Stop,
   StopEventHandler,
   TileLayerStation
@@ -18,11 +16,11 @@ import { flatten } from "flat";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Styled } from "@opentripplanner/base-map";
 
+import { Entity, getNetwork, makeDefaultGetEntityName } from "./util";
 import { ViewStopButton } from "./styled";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
-import { makeDefaultGetEntityName } from "./util";
 
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
@@ -92,7 +90,6 @@ const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => v
   )
 }
 
-type Entity = Stop | Station | TileLayerStation
 type Props = {
   closePopup?: (arg?: any) => void
   configCompanies?: ConfiguredCompany[];
@@ -118,7 +115,7 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
   const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultMessages);
   const name = getNameFunc(entity, configCompanies);
 
-  const stationNetwork = "network" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks([entity.network] || [], configCompanies) || entity.network);
+  const stationNetwork = getNetwork(entity, configCompanies);
 
   const bikesAvailablePresent = entityIsStation(entity)
   const entityIsStationHub = bikesAvailablePresent && entity.vehiclesAvailable !== undefined && !entity.isFloatingBike;
