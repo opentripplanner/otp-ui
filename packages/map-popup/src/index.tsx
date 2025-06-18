@@ -92,10 +92,10 @@ const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => v
 }
 
 type Props = {
-  closePopup?: (arg?: any) => void
+  closePopup?: (arg?: boolean) => void
   configCompanies?: ConfiguredCompany[];
   entity: Entity
-  getEntityName?: (entity: Entity, configCompanies: Company[],) => string;
+  getEntityName?: (entity: Entity, configCompanies: Company[]) => string;
   getEntityPrefix?: (entity: Entity) => JSX.Element
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
   setViewedStop?: StopEventHandler;
