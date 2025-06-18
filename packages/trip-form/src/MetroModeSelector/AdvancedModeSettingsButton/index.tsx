@@ -110,18 +110,28 @@ const AdvancedModeSettingsButton = ({
   const checkboxId = `metro-submode-selector-mode-${id}`;
   const containsSubsettings = modeButton.modeSettings.length > 0;
 
+  const subsettingsStatusLabel = modeButton.enabled
+    ? intl.formatMessage({
+        id: "otpUi.ModeSelector.labels.subsettingsExpanded"
+      })
+    : intl.formatMessage({
+        id: "otpUi.ModeSelector.labels.subsettingsCollapsed"
+      });
+  const ariaLabel = containsSubsettings
+    ? label + subsettingsStatusLabel
+    : label;
+
   return (
     <SettingsContainer className="advanced-submode-container">
       <StyledModeSettingsButton
         accentColor={accentColor}
-        aria-expanded={containsSubsettings ? !!modeButton.enabled : undefined}
         className="advanced-submode-mode-button"
         fillModeIcons={fillModeIcons}
         id={modeButton.key}
         subsettings={containsSubsettings}
       >
         <input
-          aria-label={label}
+          aria-label={ariaLabel}
           checked={modeButton.enabled ?? undefined}
           id={checkboxId}
           onChange={onToggle}
