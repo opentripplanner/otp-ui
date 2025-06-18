@@ -370,6 +370,7 @@ exports[`LocationField/Mobile Context SelectedLocation smoke-test 1`] = `
          value="123 Main St"
   >
   <button aria-label="Clear location"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__ClearButton-sc-xahsq2-2 hoozke cCkuXw"
   >
     <svg viewbox="0 0 320 512"
@@ -470,6 +471,7 @@ exports[`LocationField/Mobile Context SelectedLocationCustomClear smoke-test 1`]
          value="123 Main St"
   >
   <button aria-label="Clear location"
+          type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__ClearButton-sc-xahsq2-2 hoozke cCkuXw"
   >
     <svg viewbox="0 0 512 512"

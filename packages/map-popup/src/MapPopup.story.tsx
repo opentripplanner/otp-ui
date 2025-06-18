@@ -18,8 +18,18 @@ export default {
   decorators: [withIntl]
 } as Meta;
 
-const STOP = {
+const STOP_NO_CODE = {
   flex: false,
+  gtfsId: "9526",
+  id: "9526",
+  lat: 45.523009,
+  lon: -122.672529,
+  name: "W Burnside & SW 2nd"
+};
+
+const STOP_WITH_CODE = {
+  flex: false,
+  code: "9526",
   gtfsId: "9526",
   id: "9526",
   lat: 45.523009,
@@ -91,14 +101,15 @@ const getEntityPrefixExample = (entity: Stop | Station) => {
 
 export const StopEntity = (): JSX.Element => (
   <MapPopupContents
-    entity={STOP}
+    entity={STOP_WITH_CODE}
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
   />
 );
-export const StopEntitywithEntityPrefix = (): JSX.Element => (
+
+export const StopEntityWithEntityPrefix = (): JSX.Element => (
   <MapPopupContents
-    entity={STOP}
+    entity={STOP_WITH_CODE}
     getEntityPrefix={getEntityPrefixExample}
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
@@ -106,7 +117,15 @@ export const StopEntitywithEntityPrefix = (): JSX.Element => (
 );
 
 export const StopEntityNoHandlers = (): JSX.Element => (
-  <MapPopupContents entity={STOP} />
+  <MapPopupContents entity={STOP_WITH_CODE} />
+);
+
+export const StopEntityNoStopCode = (): JSX.Element => (
+  <MapPopupContents
+    entity={STOP_NO_CODE}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+  />
 );
 
 export const StationEntity = (): JSX.Element => (

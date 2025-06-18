@@ -51,6 +51,7 @@ exports[`Trip Form Components dateTimeSelector smoke-test 1`] = `
         <button aria-expanded="false"
                 aria-haspopup="listbox"
                 id="date-time-depart-arrive-label"
+                type="button"
                 class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
                 style="background-color: transparent; border: 0px; color: inherit;"
         >
@@ -96,6 +97,7 @@ exports[`Trip Form Components dateTimeSelector smoke-test 1`] = `
           <button aria-expanded="false"
                   aria-haspopup="listbox"
                   id="date-time-depart-arrive-label"
+                  type="button"
                   class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
                   style="background-color: transparent; border: 0px; color: inherit;"
           >
@@ -140,6 +142,7 @@ exports[`Trip Form Components departArriveDropdown smoke-test 1`] = `
       <button aria-expanded="false"
               aria-haspopup="listbox"
               id="date-time-depart-arrive-label"
+              type="button"
               class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
               style="background-color: transparent; border: 0px; color: inherit;"
       >
@@ -166,6 +169,7 @@ exports[`Trip Form Components departArriveDropdown smoke-test 1`] = `
         <button aria-expanded="false"
                 aria-haspopup="listbox"
                 id="date-time-depart-arrive-label"
+                type="button"
                 class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
                 style="background-color: transparent; border: 0px; color: inherit;"
         >
