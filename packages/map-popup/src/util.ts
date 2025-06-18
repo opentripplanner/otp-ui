@@ -1,4 +1,9 @@
-import { Company, Station, Stop } from "@opentripplanner/types";
+import {
+  Company,
+  Station,
+  Stop,
+  TileLayerStation
+} from "@opentripplanner/types";
 import { IntlShape } from "react-intl";
 import coreUtils from "@opentripplanner/core-utils";
 
@@ -8,18 +13,18 @@ export function makeDefaultGetEntityName(
   defaultEnglishMessages: { [key: string]: string }
 ) {
   return function defaultGetEntityName(
-    entity: Station | Stop,
+    entity: Station | Stop | TileLayerStation,
     configCompanies: Company[]
   ): string | null {
     // TODO: Stop generating this / passing it to the car string? Is it needed?
     // In English we say "Car: " instead
     const stationNetworks =
-      "networks" in entity &&
+      "network" in entity &&
       (coreUtils.itinerary.getCompaniesLabelFromNetworks(
-        entity?.networks || [],
+        [entity.network] || [],
         configCompanies
       ) ||
-        entity?.networks?.[0]);
+        entity.network);
     let stationName: string | null = entity.name || entity.id;
     // If the station name or id is a giant UUID (with more than 3 "-" characters)
     // best not to show that at all. The company name will still be shown.
@@ -31,7 +36,7 @@ export function makeDefaultGetEntityName(
       stationName = null;
     }
 
-    if ("isFloatingBike" in entity && entity.isFloatingBike) {
+    if ("isFloatingVehicle" in entity && entity.isFloatingVehicle) {
       stationName = intl.formatMessage(
         {
           defaultMessage: defaultEnglishMessages["otpUi.MapPopup.floatingBike"],

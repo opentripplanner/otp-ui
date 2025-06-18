@@ -107,19 +107,7 @@ const OTP2TileLayerWithPopup = ({
           sourceLayer === "rentalVehicles" &&
           // @ts-expect-error TODO Find/implement the correct type
           synthesizedEntity.formFactor === "SCOOTER",
-        // OTP1 compatibility -- will get overwritten if possible
-        // @ts-expect-error TODO Decide whether to keep this
-        networks: [synthesizedEntity.network],
-        ...synthesizedEntity,
-        // OTP1 compatibility
-        // @ts-expect-error TODO Decide whether to keep this
-        bikesAvailable: synthesizedEntity.vehiclesAvailable,
-        // OTP1 compatibility
-        // TODO Decide whether to keep this
-        x: synthesizedEntity.lon,
-        // OTP1 compatibility
-        // TODO Decide whether to keep this
-        y: synthesizedEntity.lat
+        ...synthesizedEntity
       });
     }
   };

@@ -602,9 +602,22 @@ export type Station = {
   name?: string;
   networks: string[];
   spacesAvailable?: number;
-  // TS TODO coordinate type
   x: number;
   y: number;
+};
+
+export type TileLayerStation = {
+  bikesAvailable?: number;
+  id: string;
+  isFloatingBike?: boolean;
+  isFloatingCar?: boolean;
+  isFloatingVehicle?: boolean;
+  lat: number;
+  lon: number;
+  name?: string;
+  network?: string;
+  spacesAvailable?: number;
+  vehiclesAvailable?: number;
 };
 
 /**
