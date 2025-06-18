@@ -5,6 +5,8 @@ import { IntlShape } from "react-intl";
 
 // TODO: Generate keys from YAML
 const MAP_CONTROL_TRANSLATION_KEYS = [
+  "GeolocateControl.FindMyLocation",
+  "GeolocateControl.LocationNotAvailable",
   "NavigationControl.ResetBearing",
   "NavigationControl.ZoomIn",
   "NavigationControl.ZoomOut",
