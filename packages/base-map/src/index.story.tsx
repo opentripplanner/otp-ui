@@ -17,8 +17,6 @@ import { withMap } from "../../../.storybook/base-map-wrapper";
 
 import BaseMap, { MarkerWithPopup, LayerWrapper, Popup, Styled } from ".";
 
-import "maplibre-gl/dist/maplibre-gl.css";
-
 const center: [number, number] = [45.522862, -122.667837];
 
 export default {

@@ -1,6 +1,8 @@
 import React from 'react'
 import BaseMap, { Styled as BaseMapStyled } from "@opentripplanner/base-map";
 
+import "maplibre-gl/dist/maplibre-gl.css";
+
 // BaseMap props
 const CENTER = [45.5215, -122.686202];
 const ZOOM = 16;
