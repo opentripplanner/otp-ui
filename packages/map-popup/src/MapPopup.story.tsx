@@ -82,7 +82,7 @@ const FLOATING_CAR = {
   lat: 52.52,
   lon: 13.405,
   name: "0541",
-  networks: "MILES", // https://miles-mobility.com
+  network: "MILES", // https://miles-mobility.com
   realTimeData: true,
   spacesAvailable: 0
 };

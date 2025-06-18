@@ -39,7 +39,7 @@ export function makeDefaultGetEntityName(
       stationName = null;
     }
 
-    if ("isFloatingVehicle" in entity && entity.isFloatingVehicle) {
+    if ("isFloatingBike" in entity && entity.isFloatingBike) {
       stationName = intl.formatMessage(
         {
           defaultMessage: defaultEnglishMessages["otpUi.MapPopup.floatingBike"],
