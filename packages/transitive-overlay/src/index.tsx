@@ -1,3 +1,6 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-await-in-loop */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { SymbolLayout } from "mapbox-gl";
 import { util } from "@opentripplanner/base-map";
 import React, { useEffect } from "react";
