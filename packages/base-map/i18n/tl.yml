@@ -4,6 +4,9 @@ otpUi:
       MacHelpText: Gamitin ang ⌘ + scroll para mag-zoom sa mapa
       MobileHelpText: Gumamit ng dalawang daliri para igalaw ang mapa
       WindowsHelpText: Gamitin ang Ctrl + scroll para mag-zoom sa mapa
+    GeolocateControl:
+      FindMyLocation: Hanapin ang lokasyon ko
+      LocationNotAvailable: HIndi available
     NavigationControl:
       ResetBearing: I-reset ang bearing sa hilaga
       ZoomIn: Mag-zoom In

@@ -4,6 +4,9 @@ otpUi:
       MacHelpText: 使用⌘並捲動，可縮放地圖
       MobileHelpText: 以兩指移動地圖
       WindowsHelpText: 使用Ctrl並捲動，可縮放地圖
+    GeolocateControl:
+      FindMyLocation: 尋找我的位置
+      LocationNotAvailable: 位置無法取得
     NavigationControl:
       ResetBearing: 將方位重設為北方
       ZoomIn: 放大

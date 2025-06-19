@@ -5,6 +5,10 @@
       "MobileHelpText",
       "WindowsHelpText"
     ],
+    "otpUi.mapControls.GeolocateControl.*": [
+      "FindMyLocation",
+      "LocationNotAvailable"
+    ],
     "otpUi.mapControls.NavigationControl.*": [
       "ResetBearing",
       "ZoomIn",
