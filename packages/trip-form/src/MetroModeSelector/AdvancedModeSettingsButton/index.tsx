@@ -131,6 +131,7 @@ const AdvancedModeSettingsButton = ({
         subsettings={containsSubsettings}
       >
         <input
+          aria-owns="subsettings-container"
           aria-label={ariaLabel}
           checked={modeButton.enabled ?? undefined}
           id={checkboxId}
@@ -144,7 +145,11 @@ const AdvancedModeSettingsButton = ({
         </label>
       </StyledModeSettingsButton>
       {containsSubsettings && (
-        <AnimateHeight duration={300} height={modeButton.enabled ? "auto" : 0}>
+        <AnimateHeight
+          id="subsettings-container"
+          duration={300}
+          height={modeButton.enabled ? "auto" : 0}
+        >
           <StyledSettingsContainer className="subsettings-container">
             <SubSettingsPane
               onSettingUpdate={onSettingsUpdate}
