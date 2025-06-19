@@ -4,6 +4,7 @@ import {
   Config,
   ElevationProfile,
   ElevationProfileComponent,
+  FareProduct,
   FlexBookingInfo,
   ItineraryOnlyLegsRequired,
   LatLngArray,
@@ -608,6 +609,15 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
 }
 
 /**
+ * Removes the OTP standard scope (":")
+ * @param item String to descope
+ * @returns    descoped string
+ */
+export const descope = (item: string): string => item?.split(":")?.[1];
+
+export type ExtendedMoney = Money & { originalAmount?: number };
+
+/**
  * Extracts useful data from the fare products on a leg, such as the leg cost and transfer info.
  * @param leg Leg with fare products (must have used getLegsWithFares)
  * @param category Rider category
@@ -617,28 +627,43 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
 export function getLegCost(
   leg: Leg,
   mediumId: string | null,
-  riderCategoryId: string | null
+  riderCategoryId: string | null,
+  seenFareIds?: string[]
 ): {
-  price?: Money;
+  price?: ExtendedMoney;
   productUseId?: string;
+  alternateFareProducts?: FareProduct[];
 } {
   if (!leg.fareProducts) return { price: undefined };
-  const relevantFareProducts = leg.fareProducts.filter(({ product }) => {
-    // riderCategory and medium can be specifically defined as null to handle
-    // generic GTFS based fares from OTP when there is no fare model
-    return (
-      // Remove (optional) agency scoping
-      (product.riderCategory?.id?.split(":")?.[1] ||
-        product.riderCategory?.id ||
-        null) === riderCategoryId &&
-      (product.medium?.id?.split(":")?.[1] || product.medium?.id || null) ===
-        mediumId
-    );
-  });
 
-  // We honor the first product, respecting OTP's order
+  const relevantFareProducts = leg.fareProducts
+    .filter(({ product }) => {
+      // riderCategory and medium can be specifically defined as null to handle
+      // generic GTFS based fares from OTP when there is no fare model
+      return (
+        // Remove (optional) agency scoping
+        (descope(product?.riderCategory?.id) ||
+          product?.riderCategory?.id ||
+          null) === riderCategoryId &&
+        (descope(product?.medium?.id) || product?.medium?.id || null) ===
+          mediumId
+      );
+    })
+    .map(fare => {
+      const clonedFare = structuredClone(fare);
+      // If we've seen the fare ID already, it's a free transfer
+      if (seenFareIds?.indexOf(fare.id) > -1) {
+        (clonedFare.product.price as ExtendedMoney).originalAmount =
+          fare.product.price.amount;
+        clonedFare.product.price.amount = 0;
+      }
+      return clonedFare;
+    })
+    .sort((a, b) => a.product.price.amount - b.product.price.amount);
 
+  // Return the cheapest, but include other matches as well
   return {
+    alternateFareProducts: relevantFareProducts.splice(1).map(fp => fp.product),
     price: relevantFareProducts?.[0]?.product.price,
     productUseId: relevantFareProducts?.[0]?.id
   };

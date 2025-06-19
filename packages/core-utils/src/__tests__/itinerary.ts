@@ -14,6 +14,8 @@ import {
   mapOldElevationComponentToNew
 } from "../itinerary";
 
+global.structuredClone = val => JSON.parse(JSON.stringify(val));
+
 const bikeRentalItinerary = require("./__mocks__/bike-rental-itinerary.json");
 const tncItinerary = require("./__mocks__/tnc-itinerary.json");
 const fareProductItinerary = require("./__mocks__/fare-products-itinerary.json");
@@ -158,7 +160,7 @@ describe("util > itinerary", () => {
           id: "testId",
           product: {
             medium: null,
-            name: "transfer",
+            name: "transfer-from-other-vehicle",
             price: { amount: 50, currency: "USD" },
             riderCategory: null
           }
@@ -170,26 +172,48 @@ describe("util > itinerary", () => {
         {
           id: "testId",
           product: {
-            medium: "cash",
-            name: "rideCost",
-            price: { amount: 200, currency: "USD" },
-            riderCategory: "adult"
+            medium: { id: "agency:cash" },
+            name: "transfer-from-other-vehicle",
+            price: { amount: 50, currency: "USD" },
+            riderCategory: { id: "agency:child" }
           }
         },
         {
           id: "testId",
           product: {
+            medium: "cash",
+            name: "rideCost",
+            price: { amount: 200, currency: "USD" },
+            riderCategory: "adult"
+          }
+        }
+      ]
+    };
+    const halfLeg = {
+      fareProducts: [
+        {
+          id: "testId",
+          product: {
             medium: { id: "agency:cash" },
-            name: "transfer",
-            price: { amount: 50, currency: "USD" },
-            riderCategory: { id: "agency:child" }
+            name: "rideCost",
+            price: { amount: 30, currency: "USD" },
+            riderCategory: null
+          }
+        },
+        {
+          id: "testId2",
+          product: {
+            medium: { id: "agency:digital" },
+            name: "rideCost",
+            price: { amount: 20, currency: "USD" },
+            riderCategory: null
           }
         }
       ]
     };
     it("should return the total cost for a leg", () => {
       const result = getLegCost(leg, null, null);
-      expect(result.price).toEqual({ amount: 200, currency: "USD" });
+      expect(result.price).toEqual({ amount: 50, currency: "USD" });
     });
     it("should return the 0 cost for a free leg", () => {
       const result = getLegCost(freeLeg, null, null);
@@ -198,6 +222,10 @@ describe("util > itinerary", () => {
     it("should return the correct cost for a leg with multiple types of fares", () => {
       const result = getLegCost(complicatedLeg, "cash", "child");
       expect(result.price).toEqual({ amount: 50, currency: "USD" });
+    });
+    it("should return the correct cost for a leg with no rider category", () => {
+      const result = getLegCost(halfLeg, "cash", null);
+      expect(result.price).toEqual({ amount: 30, currency: "USD" });
     });
 
     it("should return undefined if no fare products exist on the leg", () => {
@@ -227,6 +255,25 @@ describe("util > itinerary", () => {
     it("should calculate the total cost of an itinerary using fares v2", () => {
       const result = getItineraryCost(faresv2Itinerary.legs, "3", "ADULT");
       expect(result.amount).toEqual(2.8);
+    });
+    it("should calculate the individual leg cost of a fares v2 legs", () => {
+      const firstLegResult = getLegCost(faresv2Itinerary.legs[1], "3", "ADULT");
+      expect(firstLegResult.price?.amount).toEqual(2);
+
+      const secondLegResult = getLegCost(
+        faresv2Itinerary.legs[3],
+        "3",
+        "ADULT"
+      );
+      expect(secondLegResult.price?.amount).toEqual(0.8);
+
+      // Check for alternate product
+      expect(firstLegResult.alternateFareProducts?.[0]?.price?.amount).toEqual(
+        undefined
+      );
+      expect(secondLegResult.alternateFareProducts?.[0]?.price?.amount).toEqual(
+        2.8
+      );
     });
     it("should calculate the total cost of an itinerary will null ids", () => {
       const result = getItineraryCost(fareProductItinerary.legs, null, null);
