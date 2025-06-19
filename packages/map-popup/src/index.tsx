@@ -1,20 +1,26 @@
 import React, { useCallback } from "react";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
-import coreUtils from "@opentripplanner/core-utils";
 
 // eslint-disable-next-line prettier/prettier
-import type { Company, ConfiguredCompany, Location, Station, Stop, StopEventHandler } from "@opentripplanner/types";
+import type {
+  Company,
+  ConfiguredCompany,
+  Location,
+  Stop,
+  StopEventHandler,
+  TileLayerStation
+} from "@opentripplanner/types";
 
 import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import { flatten } from "flat";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Styled } from "@opentripplanner/base-map";
 
+import { Entity, getNetwork, makeDefaultGetEntityName } from "./util";
 import { ViewStopButton } from "./styled";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
-import { makeDefaultGetEntityName } from "./util";
 
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
@@ -33,7 +39,7 @@ const generateLocation = (entity: Entity, name: string) => {
   return { lat, lon, name };
 }
 
-const StationHubDetails = ({ station }: { station: Station }) => {
+const StationHubDetails = ({ station }: { station: TileLayerStation }) => {
   return (
     <Styled.PopupRow>
       <div>
@@ -43,7 +49,7 @@ const StationHubDetails = ({ station }: { station: Station }) => {
           }
           description="Label text for the number of bikes available"
           id="otpUi.MapPopup.availableBikes"
-          values={{ value: station.bikesAvailable }}
+          values={{ value: station.vehiclesAvailable }}
         />
       </div>
       <div>
@@ -85,19 +91,18 @@ const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => v
   )
 }
 
-type Entity = Stop | Station
 type Props = {
-  closePopup?: (arg?: any) => void
+  closePopup?: (arg?: boolean) => void
   configCompanies?: ConfiguredCompany[];
   entity: Entity
-  getEntityName?: (entity: Entity, configCompanies: Company[],) => string;
+  getEntityName?: (entity: Entity, configCompanies: Company[]) => string;
   getEntityPrefix?: (entity: Entity) => JSX.Element
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
   setViewedStop?: StopEventHandler;
 };
 
-function entityIsStation(entity: Entity): entity is Station {
-  return "bikesAvailable" in entity
+function entityIsStation(entity: Entity): entity is TileLayerStation {
+  return "vehiclesAvailable" in entity
 }
 
 /**
@@ -111,11 +116,11 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
   const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultMessages);
   const name = getNameFunc(entity, configCompanies);
 
-  const stationNetwork = "networks" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.networks || [], configCompanies) || entity?.networks?.[0]);
+  const stationNetwork = getNetwork(entity, configCompanies);
 
   const bikesAvailablePresent = entityIsStation(entity)
-  const entityIsStationHub = bikesAvailablePresent && entity?.bikesAvailable !== undefined && !entity?.isFloatingBike;
-  const stopId = !bikesAvailablePresent && entity?.code;
+  const entityIsStationHub = bikesAvailablePresent && entity.vehiclesAvailable !== undefined && !entity.isFloatingBike;
+  const stopId = !bikesAvailablePresent && "code" in entity && entity.code;
   const id = `focus-${encodeURIComponent(entity.id).replace(/%/g, "")}-popup`
 
   return (
@@ -137,7 +142,7 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
       {setViewedStop && !bikesAvailablePresent && (
         <StopDetails
           id={stopId}
-          setViewedStop={useCallback(() => setViewedStop(entity), [entity])}
+          setViewedStop={useCallback(() => setViewedStop(entity as Stop), [entity])}
         />
       )}
 
