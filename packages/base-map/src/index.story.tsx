@@ -48,9 +48,6 @@ const sampleMarkers = (
 const onClick = action("onClick");
 const onContextMenu = action("onContextMenu");
 const onViewportChanged = action("onViewportChanged");
-const a11yOverrideParameters = {
-  a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
-};
 
 export const clickAndViewportchangedEvents = Template.bind({});
 clickAndViewportchangedEvents.args = {
@@ -160,8 +157,6 @@ export const optionalLayers = {
     </Styled.StoryMapContainer>
   )
 };
-// Custom styling for this story only, not in production
-customLocationPopupContent.parameters = a11yOverrideParameters;
 
 export const onContextMenuPopup = () => <ContextMenuDemo />;
 
