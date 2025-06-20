@@ -11,6 +11,8 @@ otpUi:
       bicycle: Bike
       car: Drive
       rent: Rent
+      subsettingsCollapsed: " (Subsettings collapsed)"
+      subsettingsExpanded: " (Subsettings expanded)"
       transit: Transit
       walk: Walk
     settings:
