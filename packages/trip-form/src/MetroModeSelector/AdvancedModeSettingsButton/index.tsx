@@ -117,6 +117,8 @@ const AdvancedModeSettingsButton = ({
     : intl.formatMessage({
         id: "otpUi.ModeSelector.labels.subsettingsCollapsed"
       });
+
+  // Adding <InvisibleAllyLabel> to the label results in AT announcing "Transit (and 1 other item)", so we must present this information in the aria-label
   const ariaLabel = containsSubsettings
     ? label + subsettingsStatusLabel
     : label;
