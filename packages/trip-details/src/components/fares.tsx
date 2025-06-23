@@ -69,11 +69,9 @@ export default function Fares({
     defaultFareType?.riderCategoryId || null
   );
   // Depending on if there are additional fares to display either render a <span> or a <details>
-  const TransitFareWrapper = S.TransitFare;
-
   const fare = defaultFareTotal !== undefined && (
     <S.Fare>
-      <TransitFareWrapper>
+      <S.TransitFare>
         <summary style={{ display: fareTypes.length > 1 ? "list-item" : "" }}>
           <FormattedMessage
             defaultMessage={
@@ -99,8 +97,12 @@ export default function Fares({
             }}
           />
         </summary>
-        <FaresV2Table legs={itinerary.legs} />
-      </TransitFareWrapper>
+        <FaresV2Table
+          legs={itinerary.legs}
+          favoriteMediumId={defaultFareType?.mediumId}
+          favoriteRiderCategoryId={defaultFareType?.riderCategoryId}
+        />
+      </S.TransitFare>
     </S.Fare>
   );
   const tncFare = minTNCFare !== 0 && (

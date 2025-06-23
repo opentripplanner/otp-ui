@@ -86,9 +86,6 @@ const FaresV2Table = ({
   const intl = useIntl();
 
   const transitLegs = legs.filter(leg => leg.transitLeg);
-  if (transitLegs.length < 2) {
-    return <></>;
-  }
 
   // Get all fare products across all legs
   const fareProducts = transitLegs.flatMap(leg => leg.fareProducts);
@@ -126,7 +123,7 @@ const FaresV2Table = ({
       ...transitLegs.map(leg => (
         <th key={leg.tripId}>{getLegRouteName(leg)}</th>
       )),
-      transitLegs.length > 0 ? (
+      transitLegs.length > 1 ? (
         <th key="total" style={{ textAlign: "right" }}>
           <em>
             <FormattedMessage id="otpUi.TripDetails.total" />
@@ -219,7 +216,7 @@ const FaresV2Table = ({
         rows[currentRowIndex].push(newCell);
 
         // Generate final column
-        if (index === transitLegs.length - 1) {
+        if (index === transitLegs.length - 1 && transitLegs.length > 1) {
           const fare = getItineraryCost(
             legs,
             descope(medium.id) || null,
