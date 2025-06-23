@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Marker } from "react-map-gl";
+import { Marker } from "react-map-gl/maplibre";
 import DefaultStopMarker from "./default-stop-marker";
 import StopViewerOverlay, { StopContainer } from ".";
 import { withMap } from "../../../.storybook/base-map-wrapper";
