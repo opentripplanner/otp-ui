@@ -74,7 +74,7 @@ export default function Fares({
   const fare = defaultFareTotal !== undefined && (
     <S.Fare>
       <TransitFareWrapper>
-        <summary style={{ display: fareTypes.length > 0 ? "list-item" : "" }}>
+        <summary style={{ display: fareTypes.length > 1 ? "list-item" : "" }}>
           <FormattedMessage
             defaultMessage={
               defaultMessages["otpUi.TripDetails.transitFareEntry"]
