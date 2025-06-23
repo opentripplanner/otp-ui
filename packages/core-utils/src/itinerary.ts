@@ -633,6 +633,7 @@ export function getLegCost(
   price?: ExtendedMoney;
   productUseId?: string;
   alternateFareProducts?: FareProduct[];
+  isDependent?: boolean;
 } {
   if (!leg.fareProducts) return { price: undefined };
 
@@ -659,13 +660,19 @@ export function getLegCost(
       }
       return clonedFare;
     })
-    .sort((a, b) => a.product.price.amount - b.product.price.amount);
+    .sort((a, b) => a.product?.price?.amount - b.product?.price?.amount);
 
   // Return the cheapest, but include other matches as well
+  const cheapestRelevantFareProduct = relevantFareProducts?.[0];
+
+  // TODO: return entire fare product here instead of dumbing it down?
   return {
     alternateFareProducts: relevantFareProducts.splice(1).map(fp => fp.product),
-    price: relevantFareProducts?.[0]?.product.price,
-    productUseId: relevantFareProducts?.[0]?.id
+    price: cheapestRelevantFareProduct?.product?.price,
+    productUseId: cheapestRelevantFareProduct?.id,
+    isDependent:
+      // eslint-disable-next-line no-underscore-dangle
+      cheapestRelevantFareProduct?.product.__typename === "DependentFareProduct"
   };
 }
 
@@ -780,7 +787,7 @@ export const getLegRouteLongName = (
  * This is happens with Seattle area streetcars and ferries.
  */
 export const getLegRouteName = (
-  leg: Pick<Leg, "route" | "routeLongName" | "routeShortName">
+  leg: Pick<Leg, "route" | "routeLongName" | "routeShortName" | "mode">
 ): string => {
   return getLegRouteShortName(leg) || getLegRouteLongName(leg);
 };

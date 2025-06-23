@@ -1,12 +1,5 @@
 otpUi:
   TripDetails:
-    FareTable:
-      cash: Efectivo
-      electronic: Electrónico
-      regular: Adulto
-      senior: Major edad
-      special: Especial
-      youth: Juventud
     co2: "CO₂ emitido: <strong>{co2}</strong>"
     co2description: >-
       La intensidad de CO₂ se calcula multiplicando la distancia de cada tramo

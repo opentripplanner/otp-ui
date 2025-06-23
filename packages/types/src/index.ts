@@ -803,6 +803,7 @@ export type ModeButtonDefinition = {
  * Definition for a fare product used to pay the fare for a leg in a transit journey
  */
 export type FareProduct = {
+  __typename: string;
   id: string;
   medium?: {
     id: string;

@@ -1,12 +1,5 @@
 otpUi:
   TripDetails:
-    FareTable:
-      cash: Cash
-      electronic: Electronic
-      regular: Nasa Hustong Gulang
-      senior: Nakatatanda
-      special: Espesyal
-      youth: Kabataan
     co2: "Na-emit na CO₂: <strong>{co2}</strong>"
     co2description: >-
       Kinakalkula ang intensity ng CO₂ sa pamamagitan ng pag-multiply sa
@@ -17,9 +10,11 @@ otpUi:
       Aalis <strong>{departureDate, date, long}</strong> nang
       <strong>{departureDate, time, short}</strong>
     hideDetail: Itago ang mga detalye
+    legMissingFareInfo: Walang impormasyon sa pamasahe para sa leg na ito
     minutesActive: >-
       Oras na Ginugol sa pagiging Aktibo: <strong>{approximatePrefix, select,
       true {~} other {}}{minutes} minuto</strong>
+    missingFareTotal: Walang available na kabuuang pamasahe
     showDetail: Ipakita ang mga detalye
     timeActiveDescription: >
       Sa pagbiyahe nang ganitong paraan, gugugol ka ng <strong>{walkMinutes}
@@ -31,5 +26,3 @@ otpUi:
     transitFare: Pamasahe sa Pampublikong Transportasyon
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: May mga flexible na ruta ang biyaheng ito. {extraMessage}
-    missingFareTotal: Walang available na kabuuang pamasahe
-    legMissingFareInfo: Walang impormasyon sa pamasahe para sa leg na ito

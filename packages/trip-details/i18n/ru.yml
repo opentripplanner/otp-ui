@@ -1,12 +1,5 @@
 otpUi:
   TripDetails:
-    FareTable:
-      cash: Наличные
-      electronic: Электронный
-      regular: Взрослые
-      senior: Пожилые
-      special: Особые
-      youth: Детский
     co2: "Выбросы CO₂: <strong>{co2}</strong>"
     co2description: >-
       Интенсивность выбросов CO₂ рассчитывается умножением расстояния каждого
@@ -17,19 +10,19 @@ otpUi:
       Прибытие: <strong>{departureDate, date, long}</strong> в
       <strong>{departureDate, time, short}</strong>
     hideDetail: Скрыть детали
+    legMissingFareInfo: Информация о тарифах на этот маршрут отсутствует
     minutesActive: >-
       Время в активном режиме: <strong>{approximatePrefix, select, true {~}
       other {}}{minutes, plural, one {# минуту} other {# минуты}}</strong>
+    missingFareTotal: Нет данных о суммарном тарифе
     showDetail: Показать детали
     timeActiveDescription: >
       Проделав этот маршрут, вы потратите <strong>{walkMinutes, plural, one {#
       минуту} other {# минуты}}</strong> на ходьбу и<strong>{bikeMinutes,
       plural, one {# минуту} other {# минуты}}</strong> на езду на велосипеде.
     title: Подробные сведения о поездке
-    tncFare: "Стоимость проезда в компаниях {companies}: <strong>{minTNCFare} — {maxTNCFare}</strong>"
+    tncFare: "Стоимость проезда в компаниях {companies}: <strong>{minTNCFare}\_— {maxTNCFare}</strong>"
     transferDiscountExplanation: Применяется скидка на пересадку в размере {transferAmount}
     transitFare: Стоимость проезда в общественном транспорте
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: Эта поездка включает гибкие маршруты. {extraMessage}
-    legMissingFareInfo: Информация о тарифах на этот маршрут отсутствует
-    missingFareTotal: Нет данных о суммарном тарифе

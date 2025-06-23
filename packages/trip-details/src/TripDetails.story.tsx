@@ -1,28 +1,17 @@
-import flatten from "flat";
 import React, { ReactElement } from "react";
 import { FormattedDate } from "react-intl";
-import {
-  ComponentStory,
-  Meta,
-  Parameters,
-  StoryContext
-} from "@storybook/react";
+import { Meta, Parameters } from "@storybook/react";
 import styled from "styled-components";
-import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/itinerary";
 // The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
 // eslint-disable-next-line import/no-named-as-default
-import TripDetails, { FareLegTable } from ".";
+import TripDetails, { FaresV2Table } from ".";
 import * as TripDetailsClasses from "./styled";
 import {
   TimeActiveDetailsProps,
   DepartureDetailsProps,
   FareDetailsProps,
-  FareTableLayout,
   TripDetailsProps
 } from "./types";
-
-import customEnglishMessages from "../__mocks__/custom-english-messages.yml";
-import customFrenchMessages from "../__mocks__/custom-french-messages.yml";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
@@ -30,12 +19,12 @@ const tncTransitTncItinerary = require("@opentripplanner/itinerary-body/src/__mo
 const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json");
 const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
 const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
-const flexItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
+const flexItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2.4-transit-itinerary.json");
 const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
 const otp2FareProducts = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/leg-fare-products.json");
-
-const flattenedEnglishMessages = flatten(customEnglishMessages);
-const flattenedFrenchMessages = flatten(customFrenchMessages);
+const multipleFareOptionsItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fares-v2-multiple-options.json");
+const faresv2ItineraryWithTransfer = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fares-v2-with-transfer.json");
+const faresv2Itinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fares-v2-fare-components.json");
 
 // Change currency code on one of the itineraries for illustration.
 // (other currency fields in the itinerary object are not used for display).
@@ -48,96 +37,6 @@ const StyledTripDetails = styled(TripDetails)`
     background-color: pink;
   }
 `;
-
-const orcaFareByLegLayout: FareTableLayout[] = [
-  {
-    cols: [
-      {
-        columnHeaderKey: "cash",
-        mediumId: "orca:cash",
-        riderCategoryId: "orca:regular"
-      },
-      {
-        columnHeaderKey: "electronic",
-        mediumId: "orca:electronic",
-        riderCategoryId: "orca:regular"
-      },
-      {
-        columnHeaderKey: "special",
-        mediumId: "orca:electronic",
-        riderCategoryId: "orca:special"
-      }
-    ],
-    headerKey: "regular"
-  },
-  {
-    cols: [
-      {
-        columnHeaderKey: "cash",
-        mediumId: "orca:cash",
-        riderCategoryId: "orca:youth"
-      },
-      {
-        columnHeaderKey: "electronic",
-        mediumId: "orca:electronic",
-        riderCategoryId: "orca:youth"
-      },
-      {
-        columnHeaderKey: "test",
-        mediumId: "invalidkey",
-        riderCategoryId: "invalidkey"
-      }
-    ],
-    headerKey: "youth"
-  },
-  {
-    headerKey: "senior",
-    cols: [
-      {
-        columnHeaderKey: "cash",
-        mediumId: "orca:cash",
-        riderCategoryId: "orca:senior"
-      },
-      {
-        columnHeaderKey: "electronic",
-        mediumId: "orca:electronic",
-        riderCategoryId: "orca:senior"
-      }
-    ]
-  }
-];
-
-const orcaDefaultFareType = {
-  headerKey: "cash-regular",
-  mediumId: "orca:cash",
-  riderCategoryId: "orca:regular"
-};
-
-const englishFareKeyMap = {
-  regular: "Transit Fare",
-  student: "Student Fare",
-  senior: "Senior Fare",
-  tram: "Tram Fare",
-  special: "Special Fare",
-  youth: "Youth Fare",
-  electronicRegular: "Orca Fare",
-  electronicYouth: "Orca Youth Fare",
-  electronicSpecial: "Orca Special Fare",
-  electronicSenior: "Orca Senior Fare"
-};
-
-const frenchFareKeyMap = {
-  regular: "Tarif en transports",
-  student: "Tarif étudiants",
-  senior: "Tarif séniors",
-  tram: "Tarif tram",
-  special: "Tarif spécial",
-  youth: "Tarif jeunes",
-  electronicRegular: "Tarif Orca",
-  electronicYouth: "Tarif Orca jeunes",
-  electronicSpecial: "Tarif Orca spécial",
-  electronicSenior: "Tarif Orca séniors"
-};
 
 const defaultCo2Config = {
   enabled: true
@@ -182,33 +81,20 @@ const CustomTimeActiveDetails = ({
  */
 function createTripDetailsTemplate(
   Component: typeof TripDetails = TripDetails
-): ComponentStory<typeof TripDetails> {
-  const TripDetailsTemplate = (
-    {
-      defaultFareType,
-      DepartureDetails,
-      FareDetails,
-      fareDetailsLayout,
-      itinerary,
-      TimeActiveDetails,
-      showApproximateMinutesActive
-    }: TripDetailsProps,
-    { globals, parameters }: StoryContext
-  ): ReactElement => {
-    const { locale } = globals;
-    const { useCustomFareKeyMap } = parameters;
-    const fareKeyNameMap = useCustomFareKeyMap
-      ? locale === "en-US"
-        ? englishFareKeyMap
-        : frenchFareKeyMap
-      : {};
+) {
+  const TripDetailsTemplate = ({
+    defaultFareType,
+    DepartureDetails,
+    FareDetails,
+    itinerary,
+    TimeActiveDetails,
+    showApproximateMinutesActive
+  }: TripDetailsProps): ReactElement => {
     return (
       <Component
         TimeActiveDetails={TimeActiveDetails}
         DepartureDetails={DepartureDetails}
         FareDetails={FareDetails}
-        fareDetailsLayout={fareDetailsLayout}
-        fareKeyNameMap={fareKeyNameMap}
         itinerary={itinerary}
         co2Config={defaultCo2Config}
         defaultFareType={defaultFareType}
@@ -226,7 +112,7 @@ function makeStory(
   args: TripDetailsProps,
   parameters?: Parameters,
   Component?: typeof TripDetails
-): ComponentStory<typeof TripDetails> {
+) {
   const BoundTripDetails = createTripDetailsTemplate(Component).bind({});
   BoundTripDetails.args = args;
   BoundTripDetails.parameters = parameters;
@@ -276,8 +162,6 @@ export const StyledItinerary = makeStory(
 );
 
 export const LegFareProductsItinerary = makeStory({
-  defaultFareType: orcaDefaultFareType,
-  fareDetailsLayout: orcaFareByLegLayout,
   itinerary: otp2FareProducts
 });
 
@@ -311,12 +195,6 @@ export const TncTransitItineraryWithCustomMessages = makeStory(
   {
     // For illustration purposes,
     // override a subset of localized strings with custom messages.
-    reactIntl: {
-      messages: {
-        "en-US": flattenedEnglishMessages,
-        fr: flattenedFrenchMessages
-      }
-    },
     useCustomFareKeyMap: true
   },
   StyledTripDetails
@@ -324,7 +202,13 @@ export const TncTransitItineraryWithCustomMessages = makeStory(
 
 export const OTP2FlexItinerary = makeStory({ itinerary: flexItinerary });
 
-export const FareLegTableStoryLegProducts = (): ReactElement => {
-  const otp1legs = otp2FareProducts.legs.map(convertGraphQLResponseToLegacy);
-  return <FareLegTable layout={orcaFareByLegLayout} legs={otp1legs} />;
+export const FaresV2TableStory = (): ReactElement => {
+  return (
+    <>
+      <FaresV2Table legs={multipleFareOptionsItinerary.legs} />
+      <FaresV2Table legs={faresv2Itinerary.legs} favoriteMediumId="3" />
+      <FaresV2Table legs={faresv2ItineraryWithTransfer.legs} />
+      <FaresV2Table legs={otp2FareProducts.legs} />
+    </>
+  );
 };

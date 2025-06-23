@@ -24,24 +24,6 @@ export interface DepartureDetailsProps {
   departureDate: Date;
 }
 
-/**
- * This is the interface used to define the layout for a particular fare table.
- * The table with be rendered with the columns defined here,
- * with each row being an individual transit leg from the itinerary.
- */
-export interface FareTableLayout {
-  cols: (FareProductSelector & {
-    columnHeaderKey: string;
-  })[]
-  headerKey: string;
-}
-/**
- * Interface containing the lgs and the layout of the fare table.
- */
-export interface FareLegTableProps {
-  layout?: FareTableLayout[];
-  legs: Leg[];
-}
 
 // Total fare amount corresponding to a fare key
 export type FareTotals = (FareProductSelector & { price: Money })[]
@@ -79,16 +61,6 @@ export interface TripDetailsProps {
    * Slot for a custom component to render the expandable section for fares.
    */
   FareDetails?: React.ElementType<FareDetailsProps>;
-  /**
-   * Column and table configuration for fare details/fare by leg table.
-   */
-  fareDetailsLayout?: FareTableLayout[];
-  /**
-   * Mapping between fare keys and human-readable names for them.
-   */
-  fareKeyNameMap?: {
-    [name: string]: string;
-  };
   /**
    * Itinerary that the user has selected to view, contains multiple legs.
    */
