@@ -1,1 +1,27 @@
-{}
+otpUi:
+  LocationField:
+    recentlySearched: Ostatnio wyszukiwane
+    resultsFound: '{results} znaleziono dla "{input}".'
+    fetchingSuggestions: Pobieranie sugestii…
+    homeLocation: Dom
+    useCurrentLocation: Użyj bieżącej lokalizacji
+    beginTypingPrompt: Zacznij pisać, aby wyszukać lokalizacje
+    currentLocationUnavailable: Bieżąca lokalizacja niedostępna
+    geocoderUnreachable: Nie można uzyskać sugestii
+    howToAccessResults: Użyj klawisza strzałki w dół, aby przeglądać listę wyników.
+      Aby wybrać wynik, użyj klawisza Enter.
+    myPlaces: Moje miejsca
+    nearby: Przystanki w pobliżu
+    noResults: Brak wyników
+    other: Inne
+    otherCount: '{count, plural, =1 {# inny punkt} other {# inne punkty}} zainteresowania'
+    stops: Przystanki
+    stations: Stacje
+    stopCount: '{count, plural, =1 {# przystanek} other {# przystanki}}'
+    stationCount: '{count, plural, =1 {# stacja} other {# stacje}}'
+    parenthesisFormat: '{main} ({detail})'
+    workLocation: Praca
+    suggestedLocationsLong: Przełącz wyświetlanie listy sugerowanych lokalizacji
+    suggestedLocations: Sugerowane lokalizacje
+    clearLocation: Wyczyść lokalizację
+    fetchingLocation: Pobieranie lokalizacji…
