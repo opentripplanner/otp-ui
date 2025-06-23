@@ -36,9 +36,9 @@ otpUi:
       slightlyRight: லேசான வலது
       uTurnLeft: இடது யு-டர்ன்
       uTurnRight: வலது யு-டர்ன்
-    stepDepart: '{தெருவில் தலை {heading}'
-    stepElevator: '{தெரு க்கு க்கு லிஃப்ட் எடுத்துக் கொள்ளுங்கள்'
-    stepFollowSigns: '{தெரு க்கு க்கு அறிகுறிகளைப் பின்பற்றவும்'
+    stepDepart: '{street} இல் தலை {heading}'
+    stepElevator: '{street}க்கு லிஃப்ட் எடுத்துக்கொள்'
+    stepFollowSigns: '{street}க்கு அறிகுறிகளைப் பின்பற்றவும்'
     stepGeneric: '{step} {street}'
     stepHeading:
       east: கிழக்கு
@@ -59,7 +59,8 @@ otpUi:
       carHail: சவாரி
       escooter: சவாரி
       walk: நடை
-    transfer: மாற்றவும் {காலம், தேர்ந்தெடுக்கப்படாதது {} பிற {, காத்திருங்கள் {duration}}}
+    transfer: மாற்றவும் {காலம், தேர்ந்தெடுக்கப்படாதது {} பிற {, காத்திருங்கள் 
+      {duration}}}
     unnamedPath: பெயரிடப்படாத பாதை
     unnamedRoad: பெயரிடப்படாத சாலை
     vehicleType:
@@ -76,7 +77,8 @@ otpUi:
     flexAdvanceNotice: ' குறைந்தது {லீட் டேச், பன்மை, ஒன்று {# நாள்} மற்ற {# நாட்கள்}}
       முன்கூட்டியே'
     flexCallNumber: '{phoneNumber} ஐ அழைக்கவும்'
-    flexPickupMessage: இந்த வழியை எடுக்க, நீங்கள் {செயல் {{action} வேண்டும்.
+    flexPickupMessage: இந்த வழியை எடுக்க, நீங்கள் 
+      {action}{advanceNotice}வேண்டும்.
     stayOnBoard: '{place} இல் போர்டில் இருங்கள்'
     travelBy: பயணம் {mode}
     travelByMode:
@@ -105,13 +107,13 @@ otpUi:
     agencyExternalLink: '{agencyName} (வெளிப்புற இணைப்பு)'
     alertsHeader: '{எச்சரிக்கை, பன்மை, = 1 {# எச்சரிக்கை} பிற {# எச்சரிக்கைகள்}}'
     arriveAt: '{place} க்கு வந்து சேருங்கள்'
-    disembarkAt: '{லெக்டெச்டினேசன் at இல் இறங்குங்கள்'
+    disembarkAt: '{legDestination}இல் இறங்குங்கள்'
     fromLocation: '{location}'
     legDetails: கால் விவரங்கள்
-    operatedBy: '{{Angencylink by ஆல் இயக்கப்படும் பணி'
+    operatedBy: '{agencyLink}ஆல் இயக்கப்படும் பணி'
     ride: சவாரி
     rideDurationAndStops: 'சவாரி {duration} {numstops, பன்மை, = 1 {} பிற { / # நிறுத்தங்கள்}}'
-    routeDescription: '{routeName} <toprefix> பெறுநர் </porrefix> {headsign}'
+    routeDescription: '{routeName}<toPrefix>இதற்கு </toPrefix>{headsign}'
     stopId: ஐடி {stopId}
     stopIdBasic: ஐடி {stopId}
     stopViewer: பார்வையாளரை நிறுத்துங்கள்
