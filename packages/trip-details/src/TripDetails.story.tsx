@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import { FormattedDate } from "react-intl";
-import { Meta, Parameters } from "@storybook/react";
+import { Meta, Parameters, StoryObj } from "@storybook/react";
 import styled from "styled-components";
 // The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
 // eslint-disable-next-line import/no-named-as-default
@@ -43,11 +43,14 @@ const defaultCo2Config = {
 };
 
 const CustomFareDetails = ({
-  transitFares
+  legs,
+  maxTNCFare,
+  minTNCFare
 }: FareDetailsProps): ReactElement => (
   <>
-    Custom details about fares (transitFares: {JSON.stringify(transitFares)}){" "}
-    (cents), can be constructed dynamically using any markup.
+    Custom details about fares (legs: {JSON.stringify(legs)}, maxTNCFare:{" "}
+    {maxTNCFare}, minTNCFare: {minTNCFare}) (cents), can be constructed
+    dynamically using any markup.
   </>
 );
 
@@ -92,13 +95,13 @@ function createTripDetailsTemplate(
   }: TripDetailsProps): ReactElement => {
     return (
       <Component
-        TimeActiveDetails={TimeActiveDetails}
+        co2Config={defaultCo2Config}
+        defaultFareType={defaultFareType}
         DepartureDetails={DepartureDetails}
         FareDetails={FareDetails}
         itinerary={itinerary}
-        co2Config={defaultCo2Config}
-        defaultFareType={defaultFareType}
         showApproximateMinutesActive={showApproximateMinutesActive}
+        TimeActiveDetails={TimeActiveDetails}
       />
     );
   };
@@ -112,7 +115,7 @@ function makeStory(
   args: TripDetailsProps,
   parameters?: Parameters,
   Component?: typeof TripDetails
-) {
+): StoryObj<typeof TripDetails> {
   const BoundTripDetails = createTripDetailsTemplate(Component).bind({});
   BoundTripDetails.args = args;
   BoundTripDetails.parameters = parameters;
@@ -120,9 +123,6 @@ function makeStory(
 }
 
 export default {
-  args: {
-    defaultFareKey: "regular"
-  },
   component: TripDetails,
   parameters: {
     date: new Date("March 10, 2021 10:00:00"),
@@ -157,12 +157,13 @@ export const StyledItinerary = makeStory(
   {
     itinerary: walkTransitWalkItinerary
   },
-  null,
+  undefined,
   StyledTripDetails
 );
 
 export const LegFareProductsItinerary = makeStory({
-  itinerary: otp2FareProducts
+  itinerary: otp2FareProducts,
+  defaultFareType: { mediumId: "electronic", riderCategoryId: "regular" }
 });
 
 // The render of this itinerary is uninteresting, but the test
@@ -183,11 +184,6 @@ export const TncTransitItinerary = makeStory(
 
 export const TncTransitItineraryWithCustomMessages = makeStory(
   {
-    defaultFareType: {
-      headerKey: "electronicRegular",
-      mediumId: "orca:electronic",
-      riderCategoryId: "orca:regular"
-    },
     DepartureDetails: CustomDepartureDetails,
     itinerary: tncTransitTncItinerary,
     TimeActiveDetails: CustomTimeActiveDetails

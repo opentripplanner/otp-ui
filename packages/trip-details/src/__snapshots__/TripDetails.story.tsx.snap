@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
       class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
@@ -9,7 +9,7 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
   </h2>
   <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -73,7 +73,7 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -162,7 +162,7 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -256,7 +256,7 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
       class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
@@ -264,7 +264,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
   </h2>
   <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -328,7 +328,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -417,7 +417,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -512,8 +512,8 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
 
 exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
 <div>
-  <table class="fare-table__Table-sc-i0o2oh-1 gFgkQX">
-    <thead class="fare-table__TableHeader-sc-i0o2oh-0 hMPTXo">
+  <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
+    <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
       <th class="main"
           scope="col"
       >
@@ -598,7 +598,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-i0o2oh-2 eLyko"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
         >
           <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
           </path>
@@ -613,7 +613,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-i0o2oh-2 eLyko"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
         >
           <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
           </path>
@@ -636,7 +636,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-i0o2oh-2 eLyko"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
         >
           <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
           </path>
@@ -651,7 +651,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-i0o2oh-2 eLyko"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
         >
           <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
           </path>
@@ -660,8 +660,8 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
       </td>
     </tr>
   </table>
-  <table class="fare-table__Table-sc-i0o2oh-1 gFgkQX">
-    <thead class="fare-table__TableHeader-sc-i0o2oh-0 hMPTXo">
+  <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
+    <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
       <th class="main"
           scope="col"
       >
@@ -735,8 +735,8 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
       </td>
     </tr>
   </table>
-  <table class="fare-table__Table-sc-i0o2oh-1 gFgkQX">
-    <thead class="fare-table__TableHeader-sc-i0o2oh-0 hMPTXo">
+  <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
+    <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
       <th class="main"
           scope="col"
       >
@@ -802,7 +802,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-i0o2oh-2 eLyko"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
         >
           <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
           </path>
@@ -825,7 +825,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-i0o2oh-2 eLyko"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
         >
           <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
           </path>
@@ -838,7 +838,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
 `;
 
 exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
       class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
@@ -846,7 +846,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
   </h2>
   <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -910,7 +910,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH fares"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -940,8 +940,8 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
               </strong>
             </summary>
             <div>
-              <table class="fare-table__Table-sc-i0o2oh-1 gFgkQX">
-                <thead class="fare-table__TableHeader-sc-i0o2oh-0 hMPTXo">
+              <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
+                <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
                   <th class="main"
                       scope="col"
                   >
@@ -1026,7 +1026,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-i0o2oh-2 eLyko"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
                     >
                       <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
                       </path>
@@ -1041,7 +1041,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-i0o2oh-2 eLyko"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
                     >
                       <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
                       </path>
@@ -1064,7 +1064,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-i0o2oh-2 eLyko"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
                     >
                       <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
                       </path>
@@ -1079,7 +1079,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-i0o2oh-2 eLyko"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
                     >
                       <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
                       </path>
@@ -1088,8 +1088,8 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                   </td>
                 </tr>
               </table>
-              <table class="fare-table__Table-sc-i0o2oh-1 gFgkQX">
-                <thead class="fare-table__TableHeader-sc-i0o2oh-0 hMPTXo">
+              <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
+                <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
                   <th class="main"
                       scope="col"
                   >
@@ -1163,8 +1163,8 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                   </td>
                 </tr>
               </table>
-              <table class="fare-table__Table-sc-i0o2oh-1 gFgkQX">
-                <thead class="fare-table__TableHeader-sc-i0o2oh-0 hMPTXo">
+              <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
+                <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
                   <th class="main"
                       scope="col"
                   >
@@ -1230,7 +1230,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-i0o2oh-2 eLyko"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
                     >
                       <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
                       </path>
@@ -1253,7 +1253,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-i0o2oh-2 eLyko"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
                     >
                       <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
                       </path>
@@ -1298,7 +1298,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -1387,7 +1387,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -1481,7 +1481,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
       class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
@@ -1489,7 +1489,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
   </h2>
   <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -1553,7 +1553,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -1642,7 +1642,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -1736,7 +1736,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
       class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
@@ -1744,7 +1744,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
   </h2>
   <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -1808,7 +1808,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -1897,7 +1897,64 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH flex-booking-info"
+    >
+      <div role="presentation"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+      >
+        <svg viewbox="0 0 512 512"
+             height="17"
+             width="17"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+        >
+          <path fill="currentColor"
+                d="M416 256s96-96 96-160c0-53-43-96-96-96s-96 43-96 96c0 29.4 20.2 65.5 42.1 96H320c-53 0-96 43-96 96s43 96 96 96h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H188.6c-6.2 9.6-12.6 18.8-19 27.2-10.7 14.2-21.3 26.9-30 36.8H416c53 0 96-43 96-96s-43-96-96-96h-96c-17.7 0-32-14.3-32-32s14.3-32 32-32h96zm0-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zM149.9 448c21.9-30.5 42.1-66.6 42.1-96 0-53-43-96-96-96S0 299 0 352c0 64 96 160 96 160s3.5-3.5 9.2-9.6c.4-.4.7-.8 1.1-1.2 3.3-3.5 7.1-7.8 11.4-12.8l.6-.6c9.4-10.8 20.7-24.6 31.6-39.8zM96 384c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"
+          >
+          </path>
+        </svg>
+      </div>
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__FlexSummary-sc-6q2ok2-12 gBOBbY">
+          This trip includes flexible routes. This is the first pickup booking info message. This is the first dropoff booking info message.
+        </span>
+      </div>
+      <div aria-hidden="true"
+           class="rah-static rah-static--height-zero "
+           style="height: 0px; overflow: hidden;"
+      >
+        <div style="display: none;">
+          <div aria-labelledby="expand-button"
+               id="mocked_id"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+          >
+            <button role="presentation"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+            >
+              <svg viewbox="0 0 512 512"
+                   height="0.92em"
+                   width="0.92em"
+                   aria-hidden="true"
+                   focusable="false"
+                   fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg"
+                   class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+              >
+                <path fill="currentColor"
+                      d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-81-337c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
+                >
+                </path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div role="group"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -1986,69 +2043,12 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
         </div>
       </div>
     </div>
-    <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
-    >
-      <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
-      >
-        <svg viewbox="0 0 512 512"
-             height="17"
-             width="17"
-             aria-hidden="true"
-             focusable="false"
-             fill="currentColor"
-             xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
-        >
-          <path fill="currentColor"
-                d="M416 256s96-96 96-160c0-53-43-96-96-96s-96 43-96 96c0 29.4 20.2 65.5 42.1 96H320c-53 0-96 43-96 96s43 96 96 96h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H188.6c-6.2 9.6-12.6 18.8-19 27.2-10.7 14.2-21.3 26.9-30 36.8H416c53 0 96-43 96-96s-43-96-96-96h-96c-17.7 0-32-14.3-32-32s14.3-32 32-32h96zm0-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zM149.9 448c21.9-30.5 42.1-66.6 42.1-96 0-53-43-96-96-96S0 299 0 352c0 64 96 160 96 160s3.5-3.5 9.2-9.6c.4-.4.7-.8 1.1-1.2 3.3-3.5 7.1-7.8 11.4-12.8l.6-.6c9.4-10.8 20.7-24.6 31.6-39.8zM96 384c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"
-          >
-          </path>
-        </svg>
-      </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__FlexSummary-sc-6q2ok2-12 gBOBbY">
-          This trip includes flexible routes. This is the first pickup booking info message. This is the first dropoff booking info message.
-        </span>
-      </div>
-      <div aria-hidden="true"
-           class="rah-static rah-static--height-zero "
-           style="height: 0px; overflow: hidden;"
-      >
-        <div style="display: none;">
-          <div aria-labelledby="expand-button"
-               id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
-          >
-            <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
-            >
-              <svg viewbox="0 0 512 512"
-                   height="0.92em"
-                   width="0.92em"
-                   aria-hidden="true"
-                   focusable="false"
-                   fill="currentColor"
-                   xmlns="http://www.w3.org/2000/svg"
-                   class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
-              >
-                <path fill="currentColor"
-                      d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-81-337c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
-                >
-                </path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
 `;
 
 exports[`TripDetails StyledItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk TripDetailsstory__StyledTripDetails-sc-1xhb9yd-0 jpZLG">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk TripDetailsstory__StyledTripDetails-sc-1xhb9yd-0 jpZLG trip-details">
   <h2 id="trip-details-header"
       class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
@@ -2056,7 +2056,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
   </h2>
   <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -2120,7 +2120,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -2209,7 +2209,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -2303,7 +2303,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
       class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
@@ -2311,7 +2311,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
   </h2>
   <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -2375,7 +2375,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH tnc-fare"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -2457,13 +2457,13 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
                 </path>
               </svg>
             </button>
-            Custom details about fares (transitFares: ) (cents), can be constructed dynamically using any markup.
+            Custom details about fares (legs: [{"rentedBike":false,"interlineWithPreviousLeg":false,"departureDelay":0,"arrivalDelay":0,"distance":643.65,"duration":144,"endTime":1684864860000,"mode":"CAR","rideHailingEstimate":{"provider":{"id":"uber"},"arrival":"PT4M","minPrice":{"currency":{"code":"USD"},"amount":17},"maxPrice":{"currency":{"code":"USD"},"amount":19}},"realTime":false,"realtimeState":null,"startTime":1684864716000,"transitLeg":false,"trip":null,"agency":null,"legGeometry":{"length":33,"points":"{lztG|pxkVrAALA?QCcD?O?EJ?pBCN??Q?e@AqAAg@?W?C?OAqCDM?WASEOAeCFS?G?QAoB?Q?oC?i@Ae@?gBAQ"},"intermediateStops":null,"route":null,"from":{"lat":45.5241494,"lon":-122.68303,"name":"128 NW 12th Ave, Portland","vertexType":"NORMAL","rentalVehicle":null,"stop":null},"to":{"lat":45.5230001,"lon":-122.6766363,"name":"West Burnside Street","vertexType":"NORMAL","rentalVehicle":null,"stop":null},"steps":[{"distance":54.68,"lat":45.5241463,"lon":-122.6831887,"relativeDirection":"DEPART","absoluteDirection":"SOUTH","stayOn":false,"streetName":"Northwest 12th Avenue","area":false,"alerts":[],"elevationProfile":[]},{"distance":79.48,"lat":45.5236547,"lon":-122.6831692,"relativeDirection":"LEFT","absoluteDirection":"EAST","stayOn":false,"streetName":"Northwest Couch Street","area":false,"alerts":[],"elevationProfile":[]},{"distance":79.25,"lat":45.5236734,"lon":-122.6821493,"relativeDirection":"RIGHT","absoluteDirection":"SOUTH","stayOn":false,"streetName":"Northwest 11th Avenue","area":false,"alerts":[],"elevationProfile":[]},{"distance":430.23,"lat":45.5229609,"lon":-122.6821228,"relativeDirection":"LEFT","absoluteDirection":"EAST","stayOn":false,"streetName":"West Burnside Street","area":false,"alerts":[],"elevationProfile":[]}]},{"rentedBike":false,"interlineWithPreviousLeg":false,"departureDelay":0,"arrivalDelay":0,"distance":0,"duration":60,"endTime":1684864920000,"mode":"WALK","rideHailingEstimate":null,"realTime":false,"realtimeState":null,"startTime":1684864860000,"transitLeg":false,"trip":null,"agency":null,"legGeometry":{"length":2,"points":"weztG~gwkVJ?"},"intermediateStops":null,"route":null,"from":{"lat":45.5230001,"lon":-122.6766363,"name":"West Burnside Street","vertexType":"NORMAL","rentalVehicle":null,"stop":null},"to":{"lat":45.522948,"lon":-122.676635,"name":"W Burnside &amp; SW 6th","vertexType":"TRANSIT","rentalVehicle":null,"stop":{"id":"U3RvcDp0cmltZXQ6Nzky","code":"792","gtfsId":"trimet:792","alerts":[]}},"steps":[]},{"rentedBike":null,"interlineWithPreviousLeg":false,"departureDelay":0,"arrivalDelay":0,"distance":1780.82,"duration":360,"endTime":1684865280000,"mode":"BUS","rideHailingEstimate":null,"realTime":false,"realtimeState":null,"startTime":1684864920000,"transitLeg":true,"trip":{"id":"VHJpcDp0cmltZXQ6MTIzNDA1MTc","gtfsId":"trimet:12340517","tripHeadsign":null},"agency":{"name":"TriMet","id":"QWdlbmN5OnRyaW1ldDpUUklNRVQ","timezone":"America/Los_Angeles","url":"https://trimet.org/","alerts":[]},"legGeometry":{"length":53,"points":"weztG~gwkV?]?C?k@AeBA}@?GA{@AiCAY?e@CiCCiD???_@?[@kBIS@}A@iC@aAFaL@yA@{AF{LDiHBkCFUA}@?iAAO?K?qE?K?_@?kA?e@@m@?aB?gB?gA?A?}A???a@?aC?iA@aC?gA?U?uD@U?iC"},"intermediateStops":[{"lat":45.523009,"lon":-122.672529,"name":"W Burnside &amp; SW 2nd","stopCode":"9526","stopId":"U3RvcDp0cmltZXQ6OTUyNg","locationType":"STOP"},{"lat":45.522847,"lon":-122.657843,"name":"E Burnside &amp; SE 8th","stopCode":"820","stopId":"U3RvcDp0cmltZXQ6ODIw","locationType":"STOP"}],"route":{"shortName":"20","longName":"Burnside/Stark","color":null,"textColor":null,"id":"Um91dGU6dHJpbWV0OjIw","type":3,"alerts":[]},"from":{"lat":45.522948,"lon":-122.676635,"name":"W Burnside &amp; SW 6th","vertexType":"TRANSIT","rentalVehicle":null,"stop":{"id":"U3RvcDp0cmltZXQ6Nzky","code":"792","gtfsId":"trimet:792","alerts":[]}},"to":{"lat":45.522823,"lon":-122.653824,"name":"E Burnside &amp; SE 12th","vertexType":"TRANSIT","rentalVehicle":null,"stop":{"id":"U3RvcDp0cmltZXQ6MTMzMjc","code":"13327","gtfsId":"trimet:13327","alerts":[]}},"steps":[]},{"rentedBike":false,"interlineWithPreviousLeg":false,"departureDelay":0,"arrivalDelay":0,"distance":0,"duration":60,"endTime":1684865340000,"mode":"WALK","rideHailingEstimate":null,"realTime":false,"realtimeState":null,"startTime":1684865280000,"transitLeg":false,"trip":null,"agency":null,"legGeometry":{"length":2,"points":"sdztGlyrkVO?"},"intermediateStops":null,"route":null,"from":{"lat":45.522823,"lon":-122.653824,"name":"E Burnside &amp; SE 12th","vertexType":"TRANSIT","rentalVehicle":null,"stop":{"id":"U3RvcDp0cmltZXQ6MTMzMjc","code":"13327","gtfsId":"trimet:13327","alerts":[]}},"to":{"lat":45.522907,"lon":-122.653824,"name":"East Burnside Street","vertexType":"NORMAL","rentalVehicle":null,"stop":null},"steps":[]},{"rentedBike":false,"interlineWithPreviousLeg":false,"departureDelay":0,"arrivalDelay":0,"distance":334.71,"duration":66,"endTime":1684865406000,"mode":"CAR","rideHailingEstimate":{"provider":{"id":"uber"},"arrival":"PT2M","minPrice":{"currency":{"code":"USD"},"amount":17},"maxPrice":{"currency":{"code":"USD"},"amount":18}},"realTime":false,"realtimeState":null,"startTime":1684865340000,"transitLeg":false,"trip":null,"agency":null,"legGeometry":{"length":17,"points":"ceztGlyrkV?I?_@U?c@?A?]?A?c@?M?O?oBAO?Q?uDAuA?A?"},"intermediateStops":null,"route":null,"from":{"lat":45.522907,"lon":-122.653824,"name":"East Burnside Street","vertexType":"NORMAL","rentalVehicle":null,"stop":null},"to":{"lat":45.525773,"lon":-122.6535042,"name":"407 NE 12th Ave, Portland","vertexType":"NORMAL","rentalVehicle":null,"stop":null},"steps":[{"distance":16.06,"lat":45.522907,"lon":-122.653824,"relativeDirection":"DEPART","absoluteDirection":"EAST","stayOn":false,"streetName":"East Burnside Street","area":false,"alerts":[],"elevationProfile":[]},{"distance":318.65,"lat":45.5229076,"lon":-122.6536179,"relativeDirection":"LEFT","absoluteDirection":"NORTH","stayOn":false,"streetName":"Northeast 12th Avenue","area":false,"alerts":[],"elevationProfile":[]}]}], maxTNCFare: 37, minTNCFare: 34) (cents), can be constructed dynamically using any markup.
           </div>
         </div>
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -2552,7 +2552,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -2646,7 +2646,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk TripDetailsstory__StyledTripDetails-sc-1xhb9yd-0 jpZLG">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk TripDetailsstory__StyledTripDetails-sc-1xhb9yd-0 jpZLG trip-details">
   <h2 id="trip-details-header"
       class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
@@ -2654,7 +2654,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
   </h2>
   <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -2744,7 +2744,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH tnc-fare"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -2810,7 +2810,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -2891,7 +2891,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -2985,7 +2985,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
 `;
 
 exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
       class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
@@ -2993,7 +2993,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
   </h2>
   <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -3057,7 +3057,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -3146,7 +3146,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -3240,7 +3240,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
       class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
@@ -3248,7 +3248,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
   </h2>
   <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -3312,7 +3312,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
@@ -3401,7 +3401,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
            class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"

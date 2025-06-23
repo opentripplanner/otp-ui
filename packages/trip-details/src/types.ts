@@ -47,16 +47,11 @@ export interface TripDetailsProps {
   /**
    * Determines which transit fare should be displayed by default, should there be multiple transit fare types.
    */
-  defaultFareType?: { headerKey: string } & FareProductSelector;
+  defaultFareType?: FareProductSelector;
   /**
    * Slot for a custom component to render the expandable section for departure.
    */
   DepartureDetails?: React.ElementType<DepartureDetailsProps>;
-  /**
-   * If this is set to true, a row will be added to the trip details displaying how
-   * many minutes in total the user will spend walking or biking.
-   */
-  displayTimeActive?: boolean;
   /**
    * Slot for a custom component to render the expandable section for fares.
    */

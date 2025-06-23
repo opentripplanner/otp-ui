@@ -6,8 +6,8 @@ import { FormattedMessage, useIntl } from "react-intl";
 import styled from "styled-components";
 import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 
-import { renderFare } from "./utils";
-import { InvisibleA11yLabel } from "./styled";
+import { renderFare } from "../utils";
+import { InvisibleA11yLabel } from "../styled";
 
 // TODO: inline this import? (@opentripplanner/core-utils/src/itinerary)
 const {

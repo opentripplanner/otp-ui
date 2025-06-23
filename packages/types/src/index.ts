@@ -818,8 +818,8 @@ export type FareProduct = {
 };
 
 export type FareProductSelector = {
-  mediumId: string;
-  riderCategoryId: string;
+  mediumId?: string;
+  riderCategoryId?: string;
 };
 
 /**
