@@ -6,6 +6,7 @@ import { FormattedMessage, useIntl } from "react-intl";
 import styled from "styled-components";
 import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 
+import { ExtendedMoney } from "@opentripplanner/core-utils/lib/itinerary";
 import { renderFare } from "../utils";
 import { InvisibleA11yLabel } from "../styled";
 
@@ -160,7 +161,9 @@ const FaresV2Table = ({
         // Calculate pre-tranfer amount either via alternate fare or fare-id matching (price.originalAmount)
         const originalAmount =
           price?.originalAmount ||
-          dependentAlternateFareProducts?.[0]?.price?.amount - price?.amount ||
+          (dependentAlternateFareProducts?.[0]?.price?.amount ||
+            (dependentAlternateFareProducts?.[0]?.price as ExtendedMoney)
+              ?.originalAmount) - price?.amount ||
           null;
 
         const newCell = (
