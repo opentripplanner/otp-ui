@@ -247,7 +247,7 @@ const OTP2TileLayerWithPopup = ({
 
 /**
  * Generates an array of MapLibreGL Source and Layer components with included popups for 
- * rendering OTP2 tile data.
+ * rendering OTP2 tile data.  
  * 
  * @param layers          A list of layers, with some minimal config, matching what is configured on the server.
  *                        This list will be used to craft the tilejson request to OTP.
