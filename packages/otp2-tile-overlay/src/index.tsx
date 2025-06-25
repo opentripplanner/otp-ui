@@ -1,6 +1,5 @@
 import EntityPopup, { StopIdAgencyMap } from "@opentripplanner/map-popup"
 import {
-  Agency,
   ConfiguredCompany,
   MapLocationActionArg,
   Station,
@@ -63,7 +62,7 @@ const OTP2TileLayerWithPopup = ({
    * A method to request the agency for a given stop ID. If this method is not passed, the agency
    * for a given stop ID will not be displayed in the popup.
    */
-  requestAgencyForStop?: (stopId: string) => Promise<Agency>
+  requestAgencyForStop?: (stopId: string) => void
   /**
    * A method fired when a stop is selected as from or to in the default popup. If this method
    * is not passed, the from/to buttons will not be shown.
@@ -281,7 +280,7 @@ const generateOTP2TileLayers = (
   stopsWhitelist?: string[],
   configCompanies?: ConfiguredCompany[],
   getEntityPrefix?: (entity: Stop | Station) => JSX.Element,
-  requestAgencyForStop?: (stopId: string) => Promise<Agency>,
+  requestAgencyForStop?: (stopId: string) => void,
   stopIdAgencyMap?: StopIdAgencyMap
 ): JSX.Element[] => {
   const fakeOtpUiLayerIndex = layers.findIndex(l=>l.type === STOPS_AND_STATIONS_TYPE)
