@@ -1,6 +1,8 @@
-import { Company, Station, Stop } from "@opentripplanner/types";
+import { Agency, Company, Station, Stop } from "@opentripplanner/types";
 import { IntlShape } from "react-intl";
 import coreUtils from "@opentripplanner/core-utils";
+
+export type StopIdAgencyMap = Record<string, Agency>;
 
 // eslint-disable-next-line import/prefer-default-export
 export function makeDefaultGetEntityName(
@@ -9,7 +11,8 @@ export function makeDefaultGetEntityName(
 ) {
   return function defaultGetEntityName(
     entity: Station | Stop,
-    configCompanies: Company[]
+    configCompanies: Company[],
+    stopIdAgencyMap?: StopIdAgencyMap
   ): string | null {
     // TODO: Stop generating this / passing it to the car string? Is it needed?
     // In English we say "Car: " instead
@@ -63,6 +66,14 @@ export function makeDefaultGetEntityName(
         },
         { name: stationName }
       );
+    } else if (
+      stopIdAgencyMap &&
+      entity.id in stopIdAgencyMap &&
+      "code" in entity
+    ) {
+      stationName = `${stationName} (${stopIdAgencyMap[entity.id].name} ${
+        entity.code
+      })`;
     }
     return stationName;
   };

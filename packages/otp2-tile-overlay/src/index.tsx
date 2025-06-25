@@ -1,5 +1,6 @@
-import EntityPopup from "@opentripplanner/map-popup"
+import EntityPopup, { StopIdAgencyMap } from "@opentripplanner/map-popup"
 import {
+  Agency,
   ConfiguredCompany,
   MapLocationActionArg,
   Station,
@@ -29,7 +30,9 @@ const OTP2TileLayerWithPopup = ({
   setLocation,
   setViewedStop,
   stopsWhitelist,
-  type
+  type,
+  stopIdAgencyMap,
+  requestAgencyForStop
 }: {
   color?: string;
   /**
@@ -57,6 +60,11 @@ const OTP2TileLayerWithPopup = ({
    */
   onMapClick?: (event: EventData) => void
   /**
+   * A method to request the agency for a given stop ID. If this method is not passed, the agency
+   * for a given stop ID will not be displayed in the popup.
+   */
+  requestAgencyForStop?: (stopId: string) => Promise<Agency>
+  /**
    * A method fired when a stop is selected as from or to in the default popup. If this method
    * is not passed, the from/to buttons will not be shown.
    */
@@ -66,6 +74,11 @@ const OTP2TileLayerWithPopup = ({
    * not passed, the stop viewer link will not be shown.
    */
   setViewedStop?: StopEventHandler
+  /**
+   * A map of stop IDs to agencies. If specified, the agency for a given stop ID will be used to
+   * display the name of the stop in the popup.
+   */
+  stopIdAgencyMap?: StopIdAgencyMap
   /**
    * A list of GTFS stop ids (with agency prepended). If specified, all stops that
    * are NOT in this list will be HIDDEN.
@@ -96,6 +109,7 @@ const OTP2TileLayerWithPopup = ({
     // See: https://github.com/opentripplanner/otp-ui/pull/472#discussion_r1023124055
     if (sourceLayer === "stops" || sourceLayer === "stations") {
       setClickedEntity(synthesizedEntity)
+      requestAgencyForStop && requestAgencyForStop(synthesizedEntity.id)
     }
     if (
       sourceLayer === "rentalVehicles" ||
@@ -235,6 +249,7 @@ const OTP2TileLayerWithPopup = ({
             configCompanies={configCompanies}
             entity={{ ...clickedEntity, id: clickedEntity?.id || clickedEntity?.gtfsId }}
             getEntityPrefix={getEntityPrefix}
+            stopIdAgencyMap={stopIdAgencyMap}
             setLocation={setLocation ? (location) => { setClickedEntity(null); setLocation(location) } : null}
             setViewedStop={setViewedStop ? (stop) => { setClickedEntity(null);setViewedStop(stop) } : null}
           />
@@ -265,7 +280,9 @@ const generateOTP2TileLayers = (
   setViewedStop?: (stop: Stop) => void,
   stopsWhitelist?: string[],
   configCompanies?: ConfiguredCompany[],
-  getEntityPrefix?: (entity: Stop | Station) => JSX.Element
+  getEntityPrefix?: (entity: Stop | Station) => JSX.Element,
+  requestAgencyForStop?: (stopId: string) => Promise<Agency>,
+  stopIdAgencyMap?: StopIdAgencyMap
 ): JSX.Element[] => {
   const fakeOtpUiLayerIndex = layers.findIndex(l=>l.type === STOPS_AND_STATIONS_TYPE)
   if (fakeOtpUiLayerIndex > -1) {
@@ -301,6 +318,8 @@ const generateOTP2TileLayers = (
           stopsWhitelist={stopsWhitelist}
           type={type}
           visible={initiallyVisible}
+          requestAgencyForStop={requestAgencyForStop}
+          stopIdAgencyMap={stopIdAgencyMap}
         />
       )
     })
