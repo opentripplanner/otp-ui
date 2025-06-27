@@ -1,0 +1,1361 @@
+{
+  "accessibilityScore": null,
+  "duration": 2427,
+  "endTime": 1750431654000,
+  "legs": [
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 569.11,
+      "dropOffBookingInfo": null,
+      "dropoffType": "SCHEDULED",
+      "duration": 513.0,
+      "endTime": 1750429740000,
+      "fareProducts": [],
+      "from": {
+        "lat": 45.5317552,
+        "lon": -122.6858247,
+        "name": "1211 NW 14th Ave, Portland",
+        "rentalVehicle": null,
+        "stop": null,
+        "vertexType": "NORMAL"
+      },
+      "headsign": null,
+      "id": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 74,
+        "points": "o|{tGj_ykVp@A@SD?B?CcD?O?UCcD?S?SCcD?Q@U@?H?HYHA@ABA@C@C@C@E?E?E@C@CACAC?E?C?E@E@A@C?C?E?G?MBABG@AJ@@@F@DAFCD?D?B?@OD?D?@?B?F?F??S|@A`@AD?DEDEBG@EBGBO@UAkBF?@??B@R"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
+      "route": null,
+      "startTime": 1750429227000,
+      "steps": [
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 27.39,
+          "elevationProfile": [],
+          "lat": 45.5317611,
+          "lon": -122.6854957,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "Northwest 14th Avenue"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 7.67,
+          "elevationProfile": [],
+          "lat": 45.5315148,
+          "lon": -122.6854868,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 4.98,
+          "elevationProfile": [],
+          "lat": 45.5315036,
+          "lon": -122.6853896,
+          "relativeDirection": "RIGHT",
+          "stayOn": true,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 238.08,
+          "elevationProfile": [],
+          "lat": 45.5314588,
+          "lon": -122.6853898,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "Northwest Northrup Street"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 6.74,
+          "elevationProfile": [],
+          "lat": 45.5315035,
+          "lon": -122.682335,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "SOUTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 100.52,
+          "elevationProfile": [],
+          "lat": 45.5314429,
+          "lon": -122.6823349,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "Tanner Springs Park Trail"
+        },
+        {
+          "absoluteDirection": "SOUTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 7.95,
+          "elevationProfile": [],
+          "lat": 45.5309509,
+          "lon": -122.6815825,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "Tanner Springs Park"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 27.72,
+          "elevationProfile": [],
+          "lat": 45.5309273,
+          "lon": -122.6815085,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 56.79,
+          "elevationProfile": [],
+          "lat": 45.5307538,
+          "lon": -122.681401,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "Northwest 10th Avenue"
+        },
+        {
+          "absoluteDirection": "SOUTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 75.67,
+          "elevationProfile": [],
+          "lat": 45.5302432,
+          "lon": -122.6813836,
+          "relativeDirection": "SLIGHTLY_LEFT",
+          "stayOn": false,
+          "streetName": "Northwest Lovejoy Street"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 6.14,
+          "elevationProfile": [],
+          "lat": 45.530118,
+          "lon": -122.680482,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": false,
+          "distance": 2.22,
+          "elevationProfile": [],
+          "lat": 45.5300628,
+          "lon": -122.6804813,
+          "relativeDirection": "RIGHT",
+          "stayOn": true,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": true,
+          "distance": 7.23,
+          "elevationProfile": [],
+          "lat": 45.5300626,
+          "lon": -122.6805098,
+          "relativeDirection": "CONTINUE",
+          "stayOn": false,
+          "streetName": "Northwest Lovejoy & 9th"
+        }
+      ],
+      "to": {
+        "lat": 45.530059,
+        "lon": -122.680499,
+        "name": "NW 9th & Lovejoy",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "13606",
+          "gtfsId": "4:13606",
+          "id": "U3RvcDo0OjEzNjA2",
+          "lat": 45.530059,
+          "lon": -122.680499
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": false,
+      "trip": null
+    },
+    {
+      "accessibilityScore": null,
+      "agency": {
+        "alerts": [],
+        "gtfsId": "4:PSC",
+        "id": "4:PSC",
+        "name": "Portland Streetcar",
+        "timezone": "America/Los_Angeles",
+        "url": "https://portlandstreetcar.org/"
+      },
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 2289.73,
+      "dropOffBookingInfo": null,
+      "dropoffType": "SCHEDULED",
+      "duration": 600.0,
+      "endTime": 1750430340000,
+      "fareProducts": [
+        {
+          "id": "a95a3a3e-22a2-3980-b5ff-54a29b72a0bf",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:STREETCAR_HC_SINGLE_RIDE",
+            "medium": { "id": "4:2", "name": "HOP Fastpass" },
+            "name": "Portland Streetcar Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "4:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.0,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "2e7293a9-4724-3ca7-bb7d-d538a6fea0bd",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:STREETCAR_HC_SINGLE_RIDE",
+            "medium": { "id": "4:3", "name": "Open Payment" },
+            "name": "Portland Streetcar Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "4:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.0,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "55cde465-4fdd-3aaf-bca9-2f98ac853249",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:STREETCAR_HC_SINGLE_RIDE",
+            "medium": { "id": "4:4", "name": "Virtual HOP Fastpass" },
+            "name": "Portland Streetcar Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "4:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.0,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "45f8b070-2bb6-39d7-af4d-7bcaf979cad6",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:STREETCAR_YOUTH_SINGLE_RIDE",
+            "medium": { "id": "4:4", "name": "Virtual HOP Fastpass" },
+            "name": "Portland Streetcar Youth 2 1/2 Hours",
+            "riderCategory": { "id": "4:YOUTH", "name": "Youth" },
+            "price": {
+              "amount": 1.0,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "7c882867-39b1-37c7-a3d4-e497934d7046",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:STREETCAR_ADULT_SINGLE_RIDE",
+            "medium": { "id": "4:0", "name": "Cash" },
+            "name": "Portland Streetcar Adult 2 1/2 Hours",
+            "riderCategory": { "id": "4:ADULT", "name": "Adult" },
+            "price": {
+              "amount": 2.0,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "26aea9d9-be6f-3b3c-b697-56308222dbe7",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:STREETCAR_YOUTH_SINGLE_RIDE",
+            "medium": { "id": "4:0", "name": "Cash" },
+            "name": "Portland Streetcar Youth 2 1/2 Hours",
+            "riderCategory": { "id": "4:YOUTH", "name": "Youth" },
+            "price": {
+              "amount": 1.0,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "b3d979f1-5450-3e1a-9893-a8e5fb33e51e",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:STREETCAR_ADULT_SINGLE_RIDE",
+            "medium": { "id": "4:2", "name": "HOP Fastpass" },
+            "name": "Portland Streetcar Adult 2 1/2 Hours",
+            "riderCategory": { "id": "4:ADULT", "name": "Adult" },
+            "price": {
+              "amount": 2.0,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "96eb14cf-84ae-3d69-b1ac-3eb6fcef4dd2",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:STREETCAR_YOUTH_SINGLE_RIDE",
+            "medium": { "id": "4:3", "name": "Open Payment" },
+            "name": "Portland Streetcar Youth 2 1/2 Hours",
+            "riderCategory": { "id": "4:YOUTH", "name": "Youth" },
+            "price": {
+              "amount": 1.0,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "117b734e-9c9a-33a3-af05-1c97300286c5",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:STREETCAR_ADULT_SINGLE_RIDE",
+            "medium": { "id": "4:3", "name": "Open Payment" },
+            "name": "Portland Streetcar Adult 2 1/2 Hours",
+            "riderCategory": { "id": "4:ADULT", "name": "Adult" },
+            "price": {
+              "amount": 2.0,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "2ea38985-a076-3012-a525-34d74ee91d07",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:STREETCAR_ADULT_SINGLE_RIDE",
+            "medium": { "id": "4:4", "name": "Virtual HOP Fastpass" },
+            "name": "Portland Streetcar Adult 2 1/2 Hours",
+            "riderCategory": { "id": "4:ADULT", "name": "Adult" },
+            "price": {
+              "amount": 2.0,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "c3f6c318-446d-391c-a2e0-6757cdfa2111",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:STREETCAR_YOUTH_SINGLE_RIDE",
+            "medium": { "id": "4:2", "name": "HOP Fastpass" },
+            "name": "Portland Streetcar Youth 2 1/2 Hours",
+            "riderCategory": { "id": "4:YOUTH", "name": "Youth" },
+            "price": {
+              "amount": 1.0,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "3882401b-ca13-3c56-a285-82d9d39ffaa3",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:STREETCAR_HC_SINGLE_RIDE",
+            "medium": { "id": "4:0", "name": "Cash" },
+            "name": "Portland Streetcar Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "4:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.0,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        }
+      ],
+      "from": {
+        "lat": 45.530059,
+        "lon": -122.680499,
+        "name": "NW 9th & Lovejoy",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "13606",
+          "gtfsId": "4:13606",
+          "id": "U3RvcDo0OjEzNjA2",
+          "lat": 45.530059,
+          "lon": -122.680499
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": "PSU via OMSI",
+      "id": "rO0ABXdOABhTQ0hFRFVMRURfVFJBTlNJVF9MRUdfVjMACjQ6MTQzNTYwNzUACjIwMjUtMDYtMjAAAAAAAAAABQAHNDoxMzYwNgAHNDoxMzYxMQAA",
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": [
+        {
+          "lat": 45.534433,
+          "locationType": "STOP",
+          "lon": -122.669221,
+          "name": "N Weidler & Ross",
+          "stopCode": "13607",
+          "stopId": "U3RvcDo0OjEzNjA3"
+        },
+        {
+          "lat": 45.534426,
+          "locationType": "STOP",
+          "lon": -122.663835,
+          "name": "NE Weidler & 2nd (Streetcar)",
+          "stopCode": "13608",
+          "stopId": "U3RvcDo0OjEzNjA4"
+        },
+        {
+          "lat": 45.53441,
+          "locationType": "STOP",
+          "lon": -122.660223,
+          "name": "NE Weidler & Grand",
+          "stopCode": "13609",
+          "stopId": "U3RvcDo0OjEzNjA5"
+        },
+        {
+          "lat": 45.533339,
+          "locationType": "STOP",
+          "lon": -122.658607,
+          "name": "NE 7th & Halsey",
+          "stopCode": "13610",
+          "stopId": "U3RvcDo0OjEzNjEw"
+        }
+      ],
+      "legGeometry": {
+        "length": 129,
+        "points": "er{tGd`xkV?EAU?c@?g@A[?M?U@I?ODk@HmAF{@JwAFkA?I@G?IAMAEAECGCECGQUEIEG_@y@eA}BeEaJm@qAm@qAwDgIWi@?GASk@sAM]KYo@sAUi@GKeAwBGMCICGAKCOCY?KAE???E?[?{@?q@?W@a@?cAAUAW?yA?wA?e@@sB?w@?m@BW?aC?_@?kC???E?W?U?eC?KAa@?_@?O?sA?k@?[?Y?q@?kA?[?W@K?G?}@???O?gB?a@?_A?eA?I?C?WN?JAL?X?L?T?T?P@JFBBj@???B?R?j@@DCDElA?r@@LAN?n@AF?p@?R?`B@HFDBj@?"
+      },
+      "mode": "TRAM",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": "SCHEDULED",
+      "rentedBike": null,
+      "rideHailingEstimate": null,
+      "route": {
+        "alerts": [],
+        "color": "D91965",
+        "gtfsId": "4:194",
+        "id": "4:194",
+        "longName": "Portland Streetcar - A Loop",
+        "shortName": "A",
+        "textColor": "FFFFFF",
+        "type": 0
+      },
+      "startTime": 1750429740000,
+      "steps": [],
+      "to": {
+        "lat": 45.530714,
+        "lon": -122.658623,
+        "name": "NE 7th & Holladay",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "13611",
+          "gtfsId": "4:13611",
+          "id": "U3RvcDo0OjEzNjEx",
+          "lat": 45.530714,
+          "lon": -122.658623
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": true,
+      "trip": {
+        "arrivalStoptime": {
+          "stop": { "gtfsId": "4:13606", "id": "U3RvcDo0OjEzNjA2" },
+          "stopPosition": 29
+        },
+        "departureStoptime": {
+          "stop": { "gtfsId": "4:13606", "id": "U3RvcDo0OjEzNjA2" },
+          "stopPosition": 1
+        },
+        "gtfsId": "4:14356075",
+        "id": "VHJpcDo0OjE0MzU2MDc1"
+      }
+    },
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 126.3,
+      "dropOffBookingInfo": null,
+      "dropoffType": "SCHEDULED",
+      "duration": 106.0,
+      "endTime": 1750430446000,
+      "fareProducts": [],
+      "from": {
+        "lat": 45.530714,
+        "lon": -122.658623,
+        "name": "NE 7th & Holladay",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "13611",
+          "gtfsId": "4:13611",
+          "id": "U3RvcDo0OjEzNjEx",
+          "lat": 45.530714,
+          "lon": -122.658623
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": null,
+      "id": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 12,
+        "points": "ov{tGjwskVV?B??I?M~A?DCF?D?F??I?iA"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
+      "route": null,
+      "startTime": 1750430340000,
+      "steps": [
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": true,
+          "distance": 13.0,
+          "elevationProfile": [],
+          "lat": 45.5308037,
+          "lon": -122.6586126,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "Northeast 7th & Holladay"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 11.53,
+          "elevationProfile": [],
+          "lat": 45.5306868,
+          "lon": -122.658614,
+          "relativeDirection": "CONTINUE",
+          "stayOn": false,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 73.28,
+          "elevationProfile": [],
+          "lat": 45.5306657,
+          "lon": -122.6584952,
+          "relativeDirection": "RIGHT",
+          "stayOn": true,
+          "streetName": "sidewalk"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": true,
+          "distance": 28.5,
+          "elevationProfile": [],
+          "lat": 45.5300456,
+          "lon": -122.6584223,
+          "relativeDirection": "CONTINUE",
+          "stayOn": false,
+          "streetName": "Northeast 7th Avenue"
+        }
+      ],
+      "to": {
+        "lat": 45.530055,
+        "lon": -122.65774,
+        "name": "NE 7th Ave MAX Station",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "8342",
+          "gtfsId": "4:8342",
+          "id": "U3RvcDo0OjgzNDI",
+          "lat": 45.530055,
+          "lon": -122.65774
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": false,
+      "trip": null
+    },
+    {
+      "accessibilityScore": null,
+      "agency": {
+        "alerts": [],
+        "gtfsId": "4:TRIMET",
+        "id": "4:TRIMET",
+        "name": "TriMet",
+        "timezone": "America/Los_Angeles",
+        "url": "https://trimet.org/"
+      },
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 3112.79,
+      "dropOffBookingInfo": null,
+      "dropoffType": "SCHEDULED",
+      "duration": 285.0,
+      "endTime": 1750431095000,
+      "fareProducts": [
+        {
+          "id": "261b5772-cf92-3d98-ab04-6817bde5143c",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:TRIMET_YOUTH_SINGLE_RIDE",
+            "medium": { "id": "4:0", "name": "Cash" },
+            "name": "TriMet Youth 2 1/2 Hours",
+            "riderCategory": { "id": "4:YOUTH", "name": "Youth" },
+            "price": {
+              "amount": 1.4,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "adbe87cc-fc63-3f5c-b573-502022febcc6",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:TRIMET_YOUTH_SINGLE_RIDE",
+            "medium": { "id": "4:2", "name": "HOP Fastpass" },
+            "name": "TriMet Youth 2 1/2 Hours",
+            "riderCategory": { "id": "4:YOUTH", "name": "Youth" },
+            "price": {
+              "amount": 1.4,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "81073738-a8ea-365c-ac7b-86d133d47c48",
+          "product": {
+            "__typename": "DependentFareProduct",
+            "id": "4:STREETCAR_TRIMET_HC_TRANSFER",
+            "medium": { "id": "4:0", "name": "Cash" },
+            "name": "Honored Citizen transfer from Portland Streetcar to TriMet",
+            "riderCategory": {
+              "id": "4:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "dependencies": [
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" }
+            ],
+            "price": { "amount": 0.4, "currency": { "code": "USD" } }
+          }
+        },
+        {
+          "id": "20bd4182-27a4-3edf-b3fd-ab0f3a22c715",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:TRIMET_YOUTH_SINGLE_RIDE",
+            "medium": { "id": "4:3", "name": "Open Payment" },
+            "name": "TriMet Youth 2 1/2 Hours",
+            "riderCategory": { "id": "4:YOUTH", "name": "Youth" },
+            "price": {
+              "amount": 1.4,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "8f13b680-d362-3b12-a8ff-4d376c433937",
+          "product": {
+            "__typename": "DependentFareProduct",
+            "id": "4:STREETCAR_TRIMET_HC_TRANSFER",
+            "medium": { "id": "4:3", "name": "Open Payment" },
+            "name": "Honored Citizen transfer from Portland Streetcar to TriMet",
+            "riderCategory": {
+              "id": "4:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "dependencies": [
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" }
+            ],
+            "price": { "amount": 0.4, "currency": { "code": "USD" } }
+          }
+        },
+        {
+          "id": "f8f53a1e-766b-37b9-a22a-e9ddec695b31",
+          "product": {
+            "__typename": "DependentFareProduct",
+            "id": "4:STREETCAR_TRIMET_ADULT_TRANSFER",
+            "medium": { "id": "4:4", "name": "Virtual HOP Fastpass" },
+            "name": "Adult transfer from Portland Streetcar to TriMet",
+            "riderCategory": { "id": "4:ADULT", "name": "Adult" },
+            "dependencies": [
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" }
+            ],
+            "price": { "amount": 0.8, "currency": { "code": "USD" } }
+          }
+        },
+        {
+          "id": "16aab818-e617-33b8-af9b-5e3956a2ddc5",
+          "product": {
+            "__typename": "DependentFareProduct",
+            "id": "4:STREETCAR_TRIMET_YOUTH_TRANSFER",
+            "medium": { "id": "4:3", "name": "Open Payment" },
+            "name": "Youth transfer from Portland Streetcar to TriMet",
+            "riderCategory": { "id": "4:YOUTH", "name": "Youth" },
+            "dependencies": [
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" }
+            ],
+            "price": { "amount": 0.4, "currency": { "code": "USD" } }
+          }
+        },
+        {
+          "id": "0507f137-00cf-327e-a5a9-f7b3f487e121",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:TRIMET_ADULT_SINGLE_RIDE",
+            "medium": { "id": "4:3", "name": "Open Payment" },
+            "name": "TriMet Adult 2 1/2 Hours",
+            "riderCategory": { "id": "4:ADULT", "name": "Adult" },
+            "price": {
+              "amount": 2.8,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "0cbc2dc0-c489-3950-b6df-0cfe14f1098a",
+          "product": {
+            "__typename": "DependentFareProduct",
+            "id": "4:STREETCAR_TRIMET_YOUTH_TRANSFER",
+            "medium": { "id": "4:0", "name": "Cash" },
+            "name": "Youth transfer from Portland Streetcar to TriMet",
+            "riderCategory": { "id": "4:YOUTH", "name": "Youth" },
+            "dependencies": [
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" }
+            ],
+            "price": { "amount": 0.4, "currency": { "code": "USD" } }
+          }
+        },
+        {
+          "id": "17c19a19-9b90-351c-b301-15f723b17c8a",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:TRIMET_ADULT_SINGLE_RIDE",
+            "medium": { "id": "4:0", "name": "Cash" },
+            "name": "TriMet Adult 2 1/2 Hours",
+            "riderCategory": { "id": "4:ADULT", "name": "Adult" },
+            "price": {
+              "amount": 2.8,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "83893834-4238-3a7e-a69d-a57bf23e3882",
+          "product": {
+            "__typename": "DependentFareProduct",
+            "id": "4:STREETCAR_TRIMET_ADULT_TRANSFER",
+            "medium": { "id": "4:2", "name": "HOP Fastpass" },
+            "name": "Adult transfer from Portland Streetcar to TriMet",
+            "riderCategory": { "id": "4:ADULT", "name": "Adult" },
+            "dependencies": [
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" }
+            ],
+            "price": { "amount": 0.8, "currency": { "code": "USD" } }
+          }
+        },
+        {
+          "id": "0a1a0cf5-f96a-3406-b135-f0a3274745d9",
+          "product": {
+            "__typename": "DependentFareProduct",
+            "id": "4:STREETCAR_TRIMET_ADULT_TRANSFER",
+            "medium": { "id": "4:0", "name": "Cash" },
+            "name": "Adult transfer from Portland Streetcar to TriMet",
+            "riderCategory": { "id": "4:ADULT", "name": "Adult" },
+            "dependencies": [
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" }
+            ],
+            "price": { "amount": 0.8, "currency": { "code": "USD" } }
+          }
+        },
+        {
+          "id": "90f4eead-29b4-3776-bd66-8554bcc12d91",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:TRIMET_HC_SINGLE_RIDE",
+            "medium": { "id": "4:4", "name": "Virtual HOP Fastpass" },
+            "name": "TriMet Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "4:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "15a0f1f9-515f-32f9-9244-4a6639bf11f4",
+          "product": {
+            "__typename": "DependentFareProduct",
+            "id": "4:STREETCAR_TRIMET_YOUTH_TRANSFER",
+            "medium": { "id": "4:2", "name": "HOP Fastpass" },
+            "name": "Youth transfer from Portland Streetcar to TriMet",
+            "riderCategory": { "id": "4:YOUTH", "name": "Youth" },
+            "dependencies": [
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" }
+            ],
+            "price": { "amount": 0.4, "currency": { "code": "USD" } }
+          }
+        },
+        {
+          "id": "93ba8d6b-505e-3993-9752-dea84c4ad184",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:TRIMET_ADULT_SINGLE_RIDE",
+            "medium": { "id": "4:2", "name": "HOP Fastpass" },
+            "name": "TriMet Adult 2 1/2 Hours",
+            "riderCategory": { "id": "4:ADULT", "name": "Adult" },
+            "price": {
+              "amount": 2.8,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "29271997-451f-3903-87d7-9ff510240492",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:TRIMET_YOUTH_SINGLE_RIDE",
+            "medium": { "id": "4:4", "name": "Virtual HOP Fastpass" },
+            "name": "TriMet Youth 2 1/2 Hours",
+            "riderCategory": { "id": "4:YOUTH", "name": "Youth" },
+            "price": {
+              "amount": 1.4,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "16a8d701-b003-36a7-ab03-dca24d1a348a",
+          "product": {
+            "__typename": "DependentFareProduct",
+            "id": "4:STREETCAR_TRIMET_HC_TRANSFER",
+            "medium": { "id": "4:4", "name": "Virtual HOP Fastpass" },
+            "name": "Honored Citizen transfer from Portland Streetcar to TriMet",
+            "riderCategory": {
+              "id": "4:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "dependencies": [
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" }
+            ],
+            "price": { "amount": 0.4, "currency": { "code": "USD" } }
+          }
+        },
+        {
+          "id": "95e445a4-1795-3a09-91a8-43b5a00ca327",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:TRIMET_HC_SINGLE_RIDE",
+            "medium": { "id": "4:2", "name": "HOP Fastpass" },
+            "name": "TriMet Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "4:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "5588f3cf-56bb-3ed7-afbf-5d04109c0a26",
+          "product": {
+            "__typename": "DependentFareProduct",
+            "id": "4:STREETCAR_TRIMET_ADULT_TRANSFER",
+            "medium": { "id": "4:3", "name": "Open Payment" },
+            "name": "Adult transfer from Portland Streetcar to TriMet",
+            "riderCategory": { "id": "4:ADULT", "name": "Adult" },
+            "dependencies": [
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" }
+            ],
+            "price": { "amount": 0.8, "currency": { "code": "USD" } }
+          }
+        },
+        {
+          "id": "ed417ad1-3d0a-3742-95a3-e0b73e6b0368",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:TRIMET_HC_SINGLE_RIDE",
+            "medium": { "id": "4:0", "name": "Cash" },
+            "name": "TriMet Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "4:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "f5e79212-7d8e-356a-a454-81be3e7131e2",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:TRIMET_ADULT_SINGLE_RIDE",
+            "medium": { "id": "4:4", "name": "Virtual HOP Fastpass" },
+            "name": "TriMet Adult 2 1/2 Hours",
+            "riderCategory": { "id": "4:ADULT", "name": "Adult" },
+            "price": {
+              "amount": 2.8,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "491d1df4-45a0-3e2c-9ad9-339911edfc82",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "4:TRIMET_HC_SINGLE_RIDE",
+            "medium": { "id": "4:3", "name": "Open Payment" },
+            "name": "TriMet Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "4:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": { "code": "USD", "digits": 2 }
+            }
+          }
+        },
+        {
+          "id": "f17200ca-7c1f-3a68-99d6-173eba1dbdf1",
+          "product": {
+            "__typename": "DependentFareProduct",
+            "id": "4:STREETCAR_TRIMET_HC_TRANSFER",
+            "medium": { "id": "4:2", "name": "HOP Fastpass" },
+            "name": "Honored Citizen transfer from Portland Streetcar to TriMet",
+            "riderCategory": {
+              "id": "4:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "dependencies": [
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" }
+            ],
+            "price": { "amount": 0.4, "currency": { "code": "USD" } }
+          }
+        },
+        {
+          "id": "2363fb8a-2312-3a69-b726-066d129ff514",
+          "product": {
+            "__typename": "DependentFareProduct",
+            "id": "4:STREETCAR_TRIMET_YOUTH_TRANSFER",
+            "medium": { "id": "4:4", "name": "Virtual HOP Fastpass" },
+            "name": "Youth transfer from Portland Streetcar to TriMet",
+            "riderCategory": { "id": "4:YOUTH", "name": "Youth" },
+            "dependencies": [
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_YOUTH_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_ADULT_SINGLE_RIDE" },
+              { "id": "4:STREETCAR_HC_SINGLE_RIDE" }
+            ],
+            "price": { "amount": 0.4, "currency": { "code": "USD" } }
+          }
+        }
+      ],
+      "from": {
+        "lat": 45.530055,
+        "lon": -122.65774,
+        "name": "NE 7th Ave MAX Station",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "8342",
+          "gtfsId": "4:8342",
+          "id": "U3RvcDo0OjgzNDI",
+          "lat": 45.530055,
+          "lon": -122.65774
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": "Portland Airport",
+      "id": "rO0ABXdMABhTQ0hFRFVMRURfVFJBTlNJVF9MRUdfVjMACjQ6MTQzNTEzMjIACjIwMjUtMDYtMjAAAAAXAAAAGQAGNDo4MzQyAAY0OjgzNDQAAA==",
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": [
+        {
+          "lat": 45.530067,
+          "locationType": "STOP",
+          "lon": -122.653638,
+          "name": "Lloyd Center/NE 11th Ave MAX Station",
+          "stopCode": "8343",
+          "stopId": "U3RvcDo0OjgzNDM"
+        }
+      ],
+      "legGeometry": {
+        "length": 127,
+        "points": "}q{tGzqskV?U@eB?_A?g@?]@}C?}C?Y?]?[@aD???I?IA{@?kB?[?C?e@?A?I?g@AgB?q@@y@@e@?Y@s@D_B@y@?W@_@?u@A]A}@YkPEeCSyLUsMEwCEsBQsIE{BAs@Cs@CSAQAQAUCSCUCOCQAOEMCOCQGYI[EMEOGSIUGMGOGOIOGMGMIMIMMSOSOQGIIIKKKKMMIIs@k@uBcB{@q@y@s@OOMKGGMMGIQSGIGKMQKSKSKSGOIQEOEMK]GQEQMw@Ig@CYCOAUAQASAQAS?O?Q?O?_@?O@O@_@B]Dm@Fm@jCeRzAuKjAaIb@cD"
+      },
+      "mode": "TRAM",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": "SCHEDULED",
+      "rentedBike": null,
+      "rideHailingEstimate": null,
+      "route": {
+        "alerts": [],
+        "color": "C41F3E",
+        "gtfsId": "4:90",
+        "id": "4:90",
+        "longName": "MAX Red Line",
+        "shortName": null,
+        "textColor": "FFFFFF",
+        "type": 0
+      },
+      "startTime": 1750430810000,
+      "steps": [],
+      "to": {
+        "lat": 45.532772,
+        "lon": -122.620708,
+        "name": "Hollywood/NE 42nd Ave MAX Station",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "8344",
+          "gtfsId": "4:8344",
+          "id": "U3RvcDo0OjgzNDQ",
+          "lat": 45.532772,
+          "lon": -122.620708
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": true,
+      "trip": {
+        "arrivalStoptime": {
+          "stop": { "gtfsId": "4:10579", "id": "U3RvcDo0OjEwNTc5" },
+          "stopPosition": 35
+        },
+        "departureStoptime": {
+          "stop": { "gtfsId": "4:9838", "id": "U3RvcDo0Ojk4Mzg" },
+          "stopPosition": 2
+        },
+        "gtfsId": "4:14351322",
+        "id": "VHJpcDo0OjE0MzUxMzIy"
+      }
+    },
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 608.55,
+      "dropOffBookingInfo": null,
+      "dropoffType": "SCHEDULED",
+      "duration": 559.0,
+      "endTime": 1750431654000,
+      "fareProducts": [],
+      "from": {
+        "lat": 45.532772,
+        "lon": -122.620708,
+        "name": "Hollywood/NE 42nd Ave MAX Station",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "8344",
+          "gtfsId": "4:8344",
+          "id": "U3RvcDo0OjgzNDQ",
+          "lat": 45.532772,
+          "lon": -122.620708
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": null,
+      "id": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 34,
+        "points": "kc|tGxllkVNoA@CJu@CABMy@AMdAUGKj@m@SE?C?i@L?{@KGQK?A?Q@O?wA?m@@kA?[?uA@u@?_B@yCAE?Uc@?O?mA?U?"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
+      "route": null,
+      "startTime": 1750431095000,
+      "steps": [
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": true,
+          "distance": 32.09,
+          "elevationProfile": [],
+          "lat": 45.5328661,
+          "lon": -122.6210809,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "Hollywood/Northeast 42nd Avenue"
+        },
+        {
+          "absoluteDirection": "SOUTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 2.23,
+          "elevationProfile": [],
+          "lat": 45.5327868,
+          "lon": -122.6206847,
+          "relativeDirection": "SLIGHTLY_RIGHT",
+          "stayOn": false,
+          "streetName": "Hollywood/NE 42nd Ave MAX Station"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 22.17,
+          "elevationProfile": [],
+          "lat": 45.5327739,
+          "lon": -122.6206628,
+          "relativeDirection": "SLIGHTLY_LEFT",
+          "stayOn": false,
+          "streetName": "steps"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 39.98,
+          "elevationProfile": [],
+          "lat": 45.5327133,
+          "lon": -122.6203917,
+          "relativeDirection": "SLIGHTLY_LEFT",
+          "stayOn": false,
+          "streetName": "Hollywood/Northeast 42nd Avenue"
+        },
+        {
+          "absoluteDirection": "WEST",
+          "alerts": [],
+          "area": false,
+          "distance": 427.6,
+          "elevationProfile": [],
+          "lat": 45.5330012,
+          "lon": -122.6203086,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "NORTH",
+          "alerts": [],
+          "area": false,
+          "distance": 84.51,
+          "elevationProfile": [],
+          "lat": 45.5338536,
+          "lon": -122.616947,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "Northeast 45th Avenue"
+        }
+      ],
+      "to": {
+        "lat": 45.5346137,
+        "lon": -122.616918,
+        "name": "1616 NE 45th Avenue, Portland",
+        "rentalVehicle": null,
+        "stop": null,
+        "vertexType": "NORMAL"
+      },
+      "transitLeg": false,
+      "trip": null
+    }
+  ],
+  "startTime": 1750429227000,
+  "transfers": 1,
+  "waitingTime": 364,
+  "walkTime": 1178
+}
