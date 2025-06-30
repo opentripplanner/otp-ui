@@ -95,7 +95,8 @@ export default function Fares({
               id="otpUi.TripDetails.transitFareEntry"
               values={{
                 name:
-                  fareKeyNameMap?.[defaultFareType.headerKey] ||
+                  (defaultFareType.headerKey &&
+                    fareKeyNameMap?.[defaultFareType.headerKey]) ||
                   fareNameFallback,
                 strong: boldText,
                 value: renderFare(
@@ -125,7 +126,8 @@ export default function Fares({
                   key={Object.values(fareType).join("-")}
                   values={{
                     name:
-                      fareKeyNameMap?.[defaultFareType.headerKey] ||
+                      (defaultFareType.headerKey &&
+                        fareKeyNameMap?.[defaultFareType.headerKey]) ||
                       fareNameFallback,
                     strong: boldText,
                     value: renderFare(
