@@ -50,7 +50,7 @@ type IdNamePair = { id: string; name: string };
 
 // Removes duplicates
 const categoryReducer = (acc: IdNamePair[], cur: IdNamePair) => {
-  if (!acc.some(m => m?.id === cur?.id)) {
+  if (!acc.some(m => descope(m?.id) === descope(cur?.id))) {
     acc.push(cur);
   }
   return acc;
