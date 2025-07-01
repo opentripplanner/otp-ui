@@ -55,8 +55,9 @@ export interface FareDetailsProps {
 export interface FareConfig {
   /**
    * Determines which transit fare should be displayed by default, should there be multiple transit fare types.
+   * Header key is used only in the old fare display.
    */
-  defaultFareType?: { headerKey: string } & FareProductSelector;
+  defaultFareType?: { headerKey?: string } & FareProductSelector;
   /**
    * Column and table configuration for fare details/fare by leg table.
    */
