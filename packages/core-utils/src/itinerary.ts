@@ -641,13 +641,18 @@ export function getLegCost(
     .filter(({ product }) => {
       // riderCategory and medium can be specifically defined as null to handle
       // generic GTFS based fares from OTP when there is no fare model
+
+      // Remove (optional) agency scoping
+      const productRiderCategoryId =
+        descope(product?.riderCategory?.id) ||
+        product?.riderCategory?.id ||
+        null;
+
+      const productMediaId =
+        descope(product?.medium?.id) || product?.medium?.id || null;
       return (
-        // Remove (optional) agency scoping
-        (descope(product?.riderCategory?.id) ||
-          product?.riderCategory?.id ||
-          null) === riderCategoryId &&
-        (descope(product?.medium?.id) || product?.medium?.id || null) ===
-          mediumId
+        productRiderCategoryId === riderCategoryId &&
+        productMediaId === mediumId
       );
     })
     .map(fare => {
@@ -665,7 +670,7 @@ export function getLegCost(
   // Return the cheapest, but include other matches as well
   const cheapestRelevantFareProduct = relevantFareProducts?.[0];
 
-  // TODO: return entire fare product here instead of dumbing it down?
+  // TODO: return one object here instead of dumbing it down?
   return {
     alternateFareProducts: relevantFareProducts.splice(1).map(fp => fp.product),
     price: cheapestRelevantFareProduct?.product?.price,
@@ -787,7 +792,7 @@ export const getLegRouteLongName = (
  * This is happens with Seattle area streetcars and ferries.
  */
 export const getLegRouteName = (
-  leg: Pick<Leg, "route" | "routeLongName" | "routeShortName" | "mode">
+  leg: Pick<Leg, "route" | "routeLongName" | "routeShortName">
 ): string => {
   return getLegRouteShortName(leg) || getLegRouteLongName(leg);
 };
