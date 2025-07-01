@@ -34,7 +34,6 @@ export interface FareDetailsProps {
   minTNCFare: number;
 }
 
-
 export interface TripDetailsProps {
   /**
    * Used for additional styling with styled components for example.
