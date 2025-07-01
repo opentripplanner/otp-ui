@@ -67,6 +67,7 @@ export function getRouteLayerLayout(textField: string): SymbolLayout {
   return {
     "icon-image": iconImage,
     "icon-optional": false,
+    "icon-size": 0.65,
     "icon-allow-overlap": true,
     "icon-rotation-alignment": "viewport",
     "icon-text-fit-padding": [17, 17.5, 17, 17.5],
