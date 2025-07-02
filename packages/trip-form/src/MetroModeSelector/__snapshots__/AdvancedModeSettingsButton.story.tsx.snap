@@ -10,7 +10,7 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
       <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 gkZqBg advanced-submode-mode-button"
            id="transit"
       >
-        <input aria-label="Transit"
+        <input aria-label="Transit (Subsettings expanded)"
                id="metro-submode-selector-mode-transit"
                type="checkbox"
                checked
