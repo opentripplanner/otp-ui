@@ -13,12 +13,10 @@
   "dependencies": {
     "@opentripplanner/core-utils": "workspace:*",
     "@styled-icons/fa-solid": "catalog:",
-    "flat": "catalog:",
     "react-animate-height": "catalog:"
   },
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*",
-    "@types/flat": "catalog:"
+    "@opentripplanner/types": "workspace:*"
   },
   "peerDependencies": {
     "react": "catalog:",
