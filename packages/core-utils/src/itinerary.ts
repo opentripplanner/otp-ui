@@ -668,7 +668,7 @@ export function getLegCost(
     .sort((a, b) => a.product?.price?.amount - b.product?.price?.amount);
 
   // Return the cheapest, but include other matches as well
-  const cheapestRelevantFareProduct = relevantFareProducts?.[0];
+  const cheapestRelevantFareProduct = relevantFareProducts[0];
 
   // TODO: return one object here instead of dumbing it down?
   return {
