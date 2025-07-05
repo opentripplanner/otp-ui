@@ -6,7 +6,6 @@ import { FormattedMessage, useIntl } from "react-intl";
 import styled from "styled-components";
 import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 
-import { ExtendedMoney } from "@opentripplanner/core-utils/lib/itinerary";
 import { renderFare } from "../utils";
 import { InvisibleA11yLabel } from "../styled";
 
@@ -144,7 +143,7 @@ const FaresV2Table = ({
         const {
           alternateFareProducts,
           isDependent,
-          price,
+          appliedFareProduct,
           productUseId
         } = getLegCost(
           leg,
@@ -152,6 +151,8 @@ const FaresV2Table = ({
           descope(rider.id) || null,
           Array.from(productUseIds)
         );
+        const legPrice = appliedFareProduct?.legPrice;
+
         productUseIds.add(productUseId);
 
         // Only consider alternateFareProducts if current product is dependent
@@ -160,11 +161,9 @@ const FaresV2Table = ({
 
         // Calculate pre-tranfer amount either via alternate fare or fare-id matching (price.originalAmount)
         const originalAmount =
-          price?.originalAmount ||
-          (dependentAlternateFareProducts?.[0]?.price?.amount ||
-            (dependentAlternateFareProducts?.[0]?.price as ExtendedMoney)
-              ?.originalAmount) - price?.amount ||
-          null;
+          dependentAlternateFareProducts?.[0]?.price.amount -
+            legPrice?.amount ||
+          appliedFareProduct?.price.amount - legPrice?.amount;
 
         const newCell = (
           <>
@@ -182,7 +181,7 @@ const FaresV2Table = ({
               </th>
             )}
             <td
-              style={{ textAlign: price ? "right" : "center" }}
+              style={{ textAlign: legPrice ? "right" : "center" }}
               title={
                 !Number.isNaN(originalAmount) &&
                 originalAmount > 0 &&
@@ -195,7 +194,7 @@ const FaresV2Table = ({
                   },
                   {
                     transferAmount: intl.formatNumber(originalAmount, {
-                      currency: price?.currency?.code,
+                      currency: legPrice?.currency?.code,
                       currencyDisplay: "narrowSymbol",
                       style: "currency"
                     })
@@ -206,8 +205,8 @@ const FaresV2Table = ({
               {!Number.isNaN(originalAmount) &&
                 originalAmount > 0 &&
                 index > 0 && <TransferIcon size={16} />}
-              {price
-                ? renderFare(price?.currency?.code, price?.amount)
+              {legPrice
+                ? renderFare(legPrice?.currency?.code, legPrice?.amount)
                 : FailDash}
             </td>
           </>

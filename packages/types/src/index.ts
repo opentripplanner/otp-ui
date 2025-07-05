@@ -400,6 +400,11 @@ type TemporaryTNCPriceType = {
   amount: number;
 };
 
+export type Currency = {
+  code: string;
+  digits: number;
+};
+
 /**
  * Describes the cost of an itinerary leg.
  */
@@ -815,6 +820,13 @@ export type FareProduct = {
     id: string;
     name: string;
   };
+};
+
+/**
+ * This fare product is designed to represent the fare product applied to a leg.
+ */
+export type AppliedFareProduct = FareProduct & {
+  legPrice: Money;
 };
 
 export type FareProductSelector = {

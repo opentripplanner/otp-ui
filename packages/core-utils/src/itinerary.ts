@@ -1,10 +1,11 @@
 import polyline from "@mapbox/polyline";
 import {
+  AppliedFareProduct,
   Company,
   Config,
+  Currency,
   ElevationProfile,
   ElevationProfileComponent,
-  FareProduct,
   FlexBookingInfo,
   ItineraryOnlyLegsRequired,
   LatLngArray,
@@ -617,6 +618,11 @@ export const descope = (item: string): string => item?.split(":")?.[1];
 
 export type ExtendedMoney = Money & { originalAmount?: number };
 
+export const zeroDollars = (currency: Currency): Money => ({
+  amount: 0,
+  currency
+});
+
 /**
  * Extracts useful data from the fare products on a leg, such as the leg cost and transfer info.
  * @param leg Leg with fare products (must have used getLegsWithFares)
@@ -630,13 +636,12 @@ export function getLegCost(
   riderCategoryId: string | null,
   seenFareIds?: string[]
 ): {
-  price?: ExtendedMoney;
+  appliedFareProduct?: AppliedFareProduct;
   productUseId?: string;
-  alternateFareProducts?: FareProduct[];
+  alternateFareProducts?: AppliedFareProduct[];
+  price?: Money;
   isDependent?: boolean;
 } {
-  if (!leg.fareProducts) return { price: undefined };
-
   const relevantFareProducts = leg.fareProducts
     .filter(({ product }) => {
       // riderCategory and medium can be specifically defined as null to handle
@@ -656,16 +661,17 @@ export function getLegCost(
       );
     })
     .map(fare => {
-      const clonedFare = structuredClone(fare);
-      // If we've seen the fare ID already, it's a free transfer
-      if (seenFareIds?.indexOf(fare.id) > -1) {
-        (clonedFare.product.price as ExtendedMoney).originalAmount =
-          fare.product.price.amount;
-        clonedFare.product.price.amount = 0;
-      }
-      return clonedFare;
+      const alreadySeen = seenFareIds?.indexOf(fare.id) > -1;
+      const currency = fare.product.price.currency;
+      return {
+        id: fare.id,
+        product: {
+          ...fare.product,
+          legPrice: alreadySeen ? zeroDollars(currency) : fare.product.price
+        } as AppliedFareProduct
+      };
     })
-    .sort((a, b) => a.product?.price?.amount - b.product?.price?.amount);
+    .sort((a, b) => a.product?.legPrice?.amount - b.product?.legPrice?.amount);
 
   // Return the cheapest, but include other matches as well
   const cheapestRelevantFareProduct = relevantFareProducts[0];
@@ -673,7 +679,8 @@ export function getLegCost(
   // TODO: return one object here instead of dumbing it down?
   return {
     alternateFareProducts: relevantFareProducts.splice(1).map(fp => fp.product),
-    price: cheapestRelevantFareProduct?.product?.price,
+    price: cheapestRelevantFareProduct?.product.legPrice,
+    appliedFareProduct: relevantFareProducts[0]?.product,
     productUseId: cheapestRelevantFareProduct?.id,
     isDependent:
       // eslint-disable-next-line no-underscore-dangle
@@ -686,6 +693,7 @@ export function getLegCost(
  * @param legs Itinerary legs with fare products (must have used getLegsWithFares)
  * @param category Rider category (youth, regular, senior)
  * @param container Fare container (cash, electronic)
+ * @param seenFareIds List of fare product IDs that have already been seen on prev legs.
  * @returns Money object for the total itinerary cost.
  */
 export function getItineraryCost(
@@ -698,13 +706,16 @@ export function getItineraryCost(
     .filter(leg => leg.fareProducts?.length > 0)
     // Get the leg cost object of each leg
     .map(leg => getLegCost(leg, mediumId, riderCategoryId))
-    .filter(cost => cost.price !== undefined)
+    .filter(cost => cost.appliedFareProduct?.legPrice !== undefined)
     // Filter out duplicate use IDs
     // One fare product can be used on multiple legs,
     // and we don't want to count it more than once.
     .reduce<{ productUseId: string; price: Money }[]>((prev, cur) => {
       if (!prev.some(p => p.productUseId === cur.productUseId)) {
-        prev.push({ productUseId: cur.productUseId, price: cur.price });
+        prev.push({
+          productUseId: cur.productUseId,
+          price: cur.appliedFareProduct?.legPrice
+        });
       }
       return prev;
     }, [])
