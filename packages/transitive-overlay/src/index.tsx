@@ -154,17 +154,18 @@ type MapImage = {
 
 const loadImages = (map: MapRef, images: MapImage[]) => {
   images.forEach(img => {
-    map
-      .loadImage(img.url)
-      .then(response => {
-        if (!map.hasImage(img.id)) {
+    if (!map.hasImage(img.id)) {
+      // Only load if the image hasn't already been added
+      map
+        .loadImage(img.url)
+        .then(response => {
           map.addImage(img.id, response.data, img.options);
-        }
-      })
-      .catch(error => {
-        // eslint-disable-next-line no-console
-        console.error(`Error loading image ${img.id}:`, error);
-      });
+        })
+        .catch(error => {
+          // eslint-disable-next-line no-console
+          console.error(`Error loading image ${img.id}:`, error);
+        });
+    }
   });
 };
 
