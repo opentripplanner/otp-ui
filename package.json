@@ -46,7 +46,6 @@
     "babel-plugin-styled-components": "^1.10.0",
     "concurrently": "^8.2.2",
     "core-js": "2",
-    "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "^4.3.0",
@@ -98,8 +97,8 @@
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "build:cjs": "lerna exec --parallel -- babel --extensions '.js,.ts,.tsx,.jsx,.snap' --ignore **/*.story.js,**/*.story.ts,**/*.story.d.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,**/__unpublished__/**,**/*.snap  --ignore **/__tests__/** -D --no-copy-ignored --root-mode upward --source-maps true src -d lib",
-    "build:esm": "lerna exec --parallel -- cross-env BABEL_ENV=esm babel --extensions '.js,.ts,.tsx,.jsx,.snap' --ignore **/*.story.js,**/*.story.ts,**/*.story.d.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,**/__unpublished__/**,**/*.snap --ignore **/__tests__/** -D --no-copy-ignored --root-mode upward --source-maps true src -d esm",
+    "build:cjs": "lerna exec --parallel -- swc -C module.type=commonjs --extensions '.js,.ts,.tsx,.jsx,.snap' --ignore **/*.story.js,**/*.story.ts,**/*.story.d.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,**/__unpublished__/**,**/*.snap  --ignore **/__tests__/** -D --source-maps true src -d lib --config-file ../../.swcrc",
+    "build:esm": "lerna exec --parallel -- swc --extensions '.js,.ts,.tsx,.jsx,.snap' --ignore **/*.story.js,**/*.story.ts,**/*.story.d.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,**/__unpublished__/**,**/*.snap --ignore **/__tests__/** -D --source-maps true src -d esm --config-file ../../.swcrc",
     "check:i18n-all": "node packages/scripts/lib/run-validate-i18n.js packages/**/src packages/**/i18n",
     "check:i18n-en-fr": "node packages/scripts/lib/run-validate-i18n.js packages/**/src packages/**/i18n/en-US.yml packages/**/i18n/fr.yml",
     "clean": "git clean -Xdf",
