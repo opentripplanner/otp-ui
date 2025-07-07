@@ -46,6 +46,7 @@ export function TripDetails({
           id="otpUi.TripDetails.title"
         />
       </S.TripDetailsHeader>
+
       <S.TripDetailsBody>
         <DepartureDate
           itinerary={itinerary}
