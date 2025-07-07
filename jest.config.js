@@ -29,7 +29,7 @@ module.exports = {
   },
   testPathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/((esm)|(lib))/"],
   transform: {
-    "\\.[jt]sx?$": "babel-jest",
+    "\\.[jt]sx?$": "@swc/jest",
     "\\.ya?ml$": "yaml-jest",
     "node_modules/chroma-js/.+\\.js$": "<rootDir>/transform-esm-modules.js"
   },
