@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import EndpointsOverlay from "@opentripplanner/endpoints-overlay";
 import React from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import { injectIntl } from "react-intl";
 
 import { withMap } from "../../../.storybook/base-map-wrapper";

@@ -1,7 +1,7 @@
 import { UserLocationAndType } from "@opentripplanner/types";
 import React from "react";
-import { action } from "@storybook/addon-actions";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { action } from "storybook/actions";
+import { ComponentMeta, ComponentStory } from "@storybook/react-webpack5";
 import { Cat } from "@styled-icons/fa-solid/Cat";
 import { Dog } from "@styled-icons/fa-solid/Dog";
 

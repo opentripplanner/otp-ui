@@ -5,10 +5,9 @@ import itineraryBodyHandlers from "../packages/itinerary-body/src/__mocks__/hand
 import geocoderHandlers from "../packages/geocoder/src/test-fixtures/handlers";
 import tileLayerHandlers from '../packages/otp2-tile-overlay/src/mocks/handlers'
 import baseMapHandlers from '../packages/base-map/src/mocks/handlers';
-import parameters from './previewParameters'
 
 import { reactIntl } from './react-intl.ts';
-import { Preview } from "@storybook/react";
+import { Preview } from "@storybook/react-webpack5";
 import { mockDateDecorator } from "storybook-mock-date-decorator";
 
 // Only install worker when running in browser
@@ -26,7 +25,12 @@ if (typeof global.process === "undefined") {
 const preview: Preview = {
   decorators: [mockDateDecorator],
 
-  parameters,
+  parameters: {
+    reactIntl,
+    docs: {
+      codePanel: true
+    }
+  },
 
   tags: ["autodocs"],
   initialGlobals: {

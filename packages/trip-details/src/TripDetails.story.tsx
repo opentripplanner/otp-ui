@@ -1,7 +1,12 @@
 import flatten from "flat";
 import React, { ReactElement } from "react";
 import { FormattedDate } from "react-intl";
-import { Meta, Parameters, StoryContext, StoryObj } from "@storybook/react";
+import {
+  Meta,
+  Parameters,
+  StoryContext,
+  StoryObj
+} from "@storybook/react-webpack5";
 import styled from "styled-components";
 import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/itinerary";
 // The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408

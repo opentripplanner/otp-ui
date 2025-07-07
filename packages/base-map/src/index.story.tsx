@@ -7,8 +7,8 @@ import {
   ScaleControl,
   useMap
 } from "react-map-gl";
-import { action } from "@storybook/addon-actions";
-import { ComponentStory } from "@storybook/react";
+import { action } from "storybook/actions";
+import { ComponentStory } from "@storybook/react-webpack5";
 
 import AllVehiclesOverlay from "../__mocks__/AllVehicles";
 import ContextMenuDemo from "../__mocks__/ContextMenuDemo";

@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { Meta } from "@storybook/react";
+import { Meta } from "@storybook/react-webpack5";
 import { ExclamationTriangle } from "@styled-icons/bootstrap/ExclamationTriangle";
 import Alert from "../alert/Alert";
 import red from "../colors/red";

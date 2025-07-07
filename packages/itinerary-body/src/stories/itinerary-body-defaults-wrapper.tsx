@@ -3,7 +3,7 @@
 import { TriMetLegIcon } from "@opentripplanner/icons";
 import { Leg } from "@opentripplanner/types";
 import React, { Component, ReactElement } from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 
 import ItineraryBody from "..";
 import DefaultLineColumnContent from "../defaults/line-column-content";

@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import { IntlProvider } from "react-intl";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 
 import FromToLocationPicker from ".";
 
