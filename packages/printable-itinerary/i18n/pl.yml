@@ -1,1 +1,17 @@
-{}
+otpUi:
+  PrintableItinerary:
+    TncLeg:
+      estimatedTravelTime: >-
+        Szacowany czas podróży: <strong>{duration}</strong> (nie uwzględnia
+        natężenia ruchu)
+      estimatedWaitTime: "Szacowany czas oczekiwania na odbiór: <strong>{duration}</strong>"
+      header: <strong>Zabierz {company}</strong> do <strong>{place}</strong>
+    TransitLeg:
+      alight: >-
+        Wysiądź na <strong>{place}</strong> ({stopId}) o <strong>{time, time,
+        short}</strong>
+      board: >-
+        Wejdź na pokład w <strong>{place}</strong> ({stopId}) o <strong>{time,
+        time, short}</strong>
+      continuesAs: Kontynuuj jako {routeDescription}
+    depart: <strong>Wyjazd</strong> z <strong>{place}</strong>

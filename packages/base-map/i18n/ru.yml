@@ -4,6 +4,9 @@ otpUi:
       MacHelpText: Используйте комбинацию ⌘ + прокрутка, чтобы изменить масштаб карты
       MobileHelpText: Перемещение карты выполняется с помощью двух пальцев
       WindowsHelpText: Используйте комбинацию Ctrl + прокрутка, чтобы изменить масштаб карты
+    GeolocateControl:
+      FindMyLocation: Показать моё местоположение
+      LocationNotAvailable: Местоположение недоступно
     NavigationControl:
       ResetBearing: Сбросить азимут на север
       ZoomIn: Увеличить масштаб

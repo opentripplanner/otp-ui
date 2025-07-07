@@ -4,6 +4,9 @@ otpUi:
       MacHelpText: ⌘ + 스크롤을 사용하여 지도를 확대 또는 축소
       MobileHelpText: 두 손가락을 사용하여 지도 이동
       WindowsHelpText: 스크롤을 사용하여 지도를 확대 또는 축소
+    GeolocateControl:
+      FindMyLocation: 내 위치 찾기
+      LocationNotAvailable: 위치 이용 불가
     NavigationControl:
       ResetBearing: 북쪽 방향 재설정
       ZoomIn: 확대
