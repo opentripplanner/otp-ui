@@ -1,4 +1,4 @@
-import { SingleGeocoderResponse } from "@opentripplanner/geocoder/lib/geocoders/types";
+import { SingleGeocoderResponse } from "@opentripplanner/geocoder";
 import { Location, Stop, UserLocation, UserPosition } from "@opentripplanner/types";
 import React, { ComponentType, ReactNode } from "react";
 // eslint-disable-next-line prettier/prettier
