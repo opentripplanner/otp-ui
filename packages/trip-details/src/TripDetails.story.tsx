@@ -8,7 +8,7 @@ import {
   StoryObj
 } from "@storybook/react-webpack5";
 import styled from "styled-components";
-import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
 // The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
 // eslint-disable-next-line import/no-named-as-default
 import TripDetails, { FareLegTable } from ".";
@@ -33,6 +33,8 @@ const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-
 const flexItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
 const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
 const otp2FareProducts = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/leg-fare-products.json");
+
+const { convertGraphQLResponseToLegacy } = coreUtils.itinerary;
 
 const flattenedEnglishMessages = flatten(customEnglishMessages);
 const flattenedFrenchMessages = flatten(customFrenchMessages);
