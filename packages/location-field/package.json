@@ -15,10 +15,9 @@
     "@opentripplanner/humanize-distance": "workspace:*",
     "@opentripplanner/location-icon": "workspace:*",
     "@styled-icons/fa-solid": "catalog:",
-    "throttle-debounce": "^2.1.0"
+    "@tanstack/react-pacer": "^0.8.0"
   },
   "devDependencies": {
-    "@types/throttle-debounce": "^2.1.0",
     "@opentripplanner/types": "workspace:*"
   },
   "peerDependencies": {
