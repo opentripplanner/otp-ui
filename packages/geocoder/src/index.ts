@@ -15,7 +15,7 @@ import OTPGeocoder from "./geocoders/otp";
 
 // Prettier does not support typescript annotation
 // eslint-disable-next-line prettier/prettier
-import type { AutocompleteQuery, GeocoderConfig, ReverseQuery, SearchQuery } from "./geocoders/types"
+import type { AutocompleteQuery, GeocoderConfig, ReverseQuery, SearchQuery, SingleGeocoderResponse } from "./geocoders/types"
 import OfflineGeocoder from "./geocoders/offline";
 
 // Create a memoized getter to avoid recreating new geocoders each time.
@@ -48,5 +48,6 @@ export type {
   AutocompleteQuery,
   GeocoderConfig,
   ReverseQuery,
-  SearchQuery
+  SearchQuery,
+  SingleGeocoderResponse
 };
