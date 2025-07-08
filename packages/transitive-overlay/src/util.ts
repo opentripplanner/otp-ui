@@ -7,14 +7,7 @@ import destination from "@turf/destination";
 import bearing from "@turf/bearing";
 import distance from "@turf/distance";
 
-import {
-  getLegBounds,
-  getLegRouteShortName,
-  isAccessMode,
-  isFlex,
-  isRideshareLeg,
-  isTransit
-} from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
 import { getPlaceName } from "@opentripplanner/itinerary-body";
 import {
   Company,
@@ -26,6 +19,15 @@ import {
   TransitiveStop
 } from "@opentripplanner/types";
 import { IntlShape } from "react-intl";
+
+const {
+  getLegBounds,
+  getLegRouteShortName,
+  isAccessMode,
+  isFlex,
+  isRideshareLeg,
+  isTransit
+} = coreUtils.itinerary;
 
 const CAR_PARK_ITIN_PREFIX = "itin_car_";
 

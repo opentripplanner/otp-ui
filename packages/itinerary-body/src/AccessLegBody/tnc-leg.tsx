@@ -2,7 +2,6 @@ import coreUtils from "@opentripplanner/core-utils";
 import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
-import { getCompanyForNetwork } from "@opentripplanner/core-utils/lib/itinerary";
 
 import { Duration } from "../defaults";
 
@@ -12,6 +11,7 @@ import { defaultMessages, parseOTP2Minute } from "../util";
 import AccessLegSummary from "./access-leg-summary";
 
 const { ensureAtLeastOneMinute } = coreUtils.time;
+const { getCompanyForNetwork } = coreUtils.itinerary;
 
 interface Props {
   config: Config;

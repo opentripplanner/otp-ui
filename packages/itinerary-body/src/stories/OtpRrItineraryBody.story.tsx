@@ -1,4 +1,4 @@
-import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
 import { FareProductSelector, Itinerary } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
 
@@ -37,6 +37,8 @@ const otp2ScooterItinerary = require("../__mocks__/itineraries/otp2-scooter.json
 const flexItinerary = require("../__mocks__/itineraries/flex-itinerary.json");
 const otp24Itinerary = require("../__mocks__/itineraries/otp2.4-transit-itinerary.json");
 const transferLegItinerary = require("../__mocks__/itineraries/otp2-transfer-leg.json");
+
+const { convertGraphQLResponseToLegacy } = coreUtils.itinerary;
 
 function withLegacyLegs(itinerary) {
   return {
