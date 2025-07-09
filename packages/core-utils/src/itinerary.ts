@@ -4,6 +4,7 @@ import {
   Config,
   ElevationProfile,
   ElevationProfileComponent,
+  FareProduct,
   FlexBookingInfo,
   ItineraryOnlyLegsRequired,
   LatLngArray,
@@ -608,6 +609,15 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
 }
 
 /**
+ * Removes the OTP standard scope (":")
+ * @param item String to descope
+ * @returns    descoped string
+ */
+export const descope = (item: string): string => item?.split(":")?.[1];
+
+export type ExtendedMoney = Money & { originalAmount?: number };
+
+/**
  * Extracts useful data from the fare products on a leg, such as the leg cost and transfer info.
  * @param leg Leg with fare products (must have used getLegsWithFares)
  * @param category Rider category
@@ -617,35 +627,57 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
 export function getLegCost(
   leg: Leg,
   mediumId: string | null,
-  riderCategoryId: string | null
+  riderCategoryId: string | null,
+  seenFareIds?: string[]
 ): {
-  price?: Money;
-  transferAmount?: Money | undefined;
+  price?: ExtendedMoney;
   productUseId?: string;
+  alternateFareProducts?: FareProduct[];
+  isDependent?: boolean;
 } {
   if (!leg.fareProducts) return { price: undefined };
-  const relevantFareProducts = leg.fareProducts.filter(({ product }) => {
-    // riderCategory and medium can be specifically defined as null to handle
-    // generic GTFS based fares from OTP when there is no fare model
-    return (
-      (product.riderCategory === null ? null : product.riderCategory.id) ===
-        riderCategoryId &&
-      (product.medium === null ? null : product.medium.id) === mediumId
-    );
-  });
 
-  // Custom fare models return "rideCost", generic GTFS fares return "regular"
-  const totalCostProduct = relevantFareProducts.find(
-    fp => fp.product.name === "rideCost" || fp.product.name === "regular"
-  );
-  const transferFareProduct = relevantFareProducts.find(
-    fp => fp.product.name === "transfer"
-  );
+  const relevantFareProducts = leg.fareProducts
+    .filter(({ product }) => {
+      // riderCategory and medium can be specifically defined as null to handle
+      // generic GTFS based fares from OTP when there is no fare model
 
+      // Remove (optional) agency scoping
+      const productRiderCategoryId =
+        descope(product?.riderCategory?.id) ||
+        product?.riderCategory?.id ||
+        null;
+
+      const productMediaId =
+        descope(product?.medium?.id) || product?.medium?.id || null;
+      return (
+        productRiderCategoryId === riderCategoryId &&
+        productMediaId === mediumId
+      );
+    })
+    .map(fare => {
+      const clonedFare = structuredClone(fare);
+      // If we've seen the fare ID already, it's a free transfer
+      if (seenFareIds?.indexOf(fare.id) > -1) {
+        (clonedFare.product.price as ExtendedMoney).originalAmount =
+          fare.product.price.amount;
+        clonedFare.product.price.amount = 0;
+      }
+      return clonedFare;
+    })
+    .sort((a, b) => a.product?.price?.amount - b.product?.price?.amount);
+
+  // Return the cheapest, but include other matches as well
+  const cheapestRelevantFareProduct = relevantFareProducts[0];
+
+  // TODO: return one object here instead of dumbing it down?
   return {
-    price: totalCostProduct?.product.price,
-    transferAmount: transferFareProduct?.product.price,
-    productUseId: totalCostProduct?.id
+    alternateFareProducts: relevantFareProducts.splice(1).map(fp => fp.product),
+    price: cheapestRelevantFareProduct?.product?.price,
+    productUseId: cheapestRelevantFareProduct?.id,
+    isDependent:
+      // eslint-disable-next-line no-underscore-dangle
+      cheapestRelevantFareProduct?.product.__typename === "DependentFareProduct"
   };
 }
 

@@ -1,12 +1,5 @@
 otpUi:
   TripDetails:
-    FareTable:
-      cash: Tiền mặt
-      electronic: Điện tử
-      regular: Người lớn
-      senior: Người lớn tuổi
-      special: Đặc biệt
-      youth: Thiếu niên
     co2: "CO₂ thải ra: <strong>{co2}</strong>"
     co2description: >-
       Nồng độ CO₂ được tính bằng cách nhân khoảng cách của mỗi chặng của một
@@ -16,9 +9,11 @@ otpUi:
       Khởi hành <strong>{departureDate, date, long}</strong> lúc
       <strong>{departureDate, time, short}</strong>
     hideDetail: Ẩn chi tiết
+    legMissingFareInfo: Không có thông tin giá vé cho chân này
     minutesActive: >-
       Thời gian hoạt động: <strong>{approximatePrefix, select, true {~} other
       {}}{minutes} phút</strong>
+    missingFareTotal: Không có sẵn tổng giá vé
     showDetail: Hiển thị chi tiết
     timeActiveDescription: >
       Nếu thực hiện chuyến đi này, quý vị sẽ dành <strong>{walkMinutes}
@@ -30,5 +25,3 @@ otpUi:
     transitFare: Giá vé xe công cộng
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: Chuyến đi này bao gồm các tuyến đường linh hoạt. {extraMessage}
-    legMissingFareInfo: Không có thông tin giá vé cho chân này
-    missingFareTotal: Không có sẵn tổng giá vé

@@ -88,6 +88,7 @@ export const TripDetails = styled.div`
   margin-bottom: 15px;
   margin-top: 16px;
   padding: 10px 16px;
+  overflow-x: scroll;
 `;
 
 export const TripDetailsBody = styled.div``;
