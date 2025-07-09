@@ -9,6 +9,7 @@ import baseMapHandlers from '../packages/base-map/src/mocks/handlers';
 import { reactIntl } from './react-intl.ts';
 import { Preview } from "@storybook/react-webpack5";
 import { mockDateDecorator } from "storybook-mock-date-decorator";
+import parameters from "./previewParameters";
 
 // Only install worker when running in browser
 if (typeof global.process === "undefined") {
@@ -25,13 +26,7 @@ if (typeof global.process === "undefined") {
 const preview: Preview = {
   decorators: [mockDateDecorator],
 
-  parameters: {
-    reactIntl,
-    docs: {
-      codePanel: true
-    }
-  },
-
+  parameters,
   tags: ["autodocs"],
   initialGlobals: {
     locale: reactIntl.defaultLocale,
