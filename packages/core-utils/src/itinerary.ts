@@ -636,11 +636,11 @@ export function getLegCost(
   riderCategoryId: string | null,
   seenFareIds?: string[]
 ): {
-  appliedFareProduct?: AppliedFareProduct;
-  productUseId?: string;
   alternateFareProducts?: AppliedFareProduct[];
-  price?: Money;
+  appliedFareProduct?: AppliedFareProduct;
   isDependent?: boolean;
+  price?: Money;
+  productUseId?: string;
 } {
   const relevantFareProducts = leg.fareProducts
     .filter(({ product }) => {
@@ -679,12 +679,13 @@ export function getLegCost(
   // TODO: return one object here instead of dumbing it down?
   return {
     alternateFareProducts: relevantFareProducts.splice(1).map(fp => fp.product),
-    price: cheapestRelevantFareProduct?.product.legPrice,
     appliedFareProduct: relevantFareProducts[0]?.product,
-    productUseId: cheapestRelevantFareProduct?.id,
     isDependent:
       // eslint-disable-next-line no-underscore-dangle
-      cheapestRelevantFareProduct?.product.__typename === "DependentFareProduct"
+      cheapestRelevantFareProduct?.product.__typename ===
+      "DependentFareProduct",
+    price: cheapestRelevantFareProduct?.product.legPrice,
+    productUseId: cheapestRelevantFareProduct?.id
   };
 }
 
