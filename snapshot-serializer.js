@@ -1,9 +1,9 @@
 // The jest-serializer-html package is available as a dependency of the test-runner
-const jestSerializerHtml = require("jest-serializer-html");
+import jestSerializerHtml from "jest-serializer-html";
 
 const DYNAMIC_ID_PATTERN = /"\b[A-Fa-f0-9]{8}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{4}-[A-Fa-f0-9]{12}\b"/g;
 
-module.exports = {
+export default {
   /*
    * The test-runner calls the serialize function when the test reaches the expect(SomeHTMLElement).toMatchSnapshot().
    * It will replace all dynamic IDs with a static ID so that the snapshot is consistent.

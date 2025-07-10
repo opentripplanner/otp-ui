@@ -1,3 +1,5 @@
-module.exports = require("babel-jest").default.createTransformer({
+import babelJest from "babel-jest";
+
+export default babelJest.default.createTransformer({
   presets: [["@babel/preset-env", { targets: { node: "current" } }]]
 });

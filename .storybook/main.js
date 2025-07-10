@@ -2,10 +2,9 @@ import { dirname, join } from "path";
 import { mergeConfig } from "vite";
 import ViteYaml from '@modyfi/vite-plugin-yaml';
 import graphqlLoader from 'vite-plugin-graphql-loader';
+import path from "path";
 
-const path = require("path");
-
-module.exports = {
+export default {
   addons: [
     getAbsolutePath("@storybook/addon-a11y"),
     getAbsolutePath("@storybook/addon-docs"),
