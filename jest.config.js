@@ -34,8 +34,7 @@ module.exports = {
   transform: {
     "\\.[jt]sx?$": "babel-jest",
     "\\.ya?ml$": "yaml-jest",
-    "\\.graphql$": "jest-transform-graphql",
-    "node_modules/chroma-js/.+\\.js$": "<rootDir>/transform-esm-modules.js"
+    "\\.graphql$": "jest-transform-graphql"
   },
   transformIgnorePatterns: ["/node_modules/(?!(chroma-js)/)"]
 };

@@ -244,8 +244,8 @@ importers:
         specifier: ^2.3.1
         version: 2.6.0(@types/node@15.14.9)(typescript@4.9.5)
       nock:
-        specifier: ^11.7.0
-        version: 11.9.1
+        specifier: ^14.0.5
+        version: 14.0.5
       prettier:
         specifier: ^1.19.1
         version: 1.19.1
@@ -2705,6 +2705,10 @@ packages:
 
   '@mswjs/interceptors@0.36.7':
     resolution: {integrity: sha512-sdx02Wlus5hv6Bx7uUDb25gb0WGjCuSgnJB2LVERemoSGuqkZMe3QI6nEXhieFGtYwPrZbYrT2vPbsFN2XfbUw==}
+    engines: {node: '>=18'}
+
+  '@mswjs/interceptors@0.38.7':
+    resolution: {integrity: sha512-Jkb27iSn7JPdkqlTqKfhncFfnEZsIJVYxsFbUSWEkxdIPdsyngrhoDBk0/BGD2FQcRH99vlRrkHpNTyKqI+0/w==}
     engines: {node: '>=18'}
 
   '@napi-rs/wasm-runtime@0.2.11':
@@ -7930,9 +7934,9 @@ packages:
   nice-try@1.0.5:
     resolution: {integrity: sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==}
 
-  nock@11.9.1:
-    resolution: {integrity: sha512-U5wPctaY4/ar2JJ5Jg4wJxlbBfayxgKbiAeGh+a1kk6Pwnc2ZEuKviLyDSG6t0uXl56q7AALIxoM6FJrBSsVXA==}
-    engines: {node: '>= 8.0'}
+  nock@14.0.5:
+    resolution: {integrity: sha512-R49fALR9caB6vxuSWUIaK2eBYeTloZQUFBZ4rHO+TbhMGQHtwnhdqKLYki+o+8qMgLvoBYWrp/2KzGPhxL4S6w==}
+    engines: {node: '>=18.20.0 <20 || >=20.12.1'}
 
   node-emoji@2.2.0:
     resolution: {integrity: sha512-Z3lTE9pLaJF47NyMhd4ww1yFTAP8YhYI8SleJiHzM46Fgpm5cnNzSl9XfzFNqbaz+VlJrIj3fXQ4DeN1Rjm6cw==}
@@ -12933,6 +12937,15 @@ snapshots:
       glob-to-regexp: 0.3.0
 
   '@mswjs/interceptors@0.36.7':
+    dependencies:
+      '@open-draft/deferred-promise': 2.2.0
+      '@open-draft/logger': 0.3.0
+      '@open-draft/until': 2.1.0
+      is-node-process: 1.2.0
+      outvariant: 1.4.3
+      strict-event-emitter: 0.5.1
+
+  '@mswjs/interceptors@0.38.7':
     dependencies:
       '@open-draft/deferred-promise': 2.2.0
       '@open-draft/logger': 0.3.0
@@ -19326,15 +19339,11 @@ snapshots:
 
   nice-try@1.0.5: {}
 
-  nock@11.9.1:
+  nock@14.0.5:
     dependencies:
-      debug: 4.3.7(supports-color@5.5.0)
+      '@mswjs/interceptors': 0.38.7
       json-stringify-safe: 5.0.1
-      lodash: 4.17.21
-      mkdirp: 0.5.6
       propagate: 2.0.1
-    transitivePeerDependencies:
-      - supports-color
 
   node-emoji@2.2.0:
     dependencies:
