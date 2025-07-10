@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentMeta } from "@storybook/react";
+import { ComponentMeta } from "@storybook/react-webpack5";
 
 import { Ship } from "@styled-icons/fa-solid/Ship";
 import { Bus } from "@styled-icons/fa-solid/Bus";

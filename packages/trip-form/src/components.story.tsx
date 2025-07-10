@@ -1,6 +1,6 @@
 import * as Icons from "@opentripplanner/icons";
 import React, { ReactElement } from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 
 import commonModes from "./__mocks__/modes-en";
 import modeOptions from "./__mocks__/mode-options";

@@ -4,25 +4,9 @@ const path = require("path");
 module.exports = {
   addons: [
     getAbsolutePath("@storybook/addon-a11y"),
-    getAbsolutePath("@storybook/addon-actions"),
     getAbsolutePath("@storybook/addon-docs"),
-    getAbsolutePath("@storybook/addon-controls"),
-    getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-links"),
-    {
-      name: '@storybook/addon-storysource',
-      options: {
-        rule: {
-          // test: [/\.stories\.jsx?$/], This is default
-          include: [path.resolve(__dirname, './src')],
-        },
-        loaderOptions: {
-          prettierConfig: { printWidth: 80, singleQuote: false },
-        }
-      }
-    },
-    getAbsolutePath("@storybook/addon-viewport"),
-    "@danielhep/storybook-react-intl",
+    "storybook-react-intl",
     getAbsolutePath("@storybook/addon-webpack5-compiler-babel")
   ],
 

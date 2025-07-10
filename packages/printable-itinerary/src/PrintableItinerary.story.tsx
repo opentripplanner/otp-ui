@@ -2,7 +2,7 @@ import { ClassicLegIcon, TriMetLegIcon } from "@opentripplanner/icons";
 import React from "react";
 import styled from "styled-components";
 
-import { Meta } from "@storybook/react";
+import { Meta } from "@storybook/react-webpack5";
 import PrintableItinerary from ".";
 import * as PrintableItineraryClasses from "./styled";
 

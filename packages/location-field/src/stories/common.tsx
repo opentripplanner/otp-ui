@@ -1,4 +1,4 @@
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 
 export const currentPosition = {
   coords: { latitude: 45.508246, longitude: -122.711574 }
