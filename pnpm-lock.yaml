@@ -225,9 +225,6 @@ importers:
       jest-resolve:
         specifier: ^30.0.2
         version: 30.0.2
-      jest-transform-graphql:
-        specifier: ^2.1.0
-        version: 2.1.0(graphql-tag@2.12.6(graphql@16.9.0))
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
@@ -7216,11 +7213,6 @@ packages:
   jest-snapshot@30.0.4:
     resolution: {integrity: sha512-S/8hmSkeUib8WRUq9pWEb5zMfsOjiYWDWzFzKnjX7eDyKKgimsu9hcmsUEg8a7dPAw8s/FacxsXquq71pDgPjQ==}
     engines: {node: ^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0}
-
-  jest-transform-graphql@2.1.0:
-    resolution: {integrity: sha512-oLVErzg6bN9eJPB/b8c1+0go3K1F1OZNkvlbUfOgK+96ulfX/fnp+4jI3tjQ1IUVL2XcSjhzwDwNdwsNI5EhRg==}
-    peerDependencies:
-      graphql-tag: ^2.0.0
 
   jest-util@24.9.0:
     resolution: {integrity: sha512-x+cZU8VRmOJxbA1K5oDBdxQmdq0OIdADarLxk0Mq+3XS4jgvhG/oKGWcIDCtPG0HgjxOYvF+ilPJQsAyXfbNOg==}
@@ -18388,10 +18380,6 @@ snapshots:
       synckit: 0.11.8
     transitivePeerDependencies:
       - supports-color
-
-  jest-transform-graphql@2.1.0(graphql-tag@2.12.6(graphql@16.9.0)):
-    dependencies:
-      graphql-tag: 2.12.6(graphql@16.9.0)
 
   jest-util@24.9.0:
     dependencies:

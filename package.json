@@ -63,7 +63,6 @@
     "jest": "^30.0.4",
     "jest-haste-map": "^30.0.2",
     "jest-resolve": "^30.0.2",
-    "jest-transform-graphql": "^2.1.0",
     "js-yaml": "^4.1.0",
     "json-loader": "^0.5.7",
     "lerna": "^8.1.9",
