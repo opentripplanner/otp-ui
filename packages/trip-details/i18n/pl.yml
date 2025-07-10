@@ -1,30 +1,35 @@
 otpUi:
   TripDetails:
-    hideDetail: Ukryj szczegóły
-    missingFareTotal: Brak łącznej ceny
-    tripIncludesFlex: Ta wycieczka obejmuje elastyczne trasy. {extraMessage}
     FareTable:
       cash: Gotówka
+      electronic: Bezgotówkowo
       regular: Dorosły
       senior: Senior
-      youth: Młodzież
       special: Specjalny
-      electronic: Bezgotówkowo
-    timeActiveDescription: "Wybierając się na tę wycieczkę, spędzisz <strong>{walkMinutes,
-      plural, one {# minuty} other {# minut}}</strong> na spacerze i <strong>{bikeMinutes,
-      plural, one {# minuty} other {# minut}}</strong> na jeździe na rowerze.\n"
+      youth: Młodzież
+    co2: "Emisja CO₂: <strong>{co2}</strong>"
+    co2description: >-
+      Ilość CO₂ oblicza się, mnożąc odległość każdego odcinka podróży przez
+      ilość CO₂ wytwarzany przez każdy środek transportu. Ilość CO₂ wytworzony
+      przez każdy środek transportu jest wyprowadzana z <link>tego arkusza
+      kalkulacyjnego</link>.
+    departure: >-
+      Wyjazd <strong>{departureDate, date, long}</strong> o
+      <strong>{departureDate, time, short}</strong>
+    hideDetail: Ukryj szczegóły
     legMissingFareInfo: Brak informacji o cenie biletu na ten odcinek
+    minutesActive: >-
+      Czas spędzony na aktywności: <strong>{approximatePrefix, select, true {~}
+      other {}}{minutes, plural, one {# minuty} other {# minut}}</strong>
+    missingFareTotal: Brak łącznej ceny
     showDetail: Pokaż szczegóły
-    transferDiscountExplanation: Zastosowano rabat transferowy w wysokości {transferAmount}
-    co2: 'Emisja CO₂: <strong>{co2}</strong>'
-    co2description: Ilość CO₂ oblicza się, mnożąc odległość każdego odcinka podróży
-      przez ilość CO₂ wytwarzany przez każdy środek transportu. Ilość CO₂ wytworzony
-      przez każdy środek transportu jest wyprowadzana z <link>tego arkusza kalkulacyjnego</link>.
-    departure: Wyjazd <strong>{departureDate, date, long}</strong> o <strong>{departureDate,
-      time, short}</strong>
+    timeActiveDescription: >
+      Wybierając się na tę wycieczkę, spędzisz <strong>{walkMinutes, plural, one
+      {# minuty} other {# minut}}</strong> na spacerze i <strong>{bikeMinutes,
+      plural, one {# minuty} other {# minut}}</strong> na jeździe na rowerze.
     title: Szczegóły podróży
-    tncFare: '{companies} Taryfa: <strong>{minTNCFare} - {maxTNCFare}</strong>'
+    tncFare: "{companies} Taryfa: <strong>{minTNCFare} - {maxTNCFare}</strong>"
+    transferDiscountExplanation: Zastosowano rabat transferowy w wysokości {transferAmount}
     transitFare: Opłata za przejazd
-    transitFareEntry: '{name}: <strong>{value}</strong>'
-    minutesActive: 'Czas spędzony na aktywności: <strong>{approximatePrefix, select,
-      true {~} other {}}{minutes, plural, one {# minuty} other {# minut}}</strong>'
+    transitFareEntry: "{name}: <strong>{value}</strong>"
+    tripIncludesFlex: Ta wycieczka obejmuje elastyczne trasy. {extraMessage}

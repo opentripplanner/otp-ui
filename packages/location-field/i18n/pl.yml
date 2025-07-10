@@ -1,27 +1,28 @@
 otpUi:
   LocationField:
-    recentlySearched: Ostatnio wyszukiwane
-    resultsFound: '{results} znaleziono dla "{input}".'
-    fetchingSuggestions: Pobieranie sugestii…
-    homeLocation: Dom
-    useCurrentLocation: Użyj bieżącej lokalizacji
     beginTypingPrompt: Zacznij pisać, aby wyszukać lokalizacje
+    clearLocation: Wyczyść lokalizację
     currentLocationUnavailable: Bieżąca lokalizacja niedostępna
+    fetchingLocation: Pobieranie lokalizacji…
+    fetchingSuggestions: Pobieranie sugestii…
     geocoderUnreachable: Nie można uzyskać sugestii
-    howToAccessResults: Użyj klawisza strzałki w dół, aby przeglądać listę wyników.
-      Aby wybrać wynik, użyj klawisza Enter.
+    homeLocation: Dom
+    howToAccessResults: >-
+      Użyj klawisza strzałki w dół, aby przeglądać listę wyników. Aby wybrać
+      wynik, użyj klawisza Enter.
     myPlaces: Moje miejsca
     nearby: Przystanki w pobliżu
     noResults: Brak wyników
     other: Inne
-    otherCount: '{count, plural, =1 {# inny punkt} other {# inne punkty}} zainteresowania'
-    stops: Przystanki
+    otherCount: "{count, plural, =1 {# inny punkt} other {# inne punkty}} zainteresowania"
+    parenthesisFormat: "{main} ({detail})"
+    recentlySearched: Ostatnio wyszukiwane
+    resultsFound: "{results} znaleziono dla \"{input}\"."
+    stationCount: "{count, plural, =1 {# stacja} other {# stacje}}"
     stations: Stacje
-    stopCount: '{count, plural, =1 {# przystanek} other {# przystanki}}'
-    stationCount: '{count, plural, =1 {# stacja} other {# stacje}}'
-    parenthesisFormat: '{main} ({detail})'
-    workLocation: Praca
-    suggestedLocationsLong: Przełącz wyświetlanie listy sugerowanych lokalizacji
+    stopCount: "{count, plural, =1 {# przystanek} other {# przystanki}}"
+    stops: Przystanki
     suggestedLocations: Sugerowane lokalizacje
-    clearLocation: Wyczyść lokalizację
-    fetchingLocation: Pobieranie lokalizacji…
+    suggestedLocationsLong: Przełącz wyświetlanie listy sugerowanych lokalizacji
+    useCurrentLocation: Użyj bieżącej lokalizacji
+    workLocation: Praca
