@@ -6,9 +6,9 @@ import path from "path";
 
 export default {
   addons: [
-    getAbsolutePath("@storybook/addon-a11y"),
-    getAbsolutePath("@storybook/addon-docs"),
-    getAbsolutePath("@storybook/addon-links"),
+    "@storybook/addon-a11y",
+    "@storybook/addon-docs",
+    "@storybook/addon-links",
     "storybook-react-intl",
   ],
 
@@ -48,7 +48,7 @@ export default {
       resolve: {
         alias: {
           // Configure module resolution for workspace packages
-          // '@opentripplanner': path.resolve(__dirname, '../packages'),
+          '@opentripplanner': path.resolve(__dirname, '../packages'),
           querystring: 'querystring-es3'
         }
       },
@@ -56,7 +56,7 @@ export default {
   },
 
   framework: {
-    name: getAbsolutePath("@storybook/react-vite"),
+    name: "@storybook/react-vite",
     options: {}
   },
 
@@ -65,8 +65,4 @@ export default {
   typescript: {
     reactDocgen: "react-docgen-typescript"
   }
-}
-
-function getAbsolutePath(value) {
-  return dirname(require.resolve(join(value, "package.json")));
 }
