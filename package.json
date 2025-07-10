@@ -92,7 +92,8 @@
     "vite-plugin-graphql-loader": "^4.0.4",
     "yaml-jest": "^1.2.0",
     "yaml-loader": "^0.8.1",
-    "yaml-sort": "^2.0.0"
+    "yaml-sort": "^2.0.0",
+    "jest-file-loader": "^1.0.3"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",

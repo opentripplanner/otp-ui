@@ -219,6 +219,9 @@ importers:
       jest:
         specifier: ^30.0.4
         version: 30.0.4(@types/node@15.14.9)(esbuild-register@3.6.0(esbuild@0.18.20))
+      jest-file-loader:
+        specifier: ^1.0.3
+        version: 1.0.3
       jest-haste-map:
         specifier: ^30.0.2
         version: 30.0.2
@@ -7070,6 +7073,9 @@ packages:
   jest-environment-node@30.0.4:
     resolution: {integrity: sha512-p+rLEzC2eThXqiNh9GHHTC0OW5Ca4ZfcURp7scPjYBcmgpR9HG6750716GuUipYf2AcThU3k20B31USuiaaIEg==}
     engines: {node: ^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0}
+
+  jest-file-loader@1.0.3:
+    resolution: {integrity: sha512-8dqzBYcIBeSlpnoCQJAn1hWHeW36woNO6i4WCqF9cd7YsYP5/ETlxuFKRwXHBgSSO6fjsvdtaw3nLa4plze7FA==}
 
   jest-get-type@26.3.0:
     resolution: {integrity: sha512-TpfaviN1R2pQWkIihlfEanwOXK0zcxrKEE4MlU6Tn7keoXdN6/3gK/xl0yEh8DOunn5pOVGKf8hB4R9gVh04ig==}
@@ -17996,6 +18002,10 @@ snapshots:
       jest-mock: 30.0.2
       jest-util: 30.0.2
       jest-validate: 30.0.2
+
+  jest-file-loader@1.0.3:
+    dependencies:
+      slash: 3.0.0
 
   jest-get-type@26.3.0: {}
 
