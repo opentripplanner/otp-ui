@@ -642,6 +642,7 @@ export function getLegCost(
   price?: Money;
   productUseId?: string;
 } {
+  if (!leg.fareProducts) return { price: undefined };
   const relevantFareProducts = leg.fareProducts
     .filter(({ product }) => {
       // riderCategory and medium can be specifically defined as null to handle
