@@ -2,12 +2,12 @@
 
 exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSettingsButtons smoke-test 1`] = `
 <div style="max-width: 500px;">
-  <fieldset class="AdvancedModeSubsettingsContainer__SubsettingsContainer-sc-9nar0m-0 fxqOun">
+  <fieldset class="sc-jsJBEP LauaN">
     <legend>
       Select a transit mode
     </legend>
-    <div class="AdvancedModeSettingsButton__SettingsContainer-sc-1wd5ill-0 faVBOF advanced-submode-container">
-      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 gkZqBg advanced-submode-mode-button"
+    <div class="sc-fHjqPf hMnprQ advanced-submode-container">
+      <div class="sc-hmdomO kRuiVG advanced-submode-mode-button"
            id="transit"
       >
         <input aria-label="Transit"
@@ -48,23 +48,23 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
            style="height: auto; overflow: visible;"
       >
         <div>
-          <div class="AdvancedModeSettingsButton__StyledSettingsContainer-sc-1wd5ill-2 iHlwrW subsettings-container">
-            <fieldset class="SubSettingsPane__SettingsPanel-sc-ug95jb-1 ldOQGL">
+          <div class="sc-bXCLTC ewiIXH subsettings-container">
+            <fieldset class="sc-feUZmu hcezds">
               <legend>
                 <span id="metro-mode-selector-transit-button-label">
                   Transit
                 </span>
               </legend>
-              <div class="SubSettingsPane__SubmodeGrid-sc-ug95jb-0 jPGmSS">
-                <div class="SubSettingsPane__SubSettingsCheckbox-sc-ug95jb-2 QbTBU">
+              <div class="sc-dAbbOL cOKbTE">
+                <div class="sc-fUnMCh fgTyhG">
                   <input id="id-query-param-tram"
                          type="checkbox"
                          checked
                   >
                   <label for="id-query-param-tram"
-                         class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
+                         class="sc-eqUAAy hwpVdS"
                   >
-                    <span class="SubSettingsPane__FormLabelIconWrapper-sc-ug95jb-3 cWYkDm">
+                    <span class="sc-hzhJZQ jYuBxb">
                       <div role="none">
                         <svg viewbox="0 0 448 512"
                              aria-hidden="true"
@@ -85,15 +85,15 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
                     </span>
                   </label>
                 </div>
-                <div class="SubSettingsPane__SubSettingsCheckbox-sc-ug95jb-2 QbTBU">
+                <div class="sc-fUnMCh fgTyhG">
                   <input id="id-query-param-bus"
                          type="checkbox"
                          checked
                   >
                   <label for="id-query-param-bus"
-                         class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
+                         class="sc-eqUAAy hwpVdS"
                   >
-                    <span class="SubSettingsPane__FormLabelIconWrapper-sc-ug95jb-3 cWYkDm">
+                    <span class="sc-hzhJZQ jYuBxb">
                       <div role="none">
                         <svg viewbox="0 0 512 512"
                              aria-hidden="true"
@@ -114,15 +114,15 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
                     </span>
                   </label>
                 </div>
-                <div class="SubSettingsPane__SubSettingsCheckbox-sc-ug95jb-2 QbTBU">
+                <div class="sc-fUnMCh fgTyhG">
                   <input id="id-query-param-subway"
                          type="checkbox"
                          checked
                   >
                   <label for="id-query-param-subway"
-                         class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
+                         class="sc-eqUAAy hwpVdS"
                   >
-                    <span class="SubSettingsPane__FormLabelIconWrapper-sc-ug95jb-3 cWYkDm">
+                    <span class="sc-hzhJZQ jYuBxb">
                       <div role="none">
                         <svg viewbox="0 0 448 512"
                              aria-hidden="true"
@@ -143,15 +143,15 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
                     </span>
                   </label>
                 </div>
-                <div class="SubSettingsPane__SubSettingsCheckbox-sc-ug95jb-2 QbTBU">
+                <div class="sc-fUnMCh fgTyhG">
                   <input id="id-query-param-ferry"
                          type="checkbox"
                          checked
                   >
                   <label for="id-query-param-ferry"
-                         class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
+                         class="sc-eqUAAy hwpVdS"
                   >
-                    <span class="SubSettingsPane__FormLabelIconWrapper-sc-ug95jb-3 cWYkDm">
+                    <span class="sc-hzhJZQ jYuBxb">
                       <div>
                         Ferry
                       </div>
@@ -159,12 +159,12 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
                   </label>
                 </div>
               </div>
-              <div class="styled__DropdownSelector-sc-122ziys-16 eIFxPB">
+              <div class="sc-cPiKLX ikyhKO">
                 <div>
                   <label for="id-query-param-busColor"
-                         class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
+                         class="sc-eqUAAy hwpVdS"
                   >
-                    <span class="SubSettingsPane__FormLabelIconWrapper-sc-ug95jb-3 cWYkDm">
+                    <span class="sc-hzhJZQ jYuBxb">
                       <div>
                         Bus Color
                       </div>
@@ -184,8 +184,8 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
         </div>
       </div>
     </div>
-    <div class="AdvancedModeSettingsButton__SettingsContainer-sc-1wd5ill-0 faVBOF advanced-submode-container">
-      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 gMJFvo advanced-submode-mode-button"
+    <div class="sc-fHjqPf hMnprQ advanced-submode-container">
+      <div class="sc-hmdomO hXPuFG advanced-submode-mode-button"
            id="walk"
       >
         <input aria-label="Walk"
@@ -211,8 +211,8 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
         </label>
       </div>
     </div>
-    <div class="AdvancedModeSettingsButton__SettingsContainer-sc-1wd5ill-0 faVBOF advanced-submode-container">
-      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 gMJFvo advanced-submode-mode-button"
+    <div class="sc-fHjqPf hMnprQ advanced-submode-container">
+      <div class="sc-hmdomO hXPuFG advanced-submode-mode-button"
            id="bicycle"
       >
         <input aria-label="Bike"
@@ -235,8 +235,8 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
         </label>
       </div>
     </div>
-    <div class="AdvancedModeSettingsButton__SettingsContainer-sc-1wd5ill-0 faVBOF advanced-submode-container">
-      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 gMJFvo advanced-submode-mode-button"
+    <div class="sc-fHjqPf hMnprQ advanced-submode-container">
+      <div class="sc-hmdomO hXPuFG advanced-submode-mode-button"
            id="car"
       >
         <input aria-label="Drive"

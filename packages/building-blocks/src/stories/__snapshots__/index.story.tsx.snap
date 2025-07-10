@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Building-Blocks/Colors Blue smoke-test 1`] = `
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 iEijBb">
+<div class="sc-aXZVg laHUje">
   <p>
     50
   </p>
@@ -9,7 +9,7 @@ exports[`Building-Blocks/Colors Blue smoke-test 1`] = `
     #E5ECF3
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 hBcHvL">
+<div class="sc-aXZVg hCUOdW">
   <p>
     100
   </p>
@@ -17,7 +17,7 @@ exports[`Building-Blocks/Colors Blue smoke-test 1`] = `
     #CCDAE7
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 czQKTO">
+<div class="sc-aXZVg fvCtxD">
   <p>
     200
   </p>
@@ -25,7 +25,7 @@ exports[`Building-Blocks/Colors Blue smoke-test 1`] = `
     #B2C7DB
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 kMwGpq">
+<div class="sc-aXZVg hYYmfL">
   <p>
     300
   </p>
@@ -33,7 +33,7 @@ exports[`Building-Blocks/Colors Blue smoke-test 1`] = `
     #99B5CF
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 fbDgxu">
+<div class="sc-aXZVg iRVeSf">
   <p>
     400
   </p>
@@ -41,7 +41,7 @@ exports[`Building-Blocks/Colors Blue smoke-test 1`] = `
     #7FA2C2
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 eNNofl">
+<div class="sc-aXZVg liHIEc">
   <p>
     500
   </p>
@@ -49,7 +49,7 @@ exports[`Building-Blocks/Colors Blue smoke-test 1`] = `
     #6690B7
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 itcLus">
+<div class="sc-aXZVg euPFdB">
   <p>
     600
   </p>
@@ -57,7 +57,7 @@ exports[`Building-Blocks/Colors Blue smoke-test 1`] = `
     #4D7EAB
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 gwrxCB">
+<div class="sc-aXZVg hMMvZc">
   <p>
     700
   </p>
@@ -65,7 +65,7 @@ exports[`Building-Blocks/Colors Blue smoke-test 1`] = `
     #336B9E
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 eoKkhy">
+<div class="sc-aXZVg fEXWvT">
   <p>
     800
   </p>
@@ -73,7 +73,7 @@ exports[`Building-Blocks/Colors Blue smoke-test 1`] = `
     #1A5992
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 bPhKNt">
+<div class="sc-aXZVg kjzUak">
   <p>
     900
   </p>
@@ -84,7 +84,7 @@ exports[`Building-Blocks/Colors Blue smoke-test 1`] = `
 `;
 
 exports[`Building-Blocks/Colors Grey smoke-test 1`] = `
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 egtZLu">
+<div class="sc-aXZVg bZDWEL">
   <p>
     50
   </p>
@@ -92,7 +92,7 @@ exports[`Building-Blocks/Colors Grey smoke-test 1`] = `
     #ECECEC
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 fKjlrp">
+<div class="sc-aXZVg jGUWHs">
   <p>
     100
   </p>
@@ -100,7 +100,7 @@ exports[`Building-Blocks/Colors Grey smoke-test 1`] = `
     #D9D9D9
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 gIeutC">
+<div class="sc-aXZVg eWvEtr">
   <p>
     200
   </p>
@@ -108,7 +108,7 @@ exports[`Building-Blocks/Colors Grey smoke-test 1`] = `
     #C5C5C5
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 cvzsPl">
+<div class="sc-aXZVg dYISWk">
   <p>
     300
   </p>
@@ -116,7 +116,7 @@ exports[`Building-Blocks/Colors Grey smoke-test 1`] = `
     #B3B3B3
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 ivqSFG">
+<div class="sc-aXZVg hivEzf">
   <p>
     400
   </p>
@@ -124,7 +124,7 @@ exports[`Building-Blocks/Colors Grey smoke-test 1`] = `
     #9F9F9F
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 eXgywq">
+<div class="sc-aXZVg KQiML">
   <p>
     500
   </p>
@@ -132,7 +132,7 @@ exports[`Building-Blocks/Colors Grey smoke-test 1`] = `
     #8C8C8C
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 fVCSRH">
+<div class="sc-aXZVg eqlNKi">
   <p>
     600
   </p>
@@ -140,7 +140,7 @@ exports[`Building-Blocks/Colors Grey smoke-test 1`] = `
     #797979
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 bGGJeZ">
+<div class="sc-aXZVg kWNRtA">
   <p>
     700
   </p>
@@ -148,7 +148,7 @@ exports[`Building-Blocks/Colors Grey smoke-test 1`] = `
     #666666
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 hGsxDb">
+<div class="sc-aXZVg hKzxVe">
   <p>
     800
   </p>
@@ -156,7 +156,7 @@ exports[`Building-Blocks/Colors Grey smoke-test 1`] = `
     #535353
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 gjOaFR">
+<div class="sc-aXZVg iQqaic">
   <p>
     900
   </p>
@@ -167,7 +167,7 @@ exports[`Building-Blocks/Colors Grey smoke-test 1`] = `
 `;
 
 exports[`Building-Blocks/Colors Red smoke-test 1`] = `
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 tzsZI">
+<div class="sc-aXZVg boCnkt">
   <p>
     50
   </p>
@@ -175,7 +175,7 @@ exports[`Building-Blocks/Colors Red smoke-test 1`] = `
     #F7E7E6
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 doCZXQ">
+<div class="sc-aXZVg hNWjTh">
   <p>
     100
   </p>
@@ -183,7 +183,7 @@ exports[`Building-Blocks/Colors Red smoke-test 1`] = `
     #EFCFCE
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 dbJTaU">
+<div class="sc-aXZVg kJHZcZ">
   <p>
     200
   </p>
@@ -191,7 +191,7 @@ exports[`Building-Blocks/Colors Red smoke-test 1`] = `
     #E7B6B4
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 aMInM">
+<div class="sc-aXZVg cTWKCV">
   <p>
     300
   </p>
@@ -199,7 +199,7 @@ exports[`Building-Blocks/Colors Red smoke-test 1`] = `
     #DF9E9C
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 irzJxP">
+<div class="sc-aXZVg cjRdeq">
   <p>
     400
   </p>
@@ -207,7 +207,7 @@ exports[`Building-Blocks/Colors Red smoke-test 1`] = `
     #D78683
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 iIjlGH">
+<div class="sc-aXZVg kthGIC">
   <p>
     500
   </p>
@@ -215,7 +215,7 @@ exports[`Building-Blocks/Colors Red smoke-test 1`] = `
     #CF6E6B
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 cVboWd">
+<div class="sc-aXZVg fWohTI">
   <p>
     600
   </p>
@@ -223,7 +223,7 @@ exports[`Building-Blocks/Colors Red smoke-test 1`] = `
     #C75652
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 lgZefV">
+<div class="sc-aXZVg jsOqwU">
   <p>
     700
   </p>
@@ -231,7 +231,7 @@ exports[`Building-Blocks/Colors Red smoke-test 1`] = `
     #BF3E3A
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 gQxjCa">
+<div class="sc-aXZVg bDGfJP">
   <p>
     800
   </p>
@@ -239,7 +239,7 @@ exports[`Building-Blocks/Colors Red smoke-test 1`] = `
     #B72620
   </p>
 </div>
-<div class="ColorPalette__ColorBlock-sc-fil65c-0 hVPMLf">
+<div class="sc-aXZVg bCTxdW">
   <p>
     900
   </p>

@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -15,9 +15,9 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -28,16 +28,16 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Bicycle 0.7 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head east on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Alder St
@@ -47,8 +47,8 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW 5th Ave
@@ -58,8 +58,8 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Morrison St
@@ -76,10 +76,10 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -90,9 +90,9 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -101,16 +101,16 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 498 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           SE 30th at Division
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head west on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Clinton St
@@ -120,8 +120,8 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE 30th Ave
@@ -134,9 +134,9 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg xmlns="http://www.w3.org/2000/svg"
              viewbox="0 0 418.62 160.29"
              height="100%"
@@ -174,16 +174,16 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Bicycle 0.6 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           SE 29th at Hawthorne
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE 30th Ave
@@ -193,8 +193,8 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Harrison St
@@ -204,8 +204,8 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE 29th Ave
@@ -215,8 +215,8 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Hawthorne Blvd
@@ -229,9 +229,9 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -240,16 +240,16 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 0.1 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1415 SE 28th Ave, Portland, OR, USA 97214
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Hawthorne Blvd
@@ -259,8 +259,8 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE 28th Ave
@@ -270,8 +270,8 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Madison St
@@ -288,10 +288,10 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -302,9 +302,9 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -313,16 +313,16 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 400 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           SE 29th at Stark
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head north on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE 30th Ave
@@ -332,8 +332,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Stark St
@@ -343,8 +343,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE 29th Ave
@@ -357,9 +357,9 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg xmlns="http://www.w3.org/2000/svg"
              viewbox="0 0 418.62 160.29"
              height="100%"
@@ -397,16 +397,16 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Bicycle 0.8 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           NE Glisan at 24th
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE 29th Ave
@@ -416,8 +416,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Pine St
@@ -427,8 +427,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE 28th Ave
@@ -438,8 +438,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Ankeny St
@@ -449,8 +449,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE 24th Ave
@@ -460,8 +460,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE 24th Ave
@@ -471,8 +471,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE Glisan St
@@ -485,9 +485,9 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -496,16 +496,16 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 497 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           NE Sandy &amp; 24th
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Hard left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE Glisan St
@@ -515,8 +515,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE 24th Ave
@@ -526,8 +526,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE Sandy Blvd
@@ -540,9 +540,9 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -551,12 +551,12 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           12
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           Barbur/Sandy Blvd
           <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
             to
@@ -564,8 +564,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
           Parkrose TC
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             NE Sandy &amp; 24th
@@ -575,7 +575,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             4:02 PM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             NE Sandy &amp; 57th
@@ -588,9 +588,9 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -599,16 +599,16 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 279 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           0086 BIKETOWN
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head northeast on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE Sandy Blvd
@@ -618,8 +618,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Hard left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE Alameda St
@@ -632,9 +632,9 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg xmlns="http://www.w3.org/2000/svg"
              viewbox="0 0 418.62 160.29"
              height="100%"
@@ -672,16 +672,16 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Bicycle 1 mile to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           NE 60th at Cully
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Hard left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE Alameda St
@@ -691,8 +691,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Hard left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE 57th Ave
@@ -702,8 +702,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE Cully Blvd
@@ -713,8 +713,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE 60th Ave
@@ -727,9 +727,9 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -738,16 +738,16 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 494 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           5916 NE Going St, Portland, OR, USA 97218
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE 60th Ave
@@ -757,8 +757,8 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE Going St
@@ -775,10 +775,10 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -789,9 +789,9 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -800,16 +800,16 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 91 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           corner of path and Pioneer Courthouse Sq (pedestrian street)
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head southeast on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -822,9 +822,9 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -835,16 +835,16 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Bicycle 0.1 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           corner of path and Pioneer Sq N (path)
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -854,8 +854,8 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW 6th Ave
@@ -865,8 +865,8 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Morrison St
@@ -876,8 +876,8 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -890,9 +890,9 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -901,16 +901,16 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 22 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Pioneer Square North MAX Station
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Pioneer Sq N (path)
@@ -923,9 +923,9 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -934,12 +934,12 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           MAX Blue Line
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           MAX Blue Line
           <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
             to
@@ -947,8 +947,8 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
           Hillsboro
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             Pioneer Square North MAX Station
@@ -958,7 +958,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
             3:46 PM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             Providence Park MAX Station
@@ -971,9 +971,9 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -982,16 +982,16 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 19 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           corner of path and Providence Park (path)
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head west on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Providence Park (path)
@@ -1004,9 +1004,9 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -1017,16 +1017,16 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Bicycle 230 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -1036,8 +1036,8 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -1047,8 +1047,8 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Morrison St
@@ -1065,10 +1065,10 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -1079,9 +1079,9 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg xmlns="http://www.w3.org/2000/svg"
              viewbox="0 0 512 512"
              height="100%"
@@ -1093,16 +1093,16 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Drive 2.4 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           P+R Sunset TC
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head southwest on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               parking aisle
@@ -1112,8 +1112,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Murray Blvd
@@ -1123,8 +1123,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NW Murray Blvd
@@ -1134,8 +1134,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Slight right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NW Murray Blvd
@@ -1145,8 +1145,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NW Sunset Hwy
@@ -1156,8 +1156,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NW Sunset Hwy
@@ -1167,8 +1167,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Cedar Hills Blvd
@@ -1178,8 +1178,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Barnes Rd
@@ -1189,8 +1189,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               service road
@@ -1200,8 +1200,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Sunset TC
@@ -1214,9 +1214,9 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg xmlns="http://www.w3.org/2000/svg"
              version="1.0"
              x="0px"
@@ -1233,16 +1233,16 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 426 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Sunset TC MAX Station
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Slight right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -1252,8 +1252,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               steps
@@ -1263,8 +1263,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -1274,8 +1274,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Sunset TC (path)
@@ -1288,9 +1288,9 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg xmlns="http://www.w3.org/2000/svg"
              version="1.0"
              viewbox="0 0 66.461 100"
@@ -1307,12 +1307,12 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           MAX Blue Line
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           MAX Blue Line
           <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
             to
@@ -1320,8 +1320,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
           Gresham
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             Sunset TC MAX Station
@@ -1331,7 +1331,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             4:05 PM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             Oak/ SW 1st Ave MAX Station
@@ -1344,9 +1344,9 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg xmlns="http://www.w3.org/2000/svg"
              version="1.0"
              x="0px"
@@ -1363,16 +1363,16 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 0.1 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           205 SW Pine St, Portland, OR, USA 97204
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head northeast on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Oak/SW 1st Ave (path)
@@ -1382,8 +1382,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -1393,8 +1393,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Oak St
@@ -1404,8 +1404,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW 1st Ave
@@ -1415,8 +1415,8 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Pine St
@@ -1433,10 +1433,10 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
 `;
 
 exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -1447,9 +1447,9 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -1458,16 +1458,16 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 206 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           EMAQ
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head east on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Alder St
@@ -1477,8 +1477,8 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW 4th Ave
@@ -1491,9 +1491,9 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 512 512"
              leg="[object Object]"
         >
@@ -1502,16 +1502,16 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Ride 0.3 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           205 SW Pine St, Portland, OR, USA 97204
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW 4th Ave
@@ -1521,8 +1521,8 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Pine St
@@ -1539,10 +1539,10 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -1553,9 +1553,9 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -1564,16 +1564,16 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 0.4 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Shared E-scooter
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head south on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE 30th Ave
@@ -1583,8 +1583,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Belmont St
@@ -1594,8 +1594,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE 29th Ave
@@ -1605,8 +1605,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Taylor St
@@ -1619,9 +1619,9 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 512 512"
              leg="[object Object]"
         >
@@ -1630,16 +1630,16 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Ride 1.4 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           NE Broadway
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Taylor St
@@ -1649,8 +1649,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE 28th Ave
@@ -1660,8 +1660,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE 28th Ave
@@ -1671,8 +1671,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Slight right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE Halsey St
@@ -1682,8 +1682,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE Halsey St
@@ -1693,8 +1693,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Slight left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE 28th Ave
@@ -1704,8 +1704,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Slight left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE 28th Ave
@@ -1715,8 +1715,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE Broadway
@@ -1729,9 +1729,9 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -1740,16 +1740,16 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           NE Broadway &amp; 28th
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               street transit link
@@ -1759,9 +1759,9 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -1770,12 +1770,12 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           70
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           12th/NE 33rd Ave
           <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
             to
@@ -1783,8 +1783,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
           NE Sunderland
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             NE Broadway &amp; 28th
@@ -1794,7 +1794,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             4:08 PM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             NE 33rd &amp; Shaver
@@ -1807,9 +1807,9 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -1818,16 +1818,16 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 0.4 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Shared E-scooter
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head north on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE 33rd Ave
@@ -1837,8 +1837,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE Shaver St
@@ -1848,8 +1848,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE 38th Ave
@@ -1862,9 +1862,9 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 512 512"
              leg="[object Object]"
         >
@@ -1873,16 +1873,16 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Ride 1 mile to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           5112 NE 47th Pl, Portland, OR, USA 97218
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE 38th Ave
@@ -1892,8 +1892,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE Skidmore St
@@ -1903,8 +1903,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE 42nd Ave
@@ -1914,8 +1914,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE Alberta St
@@ -1925,8 +1925,8 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NE 47th Pl
@@ -1943,10 +1943,10 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -1957,9 +1957,9 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg xmlns="http://www.w3.org/2000/svg"
              version="1.0"
              x="0px"
@@ -1976,16 +1976,16 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 0.2 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Razor Vehicle
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head south on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Courtland Street Northeast
@@ -1995,8 +1995,8 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -2006,8 +2006,8 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Peachtree Center Avenue Northeast
@@ -2020,9 +2020,9 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg height="100%"
              viewbox="0 0 512 512"
              width="100%"
@@ -2034,16 +2034,16 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Ride 1 mile to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           126 Mitchell St SW, Atlanta, GA 30303-3524, United States
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Hard right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Peachtree Center Avenue Northeast
@@ -2053,8 +2053,8 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               service road
@@ -2064,8 +2064,8 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Peachtree Center Cycle Track
@@ -2075,8 +2075,8 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Edgewood Avenue Northeast
@@ -2086,8 +2086,8 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Pryor Street Southwest
@@ -2097,8 +2097,8 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Pryor Street
@@ -2108,8 +2108,8 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Pryor Street Southwest
@@ -2119,8 +2119,8 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -2130,8 +2130,8 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               sidewalk
@@ -2148,10 +2148,10 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -2162,9 +2162,9 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -2173,16 +2173,16 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 0.9 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Orenco MAX Station
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head northeast on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               parking aisle
@@ -2192,8 +2192,8 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Northeast Cherry Lane
@@ -2203,8 +2203,8 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Northeast Cherry Drive
@@ -2214,8 +2214,8 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Northeast Century Boulevard
@@ -2225,8 +2225,8 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Northeast Century Boulevard (path)
@@ -2236,8 +2236,8 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -2247,8 +2247,8 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Orenco
@@ -2261,9 +2261,9 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -2272,11 +2272,11 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           MAX Blue Line
           <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
             to
@@ -2284,8 +2284,8 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
           Gresham
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             Orenco MAX Station
@@ -2295,7 +2295,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
             8:15 AM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             Providence Park MAX Station
@@ -2308,9 +2308,9 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -2319,16 +2319,16 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 0.2 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           W Burnside &amp; SW 18th
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head east on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Providence Park
@@ -2338,8 +2338,8 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -2349,8 +2349,8 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -2360,8 +2360,8 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Southwest 17th Avenue
@@ -2371,8 +2371,8 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               West Burnside Street
@@ -2385,9 +2385,9 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -2396,12 +2396,12 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           20
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           Burnside/Stark
           <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
             to
@@ -2409,8 +2409,8 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
           Gresham TC
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             W Burnside &amp; SW 18th
@@ -2420,7 +2420,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
             8:57 AM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             E Burnside &amp; SE 94th
@@ -2433,9 +2433,9 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -2444,16 +2444,16 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 0.5 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           766 NE 94th Avenue, Portland
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head west on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               East Burnside Street (sidewalk)
@@ -2463,8 +2463,8 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Southeast 94th Avenue
@@ -2474,8 +2474,8 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Northeast 94th Avenue
@@ -2485,8 +2485,8 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Northeast Oregon Street
@@ -2503,10 +2503,10 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -2517,9 +2517,9 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -2533,16 +2533,16 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Drive 2.4 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           P+R Sunset TC
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head southwest on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               parking aisle
@@ -2552,8 +2552,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Murray Blvd
@@ -2563,8 +2563,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NW Murray Blvd
@@ -2574,8 +2574,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Slight right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NW Murray Blvd
@@ -2585,8 +2585,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NW Sunset Hwy
@@ -2596,8 +2596,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               NW Sunset Hwy
@@ -2607,8 +2607,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Cedar Hills Blvd
@@ -2618,8 +2618,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Barnes Rd
@@ -2629,8 +2629,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               service road
@@ -2640,8 +2640,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Sunset TC
@@ -2654,9 +2654,9 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -2665,16 +2665,16 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 426 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Sunset TC MAX Station
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Slight right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -2684,8 +2684,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               steps
@@ -2695,8 +2695,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -2706,8 +2706,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Sunset TC (path)
@@ -2720,9 +2720,9 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -2731,12 +2731,12 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           MAX Blue Line
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           MAX Blue Line
           <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
             to
@@ -2744,8 +2744,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
           Gresham
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             Sunset TC MAX Station
@@ -2755,7 +2755,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             4:05 PM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             Oak/ SW 1st Ave MAX Station
@@ -2768,9 +2768,9 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -2779,16 +2779,16 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 0.1 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           205 SW Pine St, Portland, OR, USA 97204
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head northeast on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Oak/SW 1st Ave (path)
@@ -2798,8 +2798,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -2809,8 +2809,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Oak St
@@ -2820,8 +2820,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW 1st Ave
@@ -2831,8 +2831,8 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Pine St
@@ -2849,10 +2849,10 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo PrintableItinerarystory__StyledPrintableItinerary-sc-1fgcguf-0 ZKSFh">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF sc-dAlyuH jMAGEf">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -2863,9 +2863,9 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -2874,16 +2874,16 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 269 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Pioneer Square North MAX Station
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head northwest on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -2893,8 +2893,8 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Pioneer Sq N (path)
@@ -2907,9 +2907,9 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -2918,12 +2918,12 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           MAX Blue Line
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           MAX Blue Line
           <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
             to
@@ -2931,8 +2931,8 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
           Hillsboro
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             Pioneer Square North MAX Station
@@ -2942,7 +2942,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
             3:46 PM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             Providence Park MAX Station
@@ -2955,9 +2955,9 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -2966,16 +2966,16 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 249 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head west on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Providence Park (path)
@@ -2985,8 +2985,8 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -2996,8 +2996,8 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -3007,8 +3007,8 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Morrison St
@@ -3025,10 +3025,10 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -3039,9 +3039,9 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3055,8 +3055,8 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Take
         </strong>
@@ -3065,14 +3065,14 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
           West Burnside Street
         </strong>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Estimated wait time for pickup:
           <strong>
             4 min
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Estimated travel time:
           <strong>
             2 min
@@ -3082,9 +3082,9 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3093,17 +3093,17 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Transfer, wait 1 min
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
+      <div class="sc-dcJsrY fvPpOF">
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3112,17 +3112,17 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           20
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           Burnside/Stark
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             W Burnside &amp; SW 6th
@@ -3132,7 +3132,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
             11:02 AM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             E Burnside &amp; SE 12th
@@ -3145,9 +3145,9 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3156,17 +3156,17 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Transfer, wait 1 min
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
+      <div class="sc-dcJsrY fvPpOF">
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3180,8 +3180,8 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Take
         </strong>
@@ -3190,14 +3190,14 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
           407 NE 12th Ave, Portland
         </strong>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Estimated wait time for pickup:
           <strong>
             2 min
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Estimated travel time:
           <strong>
             1 min
@@ -3211,10 +3211,10 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -3225,9 +3225,9 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3236,16 +3236,16 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 0.3 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Everett Station Bay C1
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head south on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               service road
@@ -3255,8 +3255,8 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Smith Avenue
@@ -3266,8 +3266,8 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Continue on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Paine Avenue
@@ -3277,8 +3277,8 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               32nd Street
@@ -3288,8 +3288,8 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               32nd Street
@@ -3299,8 +3299,8 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -3313,9 +3313,9 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3324,17 +3324,17 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           512
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           Northgate Station
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             Everett Station Bay C1
@@ -3344,7 +3344,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
             1:04 PM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             Northgate Station
@@ -3357,9 +3357,9 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3368,20 +3368,20 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Northgate Station - Bay 4
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
+      <div class="sc-dcJsrY fvPpOF">
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3390,17 +3390,17 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           40
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           Downtown Seattle Ballard
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             Northgate Station - Bay 4
@@ -3410,7 +3410,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
             1:55 PM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             N 105th St &amp; Aurora Ave N
@@ -3423,9 +3423,9 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3434,16 +3434,16 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 259 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Aurora Ave N &amp; N 105th St
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head east on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               North 105th Street
@@ -3453,8 +3453,8 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               service road
@@ -3464,8 +3464,8 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -3478,9 +3478,9 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3489,17 +3489,17 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           E Line
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           Downtown Seattle
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             Aurora Ave N &amp; N 105th St
@@ -3509,7 +3509,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
             2:07 PM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             3rd Ave &amp; Cherry St
@@ -3522,9 +3522,9 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3533,16 +3533,16 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 443 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           208 James St, Seattle, WA 98104-2212, United States
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head southeast on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               sidewalk
@@ -3552,8 +3552,8 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right U-turn on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               sidewalk
@@ -3570,10 +3570,10 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary WalkOnlyItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -3584,9 +3584,9 @@ exports[`PrintableItinerary WalkOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3595,24 +3595,24 @@ exports[`PrintableItinerary WalkOnlyItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 166 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           701 SW 6th Ave, Portland, OR, USA 97204
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head northwest on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -3626,10 +3626,10 @@ exports[`PrintableItinerary WalkOnlyItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -3640,9 +3640,9 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3651,16 +3651,16 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 238 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           SE Cesar Chavez Blvd &amp; Brooklyn (long address that spans multiple lines)
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head west on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Brooklyn St
@@ -3670,8 +3670,8 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Cesar E. Chavez Blvd
@@ -3684,9 +3684,9 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3695,12 +3695,12 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           755X
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           Cesar Chavez/Lombard (very long route name)
           <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
             to
@@ -3708,8 +3708,8 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
           St. Johns via NAYA
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             SE Cesar Chavez Blvd &amp; Brooklyn
@@ -3719,7 +3719,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
             3:47 PM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             SE Cesar Chavez Blvd &amp; Hawthorne
@@ -3732,9 +3732,9 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3743,16 +3743,16 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 440 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           SE Hawthorne &amp; Cesar Chavez Blvd
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head south on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               service road
@@ -3762,8 +3762,8 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Cesar E. Chavez Blvd
@@ -3773,8 +3773,8 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Hawthorne Blvd
@@ -3787,9 +3787,9 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3798,12 +3798,12 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           1
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           Hawthorne
           <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
             to
@@ -3811,8 +3811,8 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
           Portland
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             SE Hawthorne &amp; Cesar Chavez Blvd
@@ -3822,7 +3822,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
             4:00 PM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             SE Hawthorne &amp; 27th
@@ -3835,9 +3835,9 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3846,16 +3846,16 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 479 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1415 SE 28th Ave, Portland, OR, USA 97214
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head west on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Hawthorne Blvd
@@ -3865,8 +3865,8 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE 27th Ave
@@ -3876,8 +3876,8 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Madison St
@@ -3894,10 +3894,10 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -3908,9 +3908,9 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -3950,16 +3950,16 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </span>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 238 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           SE Cesar Chavez Blvd &amp; Brooklyn (long address that spans multiple lines)
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head west on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Brooklyn St
@@ -3969,8 +3969,8 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Cesar E. Chavez Blvd
@@ -3983,9 +3983,9 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -4025,12 +4025,12 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </span>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           755X
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           Cesar Chavez/Lombard (very long route name)
           <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
             to
@@ -4038,8 +4038,8 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
           St. Johns via NAYA
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             SE Cesar Chavez Blvd &amp; Brooklyn
@@ -4049,7 +4049,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
             3:47 PM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             SE Cesar Chavez Blvd &amp; Hawthorne
@@ -4062,9 +4062,9 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -4073,16 +4073,16 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 440 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           SE Hawthorne &amp; Cesar Chavez Blvd
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head south on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               service road
@@ -4092,8 +4092,8 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Cesar E. Chavez Blvd
@@ -4103,8 +4103,8 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Hawthorne Blvd
@@ -4117,9 +4117,9 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -4159,12 +4159,12 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </span>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           1
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           Hawthorne
           <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
             to
@@ -4172,8 +4172,8 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
           Portland
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             SE Hawthorne &amp; Cesar Chavez Blvd
@@ -4183,7 +4183,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
             4:00 PM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             SE Hawthorne &amp; 27th
@@ -4196,9 +4196,9 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -4238,16 +4238,16 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </span>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 479 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1415 SE 28th Ave, Portland, OR, USA 97214
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head west on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Hawthorne Blvd
@@ -4257,8 +4257,8 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE 27th Ave
@@ -4268,8 +4268,8 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SE Madison St
@@ -4286,10 +4286,10 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
 `;
 
 exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
-  <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+<div class="sc-kpDqfm cmzwJF">
+  <div class="sc-aXZVg sc-gEvEer lbwBBJ ZmgCL">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           Depart
         </strong>
@@ -4300,9 +4300,9 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -4311,16 +4311,16 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 269 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Pioneer Square North MAX Station
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head northwest on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -4330,8 +4330,8 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Left on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Pioneer Sq N (path)
@@ -4344,9 +4344,9 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -4355,12 +4355,12 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
+    <div class="sc-eqUAAy dpVHeM">
+      <div class="sc-iGgWBj KvLwl">
         <strong>
           MAX Blue Line
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="sc-jXbUNg cRoTyz">
           MAX Blue Line
           <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
             to
@@ -4368,8 +4368,8 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
           Hillsboro
         </span>
       </div>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
           Board at
           <strong>
             Pioneer Square North MAX Station
@@ -4379,7 +4379,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
             3:46 PM
           </strong>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
+        <div class="sc-fqkvVR hdGXoh">
           Get off at
           <strong>
             Providence Park MAX Station
@@ -4392,9 +4392,9 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
   </div>
-  <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
-    <div class="styled__LegAnnotation-sc-1fqxr7x-7 bbmvov">
-      <div class="styled__ModeIcon-sc-1fqxr7x-10 kVWemK">
+  <div class="sc-aXZVg lbwBBJ">
+    <div class="sc-kAyceB dhwGiK">
+      <div class="sc-dhKdcB ftIYWp">
         <svg viewbox="0 0 390 390"
              leg="[object Object]"
         >
@@ -4403,16 +4403,16 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
         </svg>
       </div>
     </div>
-    <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+    <div class="sc-eqUAAy dpVHeM">
+      <span class="sc-gsFSXq eIDHuh">
         Walk 249 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
       </span>
-      <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+      <div class="sc-dcJsrY fvPpOF">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Head west on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Providence Park (path)
@@ -4422,8 +4422,8 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -4433,8 +4433,8 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               Unnamed Path
@@ -4444,8 +4444,8 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
             </span>
           </span>
         </div>
-        <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+        <div class="sc-fqkvVR hdGXoh">
+          <span class="sc-imWYAI eOtlox">
             Right on
             <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
               SW Morrison St

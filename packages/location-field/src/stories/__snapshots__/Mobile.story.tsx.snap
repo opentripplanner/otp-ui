@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LocationField/Mobile Context Blank smoke-test 1`] = `
-<div class="styled__InputGroup-sc-xahsq2-7 erfoji"
+<div class="sc-kAyceB hjTygp"
      role="group"
 >
   <button aria-controls="from-listbox"
@@ -9,7 +9,7 @@ exports[`LocationField/Mobile Context Blank smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
+          class="sc-gEvEer sc-dcJsrY ehglFu goGsTJ"
   >
     <svg viewbox="0 0 512 512"
          height="13"
@@ -33,31 +33,31 @@ exports[`LocationField/Mobile Context Blank smoke-test 1`] = `
          aria-invalid="false"
          aria-label="from"
          aria-required="false"
-         class="styled__Input-sc-xahsq2-6 axlAP from-form-control"
+         class="sc-gsFSXq ccIjPT from-form-control"
          spellcheck="false"
          placeholder="from"
          role="combobox"
          value
   >
   <span role="status"
-        class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
+        class="sc-aXZVg kNcGhI"
   >
   </span>
   <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="sc-iGgWBj sc-cPiKLX kCDGCa ilQQAZ"
   >
     <li aria-live="off"
         id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 448 512"
                height="13"
                width="13"
@@ -73,7 +73,7 @@ exports[`LocationField/Mobile Context Blank smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Use Current Location
         </span>
       </span>
@@ -83,7 +83,7 @@ exports[`LocationField/Mobile Context Blank smoke-test 1`] = `
 `;
 
 exports[`LocationField/Mobile Context GeocoderNoResults smoke-test 1`] = `
-<div class="styled__InputGroup-sc-xahsq2-7 erfoji"
+<div class="sc-kAyceB hjTygp"
      role="group"
 >
   <button aria-controls="from-listbox"
@@ -91,7 +91,7 @@ exports[`LocationField/Mobile Context GeocoderNoResults smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
+          class="sc-gEvEer sc-dcJsrY ehglFu goGsTJ"
   >
     <svg viewbox="0 0 512 512"
          height="13"
@@ -115,31 +115,31 @@ exports[`LocationField/Mobile Context GeocoderNoResults smoke-test 1`] = `
          aria-invalid="false"
          aria-label="from"
          aria-required="false"
-         class="styled__Input-sc-xahsq2-6 axlAP from-form-control"
+         class="sc-gsFSXq ccIjPT from-form-control"
          spellcheck="false"
          placeholder="from"
          role="combobox"
          value
   >
   <span role="status"
-        class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
+        class="sc-aXZVg kNcGhI"
   >
   </span>
   <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="sc-iGgWBj sc-cPiKLX kCDGCa ilQQAZ"
   >
     <li aria-live="off"
         id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 448 512"
                height="13"
                width="13"
@@ -155,7 +155,7 @@ exports[`LocationField/Mobile Context GeocoderNoResults smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Use Current Location
         </span>
       </span>
@@ -165,7 +165,7 @@ exports[`LocationField/Mobile Context GeocoderNoResults smoke-test 1`] = `
 `;
 
 exports[`LocationField/Mobile Context GeocoderUnreachable smoke-test 1`] = `
-<div class="styled__InputGroup-sc-xahsq2-7 erfoji"
+<div class="sc-kAyceB hjTygp"
      role="group"
 >
   <button aria-controls="from-listbox"
@@ -173,7 +173,7 @@ exports[`LocationField/Mobile Context GeocoderUnreachable smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
+          class="sc-gEvEer sc-dcJsrY ehglFu goGsTJ"
   >
     <svg viewbox="0 0 512 512"
          height="13"
@@ -197,31 +197,31 @@ exports[`LocationField/Mobile Context GeocoderUnreachable smoke-test 1`] = `
          aria-invalid="false"
          aria-label="from"
          aria-required="false"
-         class="styled__Input-sc-xahsq2-6 axlAP from-form-control"
+         class="sc-gsFSXq ccIjPT from-form-control"
          spellcheck="false"
          placeholder="from"
          role="combobox"
          value
   >
   <span role="status"
-        class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
+        class="sc-aXZVg kNcGhI"
   >
   </span>
   <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="sc-iGgWBj sc-cPiKLX kCDGCa ilQQAZ"
   >
     <li aria-live="off"
         id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 448 512"
                height="13"
                width="13"
@@ -237,7 +237,7 @@ exports[`LocationField/Mobile Context GeocoderUnreachable smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Use Current Location
         </span>
       </span>
@@ -247,7 +247,7 @@ exports[`LocationField/Mobile Context GeocoderUnreachable smoke-test 1`] = `
 `;
 
 exports[`LocationField/Mobile Context LocationUnavailable smoke-test 1`] = `
-<div class="styled__InputGroup-sc-xahsq2-7 erfoji"
+<div class="sc-kAyceB hjTygp"
      role="group"
 >
   <button aria-controls="from-listbox"
@@ -255,7 +255,7 @@ exports[`LocationField/Mobile Context LocationUnavailable smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
+          class="sc-gEvEer sc-dcJsrY ehglFu goGsTJ"
   >
     <svg viewbox="0 0 512 512"
          height="13"
@@ -279,14 +279,14 @@ exports[`LocationField/Mobile Context LocationUnavailable smoke-test 1`] = `
          aria-invalid="false"
          aria-label="from"
          aria-required="false"
-         class="styled__Input-sc-xahsq2-6 axlAP from-form-control"
+         class="sc-gsFSXq ccIjPT from-form-control"
          spellcheck="false"
          placeholder="from"
          role="combobox"
          value
   >
   <span role="status"
-        class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
+        class="sc-aXZVg kNcGhI"
   >
     Current location not available
   </span>
@@ -294,7 +294,7 @@ exports[`LocationField/Mobile Context LocationUnavailable smoke-test 1`] = `
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="sc-iGgWBj sc-cPiKLX kCDGCa ilQQAZ"
   >
     <li aria-hidden="true"
         aria-live="off"
@@ -302,10 +302,10 @@ exports[`LocationField/Mobile Context LocationUnavailable smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 512 512"
                height="13"
                width="13"
@@ -321,7 +321,7 @@ exports[`LocationField/Mobile Context LocationUnavailable smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Current location not available
         </span>
       </span>
@@ -331,7 +331,7 @@ exports[`LocationField/Mobile Context LocationUnavailable smoke-test 1`] = `
 `;
 
 exports[`LocationField/Mobile Context SelectedLocation smoke-test 1`] = `
-<div class="styled__InputGroup-sc-xahsq2-7 erfoji"
+<div class="sc-kAyceB hjTygp"
      role="group"
 >
   <button aria-controls="to-listbox"
@@ -339,7 +339,7 @@ exports[`LocationField/Mobile Context SelectedLocation smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
+          class="sc-gEvEer sc-dcJsrY ehglFu goGsTJ"
   >
     <svg viewbox="0 0 384 512"
          height="13"
@@ -363,7 +363,7 @@ exports[`LocationField/Mobile Context SelectedLocation smoke-test 1`] = `
          aria-invalid="false"
          aria-label="to"
          aria-required="false"
-         class="styled__Input-sc-xahsq2-6 axlAP to-form-control"
+         class="sc-gsFSXq ccIjPT to-form-control"
          spellcheck="false"
          placeholder="to"
          role="combobox"
@@ -371,7 +371,7 @@ exports[`LocationField/Mobile Context SelectedLocation smoke-test 1`] = `
   >
   <button aria-label="Clear location"
           type="button"
-          class="styled__BaseButton-sc-xahsq2-1 styled__ClearButton-sc-xahsq2-2 hoozke cCkuXw"
+          class="sc-gEvEer sc-eqUAAy ehglFu exhVwv"
   >
     <svg viewbox="0 0 320 512"
          height="13"
@@ -389,24 +389,24 @@ exports[`LocationField/Mobile Context SelectedLocation smoke-test 1`] = `
     </svg>
   </button>
   <span role="status"
-        class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
+        class="sc-aXZVg kNcGhI"
   >
   </span>
   <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="sc-iGgWBj sc-cPiKLX kCDGCa ilQQAZ"
   >
     <li aria-live="off"
         id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 448 512"
                height="13"
                width="13"
@@ -422,7 +422,7 @@ exports[`LocationField/Mobile Context SelectedLocation smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Use Current Location
         </span>
       </span>
@@ -432,7 +432,7 @@ exports[`LocationField/Mobile Context SelectedLocation smoke-test 1`] = `
 `;
 
 exports[`LocationField/Mobile Context SelectedLocationCustomClear smoke-test 1`] = `
-<div class="styled__InputGroup-sc-xahsq2-7 erfoji"
+<div class="sc-kAyceB hjTygp"
      role="group"
 >
   <button aria-controls="to-listbox"
@@ -440,7 +440,7 @@ exports[`LocationField/Mobile Context SelectedLocationCustomClear smoke-test 1`]
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
+          class="sc-gEvEer sc-dcJsrY ehglFu goGsTJ"
   >
     <svg viewbox="0 0 384 512"
          height="13"
@@ -464,7 +464,7 @@ exports[`LocationField/Mobile Context SelectedLocationCustomClear smoke-test 1`]
          aria-invalid="false"
          aria-label="to"
          aria-required="false"
-         class="styled__Input-sc-xahsq2-6 axlAP to-form-control"
+         class="sc-gsFSXq ccIjPT to-form-control"
          spellcheck="false"
          placeholder="to"
          role="combobox"
@@ -472,7 +472,7 @@ exports[`LocationField/Mobile Context SelectedLocationCustomClear smoke-test 1`]
   >
   <button aria-label="Clear location"
           type="button"
-          class="styled__BaseButton-sc-xahsq2-1 styled__ClearButton-sc-xahsq2-2 hoozke cCkuXw"
+          class="sc-gEvEer sc-eqUAAy ehglFu exhVwv"
   >
     <svg viewbox="0 0 512 512"
          height="13"
@@ -490,24 +490,24 @@ exports[`LocationField/Mobile Context SelectedLocationCustomClear smoke-test 1`]
     </svg>
   </button>
   <span role="status"
-        class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
+        class="sc-aXZVg kNcGhI"
   >
   </span>
   <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="sc-iGgWBj sc-cPiKLX kCDGCa ilQQAZ"
   >
     <li aria-live="off"
         id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 448 512"
                height="13"
                width="13"
@@ -523,7 +523,7 @@ exports[`LocationField/Mobile Context SelectedLocationCustomClear smoke-test 1`]
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Use Current Location
         </span>
       </span>
@@ -533,7 +533,7 @@ exports[`LocationField/Mobile Context SelectedLocationCustomClear smoke-test 1`]
 `;
 
 exports[`LocationField/Mobile Context SlowGeocoder smoke-test 1`] = `
-<div class="styled__InputGroup-sc-xahsq2-7 erfoji"
+<div class="sc-kAyceB hjTygp"
      role="group"
 >
   <button aria-controls="from-listbox"
@@ -541,7 +541,7 @@ exports[`LocationField/Mobile Context SlowGeocoder smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
+          class="sc-gEvEer sc-dcJsrY ehglFu goGsTJ"
   >
     <svg viewbox="0 0 512 512"
          height="13"
@@ -565,31 +565,31 @@ exports[`LocationField/Mobile Context SlowGeocoder smoke-test 1`] = `
          aria-invalid="false"
          aria-label="from"
          aria-required="false"
-         class="styled__Input-sc-xahsq2-6 axlAP from-form-control"
+         class="sc-gsFSXq ccIjPT from-form-control"
          spellcheck="false"
          placeholder="from"
          role="combobox"
          value
   >
   <span role="status"
-        class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
+        class="sc-aXZVg kNcGhI"
   >
   </span>
   <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="sc-iGgWBj sc-cPiKLX kCDGCa ilQQAZ"
   >
     <li aria-live="off"
         id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 448 512"
                height="13"
                width="13"
@@ -605,7 +605,7 @@ exports[`LocationField/Mobile Context SlowGeocoder smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Use Current Location
         </span>
       </span>
@@ -615,7 +615,7 @@ exports[`LocationField/Mobile Context SlowGeocoder smoke-test 1`] = `
 `;
 
 exports[`LocationField/Mobile Context Styled smoke-test 1`] = `
-<div class="styled__InputGroup-sc-xahsq2-7 erfoji Mobilestory__StyledLocationField-sc-1kqdrv5-0 klgtTw"
+<div class="sc-kAyceB hjTygp sc-dAbbOL dPMfOc"
      role="group"
 >
   <button aria-controls="from-listbox"
@@ -623,7 +623,7 @@ exports[`LocationField/Mobile Context Styled smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
+          class="sc-gEvEer sc-dcJsrY ehglFu goGsTJ"
   >
     <svg viewbox="0 0 512 512"
          height="13"
@@ -647,31 +647,31 @@ exports[`LocationField/Mobile Context Styled smoke-test 1`] = `
          aria-invalid="false"
          aria-label="from"
          aria-required="false"
-         class="styled__Input-sc-xahsq2-6 axlAP from-form-control"
+         class="sc-gsFSXq ccIjPT from-form-control"
          spellcheck="false"
          placeholder="from"
          role="combobox"
          value
   >
   <span role="status"
-        class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
+        class="sc-aXZVg kNcGhI"
   >
   </span>
   <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="sc-iGgWBj sc-cPiKLX kCDGCa ilQQAZ"
   >
     <li aria-live="off"
         id="current-position"
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 448 512"
                height="13"
                width="13"
@@ -687,7 +687,7 @@ exports[`LocationField/Mobile Context Styled smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Use Current Location
         </span>
       </span>
@@ -697,7 +697,7 @@ exports[`LocationField/Mobile Context Styled smoke-test 1`] = `
 `;
 
 exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
-<div class="styled__InputGroup-sc-xahsq2-7 erfoji"
+<div class="sc-kAyceB hjTygp"
      role="group"
 >
   <button aria-controls="to-listbox"
@@ -705,7 +705,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
+          class="sc-gEvEer sc-dcJsrY ehglFu goGsTJ"
   >
     <svg viewbox="0 0 640 512"
          height="13"
@@ -729,23 +729,23 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
          aria-invalid="false"
          aria-label="to"
          aria-required="false"
-         class="styled__Input-sc-xahsq2-6 axlAP to-form-control"
+         class="sc-gsFSXq ccIjPT to-form-control"
          spellcheck="false"
          placeholder="to"
          role="combobox"
          value
   >
   <span role="status"
-        class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
+        class="sc-aXZVg kNcGhI"
   >
   </span>
   <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="sc-iGgWBj sc-cPiKLX kCDGCa ilQQAZ"
   >
-    <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 iDacNN">
+    <h2 class="sc-imWYAI dftntC">
       Nearby Stops
     </h2>
     <li aria-live="off"
@@ -753,9 +753,9 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__StopIconAndDistanceContainer-sc-xahsq2-19 jwHZuF">
+      <span class="sc-eldPxv jPuweW">
         <svg viewbox="0 0 512 512"
              height="13"
              width="13"
@@ -770,21 +770,21 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
           >
           </path>
         </svg>
-        <span class="styled__StopDistance-sc-xahsq2-18 dikZwS">
+        <span class="sc-eDPEul ixgLv">
           404 ft
         </span>
       </span>
-      <span class="styled__StopContentContainer-sc-xahsq2-17 gaHWbQ">
-        <span class="styled__StopName-sc-xahsq2-20 gqVeRv">
+      <span class="sc-dLMFU fmgTIs">
+        <span class="sc-fPXMVe iZqZog">
           1st &amp; Main (1)
         </span>
-        <span class="styled__StopRoutes-sc-xahsq2-21 coIaiw">
-          <span class="styled__RouteName-sc-xahsq2-15 fokEYr">
+        <span class="sc-gFqAkR jNCZZX">
+          <span class="sc-jEACwC flQsQA">
             1
           </span>
         </span>
       </span>
-      <div class="styled__ClearBoth-sc-xahsq2-3 gMCZXA">
+      <div class="sc-fqkvVR ePSBRT">
       </div>
     </li>
     <li aria-live="off"
@@ -792,9 +792,9 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__StopIconAndDistanceContainer-sc-xahsq2-19 jwHZuF">
+      <span class="sc-eldPxv jPuweW">
         <svg viewbox="0 0 512 512"
              height="13"
              width="13"
@@ -809,24 +809,24 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
           >
           </path>
         </svg>
-        <span class="styled__StopDistance-sc-xahsq2-18 dikZwS">
+        <span class="sc-eDPEul ixgLv">
           0.2 mi
         </span>
       </span>
-      <span class="styled__StopContentContainer-sc-xahsq2-17 gaHWbQ">
-        <span class="styled__StopName-sc-xahsq2-20 gqVeRv">
+      <span class="sc-dLMFU fmgTIs">
+        <span class="sc-fPXMVe iZqZog">
           Main &amp; 2nd (2)
         </span>
-        <span class="styled__StopRoutes-sc-xahsq2-21 coIaiw">
-          <span class="styled__RouteName-sc-xahsq2-15 fokEYr">
+        <span class="sc-gFqAkR jNCZZX">
+          <span class="sc-jEACwC flQsQA">
             2
           </span>
         </span>
       </span>
-      <div class="styled__ClearBoth-sc-xahsq2-3 gMCZXA">
+      <div class="sc-fqkvVR ePSBRT">
       </div>
     </li>
-    <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 iDacNN">
+    <h2 class="sc-imWYAI dftntC">
       Recently Searched
     </h2>
     <li aria-live="off"
@@ -834,10 +834,10 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 512 512"
                height="13"
                width="13"
@@ -853,12 +853,12 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           123 Main St
         </span>
       </span>
     </li>
-    <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 iDacNN">
+    <h2 class="sc-imWYAI dftntC">
       My Places
     </h2>
     <li aria-live="off"
@@ -866,10 +866,10 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 576 512"
                height="13"
                width="13"
@@ -885,7 +885,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Home (456 Suburb St)
         </span>
       </span>
@@ -895,10 +895,10 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 384 512"
                height="13"
                width="13"
@@ -914,7 +914,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Work (789 Busy St)
         </span>
       </span>
@@ -924,10 +924,10 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 576 512"
                height="13"
                width="13"
@@ -943,7 +943,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Coffee Roasters Shop, 55 Coffee Street
         </span>
       </span>
@@ -953,10 +953,10 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 576 512"
                height="13"
                width="13"
@@ -972,7 +972,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           123 Main St
         </span>
       </span>
@@ -982,10 +982,10 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 512 512"
                height="13"
                width="13"
@@ -1001,7 +1001,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Use Current Location
         </span>
       </span>
@@ -1011,7 +1011,7 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
 `;
 
 exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
-<div class="styled__InputGroup-sc-xahsq2-7 erfoji"
+<div class="sc-kAyceB hjTygp"
      role="group"
 >
   <button aria-controls="to-listbox"
@@ -1019,7 +1019,7 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
+          class="sc-gEvEer sc-dcJsrY ehglFu goGsTJ"
   >
     <svg viewbox="0 0 384 512"
          height="13"
@@ -1043,23 +1043,23 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
          aria-invalid="false"
          aria-label="to"
          aria-required="false"
-         class="styled__Input-sc-xahsq2-6 axlAP to-form-control"
+         class="sc-gsFSXq ccIjPT to-form-control"
          spellcheck="false"
          placeholder="to"
          role="combobox"
          value
   >
   <span role="status"
-        class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
+        class="sc-aXZVg kNcGhI"
   >
   </span>
   <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="sc-iGgWBj sc-cPiKLX kCDGCa ilQQAZ"
   >
-    <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 iDacNN">
+    <h2 class="sc-imWYAI dftntC">
       Nearby Stops
     </h2>
     <li aria-live="off"
@@ -1067,9 +1067,9 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__StopIconAndDistanceContainer-sc-xahsq2-19 jwHZuF">
+      <span class="sc-eldPxv jPuweW">
         <svg viewbox="0 0 512 512"
              height="13"
              width="13"
@@ -1084,21 +1084,21 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
           >
           </path>
         </svg>
-        <span class="styled__StopDistance-sc-xahsq2-18 dikZwS">
+        <span class="sc-eDPEul ixgLv">
           404 ft
         </span>
       </span>
-      <span class="styled__StopContentContainer-sc-xahsq2-17 gaHWbQ">
-        <span class="styled__StopName-sc-xahsq2-20 gqVeRv">
+      <span class="sc-dLMFU fmgTIs">
+        <span class="sc-fPXMVe iZqZog">
           1st &amp; Main (1)
         </span>
-        <span class="styled__StopRoutes-sc-xahsq2-21 coIaiw">
-          <span class="styled__RouteName-sc-xahsq2-15 fokEYr">
+        <span class="sc-gFqAkR jNCZZX">
+          <span class="sc-jEACwC flQsQA">
             1
           </span>
         </span>
       </span>
-      <div class="styled__ClearBoth-sc-xahsq2-3 gMCZXA">
+      <div class="sc-fqkvVR ePSBRT">
       </div>
     </li>
     <li aria-live="off"
@@ -1106,9 +1106,9 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__StopIconAndDistanceContainer-sc-xahsq2-19 jwHZuF">
+      <span class="sc-eldPxv jPuweW">
         <svg viewbox="0 0 512 512"
              height="13"
              width="13"
@@ -1123,21 +1123,21 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
           >
           </path>
         </svg>
-        <span class="styled__StopDistance-sc-xahsq2-18 dikZwS">
+        <span class="sc-eDPEul ixgLv">
           0.2 mi
         </span>
       </span>
-      <span class="styled__StopContentContainer-sc-xahsq2-17 gaHWbQ">
-        <span class="styled__StopName-sc-xahsq2-20 gqVeRv">
+      <span class="sc-dLMFU fmgTIs">
+        <span class="sc-fPXMVe iZqZog">
           Main &amp; 2nd (2)
         </span>
-        <span class="styled__StopRoutes-sc-xahsq2-21 coIaiw">
-          <span class="styled__RouteName-sc-xahsq2-15 fokEYr">
+        <span class="sc-gFqAkR jNCZZX">
+          <span class="sc-jEACwC flQsQA">
             2
           </span>
         </span>
       </span>
-      <div class="styled__ClearBoth-sc-xahsq2-3 gMCZXA">
+      <div class="sc-fqkvVR ePSBRT">
       </div>
     </li>
     <li aria-live="off"
@@ -1145,10 +1145,10 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 448 512"
                height="13"
                width="13"
@@ -1164,7 +1164,7 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Use Current Location
         </span>
       </span>
@@ -1174,7 +1174,7 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
 `;
 
 exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
-<div class="styled__InputGroup-sc-xahsq2-7 erfoji"
+<div class="sc-kAyceB hjTygp"
      role="group"
 >
   <button aria-controls="to-listbox"
@@ -1182,7 +1182,7 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
+          class="sc-gEvEer sc-dcJsrY ehglFu goGsTJ"
   >
     <svg viewbox="0 0 384 512"
          height="13"
@@ -1206,23 +1206,23 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
          aria-invalid="false"
          aria-label="to"
          aria-required="false"
-         class="styled__Input-sc-xahsq2-6 axlAP to-form-control"
+         class="sc-gsFSXq ccIjPT to-form-control"
          spellcheck="false"
          placeholder="to"
          role="combobox"
          value
   >
   <span role="status"
-        class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
+        class="sc-aXZVg kNcGhI"
   >
   </span>
   <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="sc-iGgWBj sc-cPiKLX kCDGCa ilQQAZ"
   >
-    <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 iDacNN">
+    <h2 class="sc-imWYAI dftntC">
       Recently Searched
     </h2>
     <li aria-live="off"
@@ -1230,10 +1230,10 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 512 512"
                height="13"
                width="13"
@@ -1249,7 +1249,7 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           123 Main St
         </span>
       </span>
@@ -1259,10 +1259,10 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 448 512"
                height="13"
                width="13"
@@ -1278,7 +1278,7 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Use Current Location
         </span>
       </span>
@@ -1288,7 +1288,7 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
 `;
 
 exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
-<div class="styled__InputGroup-sc-xahsq2-7 erfoji"
+<div class="sc-kAyceB hjTygp"
      role="group"
 >
   <button aria-controls="to-listbox"
@@ -1296,7 +1296,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
+          class="sc-gEvEer sc-dcJsrY ehglFu goGsTJ"
   >
     <svg viewbox="0 0 384 512"
          height="13"
@@ -1320,23 +1320,23 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
          aria-invalid="false"
          aria-label="to"
          aria-required="false"
-         class="styled__Input-sc-xahsq2-6 axlAP to-form-control"
+         class="sc-gsFSXq ccIjPT to-form-control"
          spellcheck="false"
          placeholder="to"
          role="combobox"
          value
   >
   <span role="status"
-        class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
+        class="sc-aXZVg kNcGhI"
   >
   </span>
   <ul aria-hidden="true"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="sc-iGgWBj sc-cPiKLX kCDGCa ilQQAZ"
   >
-    <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 iDacNN">
+    <h2 class="sc-imWYAI dftntC">
       My Places
     </h2>
     <li aria-live="off"
@@ -1344,10 +1344,10 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 576 512"
                height="13"
                width="13"
@@ -1363,7 +1363,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Home (456 Suburb St)
         </span>
       </span>
@@ -1373,10 +1373,10 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 512 512"
                height="13"
                width="13"
@@ -1392,7 +1392,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Work (789 Busy St)
         </span>
       </span>
@@ -1402,10 +1402,10 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 384 512"
                height="13"
                width="13"
@@ -1421,7 +1421,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Coffee Roasters Shop, 55 Coffee Street
         </span>
       </span>
@@ -1431,10 +1431,10 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 384 512"
                height="13"
                width="13"
@@ -1450,7 +1450,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           123 Main St
         </span>
       </span>
@@ -1460,10 +1460,10 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
         role="option"
         aria-selected="false"
         tabindex="-1"
-        class="styled__MenuItemLi-sc-xahsq2-9 eJoDhM"
+        class="sc-jXbUNg XFopA"
     >
-      <span class="styled__OptionContainer-sc-xahsq2-10 jVmFDL">
-        <span class="styled__OptionIconContainer-sc-xahsq2-14 gBvsQe">
+      <span class="sc-dhKdcB hwUpcu">
+        <span class="sc-cwHptR ejUpcM">
           <svg viewbox="0 0 448 512"
                height="13"
                width="13"
@@ -1479,7 +1479,7 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
             </path>
           </svg>
         </span>
-        <span class="styled__OptionContent-sc-xahsq2-13 kWmkIl">
+        <span class="sc-jlZhew egxPxP">
           Use Current Location
         </span>
       </span>
