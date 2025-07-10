@@ -33,7 +33,8 @@ module.exports = {
   testPathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/((esm)|(lib))/"],
   transform: {
     "\\.[jt]sx?$": "babel-jest",
-    "\\.ya?ml$": "yaml-jest"
+    "\\.ya?ml$": "yaml-jest",
+    "\\.graphql$": "jest-file-loader"
   },
   transformIgnorePatterns: ["/node_modules/(?!(chroma-js)/)"]
 };
