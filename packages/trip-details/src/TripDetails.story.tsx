@@ -22,7 +22,7 @@ const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-
 const flexItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2.4-transit-itinerary.json");
 const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
 const otp2FareProducts = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/leg-fare-products.json");
-// const multipleFareOptionsItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fares-v2-multiple-options.json");
+const multipleFareOptionsItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fares-v2-multiple-options.json");
 const faresv2ItineraryWithTransfer = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fares-v2-with-transfer.json");
 const faresv2Itinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fares-v2-fare-components.json");
 
@@ -201,7 +201,7 @@ export const OTP2FlexItinerary = makeStory({ itinerary: flexItinerary });
 export const FaresV2TableStory = (): ReactElement => {
   return (
     <>
-      {/* <FaresV2Table legs={multipleFareOptionsItinerary.legs} /> */}
+      <FaresV2Table legs={multipleFareOptionsItinerary.legs} />
       <FaresV2Table legs={faresv2Itinerary.legs} favoriteMediumId="3" />
       <FaresV2Table legs={faresv2ItineraryWithTransfer.legs} />
       <FaresV2Table legs={otp2FareProducts.legs} />
