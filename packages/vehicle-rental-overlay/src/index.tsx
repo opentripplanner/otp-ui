@@ -3,7 +3,7 @@ import {
   Company,
   ConfiguredCompany,
   MapLocationActionArg,
-  Station
+  VehicleRentalStation
 } from "@opentripplanner/types";
 import { EventData } from "mapbox-gl";
 import React, { useEffect, useState } from "react";
@@ -15,11 +15,15 @@ import { BaseBikeRentalIcon, StationMarker } from "./styled";
 // TODO: Make configurable?
 const DETAILED_MARKER_CUTOFF = 16;
 
-const getColorForStation = (v: Station) => {
+const getColorForStation = (v: VehicleRentalStation) => {
   if (v.isFloatingCar) return "#009cde";
   if (v.isFloatingVehicle) return "#f5a729";
   // TODO: nicer color to match transitive
-  if (v.bikesAvailable !== undefined || v.isFloatingBike) return "#f00";
+  if (
+    (v.availableVehicles !== undefined && v.availableVehicles.total > 0) ||
+    v.isFloatingBike
+  )
+    return "#f00";
   return "gray";
 };
 
@@ -42,7 +46,10 @@ type Props = {
    * rental station. This function takes two arguments of the configCompanies
    * prop and a vehicle rental station. The function must return a string.
    */
-  getStationName?: (configCompanies: Company[], station: Station) => string;
+  getStationName?: (
+    configCompanies: Company[],
+    station: VehicleRentalStation
+  ) => string;
   /**
    * If specified, a function that will be triggered every 30 seconds whenever this layer is
    * visible.
@@ -69,7 +76,7 @@ type Props = {
   /**
    * A list of the vehicle rental stations specific to this overlay instance.
    */
-  stations: Station[];
+  stations: VehicleRentalStation[];
   /**
    * Whether the overlay is currently visible.
    */
@@ -145,15 +152,17 @@ const VehicleRentalOverlay = ({
         vehicle =>
           // Include specified companies only if companies is specified and network info is available
           !companies ||
-          !vehicle.networks ||
-          companies.includes(vehicle.networks[0])
+          !vehicle.rentalNetwork.networkId ||
+          companies.includes(vehicle.rentalNetwork.networkId)
       )
       .map(vehicle => ({
         type: "Feature",
-        geometry: { type: "Point", coordinates: [vehicle.x, vehicle.y] },
+        geometry: { type: "Point", coordinates: [vehicle.lon, vehicle.lat] },
         properties: {
           ...vehicle,
-          networks: JSON.stringify(vehicle.networks),
+          availableSpaces: vehicle.availableSpaces?.total ?? 0,
+          availableVehicles: vehicle.availableVehicles?.total ?? 0,
+          networks: vehicle.rentalNetwork.networkId,
           "stroke-width":
             vehicle.isFloatingBike || vehicle.isFloatingVehicle ? 1 : 2,
           color: getColorForStation(vehicle)
@@ -196,16 +205,17 @@ const VehicleRentalOverlay = ({
                 entity={station}
               />
             }
-            position={[station.y, station.x]}
+            position={[station.lat, station.lon]}
           >
-            {station.bikesAvailable !== undefined &&
+            {station.availableVehicles.total > 0 &&
             !station.isFloatingBike &&
             !station.isFloatingVehicle &&
-            station.spacesAvailable !== undefined ? (
+            station.availableSpaces !== undefined ? (
               <BaseBikeRentalIcon
                 percent={
-                  station?.bikesAvailable /
-                  (station?.bikesAvailable + station?.spacesAvailable)
+                  station?.availableVehicles.total /
+                  (station?.availableVehicles.total +
+                    station?.availableSpaces.total)
                 }
               />
             ) : (
@@ -215,8 +225,8 @@ const VehicleRentalOverlay = ({
         ))}
       {clickedVehicle && (
         <Popup
-          latitude={clickedVehicle.y}
-          longitude={clickedVehicle.x}
+          latitude={clickedVehicle.lat}
+          longitude={clickedVehicle.lon}
           maxWidth="100%"
           onClose={() => {
             setClickedVehicle(null);
@@ -234,7 +244,7 @@ const VehicleRentalOverlay = ({
             }}
             entity={{
               ...clickedVehicle,
-              networks: JSON.parse(clickedVehicle.networks)
+              rentalNetwork: clickedVehicle.rentalNetwork.networkId
             }}
           />
         </Popup>
