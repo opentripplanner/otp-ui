@@ -15,8 +15,6 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Install Playwright
-        run: pnpm exec playwright install --with-deps
       - name: Lint code
         run: pnpm run lint:js
       - name: Lint styles
@@ -29,6 +27,8 @@ jobs:
         run: pnpm run unit
       - name: Build Storybook
         run: pnpm run build-storybook --quiet
+      - name: Install Playwright
+        run: pnpm exec playwright install --with-deps
       - name: Serve Storybook and run snapshot tests
         env: 
           ONLY_RUN: SNAPSHOTS
