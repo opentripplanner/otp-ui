@@ -1,4 +1,4 @@
-import { Company, Station, Stop } from "@opentripplanner/types";
+import { Company, VehicleRentalStation, Stop } from "@opentripplanner/types";
 import { IntlShape } from "react-intl";
 import coreUtils from "@opentripplanner/core-utils";
 
@@ -8,18 +8,18 @@ export function makeDefaultGetEntityName(
   defaultEnglishMessages: { [key: string]: string }
 ) {
   return function defaultGetEntityName(
-    entity: Station | Stop,
+    entity: VehicleRentalStation | Stop,
     configCompanies: Company[]
   ): string | null {
     // TODO: Stop generating this / passing it to the car string? Is it needed?
     // In English we say "Car: " instead
     const stationNetworks =
-      "networks" in entity &&
+      "rentalNetwork" in entity &&
       (coreUtils.itinerary.getCompaniesLabelFromNetworks(
-        entity?.networks || [],
+        entity?.rentalNetwork.networkId || [],
         configCompanies
       ) ||
-        entity?.networks?.[0]);
+        entity?.rentalNetwork.networkId);
     let stationName: string | null = entity.name || entity.id;
     // If the station name or id is a giant UUID (with more than 3 "-" characters)
     // best not to show that at all. The company name will still be shown.

@@ -1,7 +1,7 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import styled from "styled-components";
-import { Station, Stop } from "@opentripplanner/types";
+import { VehicleRentalStation, Stop, FormFactor } from "@opentripplanner/types";
 import { IntlProvider } from "react-intl";
 import { Meta } from "@storybook/react";
 import MapPopupContents from "./index";
@@ -37,21 +37,23 @@ const STOP_WITH_CODE = {
   name: "W Burnside & SW 2nd"
 };
 
-const STATION = {
-  "stroke-width": 2,
+const VEHICLE_RENTAL_STATION = {
   allowDropoff: true,
   allowPickup: true,
-  bikesAvailable: 6,
+  availableVehicles: {
+    total: 6,
+    byType: [{ count: 6, vehicleType: { formFactor: FormFactor.BICYCLE } }]
+  },
   color: "#f00",
   id: '"hub_1580"',
   isCarStation: false,
   isFloatingBike: false,
   name: "SW Morrison at 18th",
-  networks: ["BIKETOWN"],
+  rentalNetwork: { networkId: "BIKETOWN" },
   realTimeData: true,
   spacesAvailable: 11,
-  x: -122.6896771788597,
-  y: 45.5219604810172
+  lon: -122.6896771788597,
+  lat: 45.5219604810172
 };
 
 const FLOATING_VEHICLE = {
@@ -64,11 +66,11 @@ const FLOATING_VEHICLE = {
   isCarStation: false,
   isFloatingBike: true,
   name: "0541",
-  networks: ["BIKETOWN"],
+  rentalNetwork: { networkId: "BIKETOWN" },
   realTimeData: true,
   spacesAvailable: 0,
-  x: -122.70486,
-  y: 45.525486666666666
+  lon: -122.70486,
+  lat: 45.525486666666666
 };
 
 const FLOATING_CAR = {
@@ -80,14 +82,14 @@ const FLOATING_CAR = {
   isCarStation: false,
   isFloatingCar: true,
   name: "0541",
-  networks: ["MILES"], // https://miles-mobility.com
+  rentalNetwork: { networkId: "MILES" },
   realTimeData: true,
   spacesAvailable: 0,
-  x: 13.405,
-  y: 52.52
+  lon: 13.405,
+  lat: 52.52
 };
 
-const getEntityPrefixExample = (entity: Stop | Station) => {
+const getEntityPrefixExample = (entity: Stop | VehicleRentalStation) => {
   const DemoIcon = styled.span`
     background-color: blue;
     border-radius: 50px;
@@ -130,7 +132,7 @@ export const StopEntityNoStopCode = (): JSX.Element => (
 
 export const StationEntity = (): JSX.Element => (
   <MapPopupContents
-    entity={STATION}
+    entity={VEHICLE_RENTAL_STATION}
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
   />
