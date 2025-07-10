@@ -717,6 +717,9 @@ importers:
       '@opentripplanner/icons':
         specifier: workspace:*
         version: link:../icons
+      '@opentripplanner/types':
+        specifier: workspace:*
+        version: link:../types
 
   packages/route-viewer-overlay:
     dependencies:

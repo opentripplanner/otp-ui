@@ -7,7 +7,7 @@ import tileLayerHandlers from '../packages/otp2-tile-overlay/src/mocks/handlers'
 import baseMapHandlers from '../packages/base-map/src/mocks/handlers';
 
 import { reactIntl } from './react-intl.ts';
-import { Preview } from "@storybook/react-webpack5";
+import { Preview } from "@storybook/react-vite";
 import { mockDateDecorator } from "storybook-mock-date-decorator";
 import parameters from "./previewParameters";
 
