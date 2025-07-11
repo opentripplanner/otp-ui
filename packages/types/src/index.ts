@@ -815,7 +815,8 @@ export type FareProduct = {
     name: string;
   };
   name: string;
-  price: Money;
+  // Fare products may not have a price if they don't implement a FareProduct subclass.
+  price?: Money;
   riderCategory?: {
     id: string;
     name: string;
