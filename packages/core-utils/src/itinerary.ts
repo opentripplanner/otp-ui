@@ -658,7 +658,10 @@ export function getLegCost(
         descope(product?.medium?.id) || product?.medium?.id || null;
       return (
         productRiderCategoryId === riderCategoryId &&
-        productMediaId === mediumId
+        productMediaId === mediumId &&
+        // Make sure there's a price
+        // Some fare products don't have a price at all.
+        product?.price
       );
     })
     .map(fare => {
