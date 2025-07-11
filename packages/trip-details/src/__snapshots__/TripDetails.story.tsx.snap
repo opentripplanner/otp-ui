@@ -543,11 +543,8 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <td style="text-align: right;">
       $2.75
     </td>
-    <td style="text-align: center;">
-      -
-      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        No fare information for this leg
-      </span>
+    <td style="text-align: right;">
+      $2.75
     </td>
     <td style="text-align: center;">
       -
@@ -560,7 +557,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
     <td style="text-align: right;">
       <em>
-        $5.50
+        $8.25
       </em>
     </td>
   </tr>
@@ -621,11 +618,8 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <td style="text-align: right;">
       $2.75
     </td>
-    <td style="text-align: center;">
-      -
-      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        No fare information for this leg
-      </span>
+    <td style="text-align: right;">
+      $2.75
     </td>
     <td style="text-align: center;">
       -
@@ -638,7 +632,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
     <td style="text-align: right;">
       <em>
-        $5.50
+        $8.25
       </em>
     </td>
   </tr>
