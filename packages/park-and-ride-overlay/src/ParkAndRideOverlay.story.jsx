@@ -1,5 +1,5 @@
 import React from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 
 import parkAndRideLocations from "../__mocks__/park-and-rides.json";
 import { withMap } from "../../../.storybook/base-map-wrapper";

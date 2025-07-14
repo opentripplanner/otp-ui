@@ -1,4 +1,4 @@
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import React, { Component, ReactElement, useState } from "react";
 
 import TripOptions from "./TripOptions";

@@ -1,5 +1,5 @@
 import React from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 
 import mockStops from "../__mocks__/stops.json";
 import mockFlexStops from "../__mocks__/flex-stops.json";

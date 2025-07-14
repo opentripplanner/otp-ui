@@ -2,7 +2,7 @@ import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/
 import { FareProductSelector, Itinerary } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
 
-import { Meta } from "@storybook/react";
+import { Meta } from "@storybook/react-webpack5";
 import ItineraryBody from "..";
 import {
   CustomTimeColumnContent,

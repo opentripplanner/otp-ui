@@ -1,9 +1,9 @@
 import React from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import styled from "styled-components";
 import { Station, Stop } from "@opentripplanner/types";
 import { IntlProvider } from "react-intl";
-import { Meta } from "@storybook/react";
+import { Meta } from "@storybook/react-webpack5";
 import MapPopupContents from "./index";
 
 // HOC to wrap components with IntlProvider

@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 
 import { Company, Station } from "@opentripplanner/types";
 import bikeRentalStations from "../__mocks__/bike-rental-stations.json";

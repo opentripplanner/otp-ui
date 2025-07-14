@@ -1,6 +1,10 @@
+import { Parameters } from '@storybook/react-webpack5';
 import { reactIntl } from './react-intl.ts';
 
-const parameters = {
+const parameters: Parameters = {
+  docs: {
+    codePanel: true
+  },
   a11y: {
     config: {
       rules: [
