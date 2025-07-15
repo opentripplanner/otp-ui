@@ -1,9 +1,5 @@
-import {
-  LngLat,
-  LngLatBoundsLike,
-  MapRef,
-  PaddingOptions
-} from "react-map-gl/maplibre";
+import { LngLat, LngLatBoundsLike, LngLatLike } from "maplibre-gl";
+import { MapRef, PaddingOptions } from "react-map-gl/maplibre";
 
 /**
  * Computes padding dimensions based on roughly 1/20 of the map's canvas dimensions
@@ -48,7 +44,14 @@ export function fitMapBounds(map: MapRef, bounds: LngLatBoundsLike): void {
 /**
  * Fit map bounds so that both points specified are visible.
  */
-export function fitMapToPoints(map: MapRef, pt1: LngLat, pt2: LngLat): void {
+export function fitMapToPoints(
+  map: MapRef,
+  point1: LngLatLike,
+  point2: LngLatLike
+): void {
+  const pt1 = LngLat.convert(point1);
+  const pt2 = LngLat.convert(point2);
+
   // Recent versions of maplibre enforce the order of coordinates (i.e., sw, ne).
   const minlat = Math.min(pt1.lat, pt2.lat);
   const maxlat = Math.max(pt1.lat, pt2.lat);
