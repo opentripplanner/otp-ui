@@ -1,4 +1,5 @@
-import { LngLatBoundsLike, MapRef, PaddingOptions } from "react-map-gl";
+import { LngLat, LngLatBoundsLike, LngLatLike } from "maplibre-gl";
+import { MapRef, PaddingOptions } from "react-map-gl/maplibre";
 
 /**
  * Computes padding dimensions based on roughly 1/20 of the map's canvas dimensions
@@ -12,7 +13,6 @@ export function getFitBoundsPadding(
   paddingRatio = 0.1
 ): PaddingOptions {
   const canvas = map.getCanvas();
-  // @ts-expect-error getPixelRatio not defined in MapRef type.
   const pixelRatio = map.getPixelRatio();
   const horizPadding = (canvas.width * paddingRatio) / pixelRatio;
   const vertPadding = (canvas.height * paddingRatio) / pixelRatio;
@@ -39,4 +39,29 @@ export function fitMapBounds(map: MapRef, bounds: LngLatBoundsLike): void {
 
   // Often times, the map is not updated right away, so try to force an update.
   map.triggerRepaint();
+}
+
+/**
+ * Fit map bounds so that both points specified are visible.
+ */
+export function fitMapToPoints(
+  map: MapRef,
+  point1: LngLatLike,
+  point2: LngLatLike,
+  paddingRatio = 0.1,
+  durationMillis = 500
+): void {
+  const pt1 = LngLat.convert(point1);
+  const pt2 = LngLat.convert(point2);
+
+  // Recent versions of maplibre enforce the order of coordinates (i.e., sw, ne).
+  const minlat = Math.min(pt1.lat, pt2.lat);
+  const maxlat = Math.max(pt1.lat, pt2.lat);
+  const minlon = Math.min(pt1.lng, pt2.lng);
+  const maxlon = Math.max(pt1.lng, pt2.lng);
+
+  map.fitBounds([minlon, minlat, maxlon, maxlat], {
+    duration: durationMillis,
+    padding: getFitBoundsPadding(map, paddingRatio)
+  });
 }

@@ -1,10 +1,7 @@
 ## WHAT:
 
-Presentational React Components used to build an interactive vehicle map .
+Presentational React Components based on react-map-gl and maplibre-gl used to build an interactive vehicle map .
 This component uses functional components and hooks (no more class components).
-
-NOTE: eventually want this component (and OTP-UI in general) to support both leaflet and
-mapbox gl libraries.
 
 ### CURRENTLY:
 
@@ -38,4 +35,3 @@ Only input in the form of https://github.com/opentripplanner/otp-ui/blob/master/
 ## TODO:
 
 1.  more / better unit tests
-2.  mapbox gl

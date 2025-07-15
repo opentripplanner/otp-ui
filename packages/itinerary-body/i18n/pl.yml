@@ -1,104 +1,83 @@
 otpUi:
-  TransitLegBody:
-    agencyExternalLink: '{agencyName} (Link zewnętrzny)'
-    stopIdBasic: Numer {stopId}
-    routeDescription: '{routeName} <toPrefix>do</toPrefix> {headsign}'
-    typicalWait: 'Typowy czas oczekiwania: {waitTime}'
-    zoomToLeg: Pokaż odcinek na mapie
-    AlertsBody:
-      today: Dzisiaj
-      tomorrow: Jutro
-      yesterday: Wczoraj
-      effectiveDate: Obowiązuje od {dateTime, date, long}
-      effectiveTimeAndDate: Obowiązuje od {dateTime, time, short}, {day}
-      alertLinkText: Zobacz alert na stronie internetowej {agency}
-      linkOpensNewWindow: (Otwiera nowe okno)
-      noAgencyAlertLinkText: Zobacz alert na stronie internetowej przewoźnika
-    ride: Jedź
-    alertsHeader: '{alertCount, plural, =1 {# alert} other {# alerty}}'
-    arriveAt: Przybycie do {place}
-    stopId: Numer przystanku {stopId}
-    expandDetails: (Rozwiń szczegóły)
-    fare: 'Opłata za przejazd: {fare}'
-    fromLocation: z {location}
-    legDetails: Szczegóły odcinka
-    operatedBy: Obsługiwane przez {agencyLink}
-    rideDurationAndStops: 'Jedź {duration}{numStops, plural, =1 {} other { / # przystanków}}'
-    disembarkAt: Wysiądź na {legDestination}
-    stopViewer: Informacje o przystanku
-    tripViewer: Informacje o podróży
   AccessLegBody:
-    step:
-      hardRight: Ostro w prawo
-      circleClockwise: Podążaj zgodnie z ruchem wskazówek zegara
-      circleCounterClockwise: Podążaj przeciwnie do ruchu wskazówek zegara
-      continue: Kontynuuj
-      left: W lewo
-      right: W prawo
-      slightlyLeft: Lekko w lewo
-      hardLeft: Ostro w lewo
-      slightlyRight: Lekko w prawo
-      uTurnLeft: Zawróć w lewo
-      uTurnRight: Zawróć w prawo
-      enterStation: Wejdź na stację
-      exitStation: Wyjdź ze stacji
-    TncLeg:
-      estimatedTravelTime: 'Szacowany czas podróży: {duration} (nie uwzględnia natężenia
-        ruchu)'
-      bookRide: Zarezerwuj przejazd
-      bookRideLater: Poczekaj do {timeMillis, time, short}, aby dokonać rezerwacji
-      estimatedCost: 'Szacowany koszt: {minFare} - {maxFare}'
-      waitForPickup: 'Poczekaj{minutes, plural, =0 { # minuty} other { # minut}} na
-        odbiór przez firmę {company}'
-    stepHeading:
-      north: północ
-      east: wschód
-      northeast: północny wschód
-      northwest: północny zachód
-      west: zachód
-      south: południe
-      southeast: południowy wschód
-      southwest: południowy zachód
-    transfer: Transfer{duration, select, undefined {} other {, czekaj {duration}}}
-    RentedVehicleSubheader:
-      vehicleType:
-        escooter: hulajnoga elektryczna
-        vehicle: pojazd
-        bike: rower
-        bikeshare: rower miejski
-        car: samochód
-      walkVehicle: Przeprowadź pojazd wzdłuż {place}
-      pickupRental: Odbierz {vehicleType} {company} {vehicleName}
-      resumeRentalRide: Kontynuuj wypożyczonym pojazdem
-    mapillaryTooltip: Pokaż zdjęcia uliczne w tej lokalizacji
-    stepDepart: Kieruj się w stronę {heading} na {street}
-    stepElevator: Wjedź windą na {street}
-    stepGeneric: '{step} na {street}'
-    summary: '{mode} do {place}'
-    summaryAndDistance: '{mode}{distance} do {place}'
-    summaryMode:
-      bike: Rower
-      bikeshare: Rower miejski
-      carHail: Jedź
-      escooter: Jedź
-      walk: Idź
-      carDrive: Jedź
-    stepFollowSigns: Podążaj za znakami do {street}
-    stepStation: '{step} na {street}'
-    vehicleType:
-      car: Samochód
-      escooter: Hulajnoga elektryczna
-      vehicle: Pojazd
-      bike: Rower
-      bikeshare: Rower miejski
-    vehicleTitle: '{company} {vehicleType}'
-    unnamedPath: Nienazwana ścieżka
-    unnamedRoad: Droga bez nazwy
     LegDiagramPreview:
       elevationChart: Wykres wysokości
       noElevationData: Dane dotyczące wysokości nie są dostępne.
       toggleElevationChart: Przełącz wykres wysokości
+    RentedVehicleSubheader:
+      pickupRental: Odbierz {vehicleType} {company} {vehicleName}
+      resumeRentalRide: Kontynuuj wypożyczonym pojazdem
+      vehicleType:
+        bike: rower
+        bikeshare: rower miejski
+        car: samochód
+        escooter: hulajnoga elektryczna
+        vehicle: pojazd
+      walkVehicle: Przeprowadź pojazd wzdłuż {place}
+    TncLeg:
+      bookRide: Zarezerwuj przejazd
+      bookRideLater: Poczekaj do {timeMillis, time, short}, aby dokonać rezerwacji
+      estimatedCost: "Szacowany koszt: {minFare} - {maxFare}"
+      estimatedTravelTime: "Szacowany czas podróży: {duration} (nie uwzględnia natężenia ruchu)"
+      waitForPickup: >-
+        Poczekaj{minutes, plural, =0 { # minuty} other { # minut}} na odbiór
+        przez firmę {company}
+    mapillaryTooltip: Pokaż zdjęcia uliczne w tej lokalizacji
+    step:
+      circleClockwise: Podążaj zgodnie z ruchem wskazówek zegara
+      circleCounterClockwise: Podążaj przeciwnie do ruchu wskazówek zegara
+      continue: Kontynuuj
+      enterStation: Wejdź na stację
+      exitStation: Wyjdź ze stacji
+      hardLeft: Ostro w lewo
+      hardRight: Ostro w prawo
+      left: W lewo
+      right: W prawo
+      slightlyLeft: Lekko w lewo
+      slightlyRight: Lekko w prawo
+      uTurnLeft: Zawróć w lewo
+      uTurnRight: Zawróć w prawo
+    stepDepart: Kieruj się w stronę {heading} na {street}
+    stepElevator: Wjedź windą na {street}
+    stepFollowSigns: Podążaj za znakami do {street}
+    stepGeneric: "{step} na {street}"
+    stepHeading:
+      east: wschód
+      north: północ
+      northeast: północny wschód
+      northwest: północny zachód
+      south: południe
+      southeast: południowy wschód
+      southwest: południowy zachód
+      west: zachód
+    stepStation: "{step} na {street}"
+    summary: "{mode} do {place}"
+    summaryAndDistance: "{mode}{distance} do {place}"
+    summaryMode:
+      bike: Rower
+      bikeshare: Rower miejski
+      carDrive: Jedź
+      carHail: Jedź
+      escooter: Jedź
+      walk: Idź
+    transfer: Transfer{duration, select, undefined {} other {, czekaj {duration}}}
+    unnamedPath: Nienazwana ścieżka
+    unnamedRoad: Droga bez nazwy
+    vehicleTitle: "{company} {vehicleType}"
+    vehicleType:
+      bike: Rower
+      bikeshare: Rower miejski
+      car: Samochód
+      escooter: Hulajnoga elektryczna
+      vehicle: Pojazd
   ItineraryBody:
+    common:
+      durationShort: >-
+        {approximatePrefix, select, true {Około } other {}}{hours, plural, =0 {}
+        other {# h }}{minutes} min
+    flexAdvanceNotice: " co najmniej {leadDays, plural, one {# dni} other {# dni}} wcześniej"
+    flexCallAhead: zadzwoń wcześniej
+    flexCallNumber: zadzwoń pod {phoneNumber}
     flexPickupMessage: Aby skorzystać z tej trasy, musisz {action}{advanceNotice}.
     stayOnBoard: Zostań w pojeździe na {place}
     travelBy: Podróż {mode}
@@ -107,17 +86,38 @@ otpUi:
       car: samochodem
       escooter: hulajnogą elektryczną
       walk: pieszo
-    common:
-      durationShort: '{approximatePrefix, select, true {Około } other {}}{hours, plural,
-        =0 {} other {# h }}{minutes} min'
-    viewOnMap: Zobacz na mapie
-    flexAdvanceNotice: ' co najmniej {leadDays, plural, one {# dni} other {# dni}}
-      wcześniej'
-    flexCallAhead: zadzwoń wcześniej
-    flexCallNumber: zadzwoń pod {phoneNumber}
     tripAccessibility:
-      itineraryAccessibility: 'Dostępność dla osób niepełnosprawnych na tej wycieczce: '
-      legAccessibility: 'Dostępność dla wózków inwalidzkich na tym etapie podróży: '
       inaccessible: niedostępny
-      unclear: nieznany
+      itineraryAccessibility: "Dostępność dla osób niepełnosprawnych na tej wycieczce: "
+      legAccessibility: "Dostępność dla wózków inwalidzkich na tym etapie podróży: "
       likelyAccessible: prawdopodobnie dostępny
+      unclear: nieznany
+    viewOnMap: Zobacz na mapie
+  TransitLegBody:
+    AlertsBody:
+      alertLinkText: Zobacz alert na stronie internetowej {agency}
+      effectiveDate: Obowiązuje od {dateTime, date, long}
+      effectiveTimeAndDate: Obowiązuje od {dateTime, time, short}, {day}
+      linkOpensNewWindow: (Otwiera nowe okno)
+      noAgencyAlertLinkText: Zobacz alert na stronie internetowej przewoźnika
+      today: Dzisiaj
+      tomorrow: Jutro
+      yesterday: Wczoraj
+    agencyExternalLink: "{agencyName} (Link zewnętrzny)"
+    alertsHeader: "{alertCount, plural, =1 {# alert} other {# alerty}}"
+    arriveAt: Przybycie do {place}
+    disembarkAt: Wysiądź na {legDestination}
+    expandDetails: (Rozwiń szczegóły)
+    fare: "Opłata za przejazd: {fare}"
+    fromLocation: z {location}
+    legDetails: Szczegóły odcinka
+    operatedBy: Obsługiwane przez {agencyLink}
+    ride: Jedź
+    rideDurationAndStops: "Jedź {duration}{numStops, plural, =1 {} other { / # przystanków}}"
+    routeDescription: "{routeName} <toPrefix>do</toPrefix> {headsign}"
+    stopId: Numer przystanku {stopId}
+    stopIdBasic: Numer {stopId}
+    stopViewer: Informacje o przystanku
+    tripViewer: Informacje o podróży
+    typicalWait: "Typowy czas oczekiwania: {waitTime}"
+    zoomToLeg: Pokaż odcinek na mapie

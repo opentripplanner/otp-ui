@@ -1,7 +1,7 @@
 import polyline from "@mapbox/polyline";
 import { LngLatBounds } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
-import { Layer, Source, useMap } from "react-map-gl";
+import { Layer, Source, useMap } from "react-map-gl/maplibre";
 import React, { useEffect, useMemo } from "react";
 
 type Props = {
