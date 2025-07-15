@@ -47,7 +47,9 @@ export function fitMapBounds(map: MapRef, bounds: LngLatBoundsLike): void {
 export function fitMapToPoints(
   map: MapRef,
   point1: LngLatLike,
-  point2: LngLatLike
+  point2: LngLatLike,
+  paddingRatio = 0.1,
+  durationMillis = 500
 ): void {
   const pt1 = LngLat.convert(point1);
   const pt2 = LngLat.convert(point2);
@@ -59,7 +61,7 @@ export function fitMapToPoints(
   const maxlon = Math.max(pt1.lng, pt2.lng);
 
   map.fitBounds([minlon, minlat, maxlon, maxlat], {
-    duration: 600, // TODO - check parametrized duration
-    padding: getFitBoundsPadding(map, 0.2)
+    duration: durationMillis,
+    padding: getFitBoundsPadding(map, paddingRatio)
   });
 }
