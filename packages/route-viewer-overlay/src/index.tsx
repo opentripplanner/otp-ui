@@ -244,7 +244,9 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
     if (objectExistsAndPopulated(bounds) && current) {
       // Try to fit the map to route bounds immediately. If other overlays are still populating contents
       // and/or the map skips/aborts fitting for any reason, try fitting bounds again after a short delay.
-      const fitBounds = () => util.fitMapBounds(current, bounds);
+      const fitBounds = () =>
+        // eslint-disable-next-line no-underscore-dangle
+        util.fitMapToPoints(current, bounds._sw, bounds._ne);
       fitBounds();
       timeout = setTimeout(fitBounds, 250);
       if (props.mapCenterCallback) {
