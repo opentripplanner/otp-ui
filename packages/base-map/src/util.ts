@@ -1,4 +1,5 @@
 import {
+  LngLat,
   LngLatBoundsLike,
   MapRef,
   PaddingOptions
@@ -42,4 +43,20 @@ export function fitMapBounds(map: MapRef, bounds: LngLatBoundsLike): void {
 
   // Often times, the map is not updated right away, so try to force an update.
   map.triggerRepaint();
+}
+
+/**
+ * Fit map bounds so that both points specified are visible.
+ */
+export function fitMapToPoints(map: MapRef, pt1: LngLat, pt2: LngLat): void {
+  // Recent versions of maplibre enforce the order of coordinates (i.e., sw, ne).
+  const minlat = Math.min(pt1.lat, pt2.lat);
+  const maxlat = Math.max(pt1.lat, pt2.lat);
+  const minlon = Math.min(pt1.lng, pt2.lng);
+  const maxlon = Math.max(pt1.lng, pt2.lng);
+
+  map.fitBounds([minlon, minlat, maxlon, maxlat], {
+    duration: 600, // TODO - check parametrized duration
+    padding: getFitBoundsPadding(map, 0.2)
+  });
 }
