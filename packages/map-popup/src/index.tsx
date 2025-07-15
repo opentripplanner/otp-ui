@@ -3,7 +3,8 @@ import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import coreUtils from "@opentripplanner/core-utils";
 
 // eslint-disable-next-line prettier/prettier
-import type { Company, ConfiguredCompany, Location, VehicleRentalStation, Stop, StopEventHandler } from "@opentripplanner/types";
+import type { Company, ConfiguredCompany, Location, Stop, StopEventHandler } from "@opentripplanner/types";
+import { VehicleRentalStation } from "@opentripplanner/types/otp2";
 
 import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import { flatten } from "flat";

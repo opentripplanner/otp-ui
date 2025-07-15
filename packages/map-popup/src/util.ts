@@ -1,4 +1,5 @@
-import { Company, VehicleRentalStation, Stop } from "@opentripplanner/types";
+import { Company, Stop } from "@opentripplanner/types";
+import { VehicleRentalStation } from "@opentripplanner/types/otp2";
 import { IntlShape } from "react-intl";
 import coreUtils from "@opentripplanner/core-utils";
 

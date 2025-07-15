@@ -2,9 +2,9 @@ import { MarkerWithPopup, Popup } from "@opentripplanner/base-map";
 import {
   Company,
   ConfiguredCompany,
-  MapLocationActionArg,
-  VehicleRentalStation
+  MapLocationActionArg
 } from "@opentripplanner/types";
+import { VehicleRentalStation } from "@opentripplanner/types/otp2";
 import { EventData } from "mapbox-gl";
 import React, { useEffect, useState } from "react";
 import { Layer, Source, useMap } from "react-map-gl";

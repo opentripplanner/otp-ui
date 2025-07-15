@@ -1,7 +1,8 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import styled from "styled-components";
-import { VehicleRentalStation, Stop, FormFactor } from "@opentripplanner/types";
+import { Stop, FormFactor } from "@opentripplanner/types";
+import { VehicleRentalStation } from "@opentripplanner/types/otp2";
 import { IntlProvider } from "react-intl";
 import { Meta } from "@storybook/react";
 import MapPopupContents from "./index";

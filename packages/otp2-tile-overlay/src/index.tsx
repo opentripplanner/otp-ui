@@ -2,10 +2,10 @@ import EntityPopup from "@opentripplanner/map-popup"
 import {
   ConfiguredCompany,
   MapLocationActionArg,
-  VehicleRentalStation,
   Stop,
   StopEventHandler,
 } from "@opentripplanner/types"
+import { VehicleRentalStation } from "@opentripplanner/types/otp2";
 // eslint-disable-next-line prettier/prettier
 import type { EventData } from "mapbox-gl"
 import React, { useCallback, useEffect, useState } from "react"
