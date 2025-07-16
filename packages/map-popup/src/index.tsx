@@ -4,7 +4,7 @@ import coreUtils from "@opentripplanner/core-utils";
 
 // eslint-disable-next-line prettier/prettier
 import type { Company, ConfiguredCompany, Location, Stop, StopEventHandler } from "@opentripplanner/types";
-import { VehicleRentalStation } from "@opentripplanner/types/otp2";
+import { RentalVehicle, VehicleRentalStation } from "@opentripplanner/types/otp2";
 
 import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import { flatten } from "flat";
@@ -86,7 +86,7 @@ const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => v
   )
 }
 
-type Entity = Stop | VehicleRentalStation
+type Entity = Stop | VehicleRentalStation | RentalVehicle
 type Props = {
   closePopup?: (arg?: any) => void
   configCompanies?: ConfiguredCompany[];
@@ -97,9 +97,7 @@ type Props = {
   setViewedStop?: StopEventHandler;
 };
 
-function entityIsStation(entity: Entity): entity is VehicleRentalStation {
-  return "availableVehicles" in entity
-}
+const entityIsStop = (entity: Entity): entity is Stop => "gtfsId" in entity;
 
 /**
  * Renders a map popup for a stop, scooter, or shared bike
@@ -114,9 +112,9 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
 
   const stationNetwork = "rentalNetwork" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.rentalNetwork.networkId || [], configCompanies) || entity?.rentalNetwork.networkId);
 
-  const bikesAvailablePresent = entityIsStation(entity)
-  const entityIsStationHub = bikesAvailablePresent && entity?.availableVehicles !== undefined && !entity?.isFloatingBike;
-  const stopId = !bikesAvailablePresent && entity?.code;
+  const vehiclesAvailable = "availableVehicles" in entity;
+  const entityIsStationHub = vehiclesAvailable && entity?.availableVehicles !== undefined;
+  const stopId = entityIsStop(entity) ? entity.code : "";
   const id = `focus-${encodeURIComponent(entity.id).replace(/%/g, "")}-popup`
 
   return (
@@ -135,7 +133,7 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
       {entityIsStationHub && <StationHubDetails station={entity} />}
 
       {/* render stop viewer link if available */}
-      {setViewedStop && !bikesAvailablePresent && (
+      {setViewedStop && entityIsStop(entity) && (
         <StopDetails
           id={stopId}
           setViewedStop={useCallback(() => setViewedStop(entity), [entity])}
