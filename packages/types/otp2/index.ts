@@ -1,3 +1,44 @@
+// RENTAL VEHICLE TYPES
+
+export type VehicleRentalStation = {
+  availableVehicles?: RentalVehicleEntityCounts;
+  availableSpaces?: RentalVehicleEntityCounts;
+  allowDropoff?: boolean;
+  allowPickup?: boolean;
+  id: string;
+  name?: string;
+  rentalNetwork: VehicleRentalNetwork;
+  realtime?: boolean;
+  lon?: number;
+  lat?: number;
+};
+
+export type RentalVehicle = {
+  allowPickupNow?: boolean;
+  availableUntil?: string;
+  fuel?: RentalVehicleFuel;
+  id: string;
+  lat?: number;
+  lon?: number;
+  name: string;
+  operative?: boolean;
+  rentalNetwork: VehicleRentalNetwork;
+  rentalUris?: VehicleRentalUris;
+  vehicleId?: string;
+  vehicleType?: RentalVehicleType;
+};
+
+type RentalVehicleFuel = {
+  percent?: number;
+  range?: number;
+};
+
+type VehicleRentalUris = {
+  android?: string;
+  ios?: string;
+  web?: string;
+};
+
 export enum FormFactor {
   BICYCLE = "BICYCLE",
   CAR = "CAR",
@@ -38,21 +79,4 @@ type RentalVehicleEntityCounts = {
 type VehicleRentalNetwork = {
   networkId: string;
   url?: string;
-};
-
-export type VehicleRentalStation = {
-  availableVehicles?: RentalVehicleEntityCounts;
-  availableSpaces?: RentalVehicleEntityCounts;
-  allowDropoff?: boolean;
-  allowPickup?: boolean;
-  id: string;
-  isFloatingBike?: boolean;
-  isFloatingCar?: boolean;
-  isFloatingVehicle?: boolean;
-  name?: string;
-  rentalNetwork: VehicleRentalNetwork;
-  realtime?: boolean;
-  // TS TODO coordinate type
-  lon: number;
-  lat: number;
 };
