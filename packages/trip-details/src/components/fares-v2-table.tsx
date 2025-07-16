@@ -205,6 +205,7 @@ const FaresV2Table = ({
               {!Number.isNaN(originalAmount) &&
                 originalAmount > 0 &&
                 index > 0 && <TransferIcon size={16} />}
+              {/* Leg Price will always be defined if the fare product has a price */}
               {legPrice
                 ? renderFare(legPrice?.currency?.code, legPrice?.amount)
                 : FailDash}

@@ -666,7 +666,7 @@ export function getLegCost(
     })
     .map(fare => {
       const alreadySeen = seenFareIds?.indexOf(fare.id) > -1;
-      const currency = fare.product.price.currency;
+      const { currency } = fare.product.price;
       return {
         id: fare.id,
         product: {
@@ -683,7 +683,7 @@ export function getLegCost(
   // TODO: return one object here instead of dumbing it down?
   return {
     alternateFareProducts: relevantFareProducts.splice(1).map(fp => fp.product),
-    appliedFareProduct: relevantFareProducts[0]?.product,
+    appliedFareProduct: cheapestRelevantFareProduct?.product,
     isDependent:
       // eslint-disable-next-line no-underscore-dangle
       cheapestRelevantFareProduct?.product.__typename ===
@@ -706,7 +706,7 @@ export function getItineraryCost(
   mediumId: string | null,
   riderCategoryId: string | null
 ): Money | undefined {
-  const legCosts = legs
+  const legCostsObj = legs
     // Only legs with fares (no walking legs)
     .filter(leg => leg.fareProducts?.length > 0)
     // Get the leg cost object of each leg
@@ -715,16 +715,14 @@ export function getItineraryCost(
     // Filter out duplicate use IDs
     // One fare product can be used on multiple legs,
     // and we don't want to count it more than once.
-    .reduce<{ productUseId: string; price: Money }[]>((prev, cur) => {
-      if (!prev.some(p => p.productUseId === cur.productUseId)) {
-        prev.push({
-          productUseId: cur.productUseId,
-          price: cur.appliedFareProduct?.legPrice
-        });
+    // Use an object keyed by productUseId to deduplicate, then extract prices
+    .reduce<{ [productUseId: string]: Money }>((acc, cur) => {
+      if (cur.productUseId && acc[cur.productUseId] === undefined) {
+        acc[cur.productUseId] = cur.appliedFareProduct?.legPrice;
       }
-      return prev;
-    }, [])
-    .map(productUse => productUse.price);
+      return acc;
+    }, {});
+  const legCosts = Object.values(legCostsObj);
 
   if (legCosts.length === 0) return undefined;
   // Calculate the total
