@@ -4,7 +4,11 @@ import {
   ConfiguredCompany,
   MapLocationActionArg
 } from "@opentripplanner/types";
-import { VehicleRentalStation } from "@opentripplanner/types/otp2";
+import {
+  FormFactor,
+  RentalVehicle,
+  VehicleRentalStation
+} from "@opentripplanner/types/otp2";
 import { EventData } from "mapbox-gl";
 import React, { useEffect, useState } from "react";
 import { Layer, Source, useMap } from "react-map-gl";
@@ -15,15 +19,20 @@ import { BaseBikeRentalIcon, StationMarker } from "./styled";
 // TODO: Make configurable?
 const DETAILED_MARKER_CUTOFF = 16;
 
-const getColorForStation = (v: VehicleRentalStation) => {
-  if (v.isFloatingCar) return "#009cde";
-  if (v.isFloatingVehicle) return "#f5a729";
-  // TODO: nicer color to match transitive
-  if (
-    (v.availableVehicles !== undefined && v.availableVehicles.total > 0) ||
-    v.isFloatingBike
-  )
-    return "#f00";
+function entityIsStation(
+  entity: VehicleRentalStation | RentalVehicle
+): entity is VehicleRentalStation {
+  return "availableVehicles" in entity;
+}
+
+const getColorForEntity = (entity: VehicleRentalStation | RentalVehicle) => {
+  if (entityIsStation(entity)) {
+    if (entity.availableVehicles && entity.availableVehicles.total > 0)
+      return "#f00";
+  } else {
+    if (entity.vehicleType.formFactor === FormFactor.SCOOTER) return "#f5a729";
+    if (entity.vehicleType.formFactor === FormFactor.BICYCLE) return "#009cde";
+  }
   return "gray";
 };
 
@@ -37,6 +46,11 @@ type Props = {
    * The entire companies config array.
    */
   configCompanies: ConfiguredCompany[];
+  /**
+   * The entities to be represented in the overlay. They can be a combination of VehicleRentalStation type
+   * (for stationary stations) and RentalVehicle type (for floating vehicles)
+   */
+  entities?: (VehicleRentalStation | RentalVehicle)[];
   /**
    * An id, used to make this layer uniquely identifiable
    */
@@ -74,9 +88,10 @@ type Props = {
    */
   setLocation?: (arg: MapLocationActionArg) => void;
   /**
+   * @deprecated use entities instead
    * A list of the vehicle rental stations specific to this overlay instance.
    */
-  stations: VehicleRentalStation[];
+  stations?: VehicleRentalStation[];
   /**
    * Whether the overlay is currently visible.
    */
@@ -94,6 +109,7 @@ type Props = {
 const VehicleRentalOverlay = ({
   companies,
   configCompanies,
+  entities,
   getStationName,
   id,
   refreshVehicles,
@@ -106,6 +122,8 @@ const VehicleRentalOverlay = ({
 
   const layerId = `rental-vehicles-${id}`;
   const [clickedVehicle, setClickedVehicle] = useState(null);
+
+  const fullEntityArr = (entities || []).concat(stations || []);
 
   useEffect(() => {
     // TODO: Make 30s configurable?
@@ -140,32 +158,29 @@ const VehicleRentalOverlay = ({
   }, [map]);
 
   // Don't render if no map or no stops are defined.
-  if (visible === false || !stations || stations.length === 0) {
+  if (visible === false || fullEntityArr.length === 0) {
     // Null can't be returned here -- react-map-gl dislikes null values as children
     return <></>;
   }
 
   const vehiclesGeoJSON: GeoJSON.FeatureCollection = {
     type: "FeatureCollection",
-    features: stations
+    features: fullEntityArr
       .filter(
-        vehicle =>
+        entity =>
           // Include specified companies only if companies is specified and network info is available
           !companies ||
-          !vehicle.rentalNetwork.networkId ||
-          companies.includes(vehicle.rentalNetwork.networkId)
+          !entity.rentalNetwork.networkId ||
+          companies.includes(entity.rentalNetwork.networkId)
       )
-      .map(vehicle => ({
+      .map(entity => ({
         type: "Feature",
-        geometry: { type: "Point", coordinates: [vehicle.lon, vehicle.lat] },
+        geometry: { type: "Point", coordinates: [entity.lon, entity.lat] },
         properties: {
-          ...vehicle,
-          availableSpaces: vehicle.availableSpaces?.total ?? 0,
-          availableVehicles: vehicle.availableVehicles?.total ?? 0,
-          networks: vehicle.rentalNetwork.networkId,
-          "stroke-width":
-            vehicle.isFloatingBike || vehicle.isFloatingVehicle ? 1 : 2,
-          color: getColorForStation(vehicle)
+          ...entity,
+          networks: entity.rentalNetwork.networkId,
+          "stroke-width": entityIsStation(entity) ? 1 : 2,
+          color: getColorForEntity(entity)
         }
       }))
   };
@@ -188,9 +203,9 @@ const VehicleRentalOverlay = ({
         </Source>
       )}
       {zoom >= DETAILED_MARKER_CUTOFF &&
-        stations.map(station => (
+        fullEntityArr.map(entity => (
           <MarkerWithPopup
-            key={station.id}
+            key={entity.id}
             popupContents={
               <StationPopup
                 configCompanies={configCompanies}
@@ -202,24 +217,23 @@ const VehicleRentalOverlay = ({
                   // @ts-expect-error no stop support. Avoid a breaking change
                   getStationName && ((s, cc) => getStationName(cc, s))
                 }
-                entity={station}
+                entity={entity}
               />
             }
-            position={[station.lat, station.lon]}
+            position={[entity.lat, entity.lon]}
           >
-            {station.availableVehicles.total > 0 &&
-            !station.isFloatingBike &&
-            !station.isFloatingVehicle &&
-            station.availableSpaces !== undefined ? (
+            {"availableVehicles" in entity &&
+            entity.availableVehicles.total > 0 &&
+            entity.availableSpaces !== undefined ? (
               <BaseBikeRentalIcon
                 percent={
-                  station?.availableVehicles.total /
-                  (station?.availableVehicles.total +
-                    station?.availableSpaces.total)
+                  entity?.availableVehicles.total /
+                  (entity?.availableVehicles.total +
+                    entity?.availableSpaces.total)
                 }
               />
             ) : (
-              <StationMarker width={12} color={getColorForStation(station)} />
+              <StationMarker width={12} color={getColorForEntity(entity)} />
             )}
           </MarkerWithPopup>
         ))}
