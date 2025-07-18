@@ -3,7 +3,8 @@ import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import coreUtils from "@opentripplanner/core-utils";
 
 // eslint-disable-next-line prettier/prettier
-import type { Company, ConfiguredCompany, Location, Station, Stop, StopEventHandler } from "@opentripplanner/types";
+import type { Company, ConfiguredCompany, Location, Stop, StopEventHandler } from "@opentripplanner/types";
+import { RentalVehicle, VehicleRentalStation } from "@opentripplanner/types/otp2";
 
 import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import { flatten } from "flat";
@@ -33,7 +34,7 @@ const generateLocation = (entity: Entity, name: string) => {
   return { lat, lon, name };
 }
 
-const StationHubDetails = ({ station }: { station: Station }) => {
+const StationHubDetails = ({ station }: { station: VehicleRentalStation }) => {
   return (
     <Styled.PopupRow>
       <div>
@@ -43,7 +44,7 @@ const StationHubDetails = ({ station }: { station: Station }) => {
           }
           description="Label text for the number of bikes available"
           id="otpUi.MapPopup.availableBikes"
-          values={{ value: station.bikesAvailable }}
+          values={{ value: station.availableVehicles?.total || 0 }}
         />
       </div>
       <div>
@@ -53,7 +54,7 @@ const StationHubDetails = ({ station }: { station: Station }) => {
           }
           description="Label text for the number of docks available"
           id="otpUi.MapPopup.availableDocks"
-          values={{ value: station.spacesAvailable }}
+          values={{ value: station.availableSpaces?.total || 0 }}
         />
       </div>
     </Styled.PopupRow>
@@ -85,7 +86,7 @@ const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => v
   )
 }
 
-type Entity = Stop | Station
+type Entity = Stop | VehicleRentalStation | RentalVehicle
 type Props = {
   closePopup?: (arg?: any) => void
   configCompanies?: ConfiguredCompany[];
@@ -96,9 +97,7 @@ type Props = {
   setViewedStop?: StopEventHandler;
 };
 
-function entityIsStation(entity: Entity): entity is Station {
-  return "bikesAvailable" in entity
-}
+const entityIsStop = (entity: Entity): entity is Stop => "gtfsId" in entity;
 
 /**
  * Renders a map popup for a stop, scooter, or shared bike
@@ -111,11 +110,11 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
   const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultMessages);
   const name = getNameFunc(entity, configCompanies);
 
-  const stationNetwork = "networks" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.networks || [], configCompanies) || entity?.networks?.[0]);
+  const stationNetwork = "rentalNetwork" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.rentalNetwork.networkId || [], configCompanies) || entity?.rentalNetwork.networkId);
 
-  const bikesAvailablePresent = entityIsStation(entity)
-  const entityIsStationHub = bikesAvailablePresent && entity?.bikesAvailable !== undefined && !entity?.isFloatingBike;
-  const stopId = !bikesAvailablePresent && entity?.code;
+  const vehiclesAvailable = "availableVehicles" in entity;
+  const entityIsStationHub = vehiclesAvailable && entity?.availableVehicles !== undefined;
+  const stopId = entityIsStop(entity) ? entity.code : "";
   const id = `focus-${encodeURIComponent(entity.id).replace(/%/g, "")}-popup`
 
   return (
@@ -134,7 +133,7 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
       {entityIsStationHub && <StationHubDetails station={entity} />}
 
       {/* render stop viewer link if available */}
-      {setViewedStop && !bikesAvailablePresent && (
+      {setViewedStop && entityIsStop(entity) && (
         <StopDetails
           id={stopId}
           setViewedStop={useCallback(() => setViewedStop(entity), [entity])}
