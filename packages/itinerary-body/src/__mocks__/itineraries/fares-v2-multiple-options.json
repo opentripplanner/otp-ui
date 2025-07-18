@@ -1,0 +1,558 @@
+{
+  "duration": 7507,
+  "legs": [
+    {
+      "mode": "WALK",
+      "route": null,
+      "fareProducts": []
+    },
+    {
+      "mode": "BUS",
+      "transitLeg": true,
+      "route": {
+        "shortName": "21",
+        "longName": "Evans Avenue"
+      },
+      "fareProducts": [
+        {
+          "id": "a4f77ea0-7acd-32b7-a84c-028f50fbd74b",
+          "product": {
+            "id": "rtd:three_hour",
+            "name": "3-Hour Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:paper_ticket",
+              "name": "Paper Ticket"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "000cd409-da9d-391a-b089-1d93c2bcfa2b",
+          "product": {
+            "id": "rtd:three_hour",
+            "name": "3-Hour Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:cash",
+              "name": "Cash"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "3318dc11-64f4-3cb2-a946-c8e0c79314cc",
+          "product": {
+            "id": "rtd:three_hour",
+            "name": "3-Hour Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:my_ride_card",
+              "name": "MyRide Card"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "df8a710f-5a6b-3ffb-bad1-b210ab027914",
+          "product": {
+            "id": "rtd:airport_day_pass",
+            "name": "Airport Day Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:my_ride_card",
+              "name": "MyRide Card"
+            },
+            "price": {
+              "amount": 10,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "bb3a3459-08dd-39cb-8330-b067f132aa5a",
+          "product": {
+            "id": "rtd:three_hour",
+            "name": "3-Hour Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:my_ride_app",
+              "name": "MyRide App"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "d4e9f6bf-f6e1-34a5-b771-f662b08c2ca4",
+          "product": {
+            "id": "rtd:airport_day_pass",
+            "name": "Airport Day Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:paper_ticket",
+              "name": "Paper Ticket"
+            },
+            "price": {
+              "amount": 10,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "b6d80fdd-82a6-39f4-93f0-e6a12544c133",
+          "product": {
+            "id": "rtd:airport_day_pass",
+            "name": "Airport Day Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:my_ride_app",
+              "name": "MyRide App"
+            },
+            "price": {
+              "amount": 10,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "4e0316cd-7f7b-3c82-809e-e4c587ed7eab",
+          "product": {
+            "id": "rtd:airport_day_pass",
+            "name": "Airport Day Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:cash",
+              "name": "Cash"
+            },
+            "price": {
+              "amount": 10,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "mode": "WALK",
+      "route": null,
+      "fareProducts": []
+    },
+    {
+      "mode": "TRAM",
+      "transitLeg": true,
+      "route": {
+        "shortName": "E",
+        "longName": "Union Station to RidgeGate Parkway Station"
+      },
+      "fareProducts": [
+        {
+          "id": "d153de4a-289d-3f4c-80d9-7af597eb2b44",
+          "product": {
+            "id": "rtd:airport_transfer",
+            "name": "Airport Upgrade",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:cash",
+              "name": "Cash"
+            }
+          }
+        },
+        {
+          "id": "c02924dc-652c-339d-8801-1521f65841a9",
+          "product": {
+            "id": "rtd:three_hour",
+            "name": "3-Hour Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:cash",
+              "name": "Cash"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "bfa16814-881f-3f1c-8575-4653c270da3f",
+          "product": {
+            "id": "rtd:airport_day_pass",
+            "name": "Airport Day Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:my_ride_card",
+              "name": "MyRide Card"
+            },
+            "price": {
+              "amount": 10,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "95340da7-36f8-36c2-a3a4-90a209d534e6",
+          "product": {
+            "id": "rtd:three_hour",
+            "name": "3-Hour Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:my_ride_app",
+              "name": "MyRide App"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "bbc08ba7-d3c0-3ea2-b5db-f35b3effa61a",
+          "product": {
+            "id": "rtd:airport_transfer",
+            "name": "Airport Upgrade",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:paper_ticket",
+              "name": "Paper Ticket"
+            }
+          }
+        },
+        {
+          "id": "390e7c51-63cf-39bd-8bf4-47c6c6694589",
+          "product": {
+            "id": "rtd:free_transfer",
+            "name": "Free Transfer",
+            "riderCategory": null,
+            "medium": null
+          }
+        },
+        {
+          "id": "75f7a354-8eb5-3cb1-a71b-4fc40ea694ba",
+          "product": {
+            "id": "rtd:airport_day_pass",
+            "name": "Airport Day Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:paper_ticket",
+              "name": "Paper Ticket"
+            },
+            "price": {
+              "amount": 10,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "5a2161ce-aef7-3575-8300-aea73d6779f5",
+          "product": {
+            "id": "rtd:airport_transfer",
+            "name": "Airport Upgrade",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:my_ride_app",
+              "name": "MyRide App"
+            }
+          }
+        },
+        {
+          "id": "5ee72031-cc72-3e7a-86ce-485aaee9df59",
+          "product": {
+            "id": "rtd:three_hour",
+            "name": "3-Hour Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:paper_ticket",
+              "name": "Paper Ticket"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "027c71f1-7a78-3219-8e08-5b929f3dd63d",
+          "product": {
+            "id": "rtd:three_hour",
+            "name": "3-Hour Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:my_ride_card",
+              "name": "MyRide Card"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "0e5c25b4-9f16-3013-8a3c-62403c68a591",
+          "product": {
+            "id": "rtd:airport_transfer",
+            "name": "Airport Upgrade",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:my_ride_card",
+              "name": "MyRide Card"
+            }
+          }
+        },
+        {
+          "id": "b057f3bc-577f-3df9-bb82-11ffbfbed019",
+          "product": {
+            "id": "rtd:airport_day_pass",
+            "name": "Airport Day Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:my_ride_app",
+              "name": "MyRide App"
+            },
+            "price": {
+              "amount": 10,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "5b0895e3-0886-3a47-84f9-ee21aca2069b",
+          "product": {
+            "id": "rtd:airport_day_pass",
+            "name": "Airport Day Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:cash",
+              "name": "Cash"
+            },
+            "price": {
+              "amount": 10,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "mode": "WALK",
+      "route": null,
+      "fareProducts": []
+    },
+    {
+      "mode": "BUS",
+      "transitLeg": true,
+      "route": {
+        "shortName": "FF1",
+        "longName": "Flatiron Flyer"
+      },
+      "fareProducts": []
+    },
+    {
+      "mode": "WALK",
+      "route": null,
+      "fareProducts": []
+    },
+    {
+      "mode": "BUS",
+      "transitLeg": true,
+      "route": {
+        "shortName": "92",
+        "longName": "92nd Avenue"
+      },
+      "fareProducts": [
+        {
+          "id": "c5a87bfd-a92e-35b3-8f10-49623f3e0b36",
+          "product": {
+            "id": "rtd:three_hour",
+            "name": "3-Hour Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:paper_ticket",
+              "name": "Paper Ticket"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "bf3418d4-3cfa-3ee8-90c7-bb1e7faab64b",
+          "product": {
+            "id": "rtd:three_hour",
+            "name": "3-Hour Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:cash",
+              "name": "Cash"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "a3140ce4-7cb9-3e58-98a9-6a21eded134f",
+          "product": {
+            "id": "rtd:three_hour",
+            "name": "3-Hour Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:my_ride_card",
+              "name": "MyRide Card"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "bb177a33-933b-3d71-a175-8074f8cfaab1",
+          "product": {
+            "id": "rtd:airport_day_pass",
+            "name": "Airport Day Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:my_ride_card",
+              "name": "MyRide Card"
+            },
+            "price": {
+              "amount": 10,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "9fb72844-5a6e-3d54-bf6c-6a9781095acd",
+          "product": {
+            "id": "rtd:three_hour",
+            "name": "3-Hour Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:my_ride_app",
+              "name": "MyRide App"
+            },
+            "price": {
+              "amount": 2.75,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "f7f59b8c-fa71-3b58-8875-464d96019932",
+          "product": {
+            "id": "rtd:airport_day_pass",
+            "name": "Airport Day Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:paper_ticket",
+              "name": "Paper Ticket"
+            },
+            "price": {
+              "amount": 10,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "7f802b8c-7831-37b6-b0d6-9a2f42a90682",
+          "product": {
+            "id": "rtd:airport_day_pass",
+            "name": "Airport Day Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:my_ride_app",
+              "name": "MyRide App"
+            },
+            "price": {
+              "amount": 10,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        },
+        {
+          "id": "f0cad859-5675-375e-9792-b22474b66f92",
+          "product": {
+            "id": "rtd:airport_day_pass",
+            "name": "Airport Day Pass",
+            "riderCategory": null,
+            "medium": {
+              "id": "rtd:cash",
+              "name": "Cash"
+            },
+            "price": {
+              "amount": 10,
+              "currency": {
+                "code": "USD"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "mode": "WALK",
+      "route": null,
+      "fareProducts": []
+    }
+  ]
+}

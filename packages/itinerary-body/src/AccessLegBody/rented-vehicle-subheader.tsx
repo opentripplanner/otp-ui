@@ -98,7 +98,7 @@ export default function RentedVehicleSubheader({
 }: Props): ReactElement {
   const configCompanies = config.companies || [];
   const { from, mode, rentedBike, walkingBike } = leg;
-  const { name: legName, networks, vertexType } = from;
+  const { name: legName, networks, vertexType, rentalVehicle } = from;
   // in OTP2 scooters are BIKERENTALs, so we need to override this
   const modeType = mode === "SCOOTER" ? "VEHICLERENTAL" : vertexType;
 
@@ -129,10 +129,10 @@ export default function RentedVehicleSubheader({
   // walking that occurs in the middle of the rental, so once the main mode
   // resumes there won't be any network info. In that case we simply return
   // that the rental is continuing.
-  if (networks || rentedBike) {
+  if (networks || rentedBike || rentalVehicle) {
     // Add company and vehicle labels.
     const company = coreUtils.itinerary.getCompaniesLabelFromNetworks(
-      networks || [],
+      networks || rentalVehicle.rentalNetwork.networkId || [],
       configCompanies
     );
     // Only show vehicle name for car rentals. For bikes and E-scooters, these

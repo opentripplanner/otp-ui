@@ -111,7 +111,7 @@ const OTP2TileLayerWithPopup = ({
           sourceLayer === "rentalVehicles" &&
           synthesizedEntity.formFactor === "SCOOTER",
         // OTP1 compatibility -- will get overwritten if possible
-        networks: [synthesizedEntity.network],
+        networks: [synthesizedEntity?.rentalNetwork?.networkId],
         ...synthesizedEntity,
         // OTP1 compatibility
         bikesAvailable: synthesizedEntity.vehiclesAvailable,

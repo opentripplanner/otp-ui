@@ -106,6 +106,17 @@ query Plan(
                 }
               }
             }
+            ... on DependentFareProduct {
+              dependencies {
+                id
+              }
+              price {
+                amount
+                currency {
+                  code
+                }
+              }
+            }
           }
         }
         from {
@@ -114,7 +125,10 @@ query Plan(
           name
           rentalVehicle {
             id
-            network
+            rentalNetwork {
+              networkId
+              url
+            }
           }
           stop {
             alerts {
@@ -133,6 +147,7 @@ query Plan(
           vertexType
         }
         headsign
+        id
         interlineWithPreviousLeg
         intermediateStops {
           lat
@@ -229,7 +244,10 @@ query Plan(
           name
           rentalVehicle {
             id
-            network
+            rentalNetwork {
+              networkId
+              url
+            }
           }
           stop {
             alerts {

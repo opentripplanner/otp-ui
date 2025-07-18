@@ -12,7 +12,10 @@ const TriMetLegIcon = ({ leg, ...props }) => {
     return <TriMetModeIcon mode="STREETCAR" {...props} />;
   }
   if (leg.rentedBike) {
-    if (leg.from.networks && leg.from.networks[0] === "GBFS") {
+    if (
+      (leg.from.networks && leg.from.networks[0] === "GBFS") ||
+      leg.from.rentalVehicle?.rentalNetwork?.networkId === "lyft_pdx"
+    ) {
       return <BiketownIcon {...props} />;
     }
     return <TriMetModeIcon mode="BICYCLE" {...props} />;

@@ -250,7 +250,7 @@ export type Place = {
   lon: number;
   name: string;
   networks?: string[];
-  rentalVehicle?: { network: string };
+  rentalVehicle?: { rentalNetwork: { networkId: string; url?: string } };
   vehicleRentalStation?: { rentalNetwork: { networkId: string } };
   stop?: Stop;
   /**
@@ -398,6 +398,11 @@ type TemporaryTNCPriceType = {
     code: string;
   };
   amount: number;
+};
+
+export type Currency = {
+  code: string;
+  digits: number;
 };
 
 /**
@@ -803,22 +808,31 @@ export type ModeButtonDefinition = {
  * Definition for a fare product used to pay the fare for a leg in a transit journey
  */
 export type FareProduct = {
+  __typename: string;
   id: string;
   medium?: {
     id: string;
     name: string;
   };
   name: string;
-  price: Money;
+  // Fare products may not have a price if they don't implement a FareProduct subclass.
+  price?: Money;
   riderCategory?: {
     id: string;
     name: string;
   };
 };
 
+/**
+ * This fare product is designed to represent the fare product applied to a leg.
+ */
+export type AppliedFareProduct = FareProduct & {
+  legPrice: Money;
+};
+
 export type FareProductSelector = {
-  mediumId: string;
-  riderCategoryId: string;
+  mediumId?: string;
+  riderCategoryId?: string;
 };
 
 /**
