@@ -250,7 +250,7 @@ export type Place = {
   lon: number;
   name: string;
   networks?: string[];
-  rentalVehicle?: { network: string };
+  rentalVehicle?: { rentalNetwork: { networkId: string; url?: string } };
   vehicleRentalStation?: { rentalNetwork: { networkId: string } };
   stop?: Stop;
   /**
