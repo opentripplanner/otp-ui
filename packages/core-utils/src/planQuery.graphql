@@ -125,7 +125,10 @@ query Plan(
           name
           rentalVehicle {
             id
-            network
+            rentalNetwork {
+              networkId
+              url
+            }
           }
           stop {
             alerts {
@@ -241,7 +244,10 @@ query Plan(
           name
           rentalVehicle {
             id
-            network
+            rentalNetwork {
+              networkId
+              url
+            }
           }
           stop {
             alerts {

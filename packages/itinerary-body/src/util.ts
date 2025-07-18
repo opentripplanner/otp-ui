@@ -153,7 +153,7 @@ export function getPlaceName(
   // Here we detect if the name is just a UUID and generate a better name.
   // It is also possible to configure station name overrides in the config using overridePlaceNames.
   const company = getCompanyForNetwork(
-    place.networks?.[0] || place?.rentalVehicle?.network,
+    place.networks?.[0] || place?.rentalVehicle?.rentalNetwork?.networkId,
     companies
   );
   if (
