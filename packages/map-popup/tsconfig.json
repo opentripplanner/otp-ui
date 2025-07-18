@@ -5,7 +5,9 @@
     "outDir": "./lib",
     "rootDir": "./src",
     "target": "ES2015",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext"
   },
 
   "include": ["src/**/*"],
@@ -13,5 +15,5 @@
     {
       "path": "../types"
     }
-  ]
+  ],
 }
