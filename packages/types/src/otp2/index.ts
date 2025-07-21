@@ -62,7 +62,7 @@ enum PropulsionType {
 }
 
 type RentalVehicleType = {
-  formFactor?: FormFactor;
+  formFactor?: string;
   propulsionType?: PropulsionType;
 };
 
