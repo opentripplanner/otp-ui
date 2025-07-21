@@ -4,7 +4,8 @@
     "composite": true,
     "outDir": "./lib",
     "rootDir": "./src",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "module": "preserve",
   },
   "include": ["src/**/*"],
   "references": [
