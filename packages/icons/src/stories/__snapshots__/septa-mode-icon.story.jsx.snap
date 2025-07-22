@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Icons/SeptaModeIcon SeptaModeIconExamples smoke-test 1`] = `
-<table class="sc-aXZVg jHOLSy">
+<table class="icon-renderer__StyledTable-sc-g7krq-0 gVtNli">
   <thead>
     <tr>
       <th>

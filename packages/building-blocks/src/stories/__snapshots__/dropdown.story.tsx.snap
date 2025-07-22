@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Building-Blocks/Dropdown DropdownAsOtprrNavItem smoke-test 1`] = `
-<div class="sc-fqkvVR gRpaKO">
-  <span class="sc-eqUAAy gwTtlG navBarItem"
+<div class="dropdownstory__NavItemWrapper-sc-giygrt-0 jFfMlb">
+  <span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS navBarItem"
         id="dropdown-navbar-wrapper"
   >
     <button aria-expanded="false"
@@ -11,7 +11,7 @@ exports[`Building-Blocks/Dropdown DropdownAsOtprrNavItem smoke-test 1`] = `
             id="dropdown-navbar-label"
             title="Dropdown navbar"
             type="button"
-            class="sc-aXZVg ipHyjz"
+            class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
     >
       <span>
         Icon
@@ -26,7 +26,7 @@ exports[`Building-Blocks/Dropdown DropdownAsOtprrNavItem smoke-test 1`] = `
 `;
 
 exports[`Building-Blocks/Dropdown DropdownWithLabel smoke-test 1`] = `
-<span class="sc-eqUAAy gwTtlG"
+<span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS"
       id="dropdown-with-label-wrapper"
 >
   <button aria-expanded="false"
@@ -35,7 +35,7 @@ exports[`Building-Blocks/Dropdown DropdownWithLabel smoke-test 1`] = `
           id="dropdown-with-label-label"
           title="Dropdown with label"
           type="button"
-          class="sc-aXZVg ipHyjz"
+          class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
   >
     <span>
       Dropdown with label
@@ -49,7 +49,7 @@ exports[`Building-Blocks/Dropdown DropdownWithLabel smoke-test 1`] = `
 `;
 
 exports[`Building-Blocks/Dropdown DropdownWithList smoke-test 1`] = `
-<span class="sc-eqUAAy gwTtlG"
+<span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS"
       id="dropdown-with-ul-wrapper"
 >
   <button aria-expanded="false"
@@ -58,7 +58,7 @@ exports[`Building-Blocks/Dropdown DropdownWithList smoke-test 1`] = `
           id="dropdown-with-ul-label"
           title="Dropdown with ul"
           type="button"
-          class="sc-aXZVg ipHyjz"
+          class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
   >
     <span>
       Dropdown with ul
@@ -72,7 +72,7 @@ exports[`Building-Blocks/Dropdown DropdownWithList smoke-test 1`] = `
 `;
 
 exports[`Building-Blocks/Dropdown DropdownWithListAlignMenuLeft smoke-test 1`] = `
-<span class="sc-eqUAAy gwTtlG"
+<span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS"
       id="dropdown-with-ul-wrapper"
 >
   <button aria-expanded="false"
@@ -81,7 +81,7 @@ exports[`Building-Blocks/Dropdown DropdownWithListAlignMenuLeft smoke-test 1`] =
           id="dropdown-with-ul-label"
           title="Dropdown with ul"
           type="button"
-          class="sc-aXZVg ipHyjz"
+          class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
   >
     <span>
       Dropdown with ul

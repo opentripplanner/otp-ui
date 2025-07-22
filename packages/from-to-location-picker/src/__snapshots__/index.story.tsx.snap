@@ -5,14 +5,14 @@ exports[`From-To-Picker customStyleAndText smoke-test 1`] = `
   <i style="color: rgb(255, 255, 0);">
     Your trip:
   </i>
-  <span class="sc-gEvEer gKwvpa">
-    <span class="sc-aXZVg ddQfmk">
-      <button class="sc-eqUAAy bFQwHW">
+  <span class="styled__FromToPickerSpan-sc-vb4790-1 giBPod">
+    <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+      <button class="styled__Button-sc-vb4790-2 ekklXB">
         From here
       </button>
     </span>
-    <span class="sc-aXZVg ddQfmk">
-      <button class="sc-eqUAAy bFQwHW">
+    <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+      <button class="styled__Button-sc-vb4790-2 ekklXB">
         To here
       </button>
     </span>
@@ -21,8 +21,8 @@ exports[`From-To-Picker customStyleAndText smoke-test 1`] = `
 `;
 
 exports[`From-To-Picker fromTo smoke-test 1`] = `
-<span class="sc-gEvEer gKwvpa">
-  <span class="sc-aXZVg ddQfmk">
+<span class="styled__FromToPickerSpan-sc-vb4790-1 giBPod">
+  <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
     <svg viewbox="0 0 512 512"
          height="0.9em"
          width="0.9em"
@@ -37,11 +37,11 @@ exports[`From-To-Picker fromTo smoke-test 1`] = `
       >
       </path>
     </svg>
-    <button class="sc-eqUAAy bFQwHW">
+    <button class="styled__Button-sc-vb4790-2 ekklXB">
       From here
     </button>
   </span>
-  <span class="sc-aXZVg ddQfmk">
+  <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
     <svg viewbox="0 0 384 512"
          height="0.9em"
          width="0.9em"
@@ -56,7 +56,7 @@ exports[`From-To-Picker fromTo smoke-test 1`] = `
       >
       </path>
     </svg>
-    <button class="sc-eqUAAy bFQwHW">
+    <button class="styled__Button-sc-vb4790-2 ekklXB">
       To here
     </button>
   </span>
@@ -68,8 +68,8 @@ exports[`From-To-Picker smallTextSansSerif smoke-test 1`] = `
   <strong>
     Plan a trip:
   </strong>
-  <span class="sc-gEvEer gKwvpa">
-    <span class="sc-aXZVg ddQfmk">
+  <span class="styled__FromToPickerSpan-sc-vb4790-1 giBPod">
+    <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
       <svg viewbox="0 0 512 512"
            height="0.9em"
            width="0.9em"
@@ -84,11 +84,11 @@ exports[`From-To-Picker smallTextSansSerif smoke-test 1`] = `
         >
         </path>
       </svg>
-      <button class="sc-eqUAAy bFQwHW">
+      <button class="styled__Button-sc-vb4790-2 ekklXB">
         From here
       </button>
     </span>
-    <span class="sc-aXZVg ddQfmk">
+    <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
       <svg viewbox="0 0 384 512"
            height="0.9em"
            width="0.9em"
@@ -103,7 +103,7 @@ exports[`From-To-Picker smallTextSansSerif smoke-test 1`] = `
         >
         </path>
       </svg>
-      <button class="sc-eqUAAy bFQwHW">
+      <button class="styled__Button-sc-vb4790-2 ekklXB">
         To here
       </button>
     </span>

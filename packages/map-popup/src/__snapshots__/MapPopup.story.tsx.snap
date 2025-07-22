@@ -191,7 +191,7 @@ exports[`Map Popup StopEntity smoke-test 1`] = `
       <strong>
         Stop ID: 9526
       </strong>
-      <button class="sc-aXZVg ejLgMT">
+      <button class="styled__ViewStopButton-sc-12v7ov3-0 hXaHvR">
         Stop Viewer
       </button>
     </p>
@@ -265,7 +265,7 @@ exports[`Map Popup StopEntityNoStopCode smoke-test 1`] = `
       W Burnside &amp; SW 2nd
     </header>
     <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
-      <button class="sc-aXZVg bjDowc">
+      <button class="styled__ViewStopButton-sc-12v7ov3-0 bbtcwi">
         Stop Viewer
       </button>
     </p>
@@ -324,7 +324,7 @@ exports[`Map Popup StopEntityWithEntityPrefix smoke-test 1`] = `
        role="presentation"
   >
     <header class="styled__PopupTitle-sc-12kjso7-3 jRNaQh">
-      <span class="sc-gEvEer kDLmPB">
+      <span class="MapPopupstory__DemoIcon-sc-vlk9f0-0 hzuFzw">
         W
       </span>
       W Burnside &amp; SW 2nd
@@ -333,7 +333,7 @@ exports[`Map Popup StopEntityWithEntityPrefix smoke-test 1`] = `
       <strong>
         Stop ID: 9526
       </strong>
-      <button class="sc-aXZVg ejLgMT">
+      <button class="styled__ViewStopButton-sc-12v7ov3-0 hXaHvR">
         Stop Viewer
       </button>
     </p>

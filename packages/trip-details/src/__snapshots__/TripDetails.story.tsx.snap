@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
-<div class="sc-cPiKLX eEukef trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
-      class="sc-eDPEul enCCGo"
+      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
     Trip Details
   </h2>
-  <div class="sc-dLMFU KgRLu">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="sc-jlZhew lcVVFJ departure-date"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -29,8 +29,8 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-jXbUNg bqEEpg">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
           Depart
           <strong>
             December 13, 2019
@@ -48,10 +48,10 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -73,10 +73,10 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ time-active"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -93,7 +93,7 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
         Time Spent Active:
         <strong>
           ~1 minute
@@ -103,7 +103,7 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -128,10 +128,10 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -162,10 +162,10 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ emissions"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -182,8 +182,8 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-fqkvVR gQycbC">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
           CO₂ Emitted:
           <strong>
             1g
@@ -194,7 +194,7 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -219,10 +219,10 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -256,18 +256,18 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
-<div class="sc-cPiKLX eEukef trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
-      class="sc-eDPEul enCCGo"
+      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
     Trip Details
   </h2>
-  <div class="sc-dLMFU KgRLu">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="sc-jlZhew lcVVFJ departure-date"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -284,8 +284,8 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-jXbUNg bqEEpg">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
           Depart
           <strong>
             November 13, 2019
@@ -303,10 +303,10 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -328,10 +328,10 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ time-active"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -348,7 +348,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
         Time Spent Active:
         <strong>
           7 minutes
@@ -358,7 +358,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -383,10 +383,10 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -417,10 +417,10 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ emissions"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -437,8 +437,8 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-fqkvVR gQycbC">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
           CO₂ Emitted:
           <strong>
             19g
@@ -449,7 +449,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -474,10 +474,10 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -512,8 +512,8 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
 
 exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
 <div>
-  <table class="sc-gFqAkR jyNXBY">
-    <thead class="sc-fPXMVe fPHsTV">
+  <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
+    <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
       <th class="main"
           scope="col"
       >
@@ -534,7 +534,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
         </strong>
         <br>
         -
-        <span class="sc-aXZVg knEpLx">
+        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
           No fare total available
         </span>
       </th>
@@ -544,7 +544,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
         </strong>
         <br>
         -
-        <span class="sc-aXZVg knEpLx">
+        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
           No fare total available
         </span>
       </th>
@@ -558,13 +558,13 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
       </td>
       <td>
         -
-        <span class="sc-aXZVg knEpLx">
+        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
           No fare information for this leg
         </span>
       </td>
       <td>
         -
-        <span class="sc-aXZVg knEpLx">
+        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
           No fare information for this leg
         </span>
       </td>
@@ -598,7 +598,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL sc-ikkxIA kAajAL"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
         >
           <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
           </path>
@@ -613,7 +613,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL sc-ikkxIA kAajAL"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
         >
           <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
           </path>
@@ -636,7 +636,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL sc-ikkxIA kAajAL"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
         >
           <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
           </path>
@@ -651,7 +651,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL sc-ikkxIA kAajAL"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
         >
           <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
           </path>
@@ -660,8 +660,8 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
       </td>
     </tr>
   </table>
-  <table class="sc-gFqAkR jyNXBY">
-    <thead class="sc-fPXMVe fPHsTV">
+  <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
+    <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
       <th class="main"
           scope="col"
       >
@@ -682,7 +682,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
         </strong>
         <br>
         -
-        <span class="sc-aXZVg knEpLx">
+        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
           No fare total available
         </span>
       </th>
@@ -696,7 +696,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
       </td>
       <td>
         -
-        <span class="sc-aXZVg knEpLx">
+        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
           No fare information for this leg
         </span>
       </td>
@@ -735,8 +735,8 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
       </td>
     </tr>
   </table>
-  <table class="sc-gFqAkR jyNXBY">
-    <thead class="sc-fPXMVe fPHsTV">
+  <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
+    <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
       <th class="main"
           scope="col"
       >
@@ -757,7 +757,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
         </strong>
         <br>
         -
-        <span class="sc-aXZVg knEpLx">
+        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
           No fare total available
         </span>
       </th>
@@ -771,7 +771,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
       </td>
       <td>
         -
-        <span class="sc-aXZVg knEpLx">
+        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
           No fare information for this leg
         </span>
       </td>
@@ -802,7 +802,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL sc-ikkxIA kAajAL"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
         >
           <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
           </path>
@@ -825,7 +825,7 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL sc-ikkxIA kAajAL"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
         >
           <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
           </path>
@@ -838,18 +838,18 @@ exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
 `;
 
 exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
-<div class="sc-cPiKLX eEukef trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
-      class="sc-eDPEul enCCGo"
+      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
     Trip Details
   </h2>
-  <div class="sc-dLMFU KgRLu">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="sc-jlZhew lcVVFJ departure-date"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -866,8 +866,8 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-jXbUNg bqEEpg">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
           Depart
           <strong>
             December 28, 2023
@@ -885,10 +885,10 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -910,10 +910,10 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ fares"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH fares"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 576 512"
              height="17"
@@ -930,9 +930,9 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-iGgWBj dVSjCO">
-          <details class="sc-dhKdcB ihnbWV">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__Fare-sc-6q2ok2-5 ifUIDh">
+          <details class="styled__TransitFare-sc-6q2ok2-10 caWmNS">
             <summary style="display: list-item;">
               Transit Fare:
               <strong>
@@ -940,8 +940,8 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
               </strong>
             </summary>
             <div>
-              <table class="sc-gFqAkR jyNXBY">
-                <thead class="sc-fPXMVe fPHsTV">
+              <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
+                <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
                   <th class="main"
                       scope="col"
                   >
@@ -962,7 +962,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                     </strong>
                     <br>
                     -
-                    <span class="sc-aXZVg knEpLx">
+                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
                       No fare total available
                     </span>
                   </th>
@@ -972,7 +972,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                     </strong>
                     <br>
                     -
-                    <span class="sc-aXZVg knEpLx">
+                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
                       No fare total available
                     </span>
                   </th>
@@ -986,13 +986,13 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                   </td>
                   <td>
                     -
-                    <span class="sc-aXZVg knEpLx">
+                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
                       No fare information for this leg
                     </span>
                   </td>
                   <td>
                     -
-                    <span class="sc-aXZVg knEpLx">
+                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
                       No fare information for this leg
                     </span>
                   </td>
@@ -1026,7 +1026,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL sc-ikkxIA kAajAL"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
                     >
                       <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
                       </path>
@@ -1041,7 +1041,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL sc-ikkxIA kAajAL"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
                     >
                       <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
                       </path>
@@ -1064,7 +1064,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL sc-ikkxIA kAajAL"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
                     >
                       <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
                       </path>
@@ -1079,7 +1079,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL sc-ikkxIA kAajAL"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
                     >
                       <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
                       </path>
@@ -1088,8 +1088,8 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                   </td>
                 </tr>
               </table>
-              <table class="sc-gFqAkR jyNXBY">
-                <thead class="sc-fPXMVe fPHsTV">
+              <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
+                <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
                   <th class="main"
                       scope="col"
                   >
@@ -1110,7 +1110,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                     </strong>
                     <br>
                     -
-                    <span class="sc-aXZVg knEpLx">
+                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
                       No fare total available
                     </span>
                   </th>
@@ -1124,7 +1124,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                   </td>
                   <td>
                     -
-                    <span class="sc-aXZVg knEpLx">
+                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
                       No fare information for this leg
                     </span>
                   </td>
@@ -1163,8 +1163,8 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                   </td>
                 </tr>
               </table>
-              <table class="sc-gFqAkR jyNXBY">
-                <thead class="sc-fPXMVe fPHsTV">
+              <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
+                <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
                   <th class="main"
                       scope="col"
                   >
@@ -1185,7 +1185,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                     </strong>
                     <br>
                     -
-                    <span class="sc-aXZVg knEpLx">
+                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
                       No fare total available
                     </span>
                   </th>
@@ -1199,7 +1199,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                   </td>
                   <td>
                     -
-                    <span class="sc-aXZVg knEpLx">
+                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
                       No fare information for this leg
                     </span>
                   </td>
@@ -1230,7 +1230,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL sc-ikkxIA kAajAL"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
                     >
                       <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
                       </path>
@@ -1253,7 +1253,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                          focusable="false"
                          fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL sc-ikkxIA kAajAL"
+                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
                     >
                       <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
                       </path>
@@ -1273,10 +1273,10 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1298,10 +1298,10 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ time-active"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -1318,7 +1318,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
         Time Spent Active:
         <strong>
           29 minutes
@@ -1328,7 +1328,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -1353,10 +1353,10 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1387,10 +1387,10 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ emissions"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -1407,8 +1407,8 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-fqkvVR gQycbC">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
           CO₂ Emitted:
           <strong>
             9,031g
@@ -1419,7 +1419,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -1444,10 +1444,10 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1481,18 +1481,18 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
-<div class="sc-cPiKLX eEukef trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
-      class="sc-eDPEul enCCGo"
+      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
     Trip Details
   </h2>
-  <div class="sc-dLMFU KgRLu">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="sc-jlZhew lcVVFJ departure-date"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -1509,8 +1509,8 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-jXbUNg bqEEpg">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
           Depart
           <strong>
             June 15, 2022
@@ -1528,10 +1528,10 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1553,10 +1553,10 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ time-active"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -1573,7 +1573,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
         Time Spent Active:
         <strong>
           5 minutes
@@ -1583,7 +1583,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -1608,10 +1608,10 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1642,10 +1642,10 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ emissions"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -1662,8 +1662,8 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-fqkvVR gQycbC">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
           CO₂ Emitted:
           <strong>
             7g
@@ -1674,7 +1674,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -1699,10 +1699,10 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1736,18 +1736,18 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
-<div class="sc-cPiKLX eEukef trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
-      class="sc-eDPEul enCCGo"
+      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
     Trip Details
   </h2>
-  <div class="sc-dLMFU KgRLu">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="sc-jlZhew lcVVFJ departure-date"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -1764,8 +1764,8 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-jXbUNg bqEEpg">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
           Depart
           <strong>
             June 22, 2022
@@ -1783,10 +1783,10 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1808,10 +1808,10 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ time-active"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -1828,7 +1828,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
         Time Spent Active:
         <strong>
           12 minutes
@@ -1838,7 +1838,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -1863,10 +1863,10 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1897,10 +1897,10 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ flex-booking-info"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH flex-booking-info"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -1917,8 +1917,8 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-dAlyuH bnGnEl">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__FlexSummary-sc-6q2ok2-12 gBOBbY">
           This trip includes flexible routes. This is the first pickup booking info message. This is the first dropoff booking info message.
         </span>
       </div>
@@ -1929,10 +1929,10 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1954,10 +1954,10 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ emissions"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -1974,8 +1974,8 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-fqkvVR gQycbC">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
           CO₂ Emitted:
           <strong>
             4,682g
@@ -1986,7 +1986,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2011,10 +2011,10 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2048,18 +2048,18 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails StyledItinerary smoke-test 1`] = `
-<div class="sc-cPiKLX eEukef sc-dAbbOL dRgPqZ trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk TripDetailsstory__StyledTripDetails-sc-1xhb9yd-0 jpZLG trip-details">
   <h2 id="trip-details-header"
-      class="sc-eDPEul enCCGo"
+      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
     Trip Details
   </h2>
-  <div class="sc-dLMFU KgRLu">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="sc-jlZhew lcVVFJ departure-date"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -2076,8 +2076,8 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-jXbUNg bqEEpg">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
           Depart
           <strong>
             November 13, 2019
@@ -2095,10 +2095,10 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2120,10 +2120,10 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ time-active"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -2140,7 +2140,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
         Time Spent Active:
         <strong>
           2 minutes
@@ -2150,7 +2150,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2175,10 +2175,10 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2209,10 +2209,10 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ emissions"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -2229,8 +2229,8 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-fqkvVR gQycbC">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
           CO₂ Emitted:
           <strong>
             61g
@@ -2241,7 +2241,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2266,10 +2266,10 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2303,18 +2303,18 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
-<div class="sc-cPiKLX eEukef trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
-      class="sc-eDPEul enCCGo"
+      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
     Trip Details
   </h2>
-  <div class="sc-dLMFU KgRLu">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="sc-jlZhew lcVVFJ departure-date"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -2331,8 +2331,8 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-jXbUNg bqEEpg">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
           Depart
           <strong>
             May 23, 2023
@@ -2350,10 +2350,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2375,10 +2375,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ tnc-fare"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH tnc-fare"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 576 512"
              height="17"
@@ -2395,10 +2395,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-iGgWBj dVSjCO">
-          <span class="sc-kAyceB hbZTEb">
-            <span class="sc-imWYAI fTiuxj">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__Fare-sc-6q2ok2-5 ifUIDh">
+          <span class="styled__TNCFare-sc-6q2ok2-7 yUDcy">
+            <span class="styled__TNCFareCompanies-sc-6q2ok2-8 brbgsV">
               uber
             </span>
             Fare:
@@ -2412,7 +2412,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2437,10 +2437,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2463,10 +2463,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ time-active"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -2483,7 +2483,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
         Time Spent Active:
         <strong>
           2 minutes
@@ -2493,7 +2493,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2518,10 +2518,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2552,10 +2552,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ emissions"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -2572,8 +2572,8 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-fqkvVR gQycbC">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
           CO₂ Emitted:
           <strong>
             319g
@@ -2584,7 +2584,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2609,10 +2609,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2646,18 +2646,18 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
-<div class="sc-cPiKLX eEukef sc-dAbbOL dRgPqZ trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk TripDetailsstory__StyledTripDetails-sc-1xhb9yd-0 jpZLG trip-details">
   <h2 id="trip-details-header"
-      class="sc-eDPEul enCCGo"
+      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
     Custom Trip Details Title
   </h2>
-  <div class="sc-dLMFU KgRLu">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="sc-jlZhew lcVVFJ departure-date"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -2674,8 +2674,8 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-jXbUNg bqEEpg">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
           <strong>
             Leave
           </strong>
@@ -2693,7 +2693,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2718,10 +2718,10 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2744,10 +2744,10 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ tnc-fare"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH tnc-fare"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 576 512"
              height="17"
@@ -2764,15 +2764,15 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-iGgWBj dVSjCO">
-          <span class="sc-kAyceB hbZTEb">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__Fare-sc-6q2ok2-5 ifUIDh">
+          <span class="styled__TNCFare-sc-6q2ok2-7 yUDcy">
             Pay
             <strong>
               $34.00-$37.00
             </strong>
             to
-            <span class="sc-imWYAI fTiuxj">
+            <span class="styled__TNCFareCompanies-sc-6q2ok2-8 brbgsV">
               uber
             </span>
           </span>
@@ -2785,10 +2785,10 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2810,10 +2810,10 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ time-active"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -2830,7 +2830,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
         Time Spent Active:
         <strong>
           2 minutes
@@ -2840,7 +2840,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2865,10 +2865,10 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2891,10 +2891,10 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ emissions"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -2911,8 +2911,8 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-fqkvVR gQycbC">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
           CO₂ Emitted:
           <strong>
             319g
@@ -2923,7 +2923,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2948,10 +2948,10 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2985,18 +2985,18 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
 `;
 
 exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
-<div class="sc-cPiKLX eEukef trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
-      class="sc-eDPEul enCCGo"
+      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
     Trip Details
   </h2>
-  <div class="sc-dLMFU KgRLu">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="sc-jlZhew lcVVFJ departure-date"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -3013,8 +3013,8 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-jXbUNg bqEEpg">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
           Depart
           <strong>
             December 13, 2019
@@ -3032,10 +3032,10 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -3057,10 +3057,10 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ time-active"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -3077,7 +3077,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
         Time Spent Active:
         <strong>
           1 minute
@@ -3087,7 +3087,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -3112,10 +3112,10 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -3146,10 +3146,10 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ emissions"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -3166,8 +3166,8 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-fqkvVR gQycbC">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
           CO₂ Emitted:
           <strong>
             1g
@@ -3178,7 +3178,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -3203,10 +3203,10 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -3240,18 +3240,18 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
-<div class="sc-cPiKLX eEukef trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
   <h2 id="trip-details-header"
-      class="sc-eDPEul enCCGo"
+      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
   >
     Trip Details
   </h2>
-  <div class="sc-dLMFU KgRLu">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
     <div role="group"
-         class="sc-jlZhew lcVVFJ departure-date"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -3268,8 +3268,8 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-jXbUNg bqEEpg">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
           Depart
           <strong>
             November 13, 2019
@@ -3287,10 +3287,10 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -3312,10 +3312,10 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ time-active"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -3332,7 +3332,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
         Time Spent Active:
         <strong>
           2 minutes
@@ -3342,7 +3342,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -3367,10 +3367,10 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -3401,10 +3401,10 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="sc-jlZhew lcVVFJ emissions"
+         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
     >
       <div role="presentation"
-           class="sc-jEACwC pfEsR"
+           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -3421,8 +3421,8 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="sc-eldPxv iywQgZ">
-        <span class="sc-fqkvVR gQycbC">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
           CO₂ Emitted:
           <strong>
             61g
@@ -3433,7 +3433,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="sc-gEvEer sc-dcJsrY bPYrkz AaPDa"
+                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -3458,10 +3458,10 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="sc-cwHptR iKJmLk"
+               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
           >
             <button role="presentation"
-                    class="sc-gEvEer sc-gsFSXq bPYrkz lluzkV"
+                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"

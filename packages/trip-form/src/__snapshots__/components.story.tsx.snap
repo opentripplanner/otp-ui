@@ -10,7 +10,7 @@ exports[`Trip Form Components checkboxSelector smoke-test 1`] = `
            type="checkbox"
     >
     <label for="id-query-param-MyParam"
-           class="sc-eqUAAy hwpVdS"
+           class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
     >
       Check me.
     </label>
@@ -20,13 +20,13 @@ exports[`Trip Form Components checkboxSelector smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="sc-fPXMVe cIgdXM">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
     <div style="display: inline-block; width: 250px;">
       <input id="id-query-param-MyParam"
              type="checkbox"
       >
       <label for="id-query-param-MyParam"
-             class="sc-eqUAAy hwpVdS"
+             class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
       >
         Check me.
       </label>
@@ -41,10 +41,10 @@ exports[`Trip Form Components dateTimeSelector smoke-test 1`] = `
 </p>
 <div>
   <div aria-label="Date/Time Selector"
-       class="sc-dcJsrY gPhyCn"
+       class="styled__DateTimeSelector-sc-122ziys-4 ehsfjV"
        role="group"
   >
-    <div class="sc-iGgWBj jZcfez">
+    <div class="styled__DepartArriveContainer-sc-122ziys-5 kqvuAJ">
       <span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS"
             id="date-time-depart-arrive-wrapper"
       >
@@ -85,12 +85,12 @@ exports[`Trip Form Components dateTimeSelector smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="sc-fPXMVe cIgdXM">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
     <div aria-label="Date/Time Selector"
-         class="sc-dcJsrY gPhyCn"
+         class="styled__DateTimeSelector-sc-122ziys-4 ehsfjV"
          role="group"
     >
-      <div class="sc-iGgWBj jZcfez">
+      <div class="styled__DepartArriveContainer-sc-122ziys-5 kqvuAJ">
         <span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS"
               id="date-time-depart-arrive-wrapper"
         >
@@ -135,7 +135,7 @@ exports[`Trip Form Components departArriveDropdown smoke-test 1`] = `
   Plain
 </p>
 <div>
-  <div class="sc-iGgWBj jZcfez">
+  <div class="styled__DepartArriveContainer-sc-122ziys-5 kqvuAJ">
     <span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS"
           id="date-time-depart-arrive-wrapper"
     >
@@ -161,8 +161,8 @@ exports[`Trip Form Components departArriveDropdown smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="sc-fPXMVe cIgdXM">
-    <div class="sc-iGgWBj jZcfez">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
+    <div class="styled__DepartArriveContainer-sc-122ziys-5 kqvuAJ">
       <span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS"
             id="date-time-depart-arrive-wrapper"
       >
@@ -192,12 +192,12 @@ exports[`Trip Form Components dropdownSelector smoke-test 1`] = `
   Plain
 </p>
 <div>
-  <div class="sc-cPiKLX ikyhKO"
+  <div class="styled__DropdownSelector-sc-122ziys-16 eIFxPB"
        style="display: inline-block; width: 250px;"
   >
     <div>
       <label for="id-query-param-MyParam"
-             class="sc-eqUAAy hwpVdS"
+             class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
       >
         Pick an option:
       </label>
@@ -218,13 +218,13 @@ exports[`Trip Form Components dropdownSelector smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="sc-fPXMVe cIgdXM">
-    <div class="sc-cPiKLX ikyhKO"
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
+    <div class="styled__DropdownSelector-sc-122ziys-16 eIFxPB"
          style="display: inline-block; width: 250px;"
     >
       <div>
         <label for="id-query-param-MyParam"
-               class="sc-eqUAAy hwpVdS"
+               class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
         >
           Pick an option:
         </label>
@@ -249,11 +249,11 @@ exports[`Trip Form Components generalSettingsPanel smoke-test 1`] = `
   Plain
 </p>
 <div>
-  <div class="sc-eDPEul AbVrp">
-    <div class="sc-cPiKLX ikyhKO">
+  <div class="styled__GeneralSettingsPanel-sc-122ziys-18 iIUyUr">
+    <div class="styled__DropdownSelector-sc-122ziys-16 eIFxPB">
       <div>
         <label for="id-query-param-maxWalkDistance"
-               class="sc-eqUAAy hwpVdS"
+               class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
         >
           Maximum Walk
         </label>
@@ -290,12 +290,12 @@ exports[`Trip Form Components generalSettingsPanel smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="sc-fPXMVe cIgdXM">
-    <div class="sc-eDPEul AbVrp">
-      <div class="sc-cPiKLX ikyhKO">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
+    <div class="styled__GeneralSettingsPanel-sc-122ziys-18 iIUyUr">
+      <div class="styled__DropdownSelector-sc-122ziys-16 eIFxPB">
         <div>
           <label for="id-query-param-maxWalkDistance"
-                 class="sc-eqUAAy hwpVdS"
+                 class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
           >
             Maximum Walk
           </label>
@@ -336,11 +336,11 @@ exports[`Trip Form Components generalSettingsPanelWithCustomMessages smoke-test 
   Plain
 </p>
 <div>
-  <div class="sc-eDPEul AbVrp">
-    <div class="sc-cPiKLX ikyhKO">
+  <div class="styled__GeneralSettingsPanel-sc-122ziys-18 iIUyUr">
+    <div class="styled__DropdownSelector-sc-122ziys-16 eIFxPB">
       <div>
         <label for="id-query-param-maxWalkDistance"
-               class="sc-eqUAAy hwpVdS"
+               class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
         >
           Max Walk Distance In Meters (custom)
         </label>
@@ -362,12 +362,12 @@ exports[`Trip Form Components generalSettingsPanelWithCustomMessages smoke-test 
   Styled
 </p>
 <div>
-  <div class="sc-fPXMVe cIgdXM">
-    <div class="sc-eDPEul AbVrp">
-      <div class="sc-cPiKLX ikyhKO">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
+    <div class="styled__GeneralSettingsPanel-sc-122ziys-18 iIUyUr">
+      <div class="styled__DropdownSelector-sc-122ziys-16 eIFxPB">
         <div>
           <label for="id-query-param-maxWalkDistance"
-                 class="sc-eqUAAy hwpVdS"
+                 class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
           >
             Max Walk Distance In Meters (custom)
           </label>
@@ -393,14 +393,14 @@ exports[`Trip Form Components generalSettingsPanelWithOtp2 smoke-test 1`] = `
   Plain
 </p>
 <div>
-  <div class="sc-eDPEul AbVrp">
+  <div class="styled__GeneralSettingsPanel-sc-122ziys-18 iIUyUr">
     <div aria-label="walk reluctance"
-         class="sc-dLMFU elubet"
+         class="styled__SliderSelector-sc-122ziys-17 ffPSmY"
          role="group"
     >
       <div>
         <span aria-hidden="true"
-              class="sc-eqUAAy hwpVdS"
+              class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
         >
           More Walking
         </span>
@@ -413,7 +413,7 @@ exports[`Trip Form Components generalSettingsPanelWithOtp2 smoke-test 1`] = `
                value="1"
         >
         <span aria-hidden="true"
-              class="sc-eqUAAy hwpVdS"
+              class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
               style="padding-left: 0px;"
         >
           More Transit
@@ -426,15 +426,15 @@ exports[`Trip Form Components generalSettingsPanelWithOtp2 smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="sc-fPXMVe cIgdXM">
-    <div class="sc-eDPEul AbVrp">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
+    <div class="styled__GeneralSettingsPanel-sc-122ziys-18 iIUyUr">
       <div aria-label="walk reluctance"
-           class="sc-dLMFU elubet"
+           class="styled__SliderSelector-sc-122ziys-17 ffPSmY"
            role="group"
       >
         <div>
           <span aria-hidden="true"
-                class="sc-eqUAAy hwpVdS"
+                class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
           >
             More Walking
           </span>
@@ -447,7 +447,7 @@ exports[`Trip Form Components generalSettingsPanelWithOtp2 smoke-test 1`] = `
                  value="1"
           >
           <span aria-hidden="true"
-                class="sc-eqUAAy hwpVdS"
+                class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
                 style="padding-left: 0px;"
           >
             More Transit
@@ -466,9 +466,9 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
 <div>
   <div>
     <div>
-      <div class="sc-jlZhew hrROAe">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="false"
-                class="sc-jEACwC kdGmxH  "
+                class="styled__Button-sc-122ziys-15 bQUWjj  "
                 title="Normal"
         >
           <svg viewbox="0 0 390 390">
@@ -490,7 +490,7 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
           </span>
           bike
         </button>
-        <div class="sc-cwHptR biSekH  "
+        <div class="styled__Title-sc-122ziys-14 cTCYyx  "
              title="Normal"
         >
           Normal
@@ -498,9 +498,9 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
       </div>
       <span style="display: inline-block; width: 1em;">
       </span>
-      <div class="sc-jlZhew hrROAe">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="true"
-                class="sc-jEACwC kdGmxH active "
+                class="styled__Button-sc-122ziys-15 bQUWjj active "
                 title="Active"
         >
           <svg viewbox="0 0 390 390">
@@ -509,7 +509,7 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
           </svg>
           Train
         </button>
-        <div class="sc-cwHptR biSekH active "
+        <div class="styled__Title-sc-122ziys-14 cTCYyx active "
              title="Active"
         >
           Active
@@ -517,9 +517,9 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
       </div>
       <span style="display: inline-block; width: 1em;">
       </span>
-      <div class="sc-jlZhew hrROAe">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="false"
-                class="sc-jEACwC kdGmxH  disabled"
+                class="styled__Button-sc-122ziys-15 bQUWjj  disabled"
                 disabled
                 title="Disabled"
         >
@@ -540,7 +540,7 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
             </path>
           </svg>
         </button>
-        <div class="sc-cwHptR biSekH  disabled"
+        <div class="styled__Title-sc-122ziys-14 cTCYyx  disabled"
              title="Disabled"
         >
           Disabled
@@ -548,9 +548,9 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
       </div>
     </div>
     <div>
-      <div class="sc-jlZhew hrROAe">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="false"
-                class="sc-jEACwC kdGmxH  "
+                class="styled__Button-sc-122ziys-15 bQUWjj  "
                 title="Walk Only"
         >
           <svg viewbox="0 0 390 390">
@@ -567,12 +567,12 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="sc-fPXMVe cIgdXM">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
     <div>
       <div>
-        <div class="sc-jlZhew hrROAe">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="false"
-                  class="sc-jEACwC kdGmxH  "
+                  class="styled__Button-sc-122ziys-15 bQUWjj  "
                   title="Normal"
           >
             <svg viewbox="0 0 390 390">
@@ -594,7 +594,7 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
             </span>
             bike
           </button>
-          <div class="sc-cwHptR biSekH  "
+          <div class="styled__Title-sc-122ziys-14 cTCYyx  "
                title="Normal"
           >
             Normal
@@ -602,9 +602,9 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
         </div>
         <span style="display: inline-block; width: 1em;">
         </span>
-        <div class="sc-jlZhew hrROAe">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="true"
-                  class="sc-jEACwC kdGmxH active "
+                  class="styled__Button-sc-122ziys-15 bQUWjj active "
                   title="Active"
           >
             <svg viewbox="0 0 390 390">
@@ -613,7 +613,7 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
             </svg>
             Train
           </button>
-          <div class="sc-cwHptR biSekH active "
+          <div class="styled__Title-sc-122ziys-14 cTCYyx active "
                title="Active"
           >
             Active
@@ -621,9 +621,9 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
         </div>
         <span style="display: inline-block; width: 1em;">
         </span>
-        <div class="sc-jlZhew hrROAe">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="false"
-                  class="sc-jEACwC kdGmxH  disabled"
+                  class="styled__Button-sc-122ziys-15 bQUWjj  disabled"
                   disabled
                   title="Disabled"
           >
@@ -644,7 +644,7 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
               </path>
             </svg>
           </button>
-          <div class="sc-cwHptR biSekH  disabled"
+          <div class="styled__Title-sc-122ziys-14 cTCYyx  disabled"
                title="Disabled"
           >
             Disabled
@@ -652,9 +652,9 @@ exports[`Trip Form Components modeButtons smoke-test 1`] = `
         </div>
       </div>
       <div>
-        <div class="sc-jlZhew hrROAe">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="false"
-                  class="sc-jEACwC kdGmxH  "
+                  class="styled__Button-sc-122ziys-15 bQUWjj  "
                   title="Walk Only"
           >
             <svg viewbox="0 0 390 390">
@@ -675,11 +675,11 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
   Plain
 </p>
 <div>
-  <div class="sc-gsFSXq bMGeNQ">
-    <div class="sc-kAyceB bdSOiW">
-      <div class="sc-jlZhew hrROAe">
+  <div class="styled__ModeSelector-sc-122ziys-6 fguJhP">
+    <div class="styled__MainRow-sc-122ziys-7 jDYhDw">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="false"
-                class="sc-jEACwC kdGmxH  "
+                class="styled__Button-sc-122ziys-15 bQUWjj  "
                 title="Primary Choice"
         >
           <span>
@@ -694,17 +694,17 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
             Primary Choice
           </span>
         </button>
-        <div class="sc-cwHptR biSekH  "
+        <div class="styled__Title-sc-122ziys-14 cTCYyx  "
              title="Primary Choice"
         >
           Primary Choice
         </div>
       </div>
     </div>
-    <div class="sc-imWYAI bPPaNr">
-      <div class="sc-jlZhew hrROAe">
+    <div class="styled__SecondaryRow-sc-122ziys-8 dIUAaM">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="false"
-                class="sc-jEACwC kdGmxH  "
+                class="styled__Button-sc-122ziys-15 bQUWjj  "
                 title="Secondary 1"
         >
           <span>
@@ -719,15 +719,15 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
             Sec. #1
           </span>
         </button>
-        <div class="sc-cwHptR biSekH  "
+        <div class="styled__Title-sc-122ziys-14 cTCYyx  "
              title="Secondary 1"
         >
           Secondary 1
         </div>
       </div>
-      <div class="sc-jlZhew hrROAe">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="true"
-                class="sc-jEACwC kdGmxH active "
+                class="styled__Button-sc-122ziys-15 bQUWjj active "
                 title="Secondary 2"
         >
           <span>
@@ -740,17 +740,17 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
         </button>
       </div>
     </div>
-    <div class="sc-jXbUNg hbMInV">
-      <div class="sc-jlZhew hrROAe">
+    <div class="styled__TertiaryRow-sc-122ziys-9 eKHob">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="false"
-                class="sc-jEACwC kdGmxH  "
+                class="styled__Button-sc-122ziys-15 bQUWjj  "
                 title="Other Mode"
         >
           <span>
             Tertiary Mode
           </span>
         </button>
-        <div class="sc-cwHptR biSekH  "
+        <div class="styled__Title-sc-122ziys-14 cTCYyx  "
              title="Other Mode"
         >
           Other Mode
@@ -763,12 +763,12 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="sc-fPXMVe cIgdXM">
-    <div class="sc-gsFSXq bMGeNQ">
-      <div class="sc-kAyceB bdSOiW">
-        <div class="sc-jlZhew hrROAe">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
+    <div class="styled__ModeSelector-sc-122ziys-6 fguJhP">
+      <div class="styled__MainRow-sc-122ziys-7 jDYhDw">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="false"
-                  class="sc-jEACwC kdGmxH  "
+                  class="styled__Button-sc-122ziys-15 bQUWjj  "
                   title="Primary Choice"
           >
             <span>
@@ -783,17 +783,17 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
               Primary Choice
             </span>
           </button>
-          <div class="sc-cwHptR biSekH  "
+          <div class="styled__Title-sc-122ziys-14 cTCYyx  "
                title="Primary Choice"
           >
             Primary Choice
           </div>
         </div>
       </div>
-      <div class="sc-imWYAI bPPaNr">
-        <div class="sc-jlZhew hrROAe">
+      <div class="styled__SecondaryRow-sc-122ziys-8 dIUAaM">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="false"
-                  class="sc-jEACwC kdGmxH  "
+                  class="styled__Button-sc-122ziys-15 bQUWjj  "
                   title="Secondary 1"
           >
             <span>
@@ -808,15 +808,15 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
               Sec. #1
             </span>
           </button>
-          <div class="sc-cwHptR biSekH  "
+          <div class="styled__Title-sc-122ziys-14 cTCYyx  "
                title="Secondary 1"
           >
             Secondary 1
           </div>
         </div>
-        <div class="sc-jlZhew hrROAe">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="true"
-                  class="sc-jEACwC kdGmxH active "
+                  class="styled__Button-sc-122ziys-15 bQUWjj active "
                   title="Secondary 2"
           >
             <span>
@@ -829,17 +829,17 @@ exports[`Trip Form Components modeSelector smoke-test 1`] = `
           </button>
         </div>
       </div>
-      <div class="sc-jXbUNg hbMInV">
-        <div class="sc-jlZhew hrROAe">
+      <div class="styled__TertiaryRow-sc-122ziys-9 eKHob">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="false"
-                  class="sc-jEACwC kdGmxH  "
+                  class="styled__Button-sc-122ziys-15 bQUWjj  "
                   title="Other Mode"
           >
             <span>
               Tertiary Mode
             </span>
           </button>
-          <div class="sc-cwHptR biSekH  "
+          <div class="styled__Title-sc-122ziys-14 cTCYyx  "
                title="Other Mode"
           >
             Other Mode
@@ -857,13 +857,13 @@ exports[`Trip Form Components sliderSelector smoke-test 1`] = `
 </p>
 <div>
   <div aria-label="Drag me."
-       class="sc-dLMFU elubet"
+       class="styled__SliderSelector-sc-122ziys-17 ffPSmY"
        role="group"
        style="display: inline-block; width: 250px;"
   >
     <div>
       <span aria-hidden="true"
-            class="sc-eqUAAy hwpVdS"
+            class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
       >
         low
       </span>
@@ -876,7 +876,7 @@ exports[`Trip Form Components sliderSelector smoke-test 1`] = `
              value="3"
       >
       <span aria-hidden="true"
-            class="sc-eqUAAy hwpVdS"
+            class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
             style="padding-left: 0px;"
       >
         high
@@ -888,15 +888,15 @@ exports[`Trip Form Components sliderSelector smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="sc-fPXMVe cIgdXM">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
     <div aria-label="Drag me."
-         class="sc-dLMFU elubet"
+         class="styled__SliderSelector-sc-122ziys-17 ffPSmY"
          role="group"
          style="display: inline-block; width: 250px;"
     >
       <div>
         <span aria-hidden="true"
-              class="sc-eqUAAy hwpVdS"
+              class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
         >
           low
         </span>
@@ -909,7 +909,7 @@ exports[`Trip Form Components sliderSelector smoke-test 1`] = `
                value="3"
         >
         <span aria-hidden="true"
-              class="sc-eqUAAy hwpVdS"
+              class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
               style="padding-left: 0px;"
         >
           high
@@ -926,18 +926,18 @@ exports[`Trip Form Components submodeSelector smoke-test 1`] = `
 </p>
 <div>
   <div aria-label="Submodes:"
-       class="sc-gEvEer sc-dhKdcB fteAEG bOsUiC"
+       class="styled__SettingsSection-sc-122ziys-1 styled__SubmodeSelector-sc-122ziys-10 jBROkq ePiaKM"
        role="group"
   >
     <span aria-hidden="true"
-          class="sc-eqUAAy hwpVdS"
+          class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
     >
       Submodes:
     </span>
-    <div class="sc-kpDqfm cmzwJF">
-      <div class="sc-jlZhew hrROAe">
+    <div class="styled__submodeRow-sc-122ziys-11 iYaXmO">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="false"
-                class="sc-jEACwC kdGmxH  "
+                class="styled__Button-sc-122ziys-15 bQUWjj  "
                 title="Use the bus"
         >
           <span>
@@ -949,9 +949,9 @@ exports[`Trip Form Components submodeSelector smoke-test 1`] = `
           </span>
         </button>
       </div>
-      <div class="sc-jlZhew hrROAe">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="true"
-                class="sc-jEACwC kdGmxH active "
+                class="styled__Button-sc-122ziys-15 bQUWjj active "
                 title="Use the streetcar"
         >
           <span>
@@ -963,9 +963,9 @@ exports[`Trip Form Components submodeSelector smoke-test 1`] = `
           </span>
         </button>
       </div>
-      <div class="sc-jlZhew hrROAe">
+      <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
         <button aria-pressed="true"
-                class="sc-jEACwC kdGmxH active "
+                class="styled__Button-sc-122ziys-15 bQUWjj active "
                 title="Uber"
         >
           <span>
@@ -994,20 +994,20 @@ exports[`Trip Form Components submodeSelector smoke-test 1`] = `
   Styled
 </p>
 <div>
-  <div class="sc-fPXMVe cIgdXM">
+  <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
     <div aria-label="Submodes:"
-         class="sc-gEvEer sc-dhKdcB fteAEG bOsUiC"
+         class="styled__SettingsSection-sc-122ziys-1 styled__SubmodeSelector-sc-122ziys-10 jBROkq ePiaKM"
          role="group"
     >
       <span aria-hidden="true"
-            class="sc-eqUAAy hwpVdS"
+            class="styled__SettingLabel-sc-122ziys-2 dfwoGt"
       >
         Submodes:
       </span>
-      <div class="sc-kpDqfm cmzwJF">
-        <div class="sc-jlZhew hrROAe">
+      <div class="styled__submodeRow-sc-122ziys-11 iYaXmO">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="false"
-                  class="sc-jEACwC kdGmxH  "
+                  class="styled__Button-sc-122ziys-15 bQUWjj  "
                   title="Use the bus"
           >
             <span>
@@ -1019,9 +1019,9 @@ exports[`Trip Form Components submodeSelector smoke-test 1`] = `
             </span>
           </button>
         </div>
-        <div class="sc-jlZhew hrROAe">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="true"
-                  class="sc-jEACwC kdGmxH active "
+                  class="styled__Button-sc-122ziys-15 bQUWjj active "
                   title="Use the streetcar"
           >
             <span>
@@ -1033,9 +1033,9 @@ exports[`Trip Form Components submodeSelector smoke-test 1`] = `
             </span>
           </button>
         </div>
-        <div class="sc-jlZhew hrROAe">
+        <div class="styled__ModeButton-sc-122ziys-13 bpdtG">
           <button aria-pressed="true"
-                  class="sc-jEACwC kdGmxH active "
+                  class="styled__Button-sc-122ziys-15 bQUWjj active "
                   title="Uber"
           >
             <span>

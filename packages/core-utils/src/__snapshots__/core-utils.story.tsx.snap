@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`core-utils RouteSortingLogic smoke-test 1`] = `
-<div class="sc-eqUAAy ldqVMJ">
-  <table class="sc-fqkvVR fswNpA">
+<div class="core-utilsstory__Columns-sc-1u8rrx8-2 hDdtQy">
+  <table class="core-utilsstory__StyledTable-sc-1u8rrx8-3 cXkHyc">
     <tr>
       <th>
         Logo
