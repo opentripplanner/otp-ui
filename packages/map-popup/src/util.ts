@@ -12,7 +12,7 @@ export function makeDefaultGetEntityName(
   return function defaultGetEntityName(
     entity: Station | Stop,
     configCompanies: Company[],
-    stopIdAgencyMap?: StopIdAgencyMap
+    agencyName?: string
   ): string | null {
     // TODO: Stop generating this / passing it to the car string? Is it needed?
     // In English we say "Car: " instead
@@ -66,14 +66,8 @@ export function makeDefaultGetEntityName(
         },
         { name: stationName }
       );
-    } else if (
-      stopIdAgencyMap &&
-      entity.id in stopIdAgencyMap &&
-      "code" in entity
-    ) {
-      stationName = `${stationName} (${stopIdAgencyMap[entity.id].name} ${
-        entity.code
-      })`;
+    } else if (agencyName && "code" in entity) {
+      stationName = `${stationName} (${agencyName} ${entity.code})`;
     }
     return stationName;
   };

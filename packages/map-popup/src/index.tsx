@@ -3,7 +3,7 @@ import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import coreUtils from "@opentripplanner/core-utils";
 
 // eslint-disable-next-line prettier/prettier
-import type { Company, ConfiguredCompany, Location, Station, Stop, StopEventHandler } from "@opentripplanner/types";
+import type { Agency, Company, ConfiguredCompany, Location, Station, Stop, StopEventHandler } from "@opentripplanner/types";
 
 import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import { flatten } from "flat";
@@ -90,9 +90,9 @@ type Props = {
   closePopup?: (arg?: any) => void
   configCompanies?: ConfiguredCompany[];
   entity: Entity
-  getEntityName?: (entity: Entity, configCompanies: Company[], stopIdAgencyMap?: StopIdAgencyMap) => string;
+  getEntityName?: (entity: Entity, configCompanies: Company[], agencyName?: string) => string;
   getEntityPrefix?: (entity: Entity) => JSX.Element
-  stopIdAgencyMap?: StopIdAgencyMap
+  agency?: Agency
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
   setViewedStop?: StopEventHandler;
 };
@@ -112,14 +112,14 @@ export function MapPopup({
   getEntityPrefix, 
   setLocation, 
   setViewedStop, 
-  stopIdAgencyMap 
+  agency,
 }: Props): JSX.Element {
 
   const intl = useIntl()
   if (!entity) return <></>
 
   const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultMessages);
-  const name = getNameFunc(entity, configCompanies, stopIdAgencyMap);
+  const name = getNameFunc(entity, configCompanies, agency?.name);
 
   const stationNetwork = "networks" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.networks || [], configCompanies) || entity?.networks?.[0]);
 
