@@ -1,7 +1,7 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import styled from "styled-components";
-import { Stop, FormFactor } from "@opentripplanner/types";
+import { Stop } from "@opentripplanner/types";
 import { VehicleRentalStation } from "@opentripplanner/types/otp2";
 import { IntlProvider } from "react-intl";
 import { Meta } from "@storybook/react";
@@ -43,7 +43,7 @@ const VEHICLE_RENTAL_STATION = {
   allowPickup: true,
   availableVehicles: {
     total: 6,
-    byType: [{ count: 6, vehicleType: { formFactor: FormFactor.BICYCLE } }]
+    byType: [{ count: 6, vehicleType: { formFactor: "BICYCLE" } }]
   },
   color: "#f00",
   id: '"hub_1580"',
