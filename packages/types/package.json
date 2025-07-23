@@ -22,7 +22,7 @@
       "types": "./lib/otp2/index.d.ts",
       "default": "./lib/otp2/index.js",
       "require": "./lib/otp2/index.js",
-      "import": "./lib/otp2/index.js"
+      "import": "./esm/otp2/index.js"
     }
   },
   "repository": "https://github.com/opentripplanner/otp-ui.git",
