@@ -3,7 +3,7 @@ import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 import coreUtils from "@opentripplanner/core-utils";
 
 // eslint-disable-next-line prettier/prettier
-import type { Agency, Company, ConfiguredCompany, Location, Station, Stop, StopEventHandler } from "@opentripplanner/types";
+import type { Company, ConfiguredCompany, Location, Station, Stop, StopEventHandler } from "@opentripplanner/types";
 
 import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import { flatten } from "flat";
@@ -21,6 +21,14 @@ import { makeDefaultGetEntityName, type StopIdAgencyMap } from "./util";
 // - the yaml loader for webpack returns a nested object,
 // - the yaml loader for jest returns messages with flattened ids.
 export const defaultMessages: { [key: string]: string } = flatten(defaultEnglishMessages);
+
+export type Feed = {
+  feedId: string;
+  publisher: {
+    name: string;
+  };
+};
+
 
 const generateLocation = (entity: Entity, name: string) => {
   // @ts-expect-error some of these values may be null, but that's ok
@@ -90,9 +98,9 @@ type Props = {
   closePopup?: (arg?: any) => void
   configCompanies?: ConfiguredCompany[];
   entity: Entity
-  getEntityName?: (entity: Entity, configCompanies: Company[], agencyName?: string) => string;
+  getEntityName?: (entity: Entity, configCompanies: Company[], feedName?: string) => string;
   getEntityPrefix?: (entity: Entity) => JSX.Element
-  agency?: Agency
+  feeds: Feed[]
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
   setViewedStop?: StopEventHandler;
 };
@@ -112,14 +120,23 @@ export function MapPopup({
   getEntityPrefix, 
   setLocation, 
   setViewedStop, 
-  agency,
+  feeds,
 }: Props): JSX.Element {
 
   const intl = useIntl()
   if (!entity) return <></>
 
   const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultMessages);
-  const name = getNameFunc(entity, configCompanies, agency?.name);
+  
+  // Find the feed name using the logic from generateLabel in otp.ts
+  let feedName: string | undefined;
+  if (feeds && entity.id) {
+    const feedId = entity.id.split(":")[0];
+    const feed = feeds.find(f => f.feedId === feedId);
+    feedName = feed?.publisher?.name;
+  }
+  
+  const name = getNameFunc(entity, configCompanies, feedName);
 
   const stationNetwork = "networks" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.networks || [], configCompanies) || entity?.networks?.[0]);
 
