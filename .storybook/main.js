@@ -75,7 +75,7 @@ module.exports = {
     // Configure module resolution for workspace packages
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@opentripplanner': path.resolve(__dirname, '../packages')
+      '~': path.resolve(__dirname, '../packages')
     };
 
     // Return the altered config
