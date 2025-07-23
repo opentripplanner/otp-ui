@@ -39,16 +39,15 @@ type VehicleRentalUris = {
   web?: string;
 };
 
-export enum FormFactor {
-  BICYCLE = "BICYCLE",
-  CAR = "CAR",
-  CARGO_BICYCLE = "CARGO_BICYCLE",
-  MOPED = "MOPED",
-  OTHER = "OTHER",
-  SCOOTER = "SCOOTER",
-  SCOOTER_SEATED = "SCOOTER_SEATED",
-  SCOOTER_STANDING = "SCOOTER_STANDING"
-}
+export type FormFactor = 
+  "BICYCLE" |
+  "CAR" |
+  "CARGO_BICYCLE" |
+  "MOPED" |
+  "OTHER" |
+  "SCOOTER" |
+  "SCOOTER_SEATED" |
+  "SCOOTER_STANDING";
 
 enum PropulsionType {
   COMBUSTION = "COMBUSTION",
@@ -62,7 +61,7 @@ enum PropulsionType {
 }
 
 type RentalVehicleType = {
-  formFactor?: string;
+  formFactor?: FormFactor;
   propulsionType?: PropulsionType;
 };
 
