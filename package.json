@@ -119,7 +119,7 @@
     "semantic-release": "lerna exec --concurrency 1 -- semantic-release -e semantic-release-monorepo -e $(pwd)/release.config.mjs",
     "test": "pnpm lint:js && pnpm lint:styles && pnpm check:i18n-en-fr && pnpm typescript && pnpm unit && pnpm test-storybook && pnpm a11y-test",
     "typescript": "lerna run tsc",
-    "unit": "jest --testPathIgnorePatterns esm lib a11y .d.ts",
+    "unit": "jest --testPathIgnorePatterns a11y .d.ts",
     "update-internal-dependencies": "node scripts/update-internal-dependencies.js",
     "test-storybook": "test-storybook --url http://localhost:5555",
     "update-snapshots": "pnpm build-storybook; npx concurrently -k -s first -n \"SB,TEST\" \"npx http-server storybook-static --port 5555 --silent\" \"npx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555 -u\"",
@@ -256,8 +256,8 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --ignore-pattern lib --ignore-pattern esm --ignore-pattern node_modules --fix",
-      "stylelint --ignore-pattern esm --ignore-pattern lib \"packages/**/!(*.d).{j,t}s{,x}\" --fix",
+      "eslint --ignore-pattern node_modules --fix",
+      "stylelint \"packages/**/!(*.d).{j,t}s{,x}\" --fix",
       "git add"
     ],
     "*.{json,md}": [
