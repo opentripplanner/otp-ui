@@ -5,7 +5,6 @@ import {
   MapLocationActionArg
 } from "@opentripplanner/types";
 import {
-  FormFactor,
   RentalVehicle,
   VehicleRentalStation
 } from "@opentripplanner/types/otp2";
@@ -256,10 +255,7 @@ const VehicleRentalOverlay = ({
               setClickedVehicle(null);
               setLocation(location);
             }}
-            entity={{
-              ...clickedVehicle,
-              rentalNetwork: clickedVehicle.rentalNetwork.networkId
-            }}
+            entity={clickedVehicle}
           />
         </Popup>
       )}

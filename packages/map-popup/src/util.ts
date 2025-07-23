@@ -17,10 +17,10 @@ export function makeDefaultGetEntityName(
     const stationNetworks =
       "rentalNetwork" in entity &&
       (coreUtils.itinerary.getCompaniesLabelFromNetworks(
-        entity?.rentalNetwork.networkId || [],
+        entity.rentalNetwork.networkId || [],
         configCompanies
       ) ||
-        entity?.rentalNetwork.networkId);
+        entity.rentalNetwork.networkId);
     let stationName: string | null = entity.name || entity.id;
     // If the station name or id is a giant UUID (with more than 3 "-" characters)
     // best not to show that at all. The company name will still be shown.
