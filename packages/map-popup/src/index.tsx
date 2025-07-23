@@ -100,7 +100,7 @@ type Props = {
   entity: Entity
   getEntityName?: (entity: Entity, configCompanies: Company[], feedName?: string) => string;
   getEntityPrefix?: (entity: Entity) => JSX.Element
-  feeds: Feed[]
+  feeds?: Feed[]
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
   setViewedStop?: StopEventHandler;
 };

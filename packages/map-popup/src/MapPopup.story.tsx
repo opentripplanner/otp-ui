@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Station, Stop } from "@opentripplanner/types";
 import { IntlProvider } from "react-intl";
 import { Meta } from "@storybook/react";
-import MapPopupContents from "./index";
+import MapPopupContents, { Feed } from "./index";
 
 // HOC to wrap components with IntlProvider
 const withIntl = (Story: () => JSX.Element) => (
@@ -36,6 +36,37 @@ const STOP_WITH_CODE = {
   lon: -122.672529,
   name: "W Burnside & SW 2nd"
 };
+
+const STOP_WITH_FEED_ID = {
+  flex: false,
+  code: "9526",
+  gtfsId: "trimet:9526",
+  id: "trimet:9526",
+  lat: 45.523009,
+  lon: -122.672529,
+  name: "W Burnside & SW 2nd"
+};
+
+const SAMPLE_FEEDS: Feed[] = [
+  {
+    feedId: "trimet",
+    publisher: {
+      name: "TriMet"
+    }
+  },
+  {
+    feedId: "c-tran",
+    publisher: {
+      name: "C-TRAN"
+    }
+  },
+  {
+    feedId: "portland-streetcar",
+    publisher: {
+      name: "Portland Streetcar"
+    }
+  }
+];
 
 const STATION = {
   "stroke-width": 2,
@@ -102,6 +133,16 @@ const getEntityPrefixExample = (entity: Stop | Station) => {
 export const StopEntity = (): JSX.Element => (
   <MapPopupContents
     entity={STOP_WITH_CODE}
+    feeds={SAMPLE_FEEDS}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+  />
+);
+
+export const StopEntityWithFeedName = (): JSX.Element => (
+  <MapPopupContents
+    entity={STOP_WITH_FEED_ID}
+    feeds={SAMPLE_FEEDS}
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
   />
