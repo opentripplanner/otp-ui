@@ -119,6 +119,7 @@ export function getVehicleType(type: FormFactor, intl: IntlShape): string {
       });
     case "SCOOTER_SEATED":
     case "SCOOTER_STANDING":
+    case "SCOOTER":
       return intl.formatMessage({
         defaultMessage:
           defaultMessages["otpUi.AccessLegBody.vehicleType.escooter"],
@@ -174,7 +175,7 @@ export function getPlaceName(
       {
         company: company?.label,
         vehicleType: getVehicleType(
-          place.rentalVehicle.vehicleType.formFactor,
+          place.rentalVehicle?.vehicleType?.formFactor,
           intl
         )
       }

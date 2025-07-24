@@ -44,6 +44,7 @@ function VehicleType({ type }: { type: FormFactor }) {
       );
     case "SCOOTER_SEATED":
     case "SCOOTER_STANDING":
+    case "SCOOTER":
       return (
         <FormattedMessage
           defaultMessage={
@@ -89,7 +90,7 @@ export default function RentedVehicleSubheader({
   const configCompanies = config.companies || [];
   const { from, mode, rentedBike, walkingBike } = leg;
   const { name: legName, networks, rentalVehicle } = from;
-  const modeType = rentalVehicle.vehicleType.formFactor;
+  const modeType = rentalVehicle?.vehicleType?.formFactor;
 
   // Sometimes rented vehicles can be walked over things like stairs or other
   // ways that forbid the main mode of travel.
@@ -121,7 +122,7 @@ export default function RentedVehicleSubheader({
   if (networks || rentedBike || rentalVehicle) {
     // Add company and vehicle labels.
     const company = coreUtils.itinerary.getCompaniesLabelFromNetworks(
-      networks || rentalVehicle.rentalNetwork.networkId || [],
+      networks || rentalVehicle?.rentalNetwork?.networkId || [],
       configCompanies
     );
     // Only show vehicle name for car rentals. For bikes and E-scooters, these

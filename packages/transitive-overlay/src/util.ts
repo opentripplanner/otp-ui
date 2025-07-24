@@ -142,15 +142,17 @@ function getPlaceId(
   const { mode } = leg;
   const { bikeShareId, name, rentalVehicle } = leg[fromTo];
   let placeId: string;
-  if (bikeShareId) {
-    placeId = `bicycle_rent_station_${bikeShareId}`;
+  // TODO: Remove bikeShareId?
+  if (bikeShareId || rentalVehicle.vehicleType.formFactor === "BICYCLE") {
+    placeId = `bicycle_rent_station_${bikeShareId || rentalVehicle?.vehicleId}`;
     if (
       // OTP2 Scooter case
       mode === "SCOOTER"
     ) {
-      placeId = `escooter_rent_station_${bikeShareId}`;
+      placeId = `escooter_rent_station_${bikeShareId ||
+        rentalVehicle?.vehicleId}`;
     }
-  } else if (rentalVehicle.vehicleType.formFactor.startsWith("SCOOTER")) {
+  } else if (rentalVehicle?.vehicleType?.formFactor.startsWith("SCOOTER")) {
     // OTP1 Scooter case
     placeId = `escooter_rent_station_${name}`;
   } else if (mode === "CAR" && otherLeg?.mode === "WALK") {

@@ -245,7 +245,8 @@ export type FormFactor =
   | "MOPED"
   | "OTHER"
   | "SCOOTER_SEATED"
-  | "SCOOTER_STANDING";
+  | "SCOOTER_STANDING"
+  | "SCOOTER";
 
 export type PropulsionType =
   | "COMBUSTION"
@@ -270,6 +271,7 @@ export type Place = {
   name: string;
   networks?: string[];
   rentalVehicle?: {
+    vehicleId?: string;
     rentalNetwork: { networkId: string; url?: string };
     vehicleType: {
       formFactor: FormFactor;
