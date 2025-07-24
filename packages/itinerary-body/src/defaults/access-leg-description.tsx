@@ -80,9 +80,7 @@ export default function AccessLegDescription({
   // Replace the Vertex Type for BIKESHARE with VEHICLE as we do not know that
   // it is a bike yet because that information is in the next leg with OTP2.
   const toPlace = {
-    ...leg.to,
-    vertexType:
-      leg.to.vertexType === "BIKESHARE" ? "VEHICLE" : leg.to.vertexType
+    ...leg.to
   };
   const modeContent = getSummaryMode(leg, intl);
   const placeContent = (

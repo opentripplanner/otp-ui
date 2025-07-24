@@ -144,7 +144,12 @@ query Plan(
             lat
             lon
           }
-          vertexType
+          rentalVehicle {
+            vehicleType {
+              formFactor
+              propulsionType
+            }
+          }
         }
         headsign
         id
@@ -263,7 +268,12 @@ query Plan(
             lat
             lon
           }
-          vertexType
+          rentalVehicle {
+            vehicleType {
+              formFactor
+              propulsionType
+            }
+          }
         }
         transitLeg
         trip {

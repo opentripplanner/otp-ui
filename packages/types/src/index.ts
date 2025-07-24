@@ -238,6 +238,25 @@ export type Step = {
   streetName: string;
 };
 
+export type FormFactor =
+  | "BICYCLE"
+  | "CAR"
+  | "CARGO_BICYCLE"
+  | "MOPED"
+  | "OTHER"
+  | "SCOOTER_SEATED"
+  | "SCOOTER_STANDING";
+
+export type PropulsionType =
+  | "COMBUSTION"
+  | "COMBUSTION_DIESEL"
+  | "ELECTRIC"
+  | "ELECTRIC_ASSIST"
+  | "HUMAN"
+  | "HYBRID"
+  | "HYDROGEN_FUEL_CELL"
+  | "PLUG_IN_HYBRID";
+
 /**
  * Describe an origin, destination, or intermediate location in an itinerary.
  */
@@ -250,7 +269,13 @@ export type Place = {
   lon: number;
   name: string;
   networks?: string[];
-  rentalVehicle?: { rentalNetwork: { networkId: string; url?: string } };
+  rentalVehicle?: {
+    rentalNetwork: { networkId: string; url?: string };
+    vehicleType: {
+      formFactor: FormFactor;
+      propulsionType: PropulsionType;
+    };
+  };
   vehicleRentalStation?: { rentalNetwork: { networkId: string } };
   stop?: Stop;
   /**
@@ -269,7 +294,6 @@ export type Place = {
    * @deprecated Only for OTP1 support, removal is immenent
    */
   stopSequence?: number;
-  vertexType: string;
   zoneId?: string;
 };
 
