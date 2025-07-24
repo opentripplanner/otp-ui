@@ -125,10 +125,14 @@ query Plan(
           name
           rentalVehicle {
             id
-            vehicleId
             rentalNetwork {
               networkId
               url
+            }
+            vehicleId
+            vehicleType {
+              formFactor
+              propulsionType
             }
           }
           stop {
@@ -144,13 +148,6 @@ query Plan(
             id
             lat
             lon
-          }
-          rentalVehicle {
-            vehicleId
-            vehicleType {
-              formFactor
-              propulsionType
-            }
           }
         }
         headsign
@@ -251,10 +248,14 @@ query Plan(
           name
           rentalVehicle {
             id
-            vehicleId
             rentalNetwork {
               networkId
               url
+            }
+            vehicleId
+            vehicleType {
+              formFactor
+              propulsionType
             }
           }
           stop {
@@ -270,13 +271,6 @@ query Plan(
             id
             lat
             lon
-          }
-          rentalVehicle {
-            vehicleId
-            vehicleType {
-              formFactor
-              propulsionType
-            }
           }
         }
         transitLeg
