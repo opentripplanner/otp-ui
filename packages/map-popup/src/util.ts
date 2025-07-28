@@ -1,5 +1,8 @@
 import { Company, Stop } from "@opentripplanner/types";
-import { VehicleRentalStation } from "@opentripplanner/types/otp2";
+import {
+  RentalVehicle,
+  VehicleRentalStation
+} from "@opentripplanner/types/otp2";
 import { IntlShape } from "react-intl";
 import coreUtils from "@opentripplanner/core-utils";
 
@@ -9,7 +12,7 @@ export function makeDefaultGetEntityName(
   defaultEnglishMessages: { [key: string]: string }
 ) {
   return function defaultGetEntityName(
-    entity: VehicleRentalStation | Stop,
+    entity: VehicleRentalStation | RentalVehicle | Stop,
     configCompanies: Company[]
   ): string | null {
     // TODO: Stop generating this / passing it to the car string? Is it needed?
