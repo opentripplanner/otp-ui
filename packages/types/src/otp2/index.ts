@@ -49,16 +49,15 @@ export type FormFactor =
   | "SCOOTER_SEATED"
   | "SCOOTER_STANDING";
 
-enum PropulsionType {
-  COMBUSTION = "COMBUSTION",
-  COMBUSTION_DIESEL = "COMBUSTION_DIESEL",
-  ELECTRIC = "ELECTRIC",
-  ELECTRIC_ASSIST = "ELECTRIC_ASSIST",
-  HUMAN = "HUMAN",
-  HYBRID = "HYBRID",
-  HYDROGEN_FUEL_CELL = "HYDROGEN_FUEL_CELL",
-  PLUG_IN_HYBRID = "PLUG_IN_HYBRID"
-}
+type PropulsionType =
+  | "COMBUSTION"
+  | "COMBUSTION_DIESEL"
+  | "ELECTRIC"
+  | "ELECTRIC_ASSIST"
+  | "HUMAN"
+  | "HYBRID"
+  | "HYDROGEN_FUEL_CELL"
+  | "PLUG_IN_HYBRID";
 
 type RentalVehicleType = {
   formFactor?: FormFactor;
