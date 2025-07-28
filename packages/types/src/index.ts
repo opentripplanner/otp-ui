@@ -363,7 +363,7 @@ export type Leg = {
   distance: number;
   dropOffBookingInfo?: FlexDropOffBookingInfo;
   duration: number;
-  endTime: number;
+  end: string;
   fareProducts?: { id: string; product: FareProduct }[];
   from: Place;
   headsign?: string;
@@ -395,7 +395,7 @@ export type Leg = {
   routeTextColor?: string;
   routeType?: number;
   serviceDate?: string;
-  startTime: number | string;
+  start: string;
   steps: Step[];
   to: Place;
   transitLeg: boolean;
@@ -453,9 +453,9 @@ export type Itinerary = {
   duration: number;
   elevationGained: number;
   elevationLost: number;
-  endTime: number;
+  end: string;
   legs: Leg[];
-  startTime: number;
+  start: string;
   tooSloped?: boolean;
   transfers: number;
   transitTime: number;

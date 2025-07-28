@@ -18,6 +18,7 @@ import {
   TncFare
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
+import { parseISO } from "date-fns";
 
 // All OTP transit modes
 export const transitModes = [
@@ -750,7 +751,8 @@ const pickupDropoffTypeToOtp1 = otp2Type => {
   }
 };
 
-export const convertGraphQLResponseToLegacy = (leg: any): any => ({
+// TODO: Remove this method when moving to PlanConnection
+export const convertGraphQLResponseToLegacy = (leg: any): Leg => ({
   ...leg,
   agencyBrandingUrl: leg.agency?.url,
   agencyId: leg.agency?.id,
@@ -763,6 +765,10 @@ export const convertGraphQLResponseToLegacy = (leg: any): any => ({
   },
   from: {
     ...leg.from,
+    endTime: parseISO(leg.from?.end?.estimated || leg.from?.end?.scheduledTime),
+    startTime: parseISO(
+      leg.from?.start?.estimated || leg.from?.start?.scheduledTime
+    ),
     stopCode: leg.from.stop?.code,
     stopId: leg.from.stop?.gtfsId
   },
@@ -774,6 +780,10 @@ export const convertGraphQLResponseToLegacy = (leg: any): any => ({
   routeTextColor: leg.route?.textColor,
   to: {
     ...leg.to,
+    endTime: parseISO(leg.to?.end?.estimated || leg.to?.end?.scheduledTime),
+    startTime: parseISO(
+      leg.to?.start?.estimated || leg.to?.start?.scheduledTime
+    ),
     stopCode: leg.to.stop?.code,
     stopId: leg.to.stop?.gtfsId
   },

@@ -37,7 +37,7 @@ query Plan(
     itineraries {
       accessibilityScore
       duration
-      endTime
+      end
       legs {
         accessibilityScore
         agency {
@@ -293,7 +293,7 @@ query Plan(
           id
         }
       }
-      startTime
+      start
       transfers: numberOfTransfers
       waitingTime
       walkTime
