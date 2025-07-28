@@ -93,7 +93,7 @@ otpUi:
     viewOnMap: 在地图上查看
   TransitLegBody:
     AlertsBody:
-      effectiveDate: 从 {dateTime, date, long} 起生效
+      effectiveDate: 从 {dateTime, date, long} 生效日期
       effectiveTimeAndDate: 从 {dateTime, time, short}, {day} 起生效
       today: 今天
       tomorrow: 明天
