@@ -29,7 +29,7 @@ const getColorForEntity = (entity: VehicleRentalStation | RentalVehicle) => {
     if (entity.availableVehicles && entity.availableVehicles.total > 0)
       return "#f00";
   } else {
-    if (entity.vehicleType.formFactor === "SCOOTER") return "#f5a729";
+    if (entity.vehicleType.formFactor.startsWith("SCOOTER")) return "#f5a729";
     if (entity.vehicleType.formFactor === "BICYCLE") return "#009cde";
   }
   return "gray";
