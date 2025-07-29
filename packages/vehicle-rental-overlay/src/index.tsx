@@ -11,6 +11,7 @@ import {
 import { EventData } from "mapbox-gl";
 import React, { useEffect, useState } from "react";
 import { Layer, Source, useMap } from "react-map-gl";
+import { Geometry } from "geojson";
 
 import StationPopup from "@opentripplanner/map-popup";
 import { BaseBikeRentalIcon, StationMarker } from "./styled";
@@ -120,7 +121,9 @@ const VehicleRentalOverlay = ({
   const [zoom, setZoom] = useState(map?.getZoom());
 
   const layerId = `rental-vehicles-${id}`;
-  const [clickedVehicle, setClickedVehicle] = useState(null);
+  const [clickedVehicle, setClickedVehicle] = useState<
+    RentalVehicle | VehicleRentalStation | undefined
+  >();
 
   const fullEntityArr = (entities || []).concat(stations || []);
 
@@ -135,25 +138,41 @@ const VehicleRentalOverlay = ({
   }, [refreshVehicles]);
 
   useEffect(() => {
-    const VEHICLE_LAYERS = [layerId];
-    VEHICLE_LAYERS.forEach(stopLayer => {
-      map?.on("mouseenter", stopLayer, () => {
-        map.getCanvas().style.cursor = "pointer";
-      });
-      map?.on("mouseleave", stopLayer, () => {
-        map.getCanvas().style.cursor = "";
-      });
-      map?.on("click", stopLayer, (event: EventData) => {
-        setClickedVehicle(event.features?.[0].properties);
-      });
-    });
-    map.on("zoom", e => {
+    const mouseEnterFunc = () => {
+      map.getCanvas().style.cursor = "pointer";
+    };
+    const mouseLeaveFunc = () => {
+      map.getCanvas().style.cursor = "";
+    };
+    const clickFunc = (event: EventData) => {
+      const p = event.features?.[0].properties;
+      setClickedVehicle({
+        ...p,
+        // the properties field of the GeoJSON Feature object serializes these
+        // two objects into JSON strings, so we need to parse them back into objects
+        availableSpaces: JSON.parse(p.availableSpaces),
+        availableVehicles: JSON.parse(p.availableVehicles)
+      } as RentalVehicle | VehicleRentalStation);
+    };
+    const zoomFunc = e => {
       // Avoid too many re-renders by only updating state if we are a whole number value different
-      const { zoom: newZoom } = e.viewState;
+      const { zoom: newZoom } = e.viewState; // this is undefined, causing error on zoom
       if (Math.floor(zoom / 2) !== Math.floor(newZoom / 2)) {
         setZoom(newZoom);
       }
-    });
+    };
+
+    map?.on("mouseenter", layerId, mouseEnterFunc);
+    map?.on("mouseleave", layerId, mouseLeaveFunc);
+    map?.on("click", layerId, clickFunc);
+    map?.on("zoom", zoomFunc);
+
+    return () => {
+      map?.off("mouseenter", layerId, mouseEnterFunc);
+      map?.off("mouseleave", layerId, mouseLeaveFunc);
+      map?.off("click", layerId, clickFunc);
+      map?.off("zoom", zoomFunc);
+    };
   }, [map]);
 
   // Don't render if no map or no stops are defined.
@@ -162,7 +181,10 @@ const VehicleRentalOverlay = ({
     return <></>;
   }
 
-  const vehiclesGeoJSON: GeoJSON.FeatureCollection = {
+  const vehiclesGeoJSON: GeoJSON.FeatureCollection<
+    Geometry,
+    VehicleRentalStation | RentalVehicle
+  > = {
     type: "FeatureCollection",
     features: fullEntityArr
       .filter(
@@ -209,7 +231,7 @@ const VehicleRentalOverlay = ({
               <StationPopup
                 configCompanies={configCompanies}
                 setLocation={location => {
-                  setClickedVehicle(null);
+                  setClickedVehicle(undefined);
                   setLocation(location);
                 }}
                 getEntityName={
@@ -242,7 +264,7 @@ const VehicleRentalOverlay = ({
           longitude={clickedVehicle.lon}
           maxWidth="100%"
           onClose={() => {
-            setClickedVehicle(null);
+            setClickedVehicle(undefined);
           }}
         >
           <StationPopup
@@ -252,7 +274,7 @@ const VehicleRentalOverlay = ({
               getStationName && ((s, cc) => getStationName(cc, s))
             }
             setLocation={location => {
-              setClickedVehicle(null);
+              setClickedVehicle(undefined);
               setLocation(location);
             }}
             entity={clickedVehicle}
