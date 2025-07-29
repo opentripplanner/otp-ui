@@ -72,12 +72,6 @@ module.exports = {
       querystring: require.resolve('querystring-es3')
     };
 
-    // Configure module resolution for workspace packages
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '~': path.resolve(__dirname, '../packages')
-    };
-
     // Return the altered config
     return config;
   },

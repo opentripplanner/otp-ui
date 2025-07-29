@@ -1,5 +1,5 @@
 import React from 'react'
-import BaseMap, { Styled as BaseMapStyled } from "~/base-map";
+import BaseMap, { Styled as BaseMapStyled } from "../packages/base-map";
 
 // BaseMap props
 const CENTER = [45.5215, -122.686202];

@@ -3,7 +3,7 @@ import { StyledTable } from "../icon-renderer";
 import ClassicModeIcon from "../classic-mode-icon";
 import CustomModeIcon from "./custom-mode-icon";
 
-import walkTransitWalkItinerary from "~/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkItinerary from "../../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
 
 const exampleLeg = walkTransitWalkItinerary.legs[1];
 
