@@ -201,10 +201,18 @@ export const OTP2FlexItinerary = makeStory({ itinerary: flexItinerary });
 export const FaresV2TableStory = (): ReactElement => {
   return (
     <>
+      <h5>Corrupt Data</h5>
       <FaresV2Table legs={multipleFareOptionsItinerary.legs} />
+      <h5>Paid Transfer</h5>
       <FaresV2Table legs={faresv2Itinerary.legs} favoriteMediumId="3" />
+      <h5>Free Transfer</h5>
       <FaresV2Table legs={faresv2ItineraryWithTransfer.legs} />
+      <h5>Custom Fare Class Data</h5>
       <FaresV2Table legs={otp2FareProducts.legs} />
+      {/*
+        // TODO: Activate this once the stories are sourced from OTP2
+      <h5>Single Ride</h5>
+      <FaresV2Table legs={walkTransitWalkItinerary.legs} /> */}
     </>
   );
 };

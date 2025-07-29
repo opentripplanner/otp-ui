@@ -610,8 +610,8 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
 }
 
 /**
- * Removes the OTP standard scope (":")
- * @param item String to descope
+ * Removes the first part of the OTP standard scope (":"), if it is present
+ * @param item String that is potentially scoped with `:` character
  * @returns    descoped string
  */
 export const descope = (item: string): string => item?.split(":")?.[1];
@@ -625,10 +625,14 @@ export const zeroDollars = (currency: Currency): Money => ({
 
 /**
  * Extracts useful data from the fare products on a leg, such as the leg cost and transfer info.
- * @param leg Leg with fare products (must have used getLegsWithFares)
- * @param category Rider category
- * @param container Fare container (cash, electronic)
- * @returns Object containing price as well as the transfer discount amount, if a transfer was used.
+ * @param leg                Leg with Fares v2 information
+ * @param mediumId           Desired medium ID to calculate fare for
+ * @param riderCategoryId    Desire rider category to calculate fare for
+ * @param seenFareIds        Fare IDs used on previous legs. Used to detect transfer discounts.
+ * @returns                  Object containing price as well as transfer/dependent
+ *                           fare information. `AppliedFareProduct` should contain
+ *                           all the information needed, but the other fields are kept to
+ *                           make the transition to Fares V2 less jarring.
  */
 export function getLegCost(
   leg: Leg,

@@ -25,4 +25,5 @@ otpUi:
     transferDiscountExplanation: Transfer discount of {transferAmount} is applied
     transitFare: Transit Fare
     transitFareEntry: "{name}: <strong>{value}</strong>"
+    transitFareTable: Table showing transit fares for this itinerary
     tripIncludesFlex: This trip includes flexible routes. {extraMessage}
