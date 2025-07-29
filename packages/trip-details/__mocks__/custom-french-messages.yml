@@ -1,9 +1,0 @@
-otpUi:
-  TripDetails:
-    FareTable:
-      cash: Espèces
-      electronic: ORCA
-      regular: Plein tarif
-      senior: Senior
-      special: LIFT
-      youth: Jeune
