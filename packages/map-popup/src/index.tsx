@@ -110,7 +110,7 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
   const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultMessages);
   const name = getNameFunc(entity, configCompanies);
 
-  const stationNetwork = "rentalNetwork" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.rentalNetwork.networkId || [], configCompanies) || entity?.rentalNetwork.networkId);
+  const stationNetwork = "rentalNetwork" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.rentalNetwork.networkId, configCompanies) || entity?.rentalNetwork.networkId);
 
   const vehiclesAvailable = "availableVehicles" in entity;
   const entityIsStationHub = vehiclesAvailable && entity?.availableVehicles !== undefined;
