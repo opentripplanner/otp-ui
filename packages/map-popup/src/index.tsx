@@ -34,7 +34,7 @@ const generateLocation = (entity: Entity, name: string) => {
   return { lat, lon, name };
 }
 
-const StationHubDetails = ({ station }: { station: VehicleRentalStation }) => {
+const StationHubDetails = ({ availableVehicles, availableSpaces }: { availableVehicles: number, availableSpaces: number }) => {
   return (
     <Styled.PopupRow>
       <div>
@@ -44,7 +44,7 @@ const StationHubDetails = ({ station }: { station: VehicleRentalStation }) => {
           }
           description="Label text for the number of bikes available"
           id="otpUi.MapPopup.availableBikes"
-          values={{ value: station.availableVehicles?.total || 0 }}
+          values={{ value: availableVehicles }}
         />
       </div>
       <div>
@@ -54,7 +54,7 @@ const StationHubDetails = ({ station }: { station: VehicleRentalStation }) => {
           }
           description="Label text for the number of docks available"
           id="otpUi.MapPopup.availableDocks"
-          values={{ value: station.availableSpaces?.total || 0 }}
+          values={{ value: availableSpaces }}
         />
       </div>
     </Styled.PopupRow>
@@ -130,7 +130,7 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
         />
       </Styled.PopupTitle>
       {/* render dock info if it is available */}
-      {entityIsStationHub && <StationHubDetails station={entity} />}
+      {entityIsStationHub && <StationHubDetails availableSpaces={entity.availableSpaces.total} availableVehicles={entity.availableVehicles.total} />}
 
       {/* render stop viewer link if available */}
       {setViewedStop && entityIsStop(entity) && (
