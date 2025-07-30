@@ -2,10 +2,10 @@ import EntityPopup, { Feed } from "@opentripplanner/map-popup"
 import {
   ConfiguredCompany,
   MapLocationActionArg,
-  Station,
   Stop,
   StopEventHandler,
 } from "@opentripplanner/types"
+import { VehicleRentalStation } from "@opentripplanner/types/otp2";
 // eslint-disable-next-line prettier/prettier
 import type { EventData } from "mapbox-gl"
 import React, { useCallback, useEffect, useState } from "react"
@@ -39,7 +39,7 @@ const OTP2TileLayerWithPopup = ({
    * default scooter/bike popup.
    */
   configCompanies?: ConfiguredCompany[]
-  getEntityPrefix?: (entity: Stop | Station) => JSX.Element
+  getEntityPrefix?: (entity: Stop | VehicleRentalStation) => JSX.Element
   id: string
   name?: string
   /**
@@ -271,7 +271,7 @@ const generateOTP2TileLayers = (
   setViewedStop?: (stop: Stop) => void,
   stopsWhitelist?: string[],
   configCompanies?: ConfiguredCompany[],
-  getEntityPrefix?: (entity: Stop | Station) => JSX.Element,
+  getEntityPrefix?: (entity: Stop | VehicleRentalStation) => JSX.Element,
   feeds?: Feed[]
 ): JSX.Element[] => {
   const fakeOtpUiLayerIndex = layers.findIndex(l=>l.type === STOPS_AND_STATIONS_TYPE)
