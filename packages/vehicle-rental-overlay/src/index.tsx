@@ -88,11 +88,6 @@ type Props = {
    */
   setLocation?: (arg: MapLocationActionArg) => void;
   /**
-   * @deprecated use entities instead
-   * A list of the vehicle rental stations specific to this overlay instance.
-   */
-  stations?: VehicleRentalStation[];
-  /**
    * Whether the overlay is currently visible.
    */
   visible?: boolean;
@@ -114,7 +109,6 @@ const VehicleRentalOverlay = ({
   id,
   refreshVehicles,
   setLocation,
-  stations,
   visible
 }: Props): JSX.Element => {
   const { current: map } = useMap();
@@ -124,8 +118,6 @@ const VehicleRentalOverlay = ({
   const [clickedVehicle, setClickedVehicle] = useState<
     RentalVehicle | VehicleRentalStation | undefined
   >();
-
-  const fullEntityArr = (entities || []).concat(stations || []);
 
   useEffect(() => {
     // TODO: Make 30s configurable?
@@ -176,7 +168,7 @@ const VehicleRentalOverlay = ({
   }, [map]);
 
   // Don't render if no map or no stops are defined.
-  if (visible === false || fullEntityArr.length === 0) {
+  if (visible === false || entities.length === 0) {
     // Null can't be returned here -- react-map-gl dislikes null values as children
     return <></>;
   }
@@ -186,7 +178,7 @@ const VehicleRentalOverlay = ({
     VehicleRentalStation | RentalVehicle
   > = {
     type: "FeatureCollection",
-    features: fullEntityArr
+    features: entities
       .filter(
         entity =>
           // Include specified companies only if companies is specified and network info is available
@@ -224,7 +216,7 @@ const VehicleRentalOverlay = ({
         </Source>
       )}
       {zoom >= DETAILED_MARKER_CUTOFF &&
-        fullEntityArr.map(entity => (
+        entities.map(entity => (
           <MarkerWithPopup
             key={entity.id}
             popupContents={
