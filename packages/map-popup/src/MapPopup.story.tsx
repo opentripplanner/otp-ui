@@ -77,6 +77,10 @@ const VEHICLE_RENTAL_STATION = {
     total: 6,
     byType: [{ count: 6, vehicleType: { formFactor: "BICYCLE" } }]
   },
+  availableSpaces: {
+    total: 11,
+    byType: [{ count: 12, vehicleType: { formFactor: "BICYCLE" } }]
+  },
   color: "#f00",
   id: '"hub_1580"',
   isCarStation: false,
