@@ -148,7 +148,7 @@ const VehicleRentalOverlay = ({
     };
     const zoomFunc = e => {
       // Avoid too many re-renders by only updating state if we are a whole number value different
-      const { zoom: newZoom } = e.viewState; // this is undefined, causing error on zoom
+      const { zoom: newZoom } = e.viewState;
       if (Math.floor(zoom / 2) !== Math.floor(newZoom / 2)) {
         setZoom(newZoom);
       }
