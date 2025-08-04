@@ -19,6 +19,7 @@ const STOPS_AND_STATIONS_TYPE = "OTP-UI-stopsAndStations";
 const OTP2TileLayerWithPopup = ({
   color,
   configCompanies,
+  feeds,
   getEntityPrefix,
   id,
   network,
@@ -27,8 +28,7 @@ const OTP2TileLayerWithPopup = ({
   setLocation,
   setViewedStop,
   stopsWhitelist,
-  type,
-  feeds
+  type
 }: {
   color?: string;
   /**
@@ -37,6 +37,11 @@ const OTP2TileLayerWithPopup = ({
    * default scooter/bike popup.
    */
   configCompanies?: ConfiguredCompany[];
+  /**
+   * A list of feeds from the GraphQL query. If specified, the feed publisher name will be used to
+   * display the name of the stop in the popup.
+   */
+  feeds?: Feed[];
   getEntityPrefix?: (entity: Stop | Station) => JSX.Element;
   id: string;
   name?: string;
@@ -65,11 +70,6 @@ const OTP2TileLayerWithPopup = ({
    * not passed, the stop viewer link will not be shown.
    */
   setViewedStop?: StopEventHandler;
-  /**
-   * A list of feeds from the GraphQL query. If specified, the feed publisher name will be used to
-   * display the name of the stop in the popup.
-   */
-  feeds?: Feed[];
   /**
    * A list of GTFS stop ids (with agency prepended). If specified, all stops that
    * are NOT in this list will be HIDDEN.
@@ -173,13 +173,13 @@ const OTP2TileLayerWithPopup = ({
         <Layer
           filter={filter}
           id={`${id}-fill`}
+          minzoom={stopsWhitelist ? 2 : minZoom}
           paint={{
             "fill-color": ROUTE_COLOR_EXPRESSION,
             "fill-opacity": 0.2
           }}
           source-layer={type}
           source={SOURCE_ID}
-          minzoom={stopsWhitelist ? 2 : minZoom}
           type="fill"
         />
       )}
@@ -204,9 +204,9 @@ const OTP2TileLayerWithPopup = ({
           filter={filter}
           id={id}
           key={`${id}-stops`}
+          minzoom={stopsWhitelist ? 2 : minZoom}
           paint={generateLayerPaint(color).stops}
           source={SOURCE_ID}
-          minzoom={stopsWhitelist ? 2 : minZoom}
           source-layer="stops"
           type="circle"
         />
@@ -216,9 +216,9 @@ const OTP2TileLayerWithPopup = ({
           filter={filter}
           id={`${id}-secondary`}
           key={`${id}-stations`}
+          minzoom={stopsWhitelist ? 2 : minZoom}
           paint={generateLayerPaint(color).stops}
           source={SOURCE_ID}
-          minzoom={stopsWhitelist ? 2 : minZoom}
           source-layer="stations"
           type="circle"
         />
@@ -228,9 +228,9 @@ const OTP2TileLayerWithPopup = ({
           filter={filter}
           id={id}
           key={id}
+          minzoom={stopsWhitelist ? 2 : minZoom}
           paint={generateLayerPaint(color)[type]}
           source={SOURCE_ID}
-          minzoom={stopsWhitelist ? 2 : minZoom}
           source-layer={type}
           type="circle"
         />
@@ -326,13 +326,13 @@ const generateOTP2TileLayers = (
         .join(",")}/tilejson.json`}
     />,
     ...layers.map(layer => {
-      const { color, name, network, type, minZoom, initiallyVisible } = layer;
-
+      const { color, initiallyVisible, minZoom, name, network, type } = layer;
       const id = `${type}${network ? `-${network}` : ""}`;
       return (
         <OTP2TileLayerWithPopup
           color={color}
           configCompanies={configCompanies}
+          feeds={feeds}
           getEntityPrefix={getEntityPrefix}
           id={id}
           key={id}
@@ -344,7 +344,6 @@ const generateOTP2TileLayers = (
           stopsWhitelist={stopsWhitelist}
           type={type}
           visible={initiallyVisible}
-          feeds={feeds}
         />
       );
     })
