@@ -1,4 +1,4 @@
-import EntityPopup from "@opentripplanner/map-popup";
+import EntityPopup, { Feed } from "@opentripplanner/map-popup";
 import {
   ConfiguredCompany,
   MapLocationActionArg,
@@ -27,7 +27,8 @@ const OTP2TileLayerWithPopup = ({
   setLocation,
   setViewedStop,
   stopsWhitelist,
-  type
+  type,
+  feeds
 }: {
   color?: string;
   /**
@@ -64,6 +65,11 @@ const OTP2TileLayerWithPopup = ({
    * not passed, the stop viewer link will not be shown.
    */
   setViewedStop?: StopEventHandler;
+  /**
+   * A list of feeds from the GraphQL query. If specified, the feed publisher name will be used to
+   * display the name of the stop in the popup.
+   */
+  feeds?: Feed[];
   /**
    * A list of GTFS stop ids (with agency prepended). If specified, all stops that
    * are NOT in this list will be HIDDEN.
@@ -244,6 +250,7 @@ const OTP2TileLayerWithPopup = ({
               ...clickedEntity,
               id: clickedEntity?.id || clickedEntity?.gtfsId
             }}
+            feeds={feeds}
             getEntityPrefix={getEntityPrefix}
             setLocation={
               setLocation
@@ -296,7 +303,8 @@ const generateOTP2TileLayers = (
   setViewedStop?: (stop: Stop) => void,
   stopsWhitelist?: string[],
   configCompanies?: ConfiguredCompany[],
-  getEntityPrefix?: (entity: Stop | Station) => JSX.Element
+  getEntityPrefix?: (entity: Stop | Station) => JSX.Element,
+  feeds?: Feed[]
 ): JSX.Element[] => {
   const fakeOtpUiLayerIndex = layers.findIndex(
     l => l.type === STOPS_AND_STATIONS_TYPE
@@ -336,6 +344,7 @@ const generateOTP2TileLayers = (
           stopsWhitelist={stopsWhitelist}
           type={type}
           visible={initiallyVisible}
+          feeds={feeds}
         />
       );
     })

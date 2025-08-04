@@ -16,7 +16,7 @@ import { flatten } from "flat";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Styled } from "@opentripplanner/base-map";
 
-import { Entity, getNetwork, makeDefaultGetEntityName } from "./util";
+import { Entity, getNetwork, makeDefaultGetEntityName, type StopIdAgencyMap } from "./util";
 import { ViewStopButton } from "./styled";
 
 // Load the default messages.
@@ -27,6 +27,14 @@ import defaultEnglishMessages from "../i18n/en-US.yml";
 // - the yaml loader for webpack returns a nested object,
 // - the yaml loader for jest returns messages with flattened ids.
 export const defaultMessages: { [key: string]: string } = flatten(defaultEnglishMessages);
+
+export type Feed = {
+  feedId: string;
+  publisher: {
+    name: string;
+  };
+};
+
 
 const generateLocation = (entity: Entity, name: string) => {
   // @ts-expect-error some of these values may be null, but that's ok
@@ -95,8 +103,9 @@ type Props = {
   closePopup?: (arg?: boolean) => void
   configCompanies?: ConfiguredCompany[];
   entity: Entity
-  getEntityName?: (entity: Entity, configCompanies: Company[]) => string;
+  getEntityName?: (entity: Entity, configCompanies: Company[], feedName?: string) => string;
   getEntityPrefix?: (entity: Entity) => JSX.Element
+  feeds?: Feed[]
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
   setViewedStop?: StopEventHandler;
 };
@@ -108,13 +117,31 @@ function entityIsStation(entity: Entity): entity is TileLayerStation {
 /**
  * Renders a map popup for a stop, scooter, or shared bike
  */
-export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEntityName, getEntityPrefix, setLocation, setViewedStop }: Props): JSX.Element {
+export function MapPopup({ 
+  closePopup = () => {}, 
+  configCompanies, 
+  entity, 
+  getEntityName, 
+  getEntityPrefix, 
+  setLocation, 
+  setViewedStop, 
+  feeds,
+}: Props): JSX.Element {
 
   const intl = useIntl()
   if (!entity) return <></>
 
   const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultMessages);
-  const name = getNameFunc(entity, configCompanies);
+  
+  // Find the feed name using the logic from generateLabel in otp.ts
+  let feedName: string | undefined;
+  if (feeds && entity.id) {
+    const feedId = entity.id.split(":")[0];
+    const feed = feeds.find(f => f.feedId === feedId);
+    feedName = feed?.publisher?.name;
+  }
+  
+  const name = getNameFunc(entity, configCompanies, feedName);
 
   const stationNetwork = getNetwork(entity, configCompanies);
 
@@ -163,3 +190,4 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
 }
 
 export default MapPopup;
+export { type StopIdAgencyMap };

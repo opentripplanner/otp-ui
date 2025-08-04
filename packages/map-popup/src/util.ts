@@ -1,4 +1,5 @@
 import {
+  Agency,
   Company,
   Station,
   Stop,
@@ -7,6 +8,7 @@ import {
 import { IntlShape } from "react-intl";
 import coreUtils from "@opentripplanner/core-utils";
 
+export type StopIdAgencyMap = Record<string, Agency>;
 export type Entity = Station | Stop | TileLayerStation;
 
 export function getNetwork(entity: Entity, configCompanies: Company[]): string {
@@ -20,13 +22,15 @@ export function getNetwork(entity: Entity, configCompanies: Company[]): string {
   );
 }
 
+// eslint-disable-next-line import/prefer-default-export
 export function makeDefaultGetEntityName(
   intl: IntlShape,
   defaultEnglishMessages: { [key: string]: string }
 ) {
   return function defaultGetEntityName(
-    entity: Station | Stop | TileLayerStation,
-    configCompanies: Company[]
+    entity: Entity,
+    configCompanies: Company[],
+    feedName?: string
   ): string | null {
     let stationName: string | null = entity.name || entity.id;
     // If the station name or id is a giant UUID (with more than 3 "-" characters)
@@ -74,6 +78,8 @@ export function makeDefaultGetEntityName(
         },
         { name: stationName }
       );
+    } else if (feedName && "code" in entity) {
+      stationName = `${stationName} (${feedName} ${entity.code})`;
     }
     return stationName;
   };
