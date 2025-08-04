@@ -238,7 +238,7 @@ const VehicleRentalOverlay = ({
               }
               position={[entity.lat, entity.lon]}
             >
-              {"availableVehicles" in entity &&
+              {entityIsStation(entity) &&
               entity.availableSpaces !== undefined &&
               entity.availableVehicles !== undefined &&
               entity.availableVehicles.total > 0 ? (
