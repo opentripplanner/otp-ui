@@ -516,7 +516,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
 </h5>
 <table class="fares-v2-table__StripedTable-sc-h3t2h2-1 fXiYxU">
   <caption class="styled__InvisibleA11yCaption-sc-6q2ok2-1 fNsmNb">
-    Table showing transit fares for this itinerary
+    Transit fares for this itinerary
   </caption>
   <tr>
     <th style="text-align: left;">
@@ -648,7 +648,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
 </h5>
 <table class="fares-v2-table__StripedTable-sc-h3t2h2-1 fXiYxU">
   <caption class="styled__InvisibleA11yCaption-sc-6q2ok2-1 fNsmNb">
-    Table showing transit fares for this itinerary
+    Transit fares for this itinerary
   </caption>
   <tr>
     <th style="text-align: left;">
@@ -1034,7 +1034,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
 </h5>
 <table class="fares-v2-table__StripedTable-sc-h3t2h2-1 fXiYxU">
   <caption class="styled__InvisibleA11yCaption-sc-6q2ok2-1 fNsmNb">
-    Table showing transit fares for this itinerary
+    Transit fares for this itinerary
   </caption>
   <tr>
     <th style="text-align: left;">
@@ -1420,7 +1420,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
 </h5>
 <table class="fares-v2-table__StripedTable-sc-h3t2h2-1 fXiYxU">
   <caption class="styled__InvisibleA11yCaption-sc-6q2ok2-1 fNsmNb">
-    Table showing transit fares for this itinerary
+    Transit fares for this itinerary
   </caption>
   <tr>
     <th style="text-align: left;">
@@ -1768,7 +1768,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
             </summary>
             <table class="fares-v2-table__StripedTable-sc-h3t2h2-1 fXiYxU">
               <caption class="styled__InvisibleA11yCaption-sc-6q2ok2-1 fNsmNb">
-                Table showing transit fares for this itinerary
+                Transit fares for this itinerary
               </caption>
               <tr>
                 <th style="text-align: left;">
@@ -2586,7 +2586,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
             </summary>
             <table class="fares-v2-table__StripedTable-sc-h3t2h2-1 fXiYxU">
               <caption class="styled__InvisibleA11yCaption-sc-6q2ok2-1 fNsmNb">
-                Table showing transit fares for this itinerary
+                Transit fares for this itinerary
               </caption>
               <tr>
                 <th style="text-align: left;">

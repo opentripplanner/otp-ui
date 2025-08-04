@@ -11,6 +11,8 @@ const InvisibleA11yStyles = css`
 export const InvisibleA11yLabel = styled.span`
   ${InvisibleA11yStyles}
 `;
+
+// Warning: https://github.com/opentripplanner/otp-ui/pull/855#discussion_r2248534209
 export const InvisibleA11yCaption = styled.caption`
   ${InvisibleA11yStyles}
 `;
