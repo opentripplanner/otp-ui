@@ -157,7 +157,7 @@ export function MapPopup({
         />
       </Styled.PopupTitle>
       {/* render dock info if it is available */}
-      {entityIsStationHub && <StationHubDetails availableSpaces={entity.availableSpaces.total} availableVehicles={entity.availableVehicles.total} />}
+      {entityIsStationHub && <StationHubDetails availableSpaces={entity.availableSpaces?.total} availableVehicles={entity.availableVehicles?.total} />}
 
       {/* render stop viewer link if available */}
       {setViewedStop && entityIsStop(entity) && (

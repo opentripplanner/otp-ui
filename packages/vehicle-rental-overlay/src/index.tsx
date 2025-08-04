@@ -142,8 +142,8 @@ const VehicleRentalOverlay = ({
         ...p,
         // the properties field of the GeoJSON Feature object serializes these
         // two objects into JSON strings, so we need to parse them back into objects
-        availableSpaces: JSON.parse(p.availableSpaces),
-        availableVehicles: JSON.parse(p.availableVehicles)
+        availableSpaces: JSON.parse(p?.availableSpaces),
+        availableVehicles: JSON.parse(p?.availableVehicles)
       } as RentalVehicle | VehicleRentalStation);
     };
     const zoomFunc = e => {
@@ -168,7 +168,7 @@ const VehicleRentalOverlay = ({
   }, [map]);
 
   // Don't render if no map or no stops are defined.
-  if (visible === false || entities.length === 0) {
+  if (visible === false || !entities || entities.length === 0) {
     // Null can't be returned here -- react-map-gl dislikes null values as children
     return <></>;
   }
@@ -179,6 +179,7 @@ const VehicleRentalOverlay = ({
   > = {
     type: "FeatureCollection",
     features: entities
+      .filter(entity => !!entity)
       .filter(
         entity =>
           // Include specified companies only if companies is specified and network info is available
@@ -216,40 +217,43 @@ const VehicleRentalOverlay = ({
         </Source>
       )}
       {zoom >= DETAILED_MARKER_CUTOFF &&
-        entities.map(entity => (
-          <MarkerWithPopup
-            key={entity.id}
-            popupContents={
-              <StationPopup
-                configCompanies={configCompanies}
-                setLocation={location => {
-                  setClickedVehicle(undefined);
-                  setLocation(location);
-                }}
-                getEntityName={
-                  // @ts-expect-error no stop support. Avoid a breaking change
-                  getStationName && ((s, cc) => getStationName(cc, s))
-                }
-                entity={entity}
-              />
-            }
-            position={[entity.lat, entity.lon]}
-          >
-            {"availableVehicles" in entity &&
-            entity.availableVehicles.total > 0 &&
-            entity.availableSpaces !== undefined ? (
-              <BaseBikeRentalIcon
-                percent={
-                  entity?.availableVehicles.total /
-                  (entity?.availableVehicles.total +
-                    entity?.availableSpaces.total)
-                }
-              />
-            ) : (
-              <StationMarker width={12} color={getColorForEntity(entity)} />
-            )}
-          </MarkerWithPopup>
-        ))}
+        entities
+          .filter(entity => !!entity)
+          .map(entity => (
+            <MarkerWithPopup
+              key={entity.id}
+              popupContents={
+                <StationPopup
+                  configCompanies={configCompanies}
+                  setLocation={location => {
+                    setClickedVehicle(undefined);
+                    setLocation(location);
+                  }}
+                  getEntityName={
+                    // @ts-expect-error no stop support. Avoid a breaking change
+                    getStationName && ((s, cc) => getStationName(cc, s))
+                  }
+                  entity={entity}
+                />
+              }
+              position={[entity.lat, entity.lon]}
+            >
+              {"availableVehicles" in entity &&
+              entity.availableSpaces !== undefined &&
+              entity.availableVehicles !== undefined &&
+              entity.availableVehicles.total > 0 ? (
+                <BaseBikeRentalIcon
+                  percent={
+                    entity?.availableVehicles.total /
+                    (entity?.availableVehicles.total +
+                      entity?.availableSpaces.total)
+                  }
+                />
+              ) : (
+                <StationMarker width={12} color={getColorForEntity(entity)} />
+              )}
+            </MarkerWithPopup>
+          ))}
       {clickedVehicle && (
         <Popup
           latitude={clickedVehicle.lat}
