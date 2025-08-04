@@ -1,3 +1,6 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-await-in-loop */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { SymbolLayout } from "mapbox-gl";
 import { util } from "@opentripplanner/base-map";
 import React, { useEffect } from "react";
@@ -152,19 +155,36 @@ type MapImage = {
   options: { sdf?: boolean; content?: [number, number, number, number] };
 };
 
-const loadImages = (map: MapRef, images: MapImage[]) => {
-  images.forEach(img => {
-    map.loadImage(img.url, (error, image) => {
-      if (error) {
-        // eslint-disable-next-line no-console
-        console.error(`Error loading image ${img.id}:`, error);
-        return;
+const loadImages = async (map: MapRef, images: MapImage[]) => {
+  for (const img of images) {
+    // Only load if the image hasn't already been added
+    // @ts-ignore (TS may not know hasImage exists depending on the type you use)
+    if (!map.hasImage(img.id)) {
+      let loadedImage;
+      try {
+        // @ts-ignore (TS will complain that loadImage expects a callback; this is fine)
+        const result = (map.loadImage as any)(img.url);
+
+        if (result && typeof result.then === "function") {
+          // MapLibre v3+/Mapbox GL v3+ (Promise API)
+          loadedImage = (await result).data;
+        } else {
+          // MapLibre v1/v2 or Mapbox GL v1/v2 (Callback API)
+          loadedImage = await new Promise((resolve, reject) => {
+            // @ts-ignore (TS expects only the callback style)
+            map.loadImage(img.url, (error, data) => {
+              if (error) reject(error);
+              else resolve(data);
+            });
+          });
+        }
+        // @ts-ignore (TS may not know about addImage's third arg)
+        map.addImage(img.id, loadedImage, img.options);
+      } catch (err) {
+        console.error(`Failed to load image: ${img.url}`, err);
       }
-      if (!map.hasImage(img.id)) {
-        map.addImage(img.id, image, img.options);
-      }
-    });
-  });
+    }
+  }
 };
 
 const TransitiveCanvasOverlay = ({
