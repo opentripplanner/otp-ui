@@ -29,7 +29,7 @@ jobs:
         run: pnpm run build-storybook --quiet
       - name: Install Playwright
         run: pnpm exec playwright install --with-deps
-      - name: Serve Storybook and run snapshot tests
+      - name: Serve Storybook and run snapshot and a11y tests
         # We have to run the snapshot and a11y tests together
         # Because Jest will fail if there are obsolete snapshots
         # And you would get obsolete snapshots from running the a11y tests alone
