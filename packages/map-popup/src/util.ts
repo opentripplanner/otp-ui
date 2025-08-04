@@ -1,8 +1,26 @@
-import { Agency, Company, Station, Stop } from "@opentripplanner/types";
+import {
+  Agency,
+  Company,
+  Station,
+  Stop,
+  TileLayerStation
+} from "@opentripplanner/types";
 import { IntlShape } from "react-intl";
 import coreUtils from "@opentripplanner/core-utils";
 
 export type StopIdAgencyMap = Record<string, Agency>;
+export type Entity = Station | Stop | TileLayerStation;
+
+export function getNetwork(entity: Entity, configCompanies: Company[]): string {
+  return (
+    "network" in entity &&
+    (coreUtils.itinerary.getCompaniesLabelFromNetworks(
+      [entity.network] || [],
+      configCompanies
+    ) ||
+      entity.network)
+  );
+}
 
 // eslint-disable-next-line import/prefer-default-export
 export function makeDefaultGetEntityName(
@@ -10,19 +28,10 @@ export function makeDefaultGetEntityName(
   defaultEnglishMessages: { [key: string]: string }
 ) {
   return function defaultGetEntityName(
-    entity: Station | Stop,
+    entity: Entity,
     configCompanies: Company[],
     feedName?: string
   ): string | null {
-    // TODO: Stop generating this / passing it to the car string? Is it needed?
-    // In English we say "Car: " instead
-    const stationNetworks =
-      "networks" in entity &&
-      (coreUtils.itinerary.getCompaniesLabelFromNetworks(
-        entity?.networks || [],
-        configCompanies
-      ) ||
-        entity?.networks?.[0]);
     let stationName: string | null = entity.name || entity.id;
     // If the station name or id is a giant UUID (with more than 3 "-" characters)
     // best not to show that at all. The company name will still be shown.
@@ -44,6 +53,9 @@ export function makeDefaultGetEntityName(
         { name: stationName }
       );
     } else if ("isFloatingCar" in entity && entity.isFloatingCar) {
+      // TODO: Stop generating this / passing it to the car string? Is it needed?
+      // In English we say "Car: " instead
+      const stationNetwork = getNetwork(entity, configCompanies);
       stationName = intl.formatMessage(
         {
           defaultMessage: defaultEnglishMessages["otpUi.MapPopup.floatingCar"],
@@ -51,7 +63,7 @@ export function makeDefaultGetEntityName(
           id: "otpUi.MapPopup.floatingCar"
         },
         {
-          company: stationNetworks,
+          company: stationNetwork,
           name: stationName
         }
       );

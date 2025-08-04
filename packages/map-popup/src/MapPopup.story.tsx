@@ -72,34 +72,34 @@ const STATION = {
   "stroke-width": 2,
   allowDropoff: true,
   allowPickup: true,
-  bikesAvailable: 6,
   color: "#f00",
   id: '"hub_1580"',
   isCarStation: false,
   isFloatingBike: false,
+  lat: 45.5219604810172,
+  lon: -122.6896771788597,
   name: "SW Morrison at 18th",
-  networks: ["BIKETOWN"],
+  network: "BIKETOWN",
   realTimeData: true,
   spacesAvailable: 11,
-  x: -122.6896771788597,
-  y: 45.5219604810172
+  vehiclesAvailable: 6
 };
 
 const FLOATING_VEHICLE = {
   "stroke-width": 1,
   allowDropoff: false,
   allowPickup: true,
-  bikesAvailable: 1,
   color: "#f00",
   id: '"bike_6861"',
   isCarStation: false,
   isFloatingBike: true,
+  lat: 45.525486666666666,
+  lon: -122.70486,
   name: "0541",
-  networks: ["BIKETOWN"],
+  network: "BIKETOWN",
   realTimeData: true,
   spacesAvailable: 0,
-  x: -122.70486,
-  y: 45.525486666666666
+  vehiclesAvailable: 1
 };
 
 const FLOATING_CAR = {
@@ -110,12 +110,12 @@ const FLOATING_CAR = {
   id: "car_6861",
   isCarStation: false,
   isFloatingCar: true,
+  lat: 52.52,
+  lon: 13.405,
   name: "0541",
-  networks: ["MILES"], // https://miles-mobility.com
+  network: "MILES", // https://miles-mobility.com
   realTimeData: true,
-  spacesAvailable: 0,
-  x: 13.405,
-  y: 52.52
+  spacesAvailable: 0
 };
 
 const getEntityPrefixExample = (entity: Stop | Station) => {

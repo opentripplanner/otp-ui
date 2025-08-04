@@ -33,7 +33,8 @@
   },
   "devDependencies": {
     "@opentripplanner/endpoints-overlay": "workspace:*",
-    "@opentripplanner/types": "workspace:*"
+    "@opentripplanner/types": "workspace:*",
+    "maplibre-gl": "catalog:"
   },
   "peerDependencies": {
     "react": "catalog:",
