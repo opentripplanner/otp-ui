@@ -238,6 +238,26 @@ export type Step = {
   streetName: string;
 };
 
+export type FormFactor =
+  | "BICYCLE"
+  | "CAR"
+  | "CARGO_BICYCLE"
+  | "MOPED"
+  | "OTHER"
+  | "SCOOTER_SEATED"
+  | "SCOOTER_STANDING"
+  | "SCOOTER";
+
+export type PropulsionType =
+  | "COMBUSTION"
+  | "COMBUSTION_DIESEL"
+  | "ELECTRIC"
+  | "ELECTRIC_ASSIST"
+  | "HUMAN"
+  | "HYBRID"
+  | "HYDROGEN_FUEL_CELL"
+  | "PLUG_IN_HYBRID";
+
 /**
  * Describe an origin, destination, or intermediate location in an itinerary.
  */
@@ -250,7 +270,14 @@ export type Place = {
   lon: number;
   name: string;
   networks?: string[];
-  rentalVehicle?: { network: string };
+  rentalVehicle?: {
+    vehicleId?: string;
+    rentalNetwork: { networkId: string; url?: string };
+    vehicleType: {
+      formFactor: FormFactor;
+      propulsionType: PropulsionType;
+    };
+  };
   vehicleRentalStation?: { rentalNetwork: { networkId: string } };
   stop?: Stop;
   /**
@@ -269,7 +296,6 @@ export type Place = {
    * @deprecated Only for OTP1 support, removal is immenent
    */
   stopSequence?: number;
-  vertexType: string;
   zoneId?: string;
 };
 
@@ -337,7 +363,7 @@ export type Leg = {
   distance: number;
   dropOffBookingInfo?: FlexDropOffBookingInfo;
   duration: number;
-  endTime: number;
+  end: string;
   fareProducts?: { id: string; product: FareProduct }[];
   from: Place;
   headsign?: string;
@@ -369,7 +395,7 @@ export type Leg = {
   routeTextColor?: string;
   routeType?: number;
   serviceDate?: string;
-  startTime: number | string;
+  start: string;
   steps: Step[];
   to: Place;
   transitLeg: boolean;
@@ -400,6 +426,11 @@ type TemporaryTNCPriceType = {
   amount: number;
 };
 
+export type Currency = {
+  code: string;
+  digits: number;
+};
+
 /**
  * Describes the cost of an itinerary leg.
  */
@@ -422,9 +453,9 @@ export type Itinerary = {
   duration: number;
   elevationGained: number;
   elevationLost: number;
-  endTime: number;
+  end: string;
   legs: Leg[];
-  startTime: number;
+  start: string;
   tooSloped?: boolean;
   transfers: number;
   transitTime: number;
@@ -816,22 +847,31 @@ export type ModeButtonDefinition = {
  * Definition for a fare product used to pay the fare for a leg in a transit journey
  */
 export type FareProduct = {
+  __typename: string;
   id: string;
   medium?: {
     id: string;
     name: string;
   };
   name: string;
-  price: Money;
+  // Fare products may not have a price if they don't implement a FareProduct subclass.
+  price?: Money;
   riderCategory?: {
     id: string;
     name: string;
   };
 };
 
+/**
+ * This fare product is designed to represent the fare product applied to a leg.
+ */
+export type AppliedFareProduct = FareProduct & {
+  legPrice: Money;
+};
+
 export type FareProductSelector = {
-  mediumId: string;
-  riderCategoryId: string;
+  mediumId?: string;
+  riderCategoryId?: string;
 };
 
 /**

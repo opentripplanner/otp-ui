@@ -1,0 +1,1251 @@
+{
+  "accessibilityScore": null,
+  "duration": 3241,
+  "endTime": 1747503869000,
+  "legs": [
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 760.7,
+      "dropOffBookingInfo": null,
+      "dropoffType": "SCHEDULED",
+      "duration": 617,
+      "endTime": 1747501245000,
+      "fareProducts": [],
+      "from": {
+        "lat": 45.5274899,
+        "lon": -122.6853819,
+        "name": "1400 NW Irving Street, Portland",
+        "rentalVehicle": null,
+        "stop": null,
+        "vertexType": "NORMAL"
+      },
+      "headsign": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 45,
+        "points": "ya{tGl~xkVn@AN?AU?EA}C?QASAkC?W?SAS?uAAkA?O?EAQ?oAAi@?g@?S?C?QAU?m@A}A?SAWAm@?g@Ag@?s@Aw@?cA?oCAa@?]?WAaDAKJ??E?MF?n@?"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
+      "route": null,
+      "startTime": 1747500628000,
+      "steps": [
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 34.73,
+          "elevationProfile": [],
+          "lat": 45.5274907,
+          "lon": -122.6853417,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "Northwest 14th Avenue"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 680.94,
+          "elevationProfile": [],
+          "lat": 45.5271784,
+          "lon": -122.6853305,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "Northwest Hoyt Street"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 6.48,
+          "elevationProfile": [],
+          "lat": 45.5273407,
+          "lon": -122.6765929,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "Northwest 6th Avenue"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 7.53,
+          "elevationProfile": [],
+          "lat": 45.5272824,
+          "lon": -122.6765908,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 3.75,
+          "elevationProfile": [],
+          "lat": 45.5272834,
+          "lon": -122.6764942,
+          "relativeDirection": "RIGHT",
+          "stayOn": true,
+          "streetName": "sidewalk"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": true,
+          "distance": 27.28,
+          "elevationProfile": [],
+          "lat": 45.5272497,
+          "lon": -122.6764934,
+          "relativeDirection": "CONTINUE",
+          "stayOn": false,
+          "streetName": "Union Station/Northwest 6th & Hoyt"
+        }
+      ],
+      "to": {
+        "lat": 45.527222,
+        "lon": -122.676517,
+        "name": "Union Station/NW 6th & Hoyt MAX Stn",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "7763",
+          "gtfsId": "5:7763",
+          "id": "U3RvcDo1Ojc3NjM",
+          "lat": 45.527222,
+          "lon": -122.676517
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": false,
+      "trip": null
+    },
+    {
+      "accessibilityScore": null,
+      "agency": {
+        "alerts": [],
+        "gtfsId": "5:TRIMET",
+        "id": "5:TRIMET",
+        "name": "TriMet",
+        "timezone": "America/Los_Angeles",
+        "url": "https://trimet.org/"
+      },
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 1181.83,
+      "dropOffBookingInfo": null,
+      "dropoffType": "SCHEDULED",
+      "duration": 270,
+      "endTime": 1747501515000,
+      "fareProducts": [
+        {
+          "id": "42da9134-dd9a-3a19-9cec-640fc2d41390",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_YOUTH_SINGLE_RIDE",
+            "medium": {
+              "id": "5:4",
+              "name": "Virtual HOP Fastpass"
+            },
+            "name": "TriMet Youth 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:YOUTH",
+              "name": "Youth"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "3fd2409c-0715-3b4e-9315-787f48db7f6d",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_YOUTH_SINGLE_RIDE",
+            "medium": {
+              "id": "5:2",
+              "name": "HOP Fastpass"
+            },
+            "name": "TriMet Youth 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:YOUTH",
+              "name": "Youth"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "1ec41d3a-64af-3c96-981c-924ca977a7f9",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_HC_SINGLE_RIDE",
+            "medium": {
+              "id": "5:4",
+              "name": "Virtual HOP Fastpass"
+            },
+            "name": "TriMet Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "8a581cef-8ec0-33d6-abe9-acb7f90b806a",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_HC_SINGLE_RIDE",
+            "medium": {
+              "id": "5:0",
+              "name": "Cash"
+            },
+            "name": "TriMet Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "f6194261-07d2-3f65-9265-7f497ae7b064",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_ADULT_SINGLE_RIDE",
+            "medium": {
+              "id": "5:4",
+              "name": "Virtual HOP Fastpass"
+            },
+            "name": "TriMet Adult 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:ADULT",
+              "name": "Adult"
+            },
+            "price": {
+              "amount": 2.8,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "75b37256-6e78-3b8d-b7e2-953c61705b7b",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_ADULT_SINGLE_RIDE",
+            "medium": {
+              "id": "5:0",
+              "name": "Cash"
+            },
+            "name": "TriMet Adult 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:ADULT",
+              "name": "Adult"
+            },
+            "price": {
+              "amount": 2.8,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "edfd0615-63de-3efc-a3d7-b168c5683094",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_YOUTH_SINGLE_RIDE",
+            "medium": {
+              "id": "5:3",
+              "name": "Open Payment"
+            },
+            "name": "TriMet Youth 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:YOUTH",
+              "name": "Youth"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "e815c542-4136-3f5d-8734-8d9f8326bacb",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_YOUTH_SINGLE_RIDE",
+            "medium": {
+              "id": "5:0",
+              "name": "Cash"
+            },
+            "name": "TriMet Youth 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:YOUTH",
+              "name": "Youth"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "67d47c36-40bd-398b-8f1e-718943df37f0",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_HC_SINGLE_RIDE",
+            "medium": {
+              "id": "5:2",
+              "name": "HOP Fastpass"
+            },
+            "name": "TriMet Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "22180e9e-f97f-3f1f-bc80-25b7e371d36d",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_ADULT_SINGLE_RIDE",
+            "medium": {
+              "id": "5:2",
+              "name": "HOP Fastpass"
+            },
+            "name": "TriMet Adult 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:ADULT",
+              "name": "Adult"
+            },
+            "price": {
+              "amount": 2.8,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "1ca95472-e626-3945-9f8d-16cf94cc9f73",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_HC_SINGLE_RIDE",
+            "medium": {
+              "id": "5:3",
+              "name": "Open Payment"
+            },
+            "name": "TriMet Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "5f17f3ed-bba6-3282-ac3b-a0ee6ca5d738",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_ADULT_SINGLE_RIDE",
+            "medium": {
+              "id": "5:3",
+              "name": "Open Payment"
+            },
+            "name": "TriMet Adult 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:ADULT",
+              "name": "Adult"
+            },
+            "price": {
+              "amount": 2.8,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        }
+      ],
+      "from": {
+        "lat": 45.527222,
+        "lon": -122.676517,
+        "name": "Union Station/NW 6th & Hoyt MAX Stn",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "7763",
+          "gtfsId": "5:7763",
+          "id": "U3RvcDo1Ojc3NjM",
+          "lat": 45.527222,
+          "lon": -122.676517
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": "Expo Center",
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": [],
+      "legGeometry": {
+        "length": 125,
+        "points": "c`{tGpgwkVK@K?I?uABI?C?CAEACCECCCACCEACAEAGAE?EAIAuB?O?E@G@G@GBGLYj@kABIBGNe@DQDQDWDMPm@DSBMBOBG@GBEBEDGBABCBAFAB?F?N?D?FA@ADCHGDEBEBG@G?A@G?G@E?G?IAi@Ao@A_@?U?G?i@DcD@k@AO?G?IAKCIAICIIQCGAEQa@mAkD_AoCw@}B[y@ISIUKQKSKOUWIKKIKIIEIGOIWIYK]IWEG?E?G?K@E@C@E@GDGDEDCBCFEFEFMVABGLIPm@hB"
+      },
+      "mode": "TRAM",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": "SCHEDULED",
+      "rentedBike": null,
+      "rideHailingEstimate": null,
+      "route": {
+        "alerts": [],
+        "color": "FFC52F",
+        "gtfsId": "5:190",
+        "id": "5:190",
+        "longName": "MAX Yellow Line",
+        "shortName": null,
+        "textColor": "000000",
+        "type": 0
+      },
+      "startTime": 1747501245000,
+      "steps": [],
+      "to": {
+        "lat": 45.53028,
+        "lon": -122.667879,
+        "name": "Interstate/Rose Quarter MAX Station",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "11508",
+          "gtfsId": "5:11508",
+          "id": "U3RvcDo1OjExNTA4",
+          "lat": 45.53028,
+          "lon": -122.667879
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": true,
+      "trip": {
+        "arrivalStoptime": {
+          "stop": {
+            "gtfsId": "5:11498",
+            "id": "U3RvcDo1OjExNDk4"
+          },
+          "stopPosition": 17
+        },
+        "departureStoptime": {
+          "stop": {
+            "gtfsId": "5:10293",
+            "id": "U3RvcDo1OjEwMjkz"
+          },
+          "stopPosition": 1
+        },
+        "gtfsId": "5:14386155",
+        "id": "VHJpcDo1OjE0Mzg2MTU1"
+      }
+    },
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 236.12,
+      "dropOffBookingInfo": null,
+      "dropoffType": "SCHEDULED",
+      "duration": 273,
+      "endTime": 1747501788000,
+      "fareProducts": [],
+      "from": {
+        "lat": 45.53028,
+        "lon": -122.667879,
+        "name": "Interstate/Rose Quarter MAX Station",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "11508",
+          "gtfsId": "5:11508",
+          "id": "U3RvcDo1OjExNTA4",
+          "lat": 45.53028,
+          "lon": -122.667879
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 29,
+        "points": "}r{tGtpukVZ_AHUECECL[DQDM\\cA@C@CBI@CBIFMGGGAACGQI]Ge@CYAE?IAMG?G??I?eA"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
+      "route": null,
+      "startTime": 1747501515000,
+      "steps": [
+        {
+          "absoluteDirection": "SOUTHEAST",
+          "alerts": [],
+          "area": true,
+          "distance": 29.56,
+          "elevationProfile": [],
+          "lat": 45.5302361,
+          "lon": -122.6677866,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "Interstate/Rose Quarter"
+        },
+        {
+          "absoluteDirection": "SOUTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 16.46,
+          "elevationProfile": [],
+          "lat": 45.5300978,
+          "lon": -122.6674626,
+          "relativeDirection": "CONTINUE",
+          "stayOn": false,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "SOUTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 79.99,
+          "elevationProfile": [],
+          "lat": 45.5301,
+          "lon": -122.667315,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "North Interstate Avenue"
+        },
+        {
+          "absoluteDirection": "NORTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 70.13,
+          "elevationProfile": [],
+          "lat": 45.5297176,
+          "lon": -122.6664452,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "NORTH",
+          "alerts": [],
+          "area": false,
+          "distance": 12.76,
+          "elevationProfile": [],
+          "lat": 45.5299721,
+          "lon": -122.6656663,
+          "relativeDirection": "LEFT",
+          "stayOn": true,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": true,
+          "distance": 27.21,
+          "elevationProfile": [],
+          "lat": 45.5300523,
+          "lon": -122.6656164,
+          "relativeDirection": "CONTINUE",
+          "stayOn": false,
+          "streetName": "Rose Quarter Transit Center"
+        }
+      ],
+      "to": {
+        "lat": 45.530057,
+        "lon": -122.664917,
+        "name": "Rose Quarter TC MAX Station",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "8340",
+          "gtfsId": "5:8340",
+          "id": "U3RvcDo1OjgzNDA",
+          "lat": 45.530057,
+          "lon": -122.664917
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": false,
+      "trip": null
+    },
+    {
+      "accessibilityScore": null,
+      "agency": {
+        "alerts": [],
+        "gtfsId": "5:TRIMET",
+        "id": "5:TRIMET",
+        "name": "TriMet",
+        "timezone": "America/Los_Angeles",
+        "url": "https://trimet.org/"
+      },
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 5291.25,
+      "dropOffBookingInfo": null,
+      "dropoffType": "SCHEDULED",
+      "duration": 590,
+      "endTime": 1747502810000,
+      "fareProducts": [
+        {
+          "id": "42da9134-dd9a-3a19-9cec-640fc2d41390",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_YOUTH_SINGLE_RIDE",
+            "medium": {
+              "id": "5:4",
+              "name": "Virtual HOP Fastpass"
+            },
+            "name": "TriMet Youth 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:YOUTH",
+              "name": "Youth"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "3fd2409c-0715-3b4e-9315-787f48db7f6d",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_YOUTH_SINGLE_RIDE",
+            "medium": {
+              "id": "5:2",
+              "name": "HOP Fastpass"
+            },
+            "name": "TriMet Youth 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:YOUTH",
+              "name": "Youth"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "1ec41d3a-64af-3c96-981c-924ca977a7f9",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_HC_SINGLE_RIDE",
+            "medium": {
+              "id": "5:4",
+              "name": "Virtual HOP Fastpass"
+            },
+            "name": "TriMet Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "8a581cef-8ec0-33d6-abe9-acb7f90b806a",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_HC_SINGLE_RIDE",
+            "medium": {
+              "id": "5:0",
+              "name": "Cash"
+            },
+            "name": "TriMet Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "f6194261-07d2-3f65-9265-7f497ae7b064",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_ADULT_SINGLE_RIDE",
+            "medium": {
+              "id": "5:4",
+              "name": "Virtual HOP Fastpass"
+            },
+            "name": "TriMet Adult 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:ADULT",
+              "name": "Adult"
+            },
+            "price": {
+              "amount": 2.8,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "75b37256-6e78-3b8d-b7e2-953c61705b7b",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_ADULT_SINGLE_RIDE",
+            "medium": {
+              "id": "5:0",
+              "name": "Cash"
+            },
+            "name": "TriMet Adult 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:ADULT",
+              "name": "Adult"
+            },
+            "price": {
+              "amount": 2.8,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "edfd0615-63de-3efc-a3d7-b168c5683094",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_YOUTH_SINGLE_RIDE",
+            "medium": {
+              "id": "5:3",
+              "name": "Open Payment"
+            },
+            "name": "TriMet Youth 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:YOUTH",
+              "name": "Youth"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "e815c542-4136-3f5d-8734-8d9f8326bacb",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_YOUTH_SINGLE_RIDE",
+            "medium": {
+              "id": "5:0",
+              "name": "Cash"
+            },
+            "name": "TriMet Youth 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:YOUTH",
+              "name": "Youth"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "67d47c36-40bd-398b-8f1e-718943df37f0",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_HC_SINGLE_RIDE",
+            "medium": {
+              "id": "5:2",
+              "name": "HOP Fastpass"
+            },
+            "name": "TriMet Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "22180e9e-f97f-3f1f-bc80-25b7e371d36d",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_ADULT_SINGLE_RIDE",
+            "medium": {
+              "id": "5:2",
+              "name": "HOP Fastpass"
+            },
+            "name": "TriMet Adult 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:ADULT",
+              "name": "Adult"
+            },
+            "price": {
+              "amount": 2.8,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "1ca95472-e626-3945-9f8d-16cf94cc9f73",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_HC_SINGLE_RIDE",
+            "medium": {
+              "id": "5:3",
+              "name": "Open Payment"
+            },
+            "name": "TriMet Honored Citizen 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:HONORED_CITIZEN",
+              "name": "Honored Citizen"
+            },
+            "price": {
+              "amount": 1.4,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        },
+        {
+          "id": "5f17f3ed-bba6-3282-ac3b-a0ee6ca5d738",
+          "product": {
+            "__typename": "DefaultFareProduct",
+            "id": "5:TRIMET_ADULT_SINGLE_RIDE",
+            "medium": {
+              "id": "5:3",
+              "name": "Open Payment"
+            },
+            "name": "TriMet Adult 2 1/2 Hours",
+            "riderCategory": {
+              "id": "5:ADULT",
+              "name": "Adult"
+            },
+            "price": {
+              "amount": 2.8,
+              "currency": {
+                "code": "USD",
+                "digits": 2
+              }
+            }
+          }
+        }
+      ],
+      "from": {
+        "lat": 45.530057,
+        "lon": -122.664917,
+        "name": "Rose Quarter TC MAX Station",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "8340",
+          "gtfsId": "5:8340",
+          "id": "U3RvcDo1OjgzNDA",
+          "lat": 45.530057,
+          "lon": -122.664917
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": "Gresham",
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": [
+        {
+          "lat": 45.530052,
+          "locationType": "STOP",
+          "lon": -122.661908,
+          "name": "Convention Center MAX Station",
+          "stopCode": "8341",
+          "stopId": "U3RvcDo1OjgzNDE"
+        },
+        {
+          "lat": 45.530055,
+          "locationType": "STOP",
+          "lon": -122.65774,
+          "name": "NE 7th Ave MAX Station",
+          "stopCode": "8342",
+          "stopId": "U3RvcDo1OjgzNDI"
+        },
+        {
+          "lat": 45.530067,
+          "locationType": "STOP",
+          "lon": -122.653638,
+          "name": "Lloyd Center/NE 11th Ave MAX Station",
+          "stopCode": "8343",
+          "stopId": "U3RvcDo1OjgzNDM"
+        },
+        {
+          "lat": 45.532772,
+          "locationType": "STOP",
+          "lon": -122.620708,
+          "name": "Hollywood/NE 42nd Ave MAX Station",
+          "stopCode": "8344",
+          "stopId": "U3RvcDo1OjgzNDQ"
+        }
+      ],
+      "legGeometry": {
+        "length": 242,
+        "points": "_r{tGv~tkV?G?]?Q?mC?S?U@S?oD?wC?M???k@?Y?wC?Y?K?yD?qD?Y?EA]@mC?E???U@eB?_A?g@?]@}C?}C?Y?]?[@aD???I?IA{@?kB?[?C?e@?A?I?g@AgB?q@@y@@e@?Y@s@D_B@y@?W@_@?u@A]A}@YkPEeCSyLUsMEwCEsBQsIE{BAs@Cs@CSAQAQAUCSCUCOCQAOEMCOCQGYI[EMEOGSIUGMGOGOIOGMGMIMIMMSOSOQGIIIKKKKMMIIs@k@uBcB{@q@y@s@OOMKGGMMGIQSGIGKMQKSKSKSGOIQEOEMK]GQEQMw@Ig@CYCOAUAQASAQAS?O?Q?O?_@?O@O@_@B]Dm@Fm@jCeRzAuKjAaIb@cD??@AJq@Hk@@GRwAPmAj@sDZsBD[H_@Lk@Je@Po@HWFQFSFOHSL]JSHSP[N[T_@Ta@p@gA`@o@zAiC`BmCzAcCzAmCTc@R_@P_@Pc@Nc@FQFQFQFUDQFSJe@DSJg@DSDUBSBUDUBUFm@BWBY@UBg@B_@@[?[@_@?]?m@?]?_@AY?YAWCs@AYEs@Ek@C[Ca@E]MaAE_@Ga@O}@Km@EUIa@Ka@Ic@Me@K]Oe@GQM_@a@eAKU"
+      },
+      "mode": "TRAM",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": "SCHEDULED",
+      "rentedBike": null,
+      "rideHailingEstimate": null,
+      "route": {
+        "alerts": [],
+        "color": "114C96",
+        "gtfsId": "5:100",
+        "id": "5:100",
+        "longName": "MAX Blue Line",
+        "shortName": null,
+        "textColor": "FFFFFF",
+        "type": 0
+      },
+      "startTime": 1747502220000,
+      "steps": [],
+      "to": {
+        "lat": 45.528764,
+        "lon": -122.602703,
+        "name": "NE 60th Ave MAX Station",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "8345",
+          "gtfsId": "5:8345",
+          "id": "U3RvcDo1OjgzNDU",
+          "lat": 45.528764,
+          "lon": -122.602703
+        },
+        "vertexType": "TRANSIT"
+      },
+      "transitLeg": true,
+      "trip": {
+        "arrivalStoptime": {
+          "stop": {
+            "gtfsId": "5:8359",
+            "id": "U3RvcDo1OjgzNTk"
+          },
+          "stopPosition": 45
+        },
+        "departureStoptime": {
+          "stop": {
+            "gtfsId": "5:9848",
+            "id": "U3RvcDo1Ojk4NDg"
+          },
+          "stopPosition": 1
+        },
+        "gtfsId": "5:14384045",
+        "id": "VHJpcDo1OjE0Mzg0MDQ1"
+      }
+    },
+    {
+      "accessibilityScore": null,
+      "agency": null,
+      "alerts": [],
+      "arrivalDelay": 0,
+      "departureDelay": 0,
+      "distance": 1315.37,
+      "dropOffBookingInfo": null,
+      "dropoffType": "SCHEDULED",
+      "duration": 1059,
+      "endTime": 1747503869000,
+      "fareProducts": [],
+      "from": {
+        "lat": 45.528764,
+        "lon": -122.602703,
+        "name": "NE 60th Ave MAX Station",
+        "rentalVehicle": null,
+        "stop": {
+          "alerts": [],
+          "code": "8345",
+          "gtfsId": "5:8345",
+          "id": "U3RvcDo1OjgzNDU",
+          "lat": 45.528764,
+          "lon": -122.602703
+        },
+        "vertexType": "TRANSIT"
+      },
+      "headsign": null,
+      "interlineWithPreviousLeg": false,
+      "intermediateStops": null,
+      "legGeometry": {
+        "length": 45,
+        "points": "yh{tG`|hkVc@_ACEWm@LOr@?F?XEh@?@Sh@@H?rC@r@Ar@??S?[BS?a@?QH?H?R??cD?eF?A?UR?xLBrF@L??[@kB?aAAO?OAOCWCQUkBJEDApFG\\Cr@zA"
+      },
+      "mode": "WALK",
+      "pickupBookingInfo": null,
+      "pickupType": "SCHEDULED",
+      "realTime": false,
+      "realtimeState": null,
+      "rentedBike": false,
+      "rideHailingEstimate": null,
+      "route": null,
+      "startTime": 1747502810000,
+      "steps": [
+        {
+          "absoluteDirection": "NORTHEAST",
+          "alerts": [],
+          "area": true,
+          "distance": 32.33,
+          "elevationProfile": [],
+          "lat": 45.528615,
+          "lon": -122.6030445,
+          "relativeDirection": "DEPART",
+          "stayOn": false,
+          "streetName": "Northeast 60th Avenue"
+        },
+        {
+          "absoluteDirection": "NORTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 2.57,
+          "elevationProfile": [],
+          "lat": 45.528797,
+          "lon": -122.6027208,
+          "relativeDirection": "CONTINUE",
+          "stayOn": false,
+          "streetName": "60th Avenue MAX Station"
+        },
+        {
+          "absoluteDirection": "NORTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 22.36,
+          "elevationProfile": [],
+          "lat": 45.5288108,
+          "lon": -122.6026944,
+          "relativeDirection": "CONTINUE",
+          "stayOn": false,
+          "streetName": "steps"
+        },
+        {
+          "absoluteDirection": "SOUTHEAST",
+          "alerts": [],
+          "area": false,
+          "distance": 81.74,
+          "elevationProfile": [],
+          "lat": 45.5289348,
+          "lon": -122.6024685,
+          "relativeDirection": "RIGHT",
+          "stayOn": true,
+          "streetName": "sidewalk"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 7.31,
+          "elevationProfile": [],
+          "lat": 45.5282201,
+          "lon": -122.6023518,
+          "relativeDirection": "LEFT",
+          "stayOn": true,
+          "streetName": "path"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 169.34,
+          "elevationProfile": [],
+          "lat": 45.5282191,
+          "lon": -122.602258,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "Northeast 60th Avenue"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 68.66,
+          "elevationProfile": [],
+          "lat": 45.5266964,
+          "lon": -122.6022633,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "service road"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 163.07,
+          "elevationProfile": [],
+          "lat": 45.5264788,
+          "lon": -122.6016677,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "Northeast Glisan Street"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 401.04,
+          "elevationProfile": [],
+          "lat": 45.5264767,
+          "lon": -122.5995743,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "Northeast 62nd Avenue"
+        },
+        {
+          "absoluteDirection": "EAST",
+          "alerts": [],
+          "area": false,
+          "distance": 158.27,
+          "elevationProfile": [],
+          "lat": 45.5228705,
+          "lon": -122.5996007,
+          "relativeDirection": "LEFT",
+          "stayOn": false,
+          "streetName": "East Burnside Street"
+        },
+        {
+          "absoluteDirection": "SOUTH",
+          "alerts": [],
+          "area": false,
+          "distance": 162.19,
+          "elevationProfile": [],
+          "lat": 45.5230364,
+          "lon": -122.5976007,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "Southeast 65th Avenue"
+        },
+        {
+          "absoluteDirection": "SOUTHWEST",
+          "alerts": [],
+          "area": false,
+          "distance": 46.52,
+          "elevationProfile": [],
+          "lat": 45.5215821,
+          "lon": -122.5975003,
+          "relativeDirection": "RIGHT",
+          "stayOn": false,
+          "streetName": "Southeast Ash Street"
+        }
+      ],
+      "to": {
+        "lat": 45.5211418,
+        "lon": -122.5979746,
+        "name": "6404 SE Ash Street, Portland",
+        "rentalVehicle": null,
+        "stop": null,
+        "vertexType": "NORMAL"
+      },
+      "transitLeg": false,
+      "trip": null
+    }
+  ],
+  "startTime": 1747500628000,
+  "transfers": 1,
+  "waitingTime": 432,
+  "walkTime": 1949
+}
