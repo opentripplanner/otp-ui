@@ -108,6 +108,21 @@ const AdvancedModeSettingsButton = ({
   const intl = useIntl();
   const label = generateModeButtonLabel(modeButton.key, intl, modeButton.label);
   const checkboxId = `metro-submode-selector-mode-${id}`;
+  const containsSubsettings = modeButton.modeSettings.length > 0;
+
+  const subsettingsStatusLabel = modeButton.enabled
+    ? intl.formatMessage({
+        id: "otpUi.ModeSelector.labels.subsettingsExpanded"
+      })
+    : intl.formatMessage({
+        id: "otpUi.ModeSelector.labels.subsettingsCollapsed"
+      });
+
+  // Adding <InvisibleAllyLabel> to the label results in AT announcing "Transit (and 1 other item)", so we must present this information in the aria-label
+  const ariaLabel = containsSubsettings
+    ? label + subsettingsStatusLabel
+    : label;
+
   return (
     <SettingsContainer className="advanced-submode-container">
       <StyledModeSettingsButton
@@ -115,10 +130,10 @@ const AdvancedModeSettingsButton = ({
         className="advanced-submode-mode-button"
         fillModeIcons={fillModeIcons}
         id={modeButton.key}
-        subsettings={modeButton.modeSettings.length > 0}
+        subsettings={containsSubsettings}
       >
         <input
-          aria-label={label}
+          aria-label={ariaLabel}
           checked={modeButton.enabled ?? undefined}
           id={checkboxId}
           onChange={onToggle}
@@ -130,7 +145,7 @@ const AdvancedModeSettingsButton = ({
           {modeButton.enabled && <Check2 />}
         </label>
       </StyledModeSettingsButton>
-      {modeButton.modeSettings.length > 0 && (
+      {containsSubsettings && (
         <AnimateHeight duration={300} height={modeButton.enabled ? "auto" : 0}>
           <StyledSettingsContainer className="subsettings-container">
             <SubSettingsPane

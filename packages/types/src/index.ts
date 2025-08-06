@@ -531,7 +531,7 @@ export type Stop = {
   code?: string;
   color?: string;
   dist?: number;
-  geometries?: { geoJson?: GeoJSON.Polygon };
+  geometries?: { geoJson?: GeoJSON.GeometryObject };
   gtfsId: string;
   id: string;
   lat?: number;
@@ -633,9 +633,22 @@ export type Station = {
   name?: string;
   networks: string[];
   spacesAvailable?: number;
-  // TS TODO coordinate type
   x: number;
   y: number;
+};
+
+export type TileLayerStation = {
+  bikesAvailable?: number;
+  id: string;
+  isFloatingBike?: boolean;
+  isFloatingCar?: boolean;
+  isFloatingVehicle?: boolean;
+  lat: number;
+  lon: number;
+  name?: string;
+  network?: string;
+  spacesAvailable?: number;
+  vehiclesAvailable?: number;
 };
 
 /**
