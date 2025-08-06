@@ -1,7 +1,7 @@
 import { UserLocationAndType } from "@opentripplanner/types";
 import React from "react";
 import { action } from "storybook/actions";
-import { ComponentMeta, ComponentStory } from "@storybook/react-webpack5";
+import { StoryFn, Meta } from "@storybook/react-vite";
 import { Cat } from "@styled-icons/fa-solid/Cat";
 import { Dog } from "@styled-icons/fa-solid/Dog";
 
@@ -44,13 +44,13 @@ export default {
   decorators: [withMap()],
   title: "EndpointsOverlay",
   parameters: { storyshots: { disable: true } }
-} as ComponentMeta<typeof EndpointsOverlay>;
+} as Meta<typeof EndpointsOverlay>;
 
-export const EndpointsOverlayWithoutUserSettings: ComponentStory<typeof EndpointsOverlay> = () => (
+export const EndpointsOverlayWithoutUserSettings: StoryFn<typeof EndpointsOverlay> = () => (
   <EndpointsOverlay fromLocation={fromLocation} toLocation={toLocation} />
 );
 
-export const EndpointsOverlayWithUserSettings: ComponentStory<typeof EndpointsOverlay> = () => (
+export const EndpointsOverlayWithUserSettings: StoryFn<typeof EndpointsOverlay> = () => (
   <EndpointsOverlay
     clearLocation={clearLocation}
     forgetPlace={forgetPlace}
@@ -64,7 +64,7 @@ export const EndpointsOverlayWithUserSettings: ComponentStory<typeof EndpointsOv
   />
 );
 
-export const EndpointsOverlayWithCustomMapMarkers: ComponentStory<typeof EndpointsOverlay> = () => (
+export const EndpointsOverlayWithCustomMapMarkers: StoryFn<typeof EndpointsOverlay> = () => (
   <EndpointsOverlay
     fromLocation={fromLocation}
     MapMarkerIcon={CatDogIcon}
@@ -73,7 +73,7 @@ export const EndpointsOverlayWithCustomMapMarkers: ComponentStory<typeof Endpoin
   />
 );
 
-export const EndpointsOverlayWithIntermediatePlace: ComponentStory<typeof EndpointsOverlay> = () => (
+export const EndpointsOverlayWithIntermediatePlace: StoryFn<typeof EndpointsOverlay> = () => (
   <EndpointsOverlay
     fromLocation={fromLocation}
     intermediatePlaces={[
@@ -89,7 +89,7 @@ export const EndpointsOverlayWithIntermediatePlace: ComponentStory<typeof Endpoi
   />
 );
 
-export const EndpointsOverlayWithUnnamedPlace: ComponentStory<typeof EndpointsOverlay> = () => (
+export const EndpointsOverlayWithUnnamedPlace: StoryFn<typeof EndpointsOverlay> = () => (
   <EndpointsOverlay
     fromLocation={unnamedFromLocation}
     setLocation={setLocation}

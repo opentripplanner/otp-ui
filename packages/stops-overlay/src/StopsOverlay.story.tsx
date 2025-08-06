@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React from "react";
 import { action } from "storybook/actions";
 
@@ -50,12 +51,14 @@ export const NoMinZoom = () => (
 // TODO: Re-add, and add support for old story
 // export const WithCustomMarkers = () => <Example symbols={customSymbols} />;
 
-export const FlexStops = () => (
-  <Example
-    filterStops={false}
-    // @ts-expect-error json import acts strange with typescript
-    stops={mockFlexStops}
-  />
-);
+export const FlexStops = {
+  render: () => (
+    <Example
+      filterStops={false}
+      // @ts-expect-error json import acts strange with typescript
+      stops={mockFlexStops}
+    />
+  ),
 
-FlexStops.decorators = [withMap([33.85, -84.61], 10)];
+  decorators: [withMap([33.85, -84.61], 10)]
+};

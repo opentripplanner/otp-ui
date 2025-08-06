@@ -1,4 +1,4 @@
-import { Parameters } from '@storybook/react-webpack5';
+import { Parameters } from '@storybook/react-vite';
 import { reactIntl } from './react-intl.ts';
 
 const parameters: Parameters = {

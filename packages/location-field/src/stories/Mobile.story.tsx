@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentMeta } from "@storybook/react-webpack5";
+import { Meta } from "@storybook/react-vite";
 import styled from "styled-components";
 import {
   Building,
@@ -99,7 +99,7 @@ export default {
     }
   },
   title: "LocationField/Mobile Context",
-} as ComponentMeta<typeof LocationField>;
+} as Meta<typeof LocationField>;
 
 export const Blank = (): JSX.Element => (
   <LocationField

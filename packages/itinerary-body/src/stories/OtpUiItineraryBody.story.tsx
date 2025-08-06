@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React, { ReactElement } from "react";
 import { Bomb } from "@styled-icons/fa-solid/Bomb";
 import { Bolt } from "@styled-icons/fa-solid/Bolt";
@@ -67,14 +68,15 @@ export const WalkTransitTransferWithA11yItinerary = (): ReactElement => (
   />
 );
 
-export const StyledWalkTransitWalkItinerary = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper
-    itinerary={walkTransitWalkItinerary}
-    styledItinerary="pink-legs"
-  />
-);
-// Custom styling for this story only, not in production
-StyledWalkTransitWalkItinerary.parameters = a11yOverrideParameters;
+export const StyledWalkTransitWalkItinerary = {
+  render: (): ReactElement => (
+    <ItineraryBodyDefaultsWrapper
+      itinerary={walkTransitWalkItinerary}
+      styledItinerary="pink-legs"
+    />
+  ),
+  parameters: a11yOverrideParameters
+};
 
 export const WalkTransitWalkItineraryWithAgencyInformation = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
@@ -109,11 +111,12 @@ export const BikeTransitBikeItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={bikeTransitBikeItinerary} />
 );
 
-export const WalkInterlinedTransitItinerary = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={walkInterlinedTransitItinerary} />
-);
-// Custom styling for this story only, not in production
-WalkInterlinedTransitItinerary.parameters = a11yOverrideParameters;
+export const WalkInterlinedTransitItinerary = {
+  render: (): ReactElement => (
+    <ItineraryBodyDefaultsWrapper itinerary={walkInterlinedTransitItinerary} />
+  ),
+  parameters: a11yOverrideParameters
+};
 
 export const WalkTransitTransferItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper

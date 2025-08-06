@@ -1,5 +1,6 @@
+/* eslint-disable react/display-name */
 import React from "react";
-import { ComponentMeta } from "@storybook/react-webpack5";
+import { Meta } from "@storybook/react-vite";
 
 import { Ship } from "@styled-icons/fa-solid/Ship";
 import { Bus } from "@styled-icons/fa-solid/Bus";
@@ -60,7 +61,7 @@ export default {
     }
   },
   title: "LocationField/Desktop Context"
-} as ComponentMeta<typeof LocationField>;
+} as Meta<typeof LocationField>;
 
 export const Blank = (): JSX.Element => (
   <LocationField
@@ -151,38 +152,43 @@ export const SelectedLocationCustomClear = (): JSX.Element => (
   />
 );
 
-export const NoAutoFocusWithMultipleControls = (): JSX.Element => (
-  <div>
-    <input id="example" defaultValue="Enter text" />
-    <button type="button">Click me!</button>
-    <LocationField
-      currentPosition={currentPosition}
-      geocoderConfig={geocoderConfig}
-      getCurrentPosition={getCurrentPosition}
-      inputPlaceholder="Select from location"
-      locationType="from"
-      onLocationSelected={onLocationSelected}
-    />
-  </div>
-);
-NoAutoFocusWithMultipleControls.parameters = a11yOverrideParameters;
+export const NoAutoFocusWithMultipleControls = {
+  render: (): JSX.Element => (
+    <div>
+      <input id="example" defaultValue="Enter text" />
+      <button type="button">Click me!</button>
+      <LocationField
+        currentPosition={currentPosition}
+        geocoderConfig={geocoderConfig}
+        getCurrentPosition={getCurrentPosition}
+        inputPlaceholder="Select from location"
+        locationType="from"
+        onLocationSelected={onLocationSelected}
+      />
+    </div>
+  ),
+  parameters: a11yOverrideParameters
+};
 
-export const AutoFocusWithMultipleControls = (): JSX.Element => (
-  <div>
-    <input id="example" defaultValue="Enter text" />
-    <button type="button">Click me!</button>
-    <LocationField
-      autoFocus
-      currentPosition={currentPosition}
-      geocoderConfig={geocoderConfig}
-      getCurrentPosition={getCurrentPosition}
-      inputPlaceholder="Select from location"
-      locationType="from"
-      onLocationSelected={onLocationSelected}
-    />
-  </div>
-);
-AutoFocusWithMultipleControls.parameters = a11yOverrideParameters;
+export const AutoFocusWithMultipleControls = {
+  render: (): JSX.Element => (
+    <div>
+      <input id="example" defaultValue="Enter text" />
+      <button type="button">Click me!</button>
+      <LocationField
+        autoFocus
+        currentPosition={currentPosition}
+        geocoderConfig={geocoderConfig}
+        getCurrentPosition={getCurrentPosition}
+        inputPlaceholder="Select from location"
+        locationType="from"
+        onLocationSelected={onLocationSelected}
+      />
+    </div>
+  ),
+
+  parameters: a11yOverrideParameters
+};
 
 export const WithBadApiKeyHandlesBadAutocomplete = (): JSX.Element => (
   <LocationField
@@ -195,7 +201,6 @@ export const WithBadApiKeyHandlesBadAutocomplete = (): JSX.Element => (
   />
 );
 
-// TODO: add custom messages once that becomes easier with the react-intl plugin
 export const WithCustomResultColorsAndIcons = (): JSX.Element => (
   <LocationField
     currentPosition={currentPosition}
@@ -209,22 +214,25 @@ export const WithCustomResultColorsAndIcons = (): JSX.Element => (
   />
 );
 
-export const WithPrefilledSearch = (): JSX.Element => (
-  <LocationField
-    currentPosition={currentPosition}
-    geocoderConfig={geocoderConfig}
-    getCurrentPosition={getCurrentPosition}
-    initialSearchResults={mockedGeocoderResponse.features}
-    inputPlaceholder="Select from location"
-    layerColorMap={layerColorMap}
-    locationType="from"
-    onLocationSelected={onLocationSelected}
-    preferredLayers={["example_layer"]}
-    sortByDistance
-    style={{ fontFamily: "sans-serif" }}
-  />
-);
-WithPrefilledSearch.parameters = a11yOverrideParameters;
+export const WithPrefilledSearch = {
+  render: (): JSX.Element => (
+    <LocationField
+      currentPosition={currentPosition}
+      geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
+      initialSearchResults={mockedGeocoderResponse.features}
+      inputPlaceholder="Select from location"
+      layerColorMap={layerColorMap}
+      locationType="from"
+      onLocationSelected={onLocationSelected}
+      preferredLayers={["example_layer"]}
+      sortByDistance
+      style={{ fontFamily: "sans-serif" }}
+    />
+  ),
+
+  parameters: a11yOverrideParameters
+};
 
 export const RequiredAndInvalidState = (): JSX.Element => (
   <LocationField
@@ -252,21 +260,23 @@ export const WithUserSettings = (): JSX.Element => (
   />
 );
 
-export const WithCustomResultsOrder = (): JSX.Element => (
-  <LocationField
-    currentPosition={currentPosition}
-    geocoderConfig={geocoderConfig}
-    geocoderResultsOrder={["OTHER", "STATIONS", "STOPS"]}
-    getCurrentPosition={getCurrentPosition}
-    initialSearchResults={mockedGeocoderResponse.features}
-    inputPlaceholder="Select from location"
-    layerColorMap={layerColorMap}
-    locationType="from"
-    onLocationSelected={onLocationSelected}
-    preferredLayers={["example_layer"]}
-    sortByDistance
-    style={{ fontFamily: "sans-serif" }}
-  />
-);
+export const WithCustomResultsOrder = {
+  render: (): JSX.Element => (
+    <LocationField
+      currentPosition={currentPosition}
+      geocoderConfig={geocoderConfig}
+      geocoderResultsOrder={["OTHER", "STATIONS", "STOPS"]}
+      getCurrentPosition={getCurrentPosition}
+      initialSearchResults={mockedGeocoderResponse.features}
+      inputPlaceholder="Select from location"
+      layerColorMap={layerColorMap}
+      locationType="from"
+      onLocationSelected={onLocationSelected}
+      preferredLayers={["example_layer"]}
+      sortByDistance
+      style={{ fontFamily: "sans-serif" }}
+    />
+  ),
 
-WithCustomResultsOrder.parameters = a11yOverrideParameters;
+  parameters: a11yOverrideParameters
+};

@@ -1,6 +1,6 @@
 import { ClassicModeIcon } from "@opentripplanner/icons";
 import { action } from "storybook/actions";
-import { StoryContext } from "@storybook/react-webpack5";
+import { StoryContext } from "@storybook/react-vite";
 import React, { Component, ReactElement } from "react";
 import SettingsSelectorPanel from "./SettingsSelectorPanel";
 

@@ -84,84 +84,130 @@ const Template = injectIntl(({ itinerary, intl, ...args }) => (
   </>
 ));
 
-export const WalkingItinerary = Template.bind({});
-WalkingItinerary.args = {
-  itinerary: walkOnlyItinerary
+export const WalkingItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: walkOnlyItinerary
+  }
 };
 
-export const BikeOnlyItinerary = Template.bind({});
-BikeOnlyItinerary.args = {
-  itinerary: bikeOnlyItinerary
+export const BikeOnlyItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: bikeOnlyItinerary
+  }
 };
 
-export const WalkTransitWalkItinerary = Template.bind({});
-WalkTransitWalkItinerary.args = {
-  itinerary: walkTransitWalkItinerary
+export const WalkTransitWalkItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: walkTransitWalkItinerary
+  }
 };
 
-export const WalkTransitWalkItineraryWithNoIntermediateStops = Template.bind(
-  {}
-);
-WalkTransitWalkItineraryWithNoIntermediateStops.args = {
-  itinerary: walkTransitWalkItineraryNoIntermediateStops
+export const WalkTransitWalkItineraryWithNoIntermediateStops = {
+  render: Template,
+
+  args: {
+    itinerary: walkTransitWalkItineraryNoIntermediateStops
+  }
 };
 
-export const BikeTransitBikeItinerary = Template.bind({});
-BikeTransitBikeItinerary.args = {
-  itinerary: bikeTransitBikeItinerary
+export const BikeTransitBikeItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: bikeTransitBikeItinerary
+  }
 };
 
-export const WalkInterlinedTransitItinerary = Template.bind({});
-WalkInterlinedTransitItinerary.args = {
-  itinerary: walkInterlinedTransitItinerary
+export const WalkInterlinedTransitItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: walkInterlinedTransitItinerary
+  }
 };
 
-export const WalkTransitTransferItinerary = Template.bind({});
-WalkTransitTransferItinerary.args = {
-  itinerary: walkTransitWalkTransitWalkItinerary
+export const WalkTransitTransferItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: walkTransitWalkTransitWalkItinerary
+  }
 };
 
-export const BikeRentalItinerary = Template.bind({});
-BikeRentalItinerary.args = {
-  itinerary: bikeRentalItinerary
+export const BikeRentalItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: bikeRentalItinerary
+  }
 };
 
-export const EScooterRentalItinerary = Template.bind({});
-EScooterRentalItinerary.args = {
-  itinerary: eScooterRentalItinerary
+export const EScooterRentalItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: eScooterRentalItinerary
+  }
 };
 
-export const ParkAndRideItinerary = Template.bind({});
-ParkAndRideItinerary.args = {
-  itinerary: parkAndRideItinerary
+export const ParkAndRideItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: parkAndRideItinerary
+  }
 };
 
-export const BikeRentalTransitItinerary = Template.bind({});
-BikeRentalTransitItinerary.args = {
-  itinerary: bikeRentalTransitBikeRentalItinerary
+export const BikeRentalTransitItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: bikeRentalTransitBikeRentalItinerary
+  }
 };
 
-export const EScooterRentalTransitItinerary = Template.bind({});
-EScooterRentalTransitItinerary.args = {
-  itinerary: eScooterRentalTransiteScooterRentalItinerary
+export const EScooterRentalTransitItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: eScooterRentalTransiteScooterRentalItinerary
+  }
 };
 
-export const TncTransitItinerary = Template.bind({});
-TncTransitItinerary.args = {
-  itinerary: tncTransitTncItinerary
+export const TncTransitItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: tncTransitTncItinerary
+  }
 };
 
-export const FlexItinerary = Template.bind({});
-FlexItinerary.args = {
-  itinerary: flexItinerary
+export const FlexItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: flexItinerary
+  }
 };
 
-export const OTP2ScooterItinerary = Template.bind({});
-OTP2ScooterItinerary.args = {
-  itinerary: otp2ScooterItinerary
+export const OTP2ScooterItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: otp2ScooterItinerary
+  }
 };
 
-export const OTP2TransitItinerary = Template.bind({});
-OTP2TransitItinerary.args = {
-  itinerary: otp2TransitItinerary
+export const OTP2TransitItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: otp2TransitItinerary
+  }
 };
