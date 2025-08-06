@@ -10,12 +10,7 @@ import {
 } from "@opentripplanner/types/otp2";
 import { Geometry } from "geojson";
 import React, { useEffect, useState } from "react";
-import { EventData } from "mapbox-gl"
-import {
-  Layer,
-  Source,
-  useMap,
-} from "react-map-gl/maplibre";
+import { Layer, Source, useMap } from "react-map-gl/maplibre";
 
 import StationPopup from "@opentripplanner/map-popup";
 import { BaseBikeRentalIcon, StationMarker } from "./styled";
@@ -140,7 +135,7 @@ const VehicleRentalOverlay = ({
     const mouseLeaveFunc = () => {
       map.getCanvas().style.cursor = "";
     };
-    const clickFunc = (event: EventData) => {
+    const clickFunc = event => {
       const p = event.features?.[0].properties;
       setClickedVehicle({
         ...p,
