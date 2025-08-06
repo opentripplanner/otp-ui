@@ -9,8 +9,7 @@ import {
   RentalVehicle,
   VehicleRentalStation
 } from "@opentripplanner/types/otp2";
-// eslint-disable-next-line prettier/prettier
-import React, { useCallback, useEffect, useState } from "react"
+import React, { useCallback, useEffect, useState } from "react";
 import { FilterSpecification, MapLayerMouseEvent } from "maplibre-gl";
 import { Layer, Popup, Source, useMap } from "react-map-gl/maplibre";
 
