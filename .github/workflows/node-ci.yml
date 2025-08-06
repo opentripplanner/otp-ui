@@ -8,15 +8,13 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 9
-      - name: Use Node.js 21.x
+      - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:
-          node-version: 21.x
+          node-version: 22.x
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
-      - name: Install Playwright
-        run: pnpm exec playwright install --with-deps
       - name: Lint code
         run: pnpm run lint:js
       - name: Lint styles
@@ -29,20 +27,25 @@ jobs:
         run: pnpm run unit
       - name: Build Storybook
         run: pnpm run build-storybook --quiet
-      - name: Serve Storybook and run snapshot tests
-        env: 
-          ONLY_RUN: SNAPSHOTS
+      - name: Install Playwright
+        run: pnpm exec playwright install --with-deps
+      - name: Serve Storybook and run snapshot and a11y tests
+        # We have to run the snapshot and a11y tests together
+        # Because Jest will fail if there are obsolete snapshots
+        # And you would get obsolete snapshots from running the a11y tests alone
+        # env: 
+        #   ONLY_RUN: SNAPSHOTS
         run: |
           npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "npx http-server storybook-static --port 5555 --silent" \
             "npx wait-on tcp:5555 && pnpm run test-storybook --ci"
-      - name: Serve Storybook and run a11y tests
-        env: 
-          ONLY_RUN: A11Y
-        run: |
-          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npx http-server storybook-static --port 5555 --silent" \
-            "npx wait-on tcp:5555 && pnpm run test-storybook --ci"
+      # - name: Serve Storybook and run a11y tests
+      #   env: 
+      #     ONLY_RUN: A11Y
+      #   run: |
+      #     npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+      #       "npx http-server storybook-static --port 5555 --silent" \
+      #       "npx wait-on tcp:5555 && pnpm run test-storybook --ci"
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

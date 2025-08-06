@@ -15,7 +15,7 @@ import { StyledItineraryBody } from "../demos";
 import OtpRRStyledItineraryBody from "../otp-react-redux/itinerary-body";
 import { ItineraryBodyProps } from "../types";
 
-const config = require("../__mocks__/config.json");
+import config from "../__mocks__/config.json";
 
 type Props = ItineraryBodyProps & {
   hideDrivingDirections?: boolean;

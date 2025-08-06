@@ -1,14 +1,21 @@
 import { dirname, join } from "path";
-const path = require("path");
+import { mergeConfig } from "vite";
+import ViteYaml from '@modyfi/vite-plugin-yaml';
+import graphqlLoader from 'vite-plugin-graphql-loader';
+import react from '@vitejs/plugin-react';
+import path from "path";
 
-module.exports = {
+export default {
   addons: [
-    getAbsolutePath("@storybook/addon-a11y"),
-    getAbsolutePath("@storybook/addon-docs"),
-    getAbsolutePath("@storybook/addon-links"),
+    "@storybook/addon-a11y",
+    "@storybook/addon-docs",
+    "@storybook/addon-links",
     "storybook-react-intl",
-    getAbsolutePath("@storybook/addon-webpack5-compiler-babel")
   ],
+
+  core: {
+    builder: '@storybook/builder-vite',
+  },
 
   stories: [
     "../packages/*/src/**/*.story.@(js|jsx|ts|tsx)"
@@ -16,58 +23,60 @@ module.exports = {
 
   staticDirs: ['../public'],
 
-  webpackFinal: async (config, { configType }) => {
-    // This method is for altering Storybook's webpack configuration.
-    // Add support for importing image files
-    config.module.rules.push({
-      test: /\.(png|jpg|gif|svg)$/,
-      use: [
-        {
-          loader: 'file-loader',
-        },
+  async viteFinal(config, { configType }) {
+    // This method is for altering Storybook's Vite configuration.
+    return mergeConfig(config, {
+      plugins: [
+        // Configure React plugin with Babel for styled-components displayName
+        react({
+          babel: {
+            plugins: [
+              [
+                'babel-plugin-styled-components',
+                {
+                  displayName: true,
+                  fileName: true
+                }
+              ]
+            ]
+          }
+        }),
+        // Add support for importing YAML files
+        ViteYaml(),
+        // Add support for importing GraphQL files
+        graphqlLoader(),
       ],
-      include: path.resolve(__dirname, './packages/transitive-overlay/src/images'),
+      build: {
+        rollupOptions: {
+          plugins: []
+        }
+      },
+      
+      assetsInclude: [
+        // Add support for importing image files
+        '**/*.png',
+        '**/*.jpg',
+        '**/*.gif',
+        '**/*.svg'
+      ],
+
+      // Add fallback for querystring
+      define: {
+        global: 'globalThis',
+      },
+
+      resolve: {
+        alias: {
+          // Configure module resolution for workspace packages
+          '@opentripplanner': path.resolve(__dirname, '../packages'),
+          querystring: 'querystring-es3'
+        }
+      },
     });
-    // Add support for importing YAML files.
-    config.module.rules.push({
-      test: /\.(yml|yaml)$/,
-      loader: "yaml-loader"
-    });
-
-    config.module.rules.push({
-      test: /\.graphql$/,
-      exclude: /node_modules/,
-      loader: 'graphql-tag/loader',
-    });
-
-    config.module.rules.push({
-      test: /uFuzzy/,
-      loader: 'babel-loader',
-      options: {
-        presets: [
-          ['@babel/preset-env', { targets: 'defaults' }]
-        ]
-      }
-    })
-
-    // Add fallback for querystring
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      querystring: require.resolve('querystring-es3')
-    };
-
-    // Configure module resolution for workspace packages
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@opentripplanner': path.resolve(__dirname, '../packages')
-    };
-
-    // Return the altered config
-    return config;
   },
 
   framework: {
-    name: getAbsolutePath("@storybook/react-webpack5"),
+    name: "@storybook/react-vite",
     options: {}
   },
 
@@ -76,8 +85,4 @@ module.exports = {
   typescript: {
     reactDocgen: "react-docgen-typescript"
   }
-}
-
-function getAbsolutePath(value) {
-  return dirname(require.resolve(join(value, "package.json")));
 }

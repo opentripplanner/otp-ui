@@ -5,7 +5,7 @@ import {
   makeRouteComparator
 } from "../route";
 
-const { otp1Routes, otp2Routes } = require("./__mocks__/routes.json");
+import { otp1Routes, otp2Routes } from "./__mocks__/routes.json";
 
 function sortRoutes(...routes) {
   routes.sort(makeRouteComparator());

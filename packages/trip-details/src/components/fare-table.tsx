@@ -3,11 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 
-import {
-  getItineraryCost,
-  getLegCost,
-  getLegRouteName
-} from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
 import { FormattedMessage, useIntl } from "react-intl";
 import { flatten } from "flat";
 import { boldText, renderFare } from "../utils";
@@ -23,6 +19,8 @@ import { InvisibleA11yLabel } from "../styled";
 // - the yaml loader for webpack returns a nested object,
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
+
+const { getItineraryCost, getLegCost, getLegRouteName } = coreUtils.itinerary;
 
 interface FareTypeTableProps extends FareTableLayout {
   legs: Leg[];
