@@ -11,6 +11,8 @@ otpUi:
       bicycle: Vélo
       car: Voiture
       rent: Location
+      subsettingsCollapsed: " (Sous-paramètres réduits)"
+      subsettingsExpanded: " (Sous-paramètres étendus)"
       transit: Transports
       walk: Marche
     settings:

@@ -1,26 +1,40 @@
 import React, { useCallback } from "react";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
-import coreUtils from "@opentripplanner/core-utils";
 
 // eslint-disable-next-line prettier/prettier
-import type { Company, ConfiguredCompany, Location, Station, Stop, StopEventHandler } from "@opentripplanner/types";
+import type {
+  Company,
+  ConfiguredCompany,
+  Location,
+  Stop,
+  StopEventHandler,
+  TileLayerStation
+} from "@opentripplanner/types";
 
 import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import { flatten } from "flat";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Styled } from "@opentripplanner/base-map";
 
+import { Entity, getNetwork, makeDefaultGetEntityName, type StopIdAgencyMap } from "./util";
 import { ViewStopButton } from "./styled";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
-import { makeDefaultGetEntityName } from "./util";
 
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
 // - the yaml loader for webpack returns a nested object,
 // - the yaml loader for jest returns messages with flattened ids.
 export const defaultMessages: { [key: string]: string } = flatten(defaultEnglishMessages);
+
+export type Feed = {
+  feedId: string;
+  publisher: {
+    name: string;
+  };
+};
+
 
 const generateLocation = (entity: Entity, name: string) => {
   // @ts-expect-error some of these values may be null, but that's ok
@@ -33,7 +47,7 @@ const generateLocation = (entity: Entity, name: string) => {
   return { lat, lon, name };
 }
 
-const StationHubDetails = ({ station }: { station: Station }) => {
+const StationHubDetails = ({ station }: { station: TileLayerStation }) => {
   return (
     <Styled.PopupRow>
       <div>
@@ -43,7 +57,7 @@ const StationHubDetails = ({ station }: { station: Station }) => {
           }
           description="Label text for the number of bikes available"
           id="otpUi.MapPopup.availableBikes"
-          values={{ value: station.bikesAvailable }}
+          values={{ value: station.vehiclesAvailable }}
         />
       </div>
       <div>
@@ -85,37 +99,55 @@ const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => v
   )
 }
 
-type Entity = Stop | Station
 type Props = {
-  closePopup?: (arg?: any) => void
+  closePopup?: (arg?: boolean) => void
   configCompanies?: ConfiguredCompany[];
   entity: Entity
-  getEntityName?: (entity: Entity, configCompanies: Company[],) => string;
+  getEntityName?: (entity: Entity, configCompanies: Company[], feedName?: string) => string;
   getEntityPrefix?: (entity: Entity) => JSX.Element
+  feeds?: Feed[]
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
   setViewedStop?: StopEventHandler;
 };
 
-function entityIsStation(entity: Entity): entity is Station {
-  return "bikesAvailable" in entity
+function entityIsStation(entity: Entity): entity is TileLayerStation {
+  return "vehiclesAvailable" in entity
 }
 
 /**
  * Renders a map popup for a stop, scooter, or shared bike
  */
-export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEntityName, getEntityPrefix, setLocation, setViewedStop }: Props): JSX.Element {
+export function MapPopup({ 
+  closePopup = () => {}, 
+  configCompanies, 
+  entity, 
+  getEntityName, 
+  getEntityPrefix, 
+  setLocation, 
+  setViewedStop, 
+  feeds,
+}: Props): JSX.Element {
 
   const intl = useIntl()
   if (!entity) return <></>
 
   const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultMessages);
-  const name = getNameFunc(entity, configCompanies);
+  
+  // Find the feed name using the logic from generateLabel in otp.ts
+  let feedName: string | undefined;
+  if (feeds && entity.id) {
+    const feedId = entity.id.split(":")[0];
+    const feed = feeds.find(f => f.feedId === feedId);
+    feedName = feed?.publisher?.name;
+  }
+  
+  const name = getNameFunc(entity, configCompanies, feedName);
 
-  const stationNetwork = "networks" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.networks || [], configCompanies) || entity?.networks?.[0]);
+  const stationNetwork = getNetwork(entity, configCompanies);
 
   const bikesAvailablePresent = entityIsStation(entity)
-  const entityIsStationHub = bikesAvailablePresent && entity?.bikesAvailable !== undefined && !entity?.isFloatingBike;
-  const stopId = !bikesAvailablePresent && entity?.code;
+  const entityIsStationHub = bikesAvailablePresent && entity.vehiclesAvailable !== undefined && !entity.isFloatingBike;
+  const stopId = !bikesAvailablePresent && "code" in entity && entity.code;
   const id = `focus-${encodeURIComponent(entity.id).replace(/%/g, "")}-popup`
 
   return (
@@ -137,7 +169,7 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
       {setViewedStop && !bikesAvailablePresent && (
         <StopDetails
           id={stopId}
-          setViewedStop={useCallback(() => setViewedStop(entity), [entity])}
+          setViewedStop={useCallback(() => setViewedStop(entity as Stop), [entity])}
         />
       )}
 
@@ -158,3 +190,4 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
 }
 
 export default MapPopup;
+export { type StopIdAgencyMap };

@@ -1,5 +1,5 @@
 import React from "react";
-import { Marker } from "react-map-gl";
+import { Marker } from "react-map-gl/maplibre";
 import { LeafletStyleMarker, Popup } from "../src/styled";
 
 import vehicleData from "./vehicle-data/all-trimet.json";
