@@ -85,29 +85,26 @@ const VEHICLE_RENTAL_STATION = {
   id: '"hub_1580"',
   isCarStation: false,
   isFloatingBike: false,
+  lat: 45.5219604810172,
+  lon: -122.6896771788597,
   name: "SW Morrison at 18th",
   rentalNetwork: { networkId: "BIKETOWN" },
-  realTimeData: true,
-  spacesAvailable: 11,
-  lon: -122.6896771788597,
-  lat: 45.5219604810172
+  realTimeData: true
 };
 
 const FLOATING_VEHICLE = {
   "stroke-width": 1,
   allowDropoff: false,
   allowPickup: true,
-  bikesAvailable: 1,
   color: "#f00",
   id: '"bike_6861"',
   isCarStation: false,
   isFloatingBike: true,
+  lat: 45.525486666666666,
+  lon: -122.70486,
   name: "0541",
   rentalNetwork: { networkId: "BIKETOWN" },
-  realTimeData: true,
-  spacesAvailable: 0,
-  lon: -122.70486,
-  lat: 45.525486666666666
+  realTimeData: true
 };
 
 const FLOATING_CAR = {
@@ -118,12 +115,11 @@ const FLOATING_CAR = {
   id: "car_6861",
   isCarStation: false,
   isFloatingCar: true,
+  lat: 52.52,
+  lon: 13.405,
   name: "0541",
   rentalNetwork: { networkId: "MILES" },
-  realTimeData: true,
-  spacesAvailable: 0,
-  lon: 13.405,
-  lat: 52.52
+  realTimeData: true
 };
 
 const getEntityPrefixExample = (entity: Stop | VehicleRentalStation) => {

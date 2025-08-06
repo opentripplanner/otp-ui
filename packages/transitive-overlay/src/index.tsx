@@ -1,7 +1,7 @@
-import { SymbolLayout } from "mapbox-gl";
+import { FilterSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
 import React, { useEffect } from "react";
-import { Layer, MapRef, Source, useMap } from "react-map-gl";
+import { Layer, MapRef, Source, useMap } from "react-map-gl/maplibre";
 import polyline from "@mapbox/polyline";
 import {
   Leg,
@@ -92,7 +92,7 @@ const defaultTextPaintParams = {
 /**
  * Common text settings.
  */
-const commonTextLayoutParams: SymbolLayout = {
+const commonTextLayoutParams: SymbolLayerSpecification["layout"] = {
   "symbol-placement": "point",
   "text-allow-overlap": false,
   "text-field": ["get", "name"],
@@ -104,7 +104,7 @@ const commonTextLayoutParams: SymbolLayout = {
 /**
  * Text size and layout that lets maplibre relocate text space permitting.
  */
-const defaultTextLayoutParams: SymbolLayout = {
+const defaultTextLayoutParams: SymbolLayerSpecification["layout"] = {
   ...commonTextLayoutParams,
   "text-variable-anchor": [
     "left",
@@ -121,16 +121,16 @@ const defaultTextLayoutParams: SymbolLayout = {
 /**
  * Default text + bold default fonts
  */
-const defaultBoldTextLayoutParams = {
+const defaultBoldTextLayoutParams: SymbolLayerSpecification["layout"] = {
   ...commonTextLayoutParams,
   // FIXME: find a better way to set a bold font
   "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
   "text-overlap": "never"
 };
 
-const routeFilter = ["==", "type", "route"];
-const stopFilter = ["==", "type", "stop"];
-const accessLegFilter = [
+const routeFilter: FilterSpecification = ["==", "type", "route"];
+const stopFilter: FilterSpecification = ["==", "type", "stop"];
+const accessLegFilter: FilterSpecification = [
   "match",
   ["get", "type"],
   ["BICYCLE", "SCOOTER", "MICROMOBILITY", "MICROMOBILITY_RENT", "CAR"],
@@ -154,16 +154,18 @@ type MapImage = {
 
 const loadImages = (map: MapRef, images: MapImage[]) => {
   images.forEach(img => {
-    map.loadImage(img.url, (error, image) => {
-      if (error) {
-        // eslint-disable-next-line no-console
-        console.error(`Error loading image ${img.id}:`, error);
-        return;
-      }
-      if (!map.hasImage(img.id)) {
-        map.addImage(img.id, image, img.options);
-      }
-    });
+    if (!map.hasImage(img.id)) {
+      // Only load if the image hasn't already been added
+      map
+        .loadImage(img.url)
+        .then(response => {
+          map.addImage(img.id, response.data, img.options);
+        })
+        .catch(error => {
+          // eslint-disable-next-line no-console
+          console.error(`Error loading image ${img.id}:`, error);
+        });
+    }
   });
 };
 
@@ -264,7 +266,6 @@ const TransitiveCanvasOverlay = ({
     Record<string, unknown>
   > = {
     type: "FeatureCollection",
-    // @ts-expect-error TODO: fix the type above for geojson
     features: transitiveData
       ? [
           ...(transitiveData.places || []).flatMap((place: TransitivePlace) => {
@@ -279,7 +280,7 @@ const TransitiveCanvasOverlay = ({
                 type: "Point",
                 coordinates: [place.place_lon, place.place_lat]
               }
-            };
+            } as GeoJSON.Feature;
           }),
           ...(transitiveData.journeys || []).flatMap(
             (journey: TransitiveJourney) =>
@@ -309,7 +310,7 @@ const TransitiveCanvasOverlay = ({
                         mode: segment.type
                       },
                       geometry: segment.arc ? drawArc(straight) : straight
-                    };
+                    } as GeoJSON.Feature;
                   });
                 })
           ),
@@ -333,14 +334,17 @@ const TransitiveCanvasOverlay = ({
               // pStop (from pattern.stops) only has an id (and sometimes line geometry)
               transitiveData.stops.find(stop => stop.stop_id === pStop.stop_id)
             )
-            .map(stop => ({
-              type: "Feature",
-              properties: { name: stop.stop_name, type: "stop" },
-              geometry: {
-                type: "Point",
-                coordinates: [stop.stop_lon, stop.stop_lat]
-              }
-            })),
+            .map(
+              stop =>
+                ({
+                  type: "Feature",
+                  properties: { name: stop.stop_name, type: "stop" },
+                  geometry: {
+                    type: "Point",
+                    coordinates: [stop.stop_lon, stop.stop_lat]
+                  }
+                } as GeoJSON.Feature)
+            ),
           ...(
             transitiveData.patterns || []
           ).flatMap((pattern: TransitivePattern) =>

@@ -1,21 +1,27 @@
 import React, { useCallback } from "react";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
-import coreUtils from "@opentripplanner/core-utils";
 
-// eslint-disable-next-line prettier/prettier
-import type { Company, ConfiguredCompany, Location, Stop, StopEventHandler } from "@opentripplanner/types";
 import { RentalVehicle, VehicleRentalStation } from "@opentripplanner/types/otp2";
+// eslint-disable-next-line prettier/prettier
+import type {
+  Company,
+  ConfiguredCompany,
+  Location,
+  Stop,
+  StopEventHandler,
+} from "@opentripplanner/types";
 
 import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import { flatten } from "flat";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Styled } from "@opentripplanner/base-map";
+import coreUtils from "@opentripplanner/core-utils";
 
+import { makeDefaultGetEntityName, type StopIdAgencyMap } from "./util";
 import { ViewStopButton } from "./styled";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
-import { makeDefaultGetEntityName, type StopIdAgencyMap } from "./util";
 
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
@@ -31,7 +37,7 @@ export type Feed = {
 };
 
 
-const generateLocation = (entity: Entity, name: string) => {
+const generateLocation = (entity: MapPopupEntity, name: string) => {
   // @ts-expect-error some of these values may be null, but that's ok
   const { lon: entityLon, lat: entityLat, x, y } = entity
 
@@ -94,19 +100,19 @@ const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => v
   )
 }
 
-type Entity = Stop | VehicleRentalStation | RentalVehicle
+type MapPopupEntity = Stop | VehicleRentalStation | RentalVehicle
 type Props = {
-  closePopup?: (arg?: any) => void
+  closePopup?: (arg?: boolean) => void
   configCompanies?: ConfiguredCompany[];
-  entity: Entity
-  getEntityName?: (entity: Entity, configCompanies: Company[], feedName?: string) => string;
-  getEntityPrefix?: (entity: Entity) => JSX.Element
+  entity: MapPopupEntity
+  getEntityName?: (entity: MapPopupEntity, configCompanies: Company[], feedName?: string) => string;
+  getEntityPrefix?: (entity: MapPopupEntity) => JSX.Element
   feeds?: Feed[]
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
   setViewedStop?: StopEventHandler;
 };
 
-const entityIsStop = (entity: Entity): entity is Stop => "gtfsId" in entity;
+const entityIsStop = (entity: MapPopupEntity): entity is Stop => "gtfsId" in entity;
 
 /**
  * Renders a map popup for a stop, scooter, or shared bike
@@ -163,7 +169,7 @@ export function MapPopup({
       {setViewedStop && entityIsStop(entity) && (
         <StopDetails
           id={stopId}
-          setViewedStop={useCallback(() => setViewedStop(entity), [entity])}
+          setViewedStop={useCallback(() => setViewedStop(entity as Stop), [entity])}
         />
       )}
 

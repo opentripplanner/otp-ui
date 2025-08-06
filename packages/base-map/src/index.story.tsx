@@ -6,7 +6,7 @@ import {
   NavigationControl,
   ScaleControl,
   useMap
-} from "react-map-gl";
+} from "react-map-gl/maplibre";
 import { action } from "@storybook/addon-actions";
 import { ComponentStory } from "@storybook/react";
 
@@ -16,8 +16,6 @@ import ContextMenuDemo from "../__mocks__/ContextMenuDemo";
 import { withMap } from "../../../.storybook/base-map-wrapper";
 
 import BaseMap, { MarkerWithPopup, LayerWrapper, Popup, Styled } from ".";
-
-import "maplibre-gl/dist/maplibre-gl.css";
 
 const center: [number, number] = [45.522862, -122.667837];
 
@@ -50,13 +48,12 @@ const sampleMarkers = (
 const onClick = action("onClick");
 const onContextMenu = action("onContextMenu");
 const onViewportChanged = action("onViewportChanged");
-const a11yOverrideParameters = {
-  a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
-};
 
 export const clickAndViewportchangedEvents = Template.bind({});
 clickAndViewportchangedEvents.args = {
   center,
+  // Note: Although onClick and onContextMenu are correctly triggered,
+  // the parameter returned by these events contains a cyclical reference that prevents Storybook from printing them.
   onClick,
   onContextMenu,
   onViewportChanged
@@ -160,8 +157,6 @@ export const optionalLayers = {
     </Styled.StoryMapContainer>
   )
 };
-// Custom styling for this story only, not in production
-customLocationPopupContent.parameters = a11yOverrideParameters;
 
 export const onContextMenuPopup = () => <ContextMenuDemo />;
 

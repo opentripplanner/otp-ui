@@ -8,10 +8,14 @@ import {
   RentalVehicle,
   VehicleRentalStation
 } from "@opentripplanner/types/otp2";
-import { EventData } from "mapbox-gl";
-import React, { useEffect, useState } from "react";
-import { Layer, Source, useMap } from "react-map-gl";
 import { Geometry } from "geojson";
+import React, { useEffect, useState } from "react";
+import { EventData } from "mapbox-gl"
+import {
+  Layer,
+  Source,
+  useMap,
+} from "react-map-gl/maplibre";
 
 import StationPopup from "@opentripplanner/map-popup";
 import { BaseBikeRentalIcon, StationMarker } from "./styled";
