@@ -1,12 +1,13 @@
 otpUi:
   TripDetails:
-    co2: 'Co₂ உமிழும்: <strong> {co2} </strong>'
-    co2description: ஒவ்வொரு பயன்முறையின் CO₂ தீவிரத்தினால் ஒரு பயணத்தின் ஒவ்வொரு
-      காலின் தூரத்தையும் பெருக்கி CO₂ தீவிரம் கணக்கிடப்படுகிறது. ஒவ்வொரு 
-      பயன்முறையின் CO₂ தீவிரமும் <link>இந்த விரிதாள்</link>இலிருந்து 
-      பெறப்பட்டது.
-    departure: புறப்படுங்கள் <strong> {புறப்பட்ட, தேதி, நீண்ட} </strong> 
-      <strong> {புறப்பட்ட, நேரம், குறுகிய} </strong> இல்
+    co2: "Co₂ உமிழும்: <strong> {co2} </strong>"
+    co2description: >-
+      ஒவ்வொரு பயன்முறையின் CO₂ தீவிரத்தினால் ஒரு பயணத்தின் ஒவ்வொரு காலின்
+      தூரத்தையும் பெருக்கி CO₂ தீவிரம் கணக்கிடப்படுகிறது. ஒவ்வொரு பயன்முறையின்
+      CO₂ தீவிரமும் <link>இந்த விரிதாள்</link>இலிருந்து பெறப்பட்டது.
+    departure: >-
+      புறப்படுங்கள் <strong> {புறப்பட்ட, தேதி, நீண்ட} </strong> <strong>
+      {புறப்பட்ட, நேரம், குறுகிய} </strong> இல்
     hideDetail: விவரங்களை மறைக்கவும்
     legMissingFareInfo: இந்த காலுக்கு கட்டண தகவல்கள் இல்லை
     minutesActive: >-
@@ -21,9 +22,8 @@ otpUi:
       <strong> {பைக்மினூட்ச், பன்மை, ஒன்று {# நிமிடம்} பிற {# செலவிடுவீர்கள்
       நிமிடங்கள்}} </strong> பைக்கிங்.
     title: பயண விவரங்கள்
-    tncFare: '{companies} கட்டணம்: <strong> {minTNCFare} - {maxTNCFare} </strong>'
-    transferDiscountExplanation: பரிமாற்ற தள்ளுபடி {transferAmount} 
-      பயன்படுத்தப்படுகிறது
+    tncFare: "{companies} கட்டணம்: <strong> {minTNCFare} - {maxTNCFare} </strong>"
+    transferDiscountExplanation: பரிமாற்ற தள்ளுபடி {transferAmount} பயன்படுத்தப்படுகிறது
     transitFare: போக்குவரத்து கட்டணம்
     transitFareEntry: "{name}: <strong> {value} </strong>"
     tripIncludesFlex: இந்த பயணத்தில் நெகிழ்வான வழிகள் உள்ளன. {extraMessage}
