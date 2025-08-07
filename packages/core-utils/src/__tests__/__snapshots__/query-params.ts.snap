@@ -413,7 +413,7 @@ Array [
     "selector": "CHECKBOX",
   },
   Object {
-    "name": "bannedRoutes",
+    "name": "banned",
     "routingTypes": Array [
       "ITINERARY",
     ],
@@ -441,7 +441,7 @@ Array [
     ],
   },
   Object {
-    "name": "preferredRoutes",
+    "name": "preferred",
     "routingTypes": Array [
       "ITINERARY",
     ],
