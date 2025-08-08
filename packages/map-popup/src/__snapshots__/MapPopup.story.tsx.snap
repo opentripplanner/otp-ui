@@ -6,7 +6,7 @@ exports[`Map Popup FloatingCarEntity smoke-test 1`] = `
        role="presentation"
   >
     <header class="styled__PopupTitle-sc-12kjso7-3 jRNaQh">
-      MILES 0541
+      MILES Car: 0541
     </header>
     <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
       <strong>
@@ -63,7 +63,7 @@ exports[`Map Popup FloatingVehicleEntity smoke-test 1`] = `
        role="presentation"
   >
     <header class="styled__PopupTitle-sc-12kjso7-3 jRNaQh">
-      BIKETOWN 0541
+      BIKETOWN Free-floating bike: 0541
     </header>
     <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
       <strong>
