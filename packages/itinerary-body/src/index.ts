@@ -6,7 +6,7 @@ import PlaceRow from "./ItineraryBody/place-row";
 import RouteBadge from "./RouteBadge";
 import TransitLegBody from "./TransitLegBody";
 import * as Styled from "./styled";
-import { getPlaceName } from "./util";
+import { getPlaceName, parseOTP2Minute } from "./util";
 
 export default ItineraryBody;
 
@@ -19,5 +19,6 @@ export {
   RouteBadge,
   Styled,
   TransitLegBody,
-  getPlaceName
+  getPlaceName,
+  parseOTP2Minute
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentMeta } from "@storybook/react";
+import { Meta } from "@storybook/react-vite";
 import styled from "styled-components";
 import Dropdown from "../dropdown";
 import blue from "../colors/blue";
@@ -42,7 +42,7 @@ const NavItemWrapper = styled.div`
 export default {
   title: "Building-Blocks/Dropdown",
   component: Dropdown
-} as ComponentMeta<typeof Dropdown>;
+} as Meta<typeof Dropdown>;
 
 export const DropdownWithLabel = (): React.ReactElement => (
   <Dropdown

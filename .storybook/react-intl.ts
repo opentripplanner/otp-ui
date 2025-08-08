@@ -29,21 +29,22 @@ const messages = {};
 // (Message printouts would be unnecessary replicated in snapshots without that check.)
 if (typeof window !== "undefined") {
 
-  packages.forEach((pkg) => {
-    locales.forEach((locale) => {
+  packages.forEach(async (pkg) => {
+    await Promise.all(locales.map(async (locale) => {
       // Chinese-simplified is assigned a special file name by Weblate.
       const localeFile = locale === "zh" ? "zh_Hans" : locale;
       try {
+        const moduleDefault = await import(`../packages/${pkg}/i18n/${localeFile}.yml`);
         messages[locale] = {
           ...messages[locale],
-          ...flatten(require(`../packages/${pkg}/i18n/${localeFile}.yml`).default)
+          ...flatten(moduleDefault.default)
         };
       } catch (e) {
         // There is no yml files for the "unknown" locale,
         // so it should fail, and we won't display an error message in that case.
         if (locale !== "unknown") console.error(e);
       }    
-    });
+    }));
   });
 }
 

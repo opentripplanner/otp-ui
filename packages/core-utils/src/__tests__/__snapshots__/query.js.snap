@@ -1,14 +1,14 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`query getDefaultQuery should allow config overrides for default query 1`] = `
-Object {
+{
   "bikeSpeed": 3.58,
   "date": "2019-08-04",
   "departArrive": "NOW",
   "endTime": "09:00",
   "from": null,
   "ignoreRealtimeUpdates": false,
-  "intermediatePlaces": Array [],
+  "intermediatePlaces": [],
   "maxBikeDistance": 4828,
   "maxBikeTime": 20,
   "maxEScooterDistance": 4828,
@@ -30,14 +30,14 @@ Object {
 `;
 
 exports[`query getDefaultQuery should return default query 1`] = `
-Object {
+{
   "bikeSpeed": 3.58,
   "date": "2019-08-04",
   "departArrive": "NOW",
   "endTime": "09:00",
   "from": null,
   "ignoreRealtimeUpdates": false,
-  "intermediatePlaces": Array [],
+  "intermediatePlaces": [],
   "maxBikeDistance": 4828,
   "maxBikeTime": 20,
   "maxEScooterDistance": 4828,
@@ -59,7 +59,7 @@ Object {
 `;
 
 exports[`query getRoutingParams should create repaired routing params for broken flex query 1`] = `
-Object {
+{
   "arriveBy": false,
   "date": "2020-08-24",
   "fromPlace": "Steamer Lane, Santa Cruz, CA, 95060, USA::36.95471026341096,-122.0248185852425",
@@ -75,7 +75,7 @@ Object {
 `;
 
 exports[`query getRoutingParams should create repaired routing params for very broken flex query 1`] = `
-Object {
+{
   "arriveBy": false,
   "date": "2020-08-24",
   "fromPlace": "Steamer Lane, Santa Cruz, CA, 95060, USA::36.95471026341096,-122.0248185852425",
@@ -90,7 +90,7 @@ Object {
 `;
 
 exports[`query getRoutingParams should create repaired routing params for very broken flex query 2`] = `
-Object {
+{
   "arriveBy": false,
   "date": "2020-08-24",
   "fromPlace": "Steamer Lane, Santa Cruz, CA, 95060, USA::36.95471026341096,-122.0248185852425",
@@ -106,7 +106,7 @@ Object {
 `;
 
 exports[`query getRoutingParams should create routing params for car rental query 1`] = `
-Object {
+{
   "arriveBy": false,
   "companies": "FAKECOMPANY",
   "date": "2020-08-24",
@@ -125,7 +125,7 @@ Object {
 `;
 
 exports[`query getRoutingParams should create routing params for flex-only query 1`] = `
-Object {
+{
   "arriveBy": false,
   "date": "2020-08-24",
   "fromPlace": "Steamer Lane, Santa Cruz, CA, 95060, USA::36.95471026341096,-122.0248185852425",
@@ -140,12 +140,12 @@ Object {
 `;
 
 exports[`query getRoutingParams should create routing params for intermediate places query 1`] = `
-Object {
+{
   "arriveBy": false,
   "date": "2020-08-24",
   "fromPlace": "Steamer Lane, Santa Cruz, CA, 95060, USA::36.95471026341096,-122.0248185852425",
   "ignoreRealtimeUpdates": false,
-  "intermediatePlaces": Array [
+  "intermediatePlaces": [
     "Lighthouse Point Park, Santa Cruz, CA, USA::36.95145225211049,-122.02672866668283",
     "Natural Bridges State Beach, 2531 W Cliff Dr, Santa Cruz, CA, 95060, USA::36.95028619314903,-122.05711810284686",
   ],
@@ -160,7 +160,7 @@ Object {
 `;
 
 exports[`query getRoutingParams should create routing params for personal micromobility query 1`] = `
-Object {
+{
   "arriveBy": false,
   "companies": "FAKECOMPANY",
   "date": "2020-08-24",
@@ -181,7 +181,7 @@ Object {
 `;
 
 exports[`query getRoutingParams should create routing params for personal micromobility query 2`] = `
-Object {
+{
   "arriveBy": false,
   "companies": "FAKECOMPANY",
   "date": "2020-08-24",
@@ -199,7 +199,7 @@ Object {
 `;
 
 exports[`query getRoutingParams should create routing params for standard flex query 1`] = `
-Object {
+{
   "arriveBy": false,
   "date": "2020-08-24",
   "fromPlace": "Steamer Lane, Santa Cruz, CA, 95060, USA::36.95471026341096,-122.0248185852425",
@@ -215,7 +215,7 @@ Object {
 `;
 
 exports[`query getRoutingParams should create routing params for standard flex query 2`] = `
-Object {
+{
   "arriveBy": false,
   "date": "2020-08-24",
   "fromPlace": "Steamer Lane, Santa Cruz, CA, 95060, USA::36.95471026341096,-122.0248185852425",
@@ -230,7 +230,7 @@ Object {
 `;
 
 exports[`query getRoutingParams should create routing params for transit query 1`] = `
-Object {
+{
   "arriveBy": false,
   "date": "2020-08-24",
   "fromPlace": "Steamer Lane, Santa Cruz, CA, 95060, USA::36.95471026341096,-122.0248185852425",
@@ -246,7 +246,7 @@ Object {
 `;
 
 exports[`query parseLocationString should return location for valid input 1`] = `
-Object {
+{
   "lat": 33.983929829,
   "lon": -87.3892387982,
   "name": "123 Main St",
@@ -254,7 +254,7 @@ Object {
 `;
 
 exports[`query parseLocationString should return location with coordinates as name for coordinates-only input 1`] = `
-Object {
+{
   "lat": 33.983929829,
   "lon": -87.3892387982,
   "name": "33.98393, -87.38924",
@@ -264,12 +264,12 @@ Object {
 exports[`query parseLocationString should return null for null input 1`] = `null`;
 
 exports[`query planParamsToQuery should parse a depart at query 1`] = `
-Object {
+{
   "bannedRoutes": "897ABC",
   "companies": "",
   "date": "2019-10-31",
   "departArrive": "DEPART",
-  "from": Object {
+  "from": {
     "lat": 45.517373,
     "lon": -122.675601,
     "name": "Guide Dogs for the Blind, Portland, OR, USA",
@@ -280,7 +280,7 @@ Object {
   "optimize": "QUICK",
   "showIntermediateStops": "true",
   "time": "17:45",
-  "to": Object {
+  "to": {
     "lat": 45.519015,
     "lon": -122.679321,
     "name": "Weather Machine, Portland, OR, USA",
@@ -292,24 +292,24 @@ Object {
 `;
 
 exports[`query planParamsToQuery should parse a query with intermediate places 1`] = `
-Object {
+{
   "bannedRoutes": "897ABC",
   "companies": "",
   "date": "2019-10-31",
   "departArrive": "DEPART",
-  "from": Object {
+  "from": {
     "lat": 45.517373,
     "lon": -122.675601,
     "name": "Guide Dogs for the Blind, Portland, OR, USA",
   },
   "ignoreRealtimeUpdates": "true",
-  "intermediatePlaces": Array [
-    Object {
+  "intermediatePlaces": [
+    {
       "lat": 45.516202,
       "lon": -122.673247,
       "name": "Mill Ends Park, Downtown - Portland",
     },
-    Object {
+    {
       "lat": 45.519094,
       "lon": -122.705692,
       "name": "International Rose Test Garden, Portland",
@@ -320,7 +320,7 @@ Object {
   "optimize": "QUICK",
   "showIntermediateStops": "true",
   "time": "17:45",
-  "to": Object {
+  "to": {
     "lat": 45.519015,
     "lon": -122.679321,
     "name": "Weather Machine, Portland, OR, USA",

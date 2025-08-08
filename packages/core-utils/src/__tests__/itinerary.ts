@@ -14,10 +14,10 @@ import {
   mapOldElevationComponentToNew
 } from "../itinerary";
 
-const bikeRentalItinerary = require("./__mocks__/bike-rental-itinerary.json");
-const tncItinerary = require("./__mocks__/tnc-itinerary.json");
-const fareProductItinerary = require("./__mocks__/fare-products-itinerary.json");
-const flexItinerary = require("../../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
+import bikeRentalItinerary from "./__mocks__/bike-rental-itinerary.json";
+import tncItinerary from "./__mocks__/tnc-itinerary.json";
+import fareProductItinerary from "./__mocks__/fare-products-itinerary.json";
+import flexItinerary from "../../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
 
 const basePlace = {
   lat: 0,

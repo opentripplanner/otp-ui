@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { Meta } from "@storybook/react";
+import { Meta } from "@storybook/react-vite";
 import ColorPalette from "./ColorPalette";
 
 import grey from "../colors/grey";

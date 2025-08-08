@@ -113,9 +113,11 @@ export default {
   title: "Trip Form Components/Metro Mode Selector"
 };
 
-export const MetroModeSelector = Template.bind({});
-
 const a11yOverrideParameters = {
   a11y: { config: { rules: [{ id: "label", reviewOnFail: true }] } }
 };
-MetroModeSelector.parameters = a11yOverrideParameters;
+
+export const MetroModeSelector = {
+  render: Template,
+  parameters: a11yOverrideParameters
+};

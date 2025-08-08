@@ -1,7 +1,4 @@
-import {
-  getLegRouteLongName,
-  getLegRouteShortName
-} from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
 import LocationIcon from "@opentripplanner/location-icon";
 import React, { ReactElement } from "react";
 import { IntlShape, useIntl } from "react-intl";
@@ -10,6 +7,8 @@ import RouteBadge from "../RouteBadge";
 import * as S from "../styled";
 import { LineColumnContentProps } from "../types";
 import { defaultMessages } from "../util";
+
+const { getLegRouteLongName, getLegRouteShortName } = coreUtils.itinerary;
 
 /**
  * Gets the travel mode in the ambient language.

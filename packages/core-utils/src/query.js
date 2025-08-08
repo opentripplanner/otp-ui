@@ -1,5 +1,5 @@
 import { format, isMatch, parse } from "date-fns";
-import getGeocoder from "@opentripplanner/geocoder/lib";
+import getGeocoder from "@opentripplanner/geocoder";
 import qs from "qs";
 
 import { getTransitModes, hasCar, isAccessMode } from "./itinerary";

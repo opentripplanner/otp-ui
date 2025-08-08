@@ -114,7 +114,9 @@ const Template = (args: {
   />
 );
 
-export const AdvancedModeSettingsButtons = Template.bind({});
+export const AdvancedModeSettingsButtons = {
+  render: Template
+};
 
 export default {
   argTypes: {

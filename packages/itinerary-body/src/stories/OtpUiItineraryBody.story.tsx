@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React, { ReactElement } from "react";
 import { Bomb } from "@styled-icons/fa-solid/Bomb";
 import { Bolt } from "@styled-icons/fa-solid/Bolt";
@@ -14,23 +15,23 @@ import {
 import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
 
 // import mock itineraries. These are all trip plan outputs from OTP.
-const bikeOnlyItinerary = require("../__mocks__/itineraries/bike-only.json");
-const bikeRentalItinerary = require("../__mocks__/itineraries/bike-rental.json");
-const bikeRentalTransitBikeRentalItinerary = require("../__mocks__/itineraries/bike-rental-transit-bike-rental.json");
-const bikeTransitBikeItinerary = require("../__mocks__/itineraries/bike-transit-bike.json");
-const eScooterRentalItinerary = require("../__mocks__/itineraries/e-scooter-rental.json");
-const eScooterRentalTransiteScooterRentalItinerary = require("../__mocks__/itineraries/e-scooter-transit-e-scooter.json");
-const parkAndRideItinerary = require("../__mocks__/itineraries/park-and-ride.json");
-const tncTransitTncItinerary = require("../__mocks__/itineraries/tnc-transit-tnc.json");
-const walkInterlinedTransitItinerary = require("../__mocks__/itineraries/walk-interlined-transit-walk.json");
-const walkOnlyItinerary = require("../__mocks__/itineraries/walk-only.json");
-const walkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-walk.json");
-const walkTransitWalkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk.json");
-const fareProductsItinerary = require("../__mocks__/itineraries/leg-fare-products.json");
-const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json");
-const otp2ScooterItinerary = require("../__mocks__/itineraries/otp2-scooter.json");
-const flexItinerary = require("../__mocks__/itineraries/flex-itinerary.json");
-const transferLegItinerary = require("../__mocks__/itineraries/otp2-transfer-leg.json");
+import bikeOnlyItinerary from "../__mocks__/itineraries/bike-only.json";
+import bikeRentalItinerary from "../__mocks__/itineraries/bike-rental.json";
+import bikeRentalTransitBikeRentalItinerary from "../__mocks__/itineraries/bike-rental-transit-bike-rental.json";
+import bikeTransitBikeItinerary from "../__mocks__/itineraries/bike-transit-bike.json";
+import eScooterRentalItinerary from "../__mocks__/itineraries/e-scooter-rental.json";
+import eScooterRentalTransiteScooterRentalItinerary from "../__mocks__/itineraries/e-scooter-transit-e-scooter.json";
+import parkAndRideItinerary from "../__mocks__/itineraries/park-and-ride.json";
+import tncTransitTncItinerary from "../__mocks__/itineraries/tnc-transit-tnc.json";
+import walkInterlinedTransitItinerary from "../__mocks__/itineraries/walk-interlined-transit-walk.json";
+import walkOnlyItinerary from "../__mocks__/itineraries/walk-only.json";
+import walkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk-transit-walk.json";
+import fareProductsItinerary from "../__mocks__/itineraries/leg-fare-products.json";
+import walkTransitWalkTransitWalkA11yItinerary from "../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json";
+import otp2ScooterItinerary from "../__mocks__/itineraries/otp2-scooter.json";
+import flexItinerary from "../__mocks__/itineraries/flex-itinerary.json";
+import transferLegItinerary from "../__mocks__/itineraries/otp2-transfer-leg.json";
 
 const a11yOverrideParameters = {
   a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
@@ -67,14 +68,15 @@ export const WalkTransitTransferWithA11yItinerary = (): ReactElement => (
   />
 );
 
-export const StyledWalkTransitWalkItinerary = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper
-    itinerary={walkTransitWalkItinerary}
-    styledItinerary="pink-legs"
-  />
-);
-// Custom styling for this story only, not in production
-StyledWalkTransitWalkItinerary.parameters = a11yOverrideParameters;
+export const StyledWalkTransitWalkItinerary = {
+  render: (): ReactElement => (
+    <ItineraryBodyDefaultsWrapper
+      itinerary={walkTransitWalkItinerary}
+      styledItinerary="pink-legs"
+    />
+  ),
+  parameters: a11yOverrideParameters
+};
 
 export const WalkTransitWalkItineraryWithAgencyInformation = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
@@ -109,11 +111,12 @@ export const BikeTransitBikeItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={bikeTransitBikeItinerary} />
 );
 
-export const WalkInterlinedTransitItinerary = (): ReactElement => (
-  <ItineraryBodyDefaultsWrapper itinerary={walkInterlinedTransitItinerary} />
-);
-// Custom styling for this story only, not in production
-WalkInterlinedTransitItinerary.parameters = a11yOverrideParameters;
+export const WalkInterlinedTransitItinerary = {
+  render: (): ReactElement => (
+    <ItineraryBodyDefaultsWrapper itinerary={walkInterlinedTransitItinerary} />
+  ),
+  parameters: a11yOverrideParameters
+};
 
 export const WalkTransitTransferItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper

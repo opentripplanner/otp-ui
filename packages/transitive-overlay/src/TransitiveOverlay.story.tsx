@@ -1,29 +1,28 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import EndpointsOverlay from "@opentripplanner/endpoints-overlay";
 import React from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import { injectIntl } from "react-intl";
 
+// import mock itinaries. These are all trip plan outputs from OTP.
+import bikeOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json";
+import bikeRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-rental.json";
+import bikeRentalTransitBikeRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-rental-transit-bike-rental.json";
+import bikeTransitBikeItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-transit-bike.json";
+import eScooterRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/e-scooter-rental.json";
+import eScooterRentalTransiteScooterRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/e-scooter-transit-e-scooter.json";
+import parkAndRideItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/park-and-ride.json";
+import tncTransitTncItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json";
+import walkInterlinedTransitItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-interlined-transit-walk.json";
+import walkOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json";
+import walkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkItineraryNoIntermediateStops from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-no-intermediate-stops.json";
+import walkTransitWalkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
+import flexItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
+import otp2ScooterItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json";
+import otp2TransitItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-transit-leg.json";
 import { withMap } from "../../../.storybook/base-map-wrapper";
 import TransitiveOverlay, { itineraryToTransitive } from ".";
-
-// import mock itinaries. These are all trip plan outputs from OTP.
-const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
-const bikeRentalItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-rental.json");
-const bikeRentalTransitBikeRentalItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-rental-transit-bike-rental.json");
-const bikeTransitBikeItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-transit-bike.json");
-const eScooterRentalItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/e-scooter-rental.json");
-const eScooterRentalTransiteScooterRentalItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/e-scooter-transit-e-scooter.json");
-const parkAndRideItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/park-and-ride.json");
-const tncTransitTncItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json");
-const walkInterlinedTransitItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-interlined-transit-walk.json");
-const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json");
-const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
-const walkTransitWalkItineraryNoIntermediateStops = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-no-intermediate-stops.json");
-const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
-const flexItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
-const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
-const otp2TransitItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-transit-leg.json");
 
 const companies = [
   {
@@ -85,84 +84,130 @@ const Template = injectIntl(({ itinerary, intl, ...args }) => (
   </>
 ));
 
-export const WalkingItinerary = Template.bind({});
-WalkingItinerary.args = {
-  itinerary: walkOnlyItinerary
+export const WalkingItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: walkOnlyItinerary
+  }
 };
 
-export const BikeOnlyItinerary = Template.bind({});
-BikeOnlyItinerary.args = {
-  itinerary: bikeOnlyItinerary
+export const BikeOnlyItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: bikeOnlyItinerary
+  }
 };
 
-export const WalkTransitWalkItinerary = Template.bind({});
-WalkTransitWalkItinerary.args = {
-  itinerary: walkTransitWalkItinerary
+export const WalkTransitWalkItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: walkTransitWalkItinerary
+  }
 };
 
-export const WalkTransitWalkItineraryWithNoIntermediateStops = Template.bind(
-  {}
-);
-WalkTransitWalkItineraryWithNoIntermediateStops.args = {
-  itinerary: walkTransitWalkItineraryNoIntermediateStops
+export const WalkTransitWalkItineraryWithNoIntermediateStops = {
+  render: Template,
+
+  args: {
+    itinerary: walkTransitWalkItineraryNoIntermediateStops
+  }
 };
 
-export const BikeTransitBikeItinerary = Template.bind({});
-BikeTransitBikeItinerary.args = {
-  itinerary: bikeTransitBikeItinerary
+export const BikeTransitBikeItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: bikeTransitBikeItinerary
+  }
 };
 
-export const WalkInterlinedTransitItinerary = Template.bind({});
-WalkInterlinedTransitItinerary.args = {
-  itinerary: walkInterlinedTransitItinerary
+export const WalkInterlinedTransitItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: walkInterlinedTransitItinerary
+  }
 };
 
-export const WalkTransitTransferItinerary = Template.bind({});
-WalkTransitTransferItinerary.args = {
-  itinerary: walkTransitWalkTransitWalkItinerary
+export const WalkTransitTransferItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: walkTransitWalkTransitWalkItinerary
+  }
 };
 
-export const BikeRentalItinerary = Template.bind({});
-BikeRentalItinerary.args = {
-  itinerary: bikeRentalItinerary
+export const BikeRentalItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: bikeRentalItinerary
+  }
 };
 
-export const EScooterRentalItinerary = Template.bind({});
-EScooterRentalItinerary.args = {
-  itinerary: eScooterRentalItinerary
+export const EScooterRentalItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: eScooterRentalItinerary
+  }
 };
 
-export const ParkAndRideItinerary = Template.bind({});
-ParkAndRideItinerary.args = {
-  itinerary: parkAndRideItinerary
+export const ParkAndRideItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: parkAndRideItinerary
+  }
 };
 
-export const BikeRentalTransitItinerary = Template.bind({});
-BikeRentalTransitItinerary.args = {
-  itinerary: bikeRentalTransitBikeRentalItinerary
+export const BikeRentalTransitItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: bikeRentalTransitBikeRentalItinerary
+  }
 };
 
-export const EScooterRentalTransitItinerary = Template.bind({});
-EScooterRentalTransitItinerary.args = {
-  itinerary: eScooterRentalTransiteScooterRentalItinerary
+export const EScooterRentalTransitItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: eScooterRentalTransiteScooterRentalItinerary
+  }
 };
 
-export const TncTransitItinerary = Template.bind({});
-TncTransitItinerary.args = {
-  itinerary: tncTransitTncItinerary
+export const TncTransitItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: tncTransitTncItinerary
+  }
 };
 
-export const FlexItinerary = Template.bind({});
-FlexItinerary.args = {
-  itinerary: flexItinerary
+export const FlexItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: flexItinerary
+  }
 };
 
-export const OTP2ScooterItinerary = Template.bind({});
-OTP2ScooterItinerary.args = {
-  itinerary: otp2ScooterItinerary
+export const OTP2ScooterItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: otp2ScooterItinerary
+  }
 };
 
-export const OTP2TransitItinerary = Template.bind({});
-OTP2TransitItinerary.args = {
-  itinerary: otp2TransitItinerary
+export const OTP2TransitItinerary = {
+  render: Template,
+
+  args: {
+    itinerary: otp2TransitItinerary
+  }
 };

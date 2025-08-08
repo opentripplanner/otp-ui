@@ -62,91 +62,104 @@ const WithChangingRoute = () => {
   return <RouteViewerOverlay routeData={rtData} />;
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  routeData
+export const Default = {
+  render: Template,
+  args: {
+    routeData
+  }
 };
 
-export const WithPathStyling = Template.bind({});
-WithPathStyling.args = {
-  path: {
-    opacity: 0.5,
-    weight: 10
-  },
-  routeData
+export const WithPathStyling = {
+  render: Template,
+  args: {
+    path: {
+      opacity: 0.5,
+      weight: 10
+    },
+    routeData
+  }
 };
 
-export const OTP2RouteOutsideOfInitialView = Template.bind({});
-OTP2RouteOutsideOfInitialView.args = {
-  routeData: routeDataOtp2
+export const OTP2RouteOutsideOfInitialView = {
+  render: Template,
+  args: {
+    routeData: routeDataOtp2
+  }
 };
 
 export const WithChangingPath = (): JSX.Element => <WithChangingRoute />;
 
-export const FlexRoute = Template.bind({});
-FlexRoute.args = {
-  clipToPatternStops: true,
-  // Since the data is fixed, we know where the relevant flex zone is.
-  // Using the stopsOverlay is not possible as it is very complex to implement */}
-  extraLayer: (
-    <StopsOverlay
-      stops={flexRouteData.patterns[0].stops
-        .filter(stop => stop?.geometries?.geoJson?.type === "Polygon")
-        .map(stop => ({ ...stop, color: `#${flexRouteData.color}` }))}
-      symbols={[]}
-      visible
-    />
-  ),
-  routeData: flexRouteData
+export const FlexRoute = {
+  render: Template,
+  args: {
+    clipToPatternStops: true,
+    // Since the data is fixed, we know where the relevant flex zone is.
+    // Using the stopsOverlay is not possible as it is very complex to implement */}
+    extraLayer: (
+      <StopsOverlay
+        stops={flexRouteData.patterns[0].stops
+          .filter(stop => stop?.geometries?.geoJson?.type === "Polygon")
+          .map(stop => ({ ...stop, color: `#${flexRouteData.color}` }))}
+        symbols={[]}
+        visible
+      />
+    ),
+    routeData: flexRouteData
+  },
+  argTypes: {
+    clipToPatternStops: { control: "boolean" }
+  },
+  decorators: [withMap(POWDER_SPRINGS, zoom)]
 };
 
-FlexRoute.argTypes = {
-  clipToPatternStops: { control: "boolean" }
-};
-FlexRoute.decorators = [withMap(POWDER_SPRINGS, zoom)];
+export const FlexRoute2 = {
+  render: Template,
+  args: {
+    clipToPatternStops: true,
+    // Since the data is fixed, we know where the relevant flex zone is.
+    // Using the stopsOverlay is not possible as it is very complex to implement */}
+    extraLayer: (
+      <StopsOverlay
+        stops={Object.values(flexRouteData2.patterns)[0]
+          .stops.filter(stop => stop?.geometries?.geoJson?.type === "Polygon")
+          .map(stop => ({ ...stop, color: `#${flexRouteData2.color}` }))}
+        symbols={[]}
+        visible
+      />
+    ),
+    routeData: flexRouteData2
+  },
 
-export const FlexRoute2 = Template.bind({});
-FlexRoute2.args = {
-  clipToPatternStops: true,
-  // Since the data is fixed, we know where the relevant flex zone is.
-  // Using the stopsOverlay is not possible as it is very complex to implement */}
-  extraLayer: (
-    <StopsOverlay
-      stops={Object.values(flexRouteData2.patterns)[0]
-        .stops.filter(stop => stop?.geometries?.geoJson?.type === "Polygon")
-        .map(stop => ({ ...stop, color: `#${flexRouteData2.color}` }))}
-      symbols={[]}
-      visible
-    />
-  ),
-  routeData: flexRouteData2
-};
-
-FlexRoute2.argTypes = {
-  clipToPatternStops: { control: "boolean" }
-};
-FlexRoute2.decorators = [withMap(POWDER_SPRINGS, zoom)];
-
-export const FlexRoute3 = Template.bind({});
-FlexRoute3.args = {
-  extraLayer: (
-    <StopsOverlay
-      // Tests stop area with GeometryCollection
-      stops={Object.values(flexRouteData3.patterns)[2]
-        .stops.filter(
-          stop =>
-            stop?.geometries?.geoJson?.type === "Polygon" ||
-            stop?.geometries?.geoJson?.type === "GeometryCollection"
-        )
-        .map(stop => ({ ...stop, color: `#333` }))}
-      symbols={[]}
-      visible
-    />
-  ),
-  routeData: flexRouteData3
+  argTypes: {
+    clipToPatternStops: { control: "boolean" }
+  },
+  decorators: [withMap(POWDER_SPRINGS, zoom)]
 };
 
-export const FlexMultiPolygonRoute = Template.bind({});
-FlexMultiPolygonRoute.args = {
-  routeData: flexRouteData4
+export const FlexRoute3 = {
+  render: Template,
+  args: {
+    extraLayer: (
+      <StopsOverlay
+        // Tests stop area with GeometryCollection
+        stops={Object.values(flexRouteData3.patterns)[2]
+          .stops.filter(
+            stop =>
+              stop?.geometries?.geoJson?.type === "Polygon" ||
+              stop?.geometries?.geoJson?.type === "GeometryCollection"
+          )
+          .map(stop => ({ ...stop, color: `#333` }))}
+        symbols={[]}
+        visible
+      />
+    ),
+    routeData: flexRouteData3
+  }
+};
+
+export const FlexMultiPolygonRoute = {
+  render: Template,
+  args: {
+    routeData: flexRouteData4
+  }
 };
