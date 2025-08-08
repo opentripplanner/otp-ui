@@ -2,12 +2,15 @@ import EntityPopup, { Feed } from "@opentripplanner/map-popup";
 import {
   ConfiguredCompany,
   MapLocationActionArg,
-  Station,
   Stop,
   StopEventHandler
 } from "@opentripplanner/types";
-import { FilterSpecification, MapLayerMouseEvent } from "maplibre-gl";
+import {
+  RentalVehicle,
+  VehicleRentalStation
+} from "@opentripplanner/types/otp2";
 import React, { useCallback, useEffect, useState } from "react";
+import { FilterSpecification, MapLayerMouseEvent } from "maplibre-gl";
 import { Layer, Popup, Source, useMap } from "react-map-gl/maplibre";
 
 import { generateLayerPaint, ROUTE_COLOR_EXPRESSION } from "./util";
@@ -42,7 +45,9 @@ const OTP2TileLayerWithPopup = ({
    * display the name of the stop in the popup.
    */
   feeds?: Feed[];
-  getEntityPrefix?: (entity: Stop | Station) => JSX.Element;
+  getEntityPrefix?: (
+    entity: Stop | VehicleRentalStation | RentalVehicle
+  ) => JSX.Element;
   id: string;
   name?: string;
   /**
@@ -303,7 +308,7 @@ const generateOTP2TileLayers = (
   setViewedStop?: (stop: Stop) => void,
   stopsWhitelist?: string[],
   configCompanies?: ConfiguredCompany[],
-  getEntityPrefix?: (entity: Stop | Station) => JSX.Element,
+  getEntityPrefix?: (entity: Stop | VehicleRentalStation) => JSX.Element,
   feeds?: Feed[]
 ): JSX.Element[] => {
   const fakeOtpUiLayerIndex = layers.findIndex(

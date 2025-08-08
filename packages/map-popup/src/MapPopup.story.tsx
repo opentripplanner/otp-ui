@@ -1,7 +1,8 @@
 import React from "react";
 import { action } from "@storybook/addon-actions";
 import styled from "styled-components";
-import { Station, Stop } from "@opentripplanner/types";
+import { Stop } from "@opentripplanner/types";
+import { VehicleRentalStation } from "@opentripplanner/types/otp2";
 import { IntlProvider } from "react-intl";
 import { Meta } from "@storybook/react";
 import MapPopupContents, { Feed } from "./index";
@@ -68,10 +69,18 @@ const SAMPLE_FEEDS: Feed[] = [
   }
 ];
 
-const STATION = {
+const VEHICLE_RENTAL_STATION = {
   "stroke-width": 2,
   allowDropoff: true,
   allowPickup: true,
+  availableVehicles: {
+    total: 6,
+    byType: [{ count: 6, vehicleType: { formFactor: "BICYCLE" } }]
+  },
+  availableSpaces: {
+    total: 11,
+    byType: [{ count: 12, vehicleType: { formFactor: "BICYCLE" } }]
+  },
   color: "#f00",
   id: '"hub_1580"',
   isCarStation: false,
@@ -79,10 +88,8 @@ const STATION = {
   lat: 45.5219604810172,
   lon: -122.6896771788597,
   name: "SW Morrison at 18th",
-  network: "BIKETOWN",
-  realTimeData: true,
-  spacesAvailable: 11,
-  vehiclesAvailable: 6
+  rentalNetwork: { networkId: "BIKETOWN" },
+  realTimeData: true
 };
 
 const FLOATING_VEHICLE = {
@@ -91,15 +98,12 @@ const FLOATING_VEHICLE = {
   allowPickup: true,
   color: "#f00",
   id: '"bike_6861"',
-  isCarStation: false,
-  isFloatingBike: true,
+  vehicleType: { formFactor: "BICYCLE" },
   lat: 45.525486666666666,
   lon: -122.70486,
   name: "0541",
-  network: "BIKETOWN",
-  realTimeData: true,
-  spacesAvailable: 0,
-  vehiclesAvailable: 1
+  rentalNetwork: { networkId: "BIKETOWN" },
+  realTimeData: true
 };
 
 const FLOATING_CAR = {
@@ -108,17 +112,15 @@ const FLOATING_CAR = {
   allowPickup: true,
   color: "#333",
   id: "car_6861",
-  isCarStation: false,
-  isFloatingCar: true,
+  vehicleType: { formFactor: "CAR" },
   lat: 52.52,
   lon: 13.405,
   name: "0541",
-  network: "MILES", // https://miles-mobility.com
-  realTimeData: true,
-  spacesAvailable: 0
+  rentalNetwork: { networkId: "MILES" },
+  realTimeData: true
 };
 
-const getEntityPrefixExample = (entity: Stop | Station) => {
+const getEntityPrefixExample = (entity: Stop | VehicleRentalStation) => {
   const DemoIcon = styled.span`
     background-color: blue;
     border-radius: 50px;
@@ -171,7 +173,7 @@ export const StopEntityNoStopCode = (): JSX.Element => (
 
 export const StationEntity = (): JSX.Element => (
   <MapPopupContents
-    entity={STATION}
+    entity={VEHICLE_RENTAL_STATION}
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
   />
