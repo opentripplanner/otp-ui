@@ -1,12 +1,5 @@
 otpUi:
   TripDetails:
-    FareTable:
-      cash: 현금
-      electronic: 전자
-      regular: 성인
-      senior: 경로
-      special: 특별
-      youth: 청소년
     co2: "CO₂ 배출: <strong>{co2}</strong>"
     co2description: >-
       CO₂ 강도는 각 모드의 CO₂ 강도를 트립에서 각 다리가 걸은 거리를 곱하여 계산됩니다. 각 모드의 CO₂ 강도는 <link>이
@@ -15,9 +8,11 @@ otpUi:
       <strong>{departureDate, time, short}</strong>에 <strong>{departureDate,
       date, long}</strong> 출발
     hideDetail: 세부정보 숨기기
+    legMissingFareInfo: 이 구간에 대한 요금 정보 없음
     minutesActive: >-
       소요 시간 사용 중: <strong>{approximatePrefix, select, true {약 } other
       {}}{minutes} 분</strong>
+    missingFareTotal: 사용할 수 있는 요금 총액 없음
     showDetail: 세부정보 표시
     timeActiveDescription: >
       이 이동편을 이용하면, 도보로 <strong>{walkMinutes} 분</strong> 및 자전거로
@@ -28,5 +23,3 @@ otpUi:
     transitFare: 대중 교통 운임
     transitFareEntry: "{name} : <strong>{value}</strong>"
     tripIncludesFlex: 이 트립에는 가변 경로가 포함되어 있습니다. {extraMessage}
-    missingFareTotal: 사용할 수 있는 요금 총액 없음
-    legMissingFareInfo: 이 구간에 대한 요금 정보 없음

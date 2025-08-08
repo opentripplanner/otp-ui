@@ -2,9 +2,9 @@ import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import { flatten } from "flat";
 import * as S from "./styled";
-import FareLegTable from "./components/fare-table";
 import { TripDetailsProps } from "./types";
 import FlexBookingInfo from "./components/flex-booking-info";
+import FaresV2Table from "./components/fares-v2-table";
 import Emissions from "./components/emissions";
 import Fares from "./components/fares";
 import TimeActive, { DefaultTimeActiveDetails } from "./components/time-active";
@@ -29,9 +29,9 @@ function cn(className: string, arg1: string): string {
 export function TripDetails({
   className = "",
   co2Config,
+  defaultFareType,
   DepartureDetails = null,
   FareDetails = null,
-  fareConfig,
   itinerary,
   showApproximateMinutesActive,
   TimeActiveDetails = DefaultTimeActiveDetails
@@ -54,8 +54,8 @@ export function TripDetails({
         />
         <Fares
           itinerary={itinerary}
-          fareConfig={fareConfig}
           FareDetails={FareDetails}
+          defaultFareType={defaultFareType}
         />
         <TimeActive
           itinerary={itinerary}
@@ -72,4 +72,4 @@ export function TripDetails({
 export default TripDetails;
 
 // Rename styled components for export.
-export { S as Styled, FareLegTable };
+export { S as Styled, FaresV2Table };

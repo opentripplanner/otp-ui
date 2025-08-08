@@ -1,18 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-17 bkRgZI trip-details">
   <h2 id="trip-details-header"
-      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
+      class="styled__TripDetailsHeader-sc-6q2ok2-19 fxsUFT"
   >
     Trip Details
   </h2>
-  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-18 ljKmZo">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU departure-date"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -29,8 +29,8 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__Timing-sc-6q2ok2-10 QXYlJ">
           Depart
           <strong>
             December 13, 2019
@@ -48,10 +48,10 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -73,10 +73,10 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU time-active"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -93,7 +93,7 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
         Time Spent Active:
         <strong>
           ~1 minute
@@ -103,7 +103,7 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -128,10 +128,10 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -162,10 +162,10 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU emissions"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -182,8 +182,8 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__CO2Summary-sc-6q2ok2-4 ctvvFS">
           CO₂ Emitted:
           <strong>
             1g
@@ -194,7 +194,7 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -219,10 +219,10 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -256,18 +256,18 @@ exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-17 bkRgZI trip-details">
   <h2 id="trip-details-header"
-      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
+      class="styled__TripDetailsHeader-sc-6q2ok2-19 fxsUFT"
   >
     Trip Details
   </h2>
-  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-18 ljKmZo">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU departure-date"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -284,8 +284,8 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__Timing-sc-6q2ok2-10 QXYlJ">
           Depart
           <strong>
             November 13, 2019
@@ -303,10 +303,10 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -328,10 +328,10 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU time-active"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -348,7 +348,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
         Time Spent Active:
         <strong>
           7 minutes
@@ -358,7 +358,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -383,10 +383,10 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -417,10 +417,10 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU emissions"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -437,8 +437,8 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__CO2Summary-sc-6q2ok2-4 ctvvFS">
           CO₂ Emitted:
           <strong>
             19g
@@ -449,7 +449,7 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -474,10 +474,10 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -510,346 +510,1173 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
 </div>
 `;
 
-exports[`TripDetails FareLegTableStoryLegProducts smoke-test 1`] = `
-<div>
-  <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
-    <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
-      <th class="main"
-          scope="col"
+exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
+<h5>
+  Corrupt Data
+</h5>
+<table class="fares-v2-table__StripedTable-sc-h3t2h2-1 fXiYxU">
+  <caption class="styled__InvisibleA11yCaption-sc-6q2ok2-1 fNsmNb">
+    Transit fares for this itinerary
+  </caption>
+  <tr>
+    <th style="text-align: left;">
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        Transit Fare
+      </span>
+    </th>
+    <th>
+      21
+    </th>
+    <th>
+      E
+    </th>
+    <th>
+      FF1
+    </th>
+    <th>
+      92
+    </th>
+    <th style="text-align: right;">
+      <em>
+        Total
+      </em>
+    </th>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Cash Fare
+    </th>
+    <td style="text-align: right;">
+      $2.75
+    </td>
+    <td style="text-align: right;">
+      $2.75
+    </td>
+    <td style="text-align: center;">
+      -
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        No fare information for this leg
+      </span>
+    </td>
+    <td style="text-align: right;">
+      $2.75
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $8.25
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      MyRide App Fare
+    </th>
+    <td style="text-align: right;">
+      $2.75
+    </td>
+    <td style="text-align: right;">
+      $2.75
+    </td>
+    <td style="text-align: center;">
+      -
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        No fare information for this leg
+      </span>
+    </td>
+    <td style="text-align: right;">
+      $2.75
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $8.25
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      MyRide Card Fare
+    </th>
+    <td style="text-align: right;">
+      $2.75
+    </td>
+    <td style="text-align: right;">
+      $2.75
+    </td>
+    <td style="text-align: center;">
+      -
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        No fare information for this leg
+      </span>
+    </td>
+    <td style="text-align: right;">
+      $2.75
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $8.25
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Paper Ticket Fare
+    </th>
+    <td style="text-align: right;">
+      $2.75
+    </td>
+    <td style="text-align: right;">
+      $2.75
+    </td>
+    <td style="text-align: center;">
+      -
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        No fare information for this leg
+      </span>
+    </td>
+    <td style="text-align: right;">
+      $2.75
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $8.25
+      </em>
+    </td>
+  </tr>
+</table>
+<h5>
+  Paid Transfer
+</h5>
+<table class="fares-v2-table__StripedTable-sc-h3t2h2-1 fXiYxU">
+  <caption class="styled__InvisibleA11yCaption-sc-6q2ok2-1 fNsmNb">
+    Transit fares for this itinerary
+  </caption>
+  <tr>
+    <th style="text-align: left;">
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        Transit Fare
+      </span>
+    </th>
+    <th>
+      A
+    </th>
+    <th>
+      MAX Red Line
+    </th>
+    <th style="text-align: right;">
+      <em>
+        Total
+      </em>
+    </th>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Open Payment Adult
+    </th>
+    <td style="text-align: right;">
+      $2.00
+    </td>
+    <td title="Transfer discount of $2.00 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
       >
-        <strong>
-          Adult
-        </strong>
-      </th>
-      <th scope="col">
-        <strong>
-          Cash
-        </strong>
-        <br>
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.80
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $2.80
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Open Payment Honored Citizen
+    </th>
+    <td style="text-align: right;">
+      $1.00
+    </td>
+    <td title="Transfer discount of $1.00 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.40
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Open Payment Youth
+    </th>
+    <td style="text-align: right;">
+      $1.00
+    </td>
+    <td title="Transfer discount of $1.00 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.40
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Cash Adult
+    </th>
+    <td style="text-align: right;">
+      $2.00
+    </td>
+    <td title="Transfer discount of $2.00 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.80
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $2.80
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Cash Honored Citizen
+    </th>
+    <td style="text-align: right;">
+      $1.00
+    </td>
+    <td title="Transfer discount of $1.00 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.40
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Cash Youth
+    </th>
+    <td style="text-align: right;">
+      $1.00
+    </td>
+    <td title="Transfer discount of $1.00 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.40
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      HOP Fastpass Adult
+    </th>
+    <td style="text-align: right;">
+      $2.00
+    </td>
+    <td title="Transfer discount of $2.00 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.80
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $2.80
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      HOP Fastpass Honored Citizen
+    </th>
+    <td style="text-align: right;">
+      $1.00
+    </td>
+    <td title="Transfer discount of $1.00 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.40
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      HOP Fastpass Youth
+    </th>
+    <td style="text-align: right;">
+      $1.00
+    </td>
+    <td title="Transfer discount of $1.00 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.40
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Virtual HOP Fastpass Adult
+    </th>
+    <td style="text-align: right;">
+      $2.00
+    </td>
+    <td title="Transfer discount of $2.00 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.80
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $2.80
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Virtual HOP Fastpass Honored Citizen
+    </th>
+    <td style="text-align: right;">
+      $1.00
+    </td>
+    <td title="Transfer discount of $1.00 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.40
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Virtual HOP Fastpass Youth
+    </th>
+    <td style="text-align: right;">
+      $1.00
+    </td>
+    <td title="Transfer discount of $1.00 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.40
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+</table>
+<h5>
+  Free Transfer
+</h5>
+<table class="fares-v2-table__StripedTable-sc-h3t2h2-1 fXiYxU">
+  <caption class="styled__InvisibleA11yCaption-sc-6q2ok2-1 fNsmNb">
+    Transit fares for this itinerary
+  </caption>
+  <tr>
+    <th style="text-align: left;">
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        Transit Fare
+      </span>
+    </th>
+    <th>
+      MAX Yellow Line
+    </th>
+    <th>
+      MAX Blue Line
+    </th>
+    <th style="text-align: right;">
+      <em>
+        Total
+      </em>
+    </th>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Cash Adult
+    </th>
+    <td style="text-align: right;">
+      $2.80
+    </td>
+    <td title="Transfer discount of $2.80 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $2.80
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Cash Honored Citizen
+    </th>
+    <td style="text-align: right;">
+      $1.40
+    </td>
+    <td title="Transfer discount of $1.40 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Cash Youth
+    </th>
+    <td style="text-align: right;">
+      $1.40
+    </td>
+    <td title="Transfer discount of $1.40 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      HOP Fastpass Adult
+    </th>
+    <td style="text-align: right;">
+      $2.80
+    </td>
+    <td title="Transfer discount of $2.80 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $2.80
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      HOP Fastpass Honored Citizen
+    </th>
+    <td style="text-align: right;">
+      $1.40
+    </td>
+    <td title="Transfer discount of $1.40 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      HOP Fastpass Youth
+    </th>
+    <td style="text-align: right;">
+      $1.40
+    </td>
+    <td title="Transfer discount of $1.40 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Open Payment Adult
+    </th>
+    <td style="text-align: right;">
+      $2.80
+    </td>
+    <td title="Transfer discount of $2.80 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $2.80
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Open Payment Honored Citizen
+    </th>
+    <td style="text-align: right;">
+      $1.40
+    </td>
+    <td title="Transfer discount of $1.40 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Open Payment Youth
+    </th>
+    <td style="text-align: right;">
+      $1.40
+    </td>
+    <td title="Transfer discount of $1.40 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Virtual HOP Fastpass Adult
+    </th>
+    <td style="text-align: right;">
+      $2.80
+    </td>
+    <td title="Transfer discount of $2.80 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $2.80
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Virtual HOP Fastpass Honored Citizen
+    </th>
+    <td style="text-align: right;">
+      $1.40
+    </td>
+    <td title="Transfer discount of $1.40 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      Virtual HOP Fastpass Youth
+    </th>
+    <td style="text-align: right;">
+      $1.40
+    </td>
+    <td title="Transfer discount of $1.40 is applied"
+        style="text-align: right;"
+    >
+      <svg viewbox="0 0 24 24"
+           height="16"
+           width="16"
+           aria-hidden="true"
+           focusable="false"
+           fill="currentColor"
+           xmlns="http://www.w3.org/2000/svg"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+      >
+        <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+        </path>
+      </svg>
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.40
+      </em>
+    </td>
+  </tr>
+</table>
+<h5>
+  Custom Fare Class Data
+</h5>
+<table class="fares-v2-table__StripedTable-sc-h3t2h2-1 fXiYxU">
+  <caption class="styled__InvisibleA11yCaption-sc-6q2ok2-1 fNsmNb">
+    Transit fares for this itinerary
+  </caption>
+  <tr>
+    <th style="text-align: left;">
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        Transit Fare
+      </span>
+    </th>
+    <th>
+      90X
+    </th>
+    <th>
+      512
+    </th>
+    <th>
+      535
+    </th>
+    <th>
+      372
+    </th>
+    <th style="text-align: right;">
+      <em>
+        Total
+      </em>
+    </th>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      cash regular
+    </th>
+    <td style="text-align: right;">
+      $1.00
+    </td>
+    <td style="text-align: right;">
+      $3.25
+    </td>
+    <td style="text-align: right;">
+      $3.25
+    </td>
+    <td style="text-align: right;">
+      $2.75
+    </td>
+    <td style="text-align: right;">
+      <em>
         $10.25
-      </th>
-      <th scope="col">
-        <strong>
-          Electronic
-        </strong>
-        <br>
-        -
-        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-          No fare total available
-        </span>
-      </th>
-      <th scope="col">
-        <strong>
-          Special
-        </strong>
-        <br>
-        -
-        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-          No fare total available
-        </span>
-      </th>
-    </thead>
-    <tr>
-      <td class="no-zebra">
-        90X
-      </td>
-      <td>
-        $1.00
-      </td>
-      <td>
-        -
-        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-          No fare information for this leg
-        </span>
-      </td>
-      <td>
-        -
-        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-          No fare information for this leg
-        </span>
-      </td>
-    </tr>
-    <tr>
-      <td class="no-zebra">
-        512
-      </td>
-      <td>
-        $3.25
-      </td>
-      <td>
-        $3.25
-      </td>
-      <td>
-        $1.00
-      </td>
-    </tr>
-    <tr>
-      <td class="no-zebra">
-        535
-      </td>
-      <td>
-        $3.25
-      </td>
-      <td title="Transfer discount of $3.25 is applied">
-        <svg viewbox="0 0 24 24"
-             height="16"
-             width="16"
-             aria-hidden="true"
-             focusable="false"
-             fill="currentColor"
-             xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
-        >
-          <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
-          </path>
-        </svg>
-        $0.00
-      </td>
-      <td title="Transfer discount of $1.00 is applied">
-        <svg viewbox="0 0 24 24"
-             height="16"
-             width="16"
-             aria-hidden="true"
-             focusable="false"
-             fill="currentColor"
-             xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
-        >
-          <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
-          </path>
-        </svg>
-        $0.00
-      </td>
-    </tr>
-    <tr>
-      <td class="no-zebra">
-        372
-      </td>
-      <td>
-        $2.75
-      </td>
-      <td title="Transfer discount of $3.25 is applied">
-        <svg viewbox="0 0 24 24"
-             height="16"
-             width="16"
-             aria-hidden="true"
-             focusable="false"
-             fill="currentColor"
-             xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
-        >
-          <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
-          </path>
-        </svg>
-        $0.00
-      </td>
-      <td title="Transfer discount of $1.00 is applied">
-        <svg viewbox="0 0 24 24"
-             height="16"
-             width="16"
-             aria-hidden="true"
-             focusable="false"
-             fill="currentColor"
-             xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
-        >
-          <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
-          </path>
-        </svg>
-        $0.00
-      </td>
-    </tr>
-  </table>
-  <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
-    <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
-      <th class="main"
-          scope="col"
-      >
-        <strong>
-          Youth
-        </strong>
-      </th>
-      <th scope="col">
-        <strong>
-          Cash
-        </strong>
-        <br>
-        $0.00
-      </th>
-      <th scope="col">
-        <strong>
-          Electronic
-        </strong>
-        <br>
-        -
-        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-          No fare total available
-        </span>
-      </th>
-    </thead>
-    <tr>
-      <td class="no-zebra">
-        90X
-      </td>
-      <td>
-        $0.00
-      </td>
-      <td>
-        -
-        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-          No fare information for this leg
-        </span>
-      </td>
-    </tr>
-    <tr>
-      <td class="no-zebra">
-        512
-      </td>
-      <td>
-        $0.00
-      </td>
-      <td>
-        $0.00
-      </td>
-    </tr>
-    <tr>
-      <td class="no-zebra">
-        535
-      </td>
-      <td>
-        $0.00
-      </td>
-      <td>
-        $0.00
-      </td>
-    </tr>
-    <tr>
-      <td class="no-zebra">
-        372
-      </td>
-      <td>
-        $0.00
-      </td>
-      <td>
-        $0.00
-      </td>
-    </tr>
-  </table>
-  <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
-    <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
-      <th class="main"
-          scope="col"
-      >
-        <strong>
-          Senior
-        </strong>
-      </th>
-      <th scope="col">
-        <strong>
-          Cash
-        </strong>
-        <br>
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      cash senior
+    </th>
+    <td style="text-align: right;">
+      $0.50
+    </td>
+    <td style="text-align: right;">
+      $3.25
+    </td>
+    <td style="text-align: right;">
+      $3.25
+    </td>
+    <td style="text-align: right;">
+      $2.75
+    </td>
+    <td style="text-align: right;">
+      <em>
         $9.75
-      </th>
-      <th scope="col">
-        <strong>
-          Electronic
-        </strong>
-        <br>
-        -
-        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-          No fare total available
-        </span>
-      </th>
-    </thead>
-    <tr>
-      <td class="no-zebra">
-        90X
-      </td>
-      <td>
-        $0.50
-      </td>
-      <td>
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      cash special
+    </th>
+    <td style="text-align: center;">
+      -
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        No fare information for this leg
+      </span>
+    </td>
+    <td style="text-align: center;">
+      -
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        No fare information for this leg
+      </span>
+    </td>
+    <td style="text-align: center;">
+      -
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        No fare information for this leg
+      </span>
+    </td>
+    <td style="text-align: center;">
+      -
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        No fare information for this leg
+      </span>
+    </td>
+    <td title="No fare total available"
+        style="text-align: center;"
+    >
+      <em>
         -
         <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
           No fare information for this leg
         </span>
-      </td>
-    </tr>
-    <tr>
-      <td class="no-zebra">
-        512
-      </td>
-      <td>
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      cash youth
+    </th>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td title="No fare total available"
+        style="text-align: center;"
+    >
+      <em>
+        -
+        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+          No fare information for this leg
+        </span>
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      electronic regular
+    </th>
+    <td style="text-align: center;">
+      -
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        No fare information for this leg
+      </span>
+    </td>
+    <td style="text-align: right;">
+      $3.25
+    </td>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      <em>
         $3.25
-      </td>
-      <td>
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      electronic senior
+    </th>
+    <td style="text-align: center;">
+      -
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        No fare information for this leg
+      </span>
+    </td>
+    <td style="text-align: right;">
+      $1.00
+    </td>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      <em>
         $1.00
-      </td>
-    </tr>
-    <tr>
-      <td class="no-zebra">
-        535
-      </td>
-      <td>
-        $3.25
-      </td>
-      <td title="Transfer discount of $1.00 is applied">
-        <svg viewbox="0 0 24 24"
-             height="16"
-             width="16"
-             aria-hidden="true"
-             focusable="false"
-             fill="currentColor"
-             xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
-        >
-          <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
-          </path>
-        </svg>
-        $0.00
-      </td>
-    </tr>
-    <tr>
-      <td class="no-zebra">
-        372
-      </td>
-      <td>
-        $2.75
-      </td>
-      <td title="Transfer discount of $1.00 is applied">
-        <svg viewbox="0 0 24 24"
-             height="16"
-             width="16"
-             aria-hidden="true"
-             focusable="false"
-             fill="currentColor"
-             xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
-        >
-          <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
-          </path>
-        </svg>
-        $0.00
-      </td>
-    </tr>
-  </table>
-</div>
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      electronic special
+    </th>
+    <td style="text-align: center;">
+      -
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        No fare information for this leg
+      </span>
+    </td>
+    <td style="text-align: right;">
+      $1.00
+    </td>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      <em>
+        $1.00
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th style="text-align: left;">
+      electronic youth
+    </th>
+    <td style="text-align: center;">
+      -
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        No fare information for this leg
+      </span>
+    </td>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td title="No fare total available"
+        style="text-align: center;"
+    >
+      <em>
+        -
+        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+          No fare information for this leg
+        </span>
+      </em>
+    </td>
+  </tr>
+</table>
 `;
 
 exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-17 bkRgZI trip-details">
   <h2 id="trip-details-header"
-      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
+      class="styled__TripDetailsHeader-sc-6q2ok2-19 fxsUFT"
   >
     Trip Details
   </h2>
-  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-18 ljKmZo">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU departure-date"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -866,8 +1693,8 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__Timing-sc-6q2ok2-10 QXYlJ">
           Depart
           <strong>
             December 28, 2023
@@ -885,10 +1712,10 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -910,10 +1737,10 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH fares"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU fares"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 576 512"
              height="17"
@@ -930,339 +1757,259 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__Fare-sc-6q2ok2-5 ifUIDh">
-          <details class="styled__TransitFare-sc-6q2ok2-10 caWmNS">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__Fare-sc-6q2ok2-6 cBxUgq">
+          <details class="styled__TransitFare-sc-6q2ok2-11 XDyWz">
             <summary style="display: list-item;">
               Transit Fare:
               <strong>
-                $10.25
+                $3.25
               </strong>
             </summary>
-            <div>
-              <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
-                <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
-                  <th class="main"
-                      scope="col"
-                  >
-                    <strong>
-                      Adult
-                    </strong>
-                  </th>
-                  <th scope="col">
-                    <strong>
-                      Cash
-                    </strong>
-                    <br>
+            <table class="fares-v2-table__StripedTable-sc-h3t2h2-1 fXiYxU">
+              <caption class="styled__InvisibleA11yCaption-sc-6q2ok2-1 fNsmNb">
+                Transit fares for this itinerary
+              </caption>
+              <tr>
+                <th style="text-align: left;">
+                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                    Transit Fare
+                  </span>
+                </th>
+                <th>
+                  90X
+                </th>
+                <th>
+                  512
+                </th>
+                <th>
+                  535
+                </th>
+                <th>
+                  372
+                </th>
+                <th style="text-align: right;">
+                  <em>
+                    Total
+                  </em>
+                </th>
+              </tr>
+              <tr>
+                <th style="text-align: left;">
+                  electronic regular
+                </th>
+                <td style="text-align: center;">
+                  -
+                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                    No fare information for this leg
+                  </span>
+                </td>
+                <td style="text-align: right;">
+                  $3.25
+                </td>
+                <td style="text-align: right;">
+                  $0.00
+                </td>
+                <td style="text-align: right;">
+                  $0.00
+                </td>
+                <td style="text-align: right;">
+                  <em>
+                    $3.25
+                  </em>
+                </td>
+              </tr>
+              <tr>
+                <th style="text-align: left;">
+                  electronic senior
+                </th>
+                <td style="text-align: center;">
+                  -
+                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                    No fare information for this leg
+                  </span>
+                </td>
+                <td style="text-align: right;">
+                  $1.00
+                </td>
+                <td style="text-align: right;">
+                  $0.00
+                </td>
+                <td style="text-align: right;">
+                  $0.00
+                </td>
+                <td style="text-align: right;">
+                  <em>
+                    $1.00
+                  </em>
+                </td>
+              </tr>
+              <tr>
+                <th style="text-align: left;">
+                  electronic special
+                </th>
+                <td style="text-align: center;">
+                  -
+                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                    No fare information for this leg
+                  </span>
+                </td>
+                <td style="text-align: right;">
+                  $1.00
+                </td>
+                <td style="text-align: right;">
+                  $0.00
+                </td>
+                <td style="text-align: right;">
+                  $0.00
+                </td>
+                <td style="text-align: right;">
+                  <em>
+                    $1.00
+                  </em>
+                </td>
+              </tr>
+              <tr>
+                <th style="text-align: left;">
+                  electronic youth
+                </th>
+                <td style="text-align: center;">
+                  -
+                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                    No fare information for this leg
+                  </span>
+                </td>
+                <td style="text-align: right;">
+                  $0.00
+                </td>
+                <td style="text-align: right;">
+                  $0.00
+                </td>
+                <td style="text-align: right;">
+                  $0.00
+                </td>
+                <td title="No fare total available"
+                    style="text-align: center;"
+                >
+                  <em>
+                    -
+                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                      No fare information for this leg
+                    </span>
+                  </em>
+                </td>
+              </tr>
+              <tr>
+                <th style="text-align: left;">
+                  cash regular
+                </th>
+                <td style="text-align: right;">
+                  $1.00
+                </td>
+                <td style="text-align: right;">
+                  $3.25
+                </td>
+                <td style="text-align: right;">
+                  $3.25
+                </td>
+                <td style="text-align: right;">
+                  $2.75
+                </td>
+                <td style="text-align: right;">
+                  <em>
                     $10.25
-                  </th>
-                  <th scope="col">
-                    <strong>
-                      Electronic
-                    </strong>
-                    <br>
-                    -
-                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                      No fare total available
-                    </span>
-                  </th>
-                  <th scope="col">
-                    <strong>
-                      Special
-                    </strong>
-                    <br>
-                    -
-                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                      No fare total available
-                    </span>
-                  </th>
-                </thead>
-                <tr>
-                  <td class="no-zebra">
-                    90X
-                  </td>
-                  <td>
-                    $1.00
-                  </td>
-                  <td>
-                    -
-                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                      No fare information for this leg
-                    </span>
-                  </td>
-                  <td>
-                    -
-                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                      No fare information for this leg
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="no-zebra">
-                    512
-                  </td>
-                  <td>
-                    $3.25
-                  </td>
-                  <td>
-                    $3.25
-                  </td>
-                  <td>
-                    $1.00
-                  </td>
-                </tr>
-                <tr>
-                  <td class="no-zebra">
-                    535
-                  </td>
-                  <td>
-                    $3.25
-                  </td>
-                  <td title="Transfer discount of $3.25 is applied">
-                    <svg viewbox="0 0 24 24"
-                         height="16"
-                         width="16"
-                         aria-hidden="true"
-                         focusable="false"
-                         fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
-                    >
-                      <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
-                      </path>
-                    </svg>
-                    $0.00
-                  </td>
-                  <td title="Transfer discount of $1.00 is applied">
-                    <svg viewbox="0 0 24 24"
-                         height="16"
-                         width="16"
-                         aria-hidden="true"
-                         focusable="false"
-                         fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
-                    >
-                      <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
-                      </path>
-                    </svg>
-                    $0.00
-                  </td>
-                </tr>
-                <tr>
-                  <td class="no-zebra">
-                    372
-                  </td>
-                  <td>
-                    $2.75
-                  </td>
-                  <td title="Transfer discount of $3.25 is applied">
-                    <svg viewbox="0 0 24 24"
-                         height="16"
-                         width="16"
-                         aria-hidden="true"
-                         focusable="false"
-                         fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
-                    >
-                      <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
-                      </path>
-                    </svg>
-                    $0.00
-                  </td>
-                  <td title="Transfer discount of $1.00 is applied">
-                    <svg viewbox="0 0 24 24"
-                         height="16"
-                         width="16"
-                         aria-hidden="true"
-                         focusable="false"
-                         fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
-                    >
-                      <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
-                      </path>
-                    </svg>
-                    $0.00
-                  </td>
-                </tr>
-              </table>
-              <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
-                <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
-                  <th class="main"
-                      scope="col"
-                  >
-                    <strong>
-                      Youth
-                    </strong>
-                  </th>
-                  <th scope="col">
-                    <strong>
-                      Cash
-                    </strong>
-                    <br>
-                    $0.00
-                  </th>
-                  <th scope="col">
-                    <strong>
-                      Electronic
-                    </strong>
-                    <br>
-                    -
-                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                      No fare total available
-                    </span>
-                  </th>
-                </thead>
-                <tr>
-                  <td class="no-zebra">
-                    90X
-                  </td>
-                  <td>
-                    $0.00
-                  </td>
-                  <td>
-                    -
-                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                      No fare information for this leg
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="no-zebra">
-                    512
-                  </td>
-                  <td>
-                    $0.00
-                  </td>
-                  <td>
-                    $0.00
-                  </td>
-                </tr>
-                <tr>
-                  <td class="no-zebra">
-                    535
-                  </td>
-                  <td>
-                    $0.00
-                  </td>
-                  <td>
-                    $0.00
-                  </td>
-                </tr>
-                <tr>
-                  <td class="no-zebra">
-                    372
-                  </td>
-                  <td>
-                    $0.00
-                  </td>
-                  <td>
-                    $0.00
-                  </td>
-                </tr>
-              </table>
-              <table class="fare-table__Table-sc-1ntg4ma-1 dzCbEM">
-                <thead class="fare-table__TableHeader-sc-1ntg4ma-0 eztBAT">
-                  <th class="main"
-                      scope="col"
-                  >
-                    <strong>
-                      Senior
-                    </strong>
-                  </th>
-                  <th scope="col">
-                    <strong>
-                      Cash
-                    </strong>
-                    <br>
+                  </em>
+                </td>
+              </tr>
+              <tr>
+                <th style="text-align: left;">
+                  cash senior
+                </th>
+                <td style="text-align: right;">
+                  $0.50
+                </td>
+                <td style="text-align: right;">
+                  $3.25
+                </td>
+                <td style="text-align: right;">
+                  $3.25
+                </td>
+                <td style="text-align: right;">
+                  $2.75
+                </td>
+                <td style="text-align: right;">
+                  <em>
                     $9.75
-                  </th>
-                  <th scope="col">
-                    <strong>
-                      Electronic
-                    </strong>
-                    <br>
-                    -
-                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                      No fare total available
-                    </span>
-                  </th>
-                </thead>
-                <tr>
-                  <td class="no-zebra">
-                    90X
-                  </td>
-                  <td>
-                    $0.50
-                  </td>
-                  <td>
+                  </em>
+                </td>
+              </tr>
+              <tr>
+                <th style="text-align: left;">
+                  cash special
+                </th>
+                <td style="text-align: center;">
+                  -
+                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                    No fare information for this leg
+                  </span>
+                </td>
+                <td style="text-align: center;">
+                  -
+                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                    No fare information for this leg
+                  </span>
+                </td>
+                <td style="text-align: center;">
+                  -
+                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                    No fare information for this leg
+                  </span>
+                </td>
+                <td style="text-align: center;">
+                  -
+                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                    No fare information for this leg
+                  </span>
+                </td>
+                <td title="No fare total available"
+                    style="text-align: center;"
+                >
+                  <em>
                     -
                     <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
                       No fare information for this leg
                     </span>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="no-zebra">
-                    512
-                  </td>
-                  <td>
-                    $3.25
-                  </td>
-                  <td>
-                    $1.00
-                  </td>
-                </tr>
-                <tr>
-                  <td class="no-zebra">
-                    535
-                  </td>
-                  <td>
-                    $3.25
-                  </td>
-                  <td title="Transfer discount of $1.00 is applied">
-                    <svg viewbox="0 0 24 24"
-                         height="16"
-                         width="16"
-                         aria-hidden="true"
-                         focusable="false"
-                         fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
-                    >
-                      <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
-                      </path>
-                    </svg>
-                    $0.00
-                  </td>
-                </tr>
-                <tr>
-                  <td class="no-zebra">
-                    372
-                  </td>
-                  <td>
-                    $2.75
-                  </td>
-                  <td title="Transfer discount of $1.00 is applied">
-                    <svg viewbox="0 0 24 24"
-                         height="16"
-                         width="16"
-                         aria-hidden="true"
-                         focusable="false"
-                         fill="currentColor"
-                         xmlns="http://www.w3.org/2000/svg"
-                         class="StyledIconBase-sc-ea9ulj-0 ebjPRL fare-table__TransferIcon-sc-1ntg4ma-2 fwDhcP"
-                    >
-                      <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
-                      </path>
-                    </svg>
-                    $0.00
-                  </td>
-                </tr>
-              </table>
-            </div>
+                  </em>
+                </td>
+              </tr>
+              <tr>
+                <th style="text-align: left;">
+                  cash youth
+                </th>
+                <td style="text-align: right;">
+                  $0.00
+                </td>
+                <td style="text-align: right;">
+                  $0.00
+                </td>
+                <td style="text-align: right;">
+                  $0.00
+                </td>
+                <td style="text-align: right;">
+                  $0.00
+                </td>
+                <td title="No fare total available"
+                    style="text-align: center;"
+                >
+                  <em>
+                    -
+                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                      No fare information for this leg
+                    </span>
+                  </em>
+                </td>
+              </tr>
+            </table>
           </details>
         </span>
       </div>
@@ -1273,10 +2020,10 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1298,10 +2045,10 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU time-active"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -1318,7 +2065,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
         Time Spent Active:
         <strong>
           29 minutes
@@ -1328,7 +2075,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -1353,10 +2100,10 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1387,10 +2134,10 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU emissions"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -1407,8 +2154,8 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__CO2Summary-sc-6q2ok2-4 ctvvFS">
           CO₂ Emitted:
           <strong>
             9,031g
@@ -1419,7 +2166,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -1444,10 +2191,10 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1481,18 +2228,18 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-17 bkRgZI trip-details">
   <h2 id="trip-details-header"
-      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
+      class="styled__TripDetailsHeader-sc-6q2ok2-19 fxsUFT"
   >
     Trip Details
   </h2>
-  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-18 ljKmZo">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU departure-date"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -1509,8 +2256,8 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__Timing-sc-6q2ok2-10 QXYlJ">
           Depart
           <strong>
             June 15, 2022
@@ -1528,10 +2275,10 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1553,10 +2300,10 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU time-active"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -1573,7 +2320,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
         Time Spent Active:
         <strong>
           5 minutes
@@ -1583,7 +2330,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -1608,10 +2355,10 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1642,10 +2389,10 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU emissions"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -1662,8 +2409,8 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__CO2Summary-sc-6q2ok2-4 ctvvFS">
           CO₂ Emitted:
           <strong>
             7g
@@ -1674,7 +2421,7 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -1699,10 +2446,10 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1736,18 +2483,18 @@ exports[`TripDetails OTP2EScooterRentalTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-17 bkRgZI trip-details">
   <h2 id="trip-details-header"
-      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
+      class="styled__TripDetailsHeader-sc-6q2ok2-19 fxsUFT"
   >
     Trip Details
   </h2>
-  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-18 ljKmZo">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU departure-date"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -1764,15 +2511,15 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__Timing-sc-6q2ok2-10 QXYlJ">
           Depart
           <strong>
-            June 22, 2022
+            January 19, 2024
           </strong>
           at
           <strong>
-            4:59 PM
+            7:54 AM
           </strong>
         </span>
       </div>
@@ -1783,10 +2530,10 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1808,10 +2555,126 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU fares"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
+      >
+        <svg viewbox="0 0 576 512"
+             height="17"
+             width="17"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+        >
+          <path fill="currentColor"
+                d="M64 64C28.7 64 0 92.7 0 128v256c0 35.3 28.7 64 64 64h448c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm64 320H64v-64c35.3 0 64 28.7 64 64zM64 192v-64h64c0 35.3-28.7 64-64 64zm384 192c0-35.3 28.7-64 64-64v64h-64zm64-192c-35.3 0-64-28.7-64-64h64v64zm-112 64c0 61.9-50.1 112-112 112s-112-50.1-112-112 50.1-112 112-112 112 50.1 112 112zm-148-48c0 9.7 6.9 17.7 16 19.6V276h-4c-11 0-20 9-20 20s9 20 20 20h48c11 0 20-9 20-20s-9-20-20-20h-4v-68c0-11-9-20-20-20h-16c-11 0-20 9-20 20z"
+          >
+          </path>
+        </svg>
+      </div>
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__Fare-sc-6q2ok2-6 cBxUgq">
+          <details class="styled__TransitFare-sc-6q2ok2-11 XDyWz">
+            <summary>
+              Transit Fare:
+              <strong>
+                $2.80
+              </strong>
+            </summary>
+            <table class="fares-v2-table__StripedTable-sc-h3t2h2-1 fXiYxU">
+              <caption class="styled__InvisibleA11yCaption-sc-6q2ok2-1 fNsmNb">
+                Transit fares for this itinerary
+              </caption>
+              <tr>
+                <th style="text-align: left;">
+                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                    Transit Fare
+                  </span>
+                </th>
+                <th>
+                </th>
+                <th>
+                  20
+                </th>
+                <th style="text-align: right;">
+                  <em>
+                    Total
+                  </em>
+                </th>
+              </tr>
+              <tr>
+                <th style="text-align: left;">
+                  Regular Fare
+                </th>
+                <td style="text-align: right;">
+                  $2.80
+                </td>
+                <td title="Transfer discount of $2.80 is applied"
+                    style="text-align: right;"
+                >
+                  <svg viewbox="0 0 24 24"
+                       height="16"
+                       width="16"
+                       aria-hidden="true"
+                       focusable="false"
+                       fill="currentColor"
+                       xmlns="http://www.w3.org/2000/svg"
+                       class="StyledIconBase-sc-ea9ulj-0 ebjPRL fares-v2-table__TransferIcon-sc-h3t2h2-0 jfEQzl"
+                  >
+                    <path d="m15 12 5-4-5-4v2.999H2v2h13zm7 3H9v-3l-5 4 5 4v-3h13z">
+                    </path>
+                  </svg>
+                  $0.00
+                </td>
+                <td style="text-align: right;">
+                  <em>
+                    $2.80
+                  </em>
+                </td>
+              </tr>
+            </table>
+          </details>
+        </span>
+      </div>
+      <div aria-hidden="true"
+           class="rah-static rah-static--height-zero "
+           style="height: 0px; overflow: hidden;"
+      >
+        <div style="display: none;">
+          <div aria-labelledby="expand-button"
+               id="mocked_id"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
+          >
+            <button role="presentation"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
+            >
+              <svg viewbox="0 0 512 512"
+                   height="0.92em"
+                   width="0.92em"
+                   aria-hidden="true"
+                   focusable="false"
+                   fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg"
+                   class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+              >
+                <path fill="currentColor"
+                      d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-81-337c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
+                >
+                </path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div role="group"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU time-active"
+    >
+      <div role="presentation"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -1828,17 +2691,17 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
         Time Spent Active:
         <strong>
-          12 minutes
+          35 minutes
         </strong>
         <button aria-label="Show details"
                 aria-controls="mocked_id"
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -1863,10 +2726,10 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -1885,7 +2748,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
             </button>
             By taking this trip, you'll spend
             <strong>
-              12 minutes
+              35 minutes
             </strong>
             walking and
             <strong>
@@ -1897,67 +2760,10 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH flex-booking-info"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU emissions"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
-      >
-        <svg viewbox="0 0 512 512"
-             height="17"
-             width="17"
-             aria-hidden="true"
-             focusable="false"
-             fill="currentColor"
-             xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
-        >
-          <path fill="currentColor"
-                d="M416 256s96-96 96-160c0-53-43-96-96-96s-96 43-96 96c0 29.4 20.2 65.5 42.1 96H320c-53 0-96 43-96 96s43 96 96 96h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H188.6c-6.2 9.6-12.6 18.8-19 27.2-10.7 14.2-21.3 26.9-30 36.8H416c53 0 96-43 96-96s-43-96-96-96h-96c-17.7 0-32-14.3-32-32s14.3-32 32-32h96zm0-128c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zM149.9 448c21.9-30.5 42.1-66.6 42.1-96 0-53-43-96-96-96S0 299 0 352c0 64 96 160 96 160s3.5-3.5 9.2-9.6c.4-.4.7-.8 1.1-1.2 3.3-3.5 7.1-7.8 11.4-12.8l.6-.6c9.4-10.8 20.7-24.6 31.6-39.8zM96 384c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32z"
-          >
-          </path>
-        </svg>
-      </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__FlexSummary-sc-6q2ok2-12 gBOBbY">
-          This trip includes flexible routes. This is the first pickup booking info message. This is the first dropoff booking info message.
-        </span>
-      </div>
-      <div aria-hidden="true"
-           class="rah-static rah-static--height-zero "
-           style="height: 0px; overflow: hidden;"
-      >
-        <div style="display: none;">
-          <div aria-labelledby="expand-button"
-               id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
-          >
-            <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
-            >
-              <svg viewbox="0 0 512 512"
-                   height="0.92em"
-                   width="0.92em"
-                   aria-hidden="true"
-                   focusable="false"
-                   fill="currentColor"
-                   xmlns="http://www.w3.org/2000/svg"
-                   class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
-              >
-                <path fill="currentColor"
-                      d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-81-337c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
-                >
-                </path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
-    >
-      <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -1974,11 +2780,11 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__CO2Summary-sc-6q2ok2-4 ctvvFS">
           CO₂ Emitted:
           <strong>
-            4,682g
+            2,348g
           </strong>
         </span>
         <button aria-label="Show details"
@@ -1986,7 +2792,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2011,10 +2817,10 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2048,18 +2854,18 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails StyledItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk TripDetailsstory__StyledTripDetails-sc-1xhb9yd-0 jpZLG trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-17 bkRgZI TripDetailsstory__StyledTripDetails-sc-1xhb9yd-0 knpzsD trip-details">
   <h2 id="trip-details-header"
-      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
+      class="styled__TripDetailsHeader-sc-6q2ok2-19 fxsUFT"
   >
     Trip Details
   </h2>
-  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-18 ljKmZo">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU departure-date"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -2076,8 +2882,8 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__Timing-sc-6q2ok2-10 QXYlJ">
           Depart
           <strong>
             November 13, 2019
@@ -2095,10 +2901,10 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2120,10 +2926,10 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU time-active"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -2140,7 +2946,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
         Time Spent Active:
         <strong>
           2 minutes
@@ -2150,7 +2956,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2175,10 +2981,10 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2209,10 +3015,10 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU emissions"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -2229,8 +3035,8 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__CO2Summary-sc-6q2ok2-4 ctvvFS">
           CO₂ Emitted:
           <strong>
             61g
@@ -2241,7 +3047,7 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2266,10 +3072,10 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2303,18 +3109,18 @@ exports[`TripDetails StyledItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-17 bkRgZI trip-details">
   <h2 id="trip-details-header"
-      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
+      class="styled__TripDetailsHeader-sc-6q2ok2-19 fxsUFT"
   >
     Trip Details
   </h2>
-  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-18 ljKmZo">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU departure-date"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -2331,8 +3137,8 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__Timing-sc-6q2ok2-10 QXYlJ">
           Depart
           <strong>
             May 23, 2023
@@ -2350,10 +3156,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2375,10 +3181,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH tnc-fare"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU tnc-fare"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 576 512"
              height="17"
@@ -2395,10 +3201,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__Fare-sc-6q2ok2-5 ifUIDh">
-          <span class="styled__TNCFare-sc-6q2ok2-7 yUDcy">
-            <span class="styled__TNCFareCompanies-sc-6q2ok2-8 brbgsV">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__Fare-sc-6q2ok2-6 cBxUgq">
+          <span class="styled__TNCFare-sc-6q2ok2-8 bujwTB">
+            <span class="styled__TNCFareCompanies-sc-6q2ok2-9 hnAyug">
               uber
             </span>
             Fare:
@@ -2412,7 +3218,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2437,10 +3243,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2463,10 +3269,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU time-active"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -2483,7 +3289,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
         Time Spent Active:
         <strong>
           2 minutes
@@ -2493,7 +3299,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2518,10 +3324,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2552,10 +3358,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU emissions"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -2572,8 +3378,8 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__CO2Summary-sc-6q2ok2-4 ctvvFS">
           CO₂ Emitted:
           <strong>
             319g
@@ -2584,7 +3390,7 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2609,10 +3415,10 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2646,18 +3452,18 @@ exports[`TripDetails TncTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk TripDetailsstory__StyledTripDetails-sc-1xhb9yd-0 jpZLG trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-17 bkRgZI TripDetailsstory__StyledTripDetails-sc-1xhb9yd-0 knpzsD trip-details">
   <h2 id="trip-details-header"
-      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
+      class="styled__TripDetailsHeader-sc-6q2ok2-19 fxsUFT"
   >
-    Custom Trip Details Title
+    Trip Details
   </h2>
-  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-18 ljKmZo">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU departure-date"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -2674,18 +3480,15 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__Timing-sc-6q2ok2-10 QXYlJ">
+          Depart
           <strong>
-            Leave
+            May 23, 2023
           </strong>
           at
           <strong>
             10:58 AM
-          </strong>
-          on
-          <strong>
-            May 23, 2023
           </strong>
         </span>
         <button aria-label="Show details"
@@ -2693,7 +3496,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2718,10 +3521,10 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2744,10 +3547,10 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH tnc-fare"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU tnc-fare"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 576 512"
              height="17"
@@ -2764,17 +3567,16 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__Fare-sc-6q2ok2-5 ifUIDh">
-          <span class="styled__TNCFare-sc-6q2ok2-7 yUDcy">
-            Pay
-            <strong>
-              $34.00-$37.00
-            </strong>
-            to
-            <span class="styled__TNCFareCompanies-sc-6q2ok2-8 brbgsV">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__Fare-sc-6q2ok2-6 cBxUgq">
+          <span class="styled__TNCFare-sc-6q2ok2-8 bujwTB">
+            <span class="styled__TNCFareCompanies-sc-6q2ok2-9 hnAyug">
               uber
             </span>
+            Fare:
+            <strong>
+              $34.00 - $37.00
+            </strong>
           </span>
         </span>
       </div>
@@ -2785,10 +3587,10 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2810,10 +3612,10 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU time-active"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -2830,7 +3632,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
         Time Spent Active:
         <strong>
           2 minutes
@@ -2840,7 +3642,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2865,10 +3667,10 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2891,10 +3693,10 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU emissions"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -2911,8 +3713,8 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__CO2Summary-sc-6q2ok2-4 ctvvFS">
           CO₂ Emitted:
           <strong>
             319g
@@ -2923,7 +3725,7 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -2948,10 +3750,10 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -2985,18 +3787,18 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
 `;
 
 exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-17 bkRgZI trip-details">
   <h2 id="trip-details-header"
-      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
+      class="styled__TripDetailsHeader-sc-6q2ok2-19 fxsUFT"
   >
     Trip Details
   </h2>
-  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-18 ljKmZo">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU departure-date"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -3013,8 +3815,8 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__Timing-sc-6q2ok2-10 QXYlJ">
           Depart
           <strong>
             December 13, 2019
@@ -3032,10 +3834,10 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -3057,10 +3859,10 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU time-active"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -3077,7 +3879,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
         Time Spent Active:
         <strong>
           1 minute
@@ -3087,7 +3889,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -3112,10 +3914,10 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -3146,10 +3948,10 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU emissions"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -3166,8 +3968,8 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__CO2Summary-sc-6q2ok2-4 ctvvFS">
           CO₂ Emitted:
           <strong>
             1g
@@ -3178,7 +3980,7 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -3203,10 +4005,10 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -3240,18 +4042,18 @@ exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
 `;
 
 exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
-<div class="styled__TripDetails-sc-6q2ok2-16 bpnhOk trip-details">
+<div class="styled__TripDetails-sc-6q2ok2-17 bkRgZI trip-details">
   <h2 id="trip-details-header"
-      class="styled__TripDetailsHeader-sc-6q2ok2-18 cSUgG"
+      class="styled__TripDetailsHeader-sc-6q2ok2-19 fxsUFT"
   >
     Trip Details
   </h2>
-  <div class="styled__TripDetailsBody-sc-6q2ok2-17 lcDewn">
+  <div class="styled__TripDetailsBody-sc-6q2ok2-18 ljKmZo">
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH departure-date"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU departure-date"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 448 512"
              height="17"
@@ -3268,8 +4070,8 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__Timing-sc-6q2ok2-9 gIPcMp">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__Timing-sc-6q2ok2-10 QXYlJ">
           Depart
           <strong>
             November 13, 2019
@@ -3287,10 +4089,10 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -3312,10 +4114,10 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH time-active"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU time-active"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -3332,7 +4134,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
         Time Spent Active:
         <strong>
           2 minutes
@@ -3342,7 +4144,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -3367,10 +4169,10 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"
@@ -3401,10 +4203,10 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div role="group"
-         class="styled__TripDetail-sc-6q2ok2-13 gnLBrH emissions"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU emissions"
     >
       <div role="presentation"
-           class="styled__TripDetailIcon-sc-6q2ok2-15 cIeekj"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
       >
         <svg viewbox="0 0 512 512"
              height="17"
@@ -3421,8 +4223,8 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
           </path>
         </svg>
       </div>
-      <div class="styled__TripDetailSummary-sc-6q2ok2-19 dNvENw">
-        <span class="styled__CO2Summary-sc-6q2ok2-3 cocvGF">
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__CO2Summary-sc-6q2ok2-4 ctvvFS">
           CO₂ Emitted:
           <strong>
             61g
@@ -3433,7 +4235,7 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
                 aria-expanded="false"
                 id="expand-button"
                 tabindex="0"
-                class="styled__BaseButton-sc-6q2ok2-1 styled__ExpandButton-sc-6q2ok2-4 keYRmF eoXTmF"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
         >
           <svg viewbox="0 0 512 512"
                height="0.92em"
@@ -3458,10 +4260,10 @@ exports[`TripDetails WalkTransitWalkItinerary smoke-test 1`] = `
         <div style="display: none;">
           <div aria-labelledby="expand-button"
                id="mocked_id"
-               class="styled__TripDetailDescription-sc-6q2ok2-14 dLSSj"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
           >
             <button role="presentation"
-                    class="styled__BaseButton-sc-6q2ok2-1 styled__HideButton-sc-6q2ok2-6 keYRmF kayzZZ"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
             >
               <svg viewbox="0 0 512 512"
                    height="0.92em"

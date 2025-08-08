@@ -16,5 +16,10 @@ catalog:
   react-map-gl: ^8.0.4
   styled-components: ^5.3.0
   styled-icons: ^10.34.0
+
 packages:
   - packages/*
+
+onlyBuiltDependencies:
+  - fsevents
+  - puppeteer
