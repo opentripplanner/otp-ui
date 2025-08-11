@@ -1,19 +1,19 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`geocoder ARCGIS should get location from geocode feature 1`] = `
-Object {
+{
   "lat": 51.973520000000065,
   "lon": 0.1296100000000706,
   "name": "Mill End, Clavering, Saffron Walden, Essex, England, GBR",
-  "rawGeocodedFeature": Object {
-    "geometry": Object {
-      "coordinates": Array [
+  "rawGeocodedFeature": {
+    "geometry": {
+      "coordinates": [
         0.1296100000000706,
         51.973520000000065,
       ],
       "type": "Point",
     },
-    "properties": Object {
+    "properties": {
       "confidence": 0.875,
       "country": "GBR",
       "country_a": "GBR",
@@ -31,20 +31,20 @@ Object {
 `;
 
 exports[`geocoder ARCGIS should make autocomplete query 1`] = `
-Object {
-  "features": Array [
-    Object {
+{
+  "features": [
+    {
       "isCollection": false,
       "magicKey": "dHA9MCNsb2M9ODU3OTE0NyNsbmc9MzMjcGw9MzI4OTA3MSNsYnM9MTQ6MjAwNTI3NTc=",
-      "properties": Object {
+      "properties": {
         "label": "Mill Ends City Park, Portland, OR, USA",
       },
       "text": "Mill Ends City Park, Portland, OR, USA",
     },
-    Object {
+    {
       "isCollection": false,
       "magicKey": "dHA9MCNsb2M9OTY5Mzc0MiNsbmc9MzMjcGw9NTA4NTQ2NiNsYnM9MTQ6MjAwNTI3NTI=",
-      "properties": Object {
+      "properties": {
         "label": "Mill End Sports & Social, Penn Road, Mill End, Rickmansworth, Hertfordshire, England, WD3 8, GBR",
       },
       "text": "Mill End Sports & Social, Penn Road, Mill End, Rickmansworth, Hertfordshire, England, WD3 8, GBR",
@@ -54,19 +54,19 @@ Object {
 `;
 
 exports[`geocoder ARCGIS should make reverse query 1`] = `
-Object {
+{
   "lat": 45.516198,
   "lon": -122.67324,
   "name": "SW Naito Pkwy, Portland, OR, 97204, USA",
-  "rawGeocodedFeature": Object {
-    "geometry": Object {
-      "coordinates": Array [
+  "rawGeocodedFeature": {
+    "geometry": {
+      "coordinates": [
         -122.67320084756255,
         45.516175523600715,
       ],
       "type": "Point",
     },
-    "properties": Object {
+    "properties": {
       "country_a": "USA",
       "county": "Multnomah County",
       "label": "SW Naito Pkwy, Portland, OR, 97204, USA",
@@ -81,17 +81,17 @@ Object {
 `;
 
 exports[`geocoder ARCGIS should make reverse query with featurecollection enabled 1`] = `
-Object {
-  "features": Array [
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
           -122.67320084756255,
           45.516175523600715,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "country_a": "USA",
         "county": "Multnomah County",
         "label": "SW Naito Pkwy, Portland, OR, 97204, USA",
@@ -103,7 +103,7 @@ Object {
       "type": "Feature",
     },
   ],
-  "query": Object {
+  "query": {
     "x": -122.67324,
     "y": 45.516198,
   },
@@ -111,17 +111,17 @@ Object {
 `;
 
 exports[`geocoder ARCGIS should make search query 1`] = `
-Object {
-  "features": Array [
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
           0.1296100000000706,
           51.973520000000065,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "confidence": 0.875,
         "country": "GBR",
         "country_a": "GBR",
@@ -135,15 +135,15 @@ Object {
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -0.8668999999999301,
           51.558340000000044,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "confidence": 0.875,
         "country": "GBR",
         "country_a": "GBR",
@@ -158,26 +158,26 @@ Object {
       "type": "Feature",
     },
   ],
-  "query": Object {
+  "query": {
     "text": "Mill Ends",
   },
 }
 `;
 
 exports[`geocoder HERE should get location from geocode feature 1`] = `
-Object {
+{
   "lat": 45.516198,
   "lon": -122.67324,
   "name": "Mill Ends Park, Portland, OR, USA",
-  "rawGeocodedFeature": Object {
-    "geometry": Object {
-      "coordinates": Array [
+  "rawGeocodedFeature": {
+    "geometry": {
+      "coordinates": [
         -122.67324,
         45.516198,
       ],
       "type": "Point",
     },
-    "properties": Object {
+    "properties": {
       "label": "Mill Ends Park, Portland, OR, USA",
     },
   },
@@ -185,33 +185,33 @@ Object {
 `;
 
 exports[`geocoder HERE should make autocomplete query 1`] = `
-Object {
-  "features": Array [
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
           -122.31701,
           47.68199,
         ],
         "type": "Point",
       },
-      "properties": Object {
-        "addendum": Object {
-          "categories": Array [
-            Object {
+      "properties": {
+        "addendum": {
+          "categories": [
+            {
               "id": "600-6300-0066",
               "name": "Grocery",
               "primary": true,
             },
-            Object {
+            {
               "id": "600-6400-0000",
               "name": "Drugstore or Pharmacy",
             },
-            Object {
+            {
               "id": "600-6400-0069",
               "name": "Drugstore",
             },
-            Object {
+            {
               "id": "600-6400-0070",
               "name": "Pharmacy",
             },
@@ -234,27 +234,27 @@ Object {
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.31388,
           47.66427,
         ],
         "type": "Point",
       },
-      "properties": Object {
-        "addendum": Object {
-          "categories": Array [
-            Object {
+      "properties": {
+        "addendum": {
+          "categories": [
+            {
               "id": "600-6300-0066",
               "name": "Grocery",
               "primary": true,
             },
-            Object {
+            {
               "id": "600-6400-0000",
               "name": "Drugstore or Pharmacy",
             },
-            Object {
+            {
               "id": "600-6400-0070",
               "name": "Pharmacy",
             },
@@ -277,31 +277,31 @@ Object {
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.28943,
           47.68261,
         ],
         "type": "Point",
       },
-      "properties": Object {
-        "addendum": Object {
-          "categories": Array [
-            Object {
+      "properties": {
+        "addendum": {
+          "categories": [
+            {
               "id": "600-6300-0066",
               "name": "Grocery",
               "primary": true,
             },
-            Object {
+            {
               "id": "600-6400-0000",
               "name": "Drugstore or Pharmacy",
             },
-            Object {
+            {
               "id": "600-6400-0069",
               "name": "Drugstore",
             },
-            Object {
+            {
               "id": "600-6400-0070",
               "name": "Pharmacy",
             },
@@ -324,27 +324,27 @@ Object {
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.35496,
           47.69285,
         ],
         "type": "Point",
       },
-      "properties": Object {
-        "addendum": Object {
-          "categories": Array [
-            Object {
+      "properties": {
+        "addendum": {
+          "categories": [
+            {
               "id": "600-6300-0066",
               "name": "Grocery",
               "primary": true,
             },
-            Object {
+            {
               "id": "600-6400-0000",
               "name": "Drugstore or Pharmacy",
             },
-            Object {
+            {
               "id": "600-6400-0070",
               "name": "Pharmacy",
             },
@@ -373,19 +373,19 @@ Object {
 `;
 
 exports[`geocoder HERE should make reverse query 1`] = `
-Object {
+{
   "lat": 45.516198,
   "lon": -122.67324,
   "name": "833 SW Naito Pkwy, Portland, OR 97204-3309, United States",
-  "rawGeocodedFeature": Object {
-    "geometry": Object {
-      "coordinates": Array [
+  "rawGeocodedFeature": {
+    "geometry": {
+      "coordinates": [
         -122.67357,
         45.5164,
       ],
       "type": "Point",
     },
-    "properties": Object {
+    "properties": {
       "country": "United States",
       "country_a": "USA",
       "country_code": "USA",
@@ -407,17 +407,17 @@ Object {
 `;
 
 exports[`geocoder HERE should make reverse query with featurecollection enabled 1`] = `
-Object {
-  "features": Array [
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
           -122.67357,
           45.5164,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "country": "United States",
         "country_a": "USA",
         "country_code": "USA",
@@ -441,33 +441,33 @@ Object {
 `;
 
 exports[`geocoder HERE should make search query 1`] = `
-Object {
-  "features": Array [
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
           -122.31701,
           47.68199,
         ],
         "type": "Point",
       },
-      "properties": Object {
-        "addendum": Object {
-          "categories": Array [
-            Object {
+      "properties": {
+        "addendum": {
+          "categories": [
+            {
               "id": "600-6300-0066",
               "name": "Grocery",
               "primary": true,
             },
-            Object {
+            {
               "id": "600-6400-0000",
               "name": "Drugstore or Pharmacy",
             },
-            Object {
+            {
               "id": "600-6400-0069",
               "name": "Drugstore",
             },
-            Object {
+            {
               "id": "600-6400-0070",
               "name": "Pharmacy",
             },
@@ -497,19 +497,19 @@ Object {
 `;
 
 exports[`geocoder NoApiGeocoder should get location from geocode feature 1`] = `
-Object {
+{
   "lat": 45.516198,
   "lon": -122.67324,
   "name": "45.516198, -122.673240",
-  "rawGeocodedFeature": Object {
-    "geometry": Object {
-      "coordinates": Array [
+  "rawGeocodedFeature": {
+    "geometry": {
+      "coordinates": [
         -122.67324,
         45.516198,
       ],
       "type": "Point",
     },
-    "properties": Object {
+    "properties": {
       "label": "45.516198, -122.673240",
     },
   },
@@ -517,26 +517,26 @@ Object {
 `;
 
 exports[`geocoder NoApiGeocoder should make autocomplete query 1`] = `
-Object {
-  "features": Array [],
+{
+  "features": [],
   "type": "FeatureCollection",
 }
 `;
 
 exports[`geocoder NoApiGeocoder should make reverse query 1`] = `
-Object {
+{
   "lat": 45.5162,
   "lon": -122.67324,
   "name": "45.5162, -122.67324",
-  "rawGeocodedFeature": Object {
-    "geometry": Object {
-      "coordinates": Array [
+  "rawGeocodedFeature": {
+    "geometry": {
+      "coordinates": [
         45.5162,
         -122.67324,
       ],
       "type": "Point",
     },
-    "properties": Object {
+    "properties": {
       "name": "45.5162, -122.67324",
     },
     "type": "Feature",
@@ -545,19 +545,19 @@ Object {
 `;
 
 exports[`geocoder NoApiGeocoder should make reverse query with featurecollection enabled 1`] = `
-Object {
+{
   "lat": 45.5162,
   "lon": -122.67324,
   "name": "45.5162, -122.67324",
-  "rawGeocodedFeature": Object {
-    "geometry": Object {
-      "coordinates": Array [
+  "rawGeocodedFeature": {
+    "geometry": {
+      "coordinates": [
         45.5162,
         -122.67324,
       ],
       "type": "Point",
     },
-    "properties": Object {
+    "properties": {
       "name": "45.5162, -122.67324",
     },
     "type": "Feature",
@@ -566,534 +566,534 @@ Object {
 `;
 
 exports[`geocoder NoApiGeocoder should make search query 1`] = `
-Object {
-  "features": Array [],
+{
+  "features": [],
   "type": "FeatureCollection",
 }
 `;
 
 exports[`geocoder OTP should make autocomplete query 1`] = `
-Object {
-  "features": Array [
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
           -122.29541,
           47.81606,
         ],
         "type": "Point",
       },
       "id": "CommTrans:lynntc",
-      "properties": Object {
+      "properties": {
         "label": "Lynnwood Transit Center (Community Transit)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Lynnwood Transit Center",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.259953,
           47.930175,
         ],
         "type": "Point",
       },
       "id": "CommTrans:3199",
-      "properties": Object {
+      "properties": {
         "label": "Seaway Transit Center (Community Transit 3199)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Seaway Transit Center",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.259948,
           47.930222,
         ],
         "type": "Point",
       },
       "id": "CommTrans:seaway",
-      "properties": Object {
+      "properties": {
         "label": "Seaway Transit Center (Community Transit)",
         "layer": "stops",
-        "modes": Array [],
+        "modes": [],
         "name": "Seaway Transit Center",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.193674,
           47.615541,
         ],
         "type": "Point",
       },
       "id": "CommTrans:blvtc",
-      "properties": Object {
+      "properties": {
         "label": "Bellevue Transit Center (Community Transit)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Bellevue Transit Center",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.10446,
           47.99976,
         ],
         "type": "Point",
       },
       "id": "CommTrans:lkspr",
-      "properties": Object {
+      "properties": {
         "label": "Lake Stevens Transit Center (Community Transit)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Lake Stevens Transit Center",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.635696,
           47.5425906,
         ],
         "type": "Point",
       },
       "id": "Kitsap:1248",
-      "properties": Object {
+      "properties": {
         "label": "Port Orchard Transit Center (Kitsap Transit)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Port Orchard Transit Center",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.6929522,
           47.6637255,
         ],
         "type": "Point",
       },
       "id": "Kitsap:214",
-      "properties": Object {
+      "properties": {
         "label": "Silverdale Transit Center (STC) (Kitsap Transit)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Silverdale Transit Center (STC)",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.260421,
           47.929989,
         ],
         "type": "Point",
       },
       "id": "CommTrans:3017",
-      "properties": Object {
+      "properties": {
         "label": "Seaway Transit Center Station (Community Transit 3017)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Seaway Transit Center Station",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.651086,
           47.75944,
         ],
         "type": "Point",
       },
       "id": "Kitsap:1066",
-      "properties": Object {
+      "properties": {
         "label": "N. Viking Transit Center (Kitsap Transit)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "N. Viking Transit Center",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.340638,
           47.774171,
         ],
         "type": "Point",
       },
       "id": "CommTrans:arvil",
-      "properties": Object {
+      "properties": {
         "label": "Aurora Village Transit Center (Community Transit)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Aurora Village Transit Center",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.337318,
           47.4694099,
         ],
         "type": "Point",
       },
       "id": "kcm:52306",
-      "properties": Object {
+      "properties": {
         "label": "Burien Transit Center - Bay 6 (Metro Transit 52306)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Burien Transit Center - Bay 6",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.629476,
           47.600636,
         ],
         "type": "Point",
       },
       "id": "Kitsap:1340",
-      "properties": Object {
+      "properties": {
         "label": "Wheaton Way Transit Center Southbound (Kitsap Transit)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Wheaton Way Transit Center Southbound",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.208549,
           47.4807777,
         ],
         "type": "Point",
       },
       "id": "kcm:46477",
-      "properties": Object {
+      "properties": {
         "label": "Renton Transit Center - Bay 2 (Metro Transit 46477)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Renton Transit Center - Bay 2",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.208786,
           47.4807777,
         ],
         "type": "Point",
       },
       "id": "kcm:46476",
-      "properties": Object {
+      "properties": {
         "label": "Renton Transit Center - Bay 1 (Sound Transit 46476)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Renton Transit Center - Bay 1",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.629983,
           47.600601,
         ],
         "type": "Point",
       },
       "id": "Kitsap:1324",
-      "properties": Object {
+      "properties": {
         "label": "Wheaton Way Transit Center (WWTC) (Kitsap Transit)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Wheaton Way Transit Center (WWTC)",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.207756,
           47.4800987,
         ],
         "type": "Point",
       },
       "id": "kcm:46463",
-      "properties": Object {
+      "properties": {
         "label": "Renton Transit Center - Bay 10 (Metro Transit 46463)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Renton Transit Center - Bay 10",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.194389,
           47.6155014,
         ],
         "type": "Point",
       },
       "id": "kcm:67655",
-      "properties": Object {
+      "properties": {
         "label": "Bellevue Transit Center - Bay 8 (Metro Transit 67655)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Bellevue Transit Center - Bay 8",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.193909,
           47.6155052,
         ],
         "type": "Point",
       },
       "id": "kcm:67654",
-      "properties": Object {
+      "properties": {
         "label": "Bellevue Transit Center - Bay 7 (Metro Transit 67654)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Bellevue Transit Center - Bay 7",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.19426,
           47.6155014,
         ],
         "type": "Point",
       },
       "id": "kcm:68005",
-      "properties": Object {
+      "properties": {
         "label": "Bellevue Transit Center - Bay 5 (Metro Transit 68005)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Bellevue Transit Center - Bay 5",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.208717,
           47.4804993,
         ],
         "type": "Point",
       },
       "id": "kcm:46478",
-      "properties": Object {
+      "properties": {
         "label": "Renton Transit Center - Bay 3 (Metro Transit 46478)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Renton Transit Center - Bay 3",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.124939,
           47.6765938,
         ],
         "type": "Point",
       },
       "id": "kcm:73227",
-      "properties": Object {
+      "properties": {
         "label": "Redmond Transit Center - Bay 1 (Sound Transit 73227)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Redmond Transit Center - Bay 1",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.232079,
           47.3057899,
         ],
         "type": "Point",
       },
       "id": "kcm:57774",
-      "properties": Object {
+      "properties": {
         "label": "Auburn Transit Center - Bay 2 (Metro Transit 57774)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Auburn Transit Center - Bay 2",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.06221,
           47.5424728,
         ],
         "type": "Point",
       },
       "id": "kcm:64593",
-      "properties": Object {
+      "properties": {
         "label": "Issaquah Transit Center - Bay 4 (Metro Transit 64593)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Issaquah Transit Center - Bay 4",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.232079,
           47.3062248,
         ],
         "type": "Point",
       },
       "id": "kcm:57773",
-      "properties": Object {
+      "properties": {
         "label": "Auburn Transit Center - Bay 1 (Metro Transit 57773)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Auburn Transit Center - Bay 1",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.062302,
           47.541584,
         ],
         "type": "Point",
       },
       "id": "kcm:64585",
-      "properties": Object {
+      "properties": {
         "label": "Issaquah Transit Center - Bay 3 (Metro Transit 64585)",
         "layer": "stops",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Issaquah Transit Center - Bay 3",
-        "secondaryLabels": Array [],
+        "secondaryLabels": [],
         "source": "otp",
       },
       "type": "Feature",
@@ -1104,356 +1104,356 @@ Object {
 `;
 
 exports[`geocoder OTP should make search query 1`] = `
-Object {
-  "results": Array [
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+{
+  "results": [
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "CommTrans:29",
             "name": "Community Transit",
           },
         ],
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.81606,
           "lon": -122.29541,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "Community Transit",
         },
         "id": "CommTrans:lynntc",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Lynnwood Transit Center",
         "type": "STATION",
       },
-      "secondaries": Array [
-        Object {
-          "agencies": Array [
-            Object {
+      "secondaries": [
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2109",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.816065,
             "lon": -122.297267,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2109",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay C1",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2119",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.816131,
             "lon": -122.296293,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2119",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay B3",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2108",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.81612,
             "lon": -122.295584,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2108",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay B5",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2167",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.816142,
             "lon": -122.29701,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2167",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay B1",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2035",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.816082,
             "lon": -122.296421,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2035",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lynnwood Transit Center",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2168",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.816135,
             "lon": -122.296598,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2168",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay B2",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2113",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.815891,
             "lon": -122.297018,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2113",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay D1",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2422",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.81588,
             "lon": -122.296301,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2422",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay D3",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2543",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.815875,
             "lon": -122.295946,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2543",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay D4",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2114",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.815884,
             "lon": -122.296606,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2114",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay D2",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2115",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.816311,
             "lon": -122.296907,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2115",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay A2",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2120",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.816125,
             "lon": -122.295937,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2120",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay B4",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2110",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.816059,
             "lon": -122.296915,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2110",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay C2",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2177",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.816049,
             "lon": -122.296254,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2177",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay C4",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2111",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.816053,
             "lon": -122.296559,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2111",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lynnwood Transit Center Bay C3",
@@ -1461,110 +1461,110 @@ Object {
         },
       ],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "CommTrans:29",
             "name": "Community Transit",
           },
         ],
         "code": "3199",
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.930175,
           "lon": -122.259953,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "Community Transit",
         },
         "id": "CommTrans:3199",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Seaway Transit Center",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [],
-        "coordinate": Object {
+    {
+      "primary": {
+        "agencies": [],
+        "coordinate": {
           "lat": 47.930222,
           "lon": -122.259948,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "Community Transit",
         },
         "id": "CommTrans:seaway",
-        "modes": Array [],
+        "modes": [],
         "name": "Seaway Transit Center",
         "type": "STATION",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "CommTrans:29",
             "name": "Community Transit",
           },
         ],
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.615541,
           "lon": -122.193674,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "Community Transit",
         },
         "id": "CommTrans:blvtc",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Bellevue Transit Center",
         "type": "STATION",
       },
-      "secondaries": Array [
-        Object {
-          "agencies": Array [
-            Object {
+      "secondaries": [
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "355",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.615535,
             "lon": -122.194839,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:355",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Bellevue Transit Center Bay 4",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2860",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.615437,
             "lon": -122.194537,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2860",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Bellevue Transit Center Bay 8",
@@ -1572,90 +1572,90 @@ Object {
         },
       ],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "CommTrans:29",
             "name": "Community Transit",
           },
         ],
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.99976,
           "lon": -122.10446,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "Community Transit",
         },
         "id": "CommTrans:lkspr",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Lake Stevens Transit Center",
         "type": "STATION",
       },
-      "secondaries": Array [
-        Object {
-          "agencies": Array [
-            Object {
+      "secondaries": [
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2666",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.999689,
             "lon": -122.103689,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2666",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lake Stevens Transit Center Bay 2",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2982",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.999423,
             "lon": -122.104467,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2982",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lake Stevens Transit Center",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2665",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.999479,
             "lon": -122.104383,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2665",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Lake Stevens Transit Center Bay 1",
@@ -1663,209 +1663,209 @@ Object {
         },
       ],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "Kitsap:kt",
             "name": "Kitsap Transit",
           },
         ],
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.5425906,
           "lon": -122.635696,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "Kitsap Transit",
         },
         "id": "Kitsap:1248",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Port Orchard Transit Center",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "Kitsap:kt",
             "name": "Kitsap Transit",
           },
         ],
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.6637255,
           "lon": -122.6929522,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "Kitsap Transit",
         },
         "id": "Kitsap:214",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Silverdale Transit Center (STC)",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "CommTrans:29",
             "name": "Community Transit",
           },
         ],
         "code": "3017",
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.929989,
           "lon": -122.260421,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "Community Transit",
         },
         "id": "CommTrans:3017",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Seaway Transit Center Station",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "Kitsap:kt",
             "name": "Kitsap Transit",
           },
         ],
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.75944,
           "lon": -122.651086,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "Kitsap Transit",
         },
         "id": "Kitsap:1066",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "N. Viking Transit Center",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "CommTrans:29",
             "name": "Community Transit",
           },
         ],
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.774171,
           "lon": -122.340638,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "Community Transit",
         },
         "id": "CommTrans:arvil",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Aurora Village Transit Center",
         "type": "STATION",
       },
-      "secondaries": Array [
-        Object {
-          "agencies": Array [
-            Object {
+      "secondaries": [
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2875",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.774427,
             "lon": -122.341362,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2875",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Aurora Village Transit Center Bay 5",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2876",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.774305,
             "lon": -122.342002,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2876",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Aurora Village Transit Center Bay 7",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2877",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.77435,
             "lon": -122.34277,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2877",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Aurora Village Transit Center",
           "type": "STOP",
         },
-        Object {
-          "agencies": Array [
-            Object {
+        {
+          "agencies": [
+            {
               "id": "CommTrans:29",
               "name": "Community Transit",
             },
           ],
           "code": "2742",
-          "coordinate": Object {
+          "coordinate": {
             "lat": 47.774297,
             "lon": -122.341069,
           },
-          "feedPublisher": Object {
+          "feedPublisher": {
             "name": "Community Transit",
           },
           "id": "CommTrans:2742",
-          "modes": Array [
+          "modes": [
             "BUS",
           ],
           "name": "Aurora Village Station",
@@ -1873,421 +1873,421 @@ Object {
         },
       ],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "kcm:1",
             "name": "Metro Transit",
           },
         ],
         "code": "52306",
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.4694099,
           "lon": -122.337318,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "King County Transit",
         },
         "id": "kcm:52306",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Burien Transit Center - Bay 6",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "Kitsap:kt",
             "name": "Kitsap Transit",
           },
         ],
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.600636,
           "lon": -122.629476,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "Kitsap Transit",
         },
         "id": "Kitsap:1340",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Wheaton Way Transit Center Southbound",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "kcm:1",
             "name": "Metro Transit",
           },
         ],
         "code": "46477",
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.4807777,
           "lon": -122.208549,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "King County Transit",
         },
         "id": "kcm:46477",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Renton Transit Center - Bay 2",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "kcm:40",
             "name": "Sound Transit",
           },
-          Object {
+          {
             "id": "kcm:1",
             "name": "Metro Transit",
           },
         ],
         "code": "46476",
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.4807777,
           "lon": -122.208786,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "King County Transit",
         },
         "id": "kcm:46476",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Renton Transit Center - Bay 1",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "Kitsap:kt",
             "name": "Kitsap Transit",
           },
         ],
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.600601,
           "lon": -122.629983,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "Kitsap Transit",
         },
         "id": "Kitsap:1324",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Wheaton Way Transit Center (WWTC)",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "kcm:1",
             "name": "Metro Transit",
           },
         ],
         "code": "46463",
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.4800987,
           "lon": -122.207756,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "King County Transit",
         },
         "id": "kcm:46463",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Renton Transit Center - Bay 10",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "kcm:1",
             "name": "Metro Transit",
           },
-          Object {
+          {
             "id": "kcm:40",
             "name": "Sound Transit",
           },
         ],
         "code": "67655",
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.6155014,
           "lon": -122.194389,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "King County Transit",
         },
         "id": "kcm:67655",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Bellevue Transit Center - Bay 8",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "kcm:1",
             "name": "Metro Transit",
           },
         ],
         "code": "67654",
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.6155052,
           "lon": -122.193909,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "King County Transit",
         },
         "id": "kcm:67654",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Bellevue Transit Center - Bay 7",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "kcm:1",
             "name": "Metro Transit",
           },
-          Object {
+          {
             "id": "kcm:40",
             "name": "Sound Transit",
           },
         ],
         "code": "68005",
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.6155014,
           "lon": -122.19426,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "King County Transit",
         },
         "id": "kcm:68005",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Bellevue Transit Center - Bay 5",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "kcm:1",
             "name": "Metro Transit",
           },
         ],
         "code": "46478",
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.4804993,
           "lon": -122.208717,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "King County Transit",
         },
         "id": "kcm:46478",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Renton Transit Center - Bay 3",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "kcm:40",
             "name": "Sound Transit",
           },
-          Object {
+          {
             "id": "kcm:1",
             "name": "Metro Transit",
           },
         ],
         "code": "73227",
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.6765938,
           "lon": -122.124939,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "King County Transit",
         },
         "id": "kcm:73227",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Redmond Transit Center - Bay 1",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "kcm:1",
             "name": "Metro Transit",
           },
-          Object {
+          {
             "id": "kcm:40",
             "name": "Sound Transit",
           },
         ],
         "code": "57774",
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.3057899,
           "lon": -122.232079,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "King County Transit",
         },
         "id": "kcm:57774",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Auburn Transit Center - Bay 2",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "kcm:1",
             "name": "Metro Transit",
           },
         ],
         "code": "64593",
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.5424728,
           "lon": -122.06221,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "King County Transit",
         },
         "id": "kcm:64593",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Issaquah Transit Center - Bay 4",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "kcm:1",
             "name": "Metro Transit",
           },
         ],
         "code": "57773",
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.3062248,
           "lon": -122.232079,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "King County Transit",
         },
         "id": "kcm:57773",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Auburn Transit Center - Bay 1",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
-    Object {
-      "primary": Object {
-        "agencies": Array [
-          Object {
+    {
+      "primary": {
+        "agencies": [
+          {
             "id": "kcm:1",
             "name": "Metro Transit",
           },
-          Object {
+          {
             "id": "kcm:40",
             "name": "Sound Transit",
           },
         ],
         "code": "64585",
-        "coordinate": Object {
+        "coordinate": {
           "lat": 47.541584,
           "lon": -122.062302,
         },
-        "feedPublisher": Object {
+        "feedPublisher": {
           "name": "King County Transit",
         },
         "id": "kcm:64585",
-        "modes": Array [
+        "modes": [
           "BUS",
         ],
         "name": "Issaquah Transit Center - Bay 3",
         "type": "STOP",
       },
-      "secondaries": Array [],
+      "secondaries": [],
     },
   ],
 }
 `;
 
 exports[`geocoder PELIAS should get location from geocode feature 1`] = `
-Object {
+{
   "lat": 45.516198,
   "lon": -122.67324,
   "name": "Mill Ends Park, Portland, OR, USA",
-  "rawGeocodedFeature": Object {
-    "geometry": Object {
-      "coordinates": Array [
+  "rawGeocodedFeature": {
+    "geometry": {
+      "coordinates": [
         -122.67324,
         45.516198,
       ],
       "type": "Point",
     },
-    "properties": Object {
+    "properties": {
       "label": "Mill Ends Park, Portland, OR, USA",
     },
   },
@@ -2295,23 +2295,23 @@ Object {
 `;
 
 exports[`geocoder PELIAS should make autocomplete query 1`] = `
-Object {
-  "bbox": Array [
+{
+  "bbox": [
     -122.673377,
     45.516278,
     -122.673377,
     45.516278,
   ],
-  "features": Array [
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
           -122.673377,
           45.516278,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "accuracy": "point",
         "continent": "North America",
         "continent_gid": "whosonfirst:continent:102191575",
@@ -2340,39 +2340,39 @@ Object {
       "type": "Feature",
     },
   ],
-  "geocoding": Object {
+  "geocoding": {
     "attribution": "http://lb-st-mapgeo.tri-met.org:4000/attribution",
-    "engine": Object {
+    "engine": {
       "author": "Mapzen",
       "name": "Pelias",
       "version": "1.0",
     },
-    "query": Object {
+    "query": {
       "focus.point.lat": 45.52,
       "focus.point.lon": -122.67,
-      "lang": Object {
+      "lang": {
         "defaulted": true,
         "iso6391": "en",
         "iso6393": "eng",
         "name": "English",
       },
-      "parsed_text": Object {},
+      "parsed_text": {},
       "parser": "addressit",
       "private": false,
       "size": 10,
       "text": "Mill Ends",
-      "tokens": Array [
+      "tokens": [
         "Mill",
         "Ends",
       ],
     },
     "timestamp": 1563948844191,
     "version": "0.2",
-    "warnings": Array [
+    "warnings": [
       "Invalid Parameter: api_key",
     ],
   },
-  "isomorphicMapzenSearchQuery": Object {
+  "isomorphicMapzenSearchQuery": {
     "api_key": "dummy-mapzen-key",
     "layers": "address,venue,street,intersection",
     "text": "Mill Ends",
@@ -2382,11 +2382,11 @@ Object {
 `;
 
 exports[`geocoder PELIAS should make reverse query 1`] = `
-Object {
+{
   "lat": 45.516198,
   "lon": -122.67324,
   "name": "Mill Ends Park, 56 SW Taylor St, Portland",
-  "rawGeocodedFeature": Object {
+  "rawGeocodedFeature": {
     "accuracy": "point",
     "address": "Mill Ends Park, 56 SW Taylor St, Portland 97204",
     "confidence": 0.9,
@@ -2403,7 +2403,7 @@ Object {
     "housenumber": "56",
     "id": "way/156366633",
     "label": "Mill Ends Park, 56 SW Taylor St, Portland",
-    "latlng": Object {
+    "latlng": {
       "lat": 45.516201,
       "lon": -122.673245,
     },
@@ -2425,29 +2425,29 @@ Object {
 `;
 
 exports[`geocoder PELIAS should make reverse query with featurecollection enabled 1`] = `
-Object {
-  "bbox": Array [
+{
+  "bbox": [
     -122.673883,
     45.5161964,
     -122.673234,
     45.516689,
   ],
-  "features": Array [
-    Object {
-      "bbox": Array [
+  "features": [
+    {
+      "bbox": [
         -122.6732557,
         45.5161964,
         -122.673234,
         45.5162067,
       ],
-      "geometry": Object {
-        "coordinates": Array [
+      "geometry": {
+        "coordinates": [
           -122.673245,
           45.516201,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "accuracy": "point",
         "confidence": 0.9,
         "continent": "North America",
@@ -2479,15 +2479,15 @@ Object {
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.673609,
           45.516337,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "accuracy": "point",
         "confidence": 0.8,
         "continent": "North America",
@@ -2520,17 +2520,17 @@ Object {
       "type": "Feature",
     },
   ],
-  "geocoding": Object {
+  "geocoding": {
     "attribution": "http://lb-st-mapgeo.tri-met.org:4000/attribution",
-    "engine": Object {
+    "engine": {
       "author": "Mapzen",
       "name": "Pelias",
       "version": "1.0",
     },
-    "query": Object {
+    "query": {
       "boundary.circle.lat": 45.516198,
       "boundary.circle.lon": -122.67324,
-      "lang": Object {
+      "lang": {
         "defaulted": true,
         "iso6391": "en",
         "iso6393": "eng",
@@ -2544,13 +2544,13 @@ Object {
     },
     "timestamp": 1563949092620,
     "version": "0.2",
-    "warnings": Array [
+    "warnings": [
       "Invalid Parameter: api_key",
     ],
   },
-  "isomorphicMapzenSearchQuery": Object {
+  "isomorphicMapzenSearchQuery": {
     "api_key": "dummy-mapzen-key",
-    "point": Object {
+    "point": {
       "lat": 45.516198,
       "lon": -122.67324,
     },
@@ -2560,23 +2560,23 @@ Object {
 `;
 
 exports[`geocoder PELIAS should make search query 1`] = `
-Object {
-  "bbox": Array [
+{
+  "bbox": [
     -122.821522,
     45.495264,
     -122.475528,
     45.516278,
   ],
-  "features": Array [
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
           -122.673377,
           45.516278,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "accuracy": "point",
         "confidence": 1,
         "continent": "North America",
@@ -2606,15 +2606,15 @@ Object {
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.681441,
           45.511851,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "accuracy": "centroid",
         "confidence": 1,
         "continent": "North America",
@@ -2647,23 +2647,23 @@ Object {
       "type": "Feature",
     },
   ],
-  "geocoding": Object {
+  "geocoding": {
     "attribution": "http://lb-st-mapgeo.tri-met.org:4000/attribution",
-    "engine": Object {
+    "engine": {
       "author": "Mapzen",
       "name": "Pelias",
       "version": "1.0",
     },
-    "query": Object {
+    "query": {
       "focus.point.lat": 45.52,
       "focus.point.lon": -122.67,
-      "lang": Object {
+      "lang": {
         "defaulted": true,
         "iso6391": "en",
         "iso6393": "eng",
         "name": "English",
       },
-      "parsed_text": Object {},
+      "parsed_text": {},
       "parser": "addressit",
       "private": false,
       "querySize": 20,
@@ -2672,11 +2672,11 @@ Object {
     },
     "timestamp": 1563949031708,
     "version": "0.2",
-    "warnings": Array [
+    "warnings": [
       "Invalid Parameter: api_key",
     ],
   },
-  "isomorphicMapzenSearchQuery": Object {
+  "isomorphicMapzenSearchQuery": {
     "api_key": "dummy-mapzen-key",
     "size": 10,
     "text": "Mill Ends",
@@ -2686,19 +2686,19 @@ Object {
 `;
 
 exports[`geocoder PHOTON should get location from geocode feature 1`] = `
-Object {
+{
   "lat": 45.51621,
   "lon": -122.67325,
   "name": "Mill Ends Park, Southwest Naito Parkway, Downtown, OR, 97204, Portland, États-Unis d'Amérique",
-  "rawGeocodedFeature": Object {
-    "geometry": Object {
-      "coordinates": Array [
+  "rawGeocodedFeature": {
+    "geometry": {
+      "coordinates": [
         -122.67325,
         45.51621,
       ],
       "type": "Point",
     },
-    "properties": Object {
+    "properties": {
       "city": "Portland",
       "country": "États-Unis d'Amérique",
       "district": "Downtown",
@@ -2713,20 +2713,20 @@ Object {
 `;
 
 exports[`geocoder PHOTON should make autocomplete query 1`] = `
-Object {
-  "features": Array [
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
           -122.67325034999999,
           45.51621765,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "country": "États-Unis d'Amérique",
         "countrycode": "US",
-        "extent": Array [
+        "extent": [
           -122.673255,
           45.5162209,
           -122.6732457,
@@ -2742,15 +2742,15 @@ Object {
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.6733766,
           45.5162784,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "city": "Portland",
         "country": "États-Unis d'Amérique",
         "countrycode": "US",
@@ -2769,21 +2769,21 @@ Object {
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -2.4756598,
           53.7547536,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "city": "Blackburn",
         "country": "Royaume-Uni",
         "countrycode": "GB",
         "county": "Blackburn with Darwen",
         "district": "Four Lane Ends",
-        "extent": Array [
+        "extent": [
           -2.4758741,
           53.7548952,
           -2.4749263,
@@ -2801,21 +2801,21 @@ Object {
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -2.0318091,
           53.8904692,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "city": "Cowling",
         "country": "Royaume-Uni",
         "countrycode": "GB",
         "county": "North Yorkshire",
         "district": "Cowling",
-        "extent": Array [
+        "extent": [
           -2.0319873,
           53.8905873,
           -2.0317233,
@@ -2834,15 +2834,15 @@ Object {
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -74.4846831,
           40.7940011,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "city": "Morristown",
         "country": "États-Unis d'Amérique",
         "countrycode": "US",
@@ -2866,22 +2866,22 @@ Object {
 `;
 
 exports[`geocoder PHOTON should make reverse query 1`] = `
-Object {
+{
   "lat": 45.516198,
   "lon": -122.67324,
   "name": "Mill Ends Park, États-Unis d'Amérique",
-  "rawGeocodedFeature": Object {
-    "geometry": Object {
-      "coordinates": Array [
+  "rawGeocodedFeature": {
+    "geometry": {
+      "coordinates": [
         -122.67325034999999,
         45.51621765,
       ],
       "type": "Point",
     },
-    "properties": Object {
+    "properties": {
       "country": "États-Unis d'Amérique",
       "countrycode": "US",
-      "extent": Array [
+      "extent": [
         -122.673255,
         45.5162209,
         -122.6732457,
@@ -2900,20 +2900,20 @@ Object {
 `;
 
 exports[`geocoder PHOTON should make reverse query with featurecollection enabled 1`] = `
-Object {
-  "features": Array [
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
           -122.67325034999999,
           45.51621765,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "country": "États-Unis d'Amérique",
         "countrycode": "US",
-        "extent": Array [
+        "extent": [
           -122.673255,
           45.5162209,
           -122.6732457,
@@ -2930,7 +2930,7 @@ Object {
       "type": "Feature",
     },
   ],
-  "point": Object {
+  "point": {
     "lat": 45.516198,
     "lon": -122.67324,
   },
@@ -2939,20 +2939,20 @@ Object {
 `;
 
 exports[`geocoder PHOTON should make search query 1`] = `
-Object {
-  "features": Array [
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+{
+  "features": [
+    {
+      "geometry": {
+        "coordinates": [
           -122.67325034999999,
           45.51621765,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "country": "États-Unis d'Amérique",
         "countrycode": "US",
-        "extent": Array [
+        "extent": [
           -122.673255,
           45.5162209,
           -122.6732457,
@@ -2968,15 +2968,15 @@ Object {
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -122.6733766,
           45.5162784,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "city": "Portland",
         "country": "États-Unis d'Amérique",
         "countrycode": "US",
@@ -2995,21 +2995,21 @@ Object {
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -2.4756598,
           53.7547536,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "city": "Blackburn",
         "country": "Royaume-Uni",
         "countrycode": "GB",
         "county": "Blackburn with Darwen",
         "district": "Four Lane Ends",
-        "extent": Array [
+        "extent": [
           -2.4758741,
           53.7548952,
           -2.4749263,
@@ -3027,21 +3027,21 @@ Object {
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -2.0318091,
           53.8904692,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "city": "Cowling",
         "country": "Royaume-Uni",
         "countrycode": "GB",
         "county": "North Yorkshire",
         "district": "Cowling",
-        "extent": Array [
+        "extent": [
           -2.0319873,
           53.8905873,
           -2.0317233,
@@ -3060,15 +3060,15 @@ Object {
       },
       "type": "Feature",
     },
-    Object {
-      "geometry": Object {
-        "coordinates": Array [
+    {
+      "geometry": {
+        "coordinates": [
           -74.4846831,
           40.7940011,
         ],
         "type": "Point",
       },
-      "properties": Object {
+      "properties": {
         "city": "Morristown",
         "country": "États-Unis d'Amérique",
         "countrycode": "US",

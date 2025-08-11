@@ -3,11 +3,21 @@ import React, { ReactElement } from "react";
 import { FormattedDate } from "react-intl";
 import { Meta, Parameters, StoryContext, StoryObj } from "@storybook/react";
 import styled from "styled-components";
-import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
 // The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
 // eslint-disable-next-line import/no-named-as-default
-import TripDetails, { FareLegTable } from ".";
-import * as TripDetailsClasses from "./styled";
+
+// import mock itinaries. These are all trip plan outputs from OTP.
+import bikeOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json";
+import tncTransitTncItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json";
+import walkOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json";
+import walkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
+import flexItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
+import otp2ScooterItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json";
+import otp2FareProducts from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/leg-fare-products.json";
+import customFrenchMessages from "../__mocks__/custom-french-messages.yml";
+import customEnglishMessages from "../__mocks__/custom-english-messages.yml";
 import {
   TimeActiveDetailsProps,
   DepartureDetailsProps,
@@ -15,19 +25,11 @@ import {
   FareTableLayout,
   TripDetailsProps
 } from "./types";
+import * as TripDetailsClasses from "./styled";
+// eslint-disable-next-line import/no-named-as-default
+import TripDetails, { FareLegTable } from ".";
 
-import customEnglishMessages from "../__mocks__/custom-english-messages.yml";
-import customFrenchMessages from "../__mocks__/custom-french-messages.yml";
-
-// import mock itinaries. These are all trip plan outputs from OTP.
-const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
-const tncTransitTncItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json");
-const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json");
-const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
-const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
-const flexItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
-const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
-const otp2FareProducts = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/leg-fare-products.json");
+const { convertGraphQLResponseToLegacy } = coreUtils.itinerary;
 
 const flattenedEnglishMessages = flatten(customEnglishMessages);
 const flattenedFrenchMessages = flatten(customFrenchMessages);
