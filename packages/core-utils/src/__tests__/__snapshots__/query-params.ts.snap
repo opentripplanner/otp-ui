@@ -1,226 +1,226 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`query-params getCustomQueryParams should return queryParams with customizations 1`] = `
-Array [
-  Object {
+[
+  {
     "default": null,
     "itineraryRewrite": [Function],
     "name": "from",
     "profileRewrite": [Function],
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
       "PROFILE",
     ],
   },
-  Object {
+  {
     "default": null,
     "itineraryRewrite": [Function],
     "name": "to",
     "profileRewrite": [Function],
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
       "PROFILE",
     ],
   },
-  Object {
+  {
     "default": [Function],
     "name": "date",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
       "PROFILE",
     ],
   },
-  Object {
+  {
     "default": [Function],
     "name": "time",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "default": "NOW",
     "itineraryRewrite": [Function],
     "name": "departArrive",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "default": "07:00",
     "name": "startTime",
-    "routingTypes": Array [
+    "routingTypes": [
       "PROFILE",
     ],
   },
-  Object {
+  {
     "default": "09:00",
     "name": "endTime",
-    "routingTypes": Array [
+    "routingTypes": [
       "PROFILE",
     ],
   },
-  Object {
+  {
     "default": "WALK,TRANSIT",
     "name": "mode",
     "profileRewrite": [Function],
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
       "PROFILE",
     ],
   },
-  Object {
+  {
     "default": true,
     "name": "showIntermediateStops",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "applicable": [Function],
     "default": 1609,
     "label": "Max Walk Distance In Meters",
     "name": "maxWalkDistance",
-    "options": Array [
-      Object {
+    "options": [
+      {
         "text": "200 m",
         "value": 200,
       },
-      Object {
+      {
         "text": "500 m",
         "value": 500,
       },
     ],
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
     "selector": "DROPDOWN",
   },
-  Object {
+  {
     "applicable": [Function],
     "default": 4828,
     "itineraryRewrite": [Function],
     "label": "Maximum Bike",
     "name": "maxBikeDistance",
-    "options": Array [
-      Object {
+    "options": [
+      {
         "text": "1/4 mile",
         "value": 402.3,
       },
-      Object {
+      {
         "text": "1/2 mile",
         "value": 804.7,
       },
-      Object {
+      {
         "text": "3/4 mile",
         "value": 1207,
       },
-      Object {
+      {
         "text": "1 mile",
         "value": 1609,
       },
-      Object {
+      {
         "text": "2 miles",
         "value": 3219,
       },
-      Object {
+      {
         "text": "3 miles",
         "value": 4828,
       },
-      Object {
+      {
         "text": "5 miles",
         "value": 8047,
       },
-      Object {
+      {
         "text": "10 miles",
         "value": 16093,
       },
-      Object {
+      {
         "text": "20 miles",
         "value": 32187,
       },
-      Object {
+      {
         "text": "30 miles",
         "value": 48280,
       },
     ],
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
     "selector": "DROPDOWN",
   },
-  Object {
+  {
     "applicable": [Function],
     "default": "QUICK",
     "label": "Optimize for",
     "name": "optimize",
-    "options": Array [
-      Object {
+    "options": [
+      {
         "text": "Speed",
         "value": "QUICK",
       },
-      Object {
+      {
         "text": "Fewest Transfers",
         "value": "TRANSFERS",
       },
     ],
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
     "selector": "DROPDOWN",
   },
-  Object {
+  {
     "applicable": [Function],
     "default": "SAFE",
     "itineraryRewrite": [Function],
     "label": "Optimize for",
     "name": "optimizeBike",
     "options": [Function],
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
     "selector": "DROPDOWN",
   },
-  Object {
+  {
     "applicable": [Function],
     "default": 15,
     "label": "Max Walk Time",
     "name": "maxWalkTime",
-    "options": Array [
-      Object {
+    "options": [
+      {
         "text": "5 minutes",
         "value": 5,
       },
-      Object {
+      {
         "text": "10 minutes",
         "value": 10,
       },
-      Object {
+      {
         "text": "15 minutes",
         "value": 15,
       },
-      Object {
+      {
         "text": "20 minutes",
         "value": 20,
       },
-      Object {
+      {
         "text": "30 minutes",
         "value": 30,
       },
-      Object {
+      {
         "text": "45 minutes",
         "value": 45,
       },
-      Object {
+      {
         "text": "1 hour",
         "value": 60,
       },
     ],
-    "routingTypes": Array [
+    "routingTypes": [
       "PROFILE",
     ],
     "selector": "DROPDOWN",
   },
-  Object {
+  {
     "applicable": [Function],
     "high": 10,
     "label": "walk reluctance",
@@ -228,491 +228,503 @@ Array [
     "labelLow": "More Walking",
     "low": 1,
     "name": "walkReluctance",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
       "PROFILE",
     ],
     "selector": "SLIDER",
     "step": 0.5,
   },
-  Object {
+  {
     "applicable": [Function],
     "default": 20,
     "label": "Max Bike Time",
     "name": "maxBikeTime",
-    "options": Array [
-      Object {
+    "options": [
+      {
         "text": "5 minutes",
         "value": 5,
       },
-      Object {
+      {
         "text": "10 minutes",
         "value": 10,
       },
-      Object {
+      {
         "text": "15 minutes",
         "value": 15,
       },
-      Object {
+      {
         "text": "20 minutes",
         "value": 20,
       },
-      Object {
+      {
         "text": "30 minutes",
         "value": 30,
       },
-      Object {
+      {
         "text": "45 minutes",
         "value": 45,
       },
-      Object {
+      {
         "text": "1 hour",
         "value": 60,
       },
     ],
-    "routingTypes": Array [
+    "routingTypes": [
       "PROFILE",
     ],
     "selector": "DROPDOWN",
   },
-  Object {
+  {
     "applicable": [Function],
     "default": 3.58,
     "label": "Bicycle Speed",
     "name": "bikeSpeed",
-    "options": Array [
-      Object {
+    "options": [
+      {
         "text": "6 MPH",
         "value": 2.68,
       },
-      Object {
+      {
         "text": "8 MPH",
         "value": 3.58,
       },
-      Object {
+      {
         "text": "10 MPH",
         "value": 4.47,
       },
-      Object {
+      {
         "text": "12 MPH",
         "value": 5.36,
       },
     ],
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
       "PROFILE",
     ],
     "selector": "DROPDOWN",
   },
-  Object {
+  {
     "applicable": [Function],
     "default": 4828,
     "itineraryRewrite": [Function],
     "label": "Maximum E-scooter Distance",
     "name": "maxEScooterDistance",
-    "options": Array [
-      Object {
+    "options": [
+      {
         "text": "1/4 mile",
         "value": 402.3,
       },
-      Object {
+      {
         "text": "1/2 mile",
         "value": 804.7,
       },
-      Object {
+      {
         "text": "3/4 mile",
         "value": 1207,
       },
-      Object {
+      {
         "text": "1 mile",
         "value": 1609,
       },
-      Object {
+      {
         "text": "2 miles",
         "value": 3219,
       },
-      Object {
+      {
         "text": "3 miles",
         "value": 4828,
       },
-      Object {
+      {
         "text": "5 miles",
         "value": 8047,
       },
-      Object {
+      {
         "text": "10 miles",
         "value": 16093,
       },
-      Object {
+      {
         "text": "20 miles",
         "value": 32187,
       },
-      Object {
+      {
         "text": "30 miles",
         "value": 48280,
       },
     ],
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
     "selector": "DROPDOWN",
   },
-  Object {
+  {
     "applicable": [Function],
     "default": 250,
     "itineraryRewrite": [Function],
     "label": "E-scooter Power",
     "name": "watts",
-    "options": Array [
-      Object {
+    "options": [
+      {
         "text": "Kid's hoverboard (6mph)",
         "value": 125,
       },
-      Object {
+      {
         "text": "Entry-level scooter (11mph)",
         "value": 250,
       },
-      Object {
+      {
         "text": "Robust E-scooter (18mph)",
         "value": 500,
       },
-      Object {
+      {
         "text": "Powerful E-scooter (24mph)",
         "value": 1500,
       },
     ],
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
       "PROFILE",
     ],
     "selector": "DROPDOWN",
   },
-  Object {
+  {
     "default": false,
     "name": "ignoreRealtimeUpdates",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "companies",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "applicable": [Function],
     "default": false,
     "icon": <ForwardRef(Wheelchair) />,
     "label": "Prefer Wheelchair Accessible Routes",
     "name": "wheelchair",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
       "PROFILE",
     ],
     "selector": "CHECKBOX",
   },
+<<<<<<< HEAD
   Object {
     "name": "banned",
     "routingTypes": Array [
+=======
+  {
+    "name": "bannedRoutes",
+    "routingTypes": [
+>>>>>>> master
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "default": 3,
     "name": "numItineraries",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
-    "default": Array [],
+  {
+    "default": [],
     "itineraryRewrite": [Function],
     "name": "intermediatePlaces",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "default": 900,
     "name": "otherThanPreferredRoutesPenalty",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
+<<<<<<< HEAD
   Object {
     "name": "preferred",
     "routingTypes": Array [
+=======
+  {
+    "name": "preferredRoutes",
+    "routingTypes": [
+>>>>>>> master
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "maxPreTransitTime",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "waitReluctance",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "driveDistanceReluctance",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "driveTimeReluctance",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "waitAtBeginningFactor",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "bikeSwitchTime",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "bikeSwitchCost",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "minTransferTime",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "preferredAgencies",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "unpreferredRoutes",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "unpreferredAgencies",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "walkBoardCost",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "bikeBoardCost",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "whiteListedRoutes",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "bannedAgencies",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "whiteListedAgencies",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "bannedTrips",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "bannedStops",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "bannedStopsHard",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "transferPenalty",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "nonpreferredTransferPenalty",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "maxTransfers",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "batch",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "startTransitStopId",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "startTransitTripId",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "clampInitialWait",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "reverseOptimizeOnTheFly",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "boardSlack",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "alightSlack",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "locale",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "disableRemainingWeightHeuristic",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "flexFlagStopBufferSize",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "flexUseReservationServices",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "flexUseEligibilityServices",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "flexIgnoreDrtAdvanceBookMin",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "maxHours",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "useRequestedDateTimeInMaxHours",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "disableAlertFiltering",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "geoidElevation",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "invalidDateStrategy",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "minTransitDistance",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "searchTimeout",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "pathComparator",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "onlyTransitTrips",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
-  Object {
+  {
     "name": "minimumMicromobilitySpeed",
-    "routingTypes": Array [
+    "routingTypes": [
       "ITINERARY",
     ],
   },
