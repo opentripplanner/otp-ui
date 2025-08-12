@@ -412,15 +412,9 @@ exports[`query-params getCustomQueryParams should return queryParams with custom
     ],
     "selector": "CHECKBOX",
   },
-<<<<<<< HEAD
-  Object {
-    "name": "banned",
-    "routingTypes": Array [
-=======
   {
-    "name": "bannedRoutes",
+    "name": "banned",
     "routingTypes": [
->>>>>>> master
       "ITINERARY",
     ],
   },
@@ -446,15 +440,9 @@ exports[`query-params getCustomQueryParams should return queryParams with custom
       "ITINERARY",
     ],
   },
-<<<<<<< HEAD
-  Object {
-    "name": "preferred",
-    "routingTypes": Array [
-=======
   {
-    "name": "preferredRoutes",
+    "name": "preferred",
     "routingTypes": [
->>>>>>> master
       "ITINERARY",
     ],
   },
