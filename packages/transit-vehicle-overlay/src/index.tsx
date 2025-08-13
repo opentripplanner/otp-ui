@@ -62,7 +62,7 @@ type Props = {
   VehicleIcon?: FC<VehicleIconProps>;
 
   /**
-   * The list of vehicles to create stop markers for.
+   * The list of vehicles to create markers for.
    */
   vehicles?: TransitVehicle[];
 };

@@ -1,4 +1,5 @@
-import { action } from "@storybook/addon-actions";
+/* eslint-disable react/display-name */
+import { action } from "storybook/actions";
 import React, { Component, ReactElement, useState } from "react";
 
 import TripOptions from "./TripOptions";
@@ -71,60 +72,68 @@ const Template = args => (
   </PanelWrapper>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  supportedModes: commonModes
+export const Default = {
+  render: Template,
+
+  args: {
+    supportedModes: commonModes
+  }
 };
 
 // This story serves as a regression test for a bug that led to
 // categories in the structure the "CAR" category in this data to fail
 // to be given a default selection
-export const CompanyFirstMixedCategory = Template.bind({});
-CompanyFirstMixedCategory.args = {
-  supportedModes: modesWithCompanyFirstMixedCategory
+export const CompanyFirstMixedCategory = {
+  render: Template,
+
+  args: {
+    supportedModes: modesWithCompanyFirstMixedCategory
+  }
 };
 
-export const CustomIconsAndCloseButton = (): ReactElement => {
-  const [featuredOverlayShown, setFeaturedOverlayShown] = useState(false);
+export const CustomIconsAndCloseButton = {
+  render: (): ReactElement => {
+    const [featuredOverlayShown, setFeaturedOverlayShown] = useState(false);
 
-  return (
-    <>
-      <button
-        type="button"
-        disabled={!featuredOverlayShown}
-        onClick={() => {
-          setFeaturedOverlayShown(false);
-        }}
-      >
-        close overlay
-      </button>
-      <PanelWrapper>
-        <TripOptions
-          featuredItemOverlayShown={setFeaturedOverlayShown}
-          featuredItemOverlayEnabled={featuredOverlayShown}
-          supportedCompanies={commonCompanies}
-          supportedModes={commonModes}
-          tripOptionIconFillOverride="white"
-          checkboxIcons={{
-            // eslint-disable-next-line react/display-name
-            checked: () => <span>✅</span>,
-            // eslint-disable-next-line react/display-name
-            unchecked: () => <span>❌</span>
+    return (
+      <>
+        <button
+          type="button"
+          disabled={!featuredOverlayShown}
+          onClick={() => {
+            setFeaturedOverlayShown(false);
           }}
-          CompanyIcon={({ company }) => (
-            <i style={{ color: "black" }}>{company}</i>
-          )}
-          DetailedModeIcon={({ mode }) => <h1>{mode}</h1>}
-          SimpleModeIcon={({ mode }) => <b>{mode}</b>}
-          QuestionIcon={<span>😕</span>}
-        />
-      </PanelWrapper>
-    </>
-  );
-};
+        >
+          close overlay
+        </button>
+        <PanelWrapper>
+          <TripOptions
+            featuredItemOverlayShown={setFeaturedOverlayShown}
+            featuredItemOverlayEnabled={featuredOverlayShown}
+            supportedCompanies={commonCompanies}
+            supportedModes={commonModes}
+            tripOptionIconFillOverride="white"
+            checkboxIcons={{
+              // eslint-disable-next-line react/display-name
+              checked: () => <span>✅</span>,
+              // eslint-disable-next-line react/display-name
+              unchecked: () => <span>❌</span>
+            }}
+            CompanyIcon={({ company }) => (
+              <i style={{ color: "black" }}>{company}</i>
+            )}
+            DetailedModeIcon={({ mode }) => <h1>{mode}</h1>}
+            SimpleModeIcon={({ mode }) => <b>{mode}</b>}
+            QuestionIcon={<span>😕</span>}
+          />
+        </PanelWrapper>
+      </>
+    );
+  },
 
-// Disable storyshot for this story, as it is mostly the same as TripOptions
-// except with a hook that storyshot can't handle
-CustomIconsAndCloseButton.parameters = {
-  storyshots: { disable: true }
+  // Disable storyshot for this story, as it is mostly the same as TripOptions
+  // except with a hook that storyshot can't handle
+  parameters: {
+    storyshots: { disable: true }
+  }
 };

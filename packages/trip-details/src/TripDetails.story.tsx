@@ -3,11 +3,12 @@ import React, { ReactElement } from "react";
 import { FormattedDate } from "react-intl";
 import { Meta, Parameters, StoryContext, StoryObj } from "@storybook/react";
 import styled from "styled-components";
-import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
 // The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
 // eslint-disable-next-line import/no-named-as-default
-import TripDetails, { FareLegTable } from ".";
-import * as TripDetailsClasses from "./styled";
+
+import customFrenchMessages from "../__mocks__/custom-french-messages.yml";
+import customEnglishMessages from "../__mocks__/custom-english-messages.yml";
 import {
   TimeActiveDetailsProps,
   DepartureDetailsProps,
@@ -15,9 +16,9 @@ import {
   FareTableLayout,
   TripDetailsProps
 } from "./types";
-
-import customEnglishMessages from "../__mocks__/custom-english-messages.yml";
-import customFrenchMessages from "../__mocks__/custom-french-messages.yml";
+import * as TripDetailsClasses from "./styled";
+// eslint-disable-next-line import/no-named-as-default
+import TripDetails, { FareLegTable } from ".";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 import bikeOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-only.json";
@@ -28,6 +29,8 @@ import walkTransitWalkTransitWalkItinerary from "../../itinerary-body/src/__mock
 import flexItinerary from "../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
 import otp2ScooterItinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2-scooter.json";
 import otp2FareProducts from "../../itinerary-body/src/__mocks__/itineraries/leg-fare-products.json";
+
+const { convertGraphQLResponseToLegacy } = coreUtils.itinerary;
 
 const flattenedEnglishMessages = flatten(customEnglishMessages);
 const flattenedFrenchMessages = flatten(customFrenchMessages);

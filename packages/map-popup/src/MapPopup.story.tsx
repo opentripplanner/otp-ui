@@ -1,5 +1,5 @@
 import React from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import styled from "styled-components";
 import { Stop } from "@opentripplanner/types";
 import {
@@ -7,7 +7,7 @@ import {
   VehicleRentalStation
 } from "@opentripplanner/types/otp2";
 import { IntlProvider } from "react-intl";
-import { Meta } from "@storybook/react";
+import { Meta } from "@storybook/react-vite";
 import MapPopupContents, { Feed } from "./index";
 
 // HOC to wrap components with IntlProvider

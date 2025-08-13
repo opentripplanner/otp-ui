@@ -1,5 +1,6 @@
+/* eslint-disable react/display-name */
 import React, { ReactNode } from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 
 import { Company } from "@opentripplanner/types";
 import {
@@ -87,21 +88,20 @@ export const RentalBicycles = () => (
   />
 );
 
-export const RentalBicyclesVisibilityControlledByKnob = ({
-  visible
-}: {
-  visible: boolean;
-}): ReactNode => {
-  return (
-    <ZoomControlledMapWithVehicleRentalOverlay
-      companies={["BIKETOWN"]}
-      refreshVehicles={action("refresh bicycles")}
-      entities={bikeRentalStations}
-      visible={visible}
-    />
-  );
+export const RentalBicyclesVisibilityControlledByKnob = {
+  render: ({ visible }: { visible: boolean }): ReactNode => {
+    return (
+      <ZoomControlledMapWithVehicleRentalOverlay
+        companies={["BIKETOWN"]}
+        refreshVehicles={action("refresh bicycles")}
+        stations={bikeRentalStations}
+        visible={visible}
+      />
+    );
+  },
+
+  args: { visible: true }
 };
-RentalBicyclesVisibilityControlledByKnob.args = { visible: true };
 
 export const RentalCars = () => (
   <ZoomControlledMapWithVehicleRentalOverlay
