@@ -2,7 +2,10 @@ import React from "react";
 import { action } from "@storybook/addon-actions";
 import styled from "styled-components";
 import { Stop } from "@opentripplanner/types";
-import { VehicleRentalStation } from "@opentripplanner/types/otp2";
+import {
+  RentalVehicle,
+  VehicleRentalStation
+} from "@opentripplanner/types/otp2";
 import { IntlProvider } from "react-intl";
 import { Meta } from "@storybook/react";
 import MapPopupContents, { Feed } from "./index";
@@ -69,8 +72,7 @@ const SAMPLE_FEEDS: Feed[] = [
   }
 ];
 
-const VEHICLE_RENTAL_STATION = {
-  "stroke-width": 2,
+const VEHICLE_RENTAL_STATION: VehicleRentalStation = {
   allowDropoff: true,
   allowPickup: true,
   availableVehicles: {
@@ -81,43 +83,32 @@ const VEHICLE_RENTAL_STATION = {
     total: 11,
     byType: [{ count: 12, vehicleType: { formFactor: "BICYCLE" } }]
   },
-  color: "#f00",
   id: '"hub_1580"',
-  isCarStation: false,
-  isFloatingBike: false,
   lat: 45.5219604810172,
   lon: -122.6896771788597,
   name: "SW Morrison at 18th",
   rentalNetwork: { networkId: "BIKETOWN" },
-  realTimeData: true
+  realtime: true
 };
 
-const FLOATING_VEHICLE = {
-  "stroke-width": 1,
-  allowDropoff: false,
-  allowPickup: true,
-  color: "#f00",
+const FLOATING_VEHICLE: RentalVehicle = {
+  allowPickupNow: true,
   id: '"bike_6861"',
   vehicleType: { formFactor: "BICYCLE" },
   lat: 45.525486666666666,
   lon: -122.70486,
   name: "0541",
-  rentalNetwork: { networkId: "BIKETOWN" },
-  realTimeData: true
+  rentalNetwork: { networkId: "BIKETOWN" }
 };
 
-const FLOATING_CAR = {
-  "stroke-width": 1,
-  allowDropoff: false,
-  allowPickup: true,
-  color: "#333",
+const FLOATING_CAR: RentalVehicle = {
+  allowPickupNow: true,
   id: "car_6861",
   vehicleType: { formFactor: "CAR" },
   lat: 52.52,
   lon: 13.405,
   name: "0541",
-  rentalNetwork: { networkId: "MILES" },
-  realTimeData: true
+  rentalNetwork: { networkId: "MILES" }
 };
 
 const getEntityPrefixExample = (entity: Stop | VehicleRentalStation) => {
