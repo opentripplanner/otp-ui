@@ -902,9 +902,6 @@ importers:
       '@styled-icons/fa-solid':
         specifier: 'catalog:'
         version: 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      flat:
-        specifier: 'catalog:'
-        version: 5.0.2
       react:
         specifier: 'catalog:'
         version: 18.2.0
@@ -921,9 +918,6 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
-      '@types/flat':
-        specifier: 'catalog:'
-        version: 5.0.5
 
   packages/trip-form:
     dependencies:

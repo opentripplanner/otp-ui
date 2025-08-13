@@ -1,12 +1,5 @@
 otpUi:
   TripDetails:
-    FareTable:
-      cash: முழுத்தொகை
-      electronic: மின்னணு
-      regular: அகவை வந்தோர்
-      senior: சீனியர்
-      special: சிறப்பு
-      youth: இளமை
     co2: "Co₂ உமிழும்: <strong> {co2} </strong>"
     co2description: >-
       ஒவ்வொரு பயன்முறையின் CO₂ தீவிரத்தினால் ஒரு பயணத்தின் ஒவ்வொரு காலின்

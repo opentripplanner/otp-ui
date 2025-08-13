@@ -1,12 +1,20 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const InvisibleA11yLabel = styled.span`
+const InvisibleA11yStyles = css`
   display: inline-block;
   clip: rect(0, 0, 0, 0);
   height: 0;
   overflow: hidden;
   position: absolute;
   width: 0;
+`;
+export const InvisibleA11yLabel = styled.span`
+  ${InvisibleA11yStyles}
+`;
+
+// Warning: https://github.com/opentripplanner/otp-ui/pull/855#discussion_r2248534209
+export const InvisibleA11yCaption = styled.caption`
+  ${InvisibleA11yStyles}
 `;
 
 const BaseButton = styled.button`
@@ -88,6 +96,7 @@ export const TripDetails = styled.div`
   margin-bottom: 15px;
   margin-top: 16px;
   padding: 10px 16px;
+  overflow-x: scroll;
 `;
 
 export const TripDetailsBody = styled.div``;
