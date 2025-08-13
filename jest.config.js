@@ -1,7 +1,10 @@
 module.exports = {
   cacheDirectory: ".jest-cache",
   coverageDirectory: ".jest-coverage",
-  coveragePathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/lib/"],
+  coveragePathIgnorePatterns: [
+    "<rootDir>/packages/(?:.+?)/lib/",
+    "<rootDir>/packages/(?:.+?)/esm/"
+  ],
   coverageReporters: ["html", "text"],
   coverageThreshold: {
     global: {
@@ -31,7 +34,7 @@ module.exports = {
   transform: {
     "\\.[jt]sx?$": "babel-jest",
     "\\.ya?ml$": "yaml-jest",
-    "node_modules/chroma-js/.+\\.js$": "<rootDir>/transform-esm-modules.js"
+    "\\.graphql$": "jest-file-loader"
   },
   transformIgnorePatterns: ["/node_modules/(?!(chroma-js)/)"]
 };

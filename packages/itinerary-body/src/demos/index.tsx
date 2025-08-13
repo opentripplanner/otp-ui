@@ -1,7 +1,7 @@
 import { Place } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedTime } from "react-intl";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import styled from "styled-components";
 import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle";
 

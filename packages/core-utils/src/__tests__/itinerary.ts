@@ -14,13 +14,13 @@ import {
   mapOldElevationComponentToNew
 } from "../itinerary";
 
-global.structuredClone = val => JSON.parse(JSON.stringify(val));
+import bikeRentalItinerary from "./__mocks__/bike-rental-itinerary.json";
+import tncItinerary from "./__mocks__/tnc-itinerary.json";
+import fareProductItinerary from "./__mocks__/fare-products-itinerary.json";
+import flexItinerary from "../../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
+import faresv2Itinerary from "../../../itinerary-body/src/__mocks__/itineraries/fares-v2-fare-components.json";
 
-const bikeRentalItinerary = require("./__mocks__/bike-rental-itinerary.json");
-const tncItinerary = require("./__mocks__/tnc-itinerary.json");
-const fareProductItinerary = require("./__mocks__/fare-products-itinerary.json");
-const flexItinerary = require("../../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
-const faresv2Itinerary = require("../../../itinerary-body/src/__mocks__/itineraries/fares-v2-fare-components.json");
+global.structuredClone = val => JSON.parse(JSON.stringify(val));
 
 const basePlace = {
   lat: 0,
