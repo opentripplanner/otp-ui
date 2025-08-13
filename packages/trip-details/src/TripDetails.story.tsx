@@ -8,7 +8,7 @@ import tncTransitTncItinerary from "../../itinerary-body/src/__mocks__/itinerari
 import walkOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-only.json";
 import walkTransitWalkItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
 import walkTransitWalkTransitWalkItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
-import flexItinerary from "../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
+import flexItinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2.4-transit-itinerary.json";
 import otp2ScooterItinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2-scooter.json";
 import otp2FareProducts from "../../itinerary-body/src/__mocks__/itineraries/leg-fare-products.json";
 import multipleFareOptionsItinerary from "../../itinerary-body/src/__mocks__/itineraries/fares-v2-multiple-options.json";
