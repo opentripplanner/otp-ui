@@ -43,6 +43,7 @@ export function makeDefaultGetEntityName(
 
     if (
       "vehicleType" in entity &&
+      !("availableVehicles" in entity) &&
       entity.vehicleType?.formFactor === "BICYCLE"
     ) {
       stationName = intl.formatMessage(
@@ -73,6 +74,7 @@ export function makeDefaultGetEntityName(
       );
     } else if (
       "vehicleType" in entity &&
+      !("availableVehicles" in entity) &&
       entity.vehicleType?.formFactor.startsWith("SCOOTER")
     ) {
       stationName = intl.formatMessage(
