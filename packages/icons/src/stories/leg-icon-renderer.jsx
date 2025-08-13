@@ -9,6 +9,7 @@ import tncTransitTncItinerary from "../../../itinerary-body/src/__mocks__/itiner
 import walkOnlyItinerary from "../../../itinerary-body/src/__mocks__/itineraries/walk-only.json";
 import walkTransitWalkItinerary from "../../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
 import walkTransitWalkTransitWalkItinerary from "../../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
+import IconRenderer from "../icon-renderer";
 
 const exampleLegs = [
   { leg: bikeOnlyItinerary.legs[0], type: "Personal bike" },
