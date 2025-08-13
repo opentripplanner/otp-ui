@@ -94,7 +94,7 @@ export const RentalBicyclesVisibilityControlledByKnob = {
       <ZoomControlledMapWithVehicleRentalOverlay
         companies={["BIKETOWN"]}
         refreshVehicles={action("refresh bicycles")}
-        stations={bikeRentalStations}
+        entities={bikeRentalStations}
         visible={visible}
       />
     );
