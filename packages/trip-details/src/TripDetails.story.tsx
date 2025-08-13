@@ -7,6 +7,15 @@ import coreUtils from "@opentripplanner/core-utils";
 // The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
 // eslint-disable-next-line import/no-named-as-default
 
+// import mock itinaries. These are all trip plan outputs from OTP.
+import bikeOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-only.json";
+import tncTransitTncItinerary from "../../itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json";
+import walkOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-only.json";
+import walkTransitWalkItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkTransitWalkItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
+import flexItinerary from "../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
+import otp2ScooterItinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2-scooter.json";
+import otp2FareProducts from "../../itinerary-body/src/__mocks__/itineraries/leg-fare-products.json";
 import customFrenchMessages from "../__mocks__/custom-french-messages.yml";
 import customEnglishMessages from "../__mocks__/custom-english-messages.yml";
 import {
@@ -19,16 +28,6 @@ import {
 import * as TripDetailsClasses from "./styled";
 // eslint-disable-next-line import/no-named-as-default
 import TripDetails, { FareLegTable } from ".";
-
-// import mock itinaries. These are all trip plan outputs from OTP.
-import bikeOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-only.json";
-import tncTransitTncItinerary from "../../itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json";
-import walkOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-only.json";
-import walkTransitWalkItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
-import walkTransitWalkTransitWalkItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
-import flexItinerary from "../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
-import otp2ScooterItinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2-scooter.json";
-import otp2FareProducts from "../../itinerary-body/src/__mocks__/itineraries/leg-fare-products.json";
 
 const { convertGraphQLResponseToLegacy } = coreUtils.itinerary;
 
