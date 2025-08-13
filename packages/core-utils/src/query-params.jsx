@@ -628,7 +628,7 @@ const queryParams = [
   },
 
   {
-    name: "bannedRoutes",
+    name: "banned",
     routingTypes: ["ITINERARY"]
   },
   {
@@ -659,7 +659,7 @@ const queryParams = [
   // passed in a query parameter they do not get filtered out from the ultimate
   // API request.
   {
-    name: "preferredRoutes",
+    name: "preferred",
     routingTypes: ["ITINERARY"]
   },
   {
