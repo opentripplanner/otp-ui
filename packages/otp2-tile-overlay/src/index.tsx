@@ -106,18 +106,37 @@ const OTP2TileLayerWithPopup = ({
     if (sourceLayer === "stops" || sourceLayer === "stations") {
       setClickedEntity(synthesizedEntity);
     }
-    if (sourceLayer === "rentalVehicles" || sourceLayer === "rentalStations") {
+    if (sourceLayer === "rentalVehicles") {
+      // need to make sure the required fields in RentalVehicle type are present and also
+      // manipulate some of the data to the right form
       setClickedEntity({
-        // GraphQL field not in the tile info, but we can deduce it
-        isFloatingBike:
-          sourceLayer === "rentalVehicles" &&
-          // @ts-expect-error TODO Find/implement the correct type
-          synthesizedEntity.formFactor === "BICYCLE",
-        // GraphQL field not in the tile info, but we can deduce it
-        isFloatingVehicle:
-          sourceLayer === "rentalVehicles" &&
-          // @ts-expect-error TODO Find/implement the correct type
-          synthesizedEntity.formFactor === "SCOOTER",
+        name: "name" in synthesizedEntity ? synthesizedEntity.name : "",
+        vehicleType:
+          "formFactor" in synthesizedEntity
+            ? { formFactor: synthesizedEntity.formFactor }
+            : undefined,
+        rentalNetwork:
+          "network" in synthesizedEntity
+            ? { networkId: synthesizedEntity.network }
+            : undefined,
+        ...synthesizedEntity
+      });
+    }
+    if (sourceLayer === "rentalStations") {
+      // need to make sure the required fields in VehicleRentalStation type are present and also
+      // manipulate some of the data to the right form
+      setClickedEntity({
+        name: "name" in synthesizedEntity ? synthesizedEntity.name : "",
+        vehicleType:
+          "formFactors" in synthesizedEntity
+            ? { formFactor: synthesizedEntity.formFactors }
+            : undefined,
+        rentalNetwork:
+          "network" in synthesizedEntity
+            ? { networkId: synthesizedEntity.network }
+            : undefined,
+        availableVehicles: undefined,
+        availableSpaces: undefined,
         ...synthesizedEntity
       });
     }
