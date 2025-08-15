@@ -16,7 +16,8 @@ import {
   aggregateModes,
   convertModeSettingValue,
   populateSettingWithValue,
-  getBannedRoutesFromSubmodes
+  getBannedRoutesFromSubmodes,
+  findRequiredOptionsForTransportMode
 } from "./MetroModeSelector/utils";
 import { ModeSettingRenderer } from "./MetroModeSelector/SubSettingsPane";
 import TripOptions, { Styled as TripOptionsStyled } from "./TripOptions";
@@ -31,6 +32,7 @@ export {
   DepartArriveDropdown,
   defaultModeSettings,
   DropdownSelector,
+  findRequiredOptionsForTransportMode,
   GeneralSettingsPanel,
   getBannedRoutesFromSubmodes,
   MetroModeSelector,

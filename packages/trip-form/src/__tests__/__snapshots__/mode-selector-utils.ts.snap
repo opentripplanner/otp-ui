@@ -3,7 +3,9 @@
 exports[`mode selector utils check add settings to button should add applicable mode settings to the buttons 1`] = `
 [
   {
+    "Icon": [Function],
     "enabled": true,
+    "iconName": "transit icon",
     "key": "TRANSIT",
     "label": "Transit",
     "modeSettings": [
@@ -21,6 +23,7 @@ exports[`mode selector utils check add settings to button should add applicable 
         "applicableMode": "TRANSIT",
         "default": true,
         "key": "enableHovercraft",
+        "label": "Bus",
         "overrideMode": "HOVERCRAFT",
         "type": "SUBMODE",
       },
@@ -35,8 +38,9 @@ exports[`mode selector utils check add settings to button should add applicable 
     ],
   },
   {
-    "Icon": {},
+    "Icon": [Function],
     "enabled": true,
+    "iconName": "walking icon",
     "key": "WALK",
     "label": "Walking",
     "modeSettings": [
@@ -60,8 +64,9 @@ exports[`mode selector utils check add settings to button should add applicable 
     ],
   },
   {
-    "Icon": {},
+    "Icon": [Function],
     "enabled": true,
+    "iconName": "biking icon",
     "key": "BIKE",
     "label": "Bike",
     "modeSettings": [
@@ -177,6 +182,7 @@ exports[`mode selector utils populate mode settings with values should populate 
     "applicableMode": "TRANSIT",
     "default": true,
     "key": "enableHovercraft",
+    "label": "Bus",
     "overrideMode": "HOVERCRAFT",
     "type": "SUBMODE",
     "value": false,
