@@ -8,14 +8,14 @@ import coreUtils from "@opentripplanner/core-utils";
 // eslint-disable-next-line import/no-named-as-default
 
 // import mock itinaries. These are all trip plan outputs from OTP.
-import bikeOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json";
-import tncTransitTncItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json";
-import walkOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json";
-import walkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
-import walkTransitWalkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
-import flexItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
-import otp2ScooterItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json";
-import otp2FareProducts from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/leg-fare-products.json";
+import bikeOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-only.json";
+import tncTransitTncItinerary from "../../itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json";
+import walkOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-only.json";
+import walkTransitWalkItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkTransitWalkItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
+import flexItinerary from "../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
+import otp2ScooterItinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2-scooter.json";
+import otp2FareProducts from "../../itinerary-body/src/__mocks__/itineraries/leg-fare-products.json";
 import customFrenchMessages from "../__mocks__/custom-french-messages.yml";
 import customEnglishMessages from "../__mocks__/custom-english-messages.yml";
 import {
