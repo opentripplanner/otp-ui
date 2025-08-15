@@ -303,7 +303,7 @@ describe("mode selector utils", () => {
     ];
 
     it.each<RequiredOptionsForTransportModeType>(cases)(
-      "when mode is %s and qualifier is %s",
+      "when mode is %s and qualifier is %s, expect %s",
       (
         mode: string,
         qualifier: string | undefined,
