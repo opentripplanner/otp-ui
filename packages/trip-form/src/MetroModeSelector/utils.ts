@@ -190,3 +190,48 @@ export const setModeButtonEnabled = (enabledKeys: string[]) => (
     enabled: enabledKeys.includes(modeButton.key)
   };
 };
+
+export const findRequiredOptionsForTransportMode = (
+  modeButtons: ModeButtonDefinition[],
+  settings: ModeSetting[],
+  transportMode: TransportMode
+): {
+  modeSetting?: string;
+  modeButton: string;
+} => {
+  // If there's a mode button with the mode we need, then just return that. No mode setting necessary
+  const modeButtonOnly = modeButtons.find(mb =>
+    mb.modes.some(
+      m =>
+        m.mode === transportMode.mode && m.qualifier === transportMode.qualifier
+    )
+  );
+  if (modeButtonOnly) {
+    return {
+      modeButton: modeButtonOnly.key
+    };
+  }
+  // Otherwise, look for a mode setting with the mode button that we need
+  const modeSetting = settings.find(ms => {
+    if ("addTransportMode" in ms) {
+      const newTransportModes = Array.isArray(ms.addTransportMode)
+        ? ms.addTransportMode
+        : [ms.addTransportMode];
+      return newTransportModes.some(
+        m =>
+          m.mode === transportMode.mode &&
+          m.qualifier === transportMode.qualifier
+      );
+    }
+    return false;
+  });
+  const { applicableMode } = modeSetting;
+  const applicableModeButton = modeButtons.find(mb =>
+    mb.modes.some(m => m.mode === applicableMode)
+  );
+
+  return {
+    modeSetting: modeSetting.key,
+    modeButton: applicableModeButton.key
+  };
+};
