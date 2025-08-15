@@ -191,47 +191,63 @@ export const setModeButtonEnabled = (enabledKeys: string[]) => (
   };
 };
 
+/**
+ * Determines which modeButton (and potentially modeSetting) needs to be set in the query params
+ * for a certain TransportMode to be enabled. This is necessary because certain configurations
+ * have combinations of modeButtons and modeSettings that do not directly map to a given mode
+ * @param modeButtons Array of mode buttons from config
+ * @param settings Array of mode settings from config
+ * @param transportMode Desired transport mode
+ * @returns The relevant modeButton and modeSetting, or undefined if no combination is found
+ */
 export const findRequiredOptionsForTransportMode = (
   modeButtons: ModeButtonDefinition[],
   settings: ModeSetting[],
   transportMode: TransportMode
-): {
-  modeSetting?: string;
-  modeButton: string;
-} => {
+):
+  | {
+      modeSetting?: string;
+      modeButton: string;
+    }
+  | undefined => {
   // If there's a mode button with the mode we need, then just return that. No mode setting necessary
   const modeButtonOnly = modeButtons.find(mb =>
-    mb.modes.some(
+    mb.modes?.some(
       m =>
         m.mode === transportMode.mode && m.qualifier === transportMode.qualifier
     )
   );
+
   if (modeButtonOnly) {
     return {
       modeButton: modeButtonOnly.key
     };
   }
+
   // Otherwise, look for a mode setting with the mode button that we need
   const modeSetting = settings.find(ms => {
-    if ("addTransportMode" in ms) {
-      const newTransportModes = Array.isArray(ms.addTransportMode)
-        ? ms.addTransportMode
-        : [ms.addTransportMode];
-      return newTransportModes.some(
+    if (!("addTransportMode" in ms)) return false;
+
+    return [ms.addTransportMode]
+      .flat() // addTransportMode can be a single TransportMode or an array of them
+      .some(
         m =>
           m.mode === transportMode.mode &&
           m.qualifier === transportMode.qualifier
       );
-    }
-    return false;
   });
+
+  if (!modeSetting) return undefined;
+
   const { applicableMode } = modeSetting;
   const applicableModeButton = modeButtons.find(mb =>
-    mb.modes.some(m => m.mode === applicableMode)
+    mb.modes?.some(m => m.mode === applicableMode)
   );
 
-  return {
-    modeSetting: modeSetting.key,
-    modeButton: applicableModeButton.key
-  };
+  return applicableModeButton
+    ? {
+        modeSetting: modeSetting.key,
+        modeButton: applicableModeButton.key
+      }
+    : undefined;
 };
