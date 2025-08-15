@@ -93,7 +93,7 @@ const OTP2TileLayerWithPopup = ({
 
   const defaultClickHandler = (event: MapLayerMouseEvent) => {
     const { sourceLayer } = event.features?.[0];
-    const synthesizedEntity = {
+    const synthesizedEntity: Record<string, any> = {
       ...event.features?.[0].properties,
       lat: event.lngLat.lat,
       lon: event.lngLat.lng,
@@ -106,40 +106,26 @@ const OTP2TileLayerWithPopup = ({
     if (sourceLayer === "stops" || sourceLayer === "stations") {
       setClickedEntity(synthesizedEntity);
     }
-    if (sourceLayer === "rentalVehicles") {
-      // need to make sure the required fields in RentalVehicle type are present and also
-      // manipulate some of the data to the right form
-      setClickedEntity({
-        name: "name" in synthesizedEntity ? synthesizedEntity.name : "",
-        vehicleType:
-          "formFactor" in synthesizedEntity
-            ? { formFactor: synthesizedEntity.formFactor }
-            : undefined,
-        rentalNetwork:
-          "network" in synthesizedEntity
-            ? { networkId: synthesizedEntity.network }
-            : undefined,
-        ...synthesizedEntity
-      });
-    }
+
+    // For rental vehicles and rental stations, additional fields need to be added in order to
+    // be compatible with the RentalVehicle and VehicleRentalStation types from OTP2
+    synthesizedEntity.name = synthesizedEntity.name ?? "";
+    synthesizedEntity.vehicleType =
+      sourceLayer === "rentalVehicles" && "formFactor" in synthesizedEntity
+        ? { formFactor: synthesizedEntity.formFactor }
+        : sourceLayer === "rentalStations" && "formFactors" in synthesizedEntity
+        ? { formFactor: synthesizedEntity.formFactors }
+        : undefined;
+    synthesizedEntity.rentalNetwork =
+      "network" in synthesizedEntity
+        ? { networkId: synthesizedEntity.network }
+        : undefined;
     if (sourceLayer === "rentalStations") {
-      // need to make sure the required fields in VehicleRentalStation type are present and also
-      // manipulate some of the data to the right form
-      setClickedEntity({
-        name: "name" in synthesizedEntity ? synthesizedEntity.name : "",
-        vehicleType:
-          "formFactors" in synthesizedEntity
-            ? { formFactor: synthesizedEntity.formFactors }
-            : undefined,
-        rentalNetwork:
-          "network" in synthesizedEntity
-            ? { networkId: synthesizedEntity.network }
-            : undefined,
-        availableVehicles: undefined,
-        availableSpaces: undefined,
-        ...synthesizedEntity
-      });
+      synthesizedEntity.availableVehicles = undefined;
+      synthesizedEntity.availableSpaces = undefined;
     }
+
+    setClickedEntity(synthesizedEntity);
   };
 
   const onLayerEnter = useCallback(() => {
