@@ -6,5 +6,7 @@ otpUi:
     floatingCar: "Car: {name}"
     floatingEScooter: "E-scooter: {name}"
     popupTitle: "{stationNetwork, select, false {{name}} other {{stationNetwork} {name}}}"
-    stopId: "Stop ID: {stopId}"
+    stopId: >-
+      {feedName, select, undefined {Stop ID: {stopId}} other {Stop ID:
+      {feedName} {stopId}}}
     stopViewer: Stop Viewer
