@@ -188,8 +188,8 @@ export const OTP2FlexItinerary = (): ReactElement => (
 export const IndividualLegFareComponents = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     defaultFareSelector={{
-      mediumId: "orca:cash",
-      riderCategoryId: "orca:regular"
+      mediumId: "cash",
+      riderCategoryId: "regular"
     }}
     itinerary={withLegacyLegs(fareProductsItinerary)}
   />

@@ -1,17 +1,23 @@
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
-import flatten from "flat";
 import coreUtils from "@opentripplanner/core-utils";
 import { FareProductSelector, Itinerary } from "@opentripplanner/types";
 import { MoneyBillAlt } from "@styled-icons/fa-solid";
+import { flatten } from "flat";
 import * as S from "../styled";
 import { boldText, renderFare } from "../utils";
 import TripDetail from "../trip-detail";
-import { FareConfig, FareDetailsProps } from "../types";
-import FareLegTable from "./fare-table";
+import { FareDetailsProps } from "../types";
+import FaresV2Table from "./fares-v2-table";
 
 // Load the default messages.
 import defaultEnglishMessages from "../../i18n/en-US.yml";
+
+export interface FaresProps {
+  itinerary: Itinerary;
+  FareDetails?: React.ElementType<FareDetailsProps>;
+  defaultFareType?: FareProductSelector;
+}
 
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
@@ -19,21 +25,14 @@ import defaultEnglishMessages from "../../i18n/en-US.yml";
 // - the yaml loader for jest returns messages with flattened ids.
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
-export interface FaresProps {
-  itinerary: Itinerary;
-  FareDetails?: React.ElementType<FareDetailsProps>;
-  fareConfig?: FareConfig;
-}
-
 export default function Fares({
   itinerary,
   FareDetails,
-  fareConfig = {}
+  defaultFareType
 }: FaresProps): ReactElement | null {
+  // process the transit fare
   const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
   const { currencyCode, maxTNCFare, minTNCFare } = fareResult;
-
-  const { defaultFareType, fareDetailsLayout, fareKeyNameMap } = fareConfig;
 
   const { companies, fareTypes } = itinerary.legs.reduce<{
     companies: string;
@@ -64,86 +63,48 @@ export default function Fares({
     { companies: "", fareTypes: [] }
   );
 
-  let fare;
-  if (fareTypes.length > 0 && defaultFareType) {
-    const defaultFareTotal = coreUtils.itinerary.getItineraryCost(
-      itinerary.legs,
-      defaultFareType.mediumId,
-      defaultFareType.riderCategoryId
-    );
-    // Depending on if there are additional fares to display either render a <span> or a <details>
-    const TransitFareWrapper =
-      fareTypes.length > 1 ? S.TransitFare : S.TransitFareSingle;
-
-    const fareNameFallback = (
-      <FormattedMessage
-        defaultMessage={defaultMessages["otpUi.TripDetails.transitFare"]}
-        description="Text showing the price of tickets on public transportation."
-        id="otpUi.TripDetails.transitFare"
-      />
-    );
-
-    fare = defaultFareTotal !== undefined && (
-      <S.Fare>
-        <TransitFareWrapper>
-          <summary style={{ display: fareTypes.length > 1 ? "list-item" : "" }}>
-            <FormattedMessage
-              defaultMessage={
-                defaultMessages["otpUi.TripDetails.transitFareEntry"]
-              }
-              description="Text showing the price of tickets on public transportation."
-              id="otpUi.TripDetails.transitFareEntry"
-              values={{
-                name:
-                  (defaultFareType.headerKey &&
-                    fareKeyNameMap?.[defaultFareType.headerKey]) ||
-                  fareNameFallback,
-                strong: boldText,
-                value: renderFare(
-                  defaultFareTotal.currency?.code || "USD",
-                  defaultFareTotal?.amount
-                )
-              }}
-            />
-          </summary>
-          {fareDetailsLayout ? (
-            // Show full ƒare details by leg
-            <FareLegTable layout={fareDetailsLayout} legs={itinerary.legs} />
-          ) : (
-            // Just show the fares for each payment type
-            fareTypes.map(fareType => {
-              // Don't show the default fare twice!
-              if (fareType) {
-                return null;
-              }
-              return (
+  const defaultFareTotal = coreUtils.itinerary.getItineraryCost(
+    itinerary.legs,
+    defaultFareType?.mediumId || null,
+    defaultFareType?.riderCategoryId || null
+  );
+  // Depending on if there are additional fares to display either render a <span> or a <details>
+  const fare = defaultFareTotal !== undefined && (
+    <S.Fare>
+      <S.TransitFare>
+        <summary style={{ display: fareTypes.length > 1 ? "list-item" : "" }}>
+          <FormattedMessage
+            defaultMessage={
+              defaultMessages["otpUi.TripDetails.transitFareEntry"]
+            }
+            description="Text showing the price of tickets on public transportation."
+            id="otpUi.TripDetails.transitFareEntry"
+            values={{
+              name: (
                 <FormattedMessage
                   defaultMessage={
-                    defaultMessages["otpUi.TripDetails.transitFareEntry"]
+                    defaultMessages["otpUi.TripDetails.transitFare"]
                   }
                   description="Text showing the price of tickets on public transportation."
-                  id="otpUi.TripDetails.transitFareEntry"
-                  key={Object.values(fareType).join("-")}
-                  values={{
-                    name:
-                      (defaultFareType.headerKey &&
-                        fareKeyNameMap?.[defaultFareType.headerKey]) ||
-                      fareNameFallback,
-                    strong: boldText,
-                    value: renderFare(
-                      defaultFareTotal.currency?.code || "USD",
-                      defaultFareTotal?.amount /
-                        defaultFareTotal?.currency?.digits
-                    )
-                  }}
+                  id="otpUi.TripDetails.transitFare"
                 />
-              );
-            })
-          )}
-        </TransitFareWrapper>
-      </S.Fare>
-    );
-  }
+              ),
+              strong: boldText,
+              value: renderFare(
+                defaultFareTotal.currency?.code || "USD",
+                defaultFareTotal?.amount
+              )
+            }}
+          />
+        </summary>
+        <FaresV2Table
+          legs={itinerary.legs}
+          favoriteMediumId={defaultFareType?.mediumId}
+          favoriteRiderCategoryId={defaultFareType?.riderCategoryId}
+        />
+      </S.TransitFare>
+    </S.Fare>
+  );
   const tncFare = minTNCFare !== 0 && (
     <S.Fare>
       <S.TNCFare>
