@@ -15,7 +15,7 @@ export function getNetwork(entity: Entity, configCompanies: Company[]): string {
   return (
     "network" in entity &&
     (coreUtils.itinerary.getCompaniesLabelFromNetworks(
-      [entity.network] || [],
+      [entity.network],
       configCompanies
     ) ||
       entity.network)
@@ -30,7 +30,8 @@ export function makeDefaultGetEntityName(
   return function defaultGetEntityName(
     entity: Entity,
     configCompanies: Company[],
-    feedName?: string
+    feedName?: string,
+    includeParenthetical = true
   ): string | null {
     let stationName: string | null = entity.name || entity.id;
     // If the station name or id is a giant UUID (with more than 3 "-" characters)
@@ -78,7 +79,7 @@ export function makeDefaultGetEntityName(
         },
         { name: stationName }
       );
-    } else if (feedName && "code" in entity) {
+    } else if (includeParenthetical && feedName && "code" in entity) {
       stationName = `${stationName} (${feedName} ${entity.code})`;
     }
     return stationName;
