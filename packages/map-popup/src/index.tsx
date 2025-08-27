@@ -75,7 +75,7 @@ const StationHubDetails = ({ availableVehicles, availableSpaces }: { availableVe
   )
 }
 
-const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => void; }) => {
+const StopDetails = ({ id, feedName, setViewedStop }: { id: string, feedName?: string, setViewedStop: () => void; }) => {
   return (
     <Styled.PopupRow>
       {id &&
@@ -85,6 +85,7 @@ const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => v
             description="Displays the stop id"
             id="otpUi.MapPopup.stopId"
             values={{
+              feedName,
               stopId: id
             }}
           />
@@ -105,7 +106,7 @@ type Props = {
   closePopup?: (arg?: boolean) => void
   configCompanies?: ConfiguredCompany[];
   entity: MapPopupEntity
-  getEntityName?: (entity: MapPopupEntity, configCompanies: Company[], feedName?: string) => string;
+  getEntityName?: (entity: MapPopupEntity, configCompanies: Company[], feedName?: string, includeParenthetical?: boolean) => string;
   getEntityPrefix?: (entity: MapPopupEntity) => JSX.Element
   feeds?: Feed[]
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
@@ -142,6 +143,7 @@ export function MapPopup({
   }
   
   const name = getNameFunc(entity, configCompanies, feedName);
+  const titleName = getNameFunc(entity, configCompanies, feedName, false);
 
   const stationNetwork = "rentalNetwork" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.rentalNetwork.networkId, configCompanies) || entity?.rentalNetwork.networkId);
 
@@ -159,7 +161,7 @@ export function MapPopup({
           defaultMessage={defaultMessages["otpUi.MapPopup.popupTitle"]}
           description="Text for title of the popup, contains an optional company name"
           id="otpUi.MapPopup.popupTitle"
-          values={{ name, stationNetwork }}
+          values={{ name: titleName, stationNetwork }}
         />
       </Styled.PopupTitle>
       {/* render dock info if it is available */}
@@ -169,6 +171,7 @@ export function MapPopup({
       {setViewedStop && entityIsStop(entity) && (
         <StopDetails
           id={stopId}
+          feedName={feedName}
           setViewedStop={useCallback(() => setViewedStop(entity as Stop), [entity])}
         />
       )}

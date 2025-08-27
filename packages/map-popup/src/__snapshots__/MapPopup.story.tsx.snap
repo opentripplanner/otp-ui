@@ -392,11 +392,11 @@ exports[`Map Popup StopEntityWithFeedName smoke-test 1`] = `
        role="presentation"
   >
     <header class="styled__PopupTitle-sc-12kjso7-3 jRNaQh">
-      W Burnside &amp; SW 2nd (TriMet 9526)
+      W Burnside &amp; SW 2nd
     </header>
     <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
       <strong>
-        Stop ID: 9526
+        Stop ID: TriMet 9526
       </strong>
       <button class="styled__ViewStopButton-sc-12v7ov3-0 hXaHvR">
         Stop Viewer

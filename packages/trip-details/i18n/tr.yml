@@ -1,12 +1,5 @@
 otpUi:
   TripDetails:
-    FareTable:
-      cash: Nakit
-      electronic: Elektronik
-      regular: Yetişkin
-      senior: Kıdemli
-      special: Özel
-      youth: Gençlik
     co2: "CO₂ Yayılımı: <strong>{co2}</strong>"
     co2description: >-
       CO2 yoğunluğu, her modun CO2 yoğunluğu ile bir gezinin her bacağının
