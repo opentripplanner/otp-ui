@@ -287,7 +287,7 @@ describe("mode selector utils", () => {
     type RequiredOptionsForTransportModeType = [
       string, // mode
       string | undefined, // qualifier
-      { modeSetting?: string; modeButton?: string } | undefined // expected result
+      { modeSetting?: string; modeButton: string } | undefined // expected result
     ];
 
     const cases: RequiredOptionsForTransportModeType[] = [
@@ -307,7 +307,7 @@ describe("mode selector utils", () => {
       (
         mode: string,
         qualifier: string | undefined,
-        expected: { modeSetting?: string; modeButton?: string } | undefined
+        expected: { modeSetting?: string; modeButton: string } | undefined
       ) => {
         const result = findRequiredOptionsForTransportMode(
           modeButtonDefinitions,
