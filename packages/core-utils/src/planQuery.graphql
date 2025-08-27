@@ -235,6 +235,11 @@ query Plan(
           stayOn
           streetName
         }
+        stopCalls {
+          stopLocation {
+             __typename
+          }
+        }
         to {
           lat
           lon
@@ -280,11 +285,6 @@ query Plan(
         }
       }
       startTime
-      stopCalls {
-          stopLocation {
-             __typename
-          }
-      }
       transfers: numberOfTransfers
       waitingTime
       walkTime
