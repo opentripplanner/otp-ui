@@ -98,20 +98,12 @@ export function legDropoffRequiresAdvanceBooking(leg: Leg): boolean {
  * returned by OTP when a leg is a flex leg.
  */
 export function isFlex(leg: Leg): boolean {
-  const callTypes =
-    leg?.stopCalls?.reduce((acc, cur) => {
-      // eslint-disable-next-line no-underscore-dangle
-      const callType = cur?.stopLocation?.__typename;
-      if (!acc.includes(callType)) {
-        acc.push(callType);
-      }
-
-      return acc;
-    }, []) || [];
   return (
-    // This isn't the most efficient way to do this but it's so clean and there will
-    // only ever be 3 items in the array
-    callTypes.includes("LocationGroup") || callTypes.includes("Location")
+    leg?.stopCalls?.some(call =>
+      // Flex calls are "Location" or "LocationGroup"
+      // eslint-disable-next-line no-underscore-dangle
+      call?.stopLocation.__typename.includes("Location")
+    ) || false
   );
 }
 export function isRideshareLeg(leg: Leg): boolean {
