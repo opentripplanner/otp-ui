@@ -532,6 +532,18 @@
         "length": 176
       },
       "steps": [],
+       "stopCalls": [
+                {
+                  "stopLocation": {
+                    "__typename": "Stop"
+                  }
+                },
+                {
+                  "stopLocation": {
+                    "__typename": "Stop"
+                  }
+                }
+              ],
       "routeShortName": "JUMP",
       "routeLongName": "Boulder / Lafayette via Arapahoe",
       "duration": 579.0
@@ -648,6 +660,18 @@
         "length": 198
       },
       "steps": [],
+      "stopCalls": [
+                {
+                  "stopLocation": {
+                    "__typename": "LocationGroup"
+                  }
+                },
+                {
+                  "stopLocation": {
+                    "__typename": "Location"
+                  }
+                }
+              ],
       "routeLongName": "60+ Ride",
       "boardRule": "mustPhone",
       "alightRule": "mustPhone",

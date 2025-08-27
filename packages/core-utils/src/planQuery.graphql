@@ -280,6 +280,11 @@ query Plan(
         }
       }
       startTime
+      stopCalls {
+          stopLocation {
+             __typename
+          }
+      }
       transfers: numberOfTransfers
       waitingTime
       walkTime
