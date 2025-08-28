@@ -37,7 +37,7 @@ query Plan(
     itineraries {
       accessibilityScore
       duration
-      endTime
+      end
       legs {
         accessibilityScore
         agency {
@@ -125,7 +125,15 @@ query Plan(
           name
           rentalVehicle {
             id
-            network
+            rentalNetwork {
+              networkId
+              url
+            }
+            vehicleId
+            vehicleType {
+              formFactor
+              propulsionType
+            }
           }
           stop {
             alerts {
@@ -141,7 +149,6 @@ query Plan(
             lat
             lon
           }
-          vertexType
         }
         headsign
         id
@@ -241,7 +248,15 @@ query Plan(
           name
           rentalVehicle {
             id
-            network
+            rentalNetwork {
+              networkId
+              url
+            }
+            vehicleId
+            vehicleType {
+              formFactor
+              propulsionType
+            }
           }
           stop {
             alerts {
@@ -257,7 +272,6 @@ query Plan(
             lat
             lon
           }
-          vertexType
         }
         transitLeg
         trip {
@@ -279,7 +293,7 @@ query Plan(
           id
         }
       }
-      startTime
+      start
       transfers: numberOfTransfers
       waitingTime
       walkTime
