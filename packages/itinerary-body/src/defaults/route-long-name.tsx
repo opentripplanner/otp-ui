@@ -1,4 +1,4 @@
-import { getLegRouteLongName } from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
 import { Leg } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement, ReactNode } from "react";
 import { FormattedMessage } from "react-intl";
@@ -6,6 +6,8 @@ import { compareTwoStrings } from "string-similarity";
 
 import * as S from "../styled";
 import { defaultMessages } from "../util";
+
+const { getLegRouteLongName } = coreUtils.itinerary;
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
   leg: Leg;

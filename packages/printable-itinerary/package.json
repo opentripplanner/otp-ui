@@ -14,7 +14,8 @@
     "@opentripplanner/itinerary-body": "workspace:*"
   },
   "devDependencies": {
-    "@opentripplanner/icons": "workspace:*"
+    "@opentripplanner/icons": "workspace:*",
+    "@opentripplanner/types": "workspace:*"
   },
   "peerDependencies": {
     "react": "catalog:",

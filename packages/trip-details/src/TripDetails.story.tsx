@@ -2,29 +2,28 @@ import React, { ReactElement } from "react";
 import { FormattedDate } from "react-intl";
 import { Meta, Parameters, StoryObj } from "@storybook/react";
 import styled from "styled-components";
-// The below eslint-disable is due to https://github.com/storybookjs/storybook/issues/13408
+
+// import mock itinaries. These are all trip plan outputs from OTP.
+import tncTransitTncItinerary from "../../itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json";
+import walkOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-only.json";
+import walkTransitWalkItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkTransitWalkItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
+import flexItinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2.4-transit-itinerary.json";
+import otp2ScooterItinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2-scooter.json";
+import otp2FareProducts from "../../itinerary-body/src/__mocks__/itineraries/leg-fare-products.json";
+import multipleFareOptionsItinerary from "../../itinerary-body/src/__mocks__/itineraries/fares-v2-multiple-options.json";
+import faresv2ItineraryWithTransfer from "../../itinerary-body/src/__mocks__/itineraries/fares-v2-with-transfer.json";
+import faresv2Itinerary from "../../itinerary-body/src/__mocks__/itineraries/fares-v2-fare-components.json";
+import bikeOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-only.json";
+import * as TripDetailsClasses from "./styled";
 // eslint-disable-next-line import/no-named-as-default
 import TripDetails, { FaresV2Table } from ".";
-import * as TripDetailsClasses from "./styled";
 import {
   TimeActiveDetailsProps,
   DepartureDetailsProps,
   FareDetailsProps,
   TripDetailsProps
 } from "./types";
-
-// import mock itinaries. These are all trip plan outputs from OTP.
-const bikeOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json");
-const tncTransitTncItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json");
-const walkOnlyItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json");
-const walkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json");
-const walkTransitWalkTransitWalkItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json");
-const flexItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2.4-transit-itinerary.json");
-const otp2ScooterItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json");
-const otp2FareProducts = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/leg-fare-products.json");
-const multipleFareOptionsItinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fares-v2-multiple-options.json");
-const faresv2ItineraryWithTransfer = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fares-v2-with-transfer.json");
-const faresv2Itinerary = require("@opentripplanner/itinerary-body/src/__mocks__/itineraries/fares-v2-fare-components.json");
 
 // Change currency code on one of the itineraries for illustration.
 // (other currency fields in the itinerary object are not used for display).
@@ -201,10 +200,18 @@ export const OTP2FlexItinerary = makeStory({ itinerary: flexItinerary });
 export const FaresV2TableStory = (): ReactElement => {
   return (
     <>
+      <h5>Corrupt Data</h5>
       <FaresV2Table legs={multipleFareOptionsItinerary.legs} />
+      <h5>Paid Transfer</h5>
       <FaresV2Table legs={faresv2Itinerary.legs} favoriteMediumId="3" />
+      <h5>Free Transfer</h5>
       <FaresV2Table legs={faresv2ItineraryWithTransfer.legs} />
+      <h5>Custom Fare Class Data</h5>
       <FaresV2Table legs={otp2FareProducts.legs} />
+      {/*
+        // TODO: Activate this once the stories are sourced from OTP2
+      <h5>Single Ride</h5>
+      <FaresV2Table legs={walkTransitWalkItinerary.legs} /> */}
     </>
   );
 };

@@ -1,9 +1,11 @@
 import React from "react";
 
-import { getLegRouteLongName } from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
 import LegIcon from "./leg-icon";
 import TriMetModeIcon from "./trimet-mode-icon";
 import BiketownIcon from "./companies/biketown-icon";
+
+const { getLegRouteLongName } = coreUtils.itinerary;
 
 const TriMetLegIcon = ({ leg, ...props }) => {
   // Custom TriMet icon logic.

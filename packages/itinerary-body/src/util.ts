@@ -155,10 +155,9 @@ export function getPlaceName(
   // Other times, it can be a name with relevant information for the user.
   // Here we detect if the name is just a UUID and generate a better name.
   // It is also possible to configure station name overrides in the config using overridePlaceNames.
-  const company = getCompanyForNetwork(
-    place.networks?.[0] || place?.rentalVehicle?.rentalNetwork?.networkId,
-    companies
-  );
+  const network =
+    place.networks?.[0] || place?.rentalVehicle?.rentalNetwork?.networkId;
+  const company = network && getCompanyForNetwork(network, companies);
   if (
     intl &&
     // Don't ever show this useless OTP default string

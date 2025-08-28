@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 
 import { renderFare } from "../utils";
-import { InvisibleA11yLabel } from "../styled";
+import { InvisibleA11yCaption, InvisibleA11yLabel } from "../styled";
 
 // TODO: inline this import? (@opentripplanner/core-utils/src/itinerary)
 const {
@@ -27,7 +27,7 @@ const FailDash = (
 );
 
 const TransferIcon = styled(Transfer)`
-  padding-left: 4px;
+  padding-right: 0.25ch;
 `;
 
 const StripedTable = styled.table`
@@ -249,6 +249,9 @@ const FaresV2Table = ({
 
   return (
     <StripedTable>
+      <InvisibleA11yCaption>
+        <FormattedMessage id="otpUi.TripDetails.transitFareTable" />
+      </InvisibleA11yCaption>
       {rows.map((r, index) => (
         <tr key={index}>{r}</tr>
       ))}

@@ -13,7 +13,7 @@ import {
   planParamsToQuery
 } from "../query";
 
-const config = require("./__mocks__/config.json");
+import config from "./__mocks__/config.json";
 
 describe("query", () => {
   afterEach(restoreDateNowBehavior);
