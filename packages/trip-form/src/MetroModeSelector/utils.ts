@@ -212,7 +212,7 @@ export const findRequiredOptionsForTransportMode = (
   settings: ModeSetting[],
   transportMode: TransportMode
 ): RequiredOptionsForTransportMode => {
-  // If there's a mode button with the mode we need, then just return that. No mode setting necessary
+  // If there's a mode button with the mode we need, then just return that. No mode setting necessary!
   const modeButtonOnly = modeButtons.find(mb =>
     mb.modes?.some(
       m =>
