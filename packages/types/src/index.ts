@@ -374,7 +374,7 @@ export type Leg = {
   // Abridged version of what OTP returns
   stopCalls?: {
     stopLocation?: {
-      __typename?: string;
+      __typename: "Stop" | "Location" | "LocationGroup";
     };
   }[];
   to: Place;
