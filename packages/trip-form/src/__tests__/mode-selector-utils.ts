@@ -1,3 +1,5 @@
+import { ModeButtonDefinition, ModeSetting } from "@opentripplanner/types";
+import React from "react";
 import {
   addSettingsToButton,
   aggregateModes,
@@ -5,11 +7,13 @@ import {
   convertModeSettingValue,
   extractModeSettingDefaultsToObject,
   filterModeDefitionsByKey,
+  findRequiredOptionsForTransportMode,
   getBannedRoutesFromSubmodes,
-  populateSettingWithValue
+  populateSettingWithValue,
+  RequiredOptionsForTransportMode
 } from "../MetroModeSelector/utils";
 
-const modeButtonDefinitions = [
+const modeButtonDefinitions: ModeButtonDefinition[] = [
   {
     enabled: true,
     key: "TRANSIT",
@@ -24,12 +28,15 @@ const modeButtonDefinitions = [
         type: "CHECKBOX",
         value: false
       }
-    ]
+    ],
+    iconName: "transit icon",
+    Icon: React.Component
   },
   {
     enabled: true,
     label: "Walking",
-    Icon: {},
+    Icon: React.Component,
+    iconName: "walking icon",
     key: "WALK",
     modes: [
       {
@@ -55,7 +62,8 @@ const modeButtonDefinitions = [
   {
     enabled: true,
     label: "Bike",
-    Icon: {},
+    Icon: React.Component,
+    iconName: "biking icon",
     key: "BIKE",
     modes: [
       {
@@ -82,7 +90,7 @@ const modeButtonDefinitions = [
         default: true,
         key: "allowBikeRental",
         label: "Enable Bike Rental",
-        type: "CHECKBOX_ADD_MODE"
+        type: "CHECKBOX"
       }
     ]
   }
@@ -90,10 +98,10 @@ const modeButtonDefinitions = [
 
 const modeButtonsWithoutSettings = modeButtonDefinitions.map(b => ({
   ...b,
-  modeSettings: null
+  modeSettings: undefined
 }));
 
-const modeSettingDefinitions = [
+const modeSettingDefinitions: ModeSetting[] = [
   {
     applicableMode: "CAR",
     default: 3,
@@ -151,7 +159,8 @@ const modeSettingDefinitions = [
     default: true,
     key: "enableHovercraft",
     overrideMode: "HOVERCRAFT",
-    type: "SUBMODE"
+    type: "SUBMODE",
+    label: "Bus"
   }
 ];
 
@@ -273,5 +282,41 @@ describe("mode selector utils", () => {
         getBannedRoutesFromSubmodes(modeSettingsWithValues, routeModeOverrides)
       ).toEqual(["soundtransit:hover1"]);
     });
+  });
+
+  describe("find required options for transport mode", () => {
+    type TransportModeCase = [
+      string, // mode
+      string | undefined, // qualifier
+      RequiredOptionsForTransportMode // expected result
+    ];
+
+    const cases: TransportModeCase[] = [
+      ["BUS", undefined, { modeSetting: undefined, modeButton: "TRANSIT" }],
+      ["WALK", undefined, { modeSetting: undefined, modeButton: "WALK" }],
+      ["BICYCLE", undefined, { modeSetting: undefined, modeButton: "BIKE" }],
+      [
+        "BICYCLE",
+        "RENT",
+        { modeSetting: "allowBikeRental", modeButton: "BIKE" }
+      ],
+      ["CAR", undefined, undefined]
+    ];
+
+    it.each<TransportModeCase>(cases)(
+      "when mode is %s and qualifier is %s, expect %s",
+      (
+        mode: string,
+        qualifier: string | undefined,
+        expected: { modeSetting?: string; modeButton: string } | undefined
+      ) => {
+        const result = findRequiredOptionsForTransportMode(
+          modeButtonDefinitions,
+          modeSettingDefinitions,
+          { mode, qualifier }
+        );
+        expect(result).toEqual(expected);
+      }
+    );
   });
 });

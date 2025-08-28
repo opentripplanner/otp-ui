@@ -190,3 +190,66 @@ export const setModeButtonEnabled = (enabledKeys: string[]) => (
     enabled: enabledKeys.includes(modeButton.key)
   };
 };
+
+export type RequiredOptionsForTransportMode =
+  | {
+      modeSetting?: string;
+      modeButton: string;
+    }
+  | undefined;
+
+/**
+ * Determines which modeButton (and potentially modeSetting) needs to be set in the query params
+ * for a certain TransportMode to be enabled. This is necessary because certain configurations
+ * have combinations of modeButtons and modeSettings that do not directly map to a given mode
+ * @param modeButtons Array of mode buttons from config
+ * @param settings Array of mode settings from config
+ * @param transportMode Desired transport mode
+ * @returns The relevant modeButton and modeSetting, or undefined if no combination is found
+ */
+export const findRequiredOptionsForTransportMode = (
+  modeButtons: ModeButtonDefinition[],
+  settings: ModeSetting[],
+  transportMode: TransportMode
+): RequiredOptionsForTransportMode => {
+  // If there's a mode button with the mode we need, then just return that. No mode setting necessary!
+  const modeButtonOnly = modeButtons.find(mb =>
+    mb.modes?.some(
+      m =>
+        m.mode === transportMode.mode && m.qualifier === transportMode.qualifier
+    )
+  );
+
+  if (modeButtonOnly) {
+    return {
+      modeButton: modeButtonOnly.key
+    };
+  }
+
+  // Otherwise, look for a mode setting with the mode button that we need
+  const modeSetting = settings.find(ms => {
+    if (!("addTransportMode" in ms)) return false;
+
+    return [ms.addTransportMode]
+      .flat() // addTransportMode can be a single TransportMode or an array of them
+      .some(
+        m =>
+          m.mode === transportMode.mode &&
+          m.qualifier === transportMode.qualifier
+      );
+  });
+
+  if (!modeSetting) return undefined;
+
+  const { applicableMode } = modeSetting;
+  const applicableModeButton = modeButtons.find(mb =>
+    mb.modes?.some(m => m.mode === applicableMode)
+  );
+
+  return applicableModeButton
+    ? {
+        modeSetting: modeSetting.key,
+        modeButton: applicableModeButton.key
+      }
+    : undefined;
+};
