@@ -191,6 +191,13 @@ export const setModeButtonEnabled = (enabledKeys: string[]) => (
   };
 };
 
+export type RequiredOptionsForTransportMode =
+  | {
+      modeSetting?: string;
+      modeButton: string;
+    }
+  | undefined;
+
 /**
  * Determines which modeButton (and potentially modeSetting) needs to be set in the query params
  * for a certain TransportMode to be enabled. This is necessary because certain configurations
@@ -204,12 +211,7 @@ export const findRequiredOptionsForTransportMode = (
   modeButtons: ModeButtonDefinition[],
   settings: ModeSetting[],
   transportMode: TransportMode
-):
-  | {
-      modeSetting?: string;
-      modeButton: string;
-    }
-  | undefined => {
+): RequiredOptionsForTransportMode => {
   // If there's a mode button with the mode we need, then just return that. No mode setting necessary
   const modeButtonOnly = modeButtons.find(mb =>
     mb.modes?.some(

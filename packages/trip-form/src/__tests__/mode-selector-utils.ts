@@ -9,7 +9,8 @@ import {
   filterModeDefitionsByKey,
   findRequiredOptionsForTransportMode,
   getBannedRoutesFromSubmodes,
-  populateSettingWithValue
+  populateSettingWithValue,
+  RequiredOptionsForTransportMode
 } from "../MetroModeSelector/utils";
 
 const modeButtonDefinitions: ModeButtonDefinition[] = [
@@ -284,13 +285,13 @@ describe("mode selector utils", () => {
   });
 
   describe("find required options for transport mode", () => {
-    type RequiredOptionsForTransportModeType = [
+    type TransportModeCase = [
       string, // mode
       string | undefined, // qualifier
-      { modeSetting?: string; modeButton: string } | undefined // expected result
+      RequiredOptionsForTransportMode // expected result
     ];
 
-    const cases: RequiredOptionsForTransportModeType[] = [
+    const cases: TransportModeCase[] = [
       ["BUS", undefined, { modeSetting: undefined, modeButton: "TRANSIT" }],
       ["WALK", undefined, { modeSetting: undefined, modeButton: "WALK" }],
       ["BICYCLE", undefined, { modeSetting: undefined, modeButton: "BIKE" }],
@@ -302,7 +303,7 @@ describe("mode selector utils", () => {
       ["CAR", undefined, undefined]
     ];
 
-    it.each<RequiredOptionsForTransportModeType>(cases)(
+    it.each<TransportModeCase>(cases)(
       "when mode is %s and qualifier is %s, expect %s",
       (
         mode: string,
