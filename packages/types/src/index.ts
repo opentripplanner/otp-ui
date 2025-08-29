@@ -371,6 +371,12 @@ export type Leg = {
   serviceDate?: string;
   startTime: number | string;
   steps: Step[];
+  // Abridged version of what OTP returns
+  stopCalls?: {
+    stopLocation?: {
+      __typename: "Stop" | "Location" | "LocationGroup";
+    };
+  }[];
   to: Place;
   transitLeg: boolean;
   trip?: {

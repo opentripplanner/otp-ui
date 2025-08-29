@@ -99,11 +99,11 @@ export function legDropoffRequiresAdvanceBooking(leg: Leg): boolean {
  */
 export function isFlex(leg: Leg): boolean {
   return (
-    isReservationRequired(leg) ||
-    isCoordinationRequired(leg) ||
-    legDropoffRequiresAdvanceBooking(leg) ||
-    isAdvanceBookingRequired(leg?.pickupBookingInfo) ||
-    legContainsGeometry(leg)
+    leg?.stopCalls?.some(call =>
+      // Flex calls are "Location" or "LocationGroup"
+      // eslint-disable-next-line no-underscore-dangle
+      call?.stopLocation?.__typename.startsWith("Location")
+    ) || false
   );
 }
 export function isRideshareLeg(leg: Leg): boolean {

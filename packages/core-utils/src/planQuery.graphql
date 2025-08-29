@@ -235,6 +235,11 @@ query Plan(
           stayOn
           streetName
         }
+        stopCalls {
+          stopLocation {
+             __typename
+          }
+        }
         to {
           lat
           lon

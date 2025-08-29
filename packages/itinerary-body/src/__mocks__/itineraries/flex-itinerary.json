@@ -532,6 +532,18 @@
         "length": 176
       },
       "steps": [],
+      "stopCalls": [
+        {
+          "stopLocation": {
+            "__typename": "Stop"
+          }
+        },
+        {
+          "stopLocation": {
+            "__typename": "Stop"
+          }
+        }
+      ],
       "routeShortName": "JUMP",
       "routeLongName": "Boulder / Lafayette via Arapahoe",
       "duration": 579.0
@@ -569,7 +581,10 @@
         "departure": 1655946752000,
         "vertexType": "NORMAL"
       },
-      "legGeometry": { "points": "k`ksFvae`SC@@BD\\@L?JD?N?", "length": 8 },
+      "legGeometry": {
+        "points": "k`ksFvae`SC@@BD\\@L?JD?N?",
+        "length": 8
+      },
       "steps": [
         {
           "distance": 26.074,
@@ -648,6 +663,18 @@
         "length": 198
       },
       "steps": [],
+      "stopCalls": [
+        {
+          "stopLocation": {
+            "__typename": "LocationGroup"
+          }
+        },
+        {
+          "stopLocation": {
+            "__typename": "Location"
+          }
+        }
+      ],
       "routeLongName": "60+ Ride",
       "boardRule": "mustPhone",
       "alightRule": "mustPhone",
@@ -656,8 +683,14 @@
           "phoneNumber": "555-352-9348",
           "infoUrl": "https://60plusride.org/"
         },
-        "earliestBookingTime": { "time": 0, "daysPrior": 0 },
-        "latestBookingTime": { "time": 57600, "daysPrior": 7 },
+        "earliestBookingTime": {
+          "time": 0,
+          "daysPrior": 0
+        },
+        "latestBookingTime": {
+          "time": 57600,
+          "daysPrior": 7
+        },
         "message": "This is the first pickup booking info message."
       },
       "dropOffBookingInfo": {
@@ -665,8 +698,14 @@
           "phoneNumber": "555-352-9348",
           "infoUrl": "https://60plusride.org/"
         },
-        "earliestBookingTime": { "time": 0, "daysPrior": 0 },
-        "latestBookingTime": { "time": 57600, "daysPrior": 7 },
+        "earliestBookingTime": {
+          "time": 0,
+          "daysPrior": 0
+        },
+        "latestBookingTime": {
+          "time": 57600,
+          "daysPrior": 7
+        },
         "message": "This is the first dropoff booking info message."
       },
       "duration": 1487.0
