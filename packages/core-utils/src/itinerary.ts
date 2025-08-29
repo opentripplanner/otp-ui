@@ -102,7 +102,7 @@ export function isFlex(leg: Leg): boolean {
     leg?.stopCalls?.some(call =>
       // Flex calls are "Location" or "LocationGroup"
       // eslint-disable-next-line no-underscore-dangle
-      call?.stopLocation.__typename.includes("Location")
+      call?.stopLocation?.__typename.startsWith("Location")
     ) || false
   );
 }
