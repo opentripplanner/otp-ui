@@ -413,7 +413,7 @@ exports[`query-params getCustomQueryParams should return queryParams with custom
     "selector": "CHECKBOX",
   },
   {
-    "name": "bannedRoutes",
+    "name": "banned",
     "routingTypes": [
       "ITINERARY",
     ],
@@ -441,7 +441,7 @@ exports[`query-params getCustomQueryParams should return queryParams with custom
     ],
   },
   {
-    "name": "preferredRoutes",
+    "name": "preferred",
     "routingTypes": [
       "ITINERARY",
     ],
