@@ -1,4 +1,4 @@
-// RENTAL VEHICLE TYPES
+// OTP2 RENTAL VEHICLE TYPES
 
 export type VehicleRentalStation = {
   availableVehicles?: RentalVehicleEntityCounts;
