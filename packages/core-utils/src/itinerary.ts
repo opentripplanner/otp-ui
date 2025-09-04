@@ -454,7 +454,8 @@ export function getCompanyForNetwork(
 }
 
 /**
- * Get a string label to display from a list of vehicle rental networks.
+ * Get a string label to display from a list of vehicle rental networks. Returns
+ * empty string if no networks provided.
  *
  * @param  {Array<string>} networks  A list of network ids.
  * @param  {Array<object>}  [companies=[]] An optional list of the companies config.
