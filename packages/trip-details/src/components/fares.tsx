@@ -129,7 +129,7 @@ export default function Fares({
 
   return (
     <>
-      {!!fare && (
+      {itinerary.legs.some(leg => leg.fareProducts) && (
         <TripDetail
           className="fares"
           // Any custom description for the transit fare needs to be handled by the slot.
@@ -143,9 +143,10 @@ export default function Fares({
             )
           }
           icon={<MoneyBillAlt size={17} />}
-          summary={fare}
+          summary={fare || <FaresV2Table legs={itinerary.legs} />}
         />
       )}
+
       {!!tncFare && (
         <TripDetail
           className="tnc-fare"
