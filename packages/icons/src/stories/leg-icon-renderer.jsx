@@ -1,6 +1,6 @@
 import React from "react";
 
-// import mock itinaries. These are all trip plan outputs from OTP.
+// Import mock itinaries. These are all trip plan outputs from OTP.
 import bikeOnlyItinerary from "../../../itinerary-body/src/__mocks__/itineraries/bike-only.json";
 import bikeRentalItinerary from "../../../itinerary-body/src/__mocks__/itineraries/bike-rental.json";
 import eScooterRentalItinerary from "../../../itinerary-body/src/__mocks__/itineraries/e-scooter-rental.json";
