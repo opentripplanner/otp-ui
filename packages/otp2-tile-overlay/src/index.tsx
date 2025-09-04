@@ -107,7 +107,7 @@ const OTP2TileLayerWithPopup = ({
       setClickedEntity(synthesizedEntity);
     }
 
-    // For rental vehicles and rental stations, additional fields need to be added in order to
+    // For rental vehicles and rental stations, additional fields must be added in order to
     // be compatible with the RentalVehicle and VehicleRentalStation types from OTP2
     synthesizedEntity.name = synthesizedEntity.name ?? "";
     synthesizedEntity.vehicleType =
