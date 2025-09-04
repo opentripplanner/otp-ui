@@ -102,6 +102,7 @@ const StopDetails = ({ id, feedName, setViewedStop }: { id: string, feedName?: s
 }
 
 type MapPopupEntity = Stop | VehicleRentalStation | RentalVehicle
+
 type Props = {
   closePopup?: (arg?: boolean) => void
   configCompanies?: ConfiguredCompany[];
