@@ -2,12 +2,15 @@ import EntityPopup, { Feed } from "@opentripplanner/map-popup";
 import {
   ConfiguredCompany,
   MapLocationActionArg,
-  Station,
   Stop,
   StopEventHandler
 } from "@opentripplanner/types";
-import { FilterSpecification, MapLayerMouseEvent } from "maplibre-gl";
+import {
+  RentalVehicle,
+  VehicleRentalStation
+} from "@opentripplanner/types/otp2";
 import React, { useCallback, useEffect, useState } from "react";
+import { FilterSpecification, MapLayerMouseEvent } from "maplibre-gl";
 import { Layer, Popup, Source, useMap } from "react-map-gl/maplibre";
 
 import { generateLayerPaint, ROUTE_COLOR_EXPRESSION } from "./util";
@@ -42,7 +45,9 @@ const OTP2TileLayerWithPopup = ({
    * display the name of the stop in the popup.
    */
   feeds?: Feed[];
-  getEntityPrefix?: (entity: Stop | Station) => JSX.Element;
+  getEntityPrefix?: (
+    entity: Stop | VehicleRentalStation | RentalVehicle
+  ) => JSX.Element;
   id: string;
   name?: string;
   /**
@@ -88,7 +93,7 @@ const OTP2TileLayerWithPopup = ({
 
   const defaultClickHandler = (event: MapLayerMouseEvent) => {
     const { sourceLayer } = event.features?.[0];
-    const synthesizedEntity = {
+    const synthesizedEntity: Record<string, any> = {
       ...event.features?.[0].properties,
       lat: event.lngLat.lat,
       lon: event.lngLat.lng,
@@ -101,21 +106,26 @@ const OTP2TileLayerWithPopup = ({
     if (sourceLayer === "stops" || sourceLayer === "stations") {
       setClickedEntity(synthesizedEntity);
     }
-    if (sourceLayer === "rentalVehicles" || sourceLayer === "rentalStations") {
-      setClickedEntity({
-        // GraphQL field not in the tile info, but we can deduce it
-        isFloatingBike:
-          sourceLayer === "rentalVehicles" &&
-          // @ts-expect-error TODO Find/implement the correct type
-          synthesizedEntity.formFactor === "BICYCLE",
-        // GraphQL field not in the tile info, but we can deduce it
-        isFloatingVehicle:
-          sourceLayer === "rentalVehicles" &&
-          // @ts-expect-error TODO Find/implement the correct type
-          synthesizedEntity.formFactor === "SCOOTER",
-        ...synthesizedEntity
-      });
+
+    // For rental vehicles and rental stations, additional fields must be added in order to
+    // be compatible with the RentalVehicle and VehicleRentalStation types from OTP2
+    synthesizedEntity.name = synthesizedEntity.name ?? "";
+    synthesizedEntity.vehicleType =
+      sourceLayer === "rentalVehicles" && "formFactor" in synthesizedEntity
+        ? { formFactor: synthesizedEntity.formFactor }
+        : sourceLayer === "rentalStations" && "formFactors" in synthesizedEntity
+        ? { formFactor: synthesizedEntity.formFactors }
+        : undefined;
+    synthesizedEntity.rentalNetwork =
+      "network" in synthesizedEntity
+        ? { networkId: synthesizedEntity.network }
+        : undefined;
+    if (sourceLayer === "rentalStations") {
+      synthesizedEntity.availableVehicles = undefined;
+      synthesizedEntity.availableSpaces = undefined;
     }
+
+    setClickedEntity(synthesizedEntity);
   };
 
   const onLayerEnter = useCallback(() => {
@@ -303,7 +313,7 @@ const generateOTP2TileLayers = (
   setViewedStop?: (stop: Stop) => void,
   stopsWhitelist?: string[],
   configCompanies?: ConfiguredCompany[],
-  getEntityPrefix?: (entity: Stop | Station) => JSX.Element,
+  getEntityPrefix?: (entity: Stop | VehicleRentalStation) => JSX.Element,
   feeds?: Feed[]
 ): JSX.Element[] => {
   const fakeOtpUiLayerIndex = layers.findIndex(

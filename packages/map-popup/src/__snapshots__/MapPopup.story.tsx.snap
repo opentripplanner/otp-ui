@@ -265,7 +265,7 @@ exports[`Map Popup StopEntityNoStopCode smoke-test 1`] = `
       W Burnside &amp; SW 2nd
     </header>
     <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
-      <button class="styled__ViewStopButton-sc-12v7ov3-0 hXaHvR">
+      <button class="styled__ViewStopButton-sc-12v7ov3-0 bbtcwi">
         Stop Viewer
       </button>
     </p>

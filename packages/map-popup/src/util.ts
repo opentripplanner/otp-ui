@@ -1,24 +1,22 @@
 import {
-  Agency,
-  Company,
-  Station,
-  Stop,
-  TileLayerStation
-} from "@opentripplanner/types";
+  RentalVehicle,
+  VehicleRentalStation
+} from "@opentripplanner/types/otp2";
+import { Agency, Company, Stop } from "@opentripplanner/types";
 import { IntlShape } from "react-intl";
 import coreUtils from "@opentripplanner/core-utils";
 
 export type StopIdAgencyMap = Record<string, Agency>;
-export type Entity = Station | Stop | TileLayerStation;
+export type Entity = VehicleRentalStation | Stop | RentalVehicle;
 
 export function getNetwork(entity: Entity, configCompanies: Company[]): string {
   return (
-    "network" in entity &&
+    "rentalNetwork" in entity &&
     (coreUtils.itinerary.getCompaniesLabelFromNetworks(
-      [entity.network],
+      entity.rentalNetwork.networkId,
       configCompanies
     ) ||
-      entity.network)
+      entity.rentalNetwork.networkId)
   );
 }
 
@@ -44,7 +42,11 @@ export function makeDefaultGetEntityName(
       stationName = null;
     }
 
-    if ("isFloatingBike" in entity && entity.isFloatingBike) {
+    if (
+      "vehicleType" in entity &&
+      !("availableVehicles" in entity) &&
+      entity.vehicleType?.formFactor === "BICYCLE"
+    ) {
       stationName = intl.formatMessage(
         {
           defaultMessage: defaultEnglishMessages["otpUi.MapPopup.floatingBike"],
@@ -53,10 +55,13 @@ export function makeDefaultGetEntityName(
         },
         { name: stationName }
       );
-    } else if ("isFloatingCar" in entity && entity.isFloatingCar) {
+    } else if (
+      "vehicleType" in entity &&
+      entity.vehicleType?.formFactor === "CAR"
+    ) {
       // TODO: Stop generating this / passing it to the car string? Is it needed?
       // In English we say "Car: " instead
-      const stationNetwork = getNetwork(entity, configCompanies);
+      const network = getNetwork(entity, configCompanies);
       stationName = intl.formatMessage(
         {
           defaultMessage: defaultEnglishMessages["otpUi.MapPopup.floatingCar"],
@@ -64,12 +69,15 @@ export function makeDefaultGetEntityName(
           id: "otpUi.MapPopup.floatingCar"
         },
         {
-          company: stationNetwork,
+          company: network,
           name: stationName
         }
       );
-    } else if ("isFloatingVehicle" in entity && entity.isFloatingVehicle) {
-      // assumes that all floating vehicles are E-scooters
+    } else if (
+      "vehicleType" in entity &&
+      !("availableVehicles" in entity) &&
+      entity.vehicleType?.formFactor.startsWith("SCOOTER")
+    ) {
       stationName = intl.formatMessage(
         {
           defaultMessage:

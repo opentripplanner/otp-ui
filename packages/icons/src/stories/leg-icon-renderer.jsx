@@ -1,14 +1,14 @@
 import React from "react";
 
-// import mock itinaries. These are all trip plan outputs from OTP.
-import bikeOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json";
-import bikeRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-rental.json";
-import eScooterRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/e-scooter-rental.json";
-import parkAndRideItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/park-and-ride.json";
-import tncTransitTncItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json";
-import walkOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json";
-import walkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
-import walkTransitWalkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
+// Import mock itinaries. These are all trip plan outputs from OTP.
+import bikeOnlyItinerary from "../../../itinerary-body/src/__mocks__/itineraries/bike-only.json";
+import bikeRentalItinerary from "../../../itinerary-body/src/__mocks__/itineraries/bike-rental.json";
+import eScooterRentalItinerary from "../../../itinerary-body/src/__mocks__/itineraries/e-scooter-rental.json";
+import parkAndRideItinerary from "../../../itinerary-body/src/__mocks__/itineraries/park-and-ride.json";
+import tncTransitTncItinerary from "../../../itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json";
+import walkOnlyItinerary from "../../../itinerary-body/src/__mocks__/itineraries/walk-only.json";
+import walkTransitWalkItinerary from "../../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkTransitWalkItinerary from "../../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
 import IconRenderer from "../icon-renderer";
 
 const exampleLegs = [

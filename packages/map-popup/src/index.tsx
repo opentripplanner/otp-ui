@@ -1,6 +1,7 @@
 import React, { useCallback } from "react";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
 
+import { RentalVehicle, VehicleRentalStation } from "@opentripplanner/types/otp2";
 // eslint-disable-next-line prettier/prettier
 import type {
   Company,
@@ -8,15 +9,15 @@ import type {
   Location,
   Stop,
   StopEventHandler,
-  TileLayerStation
 } from "@opentripplanner/types";
 
 import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import { flatten } from "flat";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Styled } from "@opentripplanner/base-map";
+import coreUtils from "@opentripplanner/core-utils";
 
-import { Entity, getNetwork, makeDefaultGetEntityName, type StopIdAgencyMap } from "./util";
+import { makeDefaultGetEntityName, type StopIdAgencyMap } from "./util";
 import { ViewStopButton } from "./styled";
 
 // Load the default messages.
@@ -36,7 +37,7 @@ export type Feed = {
 };
 
 
-const generateLocation = (entity: Entity, name: string) => {
+const generateLocation = (entity: MapPopupEntity, name: string) => {
   // @ts-expect-error some of these values may be null, but that's ok
   const { lon: entityLon, lat: entityLat, x, y } = entity
 
@@ -47,7 +48,7 @@ const generateLocation = (entity: Entity, name: string) => {
   return { lat, lon, name };
 }
 
-const StationHubDetails = ({ station }: { station: TileLayerStation }) => {
+const StationHubDetails = ({ availableVehicles, availableSpaces }: { availableVehicles: number, availableSpaces: number }) => {
   return (
     <Styled.PopupRow>
       <div>
@@ -57,7 +58,7 @@ const StationHubDetails = ({ station }: { station: TileLayerStation }) => {
           }
           description="Label text for the number of bikes available"
           id="otpUi.MapPopup.availableBikes"
-          values={{ value: station.vehiclesAvailable }}
+          values={{ value: availableVehicles }}
         />
       </div>
       <div>
@@ -67,7 +68,7 @@ const StationHubDetails = ({ station }: { station: TileLayerStation }) => {
           }
           description="Label text for the number of docks available"
           id="otpUi.MapPopup.availableDocks"
-          values={{ value: station.spacesAvailable }}
+          values={{ value: availableSpaces }}
         />
       </div>
     </Styled.PopupRow>
@@ -100,20 +101,20 @@ const StopDetails = ({ id, feedName, setViewedStop }: { id: string, feedName?: s
   )
 }
 
+type MapPopupEntity = Stop | VehicleRentalStation | RentalVehicle
+
 type Props = {
   closePopup?: (arg?: boolean) => void
   configCompanies?: ConfiguredCompany[];
-  entity: Entity
-  getEntityName?: (entity: Entity, configCompanies: Company[], feedName?: string, includeParenthetical?: boolean) => string;
-  getEntityPrefix?: (entity: Entity) => JSX.Element
+  entity: MapPopupEntity
+  getEntityName?: (entity: MapPopupEntity, configCompanies: Company[], feedName?: string, includeParenthetical?: boolean) => string;
+  getEntityPrefix?: (entity: MapPopupEntity) => JSX.Element
   feeds?: Feed[]
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
   setViewedStop?: StopEventHandler;
 };
 
-function entityIsStation(entity: Entity): entity is TileLayerStation {
-  return "vehiclesAvailable" in entity
-}
+const entityIsStop = (entity: MapPopupEntity): entity is Stop => "gtfsId" in entity;
 
 /**
  * Renders a map popup for a stop, scooter, or shared bike
@@ -145,11 +146,11 @@ export function MapPopup({
   const name = getNameFunc(entity, configCompanies, feedName);
   const titleName = getNameFunc(entity, configCompanies, feedName, false);
 
-  const stationNetwork = getNetwork(entity, configCompanies);
+  const stationNetwork = "rentalNetwork" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.rentalNetwork.networkId, configCompanies) || entity?.rentalNetwork.networkId);
 
-  const bikesAvailablePresent = entityIsStation(entity)
-  const entityIsStationHub = bikesAvailablePresent && entity.vehiclesAvailable !== undefined && !entity.isFloatingBike;
-  const stopId = !bikesAvailablePresent && "code" in entity && entity.code;
+  const vehiclesAvailable = "availableVehicles" in entity;
+  const entityIsStationHub = vehiclesAvailable && entity?.availableVehicles !== undefined;
+  const stopId = entityIsStop(entity) ? entity.code : "";
   const id = `focus-${encodeURIComponent(entity.id).replace(/%/g, "")}-popup`
 
   return (
@@ -165,10 +166,10 @@ export function MapPopup({
         />
       </Styled.PopupTitle>
       {/* render dock info if it is available */}
-      {entityIsStationHub && <StationHubDetails station={entity} />}
+      {entityIsStationHub && <StationHubDetails availableSpaces={entity.availableSpaces?.total} availableVehicles={entity.availableVehicles?.total} />}
 
       {/* render stop viewer link if available */}
-      {setViewedStop && !bikesAvailablePresent && (
+      {setViewedStop && entityIsStop(entity) && (
         <StopDetails
           id={stopId}
           feedName={feedName}
