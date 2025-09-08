@@ -19,7 +19,7 @@ import {
   getBannedRoutesFromSubmodes,
   findRequiredOptionsForTransportMode,
 } from "./MetroModeSelector/utils";
-// Prettier does not support typescript annotation
+// Prettier does not support typescript annotation 
 // eslint-disable-next-line prettier/prettier
 import type { RequiredOptionsForTransportMode } from "./MetroModeSelector/utils";
 import { ModeSettingRenderer } from "./MetroModeSelector/SubSettingsPane";
