@@ -8,7 +8,6 @@ otpUi:
       pickupRental: Récupérez {vehicleType} {company} {vehicleName}
       resumeRentalRide: Continuez avec le véhicule loué
       vehicleType:
-        bike: le vélo
         bikeshare: le vélo partagé
         car: la voiture
         escooter: la trottinette
@@ -69,7 +68,6 @@ otpUi:
     unnamedRoad: Route sans nom
     vehicleTitle: "{vehicleType} {company}"
     vehicleType:
-      bike: Vélo
       bikeshare: Vélo partagé
       car: Voiture
       escooter: Trottinette

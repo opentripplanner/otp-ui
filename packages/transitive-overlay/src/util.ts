@@ -138,22 +138,22 @@ function getPlaceId(
   fromTo: "from" | "to",
   streetEdgeId: string | number,
   leg: Leg,
-  otherLeg?: Leg,
-  forcedVertexType?: string
+  otherLeg?: Leg
 ): string {
   const { mode } = leg;
-  const { bikeShareId, name, vertexType: legVertexType } = leg[fromTo];
-  const vertexType = forcedVertexType || legVertexType;
+  const { bikeShareId, name, rentalVehicle } = leg[fromTo];
   let placeId: string;
-  if (bikeShareId) {
-    placeId = `bicycle_rent_station_${bikeShareId}`;
+  // TODO: Remove bikeShareId?
+  if (bikeShareId || rentalVehicle.vehicleType.formFactor === "BICYCLE") {
+    placeId = `bicycle_rent_station_${bikeShareId || rentalVehicle?.vehicleId}`;
     if (
       // OTP2 Scooter case
       mode === "SCOOTER"
     ) {
-      placeId = `escooter_rent_station_${bikeShareId}`;
+      placeId = `escooter_rent_station_${bikeShareId ||
+        rentalVehicle?.vehicleId}`;
     }
-  } else if (vertexType === "VEHICLERENTAL") {
+  } else if (rentalVehicle?.vehicleType?.formFactor.startsWith("SCOOTER")) {
     // OTP1 Scooter case
     placeId = `escooter_rent_station_${name}`;
   } else if (mode === "CAR" && otherLeg?.mode === "WALK") {
@@ -245,14 +245,6 @@ export function itineraryToTransitive(
   newPlaces.push(makeFromToPlace(itin.legs[itin.legs.length - 1].to, "to"));
 
   itin.legs.forEach((leg, idx) => {
-    // OTP2 puts "BIKESHARE" as the vertexType for scooter share legs.
-    // Here we fix that by looking ahead at the next leg to find out if it is a scooter.
-    const toVertexType =
-      itin.legs[idx + 1]?.mode === "SCOOTER"
-        ? "VEHICLERENTAL"
-        : leg.to.vertexType;
-    const fromVertexType =
-      leg.mode === "SCOOTER" ? "VEHICLERENTAL" : leg.from.vertexType;
     const streetEdgeId = idx;
 
     // Show on the map the labels for:
@@ -274,8 +266,7 @@ export function itineraryToTransitive(
         "to",
         streetEdgeId,
         leg,
-        idx < itin.legs.length - 1 ? itin.legs[idx + 1] : null,
-        toVertexType
+        idx < itin.legs.length - 1 ? itin.legs[idx + 1] : null
       );
       let addFromPlace = false;
       let addToPlace = false;
@@ -284,7 +275,7 @@ export function itineraryToTransitive(
 
         // Only add the "to" portion of rental legs if they involve docking a vehicle on arrival
         // (this is to avoid https://github.com/conveyal/trimet-mod-otp/issues/152).
-        if (leg.to.vertexType !== "NORMAL") {
+        if (!!leg.to.rentalVehicle || !!leg.to.vehicleRentalStation) {
           addToPlace = true;
         }
       }
@@ -303,11 +294,7 @@ export function itineraryToTransitive(
       if (addFromPlace) {
         newPlaces.push({
           placeId: fromPlaceId,
-          place_name: getPlaceName(
-            { ...leg.from, vertexType: fromVertexType },
-            companies || [],
-            intl
-          ),
+          place_name: getPlaceName({ ...leg.from }, companies || [], intl),
           place_lat: leg.from.lat,
           place_lon: leg.from.lon,
           type: leg.mode
@@ -318,7 +305,7 @@ export function itineraryToTransitive(
           placeId: toPlaceId,
           place_name: getPlaceName(
             // replace the vertex type since we tweaked it above
-            { ...leg.to, vertexType: toVertexType },
+            { ...leg.to },
             companies || [],
             intl
           ),
