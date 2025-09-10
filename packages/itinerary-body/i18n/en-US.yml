@@ -74,9 +74,10 @@ otpUi:
         {approximatePrefix, select, true {About } other {}}{hours, plural, =0 {}
         other {# hr }}{minutes} min
     flexAdvanceNotice: " at least {leadDays, plural, one {# day} other {# days}} in advance"
+    flexBookingUrl: <link>reserve your trip online</link>
     flexCallAhead: call ahead
     flexCallNumber: call {phoneNumber}
-    flexPickupMessage: To take this route, you must {action}{advanceNotice}.
+    flexPickupMessage: To ride this route, you must {action}{advanceNotice}.
     stayOnBoard: Stay on Board at {place}
     travelBy: Travel {mode}
     travelByMode:

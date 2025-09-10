@@ -70,24 +70,47 @@ function getFlexMessageValues(info: FlexBookingInfo) {
   // There used to be a variable `hasLeadTime` here. This should be brought back
   // if the leadTime check is ever to be more than just checking the value of
   // daysPrior (which can be done within react-intl)
-  const hasPhone = !!info?.contactInfo?.phoneNumber;
+  // This will allow for displaying how many _hours_ before a trip it must be booked
+
   const leadDays = info?.latestBookingTime?.daysPrior;
   const phoneNumber = info?.contactInfo?.phoneNumber;
-  return {
-    action: hasPhone ? (
+  const bookingUrl = info?.contactInfo?.bookingUrl;
+
+  let action = (
+    <FormattedMessage
+      defaultMessage={defaultMessages["otpUi.ItineraryBody.flexCallAhead"]}
+      description="For calling ahead."
+      id="otpUi.ItineraryBody.flexCallAhead"
+    />
+  );
+
+  if (phoneNumber) {
+    action = (
       <FormattedMessage
         defaultMessage={defaultMessages["otpUi.ItineraryBody.flexCallNumber"]}
         description="For calling a phone number."
         id="otpUi.ItineraryBody.flexCallNumber"
         values={{ phoneNumber }}
       />
-    ) : (
+    );
+  }
+  if (bookingUrl) {
+    action = (
       <FormattedMessage
-        defaultMessage={defaultMessages["otpUi.ItineraryBody.flexCallAhead"]}
-        description="For calling ahead."
-        id="otpUi.ItineraryBody.flexCallAhead"
+        defaultMessage={defaultMessages["otpUi.ItineraryBody.flexBookingUrl"]}
+        description="For booking via phone number."
+        id="otpUi.ItineraryBody.flexBookingUrl"
+        values={{
+          bookingUrl,
+          // eslint-disable-next-line react/display-name
+          link: contents => <a href={bookingUrl}>{contents}</a>
+        }}
       />
-    ),
+    );
+  }
+
+  return {
+    action,
     advanceNotice:
       leadDays > 0 ? (
         <FormattedMessage

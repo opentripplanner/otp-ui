@@ -280,7 +280,9 @@ export type Place = {
  */
 export type FlexBookingInfo = {
   contactInfo?: {
-    phoneNumber: string;
+    phoneNumber?: string;
+    bookingUrl?: string;
+    infoUrl?: string;
   };
   latestBookingTime?: {
     daysPrior: number;
