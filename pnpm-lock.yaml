@@ -403,9 +403,6 @@ importers:
       lodash.clonedeep:
         specifier: ^4.5.0
         version: 4.5.0
-      lodash.isequal:
-        specifier: ^4.5.0
-        version: 4.5.0
       qs:
         specifier: ^6.9.1
         version: 6.14.0
@@ -590,6 +587,9 @@ importers:
       '@tanstack/react-pacer':
         specifier: ^0.8.0
         version: 0.8.0(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+      flat:
+        specifier: 'catalog:'
+        version: 5.0.2
       react:
         specifier: 'catalog:'
         version: 18.2.0
@@ -704,6 +704,9 @@ importers:
       '@opentripplanner/itinerary-body':
         specifier: workspace:*
         version: link:../itinerary-body
+      flat:
+        specifier: 'catalog:'
+        version: 5.0.2
       react:
         specifier: 'catalog:'
         version: 18.2.0
@@ -825,6 +828,9 @@ importers:
       flat:
         specifier: 'catalog:'
         version: 5.0.2
+      lodash.memoize:
+        specifier: ^4.1.2
+        version: 4.1.2
       react:
         specifier: 'catalog:'
         version: 18.2.0
@@ -899,9 +905,15 @@ importers:
       '@opentripplanner/core-utils':
         specifier: workspace:*
         version: link:../core-utils
+      '@styled-icons/boxicons-regular':
+        specifier: ^10.47.0
+        version: 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
       '@styled-icons/fa-solid':
         specifier: 'catalog:'
         version: 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
+      flat:
+        specifier: 'catalog:'
+        version: 5.0.2
       react:
         specifier: 'catalog:'
         version: 18.2.0
@@ -921,9 +933,6 @@ importers:
 
   packages/trip-form:
     dependencies:
-      '@floating-ui/react':
-        specifier: ^0.19.2
-        version: 0.19.2(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       '@opentripplanner/building-blocks':
         specifier: workspace:*
         version: link:../building-blocks
@@ -945,6 +954,9 @@ importers:
       '@styled-icons/fa-solid':
         specifier: ^10.37.0
         version: 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
+      csstype:
+        specifier: ^3.1.3
+        version: 3.1.3
       date-fns:
         specifier: 'catalog:'
         version: 2.30.0
@@ -1051,6 +1063,9 @@ importers:
       '@opentripplanner/icons':
         specifier: workspace:*
         version: link:../icons
+      lodash.clonedeep:
+        specifier: ^4.5.0
+        version: 4.5.0
       react:
         specifier: 'catalog:'
         version: 18.2.0
@@ -2186,27 +2201,6 @@ packages:
   '@eslint/eslintrc@0.4.3':
     resolution: {integrity: sha512-J6KFFz5QCYUJq3pf0mjEcCJVERbzv71PUIDczuh9JkwGEzced6CO5ADLHB1rbf/+oPBtoPfMYNOpGDzCANlbXw==}
     engines: {node: ^10.12.0 || >=12.0.0}
-
-  '@floating-ui/core@1.6.8':
-    resolution: {integrity: sha512-7XJ9cPU+yI2QeLS+FCSlqNFZJq8arvswefkZrYI1yQBbftw6FyrZOxYSh+9S7z7TpeWlRt9zJ5IhM1WIL334jA==}
-
-  '@floating-ui/dom@1.6.12':
-    resolution: {integrity: sha512-NP83c0HjokcGVEMeoStg317VD9W7eDlGK7457dMBANbKA6GJZdc7rjujdgqzTaz93jkGgc5P/jeWbaCHnMNc+w==}
-
-  '@floating-ui/react-dom@1.3.0':
-    resolution: {integrity: sha512-htwHm67Ji5E/pROEAr7f8IKFShuiCKHwUC/UY4vC3I5jiSvGFAYnSYiZO5MlGmads+QqvUkR9ANHEguGrDv72g==}
-    peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-
-  '@floating-ui/react@0.19.2':
-    resolution: {integrity: sha512-JyNk4A0Ezirq8FlXECvRtQOX/iBe5Ize0W/pLkrZjfHW9GUV7Xnq6zm6fyZuQzaHHqEnVizmvlA96e1/CkZv+w==}
-    peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-
-  '@floating-ui/utils@0.2.8':
-    resolution: {integrity: sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig==}
 
   '@formatjs/cli@4.8.4':
     resolution: {integrity: sha512-zZI8QYVl5CHaT6j9OHjS+0mMnWzopBVH0un4n5b4IhIJRzIKnxwFTkxBp5Ifqj6FntrwzIGqP+D6v8u7MPYsmw==}
@@ -4340,10 +4334,6 @@ packages:
 
   argv-formatter@1.0.0:
     resolution: {integrity: sha512-F2+Hkm9xFaRg+GkaNnbwXNDV5O6pnCFEmqyhvfC/Ic5LbgOWjJh3L+mN/s91rxVL3znE7DYVpW0GJFT+4YBgWw==}
-
-  aria-hidden@1.2.4:
-    resolution: {integrity: sha512-y+CcFFwelSXpLZk/7fMB2mUbGtX9lKycf1MWJ7CaTIERyitVlyQx6C+sxcROU2BAJ24OiZyK+8wj2i8AlBoS3A==}
-    engines: {node: '>=10'}
 
   aria-query@3.0.0:
     resolution: {integrity: sha512-majUxHgLehQTeSA+hClx+DY09OVUqG3GtezWkF1krgLGNdlDu9l9V8DaqNMWbq4Eddc8wsyDA0hpDUtnYxQEXw==}
@@ -9944,9 +9934,6 @@ packages:
     resolution: {integrity: sha512-+XZ+r1XGIJGeQk3VvXhT6xx/VpbHsRzsTkGgF6E5RX9TTXD0118l87puaEBZ566FhqblC6U0d4XnubznJDm30A==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
-  tabbable@6.2.0:
-    resolution: {integrity: sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew==}
-
   table@5.4.6:
     resolution: {integrity: sha512-wmEc8m4fjnob4gt5riFRtTu/6+4rSe12TpAELNSqHMfF3IqnA+CH37USM6/YR3qRZv7e56kAEAtd6nKZaxe0Ug==}
     engines: {node: '>=6.0.0'}
@@ -10862,7 +10849,7 @@ snapshots:
 
   '@babel/helper-annotate-as-pure@7.25.9':
     dependencies:
-      '@babel/types': 7.26.0
+      '@babel/types': 7.28.0
 
   '@babel/helper-builder-binary-assignment-operator-visitor@7.25.9':
     dependencies:
@@ -10927,7 +10914,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/helper-module-imports@7.25.9(supports-color@5.5.0)':
+  '@babel/helper-module-imports@7.25.9':
     dependencies:
       '@babel/traverse': 7.28.0(supports-color@5.5.0)
       '@babel/types': 7.26.0
@@ -11530,7 +11517,7 @@ snapshots:
   '@babel/plugin-transform-runtime@7.25.9(@babel/core@7.28.0)':
     dependencies:
       '@babel/core': 7.28.0
-      '@babel/helper-module-imports': 7.25.9(supports-color@5.5.0)
+      '@babel/helper-module-imports': 7.25.9
       '@babel/helper-plugin-utils': 7.25.9
       babel-plugin-polyfill-corejs2: 0.4.11(@babel/core@7.28.0)
       babel-plugin-polyfill-corejs3: 0.10.6(@babel/core@7.28.0)
@@ -11983,31 +11970,6 @@ snapshots:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
-
-  '@floating-ui/core@1.6.8':
-    dependencies:
-      '@floating-ui/utils': 0.2.8
-
-  '@floating-ui/dom@1.6.12':
-    dependencies:
-      '@floating-ui/core': 1.6.8
-      '@floating-ui/utils': 0.2.8
-
-  '@floating-ui/react-dom@1.3.0(react-dom@18.3.1(react@18.2.0))(react@18.2.0)':
-    dependencies:
-      '@floating-ui/dom': 1.6.12
-      react: 18.2.0
-      react-dom: 18.3.1(react@18.2.0)
-
-  '@floating-ui/react@0.19.2(react-dom@18.3.1(react@18.2.0))(react@18.2.0)':
-    dependencies:
-      '@floating-ui/react-dom': 1.3.0(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
-      aria-hidden: 1.2.4
-      react: 18.2.0
-      react-dom: 18.3.1(react@18.2.0)
-      tabbable: 6.2.0
-
-  '@floating-ui/utils@0.2.8': {}
 
   '@formatjs/cli@4.8.4':
     dependencies:
@@ -14850,10 +14812,6 @@ snapshots:
 
   argv-formatter@1.0.0: {}
 
-  aria-hidden@1.2.4:
-    dependencies:
-      tslib: 2.8.0
-
   aria-query@3.0.0:
     dependencies:
       ast-types-flow: 0.0.7
@@ -15137,7 +15095,7 @@ snapshots:
   babel-plugin-styled-components@1.13.3(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))(supports-color@5.5.0):
     dependencies:
       '@babel/helper-annotate-as-pure': 7.25.9
-      '@babel/helper-module-imports': 7.25.9(supports-color@5.5.0)
+      '@babel/helper-module-imports': 7.27.1(supports-color@5.5.0)
       babel-plugin-syntax-jsx: 6.18.0
       lodash: 4.17.21
       styled-components: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -21580,8 +21538,6 @@ snapshots:
   synckit@0.11.8:
     dependencies:
       '@pkgr/core': 0.2.7
-
-  tabbable@6.2.0: {}
 
   table@5.4.6:
     dependencies:
