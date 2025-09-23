@@ -80,6 +80,7 @@ otpUi:
         {approximatePrefix, select, true {Environ } other {}}{hours, plural, =0
         {} other {# h }}{minutes} min
     flexAdvanceNotice: " au moins {leadDays, plural, one {# jour} other {# jours}} à l'avance"
+    flexBookingUrl: <link>reserve your trip online</link>
     flexCallAhead: réserver au préalable
     flexCallNumber: réserver au {phoneNumber}
     flexPickupMessage: Pour emprunter cette ligne, vous devez {action}{advanceNotice}.
