@@ -25,8 +25,8 @@ otpUi:
     mapillaryTooltip: Mostrar imágenes de la calle en esta ubicación
     step:
       circleClockwise: Siga el círculo en el sentido de las agujas del reloj
-      circleCounterClockwise: Siga el círculo en sentido contrario a las agujas del
-        reloj
+      circleCounterClockwise: Siga el círculo en sentido contrario a las agujas 
+        del reloj
       continue: Continuar
       enterStation: Entrar a la estación
       exitStation: Salir de la estación
@@ -70,7 +70,8 @@ otpUi:
       car: Coche
       escooter: Patineta
       vehicle: Vehículo
-    transfer: Transferir{duration, select, undefined {} other {, esperar {duration}}
+    transfer: Transferir{duration, select, undefined {} other {, esperar 
+      {duration}}
   ItineraryBody:
     common:
       durationShort: >-
