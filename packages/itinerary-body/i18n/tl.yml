@@ -71,7 +71,8 @@ otpUi:
       car: Sasakyan
       escooter: E-scooter
       vehicle: Sasakyan
-    transfer: Paglilipat{duration, select, undefined {} other {, wait {duration}}}
+    transfer: Paglilipat{duration, select, undefined {} other {, wait 
+      {duration}}}
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} (na) minuto"
