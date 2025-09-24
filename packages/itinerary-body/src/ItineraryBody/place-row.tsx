@@ -96,13 +96,6 @@ export default function PlaceRow({
     <PlaceName config={config} place={leg.to} />
   );
 
-  // OTP2 marks both bikes and scooters as BIKESHARE in the vertextype
-  // To get the right label, we need to fix scooters to be "VEHICLERENTAL"
-  place.vertexType =
-    leg.mode === "SCOOTER" && !isDestination
-      ? "VEHICLERENTAL"
-      : place.vertexType;
-
   const intl = useIntl();
   const viewOnMapMessage = intl.formatMessage({
     defaultMessage: defaultMessages["otpUi.ItineraryBody.viewOnMap"],

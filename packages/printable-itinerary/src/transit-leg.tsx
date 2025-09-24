@@ -49,7 +49,7 @@ export default function TransitLeg({
         place: leg.to.name,
         stopId: stopIdTo,
         strong: strongText,
-        time: leg.endTime
+        time: leg.end
       }}
     />
   );
@@ -101,7 +101,7 @@ export default function TransitLeg({
                 place: leg.from.name,
                 stopId: stopIdFrom,
                 strong: strongText,
-                time: leg.startTime
+                time: leg.start
               }}
             />
           </S.LegDetail>

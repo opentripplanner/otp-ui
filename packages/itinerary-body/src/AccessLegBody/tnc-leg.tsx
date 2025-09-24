@@ -95,7 +95,8 @@ export default function TNCLeg({
             />
           </S.BookTNCRideButton>
           {followsTransit && <S.BookLaterPointer />}
-          {followsTransit && typeof leg.startTime === "number" && (
+          {/* // TODO: Restore support for this without start being a number */}
+          {followsTransit && typeof leg.start === "number" && (
             <S.BookLaterContainer>
               <S.BookLaterInnerContainer>
                 <S.BookLaterText>
@@ -109,7 +110,7 @@ export default function TNCLeg({
                     id="otpUi.AccessLegBody.TncLeg.bookRideLater"
                     values={{
                       timeMillis:
-                        leg.startTime -
+                        leg.start -
                         parseInt(
                           parseOTP2Minute(rideHailingEstimate.arrival),
                           10

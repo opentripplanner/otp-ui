@@ -8,7 +8,6 @@ otpUi:
       pickupRental: Pick up {company} {vehicleType} {vehicleName}
       resumeRentalRide: Continue using rental
       vehicleType:
-        bike: bike
         bikeshare: shared bike
         car: car
         escooter: E-scooter
@@ -63,7 +62,6 @@ otpUi:
     unnamedRoad: Unnamed Road
     vehicleTitle: "{company} {vehicleType}"
     vehicleType:
-      bike: Bike
       bikeshare: Shared bike
       car: Car
       escooter: E-scooter
