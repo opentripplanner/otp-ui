@@ -19,9 +19,10 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/core-utils": "workspace:*",
     "@opentripplanner/base-map": "workspace:*",
-    "@opentripplanner/icons": "workspace:*"
+    "@opentripplanner/core-utils": "workspace:*",
+    "@opentripplanner/icons": "workspace:*",
+    "lodash.clonedeep": "^4.5.0"
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*"
