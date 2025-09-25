@@ -70,4 +70,8 @@ export const ModeIcon = styled.div`
   height: 32px;
 `;
 
+export const TripAccessibilityScoreWrapper = styled.div`
+  margin-bottom: 1em;
+`;
+
 export const PrintableItinerary = styled.div``;
