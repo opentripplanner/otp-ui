@@ -709,13 +709,37 @@ export function getLegCost(
  */
 export function getItineraryCost(
   legs: Leg[],
-  mediumId: string | null,
-  riderCategoryId: string | null
+  mediumId: string | string[] | null,
+  riderCategoryId: string | string[] | null
 ): Money | undefined {
+  // TODO: Better input type handling
+  if (Array.isArray(mediumId) && Array.isArray(riderCategoryId)) {
+    if (mediumId?.length !== riderCategoryId.length) {
+      console.warn(
+        "Invalid input types, only using first item. medium id list and rider category list must have same number of items"
+      );
+      return getItineraryCost(legs, mediumId[0], riderCategoryId[0]);
+    }
+
+    let total = { amount: 0, currency: null };
+    for (let i = 0; i < mediumId.length; i++) {
+      const newCost = getItineraryCost(legs, mediumId[i], riderCategoryId[i]);
+      if (newCost) {
+        total = {
+          amount: total?.amount + (newCost?.amount || 0),
+          currency: total.currency ?? newCost?.currency
+        };
+      }
+    }
+    if (total.currency === null) return undefined;
+    return total;
+  }
+
   const legCostsObj = legs
     // Only legs with fares (no walking legs)
     .filter(leg => leg.fareProducts?.length > 0)
     // Get the leg cost object of each leg
+    // @ts-expect-error TS doesn't like our check in the if statement above
     .map(leg => getLegCost(leg, mediumId, riderCategoryId))
     .filter(cost => cost.appliedFareProduct?.legPrice !== undefined)
     // Filter out duplicate use IDs
