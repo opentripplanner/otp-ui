@@ -24,9 +24,9 @@ export default function AccessibilityAnnotation({
       </S.ModeIcon>
       {leg.accessibilityScore !== null && leg.accessibilityScore > -1 && (
         <AccessibilityRating
-          isLeg
           gradationMap={accessibilityScoreGradationMap}
           grayscale={grayscale}
+          isLeg
           score={leg.accessibilityScore}
         />
       )}

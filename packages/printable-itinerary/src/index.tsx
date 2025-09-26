@@ -74,9 +74,9 @@ function PrintableItinerary({
         ) : leg.rideHailingEstimate ? (
           <TNCLeg
             accessibilityScoreGradationMap={gradationMap}
+            key={k}
             leg={leg}
             LegIcon={LegIcon}
-            key={k}
           />
         ) : (
           <AccessLeg
