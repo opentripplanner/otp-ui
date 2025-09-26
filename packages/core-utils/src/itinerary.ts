@@ -716,7 +716,7 @@ export function getItineraryCost(
   if (Array.isArray(mediumId) && Array.isArray(riderCategoryId)) {
     if (mediumId?.length !== riderCategoryId.length) {
       console.warn(
-        "Invalid input types, only using first item. medium id list and rider cateogry list must have same number of items"
+        "Invalid input types, only using first item. medium id list and rider category list must have same number of items"
       );
       return getItineraryCost(legs, mediumId[0], riderCategoryId[0]);
     }
@@ -739,6 +739,7 @@ export function getItineraryCost(
     // Only legs with fares (no walking legs)
     .filter(leg => leg.fareProducts?.length > 0)
     // Get the leg cost object of each leg
+    // @ts-expect-error TS doesn't like our check in the if statement above
     .map(leg => getLegCost(leg, mediumId, riderCategoryId))
     .filter(cost => cost.appliedFareProduct?.legPrice !== undefined)
     // Filter out duplicate use IDs
