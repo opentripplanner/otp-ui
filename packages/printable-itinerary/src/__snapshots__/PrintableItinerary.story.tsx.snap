@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -76,7 +76,7 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -288,7 +288,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -775,7 +775,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -1065,7 +1065,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -1433,7 +1433,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
 `;
 
 exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -1539,7 +1539,7 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -1943,7 +1943,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -2148,7 +2148,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -2503,7 +2503,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -2849,7 +2849,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo PrintableItinerarystory__StyledPrintableItinerary-sc-1fgcguf-0 ZKSFh">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT PrintableItinerarystory__StyledPrintableItinerary-sc-1fgcguf-0 ZKSFh">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -3025,7 +3025,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -3211,7 +3211,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -3570,7 +3570,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary WalkOnlyItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -3626,7 +3626,7 @@ exports[`PrintableItinerary WalkOnlyItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -3894,7 +3894,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
 `;
 
 exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
@@ -3919,11 +3919,11 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </svg>
       </div>
       <div color="transparent"
-           title="Wheelchair accessibility of this trip: likely accessible"
+           title="Wheelchair accessibility of this trip leg: likely accessible"
            class="accessibility-rating__Wrapper-sc-7g85t2-0 ghJxtf"
       >
         <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
-          Wheelchair accessibility of this trip: likely accessible
+          Wheelchair accessibility of this trip leg: likely accessible
         </span>
         <svg viewbox="0 0 100 100"
              aria-hidden="true"
@@ -3994,11 +3994,11 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </svg>
       </div>
       <div color="transparent"
-           title="Wheelchair accessibility of this trip: unknown"
+           title="Wheelchair accessibility of this trip leg: unknown"
            class="accessibility-rating__Wrapper-sc-7g85t2-0 ghJxtf"
       >
         <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
-          Wheelchair accessibility of this trip: unknown
+          Wheelchair accessibility of this trip leg: unknown
         </span>
         <svg viewbox="0 0 100 100"
              aria-hidden="true"
@@ -4128,11 +4128,11 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </svg>
       </div>
       <div color="transparent"
-           title="Wheelchair accessibility of this trip: inaccessible"
+           title="Wheelchair accessibility of this trip leg: inaccessible"
            class="accessibility-rating__Wrapper-sc-7g85t2-0 ghJxtf"
       >
         <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
-          Wheelchair accessibility of this trip: inaccessible
+          Wheelchair accessibility of this trip leg: inaccessible
         </span>
         <svg viewbox="0 0 100 100"
              aria-hidden="true"
@@ -4207,11 +4207,11 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         </svg>
       </div>
       <div color="transparent"
-           title="Wheelchair accessibility of this trip: inaccessible"
+           title="Wheelchair accessibility of this trip leg: inaccessible"
            class="accessibility-rating__Wrapper-sc-7g85t2-0 ghJxtf"
       >
         <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
-          Wheelchair accessibility of this trip: inaccessible
+          Wheelchair accessibility of this trip leg: inaccessible
         </span>
         <svg viewbox="0 0 100 100"
              aria-hidden="true"
@@ -4286,7 +4286,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
 `;
 
 exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
-<div class="styled__PrintableItinerary-sc-1fqxr7x-11 iqiwLo">
+<div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
