@@ -129,7 +129,7 @@ export default function PlaceRow({
         />
       </S.LineColumn>
       <S.PlaceHeader>
-        <S.PlaceName aria-hidden className="place-name">
+        <S.PlaceName aria-hidden className="place-row-place-name">
           {placeName}
         </S.PlaceName>
       </S.PlaceHeader>
