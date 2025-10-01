@@ -129,7 +129,9 @@ export default function PlaceRow({
         />
       </S.LineColumn>
       <S.PlaceHeader>
-        <S.PlaceName aria-hidden>{placeName}</S.PlaceName>
+        <S.PlaceName aria-hidden className="place-row-place-name">
+          {placeName}
+        </S.PlaceName>
       </S.PlaceHeader>
       <S.TimeColumn>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
