@@ -26,6 +26,7 @@ export default function AccessibilityAnnotation({
         <AccessibilityRating
           gradationMap={accessibilityScoreGradationMap}
           grayscale={grayscale}
+          isLeg
           score={leg.accessibilityScore}
         />
       )}

@@ -5,7 +5,7 @@ export const ViewStopButton = styled.button<{ stopId?: string }>`
   background: none;
   border-bottom: none;
   ${props =>
-    props.stopId != null
+    props.stopId
       ? "border-left: 1px solid #000; margin-left: 5px;"
       : "border-left: none; padding-left: 0;"};
   border-right: none;
