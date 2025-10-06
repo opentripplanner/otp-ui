@@ -11,7 +11,8 @@
   "private": false,
   "dependencies": {
     "@opentripplanner/core-utils": "workspace:*",
-    "@opentripplanner/itinerary-body": "workspace:*"
+    "@opentripplanner/itinerary-body": "workspace:*",
+    "flat": "catalog:"
   },
   "devDependencies": {
     "@opentripplanner/icons": "workspace:*",

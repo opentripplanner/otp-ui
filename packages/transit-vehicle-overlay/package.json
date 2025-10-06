@@ -12,7 +12,8 @@
     "@opentripplanner/base-map": "workspace:*",
     "@opentripplanner/core-utils": "workspace:*",
     "@opentripplanner/icons": "workspace:*",
-    "flat": "catalog:"
+    "flat": "catalog:",
+    "lodash.memoize": "^4.1.2"
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*"
