@@ -255,6 +255,12 @@ describe("util > itinerary", () => {
     it("should calculate the total cost of an itinerary using fares v2", () => {
       const result = getItineraryCost(faresv2Itinerary.legs, "3", "ADULT");
       expect(result.amount).toEqual(2.8);
+      const complexResult = getItineraryCost(
+        faresv2Itinerary.legs,
+        ["0", "0"],
+        ["ADULT", "ADULT"]
+      );
+      expect(complexResult.amount).toEqual(2.8 * 2);
     });
     it("should calculate the individual leg cost of a fares v2 legs", () => {
       const firstLegResult = getLegCost(faresv2Itinerary.legs[1], "3", "ADULT");
