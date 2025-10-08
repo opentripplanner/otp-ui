@@ -26,7 +26,7 @@ export default function DepartureDate({
   itinerary,
   DepartureDetails
 }: DepartureDateProps): ReactElement {
-  const departureDate = new Date(itinerary.startTime);
+  const departureDate = new Date(itinerary.start);
   return (
     <TripDetail
       className="departure-date"

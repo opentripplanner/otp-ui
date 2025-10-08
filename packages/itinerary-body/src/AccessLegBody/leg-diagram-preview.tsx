@@ -65,7 +65,7 @@ class LegDiagramPreview extends Component<Props, State> {
    */
   isActive = (): boolean => {
     const { diagramVisible, leg } = this.props;
-    return diagramVisible && diagramVisible.startTime === leg.startTime;
+    return diagramVisible && diagramVisible.start === leg.start;
   };
 
   onExpandClick = (): void => {
