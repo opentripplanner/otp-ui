@@ -19,9 +19,6 @@ import {
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
 
-type ConvertMode = "legacy" | "passthrough";
-interface ConvertThisArg { mode?: ConvertMode }
-
 // All OTP transit modes
 export const transitModes = [
   "TRAM",
