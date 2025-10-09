@@ -19,6 +19,9 @@ import {
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
 
+type ConvertMode = "legacy" | "passthrough";
+interface ConvertThisArg { mode?: ConvertMode }
+
 // All OTP transit modes
 export const transitModes = [
   "TRAM",
@@ -788,7 +791,13 @@ export const convertGraphQLResponseToLegacy = (leg: any): any => ({
   agencyUrl: leg.agency?.url,
   alightRule: pickupDropoffTypeToOtp1(leg.dropoffType),
   boardRule: pickupDropoffTypeToOtp1(leg.pickupType),
-  // dropOffBookingInfo is already present in 'leg'
+  bookingRuleInfo: {
+    dropOff: leg.dropOffBookingInfo,
+    pickUp: leg.pickUpBookingInfo
+  },
+  dropOffBookingInfo: {
+    latestBookingTime: leg.dropOffBookingInfo
+  },
   from: {
     ...leg.from,
     stopCode: leg.from.stop?.code,
