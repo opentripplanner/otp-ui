@@ -24,7 +24,7 @@ export default function AccessLegStep({
   step,
   style
 }: Props): ReactElement {
-  const { absoluteDirection, relativeDirection, streetName } = step;
+  const { absoluteDirection, distance, relativeDirection, streetName } = step;
 
   const street = (
     <S.StepStreetName>
@@ -105,14 +105,9 @@ export default function AccessLegStep({
     // for styled-components support.
     <span className={className} style={style}>
       {stepContent}
-      {/* TODO: Implement metric vs imperial (up until now it's just imperial). */}
-      {step?.distance > 0 && (
+      {distance > 0 && (
         <S.StepLength>
-          <Distance
-            imperial={imperial}
-            long={imperial}
-            meters={step.distance}
-          />
+          <Distance imperial={imperial} long={imperial} meters={distance} />
         </S.StepLength>
       )}
     </span>
