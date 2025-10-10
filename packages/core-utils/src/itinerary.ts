@@ -788,6 +788,10 @@ export const convertGraphQLResponseToLegacy = (leg: any): any => ({
   agencyUrl: leg.agency?.url,
   alightRule: pickupDropoffTypeToOtp1(leg.dropoffType),
   boardRule: pickupDropoffTypeToOtp1(leg.pickupType),
+  bookingRuleInfo: {
+    dropOff: leg?.dropOffBookingInfo || {},
+    pickUp: leg?.pickUpBookingInfo || {}
+  },
   dropOffBookingInfo: {
     latestBookingTime: leg.dropOffBookingInfo
   },
