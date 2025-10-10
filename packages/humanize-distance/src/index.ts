@@ -1,5 +1,6 @@
 import { IntlShape } from "react-intl";
 
+import Distance from "./distance";
 import { getImperialParams, getMetricParams } from "./util";
 
 export function humanizeDistanceStringImperial(
@@ -52,3 +53,5 @@ export function humanizeDistanceString(
     ? humanizeDistanceStringMetric(meters, intl)
     : humanizeDistanceStringImperial(meters, null, intl);
 }
+
+export { Distance };
