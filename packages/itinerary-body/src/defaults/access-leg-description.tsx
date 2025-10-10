@@ -77,12 +77,12 @@ export default function AccessLegDescription({
   style
 }: Props): ReactElement {
   const intl = useIntl();
+  const { from, distance, duration, to } = leg;
   // Replace the Vertex Type for BIKESHARE with VEHICLE as we do not know that
   // it is a bike yet because that information is in the next leg with OTP2.
   const toPlace = {
-    ...leg.to,
-    vertexType:
-      leg.to.vertexType === "BIKESHARE" ? "VEHICLE" : leg.to.vertexType
+    ...to,
+    vertexType: to.vertexType === "BIKESHARE" ? "VEHICLE" : to.vertexType
   };
   const modeContent = getSummaryMode(leg, intl);
   const placeContent = (
@@ -91,28 +91,24 @@ export default function AccessLegDescription({
     </S.LegDescriptionPlace>
   );
 
-  const durationSeconds = ensureAtLeastOneMinute(leg.duration);
+  const durationSeconds = ensureAtLeastOneMinute(duration);
 
   // TODO: is this causing issues with TNC legs? Do walk legs leading to a TNC
   // trip really have the same `to.stopId` as `from.stopId`?
-  const isTransferLeg = leg.to.stopId === leg.from.stopId;
+  const isTransferLeg = to.stopId === from.stopId;
   const imperial = isImperial(config);
   return (
     // Return an HTML element which is passed a className (and style props)
     // for styled-components support.
     <span className={className} style={style}>
-      {leg.distance > 0 ? (
+      {distance > 0 ? (
         <FormattedMessage
           defaultMessage="{mode} {distance} to {place}"
           description="Summarizes an access leg, including distance"
           id="otpUi.AccessLegBody.summaryAndDistance"
           values={{
             distance: (
-              <Distance
-                imperial={imperial}
-                long={imperial}
-                meters={leg.distance}
-              />
+              <Distance imperial={imperial} long={imperial} meters={distance} />
             ),
             // This is not used by the default string,
             // but supplying it allows a user who is overriding the string to use it
