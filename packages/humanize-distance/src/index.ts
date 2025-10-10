@@ -1,62 +1,46 @@
 import { IntlShape } from "react-intl";
 
-function roundToOneDecimalPlace(number: number): number {
-  return Math.round(number * 10) / 10;
-}
+import { getImperialParams, getMetricParams } from "./util";
 
 export function humanizeDistanceStringImperial(
   meters: number,
   abbreviate?: boolean,
   intl?: IntlShape
 ): string {
-  const feet = meters * 3.28084;
-
-  let unit = "mile";
-  let unitIfNoIntl = abbreviate ? "mi" : "miles";
-  let value = roundToOneDecimalPlace(feet / 5280);
-
-  if (feet < 528) {
-    unit = "foot";
-    unitIfNoIntl = abbreviate ? "ft" : "feet";
-    value = Math.round(feet);
+  const { unit, value } = getImperialParams(meters);
+  if (intl) {
+    return intl.formatNumber(value, {
+      style: "unit",
+      unit,
+      unitDisplay: abbreviate ? "short" : "long"
+    });
   }
-
-  return intl
-    ? intl.formatNumber(value, {
-        style: "unit",
-        unit,
-        unitDisplay: abbreviate ? "short" : "long"
-      })
-    : `${value} ${unitIfNoIntl}`;
+  const unitIfNoIntl =
+    unit === "foot"
+      ? abbreviate
+        ? "ft"
+        : "feet"
+      : abbreviate
+      ? "mi"
+      : "miles";
+  return `${value} ${unitIfNoIntl}`;
 }
 
 export function humanizeDistanceStringMetric(
   meters: number,
   intl?: IntlShape
 ): string {
-  const km = meters / 1000;
-  let unit = "meter";
-  let shortUnit = "m";
-  let value = Math.round(meters);
-
-  if (km > 1) {
-    unit = "kilometer";
-    shortUnit = "km";
-    value =
-      km > 100
-        ? // 100 km and over
-          Math.round(km)
-        : // 1.1 km => 99.9 km
-          roundToOneDecimalPlace(km);
+  const { unit, value } = getMetricParams(meters);
+  if (intl) {
+    return intl.formatNumber(value, {
+      style: "unit",
+      unit,
+      unitDisplay: "short"
+    });
   }
 
-  return intl
-    ? intl.formatNumber(value, {
-        style: "unit",
-        unit,
-        unitDisplay: "short"
-      })
-    : `${value} ${shortUnit}`;
+  const shortUnit = unit === "meter" ? "m" : "km";
+  return `${value} ${shortUnit}`;
 }
 
 export function humanizeDistanceString(
