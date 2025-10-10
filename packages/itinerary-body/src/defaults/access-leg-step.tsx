@@ -1,8 +1,8 @@
 /* eslint-disable no-case-declarations */
 import { Step } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
-import { FormattedMessage, useIntl } from "react-intl";
-import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
+import { FormattedMessage } from "react-intl";
+import { Distance } from "@opentripplanner/humanize-distance";
 import { defaultMessages } from "../util";
 
 import * as S from "../styled";
@@ -11,6 +11,7 @@ import AccessLegStepHeading, { Heading } from "./access-leg-step-heading";
 import StreetName from "./street-name";
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
+  imperial: boolean;
   step: Step;
 }
 
@@ -19,11 +20,11 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
  */
 export default function AccessLegStep({
   className,
+  imperial,
   step,
   style
 }: Props): ReactElement {
   const { absoluteDirection, relativeDirection, streetName } = step;
-  const intl = useIntl();
 
   const street = (
     <S.StepStreetName>
@@ -107,7 +108,11 @@ export default function AccessLegStep({
       {/* TODO: Implement metric vs imperial (up until now it's just imperial). */}
       {step?.distance > 0 && (
         <S.StepLength>
-          {humanizeDistanceString(step.distance, false, intl)}
+          <Distance
+            imperial={imperial}
+            long={imperial}
+            meters={step.distance}
+          />
         </S.StepLength>
       )}
     </span>

@@ -1,11 +1,11 @@
-import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
+import { Distance } from "@opentripplanner/humanize-distance";
 import { Config, Leg } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
 import { FormattedMessage, IntlShape, useIntl } from "react-intl";
 import coreUtils from "@opentripplanner/core-utils";
 import * as S from "../styled";
 
-import { defaultMessages, getPlaceName } from "../util";
+import { defaultMessages, getPlaceName, isImperial } from "../util";
 
 const { ensureAtLeastOneMinute, toHoursMinutesSeconds } = coreUtils.time;
 
@@ -96,6 +96,7 @@ export default function AccessLegDescription({
   // TODO: is this causing issues with TNC legs? Do walk legs leading to a TNC
   // trip really have the same `to.stopId` as `from.stopId`?
   const isTransferLeg = leg.to.stopId === leg.from.stopId;
+  const imperial = isImperial(config);
   return (
     // Return an HTML element which is passed a className (and style props)
     // for styled-components support.
@@ -106,8 +107,13 @@ export default function AccessLegDescription({
           description="Summarizes an access leg, including distance"
           id="otpUi.AccessLegBody.summaryAndDistance"
           values={{
-            // TODO: Implement metric vs imperial (up until now it's just imperial).
-            distance: humanizeDistanceString(leg.distance, false, intl),
+            distance: (
+              <Distance
+                imperial={imperial}
+                long={imperial}
+                meters={leg.distance}
+              />
+            ),
             // This is not used by the default string,
             // but supplying it allows a user who is overriding the string to use it
             // This relies on `formatDuration` being passed into the itinerary body config.
