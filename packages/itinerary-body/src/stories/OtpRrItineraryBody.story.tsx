@@ -64,6 +64,7 @@ interface StoryWrapperProps {
   defaultFareSelector?: FareProductSelector;
   hideDrivingDirections?: boolean;
   itinerary: Itinerary;
+  metric?: boolean;
   showAlertEffectiveDateTimeText?: boolean;
   showApproximateAccessLegTravelTimes?: boolean;
   TimeColumnContent?: FunctionComponent<TimeColumnContentProps>;
@@ -74,6 +75,7 @@ function OtpRRItineraryBodyWrapper({
   defaultFareSelector,
   hideDrivingDirections = false,
   itinerary,
+  metric,
   showAlertEffectiveDateTimeText = true,
   showApproximateAccessLegTravelTimes = false,
   TimeColumnContent
@@ -86,6 +88,7 @@ function OtpRRItineraryBodyWrapper({
       itinerary={itinerary}
       LegIcon={LegIconWithA11y}
       LineColumnContent={OtpRRLineColumnContent}
+      metric={metric}
       PlaceName={OtpRRPlaceName}
       RouteDescription={OtpRRRouteDescription}
       showAgencyInfo
@@ -112,6 +115,10 @@ export default {
 
 export const WalkOnlyItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkOnlyItinerary} />
+);
+
+export const WalkOnlyItineraryMetric = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={walkOnlyItinerary} metric />
 );
 
 // OTP2.4 type data
