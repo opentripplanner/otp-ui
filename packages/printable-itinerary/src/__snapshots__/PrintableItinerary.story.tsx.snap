@@ -43,7 +43,7 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
               SW Alder St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              87 feet
+              26 m
             </span>
           </span>
         </div>
@@ -54,7 +54,7 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
               SW 5th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              257 feet
+              78 m
             </span>
           </span>
         </div>
@@ -65,7 +65,7 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
               SW Morrison St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.6 miles
+              1 km
             </span>
           </span>
         </div>
@@ -116,7 +116,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
               SE Clinton St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              79 feet
+              24 m
             </span>
           </span>
         </div>
@@ -127,7 +127,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
               SE 30th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              419 feet
+              128 m
             </span>
           </span>
         </div>
@@ -189,7 +189,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
               SE 30th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.3 miles
+              413 m
             </span>
           </span>
         </div>
@@ -200,7 +200,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
               SE Harrison St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              361 feet
+              110 m
             </span>
           </span>
         </div>
@@ -211,7 +211,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
               SE 29th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.2 miles
+              402 m
             </span>
           </span>
         </div>
@@ -222,7 +222,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
               SE Hawthorne Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              50 feet
+              15 m
             </span>
           </span>
         </div>
@@ -255,7 +255,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
               SE Hawthorne Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              210 feet
+              64 m
             </span>
           </span>
         </div>
@@ -266,7 +266,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
               SE 28th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              295 feet
+              90 m
             </span>
           </span>
         </div>
@@ -277,7 +277,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
               SE Madison St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              114 feet
+              35 m
             </span>
           </span>
         </div>
@@ -328,7 +328,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               SE 30th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              103 feet
+              31 m
             </span>
           </span>
         </div>
@@ -339,7 +339,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               SE Stark St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              277 feet
+              84 m
             </span>
           </span>
         </div>
@@ -350,7 +350,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               SE 29th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              19 feet
+              6 m
             </span>
           </span>
         </div>
@@ -412,7 +412,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               SE 29th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              492 feet
+              150 m
             </span>
           </span>
         </div>
@@ -423,7 +423,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               SE Pine St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              358 feet
+              109 m
             </span>
           </span>
         </div>
@@ -434,7 +434,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               SE 28th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              518 feet
+              158 m
             </span>
           </span>
         </div>
@@ -445,7 +445,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               SE Ankeny St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.2 miles
+              324 m
             </span>
           </span>
         </div>
@@ -456,7 +456,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               SE 24th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              259 feet
+              79 m
             </span>
           </span>
         </div>
@@ -467,7 +467,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               NE 24th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.2 miles
+              402 m
             </span>
           </span>
         </div>
@@ -478,7 +478,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               NE Glisan St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              57 feet
+              17 m
             </span>
           </span>
         </div>
@@ -511,7 +511,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               NE Glisan St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              57 feet
+              17 m
             </span>
           </span>
         </div>
@@ -522,7 +522,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               NE 24th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              382 feet
+              116 m
             </span>
           </span>
         </div>
@@ -533,7 +533,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               NE Sandy Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              58 feet
+              18 m
             </span>
           </span>
         </div>
@@ -614,7 +614,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               NE Sandy Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              75 feet
+              23 m
             </span>
           </span>
         </div>
@@ -625,7 +625,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               NE Alameda St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              203 feet
+              62 m
             </span>
           </span>
         </div>
@@ -687,7 +687,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               NE Alameda St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              203 feet
+              62 m
             </span>
           </span>
         </div>
@@ -698,7 +698,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               NE 57th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.6 miles
+              986 m
             </span>
           </span>
         </div>
@@ -709,7 +709,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               NE Cully Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.3 miles
+              562 m
             </span>
           </span>
         </div>
@@ -720,7 +720,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               NE 60th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              171 feet
+              52 m
             </span>
           </span>
         </div>
@@ -753,7 +753,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               NE 60th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              270 feet
+              82 m
             </span>
           </span>
         </div>
@@ -764,7 +764,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
               NE Going St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              225 feet
+              68 m
             </span>
           </span>
         </div>
@@ -815,7 +815,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              91 feet
+              28 m
             </span>
           </span>
         </div>
@@ -850,7 +850,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              20 feet
+              6 m
             </span>
           </span>
         </div>
@@ -861,7 +861,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
               SW 6th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              245 feet
+              75 m
             </span>
           </span>
         </div>
@@ -872,7 +872,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
               SW Morrison St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              241 feet
+              73 m
             </span>
           </span>
         </div>
@@ -883,7 +883,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              27 feet
+              8 m
             </span>
           </span>
         </div>
@@ -916,7 +916,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
               Pioneer Sq N (path)
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              22 feet
+              7 m
             </span>
           </span>
         </div>
@@ -997,7 +997,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
               Providence Park (path)
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              19 feet
+              6 m
             </span>
           </span>
         </div>
@@ -1032,7 +1032,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              104 feet
+              32 m
             </span>
           </span>
         </div>
@@ -1043,7 +1043,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              27 feet
+              8 m
             </span>
           </span>
         </div>
@@ -1054,7 +1054,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
               SW Morrison St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              99 feet
+              30 m
             </span>
           </span>
         </div>
@@ -1108,7 +1108,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               parking aisle
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              158 feet
+              48 m
             </span>
           </span>
         </div>
@@ -1119,7 +1119,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               SW Murray Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.2 miles
+              348 m
             </span>
           </span>
         </div>
@@ -1130,7 +1130,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               NW Murray Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              150 feet
+              46 m
             </span>
           </span>
         </div>
@@ -1141,7 +1141,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               NW Murray Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.4 miles
+              644 m
             </span>
           </span>
         </div>
@@ -1152,7 +1152,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               NW Sunset Hwy
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.6 miles
+              910 m
             </span>
           </span>
         </div>
@@ -1163,7 +1163,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               NW Sunset Hwy
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.3 miles
+              454 m
             </span>
           </span>
         </div>
@@ -1174,7 +1174,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               SW Cedar Hills Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.2 miles
+              355 m
             </span>
           </span>
         </div>
@@ -1185,7 +1185,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               SW Barnes Rd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.5 miles
+              775 m
             </span>
           </span>
         </div>
@@ -1196,7 +1196,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               service road
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.2 miles
+              312 m
             </span>
           </span>
         </div>
@@ -1207,7 +1207,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               Sunset TC
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              76 feet
+              23 m
             </span>
           </span>
         </div>
@@ -1248,7 +1248,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              16 feet
+              5 m
             </span>
           </span>
         </div>
@@ -1259,7 +1259,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               steps
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              232 feet
+              71 m
             </span>
           </span>
         </div>
@@ -1270,7 +1270,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              19 feet
+              6 m
             </span>
           </span>
         </div>
@@ -1281,7 +1281,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               Sunset TC (path)
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              159 feet
+              49 m
             </span>
           </span>
         </div>
@@ -1378,7 +1378,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               Oak/SW 1st Ave (path)
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              13 feet
+              4 m
             </span>
           </span>
         </div>
@@ -1389,7 +1389,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              27 feet
+              8 m
             </span>
           </span>
         </div>
@@ -1400,7 +1400,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               SW Oak St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              37 feet
+              11 m
             </span>
           </span>
         </div>
@@ -1411,7 +1411,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               SW 1st Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              260 feet
+              79 m
             </span>
           </span>
         </div>
@@ -1422,7 +1422,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
               SW Pine St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              337 feet
+              103 m
             </span>
           </span>
         </div>
@@ -1473,7 +1473,7 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
               SW Alder St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              118 feet
+              36 m
             </span>
           </span>
         </div>
@@ -1484,7 +1484,7 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
               SW 4th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              88 feet
+              27 m
             </span>
           </span>
         </div>
@@ -1517,7 +1517,7 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
               SW 4th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.2 miles
+              291 m
             </span>
           </span>
         </div>
@@ -1528,7 +1528,7 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
               SW Pine St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              456 feet
+              139 m
             </span>
           </span>
         </div>
@@ -1579,7 +1579,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               SE 30th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.2 miles
+              289 m
             </span>
           </span>
         </div>
@@ -1590,7 +1590,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               SE Belmont St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              330 feet
+              101 m
             </span>
           </span>
         </div>
@@ -1601,7 +1601,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               SE 29th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              511 feet
+              156 m
             </span>
           </span>
         </div>
@@ -1612,7 +1612,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               SE Taylor St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              235 feet
+              72 m
             </span>
           </span>
         </div>
@@ -1645,7 +1645,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               SE Taylor St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              26 feet
+              8 m
             </span>
           </span>
         </div>
@@ -1656,7 +1656,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               SE 28th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.6 miles
+              891 m
             </span>
           </span>
         </div>
@@ -1667,7 +1667,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               NE 28th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.7 miles
+              1.2 km
             </span>
           </span>
         </div>
@@ -1678,7 +1678,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               NE Halsey St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              17 feet
+              5 m
             </span>
           </span>
         </div>
@@ -1689,7 +1689,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               NE Halsey St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              59 feet
+              18 m
             </span>
           </span>
         </div>
@@ -1700,7 +1700,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               NE 28th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              28 feet
+              8 m
             </span>
           </span>
         </div>
@@ -1711,7 +1711,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               NE 28th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              489 feet
+              149 m
             </span>
           </span>
         </div>
@@ -1722,7 +1722,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               NE Broadway
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              86 feet
+              26 m
             </span>
           </span>
         </div>
@@ -1833,7 +1833,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               NE 33rd Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              33 feet
+              10 m
             </span>
           </span>
         </div>
@@ -1844,7 +1844,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               NE Shaver St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.3 miles
+              486 m
             </span>
           </span>
         </div>
@@ -1855,7 +1855,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               NE 38th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              332 feet
+              101 m
             </span>
           </span>
         </div>
@@ -1888,7 +1888,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               NE 38th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              355 feet
+              108 m
             </span>
           </span>
         </div>
@@ -1899,7 +1899,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               NE Skidmore St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.2 miles
+              317 m
             </span>
           </span>
         </div>
@@ -1910,7 +1910,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               NE 42nd Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.4 miles
+              574 m
             </span>
           </span>
         </div>
@@ -1921,7 +1921,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               NE Alberta St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.3 miles
+              440 m
             </span>
           </span>
         </div>
@@ -1932,7 +1932,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
               NE 47th Pl
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              313 feet
+              95 m
             </span>
           </span>
         </div>
@@ -1991,7 +1991,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
               Courtland Street Northeast
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              172 feet
+              53 m
             </span>
           </span>
         </div>
@@ -2002,7 +2002,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.1 miles
+              171 m
             </span>
           </span>
         </div>
@@ -2013,7 +2013,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
               Peachtree Center Avenue Northeast
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              140 feet
+              43 m
             </span>
           </span>
         </div>
@@ -2049,7 +2049,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
               Peachtree Center Avenue Northeast
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              12 feet
+              4 m
             </span>
           </span>
         </div>
@@ -2060,7 +2060,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
               service road
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              10 feet
+              3 m
             </span>
           </span>
         </div>
@@ -2071,7 +2071,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
               Peachtree Center Cycle Track
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.5 miles
+              822 m
             </span>
           </span>
         </div>
@@ -2082,7 +2082,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
               Edgewood Avenue Northeast
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.1 miles
+              187 m
             </span>
           </span>
         </div>
@@ -2093,7 +2093,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
               Pryor Street Southwest
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              269 feet
+              82 m
             </span>
           </span>
         </div>
@@ -2104,7 +2104,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
               Pryor Street
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              518 feet
+              158 m
             </span>
           </span>
         </div>
@@ -2115,7 +2115,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
               Pryor Street Southwest
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.2 miles
+              311 m
             </span>
           </span>
         </div>
@@ -2126,7 +2126,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              19 feet
+              6 m
             </span>
           </span>
         </div>
@@ -2137,7 +2137,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
               sidewalk
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              22 feet
+              7 m
             </span>
           </span>
         </div>
@@ -2188,7 +2188,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               parking aisle
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              212 feet
+              65 m
             </span>
           </span>
         </div>
@@ -2199,7 +2199,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               Northeast Cherry Lane
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              342 feet
+              104 m
             </span>
           </span>
         </div>
@@ -2210,7 +2210,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               Northeast Cherry Drive
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.7 miles
+              1.1 km
             </span>
           </span>
         </div>
@@ -2221,7 +2221,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               Northeast Century Boulevard
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              332 feet
+              101 m
             </span>
           </span>
         </div>
@@ -2232,7 +2232,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               Northeast Century Boulevard (path)
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              26 feet
+              8 m
             </span>
           </span>
         </div>
@@ -2243,7 +2243,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              204 feet
+              62 m
             </span>
           </span>
         </div>
@@ -2254,7 +2254,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               Orenco
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              98 feet
+              30 m
             </span>
           </span>
         </div>
@@ -2334,7 +2334,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               Providence Park
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              81 feet
+              25 m
             </span>
           </span>
         </div>
@@ -2345,7 +2345,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              19 feet
+              6 m
             </span>
           </span>
         </div>
@@ -2356,7 +2356,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              19 feet
+              6 m
             </span>
           </span>
         </div>
@@ -2367,7 +2367,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               Southwest 17th Avenue
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.1 miles
+              196 m
             </span>
           </span>
         </div>
@@ -2378,7 +2378,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               West Burnside Street
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              276 feet
+              84 m
             </span>
           </span>
         </div>
@@ -2459,7 +2459,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               East Burnside Street (sidewalk)
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              79 feet
+              24 m
             </span>
           </span>
         </div>
@@ -2470,7 +2470,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               Southeast 94th Avenue
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              28 feet
+              8 m
             </span>
           </span>
         </div>
@@ -2481,7 +2481,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               Northeast 94th Avenue
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.4 miles
+              684 m
             </span>
           </span>
         </div>
@@ -2492,7 +2492,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
               Northeast Oregon Street
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              107 feet
+              33 m
             </span>
           </span>
         </div>
@@ -2548,7 +2548,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               parking aisle
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              158 feet
+              48 m
             </span>
           </span>
         </div>
@@ -2559,7 +2559,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               SW Murray Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.2 miles
+              348 m
             </span>
           </span>
         </div>
@@ -2570,7 +2570,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               NW Murray Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              150 feet
+              46 m
             </span>
           </span>
         </div>
@@ -2581,7 +2581,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               NW Murray Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.4 miles
+              644 m
             </span>
           </span>
         </div>
@@ -2592,7 +2592,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               NW Sunset Hwy
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.6 miles
+              910 m
             </span>
           </span>
         </div>
@@ -2603,7 +2603,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               NW Sunset Hwy
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.3 miles
+              454 m
             </span>
           </span>
         </div>
@@ -2614,7 +2614,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               SW Cedar Hills Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.2 miles
+              355 m
             </span>
           </span>
         </div>
@@ -2625,7 +2625,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               SW Barnes Rd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.5 miles
+              775 m
             </span>
           </span>
         </div>
@@ -2636,7 +2636,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               service road
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.2 miles
+              312 m
             </span>
           </span>
         </div>
@@ -2647,7 +2647,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               Sunset TC
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              76 feet
+              23 m
             </span>
           </span>
         </div>
@@ -2680,7 +2680,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              16 feet
+              5 m
             </span>
           </span>
         </div>
@@ -2691,7 +2691,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               steps
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              232 feet
+              71 m
             </span>
           </span>
         </div>
@@ -2702,7 +2702,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              19 feet
+              6 m
             </span>
           </span>
         </div>
@@ -2713,7 +2713,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               Sunset TC (path)
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              159 feet
+              49 m
             </span>
           </span>
         </div>
@@ -2794,7 +2794,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               Oak/SW 1st Ave (path)
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              13 feet
+              4 m
             </span>
           </span>
         </div>
@@ -2805,7 +2805,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              27 feet
+              8 m
             </span>
           </span>
         </div>
@@ -2816,7 +2816,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               SW Oak St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              37 feet
+              11 m
             </span>
           </span>
         </div>
@@ -2827,7 +2827,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               SW 1st Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              260 feet
+              79 m
             </span>
           </span>
         </div>
@@ -2838,7 +2838,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
               SW Pine St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              337 feet
+              103 m
             </span>
           </span>
         </div>
@@ -2889,7 +2889,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              167 feet
+              51 m
             </span>
           </span>
         </div>
@@ -2900,7 +2900,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
               Pioneer Sq N (path)
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              101 feet
+              31 m
             </span>
           </span>
         </div>
@@ -2981,7 +2981,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
               Providence Park (path)
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              19 feet
+              6 m
             </span>
           </span>
         </div>
@@ -2992,7 +2992,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              104 feet
+              32 m
             </span>
           </span>
         </div>
@@ -3003,7 +3003,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              27 feet
+              8 m
             </span>
           </span>
         </div>
@@ -3014,7 +3014,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
               SW Morrison St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              99 feet
+              30 m
             </span>
           </span>
         </div>
@@ -3251,7 +3251,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
               service road
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              0.1 miles
+              173 m
             </span>
           </span>
         </div>
@@ -3262,7 +3262,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
               Smith Avenue
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              129 feet
+              39 m
             </span>
           </span>
         </div>
@@ -3273,7 +3273,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
               Paine Avenue
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              61 feet
+              18 m
             </span>
           </span>
         </div>
@@ -3284,7 +3284,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
               32nd Street
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              67 feet
+              21 m
             </span>
           </span>
         </div>
@@ -3295,7 +3295,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
               32nd Street
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              313 feet
+              95 m
             </span>
           </span>
         </div>
@@ -3306,7 +3306,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              380 feet
+              116 m
             </span>
           </span>
         </div>
@@ -3449,7 +3449,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
               North 105th Street
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              64 feet
+              20 m
             </span>
           </span>
         </div>
@@ -3460,7 +3460,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
               service road
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              14 feet
+              4 m
             </span>
           </span>
         </div>
@@ -3471,7 +3471,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              180 feet
+              55 m
             </span>
           </span>
         </div>
@@ -3548,7 +3548,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
               sidewalk
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              326 feet
+              99 m
             </span>
           </span>
         </div>
@@ -3559,7 +3559,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
               sidewalk
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              117 feet
+              36 m
             </span>
           </span>
         </div>
@@ -3666,7 +3666,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
               SE Brooklyn St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              205 feet
+              62 m
             </span>
           </span>
         </div>
@@ -3677,7 +3677,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
               SE Cesar E. Chavez Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              33 feet
+              10 m
             </span>
           </span>
         </div>
@@ -3758,7 +3758,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
               service road
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              146 feet
+              44 m
             </span>
           </span>
         </div>
@@ -3769,7 +3769,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
               SE Cesar E. Chavez Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              198 feet
+              60 m
             </span>
           </span>
         </div>
@@ -3780,7 +3780,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
               SE Hawthorne Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              96 feet
+              29 m
             </span>
           </span>
         </div>
@@ -3861,7 +3861,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
               SE Hawthorne Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              40 feet
+              12 m
             </span>
           </span>
         </div>
@@ -3872,7 +3872,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
               SE 27th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              294 feet
+              90 m
             </span>
           </span>
         </div>
@@ -3883,7 +3883,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
               SE Madison St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              146 feet
+              44 m
             </span>
           </span>
         </div>
@@ -3965,7 +3965,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
               SE Brooklyn St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              205 feet
+              62 m
             </span>
           </span>
         </div>
@@ -3976,7 +3976,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
               SE Cesar E. Chavez Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              33 feet
+              10 m
             </span>
           </span>
         </div>
@@ -4088,7 +4088,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
               service road
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              146 feet
+              44 m
             </span>
           </span>
         </div>
@@ -4099,7 +4099,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
               SE Cesar E. Chavez Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              198 feet
+              60 m
             </span>
           </span>
         </div>
@@ -4110,7 +4110,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
               SE Hawthorne Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              96 feet
+              29 m
             </span>
           </span>
         </div>
@@ -4253,7 +4253,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
               SE Hawthorne Blvd
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              40 feet
+              12 m
             </span>
           </span>
         </div>
@@ -4264,7 +4264,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
               SE 27th Ave
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              294 feet
+              90 m
             </span>
           </span>
         </div>
@@ -4275,7 +4275,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
               SE Madison St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              146 feet
+              44 m
             </span>
           </span>
         </div>
@@ -4326,7 +4326,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              167 feet
+              51 m
             </span>
           </span>
         </div>
@@ -4337,7 +4337,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
               Pioneer Sq N (path)
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              101 feet
+              31 m
             </span>
           </span>
         </div>
@@ -4418,7 +4418,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
               Providence Park (path)
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              19 feet
+              6 m
             </span>
           </span>
         </div>
@@ -4429,7 +4429,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              104 feet
+              32 m
             </span>
           </span>
         </div>
@@ -4440,7 +4440,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
               Unnamed Path
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              27 feet
+              8 m
             </span>
           </span>
         </div>
@@ -4451,7 +4451,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
               SW Morrison St
             </span>
             <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
-              99 feet
+              30 m
             </span>
           </span>
         </div>

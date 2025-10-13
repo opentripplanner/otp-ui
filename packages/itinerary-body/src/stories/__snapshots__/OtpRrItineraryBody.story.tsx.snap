@@ -31599,6 +31599,277 @@ exports[`ItineraryBody/otp-react-redux WalkOnlyItinerary smoke-test 1`] = `
 </ol>
 `;
 
+exports[`ItineraryBody/otp-react-redux WalkOnlyItineraryMetric smoke-test 1`] = `
+<ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 hvAfKt leg-line">
+      </div>
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 iTIsMm hPKTER"
+        >
+          <path fill="currentColor"
+                d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 512 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+        >
+          <path fill="currentColor"
+                d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 hDHNht">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 dGClkY"
+      >
+        KGW Studio on the Sq, Portland, OR, USA
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 eFBxHX">
+      11:29 AM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+      from KGW Studio on the Sq, Portland, OR, USA
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 fhCdHh place-details ">
+      <div class="styled__LegBody-sc-1q8npbl-23 eKSfhr">
+        <div class="styled__LegClickable-sc-1q8npbl-24 bwATsX">
+          <span class="styled__LegDescription-sc-1q8npbl-26 izZSiG">
+            <span class="styled__LegIconAndRouteShortName-sc-1q8npbl-35 lhpYyp">
+              <span class="styled__LegIconContainer-sc-1q8npbl-34 grDdVM">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     version="1.0"
+                     x="0px"
+                     y="0px"
+                     viewbox="0 0 55.74 100"
+                     height="100%"
+                     width="100%"
+                     leg="[object Object]"
+                >
+                  <path d="M31.269,13.769c3.862,0,6.884-3.025,6.884-6.885C38.153,3.022,35.131,0,31.269,0c-3.86,0-6.885,3.022-6.885,6.884  C24.384,10.744,27.409,13.769,31.269,13.769z">
+                  </path>
+                  <path d="M1.249,51.724l4.512-0.421L5.863,35.25l8.224-5.204c0,0-1.333,10.545-1.333,16.085c0,4.831-0.172,8.736-0.172,8.736  L2.054,96.918L9.489,100L21.28,61.549l8.195,10.424l9.339,26.337l8.394-3.355l-9.425-27.965L27.446,50.665l2.901-21.399l6.46,13.544  l16.622,5.708l2.311-4.199l-15.234-8.887c0,0-3.691-9.819-6.711-15.962c-1.027-2.091-5.196-2.774-6.894-2.901  c-4.896-0.362-7.428,1.296-11.488,3.432C11.358,22.131,0,30.728,0,30.728L1.249,51.724z">
+                  </path>
+                </svg>
+              </span>
+            </span>
+            <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+              -
+            </span>
+            <span>
+              Walk 51 m to
+              <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+                701 SW 6th Ave, Portland, OR, USA 97204
+              </span>
+            </span>
+            <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-25 jOzsRd fZKyAm">
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+                Zoom to leg on map
+              </span>
+            </button>
+          </span>
+        </div>
+        <span class="styled__LegDetails-sc-1q8npbl-39 eCUibL">
+          <span class="styled__StepsHeaderAndMapLink-sc-1q8npbl-60 jjumdN">
+            <button aria-expanded="false"
+                    class="styled__TransparentButton-sc-1q8npbl-1 styled__StepsHeaderButton-sc-1q8npbl-61 jOzsRd jhYtnR"
+            >
+              1 min
+              <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
+                <svg viewbox="0 0 320 512"
+                     height="15"
+                     width="15"
+                     aria-hidden="true"
+                     focusable="false"
+                     fill="currentColor"
+                     xmlns="http://www.w3.org/2000/svg"
+                     class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+                >
+                  <path fill="currentColor"
+                        d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9S301 191.9 288 191.9L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"
+                  >
+                  </path>
+                </svg>
+              </span>
+              <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+                (Expand details)
+              </span>
+            </button>
+            <a aria-label="Show street imagery at this location"
+               role="link"
+               title="Show street imagery at this location"
+               class="mapillary-button__Container-sc-l7gdsc-0 fUOQNZ"
+            >
+              <svg viewbox="0 0 512 512"
+                   aria-hidden="true"
+                   focusable="false"
+                   fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg"
+                   class="StyledIconBase-sc-ea9ulj-0 ebjPRL mapillary-button__Icon-sc-l7gdsc-1 dQCpQk"
+                   style="padding-bottom: 1px;"
+              >
+                <path fill="currentColor"
+                      d="M320 64c0-35.3-28.7-64-64-64s-64 28.7-64 64 28.7 64 64 64 64-28.7 64-64zm-96 96c-35.3 0-64 28.7-64 64v48c0 17.7 14.3 32 32 32h1.8l11.1 99.5c1.8 16.2 15.5 28.5 31.8 28.5h38.7c16.3 0 30-12.3 31.8-28.5l11-99.5h1.8c17.7 0 32-14.3 32-32v-48c0-35.3-28.7-64-64-64h-64zm-91.7 234.2c13-2.4 21.7-14.9 19.3-27.9s-14.9-21.7-27.9-19.3c-32.4 5.9-60.9 14.2-82 24.8-10.5 5.3-20.3 11.7-27.8 19.6C6.4 399.5 0 410.5 0 424c0 21.4 15.5 36.1 29.1 45 14.7 9.6 34.3 17.3 56.4 23.4C130.2 504.7 190.4 512 256 512s125.8-7.3 170.4-19.6c22.1-6.1 41.8-13.8 56.4-23.4 13.7-8.9 29.1-23.6 29.1-45 0-13.5-6.4-24.5-14-32.6-7.5-7.9-17.3-14.3-27.8-19.6-21-10.6-49.5-18.9-82-24.8-13-2.4-25.5 6.3-27.9 19.3s6.3 25.5 19.3 27.9c30.2 5.5 53.7 12.8 69 20.5 3.2 1.6 5.8 3.1 7.9 4.5 3.6 2.4 3.6 7.2 0 9.6-8.8 5.7-23.1 11.8-43 17.3C374.3 457 318.5 464 256 464s-118.3-7-157.7-17.9c-19.9-5.5-34.2-11.6-43-17.3-3.6-2.4-3.6-7.2 0-9.6 2.1-1.4 4.8-2.9 7.9-4.5 15.3-7.7 38.8-14.9 69-20.5z"
+                >
+                </path>
+              </svg>
+            </a>
+          </span>
+          <div aria-hidden="true"
+               class="rah-static rah-static--height-zero "
+               style="grid-column: 1 / span 2; height: 0px; overflow: hidden;"
+          >
+            <div style="display: none;">
+              <ol class="styled__Steps-sc-1q8npbl-58 dluEYa">
+                <li class="styled__StepRow-sc-1q8npbl-64 FXFpN">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 bBTHbD">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M100.5 110.5v150h60v-150h40l-70-110-70 110h40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 hAlhLX">
+                    <span>
+                      Head northwest on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+                        Unnamed Path
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 fUOQNZ"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-sc-ea9ulj-0 ebjPRL mapillary-button__Icon-sc-l7gdsc-1 dQCpQk"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M320 64c0-35.3-28.7-64-64-64s-64 28.7-64 64 28.7 64 64 64 64-28.7 64-64zm-96 96c-35.3 0-64 28.7-64 64v48c0 17.7 14.3 32 32 32h1.8l11.1 99.5c1.8 16.2 15.5 28.5 31.8 28.5h38.7c16.3 0 30-12.3 31.8-28.5l11-99.5h1.8c17.7 0 32-14.3 32-32v-48c0-35.3-28.7-64-64-64h-64zm-91.7 234.2c13-2.4 21.7-14.9 19.3-27.9s-14.9-21.7-27.9-19.3c-32.4 5.9-60.9 14.2-82 24.8-10.5 5.3-20.3 11.7-27.8 19.6C6.4 399.5 0 410.5 0 424c0 21.4 15.5 36.1 29.1 45 14.7 9.6 34.3 17.3 56.4 23.4C130.2 504.7 190.4 512 256 512s125.8-7.3 170.4-19.6c22.1-6.1 41.8-13.8 56.4-23.4 13.7-8.9 29.1-23.6 29.1-45 0-13.5-6.4-24.5-14-32.6-7.5-7.9-17.3-14.3-27.8-19.6-21-10.6-49.5-18.9-82-24.8-13-2.4-25.5 6.3-27.9 19.3s6.3 25.5 19.3 27.9c30.2 5.5 53.7 12.8 69 20.5 3.2 1.6 5.8 3.1 7.9 4.5 3.6 2.4 3.6 7.2 0 9.6-8.8 5.7-23.1 11.8-43 17.3C374.3 457 318.5 464 256 464s-118.3-7-157.7-17.9c-19.9-5.5-34.2-11.6-43-17.3-3.6-2.4-3.6-7.2 0-9.6 2.1-1.4 4.8-2.9 7.9-4.5 15.3-7.7 38.8-14.9 69-20.5z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+                <li class="styled__StepRow-sc-1q8npbl-64 FXFpN">
+                  <div class="styled__StepIconContainer-sc-1q8npbl-63 bBTHbD">
+                    <svg viewbox="0 0 261 261">
+                      <path d="M114.5 100.5h60v160h60v-170c0-30-20-50-50-50h-70V.5l-100 69.14 100 70.86v-40z">
+                      </path>
+                    </svg>
+                  </div>
+                  <div class="styled__StepDescriptionContainer-sc-1q8npbl-59 hAlhLX">
+                    <span>
+                      Left on
+                      <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+                        Unnamed Path
+                      </span>
+                    </span>
+                    <a aria-label="Show street imagery at this location"
+                       role="link"
+                       title="Show street imagery at this location"
+                       class="mapillary-button__Container-sc-l7gdsc-0 fUOQNZ"
+                    >
+                      <svg viewbox="0 0 512 512"
+                           aria-hidden="true"
+                           focusable="false"
+                           fill="currentColor"
+                           xmlns="http://www.w3.org/2000/svg"
+                           class="StyledIconBase-sc-ea9ulj-0 ebjPRL mapillary-button__Icon-sc-l7gdsc-1 dQCpQk"
+                           style="padding-bottom: 1px;"
+                      >
+                        <path fill="currentColor"
+                              d="M320 64c0-35.3-28.7-64-64-64s-64 28.7-64 64 28.7 64 64 64 64-28.7 64-64zm-96 96c-35.3 0-64 28.7-64 64v48c0 17.7 14.3 32 32 32h1.8l11.1 99.5c1.8 16.2 15.5 28.5 31.8 28.5h38.7c16.3 0 30-12.3 31.8-28.5l11-99.5h1.8c17.7 0 32-14.3 32-32v-48c0-35.3-28.7-64-64-64h-64zm-91.7 234.2c13-2.4 21.7-14.9 19.3-27.9s-14.9-21.7-27.9-19.3c-32.4 5.9-60.9 14.2-82 24.8-10.5 5.3-20.3 11.7-27.8 19.6C6.4 399.5 0 410.5 0 424c0 21.4 15.5 36.1 29.1 45 14.7 9.6 34.3 17.3 56.4 23.4C130.2 504.7 190.4 512 256 512s125.8-7.3 170.4-19.6c22.1-6.1 41.8-13.8 56.4-23.4 13.7-8.9 29.1-23.6 29.1-45 0-13.5-6.4-24.5-14-32.6-7.5-7.9-17.3-14.3-27.8-19.6-21-10.6-49.5-18.9-82-24.8-13-2.4-25.5 6.3-27.9 19.3s6.3 25.5 19.3 27.9c30.2 5.5 53.7 12.8 69 20.5 3.2 1.6 5.8 3.1 7.9 4.5 3.6 2.4 3.6 7.2 0 9.6-8.8 5.7-23.1 11.8-43 17.3C374.3 457 318.5 464 256 464s-118.3-7-157.7-17.9c-19.9-5.5-34.2-11.6-43-17.3-3.6-2.4-3.6-7.2 0-9.6 2.1-1.4 4.8-2.9 7.9-4.5 15.3-7.7 38.8-14.9 69-20.5z"
+                        >
+                        </path>
+                      </svg>
+                    </a>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </span>
+      </div>
+    </div>
+  </li>
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
+    <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
+      <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
+        <svg viewbox="0 0 512 512"
+             height="14"
+             width="14"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             color="white"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL line-column-content__StackedCircle-sc-1wcbb7o-2 line-column-content__StackedCircleInner-sc-1wcbb7o-3 iTIsMm hPKTER"
+        >
+          <path fill="currentColor"
+                d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256z"
+          >
+          </path>
+        </svg>
+        <svg viewbox="0 0 384 512"
+             height="20"
+             width="20"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+        >
+          <path fill="currentColor"
+                d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
+          >
+          </path>
+        </svg>
+      </span>
+    </div>
+    <div class="styled__PlaceHeader-sc-1q8npbl-47 hDHNht">
+      <span aria-hidden="true"
+            class="styled__PlaceName-sc-1q8npbl-48 dGClkY"
+      >
+        701 SW 6th Ave, Portland, OR, USA 97204
+      </span>
+    </div>
+    <div class="styled__TimeColumn-sc-1q8npbl-42 eFBxHX">
+      11:30 AM
+    </div>
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+      Arrive at 701 SW 6th Ave, Portland, OR, USA 97204
+    </span>
+    <div class="styled__PlaceDetails-sc-1q8npbl-46 fhCdHh place-details ">
+    </div>
+  </li>
+</ol>
+`;
+
 exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
