@@ -192,6 +192,11 @@ export type Config = {
     }[];
   };
   transitOperators?: TransitOperator[];
+  /**
+   * The preferred unit system to use, either metric or imperial.
+   * The default is 'imperial' so that existing visuals with distances in feet/miles don't break.
+   */
+  units?: "metric" | "imperial";
 };
 
 export type EncodedPolyline = {

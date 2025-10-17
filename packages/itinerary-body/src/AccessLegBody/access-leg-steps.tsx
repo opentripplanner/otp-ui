@@ -9,6 +9,7 @@ import MapillaryButton from "./mapillary-button";
 import AccessLegStep from "../defaults/access-leg-step";
 
 interface Props {
+  imperial: boolean;
   mapillaryCallback?: (id: string) => void;
   mapillaryKey?: string;
   steps: Step[];
@@ -18,6 +19,7 @@ interface Props {
  * Renders a turn-by-turn step of an access leg.
  */
 export default function AccessLegSteps({
+  imperial,
   steps,
   mapillaryCallback,
   mapillaryKey
@@ -33,7 +35,7 @@ export default function AccessLegSteps({
             </S.StepIconContainer>
 
             <S.StepDescriptionContainer>
-              <AccessLegStep step={step} />
+              <AccessLegStep imperial={imperial} step={step} />
               <MapillaryButton
                 clickCallback={mapillaryCallback}
                 coords={{ lat, lon }}

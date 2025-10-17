@@ -4,6 +4,7 @@ import {
   Leg,
   LegIconComponent
 } from "@opentripplanner/types";
+import { isImperial } from "@opentripplanner/itinerary-body";
 import React, { ReactElement } from "react";
 import AccessibilityAnnotation from "./accessibility-annotation";
 
@@ -22,6 +23,7 @@ export default function AccessLeg({
   leg,
   LegIcon
 }: Props): ReactElement {
+  const imperial = isImperial(config);
   return (
     <S.Leg>
       <AccessibilityAnnotation
@@ -36,7 +38,7 @@ export default function AccessLeg({
           <S.LegDetails>
             {leg.steps.map((step, k) => (
               <S.LegDetail key={k}>
-                <S.AccessLegStep step={step} />
+                <S.AccessLegStep imperial={imperial} step={step} />
               </S.LegDetail>
             ))}
           </S.LegDetails>
