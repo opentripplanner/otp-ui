@@ -117,10 +117,6 @@ export const WalkOnlyItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkOnlyItinerary} />
 );
 
-export const WalkOnlyItineraryMetric = (): ReactElement => (
-  <OtpRRItineraryBodyWrapper itinerary={walkOnlyItinerary} metric />
-);
-
 // OTP2.4 type data
 export const Otp24Itinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={otp24Itinerary} />
@@ -132,6 +128,10 @@ export const BikeOnlyItinerary = (): ReactElement => (
 
 export const WalkTransitWalkItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItinerary} />
+);
+
+export const WalkTransitWalkItineraryMetric = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItinerary} metric />
 );
 
 export const BikeTransitBikeItinerary = (): ReactElement => (
