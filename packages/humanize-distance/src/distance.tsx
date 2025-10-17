@@ -31,7 +31,6 @@ const Distance = ({ imperial, long, meters }: Props): JSX.Element => {
     ? getImperialParams(meters)
     : getMetricParams(meters);
 
-  // TODO: include full units for assistive technology (consider <FormattedNumberParts> and the <abbr> tag).
   return (
     <FormattedNumber
       // Not a "real" style prop
