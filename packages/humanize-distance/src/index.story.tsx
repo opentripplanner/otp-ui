@@ -1,42 +1,49 @@
-import React, { ReactElement } from "react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 
 import { Distance } from ".";
 
-export default {
+const meta = {
   component: Distance,
+  render: Distance,
   title: "Distance"
+} as Meta<typeof Distance>;
+
+type Story = StoryObj<typeof meta>;
+
+export default meta;
+
+export const metersShort: Story = {
+  args: { meters: 124.5 }
 };
 
-export const metersShort = (): ReactElement => <Distance meters={124.5} />;
+export const metersLong: Story = {
+  args: { long: true, meters: 124.5 }
+};
 
-export const metersLong = (): ReactElement => <Distance long meters={124.5} />;
+export const feetShort: Story = {
+  args: { imperial: true, meters: 124.5 }
+};
 
-export const feetShort = (): ReactElement => (
-  <Distance imperial meters={124.5} />
-);
+export const feetLong: Story = {
+  args: { imperial: true, long: true, meters: 124.5 }
+};
 
-export const feetLong = (): ReactElement => (
-  <Distance imperial long meters={124.5} />
-);
+export const kilometersShort: Story = {
+  args: { meters: 12450 }
+};
 
-export const kilometersShort = (): ReactElement => <Distance meters={12450} />;
+export const kilometersLong: Story = {
+  args: { long: true, meters: 12450 }
+};
 
-export const kilometersLong = (): ReactElement => (
-  <Distance long meters={12450} />
-);
+export const milesShort: Story = {
+  args: { imperial: true, meters: 12450 }
+};
 
-export const milesShort = (): ReactElement => (
-  <Distance imperial meters={12450} />
-);
+export const milesLong: Story = {
+  args: { imperial: true, long: true, meters: 12450 }
+};
 
-export const milesLong = (): ReactElement => (
-  <Distance imperial long meters={12450} />
-);
-
-export const milesFractionShort = (): ReactElement => (
-  <Distance imperial meters={1245} />
-);
-
-export const milesFractionLong = (): ReactElement => (
-  <Distance imperial long meters={1245} />
-);
+export const milesFraction: Story = {
+  args: { imperial: true, meters: 1245 }
+};
