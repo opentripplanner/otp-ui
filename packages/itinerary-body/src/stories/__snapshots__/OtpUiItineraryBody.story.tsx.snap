@@ -14217,7 +14217,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
              role="group"
         >
           <div class="styled__CallAheadWarning-sc-1q8npbl-7 jdfZey">
-            To take this route, you must call 555-352-9348 at least 7 days in advance.
+            To ride this route, you must call 555-352-9348 at least 7 days in advance.
           </div>
           <div aria-hidden="false"
                class="rah-static rah-static--height-auto "
