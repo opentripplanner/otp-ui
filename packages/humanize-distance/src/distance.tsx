@@ -21,9 +21,9 @@ export interface Props {
 
 /**
  * Renders a distance expressed in imperial or metric unit.
- * The unit can be shown both in long or short form.
+ * The unit can be shown in long or short form.
  * English examples:
- * - 2.415 kilometers
+ * - 2.4 kilometers
  * - 807 ft
  */
 const Distance = ({ imperial, long, meters }: Props): JSX.Element => {
