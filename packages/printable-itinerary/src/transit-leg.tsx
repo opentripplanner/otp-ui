@@ -23,8 +23,9 @@ export default function TransitLeg({
   LegIcon,
   interlineFollows
 }: Props): ReactElement {
-  const stopIdFrom = getDisplayedStopId(leg.from);
-  const stopIdTo = getDisplayedStopId(leg.to);
+  // TODO: some mocks in itinerary-body have legs with null values for from/to.stop
+  const stopIdFrom = getDisplayedStopId(leg.from.stop ?? leg.from);
+  const stopIdTo = getDisplayedStopId(leg.to.stop ?? leg.to);
 
   // TODO: core-utils needs some larger-scale type fixes
   // null is an object, so we need to redefine it as undefined to prevent

@@ -3127,7 +3127,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
           <strong>
             W Burnside &amp; SW 6th
           </strong>
-          () at
+          (792) at
           <strong>
             11:02 AM
           </strong>
@@ -3137,7 +3137,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
           <strong>
             E Burnside &amp; SE 12th
           </strong>
-          () at
+          (13327) at
           <strong>
             11:08 AM
           </strong>
