@@ -1,11 +1,12 @@
 /* eslint-disable no-case-declarations */
+import { Distance } from "@opentripplanner/humanize-distance";
 import { Step } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
-import { Distance } from "@opentripplanner/humanize-distance";
-import { defaultMessages } from "../util";
 
 import * as S from "../styled";
+import { defaultMessages } from "../util";
+
 import AccessLegStepAction, { Action } from "./access-leg-step-action";
 import AccessLegStepHeading, { Heading } from "./access-leg-step-heading";
 import StreetName from "./street-name";
