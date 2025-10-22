@@ -136,6 +136,8 @@ export type VehicleRentalMapOverlaySymbol =
     }
   | ZoomBasedSymbol;
 
+export type UnitSystem = "metric" | "imperial";
+
 /**
  * Represents the expected configuration of the webapp.
  *
@@ -196,7 +198,7 @@ export type Config = {
    * The preferred unit system to use, either metric or imperial.
    * The default is 'imperial' so that existing visuals with distances in feet/miles don't break.
    */
-  units?: "metric" | "imperial";
+  units?: UnitSystem;
 };
 
 export type EncodedPolyline = {
