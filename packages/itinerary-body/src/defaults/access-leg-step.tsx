@@ -1,19 +1,19 @@
 /* eslint-disable no-case-declarations */
 import { Distance } from "@opentripplanner/humanize-distance";
-import { Step } from "@opentripplanner/types";
+import { Step, UnitSystem } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
 import * as S from "../styled";
-import { defaultMessages } from "../util";
+import { defaultMessages, isImperial } from "../util";
 
 import AccessLegStepAction, { Action } from "./access-leg-step-action";
 import AccessLegStepHeading, { Heading } from "./access-leg-step-heading";
 import StreetName from "./street-name";
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
-  imperial: boolean;
   step: Step;
+  units?: UnitSystem;
 }
 
 /**
@@ -21,11 +21,12 @@ interface Props extends HTMLAttributes<HTMLSpanElement> {
  */
 export default function AccessLegStep({
   className,
-  imperial,
   step,
-  style
+  style,
+  units
 }: Props): ReactElement {
   const { absoluteDirection, distance, relativeDirection, streetName } = step;
+  const imperial = isImperial(units);
 
   const street = (
     <S.StepStreetName>

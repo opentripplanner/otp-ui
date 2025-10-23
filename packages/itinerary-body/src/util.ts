@@ -1,5 +1,5 @@
 import flatten from "flat";
-import { Company, Config, Place } from "@opentripplanner/types";
+import { Company, Place, UnitSystem } from "@opentripplanner/types";
 import { IntlShape } from "react-intl";
 
 // Load the default messages.
@@ -182,5 +182,4 @@ export const parseOTP2Minute = (otp2Minute: string): string => {
   return otp2Minute.split("PT")[1].split("M")[0];
 };
 
-export const isImperial = (config: Config): boolean =>
-  !config.units || config.units === "imperial";
+export const isImperial = (units: UnitSystem): boolean => units !== "metric";

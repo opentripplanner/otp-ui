@@ -15,7 +15,7 @@ import MapillaryButton from "./mapillary-button";
 import RentedVehicleSubheader from "./rented-vehicle-subheader";
 import TNCLeg from "./tnc-leg";
 
-import { defaultMessages, isImperial } from "../util";
+import { defaultMessages } from "../util";
 
 const { ensureAtLeastOneMinute } = coreUtils.time;
 const { isTransit } = coreUtils.itinerary;
@@ -176,10 +176,10 @@ class AccessLegBody extends Component<Props, State> {
                     style={{ gridColumn: "1 / span 2" }}
                   >
                     <AccessLegSteps
-                      imperial={isImperial(config)}
                       mapillaryCallback={mapillaryCallback}
                       mapillaryKey={mapillaryKey}
                       steps={leg.steps}
+                      units={config.units}
                     />
                   </AnimateHeight>
                 </>

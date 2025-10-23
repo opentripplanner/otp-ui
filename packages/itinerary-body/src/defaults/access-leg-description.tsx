@@ -96,7 +96,7 @@ export default function AccessLegDescription({
   // TODO: is this causing issues with TNC legs? Do walk legs leading to a TNC
   // trip really have the same `to.stopId` as `from.stopId`?
   const isTransferLeg = to.stopId === from.stopId;
-  const imperial = isImperial(config);
+  const imperial = isImperial(config.units);
   return (
     // Return an HTML element which is passed a className (and style props)
     // for styled-components support.
