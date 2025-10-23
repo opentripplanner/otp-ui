@@ -19,6 +19,7 @@ import config from "../__mocks__/config.json";
 
 type Props = ItineraryBodyProps & {
   hideDrivingDirections?: boolean;
+  metric?: boolean;
   styledItinerary?: string;
 };
 
@@ -49,6 +50,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       itinerary,
       LegIcon = TriMetLegIcon,
       LineColumnContent,
+      metric,
       PlaceName,
       RouteDescription,
       RouteDescriptionFooter = undefined,
@@ -82,6 +84,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
     config.itinerary = {
       hideDrivingDirections
     };
+    config.units = metric ? "metric" : undefined;
 
     return (
       <ItineraryBodyComponent

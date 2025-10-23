@@ -179,6 +179,7 @@ class AccessLegBody extends Component<Props, State> {
                       mapillaryCallback={mapillaryCallback}
                       mapillaryKey={mapillaryKey}
                       steps={leg.steps}
+                      units={config.units}
                     />
                   </AnimateHeight>
                 </>
