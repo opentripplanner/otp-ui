@@ -35215,7 +35215,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-47 hDHNht">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-48 dGClkY"
+            class="styled__PlaceName-sc-1q8npbl-48 dGClkY place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -35438,7 +35438,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-47 hDHNht">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-48 dGClkY"
+            class="styled__PlaceName-sc-1q8npbl-48 dGClkY place-row-place-name"
       >
         Pioneer Square North MAX Station
       </span>
@@ -35808,7 +35808,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-47 hDHNht">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-48 dGClkY"
+            class="styled__PlaceName-sc-1q8npbl-48 dGClkY place-row-place-name"
       >
         Providence Park MAX Station
       </span>
@@ -36112,7 +36112,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-47 hDHNht">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-48 dGClkY"
+            class="styled__PlaceName-sc-1q8npbl-48 dGClkY place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
