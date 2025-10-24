@@ -739,8 +739,16 @@ export function getItineraryCost(
     // Only legs with fares (no walking legs)
     .filter(leg => leg.fareProducts?.length > 0)
     // Get the leg cost object of each leg
-    // @ts-expect-error TS doesn't like our check in the if statement above
-    .map(leg => getLegCost(leg, mediumId, riderCategoryId))
+    .map((leg, index, arr) =>
+      getLegCost(
+        leg,
+        // @ts-expect-error TS doesn't like our check in the if statement above
+        mediumId,
+        riderCategoryId,
+        // We need to include the seen fare ids by gathering all previous leg fare product ids
+        arr.splice(0, index).flatMap(l => l?.fareProducts.map(fp => fp?.id))
+      )
+    )
     .filter(cost => cost.appliedFareProduct?.legPrice !== undefined)
     // Filter out duplicate use IDs
     // One fare product can be used on multiple legs,
