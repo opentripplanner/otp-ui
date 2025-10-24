@@ -1,0 +1,1698 @@
+{
+    "accessibilityScore": null,
+    "duration": 3585,
+    "endTime": 1761243371000,
+    "legs": [
+        {
+            "accessibilityScore": null,
+            "agency": null,
+            "alerts": [],
+            "arrivalDelay": 0,
+            "departureDelay": 0,
+            "distance": 425.58,
+            "dropOffBookingInfo": null,
+            "dropoffType": "SCHEDULED",
+            "duration": {
+                "source": "394.0",
+                "parsedValue": 394
+            },
+            "endTime": 1761240180000,
+            "fareProducts": [],
+            "from": {
+                "lat": 45.515529,
+                "lon": -122.675332,
+                "name": "101 SE Main Street, Portland, Downtown, OR",
+                "rentalVehicle": null,
+                "stop": null,
+                "vertexType": "NORMAL"
+            },
+            "headsign": null,
+            "id": null,
+            "interlineWithPreviousLeg": false,
+            "intermediateStops": null,
+            "legGeometry": {
+                "length": 30,
+                "points": "mvxtGv}vkVr@ZW|AMr@EPEVi@|CEREVKj@CHEJCFAF?L?JKl@JFJDETCNCJe@xCEP?BGVJDh@TZN@G"
+            },
+            "mode": "WALK",
+            "pickupBookingInfo": null,
+            "pickupType": "SCHEDULED",
+            "realTime": false,
+            "realtimeState": null,
+            "rentedBike": false,
+            "rideHailingEstimate": null,
+            "route": null,
+            "startTime": 1761239786000,
+            "steps": [
+                {
+                    "absoluteDirection": "SOUTH",
+                    "alerts": [],
+                    "area": false,
+                    "distance": 31.03,
+                    "elevationProfile": [],
+                    "lat": 45.5154387,
+                    "lon": -122.6749952,
+                    "relativeDirection": "DEPART",
+                    "stayOn": false,
+                    "streetName": "Southwest 1st Avenue"
+                },
+                {
+                    "absoluteDirection": "WEST",
+                    "alerts": [],
+                    "area": false,
+                    "distance": 227.47,
+                    "elevationProfile": [],
+                    "lat": 45.5151781,
+                    "lon": -122.6751375,
+                    "relativeDirection": "RIGHT",
+                    "stayOn": false,
+                    "streetName": "Southwest Main Street"
+                },
+                {
+                    "absoluteDirection": "SOUTH",
+                    "alerts": [],
+                    "area": false,
+                    "distance": 14.78,
+                    "elevationProfile": [],
+                    "lat": 45.5158969,
+                    "lon": -122.6778579,
+                    "relativeDirection": "LEFT",
+                    "stayOn": false,
+                    "streetName": "path"
+                },
+                {
+                    "absoluteDirection": "WEST",
+                    "alerts": [],
+                    "area": false,
+                    "distance": 20.78,
+                    "elevationProfile": [],
+                    "lat": 45.5157731,
+                    "lon": -122.677927,
+                    "relativeDirection": "RIGHT",
+                    "stayOn": true,
+                    "streetName": "path"
+                },
+                {
+                    "absoluteDirection": "WEST",
+                    "alerts": [],
+                    "area": false,
+                    "distance": 64.05,
+                    "elevationProfile": [],
+                    "lat": 45.5158411,
+                    "lon": -122.6781755,
+                    "relativeDirection": "CONTINUE",
+                    "stayOn": false,
+                    "streetName": "Southwest Main Street"
+                },
+                {
+                    "absoluteDirection": "WEST",
+                    "alerts": [],
+                    "area": false,
+                    "distance": 18.97,
+                    "elevationProfile": [],
+                    "lat": 45.5160399,
+                    "lon": -122.6789471,
+                    "relativeDirection": "CONTINUE",
+                    "stayOn": false,
+                    "streetName": "path"
+                },
+                {
+                    "absoluteDirection": "SOUTH",
+                    "alerts": [],
+                    "area": false,
+                    "distance": 48.49,
+                    "elevationProfile": [],
+                    "lat": 45.5161009,
+                    "lon": -122.6791745,
+                    "relativeDirection": "LEFT",
+                    "stayOn": false,
+                    "streetName": "Southwest 5th Avenue"
+                }
+            ],
+            "stopCalls": [],
+            "to": {
+                "lat": 45.515682,
+                "lon": -122.679352,
+                "name": "SW 5th & Madison",
+                "rentalVehicle": null,
+                "stop": {
+                    "alerts": [],
+                    "code": "5005",
+                    "gtfsId": "1:5005",
+                    "id": "U3RvcDoxOjUwMDU",
+                    "lat": 45.515682,
+                    "lon": -122.679352
+                },
+                "vertexType": "TRANSIT"
+            },
+            "transitLeg": false,
+            "trip": null
+        },
+        {
+            "accessibilityScore": null,
+            "agency": {
+                "alerts": [],
+                "gtfsId": "1:C-TRAN",
+                "id": "1:C-TRAN",
+                "name": "C-TRAN",
+                "timezone": "America/Los_Angeles",
+                "url": "http://www.C-TRAN.com"
+            },
+            "alerts": [],
+            "arrivalDelay": 0,
+            "departureDelay": 0,
+            "distance": 26793.23,
+            "dropOffBookingInfo": null,
+            "dropoffType": "SCHEDULED",
+            "duration": {
+                "source": "1620.0",
+                "parsedValue": 1620
+            },
+            "endTime": 1761241800000,
+            "fareProducts": [
+                {
+                    "id": "01012534-e2ba-3fc1-975c-982933fad2fd",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:ADULT_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:1",
+                            "name": "Ticket"
+                        },
+                        "name": "Adult Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:ADULT",
+                            "name": "Adult"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "25f2b488-a759-3a18-9875-bd1024c61d31",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:ADULT_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:0",
+                            "name": "Cash"
+                        },
+                        "name": "Adult Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:ADULT",
+                            "name": "Adult"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "9bd9194e-88fb-3fae-971f-3b3201c31599",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:ADULT_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:3",
+                            "name": "Open Payment"
+                        },
+                        "name": "Adult Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:ADULT",
+                            "name": "Adult"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "b6d8eab0-48e7-3232-a442-cdebd7594010",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:ADULT_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:4",
+                            "name": "Virtual HOP Fastpass"
+                        },
+                        "name": "Adult Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:ADULT",
+                            "name": "Adult"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "e8ecf087-5f32-30a0-a14d-56f62849f95f",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:ADULT_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:2",
+                            "name": "HOP Fastpass"
+                        },
+                        "name": "Adult Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:ADULT",
+                            "name": "Adult"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "28813439-fcea-3543-ae1c-57082d5118c8",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:HC_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:2",
+                            "name": "HOP Fastpass"
+                        },
+                        "name": "Honored Citizen Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:HONORED_CITIZEN",
+                            "name": "Honored Citizen"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "4f9c51f6-3658-3485-a2e1-52ea1a0b39f8",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:HC_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:0",
+                            "name": "Cash"
+                        },
+                        "name": "Honored Citizen Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:HONORED_CITIZEN",
+                            "name": "Honored Citizen"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "a979728c-71da-32df-a91c-8007546e6544",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:HC_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:1",
+                            "name": "Ticket"
+                        },
+                        "name": "Honored Citizen Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:HONORED_CITIZEN",
+                            "name": "Honored Citizen"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "b548ee25-aa90-3a07-a5cd-b07c272abaf8",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:HC_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:3",
+                            "name": "Open Payment"
+                        },
+                        "name": "Honored Citizen Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:HONORED_CITIZEN",
+                            "name": "Honored Citizen"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "bdd031b6-a0d3-3bfb-bf47-935873f1aa42",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:HC_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:4",
+                            "name": "Virtual HOP Fastpass"
+                        },
+                        "name": "Honored Citizen Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:HONORED_CITIZEN",
+                            "name": "Honored Citizen"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "45399863-df02-349b-8613-5795194bcc7a",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:YOUTH_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:0",
+                            "name": "Cash"
+                        },
+                        "name": "Youth Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:YOUTH",
+                            "name": "Youth"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "795c2d2d-1c47-3197-b3cc-e040294e8896",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:YOUTH_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:2",
+                            "name": "HOP Fastpass"
+                        },
+                        "name": "Youth Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:YOUTH",
+                            "name": "Youth"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "9102431b-41be-383b-9a82-915c74035b6a",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:YOUTH_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:3",
+                            "name": "Open Payment"
+                        },
+                        "name": "Youth Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:YOUTH",
+                            "name": "Youth"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "9b406854-7fc1-331a-a59f-dff017f94786",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:YOUTH_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:4",
+                            "name": "Virtual HOP Fastpass"
+                        },
+                        "name": "Youth Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:YOUTH",
+                            "name": "Youth"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "bcc36502-abe6-3a85-a5d1-ce418b313441",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:YOUTH_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:1",
+                            "name": "Ticket"
+                        },
+                        "name": "Youth Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:YOUTH",
+                            "name": "Youth"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                }
+            ],
+            "from": {
+                "lat": 45.515682,
+                "lon": -122.679352,
+                "name": "SW 5th & Madison",
+                "rentalVehicle": null,
+                "stop": {
+                    "alerts": [],
+                    "code": "5005",
+                    "gtfsId": "1:5005",
+                    "id": "U3RvcDoxOjUwMDU",
+                    "lat": 45.515682,
+                    "lon": -122.679352
+                },
+                "vertexType": "TRANSIT"
+            },
+            "headsign": "Fisher's Landing Transit Center",
+            "id": "rO0ABXdKABhTQ0hFRFVMRURfVFJBTlNJVF9MRUdfVjMACDE6Njk5MzAxAAoyMDI1LTEwLTIzAAAAAQAAAAMABjE6NTAwNQAGMTo5MDA4AAA=",
+            "interlineWithPreviousLeg": false,
+            "intermediateStops": [
+                {
+                    "lat": 45.510939,
+                    "locationType": "STOP",
+                    "lon": -122.681923,
+                    "name": "SW 5th & Harrison",
+                    "stopCode": "5008",
+                    "stopId": "U3RvcDoxOjUwMDg"
+                }
+            ],
+            "legGeometry": {
+                "length": 458,
+                "points": "{wxtGrxwkV??f@T`CfAdCfAdCfAdCfAbCfAdCfAjB|@??@?VLdCbAbCfAbChA|FdBZHj@Fl@KXK^a@\\m@Xu@bA_DTw@Ry@Pu@Jq@B_@?c@DUNiAJsAJcBF}AVwD@S@W@]l@iIDm@Bw@@g@@_@?MEgDGo@G_@a@cBc@eA_@k@OWyA}Bu@gAsAqB}KySq@iAi@i@o@_@g@S]Ie@Ic@AY@}AV]J[J_@Lk@TiAj@kAPYBUBu@Dc@@mAA_ACwAGs@Ew@MaG_@sB[y@Sa@KUG_@Ik@Um@Wq@WoAi@ICw@QyBc@sAScBc@eE_A_GK{@Cg@Ge@?QAmAGMCWGe@Oo@]m@m@WWS[Y{@Om@OgAM}@KqAS_EQeAIm@Kg@Oo@a@uAiAyCgByEqCuH]_Aw@uC_@cBa@sB]gB_@wBoCuP}@qF_@iCMcAKsAIiBMiGMmGY}Mo@o`@GoCOkBIu@CYUkA[mAYu@e@kA]i@g@w@gAcAcA}@o@m@iC{Bk@q@a@c@Ye@Wi@q@mBOq@O}@Q}AIgAC{@?u@@u@Dq@Bo@RqBb@sCf@mD~BuPfBiLReBrBwLb@kBX}@xAsDbDiGvBqDzDaHb@y@f@cAp@{A\\cAPi@b@iBJq@RoAVoBNuAHcCBgBEcCEqBYgDi@oDOw@_@_BUw@i@{Am@wA{@oByG{OgKwVqHoQiCaGiAqCOe@k@kBYeAUmAW{AScBKgBI{BAqBBsADgAFaAHiAL_ANmAVsA|@qD`BqFfBcHdB}G\\kBl@_Cj@{B|@wD|AmGr@qD\\mCXyDHyAD_HEqCGmBUyC]yCi@_D]gB]iAgAkDMe@Q]Ym@e@}@qA_C}AmCuBsCgAoAcAgA}@u@mA{@eAk@{Aq@uAe@qAWeAO_Ig@}RuCy@Gs@Cq@?sAFu@LaBZgFhAgI`BuCd@}D|AsCnBsAjBY`@}@tAa@l@k@~@sIjMuAjAs@f@iAv@{Ap@mCl@_ALmAH[@qBG{AU[E}@]gB_A{BwAyAyAsC{DUY_DmEg@_A{CiEaLcPwKoOmCmE}@{Ae@m@Yc@gIyKMSwJ{Na@e@EGQQ[e@kDmE{BcCmDgDeEgCSOsBmAm@]qAu@kCeA}B_A{DoA_Ey@mC]eDY}CMQAqGHaCLyBTkBXQBkDr@qCt@aBj@uBz@mD~AoE|BsDnBcCpA_K`FqB|@mC~@sFnBwFdBsEbAmDj@qDh@aEf@KBA?YBgHj@yFN_BF]BW@C?y@Bs@BuADO?SEOEMGMMKMOYGSCQCQAUAI?K@W@K@MFSDQLULSHMJOPOf@c@n@c@b@Sj@SlDcAVITE`@MBALERKPKDCRUJONWLYLUPk@Lk@Hm@Fw@FqBDqBDmABi@HoA`@}DzAiLxAoKfCiQvD}VzEe\\v@oFjAcIrAiI~CeQxFc\\xAyHToAjCiOpAaF|CyNRgA^oA~@gC`CkGXaAJu@B}@AoAgBFK?K?oADuKA@xA?J@F@HBFBFFR@F?D@DAD?DGPm@hB]fA"
+            },
+            "mode": "BUS",
+            "pickupBookingInfo": null,
+            "pickupType": "SCHEDULED",
+            "realTime": false,
+            "realtimeState": "SCHEDULED",
+            "rentedBike": null,
+            "rideHailingEstimate": null,
+            "route": {
+                "alerts": [],
+                "color": "ffcb05",
+                "gtfsId": "1:164",
+                "id": "1:164",
+                "longName": "Fishers Landing Express",
+                "shortName": "164",
+                "textColor": "000000",
+                "type": 3
+            },
+            "startTime": 1761240180000,
+            "steps": [],
+            "stopCalls": [
+                {
+                    "stopLocation": {
+                        "__typename": "Stop"
+                    }
+                },
+                {
+                    "stopLocation": {
+                        "__typename": "Stop"
+                    }
+                },
+                {
+                    "stopLocation": {
+                        "__typename": "Stop"
+                    }
+                }
+            ],
+            "to": {
+                "lat": 45.594627,
+                "lon": -122.505912,
+                "name": "Fisher's Landing Transit Center: Bay I",
+                "rentalVehicle": null,
+                "stop": {
+                    "alerts": [],
+                    "code": "9008",
+                    "gtfsId": "1:9008",
+                    "id": "U3RvcDoxOjkwMDg",
+                    "lat": 45.594627,
+                    "lon": -122.505912
+                },
+                "vertexType": "TRANSIT"
+            },
+            "transitLeg": true,
+            "trip": {
+                "arrivalStoptime": {
+                    "stop": {
+                        "gtfsId": "1:9008",
+                        "id": "U3RvcDoxOjkwMDg"
+                    },
+                    "stopPosition": 4
+                },
+                "departureStoptime": {
+                    "stop": {
+                        "gtfsId": "1:5002",
+                        "id": "U3RvcDoxOjUwMDI"
+                    },
+                    "stopPosition": 1
+                },
+                "gtfsId": "1:699301",
+                "id": "VHJpcDoxOjY5OTMwMQ"
+            }
+        },
+        {
+            "accessibilityScore": null,
+            "agency": null,
+            "alerts": [],
+            "arrivalDelay": 0,
+            "departureDelay": 0,
+            "distance": 149.52,
+            "dropOffBookingInfo": null,
+            "dropoffType": "SCHEDULED",
+            "duration": {
+                "source": "137.0",
+                "parsedValue": 137
+            },
+            "endTime": 1761241937000,
+            "fareProducts": [],
+            "from": {
+                "lat": 45.594627,
+                "lon": -122.505912,
+                "name": "Fisher's Landing Transit Center: Bay I",
+                "rentalVehicle": null,
+                "stop": {
+                    "alerts": [],
+                    "code": "9008",
+                    "gtfsId": "1:9008",
+                    "id": "U3RvcDoxOjkwMDg",
+                    "lat": 45.594627,
+                    "lon": -122.505912
+                },
+                "vertexType": "TRANSIT"
+            },
+            "headsign": null,
+            "id": null,
+            "interlineWithPreviousLeg": false,
+            "intermediateStops": null,
+            "legGeometry": {
+                "length": 12,
+                "points": "kehuG~|ujV@@ALMXA@Se@~@sCQh@B@KZPL?@"
+            },
+            "mode": "WALK",
+            "pickupBookingInfo": null,
+            "pickupType": "SCHEDULED",
+            "realTime": false,
+            "realtimeState": null,
+            "rentedBike": false,
+            "rideHailingEstimate": null,
+            "route": null,
+            "startTime": 1761241800000,
+            "steps": [
+                {
+                    "absoluteDirection": "WEST",
+                    "alerts": [],
+                    "area": true,
+                    "distance": 20.2,
+                    "elevationProfile": [],
+                    "lat": 45.5946121,
+                    "lon": -122.5059241,
+                    "relativeDirection": "DEPART",
+                    "stayOn": false,
+                    "streetName": "Fisher's Landing Transit Center"
+                },
+                {
+                    "absoluteDirection": "SOUTHEAST",
+                    "alerts": [],
+                    "area": true,
+                    "distance": 129.32,
+                    "elevationProfile": [],
+                    "lat": 45.5948003,
+                    "lon": -122.5059456,
+                    "relativeDirection": "UTURN_RIGHT",
+                    "stayOn": true,
+                    "streetName": "Fisher's Landing Transit Center"
+                }
+            ],
+            "stopCalls": [],
+            "to": {
+                "lat": 45.59452,
+                "lon": -122.505645,
+                "name": "Fisher's Landing Transit Center: Bay G",
+                "rentalVehicle": null,
+                "stop": {
+                    "alerts": [],
+                    "code": "9006",
+                    "gtfsId": "1:9006",
+                    "id": "U3RvcDoxOjkwMDY",
+                    "lat": 45.59452,
+                    "lon": -122.505645
+                },
+                "vertexType": "TRANSIT"
+            },
+            "transitLeg": false,
+            "trip": null
+        },
+        {
+            "accessibilityScore": null,
+            "agency": {
+                "alerts": [],
+                "gtfsId": "1:C-TRAN",
+                "id": "1:C-TRAN",
+                "name": "C-TRAN",
+                "timezone": "America/Los_Angeles",
+                "url": "http://www.C-TRAN.com"
+            },
+            "alerts": [],
+            "arrivalDelay": 0,
+            "departureDelay": 0,
+            "distance": 3219.58,
+            "dropOffBookingInfo": null,
+            "dropoffType": "SCHEDULED",
+            "duration": {
+                "source": "420.0",
+                "parsedValue": 420
+            },
+            "endTime": 1761242820000,
+            "fareProducts": [
+                {
+                    "id": "01012534-e2ba-3fc1-975c-982933fad2fd",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:ADULT_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:1",
+                            "name": "Ticket"
+                        },
+                        "name": "Adult Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:ADULT",
+                            "name": "Adult"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "25f2b488-a759-3a18-9875-bd1024c61d31",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:ADULT_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:0",
+                            "name": "Cash"
+                        },
+                        "name": "Adult Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:ADULT",
+                            "name": "Adult"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "9bd9194e-88fb-3fae-971f-3b3201c31599",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:ADULT_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:3",
+                            "name": "Open Payment"
+                        },
+                        "name": "Adult Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:ADULT",
+                            "name": "Adult"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "b6d8eab0-48e7-3232-a442-cdebd7594010",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:ADULT_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:4",
+                            "name": "Virtual HOP Fastpass"
+                        },
+                        "name": "Adult Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:ADULT",
+                            "name": "Adult"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "e8ecf087-5f32-30a0-a14d-56f62849f95f",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:ADULT_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:2",
+                            "name": "HOP Fastpass"
+                        },
+                        "name": "Adult Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:ADULT",
+                            "name": "Adult"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "0bad187a-00dc-3113-93ba-76bf499b9368",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:ADULT_LOCAL_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:2",
+                            "name": "HOP Fastpass"
+                        },
+                        "name": "Adult Local 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:ADULT",
+                            "name": "Adult"
+                        },
+                        "price": {
+                            "amount": 1.25,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "0bb62088-ecd4-304a-b3e4-fc945aa8aedd",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:ADULT_LOCAL_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:0",
+                            "name": "Cash"
+                        },
+                        "name": "Adult Local 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:ADULT",
+                            "name": "Adult"
+                        },
+                        "price": {
+                            "amount": 1.25,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "15950ecf-b22b-38bd-9b3c-1d523c4bce16",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:ADULT_LOCAL_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:3",
+                            "name": "Open Payment"
+                        },
+                        "name": "Adult Local 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:ADULT",
+                            "name": "Adult"
+                        },
+                        "price": {
+                            "amount": 1.25,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "3368efd6-f786-3bfe-8fd5-ff61adfa81f4",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:ADULT_LOCAL_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:4",
+                            "name": "Virtual HOP Fastpass"
+                        },
+                        "name": "Adult Local 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:ADULT",
+                            "name": "Adult"
+                        },
+                        "price": {
+                            "amount": 1.25,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "e823967e-0c9d-3c8d-bbad-4748911e6ebc",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:ADULT_LOCAL_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:1",
+                            "name": "Ticket"
+                        },
+                        "name": "Adult Local 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:ADULT",
+                            "name": "Adult"
+                        },
+                        "price": {
+                            "amount": 1.25,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "28813439-fcea-3543-ae1c-57082d5118c8",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:HC_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:2",
+                            "name": "HOP Fastpass"
+                        },
+                        "name": "Honored Citizen Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:HONORED_CITIZEN",
+                            "name": "Honored Citizen"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "4f9c51f6-3658-3485-a2e1-52ea1a0b39f8",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:HC_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:0",
+                            "name": "Cash"
+                        },
+                        "name": "Honored Citizen Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:HONORED_CITIZEN",
+                            "name": "Honored Citizen"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "a979728c-71da-32df-a91c-8007546e6544",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:HC_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:1",
+                            "name": "Ticket"
+                        },
+                        "name": "Honored Citizen Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:HONORED_CITIZEN",
+                            "name": "Honored Citizen"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "b548ee25-aa90-3a07-a5cd-b07c272abaf8",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:HC_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:3",
+                            "name": "Open Payment"
+                        },
+                        "name": "Honored Citizen Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:HONORED_CITIZEN",
+                            "name": "Honored Citizen"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "bdd031b6-a0d3-3bfb-bf47-935873f1aa42",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:HC_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:4",
+                            "name": "Virtual HOP Fastpass"
+                        },
+                        "name": "Honored Citizen Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:HONORED_CITIZEN",
+                            "name": "Honored Citizen"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "3d220f45-ea2b-3158-b407-2d33a29cc60c",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:HC_LOCAL_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:1",
+                            "name": "Ticket"
+                        },
+                        "name": "Honored Citizen Local 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:HONORED_CITIZEN",
+                            "name": "Honored Citizen"
+                        },
+                        "price": {
+                            "amount": 0.6,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "76dae477-8e4c-3ed9-a13d-653dbb7dd282",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:HC_LOCAL_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:2",
+                            "name": "HOP Fastpass"
+                        },
+                        "name": "Honored Citizen Local 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:HONORED_CITIZEN",
+                            "name": "Honored Citizen"
+                        },
+                        "price": {
+                            "amount": 0.6,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "b77c9c3e-7e16-3982-84bf-ff985fef2ce4",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:HC_LOCAL_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:4",
+                            "name": "Virtual HOP Fastpass"
+                        },
+                        "name": "Honored Citizen Local 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:HONORED_CITIZEN",
+                            "name": "Honored Citizen"
+                        },
+                        "price": {
+                            "amount": 0.6,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "c254b865-9bfb-39fd-adf3-e1c0ac31abbc",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:HC_LOCAL_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:3",
+                            "name": "Open Payment"
+                        },
+                        "name": "Honored Citizen Local 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:HONORED_CITIZEN",
+                            "name": "Honored Citizen"
+                        },
+                        "price": {
+                            "amount": 0.6,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "ff8ce8fa-9c43-39f0-8975-43f8217b4d80",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:HC_LOCAL_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:0",
+                            "name": "Cash"
+                        },
+                        "name": "Honored Citizen Local 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:HONORED_CITIZEN",
+                            "name": "Honored Citizen"
+                        },
+                        "price": {
+                            "amount": 0.6,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "45399863-df02-349b-8613-5795194bcc7a",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:YOUTH_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:0",
+                            "name": "Cash"
+                        },
+                        "name": "Youth Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:YOUTH",
+                            "name": "Youth"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "795c2d2d-1c47-3197-b3cc-e040294e8896",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:YOUTH_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:2",
+                            "name": "HOP Fastpass"
+                        },
+                        "name": "Youth Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:YOUTH",
+                            "name": "Youth"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "9102431b-41be-383b-9a82-915c74035b6a",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:YOUTH_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:3",
+                            "name": "Open Payment"
+                        },
+                        "name": "Youth Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:YOUTH",
+                            "name": "Youth"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "9b406854-7fc1-331a-a59f-dff017f94786",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:YOUTH_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:4",
+                            "name": "Virtual HOP Fastpass"
+                        },
+                        "name": "Youth Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:YOUTH",
+                            "name": "Youth"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "bcc36502-abe6-3a85-a5d1-ce418b313441",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:YOUTH_EXPRESS_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:1",
+                            "name": "Ticket"
+                        },
+                        "name": "Youth Express 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:YOUTH",
+                            "name": "Youth"
+                        },
+                        "price": {
+                            "amount": 3.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "13f713db-e795-312d-a7c7-49b438a4a888",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:YOUTH_LOCAL_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:0",
+                            "name": "Cash"
+                        },
+                        "name": "Youth Local 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:YOUTH",
+                            "name": "Youth"
+                        },
+                        "price": {
+                            "amount": 0.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "32a537af-91fc-397d-a8ad-f4d36b341e9a",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:YOUTH_LOCAL_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:2",
+                            "name": "HOP Fastpass"
+                        },
+                        "name": "Youth Local 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:YOUTH",
+                            "name": "Youth"
+                        },
+                        "price": {
+                            "amount": 0.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "5cc34381-ddcd-35f8-b6b5-c001bf66f235",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:YOUTH_LOCAL_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:4",
+                            "name": "Virtual HOP Fastpass"
+                        },
+                        "name": "Youth Local 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:YOUTH",
+                            "name": "Youth"
+                        },
+                        "price": {
+                            "amount": 0.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "6748b6a5-1bd1-30cb-8340-a98c71be2cf0",
+                    "product": {
+                        "__typename": "DefaultFareProduct",
+                        "id": "1:YOUTH_LOCAL_SINGLE_RIDE",
+                        "medium": {
+                            "id": "1:3",
+                            "name": "Open Payment"
+                        },
+                        "name": "Youth Local 2 1/2 Hours",
+                        "riderCategory": {
+                            "id": "1:YOUTH",
+                            "name": "Youth"
+                        },
+                        "price": {
+                            "amount": 0.0,
+                            "currency": {
+                                "code": "USD",
+                                "digits": 2
+                            }
+                        }
+                    }
+                }
+            ],
+            "from": {
+                "lat": 45.59452,
+                "lon": -122.505645,
+                "name": "Fisher's Landing Transit Center: Bay G",
+                "rentalVehicle": null,
+                "stop": {
+                    "alerts": [],
+                    "code": "9006",
+                    "gtfsId": "1:9006",
+                    "id": "U3RvcDoxOjkwMDY",
+                    "lat": 45.59452,
+                    "lon": -122.505645
+                },
+                "vertexType": "TRANSIT"
+            },
+            "headsign": "Downtown Vancouver",
+            "id": "rO0ABXdKABhTQ0hFRFVMRURfVFJBTlNJVF9MRUdfVjMACDE6Njk2MjExAAoyMDI1LTEwLTIzAAAAAAAAAAcABjE6OTAwNgAGMToyOTI4AAA=",
+            "interlineWithPreviousLeg": false,
+            "intermediateStops": [
+                {
+                    "lat": 45.598961,
+                    "locationType": "STOP",
+                    "lon": -122.503677,
+                    "name": "SE 164th Ave 3200 Block",
+                    "stopCode": "1316",
+                    "stopId": "U3RvcDoxOjEzMTY"
+                },
+                {
+                    "lat": 45.603245,
+                    "locationType": "STOP",
+                    "lon": -122.503586,
+                    "name": "SE 164th Ave & McGillivray",
+                    "stopCode": "1314",
+                    "stopId": "U3RvcDoxOjEzMTQ"
+                },
+                {
+                    "lat": 45.60563,
+                    "locationType": "STOP",
+                    "lon": -122.503728,
+                    "name": "SE 164th Ave at Fred Meyer",
+                    "stopCode": "2909",
+                    "stopId": "U3RvcDoxOjI5MDk"
+                },
+                {
+                    "lat": 45.611455,
+                    "locationType": "STOP",
+                    "lon": -122.503966,
+                    "name": "SE 164th Ave 1400 Block",
+                    "stopCode": "2130",
+                    "stopId": "U3RvcDoxOjIxMzA"
+                },
+                {
+                    "lat": 45.615855,
+                    "locationType": "STOP",
+                    "lon": -122.504129,
+                    "name": "SE 164th Ave & Mill Plain",
+                    "stopCode": "6239",
+                    "stopId": "U3RvcDoxOjYyMzk"
+                },
+                {
+                    "lat": 45.617961,
+                    "locationType": "STOP",
+                    "lon": -122.504049,
+                    "name": "SE 164th Ave & 5th St",
+                    "stopCode": "1397",
+                    "stopId": "U3RvcDoxOjEzOTc"
+                }
+            ],
+            "legGeometry": {
+                "length": 113,
+                "points": "mdhuGp{ujVi@hBC@A@C?C?A?C?CAAACAAAACACAC?EAC?C?E?CENAJAHEFED_@LGDCD?LEH]Si@_@QMOKOKMIMIGIIGGECCMKMO_@k@ACK[K_@Ka@G_@Eg@Ac@Ac@AcAQ@qA?k@A[A]Ei@Ao@AwC@??A?M?q@?s@BkCCsH@m@?{DAw@@???@k@?sDCwFH????E?qEH_D?eD@S?QDsIRcD@uAB??A?qBBW@{C@aADU@i@@aEFiCBW@Y?gAA??A?oG?_BGq@???C?m@A_FB_C@{@ByDGaC@"
+            },
+            "mode": "BUS",
+            "pickupBookingInfo": null,
+            "pickupType": "SCHEDULED",
+            "realTime": false,
+            "realtimeState": "SCHEDULED",
+            "rentedBike": null,
+            "rideHailingEstimate": null,
+            "route": {
+                "alerts": [],
+                "color": "3777bc",
+                "gtfsId": "1:030",
+                "id": "1:030",
+                "longName": "Burton",
+                "shortName": "30",
+                "textColor": "ffffff",
+                "type": 3
+            },
+            "startTime": 1761242400000,
+            "steps": [],
+            "stopCalls": [
+                {
+                    "stopLocation": {
+                        "__typename": "Stop"
+                    }
+                },
+                {
+                    "stopLocation": {
+                        "__typename": "Stop"
+                    }
+                },
+                {
+                    "stopLocation": {
+                        "__typename": "Stop"
+                    }
+                },
+                {
+                    "stopLocation": {
+                        "__typename": "Stop"
+                    }
+                },
+                {
+                    "stopLocation": {
+                        "__typename": "Stop"
+                    }
+                },
+                {
+                    "stopLocation": {
+                        "__typename": "Stop"
+                    }
+                },
+                {
+                    "stopLocation": {
+                        "__typename": "Stop"
+                    }
+                },
+                {
+                    "stopLocation": {
+                        "__typename": "Stop"
+                    }
+                }
+            ],
+            "to": {
+                "lat": 45.621855,
+                "lon": -122.504105,
+                "name": "SE 164th Ave & 1st St",
+                "rentalVehicle": null,
+                "stop": {
+                    "alerts": [],
+                    "code": "2928",
+                    "gtfsId": "1:2928",
+                    "id": "U3RvcDoxOjI5Mjg",
+                    "lat": 45.621855,
+                    "lon": -122.504105
+                },
+                "vertexType": "TRANSIT"
+            },
+            "transitLeg": true,
+            "trip": {
+                "arrivalStoptime": {
+                    "stop": {
+                        "gtfsId": "1:632",
+                        "id": "U3RvcDoxOjYzMg"
+                    },
+                    "stopPosition": 54
+                },
+                "departureStoptime": {
+                    "stop": {
+                        "gtfsId": "1:9006",
+                        "id": "U3RvcDoxOjkwMDY"
+                    },
+                    "stopPosition": 1
+                },
+                "gtfsId": "1:696211",
+                "id": "VHJpcDoxOjY5NjIxMQ"
+            }
+        },
+        {
+            "accessibilityScore": null,
+            "agency": null,
+            "alerts": [],
+            "arrivalDelay": 0,
+            "departureDelay": 0,
+            "distance": 664.94,
+            "dropOffBookingInfo": null,
+            "dropoffType": "SCHEDULED",
+            "duration": {
+                "source": "551.0",
+                "parsedValue": 551
+            },
+            "endTime": 1761243371000,
+            "fareProducts": [],
+            "from": {
+                "lat": 45.621855,
+                "lon": -122.504105,
+                "name": "SE 164th Ave & 1st St",
+                "rentalVehicle": null,
+                "stop": {
+                    "alerts": [],
+                    "code": "2928",
+                    "gtfsId": "1:2928",
+                    "id": "U3RvcDoxOjI5Mjg",
+                    "lat": 45.621855,
+                    "lon": -122.504105
+                },
+                "vertexType": "TRANSIT"
+            },
+            "headsign": null,
+            "id": null,
+            "interlineWithPreviousLeg": false,
+            "intermediateStops": null,
+            "legGeometry": {
+                "length": 29,
+                "points": "qomuGtqujV?P`@?d@?^?@`@@V??B@@D@@?@?B@D?R?rA@h@W?INyA??rBkA?sA@q@??V?jQ?R?R@jA"
+            },
+            "mode": "WALK",
+            "pickupBookingInfo": null,
+            "pickupType": "SCHEDULED",
+            "realTime": false,
+            "realtimeState": null,
+            "rentedBike": false,
+            "rideHailingEstimate": null,
+            "route": null,
+            "startTime": 1761242820000,
+            "steps": [
+                {
+                    "absoluteDirection": "SOUTH",
+                    "alerts": [],
+                    "area": false,
+                    "distance": 57.5,
+                    "elevationProfile": [],
+                    "lat": 45.6218546,
+                    "lon": -122.5041948,
+                    "relativeDirection": "DEPART",
+                    "stayOn": false,
+                    "streetName": "Northeast 164th Avenue"
+                },
+                {
+                    "absoluteDirection": "WEST",
+                    "alerts": [],
+                    "area": false,
+                    "distance": 90.88,
+                    "elevationProfile": [],
+                    "lat": 45.6213375,
+                    "lon": -122.5041906,
+                    "relativeDirection": "RIGHT",
+                    "stayOn": false,
+                    "streetName": "bike path"
+                },
+                {
+                    "absoluteDirection": "NORTH",
+                    "alerts": [],
+                    "area": false,
+                    "distance": 116.4,
+                    "elevationProfile": [],
+                    "lat": 45.6212597,
+                    "lon": -122.505329,
+                    "relativeDirection": "RIGHT",
+                    "stayOn": true,
+                    "streetName": "service road"
+                },
+                {
+                    "absoluteDirection": "NORTH",
+                    "alerts": [],
+                    "area": false,
+                    "distance": 116.95,
+                    "elevationProfile": [],
+                    "lat": 45.6218775,
+                    "lon": -122.5059852,
+                    "relativeDirection": "RIGHT",
+                    "stayOn": false,
+                    "streetName": "Northeast 162nd Avenue"
+                },
+                {
+                    "absoluteDirection": "WEST",
+                    "alerts": [],
+                    "area": false,
+                    "distance": 283.22,
+                    "elevationProfile": [],
+                    "lat": 45.6229292,
+                    "lon": -122.5059956,
+                    "relativeDirection": "LEFT",
+                    "stayOn": false,
+                    "streetName": "Northeast 3rd Street"
+                }
+            ],
+            "stopCalls": [],
+            "to": {
+                "lat": 45.623107,
+                "lon": -122.509639,
+                "name": "15818 NE 3rd St, Vancouver, WA",
+                "rentalVehicle": null,
+                "stop": null,
+                "vertexType": "NORMAL"
+            },
+            "transitLeg": false,
+            "trip": null
+        }
+    ],
+    "startTime": 1761239786000,
+    "transfers": 1,
+    "waitingTime": 463,
+    "walkTime": 1082
+}
