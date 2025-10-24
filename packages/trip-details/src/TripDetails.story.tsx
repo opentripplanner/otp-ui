@@ -200,8 +200,9 @@ export const OTP2FlexItinerary = makeStory({ itinerary: flexItinerary });
 export const FaresV2TableStory = (): ReactElement => {
   return (
     <>
-      <h5>Corrupt Data</h5>
-      <FaresV2Table legs={multipleFareOptionsItinerary.legs} />
+      {/* TODO: re-enable the RTD fares once they have non-corrupt data */}
+      {/* <h5>Corrupt Data</h5> */}
+      {/* <FaresV2Table legs={multipleFareOptionsItinerary.legs} /> */}
       <h5>Paid Transfer</h5>
       <FaresV2Table legs={faresv2Itinerary.legs} favoriteMediumId="3" />
       <h5>Free Transfer</h5>
