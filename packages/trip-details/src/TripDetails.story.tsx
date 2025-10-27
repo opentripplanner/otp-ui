@@ -11,7 +11,7 @@ import walkTransitWalkTransitWalkItinerary from "../../itinerary-body/src/__mock
 import flexItinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2.4-transit-itinerary.json";
 import otp2ScooterItinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2-scooter.json";
 import otp2FareProducts from "../../itinerary-body/src/__mocks__/itineraries/leg-fare-products.json";
-import multipleFareOptionsItinerary from "../../itinerary-body/src/__mocks__/itineraries/fares-v2-multiple-options.json";
+// import multipleFareOptionsItinerary from "../../itinerary-body/src/__mocks__/itineraries/fares-v2-multiple-options.json";
 import faresv2ItineraryWithTransfer from "../../itinerary-body/src/__mocks__/itineraries/fares-v2-with-transfer.json";
 import faresv2Itinerary from "../../itinerary-body/src/__mocks__/itineraries/fares-v2-fare-components.json";
 import bikeOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-only.json";
