@@ -7,6 +7,7 @@ import RouteBadge from "./RouteBadge";
 import TransitLegBody from "./TransitLegBody";
 import * as Styled from "./styled";
 import { getPlaceName, parseOTP2Minute } from "./util";
+import * as Types from "./types";
 
 export default ItineraryBody;
 
@@ -20,5 +21,6 @@ export {
   Styled,
   TransitLegBody,
   getPlaceName,
-  parseOTP2Minute
+  parseOTP2Minute,
+  Types
 };
