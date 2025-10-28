@@ -713,7 +713,7 @@ export function getItineraryCost(
   riderCategoryId: string | string[] | null
 ): Money | undefined {
   // TODO: Better input type handling
-  if (Array.isArray(mediumId) && Array.isArray(riderCategoryId)) {
+  if (Array.isArray(mediumId) || Array.isArray(riderCategoryId)) {
     if (mediumId?.length !== riderCategoryId.length) {
       console.warn(
         "Invalid input types, only using first item. medium id list and rider category list must have same number of items"
@@ -742,7 +742,6 @@ export function getItineraryCost(
     .map((leg, index, arr) =>
       getLegCost(
         leg,
-        // @ts-expect-error TS doesn't like our check in the if statement above
         mediumId,
         riderCategoryId,
         // We need to include the seen fare ids by gathering all previous leg fare product ids
