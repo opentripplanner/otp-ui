@@ -988,6 +988,9 @@ importers:
       '@types/flat':
         specifier: 'catalog:'
         version: 5.0.5
+      lodash.clonedeep:
+        specifier: ^4.5.0
+        version: 4.5.0
 
   packages/trip-viewer-overlay:
     dependencies:
