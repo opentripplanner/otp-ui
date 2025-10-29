@@ -13,6 +13,9 @@
   "scripts": {
     "tsc": "tsc"
   },
+  "devDependencies": {
+    "@opentripplanner/types": "workspace:*"
+  },
   "peerDependencies": {
     "react": "catalog:",
     "react-intl": "catalog:"

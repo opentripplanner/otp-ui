@@ -502,6 +502,10 @@ importers:
       react-intl:
         specifier: 'catalog:'
         version: 6.8.4(react@18.2.0)(typescript@4.9.5)
+    devDependencies:
+      '@opentripplanner/types':
+        specifier: workspace:*
+        version: link:../types
 
   packages/icons:
     dependencies:
