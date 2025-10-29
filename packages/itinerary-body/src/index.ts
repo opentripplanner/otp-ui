@@ -7,7 +7,24 @@ import RouteBadge from "./RouteBadge";
 import TransitLegBody from "./TransitLegBody";
 import * as Styled from "./styled";
 import { getPlaceName, parseOTP2Minute } from "./util";
-import * as Types from "./types";
+import {
+  RouteDescriptionProps,
+  RouteDescriptionFooterProps,
+  ToRouteAbbreviationFunction,
+  LegDestination,
+  TimeColumnContentProps,
+  LegSharedProps,
+  LineColumnContentProps,
+  PlaceNameProps,
+  SetActiveLegFunction,
+  FrameLegFunction,
+  TripSection,
+  SetViewedTripFunction,
+  TransitLegSubheaderProps,
+  TransitLegSummaryProps,
+  PlaceRowProps,
+  ItineraryBodyProps
+} from "./types";
 
 export default ItineraryBody;
 
@@ -22,5 +39,20 @@ export {
   TransitLegBody,
   getPlaceName,
   parseOTP2Minute,
-  Types
+  RouteDescriptionProps,
+  RouteDescriptionFooterProps,
+  ToRouteAbbreviationFunction,
+  LegDestination,
+  TimeColumnContentProps,
+  LegSharedProps,
+  LineColumnContentProps,
+  PlaceNameProps,
+  SetActiveLegFunction,
+  FrameLegFunction,
+  TripSection,
+  SetViewedTripFunction,
+  TransitLegSubheaderProps,
+  TransitLegSummaryProps,
+  PlaceRowProps,
+  ItineraryBodyProps
 };
