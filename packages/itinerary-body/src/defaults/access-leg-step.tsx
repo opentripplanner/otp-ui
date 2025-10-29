@@ -1,5 +1,4 @@
 /* eslint-disable no-case-declarations */
-import { Distance, isImperial } from "@opentripplanner/humanize-distance";
 import { Step, UnitSystem } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
@@ -9,6 +8,7 @@ import { defaultMessages } from "../util";
 
 import AccessLegStepAction, { Action } from "./access-leg-step-action";
 import AccessLegStepHeading, { Heading } from "./access-leg-step-heading";
+import Distance from "./default-distance";
 import StreetName from "./street-name";
 
 interface Props extends HTMLAttributes<HTMLSpanElement> {
@@ -108,7 +108,7 @@ export default function AccessLegStep({
       {stepContent}
       {distance > 0 && (
         <S.StepLength>
-          <Distance long={isImperial(units)} meters={distance} units={units} />
+          <Distance meters={distance} units={units} />
         </S.StepLength>
       )}
     </span>

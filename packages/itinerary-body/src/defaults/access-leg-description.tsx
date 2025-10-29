@@ -1,4 +1,3 @@
-import { Distance, isImperial } from "@opentripplanner/humanize-distance";
 import { Config, Leg } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
 import { FormattedMessage, IntlShape, useIntl } from "react-intl";
@@ -6,6 +5,8 @@ import coreUtils from "@opentripplanner/core-utils";
 import * as S from "../styled";
 
 import { defaultMessages, getPlaceName } from "../util";
+
+import Distance from "./default-distance";
 
 const { ensureAtLeastOneMinute, toHoursMinutesSeconds } = coreUtils.time;
 
@@ -107,13 +108,7 @@ export default function AccessLegDescription({
           description="Summarizes an access leg, including distance"
           id="otpUi.AccessLegBody.summaryAndDistance"
           values={{
-            distance: (
-              <Distance
-                long={isImperial(units)}
-                meters={distance}
-                units={units}
-              />
-            ),
+            distance: <Distance meters={distance} units={units} />,
             // This is not used by the default string,
             // but supplying it allows a user who is overriding the string to use it
             // This relies on `formatDuration` being passed into the itinerary body config.
