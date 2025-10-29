@@ -36,7 +36,7 @@ export default function AccessLeg({
           <S.LegDetails>
             {leg.steps.map((step, k) => (
               <S.LegDetail key={k}>
-                <S.AccessLegStep step={step} />
+                <S.AccessLegStep step={step} units={config.units} />
               </S.LegDetail>
             ))}
           </S.LegDetails>

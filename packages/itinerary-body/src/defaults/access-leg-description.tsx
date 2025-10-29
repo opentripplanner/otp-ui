@@ -1,4 +1,3 @@
-import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { Config, Leg } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
 import { FormattedMessage, IntlShape, useIntl } from "react-intl";
@@ -6,6 +5,8 @@ import coreUtils from "@opentripplanner/core-utils";
 import * as S from "../styled";
 
 import { defaultMessages, getPlaceName } from "../util";
+
+import Distance from "./default-distance";
 
 const { ensureAtLeastOneMinute, toHoursMinutesSeconds } = coreUtils.time;
 
@@ -77,44 +78,43 @@ export default function AccessLegDescription({
   style
 }: Props): ReactElement {
   const intl = useIntl();
+  const { companies, formatDuration, units } = config;
+  const { from, distance, duration, to } = leg;
   // Replace the Vertex Type for BIKESHARE with VEHICLE as we do not know that
   // it is a bike yet because that information is in the next leg with OTP2.
   const toPlace = {
-    ...leg.to,
-    vertexType:
-      leg.to.vertexType === "BIKESHARE" ? "VEHICLE" : leg.to.vertexType
+    ...to,
+    vertexType: to.vertexType === "BIKESHARE" ? "VEHICLE" : to.vertexType
   };
   const modeContent = getSummaryMode(leg, intl);
   const placeContent = (
     <S.LegDescriptionPlace>
-      {getPlaceName(toPlace, config.companies, intl)}
+      {getPlaceName(toPlace, companies, intl)}
     </S.LegDescriptionPlace>
   );
 
-  const durationSeconds = ensureAtLeastOneMinute(leg.duration);
+  const durationSeconds = ensureAtLeastOneMinute(duration);
 
   // TODO: is this causing issues with TNC legs? Do walk legs leading to a TNC
   // trip really have the same `to.stopId` as `from.stopId`?
-  const isTransferLeg = leg.to.stopId === leg.from.stopId;
+  const isTransferLeg = to.stopId === from.stopId;
   return (
     // Return an HTML element which is passed a className (and style props)
     // for styled-components support.
     <span className={className} style={style}>
-      {leg.distance > 0 ? (
+      {distance > 0 ? (
         <FormattedMessage
           defaultMessage="{mode} {distance} to {place}"
           description="Summarizes an access leg, including distance"
           id="otpUi.AccessLegBody.summaryAndDistance"
           values={{
-            // TODO: Implement metric vs imperial (up until now it's just imperial).
-            distance: humanizeDistanceString(leg.distance, false, intl),
+            distance: <Distance meters={distance} units={units} />,
             // This is not used by the default string,
             // but supplying it allows a user who is overriding the string to use it
             // This relies on `formatDuration` being passed into the itinerary body config.
             // That method is used to generate the duration string
             duration:
-              config?.formatDuration &&
-              config.formatDuration(durationSeconds, intl, false),
+              formatDuration && formatDuration(durationSeconds, intl, false),
             mode: modeContent,
             place: placeContent
           }}

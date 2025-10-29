@@ -69,6 +69,14 @@ export const WalkTransitWalkItinerary = () => (
   />
 );
 
+export const WalkTransitWalkItineraryMetric = () => (
+  <PrintableItinerary
+    config={{ ...config, units: "metric" }}
+    itinerary={walkTransitWalkItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
 export const StyledWalkTransitWalkItinerary = () => (
   <StyledPrintableItinerary
     config={config}
