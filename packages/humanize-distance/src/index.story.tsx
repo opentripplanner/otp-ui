@@ -21,11 +21,11 @@ export const metersLong: Story = {
 };
 
 export const feetShort: Story = {
-  args: { imperial: true, meters: 124.5 }
+  args: { meters: 124.5, units: "imperial" }
 };
 
 export const feetLong: Story = {
-  args: { imperial: true, long: true, meters: 124.5 }
+  args: { long: true, meters: 124.5, units: "imperial" }
 };
 
 export const kilometersShort: Story = {
@@ -37,13 +37,13 @@ export const kilometersLong: Story = {
 };
 
 export const milesShort: Story = {
-  args: { imperial: true, meters: 12450 }
+  args: { meters: 12450, units: "imperial" }
 };
 
 export const milesLong: Story = {
-  args: { imperial: true, long: true, meters: 12450 }
+  args: { long: true, meters: 12450, units: "imperial" }
 };
 
 export const milesFraction: Story = {
-  args: { imperial: true, meters: 1245 }
+  args: { meters: 1245, units: "imperial" }
 };

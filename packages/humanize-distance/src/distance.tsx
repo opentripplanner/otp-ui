@@ -1,13 +1,9 @@
+import { UnitSystem } from "@opentripplanner/types";
 import React from "react";
 import { FormattedNumber } from "react-intl";
-import { getImperialParams, getMetricParams } from "./util";
+import { getImperialParams, getMetricParams, isImperial } from "./util";
 
 export interface Props {
-  /**
-   * Whether to display the specified distance in imperial or metric units.
-   * @default false
-   */
-  imperial?: boolean;
   /**
    * Whether to display long units (e.g. "kilometers" vs. "km").
    * @default false
@@ -17,6 +13,11 @@ export interface Props {
    * The original distance, in meters, to render.
    */
   meters: number;
+  /**
+   * Whether to display the specified distance in imperial or metric units.
+   * @default "metric"
+   */
+  units: UnitSystem;
 }
 
 /**
@@ -26,8 +27,8 @@ export interface Props {
  * - 2.4 kilometers
  * - 807 ft
  */
-const Distance = ({ imperial, long, meters }: Props): JSX.Element => {
-  const { unit, value } = imperial
+const Distance = ({ long, meters, units }: Props): JSX.Element => {
+  const { unit, value } = isImperial(units)
     ? getImperialParams(meters)
     : getMetricParams(meters);
 

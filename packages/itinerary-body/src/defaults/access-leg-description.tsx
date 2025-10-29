@@ -77,6 +77,7 @@ export default function AccessLegDescription({
   style
 }: Props): ReactElement {
   const intl = useIntl();
+  const { companies, formatDuration, units } = config;
   const { from, distance, duration, to } = leg;
   // Replace the Vertex Type for BIKESHARE with VEHICLE as we do not know that
   // it is a bike yet because that information is in the next leg with OTP2.
@@ -87,7 +88,7 @@ export default function AccessLegDescription({
   const modeContent = getSummaryMode(leg, intl);
   const placeContent = (
     <S.LegDescriptionPlace>
-      {getPlaceName(toPlace, config.companies, intl)}
+      {getPlaceName(toPlace, companies, intl)}
     </S.LegDescriptionPlace>
   );
 
@@ -96,7 +97,6 @@ export default function AccessLegDescription({
   // TODO: is this causing issues with TNC legs? Do walk legs leading to a TNC
   // trip really have the same `to.stopId` as `from.stopId`?
   const isTransferLeg = to.stopId === from.stopId;
-  const imperial = isImperial(config.units);
   return (
     // Return an HTML element which is passed a className (and style props)
     // for styled-components support.
@@ -108,15 +108,18 @@ export default function AccessLegDescription({
           id="otpUi.AccessLegBody.summaryAndDistance"
           values={{
             distance: (
-              <Distance imperial={imperial} long={imperial} meters={distance} />
+              <Distance
+                long={isImperial(units)}
+                meters={distance}
+                units={units}
+              />
             ),
             // This is not used by the default string,
             // but supplying it allows a user who is overriding the string to use it
             // This relies on `formatDuration` being passed into the itinerary body config.
             // That method is used to generate the duration string
             duration:
-              config?.formatDuration &&
-              config.formatDuration(durationSeconds, intl, false),
+              formatDuration && formatDuration(durationSeconds, intl, false),
             mode: modeContent,
             place: placeContent
           }}
