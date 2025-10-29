@@ -1,11 +1,11 @@
-import { Distance } from "@opentripplanner/humanize-distance";
+import { Distance, isImperial } from "@opentripplanner/humanize-distance";
 import { Config, Leg } from "@opentripplanner/types";
 import React, { HTMLAttributes, ReactElement } from "react";
 import { FormattedMessage, IntlShape, useIntl } from "react-intl";
 import coreUtils from "@opentripplanner/core-utils";
 import * as S from "../styled";
 
-import { defaultMessages, getPlaceName, isImperial } from "../util";
+import { defaultMessages, getPlaceName } from "../util";
 
 const { ensureAtLeastOneMinute, toHoursMinutesSeconds } = coreUtils.time;
 

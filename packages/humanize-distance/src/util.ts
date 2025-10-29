@@ -1,3 +1,5 @@
+import { UnitSystem } from "@opentripplanner/types";
+
 export interface DistanceParams {
   unit: "meter" | "kilometer" | "foot" | "mile";
   value: number;
@@ -37,3 +39,8 @@ export function getMetricParams(meters: number): DistanceParams {
         value: Math.round(meters)
       };
 }
+
+/**
+ * Determines whether a unit system value is imperial or metric.
+ */
+export const isImperial = (units: UnitSystem): boolean => units !== "metric";
