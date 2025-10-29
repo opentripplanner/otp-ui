@@ -43,4 +43,7 @@ export function getMetricParams(meters: number): DistanceParams {
 /**
  * Determines whether a unit system value is imperial or metric.
  */
-export const isImperial = (units: UnitSystem): boolean => units !== "metric";
+export const isImperial = (
+  units?: UnitSystem,
+  defaultUnits: UnitSystem = "metric"
+): boolean => (units || defaultUnits) === "imperial";

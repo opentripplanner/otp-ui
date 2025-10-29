@@ -3,7 +3,7 @@ import React from "react";
 import { FormattedNumber } from "react-intl";
 import { getImperialParams, getMetricParams, isImperial } from "./util";
 
-export interface Props {
+export interface DistanceProps {
   /**
    * Whether to display long units (e.g. "kilometers" vs. "km").
    * @default false
@@ -17,7 +17,7 @@ export interface Props {
    * Whether to display the specified distance in imperial or metric units.
    * @default "metric"
    */
-  units: UnitSystem;
+  units?: UnitSystem;
 }
 
 /**
@@ -27,7 +27,7 @@ export interface Props {
  * - 2.4 kilometers
  * - 807 ft
  */
-const Distance = ({ long, meters, units }: Props): JSX.Element => {
+const Distance = ({ long, meters, units }: DistanceProps): JSX.Element => {
   const { unit, value } = isImperial(units)
     ? getImperialParams(meters)
     : getMetricParams(meters);

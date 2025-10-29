@@ -1,6 +1,7 @@
 import { IntlShape } from "react-intl";
 
-import Distance from "./distance";
+// eslint-disable-next-line prettier/prettier
+import Distance, { type DistanceProps } from "./distance";
 import { getImperialParams, getMetricParams, isImperial } from "./util";
 
 export function humanizeDistanceStringImperial(
@@ -54,4 +55,4 @@ export function humanizeDistanceString(
     : humanizeDistanceStringImperial(meters, null, intl);
 }
 
-export { Distance, isImperial };
+export { Distance, type DistanceProps, isImperial };
