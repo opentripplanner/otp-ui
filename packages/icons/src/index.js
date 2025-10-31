@@ -122,6 +122,7 @@ export {
   BikeLocker,
   BikeParking,
   BikeStaple,
+  septa,
   Bus,
   BusCircle,
   Car,
