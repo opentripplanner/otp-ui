@@ -523,7 +523,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
         style="text-align: left;"
     >
       <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        Transit Fare
+        Fare Category
       </span>
     </th>
     <th scope="col">
@@ -937,7 +937,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
         style="text-align: left;"
     >
       <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        Transit Fare
+        Fare Category
       </span>
     </th>
     <th scope="col">
@@ -1351,7 +1351,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
         style="text-align: left;"
     >
       <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        Transit Fare
+        Fare Category
       </span>
     </th>
     <th scope="col">
@@ -1719,7 +1719,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                     style="text-align: left;"
                 >
                   <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                    Transit Fare
+                    Fare Category
                   </span>
                 </th>
                 <th scope="col">
@@ -2557,7 +2557,7 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
                     style="text-align: left;"
                 >
                   <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                    Transit Fare
+                    Fare Category
                   </span>
                 </th>
                 <th scope="col">
