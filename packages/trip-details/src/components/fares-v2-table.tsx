@@ -117,7 +117,7 @@ const FaresV2Table = ({
     [
       <th key="faretitle" style={{ textAlign: "left" }} scope="col">
         <InvisibleA11yLabel>
-          <FormattedMessage id="otpUi.TripDetails.transitFare" />
+          <FormattedMessage id="otpUi.TripDetails.fareCategory" />
         </InvisibleA11yLabel>
       </th>,
       ...transitLegs.map(leg => (

@@ -8,6 +8,7 @@ otpUi:
     departure: >-
       Départ le <strong>{departureDate, date, long}</strong> à
       <strong>{departureDate, time, short}</strong>
+    fareCategory: Fare Category
     hideDetail: Masquer les détails
     legMissingFareInfo: Tarif inconnu pour cette étape
     minutesActive: "Activité physique\_: <strong>{approximatePrefix, select, true {~} other {}}{minutes, plural, one {# minute} other {# minutes}}</strong>"

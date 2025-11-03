@@ -263,7 +263,7 @@ describe("util > itinerary", () => {
       );
       expect(complexResult.amount).toEqual(2.8 * 2);
     });
-    it("should calculate the total cost of an itinerary with complicated fares v2 fares", () => {
+    it("should calculate the total cost of an itinerary with multiple v2 fares & transfers", () => {
       const result = getItineraryCost(complexItinerary.legs, "0", "ADULT");
       expect(result.amount).toEqual(3.0);
     });
