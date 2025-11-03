@@ -17,6 +17,7 @@ import {
 import bikeRentalItinerary from "./__mocks__/bike-rental-itinerary.json";
 import tncItinerary from "./__mocks__/tnc-itinerary.json";
 import fareProductItinerary from "./__mocks__/fare-products-itinerary.json";
+import complexItinerary from "./__mocks__/complex-fares.json";
 import flexItinerary from "../../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
 import faresv2Itinerary from "../../../itinerary-body/src/__mocks__/itineraries/fares-v2-fare-components.json";
 
@@ -261,6 +262,10 @@ describe("util > itinerary", () => {
         ["ADULT", "ADULT"]
       );
       expect(complexResult.amount).toEqual(2.8 * 2);
+    });
+    it("should calculate the total cost of an itinerary with multiple v2 fares & transfers", () => {
+      const result = getItineraryCost(complexItinerary.legs, "0", "ADULT");
+      expect(result.amount).toEqual(3.0);
     });
     it("should calculate the individual leg cost of a fares v2 legs", () => {
       const firstLegResult = getLegCost(faresv2Itinerary.legs[1], "3", "ADULT");

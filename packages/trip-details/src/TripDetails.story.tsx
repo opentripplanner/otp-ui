@@ -11,7 +11,7 @@ import walkTransitWalkTransitWalkItinerary from "../../itinerary-body/src/__mock
 import flexItinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2.4-transit-itinerary.json";
 import otp2ScooterItinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2-scooter.json";
 import otp2FareProducts from "../../itinerary-body/src/__mocks__/itineraries/leg-fare-products.json";
-import multipleFareOptionsItinerary from "../../itinerary-body/src/__mocks__/itineraries/fares-v2-multiple-options.json";
+// import multipleFareOptionsItinerary from "../../itinerary-body/src/__mocks__/itineraries/fares-v2-multiple-options.json";
 import faresv2ItineraryWithTransfer from "../../itinerary-body/src/__mocks__/itineraries/fares-v2-with-transfer.json";
 import faresv2Itinerary from "../../itinerary-body/src/__mocks__/itineraries/fares-v2-fare-components.json";
 import bikeOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-only.json";
@@ -200,8 +200,9 @@ export const OTP2FlexItinerary = makeStory({ itinerary: flexItinerary });
 export const FaresV2TableStory = (): ReactElement => {
   return (
     <>
-      <h5>Corrupt Data</h5>
-      <FaresV2Table legs={multipleFareOptionsItinerary.legs} />
+      {/* TODO: re-enable the RTD fares once they have non-corrupt data */}
+      {/* <h5>Corrupt Data</h5> */}
+      {/* <FaresV2Table legs={multipleFareOptionsItinerary.legs} /> */}
       <h5>Paid Transfer</h5>
       <FaresV2Table legs={faresv2Itinerary.legs} favoriteMediumId="3" />
       <h5>Free Transfer</h5>

@@ -115,16 +115,18 @@ const FaresV2Table = ({
 
   const rows = [
     [
-      <th key="faretitle" style={{ textAlign: "left" }}>
+      <th key="faretitle" style={{ textAlign: "left" }} scope="col">
         <InvisibleA11yLabel>
-          <FormattedMessage id="otpUi.TripDetails.transitFare" />
+          <FormattedMessage id="otpUi.TripDetails.fareCategory" />
         </InvisibleA11yLabel>
       </th>,
       ...transitLegs.map(leg => (
-        <th key={leg.tripId}>{getLegRouteName(leg)}</th>
+        <th key={leg.tripId} scope="col">
+          {getLegRouteName(leg)}
+        </th>
       )),
       transitLegs.length > 1 ? (
-        <th key="total" style={{ textAlign: "right" }}>
+        <th key="total" style={{ textAlign: "right" }} scope="col">
           <em>
             <FormattedMessage id="otpUi.TripDetails.total" />
           </em>
@@ -169,7 +171,7 @@ const FaresV2Table = ({
           <>
             {/* Only render the list of fare types once */}
             {index === 0 && (
-              <th style={{ textAlign: "left" }}>
+              <th style={{ textAlign: "left" }} scope="row">
                 <FormattedMessage
                   id={`config.fares.media.${descope(medium.id)}`}
                   defaultMessage={medium.name}
