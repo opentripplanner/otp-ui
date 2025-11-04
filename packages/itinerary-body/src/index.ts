@@ -25,6 +25,7 @@ import {
   PlaceRowProps,
   ItineraryBodyProps
 } from "./types";
+import * as Types from "./types";
 
 export default ItineraryBody;
 
@@ -54,5 +55,6 @@ export {
   TransitLegSubheaderProps,
   TransitLegSummaryProps,
   PlaceRowProps,
-  ItineraryBodyProps
+  ItineraryBodyProps,
+  Types
 };
