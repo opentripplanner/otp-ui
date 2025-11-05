@@ -218,6 +218,9 @@
           "*.graphql"
         ],
         "rules": {
+          "@graphql-eslint/no-deprecated": [
+            "warn"
+          ],
           "@graphql-eslint/alphabetize": [
             "error",
             {
