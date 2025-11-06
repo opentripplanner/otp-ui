@@ -27,7 +27,11 @@ export interface DistanceProps {
  * - 2.4 kilometers
  * - 807 ft
  */
-const Distance = ({ long, meters, units }: DistanceProps): JSX.Element => {
+const Distance = ({
+  long,
+  meters,
+  units = "metric"
+}: DistanceProps): JSX.Element => {
   const { unit, value } = isImperial(units)
     ? getImperialParams(meters)
     : getMetricParams(meters);

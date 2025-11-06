@@ -11,13 +11,9 @@ import React, { ReactElement } from "react";
  */
 const DefaultDistance = ({
   meters,
-  units
+  units = "imperial"
 }: Omit<DistanceProps, "long">): ReactElement => (
-  <Distance
-    long={isImperial(units, "imperial")}
-    meters={meters}
-    units={units || "imperial"}
-  />
+  <Distance long={isImperial(units)} meters={meters} units={units} />
 );
 
 export default DefaultDistance;

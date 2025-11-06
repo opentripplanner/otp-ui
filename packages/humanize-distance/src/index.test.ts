@@ -31,32 +31,23 @@ describe("humanizeDistanceString", () => {
 describe("isImperial", () => {
   const testCases = [
     {
-      defaultUnits: "metric",
       imperialExpected: false,
       unitType: "metric"
     },
     {
-      defaultUnits: "metric",
       imperialExpected: false
     },
     {
-      defaultUnits: "metric",
       imperialExpected: true,
       unitType: "imperial"
-    },
-    {
-      defaultUnits: "imperial",
-      imperialExpected: true
     }
   ];
 
-  testCases.forEach(({ defaultUnits, imperialExpected, unitType }) => {
-    it(`${unitType} with default unit type ${defaultUnits} should be ${
+  testCases.forEach(({ imperialExpected, unitType }) => {
+    it(`${unitType} should be ${
       imperialExpected ? "imperial" : "metric"
     }`, () => {
-      expect(
-        h.isImperial(unitType as UnitSystem, defaultUnits as UnitSystem)
-      ).toBe(imperialExpected);
+      expect(h.isImperial(unitType as UnitSystem)).toBe(imperialExpected);
     });
   });
 });
