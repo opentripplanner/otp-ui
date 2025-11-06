@@ -72,7 +72,6 @@ export default {
       resolve: {
         alias: {
           // Configure module resolution for workspace packages
-          '@opentripplanner': path.resolve(__dirname, '../packages'),
           querystring: 'querystring-es3'
         }
       },
