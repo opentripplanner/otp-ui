@@ -99,8 +99,16 @@ export default function Fares({
         </summary>
         <FaresV2Table
           legs={itinerary.legs}
-          favoriteMediumId={defaultFareType?.mediumId}
-          favoriteRiderCategoryId={defaultFareType?.riderCategoryId}
+          favoriteMediumId={
+            Array.isArray(defaultFareType?.mediumId)
+              ? defaultFareType?.mediumId[0]
+              : defaultFareType?.mediumId
+          }
+          favoriteRiderCategoryId={
+            Array.isArray(defaultFareType?.riderCategoryId)
+              ? defaultFareType?.riderCategoryId[0]
+              : defaultFareType?.riderCategoryId
+          }
         />
       </S.TransitFare>
     </S.Fare>
@@ -129,7 +137,7 @@ export default function Fares({
 
   return (
     <>
-      {!!fare && (
+      {itinerary.legs.some(leg => leg.fareProducts) && (
         <TripDetail
           className="fares"
           // Any custom description for the transit fare needs to be handled by the slot.
@@ -143,9 +151,10 @@ export default function Fares({
             )
           }
           icon={<MoneyBillAlt size={17} />}
-          summary={fare}
+          summary={fare || <FaresV2Table legs={itinerary.legs} />}
         />
       )}
+
       {!!tncFare && (
         <TripDetail
           className="tnc-fare"

@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/location-field",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "description": "A component for display and finding a location",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -15,7 +15,8 @@
     "@opentripplanner/humanize-distance": "workspace:*",
     "@opentripplanner/location-icon": "workspace:*",
     "@styled-icons/fa-solid": "catalog:",
-    "@tanstack/react-pacer": "^0.8.0"
+    "@tanstack/react-pacer": "^0.8.0",
+    "flat": "catalog:"
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*"

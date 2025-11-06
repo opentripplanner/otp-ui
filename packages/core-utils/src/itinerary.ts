@@ -100,11 +100,11 @@ export function legDropoffRequiresAdvanceBooking(leg: Leg): boolean {
  */
 export function isFlex(leg: Leg): boolean {
   return (
-    isReservationRequired(leg) ||
-    isCoordinationRequired(leg) ||
-    legDropoffRequiresAdvanceBooking(leg) ||
-    isAdvanceBookingRequired(leg?.pickupBookingInfo) ||
-    legContainsGeometry(leg)
+    leg?.stopCalls?.some(call =>
+      // Flex calls are "Location" or "LocationGroup"
+      // eslint-disable-next-line no-underscore-dangle
+      call?.stopLocation?.__typename.startsWith("Location")
+    ) || false
   );
 }
 export function isRideshareLeg(leg: Leg): boolean {
@@ -455,16 +455,18 @@ export function getCompanyForNetwork(
 }
 
 /**
- * Get a string label to display from a list of vehicle rental networks.
+ * Get a string label to display from a list of vehicle rental networks. Returns
+ * empty string if no networks provided.
  *
  * @param  {Array<string>} networks  A list of network ids.
  * @param  {Array<object>}  [companies=[]] An optional list of the companies config.
  * @return {string}  A label for use in presentation on a website.
  */
 export function getCompaniesLabelFromNetworks(
-  networks: string[] | string,
+  networks?: string[] | string,
   companies: Company[] = []
 ): string {
+  if (!networks) return "";
   return (Array.isArray(networks) ? networks : [networks])
     .map(network => getCompanyForNetwork(network, companies))
     .filter(co => !!co)
@@ -708,14 +710,45 @@ export function getLegCost(
  */
 export function getItineraryCost(
   legs: Leg[],
-  mediumId: string | null,
-  riderCategoryId: string | null
+  mediumId: string | string[] | null,
+  riderCategoryId: string | string[] | null
 ): Money | undefined {
+  // TODO: Better input type handling
+  if (Array.isArray(mediumId) || Array.isArray(riderCategoryId)) {
+    if (mediumId?.length !== riderCategoryId.length) {
+      console.warn(
+        "Invalid input types, only using first item. medium id list and rider category list must have same number of items"
+      );
+      return getItineraryCost(legs, mediumId[0], riderCategoryId[0]);
+    }
+
+    let total = { amount: 0, currency: null };
+    for (let i = 0; i < mediumId.length; i++) {
+      const newCost = getItineraryCost(legs, mediumId[i], riderCategoryId[i]);
+      if (newCost) {
+        total = {
+          amount: total?.amount + (newCost?.amount || 0),
+          currency: total.currency ?? newCost?.currency
+        };
+      }
+    }
+    if (total.currency === null) return undefined;
+    return total;
+  }
+
   const legCostsObj = legs
     // Only legs with fares (no walking legs)
     .filter(leg => leg.fareProducts?.length > 0)
     // Get the leg cost object of each leg
-    .map(leg => getLegCost(leg, mediumId, riderCategoryId))
+    .map((leg, index, arr) =>
+      getLegCost(
+        leg,
+        mediumId,
+        riderCategoryId,
+        // We need to include the seen fare ids by gathering all previous leg fare product ids
+        arr.splice(0, index).flatMap(l => l?.fareProducts.map(fp => fp?.id))
+      )
+    )
     .filter(cost => cost.appliedFareProduct?.legPrice !== undefined)
     // Filter out duplicate use IDs
     // One fare product can be used on multiple legs,
@@ -764,6 +797,10 @@ export const convertGraphQLResponseToLegacy = (leg: any): Leg => ({
   agencyUrl: leg.agency?.url,
   alightRule: pickupDropoffTypeToOtp1(leg.dropoffType),
   boardRule: pickupDropoffTypeToOtp1(leg.pickupType),
+  bookingRuleInfo: {
+    dropOff: leg?.dropOffBookingInfo || {},
+    pickUp: leg?.pickUpBookingInfo || {}
+  },
   dropOffBookingInfo: {
     latestBookingTime: leg.dropOffBookingInfo
   },

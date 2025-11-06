@@ -306,7 +306,9 @@ export type Place = {
  */
 export type FlexBookingInfo = {
   contactInfo?: {
-    phoneNumber: string;
+    phoneNumber?: string;
+    bookingUrl?: string;
+    infoUrl?: string;
   };
   latestBookingTime?: {
     daysPrior: number;
@@ -397,6 +399,12 @@ export type Leg = {
   serviceDate?: string;
   start: string;
   steps: Step[];
+  // Abridged version of what OTP returns
+  stopCalls?: {
+    stopLocation?: {
+      __typename: "Stop" | "Location" | "LocationGroup";
+    };
+  }[];
   to: Place;
   transitLeg: boolean;
   trip?: {

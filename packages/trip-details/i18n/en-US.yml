@@ -8,6 +8,7 @@ otpUi:
     departure: >-
       Depart <strong>{departureDate, date, long}</strong> at
       <strong>{departureDate, time, short}</strong>
+    fareCategory: Fare Category
     hideDetail: Hide details
     legMissingFareInfo: No fare information for this leg
     minutesActive: >-

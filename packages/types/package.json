@@ -1,9 +1,30 @@
 {
   "name": "@opentripplanner/types",
-  "version": "8.0.0",
+  "version": "8.2.1",
   "description": "TypeScript types used across multiple OTP-UI packages",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "otp2": [
+        "./lib/otp2/index.d.ts"
+      ]
+    }
+  },
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js",
+      "require": "./lib/index.js",
+      "import": "./esm/index.js"
+    },
+    "./otp2": {
+      "types": "./lib/otp2/index.d.ts",
+      "default": "./lib/otp2/index.js",
+      "require": "./lib/otp2/index.js",
+      "import": "./lib/otp2/index.js"
+    }
+  },
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "author": "Binh Dam",
   "license": "MIT",

@@ -1,5 +1,5 @@
 import React from 'react'
-import BaseMap, { Styled as BaseMapStyled } from "@opentripplanner/base-map";
+import BaseMap, { Styled as BaseMapStyled } from "../packages/base-map";
 
 import "maplibre-gl/dist/maplibre-gl.css";
 import "./base-map-wrapper-a11y.css";
