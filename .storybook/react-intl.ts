@@ -13,6 +13,7 @@ const packages = [
   "base-map",
   "endpoints-overlay",
   "from-to-location-picker",
+  "humanize-distance",
   "itinerary-body",
   "location-field",
   "printable-itinerary",
@@ -23,7 +24,7 @@ const packages = [
 ];
 
 /** Messages for all packages AND locales above. */
-const messages = {};
+const messages: Record<string, object> = {};
 
 // Populate messages if not running snapshots.
 // (Message printouts would be unnecessary replicated in snapshots without that check.)

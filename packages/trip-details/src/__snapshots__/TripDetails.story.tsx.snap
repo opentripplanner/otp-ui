@@ -512,138 +512,6 @@ exports[`TripDetails BikeOnlyItinerary smoke-test 1`] = `
 
 exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
 <h5>
-  Corrupt Data
-</h5>
-<table class="fares-v2-table__StripedTable-sc-h3t2h2-1 fXiYxU">
-  <caption class="styled__InvisibleA11yCaption-sc-6q2ok2-1 fNsmNb">
-    Transit fares for this itinerary
-  </caption>
-  <tr>
-    <th style="text-align: left;">
-      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        Transit Fare
-      </span>
-    </th>
-    <th>
-      21
-    </th>
-    <th>
-      E
-    </th>
-    <th>
-      FF1
-    </th>
-    <th>
-      92
-    </th>
-    <th style="text-align: right;">
-      <em>
-        Total
-      </em>
-    </th>
-  </tr>
-  <tr>
-    <th style="text-align: left;">
-      Cash Fare
-    </th>
-    <td style="text-align: right;">
-      $2.75
-    </td>
-    <td style="text-align: right;">
-      $2.75
-    </td>
-    <td style="text-align: center;">
-      -
-      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        No fare information for this leg
-      </span>
-    </td>
-    <td style="text-align: right;">
-      $2.75
-    </td>
-    <td style="text-align: right;">
-      <em>
-        $8.25
-      </em>
-    </td>
-  </tr>
-  <tr>
-    <th style="text-align: left;">
-      MyRide App Fare
-    </th>
-    <td style="text-align: right;">
-      $2.75
-    </td>
-    <td style="text-align: right;">
-      $2.75
-    </td>
-    <td style="text-align: center;">
-      -
-      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        No fare information for this leg
-      </span>
-    </td>
-    <td style="text-align: right;">
-      $2.75
-    </td>
-    <td style="text-align: right;">
-      <em>
-        $8.25
-      </em>
-    </td>
-  </tr>
-  <tr>
-    <th style="text-align: left;">
-      MyRide Card Fare
-    </th>
-    <td style="text-align: right;">
-      $2.75
-    </td>
-    <td style="text-align: right;">
-      $2.75
-    </td>
-    <td style="text-align: center;">
-      -
-      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        No fare information for this leg
-      </span>
-    </td>
-    <td style="text-align: right;">
-      $2.75
-    </td>
-    <td style="text-align: right;">
-      <em>
-        $8.25
-      </em>
-    </td>
-  </tr>
-  <tr>
-    <th style="text-align: left;">
-      Paper Ticket Fare
-    </th>
-    <td style="text-align: right;">
-      $2.75
-    </td>
-    <td style="text-align: right;">
-      $2.75
-    </td>
-    <td style="text-align: center;">
-      -
-      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        No fare information for this leg
-      </span>
-    </td>
-    <td style="text-align: right;">
-      $2.75
-    </td>
-    <td style="text-align: right;">
-      <em>
-        $8.25
-      </em>
-    </td>
-  </tr>
-</table>
-<h5>
   Paid Transfer
 </h5>
 <table class="fares-v2-table__StripedTable-sc-h3t2h2-1 fXiYxU">
@@ -651,25 +519,31 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     Transit fares for this itinerary
   </caption>
   <tr>
-    <th style="text-align: left;">
+    <th scope="col"
+        style="text-align: left;"
+    >
       <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        Transit Fare
+        Fare Category
       </span>
     </th>
-    <th>
+    <th scope="col">
       A
     </th>
-    <th>
+    <th scope="col">
       MAX Red Line
     </th>
-    <th style="text-align: right;">
+    <th scope="col"
+        style="text-align: right;"
+    >
       <em>
         Total
       </em>
     </th>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Open Payment Adult
     </th>
     <td style="text-align: right;">
@@ -699,7 +573,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Open Payment Honored Citizen
     </th>
     <td style="text-align: right;">
@@ -729,7 +605,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Open Payment Youth
     </th>
     <td style="text-align: right;">
@@ -759,7 +637,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Cash Adult
     </th>
     <td style="text-align: right;">
@@ -789,7 +669,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Cash Honored Citizen
     </th>
     <td style="text-align: right;">
@@ -819,7 +701,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Cash Youth
     </th>
     <td style="text-align: right;">
@@ -849,7 +733,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       HOP Fastpass Adult
     </th>
     <td style="text-align: right;">
@@ -879,7 +765,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       HOP Fastpass Honored Citizen
     </th>
     <td style="text-align: right;">
@@ -909,7 +797,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       HOP Fastpass Youth
     </th>
     <td style="text-align: right;">
@@ -939,7 +829,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Virtual HOP Fastpass Adult
     </th>
     <td style="text-align: right;">
@@ -969,7 +861,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Virtual HOP Fastpass Honored Citizen
     </th>
     <td style="text-align: right;">
@@ -999,7 +893,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Virtual HOP Fastpass Youth
     </th>
     <td style="text-align: right;">
@@ -1037,25 +933,31 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     Transit fares for this itinerary
   </caption>
   <tr>
-    <th style="text-align: left;">
+    <th scope="col"
+        style="text-align: left;"
+    >
       <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        Transit Fare
+        Fare Category
       </span>
     </th>
-    <th>
+    <th scope="col">
       MAX Yellow Line
     </th>
-    <th>
+    <th scope="col">
       MAX Blue Line
     </th>
-    <th style="text-align: right;">
+    <th scope="col"
+        style="text-align: right;"
+    >
       <em>
         Total
       </em>
     </th>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Cash Adult
     </th>
     <td style="text-align: right;">
@@ -1085,7 +987,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Cash Honored Citizen
     </th>
     <td style="text-align: right;">
@@ -1115,7 +1019,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Cash Youth
     </th>
     <td style="text-align: right;">
@@ -1145,7 +1051,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       HOP Fastpass Adult
     </th>
     <td style="text-align: right;">
@@ -1175,7 +1083,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       HOP Fastpass Honored Citizen
     </th>
     <td style="text-align: right;">
@@ -1205,7 +1115,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       HOP Fastpass Youth
     </th>
     <td style="text-align: right;">
@@ -1235,7 +1147,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Open Payment Adult
     </th>
     <td style="text-align: right;">
@@ -1265,7 +1179,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Open Payment Honored Citizen
     </th>
     <td style="text-align: right;">
@@ -1295,7 +1211,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Open Payment Youth
     </th>
     <td style="text-align: right;">
@@ -1325,7 +1243,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Virtual HOP Fastpass Adult
     </th>
     <td style="text-align: right;">
@@ -1355,7 +1275,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Virtual HOP Fastpass Honored Citizen
     </th>
     <td style="text-align: right;">
@@ -1385,7 +1307,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       Virtual HOP Fastpass Youth
     </th>
     <td style="text-align: right;">
@@ -1423,31 +1347,37 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     Transit fares for this itinerary
   </caption>
   <tr>
-    <th style="text-align: left;">
+    <th scope="col"
+        style="text-align: left;"
+    >
       <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        Transit Fare
+        Fare Category
       </span>
     </th>
-    <th>
+    <th scope="col">
       90X
     </th>
-    <th>
+    <th scope="col">
       512
     </th>
-    <th>
+    <th scope="col">
       535
     </th>
-    <th>
+    <th scope="col">
       372
     </th>
-    <th style="text-align: right;">
+    <th scope="col"
+        style="text-align: right;"
+    >
       <em>
         Total
       </em>
     </th>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       cash regular
     </th>
     <td style="text-align: right;">
@@ -1464,12 +1394,14 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
     <td style="text-align: right;">
       <em>
-        $10.25
+        $7.00
       </em>
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       cash senior
     </th>
     <td style="text-align: right;">
@@ -1486,12 +1418,14 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
     <td style="text-align: right;">
       <em>
-        $9.75
+        $6.50
       </em>
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       cash special
     </th>
     <td style="text-align: center;">
@@ -1530,7 +1464,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       cash youth
     </th>
     <td style="text-align: right;">
@@ -1557,7 +1493,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       electronic regular
     </th>
     <td style="text-align: center;">
@@ -1582,7 +1520,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       electronic senior
     </th>
     <td style="text-align: center;">
@@ -1607,7 +1547,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       electronic special
     </th>
     <td style="text-align: center;">
@@ -1632,7 +1574,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
   </tr>
   <tr>
-    <th style="text-align: left;">
+    <th scope="row"
+        style="text-align: left;"
+    >
       electronic youth
     </th>
     <td style="text-align: center;">
@@ -1771,31 +1715,37 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 Transit fares for this itinerary
               </caption>
               <tr>
-                <th style="text-align: left;">
+                <th scope="col"
+                    style="text-align: left;"
+                >
                   <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                    Transit Fare
+                    Fare Category
                   </span>
                 </th>
-                <th>
+                <th scope="col">
                   90X
                 </th>
-                <th>
+                <th scope="col">
                   512
                 </th>
-                <th>
+                <th scope="col">
                   535
                 </th>
-                <th>
+                <th scope="col">
                   372
                 </th>
-                <th style="text-align: right;">
+                <th scope="col"
+                    style="text-align: right;"
+                >
                   <em>
                     Total
                   </em>
                 </th>
               </tr>
               <tr>
-                <th style="text-align: left;">
+                <th scope="row"
+                    style="text-align: left;"
+                >
                   electronic regular
                 </th>
                 <td style="text-align: center;">
@@ -1820,7 +1770,9 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 </td>
               </tr>
               <tr>
-                <th style="text-align: left;">
+                <th scope="row"
+                    style="text-align: left;"
+                >
                   electronic senior
                 </th>
                 <td style="text-align: center;">
@@ -1845,7 +1797,9 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 </td>
               </tr>
               <tr>
-                <th style="text-align: left;">
+                <th scope="row"
+                    style="text-align: left;"
+                >
                   electronic special
                 </th>
                 <td style="text-align: center;">
@@ -1870,7 +1824,9 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 </td>
               </tr>
               <tr>
-                <th style="text-align: left;">
+                <th scope="row"
+                    style="text-align: left;"
+                >
                   electronic youth
                 </th>
                 <td style="text-align: center;">
@@ -1900,7 +1856,9 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 </td>
               </tr>
               <tr>
-                <th style="text-align: left;">
+                <th scope="row"
+                    style="text-align: left;"
+                >
                   cash regular
                 </th>
                 <td style="text-align: right;">
@@ -1917,12 +1875,14 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 </td>
                 <td style="text-align: right;">
                   <em>
-                    $10.25
+                    $7.00
                   </em>
                 </td>
               </tr>
               <tr>
-                <th style="text-align: left;">
+                <th scope="row"
+                    style="text-align: left;"
+                >
                   cash senior
                 </th>
                 <td style="text-align: right;">
@@ -1939,12 +1899,14 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 </td>
                 <td style="text-align: right;">
                   <em>
-                    $9.75
+                    $6.50
                   </em>
                 </td>
               </tr>
               <tr>
-                <th style="text-align: left;">
+                <th scope="row"
+                    style="text-align: left;"
+                >
                   cash special
                 </th>
                 <td style="text-align: center;">
@@ -1983,7 +1945,9 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 </td>
               </tr>
               <tr>
-                <th style="text-align: left;">
+                <th scope="row"
+                    style="text-align: left;"
+                >
                   cash youth
                 </th>
                 <td style="text-align: right;">
@@ -2589,24 +2553,30 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
                 Transit fares for this itinerary
               </caption>
               <tr>
-                <th style="text-align: left;">
+                <th scope="col"
+                    style="text-align: left;"
+                >
                   <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                    Transit Fare
+                    Fare Category
                   </span>
                 </th>
-                <th>
+                <th scope="col">
                 </th>
-                <th>
+                <th scope="col">
                   20
                 </th>
-                <th style="text-align: right;">
+                <th scope="col"
+                    style="text-align: right;"
+                >
                   <em>
                     Total
                   </em>
                 </th>
               </tr>
               <tr>
-                <th style="text-align: left;">
+                <th scope="row"
+                    style="text-align: left;"
+                >
                   Regular Fare
                 </th>
                 <td style="text-align: right;">
