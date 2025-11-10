@@ -11,6 +11,6 @@ export default function TimeColumnContent({
   isDestination,
   leg
 }: TimeColumnContentProps): ReactElement {
-  const time = isDestination ? leg.endTime : leg.startTime;
+  const time = isDestination ? leg.end : leg.start;
   return time && <FormattedTime value={time} />;
 }

@@ -1,5 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
-import { Config, Leg } from "@opentripplanner/types";
+import { Config, FormFactor, Leg } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
@@ -15,21 +15,10 @@ interface Props {
  * Although similar to utils/getVehicleType, this version accommodates gendered articles
  * for Spanish and French, so sentences literally read like "Pickup the scooter ABC".
  */
-function VehicleType({ type }: { type: string }) {
+function VehicleType({ type }: { type: FormFactor }) {
   switch (type) {
-    case "BIKEPARK":
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages[
-              "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.bike"
-            ]
-          }
-          description="Bike vehicle type"
-          id="otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.bike"
-        />
-      );
-    case "BIKESHARE":
+    case "BICYCLE":
+    case "CARGO_BICYCLE":
       return (
         <FormattedMessage
           defaultMessage={
@@ -41,7 +30,7 @@ function VehicleType({ type }: { type: string }) {
           id="otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.bikeshare"
         />
       );
-    case "CARSHARE":
+    case "CAR":
       return (
         <FormattedMessage
           defaultMessage={
@@ -53,7 +42,9 @@ function VehicleType({ type }: { type: string }) {
           id="otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.car"
         />
       );
-    case "VEHICLERENTAL":
+    case "SCOOTER_SEATED":
+    case "SCOOTER_STANDING":
+    case "SCOOTER":
       return (
         <FormattedMessage
           defaultMessage={
@@ -98,9 +89,8 @@ export default function RentedVehicleSubheader({
 }: Props): ReactElement {
   const configCompanies = config.companies || [];
   const { from, mode, rentedBike, walkingBike } = leg;
-  const { name: legName, networks, vertexType } = from;
-  // in OTP2 scooters are BIKERENTALs, so we need to override this
-  const modeType = mode === "SCOOTER" ? "VEHICLERENTAL" : vertexType;
+  const { name: legName, networks, rentalVehicle } = from;
+  const modeType = rentalVehicle?.vehicleType?.formFactor;
 
   // Sometimes rented vehicles can be walked over things like stairs or other
   // ways that forbid the main mode of travel.
@@ -129,10 +119,10 @@ export default function RentedVehicleSubheader({
   // walking that occurs in the middle of the rental, so once the main mode
   // resumes there won't be any network info. In that case we simply return
   // that the rental is continuing.
-  if (networks || rentedBike) {
+  if (networks || rentedBike || rentalVehicle) {
     // Add company and vehicle labels.
     const company = coreUtils.itinerary.getCompaniesLabelFromNetworks(
-      networks || [],
+      networks || rentalVehicle?.rentalNetwork?.networkId || [],
       configCompanies
     );
     // Only show vehicle name for car rentals. For bikes and E-scooters, these

@@ -1,5 +1,5 @@
 import flatten from "flat";
-import { Company, Place } from "@opentripplanner/types";
+import { Company, FormFactor, Place } from "@opentripplanner/types";
 import { IntlShape } from "react-intl";
 
 // Load the default messages.
@@ -95,28 +95,31 @@ function getCompanyForNetwork(
 /**
  * Gets a localized version of a vehicle type.
  */
-export function getVehicleType(type: string, intl: IntlShape): string {
+export function getVehicleType(type: FormFactor, intl: IntlShape): string {
   switch (type) {
-    case "BIKEPARK":
-      return intl.formatMessage({
-        defaultMessage: defaultMessages["otpUi.AccessLegBody.vehicleType.bike"],
-        description: "Bike vehicle type",
-        id: "otpUi.AccessLegBody.vehicleType.bike"
-      });
-    case "BIKESHARE":
+    // TODO: In what case do we display "bike"?
+    //   return intl.formatMessage({
+    //     defaultMessage: defaultMessages["otpUi.AccessLegBody.vehicleType.bike"],
+    //     description: "Bike vehicle type",
+    //     id: "otpUi.AccessLegBody.vehicleType.bike"
+    //   });
+    case "BICYCLE":
+    case "CARGO_BICYCLE":
       return intl.formatMessage({
         defaultMessage:
           defaultMessages["otpUi.AccessLegBody.vehicleType.bikeshare"],
         description: "Bike share vehicle type",
         id: "otpUi.AccessLegBody.vehicleType.bikeshare"
       });
-    case "CARSHARE":
+    case "CAR":
       return intl.formatMessage({
         defaultMessage: defaultMessages["otpUi.AccessLegBody.vehicleType.car"],
         description: "Car vehicle type",
         id: "otpUi.AccessLegBody.vehicleType.car"
       });
-    case "VEHICLERENTAL":
+    case "SCOOTER_SEATED":
+    case "SCOOTER_STANDING":
+    case "SCOOTER":
       return intl.formatMessage({
         defaultMessage:
           defaultMessages["otpUi.AccessLegBody.vehicleType.escooter"],
@@ -152,7 +155,8 @@ export function getPlaceName(
   // Other times, it can be a name with relevant information for the user.
   // Here we detect if the name is just a UUID and generate a better name.
   // It is also possible to configure station name overrides in the config using overridePlaceNames.
-  const network = place.networks?.[0] || place?.rentalVehicle?.network;
+  const network =
+    place.networks?.[0] || place?.rentalVehicle?.rentalNetwork?.networkId;
   const company = network && getCompanyForNetwork(network, companies);
   if (
     intl &&
@@ -169,7 +173,10 @@ export function getPlaceName(
       },
       {
         company: company?.label,
-        vehicleType: getVehicleType(place.vertexType, intl)
+        vehicleType: getVehicleType(
+          place.rentalVehicle?.vehicleType?.formFactor,
+          intl
+        )
       }
     );
   }

@@ -245,6 +245,26 @@ export type Step = {
   streetName: string;
 };
 
+export type FormFactor =
+  | "BICYCLE"
+  | "CAR"
+  | "CARGO_BICYCLE"
+  | "MOPED"
+  | "OTHER"
+  | "SCOOTER_SEATED"
+  | "SCOOTER_STANDING"
+  | "SCOOTER";
+
+export type PropulsionType =
+  | "COMBUSTION"
+  | "COMBUSTION_DIESEL"
+  | "ELECTRIC"
+  | "ELECTRIC_ASSIST"
+  | "HUMAN"
+  | "HYBRID"
+  | "HYDROGEN_FUEL_CELL"
+  | "PLUG_IN_HYBRID";
+
 /**
  * Describe an origin, destination, or intermediate location in an itinerary.
  */
@@ -257,7 +277,14 @@ export type Place = {
   lon: number;
   name: string;
   networks?: string[];
-  rentalVehicle?: { network: string };
+  rentalVehicle?: {
+    vehicleId?: string;
+    rentalNetwork: { networkId: string; url?: string };
+    vehicleType: {
+      formFactor: FormFactor;
+      propulsionType: PropulsionType;
+    };
+  };
   vehicleRentalStation?: { rentalNetwork: { networkId: string } };
   stop?: Stop;
   /**
@@ -276,7 +303,6 @@ export type Place = {
    * @deprecated Only for OTP1 support, removal is immenent
    */
   stopSequence?: number;
-  vertexType: string;
   zoneId?: string;
 };
 
@@ -346,7 +372,7 @@ export type Leg = {
   distance: number;
   dropOffBookingInfo?: FlexDropOffBookingInfo;
   duration: number;
-  endTime: number;
+  end: string;
   fareProducts?: { id: string; product: FareProduct }[];
   from: Place;
   headsign?: string;
@@ -378,7 +404,7 @@ export type Leg = {
   routeTextColor?: string;
   routeType?: number;
   serviceDate?: string;
-  startTime: number | string;
+  start: string;
   steps: Step[];
   // Abridged version of what OTP returns
   stopCalls?: {
@@ -442,9 +468,9 @@ export type Itinerary = {
   duration: number;
   elevationGained: number;
   elevationLost: number;
-  endTime: number;
+  end: string;
   legs: Leg[];
-  startTime: number;
+  start: string;
   tooSloped?: boolean;
   transfers: number;
   transitTime: number;
