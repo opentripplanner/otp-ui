@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/humanize-distance",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Pretty print a string for a certain distance",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -13,7 +13,11 @@
   "scripts": {
     "tsc": "tsc"
   },
+  "devDependencies": {
+    "@opentripplanner/types": "workspace:*"
+  },
   "peerDependencies": {
+    "react": "catalog:",
     "react-intl": "catalog:"
   }
 }
