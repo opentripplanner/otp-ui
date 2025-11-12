@@ -65,6 +65,10 @@ export default {
         global: 'globalThis',
       },
 
+      optimizeDeps: {
+        include: ['hoist-non-react-statics']
+      },
+
       resolve: {
         alias: {
           // Configure module resolution for workspace packages

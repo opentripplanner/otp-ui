@@ -7,7 +7,6 @@ query Plan(
   $fromPlace: String!
   $modes: [TransportMode]
   $numItineraries: Int
-  $preferred: InputPreferred
   $time: String
   $toPlace: String!
   $unpreferred: InputUnpreferred
@@ -25,7 +24,6 @@ query Plan(
     # Currently only supporting EN locale, used for times and text
     locale: "en"
     numItineraries: $numItineraries
-    preferred: $preferred
     time: $time
     toPlace: $toPlace
     transportModes: $modes
@@ -237,7 +235,7 @@ query Plan(
         }
         stopCalls {
           stopLocation {
-             __typename
+            __typename
           }
         }
         to {
