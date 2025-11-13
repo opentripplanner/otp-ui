@@ -11,7 +11,7 @@ import DefaultPlaceName from "../defaults/place-name";
 import DefaultRouteDescription from "../defaults/route-description";
 import { DefaultRouteDescriptionFooter } from "./route-description-footer";
 import DefaultTransitLegSummary from "../defaults/transit-leg-summary";
-import { StyledItineraryBody } from "../demos";
+import { StyledItineraryBody } from "../demos/index.story";
 import OtpRRStyledItineraryBody from "../otp-react-redux/itinerary-body";
 import { ItineraryBodyProps } from "../types";
 
