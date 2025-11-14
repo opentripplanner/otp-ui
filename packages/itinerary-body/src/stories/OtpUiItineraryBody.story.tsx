@@ -11,8 +11,8 @@ import {
   CustomPlaceName,
   customToRouteAbbreviation,
   CustomTransitLegSummary
-} from "../demos/index.story";
-import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper.story";
+} from "../demos/index";
+import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
 
 // import mock itineraries. These are all trip plan outputs from OTP.
 import bikeOnlyItinerary from "../__mocks__/itineraries/bike-only.json";

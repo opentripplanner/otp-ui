@@ -7,14 +7,14 @@ import ItineraryBody from "..";
 import {
   CustomTimeColumnContent,
   WrappedOtpRRTransitLegSubheader
-} from "../demos/index.story";
+} from "../demos/index";
 import OtpRRLineColumnContent from "../otp-react-redux/line-column-content";
 import { PlaceName as OtpRRPlaceName } from "../otp-react-redux";
 import OtpRRRouteDescription from "../otp-react-redux/route-description";
 import { isTestRunner } from "../../../../.storybook/react-intl";
 import { TimeColumnContentProps } from "../types";
 
-import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper.story";
+import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
 import LegIconWithA11y from "./LegIconWithA11y";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
