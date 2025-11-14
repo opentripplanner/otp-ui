@@ -17,7 +17,7 @@ import {
   slowGeocoderConfig,
   unreachableGeocoderConfig,
   userLocationsAndRecentPlaces
-} from "./common.story";
+} from "./common";
 
 import mockedGeocoderResponse from "../mocks/autocomplete.json";
 

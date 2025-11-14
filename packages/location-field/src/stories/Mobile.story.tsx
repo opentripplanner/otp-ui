@@ -28,7 +28,7 @@ import {
   slowGeocoderConfig,
   unreachableGeocoderConfig,
   userLocationsAndRecentPlaces
-} from "./common.story";
+} from "./common";
 import * as LocationFieldClasses from "../styled";
 
 // eslint-disable-next-line prettier/prettier
