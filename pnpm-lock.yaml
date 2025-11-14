@@ -51,6 +51,9 @@ catalogs:
     react-map-gl:
       specifier: ^8.0.4
       version: 8.0.4
+    storybook:
+      specifier: ^10.0.5
+      version: 10.0.5
     styled-components:
       specifier: ^5.3.0
       version: 5.3.11
@@ -119,25 +122,25 @@ importers:
         version: 10.0.1(semantic-release@24.2.3(typescript@4.9.5))
       '@storybook/addon-a11y':
         specifier: ^10.0.5
-        version: 10.0.5(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))
+        version: 10.0.5
       '@storybook/addon-docs':
         specifier: ^10.0.5
-        version: 10.0.5(@types/react@18.3.12)(esbuild@0.25.5)(rollup@4.44.2)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))
+        version: 10.0.5(@types/react@18.3.12)(esbuild@0.25.5)(rollup@4.44.2)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))
       '@storybook/addon-links':
         specifier: ^10.0.5
-        version: 10.0.5(react@18.2.0)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))
+        version: 10.0.5(react@18.2.0)
       '@storybook/builder-vite':
         specifier: ^10.0.5
-        version: 10.0.5(esbuild@0.25.5)(rollup@4.44.2)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))
+        version: 10.0.5(esbuild@0.25.5)(rollup@4.44.2)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))
       '@storybook/react-vite':
         specifier: ^10.0.5
-        version: 10.0.5(esbuild@0.25.5)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(rollup@4.44.2)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))(typescript@4.9.5)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))
+        version: 10.0.5(esbuild@0.25.5)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(rollup@4.44.2)(typescript@4.9.5)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))
       '@storybook/storybook-deployer':
         specifier: ^2.8.10
         version: 2.8.16
       '@storybook/test-runner':
         specifier: ^0.24.1
-        version: 0.24.1(@types/node@15.14.9)(esbuild-register@3.6.0(esbuild@0.25.5))(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))
+        version: 0.24.1(@types/node@15.14.9)(esbuild-register@3.6.0(esbuild@0.25.5))
       '@types/jest':
         specifier: ^26.0.23
         version: 26.0.24
@@ -282,15 +285,12 @@ importers:
       semver:
         specifier: ^7.3.2
         version: 7.7.2
-      storybook:
-        specifier: ^10.0.5
-        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))
       storybook-mock-date-decorator:
         specifier: ^3.0.0
-        version: 3.0.0(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))
+        version: 3.0.0
       storybook-react-intl:
         specifier: 4.0.7
-        version: 4.0.7(react-dom@18.3.1(react@18.2.0))(react-intl@6.8.4(react@18.2.0)(typescript@4.9.5))(react@18.2.0)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))
+        version: 4.0.7(react-dom@18.3.1(react@18.2.0))(react-intl@6.8.4(react@18.2.0)(typescript@4.9.5))(react@18.2.0)
       styled-components:
         specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
@@ -348,6 +348,10 @@ importers:
       styled-components:
         specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
+    devDependencies:
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/building-blocks:
     dependencies:
@@ -370,6 +374,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/core-utils:
     dependencies:
@@ -410,6 +417,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/endpoints-overlay:
     dependencies:
@@ -453,6 +463,9 @@ importers:
       '@types/flat':
         specifier: 'catalog:'
         version: 5.0.5
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/from-to-location-picker:
     dependencies:
@@ -475,6 +488,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/geocoder:
     dependencies:
@@ -493,6 +509,10 @@ importers:
       lodash.memoize:
         specifier: ^4.1.2
         version: 4.1.2
+    devDependencies:
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/humanize-distance:
     dependencies:
@@ -506,6 +526,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/icons:
     dependencies:
@@ -518,6 +541,10 @@ importers:
       react:
         specifier: 'catalog:'
         version: 18.2.0
+    devDependencies:
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/itinerary-body:
     dependencies:
@@ -570,6 +597,9 @@ importers:
       '@types/flat':
         specifier: 'catalog:'
         version: 5.0.5
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/location-field:
     dependencies:
@@ -610,6 +640,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/location-icon:
     dependencies:
@@ -625,6 +658,10 @@ importers:
       styled-components:
         specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
+    devDependencies:
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/map-popup:
     dependencies:
@@ -656,6 +693,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/otp2-tile-overlay:
     dependencies:
@@ -678,6 +718,9 @@ importers:
       maplibre-gl:
         specifier: 'catalog:'
         version: 5.6.1
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/park-and-ride-overlay:
     dependencies:
@@ -702,6 +745,10 @@ importers:
       styled-components:
         specifier: 'catalog:'
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
+    devDependencies:
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/printable-itinerary:
     dependencies:
@@ -727,6 +774,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/route-viewer-overlay:
     dependencies:
@@ -749,6 +799,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/scripts:
     dependencies:
@@ -767,6 +820,10 @@ importers:
       js-yaml:
         specifier: ^4.1.0
         version: 4.1.0
+    devDependencies:
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/stop-viewer-overlay:
     dependencies:
@@ -786,6 +843,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/stops-overlay:
     dependencies:
@@ -817,6 +877,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
       styled-icons:
         specifier: 'catalog:'
         version: 10.47.1(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
@@ -854,6 +917,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/transitive-overlay:
     dependencies:
@@ -906,6 +972,9 @@ importers:
       maplibre-gl:
         specifier: 'catalog:'
         version: 5.6.1
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/trip-details:
     dependencies:
@@ -937,6 +1006,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/trip-form:
     dependencies:
@@ -998,6 +1070,9 @@ importers:
       lodash.clonedeep:
         specifier: ^4.5.0
         version: 4.5.0
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/trip-viewer-overlay:
     dependencies:
@@ -1016,8 +1091,16 @@ importers:
       react-map-gl:
         specifier: 'catalog:'
         version: 8.0.4(maplibre-gl@5.6.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+    devDependencies:
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
-  packages/types: {}
+  packages/types:
+    devDependencies:
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/vehicle-rental-overlay:
     dependencies:
@@ -1061,6 +1144,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
   packages/zoom-based-markers:
     dependencies:
@@ -1089,6 +1175,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      storybook:
+        specifier: 'catalog:'
+        version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
 
 packages:
 
@@ -4042,11 +4131,6 @@ packages:
 
   acorn@7.4.1:
     resolution: {integrity: sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==}
-    engines: {node: '>=0.4.0'}
-    hasBin: true
-
-  acorn@8.14.0:
-    resolution: {integrity: sha512-cl669nCJTZBsL97OF4kUQm5g5hC2uihk0NxY3WENAC0TYdILVkAyHymAntgxGkl7K+t0cXIrH5siy5S4XkFycA==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -12206,7 +12290,7 @@ snapshots:
       glob: 10.4.5
       magic-string: 0.30.12
       react-docgen-typescript: 2.2.2(typescript@4.9.5)
-      vite: 7.0.2(@types/node@15.14.9)(terser@5.36.0)
+      vite: 7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0)
     optionalDependencies:
       typescript: 4.9.5
 
@@ -12387,7 +12471,7 @@ snapshots:
       '@rollup/pluginutils': 5.1.0(rollup@4.44.2)
       js-yaml: 4.1.0
       tosource: 2.0.0-alpha.3
-      vite: 7.0.2(@types/node@15.14.9)(terser@5.36.0)
+      vite: 7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0)
     transitivePeerDependencies:
       - rollup
 
@@ -13031,21 +13115,19 @@ snapshots:
     dependencies:
       '@sinonjs/commons': 3.0.1
 
-  '@storybook/addon-a11y@10.0.5(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))':
+  '@storybook/addon-a11y@10.0.5':
     dependencies:
       '@storybook/global': 5.0.0
       axe-core: 4.10.2
-      storybook: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))
 
-  '@storybook/addon-docs@10.0.5(@types/react@18.3.12)(esbuild@0.25.5)(rollup@4.44.2)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))':
+  '@storybook/addon-docs@10.0.5(@types/react@18.3.12)(esbuild@0.25.5)(rollup@4.44.2)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))':
     dependencies:
       '@mdx-js/react': 3.1.0(@types/react@18.3.12)(react@18.2.0)
-      '@storybook/csf-plugin': 10.0.5(esbuild@0.25.5)(rollup@4.44.2)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))
+      '@storybook/csf-plugin': 10.0.5(esbuild@0.25.5)(rollup@4.44.2)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))
       '@storybook/icons': 1.6.0(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
-      '@storybook/react-dom-shim': 10.0.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))
+      '@storybook/react-dom-shim': 10.0.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       react: 18.2.0
       react-dom: 18.3.1(react@18.2.0)
-      storybook: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))
       ts-dedent: 2.2.0
     transitivePeerDependencies:
       - '@types/react'
@@ -13054,32 +13136,29 @@ snapshots:
       - vite
       - webpack
 
-  '@storybook/addon-links@10.0.5(react@18.2.0)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))':
+  '@storybook/addon-links@10.0.5(react@18.2.0)':
     dependencies:
       '@storybook/global': 5.0.0
-      storybook: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))
     optionalDependencies:
       react: 18.2.0
 
-  '@storybook/builder-vite@10.0.5(esbuild@0.25.5)(rollup@4.44.2)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))':
+  '@storybook/builder-vite@10.0.5(esbuild@0.25.5)(rollup@4.44.2)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))':
     dependencies:
-      '@storybook/csf-plugin': 10.0.5(esbuild@0.25.5)(rollup@4.44.2)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))
-      storybook: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))
+      '@storybook/csf-plugin': 10.0.5(esbuild@0.25.5)(rollup@4.44.2)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))
       ts-dedent: 2.2.0
-      vite: 7.0.2(@types/node@15.14.9)(terser@5.36.0)
+      vite: 7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0)
     transitivePeerDependencies:
       - esbuild
       - rollup
       - webpack
 
-  '@storybook/csf-plugin@10.0.5(esbuild@0.25.5)(rollup@4.44.2)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))':
+  '@storybook/csf-plugin@10.0.5(esbuild@0.25.5)(rollup@4.44.2)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))':
     dependencies:
-      storybook: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))
       unplugin: 2.3.10
     optionalDependencies:
       esbuild: 0.25.5
       rollup: 4.44.2
-      vite: 7.0.2(@types/node@15.14.9)(terser@5.36.0)
+      vite: 7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0)
       webpack: 5.96.0(@swc/core@1.7.42)(esbuild@0.25.5)
 
   '@storybook/global@5.0.0': {}
@@ -13089,27 +13168,25 @@ snapshots:
       react: 18.2.0
       react-dom: 18.3.1(react@18.2.0)
 
-  '@storybook/react-dom-shim@10.0.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))':
+  '@storybook/react-dom-shim@10.0.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0)':
     dependencies:
       react: 18.2.0
       react-dom: 18.3.1(react@18.2.0)
-      storybook: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))
 
-  '@storybook/react-vite@10.0.5(esbuild@0.25.5)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(rollup@4.44.2)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))(typescript@4.9.5)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))':
+  '@storybook/react-vite@10.0.5(esbuild@0.25.5)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(rollup@4.44.2)(typescript@4.9.5)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))':
     dependencies:
       '@joshwooding/vite-plugin-react-docgen-typescript': 0.6.1(typescript@4.9.5)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))
       '@rollup/pluginutils': 5.1.0(rollup@4.44.2)
-      '@storybook/builder-vite': 10.0.5(esbuild@0.25.5)(rollup@4.44.2)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))
-      '@storybook/react': 10.0.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))(typescript@4.9.5)
+      '@storybook/builder-vite': 10.0.5(esbuild@0.25.5)(rollup@4.44.2)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))(webpack@5.96.0(@swc/core@1.7.42)(esbuild@0.25.5))
+      '@storybook/react': 10.0.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(typescript@4.9.5)
       empathic: 2.0.0
       magic-string: 0.30.12
       react: 18.2.0
       react-docgen: 8.0.0
       react-dom: 18.3.1(react@18.2.0)
       resolve: 1.22.8
-      storybook: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))
       tsconfig-paths: 4.2.0
-      vite: 7.0.2(@types/node@15.14.9)(terser@5.36.0)
+      vite: 7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0)
     transitivePeerDependencies:
       - esbuild
       - rollup
@@ -13117,13 +13194,12 @@ snapshots:
       - typescript
       - webpack
 
-  '@storybook/react@10.0.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))(typescript@4.9.5)':
+  '@storybook/react@10.0.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(typescript@4.9.5)':
     dependencies:
       '@storybook/global': 5.0.0
-      '@storybook/react-dom-shim': 10.0.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))
+      '@storybook/react-dom-shim': 10.0.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       react: 18.2.0
       react-dom: 18.3.1(react@18.2.0)
-      storybook: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))
     optionalDependencies:
       typescript: 4.9.5
 
@@ -13135,7 +13211,7 @@ snapshots:
       shelljs: 0.8.5
       yargs: 15.4.1
 
-  '@storybook/test-runner@0.24.1(@types/node@15.14.9)(esbuild-register@3.6.0(esbuild@0.25.5))(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))':
+  '@storybook/test-runner@0.24.1(@types/node@15.14.9)(esbuild-register@3.6.0(esbuild@0.25.5))':
     dependencies:
       '@babel/core': 7.28.0
       '@babel/generator': 7.28.0
@@ -13157,7 +13233,6 @@ snapshots:
       playwright: 1.48.2
       playwright-core: 1.48.2
       rimraf: 3.0.2
-      storybook: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))
       uuid: 8.3.2
     transitivePeerDependencies:
       - '@swc/helpers'
@@ -13944,7 +14019,7 @@ snapshots:
       '@rolldown/pluginutils': 1.0.0-beta.27
       '@types/babel__core': 7.20.5
       react-refresh: 0.17.0
-      vite: 7.0.2(@types/node@15.14.9)(terser@5.36.0)
+      vite: 7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -13956,14 +14031,14 @@ snapshots:
       chai: 5.2.0
       tinyrainbow: 2.0.0
 
-  '@vitest/mocker@3.2.4(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))':
+  '@vitest/mocker@3.2.4(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))':
     dependencies:
       '@vitest/spy': 3.2.4
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
       msw: 2.6.0(@types/node@15.14.9)(typescript@4.9.5)
-      vite: 7.0.2(@types/node@15.14.9)(terser@5.36.0)
+      vite: 7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0)
 
   '@vitest/pretty-format@3.2.4':
     dependencies:
@@ -14154,8 +14229,6 @@ snapshots:
       acorn: 7.4.1
 
   acorn@7.4.1: {}
-
-  acorn@8.14.0: {}
 
   acorn@8.15.0: {}
 
@@ -15995,9 +16068,9 @@ snapshots:
     dependencies:
       bser: 2.1.1
 
-  fdir@6.4.6(picomatch@4.0.2):
+  fdir@6.4.6(picomatch@4.0.3):
     optionalDependencies:
-      picomatch: 4.0.2
+      picomatch: 4.0.3
 
   fetch-everywhere@1.0.5:
     dependencies:
@@ -20186,36 +20259,33 @@ snapshots:
 
   statuses@2.0.1: {}
 
-  storybook-i18n@4.0.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))):
+  storybook-i18n@4.0.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0):
     dependencies:
       '@storybook/icons': 1.6.0(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
-      storybook: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))
     transitivePeerDependencies:
       - react
       - react-dom
 
-  storybook-mock-date-decorator@3.0.0(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))):
+  storybook-mock-date-decorator@3.0.0:
     dependencies:
       mockdate: 3.0.5
-      storybook: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))
 
-  storybook-react-intl@4.0.7(react-dom@18.3.1(react@18.2.0))(react-intl@6.8.4(react@18.2.0)(typescript@4.9.5))(react@18.2.0)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))):
+  storybook-react-intl@4.0.7(react-dom@18.3.1(react@18.2.0))(react-intl@6.8.4(react@18.2.0)(typescript@4.9.5))(react@18.2.0):
     dependencies:
       react: 18.2.0
       react-intl: 6.8.4(react@18.2.0)(typescript@4.9.5)
-      storybook: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))
-      storybook-i18n: 4.0.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)))
+      storybook-i18n: 4.0.5(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     transitivePeerDependencies:
       - react-dom
 
-  storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)):
+  storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0)):
     dependencies:
       '@storybook/global': 5.0.0
       '@storybook/icons': 1.6.0(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
       '@testing-library/jest-dom': 6.6.3
       '@testing-library/user-event': 14.6.1(@testing-library/dom@10.4.0)
       '@vitest/expect': 3.2.4
-      '@vitest/mocker': 3.2.4(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0))
+      '@vitest/mocker': 3.2.4(msw@2.6.0(@types/node@15.14.9)(typescript@4.9.5))(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0))
       '@vitest/spy': 3.2.4
       esbuild: 0.25.5
       recast: 0.23.9
@@ -20634,7 +20704,7 @@ snapshots:
   terser@5.36.0:
     dependencies:
       '@jridgewell/source-map': 0.3.6
-      acorn: 8.14.0
+      acorn: 8.15.0
       commander: 2.20.3
       source-map-support: 0.5.21
 
@@ -20680,8 +20750,8 @@ snapshots:
 
   tinyglobby@0.2.14:
     dependencies:
-      fdir: 6.4.6(picomatch@4.0.2)
-      picomatch: 4.0.2
+      fdir: 6.4.6(picomatch@4.0.3)
+      picomatch: 4.0.3
 
   tinyqueue@3.0.0: {}
 
@@ -21074,11 +21144,11 @@ snapshots:
       graphql-tag: 2.12.6(graphql@16.9.0)
       magic-string: 0.30.12
 
-  vite@7.0.2(@types/node@15.14.9)(terser@5.36.0):
+  vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.6.0):
     dependencies:
       esbuild: 0.25.5
-      fdir: 6.4.6(picomatch@4.0.2)
-      picomatch: 4.0.2
+      fdir: 6.4.6(picomatch@4.0.3)
+      picomatch: 4.0.3
       postcss: 8.5.6
       rollup: 4.44.2
       tinyglobby: 0.2.14
@@ -21086,6 +21156,7 @@ snapshots:
       '@types/node': 15.14.9
       fsevents: 2.3.3
       terser: 5.36.0
+      yaml: 2.6.0
 
   vt-pbf@3.1.3:
     dependencies:
@@ -21158,7 +21229,7 @@ snapshots:
       '@webassemblyjs/ast': 1.12.1
       '@webassemblyjs/wasm-edit': 1.12.1
       '@webassemblyjs/wasm-parser': 1.12.1
-      acorn: 8.14.0
+      acorn: 8.15.0
       browserslist: 4.24.2
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.17.1

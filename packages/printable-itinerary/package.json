@@ -16,7 +16,8 @@
   },
   "devDependencies": {
     "@opentripplanner/icons": "workspace:*",
-    "@opentripplanner/types": "workspace:*"
+    "@opentripplanner/types": "workspace:*",
+    "storybook": "catalog:"
   },
   "peerDependencies": {
     "react": "catalog:",

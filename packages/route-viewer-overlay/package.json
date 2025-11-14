@@ -26,7 +26,8 @@
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*",
-    "point-in-polygon": "^1.1.0"
+    "point-in-polygon": "^1.1.0",
+    "storybook": "catalog:"
   },
   "peerDependencies": {
     "react": "catalog:"

@@ -31,5 +31,8 @@
   "private": false,
   "scripts": {
     "tsc": "tsc"
+  },
+  "devDependencies": {
+    "storybook": "catalog:"
   }
 }
