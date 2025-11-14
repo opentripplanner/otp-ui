@@ -21,6 +21,10 @@ const StyledModeSettingsButton = styled.div<{
   fillModeIcons: boolean;
   subsettings: boolean;
 }>`
+  span {
+    justify-self: flex-start;
+  }
+
   & > label {
     align-items: center;
     background-color: #fff;
@@ -39,6 +43,10 @@ const StyledModeSettingsButton = styled.div<{
     margin-bottom: 0;
     margin-top: -2px;
     padding: 0 10px;
+
+    span:first-of-type {
+      ${invisibleCss}
+    }
   }
   & > input {
     ${invisibleCss}
@@ -62,10 +70,6 @@ const StyledModeSettingsButton = styled.div<{
     &:focus + label {
       outline: white 1px solid;
     }
-  }
-
-  span {
-    justify-self: flex-start;
   }
 
   svg {
@@ -118,8 +122,7 @@ const AdvancedModeSettingsButton = ({
         id: "otpUi.ModeSelector.labels.subsettingsCollapsed"
       });
 
-  // Adding <InvisibleAllyLabel> to the label results in AT announcing "Transit (and 1 other item)", so we must present this information in the aria-label
-  const ariaLabel = containsSubsettings
+  const accessibilityLabel = containsSubsettings
     ? label + subsettingsStatusLabel
     : label;
 
@@ -133,7 +136,6 @@ const AdvancedModeSettingsButton = ({
         subsettings={containsSubsettings}
       >
         <input
-          aria-label={ariaLabel}
           checked={modeButton.enabled ?? undefined}
           id={checkboxId}
           onChange={onToggle}
@@ -141,7 +143,8 @@ const AdvancedModeSettingsButton = ({
         />
         <label htmlFor={checkboxId}>
           <modeButton.Icon />
-          <span>{label}</span>
+          <span>{accessibilityLabel}</span>
+          <span aria-hidden>{label}</span>
           {modeButton.enabled && <Check2 />}
         </label>
       </StyledModeSettingsButton>
