@@ -17,9 +17,11 @@ otpUi:
     TncLeg:
       bookRide: Забронировать поездку
       bookRideLater: Для бронирования подождите до {timeMillis, time, short}
-      estimatedCost: "Предполагаемая стоимость: {minFare}\_— {maxFare}"
-      estimatedTravelTime: "Предполагаемое время поездки: {duration} (без учета дорожного движения)"
-      waitForPickup: "Подождите{minutes, plural, =0 {} other { # мин}} до приезда {company}"
+      estimatedCost: "Предполагаемая стоимость: {minFare} — {maxFare}"
+      estimatedTravelTime: "Предполагаемое время поездки: {duration} (без учета дорожного
+        движения)"
+      waitForPickup: "Подождите{minutes, plural, =0 {} other { # мин}} до приезда
+        {company}"
     mapillaryTooltip: Показать изображения улиц для этого местоположения
     step:
       circleClockwise: Двигайтесь по кругу по часовой стрелке
@@ -58,7 +60,6 @@ otpUi:
       carHail: Поездка
       escooter: Электросамокат
       walk: Пешком
-    transfer: Пересадка{duration, select, undefined {} other {, wait {duration}}}
     unnamedPath: Неизвестный путь
     unnamedRoad: Неизвестная дорога
     vehicleTitle: "{vehicleType} «{company}»"
@@ -68,15 +69,17 @@ otpUi:
       car: Авто
       escooter: Электросамокат
       vehicle: Транспортное средство
+    transfer: Пересадка{duration, select, undefined {} other {, wait 
+      {duration}}}
   ItineraryBody:
     common:
       durationShort: >-
         {approximatePrefix, select, true {Около } other {}}{hours, plural, =0 {}
         other {# ч }}{minutes} мин
-    flexAdvanceNotice: " не менее чем за {leadDays, plural, one {# day} other {# days}}"
     flexCallAhead: звоните заранее
     flexCallNumber: звоните {phoneNumber}
-    flexPickupMessage: Чтобы воспользоваться этим маршрутом, {action}{advanceNotice}.
+    flexPickupMessage: Чтобы воспользоваться этим маршрутом, 
+      {action}{advanceNotice}.
     stayOnBoard: Не выходите в месте {place}
     travelBy: Передвижение {mode}
     travelByMode:
@@ -86,21 +89,24 @@ otpUi:
       walk: пешком
     tripAccessibility:
       inaccessible: недоступно
-      itineraryAccessibility: "Доступность для инвалидных колясок на этом отрезке поездки: \_"
-      legAccessibility: "Доступность для инвалидных колясок на этом отрезке поездки: "
+      itineraryAccessibility: "Доступность для инвалидных колясок на этом отрезке
+        поездки:  "
+      legAccessibility: "Доступность для инвалидных колясок на этом отрезке поездки:
+         "
       likelyAccessible: Скорее всего доступно
       unclear: неизвестно
     viewOnMap: Просмотреть на карте
+    flexAdvanceNotice: ' не менее чем за {leadDays, plural, one {# day} other {# days}}'
   TransitLegBody:
     AlertsBody:
-      alertLinkText: См. предупреждение на сайте {agency}
       effectiveDate: Актуально на {dateTime, date, long}
       effectiveTimeAndDate: Актуально на {dateTime, time, short}, {day}
-      linkOpensNewWindow: (Открывает новое окно)
-      noAgencyAlertLinkText: См. предупреждение на сайте агентства
       today: Сегодня
       tomorrow: Завтра
       yesterday: Вчера
+      alertLinkText: См. предупреждение на сайте {agency}
+      linkOpensNewWindow: (Открывает новое окно)
+      noAgencyAlertLinkText: См. предупреждение на сайте агентства
     agencyExternalLink: "{agencyName} (Ссылка на внешний источник)"
     alertsHeader: >-
       {alertCount, plural, =1 {# предупреждение!} other {Несколько
@@ -113,7 +119,8 @@ otpUi:
     legDetails: Детальное описание отрезка маршрута
     operatedBy: Услуги, предоставляемые агентством «{agencyLink}»
     ride: Поездка
-    rideDurationAndStops: "Поездка: {duration}{numStops, plural, =1 {} other { / остановки (#)}}"
+    rideDurationAndStops: "Поездка: {duration}{numStops, plural, =1 {} other { / остановки
+      (#)}}"
     routeDescription: "{routeName} <toPrefix>—</toPrefix> {headsign}"
     stopId: Идентификатор остановки {stopId}
     stopIdBasic: Идентификатор {stopId}

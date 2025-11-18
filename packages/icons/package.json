@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/icons",
-  "version": "4.0.1-alpha.1",
+  "version": "4.1.0",
   "description": "Icons for otp-ui",
   "main": "lib/index.js",
   "module": "esm/index.js",

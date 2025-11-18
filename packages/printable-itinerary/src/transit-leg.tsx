@@ -1,7 +1,4 @@
-import {
-  getDisplayedStopId,
-  getLegRouteShortName
-} from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
 import { Defaults } from "@opentripplanner/itinerary-body";
 import { GradationMap, Leg, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
@@ -10,6 +7,8 @@ import { FormattedMessage } from "react-intl";
 import AccessibilityAnnotation from "./accessibility-annotation";
 import * as S from "./styled";
 import { defaultMessages, strongText } from "./util";
+
+const { getDisplayedStopId, getLegRouteShortName } = coreUtils.itinerary;
 
 interface Props {
   accessibilityScoreGradationMap?: GradationMap;
@@ -24,8 +23,9 @@ export default function TransitLeg({
   LegIcon,
   interlineFollows
 }: Props): ReactElement {
-  const stopIdFrom = getDisplayedStopId(leg.from);
-  const stopIdTo = getDisplayedStopId(leg.to);
+  // TODO: some mocks in itinerary-body have legs with null values for from/to.stop
+  const stopIdFrom = getDisplayedStopId(leg.from.stop ?? leg.from);
+  const stopIdTo = getDisplayedStopId(leg.to.stop ?? leg.to);
 
   // TODO: core-utils needs some larger-scale type fixes
   // null is an object, so we need to redefine it as undefined to prevent

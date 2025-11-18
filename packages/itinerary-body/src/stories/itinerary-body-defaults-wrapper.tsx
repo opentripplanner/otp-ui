@@ -3,7 +3,7 @@
 import { TriMetLegIcon } from "@opentripplanner/icons";
 import { Leg } from "@opentripplanner/types";
 import React, { Component, ReactElement } from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 
 import ItineraryBody from "..";
 import DefaultLineColumnContent from "../defaults/line-column-content";
@@ -15,10 +15,11 @@ import { StyledItineraryBody } from "../demos";
 import OtpRRStyledItineraryBody from "../otp-react-redux/itinerary-body";
 import { ItineraryBodyProps } from "../types";
 
-const config = require("../__mocks__/config.json");
+import config from "../__mocks__/config.json";
 
 type Props = ItineraryBodyProps & {
   hideDrivingDirections?: boolean;
+  metric?: boolean;
   styledItinerary?: string;
 };
 
@@ -49,6 +50,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       itinerary,
       LegIcon = TriMetLegIcon,
       LineColumnContent,
+      metric,
       PlaceName,
       RouteDescription,
       RouteDescriptionFooter = undefined,
@@ -82,6 +84,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
     config.itinerary = {
       hideDrivingDirections
     };
+    config.units = metric ? "metric" : undefined;
 
     return (
       <ItineraryBodyComponent

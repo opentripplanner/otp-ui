@@ -191,27 +191,65 @@ export const setModeButtonEnabled = (enabledKeys: string[]) => (
   };
 };
 
-/**
- * Generates a record of all mode setting keys and their values from (in order of priority):
- * URL Search Params, Initial Value, and default from definition.
- * @param urlSearchParams URL Search Parameters containing mode setting values
- * @param modeSettingDefinitions Complete listing of mode setting definitions with defaults
- * @param initalStateValues Initial state values
- * @returns Record of mode setting keys and their values
- */
-export const generateModeSettingValues = (
-  urlSearchParams: URLSearchParams,
-  modeSettingDefinitions: ModeSetting[],
-  initalStateValues: ModeSettingValues
-): ModeSettingValues => {
-  // Get mode setting values from the url, or initial state config, or default value in definition
-  const modeSettingValues = modeSettingDefinitions?.reduce((acc, setting) => {
-    const fromUrl = urlSearchParams.get(setting.key);
-    acc[setting.key] = fromUrl
-      ? convertModeSettingValue(setting, fromUrl)
-      : initalStateValues?.[setting.key] || setting.default;
-    return acc;
-  }, {});
+export type RequiredOptionsForTransportMode =
+  | {
+      modeSetting?: string;
+      modeButton: string;
+    }
+  | undefined;
 
-  return modeSettingValues;
+/**
+ * Determines which modeButton (and potentially modeSetting) needs to be set in the query params
+ * for a certain TransportMode to be enabled. This is necessary because certain configurations
+ * have combinations of modeButtons and modeSettings that do not directly map to a given mode
+ * @param modeButtons Array of mode buttons from config
+ * @param settings Array of mode settings from config
+ * @param transportMode Desired transport mode
+ * @returns The relevant modeButton and modeSetting, or undefined if no combination is found
+ */
+export const findRequiredOptionsForTransportMode = (
+  modeButtons: ModeButtonDefinition[],
+  settings: ModeSetting[],
+  transportMode: TransportMode
+): RequiredOptionsForTransportMode => {
+  // If there's a mode button with the mode we need, then just return that. No mode setting necessary!
+  const modeButtonOnly = modeButtons.find(mb =>
+    mb.modes?.some(
+      m =>
+        m.mode === transportMode.mode && m.qualifier === transportMode.qualifier
+    )
+  );
+
+  if (modeButtonOnly) {
+    return {
+      modeButton: modeButtonOnly.key
+    };
+  }
+
+  // Otherwise, look for a mode setting with the mode button that we need
+  const modeSetting = settings.find(ms => {
+    if (!("addTransportMode" in ms)) return false;
+
+    return [ms.addTransportMode]
+      .flat() // addTransportMode can be a single TransportMode or an array of them
+      .some(
+        m =>
+          m.mode === transportMode.mode &&
+          m.qualifier === transportMode.qualifier
+      );
+  });
+
+  if (!modeSetting) return undefined;
+
+  const { applicableMode } = modeSetting;
+  const applicableModeButton = modeButtons.find(mb =>
+    mb.modes?.some(m => m.mode === applicableMode)
+  );
+
+  return applicableModeButton
+    ? {
+        modeSetting: modeSetting.key,
+        modeButton: applicableModeButton.key
+      }
+    : undefined;
 };

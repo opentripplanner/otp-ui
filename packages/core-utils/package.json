@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/core-utils",
-  "version": "14.0.0-alpha.2",
+  "version": "14.3.0",
   "description": "Core functionality that is shared among numerous UI components",
   "engines": {
     "node": ">=13"
@@ -22,7 +22,6 @@
     "date-fns-tz": "catalog:",
     "graphql": "^16.6.0",
     "lodash.clonedeep": "^4.5.0",
-    "lodash.isequal": "^4.5.0",
     "qs": "^6.9.1"
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",

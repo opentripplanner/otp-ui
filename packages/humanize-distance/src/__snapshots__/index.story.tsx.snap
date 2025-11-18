@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Distance feetLong smoke-test 1`] = `"408 feet"`;
+
+exports[`Distance feetShort smoke-test 1`] = `"408 ft"`;
+
+exports[`Distance kilometersLong smoke-test 1`] = `"12.5 kilometers"`;
+
+exports[`Distance kilometersShort smoke-test 1`] = `"12.5 km"`;
+
+exports[`Distance metersLong smoke-test 1`] = `"125 meters"`;
+
+exports[`Distance metersShort smoke-test 1`] = `"125 m"`;
+
+exports[`Distance milesFraction smoke-test 1`] = `"0.8 mi"`;
+
+exports[`Distance milesLong smoke-test 1`] = `"7.7 miles"`;
+
+exports[`Distance milesShort smoke-test 1`] = `"7.7 mi"`;

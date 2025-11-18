@@ -1,9 +1,5 @@
-## Usage
+# Vehicle Rental Overlay
 
-```
+## Upgrade to OTP2 types
 
-TBD
-```
-
-<!-- Updated for semantic release trigger -->
-<!-- Updated for semantic release trigger -->
+Version 5.0.1 is the final version to support OTP1 types for the `stations` prop of `VehicleRentalOverlay`. Starting with version 6.0.0, the `stations` prop will be replaced with `entities`, with a type of `VehicleRentalStation[]`. This updated type can be found in the `@opentripplanner/types/otp2` package.

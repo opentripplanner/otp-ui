@@ -1,4 +1,4 @@
-import { convertGraphQLResponseToLegacy } from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
 import { FareProductSelector, Itinerary } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
 
@@ -18,25 +18,27 @@ import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
 import LegIconWithA11y from "./LegIconWithA11y";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
-const bikeOnlyItinerary = require("../__mocks__/itineraries/bike-only.json");
-const bikeRentalItinerary = require("../__mocks__/itineraries/bike-rental.json");
-const bikeRentalTransitBikeRentalItinerary = require("../__mocks__/itineraries/bike-rental-transit-bike-rental.json");
-const bikeTransitBikeItinerary = require("../__mocks__/itineraries/bike-transit-bike.json");
-const eScooterRentalItinerary = require("../__mocks__/itineraries/e-scooter-rental.json");
-const eScooterRentalTransiteScooterRentalItinerary = require("../__mocks__/itineraries/e-scooter-transit-e-scooter.json");
-const fareProductsItinerary = require("../__mocks__/itineraries/leg-fare-products.json");
-const parkAndRideItinerary = require("../__mocks__/itineraries/park-and-ride.json");
-const tncTransitTncItinerary = require("../__mocks__/itineraries/tnc-transit-tnc.json");
-const walkInterlinedTransitItinerary = require("../__mocks__/itineraries/walk-interlined-transit-walk.json");
-const walkOnlyItinerary = require("../__mocks__/itineraries/walk-only.json");
-const walkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-walk.json");
-const walkTransitWalkTransitWalkItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk.json");
-const walkTransitWalkTransitWalkA11yItinerary = require("../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json");
-const stayOnBoardItinerary = require("../__mocks__/itineraries/stay-on-board.json");
-const otp2ScooterItinerary = require("../__mocks__/itineraries/otp2-scooter.json");
-const flexItinerary = require("../__mocks__/itineraries/flex-itinerary.json");
-const otp24Itinerary = require("../__mocks__/itineraries/otp2.4-transit-itinerary.json");
-const transferLegItinerary = require("../__mocks__/itineraries/otp2-transfer-leg.json");
+import bikeOnlyItinerary from "../__mocks__/itineraries/bike-only.json";
+import bikeRentalItinerary from "../__mocks__/itineraries/bike-rental.json";
+import bikeRentalTransitBikeRentalItinerary from "../__mocks__/itineraries/bike-rental-transit-bike-rental.json";
+import bikeTransitBikeItinerary from "../__mocks__/itineraries/bike-transit-bike.json";
+import eScooterRentalItinerary from "../__mocks__/itineraries/e-scooter-rental.json";
+import eScooterRentalTransiteScooterRentalItinerary from "../__mocks__/itineraries/e-scooter-transit-e-scooter.json";
+import fareProductsItinerary from "../__mocks__/itineraries/leg-fare-products.json";
+import parkAndRideItinerary from "../__mocks__/itineraries/park-and-ride.json";
+import tncTransitTncItinerary from "../__mocks__/itineraries/tnc-transit-tnc.json";
+import walkInterlinedTransitItinerary from "../__mocks__/itineraries/walk-interlined-transit-walk.json";
+import walkOnlyItinerary from "../__mocks__/itineraries/walk-only.json";
+import walkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk-transit-walk.json";
+import walkTransitWalkTransitWalkA11yItinerary from "../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json";
+import stayOnBoardItinerary from "../__mocks__/itineraries/stay-on-board.json";
+import otp2ScooterItinerary from "../__mocks__/itineraries/otp2-scooter.json";
+import flexItinerary from "../__mocks__/itineraries/flex-itinerary.json";
+import otp24Itinerary from "../__mocks__/itineraries/otp2.4-transit-itinerary.json";
+import transferLegItinerary from "../__mocks__/itineraries/otp2-transfer-leg.json";
+
+const { convertGraphQLResponseToLegacy } = coreUtils.itinerary;
 
 function withLegacyLegs(itinerary) {
   return {
@@ -62,6 +64,7 @@ interface StoryWrapperProps {
   defaultFareSelector?: FareProductSelector;
   hideDrivingDirections?: boolean;
   itinerary: Itinerary;
+  metric?: boolean;
   showAlertEffectiveDateTimeText?: boolean;
   showApproximateAccessLegTravelTimes?: boolean;
   TimeColumnContent?: FunctionComponent<TimeColumnContentProps>;
@@ -72,6 +75,7 @@ function OtpRRItineraryBodyWrapper({
   defaultFareSelector,
   hideDrivingDirections = false,
   itinerary,
+  metric,
   showAlertEffectiveDateTimeText = true,
   showApproximateAccessLegTravelTimes = false,
   TimeColumnContent
@@ -84,6 +88,7 @@ function OtpRRItineraryBodyWrapper({
       itinerary={itinerary}
       LegIcon={LegIconWithA11y}
       LineColumnContent={OtpRRLineColumnContent}
+      metric={metric}
       PlaceName={OtpRRPlaceName}
       RouteDescription={OtpRRRouteDescription}
       showAgencyInfo
@@ -123,6 +128,10 @@ export const BikeOnlyItinerary = (): ReactElement => (
 
 export const WalkTransitWalkItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItinerary} />
+);
+
+export const WalkTransitWalkItineraryMetric = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItinerary} metric />
 );
 
 export const BikeTransitBikeItinerary = (): ReactElement => (
@@ -186,8 +195,8 @@ export const OTP2FlexItinerary = (): ReactElement => (
 export const IndividualLegFareComponents = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     defaultFareSelector={{
-      mediumId: "orca:cash",
-      riderCategoryId: "orca:regular"
+      mediumId: "cash",
+      riderCategoryId: "regular"
     }}
     itinerary={withLegacyLegs(fareProductsItinerary)}
   />

@@ -136,6 +136,8 @@ export type VehicleRentalMapOverlaySymbol =
     }
   | ZoomBasedSymbol;
 
+export type UnitSystem = "metric" | "imperial";
+
 /**
  * Represents the expected configuration of the webapp.
  *
@@ -155,9 +157,6 @@ export type Config = {
     includeSeconds: boolean
   ) => string;
   homeTimezone: string;
-  itinerary?: {
-    hideDrivingDirections?: boolean;
-  };
   /** @deprecated */
   modes?: ConfiguredModes;
   // TODO: add full typing
@@ -195,6 +194,11 @@ export type Config = {
     }[];
   };
   transitOperators?: TransitOperator[];
+  /**
+   * The preferred unit system to use, either metric or imperial.
+   * The default is 'imperial' so that existing visuals with distances in feet/miles don't break.
+   */
+  units?: UnitSystem;
 };
 
 export type EncodedPolyline = {
@@ -283,7 +287,9 @@ export type Place = {
  */
 export type FlexBookingInfo = {
   contactInfo?: {
-    phoneNumber: string;
+    phoneNumber?: string;
+    bookingUrl?: string;
+    infoUrl?: string;
   };
   latestBookingTime?: {
     daysPrior: number;
@@ -374,6 +380,12 @@ export type Leg = {
   serviceDate?: string;
   startTime: number | string;
   steps: Step[];
+  // Abridged version of what OTP returns
+  stopCalls?: {
+    stopLocation?: {
+      __typename: "Stop" | "Location" | "LocationGroup";
+    };
+  }[];
   to: Place;
   transitLeg: boolean;
   trip?: {
@@ -401,6 +413,11 @@ type TemporaryTNCPriceType = {
     code: string;
   };
   amount: number;
+};
+
+export type Currency = {
+  code: string;
+  digits: number;
 };
 
 /**
@@ -503,7 +520,7 @@ export type Stop = {
   code?: string;
   color?: string;
   dist?: number;
-  geometries?: { geoJson?: GeoJSON.Polygon };
+  geometries?: { geoJson?: GeoJSON.GeometryObject };
   gtfsId: string;
   id: string;
   lat?: number;
@@ -605,9 +622,22 @@ export type Station = {
   name?: string;
   networks: string[];
   spacesAvailable?: number;
-  // TS TODO coordinate type
   x: number;
   y: number;
+};
+
+export type TileLayerStation = {
+  bikesAvailable?: number;
+  id: string;
+  isFloatingBike?: boolean;
+  isFloatingCar?: boolean;
+  isFloatingVehicle?: boolean;
+  lat: number;
+  lon: number;
+  name?: string;
+  network?: string;
+  spacesAvailable?: number;
+  vehiclesAvailable?: number;
 };
 
 /**
@@ -729,7 +759,6 @@ export type DropdownOptions = {
 export type SliderOptions = {
   default?: number;
   high: number;
-  id?: string;
   inverseKey?: string;
   label: string;
   labelHigh: string;
@@ -744,11 +773,10 @@ export type CheckboxOptions = {
   // This transport mode should match an OTP transport mode
   addTransportMode?: TransportMode | TransportMode[];
   default?: boolean;
-  falseValue?: boolean | string | number;
-  id?: string;
   label: string;
-  truthValue?: boolean | string | number;
   type: "CHECKBOX";
+  truthValue?: boolean | string | number;
+  falseValue?: boolean | string | number;
   value?: boolean;
 };
 
@@ -768,7 +796,6 @@ export type ModeSettingBase = {
   applicableMode: string;
   iconName?: string;
   icon?: JSX.Element;
-  id?: string;
   key: string;
 };
 
@@ -809,22 +836,31 @@ export type ModeButtonDefinition = {
  * Definition for a fare product used to pay the fare for a leg in a transit journey
  */
 export type FareProduct = {
+  __typename: string;
   id: string;
   medium?: {
     id: string;
     name: string;
   };
   name: string;
-  price: Money;
+  // Fare products may not have a price if they don't implement a FareProduct subclass.
+  price?: Money;
   riderCategory?: {
     id: string;
     name: string;
   };
 };
 
+/**
+ * This fare product is designed to represent the fare product applied to a leg.
+ */
+export type AppliedFareProduct = FareProduct & {
+  legPrice: Money;
+};
+
 export type FareProductSelector = {
-  riderCategoryId: string;
-  mediumId: string;
+  mediumId?: string;
+  riderCategoryId?: string;
 };
 
 /**

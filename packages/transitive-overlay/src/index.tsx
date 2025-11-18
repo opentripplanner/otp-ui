@@ -1,10 +1,7 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable no-await-in-loop */
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-import { SymbolLayout } from "mapbox-gl";
+import { FilterSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
 import React, { useEffect } from "react";
-import { Layer, MapRef, Source, useMap } from "react-map-gl";
+import { Layer, MapRef, Source, useMap } from "react-map-gl/maplibre";
 import polyline from "@mapbox/polyline";
 import {
   Leg,
@@ -84,7 +81,7 @@ const modeColorMap = {
 };
 
 /**
- * Apply a thin, white halo around the (black) text
+ * Apply a thin, white halo around the (black) text.
  */
 const defaultTextPaintParams = {
   "text-halo-blur": 1,
@@ -95,7 +92,7 @@ const defaultTextPaintParams = {
 /**
  * Common text settings.
  */
-const commonTextLayoutParams: SymbolLayout = {
+const commonTextLayoutParams: SymbolLayerSpecification["layout"] = {
   "symbol-placement": "point",
   "text-allow-overlap": false,
   "text-field": ["get", "name"],
@@ -107,7 +104,7 @@ const commonTextLayoutParams: SymbolLayout = {
 /**
  * Text size and layout that lets maplibre relocate text space permitting.
  */
-const defaultTextLayoutParams: SymbolLayout = {
+const defaultTextLayoutParams: SymbolLayerSpecification["layout"] = {
   ...commonTextLayoutParams,
   "text-variable-anchor": [
     "left",
@@ -124,16 +121,16 @@ const defaultTextLayoutParams: SymbolLayout = {
 /**
  * Default text + bold default fonts
  */
-const defaultBoldTextLayoutParams = {
+const defaultBoldTextLayoutParams: SymbolLayerSpecification["layout"] = {
   ...commonTextLayoutParams,
   // FIXME: find a better way to set a bold font
   "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
   "text-overlap": "never"
 };
 
-const routeFilter = ["==", "type", "route"];
-const stopFilter = ["==", "type", "stop"];
-const accessLegFilter = [
+const routeFilter: FilterSpecification = ["==", "type", "route"];
+const stopFilter: FilterSpecification = ["==", "type", "stop"];
+const accessLegFilter: FilterSpecification = [
   "match",
   ["get", "type"],
   ["BICYCLE", "SCOOTER", "MICROMOBILITY", "MICROMOBILITY_RENT", "CAR"],
@@ -155,36 +152,21 @@ type MapImage = {
   options: { sdf?: boolean; content?: [number, number, number, number] };
 };
 
-const loadImages = async (map: MapRef, images: MapImage[]) => {
-  for (const img of images) {
-    // Only load if the image hasn't already been added
-    // @ts-ignore (TS may not know hasImage exists depending on the type you use)
+const loadImages = (map: MapRef, images: MapImage[]) => {
+  images.forEach(img => {
     if (!map.hasImage(img.id)) {
-      let loadedImage;
-      try {
-        // @ts-ignore (TS will complain that loadImage expects a callback; this is fine)
-        const result = (map.loadImage as any)(img.url);
-
-        if (result && typeof result.then === "function") {
-          // MapLibre v3+/Mapbox GL v3+ (Promise API)
-          loadedImage = (await result).data;
-        } else {
-          // MapLibre v1/v2 or Mapbox GL v1/v2 (Callback API)
-          loadedImage = await new Promise((resolve, reject) => {
-            // @ts-ignore (TS expects only the callback style)
-            map.loadImage(img.url, (error, data) => {
-              if (error) reject(error);
-              else resolve(data);
-            });
-          });
-        }
-        // @ts-ignore (TS may not know about addImage's third arg)
-        map.addImage(img.id, loadedImage, img.options);
-      } catch (err) {
-        console.error(`Failed to load image: ${img.url}`, err);
-      }
+      // Only load if the image hasn't already been added
+      map
+        .loadImage(img.url)
+        .then(response => {
+          map.addImage(img.id, response.data, img.options);
+        })
+        .catch(error => {
+          // eslint-disable-next-line no-console
+          console.error(`Error loading image ${img.id}:`, error);
+        });
     }
-  }
+  });
 };
 
 const TransitiveCanvasOverlay = ({
@@ -277,14 +259,13 @@ const TransitiveCanvasOverlay = ({
 
   useEffect(() => {
     loadImages(map, mapImages);
-  }, [map, mapImages]);
+  }, []);
 
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
     Record<string, unknown>
   > = {
     type: "FeatureCollection",
-    // @ts-expect-error TODO: fix the type above for geojson
     features: transitiveData
       ? [
           ...(transitiveData.places || []).flatMap((place: TransitivePlace) => {
@@ -299,7 +280,7 @@ const TransitiveCanvasOverlay = ({
                 type: "Point",
                 coordinates: [place.place_lon, place.place_lat]
               }
-            };
+            } as GeoJSON.Feature;
           }),
           ...(transitiveData.journeys || []).flatMap(
             (journey: TransitiveJourney) =>
@@ -329,7 +310,7 @@ const TransitiveCanvasOverlay = ({
                         mode: segment.type
                       },
                       geometry: segment.arc ? drawArc(straight) : straight
-                    };
+                    } as GeoJSON.Feature;
                   });
                 })
           ),
@@ -353,14 +334,17 @@ const TransitiveCanvasOverlay = ({
               // pStop (from pattern.stops) only has an id (and sometimes line geometry)
               transitiveData.stops.find(stop => stop.stop_id === pStop.stop_id)
             )
-            .map(stop => ({
-              type: "Feature",
-              properties: { name: stop.stop_name, type: "stop" },
-              geometry: {
-                type: "Point",
-                coordinates: [stop.stop_lon, stop.stop_lat]
-              }
-            })),
+            .map(
+              stop =>
+                ({
+                  type: "Feature",
+                  properties: { name: stop.stop_name, type: "stop" },
+                  geometry: {
+                    type: "Point",
+                    coordinates: [stop.stop_lon, stop.stop_lat]
+                  }
+                } as GeoJSON.Feature)
+            ),
           ...(
             transitiveData.patterns || []
           ).flatMap((pattern: TransitivePattern) =>

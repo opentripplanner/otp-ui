@@ -1,7 +1,9 @@
 import polyline from "@mapbox/polyline";
 import {
+  AppliedFareProduct,
   Company,
   Config,
+  Currency,
   ElevationProfile,
   ElevationProfileComponent,
   FlexBookingInfo,
@@ -97,11 +99,11 @@ export function legDropoffRequiresAdvanceBooking(leg: Leg): boolean {
  */
 export function isFlex(leg: Leg): boolean {
   return (
-    isReservationRequired(leg) ||
-    isCoordinationRequired(leg) ||
-    legDropoffRequiresAdvanceBooking(leg) ||
-    isAdvanceBookingRequired(leg?.pickupBookingInfo) ||
-    legContainsGeometry(leg)
+    leg?.stopCalls?.some(call =>
+      // Flex calls are "Location" or "LocationGroup"
+      // eslint-disable-next-line no-underscore-dangle
+      call?.stopLocation?.__typename.startsWith("Location")
+    ) || false
   );
 }
 
@@ -454,16 +456,18 @@ export function getCompanyForNetwork(
 }
 
 /**
- * Get a string label to display from a list of vehicle rental networks.
+ * Get a string label to display from a list of vehicle rental networks. Returns
+ * empty string if no networks provided.
  *
  * @param  {Array<string>} networks  A list of network ids.
  * @param  {Array<object>}  [companies=[]] An optional list of the companies config.
  * @return {string}  A label for use in presentation on a website.
  */
 export function getCompaniesLabelFromNetworks(
-  networks: string[] | string,
+  networks?: string[] | string,
   companies: Company[] = []
 ): string {
+  if (!networks) return "";
   return (Array.isArray(networks) ? networks : [networks])
     .map(network => getCompanyForNetwork(network, companies))
     .filter(co => !!co)
@@ -610,44 +614,90 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
 }
 
 /**
+ * Removes the first part of the OTP standard scope (":"), if it is present
+ * @param item String that is potentially scoped with `:` character
+ * @returns    descoped string
+ */
+export const descope = (item: string): string => item?.split(":")?.[1];
+
+export type ExtendedMoney = Money & { originalAmount?: number };
+
+export const zeroDollars = (currency: Currency): Money => ({
+  amount: 0,
+  currency
+});
+
+/**
  * Extracts useful data from the fare products on a leg, such as the leg cost and transfer info.
- * @param leg Leg with fare products (must have used getLegsWithFares)
- * @param category Rider category
- * @param container Fare container (cash, electronic)
- * @returns Object containing price as well as the transfer discount amount, if a transfer was used.
+ * @param leg                Leg with Fares v2 information
+ * @param mediumId           Desired medium ID to calculate fare for
+ * @param riderCategoryId    Desire rider category to calculate fare for
+ * @param seenFareIds        Fare IDs used on previous legs. Used to detect transfer discounts.
+ * @returns                  Object containing price as well as transfer/dependent
+ *                           fare information. `AppliedFareProduct` should contain
+ *                           all the information needed, but the other fields are kept to
+ *                           make the transition to Fares V2 less jarring.
  */
 export function getLegCost(
   leg: Leg,
   mediumId: string | null,
-  riderCategoryId: string | null
+  riderCategoryId: string | null,
+  seenFareIds?: string[]
 ): {
+  alternateFareProducts?: AppliedFareProduct[];
+  appliedFareProduct?: AppliedFareProduct;
+  isDependent?: boolean;
   price?: Money;
-  transferAmount?: Money | undefined;
   productUseId?: string;
 } {
   if (!leg.fareProducts) return { price: undefined };
-  const relevantFareProducts = leg.fareProducts.filter(({ product }) => {
-    // riderCategory and medium can be specifically defined as null to handle
-    // generic GTFS based fares from OTP when there is no fare model
-    return (
-      (product.riderCategory === null ? null : product.riderCategory.id) ===
-        riderCategoryId &&
-      (product.medium === null ? null : product.medium.id) === mediumId
-    );
-  });
+  const relevantFareProducts = leg.fareProducts
+    .filter(({ product }) => {
+      // riderCategory and medium can be specifically defined as null to handle
+      // generic GTFS based fares from OTP when there is no fare model
 
-  // Custom fare models return "rideCost", generic GTFS fares return "regular"
-  const totalCostProduct = relevantFareProducts.find(
-    fp => fp.product.name === "rideCost" || fp.product.name === "regular"
-  );
-  const transferFareProduct = relevantFareProducts.find(
-    fp => fp.product.name === "transfer"
-  );
+      // Remove (optional) agency scoping
+      const productRiderCategoryId =
+        descope(product?.riderCategory?.id) ||
+        product?.riderCategory?.id ||
+        null;
 
+      const productMediaId =
+        descope(product?.medium?.id) || product?.medium?.id || null;
+      return (
+        productRiderCategoryId === riderCategoryId &&
+        productMediaId === mediumId &&
+        // Make sure there's a price
+        // Some fare products don't have a price at all.
+        product?.price
+      );
+    })
+    .map(fare => {
+      const alreadySeen = seenFareIds?.indexOf(fare.id) > -1;
+      const { currency } = fare.product.price;
+      return {
+        id: fare.id,
+        product: {
+          ...fare.product,
+          legPrice: alreadySeen ? zeroDollars(currency) : fare.product.price
+        } as AppliedFareProduct
+      };
+    })
+    .sort((a, b) => a.product?.legPrice?.amount - b.product?.legPrice?.amount);
+
+  // Return the cheapest, but include other matches as well
+  const cheapestRelevantFareProduct = relevantFareProducts[0];
+
+  // TODO: return one object here instead of dumbing it down?
   return {
-    price: totalCostProduct?.product.price,
-    transferAmount: transferFareProduct?.product.price,
-    productUseId: totalCostProduct?.id
+    alternateFareProducts: relevantFareProducts.splice(1).map(fp => fp.product),
+    appliedFareProduct: cheapestRelevantFareProduct?.product,
+    isDependent:
+      // eslint-disable-next-line no-underscore-dangle
+      cheapestRelevantFareProduct?.product.__typename ===
+      "DependentFareProduct",
+    price: cheapestRelevantFareProduct?.product.legPrice,
+    productUseId: cheapestRelevantFareProduct?.id
   };
 }
 
@@ -656,29 +706,62 @@ export function getLegCost(
  * @param legs Itinerary legs with fare products (must have used getLegsWithFares)
  * @param category Rider category (youth, regular, senior)
  * @param container Fare container (cash, electronic)
+ * @param seenFareIds List of fare product IDs that have already been seen on prev legs.
  * @returns Money object for the total itinerary cost.
  */
 export function getItineraryCost(
   legs: Leg[],
-  mediumId: string | null,
-  riderCategoryId: string | null
+  mediumId: string | string[] | null,
+  riderCategoryId: string | string[] | null
 ): Money | undefined {
-  const legCosts = legs
+  // TODO: Better input type handling
+  if (Array.isArray(mediumId) || Array.isArray(riderCategoryId)) {
+    if (mediumId?.length !== riderCategoryId.length) {
+      console.warn(
+        "Invalid input types, only using first item. medium id list and rider category list must have same number of items"
+      );
+      return getItineraryCost(legs, mediumId[0], riderCategoryId[0]);
+    }
+
+    let total = { amount: 0, currency: null };
+    for (let i = 0; i < mediumId.length; i++) {
+      const newCost = getItineraryCost(legs, mediumId[i], riderCategoryId[i]);
+      if (newCost) {
+        total = {
+          amount: total?.amount + (newCost?.amount || 0),
+          currency: total.currency ?? newCost?.currency
+        };
+      }
+    }
+    if (total.currency === null) return undefined;
+    return total;
+  }
+
+  const legCostsObj = legs
     // Only legs with fares (no walking legs)
     .filter(leg => leg.fareProducts?.length > 0)
     // Get the leg cost object of each leg
-    .map(leg => getLegCost(leg, mediumId, riderCategoryId))
-    .filter(cost => cost.price !== undefined)
+    .map((leg, index, arr) =>
+      getLegCost(
+        leg,
+        mediumId,
+        riderCategoryId,
+        // We need to include the seen fare ids by gathering all previous leg fare product ids
+        arr.splice(0, index).flatMap(l => l?.fareProducts.map(fp => fp?.id))
+      )
+    )
+    .filter(cost => cost.appliedFareProduct?.legPrice !== undefined)
     // Filter out duplicate use IDs
     // One fare product can be used on multiple legs,
     // and we don't want to count it more than once.
-    .reduce<{ productUseId: string; price: Money }[]>((prev, cur) => {
-      if (!prev.some(p => p.productUseId === cur.productUseId)) {
-        prev.push({ productUseId: cur.productUseId, price: cur.price });
+    // Use an object keyed by productUseId to deduplicate, then extract prices
+    .reduce<{ [productUseId: string]: Money }>((acc, cur) => {
+      if (cur.productUseId && acc[cur.productUseId] === undefined) {
+        acc[cur.productUseId] = cur.appliedFareProduct?.legPrice;
       }
-      return prev;
-    }, [])
-    .map(productUse => productUse.price);
+      return acc;
+    }, {});
+  const legCosts = Object.values(legCostsObj);
 
   if (legCosts.length === 0) return undefined;
   // Calculate the total
@@ -714,6 +797,10 @@ export const convertGraphQLResponseToLegacy = (leg: any): any => ({
   agencyUrl: leg.agency?.url,
   alightRule: pickupDropoffTypeToOtp1(leg.dropoffType),
   boardRule: pickupDropoffTypeToOtp1(leg.pickupType),
+  bookingRuleInfo: {
+    dropOff: leg?.dropOffBookingInfo || {},
+    pickUp: leg?.pickUpBookingInfo || {}
+  },
   dropOffBookingInfo: {
     latestBookingTime: leg.dropOffBookingInfo
   },

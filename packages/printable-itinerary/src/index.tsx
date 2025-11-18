@@ -2,6 +2,7 @@ import { Config, Itinerary, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
+import { AccessibilityRating } from "@opentripplanner/itinerary-body/src";
 import AccessLeg from "./access-leg";
 import * as S from "./styled";
 import TNCLeg from "./tnc-leg";
@@ -25,8 +26,20 @@ function PrintableItinerary({
   itinerary,
   LegIcon
 }: Props): ReactElement {
+  const gradationMap = config.accessibilityScore?.gradationMap;
   return (
     <S.PrintableItinerary className={className}>
+      {itinerary.accessibilityScore && (
+        <S.TripAccessibilityScoreWrapper>
+          <AccessibilityRating
+            isLeg={false}
+            gradationMap={gradationMap}
+            grayscale
+            score={itinerary.accessibilityScore}
+          />
+        </S.TripAccessibilityScoreWrapper>
+      )}
+
       {itinerary.legs.length > 0 && (
         <S.CollapsedTop>
           <S.LegBody>
@@ -49,6 +62,7 @@ function PrintableItinerary({
       {itinerary.legs.map((leg, k) =>
         leg.transitLeg ? (
           <TransitLeg
+            accessibilityScoreGradationMap={gradationMap}
             interlineFollows={
               k < itinerary.legs.length - 1 &&
               itinerary.legs[k + 1].interlineWithPreviousLeg
@@ -58,9 +72,20 @@ function PrintableItinerary({
             LegIcon={LegIcon}
           />
         ) : leg.rideHailingEstimate ? (
-          <TNCLeg leg={leg} LegIcon={LegIcon} key={k} />
+          <TNCLeg
+            accessibilityScoreGradationMap={gradationMap}
+            key={k}
+            leg={leg}
+            LegIcon={LegIcon}
+          />
         ) : (
-          <AccessLeg config={config} key={k} leg={leg} LegIcon={LegIcon} />
+          <AccessLeg
+            accessibilityScoreGradationMap={gradationMap}
+            config={config}
+            key={k}
+            leg={leg}
+            LegIcon={LegIcon}
+          />
         )
       )}
     </S.PrintableItinerary>

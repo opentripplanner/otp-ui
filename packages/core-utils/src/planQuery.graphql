@@ -7,7 +7,6 @@ query Plan(
   $fromPlace: String!
   $modes: [TransportMode]
   $numItineraries: Int
-  $preferred: InputPreferred
   $time: String
   $toPlace: String!
   $unpreferred: InputUnpreferred
@@ -25,7 +24,6 @@ query Plan(
     # Currently only supporting EN locale, used for times and text
     locale: "en"
     numItineraries: $numItineraries
-    preferred: $preferred
     time: $time
     toPlace: $toPlace
     transportModes: $modes
@@ -106,6 +104,17 @@ query Plan(
                 }
               }
             }
+            ... on DependentFareProduct {
+              dependencies {
+                id
+              }
+              price {
+                amount
+                currency {
+                  code
+                }
+              }
+            }
           }
         }
         from {
@@ -133,6 +142,7 @@ query Plan(
           vertexType
         }
         headsign
+        id
         interlineWithPreviousLeg
         intermediateStops {
           lat
@@ -222,6 +232,11 @@ query Plan(
           relativeDirection
           stayOn
           streetName
+        }
+        stopCalls {
+          stopLocation {
+            __typename
+          }
         }
         to {
           lat

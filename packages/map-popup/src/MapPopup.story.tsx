@@ -1,10 +1,14 @@
 import React from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 import styled from "styled-components";
-import { Station, Stop } from "@opentripplanner/types";
+import { Stop } from "@opentripplanner/types";
+import {
+  RentalVehicle,
+  VehicleRentalStation
+} from "@opentripplanner/types/otp2";
 import { IntlProvider } from "react-intl";
-import { Meta } from "@storybook/react";
-import MapPopupContents from "./index";
+import { Meta } from "@storybook/react-vite";
+import MapPopupContents, { Feed } from "./index";
 
 // HOC to wrap components with IntlProvider
 const withIntl = (Story: () => JSX.Element) => (
@@ -37,57 +41,77 @@ const STOP_WITH_CODE = {
   name: "W Burnside & SW 2nd"
 };
 
-const STATION = {
-  "stroke-width": 2,
+const STOP_WITH_FEED_ID = {
+  flex: false,
+  code: "9526",
+  gtfsId: "trimet:9526",
+  id: "trimet:9526",
+  lat: 45.523009,
+  lon: -122.672529,
+  name: "W Burnside & SW 2nd"
+};
+
+const SAMPLE_FEEDS: Feed[] = [
+  {
+    feedId: "trimet",
+    publisher: {
+      name: "TriMet"
+    }
+  },
+  {
+    feedId: "c-tran",
+    publisher: {
+      name: "C-TRAN"
+    }
+  },
+  {
+    feedId: "portland-streetcar",
+    publisher: {
+      name: "Portland Streetcar"
+    }
+  }
+];
+
+const VEHICLE_RENTAL_STATION: VehicleRentalStation = {
   allowDropoff: true,
   allowPickup: true,
-  bikesAvailable: 6,
-  color: "#f00",
+  availableVehicles: {
+    total: 6,
+    byType: [{ count: 6, vehicleType: { formFactor: "BICYCLE" } }]
+  },
+  availableSpaces: {
+    total: 11,
+    byType: [{ count: 12, vehicleType: { formFactor: "BICYCLE" } }]
+  },
   id: '"hub_1580"',
-  isCarStation: false,
-  isFloatingBike: false,
+  lat: 45.5219604810172,
+  lon: -122.6896771788597,
   name: "SW Morrison at 18th",
-  networks: ["BIKETOWN"],
-  realTimeData: true,
-  spacesAvailable: 11,
-  x: -122.6896771788597,
-  y: 45.5219604810172
+  rentalNetwork: { networkId: "BIKETOWN" },
+  realtime: true
 };
 
-const FLOATING_VEHICLE = {
-  "stroke-width": 1,
-  allowDropoff: false,
-  allowPickup: true,
-  bikesAvailable: 1,
-  color: "#f00",
+const FLOATING_VEHICLE: RentalVehicle = {
+  allowPickupNow: true,
   id: '"bike_6861"',
-  isCarStation: false,
-  isFloatingBike: true,
+  vehicleType: { formFactor: "BICYCLE" },
+  lat: 45.525486666666666,
+  lon: -122.70486,
   name: "0541",
-  networks: ["BIKETOWN"],
-  realTimeData: true,
-  spacesAvailable: 0,
-  x: -122.70486,
-  y: 45.525486666666666
+  rentalNetwork: { networkId: "BIKETOWN" }
 };
 
-const FLOATING_CAR = {
-  "stroke-width": 1,
-  allowDropoff: false,
-  allowPickup: true,
-  color: "#333",
+const FLOATING_CAR: RentalVehicle = {
+  allowPickupNow: true,
   id: "car_6861",
-  isCarStation: false,
-  isFloatingCar: true,
+  vehicleType: { formFactor: "CAR" },
+  lat: 52.52,
+  lon: 13.405,
   name: "0541",
-  networks: ["MILES"], // https://miles-mobility.com
-  realTimeData: true,
-  spacesAvailable: 0,
-  x: 13.405,
-  y: 52.52
+  rentalNetwork: { networkId: "MILES" }
 };
 
-const getEntityPrefixExample = (entity: Stop | Station) => {
+const getEntityPrefixExample = (entity: Stop | VehicleRentalStation) => {
   const DemoIcon = styled.span`
     background-color: blue;
     border-radius: 50px;
@@ -102,6 +126,16 @@ const getEntityPrefixExample = (entity: Stop | Station) => {
 export const StopEntity = (): JSX.Element => (
   <MapPopupContents
     entity={STOP_WITH_CODE}
+    feeds={SAMPLE_FEEDS}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+  />
+);
+
+export const StopEntityWithFeedName = (): JSX.Element => (
+  <MapPopupContents
+    entity={STOP_WITH_FEED_ID}
+    feeds={SAMPLE_FEEDS}
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
   />
@@ -130,7 +164,7 @@ export const StopEntityNoStopCode = (): JSX.Element => (
 
 export const StationEntity = (): JSX.Element => (
   <MapPopupContents
-    entity={STATION}
+    entity={VEHICLE_RENTAL_STATION}
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
   />

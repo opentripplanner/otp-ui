@@ -17,8 +17,12 @@ import {
   convertModeSettingValue,
   generateModeSettingValues,
   populateSettingWithValue,
-  getBannedRoutesFromSubmodes
+  getBannedRoutesFromSubmodes,
+  findRequiredOptionsForTransportMode,
 } from "./MetroModeSelector/utils";
+// Prettier does not support typescript annotation 
+// eslint-disable-next-line prettier/prettier
+import type { RequiredOptionsForTransportMode } from "./MetroModeSelector/utils";
 import { ModeSettingRenderer } from "./MetroModeSelector/SubSettingsPane";
 import TripOptions, { Styled as TripOptionsStyled } from "./TripOptions";
 import defaultModeSettings from "../modeSettings.yml";
@@ -32,6 +36,7 @@ export {
   DepartArriveDropdown,
   defaultModeSettings,
   DropdownSelector,
+  findRequiredOptionsForTransportMode,
   GeneralSettingsPanel,
   generateModeSettingValues,
   getBannedRoutesFromSubmodes,
@@ -42,6 +47,7 @@ export {
   ModeSelector,
   ModeSettingRenderer,
   populateSettingWithValue,
+  RequiredOptionsForTransportMode,
   SettingsSelectorPanel,
   SliderSelector,
   Styled,

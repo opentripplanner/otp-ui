@@ -21,23 +21,18 @@
     "@babel/preset-env": "^7.10",
     "@babel/preset-react": "^7.10",
     "@babel/preset-typescript": "^7.13.0",
-    "@danielhep/storybook-react-intl": "3.0.1",
+    "storybook-react-intl": "4.0.7",
     "@formatjs/cli": "^4.2.32",
     "@graphql-eslint/eslint-plugin": "^3.19.1",
+    "@modyfi/vite-plugin-yaml": "^1.1.1",
     "@semantic-release/git": "^10.0.1",
-    "@storybook/addon-a11y": "^8.6.4",
-    "@storybook/addon-actions": "^8.6.4",
-    "@storybook/addon-controls": "^8.6.4",
-    "@storybook/addon-docs": "^8.6.4",
-    "@storybook/addon-essentials": "^8.6.4",
-    "@storybook/addon-links": "^8.6.4",
-    "@storybook/addon-storysource": "^8.6.4",
-    "@storybook/addon-viewport": "^8.6.4",
-    "@storybook/addon-webpack5-compiler-babel": "^3.0.5",
-    "@storybook/react": "^8.6.4",
-    "@storybook/react-webpack5": "^8.6.4",
+    "@storybook/addon-a11y": "^9.0.15",
+    "@storybook/addon-docs": "^9.0.15",
+    "@storybook/addon-links": "^9.0.15",
+    "@storybook/builder-vite": "^9.0.15",
+    "@storybook/react-vite": "^9.0.15",
     "@storybook/storybook-deployer": "^2.8.10",
-    "@storybook/test-runner": "^0.22.0",
+    "@storybook/test-runner": "^0.23.0",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.0.0",
     "@types/styled-components": "^5.1.9",
@@ -56,7 +51,6 @@
     "eslint": "^7.32.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-config-prettier": "^4.3.0",
-    "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-import": "2.23.3",
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-prettier": "^3.1.0",
@@ -66,18 +60,17 @@
     "graphql-tag": "^2.12.6",
     "husky": "^2.4.1",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.8.0",
-    "jest-haste-map": "^24.8.0",
-    "jest-resolve": "^24.8.0",
-    "jest-styled-components": "^7.0.5",
+    "jest": "^30.0.4",
+    "jest-haste-map": "^30.0.2",
+    "@vitejs/plugin-react": "^4.7.0",
+    "jest-resolve": "^30.0.2",
     "js-yaml": "^4.1.0",
     "json-loader": "^0.5.7",
     "lerna": "^8.1.9",
     "lint-staged": "^8.2.0",
     "msw": "^2.3.1",
-    "nock": "^11.7.0",
+    "nock": "^14.0.5",
     "prettier": "^1.19.1",
-    "puppeteer": "^10.2.0",
     "querystring-es3": "^0.2.1",
     "react": "catalog:",
     "react-dom": "catalog:",
@@ -87,8 +80,8 @@
     "semantic-release-monorepo": "^8.0.2",
     "semantic-release-pnpm": "^1.0.2",
     "semver": "^7.3.2",
-    "storybook": "^8.6.4",
-    "storybook-mock-date-decorator": "^2.0.6",
+    "storybook": "^9.0.15",
+    "storybook-mock-date-decorator": "^3.0.0",
     "styled-components": "catalog:",
     "stylelint": "^10.1.0",
     "stylelint-config-prettier": "^5.2.0",
@@ -97,10 +90,11 @@
     "stylelint-prettier": "^1.1.1",
     "stylelint-processor-styled-components": "^1.8.0",
     "typescript": "^4.2.4",
-    "webpack": "^4.33.0",
+    "vite-plugin-graphql-loader": "^4.0.4",
     "yaml-jest": "^1.2.0",
     "yaml-loader": "^0.8.1",
-    "yaml-sort": "^2.0.0"
+    "yaml-sort": "^2.0.0",
+    "jest-file-loader": "^1.0.3"
   },
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -109,7 +103,7 @@
     "check:i18n-all": "node packages/scripts/lib/run-validate-i18n.js packages/**/src packages/**/i18n",
     "check:i18n-en-fr": "node packages/scripts/lib/run-validate-i18n.js packages/**/src packages/**/i18n/en-US.yml packages/**/i18n/fr.yml",
     "clean": "git clean -Xdf",
-    "prepublish": "pnpm typescript && pnpm build:cjs && pnpm build:esm",
+    "prepublish": "pnpm build:cjs && pnpm build:esm",
     "check-eslint-config": "eslint --print-config jestconfig.js | eslint-config-prettier-check",
     "coverage": "jest --coverage",
     "deploy-storybook": "storybook-to-ghpages",
@@ -129,6 +123,7 @@
     "update-internal-dependencies": "node scripts/update-internal-dependencies.js",
     "test-storybook": "test-storybook --url http://localhost:5555",
     "update-snapshots": "pnpm build-storybook; npx concurrently -k -s first -n \"SB,TEST\" \"npx http-server storybook-static --port 5555 --silent\" \"npx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555 -u\"",
+    "test-snapshots": "npx concurrently -k -s first -n \"SB,TEST\" \"npx http-server storybook-static --port 5555 --silent\" \"npx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555\"",
     "pack-all": "pnpm prepublish && lerna exec --no-private -- sh ../../scripts/pack-and-extract-single.sh"
   },
   "eslintConfig": {
@@ -223,6 +218,9 @@
           "*.graphql"
         ],
         "rules": {
+          "@graphql-eslint/no-deprecated": [
+            "warn"
+          ],
           "@graphql-eslint/alphabetize": [
             "error",
             {
@@ -261,7 +259,7 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "eslint --ignore-pattern lib --ignore-pattern node_modules --fix",
+      "eslint --ignore-pattern node_modules --fix",
       "stylelint \"packages/**/!(*.d).{j,t}s{,x}\" --fix",
       "git add"
     ],
@@ -284,6 +282,6 @@
     "workerDirectory": "public"
   },
   "dependencies": {
-    "@storybook/icons": "^1.2.9"
+    "@storybook/icons": "^1.4.0"
   }
 }

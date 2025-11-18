@@ -1,20 +1,27 @@
 import React, { useCallback } from "react";
 import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
-import coreUtils from "@opentripplanner/core-utils";
 
+import { RentalVehicle, VehicleRentalStation } from "@opentripplanner/types/otp2";
 // eslint-disable-next-line prettier/prettier
-import type { Company, ConfiguredCompany, Location, Station, Stop, StopEventHandler } from "@opentripplanner/types";
+import type {
+  Company,
+  ConfiguredCompany,
+  Location,
+  Stop,
+  StopEventHandler,
+} from "@opentripplanner/types";
 
 import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import { flatten } from "flat";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Styled } from "@opentripplanner/base-map";
+import coreUtils from "@opentripplanner/core-utils";
 
+import { makeDefaultGetEntityName, type StopIdAgencyMap } from "./util";
 import { ViewStopButton } from "./styled";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
-import { makeDefaultGetEntityName } from "./util";
 
 // HACK: We should flatten the messages loaded above because
 // the YAML loaders behave differently between webpack and our version of jest:
@@ -22,7 +29,15 @@ import { makeDefaultGetEntityName } from "./util";
 // - the yaml loader for jest returns messages with flattened ids.
 export const defaultMessages: { [key: string]: string } = flatten(defaultEnglishMessages);
 
-const generateLocation = (entity: Entity, name: string) => {
+export type Feed = {
+  feedId: string;
+  publisher: {
+    name: string;
+  };
+};
+
+
+const generateLocation = (entity: MapPopupEntity, name: string) => {
   // @ts-expect-error some of these values may be null, but that's ok
   const { lon: entityLon, lat: entityLat, x, y } = entity
 
@@ -33,7 +48,7 @@ const generateLocation = (entity: Entity, name: string) => {
   return { lat, lon, name };
 }
 
-const StationHubDetails = ({ station }: { station: Station }) => {
+const StationHubDetails = ({ availableVehicles, availableSpaces }: { availableVehicles: number, availableSpaces: number }) => {
   return (
     <Styled.PopupRow>
       <div>
@@ -43,7 +58,7 @@ const StationHubDetails = ({ station }: { station: Station }) => {
           }
           description="Label text for the number of bikes available"
           id="otpUi.MapPopup.availableBikes"
-          values={{ value: station.bikesAvailable }}
+          values={{ value: availableVehicles }}
         />
       </div>
       <div>
@@ -53,14 +68,14 @@ const StationHubDetails = ({ station }: { station: Station }) => {
           }
           description="Label text for the number of docks available"
           id="otpUi.MapPopup.availableDocks"
-          values={{ value: station.spacesAvailable }}
+          values={{ value: availableSpaces }}
         />
       </div>
     </Styled.PopupRow>
   )
 }
 
-const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => void; }) => {
+const StopDetails = ({ id, feedName, setViewedStop }: { id: string, feedName?: string, setViewedStop: () => void; }) => {
   return (
     <Styled.PopupRow>
       {id &&
@@ -70,6 +85,7 @@ const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => v
             description="Displays the stop id"
             id="otpUi.MapPopup.stopId"
             values={{
+              feedName,
               stopId: id
             }}
           />
@@ -85,37 +101,56 @@ const StopDetails = ({ id, setViewedStop }: { id: string, setViewedStop: () => v
   )
 }
 
-type Entity = Stop | Station
+type MapPopupEntity = Stop | VehicleRentalStation | RentalVehicle
+
 type Props = {
-  closePopup?: (arg?: any) => void
+  closePopup?: (arg?: boolean) => void
   configCompanies?: ConfiguredCompany[];
-  entity: Entity
-  getEntityName?: (entity: Entity, configCompanies: Company[],) => string;
-  getEntityPrefix?: (entity: Entity) => JSX.Element
+  entity: MapPopupEntity
+  getEntityName?: (entity: MapPopupEntity, configCompanies: Company[], feedName?: string, includeParenthetical?: boolean) => string;
+  getEntityPrefix?: (entity: MapPopupEntity) => JSX.Element
+  feeds?: Feed[]
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
   setViewedStop?: StopEventHandler;
 };
 
-function entityIsStation(entity: Entity): entity is Station {
-  return "bikesAvailable" in entity
-}
+const entityIsStop = (entity: MapPopupEntity): entity is Stop => "gtfsId" in entity;
 
 /**
  * Renders a map popup for a stop, scooter, or shared bike
  */
-export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEntityName, getEntityPrefix, setLocation, setViewedStop }: Props): JSX.Element {
+export function MapPopup({ 
+  closePopup = () => {}, 
+  configCompanies, 
+  entity, 
+  getEntityName, 
+  getEntityPrefix, 
+  setLocation, 
+  setViewedStop, 
+  feeds,
+}: Props): JSX.Element {
 
   const intl = useIntl()
   if (!entity) return <></>
 
   const getNameFunc = getEntityName || makeDefaultGetEntityName(intl, defaultMessages);
-  const name = getNameFunc(entity, configCompanies);
+  
+  // Find the feed name using the logic from generateLabel in otp.ts
+  let feedName: string | undefined;
+  if (feeds && entity.id) {
+    const feedId = entity.id.split(":")[0];
+    const feed = feeds.find(f => f.feedId === feedId);
+    feedName = feed?.publisher?.name;
+  }
+  
+  const name = getNameFunc(entity, configCompanies, feedName);
+  const titleName = getNameFunc(entity, configCompanies, feedName, false);
 
-  const stationNetwork = "networks" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.networks || [], configCompanies) || entity?.networks?.[0]);
+  const stationNetwork = "rentalNetwork" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.rentalNetwork.networkId, configCompanies) || entity?.rentalNetwork.networkId);
 
-  const bikesAvailablePresent = entityIsStation(entity)
-  const entityIsStationHub = bikesAvailablePresent && entity?.bikesAvailable !== undefined && !entity?.isFloatingBike;
-  const stopId = !bikesAvailablePresent && entity?.code;
+  const vehiclesAvailable = "availableVehicles" in entity;
+  const entityIsStationHub = vehiclesAvailable && entity?.availableVehicles !== undefined;
+  const stopId = entityIsStop(entity) ? entity.code : "";
   const id = `focus-${encodeURIComponent(entity.id).replace(/%/g, "")}-popup`
 
   return (
@@ -127,17 +162,18 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
           defaultMessage={defaultMessages["otpUi.MapPopup.popupTitle"]}
           description="Text for title of the popup, contains an optional company name"
           id="otpUi.MapPopup.popupTitle"
-          values={{ name, stationNetwork }}
+          values={{ name: titleName, stationNetwork }}
         />
       </Styled.PopupTitle>
       {/* render dock info if it is available */}
-      {entityIsStationHub && <StationHubDetails station={entity} />}
+      {entityIsStationHub && <StationHubDetails availableSpaces={entity.availableSpaces?.total} availableVehicles={entity.availableVehicles?.total} />}
 
       {/* render stop viewer link if available */}
-      {setViewedStop && !bikesAvailablePresent && (
+      {setViewedStop && entityIsStop(entity) && (
         <StopDetails
           id={stopId}
-          setViewedStop={useCallback(() => setViewedStop(entity), [entity])}
+          feedName={feedName}
+          setViewedStop={useCallback(() => setViewedStop(entity as Stop), [entity])}
         />
       )}
 
@@ -158,3 +194,4 @@ export function MapPopup({ closePopup = () => {}, configCompanies, entity, getEn
 }
 
 export default MapPopup;
+export { type StopIdAgencyMap };

@@ -1,12 +1,5 @@
 otpUi:
   TripDetails:
-    FareTable:
-      cash: Tiền mặt
-      electronic: Điện tử
-      regular: Người lớn
-      senior: Người lớn tuổi
-      special: Đặc biệt
-      youth: Thiếu niên
     co2: "CO₂ thải ra: <strong>{co2}</strong>"
     co2description: >-
       Nồng độ CO₂ được tính bằng cách nhân khoảng cách của mỗi chặng của một

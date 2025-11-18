@@ -7,22 +7,14 @@ import { useIntl } from "react-intl";
 import * as S from "./styled";
 
 type Props = {
+  className?: string;
   description?: ReactElement | string;
   icon: ReactElement;
   summary: ReactElement | string;
 };
 
-// TODO: Remove these two helper methods by moving to semantically correct HTML
-/**
- * Copied from https://stackoverflow.com/questions/50940640/how-to-determine-if-jest-is-running-the-code-or-not
- */
-function isRunningJest() {
-  return process.env.JEST_WORKER_ID !== undefined;
-}
-
+// TODO: Remove this helper method by moving to semantically correct HTML
 function uuidv4(): string {
-  if (isRunningJest()) return "mocked-random-id";
-
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
     // eslint-disable-next-line no-bitwise
     const r = (Math.random() * 16) | 0;
@@ -32,7 +24,12 @@ function uuidv4(): string {
   });
 }
 
-const TripDetail = ({ icon, summary, description }: Props): JSX.Element => {
+const TripDetail = ({
+  icon,
+  summary,
+  description,
+  className
+}: Props): JSX.Element => {
   const intl = useIntl();
   const [expanded, setExpanded] = useState(false);
 
@@ -43,7 +40,7 @@ const TripDetail = ({ icon, summary, description }: Props): JSX.Element => {
   };
 
   return (
-    <S.TripDetail role="group">
+    <S.TripDetail role="group" className={className}>
       <S.TripDetailIcon role="presentation">{icon}</S.TripDetailIcon>
       {/* TODO: Adjust the summary and description to be a `summary`/`details` pair, therefore semantically correct */}
       {/* https://github.com/opentripplanner/otp-ui/pull/530#discussion_r1074006057 */}

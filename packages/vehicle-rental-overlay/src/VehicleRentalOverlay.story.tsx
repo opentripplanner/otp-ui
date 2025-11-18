@@ -1,7 +1,12 @@
+/* eslint-disable react/display-name */
 import React, { ReactNode } from "react";
-import { action } from "@storybook/addon-actions";
+import { action } from "storybook/actions";
 
-import { Company, Station } from "@opentripplanner/types";
+import { Company } from "@opentripplanner/types";
+import {
+  RentalVehicle,
+  VehicleRentalStation
+} from "@opentripplanner/types/otp2";
 import bikeRentalStations from "../__mocks__/bike-rental-stations.json";
 import carRentalStations from "../__mocks__/car-rental-stations.json";
 import eScooterStations from "../__mocks__/e-scooter-rental-stations.json";
@@ -37,27 +42,30 @@ const INITIAL_ZOOM = 13;
 
 type StoryProps = {
   companies: string[];
-  getStationName?: (configCompanies: Company[], station: Station) => string;
+  getStationName?: (
+    configCompanies: Company[],
+    station: VehicleRentalStation
+  ) => string;
   refreshVehicles: () => void;
-  stations: Station[];
+  entities: (VehicleRentalStation | RentalVehicle)[];
   visible?: boolean;
 };
 
 const ZoomControlledMapWithVehicleRentalOverlay = ({
   companies,
+  entities,
   getStationName,
   refreshVehicles,
-  stations,
   visible
 }: StoryProps) => (
   <VehicleRentalOverlay
     companies={companies}
     configCompanies={configCompanies}
+    entities={entities}
     getStationName={getStationName}
     id="test"
     refreshVehicles={refreshVehicles}
     setLocation={setLocation}
-    stations={stations}
     visible={visible}
   />
 );
@@ -76,31 +84,30 @@ export const RentalBicycles = () => (
   <ZoomControlledMapWithVehicleRentalOverlay
     companies={["BIKETOWN"]}
     refreshVehicles={action("refresh bicycles")}
-    stations={bikeRentalStations}
+    entities={bikeRentalStations}
   />
 );
 
-export const RentalBicyclesVisibilityControlledByKnob = ({
-  visible
-}: {
-  visible: boolean;
-}): ReactNode => {
-  return (
-    <ZoomControlledMapWithVehicleRentalOverlay
-      companies={["BIKETOWN"]}
-      refreshVehicles={action("refresh bicycles")}
-      stations={bikeRentalStations}
-      visible={visible}
-    />
-  );
+export const RentalBicyclesVisibilityControlledByKnob = {
+  render: ({ visible }: { visible: boolean }): ReactNode => {
+    return (
+      <ZoomControlledMapWithVehicleRentalOverlay
+        companies={["BIKETOWN"]}
+        refreshVehicles={action("refresh bicycles")}
+        entities={bikeRentalStations}
+        visible={visible}
+      />
+    );
+  },
+
+  args: { visible: true }
 };
-RentalBicyclesVisibilityControlledByKnob.args = { visible: true };
 
 export const RentalCars = () => (
   <ZoomControlledMapWithVehicleRentalOverlay
     companies={["CAR2GO"]}
     refreshVehicles={action("refresh cars")}
-    stations={carRentalStations}
+    entities={carRentalStations}
   />
 );
 
@@ -108,7 +115,7 @@ export const RentalEScooters = () => (
   <ZoomControlledMapWithVehicleRentalOverlay
     companies={["SHARED"]}
     refreshVehicles={action("refresh E-scooters")}
-    stations={eScooterStations}
+    entities={eScooterStations}
   />
 );
 
@@ -117,6 +124,6 @@ export const RentalEScootersWithCustomNaming = () => (
     companies={["SHARED"]}
     getStationName={customStationName}
     refreshVehicles={action("refresh E-scooters")}
-    stations={eScooterStations}
+    entities={eScooterStations}
   />
 );

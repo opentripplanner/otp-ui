@@ -2,12 +2,15 @@ import { MarkerWithPopup, Popup } from "@opentripplanner/base-map";
 import {
   Company,
   ConfiguredCompany,
-  MapLocationActionArg,
-  Station
+  MapLocationActionArg
 } from "@opentripplanner/types";
-import { EventData } from "mapbox-gl";
+import {
+  RentalVehicle,
+  VehicleRentalStation
+} from "@opentripplanner/types/otp2";
+import { Geometry } from "geojson";
 import React, { useEffect, useState } from "react";
-import { Layer, Source, useMap } from "react-map-gl";
+import { Layer, Source, useMap } from "react-map-gl/maplibre";
 
 import StationPopup from "@opentripplanner/map-popup";
 import { BaseBikeRentalIcon, StationMarker } from "./styled";
@@ -15,11 +18,20 @@ import { BaseBikeRentalIcon, StationMarker } from "./styled";
 // TODO: Make configurable?
 const DETAILED_MARKER_CUTOFF = 16;
 
-const getColorForStation = (v: Station) => {
-  if (v.isFloatingCar) return "#009cde";
-  if (v.isFloatingVehicle) return "#f5a729";
-  // TODO: nicer color to match transitive
-  if (v.bikesAvailable !== undefined || v.isFloatingBike) return "#f00";
+function entityIsStation(
+  entity: VehicleRentalStation | RentalVehicle
+): entity is VehicleRentalStation {
+  return "availableVehicles" in entity;
+}
+
+const getColorForEntity = (entity: VehicleRentalStation | RentalVehicle) => {
+  if (entityIsStation(entity)) {
+    if (entity.availableVehicles && entity.availableVehicles.total > 0)
+      return "#f00";
+  } else {
+    if (entity.vehicleType.formFactor.startsWith("SCOOTER")) return "#f5a729";
+    if (entity.vehicleType.formFactor === "BICYCLE") return "#009cde";
+  }
   return "gray";
 };
 
@@ -34,6 +46,11 @@ type Props = {
    */
   configCompanies: ConfiguredCompany[];
   /**
+   * The entities to be represented in the overlay. They can be a combination of VehicleRentalStation type
+   * (for stationary stations) and RentalVehicle type (for floating vehicles)
+   */
+  entities?: (VehicleRentalStation | RentalVehicle)[];
+  /**
    * An id, used to make this layer uniquely identifiable
    */
   id: string;
@@ -42,7 +59,10 @@ type Props = {
    * rental station. This function takes two arguments of the configCompanies
    * prop and a vehicle rental station. The function must return a string.
    */
-  getStationName?: (configCompanies: Company[], station: Station) => string;
+  getStationName?: (
+    configCompanies: Company[],
+    station: VehicleRentalStation
+  ) => string;
   /**
    * If specified, a function that will be triggered every 30 seconds whenever this layer is
    * visible.
@@ -67,10 +87,6 @@ type Props = {
    */
   setLocation?: (arg: MapLocationActionArg) => void;
   /**
-   * A list of the vehicle rental stations specific to this overlay instance.
-   */
-  stations: Station[];
-  /**
    * Whether the overlay is currently visible.
    */
   visible?: boolean;
@@ -87,18 +103,20 @@ type Props = {
 const VehicleRentalOverlay = ({
   companies,
   configCompanies,
+  entities,
   getStationName,
   id,
   refreshVehicles,
   setLocation,
-  stations,
   visible
 }: Props): JSX.Element => {
   const { current: map } = useMap();
   const [zoom, setZoom] = useState(map?.getZoom());
 
   const layerId = `rental-vehicles-${id}`;
-  const [clickedVehicle, setClickedVehicle] = useState(null);
+  const [clickedVehicle, setClickedVehicle] = useState<
+    RentalVehicle | VehicleRentalStation | undefined
+  >();
 
   useEffect(() => {
     // TODO: Make 30s configurable?
@@ -111,52 +129,71 @@ const VehicleRentalOverlay = ({
   }, [refreshVehicles]);
 
   useEffect(() => {
-    const VEHICLE_LAYERS = [layerId];
-    VEHICLE_LAYERS.forEach(stopLayer => {
-      map?.on("mouseenter", stopLayer, () => {
-        map.getCanvas().style.cursor = "pointer";
-      });
-      map?.on("mouseleave", stopLayer, () => {
-        map.getCanvas().style.cursor = "";
-      });
-      map?.on("click", stopLayer, (event: EventData) => {
-        setClickedVehicle(event.features?.[0].properties);
-      });
-    });
-    map.on("zoom", e => {
+    const mouseEnterFunc = () => {
+      map.getCanvas().style.cursor = "pointer";
+    };
+    const mouseLeaveFunc = () => {
+      map.getCanvas().style.cursor = "";
+    };
+    const clickFunc = event => {
+      const p = event.features?.[0].properties;
+      setClickedVehicle({
+        ...p,
+        // the properties field of the GeoJSON Feature object serializes these
+        // two objects into JSON strings, so we need to parse them back into objects
+        availableSpaces: JSON.parse(p?.availableSpaces),
+        availableVehicles: JSON.parse(p?.availableVehicles)
+      } as RentalVehicle | VehicleRentalStation);
+    };
+    const zoomFunc = e => {
       // Avoid too many re-renders by only updating state if we are a whole number value different
       const { zoom: newZoom } = e.viewState;
       if (Math.floor(zoom / 2) !== Math.floor(newZoom / 2)) {
         setZoom(newZoom);
       }
-    });
+    };
+
+    map?.on("mouseenter", layerId, mouseEnterFunc);
+    map?.on("mouseleave", layerId, mouseLeaveFunc);
+    map?.on("click", layerId, clickFunc);
+    map?.on("zoom", zoomFunc);
+
+    return () => {
+      map?.off("mouseenter", layerId, mouseEnterFunc);
+      map?.off("mouseleave", layerId, mouseLeaveFunc);
+      map?.off("click", layerId, clickFunc);
+      map?.off("zoom", zoomFunc);
+    };
   }, [map]);
 
   // Don't render if no map or no stops are defined.
-  if (visible === false || !stations || stations.length === 0) {
+  if (visible === false || !entities || entities.length === 0) {
     // Null can't be returned here -- react-map-gl dislikes null values as children
     return <></>;
   }
 
-  const vehiclesGeoJSON: GeoJSON.FeatureCollection = {
+  const vehiclesGeoJSON: GeoJSON.FeatureCollection<
+    Geometry,
+    VehicleRentalStation | RentalVehicle
+  > = {
     type: "FeatureCollection",
-    features: stations
+    features: entities
+      .filter(entity => !!entity)
       .filter(
-        vehicle =>
+        entity =>
           // Include specified companies only if companies is specified and network info is available
           !companies ||
-          !vehicle.networks ||
-          companies.includes(vehicle.networks[0])
+          !entity.rentalNetwork.networkId ||
+          companies.includes(entity.rentalNetwork.networkId)
       )
-      .map(vehicle => ({
+      .map(entity => ({
         type: "Feature",
-        geometry: { type: "Point", coordinates: [vehicle.x, vehicle.y] },
+        geometry: { type: "Point", coordinates: [entity.lon, entity.lat] },
         properties: {
-          ...vehicle,
-          networks: JSON.stringify(vehicle.networks),
-          "stroke-width":
-            vehicle.isFloatingBike || vehicle.isFloatingVehicle ? 1 : 2,
-          color: getColorForStation(vehicle)
+          ...entity,
+          networks: entity.rentalNetwork.networkId,
+          "stroke-width": entityIsStation(entity) ? 1 : 2,
+          color: getColorForEntity(entity)
         }
       }))
   };
@@ -179,47 +216,50 @@ const VehicleRentalOverlay = ({
         </Source>
       )}
       {zoom >= DETAILED_MARKER_CUTOFF &&
-        stations.map(station => (
-          <MarkerWithPopup
-            key={station.id}
-            popupContents={
-              <StationPopup
-                configCompanies={configCompanies}
-                setLocation={location => {
-                  setClickedVehicle(null);
-                  setLocation(location);
-                }}
-                getEntityName={
-                  // @ts-expect-error no stop support. Avoid a breaking change
-                  getStationName && ((s, cc) => getStationName(cc, s))
-                }
-                entity={station}
-              />
-            }
-            position={[station.y, station.x]}
-          >
-            {station.bikesAvailable !== undefined &&
-            !station.isFloatingBike &&
-            !station.isFloatingVehicle &&
-            station.spacesAvailable !== undefined ? (
-              <BaseBikeRentalIcon
-                percent={
-                  station?.bikesAvailable /
-                  (station?.bikesAvailable + station?.spacesAvailable)
-                }
-              />
-            ) : (
-              <StationMarker width={12} color={getColorForStation(station)} />
-            )}
-          </MarkerWithPopup>
-        ))}
+        entities
+          .filter(entity => !!entity)
+          .map(entity => (
+            <MarkerWithPopup
+              key={entity.id}
+              popupContents={
+                <StationPopup
+                  configCompanies={configCompanies}
+                  setLocation={location => {
+                    setClickedVehicle(undefined);
+                    setLocation(location);
+                  }}
+                  getEntityName={
+                    // @ts-expect-error no stop support. Avoid a breaking change
+                    getStationName && ((s, cc) => getStationName(cc, s))
+                  }
+                  entity={entity}
+                />
+              }
+              position={[entity.lat, entity.lon]}
+            >
+              {entityIsStation(entity) &&
+              entity.availableSpaces !== undefined &&
+              entity.availableVehicles !== undefined &&
+              entity.availableVehicles.total > 0 ? (
+                <BaseBikeRentalIcon
+                  percent={
+                    entity?.availableVehicles.total /
+                    (entity?.availableVehicles.total +
+                      entity?.availableSpaces.total)
+                  }
+                />
+              ) : (
+                <StationMarker width={12} color={getColorForEntity(entity)} />
+              )}
+            </MarkerWithPopup>
+          ))}
       {clickedVehicle && (
         <Popup
-          latitude={clickedVehicle.y}
-          longitude={clickedVehicle.x}
+          latitude={clickedVehicle.lat}
+          longitude={clickedVehicle.lon}
           maxWidth="100%"
           onClose={() => {
-            setClickedVehicle(null);
+            setClickedVehicle(undefined);
           }}
         >
           <StationPopup
@@ -229,13 +269,10 @@ const VehicleRentalOverlay = ({
               getStationName && ((s, cc) => getStationName(cc, s))
             }
             setLocation={location => {
-              setClickedVehicle(null);
+              setClickedVehicle(undefined);
               setLocation(location);
             }}
-            entity={{
-              ...clickedVehicle,
-              networks: JSON.parse(clickedVehicle.networks)
-            }}
+            entity={clickedVehicle}
           />
         </Popup>
       )}

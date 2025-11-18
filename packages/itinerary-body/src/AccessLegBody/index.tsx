@@ -1,9 +1,8 @@
 import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
-import { isTransit } from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
 import React, { Component, FunctionComponent, ReactElement } from "react";
 import AnimateHeight from "react-animate-height";
 import { FormattedMessage } from "react-intl";
-import coreUtils from "@opentripplanner/core-utils";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
@@ -19,6 +18,7 @@ import TNCLeg from "./tnc-leg";
 import { defaultMessages } from "../util";
 
 const { ensureAtLeastOneMinute } = coreUtils.time;
+const { isTransit } = coreUtils.itinerary;
 
 interface Props {
   config: Config & {
@@ -179,6 +179,7 @@ class AccessLegBody extends Component<Props, State> {
                       mapillaryCallback={mapillaryCallback}
                       mapillaryKey={mapillaryKey}
                       steps={leg.steps}
+                      units={config.units}
                     />
                   </AnimateHeight>
                 </>

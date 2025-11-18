@@ -18,12 +18,15 @@ otpUi:
       bookRide: Reservar un viaje
       bookRideLater: Espere hasta las {timeMillis, time, short} para reservar
       estimatedCost: "Costo estimado: {minFare} - {maxFare}"
-      estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta el tráfico)"
-      waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other { # minutos}}"
+      estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta
+        el tráfico)"
+      waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other {
+        # minutos}}"
     mapillaryTooltip: Mostrar imágenes de la calle en esta ubicación
     step:
       circleClockwise: Siga el círculo en el sentido de las agujas del reloj
-      circleCounterClockwise: Siga el círculo en sentido contrario a las agujas del reloj
+      circleCounterClockwise: Siga el círculo en sentido contrario a las agujas 
+        del reloj
       continue: Continuar
       enterStation: Entrar a la estación
       exitStation: Salir de la estación
@@ -58,7 +61,6 @@ otpUi:
       carHail: Paseo
       escooter: Patineta
       walk: Caminar
-    transfer: Transferir{duration, select, undefined {} other {, esperar {duration}}
     unnamedPath: Sendero sin nombre
     unnamedRoad: Calle sin nombre
     vehicleTitle: "{vehicleType} {company}"
@@ -68,12 +70,15 @@ otpUi:
       car: Coche
       escooter: Patineta
       vehicle: Vehículo
+    transfer: Transferir{duration, select, undefined {} other {, esperar 
+      {duration}}
   ItineraryBody:
     common:
       durationShort: >-
         {approximatePrefix, select, true {Unos } other {}}{hours, plural, =0 {}
         other {# hr. }}{minutes} min
-    flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de antelación"
+    flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de
+      antelación"
     flexCallAhead: llama con anticipación
     flexCallNumber: llama {phoneNumber}
     flexPickupMessage: Para tomar esta ruta, tiene que {action}{advanceNotice}.

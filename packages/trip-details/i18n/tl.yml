@@ -1,12 +1,5 @@
 otpUi:
   TripDetails:
-    FareTable:
-      cash: Cash
-      electronic: Electronic
-      regular: Nasa Hustong Gulang
-      senior: Nakatatanda
-      special: Espesyal
-      youth: Kabataan
     co2: "Na-emit na CO₂: <strong>{co2}</strong>"
     co2description: >-
       Kinakalkula ang intensity ng CO₂ sa pamamagitan ng pag-multiply sa

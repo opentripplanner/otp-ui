@@ -62,7 +62,6 @@ otpUi:
       carHail: Ride
       escooter: E-Scooter
       walk: Naglalakad
-    transfer: Paglilipat{duration, select, undefined {} other {, wait {duration}}}
     unnamedPath: Unnamed Path
     unnamedRoad: Unnamed Road
     vehicleTitle: "{company} {vehicleType}"
@@ -72,10 +71,11 @@ otpUi:
       car: Sasakyan
       escooter: E-scooter
       vehicle: Sasakyan
+    transfer: Paglilipat{duration, select, undefined {} other {, wait 
+      {duration}}}
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} (na) minuto"
-    flexAdvanceNotice: " kahit na mas maaga nang {leadDays, plural, one {# day} other {# days}}"
     flexCallAhead: tumawag nang maaga
     flexCallNumber: tumawag sa {phoneNumber}
     flexPickupMessage: Para gamitin ang rutang ito, {action}{advanceNotice}.
@@ -88,21 +88,23 @@ otpUi:
       walk: walking
     tripAccessibility:
       inaccessible: hindi ma-access
-      itineraryAccessibility: "Pagiging accessible sa wheelchair ng biyaheng ito:\_"
-      legAccessibility: "Pagiging accessible sa wheelchair ng leg ng biyaheng ito:\_"
+      itineraryAccessibility: "Pagiging accessible sa wheelchair ng biyaheng ito: "
+      legAccessibility: "Pagiging accessible sa wheelchair ng leg ng biyaheng ito: "
       likelyAccessible: malamang na naa-access
       unclear: hindi alam
     viewOnMap: Tingnan sa mapa
+    flexAdvanceNotice: ' kahit na mas maaga nang {leadDays, plural, one {# day} other
+      {# days}}'
   TransitLegBody:
     AlertsBody:
-      alertLinkText: Tingnan ang alerto sa website ng {agency}
       effectiveDate: May bisa simula {dateTime, date, long}
       effectiveTimeAndDate: May bisa simula {dateTime, time, short}, {day}
-      linkOpensNewWindow: (Magbubukas sa bagong window)
-      noAgencyAlertLinkText: Tingnan ang alerto sa website ng ahensya
       today: Ngayong Araw
       tomorrow: Bukas
       yesterday: Kahapon
+      alertLinkText: Tingnan ang alerto sa website ng {agency}
+      linkOpensNewWindow: (Magbubukas sa bagong window)
+      noAgencyAlertLinkText: Tingnan ang alerto sa website ng ahensya
     agencyExternalLink: "{agencyName} (External na Link)"
     alertsHeader: "{alertCount, plural, =1 {# alert} other {# alerts}}"
     arriveAt: Darating nang {place}

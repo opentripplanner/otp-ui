@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React, { useState } from "react";
 import styled from "styled-components";
 import {
@@ -42,29 +43,39 @@ const ColorPair = ({ fg, bg }: { fg: string; bg: string }) => {
   );
 };
 
-export const RouteColorTester = (): JSX.Element => {
-  const [fg, setFg] = useState("#333333");
-  const [bg, setBg] = useState("#cbeb55");
-  return (
-    <>
-      <ColorPair bg={bg} fg={fg}></ColorPair>
-      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-      <label>
-        Foreground Color
-        <input onChange={e => setFg(e.target.value)} type="color" value={fg} />
-      </label>
-      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-      <label>
-        Background Color
-        <input onChange={e => setBg(e.target.value)} type="color" value={bg} />
-      </label>
-    </>
-  );
-};
-// Disable color contrast checking for the uncorrected color pairs.
-RouteColorTester.parameters = {
-  a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } },
-  storyshots: { disable: true }
+export const RouteColorTester = {
+  render: (): JSX.Element => {
+    const [fg, setFg] = useState("#333333");
+    const [bg, setBg] = useState("#cbeb55");
+    return (
+      <>
+        <ColorPair bg={bg} fg={fg}></ColorPair>
+        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+        <label>
+          Foreground Color
+          <input
+            onChange={e => setFg(e.target.value)}
+            type="color"
+            value={fg}
+          />
+        </label>
+        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+        <label>
+          Background Color
+          <input
+            onChange={e => setBg(e.target.value)}
+            type="color"
+            value={bg}
+          />
+        </label>
+      </>
+    );
+  },
+  // Disable color contrast checking for the uncorrected color pairs
+  parameters: {
+    a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } },
+    storyshots: { disable: true }
+  }
 };
 
 // Route sort logic story:

@@ -18,7 +18,8 @@ otpUi:
       bookRide: புத்தக சவாரி
       bookRideLater: "{Timemillis, time, short} புத்தகத்திற்கு காத்திருங்கள்"
       estimatedCost: "மதிப்பிடப்பட்ட செலவு: {minFare} - {maxFare}"
-      estimatedTravelTime: "மதிப்பிடப்பட்ட பயண நேரம்: {duration} (போக்குவரத்துக்கு கணக்கிடாது)"
+      estimatedTravelTime: "மதிப்பிடப்பட்ட பயண நேரம்: {duration} (போக்குவரத்துக்கு
+        கணக்கிடாது)"
       waitForPickup: "{நிமிடங்கள், பன்மை, = 0 {} பிற { # நிமிடங்கள்}} {company} இடும்"
     mapillaryTooltip: இந்த இடத்தில் தெரு படங்களைக் காட்டு
     step:
@@ -35,9 +36,9 @@ otpUi:
       slightlyRight: லேசான வலது
       uTurnLeft: இடது யு-டர்ன்
       uTurnRight: வலது யு-டர்ன்
-    stepDepart: "{தெருவில் தலை {heading}"
-    stepElevator: "{தெரு க்கு க்கு லிஃப்ட் எடுத்துக் கொள்ளுங்கள்"
-    stepFollowSigns: "{தெரு க்கு க்கு அறிகுறிகளைப் பின்பற்றவும்"
+    stepDepart: "{street} இல் தலை {heading}"
+    stepElevator: "{street}க்கு லிஃப்ட் எடுத்துக்கொள்"
+    stepFollowSigns: "{street}க்கு அறிகுறிகளைப் பின்பற்றவும்"
     stepGeneric: "{step} {street}"
     stepHeading:
       east: கிழக்கு
@@ -75,10 +76,12 @@ otpUi:
       durationShort: >-
         {தோராயமான பிரீஃபிக்ச், தேர்ந்தெடு, உண்மை {About } பிற {}} {மணிநேரம்,
         பன்மை, = 0 {} பிற {# hr}} {minutes} min
-    flexAdvanceNotice: " குறைந்தது {லீட் டேச், பன்மை, ஒன்று {# நாள்} மற்ற {# நாட்கள்}} முன்கூட்டியே"
+    flexAdvanceNotice: " குறைந்தது {லீட் டேச், பன்மை, ஒன்று {# நாள்} மற்ற {# நாட்கள்}}
+      முன்கூட்டியே"
     flexCallAhead: முன்னால் அழைக்கவும்
     flexCallNumber: "{phoneNumber} ஐ அழைக்கவும்"
-    flexPickupMessage: இந்த வழியை எடுக்க, நீங்கள் {செயல் {{action} வேண்டும்.
+    flexPickupMessage: இந்த வழியை எடுக்க, நீங்கள் 
+      {action}{advanceNotice}வேண்டும்.
     stayOnBoard: "{place} இல் போர்டில் இருங்கள்"
     travelBy: பயணம் {mode}
     travelByMode:
@@ -106,15 +109,15 @@ otpUi:
     agencyExternalLink: "{agencyName} (வெளிப்புற இணைப்பு)"
     alertsHeader: "{எச்சரிக்கை, பன்மை, = 1 {# எச்சரிக்கை} பிற {# எச்சரிக்கைகள்}}"
     arriveAt: "{place} க்கு வந்து சேருங்கள்"
-    disembarkAt: "{லெக்டெச்டினேசன் at இல் இறங்குங்கள்"
+    disembarkAt: "{legDestination}இல் இறங்குங்கள்"
     expandDetails: (விவரங்களை விரிவாக்கு)
     fare: "செய்: {fare}"
     fromLocation: "{location}"
     legDetails: கால் விவரங்கள்
-    operatedBy: "{{Angencylink by ஆல் இயக்கப்படும் பணி"
+    operatedBy: "{agencyLink}ஆல் இயக்கப்படும் பணி"
     ride: சவாரி
     rideDurationAndStops: "சவாரி {duration} {numstops, பன்மை, = 1 {} பிற { / # நிறுத்தங்கள்}}"
-    routeDescription: "{routeName} <toprefix> பெறுநர் </porrefix> {headsign}"
+    routeDescription: "{routeName}<toPrefix>இதற்கு </toPrefix>{headsign}"
     stopId: ஐடி {stopId}
     stopIdBasic: ஐடி {stopId}
     stopViewer: பார்வையாளரை நிறுத்துங்கள்

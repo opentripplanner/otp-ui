@@ -1,8 +1,8 @@
 import React from "react";
-import { Marker } from "react-map-gl";
+import { Marker } from "react-map-gl/maplibre";
 import { LeafletStyleMarker, Popup } from "../src/styled";
 
-const vehicleData = require("./vehicle-data/all-trimet.json");
+import vehicleData from "./vehicle-data/all-trimet.json";
 
 type Props = {
   id?: string;

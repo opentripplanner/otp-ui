@@ -14,10 +14,14 @@ import {
   mapOldElevationComponentToNew
 } from "../itinerary";
 
-const bikeRentalItinerary = require("./__mocks__/bike-rental-itinerary.json");
-const tncItinerary = require("./__mocks__/tnc-itinerary.json");
-const fareProductItinerary = require("./__mocks__/fare-products-itinerary.json");
-const flexItinerary = require("../../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json");
+import bikeRentalItinerary from "./__mocks__/bike-rental-itinerary.json";
+import tncItinerary from "./__mocks__/tnc-itinerary.json";
+import fareProductItinerary from "./__mocks__/fare-products-itinerary.json";
+import complexItinerary from "./__mocks__/complex-fares.json";
+import flexItinerary from "../../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
+import faresv2Itinerary from "../../../itinerary-body/src/__mocks__/itineraries/fares-v2-fare-components.json";
+
+global.structuredClone = val => JSON.parse(JSON.stringify(val));
 
 const basePlace = {
   lat: 0,
@@ -129,37 +133,100 @@ describe("util > itinerary", () => {
   });
 
   describe("getLegCost", () => {
+    const freeLeg = {
+      fareProducts: [
+        {
+          id: "testId",
+          product: {
+            medium: null,
+            name: "rideCost",
+            price: { amount: 0, currency: "USD" },
+            riderCategory: null
+          }
+        }
+      ]
+    };
     const leg = {
       fareProducts: [
         {
           id: "testId",
           product: {
-            medium: { id: "cash" },
+            medium: null,
             name: "rideCost",
             price: { amount: 200, currency: "USD" },
-            riderCategory: { id: "regular" }
+            riderCategory: null
           }
         },
         {
           id: "testId",
           product: {
-            medium: { id: "cash" },
-            name: "transfer",
+            medium: null,
+            name: "transfer-from-other-vehicle",
             price: { amount: 50, currency: "USD" },
-            riderCategory: { id: "regular" }
+            riderCategory: null
+          }
+        }
+      ]
+    };
+    const complicatedLeg = {
+      fareProducts: [
+        {
+          id: "testId",
+          product: {
+            medium: { id: "agency:cash" },
+            name: "transfer-from-other-vehicle",
+            price: { amount: 50, currency: "USD" },
+            riderCategory: { id: "agency:child" }
+          }
+        },
+        {
+          id: "testId",
+          product: {
+            medium: "cash",
+            name: "rideCost",
+            price: { amount: 200, currency: "USD" },
+            riderCategory: "adult"
+          }
+        }
+      ]
+    };
+    const halfLeg = {
+      fareProducts: [
+        {
+          id: "testId",
+          product: {
+            medium: { id: "agency:cash" },
+            name: "rideCost",
+            price: { amount: 30, currency: "USD" },
+            riderCategory: null
+          }
+        },
+        {
+          id: "testId2",
+          product: {
+            medium: { id: "agency:digital" },
+            name: "rideCost",
+            price: { amount: 20, currency: "USD" },
+            riderCategory: null
           }
         }
       ]
     };
     it("should return the total cost for a leg", () => {
-      const result = getLegCost(leg, "cash", "regular");
-      expect(result.price).toEqual({ amount: 200, currency: "USD" });
+      const result = getLegCost(leg, null, null);
+      expect(result.price).toEqual({ amount: 50, currency: "USD" });
     });
-
-    it("should return the transfer discount amount if a transfer was used", () => {
-      const result = getLegCost(leg, "cash", "regular");
-      expect(result.price).toEqual({ amount: 200, currency: "USD" });
-      expect(result.transferAmount).toEqual({ amount: 50, currency: "USD" });
+    it("should return the 0 cost for a free leg", () => {
+      const result = getLegCost(freeLeg, null, null);
+      expect(result.price).toEqual({ amount: 0, currency: "USD" });
+    });
+    it("should return the correct cost for a leg with multiple types of fares", () => {
+      const result = getLegCost(complicatedLeg, "cash", "child");
+      expect(result.price).toEqual({ amount: 50, currency: "USD" });
+    });
+    it("should return the correct cost for a leg with no rider category", () => {
+      const result = getLegCost(halfLeg, "cash", null);
+      expect(result.price).toEqual({ amount: 30, currency: "USD" });
     });
 
     it("should return undefined if no fare products exist on the leg", () => {
@@ -177,14 +244,47 @@ describe("util > itinerary", () => {
     it("should calculate the total cost of an itinerary", () => {
       const result = getItineraryCost(
         fareProductItinerary.legs,
-        "orca:cash",
-        "orca:regular"
+        "cash",
+        "regular"
       );
       expect(result.amount).toEqual(5.75);
       expect(result.currency).toEqual({
         code: "USD",
         digits: 2
       });
+    });
+    it("should calculate the total cost of an itinerary using fares v2", () => {
+      const result = getItineraryCost(faresv2Itinerary.legs, "3", "ADULT");
+      expect(result.amount).toEqual(2.8);
+      const complexResult = getItineraryCost(
+        faresv2Itinerary.legs,
+        ["0", "0"],
+        ["ADULT", "ADULT"]
+      );
+      expect(complexResult.amount).toEqual(2.8 * 2);
+    });
+    it("should calculate the total cost of an itinerary with multiple v2 fares & transfers", () => {
+      const result = getItineraryCost(complexItinerary.legs, "0", "ADULT");
+      expect(result.amount).toEqual(3.0);
+    });
+    it("should calculate the individual leg cost of a fares v2 legs", () => {
+      const firstLegResult = getLegCost(faresv2Itinerary.legs[1], "3", "ADULT");
+      expect(firstLegResult.price?.amount).toEqual(2);
+
+      const secondLegResult = getLegCost(
+        faresv2Itinerary.legs[3],
+        "3",
+        "ADULT"
+      );
+      expect(secondLegResult.price?.amount).toEqual(0.8);
+
+      // Check for alternate product
+      expect(firstLegResult.alternateFareProducts?.[0]?.price?.amount).toEqual(
+        undefined
+      );
+      expect(secondLegResult.alternateFareProducts?.[0]?.price?.amount).toEqual(
+        2.8
+      );
     });
     it("should calculate the total cost of an itinerary will null ids", () => {
       const result = getItineraryCost(fareProductItinerary.legs, null, null);
@@ -206,11 +306,7 @@ describe("util > itinerary", () => {
       const legsWithDuplicatedProducts = [...fareProductItinerary.legs];
       legsWithDuplicatedProducts[3].fareProducts =
         legsWithDuplicatedProducts[1].fareProducts;
-      const result = getItineraryCost(
-        fareProductItinerary.legs,
-        "orca:cash",
-        "orca:regular"
-      );
+      const result = getItineraryCost(fareProductItinerary.legs, null, null);
       expect(result.amount).toEqual(2.75);
       expect(result.currency).toEqual({
         code: "USD",

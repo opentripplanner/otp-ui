@@ -1,46 +1,50 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`mode selector utils check add settings to button should add applicable mode settings to the buttons 1`] = `
-Array [
-  Object {
+[
+  {
+    "Icon": [Function],
     "enabled": true,
+    "iconName": "transit icon",
     "key": "TRANSIT",
     "label": "Transit",
-    "modeSettings": Array [
-      Object {
+    "modeSettings": [
+      {
         "applicableMode": "TRANSIT",
         "default": false,
         "key": "wheelchair",
         "label": "Use Accessible Routing",
         "type": "CHECKBOX",
       },
-      Object {
-        "addTransportMode": Object {
+      {
+        "addTransportMode": {
           "mode": "BUS",
         },
         "applicableMode": "TRANSIT",
         "default": true,
         "key": "enableHovercraft",
+        "label": "Bus",
         "overrideMode": "HOVERCRAFT",
         "type": "SUBMODE",
       },
     ],
-    "modes": Array [
-      Object {
+    "modes": [
+      {
         "mode": "BUS",
       },
-      Object {
+      {
         "mode": "RAIL",
       },
     ],
   },
-  Object {
-    "Icon": Object {},
+  {
+    "Icon": [Function],
     "enabled": true,
+    "iconName": "walking icon",
     "key": "WALK",
     "label": "Walking",
-    "modeSettings": Array [
-      Object {
+    "modeSettings": [
+      {
         "applicableMode": "WALK",
         "default": 2,
         "high": 5,
@@ -53,19 +57,20 @@ Array [
         "type": "SLIDER",
       },
     ],
-    "modes": Array [
-      Object {
+    "modes": [
+      {
         "mode": "WALK",
       },
     ],
   },
-  Object {
-    "Icon": Object {},
+  {
+    "Icon": [Function],
     "enabled": true,
+    "iconName": "biking icon",
     "key": "BIKE",
     "label": "Bike",
-    "modeSettings": Array [
-      Object {
+    "modeSettings": [
+      {
         "applicableMode": "BICYCLE",
         "default": 2,
         "high": 5,
@@ -77,8 +82,8 @@ Array [
         "step": 0.1,
         "type": "SLIDER",
       },
-      Object {
-        "addTransportMode": Object {
+      {
+        "addTransportMode": {
           "mode": "BICYCLE",
           "qualifier": "RENT",
         },
@@ -89,8 +94,8 @@ Array [
         "type": "CHECKBOX",
       },
     ],
-    "modes": Array [
-      Object {
+    "modes": [
+      {
         "mode": "BICYCLE",
       },
     ],
@@ -99,7 +104,7 @@ Array [
 `;
 
 exports[`mode selector utils extract mode setting defaults to object should extract defaults from the mode settings 1`] = `
-Object {
+{
   "allowBikeRental": true,
   "bikeReluctance": 2,
   "carReluctance": 3,
@@ -110,8 +115,8 @@ Object {
 `;
 
 exports[`mode selector utils populate mode settings with values should populate settings with values 1`] = `
-Array [
-  Object {
+[
+  {
     "applicableMode": "CAR",
     "default": 3,
     "high": 5,
@@ -124,7 +129,7 @@ Array [
     "type": "SLIDER",
     "value": 3,
   },
-  Object {
+  {
     "applicableMode": "BICYCLE",
     "default": 2,
     "high": 5,
@@ -137,7 +142,7 @@ Array [
     "type": "SLIDER",
     "value": 2,
   },
-  Object {
+  {
     "applicableMode": "WALK",
     "default": 2,
     "high": 5,
@@ -150,8 +155,8 @@ Array [
     "type": "SLIDER",
     "value": 2,
   },
-  Object {
-    "addTransportMode": Object {
+  {
+    "addTransportMode": {
       "mode": "BICYCLE",
       "qualifier": "RENT",
     },
@@ -162,7 +167,7 @@ Array [
     "type": "CHECKBOX",
     "value": true,
   },
-  Object {
+  {
     "applicableMode": "TRANSIT",
     "default": false,
     "key": "wheelchair",
@@ -170,13 +175,14 @@ Array [
     "type": "CHECKBOX",
     "value": false,
   },
-  Object {
-    "addTransportMode": Object {
+  {
+    "addTransportMode": {
       "mode": "BUS",
     },
     "applicableMode": "TRANSIT",
     "default": true,
     "key": "enableHovercraft",
+    "label": "Bus",
     "overrideMode": "HOVERCRAFT",
     "type": "SUBMODE",
     "value": false,

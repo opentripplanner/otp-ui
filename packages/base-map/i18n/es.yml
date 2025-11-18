@@ -4,6 +4,9 @@ otpUi:
       MacHelpText: Use ⌘ +  desplazar para hacer zoom al mapa
       MobileHelpText: Use dos dedos para mover el mapa
       WindowsHelpText: Use Ctrl + desplazar para hacer zoom al mapa
+    GeolocateControl:
+      FindMyLocation: Encontrar mi ubicación
+      LocationNotAvailable: La ubicación no está disponible
     NavigationControl:
       ResetBearing: Reestablecer en dirección norte
       ZoomIn: Acercar

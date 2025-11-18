@@ -58,7 +58,6 @@ otpUi:
       carHail: 骑
       escooter: 骑
       walk: 步行
-    transfer: 换乘{duration, select, undefined {} other {, wait {duration}}}
     unnamedPath: 未命名路径
     unnamedRoad: 未命名路
     vehicleTitle: "{company} {vehicleType}"
@@ -68,6 +67,7 @@ otpUi:
       car: 汽车
       escooter: 电动滑板车
       vehicle: 车辆
+    transfer: 换乘{duration, select, undefined {} other {, wait {duration}}}
   ItineraryBody:
     common:
       durationShort: >-
@@ -93,14 +93,14 @@ otpUi:
     viewOnMap: 在地图上查看
   TransitLegBody:
     AlertsBody:
-      alertLinkText: 查看 {agency} 网站上的提醒
-      effectiveDate: 从 {dateTime, date, long} 起生效
+      effectiveDate: 从 {dateTime, date, long} 生效日期
       effectiveTimeAndDate: 从 {dateTime, time, short}, {day} 起生效
-      linkOpensNewWindow: （将在新窗口打开）
-      noAgencyAlertLinkText: 查看机构网站上的提醒
       today: 今天
       tomorrow: 明天
       yesterday: 昨天
+      alertLinkText: 查看 {agency} 网站上的提醒
+      linkOpensNewWindow: （将在新窗口打开）
+      noAgencyAlertLinkText: 查看机构网站上的提醒
     agencyExternalLink: "{agencyName} (外部链接)"
     alertsHeader: "{alertCount} 个警报"
     arriveAt: 到达

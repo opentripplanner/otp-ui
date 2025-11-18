@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`time getCurrentDate should return current date at specified timezone 1`] = `"2019-08-04"`;
 
@@ -13,7 +13,7 @@ exports[`time getUserTimezone should get the correct timezone from the testing e
 exports[`time time format functions should correctly format 9401 seconds as a duration since midnight 1`] = `"02:36"`;
 
 exports[`time toHoursMinutesSeconds should correctly break down 9401 in hours, minutes, and seconds 1`] = `
-Object {
+{
   "hours": 2,
   "minutes": 36,
   "seconds": 41,

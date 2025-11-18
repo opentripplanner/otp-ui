@@ -1,12 +1,5 @@
 otpUi:
   TripDetails:
-    FareTable:
-      cash: Наличные
-      electronic: Электронный
-      regular: Взрослые
-      senior: Пожилые
-      special: Особые
-      youth: Детский
     co2: "Выбросы CO₂: <strong>{co2}</strong>"
     co2description: >-
       Интенсивность выбросов CO₂ рассчитывается умножением расстояния каждого

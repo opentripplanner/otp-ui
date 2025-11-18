@@ -1,12 +1,5 @@
 otpUi:
   TripDetails:
-    FareTable:
-      cash: 현금
-      electronic: 전자
-      regular: 성인
-      senior: 경로
-      special: 특별
-      youth: 청소년
     co2: "CO₂ 배출: <strong>{co2}</strong>"
     co2description: >-
       CO₂ 강도는 각 모드의 CO₂ 강도를 트립에서 각 다리가 걸은 거리를 곱하여 계산됩니다. 각 모드의 CO₂ 강도는 <link>이

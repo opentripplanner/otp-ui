@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 /* eslint-disable react/button-has-type */
 import React, { useState } from "react";
 import {
@@ -6,9 +7,9 @@ import {
   NavigationControl,
   ScaleControl,
   useMap
-} from "react-map-gl";
-import { action } from "@storybook/addon-actions";
-import { ComponentStory } from "@storybook/react";
+} from "react-map-gl/maplibre";
+import { action } from "storybook/actions";
+import { StoryFn } from "@storybook/react-vite";
 
 import AllVehiclesOverlay from "../__mocks__/AllVehicles";
 import ContextMenuDemo from "../__mocks__/ContextMenuDemo";
@@ -16,8 +17,6 @@ import ContextMenuDemo from "../__mocks__/ContextMenuDemo";
 import { withMap } from "../../../.storybook/base-map-wrapper";
 
 import BaseMap, { MarkerWithPopup, LayerWrapper, Popup, Styled } from ".";
-
-import "maplibre-gl/dist/maplibre-gl.css";
 
 const center: [number, number] = [45.522862, -122.667837];
 
@@ -27,9 +26,6 @@ export default {
   title: "BaseMap",
   parameters: { storyshots: { disable: true } }
 };
-
-// eslint-disable-next-line react/jsx-props-no-spreading
-const Template = args => <BaseMap {...args} />;
 
 const samplePopup = (
   <div>
@@ -50,25 +46,26 @@ const sampleMarkers = (
 const onClick = action("onClick");
 const onContextMenu = action("onContextMenu");
 const onViewportChanged = action("onViewportChanged");
-const a11yOverrideParameters = {
-  a11y: { config: { rules: [{ id: "color-contrast", reviewOnFail: true }] } }
+
+export const clickAndViewportchangedEvents = {
+  args: {
+    center,
+    // Note: Although onClick and onContextMenu are correctly triggered,
+    // the parameter returned by these events contains a cyclical reference that prevents Storybook from printing them.
+    onClick,
+    onContextMenu,
+    onViewportChanged
+  },
+  decorators: [withMap()]
 };
 
-export const clickAndViewportchangedEvents = Template.bind({});
-clickAndViewportchangedEvents.args = {
-  center,
-  onClick,
-  onContextMenu,
-  onViewportChanged
+export const zoomed = {
+  args: {
+    center,
+    zoom: 17
+  },
+  decorators: [withMap()]
 };
-clickAndViewportchangedEvents.decorators = [withMap()];
-
-export const zoomed = Template.bind({});
-zoomed.args = {
-  center,
-  zoom: 17
-};
-zoomed.decorators = [withMap()];
 
 const SetBoundsButton = () => {
   const { mapWithBounds } = useMap();
@@ -98,7 +95,7 @@ const SetBoundsButton = () => {
 
 // This story causes the map to be rendered twice
 // This is a storybook bug: https://github.com/storybookjs/storybook/issues/12670
-export const clickToSetBounds = (): ComponentStory<typeof BaseMap> => (
+export const clickToSetBounds: StoryFn<typeof BaseMap> = () => (
   <Styled.StoryMapContainer>
     <MapProvider>
       <SetBoundsButton />
@@ -107,12 +104,13 @@ export const clickToSetBounds = (): ComponentStory<typeof BaseMap> => (
   </Styled.StoryMapContainer>
 );
 
-export const maxZoom = Template.bind({});
-maxZoom.args = {
-  maxZoom: 18,
-  zoom: 30
+export const maxZoom = {
+  args: {
+    maxZoom: 18,
+    zoom: 30
+  },
+  decorators: [withMap()]
 };
-maxZoom.decorators = [withMap()];
 
 export const withSampleMarkers = () => (
   <Styled.StoryMapContainer>
@@ -120,15 +118,18 @@ export const withSampleMarkers = () => (
   </Styled.StoryMapContainer>
 );
 
-export const overlayWithLargeDataSet = () => (
-  <>
-    <div style={{ position: "relative", zIndex: 1000 }}>
-      Do not add Storybook overhead on layers with large dataset...
-    </div>
-    <AllVehiclesOverlay />
-  </>
-);
-overlayWithLargeDataSet.decorators = [withMap()];
+export const overlayWithLargeDataSet = {
+  render: () => (
+    <>
+      <div style={{ position: "relative", zIndex: 1000 }}>
+        Do not add Storybook overhead on layers with large dataset...
+      </div>
+      <AllVehiclesOverlay />
+    </>
+  ),
+
+  decorators: [withMap()]
+};
 
 export const customLocationPopupContent = () => (
   <Styled.StoryMapContainer>
@@ -160,8 +161,6 @@ export const optionalLayers = {
     </Styled.StoryMapContainer>
   )
 };
-// Custom styling for this story only, not in production
-customLocationPopupContent.parameters = a11yOverrideParameters;
 
 export const onContextMenuPopup = () => <ContextMenuDemo />;
 
@@ -172,19 +171,21 @@ export const onContextMenuPopup = () => <ContextMenuDemo />;
  *
  * Any control which is added as a child of a react-map-gl map is supported
  */
-export const withOptionalControls = () => (
-  <BaseMap
-    center={center}
-    // We supply our own AttributionControl, so disable the default one
-    // See https://visgl.github.io/react-map-gl/docs/api-reference/attribution-control
-    mapLibreProps={{ attributionControl: false }}
-  >
-    <AttributionControl customAttribution="This adds to the attribution information supplied by the map style json" />
-    <NavigationControl position="bottom-right" />
-    <ScaleControl />
-  </BaseMap>
-);
-withOptionalControls.decorators = [withMap()];
+export const withOptionalControls = {
+  render: () => (
+    <BaseMap
+      center={center}
+      // We supply our own AttributionControl, so disable the default one
+      // See https://visgl.github.io/react-map-gl/docs/api-reference/attribution-control
+      mapLibreProps={{ attributionControl: false }}
+    >
+      <AttributionControl customAttribution="This adds to the attribution information supplied by the map style json" />
+      <NavigationControl position="bottom-right" />
+      <ScaleControl />
+    </BaseMap>
+  ),
+  decorators: [withMap()]
+};
 
 export const withMultipleBaseLayers = () => {
   const [mapTilerKey, setMapTilerKey] = useState("");
