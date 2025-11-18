@@ -7,11 +7,10 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
       Select a transit mode
     </legend>
     <div class="AdvancedModeSettingsButton__SettingsContainer-sc-1wd5ill-0 faVBOF advanced-submode-container">
-      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 gkZqBg advanced-submode-mode-button"
+      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 bcFBiJ advanced-submode-mode-button"
            id="transit"
       >
-        <input aria-label="Transit (Subsettings expanded)"
-               id="metro-submode-selector-mode-transit"
+        <input id="metro-submode-selector-mode-transit"
                type="checkbox"
                checked
         >
@@ -29,6 +28,9 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
             </path>
           </svg>
           <span>
+            Transit (Subsettings expanded)
+          </span>
+          <span aria-hidden="true">
             Transit
           </span>
           <svg viewbox="0 0 16 16"
@@ -185,11 +187,10 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
       </div>
     </div>
     <div class="AdvancedModeSettingsButton__SettingsContainer-sc-1wd5ill-0 faVBOF advanced-submode-container">
-      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 gMJFvo advanced-submode-mode-button"
+      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 dQZxBh advanced-submode-mode-button"
            id="walk"
       >
-        <input aria-label="Walk"
-               id="metro-submode-selector-mode-walk"
+        <input id="metro-submode-selector-mode-walk"
                type="checkbox"
         >
         <label for="metro-submode-selector-mode-walk">
@@ -208,15 +209,17 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
           <span>
             Walk
           </span>
+          <span aria-hidden="true">
+            Walk
+          </span>
         </label>
       </div>
     </div>
     <div class="AdvancedModeSettingsButton__SettingsContainer-sc-1wd5ill-0 faVBOF advanced-submode-container">
-      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 gMJFvo advanced-submode-mode-button"
+      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 dQZxBh advanced-submode-mode-button"
            id="bicycle"
       >
-        <input aria-label="Bike"
-               id="metro-submode-selector-mode-bicycle"
+        <input id="metro-submode-selector-mode-bicycle"
                type="checkbox"
         >
         <label for="metro-submode-selector-mode-bicycle">
@@ -232,15 +235,17 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
           <span>
             Bike
           </span>
+          <span aria-hidden="true">
+            Bike
+          </span>
         </label>
       </div>
     </div>
     <div class="AdvancedModeSettingsButton__SettingsContainer-sc-1wd5ill-0 faVBOF advanced-submode-container">
-      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 gMJFvo advanced-submode-mode-button"
+      <div class="AdvancedModeSettingsButton__StyledModeSettingsButton-sc-1wd5ill-1 dQZxBh advanced-submode-mode-button"
            id="car"
       >
-        <input aria-label="Drive"
-               id="metro-submode-selector-mode-car"
+        <input id="metro-submode-selector-mode-car"
                type="checkbox"
         >
         <label for="metro-submode-selector-mode-car">
@@ -257,6 +262,9 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
             </path>
           </svg>
           <span>
+            Drive
+          </span>
+          <span aria-hidden="true">
             Drive
           </span>
         </label>
