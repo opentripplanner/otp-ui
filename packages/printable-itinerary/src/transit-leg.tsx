@@ -8,7 +8,7 @@ import AccessibilityAnnotation from "./accessibility-annotation";
 import * as S from "./styled";
 import { defaultMessages, strongText } from "./util";
 
-const { getDisplayedStopId, getLegRouteShortName } = coreUtils.itinerary;
+const { getDisplayedStopCode, getLegRouteShortName } = coreUtils.itinerary;
 
 interface Props {
   accessibilityScoreGradationMap?: GradationMap;
@@ -24,8 +24,11 @@ export default function TransitLeg({
   interlineFollows
 }: Props): ReactElement {
   // TODO: some mocks in itinerary-body have legs with null values for from/to.stop
-  const stopIdFrom = getDisplayedStopId(leg.from.stop ?? leg.from);
-  const stopIdTo = getDisplayedStopId(leg.to.stop ?? leg.to);
+  const stopIdFrom = getDisplayedStopCode(leg.from.stop ?? leg.from);
+  const stopIdTo = getDisplayedStopCode(leg.to.stop ?? leg.to);
+
+  const stopIdFromPart = stopIdFrom ? ` (${stopIdFrom})` : "";
+  const stopIdToPart = stopIdTo ? ` (${stopIdTo})` : "";
 
   // TODO: core-utils needs some larger-scale type fixes
   // null is an object, so we need to redefine it as undefined to prevent
@@ -48,7 +51,7 @@ export default function TransitLeg({
       id="otpUi.PrintableItinerary.TransitLeg.alight"
       values={{
         place: leg.to.name,
-        stopId: stopIdTo,
+        stopIdPart: stopIdToPart,
         strong: strongText,
         time: leg.endTime
       }}
@@ -100,7 +103,7 @@ export default function TransitLeg({
               id="otpUi.PrintableItinerary.TransitLeg.board"
               values={{
                 place: leg.from.name,
-                stopId: stopIdFrom,
+                stopIdPart: stopIdFromPart,
                 strong: strongText,
                 time: leg.startTime
               }}
