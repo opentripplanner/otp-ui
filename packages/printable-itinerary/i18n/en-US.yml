@@ -8,10 +8,10 @@ otpUi:
       header: <strong>Take {company}</strong> to <strong>{place}</strong>
     TransitLeg:
       alight: >-
-        Get off at <strong>{place}</strong> ({stopId}) at <strong>{time, time,
+        Get off at <strong>{place}</strong>{stopIdPart} at <strong>{time, time,
         short}</strong>
       board: >-
-        Board at <strong>{place}</strong> ({stopId}) at <strong>{time, time,
+        Board at <strong>{place}</strong>{stopIdPart} at <strong>{time, time,
         short}</strong>
       continuesAs: Continues as {routeDescription}
     depart: <strong>Depart</strong> from <strong>{place}</strong>
