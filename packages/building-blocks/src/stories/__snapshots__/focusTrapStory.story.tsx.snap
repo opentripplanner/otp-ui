@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Building-Blocks/FocusTrapWrapper FocusTrapAroundButtonSet smoke-test 1`] = `
 <div id="button-set-story-focus-trap"
