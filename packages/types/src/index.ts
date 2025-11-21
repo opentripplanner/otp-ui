@@ -350,6 +350,7 @@ export type Leg = {
   fareProducts?: { id: string; product: FareProduct }[];
   from: Place;
   headsign?: string;
+  id?: string;
   interlineWithPreviousLeg: boolean;
   intermediateStops: Place[];
   interStopGeometry?: EncodedPolyline[];
