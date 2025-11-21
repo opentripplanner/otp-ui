@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`core-utils RouteSortingLogic smoke-test 1`] = `
 <div class="core-utilsstory__Columns-sc-1u8rrx8-2 hDdtQy">

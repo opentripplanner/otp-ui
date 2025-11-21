@@ -11,7 +11,7 @@ import {
   CustomPlaceName,
   customToRouteAbbreviation,
   CustomTransitLegSummary
-} from "../demos";
+} from "../demos/index";
 import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
 
 // import mock itineraries. These are all trip plan outputs from OTP.

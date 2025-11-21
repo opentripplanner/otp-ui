@@ -16,7 +16,8 @@
     "lodash.memoize": "^4.1.2"
   },
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*"
+    "@opentripplanner/types": "workspace:*",
+    "storybook": "catalog:"
   },
   "peerDependencies": {
     "react": "catalog:",

@@ -4,5 +4,6 @@
     "outDir": "./lib",
     "preserveSymlinks": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["**/*.story.tsx", "**/*.story.ts", "src/stories/**/*"]
 }

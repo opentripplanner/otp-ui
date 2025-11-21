@@ -27,7 +27,8 @@
   "devDependencies": {
     "@opentripplanner/types": "workspace:*",
     "@types/flat": "catalog:",
-    "lodash.clonedeep": "^4.5.0"
+    "lodash.clonedeep": "^4.5.0",
+    "storybook": "catalog:"
   },
   "peerDependencies": {
     "react": "catalog:",

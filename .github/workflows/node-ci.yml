@@ -7,7 +7,7 @@ jobs:
           persist-credentials: false
       - uses: pnpm/action-setup@v2
         with:
-          version: 9
+          version: 10
       - name: Use Node.js 22.x
         uses: actions/setup-node@v4
         with:

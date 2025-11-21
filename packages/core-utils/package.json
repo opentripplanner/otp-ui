@@ -29,6 +29,7 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*"
+    "@opentripplanner/types": "workspace:*",
+    "storybook": "catalog:"
   }
 }
