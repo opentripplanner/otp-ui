@@ -71,7 +71,7 @@ otpUi:
       car: Sasakyan
       escooter: E-scooter
       vehicle: Sasakyan
-    transfer: Paglilipat{duration, select, undefined {} other {, wait 
+    transfer: Paglilipat{duration, select, undefined {} other {, maghintay ng 
       {duration}}}
   ItineraryBody:
     common:
