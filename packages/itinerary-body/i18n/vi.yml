@@ -68,7 +68,7 @@ otpUi:
       car: Xe hơi
       escooter: Xe tay ga điện
       vehicle: Xe
-    transfer: Chuyển{duration, select, undefined {} other {, wait {duration}}}
+    transfer: Chuyển{duration, select, undefined {} other {, đợi {duration}}}
   ItineraryBody:
     common:
       durationShort: >-
