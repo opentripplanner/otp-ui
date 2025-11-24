@@ -4,5 +4,8 @@ import Car from "./Car";
 import Metro from "./Metro";
 import Rail from "./Rail";
 import Walk from "./Walk";
+import BlvdDirect from "./routes/BlvdDirect";
+import LucyGold from "./routes/LucyGold";
+import LucyGreen from "./routes/LucyGreen";
 
-export { Bike, Bus, Car, Metro, Rail, Walk };
+export { LucyGold, LucyGreen, BlvdDirect, Bike, Bus, Car, Metro, Rail, Walk };
