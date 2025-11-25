@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`LocationField/Mobile Context Blank smoke-test 1`] = `
 <div class="styled__InputGroup-sc-xahsq2-7 erfoji"

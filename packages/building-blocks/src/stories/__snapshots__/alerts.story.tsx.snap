@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Building-Blocks/Alert BasicAlert smoke-test 1`] = `
 <div class="Alert__AlertContainer-sc-2vlo3n-0 bVfQIo">

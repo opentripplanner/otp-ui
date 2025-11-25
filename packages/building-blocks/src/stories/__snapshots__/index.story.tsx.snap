@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Building-Blocks/Colors Blue smoke-test 1`] = `
 <div class="ColorPalette__ColorBlock-sc-fil65c-0 iEijBb">

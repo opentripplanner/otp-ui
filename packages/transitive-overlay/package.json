@@ -34,7 +34,8 @@
   "devDependencies": {
     "@opentripplanner/endpoints-overlay": "workspace:*",
     "@opentripplanner/types": "workspace:*",
-    "maplibre-gl": "catalog:"
+    "maplibre-gl": "catalog:",
+    "storybook": "catalog:"
   },
   "peerDependencies": {
     "react": "catalog:",

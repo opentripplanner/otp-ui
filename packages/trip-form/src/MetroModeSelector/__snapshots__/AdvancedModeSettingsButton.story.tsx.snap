@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSettingsButtons smoke-test 1`] = `
 <div style="max-width: 500px;">

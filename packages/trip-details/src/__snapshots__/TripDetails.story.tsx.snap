@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`TripDetails ApproximatePrefixItinerary smoke-test 1`] = `
 <div class="styled__TripDetails-sc-6q2ok2-17 bkRgZI trip-details">

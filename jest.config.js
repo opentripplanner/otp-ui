@@ -30,7 +30,12 @@ module.exports = {
     "\\.(pbf)$": "<rootDir>/__mocks__/file-mock.js",
     "\\.(svg)$": "<rootDir>/__mocks__/file-mock.js"
   },
-  testPathIgnorePatterns: ["<rootDir>/packages/(?:.+?)/((esm)|(lib))/"],
+  testPathIgnorePatterns: [
+    "<rootDir>/packages/.*/lib/",
+    "<rootDir>/packages/.*/esm/",
+    "a11y",
+    "\\.d\\.ts"
+  ],
   transform: {
     "\\.[jt]sx?$": "babel-jest",
     "\\.ya?ml$": "yaml-jest",

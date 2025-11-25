@@ -26,7 +26,8 @@
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*",
-    "styled-icons": "catalog:"
+    "styled-icons": "catalog:",
+    "storybook": "catalog:"
   },
   "peerDependencies": {
     "react": "catalog:",

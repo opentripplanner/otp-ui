@@ -18,7 +18,8 @@
     "react-animate-height": "catalog:"
   },
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*"
+    "@opentripplanner/types": "workspace:*",
+    "storybook": "catalog:"
   },
   "peerDependencies": {
     "react": "catalog:",

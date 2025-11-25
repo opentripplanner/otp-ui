@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">

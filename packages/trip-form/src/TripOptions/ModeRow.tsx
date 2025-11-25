@@ -41,7 +41,9 @@ const ModeRow = ({
 
   // Scroll to active mode on initial render
   // This ref is attached to every active mode checkbox
-  const initialRenderRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+  const initialRenderRef = useRef() as React.MutableRefObject<
+    HTMLButtonElement
+  >;
 
   useEffect(() => {
     // Non-DOM environments don't support scrollIntoView
