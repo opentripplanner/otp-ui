@@ -735,31 +735,37 @@ export function getItineraryCost(
     return total;
   }
 
-  const legCostsObj = legs
+  const legCosts = legs
     // Only legs with fares (no walking legs)
     .filter(leg => leg.fareProducts?.length > 0)
     // Get the leg cost object of each leg
-    .map((leg, index, arr) =>
-      getLegCost(
-        leg,
-        mediumId,
-        riderCategoryId,
-        // We need to include the seen fare ids by gathering all previous leg fare product ids
-        arr.splice(0, index).flatMap(l => l?.fareProducts.map(fp => fp?.id))
-      )
+    .reduce<{ seenIds: string[]; legCosts: AppliedFareProduct[] }>(
+      (acc, leg) => {
+        const { appliedFareProduct, productUseId } = getLegCost(
+          leg,
+          mediumId,
+          riderCategoryId,
+          acc.seenIds
+        );
+        if (!appliedFareProduct) return acc;
+        return {
+          legCosts: [...acc.legCosts, appliedFareProduct],
+          seenIds: [...acc.seenIds, productUseId]
+        };
+      },
+      { seenIds: [], legCosts: [] }
     )
-    .filter(cost => cost.appliedFareProduct?.legPrice !== undefined)
-    // Filter out duplicate use IDs
-    // One fare product can be used on multiple legs,
-    // and we don't want to count it more than once.
-    // Use an object keyed by productUseId to deduplicate, then extract prices
-    .reduce<{ [productUseId: string]: Money }>((acc, cur) => {
-      if (cur.productUseId && acc[cur.productUseId] === undefined) {
-        acc[cur.productUseId] = cur.appliedFareProduct?.legPrice;
-      }
-      return acc;
-    }, {});
-  const legCosts = Object.values(legCostsObj);
+    .legCosts.map(lc => lc.legPrice);
+  // Filter out duplicate use IDs
+  // One fare product can be used on multiple legs,
+  // and we don't want to count it more than once.
+  // Use an object keyed by productUseId to deduplicate, then extract prices
+  // .reduce<{ [productUseId: string]: Money }>((acc, cur) => {
+  //   if (cur.productUseId && acc[cur.productUseId] === undefined) {
+  //     acc[cur.productUseId] = cur.appliedFareProduct?.legPrice;
+  //   }
+  //   return acc;
+  // }, {});
 
   if (legCosts.length === 0) return undefined;
   // Calculate the total
