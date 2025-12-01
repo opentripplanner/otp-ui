@@ -1,9 +1,14 @@
 
+import { normalize  } from "@conveyal/lonlat"
+// eslint-disable-next-line prettier/prettier
+import type { LonLatOutput } from "@conveyal/lonlat"
 // eslint-disable-next-line prettier/prettier
 import type { AutocompleteQuery, SearchQuery } from "../../geocoders/types"
 
 type FetchArgs = {
   url: string
+  focusLongitude?: string
+  focusLatitude?: string
   query: string
 }
 
@@ -16,7 +21,7 @@ type OTPGeocoderStop = {
   },
   feedPublisher?: { name: string }
   id: string,
-  modes: string[] 
+  modes: string[]
   name: string,
   type: "STOP" | "STATION"
 }
@@ -30,8 +35,9 @@ type OTPGeocoderResponse = {
 } | undefined
 
 
-function run({ query, url }: FetchArgs): Promise<OTPGeocoderResponse> {
-  return fetch(`${url}/geocode/stopClusters?query=${query}`)
+function run({ query, focusLatitude, focusLongitude, url }: FetchArgs): Promise<OTPGeocoderResponse> {
+  // TODO: is there a cleaner way to implement this? Some sort of dynamic query bulider? Is it worth it for a URL which is unlikely to change soon?
+  return fetch(`${url}/geocode/stopClusters?query=${query}${focusLongitude ? `&focusLongitude=${focusLongitude}` : ""}${focusLatitude ? `&focusLatitude=${focusLatitude}` : ""}`)
     .then(res => res.text())
     .then(res => {
       let parsed = { results: [] }
@@ -43,7 +49,7 @@ function run({ query, url }: FetchArgs): Promise<OTPGeocoderResponse> {
       }
 
       return parsed
-});
+    });
 }
 
 /**
@@ -57,6 +63,7 @@ function run({ query, url }: FetchArgs): Promise<OTPGeocoderResponse> {
  */
 async function autocomplete({
   url,
+  focusPoint,
   text
 }: AutocompleteQuery): Promise<OTPGeocoderResponse> {
   let shortenedText = text;
@@ -65,15 +72,25 @@ async function autocomplete({
   if (text.toLowerCase().indexOf(IGNORED_MAGIC_STRING) > -1) {
     shortenedText = text.toLowerCase().split(IGNORED_MAGIC_STRING)[1]
   }
+
+  // Re-write focus point for OTP, if it is present
+  const focus = { focusLatitude: null, focusLongitude: null }
+  if (focusPoint) {
+    const { lat, lon }: LonLatOutput = normalize(focusPoint);
+    focus.focusLongitude = lon.toString();
+    focus.focusLatitude = lat.toString();
+  }
+
   return run({
     query: shortenedText,
-    url
+    url,
+    ...focus,
   })
 }
 
 async function search(args: SearchQuery): Promise<OTPGeocoderResponse> {
   return autocomplete(args);
-} 
+}
 
 function reverse(): Promise<OTPGeocoderResponse> { console.warn("Not implemented"); return null }
 
