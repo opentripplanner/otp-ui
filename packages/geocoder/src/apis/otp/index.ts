@@ -44,6 +44,12 @@ function run({ query, focusLatitude, focusLongitude, url }: FetchArgs): Promise<
 
       try {
         parsed = JSON.parse(`{"results": ${res}}`)
+
+        // Unforunate way to swallow errors
+        if (!Array.isArray(parsed.results)) {
+          console.warn(`Invalid response from OTP: ${res}`)
+          parsed = { results:[] }
+        }
       } catch (e) {
         console.warn("Invalid response from OTP Geocoder!")
       }
