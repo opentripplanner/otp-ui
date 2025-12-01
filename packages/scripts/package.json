@@ -22,9 +22,6 @@
     "tsc": "tsc",
     "validate-i18n": "node lib/run-validate-i18n.js ../**/src ../**/i18n"
   },
-  "devDependencies": {
-    "storybook": "catalog:"
-  },
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },

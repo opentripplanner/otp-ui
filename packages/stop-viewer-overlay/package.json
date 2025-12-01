@@ -23,8 +23,7 @@
     "@opentripplanner/core-utils": "workspace:*"
   },
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*",
-    "storybook": "catalog:"
+    "@opentripplanner/types": "workspace:*"
   },
   "peerDependencies": {
     "react": "catalog:",

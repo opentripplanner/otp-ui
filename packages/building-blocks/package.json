@@ -10,8 +10,7 @@
   "private": false,
   "devDependencies": {
     "@opentripplanner/types": "workspace:*",
-    "@opentripplanner/core-utils": "workspace:*",
-    "storybook": "catalog:"
+    "@opentripplanner/core-utils": "workspace:*"
   },
   "peerDependencies": {
     "react": "catalog:",

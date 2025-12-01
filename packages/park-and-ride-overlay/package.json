@@ -23,9 +23,6 @@
     "@opentripplanner/from-to-location-picker": "workspace:*",
     "@opentripplanner/types": "workspace:*"
   },
-  "devDependencies": {
-    "storybook": "catalog:"
-  },
   "peerDependencies": {
     "react": "catalog:",
     "react-dom": "catalog:",

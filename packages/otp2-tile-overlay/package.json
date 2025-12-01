@@ -21,7 +21,6 @@
   "devDependencies": {
     "@opentripplanner/base-map": "workspace:*",
     "@opentripplanner/types": "workspace:*",
-    "maplibre-gl": "catalog:",
-    "storybook": "catalog:"
+    "maplibre-gl": "catalog:"
   }
 }

@@ -23,9 +23,6 @@
     "@opentripplanner/base-map": "workspace:*",
     "@opentripplanner/core-utils": "workspace:*"
   },
-  "devDependencies": {
-    "storybook": "catalog:"
-  },
   "peerDependencies": {
     "react": "catalog:",
     "react-map-gl": "catalog:"

@@ -1,7 +1,5 @@
 catalog:
   "@mapbox/polyline": ^1.1.1
-  "@storybook/addon-actions": ^8.0.0
-  "@storybook/test": ^8.0.0
   "@styled-icons/bootstrap": ^10.34.0
   "@styled-icons/fa-regular": ^10.34.0
   "@styled-icons/fa-solid": ^10.34.0
@@ -16,7 +14,6 @@ catalog:
   react-dom: ^18.2.0
   react-intl: ^6.8.4
   react-map-gl: ^8.0.4
-  storybook: ^10.0.5
   styled-components: ^5.3.0
   styled-icons: ^10.34.0
 onlyBuiltDependencies:

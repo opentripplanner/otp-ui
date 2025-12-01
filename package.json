@@ -80,6 +80,7 @@
     "semantic-release-monorepo": "^8.0.2",
     "semantic-release-pnpm": "^1.0.2",
     "semver": "^7.3.2",
+    "storybook": "^10.0.5",
     "storybook-mock-date-decorator": "^3.0.0",
     "storybook-react-intl": "4.0.7",
     "styled-components": "catalog:",
