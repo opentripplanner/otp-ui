@@ -71,7 +71,6 @@ export default {
 
       resolve: {
         alias: {
-          // Configure module resolution for workspace packages
           querystring: 'querystring-es3'
         }
       },
