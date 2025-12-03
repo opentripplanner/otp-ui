@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Icons/TrimetModeIcon TrimetModeIconExamples smoke-test 1`] = `
 <table class="icon-renderer__StyledTable-sc-g7krq-0 gVtNli">
