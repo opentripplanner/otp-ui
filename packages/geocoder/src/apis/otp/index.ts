@@ -36,7 +36,7 @@ type OTPGeocoderResponse = {
 
 
 function run({ query, focusLatitude, focusLongitude, url }: FetchArgs): Promise<OTPGeocoderResponse> {
-  // TODO: is there a cleaner way to implement this? Some sort of dynamic query bulider? Is it worth it for a URL which is unlikely to change soon?
+  // TODO: is there a cleaner way to implement this? Some sort of dynamic query builder? Is it worth it for a URL which is unlikely to change soon?
   return fetch(`${url}/geocode/stopClusters?query=${query}${focusLongitude ? `&focusLongitude=${focusLongitude}` : ""}${focusLatitude ? `&focusLatitude=${focusLatitude}` : ""}`)
     .then(res => res.text())
     .then(res => {
@@ -45,7 +45,7 @@ function run({ query, focusLatitude, focusLongitude, url }: FetchArgs): Promise<
       try {
         parsed = JSON.parse(`{"results": ${res}}`)
 
-        // Unforunate way to swallow errors
+        // Unfortunate way to swallow errors
         if (!Array.isArray(parsed.results)) {
           console.warn(`Invalid response from OTP: ${res}`)
           parsed = { results:[] }
@@ -63,9 +63,10 @@ function run({ query, focusLatitude, focusLongitude, url }: FetchArgs): Promise<
  * OTP Geocoder
  *
  * @param  {Object} $0
- * @param  {string} $0.url  The OTP instance, ending with /default/
- * @param  {string} $0.text query
- * @return {Promise}        A Promise that'll get resolved with the autocomplete result
+ * @param  {string} $0.url        The OTP instance, ending with /default/
+ * @param  {string} $0.text       query
+ * @param  {string} $0.focusPoint coordinates to center search around
+ * @return {Promise}              A Promise that'll get resolved with the autocomplete result
  */
 async function autocomplete({
   url,
