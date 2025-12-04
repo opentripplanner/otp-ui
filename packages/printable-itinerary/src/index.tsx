@@ -2,7 +2,7 @@ import { Config, Itinerary, LegIconComponent } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
-import { AccessibilityRating } from "@opentripplanner/itinerary-body/src";
+import { AccessibilityRating } from "@opentripplanner/itinerary-body";
 import AccessLeg from "./access-leg";
 import * as S from "./styled";
 import TNCLeg from "./tnc-leg";

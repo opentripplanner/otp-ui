@@ -7,7 +7,8 @@ import RouteBadge from "./RouteBadge";
 import TransitLegBody from "./TransitLegBody";
 import * as Styled from "./styled";
 import { getPlaceName, parseOTP2Minute } from "./util";
-import {
+// eslint-disable-next-line prettier/prettier
+import type {
   RouteDescriptionProps,
   RouteDescriptionFooterProps,
   ToRouteAbbreviationFunction,
