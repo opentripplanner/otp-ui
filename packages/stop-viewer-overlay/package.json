@@ -2,8 +2,7 @@
   "name": "@opentripplanner/stop-viewer-overlay",
   "version": "5.0.0",
   "description": "A map overlay to show a stop",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
+  "main": "./lib/index.js",
   "author": "Evan Siroky",
   "license": "MIT",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
@@ -28,5 +27,6 @@
   "peerDependencies": {
     "react": "catalog:",
     "react-map-gl": "catalog:"
-  }
+  },
+  "type": "module"
 }

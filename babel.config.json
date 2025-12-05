@@ -1,21 +1,56 @@
 {
-  "env": {
-    "esm": {
-      "presets": [["@babel/preset-env", { "modules": false }]]
-    }
-  },
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "12"
+        },
+        "modules": false
+      }
+    ],
+    "@babel/preset-typescript",
+    "@babel/preset-react"
+  ],
   "plugins": [
-    ["@babel/plugin-proposal-class-properties", { "loose": true }],
-    ["@babel/plugin-transform-private-methods", { "loose": true }],
-    ["@babel/plugin-transform-private-property-in-object", { "loose": true }],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    [
+      "@babel/plugin-transform-private-methods",
+      {
+        "loose": true
+      }
+    ],
+    [
+      "@babel/plugin-transform-private-property-in-object",
+      {
+        "loose": true
+      }
+    ],
     "babel-plugin-styled-components",
     "@babel/plugin-transform-runtime",
     "import-graphql",
     "@babel/plugin-proposal-nullish-coalescing-operator"
   ],
-  "presets": [
-    ["@babel/preset-env", { "targets": { "node": "12" } }],
-    "@babel/preset-typescript",
-    "@babel/preset-react"
-  ]
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "current"
+            },
+            "modules": "commonjs"
+          }
+        ],
+        "@babel/preset-typescript",
+        "@babel/preset-react"
+      ]
+    }
+  }
 }
