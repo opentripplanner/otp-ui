@@ -741,6 +741,10 @@ export function getItineraryCost(
     // Get the leg cost object of each leg
     .reduce<{ seenIds: string[]; legCosts: AppliedFareProduct[] }>(
       (acc, leg) => {
+        // getLegCost handles filtering out duplicate use IDs
+        // One fare product can be used on multiple legs,
+        // and we don't want to count it more than once.
+        // Use an object keyed by productUseId to deduplicate, then extract prices
         const { appliedFareProduct, productUseId } = getLegCost(
           leg,
           mediumId,
@@ -756,16 +760,6 @@ export function getItineraryCost(
       { seenIds: [], legCosts: [] }
     )
     .legCosts.map(lc => lc.legPrice);
-  // Filter out duplicate use IDs
-  // One fare product can be used on multiple legs,
-  // and we don't want to count it more than once.
-  // Use an object keyed by productUseId to deduplicate, then extract prices
-  // .reduce<{ [productUseId: string]: Money }>((acc, cur) => {
-  //   if (cur.productUseId && acc[cur.productUseId] === undefined) {
-  //     acc[cur.productUseId] = cur.appliedFareProduct?.legPrice;
-  //   }
-  //   return acc;
-  // }, {});
 
   if (legCosts.length === 0) return undefined;
   // Calculate the total
