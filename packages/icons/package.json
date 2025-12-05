@@ -2,8 +2,7 @@
   "name": "@opentripplanner/icons",
   "version": "4.1.0",
   "description": "Icons for otp-ui",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
+  "main": "./lib/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "author": "Evan Siroky",
@@ -19,5 +18,6 @@
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
-  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
+  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
+  "type": "module"
 }

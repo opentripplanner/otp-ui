@@ -81,6 +81,8 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         ItineraryBodyComponent = ItineraryBody;
     }
 
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     config.itinerary = {
       hideDrivingDirections
     };
