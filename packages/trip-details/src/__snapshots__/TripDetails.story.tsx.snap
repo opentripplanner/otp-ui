@@ -1394,7 +1394,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
     <td style="text-align: right;">
       <em>
-        $7.00
+        $10.25
       </em>
     </td>
   </tr>
@@ -1418,7 +1418,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     </td>
     <td style="text-align: right;">
       <em>
-        $6.50
+        $9.75
       </em>
     </td>
   </tr>
@@ -1875,7 +1875,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 </td>
                 <td style="text-align: right;">
                   <em>
-                    $7.00
+                    $10.25
                   </em>
                 </td>
               </tr>
@@ -1899,7 +1899,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 </td>
                 <td style="text-align: right;">
                   <em>
-                    $6.50
+                    $9.75
                   </em>
                 </td>
               </tr>
