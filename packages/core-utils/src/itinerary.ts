@@ -595,20 +595,16 @@ export function calculateEmissions(
 }
 
 /**
- * Returns the user-facing stop id to display for a stop or place, using the following priority:
- * 1. stop code,
- * 2. stop id without the agency id portion, if stop id contains an agency portion,
- * 3. stop id, whether null or not (this is the fallback case).
+ * Returns the user-facing stop code to display for a stop or place
  */
-export function getDisplayedStopId(placeOrStop: Place | Stop): string {
-  let stopId;
+export function getDisplayedStopCode(placeOrStop: Place | Stop): string {
   let stopCode;
   if ("stopId" in placeOrStop) {
-    ({ stopCode, stopId } = placeOrStop);
+    ({ stopCode } = placeOrStop);
   } else if ("id" in placeOrStop) {
-    ({ code: stopCode, id: stopId } = placeOrStop);
+    ({ code: stopCode } = placeOrStop);
   }
-  return stopCode || stopId?.split(":")[1] || stopId;
+  return stopCode || null;
 }
 
 /**

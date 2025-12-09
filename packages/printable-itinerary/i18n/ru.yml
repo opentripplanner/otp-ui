@@ -10,10 +10,10 @@ otpUi:
         добраться к месту <strong>{place}</strong>
     TransitLeg:
       alight: >-
-        Выходите в месте <strong>{place}</strong> ({stopId}) в <strong>{time,
+        Выходите в месте <strong>{place}</strong>{stopIdPart} в <strong>{time,
         time, short}</strong>
       board: >-
-        Садитесь в транспорт в месте <strong>{place}</strong> ({stopId}) в
+        Садитесь в транспорт в месте <strong>{place}</strong>{stopIdPart} в
         <strong>{time, time, short}</strong>
       continuesAs: "Продолжение: {routeDescription}"
     depart: <strong>Отправление</strong> с места <strong>{place}</strong>
