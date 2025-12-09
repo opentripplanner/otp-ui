@@ -264,10 +264,7 @@ const VehicleRentalOverlay = ({
         >
           <StationPopup
             configCompanies={configCompanies}
-            getEntityName={
-              // @ts-expect-error no stop support. Avoid a breaking change
-              getStationName && ((s, cc) => getStationName(cc, s))
-            }
+            getEntityName={getStationName && ((s, cc) => getStationName(cc, s))}
             setLocation={location => {
               setClickedVehicle(undefined);
               setLocation(location);
