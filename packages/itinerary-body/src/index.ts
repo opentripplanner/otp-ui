@@ -7,7 +7,8 @@ import RouteBadge from "./RouteBadge";
 import TransitLegBody from "./TransitLegBody";
 import * as Styled from "./styled";
 import { getPlaceName, parseOTP2Minute } from "./util";
-import {
+// eslint-disable-next-line prettier/prettier
+import type {
   RouteDescriptionProps,
   RouteDescriptionFooterProps,
   ToRouteAbbreviationFunction,
@@ -25,6 +26,7 @@ import {
   PlaceRowProps,
   ItineraryBodyProps
 } from "./types";
+import * as Types from "./types";
 
 export default ItineraryBody;
 
@@ -54,5 +56,6 @@ export {
   TransitLegSubheaderProps,
   TransitLegSummaryProps,
   PlaceRowProps,
-  ItineraryBodyProps
+  ItineraryBodyProps,
+  Types
 };

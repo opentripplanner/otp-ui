@@ -69,7 +69,8 @@ otpUi:
       car: Авто
       escooter: Электросамокат
       vehicle: Транспортное средство
-    transfer: Пересадка{duration, select, undefined {} other {, wait {duration}}}
+    transfer: Пересадка{duration, select, undefined {} other {, подожди 
+      {duration}}}
   ItineraryBody:
     common:
       durationShort: >-
@@ -77,7 +78,8 @@ otpUi:
         other {# ч }}{minutes} мин
     flexCallAhead: звоните заранее
     flexCallNumber: звоните {phoneNumber}
-    flexPickupMessage: Чтобы воспользоваться этим маршрутом, {action}{advanceNotice}.
+    flexPickupMessage: Чтобы воспользоваться этим маршрутом, 
+      {action}{advanceNotice}.
     stayOnBoard: Не выходите в месте {place}
     travelBy: Передвижение {mode}
     travelByMode:
