@@ -2,8 +2,6 @@
   "name": "@opentripplanner/trip-details",
   "version": "9.0.5",
   "description": "A component for displaying details about a trip planning itinerary",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
   "types": "lib/index.d.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
@@ -31,5 +29,12 @@
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
   "scripts": {
     "tsc": "tsc"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   }
 }

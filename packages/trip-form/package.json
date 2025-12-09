@@ -5,8 +5,6 @@
   "author": "@binh-dam-ibigroup",
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
   "license": "MIT",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
   "types": "lib/index.d.ts",
   "private": false,
   "dependencies": {
@@ -45,5 +43,12 @@
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
-  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
+  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  }
 }

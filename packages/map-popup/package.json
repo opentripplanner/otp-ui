@@ -2,8 +2,6 @@
   "name": "@opentripplanner/map-popup",
   "version": "8.0.1",
   "description": "A component for displaying map popup contents",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
   "types": "lib/index.d.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
@@ -30,5 +28,12 @@
   },
   "scripts": {
     "tsc": "tsc"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   }
 }

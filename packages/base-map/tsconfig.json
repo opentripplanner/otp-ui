@@ -3,7 +3,7 @@
   "compilerOptions": {
     "composite": true,
     "lib": ["es2019", "dom"],
-    "outDir": "./lib",
+    "outDir": "./dist",
     "rootDir": "./src",
     "skipLibCheck": true
   },

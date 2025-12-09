@@ -2,8 +2,6 @@
   "name": "@opentripplanner/otp2-tile-overlay",
   "version": "5.0.0",
   "description": "Render data from OTP2's vector tile server",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
   "types": "lib/index.d.ts",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "license": "MIT",
@@ -22,5 +20,12 @@
     "@opentripplanner/base-map": "workspace:*",
     "@opentripplanner/types": "workspace:*",
     "maplibre-gl": "catalog:"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   }
 }

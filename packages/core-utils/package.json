@@ -5,8 +5,6 @@
   "engines": {
     "node": ">=13"
   },
-  "main": "lib/index.js",
-  "module": "esm/index.js",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "author": "Evan Siroky",
   "license": "MIT",
@@ -30,5 +28,12 @@
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   }
 }
