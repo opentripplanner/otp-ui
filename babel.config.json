@@ -12,5 +12,12 @@
     ["@babel/preset-env", { "targets": { "node": "12" }, "modules": false }],
     "@babel/preset-typescript",
     "@babel/preset-react"
-  ]
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        ["@babel/preset-env", { "targets": { "node": "current" }, "modules": "commonjs" }]
+      ]
+    }
+  }
 }
