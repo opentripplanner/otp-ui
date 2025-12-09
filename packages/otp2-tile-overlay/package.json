@@ -2,7 +2,7 @@
   "name": "@opentripplanner/otp2-tile-overlay",
   "version": "5.0.0",
   "description": "Render data from OTP2's vector tile server",
-  "types": "lib/index.d.ts",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "license": "MIT",
   "private": false,

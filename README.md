@@ -49,7 +49,7 @@ This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows
 
 - `pnpm dev` - This starts Storybook for viewing all the components locally.
 - `pnpm install` - This installs all of the packages and links dependent packages together.
-- `pnpm preppublish` - This babelfies all of the packages and creates `/lib` and `/esm` folders for each one.
+- `pnpm preppublish` - This builds all of the packages and creates `/dist` folders for each one.
 - `pnpm unit` - Run jest unit tests.
 - `pnpm coverage` - Shows jest unit coverage.
 - `pnpm clean` - Deletes all files in the gitignore (note: this can delete local editor settings)

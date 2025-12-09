@@ -4,7 +4,7 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "esModuleInterop": true,
-    "outDir": "./lib/",
+    "outDir": "./dist/",
     "noImplicitAny": true,
     "moduleResolution": "node",
     "module": "commonjs",

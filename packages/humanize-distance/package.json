@@ -2,7 +2,7 @@
   "name": "@opentripplanner/humanize-distance",
   "version": "2.1.0",
   "description": "Pretty print a string for a certain distance",
-  "types": "lib/index.d.ts",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "author": "Evan  Siroky",
   "license": "MIT",

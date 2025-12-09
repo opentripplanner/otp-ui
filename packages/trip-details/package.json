@@ -2,7 +2,7 @@
   "name": "@opentripplanner/trip-details",
   "version": "9.0.5",
   "description": "A component for displaying details about a trip planning itinerary",
-  "types": "lib/index.d.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "author": "Evan Siroky",
