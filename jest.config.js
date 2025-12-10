@@ -24,6 +24,7 @@ module.exports = {
   ],
   moduleNameMapper: {
     "^@opentripplanner/(.*)$": "<rootDir>/packages/$1/src",
+    "^(\\.{1,2}/.*)\\.js$": "$1",
     "\\.(s?css|less)$": "identity-obj-proxy",
     "\\.(pbf)$": "<rootDir>/__mocks__/file-mock.js",
     "\\.(svg)$": "<rootDir>/__mocks__/file-mock.js"

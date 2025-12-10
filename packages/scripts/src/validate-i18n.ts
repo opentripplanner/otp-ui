@@ -8,7 +8,7 @@ import {
   isNotSpecialId,
   loadYamlFile,
   sortSourceAndYmlFiles
-} from "./util";
+} from "./util.js";
 
 /**
  * Computes the unused ids from code or YML file for a given locale.
