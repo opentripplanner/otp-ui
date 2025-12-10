@@ -229,7 +229,9 @@ const VehicleRentalOverlay = ({
                     setLocation(location);
                   }}
                   getEntityName={
-                    getStationName && ((s, cc) => getStationName(cc, s))
+                    entityIsStation(entity) && getStationName
+                      ? (s, cc) => getStationName(cc, s as VehicleRentalStation)
+                      : undefined
                   }
                   entity={entity}
                 />
@@ -263,7 +265,13 @@ const VehicleRentalOverlay = ({
         >
           <StationPopup
             configCompanies={configCompanies}
-            getEntityName={getStationName && ((s, cc) => getStationName(cc, s))}
+            getEntityName={
+              clickedVehicle &&
+              entityIsStation(clickedVehicle) &&
+              getStationName
+                ? (s, cc) => getStationName(cc, s as VehicleRentalStation)
+                : undefined
+            }
             setLocation={location => {
               setClickedVehicle(undefined);
               setLocation(location);

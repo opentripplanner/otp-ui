@@ -6,7 +6,7 @@ import { LeafletStyleMarker, Popup } from "./styled";
 
 type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   popupContents?: React.ReactNode;
-  popupProps?: PopupProps;
+  popupProps?: Omit<PopupProps, "longitude" | "latitude">;
   position: [number, number];
   tooltipContents?: React.ReactNode;
 };
