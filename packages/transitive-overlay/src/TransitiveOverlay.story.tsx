@@ -5,22 +5,22 @@ import { action } from "storybook/actions";
 import { injectIntl } from "react-intl";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
-import bikeOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json";
-import bikeRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-rental.json";
-import bikeRentalTransitBikeRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-rental-transit-bike-rental.json";
-import bikeTransitBikeItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-transit-bike.json";
-import eScooterRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/e-scooter-rental.json";
-import eScooterRentalTransiteScooterRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/e-scooter-transit-e-scooter.json";
-import parkAndRideItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/park-and-ride.json";
-import tncTransitTncItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json";
-import walkInterlinedTransitItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-interlined-transit-walk.json";
-import walkOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json";
-import walkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
-import walkTransitWalkItineraryNoIntermediateStops from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-no-intermediate-stops.json";
-import walkTransitWalkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
-import flexItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
-import otp2ScooterItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json";
-import otp2TransitItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-transit-leg.json";
+import bikeOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-only.json";
+import bikeRentalItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-rental.json";
+import bikeRentalTransitBikeRentalItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-rental-transit-bike-rental.json";
+import bikeTransitBikeItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-transit-bike.json";
+import eScooterRentalItinerary from "../../itinerary-body/src/__mocks__/itineraries/e-scooter-rental.json";
+import eScooterRentalTransiteScooterRentalItinerary from "../../itinerary-body/src/__mocks__/itineraries/e-scooter-transit-e-scooter.json";
+import parkAndRideItinerary from "../../itinerary-body/src/__mocks__/itineraries/park-and-ride.json";
+import tncTransitTncItinerary from "../../itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json";
+import walkInterlinedTransitItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-interlined-transit-walk.json";
+import walkOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-only.json";
+import walkTransitWalkItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkItineraryNoIntermediateStops from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk-no-intermediate-stops.json";
+import walkTransitWalkTransitWalkItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
+import flexItinerary from "../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
+import otp2ScooterItinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2-scooter.json";
+import otp2TransitItinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2-transit-leg.json";
 import { withMap } from "../../../.storybook/base-map-wrapper";
 import TransitiveOverlay, { itineraryToTransitive } from ".";
 

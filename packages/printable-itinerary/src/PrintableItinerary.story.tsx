@@ -5,22 +5,22 @@ import styled from "styled-components";
 import { Meta } from "@storybook/react";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
-import bikeOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json";
-import bikeRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-rental.json";
-import bikeRentalTransitBikeRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-rental-transit-bike-rental.json";
-import bikeTransitBikeItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-transit-bike.json";
-import eScooterRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/e-scooter-rental.json";
-import eScooterRentalTransiteScooterRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/e-scooter-transit-e-scooter.json";
-import parkAndRideItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/park-and-ride.json";
-import tncTransitTncItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json";
-import walkInterlinedTransitItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-interlined-transit-walk.json";
-import walkOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json";
-import walkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
-import walkTransitWalkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
-import walkTransitWalkTransitWalkA11yItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json";
-import config from "@opentripplanner/itinerary-body/src/__mocks__/config.json";
-import otp2ScooterItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2-scooter.json";
-import otp24Itinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/otp2.4-transit-itinerary.json";
+import bikeOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-only.json";
+import bikeRentalItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-rental.json";
+import bikeRentalTransitBikeRentalItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-rental-transit-bike-rental.json";
+import bikeTransitBikeItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-transit-bike.json";
+import eScooterRentalItinerary from "../../itinerary-body/src/__mocks__/itineraries/e-scooter-rental.json";
+import eScooterRentalTransiteScooterRentalItinerary from "../../itinerary-body/src/__mocks__/itineraries/e-scooter-transit-e-scooter.json";
+import parkAndRideItinerary from "../../itinerary-body/src/__mocks__/itineraries/park-and-ride.json";
+import tncTransitTncItinerary from "../../itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json";
+import walkInterlinedTransitItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-interlined-transit-walk.json";
+import walkOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-only.json";
+import walkTransitWalkItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkTransitWalkItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
+import walkTransitWalkTransitWalkA11yItinerary from "../../itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json";
+import config from "../../itinerary-body/src/__mocks__/config.json";
+import otp2ScooterItinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2-scooter.json";
+import otp24Itinerary from "../../itinerary-body/src/__mocks__/itineraries/otp2.4-transit-itinerary.json";
 import PrintableItinerary from ".";
 import * as PrintableItineraryClasses from "./styled";
 
