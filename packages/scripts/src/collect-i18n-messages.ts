@@ -8,7 +8,7 @@ import {
   isNotSpecialId,
   loadYamlFile,
   sortSourceAndYmlFiles
-} from "./util.js";
+} from "./util";
 
 // The data that corresponds to rows in the CSV output.
 type MessageData = Record<
