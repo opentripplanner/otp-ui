@@ -29,7 +29,7 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -923,7 +923,7 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -980,7 +980,7 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -1877,7 +1877,7 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -1934,7 +1934,7 @@ exports[`ItineraryBody/otp-react-redux BikeOnlyItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -2217,7 +2217,7 @@ exports[`ItineraryBody/otp-react-redux BikeOnlyItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -2274,7 +2274,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -3052,7 +3052,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -3109,7 +3109,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -5182,7 +5182,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -5239,7 +5239,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -6651,7 +6651,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -6708,7 +6708,7 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -7362,7 +7362,7 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -7439,7 +7439,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -7865,7 +7865,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -7922,7 +7922,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -9682,7 +9682,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -9739,7 +9739,7 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -10833,7 +10833,7 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -10890,7 +10890,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -13332,7 +13332,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -13389,7 +13389,7 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -14806,7 +14806,7 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -14863,7 +14863,7 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -15613,7 +15613,7 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -15670,7 +15670,7 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -17497,7 +17497,7 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -17554,7 +17554,7 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -19058,7 +19058,7 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -19115,7 +19115,7 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -19555,7 +19555,7 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -19612,7 +19612,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -20509,7 +20509,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -20566,7 +20566,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -21463,7 +21463,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -21520,7 +21520,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -22417,7 +22417,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -22474,7 +22474,7 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -23047,7 +23047,7 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -23104,7 +23104,7 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -24813,7 +24813,7 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -24870,7 +24870,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -26395,7 +26395,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -26452,7 +26452,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -27956,7 +27956,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -28013,7 +28013,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -29517,7 +29517,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -29574,7 +29574,7 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -31300,7 +31300,7 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -31357,7 +31357,7 @@ exports[`ItineraryBody/otp-react-redux WalkOnlyItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -31571,7 +31571,7 @@ exports[`ItineraryBody/otp-react-redux WalkOnlyItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -31628,7 +31628,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -32820,7 +32820,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -32877,7 +32877,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -34193,7 +34193,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -34250,7 +34250,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -35147,7 +35147,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -35204,7 +35204,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -36101,7 +36101,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -36158,7 +36158,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -37884,7 +37884,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -37941,7 +37941,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -39667,7 +39667,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -39724,7 +39724,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -41450,7 +41450,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD line-column-content__StyledLocationIcon-sc-1wcbb7o-4 jnioyI"
         >
           <path fill="currentColor"
                 d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
