@@ -19,7 +19,7 @@ const Table = styled.table`
 export const SeptaRouteIconExamples = () => (
   <Table>
     <tr>
-      <td>Blvd Direct</td>
+      <td>Boulevard Direct</td>
       <td>
         <BlvdDirect />
       </td>
