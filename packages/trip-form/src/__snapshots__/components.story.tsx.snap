@@ -45,14 +45,14 @@ exports[`Trip Form Components dateTimeSelector smoke-test 1`] = `
        role="group"
   >
     <div class="styled__DepartArriveContainer-sc-122ziys-5 kqvuAJ">
-      <span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS"
+      <span class="styled__DropdownWrapper-sc-1pgs1t6-2 hlfqPh"
             id="date-time-depart-arrive-wrapper"
       >
         <button aria-expanded="false"
                 aria-haspopup="listbox"
                 id="date-time-depart-arrive-label"
                 type="button"
-                class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
+                class="styled__DropdownButton-sc-1pgs1t6-0 bA-DMzd"
                 style="background-color: transparent; border: 0px; color: inherit;"
         >
           <span>
@@ -91,14 +91,14 @@ exports[`Trip Form Components dateTimeSelector smoke-test 1`] = `
          role="group"
     >
       <div class="styled__DepartArriveContainer-sc-122ziys-5 kqvuAJ">
-        <span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS"
+        <span class="styled__DropdownWrapper-sc-1pgs1t6-2 hlfqPh"
               id="date-time-depart-arrive-wrapper"
         >
           <button aria-expanded="false"
                   aria-haspopup="listbox"
                   id="date-time-depart-arrive-label"
                   type="button"
-                  class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
+                  class="styled__DropdownButton-sc-1pgs1t6-0 bA-DMzd"
                   style="background-color: transparent; border: 0px; color: inherit;"
           >
             <span>
@@ -136,14 +136,14 @@ exports[`Trip Form Components departArriveDropdown smoke-test 1`] = `
 </p>
 <div>
   <div class="styled__DepartArriveContainer-sc-122ziys-5 kqvuAJ">
-    <span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS"
+    <span class="styled__DropdownWrapper-sc-1pgs1t6-2 hlfqPh"
           id="date-time-depart-arrive-wrapper"
     >
       <button aria-expanded="false"
               aria-haspopup="listbox"
               id="date-time-depart-arrive-label"
               type="button"
-              class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
+              class="styled__DropdownButton-sc-1pgs1t6-0 bA-DMzd"
               style="background-color: transparent; border: 0px; color: inherit;"
       >
         <span>
@@ -163,14 +163,14 @@ exports[`Trip Form Components departArriveDropdown smoke-test 1`] = `
 <div>
   <div class="trimet-styled__TriMetStyled-sc-buwk9d-0 dZhbzT">
     <div class="styled__DepartArriveContainer-sc-122ziys-5 kqvuAJ">
-      <span class="styled__DropdownWrapper-sc-kes9ha-2 elAsDS"
+      <span class="styled__DropdownWrapper-sc-1pgs1t6-2 hlfqPh"
             id="date-time-depart-arrive-wrapper"
       >
         <button aria-expanded="false"
                 aria-haspopup="listbox"
                 id="date-time-depart-arrive-label"
                 type="button"
-                class="styled__DropdownButton-sc-kes9ha-0 eRScRa"
+                class="styled__DropdownButton-sc-1pgs1t6-0 bA-DMzd"
                 style="background-color: transparent; border: 0px; color: inherit;"
         >
           <span>
