@@ -105,7 +105,6 @@ const TransitVehicleOverlay = ({
   return validVehicles?.map(vehicle => (
     <MarkerWithPopup
       key={vehicle.vehicleId}
-      // @ts-expect-error the prop override doesn't require all props to be present
       popupProps={{ offset: [-iconPixels / 2 - iconPadding, 0] }}
       position={[vehicle.lat, vehicle.lon]}
       tooltipContents={

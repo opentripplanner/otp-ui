@@ -2,8 +2,6 @@
   "name": "@opentripplanner/route-viewer-overlay",
   "version": "5.0.0",
   "description": "A map overlay to show a transit route",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
   "author": "Evan Siroky",
   "license": "MIT",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
@@ -31,5 +29,12 @@
   "peerDependencies": {
     "react": "catalog:"
   },
-  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
+  "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  }
 }

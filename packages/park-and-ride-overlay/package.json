@@ -2,8 +2,6 @@
   "name": "@opentripplanner/park-and-ride-overlay",
   "version": "5.0.0",
   "description": "A map overlay to show park and rides",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
   "author": "Evan Siroky",
   "license": "MIT",
@@ -28,5 +26,12 @@
     "react-dom": "catalog:",
     "react-map-gl": "catalog:",
     "styled-components": "catalog:"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   }
 }

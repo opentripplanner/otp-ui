@@ -1488,7 +1488,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -1835,7 +1835,7 @@ exports[`ItineraryBody/otp-ui BikeOnlyItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -2717,7 +2717,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -4894,7 +4894,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -6310,7 +6310,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -7223,7 +7223,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -7719,7 +7719,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -9522,7 +9522,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -10649,7 +10649,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -12892,7 +12892,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -14261,7 +14261,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -15088,7 +15088,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -16625,7 +16625,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -17538,7 +17538,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -18451,7 +18451,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -19364,7 +19364,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -20277,7 +20277,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -20875,7 +20875,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -22550,7 +22550,7 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -24087,7 +24087,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -25645,7 +25645,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -27182,7 +27182,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -28838,7 +28838,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -29110,7 +29110,7 @@ exports[`ItineraryBody/otp-ui WalkOnlyItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -30268,7 +30268,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -31556,7 +31556,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -32472,7 +32472,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -33399,7 +33399,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -34297,7 +34297,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -35212,7 +35212,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -36129,7 +36129,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -37785,7 +37785,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -39441,7 +39441,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -41097,7 +41097,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
                  focusable="false"
                  fill="currentColor"
                  xmlns="http://www.w3.org/2000/svg"
-                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+                 class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
             >
               <path fill="currentColor"
                     d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"

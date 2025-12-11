@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "composite": true,
-    "outDir": "./lib",
+    "outDir": "./dist",
     "rootDir": "./src",
     "target": "ES2019",
     "skipLibCheck": true

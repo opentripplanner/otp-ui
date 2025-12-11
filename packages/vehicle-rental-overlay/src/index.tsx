@@ -229,8 +229,9 @@ const VehicleRentalOverlay = ({
                     setLocation(location);
                   }}
                   getEntityName={
-                    // @ts-expect-error no stop support. Avoid a breaking change
-                    getStationName && ((s, cc) => getStationName(cc, s))
+                    entityIsStation(entity) && getStationName
+                      ? (s, cc) => getStationName(cc, s as VehicleRentalStation)
+                      : undefined
                   }
                   entity={entity}
                 />
@@ -265,8 +266,11 @@ const VehicleRentalOverlay = ({
           <StationPopup
             configCompanies={configCompanies}
             getEntityName={
-              // @ts-expect-error no stop support. Avoid a breaking change
-              getStationName && ((s, cc) => getStationName(cc, s))
+              clickedVehicle &&
+              entityIsStation(clickedVehicle) &&
+              getStationName
+                ? (s, cc) => getStationName(cc, s as VehicleRentalStation)
+                : undefined
             }
             setLocation={location => {
               setClickedVehicle(undefined);

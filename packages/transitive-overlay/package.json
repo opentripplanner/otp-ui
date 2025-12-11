@@ -2,8 +2,6 @@
   "name": "@opentripplanner/transitive-overlay",
   "version": "7.0.2",
   "description": "A map overlay to show an itinerary based on transitive.js",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
   "author": "Evan Siroky",
   "license": "MIT",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
@@ -39,5 +37,12 @@
   "peerDependencies": {
     "react": "catalog:",
     "react-map-gl": "catalog:"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   }
 }

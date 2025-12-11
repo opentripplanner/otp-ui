@@ -25,7 +25,7 @@ exports[`LocationField/Desktop Context AutoFocusWithMultipleControls smoke-test 
            focusable="false"
            fill="currentColor"
            xmlns="http://www.w3.org/2000/svg"
-           class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
       >
         <path fill="currentColor"
               d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -79,7 +79,7 @@ exports[`LocationField/Desktop Context Blank smoke-test 1`] = `
          focusable="false"
          fill="currentColor"
          xmlns="http://www.w3.org/2000/svg"
-         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
     >
       <path fill="currentColor"
             d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -132,7 +132,7 @@ exports[`LocationField/Desktop Context GeocoderNoResults smoke-test 1`] = `
          focusable="false"
          fill="currentColor"
          xmlns="http://www.w3.org/2000/svg"
-         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
     >
       <path fill="currentColor"
             d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -185,7 +185,7 @@ exports[`LocationField/Desktop Context GeocoderUnreachable smoke-test 1`] = `
          focusable="false"
          fill="currentColor"
          xmlns="http://www.w3.org/2000/svg"
-         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
     >
       <path fill="currentColor"
             d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -238,7 +238,7 @@ exports[`LocationField/Desktop Context HereGeocoder smoke-test 1`] = `
          focusable="false"
          fill="currentColor"
          xmlns="http://www.w3.org/2000/svg"
-         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
     >
       <path fill="currentColor"
             d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -291,7 +291,7 @@ exports[`LocationField/Desktop Context LocationUnavailable smoke-test 1`] = `
          focusable="false"
          fill="currentColor"
          xmlns="http://www.w3.org/2000/svg"
-         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
     >
       <path fill="currentColor"
             d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -351,7 +351,7 @@ exports[`LocationField/Desktop Context NoAutoFocusWithMultipleControls smoke-tes
            focusable="false"
            fill="currentColor"
            xmlns="http://www.w3.org/2000/svg"
-           class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+           class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
       >
         <path fill="currentColor"
               d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -405,7 +405,7 @@ exports[`LocationField/Desktop Context RequiredAndInvalidState smoke-test 1`] = 
          focusable="false"
          fill="currentColor"
          xmlns="http://www.w3.org/2000/svg"
-         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
     >
       <path fill="currentColor"
             d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -458,7 +458,7 @@ exports[`LocationField/Desktop Context SelectedLocation smoke-test 1`] = `
          focusable="false"
          fill="currentColor"
          xmlns="http://www.w3.org/2000/svg"
-         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
     >
       <path fill="currentColor"
             d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -530,7 +530,7 @@ exports[`LocationField/Desktop Context SelectedLocationCustomClear smoke-test 1`
          focusable="false"
          fill="currentColor"
          xmlns="http://www.w3.org/2000/svg"
-         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
     >
       <path fill="currentColor"
             d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
@@ -602,7 +602,7 @@ exports[`LocationField/Desktop Context SlowGeocoder smoke-test 1`] = `
          focusable="false"
          fill="currentColor"
          xmlns="http://www.w3.org/2000/svg"
-         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
     >
       <path fill="currentColor"
             d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -655,7 +655,7 @@ exports[`LocationField/Desktop Context WithBadApiKeyHandlesBadAutocomplete smoke
          focusable="false"
          fill="currentColor"
          xmlns="http://www.w3.org/2000/svg"
-         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
     >
       <path fill="currentColor"
             d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -708,7 +708,7 @@ exports[`LocationField/Desktop Context WithCustomResultColorsAndIcons smoke-test
          focusable="false"
          fill="currentColor"
          xmlns="http://www.w3.org/2000/svg"
-         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
     >
       <path fill="currentColor"
             d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -761,7 +761,7 @@ exports[`LocationField/Desktop Context WithCustomResultsOrder smoke-test 1`] = `
          focusable="false"
          fill="currentColor"
          xmlns="http://www.w3.org/2000/svg"
-         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
     >
       <path fill="currentColor"
             d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -1093,7 +1093,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
          focusable="false"
          fill="currentColor"
          xmlns="http://www.w3.org/2000/svg"
-         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
     >
       <path fill="currentColor"
             d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
@@ -1425,7 +1425,7 @@ exports[`LocationField/Desktop Context WithUserSettings smoke-test 1`] = `
          focusable="false"
          fill="currentColor"
          xmlns="http://www.w3.org/2000/svg"
-         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
     >
       <path fill="currentColor"
             d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"

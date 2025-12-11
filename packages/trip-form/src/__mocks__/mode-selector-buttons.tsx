@@ -9,7 +9,7 @@ import {
 
 import { ModeButtonDefinition, ModeSetting } from "@opentripplanner/types";
 
-import { ClassicBike } from "@opentripplanner/icons/src/classic";
+import { ClassicBike } from "@opentripplanner/icons";
 import React from "react";
 
 export const defaultModeButtonDefinitions: ModeButtonDefinition[] = [

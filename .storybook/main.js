@@ -66,7 +66,36 @@ export default {
       },
 
       optimizeDeps: {
-        include: ['hoist-non-react-statics']
+        include: ['hoist-non-react-statics'],
+        exclude: [
+          '@opentripplanner/base-map',
+          '@opentripplanner/building-blocks',
+          '@opentripplanner/core-utils',
+          '@opentripplanner/endpoints-overlay',
+          '@opentripplanner/from-to-location-picker',
+          '@opentripplanner/geocoder',
+          '@opentripplanner/humanize-distance',
+          '@opentripplanner/icons',
+          '@opentripplanner/itinerary-body',
+          '@opentripplanner/location-field',
+          '@opentripplanner/location-icon',
+          '@opentripplanner/map-popup',
+          '@opentripplanner/otp2-tile-overlay',
+          '@opentripplanner/park-and-ride-overlay',
+          '@opentripplanner/printable-itinerary',
+          '@opentripplanner/route-viewer-overlay',
+          '@opentripplanner/scripts',
+          '@opentripplanner/stop-viewer-overlay',
+          '@opentripplanner/stops-overlay',
+          '@opentripplanner/transit-vehicle-overlay',
+          '@opentripplanner/transitive-overlay',
+          '@opentripplanner/trip-details',
+          '@opentripplanner/trip-form',
+          '@opentripplanner/trip-viewer-overlay',
+          '@opentripplanner/types',
+          '@opentripplanner/vehicle-rental-overlay',
+          '@opentripplanner/zoom-based-markers',
+        ]
       },
 
       resolve: {

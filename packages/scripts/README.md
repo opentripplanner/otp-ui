@@ -12,8 +12,8 @@ Use `run-validate-i18n.js` to check that:
 - All message ids used in the given code have translations.
 
 ```bash
-node path-to/lib/run-validate-i18n.js ../trip-details/src ../trip-details/i18n
-node path-to/lib/run-validate-i18n.js ../**/src ../**/i18n
+node path-to/dist/run-validate-i18n.js ../trip-details/src ../trip-details/i18n
+node path-to/dist/run-validate-i18n.js ../**/src ../**/i18n
 ```
 
 ### Extracting a CSV file of messages
@@ -22,8 +22,8 @@ Use `run-collect-i18n-messages.js` to gather all messages from code and output t
 with message ids, descriptions, and content in the languages specified or found:
 
 ```bash
-node path-to/lib/run-collect-i18n-messages.js ../**/src ../**/i18n
-node path-to-lib/run-collect-i18n-messages.js ../**/src ../**/i18n/en-US.yml
+node path-to/dist/run-collect-i18n-messages.js ../**/src ../**/i18n
+node path-to-dist/run-collect-i18n-messages.js ../**/src ../**/i18n/en-US.yml
 ```
 
 ### Exceptions

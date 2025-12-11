@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Map Popup FloatingCarEntity smoke-test 1`] = `
-<div class="styled__MapOverlayPopup-sc-12kjso7-1 cPqJxe">
+<div class="styled__MapOverlayPopup-sc-1ua8l3w-1 caiJeC">
   <div id="focus-car_6861-popup-focus-trap"
        role="presentation"
   >
-    <header class="styled__PopupTitle-sc-12kjso7-3 jRNaQh">
+    <header class="styled__PopupTitle-sc-1ua8l3w-3 hPZfeZ">
       MILES Car: 0541
     </header>
-    <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
+    <p class="styled__PopupRow-sc-1ua8l3w-2 iGrpST">
       <strong>
         Plan a trip:
       </strong>
-      <span class="styled__FromToPickerSpan-sc-vb4790-1 giBPod">
-        <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+      <span class="styled__FromToPickerSpan-sc-1tbhfr7-1 fuTqOt">
+        <span class="styled__LocationPickerSpan-sc-1tbhfr7-0 dCEPLS">
           <svg viewbox="0 0 512 512"
                height="0.9em"
                width="0.9em"
@@ -21,18 +21,18 @@ exports[`Map Popup FloatingCarEntity smoke-test 1`] = `
                focusable="false"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
           >
             <path fill="currentColor"
                   d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
             >
             </path>
           </svg>
-          <button class="styled__Button-sc-vb4790-2 ekklXB">
+          <button class="styled__Button-sc-1tbhfr7-2 fHVwrt">
             From here
           </button>
         </span>
-        <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+        <span class="styled__LocationPickerSpan-sc-1tbhfr7-0 dCEPLS">
           <svg viewbox="0 0 384 512"
                height="0.9em"
                width="0.9em"
@@ -40,14 +40,14 @@ exports[`Map Popup FloatingCarEntity smoke-test 1`] = `
                focusable="false"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
           >
             <path fill="currentColor"
                   d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
             >
             </path>
           </svg>
-          <button class="styled__Button-sc-vb4790-2 ekklXB">
+          <button class="styled__Button-sc-1tbhfr7-2 fHVwrt">
             To here
           </button>
         </span>
@@ -58,19 +58,19 @@ exports[`Map Popup FloatingCarEntity smoke-test 1`] = `
 `;
 
 exports[`Map Popup FloatingVehicleEntity smoke-test 1`] = `
-<div class="styled__MapOverlayPopup-sc-12kjso7-1 cPqJxe">
+<div class="styled__MapOverlayPopup-sc-1ua8l3w-1 caiJeC">
   <div id="focus-22bike_686122-popup-focus-trap"
        role="presentation"
   >
-    <header class="styled__PopupTitle-sc-12kjso7-3 jRNaQh">
+    <header class="styled__PopupTitle-sc-1ua8l3w-3 hPZfeZ">
       BIKETOWN Free-floating bike: 0541
     </header>
-    <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
+    <p class="styled__PopupRow-sc-1ua8l3w-2 iGrpST">
       <strong>
         Plan a trip:
       </strong>
-      <span class="styled__FromToPickerSpan-sc-vb4790-1 giBPod">
-        <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+      <span class="styled__FromToPickerSpan-sc-1tbhfr7-1 fuTqOt">
+        <span class="styled__LocationPickerSpan-sc-1tbhfr7-0 dCEPLS">
           <svg viewbox="0 0 512 512"
                height="0.9em"
                width="0.9em"
@@ -78,18 +78,18 @@ exports[`Map Popup FloatingVehicleEntity smoke-test 1`] = `
                focusable="false"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
           >
             <path fill="currentColor"
                   d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
             >
             </path>
           </svg>
-          <button class="styled__Button-sc-vb4790-2 ekklXB">
+          <button class="styled__Button-sc-1tbhfr7-2 fHVwrt">
             From here
           </button>
         </span>
-        <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+        <span class="styled__LocationPickerSpan-sc-1tbhfr7-0 dCEPLS">
           <svg viewbox="0 0 384 512"
                height="0.9em"
                width="0.9em"
@@ -97,14 +97,14 @@ exports[`Map Popup FloatingVehicleEntity smoke-test 1`] = `
                focusable="false"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
           >
             <path fill="currentColor"
                   d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
             >
             </path>
           </svg>
-          <button class="styled__Button-sc-vb4790-2 ekklXB">
+          <button class="styled__Button-sc-1tbhfr7-2 fHVwrt">
             To here
           </button>
         </span>
@@ -115,14 +115,14 @@ exports[`Map Popup FloatingVehicleEntity smoke-test 1`] = `
 `;
 
 exports[`Map Popup StationEntity smoke-test 1`] = `
-<div class="styled__MapOverlayPopup-sc-12kjso7-1 cPqJxe">
+<div class="styled__MapOverlayPopup-sc-1ua8l3w-1 caiJeC">
   <div id="focus-22hub_158022-popup-focus-trap"
        role="presentation"
   >
-    <header class="styled__PopupTitle-sc-12kjso7-3 jRNaQh">
+    <header class="styled__PopupTitle-sc-1ua8l3w-3 hPZfeZ">
       BIKETOWN SW Morrison at 18th
     </header>
-    <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
+    <p class="styled__PopupRow-sc-1ua8l3w-2 iGrpST">
       <div>
         Available bikes: 6
       </div>
@@ -130,12 +130,12 @@ exports[`Map Popup StationEntity smoke-test 1`] = `
         Available docks: 11
       </div>
     </p>
-    <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
+    <p class="styled__PopupRow-sc-1ua8l3w-2 iGrpST">
       <strong>
         Plan a trip:
       </strong>
-      <span class="styled__FromToPickerSpan-sc-vb4790-1 giBPod">
-        <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+      <span class="styled__FromToPickerSpan-sc-1tbhfr7-1 fuTqOt">
+        <span class="styled__LocationPickerSpan-sc-1tbhfr7-0 dCEPLS">
           <svg viewbox="0 0 512 512"
                height="0.9em"
                width="0.9em"
@@ -143,18 +143,18 @@ exports[`Map Popup StationEntity smoke-test 1`] = `
                focusable="false"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
           >
             <path fill="currentColor"
                   d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
             >
             </path>
           </svg>
-          <button class="styled__Button-sc-vb4790-2 ekklXB">
+          <button class="styled__Button-sc-1tbhfr7-2 fHVwrt">
             From here
           </button>
         </span>
-        <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+        <span class="styled__LocationPickerSpan-sc-1tbhfr7-0 dCEPLS">
           <svg viewbox="0 0 384 512"
                height="0.9em"
                width="0.9em"
@@ -162,14 +162,14 @@ exports[`Map Popup StationEntity smoke-test 1`] = `
                focusable="false"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
           >
             <path fill="currentColor"
                   d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
             >
             </path>
           </svg>
-          <button class="styled__Button-sc-vb4790-2 ekklXB">
+          <button class="styled__Button-sc-1tbhfr7-2 fHVwrt">
             To here
           </button>
         </span>
@@ -180,14 +180,14 @@ exports[`Map Popup StationEntity smoke-test 1`] = `
 `;
 
 exports[`Map Popup StopEntity smoke-test 1`] = `
-<div class="styled__MapOverlayPopup-sc-12kjso7-1 cPqJxe">
+<div class="styled__MapOverlayPopup-sc-1ua8l3w-1 caiJeC">
   <div id="focus-9526-popup-focus-trap"
        role="presentation"
   >
-    <header class="styled__PopupTitle-sc-12kjso7-3 jRNaQh">
+    <header class="styled__PopupTitle-sc-1ua8l3w-3 hPZfeZ">
       W Burnside &amp; SW 2nd
     </header>
-    <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
+    <p class="styled__PopupRow-sc-1ua8l3w-2 iGrpST">
       <strong>
         Stop ID: 9526
       </strong>
@@ -195,12 +195,12 @@ exports[`Map Popup StopEntity smoke-test 1`] = `
         Stop Viewer
       </button>
     </p>
-    <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
+    <p class="styled__PopupRow-sc-1ua8l3w-2 iGrpST">
       <strong>
         Plan a trip:
       </strong>
-      <span class="styled__FromToPickerSpan-sc-vb4790-1 giBPod">
-        <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+      <span class="styled__FromToPickerSpan-sc-1tbhfr7-1 fuTqOt">
+        <span class="styled__LocationPickerSpan-sc-1tbhfr7-0 dCEPLS">
           <svg viewbox="0 0 512 512"
                height="0.9em"
                width="0.9em"
@@ -208,18 +208,18 @@ exports[`Map Popup StopEntity smoke-test 1`] = `
                focusable="false"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
           >
             <path fill="currentColor"
                   d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
             >
             </path>
           </svg>
-          <button class="styled__Button-sc-vb4790-2 ekklXB">
+          <button class="styled__Button-sc-1tbhfr7-2 fHVwrt">
             From here
           </button>
         </span>
-        <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+        <span class="styled__LocationPickerSpan-sc-1tbhfr7-0 dCEPLS">
           <svg viewbox="0 0 384 512"
                height="0.9em"
                width="0.9em"
@@ -227,14 +227,14 @@ exports[`Map Popup StopEntity smoke-test 1`] = `
                focusable="false"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
           >
             <path fill="currentColor"
                   d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
             >
             </path>
           </svg>
-          <button class="styled__Button-sc-vb4790-2 ekklXB">
+          <button class="styled__Button-sc-1tbhfr7-2 fHVwrt">
             To here
           </button>
         </span>
@@ -245,11 +245,11 @@ exports[`Map Popup StopEntity smoke-test 1`] = `
 `;
 
 exports[`Map Popup StopEntityNoHandlers smoke-test 1`] = `
-<div class="styled__MapOverlayPopup-sc-12kjso7-1 cPqJxe">
+<div class="styled__MapOverlayPopup-sc-1ua8l3w-1 caiJeC">
   <div id="focus-9526-popup-focus-trap"
        role="presentation"
   >
-    <header class="styled__PopupTitle-sc-12kjso7-3 jRNaQh">
+    <header class="styled__PopupTitle-sc-1ua8l3w-3 hPZfeZ">
       W Burnside &amp; SW 2nd
     </header>
   </div>
@@ -257,24 +257,24 @@ exports[`Map Popup StopEntityNoHandlers smoke-test 1`] = `
 `;
 
 exports[`Map Popup StopEntityNoStopCode smoke-test 1`] = `
-<div class="styled__MapOverlayPopup-sc-12kjso7-1 cPqJxe">
+<div class="styled__MapOverlayPopup-sc-1ua8l3w-1 caiJeC">
   <div id="focus-9526-popup-focus-trap"
        role="presentation"
   >
-    <header class="styled__PopupTitle-sc-12kjso7-3 jRNaQh">
+    <header class="styled__PopupTitle-sc-1ua8l3w-3 hPZfeZ">
       W Burnside &amp; SW 2nd
     </header>
-    <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
+    <p class="styled__PopupRow-sc-1ua8l3w-2 iGrpST">
       <button class="styled__ViewStopButton-sc-12v7ov3-0 bbtcwi">
         Stop Viewer
       </button>
     </p>
-    <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
+    <p class="styled__PopupRow-sc-1ua8l3w-2 iGrpST">
       <strong>
         Plan a trip:
       </strong>
-      <span class="styled__FromToPickerSpan-sc-vb4790-1 giBPod">
-        <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+      <span class="styled__FromToPickerSpan-sc-1tbhfr7-1 fuTqOt">
+        <span class="styled__LocationPickerSpan-sc-1tbhfr7-0 dCEPLS">
           <svg viewbox="0 0 512 512"
                height="0.9em"
                width="0.9em"
@@ -282,18 +282,18 @@ exports[`Map Popup StopEntityNoStopCode smoke-test 1`] = `
                focusable="false"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
           >
             <path fill="currentColor"
                   d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
             >
             </path>
           </svg>
-          <button class="styled__Button-sc-vb4790-2 ekklXB">
+          <button class="styled__Button-sc-1tbhfr7-2 fHVwrt">
             From here
           </button>
         </span>
-        <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+        <span class="styled__LocationPickerSpan-sc-1tbhfr7-0 dCEPLS">
           <svg viewbox="0 0 384 512"
                height="0.9em"
                width="0.9em"
@@ -301,14 +301,14 @@ exports[`Map Popup StopEntityNoStopCode smoke-test 1`] = `
                focusable="false"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
           >
             <path fill="currentColor"
                   d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
             >
             </path>
           </svg>
-          <button class="styled__Button-sc-vb4790-2 ekklXB">
+          <button class="styled__Button-sc-1tbhfr7-2 fHVwrt">
             To here
           </button>
         </span>
@@ -319,17 +319,17 @@ exports[`Map Popup StopEntityNoStopCode smoke-test 1`] = `
 `;
 
 exports[`Map Popup StopEntityWithEntityPrefix smoke-test 1`] = `
-<div class="styled__MapOverlayPopup-sc-12kjso7-1 cPqJxe">
+<div class="styled__MapOverlayPopup-sc-1ua8l3w-1 caiJeC">
   <div id="focus-9526-popup-focus-trap"
        role="presentation"
   >
-    <header class="styled__PopupTitle-sc-12kjso7-3 jRNaQh">
+    <header class="styled__PopupTitle-sc-1ua8l3w-3 hPZfeZ">
       <span class="MapPopupstory__DemoIcon-sc-vlk9f0-0 hzuFzw">
         W
       </span>
       W Burnside &amp; SW 2nd
     </header>
-    <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
+    <p class="styled__PopupRow-sc-1ua8l3w-2 iGrpST">
       <strong>
         Stop ID: 9526
       </strong>
@@ -337,12 +337,12 @@ exports[`Map Popup StopEntityWithEntityPrefix smoke-test 1`] = `
         Stop Viewer
       </button>
     </p>
-    <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
+    <p class="styled__PopupRow-sc-1ua8l3w-2 iGrpST">
       <strong>
         Plan a trip:
       </strong>
-      <span class="styled__FromToPickerSpan-sc-vb4790-1 giBPod">
-        <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+      <span class="styled__FromToPickerSpan-sc-1tbhfr7-1 fuTqOt">
+        <span class="styled__LocationPickerSpan-sc-1tbhfr7-0 dCEPLS">
           <svg viewbox="0 0 512 512"
                height="0.9em"
                width="0.9em"
@@ -350,18 +350,18 @@ exports[`Map Popup StopEntityWithEntityPrefix smoke-test 1`] = `
                focusable="false"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
           >
             <path fill="currentColor"
                   d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
             >
             </path>
           </svg>
-          <button class="styled__Button-sc-vb4790-2 ekklXB">
+          <button class="styled__Button-sc-1tbhfr7-2 fHVwrt">
             From here
           </button>
         </span>
-        <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+        <span class="styled__LocationPickerSpan-sc-1tbhfr7-0 dCEPLS">
           <svg viewbox="0 0 384 512"
                height="0.9em"
                width="0.9em"
@@ -369,14 +369,14 @@ exports[`Map Popup StopEntityWithEntityPrefix smoke-test 1`] = `
                focusable="false"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
           >
             <path fill="currentColor"
                   d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
             >
             </path>
           </svg>
-          <button class="styled__Button-sc-vb4790-2 ekklXB">
+          <button class="styled__Button-sc-1tbhfr7-2 fHVwrt">
             To here
           </button>
         </span>
@@ -387,14 +387,14 @@ exports[`Map Popup StopEntityWithEntityPrefix smoke-test 1`] = `
 `;
 
 exports[`Map Popup StopEntityWithFeedName smoke-test 1`] = `
-<div class="styled__MapOverlayPopup-sc-12kjso7-1 cPqJxe">
+<div class="styled__MapOverlayPopup-sc-1ua8l3w-1 caiJeC">
   <div id="focus-trimet3A9526-popup-focus-trap"
        role="presentation"
   >
-    <header class="styled__PopupTitle-sc-12kjso7-3 jRNaQh">
+    <header class="styled__PopupTitle-sc-1ua8l3w-3 hPZfeZ">
       W Burnside &amp; SW 2nd
     </header>
-    <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
+    <p class="styled__PopupRow-sc-1ua8l3w-2 iGrpST">
       <strong>
         Stop ID: TriMet 9526
       </strong>
@@ -402,12 +402,12 @@ exports[`Map Popup StopEntityWithFeedName smoke-test 1`] = `
         Stop Viewer
       </button>
     </p>
-    <p class="styled__PopupRow-sc-12kjso7-2 ckOOWr">
+    <p class="styled__PopupRow-sc-1ua8l3w-2 iGrpST">
       <strong>
         Plan a trip:
       </strong>
-      <span class="styled__FromToPickerSpan-sc-vb4790-1 giBPod">
-        <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+      <span class="styled__FromToPickerSpan-sc-1tbhfr7-1 fuTqOt">
+        <span class="styled__LocationPickerSpan-sc-1tbhfr7-0 dCEPLS">
           <svg viewbox="0 0 512 512"
                height="0.9em"
                width="0.9em"
@@ -415,18 +415,18 @@ exports[`Map Popup StopEntityWithFeedName smoke-test 1`] = `
                focusable="false"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-can73f-0 dhCAOI"
           >
             <path fill="currentColor"
                   d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
             >
             </path>
           </svg>
-          <button class="styled__Button-sc-vb4790-2 ekklXB">
+          <button class="styled__Button-sc-1tbhfr7-2 fHVwrt">
             From here
           </button>
         </span>
-        <span class="styled__LocationPickerSpan-sc-vb4790-0 gsVfXo">
+        <span class="styled__LocationPickerSpan-sc-1tbhfr7-0 dCEPLS">
           <svg viewbox="0 0 384 512"
                height="0.9em"
                width="0.9em"
@@ -434,14 +434,14 @@ exports[`Map Popup StopEntityWithFeedName smoke-test 1`] = `
                focusable="false"
                fill="currentColor"
                xmlns="http://www.w3.org/2000/svg"
-               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-n5xcvc-2 gZxRwk"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__ToIcon-sc-can73f-2 hyDVZD"
           >
             <path fill="currentColor"
                   d="M215.7 499.2C267 435 384 279.4 384 192 384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2 12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"
             >
             </path>
           </svg>
-          <button class="styled__Button-sc-vb4790-2 ekklXB">
+          <button class="styled__Button-sc-1tbhfr7-2 fHVwrt">
             To here
           </button>
         </span>

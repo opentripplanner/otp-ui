@@ -2,8 +2,6 @@
   "name": "@opentripplanner/endpoints-overlay",
   "version": "5.0.0",
   "description": "A map overlay to show the from and to locations of an itinerary",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
   "author": "Evan Siroky",
   "license": "MIT",
   "homepage": "https://github.com/opentripplanner/otp-ui#readme",
@@ -36,5 +34,12 @@
     "react-intl": "catalog:",
     "react-map-gl": "catalog:",
     "styled-components": "catalog:"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
   }
 }

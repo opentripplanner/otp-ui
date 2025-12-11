@@ -2,27 +2,22 @@
   "name": "@opentripplanner/types",
   "version": "8.3.1",
   "description": "TypeScript types used across multiple OTP-UI packages",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "types": "dist/index.d.ts",
   "typesVersions": {
     "*": {
       "otp2": [
-        "./lib/otp2/index.d.ts"
+        "./dist/otp2/index.d.ts"
       ]
     }
   },
   "exports": {
     ".": {
-      "types": "./lib/index.d.ts",
-      "default": "./lib/index.js",
-      "require": "./lib/index.js",
-      "import": "./esm/index.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
     },
     "./otp2": {
-      "types": "./lib/otp2/index.d.ts",
-      "default": "./lib/otp2/index.js",
-      "require": "./lib/otp2/index.js",
-      "import": "./lib/otp2/index.js"
+      "types": "./dist/otp2/index.d.ts",
+      "import": "./dist/otp2/index.js"
     }
   },
   "repository": "https://github.com/opentripplanner/otp-ui.git",
@@ -31,5 +26,6 @@
   "private": false,
   "scripts": {
     "tsc": "tsc"
-  }
+  },
+  "type": "module"
 }
