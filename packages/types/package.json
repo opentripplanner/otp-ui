@@ -2,7 +2,7 @@
   "name": "@opentripplanner/types",
   "version": "8.3.1",
   "description": "TypeScript types used across multiple OTP-UI packages",
-  "main": "lib/index.js",
+  "main": "./lib/index.js",
   "types": "lib/index.d.ts",
   "typesVersions": {
     "*": {
@@ -31,5 +31,6 @@
   "private": false,
   "scripts": {
     "tsc": "tsc"
-  }
+  },
+  "type": "module"
 }

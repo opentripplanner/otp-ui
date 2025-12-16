@@ -2,8 +2,7 @@
   "name": "@opentripplanner/humanize-distance",
   "version": "2.1.0",
   "description": "Pretty print a string for a certain distance",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
+  "main": "./lib/index.js",
   "types": "lib/index.d.ts",
   "repository": "https://github.com/opentripplanner/otp-ui.git",
   "author": "Evan  Siroky",
@@ -19,5 +18,6 @@
   "peerDependencies": {
     "react": "catalog:",
     "react-intl": "catalog:"
-  }
+  },
+  "type": "module"
 }
