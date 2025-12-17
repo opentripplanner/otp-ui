@@ -46,6 +46,8 @@ jobs:
       #     npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
       #       "npx http-server storybook-static --port 5555 --silent" \
       #       "npx wait-on tcp:5555 && pnpm run test-storybook --ci"
+      - name: Build packages
+        run: pnpm run build:cjs && pnpm run build:esm
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
