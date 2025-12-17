@@ -1,4 +1,5 @@
-import React, { FunctionComponent, ReactElement } from "react";
+import * as React from "react";
+import { FunctionComponent, ReactElement, MutableRefObject } from "react";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore FIXME: Create TypeScript types for the icons package.
 import { TriMetModeIcon2021 as TriMetModeIcon } from "@opentripplanner/icons";
@@ -22,7 +23,7 @@ export default function Checkbox(
     checked: boolean;
     children: React.ReactNode | string;
     className?: string;
-    innerRef?: React.MutableRefObject<HTMLInputElement>;
+    innerRef?: MutableRefObject<HTMLButtonElement>;
     SimpleModeIcon?: FunctionComponent<{ mode: string }>;
   } & ButtonProps
 ): ReactElement {

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`LocationIcon CustomStyleForTo smoke-test 1`] = `
 <svg viewbox="0 0 384 512"

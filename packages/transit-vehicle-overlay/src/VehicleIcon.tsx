@@ -1,4 +1,4 @@
-import React, { FC, ReactElement } from "react";
+import React, { FC, ReactElement, ReactNode } from "react";
 
 import { VehicleComponentProps } from "./types";
 
@@ -46,7 +46,7 @@ export default function VehicleIcon({
   defaultMode,
   ModeIcon,
   vehicle
-}: VehicleIconProps): ReactElement {
+}: VehicleIconProps): ReactNode {
   // Try to see if content is returned by the ModeIcon function component,
   // if null, fall back to route number.
   return (
