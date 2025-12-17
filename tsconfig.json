@@ -10,7 +10,8 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "jsx": "react",
-    "noEmit": false
+    "noEmit": false,
+    "emitDeclarationOnly": true
   },
   "exclude": [
     "**/*.test.ts",
