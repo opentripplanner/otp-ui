@@ -70,7 +70,7 @@ const HEIGHT_IMAGE_SIZE = 533;
 
 export { itineraryToTransitive };
 
-// TODO: BETTER COLORS.
+// TODO: BETTER COLORS
 const modeColorMap = {
   CAR: "#888",
   BICYCLE: "#f00",
