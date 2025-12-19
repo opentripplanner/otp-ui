@@ -17,16 +17,23 @@ export default function TransitLegSubheader({
   const { from } = leg;
   return (
     <S.PlaceSubheader className="transit-leg-subheader">
-      <FormattedMessage
-        defaultMessage={defaultMessages["otpUi.TransitLegBody.stopId"]}
-        description="Displays the stop ID"
-        id="otpUi.TransitLegBody.stopId"
-        values={{
-          stopId: getDisplayedStopCode(from)
-        }}
-      />
+      {getDisplayedStopCode(from) && (
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.TransitLegBody.stopId"]}
+          description="Displays the stop ID"
+          id="otpUi.TransitLegBody.stopId"
+          values={{
+            stopId: getDisplayedStopCode(from)
+          }}
+        />
+      )}
+
       {!isFlex(leg) && (
-        <ViewStopButton onStopClick={onStopClick} stop={from.stop} />
+        <ViewStopButton
+          onStopClick={onStopClick}
+          stop={from.stop}
+          stopCode={getDisplayedStopCode(from)}
+        />
       )}
     </S.PlaceSubheader>
   );
