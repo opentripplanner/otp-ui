@@ -95,14 +95,25 @@ export const LinkButton = styled(TransparentButton)`
   }
 `;
 
-export const ViewerButton = styled(LinkButton)`
+interface ViewerButtonProps {
+  stopCode?: string | null;
+}
+
+export const ViewerButton = styled(LinkButton)<ViewerButtonProps>`
   padding-left: 0px;
 
-  &:before {
-    content: "|";
-    color: black;
-    margin-right: 5px;
-  }
+  ${props =>
+    props.stopCode
+      ? css`
+          &:before {
+            content: "|";
+            color: black;
+            margin-right: 5px;
+          }
+        `
+      : css`
+          margin-left: 0px;
+        `};
 `;
 
 // ////////////////////////////////////////////////
