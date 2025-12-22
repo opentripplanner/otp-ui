@@ -183,14 +183,17 @@ function makeStop(stop: Place, coordinate?: number[]) {
  * Flex routes sometimes have the same from and to IDs, but
  * these stops still need to be rendered separately!
  */
-function renameLegFlexStops(leg: Leg): Place {
+function renameLegFlexStops(
+  leg: Leg,
+  isFlexCheck: (leg: Leg) => boolean
+): Place {
   const flexSupportStop = { ...leg.to };
 
   if (typeof flexSupportStop.stop === "object") {
     flexSupportStop.stop = { ...flexSupportStop.stop };
   }
 
-  if (isFlex(leg)) {
+  if (isFlexCheck(leg)) {
     if (typeof flexSupportStop.stop === "object") {
       flexSupportStop.stop.id = `${flexSupportStop.stop.id}_flexed_to`;
     } else {
@@ -216,9 +219,18 @@ export function itineraryToTransitive(
     getRouteLabel?: (leg: Leg) => string;
     disableFlexArc?: boolean;
     intl?: IntlShape;
+    isFlexOverride?: (leg: Leg) => boolean;
   }
 ): TransitiveData {
-  const { companies, getRouteLabel, disableFlexArc, intl } = options;
+  const {
+    companies,
+    getRouteLabel,
+    disableFlexArc,
+    isFlexOverride,
+    intl
+  } = options;
+  const isFlexCheck = isFlexOverride || isFlex;
+
   const tdata = {
     journeys: [],
     streetEdges: [],
@@ -397,7 +409,10 @@ export function itineraryToTransitive(
       // Add the "to" end of transit legs to the list of stops.
       // (Do not label stop names if they repeat.)
       const lastCoord = hasLegGeometry && legCoords[legCoords.length - 1];
-      const modifiedToStop = makeStop(renameLegFlexStops(leg), lastCoord);
+      const modifiedToStop = makeStop(
+        renameLegFlexStops(leg, isFlexCheck),
+        lastCoord
+      );
       addStop(modifiedToStop, newStops, knownStopNames);
       pattern.stops.push({
         stop_id: getStopId(modifiedToStop),
@@ -446,7 +461,9 @@ export function itineraryToTransitive(
       // add the pattern reference to the journey object
       journey.segments.push({
         arc:
-          typeof disableFlexArc === "undefined" ? isFlex(leg) : !disableFlexArc,
+          typeof disableFlexArc === "undefined"
+            ? isFlexCheck(leg)
+            : !disableFlexArc,
         type: "TRANSIT",
         patterns: [
           {
