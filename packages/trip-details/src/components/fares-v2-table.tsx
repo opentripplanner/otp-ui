@@ -163,8 +163,8 @@ const FaresV2Table = ({
         productUseId
       } = getLegCost(
         leg,
-        descope(medium?.id) || null,
-        descope(rider?.id) || null,
+        descope(medium?.id),
+        descope(rider?.id),
         Array.from(productUseIds)
       );
       const legPrice = appliedFareProduct?.legPrice;

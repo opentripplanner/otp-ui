@@ -638,8 +638,8 @@ export const zeroDollars = (currency: Currency): Money => ({
  */
 export function getLegCost(
   leg: Leg,
-  mediumId: string | null,
-  riderCategoryId: string | null,
+  mediumId?: string | null,
+  riderCategoryId?: string | null,
   seenFareIds?: string[]
 ): {
   alternateFareProducts?: AppliedFareProduct[];
@@ -709,8 +709,8 @@ export function getLegCost(
  */
 export function getItineraryCost(
   legs: Leg[],
-  mediumId: string | string[] | null,
-  riderCategoryId: string | string[] | null
+  mediumId?: string | string[] | null,
+  riderCategoryId?: string | string[] | null
 ): Money | undefined {
   // TODO: Better input type handling
   if (Array.isArray(mediumId) || Array.isArray(riderCategoryId)) {
