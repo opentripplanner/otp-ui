@@ -23,6 +23,7 @@
       "route": "",
       "agencyTimeZoneOffset": -28800000,
       "interlineWithPreviousLeg": false,
+      "fareProducts": [],
       "from": {
         "name": "KGW Studio on the Sq, Portland, OR, USA",
         "lon": -122.67914856500536,
