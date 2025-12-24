@@ -146,7 +146,7 @@ export function MapPopup({
   const name = getNameFunc(entity, configCompanies, feedName);
   const titleName = getNameFunc(entity, configCompanies, feedName, false);
 
-  const stationNetwork = "rentalNetwork" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.rentalNetwork.networkId, configCompanies) || entity?.rentalNetwork.networkId);
+  const stationNetwork = "rentalNetwork" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.rentalNetwork?.networkId, configCompanies) || entity?.rentalNetwork?.networkId);
 
   const vehiclesAvailable = "availableVehicles" in entity;
   const entityIsStationHub = vehiclesAvailable && entity?.availableVehicles !== undefined;
