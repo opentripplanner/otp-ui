@@ -93,12 +93,10 @@ const FaresV2Table = ({
   // Reduce these into mediums and riders
   const mediums = fareProducts
     .map(fp => fp.product?.medium)
-    .filter(m => m !== null)
     .reduce(categoryReducer, [])
     .sort(categorySorter(favoriteMediumId));
   const riders = fareProducts
     .map(fp => fp.product?.riderCategory)
-    .filter(r => r !== null)
     .reduce(categoryReducer, [])
     .sort(categorySorter(favoriteRiderCategoryId));
 
@@ -158,7 +156,6 @@ const FaresV2Table = ({
   transitLegs.forEach((leg, index) => {
     riderMediumPairs.forEach((rmp, currentRowIndex) => {
       const { medium, rider } = rmp;
-      if (!medium || !rider) return;
       const {
         alternateFareProducts,
         isDependent,
@@ -166,8 +163,8 @@ const FaresV2Table = ({
         productUseId
       } = getLegCost(
         leg,
-        descope(medium.id) || null,
-        descope(rider.id) || null,
+        descope(medium?.id) || null,
+        descope(rider?.id) || null,
         Array.from(productUseIds)
       );
       const legPrice = appliedFareProduct?.legPrice;
@@ -188,14 +185,18 @@ const FaresV2Table = ({
           {/* Only render the list of fare types once */}
           {index === 0 && (
             <th style={{ textAlign: "left" }} scope="row">
-              <FormattedMessage
-                id={`config.fares.media.${descope(medium.id)}`}
-                defaultMessage={medium.name}
-              />{" "}
-              <FormattedMessage
-                id={`config.fares.riderCategory.${descope(rider.id)}`}
-                defaultMessage={rider.name}
-              />
+              {medium?.id && (
+                <FormattedMessage
+                  id={`config.fares.media.${descope(medium.id)}`}
+                  defaultMessage={medium.name}
+                />
+              )}{" "}
+              {rider?.id && (
+                <FormattedMessage
+                  id={`config.fares.riderCategory.${descope(rider.id)}`}
+                  defaultMessage={rider.name}
+                />
+              )}
             </th>
           )}
           <td
@@ -240,8 +241,8 @@ const FaresV2Table = ({
       if (index === transitLegs.length - 1 && transitLegs.length > 1) {
         const fare = getItineraryCost(
           legs,
-          descope(medium.id) || null,
-          descope(rider.id) || null
+          descope(medium?.id) || null,
+          descope(rider?.id) || null
         );
         rows[nextRowIndex].push(
           <td
