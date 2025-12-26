@@ -1,6 +1,7 @@
 import { ElevationProfile } from "@opentripplanner/types";
 import {
   calculateTncFares,
+  descope,
   getCompanyFromLeg,
   getDisplayedStopId,
   getElevationProfile,
@@ -31,6 +32,30 @@ const basePlace = {
 };
 
 describe("util > itinerary", () => {
+  describe("descope", () => {
+    it("should return the descope'd part for standard scoped strings", () => {
+      expect(descope("agency:cash")).toBe("cash");
+      expect(descope("foo:bar")).toBe("bar");
+    });
+
+    it("should return the input if it is not scoped", () => {
+      expect(descope("cash")).toBe("cash");
+      expect(descope("")).toBe("");
+    });
+
+    it("should only return the segment after the first ':' (per current implementation)", () => {
+      expect(descope("a:b:c")).toBe("b");
+      expect(descope(":value")).toBe("value");
+      expect(descope("value:")).toBe("");
+      expect(descope(":")).toBe("");
+    });
+
+    it("should handle null and undefined", () => {
+      expect(descope(null)).toBeNull();
+      expect(descope(undefined)).toBeUndefined();
+    });
+  });
+
   describe("getElevationProfile", () => {
     it("should work with REST legacy data and GraphQL elevationProfile", () => {
       const legacyOutput = getElevationProfile(
