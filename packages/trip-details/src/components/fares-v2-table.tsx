@@ -9,7 +9,6 @@ import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 import { renderFare } from "../utils";
 import { InvisibleA11yCaption, InvisibleA11yLabel } from "../styled";
 
-// TODO: inline this import? (@opentripplanner/core-utils/src/itinerary)
 const {
   getLegCost,
   getItineraryCost,
@@ -163,8 +162,8 @@ const FaresV2Table = ({
         productUseId
       } = getLegCost(
         leg,
-        descope(medium?.id),
-        descope(rider?.id),
+        descope(medium?.id ?? null),
+        descope(rider?.id ?? null),
         Array.from(productUseIds)
       );
       const legPrice = appliedFareProduct?.legPrice;
@@ -185,18 +184,19 @@ const FaresV2Table = ({
           {/* Only render the list of fare types once */}
           {index === 0 && (
             <th style={{ textAlign: "left" }} scope="row">
-              {medium?.id && (
+              {medium?.id ? (
                 <FormattedMessage
                   id={`config.fares.media.${descope(medium.id)}`}
                   defaultMessage={medium.name}
                 />
-              )}{" "}
-              {rider?.id && (
+              ) : null}
+              {rider?.id ? (
                 <FormattedMessage
                   id={`config.fares.riderCategory.${descope(rider.id)}`}
                   defaultMessage={rider.name}
                 />
-              )}
+              ) : null}
+              {!medium?.id && !rider?.id ? FailDash : null}
             </th>
           )}
           <td

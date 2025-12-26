@@ -613,10 +613,12 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
 
 /**
  * Removes the first part of the OTP standard scope (":"), if it is present
+ * If it's null or undefined, return the original value.
  * @param item String that is potentially scoped with `:` character
  * @returns    descoped string
  */
-export const descope = (item: string): string => item?.split(":")?.[1];
+export const descope = (item?: string | null): string | null | undefined =>
+  item?.split(":")?.[1] ?? item;
 
 export type ExtendedMoney = Money & { originalAmount?: number };
 
@@ -662,6 +664,7 @@ export function getLegCost(
 
       const productMediaId =
         descope(product?.medium?.id) || product?.medium?.id || null;
+
       return (
         productRiderCategoryId === riderCategoryId &&
         productMediaId === mediumId &&
