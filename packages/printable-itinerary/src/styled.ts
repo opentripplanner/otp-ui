@@ -32,6 +32,7 @@ export const LegDetails = styled.div`
 // TODO Refactor
 export const LegHeader = styled.div`
   font-size: 18px;
+  margin: 0;
 `;
 
 export const AccessLegDescription = styled(Defaults.AccessLegDescription)`

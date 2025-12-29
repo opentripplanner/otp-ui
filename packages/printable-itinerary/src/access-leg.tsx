@@ -2,14 +2,15 @@ import {
   Config,
   GradationMap,
   Leg,
-  LegIconComponent
+  LegIconComponent,
+  LegHeadingProp
 } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import AccessibilityAnnotation from "./accessibility-annotation";
 
 import * as S from "./styled";
 
-interface Props {
+interface Props extends LegHeadingProp {
   accessibilityScoreGradationMap?: GradationMap;
   config: Config;
   leg: Leg;
@@ -20,8 +21,10 @@ export default function AccessLeg({
   accessibilityScoreGradationMap,
   config,
   leg,
-  LegIcon
+  LegIcon,
+  headingAs
 }: Props): ReactElement {
+  console.log("AccessLeg headingAs:", headingAs);
   return (
     <S.Leg>
       <AccessibilityAnnotation
@@ -31,7 +34,11 @@ export default function AccessLeg({
         LegIcon={LegIcon}
       />
       <S.LegBody>
-        <S.AccessLegDescription config={config} leg={leg} />
+        <S.AccessLegDescription
+          config={config}
+          leg={leg}
+          headingAs={headingAs}
+        />
         {!leg.rideHailingEstimate && (
           <S.LegDetails>
             {leg.steps.map((step, k) => (
