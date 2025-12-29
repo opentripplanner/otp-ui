@@ -184,18 +184,20 @@ const FaresV2Table = ({
           {/* Only render the list of fare types once */}
           {index === 0 && (
             <th style={{ textAlign: "left" }} scope="row">
-              {medium?.id ? (
-                <FormattedMessage
-                  id={`config.fares.media.${descope(medium.id)}`}
-                  defaultMessage={medium.name}
-                />
-              ) : null}
-              {rider?.id ? (
+              {medium?.id && (
+                <>
+                  <FormattedMessage
+                    id={`config.fares.media.${descope(medium.id)}`}
+                    defaultMessage={medium.name}
+                  />{" "}
+                </>
+              )}
+              {rider?.id && (
                 <FormattedMessage
                   id={`config.fares.riderCategory.${descope(rider.id)}`}
                   defaultMessage={rider.name}
                 />
-              ) : null}
+              )}
               {!medium?.id && !rider?.id ? FailDash : null}
             </th>
           )}

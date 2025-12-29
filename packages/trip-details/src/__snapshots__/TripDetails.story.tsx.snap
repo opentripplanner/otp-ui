@@ -544,7 +544,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      Open PaymentAdult
+      Open Payment Adult
     </th>
     <td style="text-align: right;">
       $2.00
@@ -576,7 +576,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      Open PaymentHonored Citizen
+      Open Payment Honored Citizen
     </th>
     <td style="text-align: right;">
       $1.00
@@ -608,7 +608,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      Open PaymentYouth
+      Open Payment Youth
     </th>
     <td style="text-align: right;">
       $1.00
@@ -640,7 +640,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      CashAdult
+      Cash Adult
     </th>
     <td style="text-align: right;">
       $2.00
@@ -672,7 +672,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      CashHonored Citizen
+      Cash Honored Citizen
     </th>
     <td style="text-align: right;">
       $1.00
@@ -704,7 +704,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      CashYouth
+      Cash Youth
     </th>
     <td style="text-align: right;">
       $1.00
@@ -736,7 +736,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      HOP FastpassAdult
+      HOP Fastpass Adult
     </th>
     <td style="text-align: right;">
       $2.00
@@ -768,7 +768,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      HOP FastpassHonored Citizen
+      HOP Fastpass Honored Citizen
     </th>
     <td style="text-align: right;">
       $1.00
@@ -800,7 +800,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      HOP FastpassYouth
+      HOP Fastpass Youth
     </th>
     <td style="text-align: right;">
       $1.00
@@ -832,7 +832,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      Virtual HOP FastpassAdult
+      Virtual HOP Fastpass Adult
     </th>
     <td style="text-align: right;">
       $2.00
@@ -864,7 +864,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      Virtual HOP FastpassHonored Citizen
+      Virtual HOP Fastpass Honored Citizen
     </th>
     <td style="text-align: right;">
       $1.00
@@ -896,7 +896,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      Virtual HOP FastpassYouth
+      Virtual HOP Fastpass Youth
     </th>
     <td style="text-align: right;">
       $1.00
@@ -958,7 +958,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      CashAdult
+      Cash Adult
     </th>
     <td style="text-align: right;">
       $2.80
@@ -990,7 +990,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      CashHonored Citizen
+      Cash Honored Citizen
     </th>
     <td style="text-align: right;">
       $1.40
@@ -1022,7 +1022,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      CashYouth
+      Cash Youth
     </th>
     <td style="text-align: right;">
       $1.40
@@ -1054,7 +1054,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      HOP FastpassAdult
+      HOP Fastpass Adult
     </th>
     <td style="text-align: right;">
       $2.80
@@ -1086,7 +1086,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      HOP FastpassHonored Citizen
+      HOP Fastpass Honored Citizen
     </th>
     <td style="text-align: right;">
       $1.40
@@ -1118,7 +1118,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      HOP FastpassYouth
+      HOP Fastpass Youth
     </th>
     <td style="text-align: right;">
       $1.40
@@ -1150,7 +1150,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      Open PaymentAdult
+      Open Payment Adult
     </th>
     <td style="text-align: right;">
       $2.80
@@ -1182,7 +1182,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      Open PaymentHonored Citizen
+      Open Payment Honored Citizen
     </th>
     <td style="text-align: right;">
       $1.40
@@ -1214,7 +1214,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      Open PaymentYouth
+      Open Payment Youth
     </th>
     <td style="text-align: right;">
       $1.40
@@ -1246,7 +1246,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      Virtual HOP FastpassAdult
+      Virtual HOP Fastpass Adult
     </th>
     <td style="text-align: right;">
       $2.80
@@ -1278,7 +1278,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      Virtual HOP FastpassHonored Citizen
+      Virtual HOP Fastpass Honored Citizen
     </th>
     <td style="text-align: right;">
       $1.40
@@ -1310,7 +1310,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      Virtual HOP FastpassYouth
+      Virtual HOP Fastpass Youth
     </th>
     <td style="text-align: right;">
       $1.40
@@ -1378,7 +1378,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      cashregular
+      cash regular
     </th>
     <td style="text-align: right;">
       $1.00
@@ -1402,7 +1402,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      cashsenior
+      cash senior
     </th>
     <td style="text-align: right;">
       $0.50
@@ -1426,7 +1426,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      cashyouth
+      cash youth
     </th>
     <td style="text-align: right;">
       $0.00
@@ -1455,7 +1455,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      electronicregular
+      electronic regular
     </th>
     <td style="text-align: center;">
       -
@@ -1482,7 +1482,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      electronicsenior
+      electronic senior
     </th>
     <td style="text-align: center;">
       -
@@ -1509,7 +1509,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      electronicspecial
+      electronic special
     </th>
     <td style="text-align: center;">
       -
@@ -1536,7 +1536,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      electronicyouth
+      electronic youth
     </th>
     <td style="text-align: center;">
       -
@@ -1737,7 +1737,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 <th scope="row"
                     style="text-align: left;"
                 >
-                  electronicregular
+                  electronic regular
                 </th>
                 <td style="text-align: center;">
                   -
@@ -1764,7 +1764,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 <th scope="row"
                     style="text-align: left;"
                 >
-                  electronicsenior
+                  electronic senior
                 </th>
                 <td style="text-align: center;">
                   -
@@ -1791,7 +1791,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 <th scope="row"
                     style="text-align: left;"
                 >
-                  electronicspecial
+                  electronic special
                 </th>
                 <td style="text-align: center;">
                   -
@@ -1818,7 +1818,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 <th scope="row"
                     style="text-align: left;"
                 >
-                  electronicyouth
+                  electronic youth
                 </th>
                 <td style="text-align: center;">
                   -
@@ -1850,7 +1850,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 <th scope="row"
                     style="text-align: left;"
                 >
-                  cashregular
+                  cash regular
                 </th>
                 <td style="text-align: right;">
                   $1.00
@@ -1874,7 +1874,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 <th scope="row"
                     style="text-align: left;"
                 >
-                  cashsenior
+                  cash senior
                 </th>
                 <td style="text-align: right;">
                   $0.50
@@ -1898,7 +1898,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 <th scope="row"
                     style="text-align: left;"
                 >
-                  cashyouth
+                  cash youth
                 </th>
                 <td style="text-align: right;">
                   $0.00
