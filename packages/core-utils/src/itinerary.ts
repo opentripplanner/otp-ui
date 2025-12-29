@@ -597,14 +597,16 @@ export function calculateEmissions(
 /**
  * Returns the user-facing stop code to display for a stop or place
  */
-export function getDisplayedStopCode(placeOrStop: Place | Stop): string {
-  let stopCode;
+export function getDisplayedStopCode(
+  placeOrStop: Place | Stop
+): string | undefined {
   if ("stopId" in placeOrStop) {
-    ({ stopCode } = placeOrStop);
-  } else if ("id" in placeOrStop) {
-    ({ code: stopCode } = placeOrStop);
+    return placeOrStop.stopCode ?? undefined;
   }
-  return stopCode || null;
+  if ("id" in placeOrStop) {
+    return placeOrStop.code ?? undefined;
+  }
+  return undefined;
 }
 
 /**

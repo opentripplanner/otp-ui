@@ -103,7 +103,7 @@ describe("util > itinerary", () => {
       };
       expect(getDisplayedStopCode(stop)).toEqual("code123");
     });
-    it("should return null if id is present and no stopCode is provided", () => {
+    it("should return undefined if id is present and no stopCode is provided", () => {
       const place = {
         ...basePlace,
         stopId: "xagency:id123"
@@ -115,7 +115,7 @@ describe("util > itinerary", () => {
       };
       expect(getDisplayedStopCode(stop)).toBeFalsy();
     });
-    it("should return null if stopId is null (and no stopCode is provided)", () => {
+    it("should return undefined if stopId is null (and no stopCode is provided)", () => {
       expect(getDisplayedStopCode(basePlace)).toBeFalsy();
     });
   });
