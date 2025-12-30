@@ -1,6 +1,11 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { Defaults } from "@opentripplanner/itinerary-body";
-import { GradationMap, Leg, LegIconComponent } from "@opentripplanner/types";
+import {
+  GradationMap,
+  Leg,
+  LegIconComponent,
+  LegHeadingProp
+} from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
@@ -10,7 +15,7 @@ import { defaultMessages, strongText } from "./util";
 
 const { getDisplayedStopId, getLegRouteShortName } = coreUtils.itinerary;
 
-interface Props {
+interface Props extends LegHeadingProp {
   accessibilityScoreGradationMap?: GradationMap;
   interlineFollows?: boolean;
   leg: Leg;
@@ -21,7 +26,8 @@ export default function TransitLeg({
   accessibilityScoreGradationMap,
   leg,
   LegIcon,
-  interlineFollows
+  interlineFollows,
+  headingAs
 }: Props): ReactElement {
   // TODO: some mocks in itinerary-body have legs with null values for from/to.stop
   const stopIdFrom = getDisplayedStopId(leg.from.stop ?? leg.from);
@@ -60,7 +66,7 @@ export default function TransitLeg({
     return (
       <S.CollapsedTop>
         <S.LegBody>
-          <S.LegHeader>
+          <S.LegHeader as={headingAs}>
             <FormattedMessage
               defaultMessage={
                 defaultMessages[
@@ -89,7 +95,7 @@ export default function TransitLeg({
         LegIcon={LegIcon}
       />
       <S.LegBody>
-        <S.LegHeader>{routeDescription}</S.LegHeader>
+        <S.LegHeader as={headingAs}>{routeDescription}</S.LegHeader>
         <S.LegDetails>
           <S.LegDetail>
             <FormattedMessage
