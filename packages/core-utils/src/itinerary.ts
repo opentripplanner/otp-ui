@@ -617,8 +617,11 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
  * @param item String that is potentially scoped with `:` character
  * @returns    descoped string
  */
-export const descope = (item?: string | null): string | null | undefined =>
-  item?.split(":")?.[1] ?? item;
+export const descope = (item?: string | null): string | null | undefined => {
+  if (!item) return item;
+  const index = item.indexOf(":");
+  return index === -1 ? item : item.substring(index + 1);
+};
 
 export type ExtendedMoney = Money & { originalAmount?: number };
 
@@ -775,7 +778,7 @@ export function getItineraryCost(
   );
 }
 
-const pickupDropoffTypeToOtp1 = otp2Type => {
+const pickupDropoffTypeToOtp1 = (otp2Type: string): string | null => {
   switch (otp2Type) {
     case "COORDINATE_WITH_DRIVER":
       return "coordinateWithDriver";

@@ -43,8 +43,8 @@ describe("util > itinerary", () => {
       expect(descope("")).toBe("");
     });
 
-    it("should only return the segment after the first ':' (per current implementation)", () => {
-      expect(descope("a:b:c")).toBe("b");
+    it("should only return the segment after the first ':'", () => {
+      expect(descope("aaaa:bbbb:cccc")).toBe("bbbb:cccc");
       expect(descope(":value")).toBe("value");
       expect(descope("value:")).toBe("");
       expect(descope(":")).toBe("");
