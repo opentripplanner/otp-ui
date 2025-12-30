@@ -24,7 +24,6 @@ export default function AccessLeg({
   LegIcon,
   headingAs
 }: Props): ReactElement {
-  console.log("AccessLeg headingAs:", headingAs);
   return (
     <S.Leg>
       <AccessibilityAnnotation
