@@ -613,10 +613,15 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
 
 /**
  * Removes the first part of the OTP standard scope (":"), if it is present
+ * If it's null or undefined, return the original value.
  * @param item String that is potentially scoped with `:` character
  * @returns    descoped string
  */
-export const descope = (item: string): string => item?.split(":")?.[1];
+export const descope = (item?: string | null): string | null | undefined => {
+  if (!item) return item;
+  const index = item.indexOf(":");
+  return index === -1 ? item : item.substring(index + 1);
+};
 
 export type ExtendedMoney = Money & { originalAmount?: number };
 
@@ -638,8 +643,8 @@ export const zeroDollars = (currency: Currency): Money => ({
  */
 export function getLegCost(
   leg: Leg,
-  mediumId: string | null,
-  riderCategoryId: string | null,
+  mediumId?: string | null,
+  riderCategoryId?: string | null,
   seenFareIds?: string[]
 ): {
   alternateFareProducts?: AppliedFareProduct[];
@@ -662,6 +667,7 @@ export function getLegCost(
 
       const productMediaId =
         descope(product?.medium?.id) || product?.medium?.id || null;
+
       return (
         productRiderCategoryId === riderCategoryId &&
         productMediaId === mediumId &&
@@ -709,8 +715,8 @@ export function getLegCost(
  */
 export function getItineraryCost(
   legs: Leg[],
-  mediumId: string | string[] | null,
-  riderCategoryId: string | string[] | null
+  mediumId?: string | string[] | null,
+  riderCategoryId?: string | string[] | null
 ): Money | undefined {
   // TODO: Better input type handling
   if (Array.isArray(mediumId) || Array.isArray(riderCategoryId)) {
@@ -772,7 +778,7 @@ export function getItineraryCost(
   );
 }
 
-const pickupDropoffTypeToOtp1 = otp2Type => {
+const pickupDropoffTypeToOtp1 = (otp2Type: string): string | null => {
   switch (otp2Type) {
     case "COORDINATE_WITH_DRIVER":
       return "coordinateWithDriver";

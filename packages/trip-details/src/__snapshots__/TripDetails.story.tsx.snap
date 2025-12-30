@@ -1426,47 +1426,6 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <th scope="row"
         style="text-align: left;"
     >
-      cash special
-    </th>
-    <td style="text-align: center;">
-      -
-      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        No fare information for this leg
-      </span>
-    </td>
-    <td style="text-align: center;">
-      -
-      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        No fare information for this leg
-      </span>
-    </td>
-    <td style="text-align: center;">
-      -
-      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        No fare information for this leg
-      </span>
-    </td>
-    <td style="text-align: center;">
-      -
-      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-        No fare information for this leg
-      </span>
-    </td>
-    <td title="No fare total available"
-        style="text-align: center;"
-    >
-      <em>
-        -
-        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-          No fare information for this leg
-        </span>
-      </em>
-    </td>
-  </tr>
-  <tr>
-    <th scope="row"
-        style="text-align: left;"
-    >
       cash youth
     </th>
     <td style="text-align: right;">
@@ -1584,6 +1543,38 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
         No fare information for this leg
       </span>
+    </td>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td style="text-align: right;">
+      $0.00
+    </td>
+    <td title="No fare total available"
+        style="text-align: center;"
+    >
+      <em>
+        -
+        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+          No fare information for this leg
+        </span>
+      </em>
+    </td>
+  </tr>
+  <tr>
+    <th scope="row"
+        style="text-align: left;"
+    >
+      -
+      <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+        No fare information for this leg
+      </span>
+    </th>
+    <td style="text-align: right;">
+      $0.00
     </td>
     <td style="text-align: right;">
       $0.00
@@ -1907,31 +1898,19 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 <th scope="row"
                     style="text-align: left;"
                 >
-                  cash special
+                  cash youth
                 </th>
-                <td style="text-align: center;">
-                  -
-                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                    No fare information for this leg
-                  </span>
+                <td style="text-align: right;">
+                  $0.00
                 </td>
-                <td style="text-align: center;">
-                  -
-                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                    No fare information for this leg
-                  </span>
+                <td style="text-align: right;">
+                  $0.00
                 </td>
-                <td style="text-align: center;">
-                  -
-                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                    No fare information for this leg
-                  </span>
+                <td style="text-align: right;">
+                  $0.00
                 </td>
-                <td style="text-align: center;">
-                  -
-                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                    No fare information for this leg
-                  </span>
+                <td style="text-align: right;">
+                  $0.00
                 </td>
                 <td title="No fare total available"
                     style="text-align: center;"
@@ -1948,7 +1927,10 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 <th scope="row"
                     style="text-align: left;"
                 >
-                  cash youth
+                  -
+                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                    No fare information for this leg
+                  </span>
                 </th>
                 <td style="text-align: right;">
                   $0.00
@@ -2577,7 +2559,10 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
                 <th scope="row"
                     style="text-align: left;"
                 >
-                  Regular Fare
+                  -
+                  <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                    No fare information for this leg
+                  </span>
                 </th>
                 <td style="text-align: right;">
                   $2.80
