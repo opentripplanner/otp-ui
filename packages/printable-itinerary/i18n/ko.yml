@@ -7,9 +7,9 @@ otpUi:
     TransitLeg:
       alight: >-
         <strong>{time, time, short}</strong>에
-        <strong>{place}</strong>{stopIdPart} 에서 하차
+        <strong>{place}</strong>{stopCodePart} 에서 하차
       board: >-
         <strong>{time, time, short}</strong> 에
-        <strong>{place}</strong>{stopIdPart} 탑승
+        <strong>{place}</strong>{stopCodePart} 탑승
       continuesAs: "{routeDescription}로 계속"
     depart: <strong>{place}</strong>에서 <strong>출발</strong>

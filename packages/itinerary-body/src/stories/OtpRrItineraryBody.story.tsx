@@ -289,6 +289,6 @@ export const AlertNoEffectiveAsOfItinerary = (): ReactElement => (
   />
 );
 
-export const StopsWithNoStopCode = (): ReactElement => (
+export const StopWithNoStopCode = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={legNoStopCodeItinerary} />
 );

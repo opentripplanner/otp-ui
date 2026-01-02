@@ -10,10 +10,10 @@ otpUi:
         கொள்ளுங்கள்
     TransitLeg:
       alight: >-
-        <strong> {place} </strong>{stopIdPart} <strong> {நேரம், நேரம், குறுகிய}
-        </strong> இல் இறங்குங்கள்
+        <strong> {place} </strong>{stopCodePart} <strong> {நேரம், நேரம்,
+        குறுகிய} </strong> இல் இறங்குங்கள்
       board: >-
-        <strong> {place} </strong>{stopIdPart} <strong> {நேரம், நேரம், குறுகிய}
-        </strong> இல் பலகை
+        <strong> {place} </strong>{stopCodePart} <strong> {நேரம், நேரம்,
+        குறுகிய} </strong> இல் பலகை
       continuesAs: "{routeDescription}"
     depart: <strong> புறப்படுதல் </strong> <strong> {place} </strong> இலிருந்து

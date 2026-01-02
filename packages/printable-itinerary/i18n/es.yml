@@ -8,10 +8,10 @@ otpUi:
       header: <strong>Tomar el {company}</strong> hasta <strong>{place}</strong>
     TransitLeg:
       alight: >-
-        Bajar en la <strong>{place}</strong>{stopIdPart} a las <strong>{time,
+        Bajar en la <strong>{place}</strong>{stopCodePart} a las <strong>{time,
         time, short}</strong>
       board: >-
-        Embarque en <strong>{place}</strong>{stopIdPart} a las <strong>{time,
+        Embarque en <strong>{place}</strong>{stopCodePart} a las <strong>{time,
         time, short}</strong>
       continuesAs: Continuar como {routeDescription}
     depart: <strong>Salir</strong> de <strong>{place}</strong>

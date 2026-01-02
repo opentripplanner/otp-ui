@@ -8,10 +8,10 @@ otpUi:
       header: <strong>Đi {company}</strong> đến <strong>{place}</strong>
     TransitLeg:
       alight: >-
-        Xuống xe ở <strong>{place}</strong>{stopIdPart} lúc <strong>{time, time,
-        short}</strong>
+        Xuống xe ở <strong>{place}</strong>{stopCodePart} lúc <strong>{time,
+        time, short}</strong>
       board: >-
-        Lên xe ở <strong>{place}</strong>{stopIdPart} lúc <strong>{time, time,
+        Lên xe ở <strong>{place}</strong>{stopCodePart} lúc <strong>{time, time,
         short}</strong>
       continuesAs: Tiếp tục là {routeDescription}
     depart: <strong>Khởi hành</strong> từ <strong>{place}</strong>

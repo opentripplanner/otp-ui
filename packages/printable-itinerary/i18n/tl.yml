@@ -12,10 +12,10 @@ otpUi:
         <strong>{place}</strong>
     TransitLeg:
       alight: >-
-        Bumaba sa <strong>{place}</strong>{stopIdPart} nang <strong>{time, time,
-        short}</strong>
+        Bumaba sa <strong>{place}</strong>{stopCodePart} nang <strong>{time,
+        time, short}</strong>
       board: >-
-        Sumakay sa <strong>{place}</strong>{stopIdPart} nang <strong>{time,
+        Sumakay sa <strong>{place}</strong>{stopCodePart} nang <strong>{time,
         time, short}</strong>
       continuesAs: Magpapatuloy bilang {routeDescription}
     depart: <strong>Aalis</strong> sa <strong>{place}</strong>

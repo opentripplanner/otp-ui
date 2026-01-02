@@ -96,7 +96,7 @@ export const LinkButton = styled(TransparentButton)`
 `;
 
 interface ViewerButtonProps {
-  stopCode?: string | null;
+  stopCode?: string;
 }
 
 export const ViewerButton = styled(LinkButton)<ViewerButtonProps>`
