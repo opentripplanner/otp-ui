@@ -25,6 +25,7 @@ import bikeTransitBikeItinerary from "../__mocks__/itineraries/bike-transit-bike
 import eScooterRentalItinerary from "../__mocks__/itineraries/e-scooter-rental.json";
 import eScooterRentalTransiteScooterRentalItinerary from "../__mocks__/itineraries/e-scooter-transit-e-scooter.json";
 import fareProductsItinerary from "../__mocks__/itineraries/leg-fare-products.json";
+import legNoStopCodeItinerary from "../__mocks__/itineraries/leg-no-stop-code.json";
 import parkAndRideItinerary from "../__mocks__/itineraries/park-and-ride.json";
 import tncTransitTncItinerary from "../__mocks__/itineraries/tnc-transit-tnc.json";
 import walkInterlinedTransitItinerary from "../__mocks__/itineraries/walk-interlined-transit-walk.json";
@@ -286,4 +287,8 @@ export const AlertNoEffectiveAsOfItinerary = (): ReactElement => (
     itinerary={walkTransitWalkItinerary}
     showAlertEffectiveDateTimeText={false}
   />
+);
+
+export const StopWithNoStopCode = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={legNoStopCodeItinerary} />
 );

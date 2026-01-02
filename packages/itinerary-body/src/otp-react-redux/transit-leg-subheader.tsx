@@ -8,7 +8,7 @@ import { defaultMessages } from "../util";
 
 import ViewStopButton from "./view-stop-button";
 
-const { getDisplayedStopId, isFlex } = coreUtils.itinerary;
+const { getDisplayedStopCode, isFlex } = coreUtils.itinerary;
 
 export default function TransitLegSubheader({
   leg,
@@ -17,16 +17,23 @@ export default function TransitLegSubheader({
   const { from } = leg;
   return (
     <S.PlaceSubheader className="transit-leg-subheader">
-      <FormattedMessage
-        defaultMessage={defaultMessages["otpUi.TransitLegBody.stopId"]}
-        description="Displays the stop ID"
-        id="otpUi.TransitLegBody.stopId"
-        values={{
-          stopId: getDisplayedStopId(from)
-        }}
-      />
+      {getDisplayedStopCode(from) && (
+        <FormattedMessage
+          defaultMessage={defaultMessages["otpUi.TransitLegBody.stopId"]}
+          description="Displays the stop ID"
+          id="otpUi.TransitLegBody.stopId"
+          values={{
+            stopId: getDisplayedStopCode(from)
+          }}
+        />
+      )}
+
       {!isFlex(leg) && (
-        <ViewStopButton onStopClick={onStopClick} stop={from.stop} />
+        <ViewStopButton
+          onStopClick={onStopClick}
+          stop={from.stop}
+          stopCode={getDisplayedStopCode(from)}
+        />
       )}
     </S.PlaceSubheader>
   );
