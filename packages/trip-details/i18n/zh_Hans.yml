@@ -1,7 +1,8 @@
 otpUi:
   TripDetails:
     co2: "排放的二氧化碳: <strong>{co2}</strong>"
-    co2description: CO₂ 强度的计算方法是将行程的每条腿的距离乘以每种模式的 CO₂ 强度。 每种模式的二氧化碳强度来自<link>此电子表格</link>。
+    co2description: CO₂ 强度的计算方法是将行程的每条腿的距离乘以每种模式的 CO₂ 强度。 
+      每种模式的二氧化碳强度来自<link>此电子表格</link>。
     departure: >-
       <strong>{departureDate, date, long}</strong> <strong>{departureDate, time,
       short}</strong> 出发
@@ -21,3 +22,4 @@ otpUi:
     transitFare: 公共交通费
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: 这个行程包括灵活的路线. {extraMessage}
+    total: 总计
