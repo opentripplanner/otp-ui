@@ -19581,7 +19581,7 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
 </ol>
 `;
 
-exports[`ItineraryBody/otp-react-redux StopsWithNoStopCode smoke-test 1`] = `
+exports[`ItineraryBody/otp-react-redux StopWithNoStopCode smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jIqwQS">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
