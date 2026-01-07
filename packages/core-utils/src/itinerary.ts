@@ -801,7 +801,7 @@ export const convertGraphQLResponseToLegacy = (leg: any): any => ({
   boardRule: pickupDropoffTypeToOtp1(leg.pickupType),
   bookingRuleInfo: {
     dropOff: leg?.dropOffBookingInfo || {},
-    pickUp: leg?.pickUpBookingInfo || {}
+    pickUp: leg?.pickupBookingInfo || {}
   },
   dropOffBookingInfo: {
     latestBookingTime: leg.dropOffBookingInfo
