@@ -1019,7 +1019,9 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 21 min / 9 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -3941,7 +3943,9 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 12 min / 13 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -5794,7 +5798,9 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -6845,7 +6851,9 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -8739,7 +8747,9 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 8 min / 9 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -10180,7 +10190,9 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 21 min / 9 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -11399,7 +11411,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 1 hr 0 min / 5 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -11746,7 +11760,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 26 min / 4 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -12085,7 +12101,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 25 min / 6 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -12439,7 +12457,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 11 min / 10 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -13345,7 +13365,9 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 18 min / 12 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -13803,7 +13825,9 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 9 min / 8 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -16156,7 +16180,9 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 21 min / 9 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -17160,7 +17186,9 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -18073,7 +18101,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -18986,7 +19016,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -19899,7 +19931,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -20593,7 +20627,9 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 6 min / 3 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -21516,7 +21552,9 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 8 min / 4 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -21773,7 +21811,9 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 20 min / 26 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -23618,7 +23658,9 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 21 min / 9 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -25176,7 +25218,9 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 21 min / 9 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -26713,7 +26757,9 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 21 min / 9 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -27687,7 +27733,9 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 47 min / 6 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -27960,7 +28008,9 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 11 min / 8 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -28419,7 +28469,9 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 31 min / 17 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -29467,7 +29519,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 4 min / 5 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -29907,7 +29961,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 4 min / 5 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -30690,7 +30746,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 4 min / 5 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -31164,7 +31222,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 4 min / 5 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -32094,7 +32154,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -33021,7 +33083,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -33925,7 +33989,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -35746,7 +35812,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 3 min / 2 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -36634,7 +36702,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 47 min / 6 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -36907,7 +36977,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 11 min / 8 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -37366,7 +37438,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 31 min / 17 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -38290,7 +38364,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 47 min / 6 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -38563,7 +38639,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 11 min / 8 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -39022,7 +39100,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 31 min / 17 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -39946,7 +40026,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 47 min / 6 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -40219,7 +40301,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 11 min / 8 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
@@ -40678,7 +40762,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
           </div>
           <div class="styled__TransitLegDetails-sc-1q8npbl-80 fMIuoQ transit-leg-details">
             <div class="styled__TransitLegDetailsHeader-sc-1q8npbl-81 crrijw">
-              <button class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW">
+              <button aria-expanded="false"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__TransitLegSummary-sc-1q8npbl-84 jOzsRd kNhJhW"
+              >
                 Ride 31 min / 17 stops
                 <span class="styled__CaretToggle-sc-1q8npbl-16 iPkfbR">
                   <svg viewbox="0 0 320 512"
