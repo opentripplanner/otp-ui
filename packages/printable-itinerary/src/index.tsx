@@ -1,4 +1,9 @@
-import { Config, Itinerary, LegIconComponent } from "@opentripplanner/types";
+import {
+  Config,
+  Itinerary,
+  LegIconComponent,
+  LegHeadingConfig
+} from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
@@ -18,13 +23,21 @@ interface Props {
   itinerary: Itinerary;
   /** A component class that is used to render icons for legs of an itinerary. */
   LegIcon: LegIconComponent;
+  /** Controls semantic heading levels for each leg section */
+  legHeadings?: LegHeadingConfig;
 }
 
 function PrintableItinerary({
   className,
   config,
   itinerary,
-  LegIcon
+  LegIcon,
+  legHeadings = {
+    titleHeading: "h2",
+    transitLeg: "h3",
+    tncLeg: "h3",
+    accessLeg: "h3"
+  }
 }: Props): ReactElement {
   const gradationMap = config.accessibilityScore?.gradationMap;
   return (
@@ -43,7 +56,7 @@ function PrintableItinerary({
       {itinerary.legs.length > 0 && (
         <S.CollapsedTop>
           <S.LegBody>
-            <S.LegHeader>
+            <S.LegHeader as={legHeadings.titleHeading || "div"}>
               <FormattedMessage
                 defaultMessage={
                   defaultMessages["otpUi.PrintableItinerary.depart"]
@@ -70,6 +83,7 @@ function PrintableItinerary({
             key={k}
             leg={leg}
             LegIcon={LegIcon}
+            headingAs={legHeadings.transitLeg || "div"}
           />
         ) : leg.rideHailingEstimate ? (
           <TNCLeg
@@ -77,6 +91,7 @@ function PrintableItinerary({
             key={k}
             leg={leg}
             LegIcon={LegIcon}
+            headingAs={legHeadings.tncLeg || "div"}
           />
         ) : (
           <AccessLeg
@@ -85,6 +100,7 @@ function PrintableItinerary({
             key={k}
             leg={leg}
             LegIcon={LegIcon}
+            headingAs={legHeadings.accessLeg || "span"}
           />
         )
       )}
