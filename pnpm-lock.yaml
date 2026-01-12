@@ -521,6 +521,9 @@ importers:
 
   packages/itinerary-body:
     dependencies:
+      '@opentripplanner/building-blocks':
+        specifier: workspace:*
+        version: link:../building-blocks
       '@opentripplanner/core-utils':
         specifier: workspace:*
         version: link:../core-utils

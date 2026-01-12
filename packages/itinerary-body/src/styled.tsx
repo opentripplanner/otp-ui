@@ -8,6 +8,7 @@ import { CaretDown } from "@styled-icons/fa-solid/CaretDown";
 import { CaretUp } from "@styled-icons/fa-solid/CaretUp";
 import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle";
 
+import colors from "@opentripplanner/building-blocks";
 import { toModeBorder, toModeColor, toSafeRouteColor } from "./util";
 
 interface LightBorderDivProps {
@@ -16,6 +17,11 @@ interface LightBorderDivProps {
     borderColor?: string;
   };
 }
+
+const { red, blue, grey } = colors;
+
+const GREY_TEXT_COLOR = "#333";
+const BOOK_LATER_YELLOW = "#fcf9d3";
 
 /**
  * This component is needed to give the offset border look to stacked place rows
@@ -45,8 +51,8 @@ export const AnchorButton = styled.a`
   background-color: #fff;
   background-image: none;
   border-radius: 4px;
-  border: 1px solid #ccc;
-  color: #333;
+  border: 1px solid ${grey[200]};
+  color: ${GREY_TEXT_COLOR};
   cursor: pointer;
   display: inline-block;
   font-size: 14px;
@@ -58,36 +64,29 @@ export const AnchorButton = styled.a`
   user-select: none;
   white-space: nowrap;
 
-  &:hover {
-    color: #333;
-    background-color: #e6e6e6;
-    border-color: #adadad;
+  &:hover,
+  &:active {
+    color: ${GREY_TEXT_COLOR};
+    background-color: ${grey[100]};
+    border-color: ${grey[300]};
   }
 
   &:active {
-    color: #333;
-    background-color: #e6e6e6;
     background-image: none;
-    border-color: #adadad;
     outline: 0;
     box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   }
 
-  &:focus {
-    color: #333;
-    background-color: #e6e6e6;
-    border-color: #8c8c8c;
-  }
-
+  &:focus,
   &:active:hover {
-    color: #333;
-    background-color: #d4d4d4;
-    border-color: #8c8c8c;
+    color: ${GREY_TEXT_COLOR};
+    background-color: ${grey[100]};
+    border-color: ${grey[500]};
   }
 `;
 
 export const LinkButton = styled(TransparentButton)`
-  color: #008;
+  color: ${blue[900]};
   margin-left: 5px;
 
   &:hover {
@@ -129,7 +128,7 @@ interface ModeRouteProps {
 export const AccessBadge = styled.div<ModeRouteProps>`
   color: black;
   background-color: ${props => toModeColor(props.mode, props.routeColor)};
-  border: 2px solid #bbb;
+  border: 2px solid ${grey[300]};
   text-align: center;
   width: 25px;
   height: 25px;
@@ -146,7 +145,7 @@ export const ArrivalTimeContainer = styled.button`
   align-items: center;
   background: none;
   border: none;
-  color: #007899;
+  color: ${blue[700]};
   cursor: pointer;
   display: flex;
   font-size: 0.9em;
@@ -159,7 +158,7 @@ export const ArrivalTimeContainer = styled.button`
 `;
 
 export const CallAheadWarning = styled.div`
-  color: #b22727;
+  color: ${red[800]};
   margin-top: 5px;
 `;
 
@@ -172,7 +171,7 @@ export const BookLaterContainer = styled.div`
 `;
 
 export const BookLaterInnerContainer = styled.div`
-  background-color: #fcf9d3;
+  background-color: ${BOOK_LATER_YELLOW};
   display: table;
   height: 100%;
   width: 100%;
@@ -180,7 +179,7 @@ export const BookLaterInnerContainer = styled.div`
 
 export const BookLaterPointer = styled.div`
   border-bottom: 16px solid transparent;
-  border-right: 16px solid #fcf9d3;
+  border-right: 16px solid ${BOOK_LATER_YELLOW};
   border-top: 16px solid transparent;
   height: 0;
   left: 94px;
@@ -190,7 +189,7 @@ export const BookLaterPointer = styled.div`
 `;
 
 export const BookLaterText = styled.div`
-  color: #444;
+  color: ${GREY_TEXT_COLOR};
   display: table-cell;
   font-style: italic;
   line-height: 0.95;
@@ -281,7 +280,7 @@ export const ItineraryBody = styled.ol`
 `;
 
 export const LegBody = styled.div`
-  color: #676767;
+  color: ${grey[700]};
   font-size: 13px;
   padding-bottom: 12px;
 `;
@@ -359,7 +358,7 @@ export const LegDescriptionRouteShortName = styled.span`
 `;
 
 export const LegDescriptionForTransit = styled(LegDescription)`
-  color: #807373;
+  color: ${grey[700]};
   margin-top: 5px;
 `;
 
@@ -422,7 +421,7 @@ interface PreviewContainerProps {
 
 export const PreviewContainer = styled.div<PreviewContainerProps>`
   background-color: ${props => props.active && "#eee"};
-  border-color: ${props => (props.active ? "#d1d5da" : "#fff")};
+  border-color: ${props => (props.active ? blue[100] : "#fff")};
   border-radius: 5px;
   border-style: solid;
   border-width: 1px;
@@ -438,7 +437,7 @@ export const PreviewContainer = styled.div<PreviewContainerProps>`
   width: 75%;
 
   &:hover {
-    border-color: #d1d5da;
+    border-color: ${blue[100]};
     background-color: #f6f8fa;
   }
 `;
@@ -500,7 +499,7 @@ export const PlaceName = styled.span`
 `;
 
 export const PlaceSubheader = styled.div`
-  color: #807373;
+  color: ${grey[700]};
   font-size: 13px;
   font-weight: 300;
   padding-top: 1px;
@@ -528,7 +527,7 @@ export const PreviewDiagramElevationChange = styled.span`
 export const PreviewDiagramElevationGain = styled(
   PreviewDiagramElevationChange
 )`
-  color: #e60000;
+  color: ${red[700]};
 `;
 
 export const PreviewDiagramElevationLoss = styled(
@@ -611,7 +610,7 @@ export const StepsHeaderAndMapLink = styled.span`
 `;
 
 const stepsHeaderStyling = css`
-  color: #676767;
+  color: ${grey[700]};
   font-size: 13px;
   font-style: normal;
   padding: 0;
@@ -627,7 +626,7 @@ export const StepsHeaderSpan = styled.span`
 `;
 
 export const StepIconContainer = styled.div`
-  fill: #676767;
+  fill: ${grey[700]};
   float: left;
   height: 16px;
   width: 16px;
@@ -636,7 +635,7 @@ export const StepIconContainer = styled.div`
 export const StepRow = styled.li`
   font-size: 13px;
   margin-top: 8px;
-  color: #676767;
+  color: ${grey[700]};
   font-style: normal;
 `;
 
@@ -664,7 +663,7 @@ export const StopMarker = styled.div`
 `;
 
 export const StopName = styled.div`
-  color: #676767;
+  color: ${grey[700]};
   margin-top: 3px;
 `;
 
@@ -726,7 +725,7 @@ export const TransitAlerts = styled.ul`
 `;
 
 const alertToggleStyling = css`
-  color: #d14727;
+  color: ${red[800]};
   display: flex;
   font-weight: 400;
   margin-top: 8px;
@@ -750,7 +749,7 @@ export const TransitLegDetails = styled.div`
 `;
 
 export const TransitLegDetailsHeader = styled.div`
-  color: #676767;
+  color: ${grey[700]};
   display: flex;
 `;
 
@@ -778,7 +777,7 @@ export const AgencyInfo = styled.div`
   margin-top: 5px;
 
   a {
-    color: #337ab7;
+    color: ${blue[700]};
     text-decoration: none;
   }
 
