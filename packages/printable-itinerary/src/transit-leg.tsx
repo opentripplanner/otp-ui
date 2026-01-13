@@ -55,7 +55,7 @@ export default function TransitLeg({
     />
   );
 
-  // Handle case of transit leg interlined w/ previous
+  // Handle case of transit leg interlined w/ previous.
   if (leg.interlineWithPreviousLeg) {
     return (
       <S.CollapsedTop>
