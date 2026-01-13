@@ -465,7 +465,7 @@ export type ItineraryOnlyLegsRequired = Partial<Itinerary> &
 export type ElevationProfile = {
   maxElev: number;
   minElev: number;
-  points: number[];
+  points: [number, number][];
   traversed: number;
   gain: number;
   loss: number;
