@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "strict": true,
     "composite": true,
     "target": "es2019",
     "outDir": "./lib",
