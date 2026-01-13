@@ -610,8 +610,7 @@ export function getDisplayedStopCode(
 }
 
 /**
- * Removes the first part of the OTP standard scope (":"), if it is present
- * If it's null or undefined, return the original value.
+ * Removes the first part of the OTP standard scope (":"), if it is present.
  * @param item String that is potentially scoped with `:` character
  * @returns    descoped string
  */
