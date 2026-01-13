@@ -612,7 +612,7 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
 }
 
 /**
- * Removes the first part of the OTP standard scope (":"), if it is present
+ * Removes the first part of the OTP standard scope (":"), if it is present.
  * @param item String that is potentially scoped with `:` character
  * @returns    descoped string
  */
