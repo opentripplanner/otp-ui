@@ -228,29 +228,29 @@ describe("util > itinerary", () => {
       ]
     };
     it("should return the total cost for a leg", () => {
-      const result = getLegCost(leg, null, null);
+      const result = getLegCost(leg, [], null, null);
       expect(result.price).toEqual({ amount: 50, currency: "USD" });
     });
     it("should return the 0 cost for a free leg", () => {
-      const result = getLegCost(freeLeg, null, null);
+      const result = getLegCost(freeLeg, [], null, null);
       expect(result.price).toEqual({ amount: 0, currency: "USD" });
     });
     it("should return the correct cost for a leg with multiple types of fares", () => {
-      const result = getLegCost(complicatedLeg, "cash", "child");
+      const result = getLegCost(complicatedLeg, [], "cash", "child");
       expect(result.price).toEqual({ amount: 50, currency: "USD" });
     });
     it("should return the correct cost for a leg with no rider category", () => {
-      const result = getLegCost(halfLeg, "cash", null);
+      const result = getLegCost(halfLeg, [], "cash", null);
       expect(result.price).toEqual({ amount: 30, currency: "USD" });
     });
 
     it("should return undefined if no fare products exist on the leg", () => {
       const emptyleg = {};
-      const result = getLegCost(emptyleg, "cash", "regular");
+      const result = getLegCost(emptyleg, [], "cash", "regular");
       expect(result.price).toBeUndefined();
     });
     it("should return undefined if the keys are invalid", () => {
-      const result = getLegCost(leg, "invalidkey", "invalidkey");
+      const result = getLegCost(leg, [], "invalidkey", "invalidkey");
       expect(result.price).toBeUndefined();
     });
   });
@@ -291,11 +291,17 @@ describe("util > itinerary", () => {
       expect(result?.amount).toEqual(11.55);
     });
     it("should calculate the individual leg cost of a fares v2 legs", () => {
-      const firstLegResult = getLegCost(faresv2Itinerary.legs[1], "3", "ADULT");
+      const firstLegResult = getLegCost(
+        faresv2Itinerary.legs[1],
+        [],
+        "3",
+        "ADULT"
+      );
       expect(firstLegResult.price?.amount).toEqual(2);
 
       const secondLegResult = getLegCost(
         faresv2Itinerary.legs[3],
+        [],
         "3",
         "ADULT"
       );

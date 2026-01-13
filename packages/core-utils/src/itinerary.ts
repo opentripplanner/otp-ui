@@ -6,6 +6,7 @@ import {
   Currency,
   ElevationProfile,
   ElevationProfileComponent,
+  FareProduct,
   FlexBookingInfo,
   ItineraryOnlyLegsRequired,
   LatLngArray,
@@ -635,6 +636,8 @@ export const zeroDollars = (currency: Currency): Money => ({
   currency
 });
 
+type FareProductWithPrice = FareProduct & { price: Money };
+
 /**
  * Extracts useful data from the fare products on a leg, such as the leg cost and transfer info.
  * @param leg                Leg with Fares v2 information
@@ -648,9 +651,9 @@ export const zeroDollars = (currency: Currency): Money => ({
  */
 export function getLegCost(
   leg: Leg,
+  seenFareIds: string[],
   mediumId?: string | null,
-  riderCategoryId?: string | null,
-  seenFareIds?: string[]
+  riderCategoryId?: string | null
 ): {
   alternateFareProducts?: AppliedFareProduct[];
   appliedFareProduct?: AppliedFareProduct;
@@ -681,6 +684,12 @@ export function getLegCost(
         product?.price
       );
     })
+    // Make sure there's a price
+    // Some fare products don't have a price at all.
+    .filter(
+      (fare): fare is { id: string; product: FareProductWithPrice } =>
+        fare.product?.price !== undefined
+    )
     .map(fare => {
       const alreadySeen = !!seenFareIds && seenFareIds?.indexOf(fare.id) > -1;
       return {
@@ -776,9 +785,9 @@ export function getItineraryCost(
         // Use an object keyed by productUseId to deduplicate, then extract prices
         const { appliedFareProduct, productUseId } = getLegCost(
           leg,
+          acc.seenIds,
           mediumId,
-          riderCategoryId,
-          acc.seenIds
+          riderCategoryId
         );
         if (!appliedFareProduct) return acc;
         if (!productUseId) return acc;
