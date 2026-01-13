@@ -386,8 +386,8 @@ importers:
         specifier: 'catalog:'
         version: 10.46.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
       '@turf/along':
-        specifier: ^6.0.1
-        version: 6.5.0
+        specifier: ^7.3.1
+        version: 7.3.1
       chroma-js:
         specifier: ^2.4.2
         version: 2.6.0
@@ -410,6 +410,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      '@types/mapbox__polyline':
+        specifier: ^1.0.5
+        version: 1.0.5
 
   packages/endpoints-overlay:
     dependencies:
@@ -3542,8 +3545,8 @@ packages:
     resolution: {integrity: sha512-92F7/SFyufn4DXsha9+QfKnN03JGqtMFMXgSHbZOo8JG59WkTni7UzAouNQDf7AuP9OAMxVOPQcqG3sB7w+kkg==}
     engines: {node: ^16.14.0 || >=18.0.0}
 
-  '@turf/along@6.5.0':
-    resolution: {integrity: sha512-LLyWQ0AARqJCmMcIEAXF4GEu8usmd4Kbz3qk1Oy5HoRNpZX47+i5exQtmIWKdqJ1MMhW26fCTXgpsEs5zgJ5gw==}
+  '@turf/along@7.3.1':
+    resolution: {integrity: sha512-z84b9PKsUB69BhkeHA6oPqRO7VaJHwTid1SpuIbwWzDqHTpq8buJBKlrKgHIIthuVr5P/AZiEXmf3R4ifRhDmw==}
 
   '@turf/bbox@6.5.0':
     resolution: {integrity: sha512-RBbLaao5hXTYyyg577iuMtDB8ehxMlUqHEJiMs8jT1GHkFhr6sYre3lmLsPeYEi/ZKj5TP5tt7fkzNdJ4GIVyw==}
@@ -3551,11 +3554,17 @@ packages:
   '@turf/bearing@6.5.0':
     resolution: {integrity: sha512-dxINYhIEMzgDOztyMZc20I7ssYVNEpSv04VbMo5YPQsqa80KO3TFvbuCahMsCAW5z8Tncc8dwBlEFrmRjJG33A==}
 
+  '@turf/bearing@7.3.1':
+    resolution: {integrity: sha512-ex78l/LiY6uO6jO8AJepyWE6/tiWEbXjKLOgqUfJSkW23UcMVlhbAKzXDjbsdz9T66sXFC/6QNAh8oaZzmoo6w==}
+
   '@turf/circle@6.5.0':
     resolution: {integrity: sha512-oU1+Kq9DgRnoSbWFHKnnUdTmtcRUMmHoV9DjTXu9vOLNV5OWtAAh1VZ+mzsioGGzoDNT/V5igbFOkMfBQc0B6A==}
 
   '@turf/destination@6.5.0':
     resolution: {integrity: sha512-4cnWQlNC8d1tItOz9B4pmJdWpXqS0vEvv65bI/Pj/genJnsL7evI0/Xw42RvEGROS481MPiU80xzvwxEvhQiMQ==}
+
+  '@turf/destination@7.3.1':
+    resolution: {integrity: sha512-yyiJtbQJ4AB9Ny/FKDDNuWI9Sg4Jtd2PMpQPqOV3AFq8NNkg0xJSNmDHDxupb3oPqPWYPxyfVI3tBoF+Xhhoig==}
 
   '@turf/distance@4.7.3':
     resolution: {integrity: sha512-nluvFy7qjZFq4B6E+KAlKdwdg9fbgJMIe/5O7jveg56gcXZ5Bvgx3lFUxAY016+l907OeX9lIZCNr/Y96FMyEA==}
@@ -3563,17 +3572,26 @@ packages:
   '@turf/distance@6.5.0':
     resolution: {integrity: sha512-xzykSLfoURec5qvQJcfifw/1mJa+5UwByZZ5TZ8iaqjGYN0vomhV9aiSLeYdUGtYRESZ+DYC/OzY+4RclZYgMg==}
 
+  '@turf/distance@7.3.1':
+    resolution: {integrity: sha512-DK//doTGgYYjBkcWUywAe7wbZYcdP97hdEJ6rXYVYRoULwGGR3lhY96GNjozg6gaW9q2eSNYnZLpcL5iFVHqgw==}
+
   '@turf/helpers@4.7.3':
     resolution: {integrity: sha512-hk5ANVazb80zK6tjJYAG76oCRTWMQo6SAFu5E1dVnlb2kT3FHLoPcOB9P11duwDafMwywz24KZ+FUorB5e728w==}
 
   '@turf/helpers@6.5.0':
     resolution: {integrity: sha512-VbI1dV5bLFzohYYdgqwikdMVpe7pJ9X3E+dlr425wa2/sMJqYDhTO++ec38/pcPvPE6oD9WEEeU3Xu3gza+VPw==}
 
+  '@turf/helpers@7.3.1':
+    resolution: {integrity: sha512-zkL34JVhi5XhsuMEO0MUTIIFEJ8yiW1InMu4hu/oRqamlY4mMoZql0viEmH6Dafh/p+zOl8OYvMJ3Vm3rFshgg==}
+
   '@turf/invariant@4.7.3':
     resolution: {integrity: sha512-MtlIn9aPC4gZsflLEnfBl/o/SJjZU/yuvj+fo9qRXUOI8wBiKaUcZIT4x1jdLW0NGvU7wMPWJSFJanLCQ9eU1w==}
 
   '@turf/invariant@6.5.0':
     resolution: {integrity: sha512-Wv8PRNCtPD31UVbdJE/KVAWKe7l6US+lJItRR/HOEW3eh+U/JwRCSUl/KZ7bmjM/C+zLNoreM2TU6OoLACs4eg==}
+
+  '@turf/invariant@7.3.1':
+    resolution: {integrity: sha512-IdZJfDjIDCLH+Gu2yLFoSM7H23sdetIo5t4ET1/25X8gi3GE2XSqbZwaGjuZgNh02nisBewLqNiJs2bo+hrqZA==}
 
   '@turf/line-arc@6.5.0':
     resolution: {integrity: sha512-I6c+V6mIyEwbtg9P9zSFF89T7QPe1DPTG3MJJ6Cm1MrAY0MdejwQKOpsvNl8LDU2ekHOlz2kHpPVR7VJsoMllA==}
@@ -3674,6 +3692,9 @@ packages:
 
   '@types/mapbox__point-geometry@0.1.4':
     resolution: {integrity: sha512-mUWlSxAmYLfwnRBmgYV86tgYmMIICX4kza8YnE/eIlywGe2XoOxlpVnXWwir92xRLjwyarqwpu2EJKD2pk0IUA==}
+
+  '@types/mapbox__polyline@1.0.5':
+    resolution: {integrity: sha512-KNkXjtDPu3AgNbtikPyVqZEB5sF+Ls7sFtaZEgGEdU9YZUO5kF9nfDsJAWQqkBW8UVQNbq7Ob3Kube8l/b+3tQ==}
 
   '@types/mapbox__vector-tile@1.3.4':
     resolution: {integrity: sha512-bpd8dRn9pr6xKvuEBQup8pwQfD4VUyqO/2deGjfpe6AwC8YRlyEipvefyRJUSiCJTZuCb8Pl1ciVV5ekqJ96Bg==}
@@ -9932,6 +9953,9 @@ packages:
   tslib@2.8.0:
     resolution: {integrity: sha512-jWVzBLplnCmoaTr13V9dYbiQ99wvZRd0vNWaDRg+aVYRcjDF3nDksxFDE/+fkXnKhpnUUkmx5pK/v8mCtLVqZA==}
 
+  tslib@2.8.1:
+    resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
+
   tsutils@3.21.0:
     resolution: {integrity: sha512-mHKK3iUXL+3UF6xL5k0PEhKRUBKPBCv/+RkEOpjRWxxx27KKRBmmA60A9pgOUvMi8GKhRMPEmjBRPzs2W7O1OA==}
     engines: {node: '>= 6'}
@@ -13758,13 +13782,15 @@ snapshots:
       '@tufjs/canonical-json': 2.0.0
       minimatch: 9.0.5
 
-  '@turf/along@6.5.0':
+  '@turf/along@7.3.1':
     dependencies:
-      '@turf/bearing': 6.5.0
-      '@turf/destination': 6.5.0
-      '@turf/distance': 6.5.0
-      '@turf/helpers': 6.5.0
-      '@turf/invariant': 6.5.0
+      '@turf/bearing': 7.3.1
+      '@turf/destination': 7.3.1
+      '@turf/distance': 7.3.1
+      '@turf/helpers': 7.3.1
+      '@turf/invariant': 7.3.1
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
 
   '@turf/bbox@6.5.0':
     dependencies:
@@ -13776,6 +13802,13 @@ snapshots:
       '@turf/helpers': 6.5.0
       '@turf/invariant': 6.5.0
 
+  '@turf/bearing@7.3.1':
+    dependencies:
+      '@turf/helpers': 7.3.1
+      '@turf/invariant': 7.3.1
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
+
   '@turf/circle@6.5.0':
     dependencies:
       '@turf/destination': 6.5.0
@@ -13785,6 +13818,13 @@ snapshots:
     dependencies:
       '@turf/helpers': 6.5.0
       '@turf/invariant': 6.5.0
+
+  '@turf/destination@7.3.1':
+    dependencies:
+      '@turf/helpers': 7.3.1
+      '@turf/invariant': 7.3.1
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
 
   '@turf/distance@4.7.3':
     dependencies:
@@ -13796,15 +13836,33 @@ snapshots:
       '@turf/helpers': 6.5.0
       '@turf/invariant': 6.5.0
 
+  '@turf/distance@7.3.1':
+    dependencies:
+      '@turf/helpers': 7.3.1
+      '@turf/invariant': 7.3.1
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
+
   '@turf/helpers@4.7.3': {}
 
   '@turf/helpers@6.5.0': {}
+
+  '@turf/helpers@7.3.1':
+    dependencies:
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
 
   '@turf/invariant@4.7.3': {}
 
   '@turf/invariant@6.5.0':
     dependencies:
       '@turf/helpers': 6.5.0
+
+  '@turf/invariant@7.3.1':
+    dependencies:
+      '@turf/helpers': 7.3.1
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
 
   '@turf/line-arc@6.5.0':
     dependencies:
@@ -13923,6 +13981,10 @@ snapshots:
   '@types/junit-report-builder@3.0.2': {}
 
   '@types/mapbox__point-geometry@0.1.4': {}
+
+  '@types/mapbox__polyline@1.0.5':
+    dependencies:
+      '@types/geojson': 7946.0.16
 
   '@types/mapbox__vector-tile@1.3.4':
     dependencies:
@@ -21279,6 +21341,8 @@ snapshots:
   tslib@1.14.1: {}
 
   tslib@2.8.0: {}
+
+  tslib@2.8.1: {}
 
   tsutils@3.21.0(typescript@5.9.3):
     dependencies:
