@@ -67,7 +67,7 @@ otpUi:
       car: 汽车
       escooter: 电动滑板车
       vehicle: 车辆
-    transfer: 换乘{duration, select, undefined {} other {, wait {duration}}}
+    transfer: 换乘{duration, select, undefined {} other {, 等待{duration}}}
   ItineraryBody:
     common:
       durationShort: >-

@@ -7,6 +7,7 @@ import { defaultMessages } from "../util";
 
 interface Props {
   onStopClick: StopEventHandler;
+  stopCode?: string;
   stopId?: string;
   stop?: Stop;
 }
@@ -18,8 +19,9 @@ export default class ViewStopButton extends Component<Props> {
   };
 
   render(): ReactElement {
+    const { stopCode } = this.props;
     return (
-      <S.ViewerButton onClick={this.onClick} role="link">
+      <S.ViewerButton onClick={this.onClick} role="link" stopCode={stopCode}>
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.TransitLegBody.stopViewer"]}
           description="Text for link that opens the stop viewer"

@@ -595,20 +595,18 @@ export function calculateEmissions(
 }
 
 /**
- * Returns the user-facing stop id to display for a stop or place, using the following priority:
- * 1. stop code,
- * 2. stop id without the agency id portion, if stop id contains an agency portion,
- * 3. stop id, whether null or not (this is the fallback case).
+ * Returns the user-facing stop code to display for a stop or place
  */
-export function getDisplayedStopId(placeOrStop: Place | Stop): string {
-  let stopId;
-  let stopCode;
+export function getDisplayedStopCode(
+  placeOrStop: Place | Stop
+): string | undefined {
   if ("stopId" in placeOrStop) {
-    ({ stopCode, stopId } = placeOrStop);
-  } else if ("id" in placeOrStop) {
-    ({ code: stopCode, id: stopId } = placeOrStop);
+    return placeOrStop.stopCode ?? undefined;
   }
-  return stopCode || stopId?.split(":")[1] || stopId;
+  if ("id" in placeOrStop) {
+    return placeOrStop.code ?? undefined;
+  }
+  return undefined;
 }
 
 /**
@@ -616,7 +614,11 @@ export function getDisplayedStopId(placeOrStop: Place | Stop): string {
  * @param item String that is potentially scoped with `:` character
  * @returns    descoped string
  */
-export const descope = (item: string): string => item?.split(":")?.[1];
+export const descope = (item?: string | null): string | null | undefined => {
+  if (!item) return item;
+  const index = item.indexOf(":");
+  return index === -1 ? item : item.substring(index + 1);
+};
 
 export type ExtendedMoney = Money & { originalAmount?: number };
 
@@ -638,8 +640,8 @@ export const zeroDollars = (currency: Currency): Money => ({
  */
 export function getLegCost(
   leg: Leg,
-  mediumId: string | null,
-  riderCategoryId: string | null,
+  mediumId?: string | null,
+  riderCategoryId?: string | null,
   seenFareIds?: string[]
 ): {
   alternateFareProducts?: AppliedFareProduct[];
@@ -662,6 +664,7 @@ export function getLegCost(
 
       const productMediaId =
         descope(product?.medium?.id) || product?.medium?.id || null;
+
       return (
         productRiderCategoryId === riderCategoryId &&
         productMediaId === mediumId &&
@@ -709,8 +712,8 @@ export function getLegCost(
  */
 export function getItineraryCost(
   legs: Leg[],
-  mediumId: string | string[] | null,
-  riderCategoryId: string | string[] | null
+  mediumId?: string | string[] | null,
+  riderCategoryId?: string | string[] | null
 ): Money | undefined {
   // TODO: Better input type handling
   if (Array.isArray(mediumId) || Array.isArray(riderCategoryId)) {
@@ -735,31 +738,31 @@ export function getItineraryCost(
     return total;
   }
 
-  const legCostsObj = legs
+  const legCosts = legs
     // Only legs with fares (no walking legs)
     .filter(leg => leg.fareProducts?.length > 0)
     // Get the leg cost object of each leg
-    .map((leg, index, arr) =>
-      getLegCost(
-        leg,
-        mediumId,
-        riderCategoryId,
-        // We need to include the seen fare ids by gathering all previous leg fare product ids
-        arr.splice(0, index).flatMap(l => l?.fareProducts.map(fp => fp?.id))
-      )
+    .reduce<{ seenIds: string[]; legCosts: AppliedFareProduct[] }>(
+      (acc, leg) => {
+        // getLegCost handles filtering out duplicate use IDs
+        // One fare product can be used on multiple legs,
+        // and we don't want to count it more than once.
+        // Use an object keyed by productUseId to deduplicate, then extract prices
+        const { appliedFareProduct, productUseId } = getLegCost(
+          leg,
+          mediumId,
+          riderCategoryId,
+          acc.seenIds
+        );
+        if (!appliedFareProduct) return acc;
+        return {
+          legCosts: [...acc.legCosts, appliedFareProduct],
+          seenIds: [...acc.seenIds, productUseId]
+        };
+      },
+      { seenIds: [], legCosts: [] }
     )
-    .filter(cost => cost.appliedFareProduct?.legPrice !== undefined)
-    // Filter out duplicate use IDs
-    // One fare product can be used on multiple legs,
-    // and we don't want to count it more than once.
-    // Use an object keyed by productUseId to deduplicate, then extract prices
-    .reduce<{ [productUseId: string]: Money }>((acc, cur) => {
-      if (cur.productUseId && acc[cur.productUseId] === undefined) {
-        acc[cur.productUseId] = cur.appliedFareProduct?.legPrice;
-      }
-      return acc;
-    }, {});
-  const legCosts = Object.values(legCostsObj);
+    .legCosts.map(lc => lc.legPrice);
 
   if (legCosts.length === 0) return undefined;
   // Calculate the total
@@ -772,7 +775,7 @@ export function getItineraryCost(
   );
 }
 
-const pickupDropoffTypeToOtp1 = otp2Type => {
+const pickupDropoffTypeToOtp1 = (otp2Type: string): string | null => {
   switch (otp2Type) {
     case "COORDINATE_WITH_DRIVER":
       return "coordinateWithDriver";
@@ -797,7 +800,7 @@ export const convertGraphQLResponseToLegacy = (leg: any): any => ({
   boardRule: pickupDropoffTypeToOtp1(leg.pickupType),
   bookingRuleInfo: {
     dropOff: leg?.dropOffBookingInfo || {},
-    pickUp: leg?.pickUpBookingInfo || {}
+    pickUp: leg?.pickupBookingInfo || {}
   },
   dropOffBookingInfo: {
     latestBookingTime: leg.dropOffBookingInfo

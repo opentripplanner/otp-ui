@@ -15,6 +15,7 @@ import otp2FareProducts from "../../itinerary-body/src/__mocks__/itineraries/leg
 import faresv2ItineraryWithTransfer from "../../itinerary-body/src/__mocks__/itineraries/fares-v2-with-transfer.json";
 import faresv2Itinerary from "../../itinerary-body/src/__mocks__/itineraries/fares-v2-fare-components.json";
 import bikeOnlyItinerary from "../../itinerary-body/src/__mocks__/itineraries/bike-only.json";
+
 import * as TripDetailsClasses from "./styled";
 // eslint-disable-next-line import/no-named-as-default
 import TripDetails, { FaresV2Table } from ".";

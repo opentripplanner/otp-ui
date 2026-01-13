@@ -19,6 +19,8 @@ jobs:
         run: pnpm run lint:js
       - name: Lint styles
         run: pnpm run lint:styles
+      - name: Build packages
+        run: pnpm run build:cjs && pnpm run build:esm
       - name: i18n check (en-US, fr only)
         run: pnpm run check:i18n-en-fr
       - name: Type check

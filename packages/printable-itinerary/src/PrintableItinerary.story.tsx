@@ -11,6 +11,7 @@ import bikeRentalTransitBikeRentalItinerary from "@opentripplanner/itinerary-bod
 import bikeTransitBikeItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-transit-bike.json";
 import eScooterRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/e-scooter-rental.json";
 import eScooterRentalTransiteScooterRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/e-scooter-transit-e-scooter.json";
+import legNoStopCodeItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/leg-no-stop-code.json";
 import parkAndRideItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/park-and-ride.json";
 import tncTransitTncItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json";
 import walkInterlinedTransitItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-interlined-transit-walk.json";
@@ -178,5 +179,13 @@ export const OTP2ScooterItinerary = () => (
     config={config}
     itinerary={otp2ScooterItinerary}
     LegIcon={ClassicLegIcon}
+  />
+);
+
+export const StopsWithNoStopCode = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={legNoStopCodeItinerary}
+    LegIcon={TriMetLegIcon}
   />
 );

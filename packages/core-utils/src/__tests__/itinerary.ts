@@ -1,8 +1,9 @@
 import { ElevationProfile } from "@opentripplanner/types";
 import {
   calculateTncFares,
+  descope,
   getCompanyFromLeg,
-  getDisplayedStopId,
+  getDisplayedStopCode,
   getElevationProfile,
   getItineraryCost,
   getLegCost,
@@ -18,6 +19,7 @@ import bikeRentalItinerary from "./__mocks__/bike-rental-itinerary.json";
 import tncItinerary from "./__mocks__/tnc-itinerary.json";
 import fareProductItinerary from "./__mocks__/fare-products-itinerary.json";
 import complexItinerary from "./__mocks__/complex-fares.json";
+import tripleItinerary from "./__mocks__/three-transfer-itinerary.json";
 import flexItinerary from "../../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
 import faresv2Itinerary from "../../../itinerary-body/src/__mocks__/itineraries/fares-v2-fare-components.json";
 
@@ -30,6 +32,30 @@ const basePlace = {
 };
 
 describe("util > itinerary", () => {
+  describe("descope", () => {
+    it("should return the descope'd part for standard scoped strings", () => {
+      expect(descope("agency:cash")).toBe("cash");
+      expect(descope("foo:bar")).toBe("bar");
+    });
+
+    it("should return the input if it is not scoped", () => {
+      expect(descope("cash")).toBe("cash");
+      expect(descope("")).toBe("");
+    });
+
+    it("should only return the segment after the first ':'", () => {
+      expect(descope("aaaa:bbbb:cccc")).toBe("bbbb:cccc");
+      expect(descope(":value")).toBe("value");
+      expect(descope("value:")).toBe("");
+      expect(descope(":")).toBe("");
+    });
+
+    it("should handle null and undefined", () => {
+      expect(descope(null)).toBeNull();
+      expect(descope(undefined)).toBeUndefined();
+    });
+  });
+
   describe("getElevationProfile", () => {
     it("should work with REST legacy data and GraphQL elevationProfile", () => {
       const legacyOutput = getElevationProfile(
@@ -88,47 +114,35 @@ describe("util > itinerary", () => {
     });
   });
 
-  describe("getDisplayedStopId", () => {
+  describe("getDisplayedStopCode", () => {
     it("should return the stop code if one is provided", () => {
       const place = {
         ...basePlace,
         stopCode: "code123",
         stopId: "xagency:id123"
       };
-      expect(getDisplayedStopId(place)).toEqual("code123");
+      expect(getDisplayedStopCode(place)).toEqual("code123");
       const stop = {
         ...basePlace,
         code: "code123",
         id: "xagency:id123"
       };
-      expect(getDisplayedStopId(stop)).toEqual("code123");
+      expect(getDisplayedStopCode(stop)).toEqual("code123");
     });
-    it("should return the id part of stopId it contains and agencyId (and no stopCode is provided)", () => {
+    it("should return undefined if id is present and no stopCode is provided", () => {
       const place = {
         ...basePlace,
         stopId: "xagency:id123"
       };
-      expect(getDisplayedStopId(place)).toEqual("id123");
+      expect(getDisplayedStopCode(place)).toBeFalsy();
       const stop = {
         ...basePlace,
         id: "xagency:id123"
       };
-      expect(getDisplayedStopId(stop)).toEqual("id123");
+      expect(getDisplayedStopCode(stop)).toBeFalsy();
     });
-    it("should return the whole stopId it does not contain an agency part (and no stopCode is provided)", () => {
-      const place = {
-        ...basePlace,
-        stopId: "wholeid123"
-      };
-      expect(getDisplayedStopId(place)).toEqual("wholeid123");
-      const stop = {
-        ...basePlace,
-        stopId: "wholeid123"
-      };
-      expect(getDisplayedStopId(stop)).toEqual("wholeid123");
-    });
-    it("should return null if stopId is null (and no stopCode is provided)", () => {
-      expect(getDisplayedStopId(basePlace)).toBeFalsy();
+    it("should return undefined if stopId is null (and no stopCode is provided)", () => {
+      expect(getDisplayedStopCode(basePlace)).toBeFalsy();
     });
   });
 
@@ -266,6 +280,14 @@ describe("util > itinerary", () => {
     it("should calculate the total cost of an itinerary with multiple v2 fares & transfers", () => {
       const result = getItineraryCost(complexItinerary.legs, "0", "ADULT");
       expect(result.amount).toEqual(3.0);
+    });
+    it("should calculate the total cost of an itinerary with three different fares v2 transfers with different rider categories", () => {
+      const result = getItineraryCost(
+        tripleItinerary.legs,
+        ["0", "0"],
+        ["ADULT", null]
+      );
+      expect(result.amount).toEqual(11.55);
     });
     it("should calculate the individual leg cost of a fares v2 legs", () => {
       const firstLegResult = getLegCost(faresv2Itinerary.legs[1], "3", "ADULT");

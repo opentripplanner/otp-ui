@@ -69,7 +69,7 @@ otpUi:
       car: Авто
       escooter: Электросамокат
       vehicle: Транспортное средство
-    transfer: Пересадка{duration, select, undefined {} other {, wait 
+    transfer: Пересадка{duration, select, undefined {} other {, подожди 
       {duration}}}
   ItineraryBody:
     common:

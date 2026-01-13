@@ -137,7 +137,9 @@ export default function Fares({
 
   return (
     <>
-      {itinerary.legs.some(leg => leg.fareProducts) && (
+      {itinerary.legs.some(
+        leg => leg.fareProducts && leg.fareProducts.length > 0
+      ) && (
         <TripDetail
           className="fares"
           // Any custom description for the transit fare needs to be handled by the slot.
