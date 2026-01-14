@@ -420,7 +420,7 @@ interface PreviewContainerProps {
 }
 
 export const PreviewContainer = styled.div<PreviewContainerProps>`
-  background-color: ${props => props.active && "#eee"};
+  background-color: ${props => props.active && grey[50]};
   border-color: ${props => (props.active ? blue[100] : "#fff")};
   border-radius: 5px;
   border-style: solid;
@@ -673,7 +673,7 @@ export const StopRow = styled.li`
 `;
 
 export const TransitAlert = styled.li`
-  background-color: #eee;
+  background-color: ${grey[50]};
   border-radius: 4px;
   color: #000;
   display: block;
