@@ -16,7 +16,7 @@ export function getTransitOperatorFromFeedIdAndAgencyId(
   feedId: string,
   agencyId: string | number,
   transitOperators: TransitOperator[]
-): TransitOperator {
+): TransitOperator | null {
   return (
     transitOperators.find(
       transitOperator =>
@@ -37,7 +37,7 @@ export function getTransitOperatorFromFeedIdAndAgencyId(
 export function getTransitOperatorFromLeg(
   leg: Leg,
   transitOperators: TransitOperator[]
-): TransitOperator {
+): TransitOperator | null {
   if (!leg.routeId || !leg.agencyId) return null;
   const feedId = leg.routeId.split(":")[0];
   return getTransitOperatorFromFeedIdAndAgencyId(
@@ -60,7 +60,7 @@ export function getTransitOperatorFromLeg(
 export function getTransitOperatorFromOtpRoute(
   route: Route,
   transitOperators: TransitOperator[]
-): TransitOperator {
+): TransitOperator | null {
   if (!route.id) return null;
   const feedId = route.id.split(":")[0];
   let agencyId: string | number;
@@ -198,7 +198,7 @@ const modeComparatorValue = {
 // Lookup that maps route types to the OTP mode sort values.
 // Note: JSDoc format not used to avoid bug in documentationjs.
 // https://github.com/documentationjs/documentation/issues/372
-const routeTypeComparatorValue = {
+const routeTypeComparatorValue: Record<number, number> = {
   0: modeComparatorValue.TRAM, // - Tram, Streetcar, Light rail.
   1: modeComparatorValue.SUBWAY, // - Subway, Metro.
   2: modeComparatorValue.RAIL, // - Rail. Used for intercity or long-distance travel.
@@ -222,6 +222,7 @@ function getRouteTypeComparatorValue(route: Route): number {
   // string-based modes, but the long route response returns the
   // integer route type. This attempts to account for both of those cases.
   if (!route) throw new Error(`Route is undefined. ${route}`);
+  if (!route.mode) throw new Error(`Route Mode is undefined for ${route}.`);
   if (typeof modeComparatorValue[route.mode] !== "undefined") {
     return modeComparatorValue[route.mode];
   }

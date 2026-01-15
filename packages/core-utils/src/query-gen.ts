@@ -102,7 +102,7 @@ function combinations(array: TransportMode[]): TransportMode[][] {
  * This constant maps all the transport mode to a broader mode type,
  * which is used to determine the valid combinations of modes used in query generation.
  */
-export const SIMPLIFICATIONS = {
+export const SIMPLIFICATIONS: Record<string, string> = {
   AIRPLANE: "TRANSIT",
   BICYCLE: "PERSONAL",
   BUS: "TRANSIT",
@@ -123,7 +123,7 @@ export const SIMPLIFICATIONS = {
 };
 
 // Inclusion of "TRANSIT" alone automatically implies "WALK" in OTP
-const VALID_COMBOS = [
+const VALID_COMBOS: string[][] = [
   ["WALK"],
   ["PERSONAL"],
   ["TRANSIT", "SHARED"],
@@ -220,8 +220,10 @@ export function generateOtp2Query(
   const { from, modeSettings, to, ...otherOtpQueryParams } = otpQueryParams;
 
   // This extracts the values from the mode settings to key value pairs
-  const modeSettingValues = modeSettings.reduce((prev, cur) => {
-    if (cur.type === "SLIDER" && cur.inverseKey) {
+  const modeSettingValues = modeSettings.reduce<
+    Record<string, string | number | boolean | undefined>
+  >((prev, cur) => {
+    if (cur.type === "SLIDER" && cur.inverseKey && cur.value) {
       prev[cur.inverseKey] = cur.high - cur.value + cur.low;
     }
     prev[cur.key] = cur.value;
@@ -229,7 +231,7 @@ export function generateOtp2Query(
     // If we assign a value on true, return the value (or null) instead of a boolean.
     if (cur.type === "CHECKBOX" && cur.truthValue) {
       prev[cur.key] =
-        cur.value === true ? cur.truthValue : cur.falseValue ?? null;
+        cur.value === true ? cur.truthValue : cur.falseValue ?? undefined;
     }
     return prev;
   }, {}) as ModeSettingValues;
