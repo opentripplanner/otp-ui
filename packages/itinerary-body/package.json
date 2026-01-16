@@ -10,6 +10,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "@opentripplanner/building-blocks": "workspace:*",
     "@opentripplanner/core-utils": "workspace:*",
     "@opentripplanner/humanize-distance": "workspace:*",
     "@opentripplanner/icons": "workspace:*",
