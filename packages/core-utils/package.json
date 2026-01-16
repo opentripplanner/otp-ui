@@ -17,7 +17,7 @@
     "@opentripplanner/geocoder": "workspace:*",
     "@styled-icons/foundation": "catalog:",
     "@turf/along": "^7.3.1",
-    "chroma-js": "^2.4.2",
+    "chroma-js": "^3.2.0",
     "date-fns": "catalog:",
     "date-fns-tz": "catalog:",
     "graphql": "^16.6.0",
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*",
+    "@types/chroma-js": "^3.1.2",
     "@types/mapbox__polyline": "^1.0.5"
   }
 }
