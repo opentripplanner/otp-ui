@@ -1,8 +1,11 @@
 import polyline from "@mapbox/polyline";
 import { ExpressionSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { TransitivePattern, TransitiveRoute } from "@opentripplanner/types";
+import colors from "@opentripplanner/building-blocks";
 
 import { drawArc } from "./util";
+
+const { blue, grey } = colors;
 
 /**
  * Create a labeled-line feature for the given transit route pattern
@@ -26,10 +29,10 @@ export function patternToRouteFeature(
   const routeName = route.route_short_name || route.route_long_name || "";
 
   const properties = {
-    color: `#${route.route_color || "000080"}`,
+    color: route.route_color ? `#${route.route_color}` : blue[900],
     name: routeName,
     routeType: route.route_type,
-    textColor: `#${route.route_text_color || "eee"}`,
+    textColor: route.route_text_color ? `#${route.route_text_color}` : grey[50],
     type: "route"
   };
 

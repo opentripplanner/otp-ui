@@ -10,6 +10,8 @@ import {
   TransitivePattern,
   TransitivePlace
 } from "@opentripplanner/types";
+import colors from "@opentripplanner/building-blocks";
+
 import bbox from "@turf/bbox";
 
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
@@ -70,14 +72,18 @@ const HEIGHT_IMAGE_SIZE = 533;
 
 export { itineraryToTransitive };
 
+const { blue, grey, red } = colors;
+
+const MICROMOBILITY_ORANGE = "#f5a729";
+
 // TODO: BETTER COLORS
 const modeColorMap = {
-  CAR: "#888",
-  BICYCLE: "#f00",
-  SCOOTER: "#f5a729",
-  MICROMOBILITY: "#f5a729",
-  MICROMOBILITY_RENT: "#f5a729",
-  WALK: "#86cdf9"
+  CAR: grey[500],
+  BICYCLE: red[600],
+  SCOOTER: MICROMOBILITY_ORANGE,
+  MICROMOBILITY: MICROMOBILITY_ORANGE,
+  MICROMOBILITY_RENT: MICROMOBILITY_ORANGE,
+  WALK: blue[200]
 };
 
 /**
@@ -272,7 +278,7 @@ const TransitiveCanvasOverlay = ({
             return {
               type: "Feature",
               properties: {
-                color: modeColorMap[place.type] || "#008",
+                color: modeColorMap[place.type] || blue[900],
                 name: place.place_name,
                 type: place.type || "place"
               },
@@ -306,7 +312,7 @@ const TransitiveCanvasOverlay = ({
                         color:
                           accessLegColorOverride ||
                           modeColorMap[segment.type] ||
-                          "#008",
+                          blue[900],
                         mode: segment.type
                       },
                       geometry: segment.arc ? drawArc(straight) : straight
@@ -529,7 +535,7 @@ const TransitiveCanvasOverlay = ({
         }}
         paint={{
           ...defaultTextPaintParams,
-          "text-color": "#910818"
+          "text-color": red[900]
         }}
         type="symbol"
       />
