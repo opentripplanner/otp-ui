@@ -71,9 +71,22 @@ export function getRouteLayerLayout(
     "icon-optional": false,
     "icon-allow-overlap": true,
     "icon-rotation-alignment": "viewport",
-    "icon-text-fit-padding": [17, 17.5, 17, 17.5],
+    "icon-text-fit-padding": [11, 10, 11, 10],
     "icon-text-fit": "both",
-    "symbol-placement": "line-center",
+    "symbol-placement": "line",
+    "symbol-spacing": [
+      "interpolate",
+      ["linear"],
+      ["zoom"],
+      0,
+      250,
+      10,
+      225,
+      15,
+      225,
+      20,
+      220
+    ] as ExpressionSpecification,
     "text-allow-overlap": true,
     "text-field": ["get", textField],
     "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
@@ -83,6 +96,6 @@ export function getRouteLayerLayout(
     "text-letter-spacing": 0,
     "text-padding": 0,
     "text-rotation-alignment": "viewport",
-    "text-size": 16
+    "text-size": 13
   };
 }
