@@ -1,8 +1,9 @@
 import { ElevationProfile } from "@opentripplanner/types";
 import {
   calculateTncFares,
+  descope,
   getCompanyFromLeg,
-  getDisplayedStopId,
+  getDisplayedStopCode,
   getElevationProfile,
   getItineraryCost,
   getLegCost,
@@ -31,6 +32,30 @@ const basePlace = {
 };
 
 describe("util > itinerary", () => {
+  describe("descope", () => {
+    it("should return the descope'd part for standard scoped strings", () => {
+      expect(descope("agency:cash")).toBe("cash");
+      expect(descope("foo:bar")).toBe("bar");
+    });
+
+    it("should return the input if it is not scoped", () => {
+      expect(descope("cash")).toBe("cash");
+      expect(descope("")).toBe("");
+    });
+
+    it("should only return the segment after the first ':'", () => {
+      expect(descope("aaaa:bbbb:cccc")).toBe("bbbb:cccc");
+      expect(descope(":value")).toBe("value");
+      expect(descope("value:")).toBe("");
+      expect(descope(":")).toBe("");
+    });
+
+    it("should handle null and undefined", () => {
+      expect(descope(null)).toBeNull();
+      expect(descope(undefined)).toBeUndefined();
+    });
+  });
+
   describe("getElevationProfile", () => {
     it("should work with REST legacy data and GraphQL elevationProfile", () => {
       const legacyOutput = getElevationProfile(
@@ -89,47 +114,35 @@ describe("util > itinerary", () => {
     });
   });
 
-  describe("getDisplayedStopId", () => {
+  describe("getDisplayedStopCode", () => {
     it("should return the stop code if one is provided", () => {
       const place = {
         ...basePlace,
         stopCode: "code123",
         stopId: "xagency:id123"
       };
-      expect(getDisplayedStopId(place)).toEqual("code123");
+      expect(getDisplayedStopCode(place)).toEqual("code123");
       const stop = {
         ...basePlace,
         code: "code123",
         id: "xagency:id123"
       };
-      expect(getDisplayedStopId(stop)).toEqual("code123");
+      expect(getDisplayedStopCode(stop)).toEqual("code123");
     });
-    it("should return the id part of stopId it contains and agencyId (and no stopCode is provided)", () => {
+    it("should return undefined if id is present and no stopCode is provided", () => {
       const place = {
         ...basePlace,
         stopId: "xagency:id123"
       };
-      expect(getDisplayedStopId(place)).toEqual("id123");
+      expect(getDisplayedStopCode(place)).toBeFalsy();
       const stop = {
         ...basePlace,
         id: "xagency:id123"
       };
-      expect(getDisplayedStopId(stop)).toEqual("id123");
+      expect(getDisplayedStopCode(stop)).toBeFalsy();
     });
-    it("should return the whole stopId it does not contain an agency part (and no stopCode is provided)", () => {
-      const place = {
-        ...basePlace,
-        stopId: "wholeid123"
-      };
-      expect(getDisplayedStopId(place)).toEqual("wholeid123");
-      const stop = {
-        ...basePlace,
-        stopId: "wholeid123"
-      };
-      expect(getDisplayedStopId(stop)).toEqual("wholeid123");
-    });
-    it("should return null if stopId is null (and no stopCode is provided)", () => {
-      expect(getDisplayedStopId(basePlace)).toBeFalsy();
+    it("should return undefined if stopId is null (and no stopCode is provided)", () => {
+      expect(getDisplayedStopCode(basePlace)).toBeFalsy();
     });
   });
 

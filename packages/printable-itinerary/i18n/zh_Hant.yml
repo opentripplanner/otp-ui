@@ -7,9 +7,9 @@ otpUi:
     TransitLeg:
       alight: >-
         <strong>{time, time, short}</strong>於<strong>{place}</strong>
-        ({stopId})下車
+        {stopCodePart}下車
       board: >-
         <strong>{time, time, short}</strong>於<strong>{place}</strong>
-        ({stopId})上車
+        {stopCodePart}上車
       continuesAs: 繼續{routeDescription}
     depart: <strong>從</strong>{place}<strong>出發</strong>

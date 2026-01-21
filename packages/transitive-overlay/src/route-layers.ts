@@ -5,7 +5,7 @@ import { TransitivePattern, TransitiveRoute } from "@opentripplanner/types";
 import { drawArc } from "./util";
 
 /**
- * Create a labeled-line feature for the given transit route pattern.
+ * Create a labeled-line feature for the given transit route pattern
  */
 export function patternToRouteFeature(
   pattern: TransitivePattern,

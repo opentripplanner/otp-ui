@@ -64,7 +64,7 @@ function DefaultLocationIcon({
 }
 
 /**
- * Helper function that includes or excludes features based om layers.
+ * Helper function that includes or excludes features based om layers
  */
 function filter(
   list: any[],

@@ -8,7 +8,7 @@ import BiketownIcon from "./companies/biketown-icon";
 const { getLegRouteLongName } = coreUtils.itinerary;
 
 const TriMetLegIcon = ({ leg, ...props }) => {
-  // Custom TriMet icon logic.
+  // Custom TriMet icon logic
   const routeLongName = getLegRouteLongName(leg);
   if (routeLongName && routeLongName.startsWith("Portland Streetcar")) {
     return <TriMetModeIcon mode="STREETCAR" {...props} />;
