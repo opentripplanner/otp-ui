@@ -69,11 +69,11 @@ export function getRouteLayerLayout(
   return {
     "icon-image": iconImage as ExpressionSpecification,
     "icon-optional": false,
-    "icon-allow-overlap": true,
+    "icon-allow-overlap": false,
     "icon-rotation-alignment": "viewport",
     "icon-text-fit-padding": [11, 10, 11, 10],
     "icon-text-fit": "both",
-    "symbol-placement": "line",
+    "symbol-placement": "line-center",
     "symbol-spacing": [
       "interpolate",
       ["linear"],
@@ -81,8 +81,6 @@ export function getRouteLayerLayout(
       0,
       250,
       10,
-      225,
-      15,
       225,
       20,
       220
