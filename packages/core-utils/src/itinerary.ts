@@ -651,7 +651,7 @@ type FareProductWithPrice = FareProduct & { price: Money };
  */
 export function getLegCost(
   leg: Leg,
-  seenFareIds: string[],
+  seenFareIds: string[] | undefined | null,
   mediumId?: string | null,
   riderCategoryId?: string | null
 ): {
