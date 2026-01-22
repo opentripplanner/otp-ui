@@ -4,6 +4,10 @@ export type OfflineResponse = {
   label: string;
   lat: number;
   lon: number;
+  street?: string;
+  neighbourhood?: string;
+  locality?: string;
+  region_a?: string;
 }[];
 
 type OfflineQuery = {
