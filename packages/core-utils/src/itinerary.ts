@@ -87,9 +87,7 @@ export function startsWithGeometry(leg: Leg): boolean {
 export function legContainsGeometry(leg: Leg): boolean {
   return endsWithGeometry(leg) || startsWithGeometry(leg);
 }
-export function isAdvanceBookingRequired(
-  info: FlexBookingInfo | undefined
-): boolean {
+export function isAdvanceBookingRequired(info?: FlexBookingInfo): boolean {
   const daysPrior = info?.latestBookingTime?.daysPrior;
   return typeof daysPrior === "number" && daysPrior > 0;
 }
@@ -229,7 +227,8 @@ export function toSentenceCase(str: string): string {
 /**
  * Derive the company string based on mode and network associated with leg.
  */
-export function getCompanyFromLeg(leg: Leg): string | undefined {
+export function getCompanyFromLeg(leg?: Leg): string | undefined {
+  if (!leg) return undefined;
   const {
     from,
     mode,
@@ -429,7 +428,7 @@ export function getTextWidth(text: string, font = "22px Arial"): number {
   const canvas =
     (getTextWidth as GetTextWidth).canvas ||
     ((getTextWidth as GetTextWidth).canvas = document.createElement("canvas"));
-  const context = canvas.getContext("2d") as CanvasRenderingContext2D | null;
+  const context = canvas.getContext("2d");
   if (!context) return 0;
   context.font = font;
   const metrics = context.measureText(text);
@@ -651,9 +650,9 @@ type FareProductWithPrice = FareProduct & { price: Money };
  */
 export function getLegCost(
   leg: Leg,
-  seenFareIds: string[] | undefined | null,
   mediumId?: string | null,
-  riderCategoryId?: string | null
+  riderCategoryId?: string | null,
+  seenFareIds?: string[] | null
 ): {
   alternateFareProducts?: AppliedFareProduct[];
   appliedFareProduct?: AppliedFareProduct;
@@ -785,9 +784,9 @@ export function getItineraryCost(
         // Use an object keyed by productUseId to deduplicate, then extract prices
         const { appliedFareProduct, productUseId } = getLegCost(
           leg,
-          acc.seenIds,
           mediumId,
-          riderCategoryId
+          riderCategoryId,
+          acc.seenIds
         );
         if (!appliedFareProduct) return acc;
         if (!productUseId) return acc;
