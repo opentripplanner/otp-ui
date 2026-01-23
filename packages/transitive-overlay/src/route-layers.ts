@@ -66,6 +66,7 @@ export function getRouteLayerLayout(
     "rect"
   ];
 
+  // TODO: Tweak shape of roundels for perfect circle
   return {
     "icon-image": iconImage as ExpressionSpecification,
     "icon-optional": false,
