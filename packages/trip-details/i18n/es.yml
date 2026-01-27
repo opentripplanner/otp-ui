@@ -21,7 +21,9 @@ otpUi:
       {# minuto} other {# minutos}}</strong> en bicicleta.
     title: Detalles del viaje
     tncFare: "{companies} Tarifa: <strong>{minTNCFare} - {maxTNCFare}</strong>"
-    transferDiscountExplanation: Se aplica un descuento de transferencia de {transferAmount}
+    transferDiscountExplanation: Se aplica un descuento de transferencia de 
+      {transferAmount}
     transitFare: Tarifa de tránsito
     transitFareEntry: "{name} : <strong>{value}</strong>"
     tripIncludesFlex: Este viaje incluye rutas flexibles. {extraMessage}
+    total: Total
