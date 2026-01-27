@@ -231,8 +231,7 @@ function getRouteTypeComparatorValue(route: Route): number {
   // string-based modes, but the long route response returns the
   // integer route type. This attempts to account for both of those cases.
   if (!route) throw new Error(`Route is undefined. ${route}`);
-  if (!route.mode) throw new Error(`Route Mode is undefined for ${route}.`);
-  if (typeof modeComparatorValue[route.mode] !== "undefined") {
+  if (route.mode && typeof modeComparatorValue[route.mode] !== "undefined") {
     return modeComparatorValue[route.mode];
   }
   if (
