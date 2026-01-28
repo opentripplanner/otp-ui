@@ -1,4 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
+import colors from "@opentripplanner/building-blocks";
 import LocationIcon from "@opentripplanner/location-icon";
 import { Leg } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
@@ -13,8 +14,16 @@ interface LegLineProps {
   routeColor: string;
 }
 
+const { blue, grey } = colors;
+
+const MICROMOBILITY_ORANGE = "#f5a729";
+
 const cssWalk = css`
-  background: radial-gradient(ellipse at center, #87cefa 40%, transparent 10%);
+  background: radial-gradient(
+    ellipse at center,
+    ${blue[200]} 40%,
+    transparent 10%
+  );
   background-position: center -5px;
   background-repeat: repeat-y;
   background-size: 12px 12px;
@@ -49,8 +58,8 @@ const cssCar = css`
 const cssMicromobility = css`
   background: repeating-linear-gradient(
     0deg,
-    #f5a729,
-    #f5a729 8px,
+    ${MICROMOBILITY_ORANGE},
+    ${MICROMOBILITY_ORANGE} 8px,
     white 8px,
     white 12.5px
   );
@@ -94,7 +103,7 @@ const legLineBackgroundColor = ({ leg, routeColor }: LegLineProps): string => {
   return leg.transitLeg || coreUtils.itinerary.isTransit(mode)
     ? routeColor
       ? `#${routeColor}`
-      : "#000088"
+      : `${blue[900]}`
     : undefined;
 };
 
@@ -191,14 +200,14 @@ export default function LineColumnContent({
   ) {
     // start or end of a vehicle rental leg (not including origin or
     // destination)
-    legBadge = <StackedCircle size={17} color="#f5a729" />;
+    legBadge = <StackedCircle size={17} color={MICROMOBILITY_ORANGE} />;
   } else if (
     (leg.mode === "CAR" && lastLeg.mode === "WALK") ||
     (lastLeg.mode === "CAR" && leg.mode === "WALK")
   ) {
     // start or end of a car rental/TNC/P&R leg (not including origin or
     // destination)
-    legBadge = <StackedCircle size={17} color="#888" />;
+    legBadge = <StackedCircle size={17} color={grey[500]} />;
   } else {
     legBadge = (
       <>
