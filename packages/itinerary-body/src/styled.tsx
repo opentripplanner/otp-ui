@@ -96,14 +96,18 @@ export const LinkButton = styled(TransparentButton)`
 `;
 
 interface ViewerButtonProps {
-  stopCode?: string;
+  showBeforeContent?: boolean;
 }
 
-export const ViewerButton = styled(LinkButton)<ViewerButtonProps>`
+export const ViewerButton = styled(LinkButton).attrs(
+  (props: ViewerButtonProps) => ({
+    showBeforeContent: props.showBeforeContent ?? true
+  })
+)<ViewerButtonProps>`
   padding-left: 0px;
 
   ${props =>
-    props.stopCode
+    props.showBeforeContent
       ? css`
           &:before {
             content: "|";
