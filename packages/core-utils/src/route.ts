@@ -186,7 +186,7 @@ function getSortValues<T, TValue>(a: T, b: T, getterFn?: (item: T) => TValue) {
 // Lookup for the sort values associated with various OTP modes.
 // Note: JSDoc format not used to avoid bug in documentationjs.
 // https://github.com/documentationjs/documentation/issues/372
-const modeComparatorValue: Record<TransitMode, number> = {
+const modeComparatorValue = {
   SUBWAY: 1,
   TRAM: 2,
   TROLLEYBUS: 9,
@@ -195,14 +195,15 @@ const modeComparatorValue: Record<TransitMode, number> = {
   FERRY: 5,
   CABLE_CAR: 6,
   FUNICULAR: 7,
-  BUS: 8,
-  AIRPLANE: 10,
-  CARPOOL: 10,
-  COACH: 10,
-  MONORAIL: 10,
-  SNOW_AND_ICE: 10,
-  TAXI: 10
-};
+  BUS: 8
+// eslint-disable-next-line prettier/prettier
+} as const satisfies Partial<Record<TransitMode, number>>;
+
+type SupportedTransitMode = keyof typeof modeComparatorValue;
+
+function isSupportedTransitMode(mode: TransitMode): mode is SupportedTransitMode {
+  return mode in modeComparatorValue;
+}
 
 // Lookup that maps route types to the OTP mode sort values.
 // Note: JSDoc format not used to avoid bug in documentationjs.
@@ -231,7 +232,7 @@ function getRouteTypeComparatorValue(route: Route): number {
   // string-based modes, but the long route response returns the
   // integer route type. This attempts to account for both of those cases.
   if (!route) throw new Error(`Route is undefined. ${route}`);
-  if (route.mode && typeof modeComparatorValue[route.mode] !== "undefined") {
+  if (route.mode && isSupportedTransitMode(route.mode)) {
     return modeComparatorValue[route.mode];
   }
   if (

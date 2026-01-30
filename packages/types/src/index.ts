@@ -680,7 +680,7 @@ export type GeocodedFeature = {
 };
 
 export type TncFare = {
-  currencyCode: string;
+  currencyCode: string | null;
   maxTNCFare: number;
   minTNCFare: number;
 };

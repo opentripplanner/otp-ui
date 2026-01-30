@@ -510,29 +510,31 @@ export function calculatePhysicalActivity(
  */
 export function calculateTncFares(
   itinerary: ItineraryOnlyLegsRequired
-): TncFare | undefined {
-  const estimates = itinerary.legs
-    .filter(leg => leg.mode === "CAR")
-    .map(leg => leg.rideHailingEstimate)
+): TncFare {
+  return itinerary.legs
     .filter(
-      (estimate): estimate is NonNullable<Leg["rideHailingEstimate"]> =>
-        estimate !== undefined
+      (
+        leg
+      ): leg is Leg & {
+        rideHailingEstimate: NonNullable<Leg["rideHailingEstimate"]>;
+      } => leg.mode === "CAR" && leg.rideHailingEstimate !== undefined
+    )
+    .reduce<TncFare>(
+      (acc, leg) => {
+        const { minPrice, maxPrice } = leg.rideHailingEstimate;
+        return {
+          // Assumes a single currency for entire itinerary.
+          currencyCode: minPrice.currency.code,
+          maxTNCFare: acc.maxTNCFare + maxPrice.amount,
+          minTNCFare: acc.minTNCFare + minPrice.amount
+        };
+      },
+      {
+        currencyCode: null,
+        maxTNCFare: 0,
+        minTNCFare: 0
+      }
     );
-
-  if (estimates.length === 0) return undefined;
-
-  const currencyCode = estimates[0].minPrice.currency.code;
-
-  return estimates.reduce<TncFare>(
-    (acc, estimate) => {
-      return {
-        currencyCode,
-        maxTNCFare: acc.maxTNCFare + estimate.maxPrice.amount,
-        minTNCFare: acc.minTNCFare + estimate.minPrice.amount
-      };
-    },
-    { currencyCode, maxTNCFare: 0, minTNCFare: 0 }
-  );
 }
 
 /**
@@ -877,7 +879,7 @@ export const getLegRouteLongName = (
 ): string | undefined => {
   const { route, routeLongName } = leg;
   // typeof route === "object" denotes newer OTP2 responses. routeLongName is OTP1.
-  return typeof route === "object" ? route.longName : routeLongName;
+  return typeof route === "object" ? route?.longName : routeLongName;
 };
 
 /**
