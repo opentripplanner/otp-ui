@@ -21,9 +21,9 @@ const TripViewerOverlay = (props: Props): JSX.Element => {
 
   if (!geometry) return null;
 
-  const pts = polyline
+  const pts: [number, number][] = polyline
     .decode(geometry.points)
-    .map((pt: [number, number]) => pt.reverse());
+    .map((pt): [number, number] => [pt[1], pt[0]]);
 
   const bounds = useMemo(() => {
     return pts.reduce((bnds, coord) => {
@@ -33,7 +33,7 @@ const TripViewerOverlay = (props: Props): JSX.Element => {
 
   const { current: map } = useMap();
   useEffect(() => {
-    if (map && bounds.length === 4 && bounds.every(Number.isFinite)) {
+    if (map && bounds && !bounds.isEmpty()) {
       util.fitMapBounds(map, bounds);
     }
   }, [map, bounds]);

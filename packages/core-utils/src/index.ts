@@ -1,7 +1,10 @@
 import * as itinerary from "./itinerary";
 import * as map from "./map";
+// @ts-expect-error not typed
 import * as profile from "./profile";
+// @ts-expect-error not typed
 import * as query from "./query";
+// @ts-expect-error not typed
 import * as queryParams from "./query-params";
 import * as route from "./route";
 import * as storage from "./storage";
