@@ -14,14 +14,16 @@ interface LegLineProps {
   routeColor: string;
 }
 
-const { blue, grey } = colors;
+const { blue, grey, red } = colors;
 
-const MICROMOBILITY_ORANGE = "#f5a729";
+const MICROMOBILITY_ORANGE = "#f1b34e";
+const BIKE_RED = red[600];
+const WALK_BLUE = blue[400];
 
 const cssWalk = css`
   background: radial-gradient(
     ellipse at center,
-    ${blue[200]} 40%,
+    ${WALK_BLUE} 40%,
     transparent 10%
   );
   background-position: center -5px;
@@ -34,8 +36,8 @@ const cssWalk = css`
 const cssBicycle = css`
   background: repeating-linear-gradient(
     0deg,
-    red,
-    red 8px,
+    ${BIKE_RED},
+    ${BIKE_RED} 8px,
     white 8px,
     white 12.5px
   );
@@ -191,7 +193,7 @@ export default function LineColumnContent({
   ) {
     // start or end of a bike rental leg (not including origin or
     // destination)
-    legBadge = <StackedCircle size={17} color="red" />;
+    legBadge = <StackedCircle size={17} color={BIKE_RED} />;
   } else if (
     leg.from.vertexType === "VEHICLERENTAL" ||
     leg.from.vertexType === "BIKESHARE" ||
