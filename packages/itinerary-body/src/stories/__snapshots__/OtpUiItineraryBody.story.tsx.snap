@@ -35769,7 +35769,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
                 </span>
               </button>
               <button role="link"
-                      class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+                      class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
               >
                 Trip Viewer
               </button>
