@@ -4,7 +4,7 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -593,7 +593,7 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -955,7 +955,7 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -1547,7 +1547,7 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -1909,7 +1909,7 @@ exports[`ItineraryBody/otp-react-redux BikeOnlyItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 iHjjOA leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 dncEaQ leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -2249,7 +2249,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -2471,7 +2471,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   rented-bike">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 iHjjOA leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 dncEaQ leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -2481,7 +2481,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             color="red"
+             color="#C75652"
              class="StyledIconBase-sc-ea9ulj-0 ebjPRL line-column-content__StackedCircle-sc-1wcbb7o-2 iTIsMm"
         >
           <path fill="currentColor"
@@ -2783,7 +2783,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -2793,7 +2793,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             color="red"
+             color="#C75652"
              class="StyledIconBase-sc-ea9ulj-0 ebjPRL line-column-content__StackedCircle-sc-1wcbb7o-2 iTIsMm"
         >
           <path fill="currentColor"
@@ -3084,7 +3084,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -3344,7 +3344,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   rented-bike">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 iHjjOA leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 dncEaQ leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -3354,7 +3354,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             color="red"
+             color="#C75652"
              class="StyledIconBase-sc-ea9ulj-0 ebjPRL line-column-content__StackedCircle-sc-1wcbb7o-2 iTIsMm"
         >
           <path fill="currentColor"
@@ -3770,7 +3770,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -3780,7 +3780,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             color="red"
+             color="#C75652"
              class="StyledIconBase-sc-ea9ulj-0 ebjPRL line-column-content__StackedCircle-sc-1wcbb7o-2 iTIsMm"
         >
           <path fill="currentColor"
@@ -4408,7 +4408,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -4639,7 +4639,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   rented-bike">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 iHjjOA leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 dncEaQ leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -4649,7 +4649,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             color="red"
+             color="#C75652"
              class="StyledIconBase-sc-ea9ulj-0 ebjPRL line-column-content__StackedCircle-sc-1wcbb7o-2 iTIsMm"
         >
           <path fill="currentColor"
@@ -4951,7 +4951,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -4961,7 +4961,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             color="red"
+             color="#C75652"
              class="StyledIconBase-sc-ea9ulj-0 ebjPRL line-column-content__StackedCircle-sc-1wcbb7o-2 iTIsMm"
         >
           <path fill="currentColor"
@@ -5214,7 +5214,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -5398,7 +5398,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 iHjjOA leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 dncEaQ leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -5693,7 +5693,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -6178,7 +6178,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -6371,7 +6371,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 iHjjOA leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 dncEaQ leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -6807,7 +6807,7 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -7111,7 +7111,7 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -7413,7 +7413,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -7635,7 +7635,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 hJZZfw leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kBTBwI leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -7645,7 +7645,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             color="#f5a729"
+             color="#f1b34e"
              class="StyledIconBase-sc-ea9ulj-0 ebjPRL line-column-content__StackedCircle-sc-1wcbb7o-2 iTIsMm"
         >
           <path fill="currentColor"
@@ -7896,7 +7896,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -8223,7 +8223,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 hJZZfw leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kBTBwI leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -8233,7 +8233,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             color="#f5a729"
+             color="#f1b34e"
              class="StyledIconBase-sc-ea9ulj-0 ebjPRL line-column-content__StackedCircle-sc-1wcbb7o-2 iTIsMm"
         >
           <path fill="currentColor"
@@ -8686,7 +8686,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -8696,7 +8696,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             color="#f5a729"
+             color="#f1b34e"
              class="StyledIconBase-sc-ea9ulj-0 ebjPRL line-column-content__StackedCircle-sc-1wcbb7o-2 iTIsMm"
         >
           <path fill="currentColor"
@@ -9011,7 +9011,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -9309,7 +9309,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 hJZZfw leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kBTBwI leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -9319,7 +9319,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             color="#f5a729"
+             color="#f1b34e"
              class="StyledIconBase-sc-ea9ulj-0 ebjPRL line-column-content__StackedCircle-sc-1wcbb7o-2 iTIsMm"
         >
           <path fill="currentColor"
@@ -9824,7 +9824,7 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -10464,7 +10464,7 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -10864,7 +10864,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -11708,7 +11708,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -12111,7 +12111,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -12530,7 +12530,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -12981,7 +12981,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -13363,7 +13363,7 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -13950,7 +13950,7 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -14418,7 +14418,7 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -14836,7 +14836,7 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -15096,7 +15096,7 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   rented-bike">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 hJZZfw leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kBTBwI leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -15106,7 +15106,7 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
              focusable="false"
              fill="currentColor"
              xmlns="http://www.w3.org/2000/svg"
-             color="#f5a729"
+             color="#f1b34e"
              class="StyledIconBase-sc-ea9ulj-0 ebjPRL line-column-content__StackedCircle-sc-1wcbb7o-2 iTIsMm"
         >
           <path fill="currentColor"
@@ -15643,7 +15643,7 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -16348,7 +16348,7 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -17136,7 +17136,7 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -18048,7 +18048,7 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -18688,7 +18688,7 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -19585,7 +19585,7 @@ exports[`ItineraryBody/otp-react-redux StopWithNoStopCode smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -20176,7 +20176,7 @@ exports[`ItineraryBody/otp-react-redux StopWithNoStopCode smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -20538,7 +20538,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -21130,7 +21130,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -21492,7 +21492,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -22084,7 +22084,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -22446,7 +22446,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -23038,7 +23038,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -23504,7 +23504,7 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -23777,7 +23777,7 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -24030,7 +24030,7 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -24745,7 +24745,7 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -25224,7 +25224,7 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -26317,7 +26317,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -26978,7 +26978,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -27899,7 +27899,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -28539,7 +28539,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -29460,7 +29460,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -30100,7 +30100,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -30500,7 +30500,7 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -31091,7 +31091,7 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -31423,7 +31423,7 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -31997,7 +31997,7 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -32283,7 +32283,7 @@ exports[`ItineraryBody/otp-react-redux WalkOnlyItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -32554,7 +32554,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -32993,7 +32993,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -33479,7 +33479,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -33803,7 +33803,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -34304,7 +34304,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -34821,7 +34821,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -35176,7 +35176,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -35768,7 +35768,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -36130,7 +36130,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -36722,7 +36722,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -37084,7 +37084,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -37675,7 +37675,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -38007,7 +38007,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -38581,7 +38581,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -38867,7 +38867,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -39458,7 +39458,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -39790,7 +39790,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -40364,7 +40364,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -40650,7 +40650,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 mguMx">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -41241,7 +41241,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -41573,7 +41573,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -42147,7 +42147,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-40 gqoKfI place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-38 ecumA-d">
-      <div class="line-column-content__LegLine-sc-1wcbb7o-1 eYqXFJ leg-line">
+      <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
