@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/trip-viewer-overlay",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "description": "A map overlay to show a trip of a route",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -20,10 +20,10 @@
   },
   "dependencies": {
     "@mapbox/polyline": "catalog:",
-    "@opentripplanner/base-map": "workspace:*",
     "@opentripplanner/core-utils": "workspace:*"
   },
   "peerDependencies": {
+    "@opentripplanner/base-map": "workspace:*",
     "react": "catalog:",
     "react-map-gl": "catalog:"
   },

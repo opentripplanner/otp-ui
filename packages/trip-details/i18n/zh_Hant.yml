@@ -13,6 +13,7 @@ otpUi:
       <strong>{bikeMinutes} 分鐘</strong>  的自行車騎乘時間。
     title: 行程詳細資訊
     tncFare: "{companies} 票價：<strong>{minTNCFare} - {maxTNCFare}</strong>"
+    total: 總計
     transferDiscountExplanation: 已套用{transferAmount}的轉乘折扣
     transitFare: 公共交通票價
     transitFareEntry: "{name}：<strong>{value}</strong>"

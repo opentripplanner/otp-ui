@@ -28,11 +28,13 @@ export default class OfflineGeocoder extends Geocoder {
       features: response?.map((r, index) => ({
         geometry: { type: "Point", coordinates: [r.lon, r.lat] },
         properties: {
+          ...r,
           id: `custom-${index}`,
           label: r.label,
-          layer: "custom",
+          // If enough address info is present, enable clients to read result as a venue
+          layer: r?.street || r?.neighbourhood || r?.locality || r?.region_a ? "venue" : "custom",
           name: r.label,
-          source: "offline",
+          source: "offline"
         },
         type: "Feature"
       })),

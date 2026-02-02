@@ -112,7 +112,7 @@ export default function AccessLegDescription({
             // This is not used by the default string,
             // but supplying it allows a user who is overriding the string to use it
             // This relies on `formatDuration` being passed into the itinerary body config.
-            // That method is used to generate the duration string
+            // That method is used to generate the duration string.
             duration:
               formatDuration && formatDuration(durationSeconds, intl, false),
             mode: modeContent,

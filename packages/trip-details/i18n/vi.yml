@@ -21,6 +21,7 @@ otpUi:
       đạp.
     title: Chi tiết chuyến đi
     tncFare: "{companies} Giá vé: <strong>{minTNCFare} - {maxTNCFare}</strong>"
+    total: Tổng
     transferDiscountExplanation: Giảm giá chuyển khoản {transferAmount} được áp dụng
     transitFare: Giá vé xe công cộng
     transitFareEntry: "{name}: <strong>{value}</strong>"
