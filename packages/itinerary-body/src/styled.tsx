@@ -456,7 +456,6 @@ interface PlaceRowWrapperProps {
 export const PlaceRowWrapper = styled.li<PlaceRowWrapperProps>`
   /* needs to be a flexbox row */
   max-width: 500px;
-  min-height: 100%;
   display: grid;
   grid-template-areas: ${props =>
     props.$showTimeColumn
