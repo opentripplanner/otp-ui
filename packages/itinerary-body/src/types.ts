@@ -213,7 +213,9 @@ interface ItineraryBodySharedProps {
   showLegIcon?: boolean;
   /** If true, will show the right column with the map button */
   showMapButtonColumn?: boolean;
-  /** If true, shows the view trip button in transit leg bodies */
+  /** If true, shows the time column */
+  showTimeColumn?: boolean;
+  /** If true, shows the time column and it's contents */
   showViewTripButton?: boolean;
   /**
    * A slot for a component that can render the content in the time column portion of ItineraryBody.

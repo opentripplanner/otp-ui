@@ -145,6 +145,40 @@ export const AccessBadge = styled.div<ModeRouteProps>`
   /* Add in border for dark mode */
 `;
 
+export const AlightingBadge = styled.div`
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -2px;
+
+  svg,
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+export const AlightingStep = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
+`;
+
+export const LineAlightBadgeContainer = styled.div`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-51%, 10%);
+`;
+
 export const ArrivalTimeContainer = styled.button`
   align-items: center;
   background: none;
@@ -397,11 +431,17 @@ export const LineBadgeContainer = styled.div`
   transform: translate(-51%, -10%);
 `;
 
-export const LineColumn = styled.div`
+interface LineColumnProps {
+  $showTimeColumn: boolean;
+}
+
+export const LineColumn = styled.div<LineColumnProps>`
   /* flexbox column */
-  grid-column-start: 2;
+  grid-column-start: ${(props) => (props.$showTimeColumn ? 2 : 1)};
   grid-row: span 2;
   padding-right: 5px;
+  height: 100%;
+  grid-area: line;
 `;
 
 export const LegDetails = styled.span`
@@ -409,14 +449,23 @@ export const LegDetails = styled.span`
   grid-template-columns: 130px auto;
 `;
 
-export const PlaceRowWrapper = styled.li`
+interface PlaceRowWrapperProps {
+  $showTimeColumn: boolean;
+}
+
+export const PlaceRowWrapper = styled.li<PlaceRowWrapperProps>`
   /* needs to be a flexbox row */
   max-width: 500px;
+  min-height: 100%;
   display: grid;
-  grid-template-areas:
-    "time line title"
-    "time line instructions";
-  grid-template-columns: 65px 30px auto;
+  grid-template-areas: ${props =>
+    props.$showTimeColumn
+      ? `"time line title"
+    "time line instructions"`
+      : `"line title"
+    "line instructions"`};
+  grid-template-columns: ${props =>
+    props.$showTimeColumn ? "65px 30px auto" : "30px auto"};
 `;
 
 interface PreviewContainerProps {
@@ -447,8 +496,7 @@ export const PreviewContainer = styled.div<PreviewContainerProps>`
 `;
 
 export const TimeColumn = styled.div`
-  grid-column-start: 1;
-  grid-row: 1 / span 2;
+  grid-area: time;
   padding-right: 5px;
   font-size: 0.9em;
 `;
@@ -476,17 +524,20 @@ export const MapIcon = styled(Map).attrs(props => ({
   role: "img"
 }))``;
 
-export const PlaceDetails = styled.div`
+interface PlaceContentProps {
+  $showTimeColumn: boolean;
+}
+
+export const PlaceDetails = styled.div<PlaceContentProps>`
   grid-row-start: 2;
-  grid-column-start: 3;
+  grid-column-start: ${(props) => (props.$showTimeColumn ? 3 : 2)};
   grid-area: instructions;
 `;
 
-export const PlaceHeader = styled.div`
+export const PlaceHeader = styled.div<PlaceContentProps>`
   display: flex;
   font-size: 1.2em;
-  grid-row-start: 1;
-  grid-column-start: 3;
+  grid-area: title;
 `;
 
 export const PlaceName = styled.span`

@@ -236,6 +236,13 @@ export const HideDrivingDirections = (): ReactElement => (
   />
 );
 
+export const NoTimeColumn = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    showTimeColumn={false}
+  />
+);
+
 export const ApproximatePrefixItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={parkAndRideItinerary}

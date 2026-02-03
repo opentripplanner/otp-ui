@@ -69,6 +69,7 @@ export default function LineColumnContent({
   );
 
   const routeShortName = getLegRouteShortName(leg);
+  const showAlightStep = interline && !isDestination; // Placeholder for alighting step logic
 
   return (
     <S.LegLine>
@@ -97,6 +98,40 @@ export default function LineColumnContent({
           <S.Destination>
             <LocationIcon size={25} type="to" />
           </S.Destination>
+        )}
+        {!isDestination && showAlightStep && (
+        <S.LineAlightBadgeContainer>
+          <S.AlightingBadge aria-label="Alight here">
+            <svg
+              id="TRIMET"
+              xmlns="http://www.w3.org/2000/svg"
+              baseProfile="tiny"
+              version="1.2"
+              viewBox="0 0 110 150"
+            >
+              <path
+                id="TRIMET-outline"
+                d="M60.797,8.204l-.297-.036v-2.198c0-3.033-2.467-5.5-5.5-5.5s-5.5,2.467-5.5,5.5v11.031c-2.559-.651-5.238-1.001-8-1.001-17.949,0-32.5,14.551-32.5,32.5s14.551,32.5,32.5,32.5c2.762,0,5.441-.35,8-1.001v55c0,3.033,2.467,5.5,5.5,5.5s5.5-2.467,5.5-5.5V53.81l.297-.036c11.518-1.378,20.203-11.174,20.203-22.785s-8.686-21.407-20.203-22.785Z"
+                fill="#fff"
+              />
+              <path
+                id="TRIMET-rightblade"
+                d="M60.5,10.686v40.606c10.139-1.213,18-9.837,18-20.303s-7.861-19.089-18-20.303Z"
+                fill="#707070"
+              />
+              <path
+                id="TRIMET-leftblade"
+                d="M49.5,19.588c-2.548-.703-5.228-1.087-8-1.087-16.569,0-30,13.431-30,30s13.431,30,30,30c2.772,0,5.452-.384,8-1.087V19.588Z"
+                fill="#707070"
+              />
+              <path
+                id="TRIMET-pole"
+                d="M55,2.97c1.657,0,3,1.343,3,3v129.03c0,1.657-1.344,3-3,3s-3-1.343-3-3V5.97c0-1.657,1.343-3,3-3"
+                fill="#707070"
+              />
+            </svg>
+          </S.AlightingBadge>
+        </S.LineAlightBadgeContainer>
         )}
       </S.LineBadgeContainer>
     </S.LegLine>

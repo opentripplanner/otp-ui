@@ -68,6 +68,7 @@ interface StoryWrapperProps {
   metric?: boolean;
   showAlertEffectiveDateTimeText?: boolean;
   showApproximateAccessLegTravelTimes?: boolean;
+  showTimeColumn?: boolean;
   TimeColumnContent?: FunctionComponent<TimeColumnContentProps>;
 }
 
@@ -79,6 +80,7 @@ function OtpRRItineraryBodyWrapper({
   metric,
   showAlertEffectiveDateTimeText = true,
   showApproximateAccessLegTravelTimes = false,
+  showTimeColumn,
   TimeColumnContent
 }: StoryWrapperProps): ReactElement {
   return (
@@ -97,6 +99,7 @@ function OtpRRItineraryBodyWrapper({
       showApproximateAccessLegTravelTimes={showApproximateAccessLegTravelTimes}
       showLegIcon
       showMapButtonColumn={false}
+      showTimeColumn={showTimeColumn}
       showViewTripButton
       styledItinerary="otp-rr"
       TimeColumnContent={TimeColumnContent}
@@ -268,6 +271,13 @@ export const HideDrivingDirections = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     hideDrivingDirections
     itinerary={parkAndRideItinerary}
+  />
+);
+
+export const NoTimeColumn = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkItinerary}
+    showTimeColumn={false}
   />
 );
 

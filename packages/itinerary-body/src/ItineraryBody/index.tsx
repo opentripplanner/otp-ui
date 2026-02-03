@@ -39,6 +39,7 @@ const ItineraryBody = ({
   showElevationProfile,
   showLegIcon,
   showMapButtonColumn = true,
+  showTimeColumn = true,
   showViewTripButton,
   TimeColumnContent,
   toRouteAbbreviation = defaultRouteAbbr,
@@ -97,6 +98,7 @@ const ItineraryBody = ({
           showElevationProfile={showElevationProfile}
           showLegIcon={showLegIcon}
           showMapButtonColumn={showMapButtonColumn}
+          showTimeColumn={showTimeColumn}
           showViewTripButton={showViewTripButton}
           TimeColumnContent={TimeColumnContent}
           toRouteAbbreviation={toRouteAbbreviation}

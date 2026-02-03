@@ -59,6 +59,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       showApproximateAccessLegTravelTimes = false,
       showLegIcon,
       showMapButtonColumn = true,
+      showTimeColumn = true,
       showViewTripButton,
       styledItinerary,
       TimeColumnContent,
@@ -116,6 +117,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         showElevationProfile
         showLegIcon={showLegIcon}
         showMapButtonColumn={showMapButtonColumn}
+        showTimeColumn={showTimeColumn}
         showViewTripButton={showViewTripButton}
         TimeColumnContent={TimeColumnContent}
         toRouteAbbreviation={toRouteAbbreviation}
