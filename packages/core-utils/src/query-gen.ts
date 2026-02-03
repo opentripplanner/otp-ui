@@ -221,20 +221,24 @@ export function generateOtp2Query(
 
   // This extracts the values from the mode settings to key value pairs
   const modeSettingValues = modeSettings.reduce<
-    Record<string, string | number | boolean | undefined>
+    Record<string, string | number | boolean>
   >((prev, cur) => {
     if (cur.type === "SLIDER" && cur.inverseKey && cur.value) {
       prev[cur.inverseKey] = cur.high - cur.value + cur.low;
+    } else if (cur.value) {
+      prev[cur.key] = cur.value;
     }
-    prev[cur.key] = cur.value;
 
     // If we assign a value on true, return the value (or null) instead of a boolean.
-    if (cur.type === "CHECKBOX" && cur.truthValue) {
-      prev[cur.key] =
-        cur.value === true ? cur.truthValue : cur.falseValue ?? undefined;
+    if (cur.type === "CHECKBOX" && cur.truthValue && cur.falseValue) {
+      const newVal = cur.value === true ? cur.truthValue : cur.falseValue;
+      if (newVal) {
+        prev[cur.key] = newVal;
+      }
     }
     return prev;
-  }, {}) as ModeSettingValues;
+  // eslint-disable-next-line prettier/prettier -- old eslint doesn't know satisfies
+  }, {}) satisfies ModeSettingValues;
 
   const {
     bikeReluctance,

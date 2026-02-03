@@ -1,22 +1,22 @@
 import polyline from "@mapbox/polyline";
 import {
-  AppliedFareProduct,
-  Company,
-  Config,
-  Currency,
-  ElevationProfile,
-  ElevationProfileComponent,
-  FareProduct,
-  FlexBookingInfo,
-  ItineraryOnlyLegsRequired,
-  LatLngArray,
-  Leg,
-  MassUnitOption,
-  Money,
-  Place,
-  Step,
-  Stop,
-  TncFare
+    AppliedFareProduct,
+    Company,
+    Config,
+    Currency,
+    ElevationProfile,
+    ElevationProfileComponent,
+    FareProduct,
+    FlexBookingInfo,
+    ItineraryOnlyLegsRequired,
+    LatLngArray,
+    Leg,
+    MassUnitOption,
+    Money,
+    Place,
+    Step,
+    Stop,
+    TncFare
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
 
@@ -227,8 +227,8 @@ export function toSentenceCase(str: string): string {
 /**
  * Derive the company string based on mode and network associated with leg.
  */
-export function getCompanyFromLeg(leg?: Leg): string | undefined {
-  if (!leg) return undefined;
+export function getCompanyFromLeg(leg?: Leg): string | null {
+  if (!leg) return null;
   const {
     from,
     mode,
@@ -241,7 +241,7 @@ export function getCompanyFromLeg(leg?: Leg): string | undefined {
   const firstNetwork =
     Array.isArray(from.networks) && from.networks.length > 0
       ? from.networks[0]
-      : undefined;
+      : null;
 
   if (mode === "CAR" && rentedCar) {
     return firstNetwork;
@@ -261,7 +261,7 @@ export function getCompanyFromLeg(leg?: Leg): string | undefined {
   if ((mode === "MICROMOBILITY" || mode === "SCOOTER") && rentedVehicle) {
     return firstNetwork;
   }
-  return undefined;
+  return null;
 }
 
 export function getItineraryBounds(
@@ -808,7 +808,8 @@ export function getItineraryCost(
       amount: prev.amount + cur?.amount || 0,
       currency: prev.currency.code !== "" ? prev.currency : cur.currency
     }),
-    { amount: 0, currency: { code: "", digits: 0 } as Currency }
+    // eslint-disable-next-line prettier/prettier -- old eslint doesn't know satisfies
+    { amount: 0, currency: { code: "", digits: 0 } satisfies Currency }
   );
 }
 

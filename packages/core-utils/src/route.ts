@@ -397,12 +397,12 @@ export function makeStringValueComparator<T>(
  * Also see https://github.com/opentripplanner/otp-react-redux/issues/122
  * This was updated in OTP2 TO be empty by default. https://docs.opentripplanner.org/en/v2.3.0/OTP2-MigrationGuide/#:~:text=the%20Alerts-,Changes%20to%20the%20Index%20API,-Error%20handling%20is
  */
-export function getRouteSortOrderValue(route: Route): number | undefined {
+export function getRouteSortOrderValue(route: Route): number | null {
   const isOTP1 = !!route.agencyId;
   const { sortOrder } = route;
 
   if ((isOTP1 && sortOrder === -999) || sortOrder === undefined) {
-    return undefined;
+    return null;
   }
 
   return sortOrder;
