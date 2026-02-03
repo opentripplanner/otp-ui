@@ -102,7 +102,7 @@ function combinations(array: TransportMode[]): TransportMode[][] {
  * This constant maps all the transport mode to a broader mode type,
  * which is used to determine the valid combinations of modes used in query generation.
  */
-export const SIMPLIFICATIONS = {
+export const SIMPLIFICATIONS: Record<string, string> = {
   AIRPLANE: "TRANSIT",
   BICYCLE: "PERSONAL",
   BUS: "TRANSIT",
@@ -123,7 +123,7 @@ export const SIMPLIFICATIONS = {
 };
 
 // Inclusion of "TRANSIT" alone automatically implies "WALK" in OTP
-const VALID_COMBOS = [
+const VALID_COMBOS: string[][] = [
   ["WALK"],
   ["PERSONAL"],
   ["TRANSIT", "SHARED"],
@@ -220,19 +220,25 @@ export function generateOtp2Query(
   const { from, modeSettings, to, ...otherOtpQueryParams } = otpQueryParams;
 
   // This extracts the values from the mode settings to key value pairs
-  const modeSettingValues = modeSettings.reduce((prev, cur) => {
-    if (cur.type === "SLIDER" && cur.inverseKey) {
+  const modeSettingValues = modeSettings.reduce<
+    Record<string, string | number | boolean>
+  >((prev, cur) => {
+    if (cur.type === "SLIDER" && cur.inverseKey && cur.value) {
       prev[cur.inverseKey] = cur.high - cur.value + cur.low;
+    } else if (cur.value) {
+      prev[cur.key] = cur.value;
     }
-    prev[cur.key] = cur.value;
 
     // If we assign a value on true, return the value (or null) instead of a boolean.
-    if (cur.type === "CHECKBOX" && cur.truthValue) {
-      prev[cur.key] =
-        cur.value === true ? cur.truthValue : cur.falseValue ?? null;
+    if (cur.type === "CHECKBOX" && cur.truthValue && cur.falseValue) {
+      const newVal = cur.value === true ? cur.truthValue : cur.falseValue;
+      if (newVal) {
+        prev[cur.key] = newVal;
+      }
     }
     return prev;
-  }, {}) as ModeSettingValues;
+  // eslint-disable-next-line prettier/prettier -- old eslint doesn't know satisfies
+  }, {}) satisfies ModeSettingValues;
 
   const {
     bikeReluctance,

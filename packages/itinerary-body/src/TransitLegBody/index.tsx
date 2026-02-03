@@ -204,7 +204,8 @@ class TransitLegBody extends Component<Props, State> {
       coreUtils.itinerary.getLegCost(
         leg,
         defaultFareSelector.mediumId,
-        defaultFareSelector.riderCategoryId
+        defaultFareSelector.riderCategoryId,
+        []
       );
 
     const alertLabelContents = (

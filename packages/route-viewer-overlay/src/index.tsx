@@ -24,7 +24,7 @@ type RouteData = {
     {
       id: string;
       name?: string;
-      geometry?: { points: [number, number][] };
+      geometry?: { points: string };
       stops?: Stop[];
     }
   >;
