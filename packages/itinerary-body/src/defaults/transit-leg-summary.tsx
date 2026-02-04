@@ -21,7 +21,7 @@ export default function TransitLegSummary({
   const durationSeconds = ensureAtLeastOneMinute(leg.duration);
 
   return (
-    <S.TransitLegSummary onClick={onClick}>
+    <S.TransitLegSummary onClick={onClick} aria-expanded={stopsExpanded}>
       <FormattedMessage
         defaultMessage={
           defaultMessages["otpUi.TransitLegBody.rideDurationAndStops"]
