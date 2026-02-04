@@ -21,6 +21,7 @@ const ItineraryBody = ({
   defaultFareSelector,
   diagramVisible,
   frameLeg = noop,
+  HeaderSequenceContent,
   itinerary,
   LegIcon,
   LineColumnContent,
@@ -35,8 +36,10 @@ const ItineraryBody = ({
   setViewedTrip,
   showAgencyInfo,
   showAlertEffectiveDateTimeText,
+  showAlightSteps,
   showApproximateAccessLegTravelTimes,
   showElevationProfile,
+  showHeaderSequence,
   showLegIcon,
   showMapButtonColumn = true,
   showTimeColumn = true,
@@ -44,7 +47,7 @@ const ItineraryBody = ({
   TimeColumnContent,
   toRouteAbbreviation = defaultRouteAbbr,
   TransitLegSubheader,
-  TransitLegSummary
+  TransitLegSummary,
 }: ItineraryBodyProps): ReactElement => {
   /*
     TODO: replace component should update logic? companies is simply used to
@@ -74,6 +77,7 @@ const ItineraryBody = ({
           diagramVisible={diagramVisible}
           followsTransit={followsTransit}
           frameLeg={frameLeg}
+          HeaderSequenceContent={HeaderSequenceContent}
           isDestination={isDestination}
           lastLeg={lastLeg}
           leg={leg}
@@ -95,7 +99,9 @@ const ItineraryBody = ({
           }
           showAgencyInfo={showAgencyInfo}
           showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
+          showAlightSteps={showAlightSteps}
           showElevationProfile={showElevationProfile}
+          showHeaderSequence={showHeaderSequence}
           showLegIcon={showLegIcon}
           showMapButtonColumn={showMapButtonColumn}
           showTimeColumn={showTimeColumn}
@@ -104,7 +110,7 @@ const ItineraryBody = ({
           toRouteAbbreviation={toRouteAbbreviation}
           TransitLegSubheader={TransitLegSubheader}
           TransitLegSummary={TransitLegSummary}
-        />
+        />,
       );
     }
 

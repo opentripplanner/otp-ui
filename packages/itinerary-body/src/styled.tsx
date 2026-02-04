@@ -128,6 +128,12 @@ interface ModeRouteProps {
   routeColor: string;
 }
 
+interface InnerLineProps {
+  $showAlightSteps: boolean;
+  mode: string;
+  routeColor: string;
+}
+
 // TODO: Can we turn this into a more abstract element to inherit from for other badges?
 export const AccessBadge = styled.div<ModeRouteProps>`
   color: black;
@@ -146,12 +152,9 @@ export const AccessBadge = styled.div<ModeRouteProps>`
 `;
 
 export const AlightingBadge = styled.div`
-  width: 30px;
-  height: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: -2px;
 
   svg,
   img {
@@ -170,13 +173,11 @@ export const AlightingStep = styled.div`
 `;
 
 export const LineAlightBadgeContainer = styled.div`
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+  width: 40px;
   position: absolute;
   left: 50%;
-  bottom: 0;
-  transform: translate(-51%, 10%);
+  bottom: -13px;
+  transform: translate(-50%, 20%);
 `;
 
 export const ArrivalTimeContainer = styled.button`
@@ -277,10 +278,10 @@ export const Destination = styled.div`
   text-align: center;
 `;
 
-export const InnerLine = styled.div<ModeRouteProps>`
+export const InnerLine = styled.div<InnerLineProps>`
   /* the actual line element */
   border-left: ${props => toModeBorder(props.mode, props.routeColor)};
-  height: 100%;
+  height: ${props => (props.$showAlightSteps ? "calc(100% - 15px)" : "100%")};
   width: 0;
   position: absolute;
   left: 50%;
@@ -451,6 +452,7 @@ export const LegDetails = styled.span`
 
 interface PlaceRowWrapperProps {
   $showTimeColumn: boolean;
+  $showAlightSteps: boolean;
 }
 
 export const PlaceRowWrapper = styled.li<PlaceRowWrapperProps>`
@@ -465,6 +467,7 @@ export const PlaceRowWrapper = styled.li<PlaceRowWrapperProps>`
     "line instructions"`};
   grid-template-columns: ${props =>
     props.$showTimeColumn ? "65px 30px auto" : "30px auto"};
+  margin-bottom: ${props => (props.$showAlightSteps ? "45px" : 0)};
 `;
 
 interface PreviewContainerProps {
@@ -535,6 +538,7 @@ export const PlaceDetails = styled.div<PlaceContentProps>`
 
 export const PlaceHeader = styled.div<PlaceContentProps>`
   display: flex;
+  flex-direction: column;
   font-size: 1.2em;
   grid-area: title;
 `;

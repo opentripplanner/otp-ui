@@ -57,6 +57,8 @@ export interface LineColumnContentProps extends LegSharedProps {
   /** Whether this leg is an interlined-transit leg */
   interline: boolean;
   LegIcon: LegIconComponent;
+  /** If true, alight steps are shown in transit legs */
+  showAlightSteps?: boolean;
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation: ToRouteAbbreviationFunction;
 }
@@ -96,6 +98,14 @@ export interface TransitLegSummaryProps {
   stopsExpanded: boolean;
 }
 
+export type AlightStepContentProps = LegDestination;
+
+export interface HeaderSequenceContentProps extends LegDestination {
+  config: Config;
+  legIndex: number;
+  leg: Leg;
+}
+
 /**
  * Shared props for various components that render itinerary data.
  */
@@ -115,6 +125,15 @@ interface ItineraryBodySharedProps {
    * within a transit leg, if this prop is not supplied a default icon is used
    */
   AlertToggleIcon?: FunctionComponent;
+  /**
+   * A slot for a component that can render the alighting step for the itineraryBody.
+   * This component is sent the following props:
+   * - isDestination - whether this place is the destination
+   * - leg - the current leg
+   */
+  AlightStepContent?: FunctionComponent<AlightStepContentProps>;
+  /** If true, alight steps are shown in transit legs */
+  showAlightSteps?: boolean;
   /** If true, alerts in a trip leg always open in a collapsed state. */
   alwaysCollapseAlerts: boolean;
   /**
@@ -144,6 +163,15 @@ interface ItineraryBodySharedProps {
    * - `place`: The place associated with the click event
    */
   frameLeg?: FrameLegFunction;
+  /**
+   * A slot for a component that can render the header sequence for each leg.
+   * This component is sent the following props:
+   * - isDestination - whether this place is the destination
+   * - leg - the current leg
+   * - legIndex - the current leg index
+   * - config - the application config
+   */
+  HeaderSequenceContent?: FunctionComponent<HeaderSequenceContentProps>;
   /** A component class that is used to render icons for legs of an itinerary */
   LegIcon: LegIconComponent;
   /**
@@ -213,6 +241,8 @@ interface ItineraryBodySharedProps {
   showLegIcon?: boolean;
   /** If true, will show the right column with the map button */
   showMapButtonColumn?: boolean;
+  /** If true, shows the header sequence number at the top of each leg */
+  showHeaderSequence?: boolean;
   /** If true, shows the time column */
   showTimeColumn?: boolean;
   /** If true, shows the time column and it's contents */

@@ -53,6 +53,7 @@ export default function LineColumnContent({
   isDestination,
   leg,
   LegIcon,
+  showAlightSteps = false,
   toRouteAbbreviation
 }: LineColumnContentProps): ReactElement {
   const { mode, routeColor, transitLeg } = leg;
@@ -69,17 +70,23 @@ export default function LineColumnContent({
   );
 
   const routeShortName = getLegRouteShortName(leg);
-  const showAlightStep = interline && !isDestination; // Placeholder for alighting step logic
+  const showAlightStep = showAlightSteps && !isDestination;
 
   return (
     <S.LegLine>
-      {!isDestination && <S.InnerLine mode={mode} routeColor={routeColor} />}
+      {!isDestination && (
+        <S.InnerLine
+          $showAlightSteps={showAlightStep}
+          mode={mode}
+          routeColor={routeColor}
+        />
+      )}
       <S.LineBadgeContainer>
         {/* TODO: This is a placeholder for a routebadge when we create the transit leg */}
         {!interline && !isDestination && transitLeg && (
           <RouteBadge
             abbreviation={toRouteAbbreviation(
-              parseInt(routeShortName, 10) || routeShortName
+              parseInt(routeShortName, 10) || routeShortName,
             )}
             color={routeColor}
             name={getLegRouteLongName(leg) || ""}
@@ -99,7 +106,8 @@ export default function LineColumnContent({
             <LocationIcon size={25} type="to" />
           </S.Destination>
         )}
-        {!isDestination && showAlightStep && (
+      </S.LineBadgeContainer>
+      {showAlightStep && (
         <S.LineAlightBadgeContainer>
           <S.AlightingBadge aria-label="Alight here">
             <svg
@@ -132,8 +140,7 @@ export default function LineColumnContent({
             </svg>
           </S.AlightingBadge>
         </S.LineAlightBadgeContainer>
-        )}
-      </S.LineBadgeContainer>
+      )}
     </S.LegLine>
   );
 }

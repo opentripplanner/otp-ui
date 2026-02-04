@@ -4,6 +4,8 @@ import React, { FunctionComponent, ReactElement } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 
 import DefaultTimeColumnContent from "../defaults/time-column-content";
+import DefaultAlightStepContent from "../defaults/alight-step-content";
+import DefaultHeaderSequenceContent from "../defaults/header-sequence-content";
 import AccessLegBody from "../AccessLegBody";
 import * as S from "../styled";
 import TransitLegBody from "../TransitLegBody";
@@ -42,6 +44,7 @@ function getLegPlaceName(
 */
 export default function PlaceRow({
   accessibilityScoreGradationMap,
+  AlightStepContent = DefaultAlightStepContent,
   AlertBodyIcon,
   AlertToggleIcon,
   alwaysCollapseAlerts,
@@ -50,6 +53,7 @@ export default function PlaceRow({
   diagramVisible,
   followsTransit,
   frameLeg,
+  HeaderSequenceContent = DefaultHeaderSequenceContent,
   isDestination,
   lastLeg,
   leg,
@@ -67,8 +71,10 @@ export default function PlaceRow({
   setViewedTrip,
   showAgencyInfo,
   showAlertEffectiveDateTimeText,
+  showAlightSteps = false,
   showApproximateAccessLegTravelTimes,
   showElevationProfile,
+  showHeaderSequence = false,
   showLegIcon,
   showMapButtonColumn,
   showViewTripButton,
@@ -76,7 +82,7 @@ export default function PlaceRow({
   TimeColumnContent = DefaultTimeColumnContent,
   toRouteAbbreviation,
   TransitLegSubheader,
-  TransitLegSummary,
+  TransitLegSummary
 }: PlaceRowProps): ReactElement {
   // NOTE: Previously there was a check for itineraries that changed vehicles
   // at a single stop, which would render the stop place the same as the
@@ -87,7 +93,7 @@ export default function PlaceRow({
     leg,
     isDestination,
     PlaceName,
-    config,
+    config
   );
   const {
     interline: nextLegInterlines = false,
@@ -108,17 +114,22 @@ export default function PlaceRow({
   const viewOnMapMessage = intl.formatMessage({
     defaultMessage: defaultMessages["otpUi.ItineraryBody.viewOnMap"],
     description: "Text describing the view-on-map button",
-    id: "otpUi.ItineraryBody.viewOnMap",
+    id: "otpUi.ItineraryBody.viewOnMap"
   });
 
   return (
     <>
-      {/* 
-        Add sequential numbering header with agency here. This could be a prop, create one for default tho.  
-        `<div> {legIndex + 1}. Walk </div>`
-      */}
+      {showHeaderSequence && showAlightSteps && !isDestination && (
+        <HeaderSequenceContent
+          config={config}
+          isDestination={isDestination}
+          leg={leg}
+          legIndex={legIndex}
+        />
+      )}
       <S.PlaceRowWrapper
         $showTimeColumn={showTimeColumn}
+        $showAlightSteps={showAlightSteps}
         className={`place-row-wrapper ${leg.transitLeg ? "transit" : ""} ${
           interline ? "interline" : ""
         } ${leg.rentedBike ? "rented-bike" : ""}`}
@@ -132,10 +143,19 @@ export default function PlaceRow({
             leg={leg}
             LegIcon={LegIcon}
             legIndex={legIndex}
+            showAlightSteps={showAlightSteps}
             toRouteAbbreviation={toRouteAbbreviation}
           />
         </S.LineColumn>
         <S.PlaceHeader $showTimeColumn={showTimeColumn}>
+          {showHeaderSequence && !showAlightSteps && !isDestination && (
+            <HeaderSequenceContent
+              config={config}
+              isDestination={isDestination}
+              leg={leg}
+              legIndex={legIndex}
+            />
+          )}
           <S.PlaceName aria-hidden className="place-row-place-name">
             {placeName}
           </S.PlaceName>
@@ -226,11 +246,10 @@ export default function PlaceRow({
                 TransitLegSubheader={TransitLegSubheader}
               />
             ))}
-          {/* Add alight step here
-          This is where we need to add a destinationPlaceName prop for the alighting step. 
-          This step should come with a stop. If it is the destination, there might not be a stop.     
-          `1:00pm Get off at {leg.to.name}.`
-        */}
+          {/* Render alight step for transit legs when enabled */}
+          {showAlightSteps && !isDestination && (
+            <AlightStepContent isDestination={false} leg={leg} />
+          )}
         </S.PlaceDetails>
         {/* This prop is a string for some reason... */}
         {showMapButtonColumn && (

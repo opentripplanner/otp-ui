@@ -46,6 +46,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
     const {
       alwaysCollapseAlerts,
       defaultFareSelector,
+      HeaderSequenceContent,
       hideDrivingDirections = false,
       itinerary,
       LegIcon = TriMetLegIcon,
@@ -56,14 +57,16 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       RouteDescriptionFooter = undefined,
       showAgencyInfo,
       showAlertEffectiveDateTimeText = true,
+      showAlightSteps = false,
       showApproximateAccessLegTravelTimes = false,
+      showHeaderSequence = false,
       showLegIcon,
       showMapButtonColumn = true,
       showTimeColumn = true,
       showViewTripButton,
       styledItinerary,
       TimeColumnContent,
-      toRouteAbbreviation = r => r?.toString()?.substr(0, 2),
+      toRouteAbbreviation = (r) => r?.toString()?.substr(0, 2),
       TransitLegSubheader,
       TransitLegSummary,
       AlertToggleIcon,
@@ -96,6 +99,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         defaultFareSelector={defaultFareSelector}
         diagramVisible={diagramVisible}
         frameLeg={action("frameLeg")}
+        HeaderSequenceContent={HeaderSequenceContent}
         itinerary={itinerary}
         LegIcon={LegIcon}
         LineColumnContent={LineColumnContent || DefaultLineColumnContent}
@@ -111,10 +115,12 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         setViewedTrip={action("setViewedTrip")}
         showAgencyInfo={showAgencyInfo}
         showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
+        showAlightSteps={showAlightSteps}
         showApproximateAccessLegTravelTimes={
           showApproximateAccessLegTravelTimes
         }
         showElevationProfile
+        showHeaderSequence={showHeaderSequence}
         showLegIcon={showLegIcon}
         showMapButtonColumn={showMapButtonColumn}
         showTimeColumn={showTimeColumn}

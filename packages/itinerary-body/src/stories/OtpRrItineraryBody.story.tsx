@@ -67,7 +67,9 @@ interface StoryWrapperProps {
   itinerary: Itinerary;
   metric?: boolean;
   showAlertEffectiveDateTimeText?: boolean;
+  showAlightSteps?: boolean;
   showApproximateAccessLegTravelTimes?: boolean;
+  showHeaderSequence?: boolean;
   showTimeColumn?: boolean;
   TimeColumnContent?: FunctionComponent<TimeColumnContentProps>;
 }
@@ -79,7 +81,9 @@ function OtpRRItineraryBodyWrapper({
   itinerary,
   metric,
   showAlertEffectiveDateTimeText = true,
+  showAlightSteps = false,
   showApproximateAccessLegTravelTimes = false,
+  showHeaderSequence = false,
   showTimeColumn,
   TimeColumnContent
 }: StoryWrapperProps): ReactElement {
@@ -96,7 +100,9 @@ function OtpRRItineraryBodyWrapper({
       RouteDescription={OtpRRRouteDescription}
       showAgencyInfo
       showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
+      showAlightSteps={showAlightSteps}
       showApproximateAccessLegTravelTimes={showApproximateAccessLegTravelTimes}
+      showHeaderSequence={showHeaderSequence}
       showLegIcon
       showMapButtonColumn={false}
       showTimeColumn={showTimeColumn}
@@ -274,13 +280,6 @@ export const HideDrivingDirections = (): ReactElement => (
   />
 );
 
-export const NoTimeColumn = (): ReactElement => (
-  <OtpRRItineraryBodyWrapper
-    itinerary={walkTransitWalkItinerary}
-    showTimeColumn={false}
-  />
-);
-
 export const ApproximatePrefixItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
     itinerary={walkTransitWalkItinerary}
@@ -301,4 +300,33 @@ export const AlertNoEffectiveAsOfItinerary = (): ReactElement => (
 
 export const StopWithNoStopCode = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={legNoStopCodeItinerary} />
+);
+
+export const NoTimeColumn = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkItinerary}
+    showTimeColumn={false}
+  />
+);
+
+export const WithHeaderSequence = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkItinerary}
+    showHeaderSequence
+  />
+);
+
+export const WithAlightSteps = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkItinerary}
+    showAlightSteps
+  />
+);
+
+export const WithHeaderSequenceAndAlightSteps = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkTransitWalkItinerary}
+    showAlightSteps
+    showHeaderSequence
+  />
 );
