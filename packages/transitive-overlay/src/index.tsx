@@ -74,6 +74,8 @@ export { itineraryToTransitive };
 
 const { blue, grey, red } = colors;
 
+// These color variables correspond to those in the itinerary-body package
+// TODO: Move these into building-blocks
 const MICROMOBILITY_ORANGE = "#f5a729";
 
 // TODO: BETTER COLORS

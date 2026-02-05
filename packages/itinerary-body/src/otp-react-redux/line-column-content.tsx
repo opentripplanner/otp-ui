@@ -16,6 +16,8 @@ interface LegLineProps {
 
 const { blue, grey, red } = colors;
 
+// These color variables correspond to those in the transitive-overlay package
+// TODO: Move these into building-blocks
 const MICROMOBILITY_ORANGE = "#f1b34e";
 const BIKE_RED = red[600];
 const WALK_BLUE = blue[400];
