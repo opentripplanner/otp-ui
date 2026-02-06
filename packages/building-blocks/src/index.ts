@@ -6,7 +6,14 @@ import FocusTrapWrapper, {
   getNextSibling,
   getPreviousSibling
 } from "./focus-trap-wrapper";
+import Alert from "./alert/Alert";
 
 // TODO: Fix exports
-export { Dropdown, FocusTrapWrapper, getNextSibling, getPreviousSibling };
+export {
+  Alert,
+  Dropdown,
+  FocusTrapWrapper,
+  getNextSibling,
+  getPreviousSibling
+};
 export default { blue, red, grey };
