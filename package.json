@@ -8,7 +8,7 @@
   },
   "packageManager": "pnpm@10.9.0",
   "devDependencies": {
-    "@anolilab/semantic-release-pnpm": "^1.1.10",
+    "@anolilab/semantic-release-pnpm": "^5.0.0",
     "@babel/cli": "^7.10",
     "@babel/core": "^7.10",
     "@babel/plugin-proposal-class-properties": "^7.10",
@@ -78,7 +78,6 @@
     "react-test-renderer": "^16.14.0",
     "semantic-release": "^25.0.3",
     "semantic-release-monorepo": "^8.0.2",
-    "semantic-release-pnpm": "^1.0.2",
     "semver": "^7.3.2",
     "storybook": "^10.0.5",
     "storybook-mock-date-decorator": "^3.0.0",
