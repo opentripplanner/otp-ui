@@ -8,10 +8,12 @@ jobs:
       - uses: pnpm/action-setup@v2
         with:
           version: 9
-      - name: Use Node.js 22.x
+      # OIDC tokens are supported from npm 11.5.1 (Node >= 24),
+      # see https://github.com/semantic-release/npm/issues/1054#issuecomment-3723415001
+      - name: Use Node.js 24.x
         uses: actions/setup-node@v4
         with:
-          node-version: 22.x
+          node-version: 24.x
           cache: "pnpm"
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies

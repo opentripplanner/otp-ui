@@ -16,7 +16,7 @@ type ZeroOrOne = 0 | 1;
 export type Company = {
   id: string;
   label: string;
-  /** a comma-separated string listing the modes that this company has */
+  /** a comma-separated string listing the modes offered by this company */
   modes: string;
   /**
    * tells OTP UI to ignore the API provided station names
