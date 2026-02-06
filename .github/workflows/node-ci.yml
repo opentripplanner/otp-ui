@@ -13,6 +13,7 @@ jobs:
         with:
           node-version: 22.x
           cache: "pnpm"
+          registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Lint code
@@ -50,10 +51,8 @@ jobs:
       #       "npx wait-on tcp:5555 && pnpm run test-storybook --ci"
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         name: Semantic Release
         run: |
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
           echo "@OpenTripPlanner:registry=https://registry.npmjs.org/" >> ~/.npmrc
           pnpm run semantic-release
 name: Node.js CI
@@ -69,3 +68,6 @@ name: Node.js CI
       - "[0-9]+.[0-9]+.x"
       - "[0-9]+.x.x"
       - "[0-9]+.x"
+permissions:
+  id-token: write # Required for OIDC for generating NPM tokens
+  contents: write # Required to publish a GitHub release and write version numbers in package files.
