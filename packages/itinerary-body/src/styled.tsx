@@ -438,7 +438,7 @@ interface LineColumnProps {
 
 export const LineColumn = styled.div<LineColumnProps>`
   /* flexbox column */
-  grid-column-start: ${(props) => (props.$showTimeColumn ? 2 : 1)};
+  grid-column-start: ${props => (props.$showTimeColumn ? 2 : 1)};
   grid-row: span 2;
   padding-right: 5px;
   height: 100%;
@@ -460,7 +460,15 @@ export const PlaceRowWrapper = styled.li<PlaceRowWrapperProps>`
   max-width: 500px;
   display: grid;
   grid-template-areas: ${props =>
-    props.$showTimeColumn
+    props.$showAlightSteps
+      ? props.$showTimeColumn
+        ? `"header header header"
+    "time line title"
+    "time line instructions"`
+        : `"header header"
+    "line title"
+    "line instructions"`
+      : props.$showTimeColumn
       ? `"time line title"
     "time line instructions"`
       : `"line title"
@@ -532,8 +540,12 @@ interface PlaceContentProps {
 
 export const PlaceDetails = styled.div<PlaceContentProps>`
   grid-row-start: 2;
-  grid-column-start: ${(props) => (props.$showTimeColumn ? 3 : 2)};
+  grid-column-start: ${props => (props.$showTimeColumn ? 3 : 2)};
   grid-area: instructions;
+`;
+
+export const PlaceHeaderSequence = styled.div`
+  grid-area: header;
 `;
 
 export const PlaceHeader = styled.div<PlaceContentProps>`

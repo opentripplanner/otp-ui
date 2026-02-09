@@ -18,7 +18,7 @@ function getLegPlaceName(
   leg: Leg,
   isDestination: boolean,
   PlaceName: FunctionComponent<PlaceNameProps>,
-  config: Config,
+  config: Config
 ) {
   // NOTE: Previously there was a check for itineraries that changed vehicles
   // at a single stop, which would render the stop place the same as the
@@ -34,7 +34,7 @@ function getLegPlaceName(
   return {
     interline,
     place,
-    placeName,
+    placeName
   };
 }
 
@@ -97,7 +97,7 @@ export default function PlaceRow({
   );
   const {
     interline: nextLegInterlines = false,
-    placeName: nextPlaceName = undefined,
+    placeName: nextPlaceName = undefined
   } = nextLeg ? getLegPlaceName(nextLeg, false, PlaceName, config) : {};
   const legDestination = nextPlaceName || (
     <PlaceName config={config} place={leg.to} />
@@ -118,152 +118,152 @@ export default function PlaceRow({
   });
 
   return (
-    <>
+    <S.PlaceRowWrapper
+      $showTimeColumn={showTimeColumn}
+      $showAlightSteps={showAlightSteps}
+      className={`place-row-wrapper ${leg.transitLeg ? "transit" : ""} ${
+        interline ? "interline" : ""
+      } ${leg.rentedBike ? "rented-bike" : ""}`}
+      key={legIndex || "destination-place"}
+    >
       {showHeaderSequence && showAlightSteps && !isDestination && (
-        <HeaderSequenceContent
-          config={config}
-          isDestination={isDestination}
-          leg={leg}
-          legIndex={legIndex}
-        />
-      )}
-      <S.PlaceRowWrapper
-        $showTimeColumn={showTimeColumn}
-        $showAlightSteps={showAlightSteps}
-        className={`place-row-wrapper ${leg.transitLeg ? "transit" : ""} ${
-          interline ? "interline" : ""
-        } ${leg.rentedBike ? "rented-bike" : ""}`}
-        key={legIndex || "destination-place"}
-      >
-        <S.LineColumn $showTimeColumn={showTimeColumn}>
-          <LineColumnContent
-            interline={interline}
+        <S.PlaceHeaderSequence>
+          <HeaderSequenceContent
+            config={config}
             isDestination={isDestination}
-            lastLeg={lastLeg}
             leg={leg}
-            LegIcon={LegIcon}
             legIndex={legIndex}
-            showAlightSteps={showAlightSteps}
-            toRouteAbbreviation={toRouteAbbreviation}
           />
-        </S.LineColumn>
-        <S.PlaceHeader $showTimeColumn={showTimeColumn}>
-          {showHeaderSequence && !showAlightSteps && !isDestination && (
-            <HeaderSequenceContent
-              config={config}
-              isDestination={isDestination}
-              leg={leg}
-              legIndex={legIndex}
-            />
-          )}
-          <S.PlaceName aria-hidden className="place-row-place-name">
-            {placeName}
-          </S.PlaceName>
-        </S.PlaceHeader>
-        {showTimeColumn && (
-          <S.TimeColumn>
-            {/* Custom rendering of the departure/arrival time of the specified leg. */}
-            <TimeColumnContent isDestination={isDestination} leg={leg} />
-            {!isDestination &&
-              leg.accessibilityScore !== null &&
-              leg.accessibilityScore > -1 && (
-                // TODO: Reorder markup so accessibility info doesn't fall between time and destination.
-                <AccessibilityRating
-                  gradationMap={accessibilityScoreGradationMap}
-                  isLeg
-                  score={leg.accessibilityScore}
-                />
-              )}
-          </S.TimeColumn>
+        </S.PlaceHeaderSequence>
+      )}
+      <S.LineColumn $showTimeColumn={showTimeColumn}>
+        <LineColumnContent
+          interline={interline}
+          isDestination={isDestination}
+          lastLeg={lastLeg}
+          leg={leg}
+          LegIcon={LegIcon}
+          legIndex={legIndex}
+          showAlightSteps={showAlightSteps}
+          toRouteAbbreviation={toRouteAbbreviation}
+        />
+      </S.LineColumn>
+      <S.PlaceHeader $showTimeColumn={showTimeColumn}>
+        {showHeaderSequence && !showAlightSteps && !isDestination && (
+          <HeaderSequenceContent
+            config={config}
+            isDestination={isDestination}
+            leg={leg}
+            legIndex={legIndex}
+          />
         )}
-        <S.InvisibleAdditionalDetails>
-          {interline ? (
-            placeName
-          ) : !isDestination ? (
-            <FormattedMessage
-              description="Add starting location for access legs"
-              id="otpUi.TransitLegBody.fromLocation"
-              values={{ location: placeName }}
+        <S.PlaceName aria-hidden className="place-row-place-name">
+          {placeName}
+        </S.PlaceName>
+      </S.PlaceHeader>
+      {showTimeColumn && (
+        <S.TimeColumn>
+          {/* Custom rendering of the departure/arrival time of the specified leg. */}
+          <TimeColumnContent isDestination={isDestination} leg={leg} />
+          {!isDestination &&
+            leg.accessibilityScore !== null &&
+            leg.accessibilityScore > -1 && (
+              // TODO: Reorder markup so accessibility info doesn't fall between time and destination.
+              <AccessibilityRating
+                gradationMap={accessibilityScoreGradationMap}
+                isLeg
+                score={leg.accessibilityScore}
+              />
+            )}
+        </S.TimeColumn>
+      )}
+      <S.InvisibleAdditionalDetails>
+        {interline ? (
+          placeName
+        ) : !isDestination ? (
+          <FormattedMessage
+            description="Add starting location for access legs"
+            id="otpUi.TransitLegBody.fromLocation"
+            values={{ location: placeName }}
+          />
+        ) : (
+          <FormattedMessage
+            id="otpUi.TransitLegBody.arriveAt"
+            defaultMessage={defaultMessages["otpUi.TransitLegBody.arriveAt"]}
+            description="Identifies end of the trip to screenreaders"
+            values={{ place: placeName }}
+          />
+        )}
+      </S.InvisibleAdditionalDetails>
+      <S.PlaceDetails
+        $showTimeColumn={showTimeColumn}
+        className={`place-details ${leg.transitLeg ? "transit" : ""}`}
+      >
+        {/* Show the leg, if not rendering the destination */}
+        {!isDestination &&
+          (leg.transitLeg ? (
+            /* This is a transit leg */
+            <TransitLegBody
+              AlertBodyIcon={AlertBodyIcon}
+              AlertToggleIcon={AlertToggleIcon}
+              alwaysCollapseAlerts={alwaysCollapseAlerts}
+              defaultFareSelector={defaultFareSelector}
+              leg={leg}
+              legDestination={legDestination}
+              LegIcon={LegIcon}
+              legIndex={legIndex}
+              nextLegInterlines={nextLegInterlines}
+              RouteDescription={RouteDescription}
+              RouteDescriptionFooter={RouteDescriptionFooter}
+              setActiveLeg={setActiveLeg}
+              setViewedTrip={setViewedTrip}
+              showAgencyInfo={showAgencyInfo}
+              showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
+              showViewTripButton={showViewTripButton}
+              timeZone={config.homeTimezone}
+              TransitLegSubheader={TransitLegSubheader}
+              TransitLegSummary={TransitLegSummary}
+              transitOperator={coreUtils.route.getTransitOperatorFromLeg(
+                leg,
+                config.transitOperators
+              )}
             />
           ) : (
-            <FormattedMessage
-              id="otpUi.TransitLegBody.arriveAt"
-              defaultMessage={defaultMessages["otpUi.TransitLegBody.arriveAt"]}
-              description="Identifies end of the trip to screenreaders"
-              values={{ place: placeName }}
+            /* This is an access (e.g. walk/bike/etc.) leg */
+            <AccessLegBody
+              config={config}
+              diagramVisible={diagramVisible}
+              followsTransit={followsTransit}
+              leg={leg}
+              LegIcon={LegIcon}
+              legIndex={legIndex}
+              mapillaryCallback={mapillaryCallback}
+              mapillaryKey={mapillaryKey}
+              setActiveLeg={setActiveLeg}
+              setLegDiagram={setLegDiagram}
+              showApproximateTravelTime={showApproximateAccessLegTravelTimes}
+              showElevationProfile={showElevationProfile}
+              showLegIcon={showLegIcon}
+              TransitLegSubheader={TransitLegSubheader}
             />
-          )}
-        </S.InvisibleAdditionalDetails>
-        <S.PlaceDetails
-          $showTimeColumn={showTimeColumn}
-          className={`place-details ${leg.transitLeg ? "transit" : ""}`}
-        >
-          {/* Show the leg, if not rendering the destination */}
-          {!isDestination &&
-            (leg.transitLeg ? (
-              /* This is a transit leg */
-              <TransitLegBody
-                AlertBodyIcon={AlertBodyIcon}
-                AlertToggleIcon={AlertToggleIcon}
-                alwaysCollapseAlerts={alwaysCollapseAlerts}
-                defaultFareSelector={defaultFareSelector}
-                leg={leg}
-                legDestination={legDestination}
-                LegIcon={LegIcon}
-                legIndex={legIndex}
-                nextLegInterlines={nextLegInterlines}
-                RouteDescription={RouteDescription}
-                RouteDescriptionFooter={RouteDescriptionFooter}
-                setActiveLeg={setActiveLeg}
-                setViewedTrip={setViewedTrip}
-                showAgencyInfo={showAgencyInfo}
-                showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
-                showViewTripButton={showViewTripButton}
-                timeZone={config.homeTimezone}
-                TransitLegSubheader={TransitLegSubheader}
-                TransitLegSummary={TransitLegSummary}
-                transitOperator={coreUtils.route.getTransitOperatorFromLeg(
-                  leg,
-                  config.transitOperators,
-                )}
-              />
-            ) : (
-              /* This is an access (e.g. walk/bike/etc.) leg */
-              <AccessLegBody
-                config={config}
-                diagramVisible={diagramVisible}
-                followsTransit={followsTransit}
-                leg={leg}
-                LegIcon={LegIcon}
-                legIndex={legIndex}
-                mapillaryCallback={mapillaryCallback}
-                mapillaryKey={mapillaryKey}
-                setActiveLeg={setActiveLeg}
-                setLegDiagram={setLegDiagram}
-                showApproximateTravelTime={showApproximateAccessLegTravelTimes}
-                showElevationProfile={showElevationProfile}
-                showLegIcon={showLegIcon}
-                TransitLegSubheader={TransitLegSubheader}
-              />
-            ))}
-          {/* Render alight step for transit legs when enabled */}
-          {showAlightSteps && !isDestination && (
-            <AlightStepContent isDestination={false} leg={leg} />
-          )}
-        </S.PlaceDetails>
-        {/* This prop is a string for some reason... */}
-        {showMapButtonColumn && (
-          <S.MapButtonColumn hideBorder="true">
-            <S.MapButton
-              aria-label={viewOnMapMessage}
-              onClick={() => frameLeg({ isDestination, leg, legIndex, place })}
-              title={viewOnMapMessage}
-            >
-              <S.MapIcon title={viewOnMapMessage} />
-            </S.MapButton>
-          </S.MapButtonColumn>
+          ))}
+        {/* Render alight step for transit legs when enabled */}
+        {showAlightSteps && !isDestination && (
+          <AlightStepContent isDestination={false} leg={leg} />
         )}
-      </S.PlaceRowWrapper>
-    </>
+      </S.PlaceDetails>
+      {/* This prop is a string for some reason... */}
+      {showMapButtonColumn && (
+        <S.MapButtonColumn hideBorder="true">
+          <S.MapButton
+            aria-label={viewOnMapMessage}
+            onClick={() => frameLeg({ isDestination, leg, legIndex, place })}
+            title={viewOnMapMessage}
+          >
+            <S.MapIcon title={viewOnMapMessage} />
+          </S.MapButton>
+        </S.MapButtonColumn>
+      )}
+    </S.PlaceRowWrapper>
   );
 }

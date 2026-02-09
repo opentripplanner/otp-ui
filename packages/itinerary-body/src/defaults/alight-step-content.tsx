@@ -9,7 +9,7 @@ import { defaultMessages } from "../util";
  * in the ItineraryBody -> PlaceRow component.
  */
 export default function AlightStepContent({
-  leg,
+  leg
 }: AlightStepContentProps): ReactElement {
   return (
     <div>

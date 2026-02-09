@@ -47,7 +47,7 @@ const ItineraryBody = ({
   TimeColumnContent,
   toRouteAbbreviation = defaultRouteAbbr,
   TransitLegSubheader,
-  TransitLegSummary,
+  TransitLegSummary
 }: ItineraryBodyProps): ReactElement => {
   /*
     TODO: replace component should update logic? companies is simply used to
@@ -110,7 +110,7 @@ const ItineraryBody = ({
           toRouteAbbreviation={toRouteAbbreviation}
           TransitLegSubheader={TransitLegSubheader}
           TransitLegSummary={TransitLegSummary}
-        />,
+        />
       );
     }
 

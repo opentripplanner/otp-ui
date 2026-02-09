@@ -11,7 +11,7 @@ export default function HeaderSequenceContent({
   config,
   isDestination,
   leg,
-  legIndex,
+  legIndex
 }: HeaderSequenceContentProps): ReactElement {
   if (isDestination) return null;
 
@@ -21,10 +21,10 @@ export default function HeaderSequenceContent({
   const agencyName = transitOperator?.name || "";
 
   return (
-    <div style={{ fontWeight: "bold", marginBottom: "8px" }}>
+    <h3 style={{ fontWeight: "bold", marginBottom: "8px", margin: 0 }}>
       {leg.transitLeg
         ? `${legIndex + 1}. ${agencyName}`
         : `${legIndex + 1}. Walk`}
-    </div>
+    </h3>
   );
 }

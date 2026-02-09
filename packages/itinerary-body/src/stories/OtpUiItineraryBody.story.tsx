@@ -257,22 +257,22 @@ export const NoTimeColumn = (): ReactElement => (
 export const WithHeaderSequence = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkItinerary}
-    showHeaderSequence={true}
+    showHeaderSequence
   />
 );
 
 export const WithAlightSteps = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkItinerary}
-    showAlightSteps={true}
+    showAlightSteps
   />
 );
 
 export const WithHeaderSequenceAlightStepsNoTimeColumn = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkTransitWalkItinerary}
-    showAlightSteps={true}
-    showHeaderSequence={true}
+    showAlightSteps
+    showHeaderSequence
     showTimeColumn={false}
   />
 );

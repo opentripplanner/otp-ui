@@ -67,7 +67,7 @@ export default function LineColumnContent({
     },
     {
       mode: getTravelMode(mode, intl)
-    },
+    }
   );
 
   const routeShortName = getLegRouteShortName(leg);
@@ -87,7 +87,7 @@ export default function LineColumnContent({
         {!interline && !isDestination && transitLeg && (
           <RouteBadge
             abbreviation={toRouteAbbreviation(
-              parseInt(routeShortName, 10) || routeShortName,
+              parseInt(routeShortName, 10) || routeShortName
             )}
             color={routeColor}
             name={getLegRouteLongName(leg) || ""}
