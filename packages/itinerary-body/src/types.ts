@@ -66,7 +66,13 @@ export interface LineColumnContentProps extends LegSharedProps {
 export interface PlaceNameProps {
   config: Config;
   interline?: boolean;
+  /** Whether this place row represents the destination */
+  isDestination?: boolean;
+  /** The leg associated with this place */
+  leg?: Leg;
   place: Place;
+  /** Whether the time column is being shown separately */
+  showTimeColumn?: boolean;
 }
 
 export type SetActiveLegFunction = (legIndex: number, leg: Leg) => void;

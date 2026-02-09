@@ -18,7 +18,8 @@ function getLegPlaceName(
   leg: Leg,
   isDestination: boolean,
   PlaceName: FunctionComponent<PlaceNameProps>,
-  config: Config
+  config: Config,
+  showTimeColumn?: boolean
 ) {
   // NOTE: Previously there was a check for itineraries that changed vehicles
   // at a single stop, which would render the stop place the same as the
@@ -28,7 +29,14 @@ function getLegPlaceName(
   const interline = !!(!isDestination && leg.interlineWithPreviousLeg);
   const place = isDestination ? { ...leg.to } : { ...leg.from };
   const placeName = (
-    <PlaceName config={config} interline={interline} place={place} />
+    <PlaceName
+      config={config}
+      interline={interline}
+      isDestination={isDestination}
+      leg={leg}
+      place={place}
+      showTimeColumn={showTimeColumn}
+    />
   );
 
   return {
@@ -93,14 +101,23 @@ export default function PlaceRow({
     leg,
     isDestination,
     PlaceName,
-    config
+    config,
+    showTimeColumn
   );
   const {
     interline: nextLegInterlines = false,
     placeName: nextPlaceName = undefined
-  } = nextLeg ? getLegPlaceName(nextLeg, false, PlaceName, config) : {};
+  } = nextLeg
+    ? getLegPlaceName(nextLeg, false, PlaceName, config, showTimeColumn)
+    : {};
   const legDestination = nextPlaceName || (
-    <PlaceName config={config} place={leg.to} />
+    <PlaceName
+      config={config}
+      isDestination
+      leg={leg}
+      place={leg.to}
+      showTimeColumn={showTimeColumn}
+    />
   );
 
   // OTP2 marks both bikes and scooters as BIKESHARE in the vertextype

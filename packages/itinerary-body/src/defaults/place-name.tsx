@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, FormattedTime } from "react-intl";
 
 import * as S from "../styled";
 import { PlaceNameProps } from "../types";
@@ -10,10 +10,20 @@ import BasicPlaceName from "./basic-place-name";
 export default function PlaceName({
   config,
   interline,
-  place
+  isDestination,
+  leg,
+  place,
+  showTimeColumn
 }: PlaceNameProps): ReactElement {
+  const time = leg ? (isDestination ? leg.endTime : leg.startTime) : undefined;
+
   return (
     <>
+      {!showTimeColumn && time && (
+        <>
+          <FormattedTime value={time} />{" "}
+        </>
+      )}
       <BasicPlaceName config={config} interline={interline} place={place} />
 
       {/* TODO: take another pass on this when working the Transit Leg */}
