@@ -137,7 +137,7 @@ export default function PlaceRow({
   return (
     <S.PlaceRowWrapper
       $showTimeColumn={showTimeColumn}
-      $showAlightSteps={showAlightSteps}
+      $showAlightSteps={isDestination ? false : showAlightSteps}
       className={`place-row-wrapper ${leg.transitLeg ? "transit" : ""} ${
         interline ? "interline" : ""
       } ${leg.rentedBike ? "rented-bike" : ""}`}
