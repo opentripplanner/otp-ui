@@ -99,9 +99,8 @@ const ItineraryBody = ({
           }
           showAgencyInfo={showAgencyInfo}
           showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
-          showAlightSteps={
-            isLastLeg && !isDestination ? false : showAlightSteps
-          }
+          showAlightSteps={showAlightSteps}
+          isLastLeg={isLastLeg}
           showElevationProfile={showElevationProfile}
           showHeaderSequence={showHeaderSequence}
           showLegIcon={showLegIcon}

@@ -283,6 +283,8 @@ export interface PlaceRowProps
     LegSharedProps {
   /** Indicates whether this leg directly follows a transit leg */
   followsTransit?: boolean;
+  /** Whether this is the last leg in the itinerary */
+  isLastLeg?: boolean;
 }
 
 export interface ItineraryBodyProps extends ItineraryBodySharedProps {

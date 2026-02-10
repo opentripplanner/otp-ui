@@ -453,6 +453,7 @@ export const LegDetails = styled.span`
 interface PlaceRowWrapperProps {
   $showTimeColumn: boolean;
   $showAlightSteps: boolean;
+  $isLastLeg?: boolean;
 }
 
 export const PlaceRowWrapper = styled.li<PlaceRowWrapperProps>`
@@ -475,7 +476,8 @@ export const PlaceRowWrapper = styled.li<PlaceRowWrapperProps>`
     "line instructions"`};
   grid-template-columns: ${props =>
     props.$showTimeColumn ? "65px 30px auto" : "30px auto"};
-  margin-bottom: ${props => (props.$showAlightSteps ? "45px" : 0)};
+  margin-bottom: ${props =>
+    props.$showAlightSteps && !props.$isLastLeg ? "45px" : 0};
 `;
 
 interface PreviewContainerProps {

@@ -63,6 +63,7 @@ export default function PlaceRow({
   frameLeg,
   HeaderSequenceContent = DefaultHeaderSequenceContent,
   isDestination,
+  isLastLeg,
   lastLeg,
   leg,
   LegIcon,
@@ -138,6 +139,7 @@ export default function PlaceRow({
     <S.PlaceRowWrapper
       $showTimeColumn={showTimeColumn}
       $showAlightSteps={isDestination ? false : showAlightSteps}
+      $isLastLeg={isLastLeg && !isDestination}
       className={`place-row-wrapper ${leg.transitLeg ? "transit" : ""} ${
         interline ? "interline" : ""
       } ${leg.rentedBike ? "rented-bike" : ""}`}
@@ -161,7 +163,7 @@ export default function PlaceRow({
           leg={leg}
           LegIcon={LegIcon}
           legIndex={legIndex}
-          showAlightSteps={showAlightSteps}
+          showAlightSteps={isLastLeg ? false : showAlightSteps}
           toRouteAbbreviation={toRouteAbbreviation}
         />
       </S.LineColumn>
@@ -265,7 +267,7 @@ export default function PlaceRow({
             />
           ))}
         {/* Render alight step for transit legs when enabled */}
-        {showAlightSteps && !isDestination && (
+        {showAlightSteps && !isDestination && !isLastLeg && (
           <AlightStepContent isDestination={false} leg={leg} />
         )}
       </S.PlaceDetails>
