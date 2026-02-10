@@ -139,6 +139,7 @@ export default function PlaceRow({
     <S.PlaceRowWrapper
       $showTimeColumn={showTimeColumn}
       $showAlightSteps={isDestination ? false : showAlightSteps}
+      $showHeaderSequence={showHeaderSequence}
       $isLastLeg={isLastLeg && !isDestination}
       className={`place-row-wrapper ${leg.transitLeg ? "transit" : ""} ${
         interline ? "interline" : ""

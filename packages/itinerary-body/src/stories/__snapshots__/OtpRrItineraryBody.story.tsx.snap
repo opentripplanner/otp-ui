@@ -38024,7 +38024,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
 
 exports[`ItineraryBody/otp-react-redux WithAlightSteps smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-25 gmGsOg itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 fYvrvr">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-43 bhiFQn place-row-wrapper   ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-43 ejEIVe place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-41 bQdKWB">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -38249,7 +38249,7 @@ exports[`ItineraryBody/otp-react-redux WithAlightSteps smoke-test 1`] = `
       </div>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-43 bhiFQn place-row-wrapper transit  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-43 ejEIVe place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-41 bQdKWB">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -40904,7 +40904,12 @@ exports[`ItineraryBody/otp-react-redux WithHeaderSequenceAndAlightSteps smoke-te
       </div>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-43 bcJzHf place-row-wrapper   ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-43 hjhuJa place-row-wrapper   ">
+    <div class="styled__PlaceHeaderSequence-sc-1q8npbl-50 bVxyjt">
+      <h3 style="font-weight: bold; margin: 0px;">
+        5. Walk
+      </h3>
+    </div>
     <div class="styled__LineColumn-sc-1q8npbl-41 bQdKWB">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -40942,9 +40947,6 @@ exports[`ItineraryBody/otp-react-redux WithHeaderSequenceAndAlightSteps smoke-te
       </span>
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-51 iqlCWD">
-      <h3 style="font-weight: bold; margin: 0px;">
-        5. Walk
-      </h3>
       <span aria-hidden="true"
             class="styled__PlaceName-sc-1q8npbl-52 dZinJv place-row-place-name"
       >

@@ -453,6 +453,7 @@ export const LegDetails = styled.span`
 interface PlaceRowWrapperProps {
   $showTimeColumn: boolean;
   $showAlightSteps: boolean;
+  $showHeaderSequence: boolean;
   $isLastLeg?: boolean;
 }
 
@@ -461,7 +462,7 @@ export const PlaceRowWrapper = styled.li<PlaceRowWrapperProps>`
   max-width: 500px;
   display: grid;
   grid-template-areas: ${props =>
-    props.$showAlightSteps
+    props.$showAlightSteps && props.$showHeaderSequence
       ? props.$showTimeColumn
         ? `"header header header"
     "time line title"

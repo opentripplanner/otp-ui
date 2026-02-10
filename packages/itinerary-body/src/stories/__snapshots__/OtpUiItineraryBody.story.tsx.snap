@@ -37081,7 +37081,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
 
 exports[`ItineraryBody/otp-ui WithAlightSteps smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-25 gmGsOg">
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-43 bhiFQn place-row-wrapper   ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-43 ejEIVe place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-41 bQdKWB">
       <div class="styled__LegLine-sc-1q8npbl-39 cXktq">
         <div mode="WALK"
@@ -37332,7 +37332,7 @@ exports[`ItineraryBody/otp-ui WithAlightSteps smoke-test 1`] = `
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-43 bhiFQn place-row-wrapper transit  ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-43 ejEIVe place-row-wrapper transit  ">
     <div class="styled__LineColumn-sc-1q8npbl-41 bQdKWB">
       <div class="styled__LegLine-sc-1q8npbl-39 cXktq">
         <div mode="TRAM"
@@ -39976,7 +39976,12 @@ exports[`ItineraryBody/otp-ui WithHeaderSequenceAlightStepsNoTimeColumn smoke-te
       </button>
     </div>
   </li>
-  <li class="styled__PlaceRowWrapper-sc-1q8npbl-43 dTevE place-row-wrapper   ">
+  <li class="styled__PlaceRowWrapper-sc-1q8npbl-43 gAHOpC place-row-wrapper   ">
+    <div class="styled__PlaceHeaderSequence-sc-1q8npbl-50 bVxyjt">
+      <h3 style="font-weight: bold; margin: 0px;">
+        5. Walk
+      </h3>
+    </div>
     <div class="styled__LineColumn-sc-1q8npbl-41 bQdKWy">
       <div class="styled__LegLine-sc-1q8npbl-39 cXktq">
         <div mode="WALK"
@@ -40003,9 +40008,6 @@ exports[`ItineraryBody/otp-ui WithHeaderSequenceAlightStepsNoTimeColumn smoke-te
       </div>
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-51 iqlCWD">
-      <h3 style="font-weight: bold; margin: 0px;">
-        5. Walk
-      </h3>
       <span aria-hidden="true"
             class="styled__PlaceName-sc-1q8npbl-52 dZinJv place-row-place-name"
       >
