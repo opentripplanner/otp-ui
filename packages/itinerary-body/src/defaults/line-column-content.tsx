@@ -110,8 +110,8 @@ export default function LineColumnContent({
       </S.LineBadgeContainer>
       {showAlightStep && (
         <S.LineAlightBadgeContainer>
-          <S.AlightingBadge aria-label="Alight here">
-            <AlightStop />
+          <S.AlightingBadge aria-hidden="true">
+            <AlightStop aria-hidden="true" focusable="false" />
           </S.AlightingBadge>
         </S.LineAlightBadgeContainer>
       )}
