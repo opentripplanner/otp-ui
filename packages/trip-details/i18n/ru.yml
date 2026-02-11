@@ -21,7 +21,9 @@ otpUi:
       минуту} other {# минуты}}</strong> на ходьбу и<strong>{bikeMinutes,
       plural, one {# минуту} other {# минуты}}</strong> на езду на велосипеде.
     title: Подробные сведения о поездке
-    tncFare: "Стоимость проезда в компаниях {companies}: <strong>{minTNCFare}\_— {maxTNCFare}</strong>"
+    tncFare: >-
+      Стоимость проезда в компаниях {companies}: <strong>{minTNCFare} —
+      {maxTNCFare}</strong>
     total: Всего
     transferDiscountExplanation: Применяется скидка на пересадку в размере {transferAmount}
     transitFare: Стоимость проезда в общественном транспорте
