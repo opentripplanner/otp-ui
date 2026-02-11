@@ -1,4 +1,4 @@
-import React, { ReactChild, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import AnimateHeight from "react-animate-height";
 import { ChevronUp } from "@styled-icons/bootstrap/ChevronUp";
@@ -8,11 +8,13 @@ import { useIntl } from "react-intl";
 import blue from "../colors/blue";
 
 interface Props {
-  alertHeader: string;
-  alertSubheader?: string;
+  alertHeader: JSX.Element | string;
+  alertSubheader?: JSX.Element | string;
   backgroundColor?: string;
+  /* If true, adds a toggle that expands/collapses the alert content */
   collapsible?: boolean;
-  children?: ReactChild;
+  children?: JSX.Element | string;
+  /* Icon displayed on Alert - default is Bell */
   Icon?: StyledIcon;
 }
 
@@ -26,17 +28,17 @@ const AlertContainer = styled.div<{
   display: grid;
   grid-template-columns: 50px auto auto;
   grid-template-rows: minmax(25px, auto) auto;
-  max-width: 715px;
-  padding: 1.5em 2em;
+  column-gap: 1em;
+  padding: 1.5em;
 
   svg {
     align-self: center;
     grid-column: 1;
     grid-row: 1 / span 2;
-    justify-self: start;
+    justify-self: center;
   }
 
-  button {
+  button.toggle-btn {
     background: transparent;
     border: none;
     width: 40px;
@@ -108,6 +110,7 @@ const Alert = ({
         {collapsible && (
           <button
             type="button"
+            className="toggle-btn"
             onClick={() => setExpandAlert(!expandAlert)}
             aria-label={label}
             title={label}

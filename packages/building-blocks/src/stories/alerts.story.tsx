@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 import { Meta } from "@storybook/react-vite";
 import { ExclamationTriangle } from "@styled-icons/bootstrap/ExclamationTriangle";
+import styled from "styled-components";
 import Alert from "../alert/Alert";
 import red from "../colors/red";
 
@@ -33,6 +34,10 @@ const alerts = [
   }
 ];
 
+const AlertContainer = styled.div`
+  max-width: 700px;
+`;
+
 const AlertContent = () => {
   return (
     <>
@@ -54,24 +59,28 @@ const AlertContent = () => {
 
 export const BasicAlert = (): ReactElement => {
   return (
-    <Alert
-      alertHeader="Next trip starts on Wednesday April 17th"
-      alertSubheader="Trip is due to begin at 7:43 AM (Realtime monitoring will being at 7:13 AM)"
-    >
-      Here is more content
-    </Alert>
+    <AlertContainer>
+      <Alert
+        alertHeader="Next trip starts on Wednesday April 17th"
+        alertSubheader="Trip is due to begin at 7:43 AM (Realtime monitoring will being at 7:13 AM)"
+      >
+        Here is more content
+      </Alert>
+    </AlertContainer>
   );
 };
 
 export const CollapsibleAlertWithTransitAlerts = (): ReactElement => {
   return (
-    <Alert
-      backgroundColor={red[50]}
-      collapsible
-      Icon={ExclamationTriangle}
-      alertHeader="Your trip has alerts"
-    >
-      <AlertContent />
-    </Alert>
+    <AlertContainer>
+      <Alert
+        backgroundColor={red[50]}
+        collapsible
+        Icon={ExclamationTriangle}
+        alertHeader="Your trip has alerts"
+      >
+        <AlertContent />
+      </Alert>
+    </AlertContainer>
   );
 };
