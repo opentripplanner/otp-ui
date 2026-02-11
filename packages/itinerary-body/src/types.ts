@@ -110,6 +110,8 @@ export interface HeaderSequenceContentProps extends LegDestination {
   config: Config;
   legIndex: number;
   leg: Leg;
+  /** The heading level to use for the header sequence (h2 or h3). Defaults to h3. */
+  headingLevel?: "h2" | "h3";
 }
 
 /**

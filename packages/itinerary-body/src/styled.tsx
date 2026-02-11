@@ -452,9 +452,42 @@ export const LegDetails = styled.span`
 
 interface PlaceRowWrapperProps {
   $showTimeColumn: boolean;
-  $showAlightSteps: boolean;
+  $shouldShowAlightStep: boolean;
   $showHeaderSequence: boolean;
+  $isDestination: boolean;
   $isLastLeg?: boolean;
+}
+
+/**
+ * Determines the CSS grid template areas for a PlaceRow based on visibility flags.
+ */
+function getGridTemplateAreas(
+  showTimeColumn: boolean,
+  showHeaderSequence: boolean,
+  isDestination: boolean
+): string {
+  if (isDestination && showTimeColumn) {
+    return `"time line title"`;
+  }
+  if (isDestination) {
+    return `"line title"`;
+  }
+  if (showHeaderSequence && !showTimeColumn) {
+    return `"line header"
+            "line title"
+            "line instructions"`;
+  }
+  if (showHeaderSequence && showTimeColumn) {
+    return `"time line header"
+            "time line title"
+            "time line instructions"`;
+  }
+  if (showTimeColumn) {
+    return `"time line title"
+            "time line instructions"`;
+  }
+  return `"line title"
+          "line instructions"`;
 }
 
 export const PlaceRowWrapper = styled.li<PlaceRowWrapperProps>`
@@ -462,23 +495,15 @@ export const PlaceRowWrapper = styled.li<PlaceRowWrapperProps>`
   max-width: 500px;
   display: grid;
   grid-template-areas: ${props =>
-    props.$showAlightSteps && props.$showHeaderSequence
-      ? props.$showTimeColumn
-        ? `"header header header"
-    "time line title"
-    "time line instructions"`
-        : `"header header"
-    "line title"
-    "line instructions"`
-      : props.$showTimeColumn
-      ? `"time line title"
-    "time line instructions"`
-      : `"line title"
-    "line instructions"`};
+    getGridTemplateAreas(
+      props.$showTimeColumn,
+      props.$showHeaderSequence,
+      props.$isDestination
+    )};
   grid-template-columns: ${props =>
     props.$showTimeColumn ? "65px 30px auto" : "30px auto"};
   margin-bottom: ${props =>
-    props.$showAlightSteps && !props.$isLastLeg ? "45px" : 0};
+    props.$shouldShowAlightStep && !props.$isLastLeg ? "45px" : 0};
 `;
 
 interface PreviewContainerProps {
@@ -549,6 +574,11 @@ export const PlaceDetails = styled.div<PlaceContentProps>`
 
 export const PlaceHeaderSequence = styled.div`
   grid-area: header;
+`;
+
+export const PlaceSequenceHeader = styled.h3`
+  font-weight: bold;
+  margin: 0 0 8px 0;
 `;
 
 export const PlaceHeader = styled.div<PlaceContentProps>`

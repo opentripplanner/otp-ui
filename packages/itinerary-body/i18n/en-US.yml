@@ -93,6 +93,8 @@ otpUi:
       unclear: unknown
     viewOnMap: View on map
     alightAt: Get off at {stopName}.
+    legSequenceTransit: "{sequence}. {agency}"
+    legSequenceWalk: "{sequence}. Walk"
   TransitLegBody:
     AlertsBody:
       alertLinkText: See alert on {agency} website

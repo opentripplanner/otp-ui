@@ -135,18 +135,38 @@ export default function PlaceRow({
     id: "otpUi.ItineraryBody.viewOnMap"
   });
 
+  // Determine if we should show the alight step for this leg
+  // Alight steps are shown for all legs except the destination and the last leg
+  const shouldShowAlightStep = showAlightSteps && !isDestination && !isLastLeg;
+
+  // Header sequence is always in its own grid row when enabled (except destination)
+  const shouldShowHeaderInOwnRow = showHeaderSequence && !isDestination;
+
   return (
     <S.PlaceRowWrapper
       $showTimeColumn={showTimeColumn}
-      $showAlightSteps={isDestination ? false : showAlightSteps}
+      $shouldShowAlightStep={shouldShowAlightStep}
       $showHeaderSequence={showHeaderSequence}
+      $isDestination={isDestination}
       $isLastLeg={isLastLeg && !isDestination}
       className={`place-row-wrapper ${leg.transitLeg ? "transit" : ""} ${
         interline ? "interline" : ""
       } ${leg.rentedBike ? "rented-bike" : ""}`}
       key={legIndex || "destination-place"}
     >
-      {showHeaderSequence && showAlightSteps && !isDestination && (
+      <S.LineColumn $showTimeColumn={showTimeColumn}>
+        <LineColumnContent
+          interline={interline}
+          isDestination={isDestination}
+          lastLeg={lastLeg}
+          leg={leg}
+          LegIcon={LegIcon}
+          legIndex={legIndex}
+          showAlightSteps={shouldShowAlightStep}
+          toRouteAbbreviation={toRouteAbbreviation}
+        />
+      </S.LineColumn>
+      {shouldShowHeaderInOwnRow && (
         <S.PlaceHeaderSequence>
           <HeaderSequenceContent
             config={config}
@@ -156,27 +176,7 @@ export default function PlaceRow({
           />
         </S.PlaceHeaderSequence>
       )}
-      <S.LineColumn $showTimeColumn={showTimeColumn}>
-        <LineColumnContent
-          interline={interline}
-          isDestination={isDestination}
-          lastLeg={lastLeg}
-          leg={leg}
-          LegIcon={LegIcon}
-          legIndex={legIndex}
-          showAlightSteps={isLastLeg ? false : showAlightSteps}
-          toRouteAbbreviation={toRouteAbbreviation}
-        />
-      </S.LineColumn>
       <S.PlaceHeader $showTimeColumn={showTimeColumn}>
-        {showHeaderSequence && !showAlightSteps && !isDestination && (
-          <HeaderSequenceContent
-            config={config}
-            isDestination={isDestination}
-            leg={leg}
-            legIndex={legIndex}
-          />
-        )}
         <S.PlaceName aria-hidden className="place-row-place-name">
           {placeName}
         </S.PlaceName>
@@ -268,7 +268,7 @@ export default function PlaceRow({
             />
           ))}
         {/* Render alight step for transit legs when enabled */}
-        {showAlightSteps && !isDestination && !isLastLeg && (
+        {shouldShowAlightStep && (
           <AlightStepContent isDestination={false} leg={leg} />
         )}
       </S.PlaceDetails>
