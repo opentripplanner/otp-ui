@@ -21,6 +21,8 @@ const { blue, grey, red } = colors;
 const MICROMOBILITY_ORANGE = "#f1b34e";
 const BIKE_RED = red[600];
 const WALK_BLUE = blue[400];
+const DRIVE_GREY = grey[500];
+const DEFAULT_TRANSIT_BLUE = blue[900];
 
 const cssWalk = css`
   background: radial-gradient(
@@ -107,7 +109,7 @@ const legLineBackgroundColor = ({ leg, routeColor }: LegLineProps): string => {
   return leg.transitLeg || coreUtils.itinerary.isTransit(mode)
     ? routeColor
       ? `#${routeColor}`
-      : `${blue[900]}`
+      : `${DEFAULT_TRANSIT_BLUE}`
     : undefined;
 };
 
@@ -211,7 +213,7 @@ export default function LineColumnContent({
   ) {
     // start or end of a car rental/TNC/P&R leg (not including origin or
     // destination)
-    legBadge = <StackedCircle size={17} color={grey[500]} />;
+    legBadge = <StackedCircle size={17} color={DRIVE_GREY} />;
   } else {
     legBadge = (
       <>
