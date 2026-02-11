@@ -4,6 +4,7 @@ import { FormattedTime } from "react-intl";
 import { action } from "storybook/actions";
 import styled from "styled-components";
 import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle";
+import colors from "@opentripplanner/building-blocks";
 
 import ItineraryBody from "..";
 import OtpRRTransitLegSubheader from "../otp-react-redux/transit-leg-subheader";
@@ -13,6 +14,8 @@ import {
   TransitLegSubheaderProps,
   TransitLegSummaryProps
 } from "../types";
+
+const { red, grey } = colors;
 
 export function CustomPlaceName({ place }: { place: Place }): string {
   return `🎉✨🎊 ${place.name} 🎉✨🎊`;
@@ -31,7 +34,7 @@ export function CustomTimeColumnContent({
   return (
     <>
       <div>
-        <span style={{ color: "#E60000" }}>
+        <span style={{ color: red[700] }}>
           <FormattedTime value={time} />
         </span>
       </div>
@@ -78,7 +81,7 @@ export const StyledItineraryBody = styled(ItineraryBody)`
   }
 
   ${ItineraryBodyClasses.TimeColumn} {
-    color: #676767;
+    color: ${grey[700]};
     font-size: 14px;
     padding-right: 4px;
     padding-top: 1px;

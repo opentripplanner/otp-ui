@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@mapbox/polyline": "catalog:",
+    "@opentripplanner/building-blocks": "workspace:*",
     "@opentripplanner/core-utils": "workspace:*",
     "@opentripplanner/itinerary-body": "workspace:*",
     "@turf/bbox": "^6.5.0",

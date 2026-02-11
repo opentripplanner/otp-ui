@@ -19,8 +19,8 @@ otpUi:
       <strong>{bikeMinutes} 분</strong> 소요됩니다.
     title: 트립 상세정보
     tncFare: "{companies} 운임: <strong>{minTNCFare} - {maxTNCFare}</strong>"
+    total: 총
     transferDiscountExplanation: 환승 할인 {transferAmount} 적용
     transitFare: 대중 교통 운임
     transitFareEntry: "{name} : <strong>{value}</strong>"
     tripIncludesFlex: 이 트립에는 가변 경로가 포함되어 있습니다. {extraMessage}
-    total: 총
