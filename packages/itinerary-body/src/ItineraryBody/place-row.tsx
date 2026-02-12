@@ -146,7 +146,6 @@ export default function PlaceRow({
     <S.PlaceRowWrapper
       $showTimeColumn={showTimeColumn}
       $shouldShowAlightStep={shouldShowAlightStep}
-      $showHeaderSequence={showHeaderSequence}
       $isDestination={isDestination}
       $isLastLeg={isLastLeg && !isDestination}
       className={`place-row-wrapper ${leg.transitLeg ? "transit" : ""} ${
@@ -166,17 +165,15 @@ export default function PlaceRow({
           toRouteAbbreviation={toRouteAbbreviation}
         />
       </S.LineColumn>
-      {shouldShowHeaderInOwnRow && (
-        <S.PlaceHeaderSequence>
+      <S.PlaceHeader $showTimeColumn={showTimeColumn}>
+        {shouldShowHeaderInOwnRow && (
           <HeaderSequenceContent
             config={config}
             isDestination={isDestination}
             leg={leg}
             legIndex={legIndex}
           />
-        </S.PlaceHeaderSequence>
-      )}
-      <S.PlaceHeader $showTimeColumn={showTimeColumn}>
+        )}
         <S.PlaceName aria-hidden className="place-row-place-name">
           {placeName}
         </S.PlaceName>

@@ -453,7 +453,6 @@ export const LegDetails = styled.span`
 interface PlaceRowWrapperProps {
   $showTimeColumn: boolean;
   $shouldShowAlightStep: boolean;
-  $showHeaderSequence: boolean;
   $isDestination: boolean;
   $isLastLeg?: boolean;
 }
@@ -463,7 +462,6 @@ interface PlaceRowWrapperProps {
  */
 function getGridTemplateAreas(
   showTimeColumn: boolean,
-  showHeaderSequence: boolean,
   isDestination: boolean
 ): string {
   if (isDestination && showTimeColumn) {
@@ -471,16 +469,6 @@ function getGridTemplateAreas(
   }
   if (isDestination) {
     return `"line title"`;
-  }
-  if (showHeaderSequence && !showTimeColumn) {
-    return `"line header"
-            "line title"
-            "line instructions"`;
-  }
-  if (showHeaderSequence && showTimeColumn) {
-    return `"time line header"
-            "time line title"
-            "time line instructions"`;
   }
   if (showTimeColumn) {
     return `"time line title"
@@ -495,11 +483,7 @@ export const PlaceRowWrapper = styled.li<PlaceRowWrapperProps>`
   max-width: 500px;
   display: grid;
   grid-template-areas: ${props =>
-    getGridTemplateAreas(
-      props.$showTimeColumn,
-      props.$showHeaderSequence,
-      props.$isDestination
-    )};
+    getGridTemplateAreas(props.$showTimeColumn, props.$isDestination)};
   grid-template-columns: ${props =>
     props.$showTimeColumn ? "65px 30px auto" : "30px auto"};
   margin-bottom: ${props =>
@@ -570,10 +554,6 @@ export const PlaceDetails = styled.div<PlaceContentProps>`
   grid-row-start: 2;
   grid-column-start: ${props => (props.$showTimeColumn ? 3 : 2)};
   grid-area: instructions;
-`;
-
-export const PlaceHeaderSequence = styled.div`
-  grid-area: header;
 `;
 
 export const PlaceSequenceHeader = styled.h3`
