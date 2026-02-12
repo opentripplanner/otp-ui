@@ -143,8 +143,10 @@ const AdvancedModeSettingsButton = ({
         />
         <label htmlFor={checkboxId}>
           <modeButton.Icon />
-          <span>{accessibilityLabel}</span>
-          <span aria-hidden>{label}</span>
+          {containsSubsettings && (
+            <span className="invisible">{accessibilityLabel}</span>
+          )}
+          <span aria-hidden={containsSubsettings}>{label}</span>
           {modeButton.enabled && <Check2 />}
         </label>
       </StyledModeSettingsButton>
