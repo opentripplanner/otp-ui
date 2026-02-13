@@ -81,6 +81,8 @@ otpUi:
         {approximatePrefix, select, true {Environ } other {}}{hours, plural, =0
         {} other {# h }}{minutes} min
     alightAt: Descendez à {stopName}.
+    legSequenceTransit: "{sequence}. {agency}"
+    legSequenceWalk: "{sequence}. Marche"
     flexAdvanceNotice:
       " au moins {leadDays, plural, one {# jour} other {# jours}}
       à l'avance"
