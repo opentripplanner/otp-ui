@@ -21,6 +21,7 @@ const ItineraryBody = ({
   defaultFareSelector,
   diagramVisible,
   frameLeg = noop,
+  HeaderSequenceContent,
   itinerary,
   LegIcon,
   LineColumnContent,
@@ -35,10 +36,13 @@ const ItineraryBody = ({
   setViewedTrip,
   showAgencyInfo,
   showAlertEffectiveDateTimeText,
+  showAlightSteps,
   showApproximateAccessLegTravelTimes,
   showElevationProfile,
+  showHeaderSequence,
   showLegIcon,
   showMapButtonColumn = true,
+  showTimeColumn = true,
   showViewTripButton,
   TimeColumnContent,
   toRouteAbbreviation = defaultRouteAbbr,
@@ -73,6 +77,7 @@ const ItineraryBody = ({
           diagramVisible={diagramVisible}
           followsTransit={followsTransit}
           frameLeg={frameLeg}
+          HeaderSequenceContent={HeaderSequenceContent}
           isDestination={isDestination}
           lastLeg={lastLeg}
           leg={leg}
@@ -94,9 +99,13 @@ const ItineraryBody = ({
           }
           showAgencyInfo={showAgencyInfo}
           showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
+          showAlightSteps={showAlightSteps}
+          isLastLeg={isLastLeg}
           showElevationProfile={showElevationProfile}
+          showHeaderSequence={showHeaderSequence}
           showLegIcon={showLegIcon}
           showMapButtonColumn={showMapButtonColumn}
+          showTimeColumn={showTimeColumn}
           showViewTripButton={showViewTripButton}
           TimeColumnContent={TimeColumnContent}
           toRouteAbbreviation={toRouteAbbreviation}

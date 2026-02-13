@@ -246,3 +246,33 @@ export const ApproximatePrefixItinerary = (): ReactElement => (
 export const TransferLegItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={transferLegItinerary} />
 );
+
+export const NoTimeColumn = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    showTimeColumn={false}
+  />
+);
+
+export const WithHeaderSequence = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    showHeaderSequence
+  />
+);
+
+export const WithAlightSteps = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    showAlightSteps
+  />
+);
+
+export const WithHeaderSequenceAlightStepsNoTimeColumn = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkTransitWalkItinerary}
+    showAlightSteps
+    showHeaderSequence
+    showTimeColumn={false}
+  />
+);

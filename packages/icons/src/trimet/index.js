@@ -2,6 +2,7 @@ import Accessible from "./Accessible";
 import AerialTram from "./AerialTram";
 import Alert from "./Alert";
 import AlertSolid from "./AlertSolid";
+import AlightStop from "./AlightStop";
 import App from "./App";
 import Bicycle from "./Bicycle";
 import Bike from "./Bike";
@@ -50,6 +51,7 @@ export {
   AerialTram,
   Alert,
   AlertSolid,
+  AlightStop,
   App,
   Bicycle,
   Bike,

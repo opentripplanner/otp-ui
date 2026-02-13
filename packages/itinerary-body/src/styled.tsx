@@ -128,6 +128,12 @@ interface ModeRouteProps {
   routeColor: string;
 }
 
+interface InnerLineProps {
+  $showAlightSteps: boolean;
+  mode: string;
+  routeColor: string;
+}
+
 // TODO: Can we turn this into a more abstract element to inherit from for other badges?
 export const AccessBadge = styled.div<ModeRouteProps>`
   color: black;
@@ -143,6 +149,35 @@ export const AccessBadge = styled.div<ModeRouteProps>`
   justify-content: center;
   padding-left: 1px;
   /* Add in border for dark mode */
+`;
+
+export const AlightingBadge = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg,
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+export const AlightingStep = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
+`;
+
+export const LineAlightBadgeContainer = styled.div`
+  width: 40px;
+  position: absolute;
+  left: 50%;
+  bottom: -13px;
+  transform: translate(-50%, 20%);
 `;
 
 export const ArrivalTimeContainer = styled.button`
@@ -243,10 +278,10 @@ export const Destination = styled.div`
   text-align: center;
 `;
 
-export const InnerLine = styled.div<ModeRouteProps>`
+export const InnerLine = styled.div<InnerLineProps>`
   /* the actual line element */
   border-left: ${props => toModeBorder(props.mode, props.routeColor)};
-  height: 100%;
+  height: ${props => (props.$showAlightSteps ? "calc(100% - 15px)" : "100%")};
   width: 0;
   position: absolute;
   left: 50%;
@@ -397,11 +432,17 @@ export const LineBadgeContainer = styled.div`
   transform: translate(-51%, -10%);
 `;
 
-export const LineColumn = styled.div`
+interface LineColumnProps {
+  $showTimeColumn: boolean;
+}
+
+export const LineColumn = styled.div<LineColumnProps>`
   /* flexbox column */
-  grid-column-start: 2;
+  grid-column-start: ${props => (props.$showTimeColumn ? 2 : 1)};
   grid-row: span 2;
   padding-right: 5px;
+  height: 100%;
+  grid-area: line;
 `;
 
 export const LegDetails = styled.span`
@@ -409,14 +450,44 @@ export const LegDetails = styled.span`
   grid-template-columns: 130px auto;
 `;
 
-export const PlaceRowWrapper = styled.li`
+interface PlaceRowWrapperProps {
+  $showTimeColumn: boolean;
+  $shouldShowAlightStep: boolean;
+  $isDestination: boolean;
+  $isLastLeg?: boolean;
+}
+
+/**
+ * Determines the CSS grid template areas for a PlaceRow based on visibility flags.
+ */
+function getGridTemplateAreas(
+  showTimeColumn: boolean,
+  isDestination: boolean
+): string {
+  if (isDestination && showTimeColumn) {
+    return `"time line title"`;
+  }
+  if (isDestination) {
+    return `"line title"`;
+  }
+  if (showTimeColumn) {
+    return `"time line title"
+            "time line instructions"`;
+  }
+  return `"line title"
+          "line instructions"`;
+}
+
+export const PlaceRowWrapper = styled.li<PlaceRowWrapperProps>`
   /* needs to be a flexbox row */
   max-width: 500px;
   display: grid;
-  grid-template-areas:
-    "time line title"
-    "time line instructions";
-  grid-template-columns: 65px 30px auto;
+  grid-template-areas: ${props =>
+    getGridTemplateAreas(props.$showTimeColumn, props.$isDestination)};
+  grid-template-columns: ${props =>
+    props.$showTimeColumn ? "65px 30px auto" : "30px auto"};
+  margin-bottom: ${props =>
+    props.$shouldShowAlightStep && !props.$isLastLeg ? "45px" : 0};
 `;
 
 interface PreviewContainerProps {
@@ -447,8 +518,7 @@ export const PreviewContainer = styled.div<PreviewContainerProps>`
 `;
 
 export const TimeColumn = styled.div`
-  grid-column-start: 1;
-  grid-row: 1 / span 2;
+  grid-area: time;
   padding-right: 5px;
   font-size: 0.9em;
 `;
@@ -476,17 +546,26 @@ export const MapIcon = styled(Map).attrs(props => ({
   role: "img"
 }))``;
 
-export const PlaceDetails = styled.div`
+interface PlaceContentProps {
+  $showTimeColumn: boolean;
+}
+
+export const PlaceDetails = styled.div<PlaceContentProps>`
   grid-row-start: 2;
-  grid-column-start: 3;
+  grid-column-start: ${props => (props.$showTimeColumn ? 3 : 2)};
   grid-area: instructions;
 `;
 
-export const PlaceHeader = styled.div`
+export const PlaceSequenceHeader = styled.h3`
+  font-weight: bold;
+  margin: 0 0 8px 0;
+`;
+
+export const PlaceHeader = styled.div<PlaceContentProps>`
   display: flex;
+  flex-direction: column;
   font-size: 1.2em;
-  grid-row-start: 1;
-  grid-column-start: 3;
+  grid-area: title;
 `;
 
 export const PlaceName = styled.span`

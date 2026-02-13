@@ -4,6 +4,8 @@ import React, { FunctionComponent, ReactElement } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 
 import DefaultTimeColumnContent from "../defaults/time-column-content";
+import DefaultAlightStepContent from "../defaults/alight-step-content";
+import DefaultHeaderSequenceContent from "../defaults/header-sequence-content";
 import AccessLegBody from "../AccessLegBody";
 import * as S from "../styled";
 import TransitLegBody from "../TransitLegBody";
@@ -16,7 +18,8 @@ function getLegPlaceName(
   leg: Leg,
   isDestination: boolean,
   PlaceName: FunctionComponent<PlaceNameProps>,
-  config: Config
+  config: Config,
+  showTimeColumn?: boolean
 ) {
   // NOTE: Previously there was a check for itineraries that changed vehicles
   // at a single stop, which would render the stop place the same as the
@@ -26,7 +29,14 @@ function getLegPlaceName(
   const interline = !!(!isDestination && leg.interlineWithPreviousLeg);
   const place = isDestination ? { ...leg.to } : { ...leg.from };
   const placeName = (
-    <PlaceName config={config} interline={interline} place={place} />
+    <PlaceName
+      config={config}
+      interline={interline}
+      isDestination={isDestination}
+      leg={leg}
+      place={place}
+      showTimeColumn={showTimeColumn}
+    />
   );
 
   return {
@@ -42,6 +52,7 @@ function getLegPlaceName(
 */
 export default function PlaceRow({
   accessibilityScoreGradationMap,
+  AlightStepContent = DefaultAlightStepContent,
   AlertBodyIcon,
   AlertToggleIcon,
   alwaysCollapseAlerts,
@@ -50,7 +61,9 @@ export default function PlaceRow({
   diagramVisible,
   followsTransit,
   frameLeg,
+  HeaderSequenceContent = DefaultHeaderSequenceContent,
   isDestination,
+  isLastLeg,
   lastLeg,
   leg,
   LegIcon,
@@ -67,11 +80,14 @@ export default function PlaceRow({
   setViewedTrip,
   showAgencyInfo,
   showAlertEffectiveDateTimeText,
+  showAlightSteps = false,
   showApproximateAccessLegTravelTimes,
   showElevationProfile,
+  showHeaderSequence = false,
   showLegIcon,
   showMapButtonColumn,
   showViewTripButton,
+  showTimeColumn,
   TimeColumnContent = DefaultTimeColumnContent,
   toRouteAbbreviation,
   TransitLegSubheader,
@@ -86,14 +102,23 @@ export default function PlaceRow({
     leg,
     isDestination,
     PlaceName,
-    config
+    config,
+    showTimeColumn
   );
   const {
     interline: nextLegInterlines = false,
     placeName: nextPlaceName = undefined
-  } = nextLeg ? getLegPlaceName(nextLeg, false, PlaceName, config) : {};
+  } = nextLeg
+    ? getLegPlaceName(nextLeg, false, PlaceName, config, showTimeColumn)
+    : {};
   const legDestination = nextPlaceName || (
-    <PlaceName config={config} place={leg.to} />
+    <PlaceName
+      config={config}
+      isDestination
+      leg={leg}
+      place={leg.to}
+      showTimeColumn={showTimeColumn}
+    />
   );
 
   // OTP2 marks both bikes and scooters as BIKESHARE in the vertextype
@@ -110,14 +135,25 @@ export default function PlaceRow({
     id: "otpUi.ItineraryBody.viewOnMap"
   });
 
+  // Determine if we should show the alight step for this leg
+  // Alight steps are shown for all legs except the destination and the last leg
+  const shouldShowAlightStep = showAlightSteps && !isDestination && !isLastLeg;
+
+  // Header sequence is always in its own grid row when enabled (except destination)
+  const shouldShowHeaderInOwnRow = showHeaderSequence && !isDestination;
+
   return (
     <S.PlaceRowWrapper
+      $showTimeColumn={showTimeColumn}
+      $shouldShowAlightStep={shouldShowAlightStep}
+      $isDestination={isDestination}
+      $isLastLeg={isLastLeg && !isDestination}
       className={`place-row-wrapper ${leg.transitLeg ? "transit" : ""} ${
         interline ? "interline" : ""
       } ${leg.rentedBike ? "rented-bike" : ""}`}
       key={legIndex || "destination-place"}
     >
-      <S.LineColumn>
+      <S.LineColumn $showTimeColumn={showTimeColumn}>
         <LineColumnContent
           interline={interline}
           isDestination={isDestination}
@@ -125,28 +161,39 @@ export default function PlaceRow({
           leg={leg}
           LegIcon={LegIcon}
           legIndex={legIndex}
+          showAlightSteps={shouldShowAlightStep}
           toRouteAbbreviation={toRouteAbbreviation}
         />
       </S.LineColumn>
-      <S.PlaceHeader>
+      <S.PlaceHeader $showTimeColumn={showTimeColumn}>
+        {shouldShowHeaderInOwnRow && (
+          <HeaderSequenceContent
+            config={config}
+            isDestination={isDestination}
+            leg={leg}
+            legIndex={legIndex}
+          />
+        )}
         <S.PlaceName aria-hidden className="place-row-place-name">
           {placeName}
         </S.PlaceName>
       </S.PlaceHeader>
-      <S.TimeColumn>
-        {/* Custom rendering of the departure/arrival time of the specified leg. */}
-        <TimeColumnContent isDestination={isDestination} leg={leg} />
-        {!isDestination &&
-          leg.accessibilityScore !== null &&
-          leg.accessibilityScore > -1 && (
-            // TODO: Reorder markup so accessibility info doesn't fall between time and destination.
-            <AccessibilityRating
-              gradationMap={accessibilityScoreGradationMap}
-              isLeg
-              score={leg.accessibilityScore}
-            />
-          )}
-      </S.TimeColumn>
+      {showTimeColumn && (
+        <S.TimeColumn>
+          {/* Custom rendering of the departure/arrival time of the specified leg. */}
+          <TimeColumnContent isDestination={isDestination} leg={leg} />
+          {!isDestination &&
+            leg.accessibilityScore !== null &&
+            leg.accessibilityScore > -1 && (
+              // TODO: Reorder markup so accessibility info doesn't fall between time and destination.
+              <AccessibilityRating
+                gradationMap={accessibilityScoreGradationMap}
+                isLeg
+                score={leg.accessibilityScore}
+              />
+            )}
+        </S.TimeColumn>
+      )}
       <S.InvisibleAdditionalDetails>
         {interline ? (
           placeName
@@ -166,6 +213,7 @@ export default function PlaceRow({
         )}
       </S.InvisibleAdditionalDetails>
       <S.PlaceDetails
+        $showTimeColumn={showTimeColumn}
         className={`place-details ${leg.transitLeg ? "transit" : ""}`}
       >
         {/* Show the leg, if not rendering the destination */}
@@ -216,6 +264,10 @@ export default function PlaceRow({
               TransitLegSubheader={TransitLegSubheader}
             />
           ))}
+        {/* Render alight step for transit legs when enabled */}
+        {shouldShowAlightStep && (
+          <AlightStepContent isDestination={false} leg={leg} />
+        )}
       </S.PlaceDetails>
       {/* This prop is a string for some reason... */}
       {showMapButtonColumn && (
