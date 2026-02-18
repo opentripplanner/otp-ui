@@ -11,15 +11,17 @@ export function isMobile(): boolean {
  * https://github.com/conveyal/trimet-mod-otp/issues/92.
  */
 export function enableScrollForSelector(selector: string): void {
-  const overlay = document.querySelector(selector);
-  let clientY = null; // remember Y position on touch start
+  const overlay = document.querySelector<HTMLElement>(selector);
+  let clientY: number | null = null; // remember Y position on touch start
 
   function isOverlayTotallyScrolled(): boolean {
     // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollHeight#Problems_and_solutions
+    if (!overlay) return false;
     return overlay.scrollHeight - overlay.scrollTop <= overlay.clientHeight;
   }
 
   function disableRubberBand(event: TouchEvent) {
+    if (!overlay || !clientY) return;
     const clientYDelta = event.targetTouches[0].clientY - clientY;
 
     if (overlay.scrollTop === 0 && clientYDelta > 0) {
@@ -33,9 +35,9 @@ export function enableScrollForSelector(selector: string): void {
     }
   }
 
-  overlay.addEventListener(
+  overlay?.addEventListener(
     "touchstart",
-    function(event: TouchEvent) {
+    (event: TouchEvent) => {
       if (event.targetTouches.length === 1) {
         // detect single touch
         clientY = event.targetTouches[0].clientY;
@@ -44,9 +46,9 @@ export function enableScrollForSelector(selector: string): void {
     false
   );
 
-  overlay.addEventListener(
+  overlay?.addEventListener(
     "touchmove",
-    function(event: TouchEvent) {
+    (event: TouchEvent) => {
       if (event.targetTouches.length === 1) {
         // detect single touch
         disableRubberBand(event);

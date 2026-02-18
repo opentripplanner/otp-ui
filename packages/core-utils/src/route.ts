@@ -1,4 +1,9 @@
-import { Leg, Route, TransitOperator } from "@opentripplanner/types";
+import {
+  Leg,
+  Route,
+  TransitMode,
+  TransitOperator
+} from "@opentripplanner/types";
 import chroma from "chroma-js";
 /**
  * Returns the transit operator (if an exact match is found) from the transit
@@ -16,7 +21,7 @@ export function getTransitOperatorFromFeedIdAndAgencyId(
   feedId: string,
   agencyId: string | number,
   transitOperators: TransitOperator[]
-): TransitOperator {
+): TransitOperator | null {
   return (
     transitOperators.find(
       transitOperator =>
@@ -37,7 +42,7 @@ export function getTransitOperatorFromFeedIdAndAgencyId(
 export function getTransitOperatorFromLeg(
   leg: Leg,
   transitOperators: TransitOperator[]
-): TransitOperator {
+): TransitOperator | null {
   if (!leg.routeId || !leg.agencyId) return null;
   const feedId = leg.routeId.split(":")[0];
   return getTransitOperatorFromFeedIdAndAgencyId(
@@ -60,7 +65,7 @@ export function getTransitOperatorFromLeg(
 export function getTransitOperatorFromOtpRoute(
   route: Route,
   transitOperators: TransitOperator[]
-): TransitOperator {
+): TransitOperator | null {
   if (!route.id) return null;
   const feedId = route.id.split(":")[0];
   let agencyId: string | number;
@@ -108,7 +113,7 @@ const END_OF_LIST_COMPARATOR_VALUE = 999999999999;
 function getTransitOperatorComparatorValue(
   route: Route,
   transitOperators: TransitOperator[]
-): number | string {
+): number | string | undefined {
   // if the transitOperators is undefined or has zero length, use the route's
   // agency name as the comparator value
   if (!transitOperators || transitOperators.length === 0) {
@@ -146,7 +151,7 @@ export function makeTransitOperatorComparator(
   return (a: Route, b: Route) => {
     const aVal = getTransitOperatorComparatorValue(a, transitOperators);
     const bVal = getTransitOperatorComparatorValue(b, transitOperators);
-    if (typeof aVal === "string") {
+    if (typeof aVal === "string" && typeof bVal === "string") {
       // happens when transitOperators is undefined. Both aVal are guaranteed to
       // be strings. Make a string comparison.
       if (aVal < bVal) return -1;
@@ -163,21 +168,19 @@ export function makeTransitOperatorComparator(
  * Gets the desired sort values according to an optional getter function. If the
  * getter function is not defined, the original sort values are returned.
  */
-function getSortValues(
-  getterFn: (item: unknown) => unknown,
-  a: unknown,
-  b: unknown
-) {
-  let aVal: unknown;
-  let bVal: unknown;
+function getSortValues<T>(a: T, b: T): { aVal: T; bVal: T };
+function getSortValues<T, TValue>(
+  a: T,
+  b: T,
+  getterFn: (item: T) => TValue
+): { aVal: TValue; bVal: TValue };
+function getSortValues<T, TValue>(a: T, b: T, getterFn?: (item: T) => TValue) {
   if (typeof getterFn === "function") {
-    aVal = getterFn(a);
-    bVal = getterFn(b);
-  } else {
-    aVal = a;
-    bVal = b;
+    return { aVal: getterFn(a), bVal: getterFn(b) };
   }
-  return { aVal, bVal };
+
+  // When no getter is provided, TValue is inferred as T via overload.
+  return { aVal: (a as unknown) as TValue, bVal: (b as unknown) as TValue };
 }
 
 // Lookup for the sort values associated with various OTP modes.
@@ -193,12 +196,19 @@ const modeComparatorValue = {
   CABLE_CAR: 6,
   FUNICULAR: 7,
   BUS: 8
-};
+// eslint-disable-next-line prettier/prettier
+} as const satisfies Partial<Record<TransitMode, number>>;
+
+type SupportedTransitMode = keyof typeof modeComparatorValue;
+
+function isSupportedTransitMode(mode: TransitMode): mode is SupportedTransitMode {
+  return mode in modeComparatorValue;
+}
 
 // Lookup that maps route types to the OTP mode sort values.
 // Note: JSDoc format not used to avoid bug in documentationjs.
 // https://github.com/documentationjs/documentation/issues/372
-const routeTypeComparatorValue = {
+const routeTypeComparatorValue: Record<number, number> = {
   0: modeComparatorValue.TRAM, // - Tram, Streetcar, Light rail.
   1: modeComparatorValue.SUBWAY, // - Subway, Metro.
   2: modeComparatorValue.RAIL, // - Rail. Used for intercity or long-distance travel.
@@ -222,10 +232,13 @@ function getRouteTypeComparatorValue(route: Route): number {
   // string-based modes, but the long route response returns the
   // integer route type. This attempts to account for both of those cases.
   if (!route) throw new Error(`Route is undefined. ${route}`);
-  if (typeof modeComparatorValue[route.mode] !== "undefined") {
+  if (route.mode && isSupportedTransitMode(route.mode)) {
     return modeComparatorValue[route.mode];
   }
-  if (typeof routeTypeComparatorValue[route.type] !== "undefined") {
+  if (
+    route.type &&
+    typeof routeTypeComparatorValue[route.type] !== "undefined"
+  ) {
     return routeTypeComparatorValue[route.type];
   }
   // Default the comparator value to a large number (placing the route at the
@@ -311,11 +324,18 @@ const isNullOrNaN = (val: any): boolean => {
  * @param  {function} [objGetterFn] An optional function to obtain the
  *  comparison value from the comparator function arguments
  */
-export function makeNumericValueComparator(
-  objGetterFn?: (item: Route) => number
+export function makeNumericValueComparator(): (a: number, b: number) => number;
+export function makeNumericValueComparator<T>(
+  objGetterFn: (item: T) => number | null | undefined
+): (a: T, b: T) => number;
+export function makeNumericValueComparator<T>(
+  objGetterFn?: (item: T) => number | null | undefined
 ) {
-  return (a: number, b: number): number | null => {
-    const { aVal, bVal } = getSortValues(objGetterFn, a, b);
+  return (a: T, b: T): number => {
+    const { aVal, bVal } =
+      typeof objGetterFn === "function"
+        ? getSortValues(a, b, objGetterFn)
+        : getSortValues(a, b);
 
     // if both values aren't valid numbers, use the next sort criteria
     if (isNullOrNaN(aVal) && isNullOrNaN(bVal)) {
@@ -328,8 +348,7 @@ export function makeNumericValueComparator(
     if (isNullOrNaN(bVal)) return -1;
 
     // a and b are valid numbers, return the sort value
-    // @ts-expect-error We know from the checks above that both aVal and bVal are valid numbers.
-    return aVal - bVal;
+    return (aVal as number) - (bVal as number);
   };
 }
 
@@ -343,11 +362,19 @@ export function makeNumericValueComparator(
  * @param  {function} [objGetterFn] An optional function to obtain the
  *  comparison value from the comparator function arguments
  */
-export function makeStringValueComparator(
-  objGetterFn?: (item: Route) => string
+export function makeStringValueComparator(): (a: string, b: string) => number;
+export function makeStringValueComparator<T>(
+  objGetterFn: (item: T) => string | null | undefined
+): (a: T, b: T) => number;
+export function makeStringValueComparator<T>(
+  objGetterFn?: (item: T) => string | null | undefined
 ) {
-  return (a: string, b: string): number => {
-    const { aVal, bVal } = getSortValues(objGetterFn, a, b);
+  return (a: T, b: T): number => {
+    const { aVal, bVal } =
+      typeof objGetterFn === "function"
+        ? getSortValues(a, b, objGetterFn)
+        : getSortValues(a, b);
+
     // both a and b are uncomparable strings, return equivalent value
     if (!aVal && !bVal) return 0;
     // a is not a comparable string, b gets priority
@@ -370,7 +397,7 @@ export function makeStringValueComparator(
  * Also see https://github.com/opentripplanner/otp-react-redux/issues/122
  * This was updated in OTP2 TO be empty by default. https://docs.opentripplanner.org/en/v2.3.0/OTP2-MigrationGuide/#:~:text=the%20Alerts-,Changes%20to%20the%20Index%20API,-Error%20handling%20is
  */
-export function getRouteSortOrderValue(route: Route): number {
+export function getRouteSortOrderValue(route: Route): number | null {
   const isOTP1 = !!route.agencyId;
   const { sortOrder } = route;
 
@@ -388,10 +415,10 @@ export function getRouteSortOrderValue(route: Route): number {
  * returned. If all comparison functions return equivalence, then the values
  * are assumed to be equivalent.
  */
-export function makeMultiCriteriaSort(
-  ...criteria: ((a: unknown, b: unknown) => number)[]
+export function makeMultiCriteriaSort<T = unknown>(
+  ...criteria: ((a: T, b: T) => number)[]
 ) {
-  return (a: number, b: number): number => {
+  return (a: T, b: T): number => {
     for (let i = 0; i < criteria.length; i++) {
       const curCriteriaComparatorValue = criteria[i](a, b);
       // if the comparison objects are not equivalent, return the value obtained
@@ -437,7 +464,7 @@ export function makeMultiCriteriaSort(
  */
 export function makeRouteComparator(
   transitOperators: TransitOperator[]
-): (a: number, b: number) => number {
+): (a: Route, b: Route) => number {
   return makeMultiCriteriaSort(
     makeTransitOperatorComparator(transitOperators),
     makeNumericValueComparator(obj => getRouteSortOrderValue(obj)),

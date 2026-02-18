@@ -16,10 +16,16 @@ export function storeItem(key: string, object: unknown): void {
  * Retrieve a javascript object at the specified key. If not found, defaults to
  * null or, the optionally provided notFoundValue.
  */
-export function getItem(key: string, notFoundValue: unknown = null): unknown {
-  let itemAsString: string;
+export function getItem<T>(
+  key: string,
+  notFoundValue: T | null = null
+): T | null {
+  let itemAsString: string | null = null;
   try {
     itemAsString = window.localStorage.getItem(`${STORAGE_PREFIX}.${key}`);
+    if (!itemAsString) {
+      return notFoundValue;
+    }
     const json = JSON.parse(itemAsString);
     if (json) return json;
     return notFoundValue;

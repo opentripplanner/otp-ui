@@ -465,7 +465,7 @@ export type ItineraryOnlyLegsRequired = Partial<Itinerary> &
 export type ElevationProfile = {
   maxElev: number;
   minElev: number;
-  points: number[];
+  points: [number, number][];
   traversed: number;
   gain: number;
   loss: number;
@@ -539,6 +539,27 @@ export type Agency = {
   phone?: string;
   fareUrl?: string;
 };
+
+/**
+ * Transit modes that correspond with OTP GraphQL `TransitMode`.
+ */
+export type TransitMode =
+  | "AIRPLANE"
+  | "BUS"
+  | "CABLE_CAR"
+  | "CARPOOL"
+  | "COACH"
+  | "FERRY"
+  | "FUNICULAR"
+  | "GONDOLA"
+  | "MONORAIL"
+  | "RAIL"
+  | "SNOW_AND_ICE"
+  | "SUBWAY"
+  | "TAXI"
+  | "TRAM"
+  | "TROLLEYBUS";
+
 export type Route = BasicRouteInfo & {
   agency: Agency;
   agencyId?: string | number;
@@ -546,7 +567,7 @@ export type Route = BasicRouteInfo & {
   // TODO: Add support for enum values, see /packages/core-utils/src/otpSchema.json#L1289.
   bikesAllowed?: ZeroOrOne;
   eligibilityRestricted?: ZeroOrOne;
-  mode?: string;
+  mode?: TransitMode;
   routeBikesAllowed?: ZeroOrOne;
   sortOrder: number;
   sortOrderSet: boolean;
@@ -659,7 +680,7 @@ export type GeocodedFeature = {
 };
 
 export type TncFare = {
-  currencyCode: string;
+  currencyCode: string | null;
   maxTNCFare: number;
   minTNCFare: number;
 };

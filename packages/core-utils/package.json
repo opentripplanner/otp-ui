@@ -16,8 +16,8 @@
     "@mapbox/polyline": "catalog:",
     "@opentripplanner/geocoder": "workspace:*",
     "@styled-icons/foundation": "catalog:",
-    "@turf/along": "^6.0.1",
-    "chroma-js": "^2.4.2",
+    "@turf/along": "^7.3.1",
+    "chroma-js": "^3.2.0",
     "date-fns": "catalog:",
     "date-fns-tz": "catalog:",
     "graphql": "^16.6.0",
@@ -29,6 +29,8 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*"
+    "@opentripplanner/types": "workspace:*",
+    "@types/chroma-js": "^3.1.2",
+    "@types/mapbox__polyline": "^1.0.5"
   }
 }

@@ -12,6 +12,7 @@ import {
   getLegRouteShortName,
   isFlex,
   isTransit,
+  legElevationAtDistance,
   mapOldElevationComponentToNew
 } from "../itinerary";
 
@@ -227,29 +228,29 @@ describe("util > itinerary", () => {
       ]
     };
     it("should return the total cost for a leg", () => {
-      const result = getLegCost(leg, null, null);
+      const result = getLegCost(leg, null, null, []);
       expect(result.price).toEqual({ amount: 50, currency: "USD" });
     });
     it("should return the 0 cost for a free leg", () => {
-      const result = getLegCost(freeLeg, null, null);
+      const result = getLegCost(freeLeg, null, null, []);
       expect(result.price).toEqual({ amount: 0, currency: "USD" });
     });
     it("should return the correct cost for a leg with multiple types of fares", () => {
-      const result = getLegCost(complicatedLeg, "cash", "child");
+      const result = getLegCost(complicatedLeg, "cash", "child", []);
       expect(result.price).toEqual({ amount: 50, currency: "USD" });
     });
     it("should return the correct cost for a leg with no rider category", () => {
-      const result = getLegCost(halfLeg, "cash", null);
+      const result = getLegCost(halfLeg, "cash", null, []);
       expect(result.price).toEqual({ amount: 30, currency: "USD" });
     });
 
     it("should return undefined if no fare products exist on the leg", () => {
       const emptyleg = {};
-      const result = getLegCost(emptyleg, "cash", "regular");
+      const result = getLegCost(emptyleg, "cash", "regular", []);
       expect(result.price).toBeUndefined();
     });
     it("should return undefined if the keys are invalid", () => {
-      const result = getLegCost(leg, "invalidkey", "invalidkey");
+      const result = getLegCost(leg, "invalidkey", "invalidkey", []);
       expect(result.price).toBeUndefined();
     });
   });
@@ -261,21 +262,21 @@ describe("util > itinerary", () => {
         "cash",
         "regular"
       );
-      expect(result.amount).toEqual(5.75);
-      expect(result.currency).toEqual({
+      expect(result?.amount).toEqual(5.75);
+      expect(result?.currency).toEqual({
         code: "USD",
         digits: 2
       });
     });
     it("should calculate the total cost of an itinerary using fares v2", () => {
       const result = getItineraryCost(faresv2Itinerary.legs, "3", "ADULT");
-      expect(result.amount).toEqual(2.8);
+      expect(result?.amount).toEqual(2.8);
       const complexResult = getItineraryCost(
         faresv2Itinerary.legs,
         ["0", "0"],
         ["ADULT", "ADULT"]
       );
-      expect(complexResult.amount).toEqual(2.8 * 2);
+      expect(complexResult?.amount).toEqual(2.8 * 2);
     });
     it("should calculate the total cost of an itinerary with multiple v2 fares & transfers", () => {
       const result = getItineraryCost(complexItinerary.legs, "0", "ADULT");
@@ -287,16 +288,22 @@ describe("util > itinerary", () => {
         ["0", "0"],
         ["ADULT", null]
       );
-      expect(result.amount).toEqual(11.55);
+      expect(result?.amount).toEqual(11.55);
     });
     it("should calculate the individual leg cost of a fares v2 legs", () => {
-      const firstLegResult = getLegCost(faresv2Itinerary.legs[1], "3", "ADULT");
+      const firstLegResult = getLegCost(
+        faresv2Itinerary.legs[1],
+        "3",
+        "ADULT",
+        []
+      );
       expect(firstLegResult.price?.amount).toEqual(2);
 
       const secondLegResult = getLegCost(
         faresv2Itinerary.legs[3],
         "3",
-        "ADULT"
+        "ADULT",
+        []
       );
       expect(secondLegResult.price?.amount).toEqual(0.8);
 
@@ -402,6 +409,55 @@ describe("util > itinerary", () => {
           routeShortName: "31"
         })
       ).toBe("15");
+    });
+  });
+
+  describe("legElevationAtDistance", () => {
+    it("should interpolate elevation within a segment", () => {
+      const points: any = [
+        [0, 100],
+        [10, 110],
+        [20, 120]
+      ];
+      // halfway between 100 and 110
+      expect(legElevationAtDistance(points, 5)).toBe(105);
+      expect(legElevationAtDistance(points, 15)).toBe(115);
+    });
+
+    it("should return start elevation at distance 0", () => {
+      const points: any = [
+        [0, 42],
+        [10, 52]
+      ];
+      expect(legElevationAtDistance(points, 0)).toBe(42);
+    });
+
+    it("should return end elevation at the segment boundary", () => {
+      const points: any = [
+        [0, 100],
+        [10, 110],
+        [20, 120]
+      ];
+      expect(legElevationAtDistance(points, 10)).toBe(110);
+      expect(legElevationAtDistance(points, 20)).toBe(120);
+    });
+
+    it("should return undefined when distance is before the profile", () => {
+      const points: any = [
+        [0, 100],
+        [10, 110],
+        [20, 120]
+      ];
+      expect(legElevationAtDistance(points, -1)).toBeUndefined();
+      expect(legElevationAtDistance(points, 21)).toBeUndefined();
+    });
+
+    it("should return undefined when first point is not at zero", () => {
+      const points: any = [
+        [5, 100],
+        [15, 110]
+      ];
+      expect(legElevationAtDistance(points, 4)).toBeUndefined();
     });
   });
 });
