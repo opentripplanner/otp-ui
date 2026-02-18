@@ -295,11 +295,10 @@ export function getLegBounds(leg: Leg): number[][] {
 }
 
 /* Returns an interpolated lat-lon at a specified distance along a leg */
-
 export function legLocationAtDistance(
   leg: Leg,
   distance: number
-): LatLngArray | undefined {
+): LatLngArray | undefined | null {
   if (!leg.legGeometry) return undefined;
 
   try {
@@ -311,7 +310,7 @@ export function legLocationAtDistance(
     // FIXME handle error!
   }
 
-  return undefined;
+  return null;
 }
 
 /**
