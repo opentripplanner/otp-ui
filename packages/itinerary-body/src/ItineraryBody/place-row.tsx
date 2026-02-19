@@ -42,6 +42,7 @@ function getLegPlaceName(
 */
 export default function PlaceRow({
   accessibilityScoreGradationMap,
+  AlightStepContent,
   AlertBodyIcon,
   AlertToggleIcon,
   alwaysCollapseAlerts,
@@ -51,6 +52,7 @@ export default function PlaceRow({
   followsTransit,
   frameLeg,
   isDestination,
+  isLastLeg,
   lastLeg,
   leg,
   LegIcon,
@@ -216,6 +218,10 @@ export default function PlaceRow({
               TransitLegSubheader={TransitLegSubheader}
             />
           ))}
+        {/* Render alight step if a custom component is provided */}
+        {AlightStepContent && !isDestination && !isLastLeg && (
+          <AlightStepContent isDestination={false} leg={leg} />
+        )}
       </S.PlaceDetails>
       {/* This prop is a string for some reason... */}
       {showMapButtonColumn && (

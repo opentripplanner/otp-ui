@@ -15,6 +15,7 @@ const ItineraryBody = ({
   accessibilityScoreGradationMap,
   AlertBodyIcon,
   AlertToggleIcon,
+  AlightStepContent,
   alwaysCollapseAlerts = false,
   className,
   config,
@@ -65,6 +66,7 @@ const ItineraryBody = ({
           accessibilityScoreGradationMap={accessibilityScoreGradationMap}
           AlertToggleIcon={AlertToggleIcon}
           AlertBodyIcon={AlertBodyIcon}
+          AlightStepContent={AlightStepContent}
           alwaysCollapseAlerts={alwaysCollapseAlerts}
           // eslint-disable-next-line react/no-array-index-key
           key={i + (isDestination ? 1 : 0)}
@@ -94,6 +96,7 @@ const ItineraryBody = ({
           }
           showAgencyInfo={showAgencyInfo}
           showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
+          isLastLeg={isLastLeg}
           showElevationProfile={showElevationProfile}
           showLegIcon={showLegIcon}
           showMapButtonColumn={showMapButtonColumn}

@@ -1,5 +1,6 @@
 import AccessLegDescription from "./access-leg-description";
 import AccessLegStep from "./access-leg-step";
+import AlightStepContent from "./alight-step-content";
 import Duration from "./duration";
 import LineColumnContent from "./line-column-content";
 import PlaceName from "./place-name";
@@ -12,6 +13,7 @@ import TransitLegSummary from "./transit-leg-summary";
 export {
   AccessLegDescription,
   AccessLegStep,
+  AlightStepContent,
   Duration,
   LineColumnContent,
   PlaceName,

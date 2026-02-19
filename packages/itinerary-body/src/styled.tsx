@@ -128,6 +128,11 @@ interface ModeRouteProps {
   routeColor: string;
 }
 
+interface InnerLineProps {
+  mode: string;
+  routeColor: string;
+}
+
 // TODO: Can we turn this into a more abstract element to inherit from for other badges?
 export const AccessBadge = styled.div<ModeRouteProps>`
   color: black;
@@ -143,6 +148,15 @@ export const AccessBadge = styled.div<ModeRouteProps>`
   justify-content: center;
   padding-left: 1px;
   /* Add in border for dark mode */
+`;
+
+export const AlightingStep = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 500;
 `;
 
 export const ArrivalTimeContainer = styled.button`
@@ -243,7 +257,7 @@ export const Destination = styled.div`
   text-align: center;
 `;
 
-export const InnerLine = styled.div<ModeRouteProps>`
+export const InnerLine = styled.div<InnerLineProps>`
   /* the actual line element */
   border-left: ${props => toModeBorder(props.mode, props.routeColor)};
   height: 100%;
@@ -479,7 +493,6 @@ export const MapIcon = styled(Map).attrs(props => ({
 export const PlaceDetails = styled.div`
   grid-row-start: 2;
   grid-column-start: 3;
-  grid-area: instructions;
 `;
 
 export const PlaceHeader = styled.div`

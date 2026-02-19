@@ -45,6 +45,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
   render(): ReactElement {
     const {
       alwaysCollapseAlerts,
+      AlightStepContent,
       defaultFareSelector,
       hideDrivingDirections = false,
       itinerary,
@@ -90,6 +91,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       <ItineraryBodyComponent
         AlertBodyIcon={AlertBodyIcon}
         AlertToggleIcon={AlertToggleIcon}
+        AlightStepContent={AlightStepContent}
         alwaysCollapseAlerts={alwaysCollapseAlerts}
         config={config}
         defaultFareSelector={defaultFareSelector}

@@ -96,6 +96,8 @@ export interface TransitLegSummaryProps {
   stopsExpanded: boolean;
 }
 
+export type AlightStepContentProps = LegDestination;
+
 /**
  * Shared props for various components that render itinerary data.
  */
@@ -115,6 +117,14 @@ interface ItineraryBodySharedProps {
    * within a transit leg, if this prop is not supplied a default icon is used
    */
   AlertToggleIcon?: FunctionComponent;
+  /**
+   * A slot for a component that can render the alighting step for the itineraryBody.
+   * If provided, renders below each non-destination, non-last transit leg body.
+   * This component is sent the following props:
+   * - isDestination - whether this place is the destination
+   * - leg - the current leg
+   */
+  AlightStepContent?: FunctionComponent<AlightStepContentProps>;
   /** If true, alerts in a trip leg always open in a collapsed state. */
   alwaysCollapseAlerts: boolean;
   /**
@@ -245,6 +255,8 @@ export interface PlaceRowProps
     LegSharedProps {
   /** Indicates whether this leg directly follows a transit leg */
   followsTransit?: boolean;
+  /** Whether this is the last leg in the itinerary */
+  isLastLeg?: boolean;
 }
 
 export interface ItineraryBodyProps extends ItineraryBodySharedProps {
