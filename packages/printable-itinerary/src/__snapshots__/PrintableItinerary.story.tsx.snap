@@ -29,42 +29,42 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Bicycle 0.7 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head east on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Alder St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               87 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW 5th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               257 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Morrison St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.6 miles
             </span>
           </span>
@@ -102,31 +102,31 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 498 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           SE 30th at Division
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head west on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Clinton St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               79 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE 30th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               419 feet
             </span>
           </span>
@@ -175,53 +175,53 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Bicycle 0.6 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           SE 29th at Hawthorne
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE 30th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.3 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Harrison St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               361 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE 29th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.2 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Hawthorne Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               50 feet
             </span>
           </span>
@@ -241,42 +241,42 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.1 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1415 SE 28th Ave, Portland, OR, USA 97214
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Hawthorne Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               210 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE 28th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               295 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Madison St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               114 feet
             </span>
           </span>
@@ -314,42 +314,42 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 400 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           SE 29th at Stark
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head north on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE 30th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               103 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Stark St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               277 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE 29th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               19 feet
             </span>
           </span>
@@ -398,86 +398,86 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Bicycle 0.8 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           NE Glisan at 24th
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE 29th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               492 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Pine St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               358 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE 28th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               518 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Ankeny St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.2 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE 24th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               259 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE 24th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.2 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE Glisan St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               57 feet
             </span>
           </span>
@@ -497,42 +497,42 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 497 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           NE Sandy &amp; 24th
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Hard left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE Glisan St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               57 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE 24th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               382 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE Sandy Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               58 feet
             </span>
           </span>
@@ -556,9 +556,9 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         <strong>
           12
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           Barbur/Sandy Blvd
-          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
+          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-29 beByhu">
             to
           </span>
           Parkrose TC
@@ -600,31 +600,31 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 279 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           0086 BIKETOWN
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head northeast on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE Sandy Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               75 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Hard left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE Alameda St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               203 feet
             </span>
           </span>
@@ -673,53 +673,53 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Bicycle 1 mile to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           NE 60th at Cully
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Hard left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE Alameda St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               203 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Hard left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE 57th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.6 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE Cully Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.3 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE 60th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               171 feet
             </span>
           </span>
@@ -739,31 +739,31 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 494 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           5916 NE Going St, Portland, OR, USA 97218
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE 60th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               270 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE Going St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               225 feet
             </span>
           </span>
@@ -801,20 +801,20 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 91 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           corner of path and Pioneer Courthouse Sq (pedestrian street)
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head southeast on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               91 feet
             </span>
           </span>
@@ -836,53 +836,53 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Bicycle 0.1 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           corner of path and Pioneer Sq N (path)
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               20 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW 6th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               245 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Morrison St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               241 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               27 feet
             </span>
           </span>
@@ -902,20 +902,20 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 22 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Pioneer Square North MAX Station
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Pioneer Sq N (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               22 feet
             </span>
           </span>
@@ -939,9 +939,9 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
         <strong>
           MAX Blue Line
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           MAX Blue Line
-          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
+          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-29 beByhu">
             to
           </span>
           Hillsboro
@@ -983,20 +983,20 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 19 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           corner of path and Providence Park (path)
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head west on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Providence Park (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               19 feet
             </span>
           </span>
@@ -1018,42 +1018,42 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Bicycle 230 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               104 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               27 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Morrison St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               99 feet
             </span>
           </span>
@@ -1094,119 +1094,119 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Drive 2.4 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           P+R Sunset TC
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head southwest on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               parking aisle
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               158 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Murray Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.2 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NW Murray Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               150 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Slight right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NW Murray Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.4 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NW Sunset Hwy
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.6 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NW Sunset Hwy
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.3 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Cedar Hills Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.2 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Barnes Rd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.5 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               service road
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.2 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Sunset TC
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               76 feet
             </span>
           </span>
@@ -1234,53 +1234,53 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 426 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Sunset TC MAX Station
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Slight right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               16 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               steps
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               232 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               19 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Sunset TC (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               159 feet
             </span>
           </span>
@@ -1312,9 +1312,9 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         <strong>
           MAX Blue Line
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           MAX Blue Line
-          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
+          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-29 beByhu">
             to
           </span>
           Gresham
@@ -1364,64 +1364,64 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.1 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           205 SW Pine St, Portland, OR, USA 97204
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head northeast on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Oak/SW 1st Ave (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               13 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               27 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Oak St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               37 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW 1st Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               260 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Pine St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               337 feet
             </span>
           </span>
@@ -1459,31 +1459,31 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 206 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           EMAQ
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head east on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Alder St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               118 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW 4th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               88 feet
             </span>
           </span>
@@ -1503,31 +1503,31 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Ride 0.3 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           205 SW Pine St, Portland, OR, USA 97204
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW 4th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.2 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Pine St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               456 feet
             </span>
           </span>
@@ -1565,53 +1565,53 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.4 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Shared E-scooter
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head south on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE 30th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.2 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Belmont St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               330 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE 29th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               511 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Taylor St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               235 feet
             </span>
           </span>
@@ -1631,97 +1631,97 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Ride 1.4 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           NE Broadway
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Taylor St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               26 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE 28th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.6 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE 28th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.7 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Slight right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE Halsey St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               17 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE Halsey St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               59 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Slight left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE 28th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               28 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Slight left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE 28th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               489 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE Broadway
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               86 feet
             </span>
           </span>
@@ -1741,17 +1741,17 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           NE Broadway &amp; 28th
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               street transit link
             </span>
           </span>
@@ -1775,9 +1775,9 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         <strong>
           70
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           12th/NE 33rd Ave
-          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
+          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-29 beByhu">
             to
           </span>
           NE Sunderland
@@ -1819,42 +1819,42 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.4 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Shared E-scooter
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head north on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE 33rd Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               33 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE Shaver St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.3 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE 38th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               332 feet
             </span>
           </span>
@@ -1874,64 +1874,64 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Ride 1 mile to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           5112 NE 47th Pl, Portland, OR, USA 97218
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE 38th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               355 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE Skidmore St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.2 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE 42nd Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.4 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE Alberta St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.3 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NE 47th Pl
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               313 feet
             </span>
           </span>
@@ -1977,42 +1977,42 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.2 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Razor Vehicle
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head south on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Courtland Street Northeast
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               172 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.1 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Peachtree Center Avenue Northeast
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               140 feet
             </span>
           </span>
@@ -2035,108 +2035,108 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Ride 1 mile to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           126 Mitchell St SW, Atlanta, GA 30303-3524, United States
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Hard right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Peachtree Center Avenue Northeast
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               12 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               service road
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               10 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Peachtree Center Cycle Track
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.5 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Edgewood Avenue Northeast
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.1 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Pryor Street Southwest
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               269 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Pryor Street
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               518 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Pryor Street Southwest
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.2 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               19 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               sidewalk
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               22 feet
             </span>
           </span>
@@ -2174,86 +2174,86 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.9 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Orenco MAX Station
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head northeast on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               parking aisle
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               212 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Northeast Cherry Lane
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               342 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Northeast Cherry Drive
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.7 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Northeast Century Boulevard
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               332 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Northeast Century Boulevard (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               26 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               204 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Orenco
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               98 feet
             </span>
           </span>
@@ -2276,9 +2276,9 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       <div class="styled__LegHeader-sc-1fqxr7x-5 lhdQfn">
         <strong>
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           MAX Blue Line
-          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
+          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-29 beByhu">
             to
           </span>
           Gresham
@@ -2320,64 +2320,64 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.2 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           W Burnside &amp; SW 18th
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head east on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Providence Park
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               81 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               19 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               19 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Southwest 17th Avenue
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.1 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               West Burnside Street
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               276 feet
             </span>
           </span>
@@ -2401,9 +2401,9 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         <strong>
           20
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           Burnside/Stark
-          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
+          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-29 beByhu">
             to
           </span>
           Gresham TC
@@ -2445,53 +2445,53 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.5 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           766 NE 94th Avenue, Portland
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head west on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               East Burnside Street (sidewalk)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               79 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Southeast 94th Avenue
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               28 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Northeast 94th Avenue
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.4 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Northeast Oregon Street
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               107 feet
             </span>
           </span>
@@ -2534,119 +2534,119 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Drive 2.4 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           P+R Sunset TC
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head southwest on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               parking aisle
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               158 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Murray Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.2 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NW Murray Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               150 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Slight right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NW Murray Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.4 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NW Sunset Hwy
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.6 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               NW Sunset Hwy
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.3 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Cedar Hills Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.2 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Barnes Rd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.5 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               service road
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.2 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Sunset TC
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               76 feet
             </span>
           </span>
@@ -2666,53 +2666,53 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 426 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Sunset TC MAX Station
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Slight right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               16 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               steps
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               232 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               19 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Sunset TC (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               159 feet
             </span>
           </span>
@@ -2736,9 +2736,9 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         <strong>
           MAX Blue Line
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           MAX Blue Line
-          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
+          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-29 beByhu">
             to
           </span>
           Gresham
@@ -2780,64 +2780,64 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.1 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           205 SW Pine St, Portland, OR, USA 97204
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head northeast on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Oak/SW 1st Ave (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               13 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               27 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Oak St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               37 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW 1st Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               260 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Pine St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               337 feet
             </span>
           </span>
@@ -2875,31 +2875,31 @@ exports[`PrintableItinerary StopsWithNoStopCode smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 269 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Pioneer Square North MAX Station
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head northwest on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               167 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Pioneer Sq N (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               101 feet
             </span>
           </span>
@@ -2923,9 +2923,9 @@ exports[`PrintableItinerary StopsWithNoStopCode smoke-test 1`] = `
         <strong>
           MAX Blue Line
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           MAX Blue Line
-          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
+          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-29 beByhu">
             to
           </span>
           Hillsboro
@@ -2967,53 +2967,53 @@ exports[`PrintableItinerary StopsWithNoStopCode smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 249 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head west on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Providence Park (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               19 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               104 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               27 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Morrison St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               99 feet
             </span>
           </span>
@@ -3051,31 +3051,31 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 269 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Pioneer Square North MAX Station
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head northwest on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               167 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Pioneer Sq N (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               101 feet
             </span>
           </span>
@@ -3099,9 +3099,9 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
         <strong>
           MAX Blue Line
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           MAX Blue Line
-          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
+          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-29 beByhu">
             to
           </span>
           Hillsboro
@@ -3143,53 +3143,53 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 249 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head west on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Providence Park (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               19 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               104 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               27 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Morrison St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               99 feet
             </span>
           </span>
@@ -3270,7 +3270,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Transfer, wait 1 min
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
@@ -3293,7 +3293,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
         <strong>
           20
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           Burnside/Stark
         </span>
       </div>
@@ -3333,7 +3333,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Transfer, wait 1 min
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
@@ -3413,75 +3413,75 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.3 miles to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Everett Station Bay C1
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head south on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               service road
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               0.1 miles
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Smith Avenue
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               129 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Continue on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Paine Avenue
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               61 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               32nd Street
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               67 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               32nd Street
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               313 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               380 feet
             </span>
           </span>
@@ -3505,7 +3505,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         <strong>
           512
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           Northgate Station
         </span>
       </div>
@@ -3545,9 +3545,9 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Northgate Station - Bay 4
         </span>
       </span>
@@ -3571,7 +3571,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         <strong>
           40
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           Downtown Seattle Ballard
         </span>
       </div>
@@ -3611,42 +3611,42 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 259 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Aurora Ave N &amp; N 105th St
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head east on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               North 105th Street
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               64 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               service road
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               14 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               180 feet
             </span>
           </span>
@@ -3670,7 +3670,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         <strong>
           E Line
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           Downtown Seattle
         </span>
       </div>
@@ -3710,31 +3710,31 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 443 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           208 James St, Seattle, WA 98104-2212, United States
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head southeast on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               sidewalk
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               326 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right U-turn on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               sidewalk
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               117 feet
             </span>
           </span>
@@ -3772,25 +3772,25 @@ exports[`PrintableItinerary WalkOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 166 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           701 SW 6th Ave, Portland, OR, USA 97204
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head northwest on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
           </span>
@@ -3828,31 +3828,31 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 238 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           SE Cesar Chavez Blvd &amp; Brooklyn (long address that spans multiple lines)
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head west on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Brooklyn St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               205 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Cesar E. Chavez Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               33 feet
             </span>
           </span>
@@ -3876,9 +3876,9 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
         <strong>
           755X
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           Cesar Chavez/Lombard (very long route name)
-          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
+          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-29 beByhu">
             to
           </span>
           St. Johns via NAYA
@@ -3920,42 +3920,42 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 440 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           SE Hawthorne &amp; Cesar Chavez Blvd
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head south on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               service road
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               146 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Cesar E. Chavez Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               198 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Hawthorne Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               96 feet
             </span>
           </span>
@@ -3979,9 +3979,9 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
         <strong>
           1
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           Hawthorne
-          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
+          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-29 beByhu">
             to
           </span>
           Portland
@@ -4023,42 +4023,42 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 479 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1415 SE 28th Ave, Portland, OR, USA 97214
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head west on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Hawthorne Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               40 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE 27th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               294 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Madison St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               146 feet
             </span>
           </span>
@@ -4098,7 +4098,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
            title="Wheelchair accessibility of this trip leg: likely accessible"
            class="accessibility-rating__Wrapper-sc-7g85t2-0 ghJxtf"
       >
-        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
           Wheelchair accessibility of this trip leg: likely accessible
         </span>
         <svg viewbox="0 0 100 100"
@@ -4127,31 +4127,31 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 238 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           SE Cesar Chavez Blvd &amp; Brooklyn (long address that spans multiple lines)
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head west on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Brooklyn St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               205 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Cesar E. Chavez Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               33 feet
             </span>
           </span>
@@ -4173,7 +4173,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
            title="Wheelchair accessibility of this trip leg: unknown"
            class="accessibility-rating__Wrapper-sc-7g85t2-0 ghJxtf"
       >
-        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
           Wheelchair accessibility of this trip leg: unknown
         </span>
         <svg viewbox="0 0 100 100"
@@ -4206,9 +4206,9 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         <strong>
           755X
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           Cesar Chavez/Lombard (very long route name)
-          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
+          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-29 beByhu">
             to
           </span>
           St. Johns via NAYA
@@ -4250,42 +4250,42 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 440 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           SE Hawthorne &amp; Cesar Chavez Blvd
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head south on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               service road
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               146 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Cesar E. Chavez Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               198 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Hawthorne Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               96 feet
             </span>
           </span>
@@ -4307,7 +4307,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
            title="Wheelchair accessibility of this trip leg: inaccessible"
            class="accessibility-rating__Wrapper-sc-7g85t2-0 ghJxtf"
       >
-        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
           Wheelchair accessibility of this trip leg: inaccessible
         </span>
         <svg viewbox="0 0 100 100"
@@ -4340,9 +4340,9 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         <strong>
           1
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           Hawthorne
-          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
+          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-29 beByhu">
             to
           </span>
           Portland
@@ -4386,7 +4386,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
            title="Wheelchair accessibility of this trip leg: inaccessible"
            class="accessibility-rating__Wrapper-sc-7g85t2-0 ghJxtf"
       >
-        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-27 dbEGNj invisible-additional-details">
+        <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
           Wheelchair accessibility of this trip leg: inaccessible
         </span>
         <svg viewbox="0 0 100 100"
@@ -4415,42 +4415,42 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 479 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1415 SE 28th Ave, Portland, OR, USA 97214
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head west on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Hawthorne Blvd
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               40 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE 27th Ave
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               294 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SE Madison St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               146 feet
             </span>
           </span>
@@ -4488,31 +4488,31 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 269 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Pioneer Square North MAX Station
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head northwest on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               167 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Pioneer Sq N (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               101 feet
             </span>
           </span>
@@ -4536,9 +4536,9 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
         <strong>
           MAX Blue Line
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           MAX Blue Line
-          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
+          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-29 beByhu">
             to
           </span>
           Hillsboro
@@ -4580,53 +4580,53 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 249 feet to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head west on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Providence Park (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               19 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               104 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               27 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Morrison St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               99 feet
             </span>
           </span>
@@ -4664,31 +4664,31 @@ exports[`PrintableItinerary WalkTransitWalkItineraryMetric smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 82 m to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Pioneer Square North MAX Station
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head northwest on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               51 m
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Pioneer Sq N (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               31 m
             </span>
           </span>
@@ -4712,9 +4712,9 @@ exports[`PrintableItinerary WalkTransitWalkItineraryMetric smoke-test 1`] = `
         <strong>
           MAX Blue Line
         </strong>
-        <span class="styled__RouteLongName-sc-1fqxr7x-9 joFeEA">
+        <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           MAX Blue Line
-          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-28 TuegP">
+          <span class="styled__LegDescriptionHeadsignPrefix-sc-1q8npbl-29 beByhu">
             to
           </span>
           Hillsboro
@@ -4756,53 +4756,53 @@ exports[`PrintableItinerary WalkTransitWalkItineraryMetric smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 76 m to
-        <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
+        <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Head west on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Providence Park (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               6 m
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               32 m
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               8 m
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 iBBVJb">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-65 hmrNIG">
+            <span class="styled__StepStreetName-sc-1q8npbl-66 isQqRF">
               SW Morrison St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-66 kKESeV">
+            <span class="styled__StepLength-sc-1q8npbl-67 iOBlfQ">
               30 m
             </span>
           </span>
