@@ -68,6 +68,8 @@ otpUi:
       car: Car
       escooter: E-scooter
       vehicle: Vehicle
+  HeaderSequence:
+    walk: Walk
   ItineraryBody:
     common:
       durationShort: >-

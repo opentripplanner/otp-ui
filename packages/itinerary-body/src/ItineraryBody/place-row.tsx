@@ -51,6 +51,7 @@ export default function PlaceRow({
   diagramVisible,
   followsTransit,
   frameLeg,
+  HeaderSequenceContent,
   isDestination,
   isLastLeg,
   lastLeg,
@@ -114,11 +115,15 @@ export default function PlaceRow({
 
   return (
     <S.PlaceRowWrapper
+      $hasSequence={!!(HeaderSequenceContent && !isDestination)}
       className={`place-row-wrapper ${leg.transitLeg ? "transit" : ""} ${
         interline ? "interline" : ""
       } ${leg.rentedBike ? "rented-bike" : ""}`}
       key={legIndex || "destination-place"}
     >
+      {HeaderSequenceContent && !isDestination && (
+        <HeaderSequenceContent leg={leg} legIndex={legIndex} />
+      )}
       <S.LineColumn>
         <LineColumnContent
           interline={interline}
@@ -149,7 +154,9 @@ export default function PlaceRow({
             />
           )}
       </S.TimeColumn>
-      <S.InvisibleAdditionalDetails>
+      <S.InvisibleAdditionalDetails
+        $hasSequence={!!(HeaderSequenceContent && !isDestination)}
+      >
         {interline ? (
           placeName
         ) : !isDestination ? (

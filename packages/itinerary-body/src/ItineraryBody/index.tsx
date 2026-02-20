@@ -22,6 +22,7 @@ const ItineraryBody = ({
   defaultFareSelector,
   diagramVisible,
   frameLeg = noop,
+  HeaderSequenceContent,
   itinerary,
   LegIcon,
   LineColumnContent,
@@ -75,6 +76,7 @@ const ItineraryBody = ({
           diagramVisible={diagramVisible}
           followsTransit={followsTransit}
           frameLeg={frameLeg}
+          HeaderSequenceContent={HeaderSequenceContent}
           isDestination={isDestination}
           lastLeg={lastLeg}
           leg={leg}

@@ -75,6 +75,8 @@ otpUi:
       car: Voiture
       escooter: Trottinette
       vehicle: Véhicule
+  HeaderSequence:
+    walk: Marche
   ItineraryBody:
     common:
       durationShort: >-

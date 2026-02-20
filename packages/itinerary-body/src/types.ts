@@ -98,6 +98,13 @@ export interface TransitLegSummaryProps {
 
 export type AlightStepContentProps = LegDestination;
 
+export interface HeaderSequenceProps {
+  /** The current leg */
+  leg: Leg;
+  /** The zero-based index of the leg within the itinerary */
+  legIndex: number;
+}
+
 /**
  * Shared props for various components that render itinerary data.
  */
@@ -154,6 +161,14 @@ interface ItineraryBodySharedProps {
    * - `place`: The place associated with the click event
    */
   frameLeg?: FrameLegFunction;
+  /**
+   * A slot for a component that renders a sequence header at the top of each
+   * place row. If provided, renders as the first child of PlaceRowWrapper.
+   * This component is sent the following props:
+   * - leg - the current leg
+   * - legIndex - the zero-based leg index
+   */
+  HeaderSequenceContent?: FunctionComponent<HeaderSequenceProps>;
   /** A component class that is used to render icons for legs of an itinerary */
   LegIcon: LegIconComponent;
   /**
