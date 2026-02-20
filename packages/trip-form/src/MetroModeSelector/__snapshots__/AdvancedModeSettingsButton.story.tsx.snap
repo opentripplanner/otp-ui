@@ -27,7 +27,7 @@ exports[`Trip Form Components/Advanced Mode Settings Buttons AdvancedModeSetting
             >
             </path>
           </svg>
-          <span class="invisible">
+          <span class="screenreader-only">
             Transit (Subsettings expanded)
           </span>
           <span aria-hidden="true">
