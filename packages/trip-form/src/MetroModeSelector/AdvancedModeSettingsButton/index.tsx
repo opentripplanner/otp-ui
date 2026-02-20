@@ -44,7 +44,7 @@ const StyledModeSettingsButton = styled.div<{
     margin-top: -2px;
     padding: 0 10px;
 
-    span:first-of-type {
+    span.invisible {
       ${invisibleCss}
     }
   }
