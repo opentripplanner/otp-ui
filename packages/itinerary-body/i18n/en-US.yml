@@ -68,6 +68,8 @@ otpUi:
       car: Car
       escooter: E-scooter
       vehicle: Vehicle
+  HeaderSequence:
+    walk: Walk
   ItineraryBody:
     common:
       durationShort: >-
@@ -92,6 +94,7 @@ otpUi:
       likelyAccessible: likely accessible
       unclear: unknown
     viewOnMap: View on map
+    alightAt: Get off at {stopName}.
   TransitLegBody:
     AlertsBody:
       alertLinkText: See alert on {agency} website

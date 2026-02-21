@@ -12,6 +12,8 @@ import {
   customToRouteAbbreviation,
   CustomTransitLegSummary
 } from "../demos/index";
+import DefaultAlightStepContent from "../defaults/alight-step-content";
+import DefaultHeaderSequence from "../defaults/header-sequence";
 import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
 
 // import mock itineraries. These are all trip plan outputs from OTP.
@@ -245,4 +247,26 @@ export const ApproximatePrefixItinerary = (): ReactElement => (
 
 export const TransferLegItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper itinerary={transferLegItinerary} />
+);
+
+export const WithAlightStepContent = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    AlightStepContent={DefaultAlightStepContent}
+  />
+);
+
+export const WithHeaderSequence = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    HeaderSequenceContent={DefaultHeaderSequence}
+  />
+);
+
+export const WithAlightStepAndHeaderSequenceContent = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    AlightStepContent={DefaultAlightStepContent}
+    HeaderSequenceContent={DefaultHeaderSequence}
+  />
 );

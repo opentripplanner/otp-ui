@@ -96,6 +96,15 @@ export interface TransitLegSummaryProps {
   stopsExpanded: boolean;
 }
 
+export type AlightStepContentProps = LegDestination;
+
+export interface HeaderSequenceProps {
+  /** The current leg */
+  leg: Leg;
+  /** The zero-based index of the leg within the itinerary */
+  legIndex: number;
+}
+
 /**
  * Shared props for various components that render itinerary data.
  */
@@ -115,6 +124,14 @@ interface ItineraryBodySharedProps {
    * within a transit leg, if this prop is not supplied a default icon is used
    */
   AlertToggleIcon?: FunctionComponent;
+  /**
+   * A slot for a component that can render the alighting step for the itineraryBody.
+   * If provided, renders below each non-destination, non-last transit leg body.
+   * This component is sent the following props:
+   * - isDestination - whether this place is the destination
+   * - leg - the current leg
+   */
+  AlightStepContent?: FunctionComponent<AlightStepContentProps>;
   /** If true, alerts in a trip leg always open in a collapsed state. */
   alwaysCollapseAlerts: boolean;
   /**
@@ -144,6 +161,14 @@ interface ItineraryBodySharedProps {
    * - `place`: The place associated with the click event
    */
   frameLeg?: FrameLegFunction;
+  /**
+   * A slot for a component that renders a sequence header at the top of each
+   * place row. If provided, renders as the first child of PlaceRowWrapper.
+   * This component is sent the following props:
+   * - leg - the current leg
+   * - legIndex - the zero-based leg index
+   */
+  HeaderSequenceContent?: FunctionComponent<HeaderSequenceProps>;
   /** A component class that is used to render icons for legs of an itinerary */
   LegIcon: LegIconComponent;
   /**
@@ -245,6 +270,8 @@ export interface PlaceRowProps
     LegSharedProps {
   /** Indicates whether this leg directly follows a transit leg */
   followsTransit?: boolean;
+  /** Whether this is the last leg in the itinerary */
+  isLastLeg?: boolean;
 }
 
 export interface ItineraryBodyProps extends ItineraryBodySharedProps {
