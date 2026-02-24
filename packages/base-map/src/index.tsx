@@ -39,6 +39,8 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   maxZoom?: number;
   /** A callback method which is fired when the map is clicked with the left mouse button/tapped */
   onClick?: (e: MapLayerMouseEvent) => void;
+  /** A callback method which is fired when the layer selector component is clicked with the left mouse button/tapped */
+  onClickLayerSelector?: () => void;
   /** A callback method which is fired when the map is clicked with the right mouse button/long tapped */
   onContextMenu?: (e: MapLayerMouseEvent) => void;
   /** A callback method which is fired when the map zoom or map bounds change */
@@ -66,6 +68,7 @@ const BaseMap = ({
   mapLibreProps,
   maxZoom,
   onClick,
+  onClickLayerSelector,
   onContextMenu,
   showEverything,
   onViewportChanged,
@@ -178,6 +181,7 @@ const BaseMap = ({
           className="filter-group"
           id="filter-group"
           onBlur={() => setFakeHover(false)}
+          onClick={onClickLayerSelector}
           onFocus={() => setFakeHover(true)}
           onTouchEnd={() => setFakeHover(true)}
         >
