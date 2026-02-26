@@ -101,7 +101,12 @@ export default function AccessLegDescription({
   return (
     // Return an HTML element which is passed a className (and style props)
     // for styled-components support.
-    <span className={className} style={style}>
+    <span
+      className={`${className} ${
+        isTransferLeg && distance === 0 ? "transfer-leg" : "walk-leg"
+      }`}
+      style={style}
+    >
       {distance > 0 ? (
         <FormattedMessage
           defaultMessage="{mode} {distance} to {place}"
