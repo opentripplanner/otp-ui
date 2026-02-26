@@ -52,6 +52,13 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -76,7 +83,7 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 269 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Pioneer Square North MAX Station
@@ -674,7 +681,7 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 249 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 1737 SW Morrison St, Portland, OR, USA 97205
@@ -1003,6 +1010,13 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -1027,7 +1041,7 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 269 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Pioneer Square North MAX Station
@@ -1628,7 +1642,7 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 249 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 1737 SW Morrison St, Portland, OR, USA 97205
@@ -1957,6 +1971,13 @@ exports[`ItineraryBody/otp-react-redux BikeOnlyItinerary smoke-test 1`] = `
       from 503 SW Alder St, Portland, OR, USA 97204
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -1977,7 +1998,7 @@ exports[`ItineraryBody/otp-react-redux BikeOnlyItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Bicycle 0.7 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 1737 SW Morrison St, Portland, OR, USA 97205
@@ -2297,6 +2318,13 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
       from 2624 SE 30th Ave, Portland, OR, USA 97202
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -2321,7 +2349,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 498 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 SE 30th at Division
@@ -2508,6 +2536,13 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
       <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL">
         Pick up  shared bike
       </div>
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -2528,7 +2563,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Bicycle 0.6 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 SE 29th at Hawthorne
@@ -2817,6 +2852,13 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
       from SE 29th at Hawthorne
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -2841,7 +2883,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.1 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 1415 SE 28th Ave, Portland, OR, USA 97214
@@ -3132,6 +3174,13 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
       from 2943 SE Washington St, Portland, OR, USA 97214
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -3156,7 +3205,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 400 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 SE 29th at Stark
@@ -3381,6 +3430,13 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
       <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL">
         Pick up  shared bike
       </div>
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -3401,7 +3457,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Bicycle 0.8 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 NE Glisan at 24th
@@ -3804,6 +3860,13 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
       from NE Glisan at 24th
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -3828,7 +3891,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 497 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 NE Sandy &amp; 24th
@@ -4489,7 +4552,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 279 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 0086 BIKETOWN
@@ -4676,6 +4739,13 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
       <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL">
         Pick up  shared bike
       </div>
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -4696,7 +4766,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Bicycle 1 mile to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 NE 60th at Cully
@@ -4985,6 +5055,13 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
       from NE 60th at Cully
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -5009,7 +5086,7 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 494 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 5916 NE Going St, Portland, OR, USA 97218
@@ -5262,6 +5339,13 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -5286,7 +5370,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 91 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 corner of path and Pioneer Courthouse Sq (pedestrian street)
@@ -5447,6 +5531,13 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
       from corner of path and Pioneer Courthouse Sq (pedestrian street)
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -5467,7 +5558,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Bicycle 0.1 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 corner of path and Pioneer Sq N (path)
@@ -5742,6 +5833,13 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
       from corner of path and Pioneer Sq N (path)
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -5766,7 +5864,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 22 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Pioneer Square North MAX Station
@@ -6259,7 +6357,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 19 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 corner of path and Providence Park (path)
@@ -6420,6 +6518,13 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
       from corner of path and Providence Park (path)
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -6440,7 +6545,7 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Bicycle 230 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 1737 SW Morrison St, Portland, OR, USA 97205
@@ -6774,7 +6879,7 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
               <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
                 -
               </span>
-              <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+              <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
                 Ride 0.4 miles to
                 <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                   West Burnside Street
@@ -6861,6 +6966,13 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
       from West Burnside Street
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -6885,7 +6997,7 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx transfer-leg">
               Transfer, wait 1 min
             </span>
             <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-26 jOzsRd eGaXDd">
@@ -7180,6 +7292,13 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
       from E Burnside &amp; SE 12th
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -7204,7 +7323,7 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx transfer-leg">
               Transfer, wait 1 min
             </span>
             <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-26 jOzsRd eGaXDd">
@@ -7296,7 +7415,7 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
               <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
                 -
               </span>
-              <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+              <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
                 Ride 0.2 miles to
                 <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                   407 NE 12th Ave, Portland
@@ -7461,6 +7580,13 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
       from 600 SW 5th Ave, Portland, OR, USA 97204
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -7485,7 +7611,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 206 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 EMAQ
@@ -7672,6 +7798,13 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
       <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL">
         Pick up Razor E-scooter
       </div>
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -7691,7 +7824,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Ride 0.3 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 205 SW Pine St, Portland, OR, USA 97204
@@ -7944,6 +8077,13 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
       from 2943 SE Washington St, Portland, OR, USA 97214
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -7968,7 +8108,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.4 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Shared E-scooter
@@ -8260,6 +8400,13 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
       <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL">
         Pick up Shared E-scooter
       </div>
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -8279,7 +8426,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Ride 1.4 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 NE Broadway
@@ -8720,6 +8867,13 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
       from NE Broadway
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -8744,7 +8898,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 NE Broadway &amp; 28th
@@ -9092,7 +9246,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.4 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Shared E-scooter
@@ -9346,6 +9500,13 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
       <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL">
         Pick up Shared E-scooter
       </div>
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -9365,7 +9526,7 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Ride 1 mile to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 5112 NE 47th Pl, Portland, OR, USA 97218
@@ -9761,6 +9922,13 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
       from 330 SW Murray Blvd, Washington County, OR, USA 97005
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -9780,7 +9948,7 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Drive 2.4 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 P+R Sunset TC
@@ -9858,6 +10026,13 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
       from P+R Sunset TC
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -9882,7 +10057,7 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 426 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Sunset TC MAX Station
@@ -10545,7 +10720,7 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.1 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 205 SW Pine St, Portland, OR, USA 97204
@@ -10912,6 +11087,13 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
       from 100 South 11th Street, Mount Vernon, WA, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -10936,7 +11118,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.8 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Skagit Station Gate 3
@@ -11789,7 +11971,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 318 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Everett Station Bay C1
@@ -12192,7 +12374,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 176 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Lynnwood Transit Center Bay D1
@@ -12611,7 +12793,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 1 foot to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Kaysner Way &amp; Woodinville Dr
@@ -13062,7 +13244,7 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.4 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 18311 57th Avenue NE, Kenmore, WA, USA
@@ -13411,6 +13593,13 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
       from 2nd Avenue, Longmont, CO, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -13435,7 +13624,7 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.3 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 S Main St &amp; 1st Ave
@@ -14031,7 +14220,7 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.2 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Arapahoe Rd &amp; Stonehenge Dr
@@ -14499,7 +14688,7 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 124 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 corner of path and Powers Street
@@ -14884,6 +15073,13 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
       from 300 Courtland St NE, Atlanta, GA 30303-12ND, United States
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -14908,7 +15104,7 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.2 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Razor Vehicle
@@ -15133,6 +15329,13 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
       <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL">
         Pick up Razor E-scooter
       </div>
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -15152,7 +15355,7 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Ride 1 mile to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 126 Mitchell St SW, Atlanta, GA 30303-3524, United States
@@ -15691,6 +15894,13 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
       from 1375 NE Cherry Lane, Hillsboro
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -15715,7 +15925,7 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.9 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Orenco MAX Station
@@ -16429,7 +16639,7 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.2 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 W Burnside &amp; SW 18th
@@ -17217,7 +17427,7 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.5 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 766 NE 94th Avenue, Portland
@@ -17575,6 +17785,13 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
       from 330 SW Murray Blvd, Washington County, OR, USA 97005
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -17594,7 +17811,7 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Drive 2.4 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 P+R Sunset TC
@@ -18082,6 +18299,13 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
       from P+R Sunset TC
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -18106,7 +18330,7 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 426 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Sunset TC MAX Station
@@ -18769,7 +18993,7 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.1 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 205 SW Pine St, Portland, OR, USA 97204
@@ -19633,6 +19857,13 @@ exports[`ItineraryBody/otp-react-redux StopWithNoStopCode smoke-test 1`] = `
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -19657,7 +19888,7 @@ exports[`ItineraryBody/otp-react-redux StopWithNoStopCode smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 269 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Pioneer Square North MAX Station
@@ -20257,7 +20488,7 @@ exports[`ItineraryBody/otp-react-redux StopWithNoStopCode smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 249 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 1737 SW Morrison St, Portland, OR, USA 97205
@@ -20586,6 +20817,13 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -20610,7 +20848,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 269 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Pioneer Square North MAX Station
@@ -21211,7 +21449,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 249 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 1737 SW Morrison St, Portland, OR, USA 97205
@@ -21540,6 +21778,13 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -21564,7 +21809,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 269 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Pioneer Square North MAX Station
@@ -22165,7 +22410,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 249 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 1737 SW Morrison St, Portland, OR, USA 97205
@@ -22494,6 +22739,13 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -22518,7 +22770,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 269 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Pioneer Square North MAX Station
@@ -23119,7 +23371,7 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 249 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 1737 SW Morrison St, Portland, OR, USA 97205
@@ -23471,7 +23723,7 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
               <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
                 -
               </span>
-              <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+              <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
                 Ride 0.4 miles to
                 <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                   West Burnside Street
@@ -23538,6 +23790,13 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
       from West Burnside Street
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -23562,7 +23821,7 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 W Burnside &amp; SW 6th
@@ -23858,7 +24117,7 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 East Burnside Street
@@ -23933,7 +24192,7 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
               <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
                 -
               </span>
-              <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+              <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
                 Ride 0.2 miles to
                 <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                   407 NE 12th Ave, Portland
@@ -24078,6 +24337,13 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
       from Airport Terminal A (SEPTA)
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -24102,7 +24368,7 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.4 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Philadelphia Airport Terminal D
@@ -24826,7 +25092,7 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx transfer-leg">
               Transfer, wait 5 min
             </span>
             <button class="styled__TransparentButton-sc-1q8npbl-1 styled__LegClickableButton-sc-1q8npbl-26 jOzsRd eGaXDd">
@@ -25305,7 +25571,7 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.6 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 39.91179, -75.16543
@@ -25844,6 +26110,13 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
       from 330 SW Murray Blvd, Washington County, OR, USA 97005
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -25863,7 +26136,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Drive 2.4 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 P+R Sunset TC
@@ -26351,6 +26624,13 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
       from P+R Sunset TC
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -26375,7 +26655,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 426 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Sunset TC MAX Station
@@ -27059,7 +27339,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.1 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 205 SW Pine St, Portland, OR, USA 97204
@@ -27426,6 +27706,13 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
       from 330 SW Murray Blvd, Washington County, OR, USA 97005
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -27445,7 +27732,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Drive 2.4 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 P+R Sunset TC
@@ -27933,6 +28220,13 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
       from P+R Sunset TC
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -27957,7 +28251,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 426 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Sunset TC MAX Station
@@ -28620,7 +28914,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.1 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 205 SW Pine St, Portland, OR, USA 97204
@@ -28987,6 +29281,13 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
       from 330 SW Murray Blvd, Washington County, OR, USA 97005
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -29006,7 +29307,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Drive 2.4 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 P+R Sunset TC
@@ -29494,6 +29795,13 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
       from P+R Sunset TC
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -29518,7 +29826,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 426 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Sunset TC MAX Station
@@ -30181,7 +30489,7 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.1 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 205 SW Pine St, Portland, OR, USA 97204
@@ -30548,6 +30856,13 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
       from 47.97767, -122.20034
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -30572,7 +30887,7 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.3 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Everett Station Bay C1
@@ -31172,7 +31487,7 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Northgate Station - Bay 4
@@ -31504,7 +31819,7 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 259 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Aurora Ave N &amp; N 105th St
@@ -32078,7 +32393,7 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 443 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 208 James St, Seattle, WA 98104-2212, United States
@@ -32331,6 +32646,13 @@ exports[`ItineraryBody/otp-react-redux WalkOnlyItinerary smoke-test 1`] = `
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -32355,7 +32677,7 @@ exports[`ItineraryBody/otp-react-redux WalkOnlyItinerary smoke-test 1`] = `
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 166 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 701 SW 6th Ave, Portland, OR, USA 97204
@@ -32602,6 +32924,13 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
       from 3940 SE Brooklyn St, Portland, OR, USA 97202
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -32626,7 +32955,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 238 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 SE Cesar Chavez Blvd &amp; Brooklyn (long address that spans multiple lines)
@@ -33074,7 +33403,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 440 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 SE Hawthorne &amp; Cesar Chavez Blvd
@@ -33560,7 +33889,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 479 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 1415 SE 28th Ave, Portland, OR, USA 97214
@@ -33882,6 +34211,13 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
       from 3940 SE Brooklyn St, Portland, OR, USA 97202
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -33906,7 +34242,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 238 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 SE Cesar Chavez Blvd &amp; Brooklyn (long address that spans multiple lines)
@@ -34385,7 +34721,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 440 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 SE Hawthorne &amp; Cesar Chavez Blvd
@@ -34933,7 +35269,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 479 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 1415 SE 28th Ave, Portland, OR, USA 97214
@@ -35224,6 +35560,13 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -35248,7 +35591,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 269 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Pioneer Square North MAX Station
@@ -35849,7 +36192,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 249 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 1737 SW Morrison St, Portland, OR, USA 97205
@@ -36178,6 +36521,13 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -36202,7 +36552,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 82 m to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Pioneer Square North MAX Station
@@ -36803,7 +37153,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 76 m to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 1737 SW Morrison St, Portland, OR, USA 97205
@@ -37132,6 +37482,13 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
       from 47.97767, -122.20034
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -37156,7 +37513,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.3 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Everett Station Bay C1
@@ -37756,7 +38113,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Northgate Station - Bay 4
@@ -38088,7 +38445,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 259 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Aurora Ave N &amp; N 105th St
@@ -38662,7 +39019,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 443 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 208 James St, Seattle, WA 98104-2212, United States
@@ -38915,6 +39272,13 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
       from 47.97767, -122.20034
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -38939,7 +39303,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.3 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Everett Station Bay C1
@@ -39539,7 +39903,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Northgate Station - Bay 4
@@ -39871,7 +40235,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 259 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Aurora Ave N &amp; N 105th St
@@ -40445,7 +40809,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 443 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 208 James St, Seattle, WA 98104-2212, United States
@@ -40698,6 +41062,13 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
       from 47.97767, -122.20034
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
+      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
+        <button role="link"
+                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
+        >
+          Stop Viewer
+        </button>
+      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -40722,7 +41093,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 0.3 miles to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Everett Station Bay C1
@@ -41322,7 +41693,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Northgate Station - Bay 4
@@ -41654,7 +42025,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 259 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 Aurora Ave N &amp; N 105th St
@@ -42228,7 +42599,7 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
             <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
               -
             </span>
-            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx">
+            <span class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx walk-leg">
               Walk 443 feet to
               <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
                 208 James St, Seattle, WA 98104-2212, United States

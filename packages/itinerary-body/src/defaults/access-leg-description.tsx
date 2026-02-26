@@ -106,7 +106,12 @@ export default function AccessLegDescription({
     // for styled-components support.
     <S.AccessLegDescriptionHeading
       as={headingAs ?? "span"}
-      className={className}
+      className={[
+        className,
+        isTransferLeg && distance === 0 ? "transfer-leg" : "walk-leg"
+      ]
+        .filter(Boolean)
+        .join(" ")}
       style={style}
     >
       {distance > 0 ? (
