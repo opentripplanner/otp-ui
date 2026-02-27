@@ -33,10 +33,10 @@ function PrintableItinerary({
   itinerary,
   LegIcon,
   legHeadings = {
-    titleHeading: "h2",
-    transitLeg: "h3",
-    tncLeg: "h3",
-    accessLeg: "h3"
+    titleHeading: "h1",
+    transitLeg: "h2",
+    tncLeg: "h2",
+    accessLeg: "h2"
   }
 }: Props): ReactElement {
   const gradationMap = config.accessibilityScore?.gradationMap;

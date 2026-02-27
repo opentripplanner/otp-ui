@@ -4,7 +4,7 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -12,7 +12,7 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
         <strong>
           503 SW Alder St, Portland, OR, USA 97204
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -29,12 +29,12 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Bicycle 0.7 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -79,7 +79,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -87,7 +87,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
         <strong>
           2624 SE 30th Ave, Portland, OR, USA 97202
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -102,12 +102,12 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 498 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           SE 30th at Division
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -175,12 +175,12 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Bicycle 0.6 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           SE 29th at Hawthorne
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -241,12 +241,12 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.1 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1415 SE 28th Ave, Portland, OR, USA 97214
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -291,7 +291,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -299,7 +299,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
         <strong>
           2943 SE Washington St, Portland, OR, USA 97214
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -314,12 +314,12 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 400 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           SE 29th at Stark
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -398,12 +398,12 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Bicycle 0.8 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           NE Glisan at 24th
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -497,12 +497,12 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 497 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           NE Sandy &amp; 24th
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -552,7 +552,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           12
         </strong>
@@ -563,7 +563,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
           </span>
           Parkrose TC
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -600,12 +600,12 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 279 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           0086 BIKETOWN
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -673,12 +673,12 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Bicycle 1 mile to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           NE 60th at Cully
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -739,12 +739,12 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 494 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           5916 NE Going St, Portland, OR, USA 97218
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -778,7 +778,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -786,7 +786,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
         <strong>
           KGW Studio on the Sq, Portland, OR, USA
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -801,12 +801,12 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 91 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           corner of path and Pioneer Courthouse Sq (pedestrian street)
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -836,12 +836,12 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Bicycle 0.1 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           corner of path and Pioneer Sq N (path)
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -902,12 +902,12 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 22 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Pioneer Square North MAX Station
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -935,7 +935,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           MAX Blue Line
         </strong>
@@ -946,7 +946,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
           </span>
           Hillsboro
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -983,12 +983,12 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 19 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           corner of path and Providence Park (path)
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -1018,12 +1018,12 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Bicycle 230 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -1068,7 +1068,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -1076,7 +1076,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
         <strong>
           330 SW Murray Blvd, Washington County, OR, USA 97005
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -1094,12 +1094,12 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Drive 2.4 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           P+R Sunset TC
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -1234,12 +1234,12 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 426 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Sunset TC MAX Station
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -1308,7 +1308,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           MAX Blue Line
         </strong>
@@ -1319,7 +1319,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
           </span>
           Gresham
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -1364,12 +1364,12 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.1 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           205 SW Pine St, Portland, OR, USA 97204
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -1436,7 +1436,7 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -1444,7 +1444,7 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
         <strong>
           600 SW 5th Ave, Portland, OR, USA 97204
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -1459,12 +1459,12 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 206 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           EMAQ
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -1503,12 +1503,12 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Ride 0.3 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           205 SW Pine St, Portland, OR, USA 97204
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -1542,7 +1542,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -1550,7 +1550,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
         <strong>
           2943 SE Washington St, Portland, OR, USA 97214
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -1565,12 +1565,12 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.4 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Shared E-scooter
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -1631,12 +1631,12 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Ride 1.4 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           NE Broadway
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -1741,12 +1741,12 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           NE Broadway &amp; 28th
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -1771,7 +1771,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           70
         </strong>
@@ -1782,7 +1782,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
           </span>
           NE Sunderland
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -1819,12 +1819,12 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.4 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Shared E-scooter
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -1874,12 +1874,12 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Ride 1 mile to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           5112 NE 47th Pl, Portland, OR, USA 97218
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -1946,7 +1946,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -1954,7 +1954,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
         <strong>
           300 Courtland St NE, Atlanta, GA 30303-12ND, United States
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -1977,12 +1977,12 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.2 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Razor Vehicle
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -2035,12 +2035,12 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Ride 1 mile to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           126 Mitchell St SW, Atlanta, GA 30303-3524, United States
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -2151,7 +2151,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -2159,7 +2159,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
         <strong>
           1375 NE Cherry Lane, Hillsboro
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -2174,12 +2174,12 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.9 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Orenco MAX Station
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -2273,7 +2273,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
         </strong>
         <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
@@ -2283,7 +2283,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
           </span>
           Gresham
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -2320,12 +2320,12 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.2 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           W Burnside &amp; SW 18th
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -2397,7 +2397,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           20
         </strong>
@@ -2408,7 +2408,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
           </span>
           Gresham TC
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -2445,12 +2445,12 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.5 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           766 NE 94th Avenue, Portland
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -2506,7 +2506,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -2514,7 +2514,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
         <strong>
           330 SW Murray Blvd, Washington County, OR, USA 97005
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -2534,12 +2534,12 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Drive 2.4 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           P+R Sunset TC
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -2666,12 +2666,12 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 426 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Sunset TC MAX Station
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -2732,7 +2732,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           MAX Blue Line
         </strong>
@@ -2743,7 +2743,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
           </span>
           Gresham
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -2780,12 +2780,12 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.1 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           205 SW Pine St, Portland, OR, USA 97204
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -2852,7 +2852,7 @@ exports[`PrintableItinerary StopsWithNoStopCode smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -2860,7 +2860,7 @@ exports[`PrintableItinerary StopsWithNoStopCode smoke-test 1`] = `
         <strong>
           KGW Studio on the Sq, Portland, OR, USA
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -2875,12 +2875,12 @@ exports[`PrintableItinerary StopsWithNoStopCode smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 269 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Pioneer Square North MAX Station
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -2919,7 +2919,7 @@ exports[`PrintableItinerary StopsWithNoStopCode smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           MAX Blue Line
         </strong>
@@ -2930,7 +2930,7 @@ exports[`PrintableItinerary StopsWithNoStopCode smoke-test 1`] = `
           </span>
           Hillsboro
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -2967,12 +2967,12 @@ exports[`PrintableItinerary StopsWithNoStopCode smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 249 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -3028,7 +3028,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT PrintableItinerarystory__StyledPrintableItinerary-sc-1fgcguf-0 ZKSFh">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -3036,7 +3036,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
         <strong>
           KGW Studio on the Sq, Portland, OR, USA
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -3051,12 +3051,12 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 269 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Pioneer Square North MAX Station
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -3095,7 +3095,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           MAX Blue Line
         </strong>
@@ -3106,7 +3106,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
           </span>
           Hillsboro
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -3143,12 +3143,12 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 249 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -3204,7 +3204,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -3212,7 +3212,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
         <strong>
           128 NW 12th Ave, Portland
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -3232,7 +3232,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Take
         </strong>
@@ -3240,7 +3240,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
         <strong>
           West Burnside Street
         </strong>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Estimated wait time for pickup:
@@ -3270,9 +3270,9 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Transfer, wait 1 min
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
       </div>
     </div>
@@ -3289,14 +3289,14 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           20
         </strong>
         <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           Burnside/Stark
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -3333,9 +3333,9 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Transfer, wait 1 min
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
       </div>
     </div>
@@ -3357,7 +3357,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Take
         </strong>
@@ -3365,7 +3365,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
         <strong>
           407 NE 12th Ave, Portland
         </strong>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Estimated wait time for pickup:
@@ -3390,7 +3390,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -3398,7 +3398,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
         <strong>
           47.97767, -122.20034
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -3413,12 +3413,12 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 0.3 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Everett Station Bay C1
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -3501,14 +3501,14 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           512
         </strong>
         <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           Northgate Station
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -3545,12 +3545,12 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Northgate Station - Bay 4
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
       </div>
     </div>
@@ -3567,14 +3567,14 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           40
         </strong>
         <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           Downtown Seattle Ballard
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -3611,12 +3611,12 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 259 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Aurora Ave N &amp; N 105th St
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -3666,14 +3666,14 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           E Line
         </strong>
         <span class="styled__RouteLongName-sc-1fqxr7x-9 hJczTF">
           Downtown Seattle
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -3710,12 +3710,12 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 443 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           208 James St, Seattle, WA 98104-2212, United States
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -3749,7 +3749,7 @@ exports[`PrintableItinerary WalkOnlyItinerary smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -3757,7 +3757,7 @@ exports[`PrintableItinerary WalkOnlyItinerary smoke-test 1`] = `
         <strong>
           KGW Studio on the Sq, Portland, OR, USA
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -3772,12 +3772,12 @@ exports[`PrintableItinerary WalkOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 166 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           701 SW 6th Ave, Portland, OR, USA 97204
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -3805,7 +3805,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -3813,7 +3813,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
         <strong>
           3940 SE Brooklyn St, Portland, OR, USA 97202
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -3828,12 +3828,12 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 238 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           SE Cesar Chavez Blvd &amp; Brooklyn (long address that spans multiple lines)
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -3872,7 +3872,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           755X
         </strong>
@@ -3883,7 +3883,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
           </span>
           St. Johns via NAYA
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -3920,12 +3920,12 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 440 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           SE Hawthorne &amp; Cesar Chavez Blvd
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -3975,7 +3975,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           1
         </strong>
@@ -3986,7 +3986,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
           </span>
           Portland
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -4023,12 +4023,12 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 479 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1415 SE 28th Ave, Portland, OR, USA 97214
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -4073,7 +4073,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -4081,7 +4081,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
         <strong>
           3940 SE Brooklyn St, Portland, OR, USA 97202
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -4127,12 +4127,12 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 238 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           SE Cesar Chavez Blvd &amp; Brooklyn (long address that spans multiple lines)
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -4202,7 +4202,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           755X
         </strong>
@@ -4213,7 +4213,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
           </span>
           St. Johns via NAYA
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -4250,12 +4250,12 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 440 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           SE Hawthorne &amp; Cesar Chavez Blvd
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -4336,7 +4336,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           1
         </strong>
@@ -4347,7 +4347,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
           </span>
           Portland
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -4415,12 +4415,12 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 479 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1415 SE 28th Ave, Portland, OR, USA 97214
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -4465,7 +4465,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -4473,7 +4473,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
         <strong>
           KGW Studio on the Sq, Portland, OR, USA
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -4488,12 +4488,12 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 269 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Pioneer Square North MAX Station
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -4532,7 +4532,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           MAX Blue Line
         </strong>
@@ -4543,7 +4543,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
           </span>
           Hillsboro
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -4580,12 +4580,12 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 249 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -4641,7 +4641,7 @@ exports[`PrintableItinerary WalkTransitWalkItineraryMetric smoke-test 1`] = `
 <div class="styled__PrintableItinerary-sc-1fqxr7x-12 bwuFHT">
   <div class="styled__Leg-sc-1fqxr7x-0 styled__CollapsedTop-sc-1fqxr7x-1 huReCP hTlAOC">
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h1 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           Depart
         </strong>
@@ -4649,7 +4649,7 @@ exports[`PrintableItinerary WalkTransitWalkItineraryMetric smoke-test 1`] = `
         <strong>
           KGW Studio on the Sq, Portland, OR, USA
         </strong>
-      </h2>
+      </h1>
     </div>
   </div>
   <div class="styled__Leg-sc-1fqxr7x-0 huReCP">
@@ -4664,12 +4664,12 @@ exports[`PrintableItinerary WalkTransitWalkItineraryMetric smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 82 m to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           Pioneer Square North MAX Station
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
@@ -4708,7 +4708,7 @@ exports[`PrintableItinerary WalkTransitWalkItineraryMetric smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
+      <h2 class="styled__LegHeader-sc-1fqxr7x-5 iLPvxc">
         <strong>
           MAX Blue Line
         </strong>
@@ -4719,7 +4719,7 @@ exports[`PrintableItinerary WalkTransitWalkItineraryMetric smoke-test 1`] = `
           </span>
           Hillsboro
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           Board at
@@ -4756,12 +4756,12 @@ exports[`PrintableItinerary WalkTransitWalkItineraryMetric smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <h3 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
+      <h2 class="styled__AccessLegDescriptionHeading-sc-1q8npbl-23 ihFIwx styled__AccessLegDescription-sc-1fqxr7x-6 eZKGmw">
         Walk 76 m to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-31 kqKLRI">
           1737 SW Morrison St, Portland, OR, USA 97205
         </span>
-      </h3>
+      </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
           <span class="styled__AccessLegStep-sc-1fqxr7x-8 kZupUg">
