@@ -96,6 +96,7 @@ otpUi:
       likelyAccessible: அணுகக்கூடியது
       unclear: தெரியவில்லை
     viewOnMap: வரைபடத்தில் காண்க
+    flexBookingUrl: <link>உங்கள் பயணத்தை ஆன்லைனில் முன்பதிவு செய்யவும்</link>
   TransitLegBody:
     AlertsBody:
       alertLinkText: "{agency} இணையதளத்தில் எச்சரிக்கையைப் பார்க்கவும்"
