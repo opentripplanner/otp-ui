@@ -23,7 +23,11 @@ otpUi:
       நிமிடங்கள்}} </strong> பைக்கிங்.
     title: பயண விவரங்கள்
     tncFare: "{companies} கட்டணம்: <strong> {minTNCFare} - {maxTNCFare} </strong>"
-    transferDiscountExplanation: பரிமாற்ற தள்ளுபடி {transferAmount} பயன்படுத்தப்படுகிறது
+    transferDiscountExplanation: பரிமாற்ற தள்ளுபடி {transferAmount} 
+      பயன்படுத்தப்படுகிறது
     transitFare: போக்குவரத்து கட்டணம்
     transitFareEntry: "{name}: <strong> {value} </strong>"
     tripIncludesFlex: இந்த பயணத்தில் நெகிழ்வான வழிகள் உள்ளன. {extraMessage}
+    fareCategory: கட்டண வகை
+    total: மொத்தம்
+    transitFareTable: இந்தப் பயணத் திட்டத்திற்கான போக்குவரத்துக் கட்டணங்கள்
