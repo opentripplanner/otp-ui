@@ -29,7 +29,7 @@ exports[`PrintableItinerary BikeOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Bicycle 0.7 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1737 SW Morrison St, Portland, OR, USA 97205
@@ -102,7 +102,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 498 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           SE 30th at Division
@@ -175,7 +175,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Bicycle 0.6 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           SE 29th at Hawthorne
@@ -241,7 +241,7 @@ exports[`PrintableItinerary BikeRentalItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 0.1 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1415 SE 28th Ave, Portland, OR, USA 97214
@@ -314,7 +314,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 400 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           SE 29th at Stark
@@ -398,7 +398,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Bicycle 0.8 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           NE Glisan at 24th
@@ -497,7 +497,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 497 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           NE Sandy &amp; 24th
@@ -600,7 +600,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 279 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           0086 BIKETOWN
@@ -673,7 +673,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Bicycle 1 mile to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           NE 60th at Cully
@@ -739,7 +739,7 @@ exports[`PrintableItinerary BikeRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 494 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           5916 NE Going St, Portland, OR, USA 97218
@@ -801,7 +801,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 91 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           corner of path and Pioneer Courthouse Sq (pedestrian street)
@@ -836,7 +836,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Bicycle 0.1 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           corner of path and Pioneer Sq N (path)
@@ -902,7 +902,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 22 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Pioneer Square North MAX Station
@@ -983,7 +983,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 19 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           corner of path and Providence Park (path)
@@ -1018,7 +1018,7 @@ exports[`PrintableItinerary BikeTransitBikeItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Bicycle 230 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1737 SW Morrison St, Portland, OR, USA 97205
@@ -1094,7 +1094,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Drive 2.4 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           P+R Sunset TC
@@ -1234,7 +1234,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 426 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Sunset TC MAX Station
@@ -1364,7 +1364,7 @@ exports[`PrintableItinerary ClassicIconsAndParkAndRideItinerary smoke-test 1`] =
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 0.1 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           205 SW Pine St, Portland, OR, USA 97204
@@ -1459,7 +1459,7 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 206 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           EMAQ
@@ -1503,7 +1503,7 @@ exports[`PrintableItinerary EScooterRentalItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Ride 0.3 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           205 SW Pine St, Portland, OR, USA 97204
@@ -1565,7 +1565,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 0.4 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Shared E-scooter
@@ -1631,7 +1631,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Ride 1.4 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           NE Broadway
@@ -1741,7 +1741,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           NE Broadway &amp; 28th
@@ -1819,7 +1819,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 0.4 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Shared E-scooter
@@ -1874,7 +1874,7 @@ exports[`PrintableItinerary EScooterRentalTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Ride 1 mile to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           5112 NE 47th Pl, Portland, OR, USA 97218
@@ -1977,7 +1977,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 0.2 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Razor Vehicle
@@ -2035,7 +2035,7 @@ exports[`PrintableItinerary OTP2ScooterItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Ride 1 mile to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           126 Mitchell St SW, Atlanta, GA 30303-3524, United States
@@ -2174,7 +2174,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 0.9 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Orenco MAX Station
@@ -2320,7 +2320,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 0.2 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           W Burnside &amp; SW 18th
@@ -2445,7 +2445,7 @@ exports[`PrintableItinerary OTP24Itinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 0.5 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           766 NE 94th Avenue, Portland
@@ -2534,7 +2534,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Drive 2.4 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           P+R Sunset TC
@@ -2666,7 +2666,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 426 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Sunset TC MAX Station
@@ -2780,7 +2780,7 @@ exports[`PrintableItinerary ParkAndRideItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 0.1 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           205 SW Pine St, Portland, OR, USA 97204
@@ -2875,7 +2875,7 @@ exports[`PrintableItinerary StopsWithNoStopCode smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 269 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Pioneer Square North MAX Station
@@ -2967,7 +2967,7 @@ exports[`PrintableItinerary StopsWithNoStopCode smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 249 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1737 SW Morrison St, Portland, OR, USA 97205
@@ -3051,7 +3051,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 269 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Pioneer Square North MAX Station
@@ -3143,7 +3143,7 @@ exports[`PrintableItinerary StyledWalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 249 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1737 SW Morrison St, Portland, OR, USA 97205
@@ -3270,7 +3270,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht transfer-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Transfer, wait 1 min
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
@@ -3333,7 +3333,7 @@ exports[`PrintableItinerary TncTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht transfer-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Transfer, wait 1 min
       </span>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
@@ -3413,7 +3413,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 0.3 miles to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Everett Station Bay C1
@@ -3545,7 +3545,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Northgate Station - Bay 4
@@ -3611,7 +3611,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 259 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Aurora Ave N &amp; N 105th St
@@ -3710,7 +3710,7 @@ exports[`PrintableItinerary WalkInterlinedTransitItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 443 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           208 James St, Seattle, WA 98104-2212, United States
@@ -3772,7 +3772,7 @@ exports[`PrintableItinerary WalkOnlyItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 166 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           701 SW 6th Ave, Portland, OR, USA 97204
@@ -3828,7 +3828,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 238 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           SE Cesar Chavez Blvd &amp; Brooklyn (long address that spans multiple lines)
@@ -3920,7 +3920,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 440 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           SE Hawthorne &amp; Cesar Chavez Blvd
@@ -4023,7 +4023,7 @@ exports[`PrintableItinerary WalkTransitTransferItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 479 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1415 SE 28th Ave, Portland, OR, USA 97214
@@ -4127,7 +4127,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 238 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           SE Cesar Chavez Blvd &amp; Brooklyn (long address that spans multiple lines)
@@ -4250,7 +4250,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 440 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           SE Hawthorne &amp; Cesar Chavez Blvd
@@ -4415,7 +4415,7 @@ exports[`PrintableItinerary WalkTransitTransferWithA11yItinerary smoke-test 1`] 
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 479 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1415 SE 28th Ave, Portland, OR, USA 97214
@@ -4488,7 +4488,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 269 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Pioneer Square North MAX Station
@@ -4580,7 +4580,7 @@ exports[`PrintableItinerary WalkTransitWalkItinerary smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 249 feet to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1737 SW Morrison St, Portland, OR, USA 97205
@@ -4664,7 +4664,7 @@ exports[`PrintableItinerary WalkTransitWalkItineraryMetric smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 82 m to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           Pioneer Square North MAX Station
@@ -4756,7 +4756,7 @@ exports[`PrintableItinerary WalkTransitWalkItineraryMetric smoke-test 1`] = `
       </div>
     </div>
     <div class="styled__LegBody-sc-1fqxr7x-2 gEKanE">
-      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht walk-leg">
+      <span class="styled__AccessLegDescription-sc-1fqxr7x-6 cfTtht">
         Walk 76 m to
         <span class="styled__LegDescriptionPlace-sc-1q8npbl-30 bMCLNZ">
           1737 SW Morrison St, Portland, OR, USA 97205
