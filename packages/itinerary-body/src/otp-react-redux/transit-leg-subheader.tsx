@@ -12,11 +12,9 @@ const { getDisplayedStopCode, isFlex } = coreUtils.itinerary;
 
 export default function TransitLegSubheader({
   leg,
-  onStopClick,
+  onStopClick
 }: TransitLegSubheaderProps): ReactElement {
   const { from } = leg;
-  // Prevent rendering subheader for access legs without a stop ID
-  if (!from?.stopId) return null as any;
   return (
     <S.PlaceSubheader className="transit-leg-subheader">
       {getDisplayedStopCode(from) && (
@@ -25,7 +23,7 @@ export default function TransitLegSubheader({
           description="Displays the stop ID"
           id="otpUi.TransitLegBody.stopId"
           values={{
-            stopId: getDisplayedStopCode(from),
+            stopId: getDisplayedStopCode(from)
           }}
         />
       )}
