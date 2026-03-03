@@ -119,9 +119,8 @@ class AccessLegBody extends Component<Props, State> {
         {leg && (leg.rentedVehicle || leg.rentedBike || leg.rentedCar) && (
           <RentedVehicleSubheader config={config} leg={leg} />
         )}
-        {leg.from.stopId && TransitLegSubheader && (
-          <TransitLegSubheader leg={leg} />
-        )}
+        {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
+
         <S.LegBody>
           <AccessLegSummary
             config={config}
