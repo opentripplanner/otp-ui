@@ -868,3 +868,25 @@ export type FareProductSelector = {
  * Options for units of mass (used in CO₂ calculation config)
  */
 export type MassUnitOption = "ounce" | "kilogram" | "pound" | "gram";
+
+/**
+ * Options for Heading for PrintableItinerary and ItineraryBody
+ */
+export type HeadingAs = "h1" | "h2" | "h3" | "h4" | "span" | "div";
+
+/**
+ * Options for Heading for PrintableItinerary
+ */
+export type LegHeadingConfig = {
+  accessLeg?: HeadingAs;
+  transitLeg?: HeadingAs;
+  tncLeg?: HeadingAs;
+  titleHeading?: HeadingAs;
+};
+
+/**
+ * LegHeadingProp type for headingAs
+ */
+export type LegHeadingProp = {
+  headingAs?: HeadingAs;
+};

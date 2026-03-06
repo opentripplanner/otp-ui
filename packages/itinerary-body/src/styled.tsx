@@ -283,6 +283,10 @@ export const ItineraryBody = styled.ol`
   padding: 0;
 `;
 
+export const AccessLegDescriptionHeading = styled.span`
+  margin: 0;
+`;
+
 export const LegBody = styled.div`
   color: ${grey[700]};
   font-size: 13px;
