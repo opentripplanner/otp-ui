@@ -713,7 +713,8 @@ export function getLegCost(
 export function getItineraryCost(
   legs: Leg[],
   mediumId?: string | string[] | null,
-  riderCategoryId?: string | string[] | null
+  riderCategoryId?: string | string[] | null,
+  failOnAnyMissingFare = false
 ): Money | undefined {
   // TODO: Better input type handling
   if (Array.isArray(mediumId) || Array.isArray(riderCategoryId)) {
@@ -763,6 +764,13 @@ export function getItineraryCost(
       { seenIds: [], legCosts: [] }
     )
     .legCosts.map(lc => lc.legPrice);
+
+  if (
+    failOnAnyMissingFare &&
+    legs.filter(l => l.transitLeg).length !== legCosts.length
+  ) {
+    return undefined;
+  }
 
   if (legCosts.length === 0) return undefined;
   // Calculate the total

@@ -22,6 +22,7 @@ import complexItinerary from "./__mocks__/complex-fares.json";
 import tripleItinerary from "./__mocks__/three-transfer-itinerary.json";
 import flexItinerary from "../../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
 import faresv2Itinerary from "../../../itinerary-body/src/__mocks__/itineraries/fares-v2-fare-components.json";
+import legFareProdcuts from "../../../itinerary-body/src/__mocks__/itineraries/leg-fare-products.json";
 
 global.structuredClone = val => JSON.parse(JSON.stringify(val));
 
@@ -308,13 +309,20 @@ describe("util > itinerary", () => {
         2.8
       );
     });
-    it("should calculate the total cost of an itinerary will null ids", () => {
+    it("should calculate the total cost of an itinerary with null ids", () => {
       const result = getItineraryCost(fareProductItinerary.legs, null, null);
       expect(result.amount).toEqual(2.75);
       expect(result.currency).toEqual({
         code: "USD",
         digits: 2
       });
+      const resultWithDashEnabled = getItineraryCost(
+        legFareProdcuts.legs,
+        "orca",
+        "youth",
+        true
+      );
+      expect(resultWithDashEnabled).toEqual(undefined);
     });
     it("should return undefined when the keys are invalid", () => {
       const result = getItineraryCost(
