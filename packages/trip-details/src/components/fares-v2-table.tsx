@@ -244,7 +244,8 @@ const FaresV2Table = ({
         const fare = getItineraryCost(
           legs,
           descope(medium?.id ?? null),
-          descope(rider?.id ?? null)
+          descope(rider?.id ?? null),
+          true
         );
         rows[nextRowIndex].push(
           <td
