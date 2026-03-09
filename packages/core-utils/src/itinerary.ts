@@ -1,22 +1,22 @@
 import polyline from "@mapbox/polyline";
 import {
-    AppliedFareProduct,
-    Company,
-    Config,
-    Currency,
-    ElevationProfile,
-    ElevationProfileComponent,
-    FareProduct,
-    FlexBookingInfo,
-    ItineraryOnlyLegsRequired,
-    LatLngArray,
-    Leg,
-    MassUnitOption,
-    Money,
-    Place,
-    Step,
-    Stop,
-    TncFare
+  AppliedFareProduct,
+  Company,
+  Config,
+  Currency,
+  ElevationProfile,
+  ElevationProfileComponent,
+  FareProduct,
+  FlexBookingInfo,
+  ItineraryOnlyLegsRequired,
+  LatLngArray,
+  Leg,
+  MassUnitOption,
+  Money,
+  Place,
+  Step,
+  Stop,
+  TncFare
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
 
