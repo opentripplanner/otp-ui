@@ -307,7 +307,7 @@ export function legLocationAtDistance(
     const coords = pt?.geometry?.coordinates;
     return [coords[1], coords[0]];
   } catch {
-    // FIXME handle error!
+    // This is designed to catch the toGeoJSON from throwing if the geometry is not in the correct format
   }
 
   return null;
@@ -326,6 +326,7 @@ export function legElevationAtDistance(
 ): number | undefined {
   const elevation = points.reduce<number | undefined>((acc, point, index) => {
     const prevPoint = points[index - 1];
+    // at the first index there is no previous point
     if (!prevPoint) return acc;
     const [pointDistance, pointElevation] = point;
     const [prevPointDistance, prevPointElevation] = prevPoint;

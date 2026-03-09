@@ -21,7 +21,7 @@ export function enableScrollForSelector(selector: string): void {
   }
 
   function disableRubberBand(event: TouchEvent) {
-    if (!overlay || !clientY) return;
+    if (!overlay || clientY === null) return;
     const clientYDelta = event.targetTouches[0].clientY - clientY;
 
     if (overlay.scrollTop === 0 && clientYDelta > 0) {
