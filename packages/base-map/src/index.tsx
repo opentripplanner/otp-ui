@@ -182,8 +182,14 @@ const BaseMap = ({
           id="filter-group"
           onBlur={() => setFakeHover(false)}
           onClick={onClickLayerSelector}
-          onFocus={() => setFakeHover(true)}
-          onTouchEnd={() => setFakeHover(true)}
+          onFocus={() => {
+            setFakeHover(true);
+            if (onClickLayerSelector) onClickLayerSelector();
+          }}
+          onTouchEnd={() => {
+            setFakeHover(true);
+            if (onClickLayerSelector) onClickLayerSelector();
+          }}
         >
           <ul
             className={`maplibregl-ctrl-group layers-list ${
