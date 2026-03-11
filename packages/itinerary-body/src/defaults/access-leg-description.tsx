@@ -102,7 +102,7 @@ export default function AccessLegDescription({
     // Return an HTML element which is passed a className (and style props)
     // for styled-components support.
     <span
-      className={`${className} ${
+      className={`${className || ""} ${
         isTransferLeg && distance === 0 ? "transfer-leg" : "walk-leg"
       }`}
       style={style}
