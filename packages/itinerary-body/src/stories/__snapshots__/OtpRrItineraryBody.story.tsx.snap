@@ -52,13 +52,6 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -282,14 +275,6 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
       from Pioneer Square North MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 8383
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -649,14 +634,6 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
       from Providence Park MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 9757
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -1010,13 +987,6 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -1240,14 +1210,6 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
       from Pioneer Square North MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 8383
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -1610,14 +1572,6 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
       from Providence Park MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 9757
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -1971,13 +1925,6 @@ exports[`ItineraryBody/otp-react-redux BikeOnlyItinerary smoke-test 1`] = `
       from 503 SW Alder St, Portland, OR, USA 97204
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -2318,13 +2265,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
       from 2624 SE 30th Ave, Portland, OR, USA 97202
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -2535,13 +2475,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
       <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL">
         Pick up  shared bike
-      </div>
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
       </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
@@ -2852,13 +2785,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
       from SE 29th at Hawthorne
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -3174,13 +3100,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
       from 2943 SE Washington St, Portland, OR, USA 97214
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -3429,13 +3348,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
       <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL">
         Pick up  shared bike
-      </div>
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
       </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
@@ -3860,13 +3772,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
       from NE Glisan at 24th
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -4128,14 +4033,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
       from NE Sandy &amp; 24th
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 5066
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -4520,14 +4417,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
       from NE Sandy &amp; 57th
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 5104
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -4738,13 +4627,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
       <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL">
         Pick up  shared bike
-      </div>
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
       </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
@@ -5055,13 +4937,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
       from NE 60th at Cully
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -5339,13 +5214,6 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -5531,13 +5399,6 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
       from corner of path and Pioneer Courthouse Sq (pedestrian street)
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -5833,13 +5694,6 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
       from corner of path and Pioneer Sq N (path)
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -6025,14 +5879,6 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
       from Pioneer Square North MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 8383
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -6325,14 +6171,6 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
       from Providence Park MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 9757
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -6518,13 +6356,6 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
       from corner of path and Providence Park (path)
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -6966,13 +6797,6 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
       from West Burnside Street
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -7580,13 +7404,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
       from 600 SW 5th Ave, Portland, OR, USA 97204
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -7797,13 +7614,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
       <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL">
         Pick up Razor E-scooter
-      </div>
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
       </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
@@ -8077,13 +7887,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
       from 2943 SE Washington St, Portland, OR, USA 97214
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -8399,13 +8202,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
       <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL">
         Pick up Shared E-scooter
-      </div>
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
       </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
@@ -8867,13 +8663,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
       from NE Broadway
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -8965,14 +8754,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
       from NE Broadway &amp; 28th
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 638
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -9214,14 +8995,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
       from NE 33rd &amp; Shaver
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 7393
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -9499,13 +9272,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
       <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL">
         Pick up Shared E-scooter
-      </div>
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
       </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
@@ -9922,13 +9688,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
       from 330 SW Murray Blvd, Washington County, OR, USA 97005
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -10026,13 +9785,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
       from P+R Sunset TC
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -10332,14 +10084,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
       from Sunset TC MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2600
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -10688,14 +10432,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
       from Oak/ SW 1st Ave MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 8337
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -11087,13 +10823,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
       from 100 South 11th Street, Mount Vernon, WA, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -13593,13 +13322,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
       from 2nd Avenue, Longmont, CO, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -13919,14 +13641,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
       from S Main St &amp; 1st Ave
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 25633
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -14188,14 +13902,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
       from US 287 &amp; Arapahoe Rd
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 33109
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -14419,14 +14125,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
       from Arapahoe Rd &amp; Stonehenge Dr
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 33465
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -14656,14 +14354,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
       from Erie Community Center
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 33200
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -14887,8 +14577,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
       from 60plusride-co-us:area_626
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -15073,13 +14761,6 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
       from 300 Courtland St NE, Atlanta, GA 30303-12ND, United States
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -15328,13 +15009,6 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
       <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL">
         Pick up Razor E-scooter
-      </div>
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
       </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
@@ -15894,13 +15568,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
       from 1375 NE Cherry Lane, Hillsboro
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -17785,13 +17452,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
       from 330 SW Murray Blvd, Washington County, OR, USA 97005
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -18299,13 +17959,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
       from P+R Sunset TC
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -18605,14 +18258,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
       from Sunset TC MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2600
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -18961,14 +18606,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
       from Oak/ SW 1st Ave MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 8337
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -19857,13 +19494,6 @@ exports[`ItineraryBody/otp-react-redux StopWithNoStopCode smoke-test 1`] = `
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -20087,13 +19717,6 @@ exports[`ItineraryBody/otp-react-redux StopWithNoStopCode smoke-test 1`] = `
       from Pioneer Square North MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -20456,14 +20079,6 @@ exports[`ItineraryBody/otp-react-redux StopWithNoStopCode smoke-test 1`] = `
       from Providence Park MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 9757
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -20817,13 +20432,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -21047,14 +20655,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
       from Pioneer Square North MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 8383
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -21417,14 +21017,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
       from Providence Park MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 9757
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -21778,13 +21370,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -22008,14 +21593,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
       from Pioneer Square North MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 8383
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -22378,14 +21955,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
       from Providence Park MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 9757
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -22739,13 +22308,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -22969,14 +22531,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
       from Pioneer Square North MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 8383
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -23339,14 +22893,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
       from Providence Park MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 9757
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -23790,13 +23336,6 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
       from West Burnside Street
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -24337,13 +23876,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
       from Airport Terminal A (SEPTA)
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -26110,13 +25642,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
       from 330 SW Murray Blvd, Washington County, OR, USA 97005
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -26624,13 +26149,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
       from P+R Sunset TC
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -26930,14 +26448,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
       from Sunset TC MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2600
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -27307,14 +26817,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
       from Oak/ SW 1st Ave MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 8337
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -27706,13 +27208,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
       from 330 SW Murray Blvd, Washington County, OR, USA 97005
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -28220,13 +27715,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
       from P+R Sunset TC
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -28526,14 +28014,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
       from Sunset TC MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2600
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -28882,14 +28362,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
       from Oak/ SW 1st Ave MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 8337
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -29281,13 +28753,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
       from 330 SW Murray Blvd, Washington County, OR, USA 97005
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -29795,13 +29260,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
       from P+R Sunset TC
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -30101,14 +29559,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
       from Sunset TC MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2600
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -30457,14 +29907,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
       from Oak/ SW 1st Ave MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 8337
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -30856,13 +30298,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
       from 47.97767, -122.20034
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -31238,14 +30673,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
       from Everett Station Bay C1
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2345
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -31455,14 +30882,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
       from Northgate Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2191
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -31554,14 +30973,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
       from Northgate Station - Bay 4
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 35318
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -31787,14 +31198,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
       from N 105th St &amp; Aurora Ave N
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 40032
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -32056,14 +31459,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
       from Aurora Ave N &amp; N 105th St
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 7080
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -32361,14 +31756,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
       from 3rd Ave &amp; Cherry St
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 490
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -32646,13 +32033,6 @@ exports[`ItineraryBody/otp-react-redux WalkOnlyItinerary smoke-test 1`] = `
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -32924,13 +32304,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
       from 3940 SE Brooklyn St, Portland, OR, USA 97202
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -33154,14 +32527,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
       from SE Cesar Chavez Blvd &amp; Brooklyn
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 7439
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -33371,14 +32736,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
       from SE Cesar Chavez Blvd &amp; Hawthorne
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 7459
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -33640,14 +32997,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
       from SE Hawthorne &amp; Cesar Chavez Blvd
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2626
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -33857,14 +33206,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
       from SE Hawthorne &amp; 27th
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2613
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -34211,13 +33552,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
       from 3940 SE Brooklyn St, Portland, OR, USA 97202
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -34472,14 +33806,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
       from SE Cesar Chavez Blvd &amp; Brooklyn
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 7439
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -34689,14 +34015,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
       from SE Cesar Chavez Blvd &amp; Hawthorne
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 7459
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -34989,14 +34307,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
       from SE Hawthorne &amp; Cesar Chavez Blvd
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2626
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -35237,14 +34547,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
       from SE Hawthorne &amp; 27th
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2613
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -35560,13 +34862,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -35790,14 +35085,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
       from Pioneer Square North MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 8383
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -36160,14 +35447,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
       from Providence Park MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 9757
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -36521,13 +35800,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
       from KGW Studio on the Sq, Portland, OR, USA
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -36751,14 +36023,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
       from Pioneer Square North MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 8383
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -37121,14 +36385,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
       from Providence Park MAX Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 9757
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -37482,13 +36738,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
       from 47.97767, -122.20034
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -37864,14 +37113,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
       from Everett Station Bay C1
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2345
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -38081,14 +37322,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
       from Northgate Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2191
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -38180,14 +37413,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
       from Northgate Station - Bay 4
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 35318
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -38413,14 +37638,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
       from N 105th St &amp; Aurora Ave N
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 40032
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -38682,14 +37899,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
       from Aurora Ave N &amp; N 105th St
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 7080
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -38987,14 +38196,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
       from 3rd Ave &amp; Cherry St
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 490
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -39272,13 +38473,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
       from 47.97767, -122.20034
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -39654,14 +38848,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
       from Everett Station Bay C1
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2345
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -39871,14 +39057,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
       from Northgate Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2191
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -39970,14 +39148,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
       from Northgate Station - Bay 4
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 35318
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -40203,14 +39373,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
       from N 105th St &amp; Aurora Ave N
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 40032
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -40472,14 +39634,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
       from Aurora Ave N &amp; N 105th St
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 7080
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -40777,14 +39931,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
       from 3rd Ave &amp; Cherry St
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 490
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -41062,13 +40208,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
       from 47.97767, -122.20034
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hHdEsv"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -41444,14 +40583,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
       from Everett Station Bay C1
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2345
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -41661,14 +40792,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
       from Northgate Station
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 2191
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -41760,14 +40883,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
       from Northgate Station - Bay 4
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 35318
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -41993,14 +41108,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
       from N 105th St &amp; Aurora Ave N
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 40032
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -42262,14 +41369,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
       from Aurora Ave N &amp; N 105th St
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details transit">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 7080
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
@@ -42567,14 +41666,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
       from 3rd Ave &amp; Cherry St
     </span>
     <div class="styled__PlaceDetails-sc-1q8npbl-47 itxLSk place-details ">
-      <div class="styled__PlaceSubheader-sc-1q8npbl-50 csGmRL transit-leg-subheader">
-        Stop ID 490
-        <button role="link"
-                class="styled__TransparentButton-sc-1q8npbl-1 styled__LinkButton-sc-1q8npbl-3 styled__ViewerButton-sc-1q8npbl-4 jOzsRd eTOvCo hqSBOF"
-        >
-          Stop Viewer
-        </button>
-      </div>
       <div class="styled__LegBody-sc-1q8npbl-24 bqpbrN">
         <div class="styled__LegClickable-sc-1q8npbl-25 gZZwfK">
           <span class="styled__LegDescription-sc-1q8npbl-27 gAcBf">
