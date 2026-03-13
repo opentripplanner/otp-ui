@@ -19,12 +19,13 @@ const isValidPosition = (
 
 type RouteData = {
   color?: string;
+  // Patterns organized by pattern ID
   patterns: Record<
     string,
     {
       id: string;
       name?: string;
-      geometry?: { points: [number, number][] };
+      geometry?: { points: string };
       stops?: Stop[];
     }
   >;
