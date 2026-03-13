@@ -4,6 +4,7 @@ import { action } from "storybook/actions";
 
 import mockStops from "../__mocks__/stops.json";
 import mockFlexStopsPolygon from "../__mocks__/flex-stops-polygon.json";
+import mockFlexStopsMultiPolygon from "../__mocks__/flex-stops-multipolygon.json";
 import { withMap } from "../../../.storybook/base-map-wrapper";
 
 import StopsOverlay, { StopProps } from ".";
@@ -61,4 +62,21 @@ export const FlexStopsPolygon = {
   ),
 
   decorators: [withMap([33.85, -84.61], 10)]
+};
+
+export const FlexStopsMultiPolygon = {
+  render: () => {
+    const mappedStops = mockFlexStopsMultiPolygon.map(s => ({
+      ...s,
+      color: `#${s.routes[0].color}`
+    }));
+    return (
+      <Example
+        filterStops={false}
+        // @ts-expect-error json import acts strange with typescript
+        stops={mappedStops}
+      />
+    );
+  },
+  decorators: [withMap([33.7629671, -84.4513974], 10)]
 };
