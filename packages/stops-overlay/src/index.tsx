@@ -40,7 +40,7 @@ type Props = {
   /**
    * The lowest zoom level the stop markers should be visible at
    */
-  minZoom?: number;
+  minZoom?: number | null;
   /**
    * A method to be fired when the map is moved
    */
