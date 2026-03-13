@@ -90,12 +90,12 @@ export const OTP2RouteOutsideOfInitialView = {
 
 export const WithChangingPath = (): JSX.Element => <WithChangingRoute />;
 
-export const FlexRoute = {
+export const FlexRouteUsingPolygon = {
   render: Template,
   args: {
     clipToPatternStops: true,
     // Since the data is fixed, we know where the relevant flex zone is.
-    // Using the stopsOverlay is not possible as it is very complex to implement */}
+    // Using the stopsOverlay is not possible as it is very complex to implement
     extraLayer: (
       <StopsOverlay
         stops={flexRouteData.patterns[0].stops
@@ -113,12 +113,12 @@ export const FlexRoute = {
   decorators: [withMap(POWDER_SPRINGS, zoom)]
 };
 
-export const FlexRoute2 = {
+export const FlexRouteUsingPolygon2 = {
   render: Template,
   args: {
     clipToPatternStops: true,
     // Since the data is fixed, we know where the relevant flex zone is.
-    // Using the stopsOverlay is not possible as it is very complex to implement */}
+    // Using the stopsOverlay is not possible as it is very complex to implement
     extraLayer: (
       <StopsOverlay
         stops={Object.values(flexRouteData2.patterns)[0]
@@ -137,7 +137,7 @@ export const FlexRoute2 = {
   decorators: [withMap(POWDER_SPRINGS, zoom)]
 };
 
-export const FlexRoute3 = {
+export const FlexRouteUsingGeometryCollection = {
   render: Template,
   args: {
     extraLayer: (
@@ -145,9 +145,7 @@ export const FlexRoute3 = {
         // Tests stop area with GeometryCollection
         stops={Object.values(flexRouteData3.patterns)[2]
           .stops.filter(
-            stop =>
-              stop?.geometries?.geoJson?.type === "Polygon" ||
-              stop?.geometries?.geoJson?.type === "GeometryCollection"
+            stop => stop?.geometries?.geoJson?.type === "GeometryCollection"
           )
           .map(stop => ({ ...stop, color: `#333` }))}
         symbols={[]}
@@ -158,17 +156,14 @@ export const FlexRoute3 = {
   }
 };
 
-export const FlexMultiPolygonRoute = {
+export const FlexRouteUsingMultiPolygon = {
   render: Template,
   args: {
     extraLayer: (
       <StopsOverlay
-        // Tests stop area with GeometryCollection
         stops={Object.values(flexRouteData4.patterns)[4]
           .stops.filter(
-            stop =>
-              stop?.geometries?.geoJson?.type === "MultiPolygon" ||
-              stop?.geometries?.geoJson?.type === "GeometryCollection"
+            stop => stop?.geometries?.geoJson?.type === "MultiPolygon"
           )
           .map(stop => ({ ...stop, color: `#333` }))}
         symbols={[]}
@@ -179,17 +174,14 @@ export const FlexMultiPolygonRoute = {
   }
 };
 
-export const FlexMultiPolygonRoute2 = {
+export const FlexRouteUsingMultiPolygon2 = {
   render: Template,
   args: {
     extraLayer: (
       <StopsOverlay
-        // Tests stop area with GeometryCollection
         stops={Object.values(flexRouteData5.patterns)[0]
           .stops.filter(
-            stop =>
-              stop?.geometries?.geoJson?.type === "MultiPolygon" ||
-              stop?.geometries?.geoJson?.type === "GeometryCollection"
+            stop => stop?.geometries?.geoJson?.type === "MultiPolygon"
           )
           .map(stop => ({ ...stop, color: `#333` }))}
         symbols={[]}
