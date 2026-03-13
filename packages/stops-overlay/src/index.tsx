@@ -252,4 +252,4 @@ const StopsOverlay = (props: Props): JSX.Element => {
 
 export default StopsOverlay;
 
-export { Props as StopProps };
+export { isGeoJsonFlex, Props as StopProps };
