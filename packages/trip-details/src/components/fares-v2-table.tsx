@@ -251,7 +251,7 @@ const FaresV2Table = ({
           <td
             style={{ textAlign: fare?.amount ? "right" : "center" }}
             title={
-              !fare?.amount !== undefined &&
+              fare?.amount === undefined &&
               intl.formatMessage({
                 id: "otpUi.TripDetails.missingFareTotal"
               })
