@@ -735,7 +735,7 @@ export function getLegCost(
 export function getItineraryCost(
   legs: Leg[],
   mediumId?: string | (string | null)[] | null,
-  riderCategoryId?: string | (string | null)[] | null
+  riderCategoryId?: string | (string | null)[] | null,
   nulledTotalFareOnAnyMissingFare = false
 ): Money | undefined {
   if (Array.isArray(mediumId) || Array.isArray(riderCategoryId)) {
