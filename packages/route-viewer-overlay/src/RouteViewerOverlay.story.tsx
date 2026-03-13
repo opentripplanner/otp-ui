@@ -7,6 +7,7 @@ import flexRouteData from "../__mocks__/mock-flex-route.json";
 import flexRouteData2 from "../__mocks__/mock-flex-route2.json";
 import flexRouteData3 from "../__mocks__/mock-flex-route3.json";
 import flexRouteData4 from "../__mocks__/mock-flex-route4.json";
+import flexRouteData5 from "../__mocks__/mock-flex-route5.json";
 
 import StopsOverlay from "../../stops-overlay/src";
 import { withMap } from "../../../.storybook/base-map-wrapper";
@@ -160,6 +161,41 @@ export const FlexRoute3 = {
 export const FlexMultiPolygonRoute = {
   render: Template,
   args: {
+    extraLayer: (
+      <StopsOverlay
+        // Tests stop area with GeometryCollection
+        stops={Object.values(flexRouteData4.patterns)[4]
+          .stops.filter(
+            stop =>
+              stop?.geometries?.geoJson?.type === "MultiPolygon" ||
+              stop?.geometries?.geoJson?.type === "GeometryCollection"
+          )
+          .map(stop => ({ ...stop, color: `#333` }))}
+        symbols={[]}
+        visible
+      />
+    ),
     routeData: flexRouteData4
+  }
+};
+
+export const FlexMultiPolygonRoute2 = {
+  render: Template,
+  args: {
+    extraLayer: (
+      <StopsOverlay
+        // Tests stop area with GeometryCollection
+        stops={Object.values(flexRouteData5.patterns)[0]
+          .stops.filter(
+            stop =>
+              stop?.geometries?.geoJson?.type === "MultiPolygon" ||
+              stop?.geometries?.geoJson?.type === "GeometryCollection"
+          )
+          .map(stop => ({ ...stop, color: `#333` }))}
+        symbols={[]}
+        visible
+      />
+    ),
+    routeData: flexRouteData5
   }
 };
