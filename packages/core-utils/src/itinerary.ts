@@ -727,12 +727,16 @@ export function getLegCost(
  * @param category Rider category (youth, regular, senior)
  * @param container Fare container (cash, electronic)
  * @param seenFareIds List of fare product IDs that have already been seen on prev legs.
+ * @param nulledTotalFareOnAnyMissingFare If this is set to true, the total fare
+ * will be null if *any* fare is missing. If false, the total will be the total
+ * fare with the missing fares ignored.
  * @returns Money object for the total itinerary cost.
  */
 export function getItineraryCost(
   legs: Leg[],
   mediumId?: string | (string | null)[] | null,
-  riderCategoryId?: string | (string | null)[] | null
+  riderCategoryId?: string | (string | null)[] | null,
+  nulledTotalFareOnAnyMissingFare = false
 ): Money | undefined {
   if (Array.isArray(mediumId) || Array.isArray(riderCategoryId)) {
     // TODO: Better input type handling
@@ -799,6 +803,13 @@ export function getItineraryCost(
       { seenIds: [], legCosts: [] }
     )
     .legCosts.map(lc => lc.legPrice);
+
+  if (
+    nulledTotalFareOnAnyMissingFare &&
+    legs.filter(l => l.transitLeg).length !== legCosts.length
+  ) {
+    return undefined;
+  }
 
   if (legCosts.length === 0) return undefined;
   // Calculate the total

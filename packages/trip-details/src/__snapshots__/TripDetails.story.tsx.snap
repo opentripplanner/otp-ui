@@ -566,7 +566,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.80
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $2.80
       </em>
@@ -598,7 +600,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.40
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -630,7 +634,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.40
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -662,7 +668,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.80
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $2.80
       </em>
@@ -694,7 +702,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.40
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -726,7 +736,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.40
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -758,7 +770,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.80
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $2.80
       </em>
@@ -790,7 +804,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.40
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -822,7 +838,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.40
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -854,7 +872,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.80
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $2.80
       </em>
@@ -886,7 +906,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.40
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -918,7 +940,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.40
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -980,7 +1004,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.00
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $2.80
       </em>
@@ -1012,7 +1038,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.00
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -1044,7 +1072,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.00
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -1076,7 +1106,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.00
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $2.80
       </em>
@@ -1108,7 +1140,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.00
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -1140,7 +1174,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.00
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -1172,7 +1208,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.00
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $2.80
       </em>
@@ -1204,7 +1242,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.00
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -1236,7 +1276,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.00
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -1268,7 +1310,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.00
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $2.80
       </em>
@@ -1300,7 +1344,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.00
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -1332,7 +1378,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
       </svg>
       $0.00
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $1.40
       </em>
@@ -1392,7 +1440,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <td style="text-align: right;">
       $2.75
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $10.25
       </em>
@@ -1416,7 +1466,9 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <td style="text-align: right;">
       $2.75
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: right;"
+    >
       <em>
         $9.75
       </em>
@@ -1444,10 +1496,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
         style="text-align: center;"
     >
       <em>
-        -
-        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-          No fare information for this leg
-        </span>
+        $0.00
       </em>
     </td>
   </tr>
@@ -1472,9 +1521,14 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <td style="text-align: right;">
       $0.00
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: center;"
+    >
       <em>
-        $3.25
+        -
+        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+          No fare information for this leg
+        </span>
       </em>
     </td>
   </tr>
@@ -1499,9 +1553,14 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <td style="text-align: right;">
       $0.00
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: center;"
+    >
       <em>
-        $1.00
+        -
+        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+          No fare information for this leg
+        </span>
       </em>
     </td>
   </tr>
@@ -1526,9 +1585,14 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
     <td style="text-align: right;">
       $0.00
     </td>
-    <td style="text-align: right;">
+    <td title="No fare total available"
+        style="text-align: center;"
+    >
       <em>
-        $1.00
+        -
+        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+          No fare information for this leg
+        </span>
       </em>
     </td>
   </tr>
@@ -1589,10 +1653,7 @@ exports[`TripDetails FaresV2TableStory smoke-test 1`] = `
         style="text-align: center;"
     >
       <em>
-        -
-        <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-          No fare information for this leg
-        </span>
+        $0.00
       </em>
     </td>
   </tr>
@@ -1754,9 +1815,14 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 <td style="text-align: right;">
                   $0.00
                 </td>
-                <td style="text-align: right;">
+                <td title="No fare total available"
+                    style="text-align: center;"
+                >
                   <em>
-                    $3.25
+                    -
+                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                      No fare information for this leg
+                    </span>
                   </em>
                 </td>
               </tr>
@@ -1781,9 +1847,14 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 <td style="text-align: right;">
                   $0.00
                 </td>
-                <td style="text-align: right;">
+                <td title="No fare total available"
+                    style="text-align: center;"
+                >
                   <em>
-                    $1.00
+                    -
+                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                      No fare information for this leg
+                    </span>
                   </em>
                 </td>
               </tr>
@@ -1808,9 +1879,14 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 <td style="text-align: right;">
                   $0.00
                 </td>
-                <td style="text-align: right;">
+                <td title="No fare total available"
+                    style="text-align: center;"
+                >
                   <em>
-                    $1.00
+                    -
+                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
+                      No fare information for this leg
+                    </span>
                   </em>
                 </td>
               </tr>
@@ -1864,7 +1940,9 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 <td style="text-align: right;">
                   $2.75
                 </td>
-                <td style="text-align: right;">
+                <td title="No fare total available"
+                    style="text-align: right;"
+                >
                   <em>
                     $10.25
                   </em>
@@ -1888,7 +1966,9 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                 <td style="text-align: right;">
                   $2.75
                 </td>
-                <td style="text-align: right;">
+                <td title="No fare total available"
+                    style="text-align: right;"
+                >
                   <em>
                     $9.75
                   </em>
@@ -1916,10 +1996,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                     style="text-align: center;"
                 >
                   <em>
-                    -
-                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                      No fare information for this leg
-                    </span>
+                    $0.00
                   </em>
                 </td>
               </tr>
@@ -1948,10 +2025,7 @@ exports[`TripDetails LegFareProductsItinerary smoke-test 1`] = `
                     style="text-align: center;"
                 >
                   <em>
-                    -
-                    <span class="styled__InvisibleA11yLabel-sc-6q2ok2-0 elLeWK">
-                      No fare information for this leg
-                    </span>
+                    $0.00
                   </em>
                 </td>
               </tr>
@@ -2584,7 +2658,9 @@ exports[`TripDetails OTP2FlexItinerary smoke-test 1`] = `
                   </svg>
                   $0.00
                 </td>
-                <td style="text-align: right;">
+                <td title="No fare total available"
+                    style="text-align: right;"
+                >
                   <em>
                     $2.80
                   </em>
