@@ -244,20 +244,21 @@ const FaresV2Table = ({
         const fare = getItineraryCost(
           legs,
           descope(medium?.id ?? null),
-          descope(rider?.id ?? null)
+          descope(rider?.id ?? null),
+          true
         );
         rows[nextRowIndex].push(
           <td
             style={{ textAlign: fare?.amount ? "right" : "center" }}
             title={
-              !fare?.amount &&
+              fare?.amount === undefined &&
               intl.formatMessage({
                 id: "otpUi.TripDetails.missingFareTotal"
               })
             }
           >
             <em>
-              {fare?.amount
+              {fare?.amount !== undefined
                 ? renderFare(fare?.currency.code, fare?.amount)
                 : FailDash}
             </em>
