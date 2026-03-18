@@ -27,9 +27,6 @@ export default function TransitLeg({
   const stopCodeFrom = getDisplayedStopCode(leg.from.stop ?? leg.from);
   const stopCodeTo = getDisplayedStopCode(leg.to.stop ?? leg.to);
 
-  const stopCodeFromPart = stopCodeFrom ? ` (${stopCodeFrom})` : "";
-  const stopCodeToPart = stopCodeTo ? ` (${stopCodeTo})` : "";
-
   // TODO: core-utils needs some larger-scale type fixes
   // null is an object, so we need to redefine it as undefined to prevent
   // it from being read as an object. The long term solution is to avoid
@@ -51,7 +48,7 @@ export default function TransitLeg({
       id="otpUi.PrintableItinerary.TransitLeg.alight"
       values={{
         place: leg.to.name,
-        stopCodePart: stopCodeToPart,
+        stopCode: stopCodeTo,
         strong: strongText,
         time: leg.endTime
       }}
@@ -103,7 +100,7 @@ export default function TransitLeg({
               id="otpUi.PrintableItinerary.TransitLeg.board"
               values={{
                 place: leg.from.name,
-                stopCodePart: stopCodeFromPart,
+                stopCode: stopCodeFrom,
                 strong: strongText,
                 time: leg.startTime
               }}
