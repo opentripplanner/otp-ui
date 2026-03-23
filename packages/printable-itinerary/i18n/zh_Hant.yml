@@ -6,10 +6,10 @@ otpUi:
       header: <strong>搭乘{company}</strong>前往<strong>{place}</strong>
     TransitLeg:
       alight: >-
-        <strong>{time, time, short}</strong>於<strong>{place}</strong>
-        {stopCodePart}下車
+        <strong>{time, time, short}</strong>於<strong>{place}</strong> {stopCode,
+        select, undefined {} other { ({stopCode})}}下車
       board: >-
-        <strong>{time, time, short}</strong>於<strong>{place}</strong>
-        {stopCodePart}上車
+        <strong>{time, time, short}</strong>於<strong>{place}</strong> {stopCode,
+        select, undefined {} other { ({stopCode})}}上車
       continuesAs: 繼續{routeDescription}
     depart: <strong>從</strong>{place}<strong>出發</strong>
