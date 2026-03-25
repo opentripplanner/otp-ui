@@ -34,9 +34,7 @@ function PrintableItinerary({
   LegIcon,
   legHeadings = {
     titleHeading: "h1",
-    transitLeg: "h2",
-    tncLeg: "h2",
-    accessLeg: "h2"
+    legHeading: "h2"
   }
 }: Props): ReactElement {
   const gradationMap = config.accessibilityScore?.gradationMap;
@@ -83,7 +81,7 @@ function PrintableItinerary({
             key={k}
             leg={leg}
             LegIcon={LegIcon}
-            headingAs={legHeadings.transitLeg || "div"}
+            headingAs={legHeadings.legHeading || "div"}
           />
         ) : leg.rideHailingEstimate ? (
           <TNCLeg
@@ -91,7 +89,7 @@ function PrintableItinerary({
             key={k}
             leg={leg}
             LegIcon={LegIcon}
-            headingAs={legHeadings.tncLeg || "div"}
+            headingAs={legHeadings.legHeading || "div"}
           />
         ) : (
           <AccessLeg
@@ -100,7 +98,7 @@ function PrintableItinerary({
             key={k}
             leg={leg}
             LegIcon={LegIcon}
-            headingAs={legHeadings.accessLeg || "span"}
+            headingAs={legHeadings.legHeading || "span"}
           />
         )
       )}

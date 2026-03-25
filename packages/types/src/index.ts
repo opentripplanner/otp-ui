@@ -878,10 +878,8 @@ export type HeadingAs = "h1" | "h2" | "h3" | "h4" | "span" | "div";
  * Options for Heading for PrintableItinerary
  */
 export type LegHeadingConfig = {
-  accessLeg?: HeadingAs;
-  transitLeg?: HeadingAs;
-  tncLeg?: HeadingAs;
   titleHeading?: HeadingAs;
+  legHeading?: HeadingAs;
 };
 
 /**
