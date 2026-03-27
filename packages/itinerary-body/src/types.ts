@@ -96,6 +96,11 @@ export interface TransitLegSummaryProps {
   stopsExpanded: boolean;
 }
 
+export interface TransitLegFooterProps {
+  /** Contains details about the leg object */
+  leg: Leg;
+}
+
 /**
  * Shared props for various components that render itinerary data.
  */
@@ -231,6 +236,12 @@ interface ItineraryBodySharedProps {
    * - onStopClick: triggered when the optional stop icon is clicked.
    */
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
+  /**
+   * An optional custom component for rendering a footer below a transit leg.
+   * The component is sent the following props:
+   * - leg: the transit leg
+   */
+  TransitLegFooter?: FunctionComponent<TransitLegFooterProps>;
   /**
    * A custom component for rendering the summary of a transit leg.
    * The component is sent 2 props:
