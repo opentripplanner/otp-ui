@@ -23,7 +23,7 @@ interface Props {
   itinerary: Itinerary;
   /** A component class that is used to render icons for legs of an itinerary. */
   LegIcon: LegIconComponent;
-  /** Controls semantic heading levels for each leg section */
+  /** Controls semantic heading levels; `legHeading` should be one level below `titleHeading`. */
   legHeadings?: LegHeadingConfig;
 }
 
