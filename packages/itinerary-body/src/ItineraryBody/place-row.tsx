@@ -74,6 +74,7 @@ export default function PlaceRow({
   showViewTripButton,
   TimeColumnContent = DefaultTimeColumnContent,
   toRouteAbbreviation,
+  AccessLegFooter,
   TransitLegFooter,
   TransitLegSubheader,
   TransitLegSummary
@@ -215,6 +216,7 @@ export default function PlaceRow({
               showApproximateTravelTime={showApproximateAccessLegTravelTimes}
               showElevationProfile={showElevationProfile}
               showLegIcon={showLegIcon}
+              AccessLegFooter={AccessLegFooter}
               TransitLegSubheader={TransitLegSubheader}
             />
           ))}

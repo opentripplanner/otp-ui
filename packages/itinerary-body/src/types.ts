@@ -101,6 +101,11 @@ export interface TransitLegFooterProps {
   leg: Leg;
 }
 
+export interface AccessLegFooterProps {
+  /** Contains details about the leg object */
+  leg: Leg;
+}
+
 /**
  * Shared props for various components that render itinerary data.
  */
@@ -229,6 +234,13 @@ interface ItineraryBodySharedProps {
   TimeColumnContent?: FunctionComponent<TimeColumnContentProps>;
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation?: ToRouteAbbreviationFunction;
+  /**
+   * An optional custom component for rendering a footer below an access leg
+   * (e.g., walk, bike, scooter, car).
+   * The component is sent the following props:
+   * - leg: the access leg
+   */
+  AccessLegFooter?: FunctionComponent<AccessLegFooterProps>;
   /**
    * An optional custom component for rendering a subheader on transit legs.
    * * The component is sent the following props:
