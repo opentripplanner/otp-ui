@@ -7,7 +7,7 @@ export default function DemoTransitLegFooter({
 }: TransitLegFooterProps): ReactElement {
   return (
     <div style={{ padding: "8px 0", fontSize: "0.95em" }}>
-      Leave at {leg.to?.name}
+      Arrive at {leg.to?.name}
     </div>
   );
 }

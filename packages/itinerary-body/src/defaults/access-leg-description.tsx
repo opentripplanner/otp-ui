@@ -25,14 +25,14 @@ export function getSummaryMode(leg: Leg, intl: IntlShape): string {
       return intl.formatMessage({
         defaultMessage: defaultMessages["otpUi.AccessLegBody.summaryMode.bike"],
         description: "Bike to somewhere",
-        id: "otpUi.AccessLegBody.summaryMode.bike",
+        id: "otpUi.AccessLegBody.summaryMode.bike"
       });
     case "BICYCLE_RENT":
       return intl.formatMessage({
         defaultMessage:
           defaultMessages["otpUi.AccessLegBody.summaryMode.bikeshare"],
         description: "Bikeshare to somewhere",
-        id: "otpUi.AccessLegBody.summaryMode.bikeshare",
+        id: "otpUi.AccessLegBody.summaryMode.bikeshare"
       });
     case "CAR":
       return leg.rideHailingEstimate
@@ -40,13 +40,13 @@ export function getSummaryMode(leg: Leg, intl: IntlShape): string {
             defaultMessage:
               defaultMessages["otpUi.AccessLegBody.summaryMode.carHail"],
             description: "Ride in a car/taxi to somewhere",
-            id: "otpUi.AccessLegBody.summaryMode.carHail",
+            id: "otpUi.AccessLegBody.summaryMode.carHail"
           })
         : intl.formatMessage({
             defaultMessage:
               defaultMessages["otpUi.AccessLegBody.summaryMode.carDrive"],
             description: "Drive somewhere",
-            id: "otpUi.AccessLegBody.summaryMode.carDrive",
+            id: "otpUi.AccessLegBody.summaryMode.carDrive"
           });
     case "MICROMOBILITY":
     case "MICROMOBILITY_RENT":
@@ -55,13 +55,13 @@ export function getSummaryMode(leg: Leg, intl: IntlShape): string {
         defaultMessage:
           defaultMessages["otpUi.AccessLegBody.summaryMode.escooter"],
         description: "Use an e-scooter",
-        id: "otpUi.AccessLegBody.summaryMode.escooter",
+        id: "otpUi.AccessLegBody.summaryMode.escooter"
       });
     case "WALK":
       return intl.formatMessage({
         defaultMessage: defaultMessages["otpUi.AccessLegBody.summaryMode.walk"],
         description: "Walk to somewhere",
-        id: "otpUi.AccessLegBody.summaryMode.walk",
+        id: "otpUi.AccessLegBody.summaryMode.walk"
       });
     default:
       return leg.mode;
@@ -77,7 +77,7 @@ export default function AccessLegDescription({
   config,
   leg,
   style,
-  headingAs,
+  headingAs
 }: Props): ReactElement {
   const intl = useIntl();
   const { companies, formatDuration, units } = config;
@@ -86,7 +86,7 @@ export default function AccessLegDescription({
   // it is a bike yet because that information is in the next leg with OTP2.
   const toPlace = {
     ...to,
-    vertexType: to.vertexType === "BIKESHARE" ? "VEHICLE" : to.vertexType,
+    vertexType: to.vertexType === "BIKESHARE" ? "VEHICLE" : to.vertexType
   };
   const modeContent = getSummaryMode(leg, intl);
   const placeContent = (
@@ -108,7 +108,7 @@ export default function AccessLegDescription({
       as={headingAs ?? "span"}
       className={[
         className,
-        isTransferLeg && distance === 0 ? "transfer-leg" : "walk-leg",
+        isTransferLeg && distance === 0 ? "transfer-leg" : "walk-leg"
       ]
         .filter(Boolean)
         .join(" ")}
@@ -128,7 +128,7 @@ export default function AccessLegDescription({
             duration:
               formatDuration && formatDuration(durationSeconds, intl, false),
             mode: modeContent,
-            place: placeContent,
+            place: placeContent
           }}
         />
       ) : isTransferLeg ? (
@@ -139,13 +139,13 @@ export default function AccessLegDescription({
           values={{
             duration: intl.formatMessage(
               {
-                id: "otpUi.ItineraryBody.common.durationShort",
+                id: "otpUi.ItineraryBody.common.durationShort"
               },
               {
                 approximatePrefix: false,
-                ...toHoursMinutesSeconds(durationSeconds),
-              },
-            ),
+                ...toHoursMinutesSeconds(durationSeconds)
+              }
+            )
           }}
         />
       ) : (
@@ -155,7 +155,7 @@ export default function AccessLegDescription({
           id="otpUi.AccessLegBody.summary"
           values={{
             mode: modeContent,
-            place: placeContent,
+            place: placeContent
           }}
         />
       )}
