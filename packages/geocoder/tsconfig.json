@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "target": "ES2019",
     "lib": ["ES2019", "DOM"],
     "composite": false,
     "outDir": "./lib",

@@ -8,6 +8,7 @@ export type OfflineResponse = {
   neighbourhood?: string;
   locality?: string;
   region_a?: string;
+  synonyms?: string[];
 }[];
 
 type OfflineQuery = {
@@ -28,12 +29,20 @@ async function autocomplete({
 }: OfflineQuery): Promise<OfflineResponse> {
   // eslint-disable-next-line new-cap
   const u = new uFuzzy();
-  const idxs = u.filter(
-    items.map(item => item.label),
-    text
-  );
 
-  return idxs.map(index => items[index]);
+  const haystackMap = items.flatMap<[string, number]>((item, idx) => {
+    const allTerms = [item.label, ...(item.synonyms ?? [])]
+    // old eslint doesn't support satisfies syntax
+    // eslint-disable-next-line prettier/prettier
+    return allTerms.map(term => [term, idx] satisfies [string, number])
+  })
+
+  const matchedIdxs = u.filter(haystackMap.map(i => i[0]), text);
+  const resultIdxs = matchedIdxs.reduce((results, matchIdx) => {
+    const itemIdx = haystackMap[matchIdx][1]
+    return results.add(itemIdx)
+  }, new Set<number>())
+  return [...resultIdxs].map(i => items[i])
 }
 
 function search(args: OfflineQuery): Promise<OfflineResponse> {
