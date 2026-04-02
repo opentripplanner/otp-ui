@@ -47,11 +47,11 @@ const MarkerWithPopup = ({
           autoOffset={autoOffset}
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...popupProps}
-          subpixelPositioning
           closeButton={false}
           closeOnClick={false}
           latitude={position[0]}
           longitude={position[1]}
+          subpixelPositioning
         >
           {tooltipContents}
         </Popup>
