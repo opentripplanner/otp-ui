@@ -1,12 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import React, { useState } from "react";
-import { Marker, PopupProps } from "react-map-gl/maplibre";
+import { Marker, PopupOptions } from "react-map-gl/maplibre";
 import { LeafletStyleMarker, Popup } from "./styled";
 
 type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
+  autoOffset?: number;
   popupContents?: React.ReactNode;
-  popupProps?: PopupProps;
+  popupProps?: PopupOptions;
   position: [number, number];
   tooltipContents?: React.ReactNode;
 };
@@ -15,6 +16,7 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
  * A MapLibre marker with a connected popup or tooltip
  */
 const MarkerWithPopup = ({
+  autoOffset,
   children,
   popupContents,
   popupProps,
@@ -42,13 +44,14 @@ const MarkerWithPopup = ({
       {/** TODO: adjust tooltip styling? */}
       {showTooltip && tooltipContents && (
         <Popup
+          autoOffset={autoOffset}
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...popupProps}
-          anchor="right"
           closeButton={false}
           closeOnClick={false}
           latitude={position[0]}
           longitude={position[1]}
+          subpixelPositioning
         >
           {tooltipContents}
         </Popup>
