@@ -517,7 +517,7 @@ export function calculateTncFares(
         leg
       ): leg is Leg & {
         rideHailingEstimate: NonNullable<Leg["rideHailingEstimate"]>;
-      } => leg.mode === "CAR" && leg.rideHailingEstimate !== undefined
+      } => leg.mode === "CAR" && leg.rideHailingEstimate !== undefined && leg.rideHailingEstimate !== null
     )
     .reduce<TncFare>(
       (acc, leg) => {
