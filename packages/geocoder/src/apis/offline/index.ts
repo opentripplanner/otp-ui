@@ -27,6 +27,8 @@ async function autocomplete({
   items,
   text
 }: OfflineQuery): Promise<OfflineResponse> {
+  if (!text) return [];
+
   // eslint-disable-next-line new-cap
   const u = new uFuzzy();
 
@@ -38,6 +40,7 @@ async function autocomplete({
   })
 
   const matchedIdxs = u.filter(haystackMap.map(i => i[0]), text);
+  if (!matchedIdxs) return [];
   const resultIdxs = matchedIdxs.reduce((results, matchIdx) => {
     const itemIdx = haystackMap[matchIdx][1]
     return results.add(itemIdx)
