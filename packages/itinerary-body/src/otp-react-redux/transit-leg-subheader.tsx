@@ -15,6 +15,7 @@ export default function TransitLegSubheader({
   onStopClick
 }: TransitLegSubheaderProps): ReactElement {
   const { from } = leg;
+  if (!from.stop?.id && !from.stopId) return null;
   return (
     <S.PlaceSubheader className="transit-leg-subheader">
       {getDisplayedStopCode(from) && (
@@ -33,6 +34,7 @@ export default function TransitLegSubheader({
           onStopClick={onStopClick}
           stop={from.stop}
           stopCode={getDisplayedStopCode(from)}
+          stopId={from.stopId}
         />
       )}
     </S.PlaceSubheader>

@@ -4,7 +4,9 @@ import { Bomb } from "@styled-icons/fa-solid/Bomb";
 import { Bolt } from "@styled-icons/fa-solid/Bolt";
 import styled from "styled-components";
 import { Meta } from "@storybook/react";
+import DemoAccessLegFooter from "./access-leg-footer";
 import RouteDescriptionFooterWithWaitTimes from "./footer-with-wait-times";
+import DemoTransitLegFooter from "./transit-leg-footer";
 
 import ItineraryBody from "..";
 import {
@@ -89,6 +91,20 @@ export const WalkTransitWalkItineraryWithCustomTransitLegSummaryComponent = (): 
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkItinerary}
     TransitLegSummary={CustomTransitLegSummary}
+  />
+);
+
+export const WalkTransitWalkItineraryWithTransitLegFooter = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    TransitLegFooter={DemoTransitLegFooter}
+  />
+);
+
+export const WalkTransitWalkItineraryWithAccessLegFooter = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    AccessLegFooter={DemoAccessLegFooter}
   />
 );
 

@@ -74,6 +74,8 @@ export default function PlaceRow({
   showViewTripButton,
   TimeColumnContent = DefaultTimeColumnContent,
   toRouteAbbreviation,
+  AccessLegFooter,
+  TransitLegFooter,
   TransitLegSubheader,
   TransitLegSummary
 }: PlaceRowProps): ReactElement {
@@ -190,6 +192,7 @@ export default function PlaceRow({
               showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
               showViewTripButton={showViewTripButton}
               timeZone={config.homeTimezone}
+              TransitLegFooter={TransitLegFooter}
               TransitLegSubheader={TransitLegSubheader}
               TransitLegSummary={TransitLegSummary}
               transitOperator={coreUtils.route.getTransitOperatorFromLeg(
@@ -213,6 +216,7 @@ export default function PlaceRow({
               showApproximateTravelTime={showApproximateAccessLegTravelTimes}
               showElevationProfile={showElevationProfile}
               showLegIcon={showLegIcon}
+              AccessLegFooter={AccessLegFooter}
               TransitLegSubheader={TransitLegSubheader}
             />
           ))}

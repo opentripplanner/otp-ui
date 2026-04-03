@@ -6,7 +6,11 @@ import { FormattedMessage } from "react-intl";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
-import { SetActiveLegFunction, TransitLegSubheaderProps } from "../types";
+import {
+  AccessLegFooterProps,
+  SetActiveLegFunction,
+  TransitLegSubheaderProps
+} from "../types";
 
 import AccessLegSteps from "./access-leg-steps";
 import AccessLegSummary from "./access-leg-summary";
@@ -42,6 +46,7 @@ interface Props {
   showApproximateTravelTime?: boolean;
   showElevationProfile: boolean;
   showLegIcon: boolean;
+  AccessLegFooter?: FunctionComponent<AccessLegFooterProps>;
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
 }
 
@@ -83,6 +88,7 @@ class AccessLegBody extends Component<Props, State> {
       showApproximateTravelTime,
       showElevationProfile,
       showLegIcon,
+      AccessLegFooter,
       TransitLegSubheader
     } = this.props;
     const { expanded } = this.state;
@@ -119,9 +125,7 @@ class AccessLegBody extends Component<Props, State> {
         {leg && (leg.rentedVehicle || leg.rentedBike || leg.rentedCar) && (
           <RentedVehicleSubheader config={config} leg={leg} />
         )}
-        {leg.from.stopId && TransitLegSubheader && (
-          <TransitLegSubheader leg={leg} />
-        )}
+        {TransitLegSubheader && <TransitLegSubheader leg={leg} />}
         <S.LegBody>
           <AccessLegSummary
             config={config}
@@ -193,6 +197,7 @@ class AccessLegBody extends Component<Props, State> {
             </S.LegDetails>
           )}
         </S.LegBody>
+        {AccessLegFooter && <AccessLegFooter leg={leg} />}
       </>
     );
   }

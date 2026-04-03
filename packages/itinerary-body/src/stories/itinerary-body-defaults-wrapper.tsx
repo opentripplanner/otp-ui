@@ -63,6 +63,8 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       styledItinerary,
       TimeColumnContent,
       toRouteAbbreviation = r => r?.toString()?.substr(0, 2),
+      AccessLegFooter,
+      TransitLegFooter,
       TransitLegSubheader,
       TransitLegSummary,
       AlertToggleIcon,
@@ -119,6 +121,8 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         showViewTripButton={showViewTripButton}
         TimeColumnContent={TimeColumnContent}
         toRouteAbbreviation={toRouteAbbreviation}
+        AccessLegFooter={AccessLegFooter}
+        TransitLegFooter={TransitLegFooter}
         TransitLegSubheader={TransitLegSubheader}
         TransitLegSummary={TransitLegSummary || DefaultTransitLegSummary}
       />

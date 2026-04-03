@@ -42,6 +42,8 @@ const ItineraryBody = ({
   showViewTripButton,
   TimeColumnContent,
   toRouteAbbreviation = defaultRouteAbbr,
+  AccessLegFooter,
+  TransitLegFooter,
   TransitLegSubheader,
   TransitLegSummary
 }: ItineraryBodyProps): ReactElement => {
@@ -100,6 +102,8 @@ const ItineraryBody = ({
           showViewTripButton={showViewTripButton}
           TimeColumnContent={TimeColumnContent}
           toRouteAbbreviation={toRouteAbbreviation}
+          AccessLegFooter={AccessLegFooter}
+          TransitLegFooter={TransitLegFooter}
           TransitLegSubheader={TransitLegSubheader}
           TransitLegSummary={TransitLegSummary}
         />
