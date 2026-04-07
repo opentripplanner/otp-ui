@@ -29,23 +29,27 @@ async function autocomplete({
 }: OfflineQuery): Promise<OfflineResponse> {
   if (!text) return [];
 
+  // TODO: could probably generate these arrays with only 1 pass of list
+  const itemsWithSynonyms = items.map(item => item.label);
+  const synonymIndicies = items.map((_, idx) => idx);
+
+  // Add synonyms to full list
+  // TODO: can this be done in a cleaner way?
+  items.forEach((item, idx) => {
+    if (item?.synonyms) {
+      item.synonyms.forEach(synonym => {
+        itemsWithSynonyms.push(synonym);
+        synonymIndicies.push(idx);
+      });
+    }
+  });
+
   // eslint-disable-next-line new-cap
   const u = new uFuzzy();
 
-  const haystackMap = items.flatMap<[string, number]>((item, idx) => {
-    const allTerms = [item.label, ...(item.synonyms ?? [])]
-    // old eslint doesn't support satisfies syntax
-    // eslint-disable-next-line prettier/prettier
-    return allTerms.map(term => [term, idx] satisfies [string, number])
-  })
+  const idxs = u.filter(itemsWithSynonyms, text);
 
-  const matchedIdxs = u.filter(haystackMap.map(i => i[0]), text);
-  if (!matchedIdxs) return [];
-  const resultIdxs = matchedIdxs.reduce((results, matchIdx) => {
-    const itemIdx = haystackMap[matchIdx][1]
-    return results.add(itemIdx)
-  }, new Set<number>())
-  return [...resultIdxs].map(i => items[i])
+  return Array.from(new Set(idxs.map(index => items[synonymIndicies[index]])));
 }
 
 function search(args: OfflineQuery): Promise<OfflineResponse> {
