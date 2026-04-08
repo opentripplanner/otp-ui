@@ -29,13 +29,14 @@ async function autocomplete({
 }: OfflineQuery): Promise<OfflineResponse> {
   if (!text) return [];
 
-  // TODO: could probably generate these arrays with only 1 pass of list
-  const itemsWithSynonyms = items.map(item => item.label);
-  const synonymIndicies = items.map((_, idx) => idx);
+  const itemsWithSynonyms = [];
+  const synonymIndicies = [];
 
   // Add synonyms to full list
   // TODO: can this be done in a cleaner way?
   items.forEach((item, idx) => {
+    itemsWithSynonyms.push(item.label);
+    synonymIndicies.push(idx);
     if (item?.synonyms) {
       item.synonyms.forEach(synonym => {
         itemsWithSynonyms.push(synonym);
