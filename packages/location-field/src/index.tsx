@@ -308,6 +308,8 @@ const LocationField = ({
   LocationIconComponent = DefaultLocationIcon,
   locationType,
   nearbyStops = [],
+  onBlur = null,
+  onFocus = null,
   onLocationSelected,
   onTextInputClick = null,
   operatorIconMap = {},
@@ -1076,6 +1078,8 @@ const LocationField = ({
       className={formControlClassname}
       onChange={onTextInputChange}
       onClick={handleTextInputClick}
+      onBlur={onBlur}
+      onFocus={onFocus}
       spellCheck={false}
       onKeyDown={onKeyDown}
       placeholder={placeholder}
