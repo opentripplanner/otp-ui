@@ -102,7 +102,7 @@
     "check:i18n-all": "node packages/scripts/lib/run-validate-i18n.js packages/**/src packages/**/i18n",
     "check:i18n-en-fr": "node packages/scripts/lib/run-validate-i18n.js packages/**/src packages/**/i18n/en-US.yml packages/**/i18n/fr.yml",
     "clean": "git clean -Xdf",
-    "prepublish": "pnpm typescript && pnpm build:cjs && pnpm build:esm",
+    "build-all": "pnpm typescript && pnpm build:cjs && pnpm build:esm",
     "check-eslint-config": "eslint --print-config jestconfig.js | eslint-config-prettier-check",
     "coverage": "jest --coverage",
     "deploy-storybook": "storybook-to-ghpages",
@@ -121,7 +121,7 @@
     "test-storybook": "test-storybook --url http://localhost:5555",
     "update-snapshots": "pnpm build-storybook; npx concurrently -k -s first -n \"SB,TEST\" \"npx http-server storybook-static --port 5555 --silent\" \"npx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555 -u\"",
     "test-snapshots": "npx concurrently -k -s first -n \"SB,TEST\" \"npx http-server storybook-static --port 5555 --silent\" \"npx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555\"",
-    "pack-all": "pnpm prepublish && lerna exec --no-private -- sh ../../scripts/pack-and-extract-single.sh"
+    "pack-all": "pnpm build-all && lerna exec --no-private -- sh ../../scripts/pack-and-extract-single.sh"
   },
   "eslintConfig": {
     "env": {

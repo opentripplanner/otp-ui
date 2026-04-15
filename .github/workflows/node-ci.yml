@@ -22,12 +22,10 @@ jobs:
         run: pnpm run lint:js
       - name: Lint styles
         run: pnpm run lint:styles
-      - name: Build packages
-        run: pnpm run build:cjs && pnpm run build:esm
+      - name: Run type check and build packages
+        run: pnpm run build-all
       - name: i18n check (en-US, fr only)
         run: pnpm run check:i18n-en-fr
-      - name: Type check
-        run: pnpm run typescript
       - name: Run unit tests
         run: pnpm run unit
       - name: Build Storybook
