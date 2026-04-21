@@ -190,6 +190,14 @@ export interface LocationFieldProps {
    */
   nearbyStops?: string[];
   /**
+   * A callback to be fired when the location field loses focus
+   */
+  onBlur?: () => void;
+  /**
+   * A callback to be fired when the location field gains focus
+   */
+  onFocus?: () => void;
+  /**
    * A function to handle when a location is selected. This is always dispatched
    * with an object of type LocationSelectedEvent, with the following fields:
    * - locationType is set with the same value as the locationType prop passed to this component.
