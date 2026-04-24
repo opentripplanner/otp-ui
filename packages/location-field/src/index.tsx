@@ -581,7 +581,7 @@ const LocationField = ({
     setValue(value);
     /* If there's a location, but the user clears out the value in the input, 
     clear the existing location */
-    location.lat && value === "" && clearLocation({ locationType });
+    location?.lat && value === "" && clearLocation({ locationType });
     setMenuVisible(true);
 
     // Cancel all pending requests
