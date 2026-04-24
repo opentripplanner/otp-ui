@@ -570,9 +570,18 @@ const LocationField = ({
     }
   };
 
+  const onFieldBlur = () => {
+    onBlur && onBlur();
+    // Reset the input field to reflect the state onBlur
+    setValue(location?.name || "");
+  };
+
   const onTextInputChange = evt => {
     const { value } = evt.target;
     setValue(value);
+    /* If there's a location, but the user clears out the value in the input, 
+    clear the existing location */
+    location?.lat && value === "" && clearLocation({ locationType });
     setMenuVisible(true);
 
     // Cancel all pending requests
@@ -1078,7 +1087,7 @@ const LocationField = ({
       className={formControlClassname}
       onChange={onTextInputChange}
       onClick={handleTextInputClick}
-      onBlur={onBlur}
+      onBlur={onFieldBlur}
       onFocus={onFocus}
       spellCheck={false}
       onKeyDown={onKeyDown}
