@@ -2,8 +2,9 @@ import {
   Styled as BaseMapStyled,
   MarkerWithPopup
 } from "@opentripplanner/base-map";
-import FromToLocationPicker from "@opentripplanner/from-to-location-picker";
-import { Location } from "@opentripplanner/types";
+import FromToLocationPicker, {
+  FromToLocation
+} from "@opentripplanner/from-to-location-picker";
 import React from "react";
 import ParkAndRideMarker from "./park-and-ride-marker";
 
@@ -11,20 +12,19 @@ type Props = {
   id?: string;
   keyboard?: boolean;
   parkAndRideLocations: { name: string; x: number; y: number }[];
-  setLocation: ({
-    location,
-    locationType,
-    reverseGeocode
-  }: {
-    location: Location;
-    locationType: string;
-    reverseGeocode: boolean;
-  }) => void;
+  setLocation?: (location?: FromToLocation) => void;
 };
 
-const ParkAndRideOverlay = (props: Props): JSX.Element => {
+const ParkAndRideOverlay = (props: Props): JSX.Element | null => {
   const { parkAndRideLocations, setLocation } = props;
   if (!parkAndRideLocations || parkAndRideLocations.length === 0) return null;
+
+  const setLocationOverride = setLocation
+    ? (l: FromToLocation) => {
+        setLocation(undefined);
+        setLocation(l);
+      }
+    : undefined;
 
   return (
     <>
@@ -49,14 +49,7 @@ const ParkAndRideOverlay = (props: Props): JSX.Element => {
                       lon: location.x,
                       name
                     }}
-                    setLocation={
-                      setLocation
-                        ? l => {
-                            setLocation(null);
-                            setLocation(l);
-                          }
-                        : null
-                    }
+                    setLocation={setLocationOverride}
                   />
                 </BaseMapStyled.PopupRow>
               </BaseMapStyled.MapOverlayPopup>
