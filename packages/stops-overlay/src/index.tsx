@@ -9,7 +9,7 @@ import { Layer, Source, useMap } from "react-map-gl/maplibre";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
 import StopPopup from "@opentripplanner/map-popup";
-import { isGeoJsonFlex } from "./utils";
+import { hasCoordinates, isGeoJsonFlex } from "./utils";
 
 type Props = {
   /**
@@ -58,8 +58,9 @@ type Props = {
 /**
  * An overlay to view a collection of stops.
  */
-const StopsOverlay = (props: Props): JSX.Element => {
+const StopsOverlay = (props: Props): JSX.Element | null => {
   const { current: map } = useMap();
+  if (!map) return null;
   const {
     activeStop,
     color,
@@ -72,7 +73,7 @@ const StopsOverlay = (props: Props): JSX.Element => {
     stops,
     visible
   } = props;
-  const [clickedStop, setClickedStop] = useState(null);
+  const [userClickedStopId, setUserClickedStopId] = useState<string>();
 
   const onLayerEnter = useCallback(() => {
     map.getCanvas().style.cursor = "pointer";
@@ -84,21 +85,20 @@ const StopsOverlay = (props: Props): JSX.Element => {
 
   const onLayerClick = useCallback(
     (event: MapLayerMouseEvent) => {
-      setClickedStop(event.features?.[0].properties);
+      // We have to cast this because the properties on geojson geatures are not defined
+      const id = event.features?.[0]?.properties?.id as string | undefined;
+      if (id) setUserClickedStopId(id);
     },
-    [setClickedStop]
+    [setUserClickedStopId]
   );
 
-  const onZoomEnd = useCallback(
-    event => {
-      if (event.viewState.zoom < minZoom) setClickedStop(null);
-    },
-    [setClickedStop, minZoom]
-  );
+  const onZoomEnd = useCallback(() => {
+    if (minZoom !== null && minZoom !== undefined && map.getZoom() < minZoom) {
+      setUserClickedStopId(undefined);
+    }
+  }, [map, setUserClickedStopId, minZoom]);
 
-  useEffect(() => {
-    setClickedStop(activeStop);
-  }, [activeStop]);
+  const shownStopId = activeStop ?? userClickedStopId;
 
   useEffect(() => {
     const STOP_LAYERS = ["stops", "flex-stops"];
@@ -125,26 +125,37 @@ const StopsOverlay = (props: Props): JSX.Element => {
     };
   }, [map, visible]);
 
-  const setNullStop = useCallback(() => {
-    setClickedStop(null);
-  }, [clickedStop]);
+  const clearClickedStop = useCallback(() => {
+    setUserClickedStopId(undefined);
+  }, []);
+
+  const shownStop = useMemo(() => stops?.find(s => s.id === shownStopId), [
+    stops,
+    shownStopId
+  ]);
 
   const flexStops = useMemo(
-    () => stops.filter(stop => isGeoJsonFlex(stop?.geometries?.geoJson)),
+    () =>
+      stops
+        ? stops.filter(stop => isGeoJsonFlex(stop?.geometries?.geoJson))
+        : [],
     [stops]
   );
 
   const stopsGeoJSON: GeoJSON.FeatureCollection = useMemo(
     () => ({
       type: "FeatureCollection",
-      features: stops.map(stop => ({
+      features: (stops ?? []).filter(hasCoordinates).map(stop => ({
         type: "Feature",
         properties: {
           ...stop,
           flex: isGeoJsonFlex(stop?.geometries?.geoJson),
           highlighted: stop.id === highlightedStop
         },
-        geometry: { type: "Point", coordinates: [stop.lon, stop.lat] }
+        geometry: {
+          type: "Point",
+          coordinates: [stop.lon, stop.lat]
+        }
       }))
     }),
     [stops, highlightedStop]
@@ -197,55 +208,64 @@ const StopsOverlay = (props: Props): JSX.Element => {
           type="circle"
         />
       </Source>
-      {clickedStop && (
+      {shownStop?.lat && shownStop?.lon && (
         <Popup
-          latitude={clickedStop.lat}
-          longitude={clickedStop.lon}
+          latitude={shownStop.lat}
+          longitude={shownStop.lon}
           maxWidth="100%"
-          onClose={setNullStop}
+          onClose={clearClickedStop}
         >
           <StopPopup
-            entity={clickedStop}
-            setLocation={location => {
-              setNullStop();
-              setLocation(location);
-            }}
-            setViewedStop={stop => {
-              setNullStop();
-              setViewedStop(stop);
-            }}
+            entity={shownStop}
+            setLocation={
+              setLocation &&
+              (location => {
+                clearClickedStop();
+                setLocation(location);
+              })
+            }
+            setViewedStop={
+              setViewedStop &&
+              (stop => {
+                clearClickedStop();
+                setViewedStop(stop);
+              })
+            }
           />
         </Popup>
       )}
-      {flexStops.map(stop => (
-        <Source
-          data={(stop.geometries.geoJson as unknown) as GeoJSON.Feature}
-          id={stop.id}
-          key={stop.id}
-          type="geojson"
-        >
-          {/* TODO:  add support for overriding layer styles */}
-          <Layer
-            id={stop.id}
-            paint={{
-              "fill-color": stop.color,
-              "fill-opacity": 0.5,
-              "fill-outline-color": stop.color
-            }}
-            type="fill"
-          />
-          <Layer
-            id={`${stop.id}-outline`}
-            layout={{ "line-join": "round", "line-cap": "round" }}
-            paint={{
-              "line-color": stop.color,
-              "line-opacity": 1,
-              "line-width": 4
-            }}
-            type="line"
-          />
-        </Source>
-      ))}
+      {flexStops.map(
+        stop =>
+          stop.geometries?.geoJson && (
+            <Source
+              data={stop.geometries?.geoJson}
+              id={stop.id}
+              key={stop.id}
+              type="geojson"
+            >
+              {/* TODO:  add support for overriding layer styles */}
+              <Layer
+                id={stop.id}
+                paint={{
+                  "fill-color": stop.color,
+                  "fill-opacity": 0.5,
+                  "fill-outline-color": stop.color
+                }}
+                type="fill"
+              />
+              <Layer
+                id={`${stop.id}-outline`}
+                layout={{ "line-join": "round", "line-cap": "round" }}
+                paint={{
+                  "line-color": stop.color,
+                  "line-opacity": 1,
+                  "line-width": 4
+                }}
+                type="line"
+              />
+            </Source>
+          )
+      )}
     </>
   );
 };
