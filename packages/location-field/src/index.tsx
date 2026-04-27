@@ -571,9 +571,9 @@ const LocationField = ({
   };
 
   const onFieldBlur = () => {
-    onBlur && onBlur();
     // Reset the input field to reflect the state onBlur
     setValue(location?.name || "");
+    onBlur && onBlur();
   };
 
   const onTextInputChange = evt => {
