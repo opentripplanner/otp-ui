@@ -85,14 +85,17 @@ const OTP2TileLayerWithPopup = ({
    */
   type: string;
   visible?: boolean;
-}): JSX.Element => {
+}): JSX.Element | undefined => {
   const { current: map } = useMap();
+  if (!map) {
+    return undefined;
+  }
 
   // TODO: handle this complex type: it can be a stop, a station, and some extra fields too
   const [clickedEntity, setClickedEntity] = useState<any>(null);
 
   const defaultClickHandler = (event: MapLayerMouseEvent) => {
-    const { sourceLayer } = event.features?.[0];
+    const sourceLayer = event.features?.[0].sourceLayer;
     const synthesizedEntity: Record<string, any> = {
       ...event.features?.[0].properties,
       lat: event.lngLat.lat,
@@ -268,7 +271,7 @@ const OTP2TileLayerWithPopup = ({
                     setClickedEntity(null);
                     setLocation(location);
                   }
-                : null
+                : undefined
             }
             setViewedStop={
               setViewedStop
@@ -276,7 +279,7 @@ const OTP2TileLayerWithPopup = ({
                     setClickedEntity(null);
                     setViewedStop(stop);
                   }
-                : null
+                : undefined
             }
           />
         </Popup>
@@ -310,7 +313,7 @@ const generateOTP2TileLayers = (
   }[],
   endpoint: string,
   setLocation?: (location: MapLocationActionArg) => void,
-  setViewedStop?: (stop: Stop) => void,
+  setViewedStop?: StopEventHandler,
   stopsWhitelist?: string[],
   configCompanies?: ConfiguredCompany[],
   getEntityPrefix?: (entity: Stop | VehicleRentalStation) => JSX.Element,
