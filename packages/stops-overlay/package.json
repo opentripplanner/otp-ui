@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:^",
+    "maplibre-gl": "catalog:",
     "styled-icons": "catalog:"
   },
   "peerDependencies": {
