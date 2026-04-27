@@ -5,7 +5,8 @@
     "lib": ["es2019", "dom"],
     "outDir": "./lib",
     "rootDir": "./src",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "strict": true
   },
   "include": ["src/**/*"],
   "references": [

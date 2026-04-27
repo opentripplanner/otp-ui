@@ -950,26 +950,26 @@ importers:
         specifier: workspace:*
         version: link:../itinerary-body
       '@turf/bbox':
-        specifier: ^6.5.0
-        version: 6.5.0
+        specifier: ^7.3.5
+        version: 7.3.5
       '@turf/bearing':
-        specifier: ^6.5.0
-        version: 6.5.0
+        specifier: ^7.3.5
+        version: 7.3.5
       '@turf/destination':
-        specifier: ^6.5.0
-        version: 6.5.0
+        specifier: ^7.3.5
+        version: 7.3.5
       '@turf/distance':
-        specifier: ^6.5.0
-        version: 6.5.0
+        specifier: ^7.3.5
+        version: 7.3.5
       '@turf/line-arc':
-        specifier: ^6.5.0
-        version: 6.5.0
+        specifier: ^7.3.5
+        version: 7.3.5
       '@turf/line-distance':
         specifier: ^4.7.3
         version: 4.7.3
       '@turf/midpoint':
-        specifier: ^6.5.0
-        version: 6.5.0
+        specifier: ^7.3.5
+        version: 7.3.5
       lodash.isequal:
         specifier: ^4.5.0
         version: 4.5.0
@@ -986,6 +986,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:*
         version: link:../types
+      '@types/mapbox__polyline':
+        specifier: ^1.0.5
+        version: 1.0.5
       maplibre-gl:
         specifier: 'catalog:'
         version: 5.6.1
@@ -1104,7 +1107,11 @@ importers:
         specifier: 'catalog:'
         version: 5.6.1
 
-  packages/types: {}
+  packages/types:
+    dependencies:
+      '@types/geojson':
+        specifier: ^7946.0.16
+        version: 7946.0.16
 
   packages/vehicle-rental-overlay:
     dependencies:
@@ -3683,53 +3690,53 @@ packages:
   '@turf/along@7.3.1':
     resolution: {integrity: sha512-z84b9PKsUB69BhkeHA6oPqRO7VaJHwTid1SpuIbwWzDqHTpq8buJBKlrKgHIIthuVr5P/AZiEXmf3R4ifRhDmw==}
 
-  '@turf/bbox@6.5.0':
-    resolution: {integrity: sha512-RBbLaao5hXTYyyg577iuMtDB8ehxMlUqHEJiMs8jT1GHkFhr6sYre3lmLsPeYEi/ZKj5TP5tt7fkzNdJ4GIVyw==}
-
-  '@turf/bearing@6.5.0':
-    resolution: {integrity: sha512-dxINYhIEMzgDOztyMZc20I7ssYVNEpSv04VbMo5YPQsqa80KO3TFvbuCahMsCAW5z8Tncc8dwBlEFrmRjJG33A==}
+  '@turf/bbox@7.3.5':
+    resolution: {integrity: sha512-oG1ya/HtBjAIg4TimbWx+nOYPbY0bCvt82Bq8tm6sBw3qqtbOyRSfDz79Sq90TnH7DXJprJ1qnVGKNtZ6jemfw==}
 
   '@turf/bearing@7.3.1':
     resolution: {integrity: sha512-ex78l/LiY6uO6jO8AJepyWE6/tiWEbXjKLOgqUfJSkW23UcMVlhbAKzXDjbsdz9T66sXFC/6QNAh8oaZzmoo6w==}
 
-  '@turf/circle@6.5.0':
-    resolution: {integrity: sha512-oU1+Kq9DgRnoSbWFHKnnUdTmtcRUMmHoV9DjTXu9vOLNV5OWtAAh1VZ+mzsioGGzoDNT/V5igbFOkMfBQc0B6A==}
+  '@turf/bearing@7.3.5':
+    resolution: {integrity: sha512-/qabIt/IuPsGlE6RukJ0zOirc6afNxoK7fK1WBNVnHuJjeOpSkW+7q1QW5XQGXBMv3odcD0ZgRR+MBiAHduYSA==}
 
-  '@turf/destination@6.5.0':
-    resolution: {integrity: sha512-4cnWQlNC8d1tItOz9B4pmJdWpXqS0vEvv65bI/Pj/genJnsL7evI0/Xw42RvEGROS481MPiU80xzvwxEvhQiMQ==}
+  '@turf/circle@7.3.5':
+    resolution: {integrity: sha512-Tse7GJrx0rxaQ5BdY6pHZ9HFPrZwRMry2yaqq94UsUyonhy1m7U2icB3Zp4M8o4XjHIGTCq9i2BYcGJram51Sw==}
 
   '@turf/destination@7.3.1':
     resolution: {integrity: sha512-yyiJtbQJ4AB9Ny/FKDDNuWI9Sg4Jtd2PMpQPqOV3AFq8NNkg0xJSNmDHDxupb3oPqPWYPxyfVI3tBoF+Xhhoig==}
 
+  '@turf/destination@7.3.5':
+    resolution: {integrity: sha512-x6ylChhOlIbucRSw7wF6z2gSEqqQl+dE0nSH5AL/ojZkqqGYahiw+2P4A8ZMuDM6rzH+FIqRYDes0o4nSArZCw==}
+
   '@turf/distance@4.7.3':
     resolution: {integrity: sha512-nluvFy7qjZFq4B6E+KAlKdwdg9fbgJMIe/5O7jveg56gcXZ5Bvgx3lFUxAY016+l907OeX9lIZCNr/Y96FMyEA==}
-
-  '@turf/distance@6.5.0':
-    resolution: {integrity: sha512-xzykSLfoURec5qvQJcfifw/1mJa+5UwByZZ5TZ8iaqjGYN0vomhV9aiSLeYdUGtYRESZ+DYC/OzY+4RclZYgMg==}
 
   '@turf/distance@7.3.1':
     resolution: {integrity: sha512-DK//doTGgYYjBkcWUywAe7wbZYcdP97hdEJ6rXYVYRoULwGGR3lhY96GNjozg6gaW9q2eSNYnZLpcL5iFVHqgw==}
 
+  '@turf/distance@7.3.5':
+    resolution: {integrity: sha512-uQAC63zg/l91KUxzfhqio7Ii3+UXTrPOVJScIdRj6EO6+9XHI4kC+AdyIS4cPAv14sZfJLIBxzMnzcGrss+kEA==}
+
   '@turf/helpers@4.7.3':
     resolution: {integrity: sha512-hk5ANVazb80zK6tjJYAG76oCRTWMQo6SAFu5E1dVnlb2kT3FHLoPcOB9P11duwDafMwywz24KZ+FUorB5e728w==}
-
-  '@turf/helpers@6.5.0':
-    resolution: {integrity: sha512-VbI1dV5bLFzohYYdgqwikdMVpe7pJ9X3E+dlr425wa2/sMJqYDhTO++ec38/pcPvPE6oD9WEEeU3Xu3gza+VPw==}
 
   '@turf/helpers@7.3.1':
     resolution: {integrity: sha512-zkL34JVhi5XhsuMEO0MUTIIFEJ8yiW1InMu4hu/oRqamlY4mMoZql0viEmH6Dafh/p+zOl8OYvMJ3Vm3rFshgg==}
 
+  '@turf/helpers@7.3.5':
+    resolution: {integrity: sha512-E/NMGV5MwbjjP7AJXBtsanC3yY8N2MQ87IGdIgkB2ji5AtBpwnH4L3gEqpYN4RlCJJWbLbzO91BbKv2waUd0eg==}
+
   '@turf/invariant@4.7.3':
     resolution: {integrity: sha512-MtlIn9aPC4gZsflLEnfBl/o/SJjZU/yuvj+fo9qRXUOI8wBiKaUcZIT4x1jdLW0NGvU7wMPWJSFJanLCQ9eU1w==}
-
-  '@turf/invariant@6.5.0':
-    resolution: {integrity: sha512-Wv8PRNCtPD31UVbdJE/KVAWKe7l6US+lJItRR/HOEW3eh+U/JwRCSUl/KZ7bmjM/C+zLNoreM2TU6OoLACs4eg==}
 
   '@turf/invariant@7.3.1':
     resolution: {integrity: sha512-IdZJfDjIDCLH+Gu2yLFoSM7H23sdetIo5t4ET1/25X8gi3GE2XSqbZwaGjuZgNh02nisBewLqNiJs2bo+hrqZA==}
 
-  '@turf/line-arc@6.5.0':
-    resolution: {integrity: sha512-I6c+V6mIyEwbtg9P9zSFF89T7QPe1DPTG3MJJ6Cm1MrAY0MdejwQKOpsvNl8LDU2ekHOlz2kHpPVR7VJsoMllA==}
+  '@turf/invariant@7.3.5':
+    resolution: {integrity: sha512-ZVIvsBvjr8lO7WxC5zYNjRsjSDvyGvWkJMjuWaJjTU8x+1tmfNnw3gDX/TI2Sit83gcRYLYkNo23lB/udqx/Hg==}
+
+  '@turf/line-arc@7.3.5':
+    resolution: {integrity: sha512-XrPicIoN7XCtiJ7e7ELje7GjMZrBw/nuJnz0mQoCwwHwmX8Oz9oRfb6uaiS8NeR4WBzUVdkmVR/ro0kW4lypog==}
 
   '@turf/line-distance@4.7.3':
     resolution: {integrity: sha512-U6sFReqpMJq/LhOoDna4w1Vs2gliJUhFa1g94WrZrVz7l4IHldy7Q0Va0CyQ00qN5n3f09/vf4F+q2+ThHbL4g==}
@@ -3738,11 +3745,11 @@ packages:
   '@turf/meta@4.7.4':
     resolution: {integrity: sha512-cvwz4EI9BjrgRHxmJ3Z3HKxq6k/fj/V95kwNZ8uWNLncCvrb7x1jUBDkQUo1tShnYdZ8eBgA+a2bvJmAM+MJ0A==}
 
-  '@turf/meta@6.5.0':
-    resolution: {integrity: sha512-RrArvtsV0vdsCBegoBtOalgdSOfkBrTJ07VkpiCnq/491W67hnMWmDu7e6Ztw0C3WldRYTXkg3SumfdzZxLBHA==}
+  '@turf/meta@7.3.5':
+    resolution: {integrity: sha512-r+ohqxoyqeigFB0oFrQx/YEHIkOKqcKpCjvZkvZs7Tkv+IFco5MezAd2zd4rzK+0DfFgDP3KpJc7HqrYjvEjhg==}
 
-  '@turf/midpoint@6.5.0':
-    resolution: {integrity: sha512-MyTzV44IwmVI6ec9fB2OgZ53JGNlgOpaYl9ArKoF49rXpL84F9rNATndbe0+MQIhdkw8IlzA6xVP4lZzfMNVCw==}
+  '@turf/midpoint@7.3.5':
+    resolution: {integrity: sha512-y92O2YDDBkZp7jAUuUPgof/HiXHjJSkKjEtQRjWXZcjTlzHd/Fqg6/twarY2wNkENK2EuaaiV9MDy74FeRG2Ow==}
 
   '@tybys/wasm-util@0.9.0':
     resolution: {integrity: sha512-6+7nlbMVX/PVDCwaIQ8nTOPveOcFLSt8GcXdx8hD0bt39uWxYT88uXzqTd4fTvqta7oeUJqudepapKNt2DYJFw==}
@@ -14040,15 +14047,12 @@ snapshots:
       '@types/geojson': 7946.0.16
       tslib: 2.8.1
 
-  '@turf/bbox@6.5.0':
+  '@turf/bbox@7.3.5':
     dependencies:
-      '@turf/helpers': 6.5.0
-      '@turf/meta': 6.5.0
-
-  '@turf/bearing@6.5.0':
-    dependencies:
-      '@turf/helpers': 6.5.0
-      '@turf/invariant': 6.5.0
+      '@turf/helpers': 7.3.5
+      '@turf/meta': 7.3.5
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
 
   '@turf/bearing@7.3.1':
     dependencies:
@@ -14057,15 +14061,19 @@ snapshots:
       '@types/geojson': 7946.0.16
       tslib: 2.8.1
 
-  '@turf/circle@6.5.0':
+  '@turf/bearing@7.3.5':
     dependencies:
-      '@turf/destination': 6.5.0
-      '@turf/helpers': 6.5.0
+      '@turf/helpers': 7.3.5
+      '@turf/invariant': 7.3.5
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
 
-  '@turf/destination@6.5.0':
+  '@turf/circle@7.3.5':
     dependencies:
-      '@turf/helpers': 6.5.0
-      '@turf/invariant': 6.5.0
+      '@turf/destination': 7.3.5
+      '@turf/helpers': 7.3.5
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
 
   '@turf/destination@7.3.1':
     dependencies:
@@ -14074,15 +14082,17 @@ snapshots:
       '@types/geojson': 7946.0.16
       tslib: 2.8.1
 
+  '@turf/destination@7.3.5':
+    dependencies:
+      '@turf/helpers': 7.3.5
+      '@turf/invariant': 7.3.5
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
+
   '@turf/distance@4.7.3':
     dependencies:
       '@turf/helpers': 4.7.3
       '@turf/invariant': 4.7.3
-
-  '@turf/distance@6.5.0':
-    dependencies:
-      '@turf/helpers': 6.5.0
-      '@turf/invariant': 6.5.0
 
   '@turf/distance@7.3.1':
     dependencies:
@@ -14091,20 +14101,26 @@ snapshots:
       '@types/geojson': 7946.0.16
       tslib: 2.8.1
 
-  '@turf/helpers@4.7.3': {}
+  '@turf/distance@7.3.5':
+    dependencies:
+      '@turf/helpers': 7.3.5
+      '@turf/invariant': 7.3.5
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
 
-  '@turf/helpers@6.5.0': {}
+  '@turf/helpers@4.7.3': {}
 
   '@turf/helpers@7.3.1':
     dependencies:
       '@types/geojson': 7946.0.16
       tslib: 2.8.1
 
-  '@turf/invariant@4.7.3': {}
-
-  '@turf/invariant@6.5.0':
+  '@turf/helpers@7.3.5':
     dependencies:
-      '@turf/helpers': 6.5.0
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
+
+  '@turf/invariant@4.7.3': {}
 
   '@turf/invariant@7.3.1':
     dependencies:
@@ -14112,11 +14128,19 @@ snapshots:
       '@types/geojson': 7946.0.16
       tslib: 2.8.1
 
-  '@turf/line-arc@6.5.0':
+  '@turf/invariant@7.3.5':
     dependencies:
-      '@turf/circle': 6.5.0
-      '@turf/destination': 6.5.0
-      '@turf/helpers': 6.5.0
+      '@turf/helpers': 7.3.5
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
+
+  '@turf/line-arc@7.3.5':
+    dependencies:
+      '@turf/circle': 7.3.5
+      '@turf/destination': 7.3.5
+      '@turf/helpers': 7.3.5
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
 
   '@turf/line-distance@4.7.3':
     dependencies:
@@ -14126,16 +14150,20 @@ snapshots:
 
   '@turf/meta@4.7.4': {}
 
-  '@turf/meta@6.5.0':
+  '@turf/meta@7.3.5':
     dependencies:
-      '@turf/helpers': 6.5.0
+      '@turf/helpers': 7.3.5
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
 
-  '@turf/midpoint@6.5.0':
+  '@turf/midpoint@7.3.5':
     dependencies:
-      '@turf/bearing': 6.5.0
-      '@turf/destination': 6.5.0
-      '@turf/distance': 6.5.0
-      '@turf/helpers': 6.5.0
+      '@turf/bearing': 7.3.5
+      '@turf/destination': 7.3.5
+      '@turf/distance': 7.3.5
+      '@turf/helpers': 7.3.5
+      '@types/geojson': 7946.0.16
+      tslib: 2.8.1
 
   '@tybys/wasm-util@0.9.0':
     dependencies:
@@ -20325,7 +20353,7 @@ snapshots:
     dependencies:
       find-up-simple: 1.0.0
       read-pkg: 9.0.1
-      type-fest: 4.26.1
+      type-fest: 4.41.0
 
   read-package-up@12.0.0:
     dependencies:
