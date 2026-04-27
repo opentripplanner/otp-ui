@@ -9,14 +9,18 @@ import coreUtils from "@opentripplanner/core-utils";
 export type StopIdAgencyMap = Record<string, Agency>;
 export type Entity = VehicleRentalStation | Stop | RentalVehicle;
 
-export function getNetwork(entity: Entity, configCompanies: Company[]): string {
+export function getNetwork(
+  entity: Entity,
+  configCompanies?: Company[]
+): string | undefined {
   return (
-    "rentalNetwork" in entity &&
-    (coreUtils.itinerary.getCompaniesLabelFromNetworks(
-      entity?.rentalNetwork?.networkId,
-      configCompanies
-    ) ||
-      entity?.rentalNetwork?.networkId)
+    ("rentalNetwork" in entity &&
+      (coreUtils.itinerary.getCompaniesLabelFromNetworks(
+        entity?.rentalNetwork?.networkId,
+        configCompanies
+      ) ||
+        entity?.rentalNetwork?.networkId)) ||
+    undefined
   );
 }
 
@@ -27,11 +31,11 @@ export function makeDefaultGetEntityName(
 ) {
   return function defaultGetEntityName(
     entity: Entity,
-    configCompanies: Company[],
+    configCompanies?: Company[],
     feedName?: string,
     includeParenthetical = true
-  ): string | null {
-    let stationName: string | null = entity.name || entity.id;
+  ): string | undefined {
+    let stationName: string | undefined = entity.name ?? entity.id;
     // If the station name or id is a giant UUID (with more than 3 "-" characters)
     // best not to show that at all. The company name will still be shown.
     // Also ignore "Default Vehicle Type"
@@ -39,7 +43,7 @@ export function makeDefaultGetEntityName(
       (stationName.match(/-/g) || []).length > 3 ||
       stationName === "Default vehicle type"
     ) {
-      stationName = null;
+      stationName = undefined;
     }
 
     if (
@@ -76,7 +80,7 @@ export function makeDefaultGetEntityName(
     } else if (
       "vehicleType" in entity &&
       !("availableVehicles" in entity) &&
-      entity.vehicleType?.formFactor.startsWith("SCOOTER")
+      entity.vehicleType?.formFactor?.startsWith("SCOOTER")
     ) {
       stationName = intl.formatMessage(
         {
