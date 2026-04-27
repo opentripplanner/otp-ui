@@ -149,13 +149,13 @@ const extractCoordinatesFromGeometry = (
  * @returns Extended bounds object
  */
 const extendBoundsWithGeometry = (
-  bounds: LngLatBounds | null,
+  bounds: LngLatBounds | undefined,
   geometry: GeoJSON.Geometry
-): LngLatBounds => {
+): LngLatBounds | undefined => {
   const coordinates = extractCoordinatesFromGeometry(geometry);
 
   if (coordinates.length === 0) {
-    return bounds || new LngLatBounds([0, 0], [0, 0]);
+    return bounds ?? new LngLatBounds([0, 0], [0, 0]);
   }
 
   let newBounds = bounds;
@@ -203,7 +203,8 @@ const removePointsInFlexZone = (stops: Stop[], points: [number, number][]) => {
 /**
  * Reducer helper for computing the bounds of a geometry.
  */
-const reduceBounds = (bnds, coord) => bnds.extend(coord);
+const reduceBounds = (bnds: LngLatBounds, coord: LngLatLike) =>
+  bnds.extend(coord);
 
 /**
  * An overlay that will display all polylines of the patterns of a route.
@@ -215,11 +216,13 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
   useEffect(() => {
     // if pattern geometry updated, update the map points
     let bounds: LngLatBounds | undefined;
-    let timeout: NodeJS.Timeout | undefined;
+    let timeout: number | undefined;
 
     if (isGeometryComplete(routeData)) {
-      const allPoints: LngLatLike[] = patterns.reduce((acc, ptn) => {
-        return acc.concat(polyline.decode(ptn.geometry.points));
+      const allPoints = patterns.reduce<[number, number][]>((acc, ptn) => {
+        return ptn.geometry?.points
+          ? acc.concat(polyline.decode(ptn.geometry?.points))
+          : acc;
       }, []);
 
       if (allPoints.length > 0) {
@@ -242,10 +245,12 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
       });
     });
 
-    if (objectExistsAndPopulated(bounds) && current) {
+    if (!!bounds && Object.keys(bounds).length > 0 && current) {
+      // Store the narrowed bounds in a const so the type stays narrowed in the closure
+      const narrowedBounds = bounds;
       // Try to fit the map to route bounds immediately. If other overlays are still populating contents
       // and/or the map skips/aborts fitting for any reason, try fitting bounds again after a short delay.
-      const fitBounds = () => util.fitMapBounds(current, bounds);
+      const fitBounds = () => util.fitMapBounds(current, narrowedBounds);
       fitBounds();
       timeout = setTimeout(fitBounds, 250);
       if (props.mapCenterCallback) {
@@ -254,7 +259,9 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
     }
 
     // Clear any timeouts when the component unmounts.
-    return () => clearTimeout(timeout);
+    return () => {
+      if (timeout) clearTimeout(timeout);
+    };
   }, [routeData, patterns, current]);
 
   const { clipToPatternStops, path } = props;
@@ -265,16 +272,17 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
   const routeColor = routeData.color
     ? `#${routeData.color}`
     : path?.color || "#00bfff";
-  const segments = patterns
-    .filter(pattern => objectExistsAndPopulated(pattern?.geometry))
-    .map(pattern => {
-      const pts = polyline.decode(pattern.geometry.points);
-      const clippedPts = clipToPatternStops
-        ? removePointsInFlexZone(pattern?.stops, pts)
-        : pts;
+  const segments = patterns.flatMap(pattern => {
+    if (!objectExistsAndPopulated(pattern?.geometry) || !pattern?.stops) {
+      return [];
+    }
+    const pts = polyline.decode(pattern.geometry?.points);
+    const clippedPts = clipToPatternStops
+      ? removePointsInFlexZone(pattern?.stops, pts)
+      : pts;
 
-      return clippedPts.map((pt: [number, number]) => [pt[1], pt[0]]);
-    });
+    return [clippedPts.map((pt: [number, number]) => [pt[1], pt[0]])];
+  });
 
   const geojson: GeoJSON.FeatureCollection = {
     type: "FeatureCollection",
