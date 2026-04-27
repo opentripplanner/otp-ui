@@ -1,9 +1,9 @@
+import bearing from "@turf/bearing";
+import destination from "@turf/destination";
+import distance from "@turf/distance";
 import lineArc from "@turf/line-arc";
 import lineDistance from "@turf/line-distance";
 import midpoint from "@turf/midpoint";
-import destination from "@turf/destination";
-import bearing from "@turf/bearing";
-import distance from "@turf/distance";
 
 import coreUtils from "@opentripplanner/core-utils";
 import { getPlaceName } from "@opentripplanner/itinerary-body";
@@ -13,11 +13,15 @@ import {
   Leg,
   Place,
   TransitiveData,
+  TransitiveJourney,
+  TransitivePattern,
   TransitivePlace,
+  TransitiveRoute,
   TransitiveStop
 } from "@opentripplanner/types";
-import { IntlShape } from "react-intl";
 import { PositionAnchor } from "maplibre-gl";
+import { IntlShape } from "react-intl";
+import { LineString } from "geojson";
 
 const {
   getLegBounds,
@@ -48,7 +52,7 @@ function stopToTransitive(
   return {
     stop_id: id,
     // Don't render this stop name if another one or similar exists.
-    stop_name: stopNameExists ? null : normalizedStopName,
+    stop_name: stopNameExists ? undefined : normalizedStopName,
     stop_lat: stop.lat,
     stop_lon: stop.lon
   };
@@ -58,7 +62,7 @@ function stopToTransitive(
  * Helper function to obtain the stop ID for an OTP2 or OTP1 place.
  */
 function getStopId(place: Place) {
-  return typeof place.stop === "object" ? place.stop.id : place.stopId;
+  return (place.stop?.id ? place.stop.id : place.stopId) ?? "";
 }
 
 /**
@@ -70,7 +74,7 @@ function addStop(
   knownStopNames: Record<string, Place>
 ) {
   const stopId = getStopId(place);
-  if (!stops[stopId]) {
+  if (stopId && !stops[stopId]) {
     stops[stopId] = stopToTransitive(place, stopId, knownStopNames);
   }
 }
@@ -99,13 +103,18 @@ export function getFromToAnchors(
 
   // Compute general direction of travel to better position from/to markers.
   let direction;
-  if (fromPlace && toPlace) {
+  if (
+    fromPlace?.place_lat &&
+    fromPlace.place_lon &&
+    toPlace?.place_lat &&
+    toPlace.place_lon
+  ) {
     const directionLat = fromPlace.place_lat < toPlace.place_lat ? "N" : "S";
     const directionLon = fromPlace.place_lon < toPlace.place_lon ? "E" : "W";
     direction = `${directionLat}${directionLon}`;
   }
-  let fromAnchor;
-  let toAnchor;
+  let fromAnchor: PositionAnchor = "top-left";
+  let toAnchor: PositionAnchor = "top-left";
   switch (direction) {
     case "NE":
       fromAnchor = "top-right";
@@ -231,7 +240,7 @@ export function itineraryToTransitive(
   } = options;
   const isFlexCheck = isFlexOverride || isFlex;
 
-  const tdata = {
+  const tdata: TransitiveData = {
     journeys: [],
     streetEdges: [],
     places: [],
@@ -239,11 +248,11 @@ export function itineraryToTransitive(
     routes: [],
     stops: []
   };
-  const routes = {};
+  const routes: Record<string, TransitiveRoute> = {};
   const knownStopNames = {};
   let patternId = 0;
 
-  const journey = {
+  const journey: TransitiveJourney = {
     journey_id: "itin",
     // This string is not shown in the UI
     journey_name: "Itinerary-derived Journey",
@@ -280,13 +289,13 @@ export function itineraryToTransitive(
         "from",
         streetEdgeId,
         leg,
-        idx > 0 ? itin.legs[idx - 1] : null
+        idx > 0 ? itin.legs[idx - 1] : undefined
       );
       const toPlaceId = getPlaceId(
         "to",
         streetEdgeId,
         leg,
-        idx < itin.legs.length - 1 ? itin.legs[idx + 1] : null,
+        idx < itin.legs.length - 1 ? itin.legs[idx + 1] : undefined,
         toVertexType
       );
       let addFromPlace = false;
@@ -362,7 +371,7 @@ export function itineraryToTransitive(
       const hasIntermediateStopGeometry =
         hasInterStopGeometry &&
         leg.intermediateStops &&
-        leg.interStopGeometry.length === leg.intermediateStops.length + 1;
+        leg.interStopGeometry?.length === leg.intermediateStops.length + 1;
 
       // Coordinates of the leg geometry, used to draw the stop marker on the line,
       // otherwise the logical stop is often times off the line.
@@ -373,16 +382,18 @@ export function itineraryToTransitive(
 
       // create leg-specific pattern
       const ptnId = `ptn_${patternId}`;
-      const pattern = {
+      const pattern: TransitivePattern = {
         pattern_id: ptnId,
-        // This string is not shown in the UI
         pattern_name: `Pattern ${patternId}`,
-        route_id: routeId,
+        route_id: routeId ?? "",
         stops: []
       };
 
       // Add the "from" end of transit legs to the list of stops.
-      const fromStop = makeStop(leg.from, hasLegGeometry && legCoords[0]);
+      const fromStop = makeStop(
+        leg.from,
+        hasLegGeometry ? legCoords[0] : undefined
+      );
       addStop(fromStop, newStops, knownStopNames);
       pattern.stops.push({ stop_id: getStopId(leg.from) });
 
@@ -397,18 +408,24 @@ export function itineraryToTransitive(
         leg.intermediateStops.forEach((stop, i) => {
           // FIXME: line up the coordinates of the stops so they appear on the line.
           addStop(stop, newStops, knownStopNames);
-          pattern.stops.push({
-            // Intermediate stops are still exclusively using stopId.
-            stop_id: stop.stopId,
-            geometry:
-              hasIntermediateStopGeometry && leg.interStopGeometry[i].points
-          });
+          // TODO: Should we be looking at using stop.stop.id? or the getStopId function?
+          if (stop.stopId) {
+            pattern.stops.push({
+              // Intermediate stops are still exclusively using stopId.
+              stop_id: stop.stopId,
+              geometry: hasIntermediateStopGeometry
+                ? leg.interStopGeometry?.[i]?.points
+                : undefined
+            });
+          }
         });
       }
 
       // Add the "to" end of transit legs to the list of stops.
       // (Do not label stop names if they repeat.)
-      const lastCoord = hasLegGeometry && legCoords[legCoords.length - 1];
+      const lastCoord = hasLegGeometry
+        ? legCoords[legCoords.length - 1]
+        : undefined;
       const modifiedToStop = makeStop(
         renameLegFlexStops(leg, isFlexCheck),
         lastCoord
@@ -416,12 +433,10 @@ export function itineraryToTransitive(
       addStop(modifiedToStop, newStops, knownStopNames);
       pattern.stops.push({
         stop_id: getStopId(modifiedToStop),
-        geometry:
-          // Some legs don't have intermediateStopGeometry, but do have valid legGeometry
-          (hasInterStopGeometry || hasLegGeometry) &&
-          (hasIntermediateStopGeometry
-            ? leg.interStopGeometry[leg.interStopGeometry.length - 1].points
-            : leg.legGeometry.points)
+        // Some legs don't have intermediateStopGeometry, but do have valid legGeometry
+        geometry: hasIntermediateStopGeometry
+          ? leg.interStopGeometry?.[leg.interStopGeometry.length - 1]?.points
+          : leg.legGeometry?.points
       });
 
       // add route to the route dictionary
@@ -432,24 +447,24 @@ export function itineraryToTransitive(
           : getLegRouteShortName(leg)) || "";
 
       const basicRouteAttributes = {
-        agency_id: leg.agencyId,
-        route_id: routeId,
+        agency_id: leg.agencyId ?? "",
+        route_id: routeId ?? "",
         route_short_name: routeLabel
       };
 
-      if (typeof leg.route === "object" && leg.route !== null) {
+      if (typeof leg.route === "object" && leg.route !== null && routeId) {
         routes[routeId] = {
           ...basicRouteAttributes,
           route_long_name: leg.route.longName || "",
-          route_type: leg.route.type,
+          route_type: leg.route.type ?? 0,
           route_color: leg.route.color,
           route_text_color: leg.route.textColor
         };
-      } else {
+      } else if (routeId) {
         routes[routeId] = {
           ...basicRouteAttributes,
           route_long_name: leg.routeLongName || "",
-          route_type: leg.routeType,
+          route_type: leg.routeType ?? 0,
           route_color: leg.routeColor,
           route_text_color: leg.routeTextColor
         };
@@ -460,10 +475,7 @@ export function itineraryToTransitive(
 
       // add the pattern reference to the journey object
       journey.segments.push({
-        arc:
-          typeof disableFlexArc === "undefined"
-            ? isFlexCheck(leg)
-            : !disableFlexArc,
+        arc: disableFlexArc === undefined ? isFlexCheck(leg) : !disableFlexArc,
         type: "TRANSIT",
         patterns: [
           {
@@ -492,8 +504,7 @@ export function itineraryToTransitive(
   return tdata;
 }
 
-// typescript TODO: TYPE
-const drawArc = (straight: any) => {
+const drawArc = (straight: LineString) => {
   // Create clone of plain route that only includes first and last point
   straight.coordinates = [
     straight.coordinates[0],

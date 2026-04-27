@@ -18,21 +18,23 @@ export function patternToRouteFeature(
   // Concatenate geometries (arrays of coordinates) to help maplibre spread out labels (not perfect).
   const concatenatedLines = pattern.stops
     .map(stop => stop.geometry)
-    .filter(geometry => !!geometry)
-    .reduce((result, geom, index) => {
+    .filter((geo): geo is string => !!geo)
+    .reduce<[number, number][]>((result, geom, index) => {
       const coords = polyline.decode(geom);
       // Remove the first element (except for the first array) because it is a duplicate
       // of the last element of the previous array.
       if (index !== 0) coords.shift();
       return result.concat(coords);
     }, []);
-  const routeName = route.route_short_name || route.route_long_name || "";
+  const routeName = route?.route_short_name || route?.route_long_name || "";
 
   const properties = {
-    color: route.route_color ? `#${route.route_color}` : blue[900],
+    color: route?.route_color ? `#${route.route_color}` : blue[900],
     name: routeName,
-    routeType: route.route_type,
-    textColor: route.route_text_color ? `#${route.route_text_color}` : grey[50],
+    routeType: route?.route_type,
+    textColor: route?.route_text_color
+      ? `#${route.route_text_color}`
+      : grey[50],
     type: "route"
   };
 
