@@ -12,7 +12,8 @@ export default function DefaultStopMarker({
 }: {
   radius: number;
   stop: Stop;
-}): JSX.Element {
+}): JSX.Element | null {
+  if (!stop.lon || !stop.lat) return null;
   return (
     <MarkerWithPopup
       key={stop.id}
