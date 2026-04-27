@@ -17,6 +17,10 @@
     "glob-promise": "^4.2.2",
     "js-yaml": "^4.1.0"
   },
+  "devDependencies": {
+    "@types/node": "^15.0.0",
+    "typescript": "^5.9.3"
+  },
   "scripts": {
     "collect-i18n": "node lib/run-collect-i18n-messages.js ../**/src ../**/i18n/en-US.yml > i18n.csv",
     "tsc": "tsc",
