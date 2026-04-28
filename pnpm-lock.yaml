@@ -328,10 +328,10 @@ importers:
   packages/base-map:
     dependencies:
       '@opentripplanner/building-blocks':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../building-blocks
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
       maplibre-gl:
         specifier: 'catalog:'
@@ -362,10 +362,10 @@ importers:
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
 
   packages/core-utils:
@@ -377,7 +377,7 @@ importers:
         specifier: 'catalog:'
         version: 1.2.1
       '@opentripplanner/geocoder':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../geocoder
       '@styled-icons/foundation':
         specifier: 'catalog:'
@@ -405,7 +405,7 @@ importers:
         version: 6.14.0
     devDependencies:
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
       '@types/chroma-js':
         specifier: ^3.1.2
@@ -417,16 +417,16 @@ importers:
   packages/endpoints-overlay:
     dependencies:
       '@opentripplanner/base-map':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../base-map
       '@opentripplanner/building-blocks':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../building-blocks
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       '@opentripplanner/location-icon':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../location-icon
       '@styled-icons/fa-solid':
         specifier: 'catalog:'
@@ -451,7 +451,7 @@ importers:
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
       '@types/flat':
         specifier: 'catalog:'
@@ -460,7 +460,7 @@ importers:
   packages/from-to-location-picker:
     dependencies:
       '@opentripplanner/location-icon':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../location-icon
       flat:
         specifier: 'catalog:'
@@ -476,7 +476,7 @@ importers:
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
 
   packages/geocoder:
@@ -507,13 +507,13 @@ importers:
         version: 6.8.4(react@18.2.0)(typescript@5.9.3)
     devDependencies:
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
 
   packages/icons:
     dependencies:
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       prop-types:
         specifier: ^15.7.2
@@ -525,19 +525,19 @@ importers:
   packages/itinerary-body:
     dependencies:
       '@opentripplanner/building-blocks':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../building-blocks
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       '@opentripplanner/humanize-distance':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../humanize-distance
       '@opentripplanner/icons':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../icons
       '@opentripplanner/location-icon':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../location-icon
       '@styled-icons/fa-solid':
         specifier: 'catalog:'
@@ -571,7 +571,7 @@ importers:
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
       '@types/flat':
         specifier: 'catalog:'
@@ -583,16 +583,16 @@ importers:
         specifier: ^0.0.3
         version: 0.0.3(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       '@opentripplanner/geocoder':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../geocoder
       '@opentripplanner/humanize-distance':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../humanize-distance
       '@opentripplanner/location-icon':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../location-icon
       '@styled-icons/fa-solid':
         specifier: 'catalog:'
@@ -614,7 +614,7 @@ importers:
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
 
   packages/location-icon:
@@ -635,16 +635,16 @@ importers:
   packages/map-popup:
     dependencies:
       '@opentripplanner/base-map':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../base-map
       '@opentripplanner/building-blocks':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../building-blocks
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       '@opentripplanner/from-to-location-picker':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../from-to-location-picker
       flat:
         specifier: 'catalog:'
@@ -660,13 +660,13 @@ importers:
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
 
   packages/otp2-tile-overlay:
     dependencies:
       '@opentripplanner/map-popup':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../map-popup
       react:
         specifier: 'catalog:'
@@ -676,10 +676,10 @@ importers:
         version: 8.0.4(maplibre-gl@5.6.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@opentripplanner/base-map':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../base-map
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
       maplibre-gl:
         specifier: 'catalog:'
@@ -688,13 +688,13 @@ importers:
   packages/park-and-ride-overlay:
     dependencies:
       '@opentripplanner/base-map':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../base-map
       '@opentripplanner/from-to-location-picker':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../from-to-location-picker
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
       react:
         specifier: 'catalog:'
@@ -712,10 +712,10 @@ importers:
   packages/printable-itinerary:
     dependencies:
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       '@opentripplanner/itinerary-body':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../itinerary-body
       flat:
         specifier: 'catalog:'
@@ -728,10 +728,10 @@ importers:
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       '@opentripplanner/icons':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../icons
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
 
   packages/route-viewer-overlay:
@@ -740,10 +740,10 @@ importers:
         specifier: 'catalog:'
         version: 1.2.1
       '@opentripplanner/base-map':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../base-map
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       point-in-polygon:
         specifier: ^1.1.0
@@ -753,7 +753,7 @@ importers:
         version: 18.2.0
     devDependencies:
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
 
   packages/scripts:
@@ -777,10 +777,10 @@ importers:
   packages/stop-viewer-overlay:
     dependencies:
       '@opentripplanner/base-map':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../base-map
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       react:
         specifier: 'catalog:'
@@ -790,19 +790,19 @@ importers:
         version: 8.0.4(maplibre-gl@5.6.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
 
   packages/stops-overlay:
     dependencies:
       '@opentripplanner/base-map':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../base-map
       '@opentripplanner/from-to-location-picker':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../from-to-location-picker
       '@opentripplanner/map-popup':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../map-popup
       flat:
         specifier: 'catalog:'
@@ -821,7 +821,7 @@ importers:
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
       styled-icons:
         specifier: 'catalog:'
@@ -830,13 +830,13 @@ importers:
   packages/transit-vehicle-overlay:
     dependencies:
       '@opentripplanner/base-map':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../base-map
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       '@opentripplanner/icons':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../icons
       flat:
         specifier: 'catalog:'
@@ -858,7 +858,7 @@ importers:
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
 
   packages/transitive-overlay:
@@ -867,16 +867,16 @@ importers:
         specifier: 'catalog:'
         version: 1.2.1
       '@opentripplanner/base-map':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../base-map
       '@opentripplanner/building-blocks':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../building-blocks
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       '@opentripplanner/itinerary-body':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../itinerary-body
       '@turf/bbox':
         specifier: ^6.5.0
@@ -907,10 +907,10 @@ importers:
         version: 8.0.4(maplibre-gl@5.6.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@opentripplanner/endpoints-overlay':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../endpoints-overlay
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
       maplibre-gl:
         specifier: 'catalog:'
@@ -919,7 +919,7 @@ importers:
   packages/trip-details:
     dependencies:
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       '@styled-icons/boxicons-regular':
         specifier: ^10.47.0
@@ -944,19 +944,19 @@ importers:
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
 
   packages/trip-form:
     dependencies:
       '@opentripplanner/building-blocks':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../building-blocks
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       '@opentripplanner/icons':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../icons
       '@styled-icons/bootstrap':
         specifier: 'catalog:'
@@ -999,7 +999,7 @@ importers:
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
       '@types/flat':
         specifier: 'catalog:'
@@ -1014,10 +1014,10 @@ importers:
         specifier: 'catalog:'
         version: 1.2.1
       '@opentripplanner/base-map':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../base-map
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       react:
         specifier: 'catalog:'
@@ -1031,16 +1031,16 @@ importers:
   packages/vehicle-rental-overlay:
     dependencies:
       '@opentripplanner/base-map':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../base-map
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       '@opentripplanner/from-to-location-picker':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../from-to-location-picker
       '@opentripplanner/map-popup':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../map-popup
       '@styled-icons/fa-solid':
         specifier: 'catalog:'
@@ -1068,19 +1068,19 @@ importers:
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
 
   packages/zoom-based-markers:
     dependencies:
       '@opentripplanner/base-map':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../base-map
       '@opentripplanner/core-utils':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../core-utils
       '@opentripplanner/icons':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../icons
       lodash.clonedeep:
         specifier: ^4.5.0
@@ -1096,7 +1096,7 @@ importers:
         version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
     devDependencies:
       '@opentripplanner/types':
-        specifier: workspace:*
+        specifier: workspace:^
         version: link:../types
 
 packages:

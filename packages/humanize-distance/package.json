@@ -14,7 +14,7 @@
     "tsc": "tsc"
   },
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*"
+    "@opentripplanner/types": "workspace:^"
   },
   "peerDependencies": {
     "react": "catalog:",

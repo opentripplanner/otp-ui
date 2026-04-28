@@ -11,14 +11,14 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/base-map": "workspace:*",
-    "@opentripplanner/building-blocks": "workspace:*",
-    "@opentripplanner/core-utils": "workspace:*",
-    "@opentripplanner/from-to-location-picker": "workspace:*",
+    "@opentripplanner/base-map": "workspace:^",
+    "@opentripplanner/building-blocks": "workspace:^",
+    "@opentripplanner/core-utils": "workspace:^",
+    "@opentripplanner/from-to-location-picker": "workspace:^",
     "flat": "catalog:"
   },
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*"
+    "@opentripplanner/types": "workspace:^"
   },
   "peerDependencies": {
     "react": "catalog:",

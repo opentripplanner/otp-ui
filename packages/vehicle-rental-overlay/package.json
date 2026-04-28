@@ -19,16 +19,16 @@
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "dependencies": {
-    "@opentripplanner/base-map": "workspace:*",
-    "@opentripplanner/core-utils": "workspace:*",
-    "@opentripplanner/from-to-location-picker": "workspace:*",
-    "@opentripplanner/map-popup": "workspace:*",
+    "@opentripplanner/base-map": "workspace:^",
+    "@opentripplanner/core-utils": "workspace:^",
+    "@opentripplanner/from-to-location-picker": "workspace:^",
+    "@opentripplanner/map-popup": "workspace:^",
     "@styled-icons/fa-solid": "catalog:",
     "flat": "catalog:",
     "lodash.memoize": "^4.1.2"
   },
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*"
+    "@opentripplanner/types": "workspace:^"
   },
   "peerDependencies": {
     "react": "catalog:",

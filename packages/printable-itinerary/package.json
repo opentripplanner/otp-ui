@@ -10,13 +10,13 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "workspace:*",
-    "@opentripplanner/itinerary-body": "workspace:*",
+    "@opentripplanner/core-utils": "workspace:^",
+    "@opentripplanner/itinerary-body": "workspace:^",
     "flat": "catalog:"
   },
   "devDependencies": {
-    "@opentripplanner/icons": "workspace:*",
-    "@opentripplanner/types": "workspace:*"
+    "@opentripplanner/icons": "workspace:^",
+    "@opentripplanner/types": "workspace:^"
   },
   "peerDependencies": {
     "react": "catalog:",
