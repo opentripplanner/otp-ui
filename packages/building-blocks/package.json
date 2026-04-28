@@ -9,8 +9,8 @@
   "module": "esm/index.js",
   "private": false,
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*",
-    "@opentripplanner/core-utils": "workspace:*"
+    "@opentripplanner/core-utils": "workspace:*",
+    "@opentripplanner/types": "workspace:*"
   },
   "peerDependencies": {
     "react": "catalog:",

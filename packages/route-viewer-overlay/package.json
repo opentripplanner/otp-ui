@@ -22,14 +22,17 @@
     "@mapbox/polyline": "catalog:",
     "@opentripplanner/base-map": "workspace:*",
     "@opentripplanner/core-utils": "workspace:*",
+    "maplibre-gl": "catalog:",
     "point-in-polygon": "^1.1.0"
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*",
+    "@types/node": "^25.6.0",
     "point-in-polygon": "^1.1.0"
   },
   "peerDependencies": {
-    "react": "catalog:"
+    "react": "catalog:",
+    "react-map-gl": "catalog:"
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d"
 }

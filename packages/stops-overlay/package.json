@@ -22,6 +22,7 @@
     "@opentripplanner/base-map": "workspace:*",
     "@opentripplanner/from-to-location-picker": "workspace:*",
     "@opentripplanner/map-popup": "workspace:*",
+    "maplibre-gl": "catalog:",
     "flat": "catalog:"
   },
   "devDependencies": {

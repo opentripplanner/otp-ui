@@ -15,6 +15,7 @@
     "@opentripplanner/humanize-distance": "workspace:*",
     "@opentripplanner/location-icon": "workspace:*",
     "@styled-icons/fa-solid": "catalog:",
+    "@tanstack/pacer": "^0.20.1",
     "@tanstack/react-pacer": "^0.8.0",
     "flat": "catalog:"
   },
