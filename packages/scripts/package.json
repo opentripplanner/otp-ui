@@ -11,6 +11,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "@babel/runtime": "^7.14.5",
     "@formatjs/cli": "^4.2.33",
     "flat": "catalog:",
     "glob": "^8.0.3",
