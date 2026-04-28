@@ -792,6 +792,9 @@ importers:
 
   packages/scripts:
     dependencies:
+      '@babel/runtime':
+        specifier: ^7.14.5
+        version: 7.26.0
       '@formatjs/cli':
         specifier: ^4.2.33
         version: 4.8.4
