@@ -17,6 +17,7 @@
     "@opentripplanner/location-icon": "workspace:*",
     "@styled-icons/fa-solid": "catalog:",
     "@styled-icons/foundation": "catalog:",
+    "@styled-icons/styled-icon": "catalog:",
     "date-fns": "catalog:",
     "date-fns-tz": "catalog:",
     "flat": "catalog:",
@@ -26,7 +27,8 @@
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:*",
-    "@types/flat": "catalog:"
+    "@types/flat": "catalog:",
+    "react-intl": "catalog:"
   },
   "peerDependencies": {
     "react": "catalog:",

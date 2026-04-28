@@ -4,6 +4,7 @@ catalog:
   "@styled-icons/fa-regular": ^10.34.0
   "@styled-icons/fa-solid": ^10.34.0
   "@styled-icons/foundation": ^10.34.0
+  "@styled-icons/styled-icon": ^10.7.1
   "@types/flat": ^5.0.2
   date-fns: ^3.6.0
   date-fns-tz: ^3.2.0
