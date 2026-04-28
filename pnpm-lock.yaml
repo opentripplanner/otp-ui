@@ -111,6 +111,9 @@ importers:
       '@babel/preset-typescript':
         specifier: ^7.13.0
         version: 7.26.0(@babel/core@7.28.0)
+      '@babel/runtime':
+        specifier: 7.26.0
+        version: 7.26.0
       '@formatjs/cli':
         specifier: ^4.2.32
         version: 4.8.4
@@ -255,6 +258,9 @@ importers:
       lint-staged:
         specifier: ^8.2.0
         version: 8.2.1
+      maplibre-gl:
+        specifier: 5.6.1
+        version: 5.6.1
       msw:
         specifier: ^2.3.1
         version: 2.6.0(@types/node@25.6.0)(typescript@5.9.3)
@@ -290,7 +296,7 @@ importers:
         version: 8.0.2(semantic-release@25.0.3(typescript@5.9.3))
       semver:
         specifier: ^7.3.2
-        version: 7.7.2
+        version: 7.7.4
       storybook:
         specifier: ^10.0.5
         version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@25.6.0)(typescript@5.9.3))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@25.6.0)(terser@5.36.0)(yaml@2.8.2))
@@ -324,6 +330,9 @@ importers:
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
+      vite:
+        specifier: 7.0.2
+        version: 7.0.2(@types/node@25.6.0)(terser@5.36.0)(yaml@2.8.2)
       vite-plugin-graphql-loader:
         specifier: ^4.0.4
         version: 4.0.4
@@ -7915,11 +7924,6 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  nanoid@3.3.7:
-    resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-
   nanomatch@1.2.13:
     resolution: {integrity: sha512-fpoe2T0RbHwBTBUOftAfBPaDEi06ufaUai0mE6Yn1kacc3SnTErfb/h+X94VXzI64rKFHYImXSvdwGGCmwOqCA==}
     engines: {node: '>=0.10.0'}
@@ -8519,10 +8523,6 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
 
-  picomatch@4.0.2:
-    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
-    engines: {node: '>=12'}
-
   picomatch@4.0.3:
     resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
@@ -8680,10 +8680,6 @@ packages:
   postcss@7.0.39:
     resolution: {integrity: sha512-yioayjNbHn6z1/Bywyb2Y4s3yvDAeXGOyxqD+LnVOinq6Mdmd++SW2wUNVzavyyHxd6+DxzWGIuosg6P1Rj8uA==}
     engines: {node: '>=6.0.0'}
-
-  postcss@8.4.47:
-    resolution: {integrity: sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==}
-    engines: {node: ^10 || ^12 || >=14}
 
   postcss@8.5.6:
     resolution: {integrity: sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==}
@@ -9288,11 +9284,6 @@ packages:
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
-    hasBin: true
-
-  semver@7.7.2:
-    resolution: {integrity: sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==}
-    engines: {node: '>=10'}
     hasBin: true
 
   semver@7.7.4:
@@ -12711,7 +12702,7 @@ snapshots:
       read-cmd-shim: 4.0.0
       resolve-from: 5.0.0
       rimraf: 4.4.1
-      semver: 7.7.2
+      semver: 7.7.4
       set-blocking: 2.0.0
       signal-exit: 3.0.7
       slash: 3.0.0
@@ -12893,7 +12884,7 @@ snapshots:
       promise-all-reject-late: 1.0.1
       promise-call-limit: 3.0.2
       read-package-json-fast: 3.0.2
-      semver: 7.7.2
+      semver: 7.7.4
       ssri: 10.0.6
       treeverse: 3.0.0
       walk-up-path: 3.0.1
@@ -12903,7 +12894,7 @@ snapshots:
 
   '@npmcli/fs@3.1.1':
     dependencies:
-      semver: 7.7.2
+      semver: 7.7.4
 
   '@npmcli/git@5.0.8':
     dependencies:
@@ -12914,7 +12905,7 @@ snapshots:
       proc-log: 4.2.0
       promise-inflight: 1.0.1
       promise-retry: 2.0.1
-      semver: 7.7.2
+      semver: 7.7.4
       which: 4.0.0
     transitivePeerDependencies:
       - bluebird
@@ -12937,7 +12928,7 @@ snapshots:
       json-parse-even-better-errors: 3.0.2
       pacote: 18.0.6
       proc-log: 4.2.0
-      semver: 7.7.2
+      semver: 7.7.4
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -12954,7 +12945,7 @@ snapshots:
       json-parse-even-better-errors: 3.0.2
       normalize-package-data: 6.0.2
       proc-log: 4.2.0
-      semver: 7.7.2
+      semver: 7.7.4
     transitivePeerDependencies:
       - bluebird
 
@@ -12987,7 +12978,7 @@ snapshots:
       ignore: 5.3.2
       minimatch: 9.0.3
       nx: 20.0.7(@swc/core@1.7.42)
-      semver: 7.7.2
+      semver: 7.7.4
       tmp: 0.2.3
       tslib: 2.8.1
       yargs-parser: 21.1.1
@@ -13369,7 +13360,7 @@ snapshots:
       read-pkg: 10.0.0
       registry-auth-token: 5.1.0
       semantic-release: 25.0.3(typescript@5.9.3)
-      semver: 7.7.2
+      semver: 7.7.4
       tempy: 3.1.0
 
   '@semantic-release/release-notes-generator@14.1.0(semantic-release@25.0.3(typescript@5.9.3))':
@@ -14253,7 +14244,7 @@ snapshots:
       functional-red-black-tree: 1.0.1
       ignore: 5.3.2
       regexpp: 3.2.0
-      semver: 7.7.2
+      semver: 7.7.4
       tsutils: 3.21.0(typescript@5.9.3)
     optionalDependencies:
       typescript: 5.9.3
@@ -14299,7 +14290,7 @@ snapshots:
       debug: 4.3.7(supports-color@5.5.0)
       globby: 11.1.0
       is-glob: 4.0.3
-      semver: 7.7.2
+      semver: 7.7.4
       tsutils: 3.21.0(typescript@5.9.3)
     optionalDependencies:
       typescript: 5.9.3
@@ -14471,7 +14462,7 @@ snapshots:
       '@vue/shared': 3.5.12
       estree-walker: 2.0.2
       magic-string: 0.30.12
-      postcss: 8.4.47
+      postcss: 8.5.6
       source-map-js: 1.2.1
 
   '@vue/compiler-ssr@3.5.12':
@@ -15542,7 +15533,7 @@ snapshots:
       handlebars: 4.7.8
       json-stringify-safe: 5.0.1
       meow: 8.1.2
-      semver: 7.7.2
+      semver: 7.7.4
       split: 1.0.1
 
   conventional-changelog-writer@8.0.1:
@@ -15550,7 +15541,7 @@ snapshots:
       conventional-commits-filter: 5.0.0
       handlebars: 4.7.8
       meow: 13.2.0
-      semver: 7.7.2
+      semver: 7.7.4
 
   conventional-commits-filter@3.0.0:
     dependencies:
@@ -16283,7 +16274,7 @@ snapshots:
       optionator: 0.9.4
       progress: 2.0.3
       regexpp: 3.2.0
-      semver: 7.7.2
+      semver: 7.7.4
       strip-ansi: 6.0.1
       strip-json-comments: 3.1.1
       table: 6.8.2
@@ -16867,7 +16858,7 @@ snapshots:
   git-semver-tags@5.0.1:
     dependencies:
       meow: 8.1.2
-      semver: 7.7.2
+      semver: 7.7.4
 
   git-up@6.0.0:
     dependencies:
@@ -17302,7 +17293,7 @@ snapshots:
       npm-package-arg: 11.0.2
       promzard: 1.0.2
       read: 3.0.1
-      semver: 7.7.2
+      semver: 7.7.4
       validate-npm-package-license: 3.0.4
       validate-npm-package-name: 5.0.1
     transitivePeerDependencies:
@@ -17660,7 +17651,7 @@ snapshots:
       '@babel/parser': 7.28.0
       '@istanbuljs/schema': 0.1.3
       istanbul-lib-coverage: 3.2.2
-      semver: 7.7.2
+      semver: 7.7.4
     transitivePeerDependencies:
       - supports-color
 
@@ -18231,7 +18222,7 @@ snapshots:
       jest-message-util: 30.0.2
       jest-util: 30.0.2
       pretty-format: 30.0.2
-      semver: 7.7.2
+      semver: 7.7.4
       synckit: 0.11.8
     transitivePeerDependencies:
       - supports-color
@@ -18257,7 +18248,7 @@ snapshots:
       jest-message-util: 30.2.0
       jest-util: 30.2.0
       pretty-format: 30.2.0
-      semver: 7.7.2
+      semver: 7.7.4
       synckit: 0.11.8
     transitivePeerDependencies:
       - supports-color
@@ -18286,7 +18277,7 @@ snapshots:
       chalk: 4.1.2
       ci-info: 4.3.0
       graceful-fs: 4.2.11
-      picomatch: 4.0.2
+      picomatch: 4.0.3
 
   jest-util@30.2.0:
     dependencies:
@@ -18562,7 +18553,7 @@ snapshots:
       read-cmd-shim: 4.0.0
       resolve-from: 5.0.0
       rimraf: 4.4.1
-      semver: 7.7.2
+      semver: 7.7.4
       set-blocking: 2.0.0
       signal-exit: 3.0.7
       slash: 3.0.0
@@ -18612,7 +18603,7 @@ snapshots:
       npm-package-arg: 11.0.2
       npm-registry-fetch: 17.1.0
       proc-log: 4.2.0
-      semver: 7.7.2
+      semver: 7.7.4
       sigstore: 2.3.1
       ssri: 10.0.6
     transitivePeerDependencies:
@@ -18835,7 +18826,7 @@ snapshots:
 
   make-dir@4.0.0:
     dependencies:
-      semver: 7.7.2
+      semver: 7.7.4
 
   make-fetch-happen@13.0.1:
     dependencies:
@@ -19171,8 +19162,6 @@ snapshots:
 
   nanoid@3.3.11: {}
 
-  nanoid@3.3.7: {}
-
   nanomatch@1.2.13:
     dependencies:
       arr-diff: 4.0.0
@@ -19240,7 +19229,7 @@ snapshots:
       make-fetch-happen: 13.0.1
       nopt: 7.2.1
       proc-log: 4.2.0
-      semver: 7.7.2
+      semver: 7.7.4
       tar: 6.2.1
       which: 4.0.0
     transitivePeerDependencies:
@@ -19271,13 +19260,13 @@ snapshots:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.15.1
-      semver: 7.7.2
+      semver: 7.7.4
       validate-npm-package-license: 3.0.4
 
   normalize-package-data@6.0.2:
     dependencies:
       hosted-git-info: 7.0.2
-      semver: 7.7.2
+      semver: 7.7.4
       validate-npm-package-license: 3.0.4
 
   normalize-package-data@8.0.0:
@@ -19308,7 +19297,7 @@ snapshots:
 
   npm-install-checks@6.3.0:
     dependencies:
-      semver: 7.7.2
+      semver: 7.7.4
 
   npm-normalize-package-bin@3.0.1: {}
 
@@ -19316,7 +19305,7 @@ snapshots:
     dependencies:
       hosted-git-info: 7.0.2
       proc-log: 4.2.0
-      semver: 7.7.2
+      semver: 7.7.4
       validate-npm-package-name: 5.0.1
 
   npm-packlist@8.0.2:
@@ -19332,7 +19321,7 @@ snapshots:
       npm-install-checks: 6.3.0
       npm-normalize-package-bin: 3.0.1
       npm-package-arg: 11.0.2
-      semver: 7.7.2
+      semver: 7.7.4
 
   npm-registry-fetch@17.1.0:
     dependencies:
@@ -19402,7 +19391,7 @@ snapshots:
       npm-run-path: 4.0.1
       open: 8.4.2
       ora: 5.3.0
-      semver: 7.7.2
+      semver: 7.7.4
       string-width: 4.2.3
       tar-stream: 2.2.0
       tmp: 0.2.3
@@ -19804,8 +19793,6 @@ snapshots:
 
   picomatch@2.3.1: {}
 
-  picomatch@4.0.2: {}
-
   picomatch@4.0.3: {}
 
   pify@2.3.0: {}
@@ -19939,12 +19926,6 @@ snapshots:
     dependencies:
       picocolors: 0.2.1
       source-map: 0.6.1
-
-  postcss@8.4.47:
-    dependencies:
-      nanoid: 3.3.7
-      picocolors: 1.1.1
-      source-map-js: 1.2.1
 
   postcss@8.5.6:
     dependencies:
@@ -20643,7 +20624,7 @@ snapshots:
       p-reduce: 3.0.0
       read-package-up: 12.0.0
       resolve-from: 5.0.0
-      semver: 7.7.2
+      semver: 7.7.4
       signale: 1.4.0
       yargs: 18.0.0
     transitivePeerDependencies:
@@ -20657,8 +20638,6 @@ snapshots:
   semver@5.7.2: {}
 
   semver@6.3.1: {}
-
-  semver@7.7.2: {}
 
   semver@7.7.4: {}
 
@@ -20993,7 +20972,7 @@ snapshots:
       '@vitest/spy': 3.2.4
       esbuild: 0.25.5
       recast: 0.23.9
-      semver: 7.7.2
+      semver: 7.7.4
       ws: 8.18.0
     optionalDependencies:
       prettier: 1.19.1
