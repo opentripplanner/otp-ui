@@ -314,6 +314,9 @@ importers:
       '@babel/preset-typescript':
         specifier: ^7.13.0
         version: 7.26.0(@babel/core@7.28.0)
+      '@babel/runtime':
+        specifier: 7.26.0
+        version: 7.26.0
       '@formatjs/cli':
         specifier: ^4.2.32
         version: 4.8.4
@@ -461,6 +464,9 @@ importers:
       lint-staged:
         specifier: ^8.2.0
         version: 8.2.1
+      maplibre-gl:
+        specifier: 5.6.1
+        version: 5.6.1
       msw:
         specifier: ^2.3.1
         version: 2.6.0(@types/node@25.6.0)(typescript@5.9.3)
@@ -530,6 +536,9 @@ importers:
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
+      vite:
+        specifier: 7.0.2
+        version: 7.0.2(@types/node@25.6.0)(terser@5.36.0)(yaml@2.8.2)
       vite-plugin-graphql-loader:
         specifier: ^4.0.4
         version: 4.0.4
@@ -8046,11 +8055,6 @@ packages:
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
-  nanoid@3.3.7:
-    resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-
   nanomatch@1.2.13:
     resolution: {integrity: sha512-fpoe2T0RbHwBTBUOftAfBPaDEi06ufaUai0mE6Yn1kacc3SnTErfb/h+X94VXzI64rKFHYImXSvdwGGCmwOqCA==}
     engines: {node: '>=0.10.0'}
@@ -8807,10 +8811,6 @@ packages:
   postcss@7.0.39:
     resolution: {integrity: sha512-yioayjNbHn6z1/Bywyb2Y4s3yvDAeXGOyxqD+LnVOinq6Mdmd++SW2wUNVzavyyHxd6+DxzWGIuosg6P1Rj8uA==}
     engines: {node: '>=6.0.0'}
-
-  postcss@8.4.47:
-    resolution: {integrity: sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==}
-    engines: {node: ^10 || ^12 || >=14}
 
   postcss@8.5.6:
     resolution: {integrity: sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==}
@@ -14503,7 +14503,7 @@ snapshots:
       '@vue/shared': 3.5.12
       estree-walker: 2.0.2
       magic-string: 0.30.12
-      postcss: 8.4.47
+      postcss: 8.5.6
       source-map-js: 1.2.1
 
   '@vue/compiler-ssr@3.5.12':
@@ -18933,8 +18933,6 @@ snapshots:
 
   nanoid@3.3.11: {}
 
-  nanoid@3.3.7: {}
-
   nanomatch@1.2.13:
     dependencies:
       arr-diff: 4.0.0
@@ -19699,12 +19697,6 @@ snapshots:
     dependencies:
       picocolors: 0.2.1
       source-map: 0.6.1
-
-  postcss@8.4.47:
-    dependencies:
-      nanoid: 3.3.7
-      picocolors: 1.1.1
-      source-map-js: 1.2.1
 
   postcss@8.5.6:
     dependencies:
