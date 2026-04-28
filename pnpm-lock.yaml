@@ -473,6 +473,9 @@ importers:
       nock:
         specifier: ^14.0.5
         version: 14.0.5
+      playwright:
+        specifier: 1.60.0
+        version: 1.60.0
       prettier:
         specifier: ^1.19.1
         version: 1.19.1
