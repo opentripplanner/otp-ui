@@ -9,14 +9,14 @@
   "module": "esm/index.js",
   "private": false,
   "dependencies": {
-    "@opentripplanner/base-map": "workspace:*",
-    "@opentripplanner/core-utils": "workspace:*",
-    "@opentripplanner/icons": "workspace:*",
+    "@opentripplanner/base-map": "workspace:^",
+    "@opentripplanner/core-utils": "workspace:^",
+    "@opentripplanner/icons": "workspace:^",
     "flat": "catalog:",
     "lodash.memoize": "^4.1.2"
   },
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*"
+    "@opentripplanner/types": "workspace:^"
   },
   "peerDependencies": {
     "react": "catalog:",

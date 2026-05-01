@@ -10,16 +10,16 @@
   "private": false,
   "dependencies": {
     "@conveyal/geocoder-arcgis-geojson": "^0.0.3",
-    "@opentripplanner/core-utils": "workspace:*",
-    "@opentripplanner/geocoder": "workspace:*",
-    "@opentripplanner/humanize-distance": "workspace:*",
-    "@opentripplanner/location-icon": "workspace:*",
+    "@opentripplanner/core-utils": "workspace:^",
+    "@opentripplanner/geocoder": "workspace:^",
+    "@opentripplanner/humanize-distance": "workspace:^",
+    "@opentripplanner/location-icon": "workspace:^",
     "@styled-icons/fa-solid": "catalog:",
     "@tanstack/react-pacer": "^0.8.0",
     "flat": "catalog:"
   },
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*"
+    "@opentripplanner/types": "workspace:^"
   },
   "peerDependencies": {
     "react": "catalog:",

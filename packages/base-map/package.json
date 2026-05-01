@@ -11,11 +11,11 @@
   "dependencies": {
     "maplibre-gl": "catalog:",
     "react-map-gl": "catalog:",
-    "@opentripplanner/building-blocks": "workspace:*"
+    "@opentripplanner/building-blocks": "workspace:^"
   },
   "peerDependencies": {
     "react": "catalog:",
-    "@opentripplanner/types": "workspace:*",
+    "@opentripplanner/types": "workspace:^",
     "styled-components": "catalog:"
   },
   "repository": {

@@ -19,15 +19,15 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/base-map": "workspace:*",
-    "@opentripplanner/location-icon": "workspace:*",
-    "@opentripplanner/core-utils": "workspace:*",
+    "@opentripplanner/base-map": "workspace:^",
+    "@opentripplanner/location-icon": "workspace:^",
+    "@opentripplanner/core-utils": "workspace:^",
     "flat": "catalog:",
     "@styled-icons/fa-solid": "catalog:",
-    "@opentripplanner/building-blocks": "workspace:*"
+    "@opentripplanner/building-blocks": "workspace:^"
   },
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*",
+    "@opentripplanner/types": "workspace:^",
     "@types/flat": "catalog:"
   },
   "peerDependencies": {

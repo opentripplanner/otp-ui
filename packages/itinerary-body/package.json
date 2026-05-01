@@ -10,11 +10,11 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/building-blocks": "workspace:*",
-    "@opentripplanner/core-utils": "workspace:*",
-    "@opentripplanner/humanize-distance": "workspace:*",
-    "@opentripplanner/icons": "workspace:*",
-    "@opentripplanner/location-icon": "workspace:*",
+    "@opentripplanner/building-blocks": "workspace:^",
+    "@opentripplanner/core-utils": "workspace:^",
+    "@opentripplanner/humanize-distance": "workspace:^",
+    "@opentripplanner/icons": "workspace:^",
+    "@opentripplanner/location-icon": "workspace:^",
     "@styled-icons/fa-solid": "catalog:",
     "@styled-icons/foundation": "catalog:",
     "date-fns": "catalog:",
@@ -25,7 +25,7 @@
     "string-similarity": "^4.0.4"
   },
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*",
+    "@opentripplanner/types": "workspace:^",
     "@types/flat": "catalog:"
   },
   "peerDependencies": {

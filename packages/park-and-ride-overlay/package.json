@@ -19,9 +19,9 @@
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
   "dependencies": {
-    "@opentripplanner/base-map": "workspace:*",
-    "@opentripplanner/from-to-location-picker": "workspace:*",
-    "@opentripplanner/types": "workspace:*"
+    "@opentripplanner/base-map": "workspace:^",
+    "@opentripplanner/from-to-location-picker": "workspace:^",
+    "@opentripplanner/types": "workspace:^"
   },
   "peerDependencies": {
     "react": "catalog:",

@@ -16,11 +16,11 @@
     "react-map-gl": "catalog:"
   },
   "dependencies": {
-    "@opentripplanner/map-popup": "workspace:*"
+    "@opentripplanner/map-popup": "workspace:^"
   },
   "devDependencies": {
-    "@opentripplanner/base-map": "workspace:*",
-    "@opentripplanner/types": "workspace:*",
+    "@opentripplanner/base-map": "workspace:^",
+    "@opentripplanner/types": "workspace:^",
     "maplibre-gl": "catalog:"
   }
 }

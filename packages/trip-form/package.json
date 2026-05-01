@@ -10,9 +10,9 @@
   "types": "lib/index.d.ts",
   "private": false,
   "dependencies": {
-    "@opentripplanner/building-blocks": "workspace:*",
-    "@opentripplanner/core-utils": "workspace:*",
-    "@opentripplanner/icons": "workspace:*",
+    "@opentripplanner/building-blocks": "workspace:^",
+    "@opentripplanner/core-utils": "workspace:^",
+    "@opentripplanner/icons": "workspace:^",
     "@styled-icons/bootstrap": "catalog:",
     "@styled-icons/boxicons-regular": "^10.38.0",
     "@styled-icons/fa-regular": "^10.37.0",
@@ -25,7 +25,7 @@
     "react-inlinesvg": "^2.3.0"
   },
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*",
+    "@opentripplanner/types": "workspace:^",
     "@types/flat": "catalog:",
     "lodash.clonedeep": "^4.5.0"
   },
