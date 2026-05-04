@@ -35,11 +35,11 @@ async function autocomplete({
   // Add synonyms to full list
   // TODO: can this be done in a cleaner way?
   items.forEach((item, idx) => {
-    itemsWithSynonyms.push(item.label);
+    itemsWithSynonyms.push(uFuzzy.latinize(item.label));
     synonymIndicies.push(idx);
     if (item?.synonyms) {
       item.synonyms.forEach(synonym => {
-        itemsWithSynonyms.push(synonym);
+        itemsWithSynonyms.push(uFuzzy.latinize(synonym));
         synonymIndicies.push(idx);
       });
     }
@@ -48,7 +48,7 @@ async function autocomplete({
   // eslint-disable-next-line new-cap
   const u = new uFuzzy();
 
-  const idxs = u.filter(itemsWithSynonyms, text);
+  const idxs = u.filter(itemsWithSynonyms, uFuzzy.latinize(text));
 
   return Array.from(new Set(idxs.map(index => items[synonymIndicies[index]])));
 }
