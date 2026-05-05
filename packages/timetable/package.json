@@ -1,0 +1,19 @@
+{
+  "name": "@opentripplanner/timetable",
+  "version": "0.0.1",
+  "description": "A component to display a timetable for a given route pattern",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
+  "repository": "https://github.com/opentripplanner/otp-ui.git",
+  "author": "Alec Georgoff",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "react": "catalog:",
+    "styled-components": "catalog:"
+  },
+  "scripts": {
+    "tsc": "tsc"
+  }
+}
