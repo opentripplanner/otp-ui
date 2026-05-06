@@ -27,6 +27,7 @@ export type GeocoderConfig = {
   sources?: string;
   size?: number;
   reverseUseFeatureCollection?: boolean;
+  enableSlowFullUnicodeSupport?: boolean
 };
 
 export type ReverseQuery = {
