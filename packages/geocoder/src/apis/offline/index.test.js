@@ -11,7 +11,7 @@ const baseItems = [
     label: "Union Station",
     lat: 45.528,
     lon: -122.673,
-    synonyms: ["Train Station"]
+    synonyms: ["Train Station", "عُود"]
   },
   { label: "Pioneer Courthouse Square", lat: 45.5189, lon: -122.6798 },
   {
@@ -47,6 +47,19 @@ describe("offline geocoder", () => {
         text: "University"
       });
       expect(result).toContainEqual(baseItems[3]);
+    });
+    it("should find item that has non-latinizable string in its synonyms", async () => {
+      const resultWithUnicodeOff = await autocomplete({
+        items: baseItems,
+        text: "عُود"
+      });
+      const resultWithUnicodeOn = await autocomplete({
+        items: baseItems,
+        text: "عُود",
+        enableSlowFullUnicodeSupport: true
+      });
+      expect(resultWithUnicodeOff).toEqual([]);
+      expect(resultWithUnicodeOn).toContainEqual(baseItems[1]);
     });
   });
   describe("synonym support", () => {
