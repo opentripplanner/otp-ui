@@ -14,6 +14,7 @@ export type OfflineResponse = {
 type OfflineQuery = {
   items: OfflineResponse;
   text?: string;
+  enableSlowFullUnicodeSupport?: boolean;
 };
 /**
  * Search for an address using offline geocoder
@@ -25,7 +26,8 @@ type OfflineQuery = {
  */
 async function autocomplete({
   items,
-  text
+  text,
+  enableSlowFullUnicodeSupport
 }: OfflineQuery): Promise<OfflineResponse> {
   if (!text) return [];
 
@@ -35,22 +37,33 @@ async function autocomplete({
   // Add synonyms to full list
   // TODO: can this be done in a cleaner way?
   items.forEach((item, idx) => {
-    itemsWithSynonyms.push(item.label);
+    itemsWithSynonyms.push(uFuzzy.latinize(item.label));
     synonymIndicies.push(idx);
     if (item?.synonyms) {
       item.synonyms.forEach(synonym => {
-        itemsWithSynonyms.push(synonym);
+        itemsWithSynonyms.push(uFuzzy.latinize(synonym));
         synonymIndicies.push(idx);
       });
     }
   });
 
   // eslint-disable-next-line new-cap
-  const u = new uFuzzy();
+  const u = new uFuzzy(
+    enableSlowFullUnicodeSupport
+      ? {
+          unicode: true,
+          interSplit: "[^\\p{L}\\d']+",
+          intraSplit: "\\p{Ll}\\p{Lu}",
+          intraBound: "\\p{L}\\d|\\d\\p{L}|\\p{Ll}\\p{Lu}",
+          intraChars: "[\\p{L}\\d']",
+          intraContr: "'\\p{L}{1,2}\\b"
+        }
+      : {}
+  );
 
-  const idxs = u.filter(itemsWithSynonyms, text);
+  const idxs = u.filter(itemsWithSynonyms, uFuzzy.latinize(text));
 
-  return Array.from(new Set(idxs.map(index => items[synonymIndicies[index]])));
+  return Array.from(new Set(idxs?.map(index => items[synonymIndicies[index]])));
 }
 
 function search(args: OfflineQuery): Promise<OfflineResponse> {
