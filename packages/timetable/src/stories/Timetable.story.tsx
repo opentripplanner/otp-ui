@@ -16,11 +16,13 @@ const stopsForPattern: Stop[] = [
         id: "stop1",
         name: "Stop 1",
         sequence: 1,
+        timepoint: true
     },
     {
         id: "stop3",
         name: "Stop 3",
         sequence: 3,
+        timepoint: true
     },
     {
         id: "stop2",
@@ -74,8 +76,6 @@ const tripWithSkippedStops: Trip = {
     sequence: 2,
     stops: skipAStop
 }
-
-// seed
 
 export const Default: Story = {
     args: {

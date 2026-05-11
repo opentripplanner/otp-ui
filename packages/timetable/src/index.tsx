@@ -1,7 +1,7 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useCallback, useMemo, useState } from "react";
 import styled from "styled-components";
 
-const COLUMN_WIDTH = "3rem";
+const COLUMN_WIDTH = "4rem";
 
 interface TimeTableRowProps {
   values: string[];
@@ -12,6 +12,7 @@ export interface Stop {
   name?: string;
   sequence: number;
   time?: string;
+  timepoint?: boolean;
 }
 
 export interface Trip {
@@ -60,16 +61,37 @@ export interface TimeTableProps {
 const TimeTable = (props: TimeTableProps): ReactElement => {
   const { stops, trips } = props;
 
+  const [expanded, setExpanded] = useState(false);
+
+  const timepointStopIds: Set<string> = useMemo(() => {
+    const ids = new Set<string>();
+    stops.forEach(s => {
+      if (s.id && s.timepoint) ids.add(s.id);
+    });
+    return ids;
+  }, [stops]);
+
+  const filterAndSortStops = useCallback(
+    (stopArray: Stop[]) =>
+      stopArray
+        .filter(s => (expanded ? true : s.id && timepointStopIds.has(s.id)))
+        .sort((a, b) => a.sequence - b.sequence),
+    [expanded, timepointStopIds]
+  );
+
   return (
     <>
+      <button type="button" onClick={() => setExpanded(!expanded)}>
+        {expanded ? "Show Timepoints Only" : "Show All Stops"}
+      </button>
       <RowContainer>
-        {stops
-          .sort((a, b) => a.sequence - b.sequence)
-          .map(s => (
-            <CellContainer key={s.sequence}>
-              <span style={{ fontWeight: "bold" }}>{s.name}</span>
-            </CellContainer>
-          ))}
+        {filterAndSortStops(stops).map(s => (
+          <CellContainer key={s.sequence}>
+            <span style={{ fontWeight: s.timepoint ? "bold" : "normal" }}>
+              {s.name}
+            </span>
+          </CellContainer>
+        ))}
       </RowContainer>
       <div>
         {trips
@@ -77,9 +99,7 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
           .map(t => (
             <TimeTableRow
               key={t.id}
-              values={t.stops
-                .sort((a, b) => a.sequence - b.sequence)
-                .map(s => s.time ?? "-")}
+              values={filterAndSortStops(t.stops).map(s => s.time ?? "-")}
             />
           ))}
       </div>
