@@ -1,7 +1,7 @@
 // eslint-disable-next-line prettier/prettier
 import type { Meta, StoryObj } from "@storybook/react-vite"
 
-import TimeTableRow, { Stop, Trip } from ".."
+import { TimeTableRow } from ".."
 
 const meta = {
     component: TimeTableRow,
@@ -11,50 +11,22 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const standardStops: Stop[] = [
-    {
-        id: "stop1",
-        sequence: 1,
-        time: "11:00"
-    },
-    {
-        id: "stop3",
-        sequence: 3,
-        time: "11:10"
-    },
-    {
-        id: "stop2",
-        sequence: 2,
-        time: "11:05"
-    }
-]
+const times: string[] = [
+    "11:00", "11:05", "11:10"
+];
 
-const standardTrip: Trip = {
-    id: "trip1",
-    sequence: 1,
-    stops: standardStops
-}
-
-const tripWithSkippedStop: Trip = {
-    id: "trip2",
-    sequence: 2,
-    stops: [
-        ...standardStops,
-        {
-            id: "skipped",
-            sequence: 4
-        }
-    ]
-}
+const timesWithSkippedStops: string[] = [
+    "11:00", "-", "11:10"
+];
 
 export const Default: Story = {
     args: {
-        trip: standardTrip
+        values: times
     }
 }
 
 export const WithSkippedStop: Story = {
     args: {
-        trip: tripWithSkippedStop
+        values: timesWithSkippedStops
     }
 }

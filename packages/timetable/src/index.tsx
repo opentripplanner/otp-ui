@@ -1,12 +1,15 @@
 import React, { ReactElement } from "react";
 import styled from "styled-components";
 
+const COLUMN_WIDTH = "3rem";
+
 interface TimeTableRowProps {
-  trip: Trip;
+  values: string[];
 }
 
 export interface Stop {
-  id: string;
+  id?: string;
+  name?: string;
   sequence: number;
   time?: string;
 }
@@ -22,7 +25,7 @@ const CellContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem;
-  width: 3rem;
+  width: ${COLUMN_WIDTH};
 `;
 
 // TODO: make highlight color customizable
@@ -35,30 +38,53 @@ const RowContainer = styled.div`
   }
 `;
 
-const TimeTableCell = (props: { text?: string }): ReactElement => {
-  const { text } = props;
+const TimeTableRow = (props: TimeTableRowProps): ReactElement => {
+  const { values } = props;
 
   return (
-    <CellContainer>
-      <span>{text ?? "-"}</span>
-    </CellContainer>
+    <RowContainer>
+      {values.map((v, i) => (
+        <CellContainer key={i}>
+          <span>{v}</span>
+        </CellContainer>
+      ))}
+    </RowContainer>
   );
 };
 
-const TimeTableRow = (props: TimeTableRowProps): ReactElement => {
-  const { trip } = props;
+export interface TimeTableProps {
+  stops: Stop[];
+  trips: Trip[];
+}
+
+const TimeTable = (props: TimeTableProps): ReactElement => {
+  const { stops, trips } = props;
 
   return (
-    <div>
+    <>
       <RowContainer>
-        {trip.stops
+        {stops
           .sort((a, b) => a.sequence - b.sequence)
           .map(s => (
-            <TimeTableCell key={s.id} text={s.time} />
+            <CellContainer key={s.sequence}>
+              <span style={{ fontWeight: "bold" }}>{s.name}</span>
+            </CellContainer>
           ))}
       </RowContainer>
-    </div>
+      <div>
+        {trips
+          .sort((a, b) => a.sequence - b.sequence)
+          .map(t => (
+            <TimeTableRow
+              key={t.id}
+              values={t.stops
+                .sort((a, b) => a.sequence - b.sequence)
+                .map(s => s.time ?? "-")}
+            />
+          ))}
+      </div>
+    </>
   );
 };
 
-export default TimeTableRow;
+export { TimeTable, TimeTableRow };
