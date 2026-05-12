@@ -103,7 +103,15 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
             const rowValues = showBlockId ? [t.blockId] : [];
             filteredAndSortedPatternStops.forEach(patternStop => {
               const time = t.stops.get(patternStop.id);
-              rowValues.push(time ? time.toLocaleTimeString() : "-");
+              rowValues.push(
+                time
+                  ? time.toLocaleTimeString("en-us", {
+                      hour12: false,
+                      hour: "2-digit",
+                      minute: "2-digit"
+                    })
+                  : "-"
+              );
             });
 
             return <TimeTableRow key={t.id} values={rowValues} />;
