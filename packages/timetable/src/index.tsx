@@ -1,4 +1,4 @@
-import React, { ReactElement, useCallback, useMemo, useState } from "react";
+import React, { ReactElement, useMemo, useState } from "react";
 import styled from "styled-components";
 
 const COLUMN_WIDTH = "4rem";
@@ -7,18 +7,19 @@ interface TimeTableRowProps {
   values: string[];
 }
 
-export interface Stop {
-  id?: string;
-  name?: string;
-  sequence: number;
-  time?: string;
-  timepoint?: boolean;
-}
-
-export interface Trip {
+interface FilterableSequenceable {
   id: string;
   sequence: number;
-  stops: Stop[];
+}
+
+export interface PatternStop extends FilterableSequenceable {
+  name: string;
+  timepoint: boolean;
+}
+
+export interface Trip extends FilterableSequenceable {
+  blockId: string;
+  stops: Map<string, Date>; // stop ID, stop time
 }
 
 const CellContainer = styled.div`
@@ -54,29 +55,29 @@ const TimeTableRow = (props: TimeTableRowProps): ReactElement => {
 };
 
 export interface TimeTableProps {
-  stops: Stop[];
+  patternStops: PatternStop[];
   trips: Trip[];
 }
 
 const TimeTable = (props: TimeTableProps): ReactElement => {
-  const { stops, trips } = props;
+  const { patternStops, trips } = props;
 
   const [expanded, setExpanded] = useState(false);
 
   const timepointStopIds: Set<string> = useMemo(() => {
     const ids = new Set<string>();
-    stops.forEach(s => {
-      if (s.id && s.timepoint) ids.add(s.id);
+    patternStops.forEach(s => {
+      if (s.timepoint) ids.add(s.id);
     });
     return ids;
-  }, [stops]);
+  }, [patternStops]);
 
-  const filterAndSortStops = useCallback(
-    (stopArray: Stop[]) =>
-      stopArray
-        .filter(s => (expanded ? true : s.id && timepointStopIds.has(s.id)))
+  const filteredAndSortedPatternStops = useMemo(
+    () =>
+      patternStops
+        .filter(s => (expanded ? true : timepointStopIds.has(s.id)))
         .sort((a, b) => a.sequence - b.sequence),
-    [expanded, timepointStopIds]
+    [expanded, patternStops, timepointStopIds]
   );
 
   return (
@@ -85,7 +86,7 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
         {expanded ? "Show Timepoints Only" : "Show All Stops"}
       </button>
       <RowContainer>
-        {filterAndSortStops(stops).map(s => (
+        {filteredAndSortedPatternStops.map(s => (
           <CellContainer key={s.sequence}>
             <span style={{ fontWeight: s.timepoint ? "bold" : "normal" }}>
               {s.name}
@@ -99,7 +100,10 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
           .map(t => (
             <TimeTableRow
               key={t.id}
-              values={filterAndSortStops(t.stops).map(s => s.time ?? "-")}
+              values={filteredAndSortedPatternStops.map(patternStop => {
+                const time = t.stops.get(patternStop.id);
+                return time ? time.toLocaleTimeString() : "-";
+              })}
             />
           ))}
       </div>

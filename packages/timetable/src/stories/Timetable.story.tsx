@@ -1,7 +1,7 @@
 // eslint-disable-next-line prettier/prettier
 import type { Meta, StoryObj } from "@storybook/react-vite"
 
-import { Stop, TimeTable, Trip } from ".."
+import { PatternStop, TimeTable, Trip } from ".."
 
 const meta = {
     component: TimeTable,
@@ -11,83 +11,80 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const stopsForPattern: Stop[] = [
+const createTime = (hours: number, minutes: number, seconds: number) => new Date(1970, 0, 1, hours, minutes, seconds)
+const minutesInMs = (minutes: number) => minutes * 60 * 1000
+
+const createStopsForTrip = (start: Date): Map<string, Date> => new Map([
+    [ "1", new Date(start.getTime() + minutesInMs(0)) ],
+    [ "2", new Date(start.getTime() + minutesInMs(5)) ],
+    [ "3", new Date(start.getTime() + minutesInMs(9)) ],
+])
+
+const patternStops: PatternStop[] = [
     {
-        id: "stop1",
-        name: "Stop 1",
+        id: "1",
+        name: "A St.",
         sequence: 1,
         timepoint: true
     },
     {
-        id: "stop3",
-        name: "Stop 3",
+        id: "3",
+        name: "C St.",
         sequence: 3,
         timepoint: true
     },
     {
-        id: "stop2",
-        name: "Stop 2",
+        id: "2",
+        name: "B St.",
         sequence: 2,
+        timepoint: false
+    },
+    {
+        id: "4",
+        name: "D St.",
+        sequence: 4,
+        timepoint: false
+    },
+    {
+        id: "5",
+        name: "E St.",
+        sequence: 5,
+        timepoint: true
     }
 ]
 
-const standardStops: Stop[] = [
+const trips: Trip[] = [
     {
-        id: "stop1",
+        id: "1",
+        blockId: "123",
         sequence: 1,
-        time: "11:00"
+        stops: createStopsForTrip(createTime(8, 0, 0))
     },
     {
-        id: "stop3",
+        id: "3",
+        blockId: "789",
         sequence: 3,
-        time: "11:10"
+        stops: createStopsForTrip(createTime(10, 0, 0))
     },
     {
-        id: "stop2",
+        id: "2",
+        blockId: "456",
         sequence: 2,
-        time: "11:05"
+        stops: createStopsForTrip(createTime(9, 0, 0))
     }
 ]
-
-const skipAStop: Stop[] = [
-    {
-        id: "stop1",
-        sequence: 1,
-        time: "12:00"
-    },
-    {
-        sequence: 2
-    },
-    {
-        id: "stop3",
-        sequence: 3,
-        time: "12:10"
-    }
-]
-
-const standardTrip: Trip = {
-    id: "trip1",
-    sequence: 1,
-    stops: standardStops
-}
-
-const tripWithSkippedStops: Trip = {
-    id: "trip2",
-    sequence: 2,
-    stops: skipAStop
-}
 
 export const Default: Story = {
     args: {
-        stops: stopsForPattern,
-        trips: [standardTrip]
+        patternStops,
+        trips
     }
 }
 
 export const SkipStops: Story = {
     name: "With Trips That Skip Stops",
     args: {
-        stops: stopsForPattern,
-        trips: [standardTrip, tripWithSkippedStops]
+        patternStops,
+        trips
     }
 }
