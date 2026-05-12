@@ -57,10 +57,11 @@ const TimeTableRow = (props: TimeTableRowProps): ReactElement => {
 export interface TimeTableProps {
   patternStops: PatternStop[];
   trips: Trip[];
+  showBlockId?: boolean;
 }
 
 const TimeTable = (props: TimeTableProps): ReactElement => {
-  const { patternStops, trips } = props;
+  const { patternStops, trips, showBlockId } = props;
 
   const [expanded, setExpanded] = useState(false);
 
@@ -86,6 +87,7 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
         {expanded ? "Show Timepoints Only" : "Show All Stops"}
       </button>
       <RowContainer>
+        {showBlockId ? <CellContainer>Block ID</CellContainer> : <div />}
         {filteredAndSortedPatternStops.map(s => (
           <CellContainer key={s.sequence}>
             <span style={{ fontWeight: s.timepoint ? "bold" : "normal" }}>
@@ -97,15 +99,15 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
       <div>
         {trips
           .sort((a, b) => a.sequence - b.sequence)
-          .map(t => (
-            <TimeTableRow
-              key={t.id}
-              values={filteredAndSortedPatternStops.map(patternStop => {
-                const time = t.stops.get(patternStop.id);
-                return time ? time.toLocaleTimeString() : "-";
-              })}
-            />
-          ))}
+          .map(t => {
+            const rowValues = showBlockId ? [t.blockId] : [];
+            filteredAndSortedPatternStops.forEach(patternStop => {
+              const time = t.stops.get(patternStop.id);
+              rowValues.push(time ? time.toLocaleTimeString() : "-");
+            });
+
+            return <TimeTableRow key={t.id} values={rowValues} />;
+          })}
       </div>
     </>
   );

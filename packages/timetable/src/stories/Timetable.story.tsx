@@ -81,6 +81,15 @@ export const Default: Story = {
     }
 }
 
+export const WithBlockIds: Story = {
+    name: "With Block IDs",
+    args: {
+        patternStops,
+        trips,
+        showBlockId: true
+    }
+}
+
 export const SkipStops: Story = {
     name: "With Trips That Skip Stops",
     args: {
