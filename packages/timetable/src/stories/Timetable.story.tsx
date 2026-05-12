@@ -18,6 +18,8 @@ const createStopsForTrip = (start: Date): Map<string, Date> => new Map([
     [ "1", new Date(start.getTime() + minutesInMs(0)) ],
     [ "2", new Date(start.getTime() + minutesInMs(5)) ],
     [ "3", new Date(start.getTime() + minutesInMs(9)) ],
+    [ "4", new Date(start.getTime() + minutesInMs(12))],
+    [ "5", new Date(start.getTime() + minutesInMs(15))]
 ])
 
 const patternStops: PatternStop[] = [
@@ -94,6 +96,9 @@ export const SkipStops: Story = {
     name: "With Trips That Skip Stops",
     args: {
         patternStops,
-        trips
+        trips: trips.map(t => {
+            t.stops.delete("2")
+            return t
+        })
     }
 }
