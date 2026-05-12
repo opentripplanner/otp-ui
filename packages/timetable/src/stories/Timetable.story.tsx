@@ -97,8 +97,9 @@ export const SkipStops: Story = {
     args: {
         patternStops,
         trips: trips.map(t => {
-            t.stops.delete("2")
-            return t
+            const stops = new Map(t.stops)
+            stops.delete("2")
+            return { ...t, stops }
         })
     }
 }
