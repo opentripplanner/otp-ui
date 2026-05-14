@@ -7,7 +7,7 @@ jobs:
           persist-credentials: false
       - uses: pnpm/action-setup@v2
         with:
-          version: 10
+          version: 11
       # OIDC tokens are supported from npm 11.5.1 (Node >= 24),
       # see https://github.com/semantic-release/npm/issues/1054#issuecomment-3723415001
       - name: Use Node.js 24.x
