@@ -14,12 +14,16 @@ interface FilterableSequenceable {
 
 export interface PatternStop extends FilterableSequenceable {
   name: string;
-  timepoint: boolean;
 }
 
 export interface Trip extends FilterableSequenceable {
   blockId: string;
-  stops: Map<string, Date>; // stop ID, stop time
+  stops: Map<string, StopDetail>; // stop ID, stop detail
+}
+
+export interface StopDetail {
+  time: Date;
+  timepoint: boolean;
 }
 
 const CellContainer = styled.div`
@@ -67,11 +71,15 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
 
   const timepointStopIds: Set<string> = useMemo(() => {
     const ids = new Set<string>();
-    patternStops.forEach(s => {
-      if (s.timepoint) ids.add(s.id);
+    // timepoints are tied to stops on individual trips, so we need to
+    // loop through all trip stops to find all timepoints
+    trips.forEach(trip => {
+      trip.stops.forEach((stopDetail, stopId) => {
+        if (stopDetail.timepoint) ids.add(stopId);
+      });
     });
     return ids;
-  }, [patternStops]);
+  }, [trips]);
 
   const filteredAndSortedPatternStops = useMemo(
     () =>
@@ -90,7 +98,11 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
         {showBlockId ? <CellContainer>Block ID</CellContainer> : <div />}
         {filteredAndSortedPatternStops.map(s => (
           <CellContainer key={s.sequence}>
-            <span style={{ fontWeight: s.timepoint ? "bold" : "normal" }}>
+            <span
+              style={{
+                fontWeight: timepointStopIds.has(s.id) ? "bold" : "normal"
+              }}
+            >
               {s.name}
             </span>
           </CellContainer>
@@ -102,10 +114,10 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
           .map(t => {
             const rowValues = showBlockId ? [t.blockId] : [];
             filteredAndSortedPatternStops.forEach(patternStop => {
-              const time = t.stops.get(patternStop.id);
+              const stopDetail = t.stops.get(patternStop.id);
               rowValues.push(
-                time
-                  ? time.toLocaleTimeString("en-us", {
+                stopDetail
+                  ? stopDetail.time.toLocaleTimeString("en-us", {
                       hour12: false,
                       hour: "2-digit",
                       minute: "2-digit"
