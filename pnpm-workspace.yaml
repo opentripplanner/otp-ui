@@ -17,14 +17,14 @@ catalog:
   styled-components: ^5.3.0
   styled-icons: ^10.34.0
 onlyBuiltDependencies:
-  - "@swc/core"
-  - core-js
-  - esbuild
-  - fsevents
-  - husky
-  - msw
-  - nx
+  - "@swc/core@1.7.42"
+  - core-js@2.6.12
+  - esbuild@0.25.5
+  - fsevents@1.2.13
+  - husky@2.7.0
+  - msw@2.6.0(@types/node@15.14.9)(typescript@5.9.3)
+  - nx@20.0.7(@swc/core@1.7.42)
   - puppeteer
-  - unrs-resolver
+  - unrs-resolver@1.11.1
 packages:
   - packages/*
