@@ -1,7 +1,7 @@
 import React, { ReactElement, useMemo, useState } from "react";
 import styled from "styled-components";
 
-const COLUMN_WIDTH = "4rem";
+const COLUMN_WIDTH = "85px";
 
 interface TimeTableRowProps {
   values: string[];
@@ -28,6 +28,8 @@ export interface StopDetail {
 
 const CellContainer = styled.div`
   display: flex;
+  flex-shrink: 0;
+  text-align: center;
   justify-content: center;
   align-items: center;
   padding: 1rem;
@@ -120,7 +122,7 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
                   ? stopDetail.time.toLocaleTimeString("en-us", {
                       hour12: false,
                       hour: "2-digit",
-                      minute: "2-digit"
+                      minute: "2-digit" // need to deal with rounding here
                     })
                   : "-"
               );
