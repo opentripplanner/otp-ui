@@ -7,7 +7,7 @@ jobs:
           persist-credentials: false
       - uses: pnpm/action-setup@v2
         with:
-          version: 10
+          version: 11
       # OIDC tokens are supported from npm 11.5.1 (Node >= 24),
       # see https://github.com/semantic-release/npm/issues/1054#issuecomment-3723415001
       - name: Use Node.js 24.x
@@ -22,12 +22,10 @@ jobs:
         run: pnpm run lint:js
       - name: Lint styles
         run: pnpm run lint:styles
-      - name: Build packages
-        run: pnpm run build:cjs && pnpm run build:esm
+      - name: Run type check and build packages
+        run: pnpm run build-all
       - name: i18n check (en-US, fr only)
         run: pnpm run check:i18n-en-fr
-      - name: Type check
-        run: pnpm run typescript
       - name: Run unit tests
         run: pnpm run unit
       - name: Build Storybook
@@ -41,9 +39,9 @@ jobs:
         # env: 
         #   ONLY_RUN: SNAPSHOTS
         run: |
-          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npx http-server storybook-static --port 5555 --silent" \
-            "npx wait-on tcp:5555 && pnpm run test-storybook --ci"
+          pnpx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "pnpx http-server storybook-static --port 5555 --silent" \
+            "pnpx wait-on tcp:5555 && pnpm run test-storybook --ci"
       # - name: Serve Storybook and run a11y tests
       #   env: 
       #     ONLY_RUN: A11Y
