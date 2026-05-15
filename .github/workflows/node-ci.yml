@@ -39,9 +39,9 @@ jobs:
         # env: 
         #   ONLY_RUN: SNAPSHOTS
         run: |
-          npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
-            "npx http-server storybook-static --port 5555 --silent" \
-            "npx wait-on tcp:5555 && pnpm run test-storybook --ci"
+          pnpx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
+            "pnpx http-server storybook-static --port 5555 --silent" \
+            "pnpx wait-on tcp:5555 && pnpm run test-storybook --ci"
       # - name: Serve Storybook and run a11y tests
       #   env: 
       #     ONLY_RUN: A11Y
