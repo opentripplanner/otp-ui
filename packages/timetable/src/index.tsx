@@ -113,7 +113,7 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
       <div>
         {trips
           .sort((a, b) => a.sequence - b.sequence)
-          .map(t => {
+          .map((t, index) => {
             const rowValues = showBlockId ? [t.blockId] : [];
             filteredAndSortedPatternStops.forEach(patternStop => {
               const stopDetail = t.stops.get(patternStop.id);
@@ -128,7 +128,9 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
               );
             });
 
-            return <TimeTableRow key={t.id} values={rowValues} />;
+            return (
+              <TimeTableRow key={`${t.blockId}-${index}`} values={rowValues} />
+            );
           })}
       </div>
     </>
