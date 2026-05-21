@@ -1129,6 +1129,7 @@ const LocationField = ({
         onClick={onDropdownToggle}
         tabIndex={-1}
         type="button"
+        aria-disabled={hasNoEnabledOptions}
       >
         <LocationIconComponent locationType={locationType} />
       </S.DropdownButton>
