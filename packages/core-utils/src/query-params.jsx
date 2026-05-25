@@ -640,10 +640,23 @@ const queryParams = [
     name: "intermediatePlaces",
     default: [],
     routingTypes: ["ITINERARY"],
+    // Translate OTP1 intermediatePlaces to OTP2 via
+    // Requires stop id to be present
+    // TODO: When does this fire? why does it lag behind one request?
     itineraryRewrite: places =>
       Array.isArray(places) && places.length > 0
         ? {
-            intermediatePlaces: places.map(place => formatPlace(place))
+            via: {
+              passThrough: {
+                stopLocationIds: places.map(
+                  place =>
+                    // TODO: Don't hardcode
+                    `TriMet:${
+                      place.rawGeocodedFeature.properties.id.split("::")[0]
+                    }`
+                )
+              }
+            }
           }
         : undefined
   },
