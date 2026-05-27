@@ -1,4 +1,4 @@
-import React, { ReactElement, useMemo, useState } from "react";
+import React, { ChangeEvent, ReactElement, useMemo, useState } from "react";
 import styled from "styled-components";
 import toposort from "toposort";
 
@@ -99,7 +99,7 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
 
   const { patterns } = route;
 
-  const directionId = 1; // convert to state
+  const [directionId, setDirectionId] = useState<number>(0);
 
   // used to extract stop names more efficiently later
   const separator = "***";
@@ -249,11 +249,21 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
       .sort(comparator);
   }, [allTripsWithDwellStops, comparator]);
 
+  const handleDirectionSelection = (e: ChangeEvent<HTMLSelectElement>) => {
+    const val = e.target.value;
+    const numVal = Number(val);
+    setDirectionId(numVal);
+  };
+
   return (
     <>
       <button type="button" onClick={() => setExpanded(!expanded)}>
         {expanded ? "Show Timepoints Only" : "Show All Stops"}
       </button>
+      <select id="direction-select" onChange={handleDirectionSelection}>
+        <option value={0}>One Direction</option>
+        <option value={1}>Other Direction</option>
+      </select>
       <RowContainer>
         {showBlockId ? <CellContainer>Block ID</CellContainer> : <div />}
         {filteredPatternStops.map((s, index) => (
