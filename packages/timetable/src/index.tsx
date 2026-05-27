@@ -91,11 +91,12 @@ interface Stop {
 
 export interface TimeTableProps {
   route: Route;
+  includeDwellStops?: boolean;
   showBlockId?: boolean;
 }
 
 const TimeTable = (props: TimeTableProps): ReactElement => {
-  const { route, showBlockId } = props;
+  const { route, includeDwellStops, showBlockId } = props;
 
   const { patterns } = route;
 
@@ -107,15 +108,14 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
   // can probably combine into one big memoized value:
 
   const allTrips = useMemo(() => {
-    return patterns
+    const trips = patterns
       .filter(p => p.directionId === directionId)
       .flatMap(p => p.tripsForDate);
-  }, [patterns, directionId]);
 
-  // need to recreate allTrips, taking into account dwell stops
-  const allTripsWithDwellStops = useMemo(() => {
+    if (!includeDwellStops) return trips;
+
     const result: Trip[] = [];
-    allTrips.forEach(trip => {
+    trips.forEach(trip => {
       const updatedStopTimes: Stoptime[] = [];
       trip.stoptimesForDate.forEach(st => {
         if (st.scheduledArrival === st.scheduledDeparture) {
@@ -143,14 +143,14 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
       });
     });
     return result;
-  }, [allTrips]);
+  }, [patterns, directionId, includeDwellStops]);
 
   const { patternStops, tripStopSets } = useMemo(() => {
     // array of sets; each set contains all of the stop IDs that are visited in a trip
     // used for determining a common stop to use for sorting trips
     const sets: Set<string>[] = [];
     const stopGraph: [string, string][] = [];
-    allTripsWithDwellStops.forEach(trip => {
+    allTrips.forEach(trip => {
       const stopIds = trip.stoptimesForDate.map(
         st => `${st.stop.gtfsId}${separator}${st.stop.name}`
       );
@@ -176,7 +176,7 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
     });
 
     return { patternStops: patternStopsFromSorted, tripStopSets: sets };
-  }, [allTripsWithDwellStops]);
+  }, [allTrips]);
 
   const commonStopId = useMemo(() => {
     let result;
@@ -212,13 +212,13 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
     const ids = new Set<string>();
     // timepoints are tied to stops on individual trips, so we need to
     // loop through all trip stops to find all timepoints
-    allTripsWithDwellStops.forEach(trip => {
+    allTrips.forEach(trip => {
       trip.stoptimesForDate.forEach(st => {
         if (st.timepoint) ids.add(st.stop.gtfsId);
       });
     });
     return ids;
-  }, [allTripsWithDwellStops]);
+  }, [allTrips]);
 
   const filteredPatternStops = useMemo(
     () =>
@@ -226,8 +226,8 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
     [expanded, patternStops, timepointStopIds]
   );
 
-  const trips: TimetableTrip[] = useMemo<TimetableTrip[]>(() => {
-    return allTripsWithDwellStops
+  const timetableTrips: TimetableTrip[] = useMemo<TimetableTrip[]>(() => {
+    return allTrips
       .map(t => {
         const firstStop = t.stoptimesForDate[0];
         return {
@@ -247,7 +247,7 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
         };
       })
       .sort(comparator);
-  }, [allTripsWithDwellStops, comparator]);
+  }, [allTrips, comparator]);
 
   const handleDirectionSelection = (e: ChangeEvent<HTMLSelectElement>) => {
     const val = e.target.value;
@@ -279,7 +279,7 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
         ))}
       </RowContainer>
       <div>
-        {trips.map((t, index) => {
+        {timetableTrips.map((t, index) => {
           const rowValues = showBlockId ? [t.blockId] : [];
           filteredPatternStops.forEach(patternStop => {
             const stopDetail = t.stops.get(patternStop.id);
