@@ -1,5 +1,6 @@
 import React, { ReactElement, useMemo, useState } from "react";
 import styled from "styled-components";
+import toposort from "toposort";
 
 const COLUMN_WIDTH = "85px";
 
@@ -7,17 +8,14 @@ interface TimeTableRowProps {
   values: string[];
 }
 
-interface FilterableSequenceable {
+export interface PatternStop {
   id: string;
-  sequence: number;
-}
-
-export interface PatternStop extends FilterableSequenceable {
   name: string;
 }
 
-export interface Trip extends FilterableSequenceable {
+export interface TimetableTrip {
   blockId: string;
+  firstStopTime: number; // pure seconds
   stops: Map<string, StopDetail>; // stop ID, stop detail
 }
 
@@ -60,14 +58,153 @@ const TimeTableRow = (props: TimeTableRowProps): ReactElement => {
   );
 };
 
+export interface Route {
+  patterns: Pattern[];
+}
+
+interface Pattern {
+  id: string; // needed?
+  directionId: number;
+  name: string; // needed?
+  tripsForDate: Trip[];
+}
+
+interface Trip {
+  blockId: string;
+  stoptimesForDate: Stoptime[];
+}
+
+interface Stoptime {
+  serviceDay: number;
+  scheduledArrival: number;
+  scheduledDeparture: number;
+  pickupType: string;
+  dropoffType: string;
+  timepoint: boolean;
+  stop: Stop;
+}
+
+interface Stop {
+  gtfsId: string;
+  name: string;
+}
+
 export interface TimeTableProps {
-  patternStops: PatternStop[];
-  trips: Trip[];
+  route: Route;
   showBlockId?: boolean;
 }
 
 const TimeTable = (props: TimeTableProps): ReactElement => {
-  const { patternStops, trips, showBlockId } = props;
+  const { route, showBlockId } = props;
+
+  const { patterns } = route;
+
+  const directionId = 1; // convert to state
+
+  // used to extract stop names more efficiently later
+  const separator = "***";
+
+  // can probably combine into one big memoized value:
+
+  const allTrips = useMemo(() => {
+    return patterns
+      .filter(p => p.directionId === directionId)
+      .flatMap(p => p.tripsForDate);
+  }, [patterns, directionId]);
+
+  // need to recreate allTrips, taking into account dwell stops
+  const allTripsWithDwellStops = useMemo(() => {
+    const result: Trip[] = [];
+    allTrips.forEach(trip => {
+      const updatedStopTimes: Stoptime[] = [];
+      trip.stoptimesForDate.forEach(st => {
+        if (st.scheduledArrival === st.scheduledDeparture) {
+          updatedStopTimes.push(st);
+          return;
+        }
+        const arrivalStopTime: Stoptime = {
+          ...st,
+          scheduledDeparture: st.scheduledArrival
+        };
+        const departureStopTime: Stoptime = {
+          ...st,
+          scheduledArrival: st.scheduledDeparture,
+          stop: {
+            ...st.stop,
+            gtfsId: `${st.stop.gtfsId}:dwell`
+          }
+        };
+        updatedStopTimes.push(arrivalStopTime);
+        updatedStopTimes.push(departureStopTime);
+      });
+      result.push({
+        blockId: trip.blockId,
+        stoptimesForDate: updatedStopTimes
+      });
+    });
+    return result;
+  }, [allTrips]);
+
+  const { patternStops, tripStopSets } = useMemo(() => {
+    // array of sets; each set contains all of the stop IDs that are visited in a trip
+    // used for determining a common stop to use for sorting trips
+    const sets: Set<string>[] = [];
+    const stopGraph: [string, string][] = [];
+    allTripsWithDwellStops.forEach(trip => {
+      const stopIds = trip.stoptimesForDate.map(
+        st => `${st.stop.gtfsId}${separator}${st.stop.name}`
+      );
+      sets.push(
+        // got to be a way to not reiterate through...separator is suspect
+        new Set(trip.stoptimesForDate.map(st => st.stop.gtfsId))
+      );
+      stopIds.forEach((stopId, index) => {
+        if (index !== stopIds.length - 1)
+          stopGraph.push([stopId, stopIds[index + 1]]);
+      });
+    });
+
+    // handle sorting failure
+    const sorted = toposort(stopGraph);
+
+    const patternStopsFromSorted: PatternStop[] = sorted.map(stop => {
+      const [gtfsId, name] = stop.split(separator);
+      return {
+        id: gtfsId,
+        name
+      };
+    });
+
+    return { patternStops: patternStopsFromSorted, tripStopSets: sets };
+  }, [allTripsWithDwellStops]);
+
+  const commonStopId = useMemo(() => {
+    let result;
+    for (let i = 0; i < patternStops.length; i++) {
+      const stopId = patternStops[i].id;
+      const inAllTrips = tripStopSets.every(trip => trip.has(stopId));
+      if (inAllTrips) {
+        result = stopId;
+        break;
+      }
+    }
+    return result;
+  }, [patternStops, tripStopSets]);
+
+  const comparator = useMemo(() => {
+    if (commonStopId) {
+      // sort by arrival time at common stop
+      return (a: TimetableTrip, b: TimetableTrip) => {
+        const timeA = a.stops.get(commonStopId)?.time || new Date(); // TODO: inspect
+        const timeB = b.stops.get(commonStopId)?.time || new Date();
+        return timeA.valueOf() - timeB.valueOf();
+      };
+    }
+    // sort by first stop time in trip
+    // TODO: add other sort methods
+    return (a: TimetableTrip, b: TimetableTrip) =>
+      a.firstStopTime - b.firstStopTime;
+  }, [commonStopId]);
 
   const [expanded, setExpanded] = useState(false);
 
@@ -75,21 +212,42 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
     const ids = new Set<string>();
     // timepoints are tied to stops on individual trips, so we need to
     // loop through all trip stops to find all timepoints
-    trips.forEach(trip => {
-      trip.stops.forEach((stopDetail, stopId) => {
-        if (stopDetail.timepoint) ids.add(stopId);
+    allTripsWithDwellStops.forEach(trip => {
+      trip.stoptimesForDate.forEach(st => {
+        if (st.timepoint) ids.add(st.stop.gtfsId);
       });
     });
     return ids;
-  }, [trips]);
+  }, [allTripsWithDwellStops]);
 
-  const filteredAndSortedPatternStops = useMemo(
+  const filteredPatternStops = useMemo(
     () =>
-      patternStops
-        .filter(s => (expanded ? true : timepointStopIds.has(s.id)))
-        .sort((a, b) => a.sequence - b.sequence),
+      patternStops.filter(s => (expanded ? true : timepointStopIds.has(s.id))),
     [expanded, patternStops, timepointStopIds]
   );
+
+  const trips: TimetableTrip[] = useMemo<TimetableTrip[]>(() => {
+    return allTripsWithDwellStops
+      .map(t => {
+        const firstStop = t.stoptimesForDate[0];
+        return {
+          blockId: t.blockId,
+          firstStopTime: firstStop.serviceDay + firstStop.scheduledArrival,
+          stops: new Map(
+            t.stoptimesForDate.map(st => {
+              return [
+                st.stop.gtfsId,
+                {
+                  time: new Date((st.serviceDay + st.scheduledArrival) * 1000),
+                  timepoint: st.timepoint
+                }
+              ];
+            })
+          )
+        };
+      })
+      .sort(comparator);
+  }, [allTripsWithDwellStops, comparator]);
 
   return (
     <>
@@ -98,8 +256,8 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
       </button>
       <RowContainer>
         {showBlockId ? <CellContainer>Block ID</CellContainer> : <div />}
-        {filteredAndSortedPatternStops.map(s => (
-          <CellContainer key={s.sequence}>
+        {filteredPatternStops.map((s, index) => (
+          <CellContainer key={index}>
             <span
               style={{
                 fontWeight: timepointStopIds.has(s.id) ? "bold" : "normal"
@@ -111,27 +269,25 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
         ))}
       </RowContainer>
       <div>
-        {trips
-          .sort((a, b) => a.sequence - b.sequence)
-          .map((t, index) => {
-            const rowValues = showBlockId ? [t.blockId] : [];
-            filteredAndSortedPatternStops.forEach(patternStop => {
-              const stopDetail = t.stops.get(patternStop.id);
-              rowValues.push(
-                stopDetail
-                  ? stopDetail.time.toLocaleTimeString("en-us", {
-                      hour12: false,
-                      hour: "2-digit",
-                      minute: "2-digit" // need to deal with rounding here
-                    })
-                  : "-"
-              );
-            });
-
-            return (
-              <TimeTableRow key={`${t.blockId}-${index}`} values={rowValues} />
+        {trips.map((t, index) => {
+          const rowValues = showBlockId ? [t.blockId] : [];
+          filteredPatternStops.forEach(patternStop => {
+            const stopDetail = t.stops.get(patternStop.id);
+            rowValues.push(
+              stopDetail
+                ? stopDetail.time.toLocaleTimeString("en-us", {
+                    hour12: false,
+                    hour: "2-digit",
+                    minute: "2-digit" // need to deal with rounding here
+                  })
+                : "-"
             );
-          })}
+          });
+
+          return (
+            <TimeTableRow key={`${t.blockId}-${index}`} values={rowValues} />
+          );
+        })}
       </div>
     </>
   );
