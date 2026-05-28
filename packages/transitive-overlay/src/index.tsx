@@ -155,7 +155,6 @@ type Props = {
    * Used to render an accessibility outline behind transit route lines.
    * Example: { "ff0000": "#000000" }
    */
-  contrastColorMap?: Record<string, string>;
   showRouteArrows?: boolean;
   transitiveData?: TransitiveData;
 };
@@ -213,15 +212,9 @@ const TransitiveCanvasOverlay = ({
   activeLeg,
   accessLegColorOverride,
   boundsFitting = true,
-  contrastColorMap,
   showRouteArrows,
   transitiveData
 }: Props): JSX.Element => {
-  /* 
-  1. Import contrastColorMap as a prop from trimet application
-  2. Create Layer that only appears if contrastColorMap is present
-  3. Make that layer match what goes on in trimet.org for the override things
-  */
   console.log('greetings from the local version!', transitiveData);
   const { current: map } = useMap();
 
@@ -395,7 +388,7 @@ const TransitiveCanvasOverlay = ({
           ...(
             transitiveData.patterns || []
           ).flatMap((pattern: TransitivePattern) =>
-            patternToRouteFeature(pattern, transitiveData.routes, contrastColorMap)
+            patternToRouteFeature(pattern, transitiveData.routes)
           )
         ]
       : []
@@ -484,8 +477,7 @@ const TransitiveCanvasOverlay = ({
         paint={{
           "line-color": ["get", "contrastColor"],
           "line-opacity": 1,
-          "line-width": FOCUSED_ROUTE_OUTLINE_WIDTH,
-          // "line-width": ["match", ["get", "routeType"], 3, 6 * OUTLINE_WIDTH_MULTIPLIER, 10 * OUTLINE_WIDTH_MULTIPLIER]
+          "line-width": ["match", ["get", "routeType"], 3, 6 * OUTLINE_WIDTH_MULTIPLIER, 10 * OUTLINE_WIDTH_MULTIPLIER]
         }}
       />
       <Layer
