@@ -1,4 +1,4 @@
-import { FilterSpecification, SymbolLayerSpecification } from "maplibre-gl";
+import { FilterSpecification, SymbolLayerSpecification, type ExpressionSpecification } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
 import React, { useEffect } from "react";
 import { Layer, MapRef, Source, useMap } from "react-map-gl/maplibre";
@@ -150,6 +150,12 @@ type Props = {
   activeLeg?: Leg;
   accessLegColorOverride?: string;
   boundsFitting?: boolean;
+  /**
+   * Optional map of route hex colors (lowercase, without #) to contrast outline colors.
+   * Used to render an accessibility outline behind transit route lines.
+   * Example: { "ff0000": "#000000" }
+   */
+  contrastColorMap?: Record<string, string>;
   showRouteArrows?: boolean;
   transitiveData?: TransitiveData;
 };
@@ -177,13 +183,46 @@ const loadImages = (map: MapRef, images: MapImage[]) => {
   });
 };
 
+
+// Route line widths (in px) by zoom level. Format is [zoom, thickness]
+export const ROUTE_LINE_WIDTH_BY_ZOOM: [number, number][] = [
+  [8, 2],
+  [10, 4],
+  [15, 6.5],
+  [19, 20],
+];
+
+/** Multiplier for contrast outline width relative to the base outline width */
+export const OUTLINE_WIDTH_MULTIPLIER = 1.8;
+
+/** Multiplier for selected route contrast outline relative to focused route width */
+export const SELECTED_OUTLINE_WIDTH_MULTIPLIER = 1.4;
+
+/** Shared line-width for focused route constrast outlines */
+export const FOCUSED_ROUTE_OUTLINE_WIDTH: ExpressionSpecification = [
+  'interpolate',
+  ['linear'],
+  ['zoom'],
+  ...ROUTE_LINE_WIDTH_BY_ZOOM.flatMap(([zoom, width]) => [
+    zoom,
+    width * SELECTED_OUTLINE_WIDTH_MULTIPLIER,
+  ]),
+];
+
 const TransitiveCanvasOverlay = ({
   activeLeg,
   accessLegColorOverride,
   boundsFitting = true,
+  contrastColorMap,
   showRouteArrows,
   transitiveData
 }: Props): JSX.Element => {
+  /* 
+  1. Import contrastColorMap as a prop from trimet application
+  2. Create Layer that only appears if contrastColorMap is present
+  3. Make that layer match what goes on in trimet.org for the override things
+  */
+  console.log('greetings from the local version!', transitiveData);
   const { current: map } = useMap();
 
   const mapImages: MapImage[] = [];
@@ -356,7 +395,7 @@ const TransitiveCanvasOverlay = ({
           ...(
             transitiveData.patterns || []
           ).flatMap((pattern: TransitivePattern) =>
-            patternToRouteFeature(pattern, transitiveData.routes)
+            patternToRouteFeature(pattern, transitiveData.routes, contrastColorMap)
           )
         ]
       : []
@@ -432,6 +471,22 @@ const TransitiveCanvasOverlay = ({
           "line-opacity": 0.9
         }}
         type="line"
+      />
+            {/* ADRIAN TODO: Put the contrast layer here, dog */}
+      <Layer 
+        filter={["all", routeFilter, ["has", "contrastColor"]]}
+        type="line"
+        id="route-contrast-outlines"
+        layout={{
+          "line-cap": "round",
+          "line-join": "round"
+        }}
+        paint={{
+          "line-color": ["get", "contrastColor"],
+          "line-opacity": 1,
+          "line-width": FOCUSED_ROUTE_OUTLINE_WIDTH,
+          // "line-width": ["match", ["get", "routeType"], 3, 6 * OUTLINE_WIDTH_MULTIPLIER, 10 * OUTLINE_WIDTH_MULTIPLIER]
+        }}
       />
       <Layer
         filter={routeFilter}

@@ -12,7 +12,8 @@ const { blue, grey } = colors;
  */
 export function patternToRouteFeature(
   pattern: TransitivePattern,
-  routes: TransitiveRoute[]
+  routes: TransitiveRoute[],
+  contrastColorMap?: Record<string, string>
 ): GeoJSON.Feature<GeoJSON.Geometry, Record<string, unknown>> {
   const route = routes.find(r => r.route_id === pattern.route_id);
   // Concatenate geometries (arrays of coordinates) to help maplibre spread out labels (not perfect).
@@ -28,8 +29,16 @@ export function patternToRouteFeature(
     }, []);
   const routeName = route.route_short_name || route.route_long_name || "";
 
+  // Use route_outline_contrast_color from the route data if present,
+  // otherwise fall back to the caller-supplied contrastColorMap (keyed by lowercase hex without #).
+  const routeColorKey = route.route_color?.toLowerCase();
+  const contrastColor =
+    (route.route_outline_contrast_color ? `#${route.route_outline_contrast_color}` : null) ??
+    (routeColorKey && contrastColorMap ? (contrastColorMap[routeColorKey] ?? null) : null);
+
   const properties = {
     color: route.route_color ? `#${route.route_color}` : blue[900],
+    ...(contrastColor ? { contrastColor } : {}),
     name: routeName,
     routeType: route.route_type,
     textColor: route.route_text_color ? `#${route.route_text_color}` : grey[50],

@@ -128,12 +128,12 @@ export type OTPTransitVehicle = TransitVehicle & {
 
 export type VehicleRentalMapOverlaySymbol =
   | {
-      dockStrokeColor?: string;
-      fillColor?: string;
-      minZoom: number;
-      pixels?: number;
-      type: string;
-    }
+    dockStrokeColor?: string;
+    fillColor?: string;
+    minZoom: number;
+    pixels?: number;
+    type: string;
+  }
   | ZoomBasedSymbol;
 
 export type UnitSystem = "metric" | "imperial";
@@ -610,6 +610,7 @@ export type TransitiveRoute = {
   route_color?: string;
   route_id: string;
   route_long_name: string;
+  route_outline_contrast_color?: string;
   route_short_name: string;
   route_text_color?: string;
   route_type: number;
