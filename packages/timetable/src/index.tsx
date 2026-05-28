@@ -308,6 +308,7 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
             rowValues.push(
               stopDetail
                 ? stopDetail.time.toLocaleTimeString("en-us", {
+                    timeZone: "America/Chicago",
                     hour12: false,
                     hour: "2-digit",
                     minute: "2-digit" // need to deal with rounding here
