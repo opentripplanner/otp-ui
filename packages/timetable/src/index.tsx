@@ -8,22 +8,6 @@ interface TimeTableRowProps {
   values: string[];
 }
 
-export interface PatternStop {
-  id: string;
-  name: string;
-}
-
-export interface TimetableTrip {
-  blockId: string;
-  firstStopTime: number; // pure seconds
-  stops: Map<string, StopDetail>; // stop ID, stop detail
-}
-
-export interface StopDetail {
-  time: Date;
-  timepoint: boolean;
-}
-
 const CellContainer = styled.div`
   display: flex;
   flex-shrink: 0;
@@ -34,14 +18,8 @@ const CellContainer = styled.div`
   width: ${COLUMN_WIDTH};
 `;
 
-// TODO: make highlight color customizable
-// TODO: deal with "active" and "focus" states?
 const RowContainer = styled.div`
   display: flex;
-
-  &:hover {
-    background: hsla(163, 100%, 74%, 1);
-  }
 `;
 
 const TimeTableRow = (props: TimeTableRowProps): ReactElement => {
@@ -58,14 +36,33 @@ const TimeTableRow = (props: TimeTableRowProps): ReactElement => {
   );
 };
 
+export interface PatternStop {
+  id: string;
+  name: string;
+}
+
+export interface TimetableTrip {
+  blockId: string;
+  /** The first stoptime of the trip, in seconds past midnight of the service
+   * day. Used for sorting trips by first stop time
+   */
+  firstStopTime: number;
+  /** A map of stop GTFS ID to stop detail */
+  stops: Map<string, StopDetail>;
+}
+
+export interface StopDetail {
+  time: Date;
+  timepoint: boolean;
+}
+
 export interface Route {
   patterns: Pattern[];
 }
 
 interface Pattern {
-  id: string; // needed?
   directionId: number;
-  name: string; // needed?
+  name: string;
   tripsForDate: Trip[];
 }
 
@@ -229,14 +226,14 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
 
   const comparator = useMemo(() => {
     if (commonStopId) {
-      // sort by arrival time at common stop
+      // Sort by arrival time at common stop
       return (a: TimetableTrip, b: TimetableTrip) => {
-        const timeA = a.stops.get(commonStopId)?.time || new Date(); // TODO: inspect
+        const timeA = a.stops.get(commonStopId)?.time || new Date();
         const timeB = b.stops.get(commonStopId)?.time || new Date();
         return timeA.valueOf() - timeB.valueOf();
       };
     }
-    // sort by first stop time in trip
+    // Sort by first stop time in trip
     // TODO: add other sort methods
     return (a: TimetableTrip, b: TimetableTrip) =>
       a.firstStopTime - b.firstStopTime;
@@ -311,7 +308,7 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
                     timeZone: "America/Chicago",
                     hour12: false,
                     hour: "2-digit",
-                    minute: "2-digit" // need to deal with rounding here
+                    minute: "2-digit"
                   })
                 : "-"
             );
