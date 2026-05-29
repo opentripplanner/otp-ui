@@ -64,6 +64,7 @@ export interface LineColumnContentProps extends LegSharedProps {
 export interface PlaceNameProps {
   config: Config;
   interline?: boolean;
+  leg: Leg;
   place: Place;
 }
 

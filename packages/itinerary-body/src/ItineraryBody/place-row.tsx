@@ -26,7 +26,7 @@ function getLegPlaceName(
   const interline = !!(!isDestination && leg.interlineWithPreviousLeg);
   const place = isDestination ? { ...leg.to } : { ...leg.from };
   const placeName = (
-    <PlaceName config={config} interline={interline} place={place} />
+    <PlaceName config={config} interline={interline} leg={leg} place={place} />
   );
 
   return {
@@ -95,7 +95,7 @@ export default function PlaceRow({
     placeName: nextPlaceName = undefined
   } = nextLeg ? getLegPlaceName(nextLeg, false, PlaceName, config) : {};
   const legDestination = nextPlaceName || (
-    <PlaceName config={config} place={leg.to} />
+    <PlaceName config={config} leg={leg} place={leg.to} />
   );
 
   // OTP2 marks both bikes and scooters as BIKESHARE in the vertextype
