@@ -48,7 +48,7 @@ export type AutocompleteQuery = {
   layers?: string;
   options?: RequestInit;
   size?: number;
-  sources?: string;
+  sources?: string | null;
   text?: string;
   url?: string;
 };
@@ -63,7 +63,7 @@ export type SearchQuery = {
   size?: number;
   text?: string;
   url?: string;
-  sources?: string;
+  sources?: string | null;
 };
 
 export type AnyGeocoderQuery = SearchQuery & AutocompleteQuery & ReverseQuery;
