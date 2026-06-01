@@ -312,13 +312,16 @@ describe("geocoder", () => {
         });
         // Forward headers defined in config
         it("should forward headers defined in config", () => {
+          const headerCheck = query => {
+            const { headers } = query.options;
+            expect(headers).not.toBeFalsy();
+            expect(headers["x-api-key"]).toEqual("key12345");
+            return Promise.resolve();
+          };
           // create mock API to check query
           const mockPeliasAPI = {
-            autocomplete: query => {
-              expect(query.options.headers).not.toBeFalsy();
-              expect(query.options.headers["x-api-key"]).toEqual("key12345");
-              return Promise.resolve();
-            }
+            autocomplete: headerCheck,
+            search: headerCheck
           };
           const pelias = new PeliasGeocoder(mockPeliasAPI, {
             ...geocoder,
@@ -328,7 +331,9 @@ describe("geocoder", () => {
               }
             }
           });
-          pelias.autocomplete({ options: { signal: {} }, text: "Mill Ends" });
+          const query = { options: { signal: {} }, text: "Mill Ends" };
+          pelias.autocomplete(query);
+          pelias.search(query);
         });
       }
     });
