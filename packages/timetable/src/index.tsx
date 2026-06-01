@@ -90,10 +90,18 @@ export interface TimeTableProps {
   route: Route;
   includeDwellStops?: boolean;
   showBlockId?: boolean;
+  errorOnStopSorting?: boolean;
+  timeZone?: string;
 }
 
 const TimeTable = (props: TimeTableProps): ReactElement => {
-  const { route, includeDwellStops, showBlockId } = props;
+  const {
+    route,
+    includeDwellStops,
+    showBlockId,
+    errorOnStopSorting,
+    timeZone
+  } = props;
 
   const { patterns } = route;
 
@@ -186,19 +194,21 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
       sorted = toposort(stopGraph);
     } catch (error) {
       console.warn("error topologically sorting stop graph", error);
-      // If sorting fails, just create an array of all the unique stops visited
-      // across all trips
-      const naiveStops = new Set<string>();
-      patterns
-        .filter(p => p.directionId === directionId)
-        .forEach(p => {
-          p.tripsForDate.forEach(trip =>
-            trip.stoptimesForDate.forEach(st => {
-              naiveStops.add(st.stop.gtfsId);
-            })
-          );
-        });
-      sorted = [...naiveStops];
+      if (!errorOnStopSorting) {
+        // If sorting fails, just create an array of all the unique stops visited
+        // across all trips
+        const naiveStops = new Set<string>();
+        patterns
+          .filter(p => p.directionId === directionId)
+          .forEach(p => {
+            p.tripsForDate.forEach(trip =>
+              trip.stoptimesForDate.forEach(st => {
+                naiveStops.add(st.stop.gtfsId);
+              })
+            );
+          });
+        sorted = [...naiveStops];
+      }
     }
 
     const patternStopsFromSorted: PatternStop[] = sorted.map(stopId => {
@@ -305,7 +315,7 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
             rowValues.push(
               stopDetail
                 ? stopDetail.time.toLocaleTimeString("en-us", {
-                    timeZone: "America/Chicago",
+                    timeZone,
                     hour12: false,
                     hour: "2-digit",
                     minute: "2-digit"
