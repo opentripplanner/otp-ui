@@ -1,7 +1,7 @@
 // eslint-disable-next-line prettier/prettier
 import type { Meta, StoryObj } from "@storybook/react-vite"
 
-import { Route, TimeTable } from ".."
+import { TimeTable } from ".."
 
 import twinCitiesRouteMock from "../../__mocks__/route-mock.json"
 
@@ -15,20 +15,20 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
     args: {
-        route: twinCitiesRouteMock.data.route as unknown as Route
+        route: twinCitiesRouteMock.data.route
     }
 }
 
 export const WithBlockIds: Story = {
     args: {
-        route: twinCitiesRouteMock.data.route as unknown as Route,
+        route: twinCitiesRouteMock.data.route,
         showBlockId: true
     }
 }
 
 export const WithDwellStopsAndBlockIds: Story = {
     args: {
-        route: twinCitiesRouteMock.data.route as unknown as Route,
+        route: twinCitiesRouteMock.data.route,
         showBlockId: true,
         includeDwellStops: true
     }
