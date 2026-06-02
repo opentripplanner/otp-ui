@@ -864,20 +864,20 @@ importers:
   packages/transitive-overlay:
     dependencies:
       '@mapbox/polyline':
-        specifier: ^1.1.1
+        specifier: 'catalog:'
         version: 1.2.1
       '@opentripplanner/base-map':
-        specifier: ^7.0.1
-        version: 7.0.1(@opentripplanner/types@8.4.0)(react-animate-height@3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
+        specifier: workspace:^
+        version: link:../base-map
       '@opentripplanner/building-blocks':
-        specifier: ^3.1.1
-        version: 3.1.1(react-animate-height@3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
+        specifier: workspace:^
+        version: link:../building-blocks
       '@opentripplanner/core-utils':
-        specifier: ^16.0.3
-        version: 16.0.3(encoding@0.1.13)(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
+        specifier: workspace:^
+        version: link:../core-utils
       '@opentripplanner/itinerary-body':
-        specifier: ^9.3.1
-        version: 9.3.1(encoding@0.1.13)(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)(react-dom@18.3.1(react@18.2.0))(react-intl@6.8.4(react@18.2.0)(typescript@5.9.3))(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
+        specifier: workspace:^
+        version: link:../itinerary-body
       '@turf/bbox':
         specifier: ^6.5.0
         version: 6.5.0
@@ -900,20 +900,20 @@ importers:
         specifier: ^4.5.0
         version: 4.5.0
       react:
-        specifier: ^18.2.0
+        specifier: 'catalog:'
         version: 18.2.0
       react-map-gl:
-        specifier: ^8.0.4
+        specifier: 'catalog:'
         version: 8.0.4(maplibre-gl@5.6.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@opentripplanner/endpoints-overlay':
-        specifier: ^5.0.1
-        version: 5.0.1(@opentripplanner/types@8.4.0)(encoding@0.1.13)(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)(react-animate-height@3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react-dom@18.3.1(react@18.2.0))(react-intl@6.8.4(react@18.2.0)(typescript@5.9.3))(react-map-gl@8.0.4(maplibre-gl@5.6.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
+        specifier: workspace:^
+        version: link:../endpoints-overlay
       '@opentripplanner/types':
-        specifier: ^8.4.0
-        version: 8.4.0
+        specifier: workspace:^
+        version: link:../types
       maplibre-gl:
-        specifier: ^5.6.1
+        specifier: 'catalog:'
         version: 5.6.1
 
   packages/trip-details:
@@ -2734,24 +2734,28 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@nx/nx-linux-arm64-musl@20.0.7':
     resolution: {integrity: sha512-lLAzyxQeeALMKM2uBA9728gZ0bihy6rfhMe+fracV1xjGLfcHEa/hNmhXNMp9Vf80sZJ50EUeW6mUPluLROBNQ==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@nx/nx-linux-x64-gnu@20.0.7':
     resolution: {integrity: sha512-H9LfEoHEa0ZHnfifseY24RPErtGaXSoWTuW9JAPylUXeYOy66i/FwxwbjsG5BMFJCnL1LGXPN9Oirh442lcsbQ==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@nx/nx-linux-x64-musl@20.0.7':
     resolution: {integrity: sha512-2VsTSLZZVGHmN2BkSaLoOp/Byj9j20so/Ne/TZg4Lo/HBp0iDSOmUtbPAnkJOS6UiAPvQtb9zqzRKPphhDhnzg==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@nx/nx-win32-arm64-msvc@20.0.7':
     resolution: {integrity: sha512-lmH7xTPHJe2q/P2tnHEjOTdwzNxnFV08Kp2z6sUU0lAfJ79mye2nydGBDtFq9CeFF1Q6vfCSDTRu5fbxAZ9/Xg==}
@@ -2882,62 +2886,6 @@ packages:
   '@open-draft/until@2.1.0':
     resolution: {integrity: sha512-U69T3ItWHvLwGg5eJ0n3I62nWuE6ilHlmz7zM0npLBRvPRd7e6NYmg54vvRtP5mZG7kZqZCFVdsTWo7BPtBujg==}
 
-  '@opentripplanner/base-map@7.0.1':
-    resolution: {integrity: sha512-UONLrwYthGXjzA2dE9zHW6vPNlPqNwsdH+EEtUwVzfjchYt/lVwyInavW1DNWb5sYxLjWHMCbS+FxJmNYKifmg==}
-    peerDependencies:
-      '@opentripplanner/types': ^8.4.0
-      react: ^18.2.0
-      styled-components: ^5.3.0
-
-  '@opentripplanner/building-blocks@3.1.1':
-    resolution: {integrity: sha512-D+BuXBTRbejOPUUf9TdG1Z78l6pUu6VJn6pA4W+CcvQuuXjNDz/PibScT3maaULASxj5GP9iPMoNoIcRHwqOOw==}
-    peerDependencies:
-      react: ^18.2.0
-      react-animate-height: ^3.0.4
-      styled-components: ^5.3.0
-
-  '@opentripplanner/core-utils@16.0.3':
-    resolution: {integrity: sha512-bpa7ItkpUzswQ18t3eEUtvKQPllh97jjX97AjKEkLtB7utA79nXlhY1TTNSEIOVjJumA4cjKnB8LOxUpmIfFPw==}
-    engines: {node: '>=13'}
-
-  '@opentripplanner/endpoints-overlay@5.0.1':
-    resolution: {integrity: sha512-lDtP++VeCsYfnMKlwuu+1I7lMg4Oq5YuBVuVpDNeAMtrw3JaxtNpu+hBufspHwoSEfGunSmHyCL7xNeKm5k8fA==}
-    peerDependencies:
-      react: ^18.2.0
-      react-dom: ^18.2.0
-      react-intl: ^6.8.4
-      react-map-gl: ^8.0.4
-      styled-components: ^5.3.0
-
-  '@opentripplanner/geocoder@3.1.1':
-    resolution: {integrity: sha512-2Hn8K8HcwzX+u7pq/eut6qsmS2NBpozB902R8cN1hEKRpEqgeXtLsrXt8V5PJL4byrX8HQ5OkEL51e+alC/Rbw==}
-
-  '@opentripplanner/humanize-distance@2.1.1':
-    resolution: {integrity: sha512-Nt+GlwZb88NSlsGDgW2GZg2iTTAJTqrt124A2Vz70QEx9Kph3KKfQgPgK73qeLPe91rJ0yJI8jnIkFKasY/LvA==}
-    peerDependencies:
-      react: ^18.2.0
-      react-intl: ^6.8.4
-
-  '@opentripplanner/icons@4.1.4':
-    resolution: {integrity: sha512-JRJj1L/E9jdxCOkCICVSkfV//HrPbr/owuefZxgILfh3XIXA5UKBf+8JlFJyrhKqdtnI7kRcBLOlqhtX/1OgYw==}
-    peerDependencies:
-      react: ^18.2.0
-
-  '@opentripplanner/itinerary-body@9.3.1':
-    resolution: {integrity: sha512-cda/u/ssocXs6ilCr918vQcOmhKJCvCDERS41Frv9kU8c4Rjd6EgK+nyjLW41jI+uD2yZ1Qs9xaa8ZNkAYiLyg==}
-    peerDependencies:
-      react: ^18.2.0
-      styled-components: ^5.3.0
-
-  '@opentripplanner/location-icon@2.0.0':
-    resolution: {integrity: sha512-Ee/+75sgxES2gYWkgFYTtY6IDR81TTmAClUMRucvSoslWxpbwY5uJhmZdJyDtH0AfB/prmLHwOsFSDH4EVVjdA==}
-    peerDependencies:
-      react: ^18.2.0
-      styled-components: ^5.3.0
-
-  '@opentripplanner/types@8.4.0':
-    resolution: {integrity: sha512-T1UJOVUTrUYQt3OAUK+kgF5MjzAwyeIuqrBR33UVYN7vcaY4QaoB/NyGigI/Wk+z+/S2LsXHgfesr1q43LZbAA==}
-
   '@peculiar/asn1-schema@2.3.13':
     resolution: {integrity: sha512-3Xq3a01WkHRZL8X04Zsfg//mGaA21xlL4tlVn4v2xGT0JStiztATRkMwa5b+f/HXmY2smsiLXYK46Gwgzvfg3g==}
 
@@ -3025,56 +2973,67 @@ packages:
     resolution: {integrity: sha512-+xmiDGGaSfIIOXMzkhJ++Oa0Gwvl9oXUeIiwarsdRXSe27HUIvjbSIpPxvnNsRebsNdUo7uAiQVgBD1hVriwSQ==}
     cpu: [arm]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-arm-musleabihf@4.44.2':
     resolution: {integrity: sha512-bDHvhzOfORk3wt8yxIra8N4k/N0MnKInCW5OGZaeDYa/hMrdPaJzo7CSkjKZqX4JFUWjUGm88lI6QJLCM7lDrA==}
     cpu: [arm]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-linux-arm64-gnu@4.44.2':
     resolution: {integrity: sha512-NMsDEsDiYghTbeZWEGnNi4F0hSbGnsuOG+VnNvxkKg0IGDvFh7UVpM/14mnMwxRxUf9AdAVJgHPvKXf6FpMB7A==}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-arm64-musl@4.44.2':
     resolution: {integrity: sha512-lb5bxXnxXglVq+7imxykIp5xMq+idehfl+wOgiiix0191av84OqbjUED+PRC5OA8eFJYj5xAGcpAZ0pF2MnW+A==}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-linux-loongarch64-gnu@4.44.2':
     resolution: {integrity: sha512-Yl5Rdpf9pIc4GW1PmkUGHdMtbx0fBLE1//SxDmuf3X0dUC57+zMepow2LK0V21661cjXdTn8hO2tXDdAWAqE5g==}
     cpu: [loong64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-powerpc64le-gnu@4.44.2':
     resolution: {integrity: sha512-03vUDH+w55s680YYryyr78jsO1RWU9ocRMaeV2vMniJJW/6HhoTBwyyiiTPVHNWLnhsnwcQ0oH3S9JSBEKuyqw==}
     cpu: [ppc64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-gnu@4.44.2':
     resolution: {integrity: sha512-iYtAqBg5eEMG4dEfVlkqo05xMOk6y/JXIToRca2bAWuqjrJYJlx/I7+Z+4hSrsWU8GdJDFPL4ktV3dy4yBSrzg==}
     cpu: [riscv64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-riscv64-musl@4.44.2':
     resolution: {integrity: sha512-e6vEbgaaqz2yEHqtkPXa28fFuBGmUJ0N2dOJK8YUfijejInt9gfCSA7YDdJ4nYlv67JfP3+PSWFX4IVw/xRIPg==}
     cpu: [riscv64]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-linux-s390x-gnu@4.44.2':
     resolution: {integrity: sha512-evFOtkmVdY3udE+0QKrV5wBx7bKI0iHz5yEVx5WqDJkxp9YQefy4Mpx3RajIVcM6o7jxTvVd/qpC1IXUhGc1Mw==}
     cpu: [s390x]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-x64-gnu@4.44.2':
     resolution: {integrity: sha512-/bXb0bEsWMyEkIsUL2Yt5nFB5naLAwyOWMEviQfQY1x3l5WsLKgvZf66TM7UTfED6erckUVUJQ/jJ1FSpm3pRQ==}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@rollup/rollup-linux-x64-musl@4.44.2':
     resolution: {integrity: sha512-3D3OB1vSSBXmkGEZR27uiMRNiwN08/RVAcBKwhUYPaiZ8bcvdeEwWPvbnXvvXHY+A/7xluzcN+kaiOFNiOZwWg==}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@rollup/rollup-win32-arm64-msvc@4.44.2':
     resolution: {integrity: sha512-VfU0fsMK+rwdK8mwODqYeM2hDrF2WiHaSmCBrS7gColkQft95/8tphyzv2EupVxn3iE0FI78wzffoULH1G+dkw==}
@@ -3532,24 +3491,28 @@ packages:
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@swc/core-linux-arm64-musl@1.7.42':
     resolution: {integrity: sha512-qtW3JNO7i1yHEko59xxz+jY38+tYmB96JGzj6XzygMbYJYZDYbrOpXQvKbMGNG3YeTDan7Fp2jD0dlKf7NgDPA==}
     engines: {node: '>=10'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@swc/core-linux-x64-gnu@1.7.42':
     resolution: {integrity: sha512-F9WY1TN+hhhtiEzZjRQziNLt36M5YprMeOBHjsLVNqwgflzleSI7ulgnlQECS8c8zESaXj3ksGduAoJYtPC1cA==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@swc/core-linux-x64-musl@1.7.42':
     resolution: {integrity: sha512-7YMdOaYKLMQ8JGfnmRDwidpLFs/6ka+80zekeM0iCVO48yLrJR36G0QGXzMjKsXI0BPhq+mboZRRENK4JfQnEA==}
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@swc/core-win32-arm64-msvc@1.7.42':
     resolution: {integrity: sha512-C5CYWaIZEyqPl5W/EwcJ/mLBJFHVoUEa/IwWi0b4q2fCXcSCktQGwKXOQ+d67GneiZoiq0HasgcdMmMpGS9YRQ==}
@@ -3952,41 +3915,49 @@ packages:
     resolution: {integrity: sha512-34gw7PjDGB9JgePJEmhEqBhWvCiiWCuXsL9hYphDF7crW7UgI05gyBAi6MF58uGcMOiOqSJ2ybEeCvHcq0BCmQ==}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
 
   '@unrs/resolver-binding-linux-arm64-musl@1.11.1':
     resolution: {integrity: sha512-RyMIx6Uf53hhOtJDIamSbTskA99sPHS96wxVE/bJtePJJtpdKGXO1wY90oRdXuYOGOTuqjT8ACccMc4K6QmT3w==}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
 
   '@unrs/resolver-binding-linux-ppc64-gnu@1.11.1':
     resolution: {integrity: sha512-D8Vae74A4/a+mZH0FbOkFJL9DSK2R6TFPC9M+jCWYia/q2einCubX10pecpDiTmkJVUH+y8K3BZClycD8nCShA==}
     cpu: [ppc64]
     os: [linux]
+    libc: [glibc]
 
   '@unrs/resolver-binding-linux-riscv64-gnu@1.11.1':
     resolution: {integrity: sha512-frxL4OrzOWVVsOc96+V3aqTIQl1O2TjgExV4EKgRY09AJ9leZpEg8Ak9phadbuX0BA4k8U5qtvMSQQGGmaJqcQ==}
     cpu: [riscv64]
     os: [linux]
+    libc: [glibc]
 
   '@unrs/resolver-binding-linux-riscv64-musl@1.11.1':
     resolution: {integrity: sha512-mJ5vuDaIZ+l/acv01sHoXfpnyrNKOk/3aDoEdLO/Xtn9HuZlDD6jKxHlkN8ZhWyLJsRBxfv9GYM2utQ1SChKew==}
     cpu: [riscv64]
     os: [linux]
+    libc: [musl]
 
   '@unrs/resolver-binding-linux-s390x-gnu@1.11.1':
     resolution: {integrity: sha512-kELo8ebBVtb9sA7rMe1Cph4QHreByhaZ2QEADd9NzIQsYNQpt9UkM9iqr2lhGr5afh885d/cB5QeTXSbZHTYPg==}
     cpu: [s390x]
     os: [linux]
+    libc: [glibc]
 
   '@unrs/resolver-binding-linux-x64-gnu@1.11.1':
     resolution: {integrity: sha512-C3ZAHugKgovV5YvAMsxhq0gtXuwESUKc5MhEtjBpLoHPLYM+iuwSj3lflFwK3DPm68660rZ7G8BMcwSro7hD5w==}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
 
   '@unrs/resolver-binding-linux-x64-musl@1.11.1':
     resolution: {integrity: sha512-rV0YSoyhK2nZ4vEswT/QwqzqQXw5I6CjoaYMOX0TqBlWhojUf8P94mvI7nuJTeaCkkds3QE4+zS8Ko+GdXuZtA==}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
 
   '@unrs/resolver-binding-wasm32-wasi@1.11.1':
     resolution: {integrity: sha512-5u4RkfxJm+Ng7IWgkzi3qrFOvLvQYnPBmjmZQ8+szTK/b31fQCnleNl1GgEt7nIsZRIf5PLhPwT0WM+q45x/UQ==}
@@ -13137,128 +13108,6 @@ snapshots:
       outvariant: 1.4.3
 
   '@open-draft/until@2.1.0': {}
-
-  '@opentripplanner/base-map@7.0.1(@opentripplanner/types@8.4.0)(react-animate-height@3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))':
-    dependencies:
-      '@opentripplanner/building-blocks': 3.1.1(react-animate-height@3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      '@opentripplanner/types': 8.4.0
-      maplibre-gl: 5.6.1
-      react: 18.2.0
-      react-map-gl: 8.0.4(maplibre-gl@5.6.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
-      styled-components: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
-    transitivePeerDependencies:
-      - mapbox-gl
-      - react-animate-height
-      - react-dom
-
-  '@opentripplanner/building-blocks@3.1.1(react-animate-height@3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))':
-    dependencies:
-      '@styled-icons/bootstrap': 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      react: 18.2.0
-      react-animate-height: 3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
-      styled-components: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
-
-  '@opentripplanner/core-utils@16.0.3(encoding@0.1.13)(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))':
-    dependencies:
-      '@conveyal/lonlat': 1.4.1
-      '@mapbox/polyline': 1.2.1
-      '@opentripplanner/geocoder': 3.1.1(encoding@0.1.13)(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)
-      '@styled-icons/foundation': 10.46.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      '@turf/along': 7.3.1
-      chroma-js: 3.2.0
-      date-fns: 3.6.0
-      date-fns-tz: 3.2.0(date-fns@3.6.0)
-      graphql: 16.9.0
-      lodash.clonedeep: 4.5.0
-      qs: 6.14.0
-    transitivePeerDependencies:
-      - encoding
-      - eslint
-      - eslint-plugin-react
-      - react
-      - styled-components
-
-  '@opentripplanner/endpoints-overlay@5.0.1(@opentripplanner/types@8.4.0)(encoding@0.1.13)(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)(react-animate-height@3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react-dom@18.3.1(react@18.2.0))(react-intl@6.8.4(react@18.2.0)(typescript@5.9.3))(react-map-gl@8.0.4(maplibre-gl@5.6.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))':
-    dependencies:
-      '@opentripplanner/base-map': 7.0.1(@opentripplanner/types@8.4.0)(react-animate-height@3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      '@opentripplanner/building-blocks': 3.1.1(react-animate-height@3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      '@opentripplanner/core-utils': 16.0.3(encoding@0.1.13)(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      '@opentripplanner/location-icon': 2.0.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      '@styled-icons/fa-solid': 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      flat: 5.0.2
-      react: 18.2.0
-      react-dom: 18.3.1(react@18.2.0)
-      react-intl: 6.8.4(react@18.2.0)(typescript@5.9.3)
-      react-map-gl: 8.0.4(maplibre-gl@5.6.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
-      styled-components: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
-    transitivePeerDependencies:
-      - '@opentripplanner/types'
-      - encoding
-      - eslint
-      - eslint-plugin-react
-      - mapbox-gl
-      - react-animate-height
-
-  '@opentripplanner/geocoder@3.1.1(encoding@0.1.13)(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)':
-    dependencies:
-      '@conveyal/geocoder-arcgis-geojson': 0.0.3(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)
-      '@conveyal/lonlat': 1.4.1
-      '@leeoniya/ufuzzy': 1.0.14
-      isomorphic-mapzen-search: 1.6.1(encoding@0.1.13)
-      lodash.memoize: 4.1.2
-    transitivePeerDependencies:
-      - encoding
-      - eslint
-      - eslint-plugin-react
-
-  '@opentripplanner/humanize-distance@2.1.1(react-intl@6.8.4(react@18.2.0)(typescript@5.9.3))(react@18.2.0)':
-    dependencies:
-      react: 18.2.0
-      react-intl: 6.8.4(react@18.2.0)(typescript@5.9.3)
-
-  '@opentripplanner/icons@4.1.4(encoding@0.1.13)(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))':
-    dependencies:
-      '@opentripplanner/core-utils': 16.0.3(encoding@0.1.13)(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      prop-types: 15.8.1
-      react: 18.2.0
-    transitivePeerDependencies:
-      - encoding
-      - eslint
-      - eslint-plugin-react
-      - styled-components
-
-  '@opentripplanner/itinerary-body@9.3.1(encoding@0.1.13)(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)(react-dom@18.3.1(react@18.2.0))(react-intl@6.8.4(react@18.2.0)(typescript@5.9.3))(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))':
-    dependencies:
-      '@opentripplanner/building-blocks': 3.1.1(react-animate-height@3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0))(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      '@opentripplanner/core-utils': 16.0.3(encoding@0.1.13)(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      '@opentripplanner/humanize-distance': 2.1.1(react-intl@6.8.4(react@18.2.0)(typescript@5.9.3))(react@18.2.0)
-      '@opentripplanner/icons': 4.1.4(encoding@0.1.13)(eslint-plugin-react@7.14.3(eslint@7.32.0))(eslint@7.32.0)(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      '@opentripplanner/location-icon': 2.0.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      '@styled-icons/fa-solid': 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      '@styled-icons/foundation': 10.46.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      date-fns: 3.6.0
-      date-fns-tz: 3.2.0(date-fns@3.6.0)
-      flat: 5.0.2
-      react: 18.2.0
-      react-animate-height: 3.0.4(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
-      react-resize-detector: 4.2.3(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
-      string-similarity: 4.0.4
-      styled-components: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
-    transitivePeerDependencies:
-      - encoding
-      - eslint
-      - eslint-plugin-react
-      - react-dom
-      - react-intl
-
-  '@opentripplanner/location-icon@2.0.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))':
-    dependencies:
-      '@styled-icons/fa-regular': 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      '@styled-icons/fa-solid': 10.47.0(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
-      react: 18.2.0
-      styled-components: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
-
-  '@opentripplanner/types@8.4.0': {}
 
   '@peculiar/asn1-schema@2.3.13':
     dependencies:

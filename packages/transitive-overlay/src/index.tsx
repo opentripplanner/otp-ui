@@ -150,11 +150,6 @@ type Props = {
   activeLeg?: Leg;
   accessLegColorOverride?: string;
   boundsFitting?: boolean;
-  /**
-   * Optional map of route hex colors (lowercase, without #) to contrast outline colors.
-   * Used to render an accessibility outline behind transit route lines.
-   * Example: { "ff0000": "#000000" }
-   */
   showRouteArrows?: boolean;
   transitiveData?: TransitiveData;
 };
@@ -215,7 +210,6 @@ const TransitiveCanvasOverlay = ({
   showRouteArrows,
   transitiveData
 }: Props): JSX.Element => {
-  console.log('greetings from the local version!', transitiveData);
   const { current: map } = useMap();
 
   const mapImages: MapImage[] = [];
@@ -465,7 +459,6 @@ const TransitiveCanvasOverlay = ({
         }}
         type="line"
       />
-            {/* ADRIAN TODO: Put the contrast layer here, dog */}
       <Layer 
         filter={["all", routeFilter, ["has", "contrastColor"]]}
         type="line"
