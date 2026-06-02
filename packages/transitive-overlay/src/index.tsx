@@ -192,7 +192,7 @@ export const OUTLINE_WIDTH_MULTIPLIER = 1.8;
 /** Multiplier for selected route contrast outline relative to focused route width */
 export const SELECTED_OUTLINE_WIDTH_MULTIPLIER = 1.4;
 
-/** Shared line-width for focused route constrast outlines */
+/** Shared line-width for focused route contrast outlines */
 export const FOCUSED_ROUTE_OUTLINE_WIDTH: ExpressionSpecification = [
   'interpolate',
   ['linear'],
