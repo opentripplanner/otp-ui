@@ -38,7 +38,7 @@
     "@storybook/builder-vite": "^10.0.5",
     "@storybook/react-vite": "^10.0.5",
     "@storybook/storybook-deployer": "^2.8.10",
-    "@storybook/test-runner": "^0.24.1",
+    "@storybook/test-runner": "^0.24.4",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.0.0",
     "@types/styled-components": "^5.1.9",
