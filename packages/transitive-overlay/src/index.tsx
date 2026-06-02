@@ -194,9 +194,9 @@ export const SELECTED_OUTLINE_WIDTH_MULTIPLIER = 1.4;
 
 /** Shared line-width for focused route contrast outlines */
 export const FOCUSED_ROUTE_OUTLINE_WIDTH: ExpressionSpecification = [
-  'interpolate',
-  ['linear'],
-  ['zoom'],
+  "interpolate",
+  ["linear"],
+  ["zoom"],
   ...ROUTE_LINE_WIDTH_BY_ZOOM.flatMap(([zoom, width]) => [
     zoom,
     width * SELECTED_OUTLINE_WIDTH_MULTIPLIER,
