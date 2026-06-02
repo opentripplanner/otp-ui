@@ -1,4 +1,5 @@
-import { FilterSpecification, SymbolLayerSpecification, type ExpressionSpecification } from "maplibre-gl";
+import type { ExpressionSpecification } from "maplibre-gl";
+import { FilterSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
 import React, { useEffect } from "react";
 import { Layer, MapRef, Source, useMap } from "react-map-gl/maplibre";
