@@ -1,3 +1,4 @@
+// eslint-disable-next-line prettier/prettier
 import type { ExpressionSpecification } from "maplibre-gl";
 import { FilterSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
