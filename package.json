@@ -9,7 +9,7 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": ">=11.0.0",
+      "version": "11.5.1",
       "onFail": "download"
     }
   },
@@ -30,6 +30,7 @@
     "@formatjs/cli": "^4.2.32",
     "@graphql-eslint/eslint-plugin": "^3.19.1",
     "@modyfi/vite-plugin-yaml": "^1.1.1",
+    "@playwright/test": "1.60.0",
     "@semantic-release/git": "^10.0.1",
     "@storybook/addon-a11y": "^10.0.5",
     "@storybook/addon-docs": "^10.0.5",
@@ -45,7 +46,7 @@
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
     "@vitejs/plugin-react": "^4.7.0",
-    "axe-playwright": "^2.1.0",
+    "axe-playwright": "^2.2.2",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
