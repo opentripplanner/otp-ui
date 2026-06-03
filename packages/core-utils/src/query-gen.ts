@@ -229,9 +229,9 @@ export function generateOtp2Query(
       prev[cur.key] = cur.value;
     }
 
-    // If we assign a value on true, return the value (or null) instead of a boolean.
-    if (cur.type === "CHECKBOX" && cur.truthValue && cur.falseValue) {
-      const newVal = cur.value === true ? cur.truthValue : cur.falseValue;
+    if (cur.type === "CHECKBOX" && cur.truthValue) {
+      // If checked, assign the truthValue. Otherwise use the routing engine default
+      const newVal = !!cur.value && cur.truthValue
       if (newVal) {
         prev[cur.key] = newVal;
       }
