@@ -17,6 +17,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
+    "react-intl": "catalog:",
     "toposort": "^2.0.2"
   },
   "devDependencies": {

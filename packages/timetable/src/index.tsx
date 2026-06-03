@@ -1,4 +1,5 @@
 import React, { ChangeEvent, ReactElement, useMemo, useState } from "react";
+import { useIntl } from "react-intl";
 import styled from "styled-components";
 import toposort from "toposort";
 
@@ -89,15 +90,11 @@ export interface TimeTableProps {
 }
 
 const TimeTable = (props: TimeTableProps): ReactElement => {
-  const {
-    route,
-    includeDwellStops,
-    showBlockId,
-    errorOnStopSorting,
-    timeZone
-  } = props;
+  const { route, includeDwellStops, showBlockId, errorOnStopSorting } = props;
 
   const { patterns } = route;
+
+  const intl = useIntl();
 
   const [directionId, setDirectionId] = useState<number>(0);
   const [expanded, setExpanded] = useState(false);
@@ -307,11 +304,9 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
               const stopDetail = t.stops.get(patternStop.id);
               rowValues.push(
                 stopDetail
-                  ? stopDetail.time.toLocaleTimeString("en-us", {
-                      timeZone,
-                      hour12: false,
-                      hour: "2-digit",
-                      minute: "2-digit" // use react intl for formatting
+                  ? intl.formatTime(stopDetail.time, {
+                      timeStyle: "short",
+                      hourCycle: "h24"
                     })
                   : "-"
               );
