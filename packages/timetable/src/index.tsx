@@ -146,8 +146,7 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
             gtfsId: dwellStopId
           }
         };
-        updatedStopTimes.push(arrivalStopTime);
-        updatedStopTimes.push(departureStopTime);
+        updatedStopTimes.push(arrivalStopTime, departureStopTime);
         if (st.timepoint) timepoints.add(dwellStopId);
       });
       withDwellStops.push({
