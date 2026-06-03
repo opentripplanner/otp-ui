@@ -18,18 +18,3 @@ export const Default: Story = {
         route: twinCitiesRouteMock.data.route
     }
 }
-
-export const WithBlockIds: Story = {
-    args: {
-        route: twinCitiesRouteMock.data.route,
-        showBlockId: true
-    }
-}
-
-export const WithDwellStopsAndBlockIds: Story = {
-    args: {
-        route: twinCitiesRouteMock.data.route,
-        showBlockId: true,
-        includeDwellStops: true
-    }
-}
