@@ -4,37 +4,31 @@ import toposort from "toposort";
 
 const COLUMN_WIDTH = "85px";
 
-interface TimeTableRowProps {
-  values: string[];
-}
+const Table = styled.table`
+  display: block;
+  overflow: auto;
+  table-layout: fixed;
+  width: 100%;
+`;
 
-const CellContainer = styled.div`
-  display: flex;
-  flex-shrink: 0;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+const TBody = styled.tbody`
+  white-space: nowrap;
+`;
+
+const TH = styled.th`
+  min-width: ${COLUMN_WIDTH};
   padding: 1rem;
+`;
+
+const TR = styled.tr`
+  text-align: center;
+  vertical-align: middle;
   width: ${COLUMN_WIDTH};
 `;
 
-const RowContainer = styled.div`
-  display: flex;
+const TD = styled.td`
+  padding: 1rem 0;
 `;
-
-const TimeTableRow = (props: TimeTableRowProps): ReactElement => {
-  const { values } = props;
-
-  return (
-    <RowContainer>
-      {values.map((v, i) => (
-        <CellContainer key={i}>
-          <span>{v}</span>
-        </CellContainer>
-      ))}
-    </RowContainer>
-  );
-};
 
 export interface PatternStop {
   id: string;
@@ -293,44 +287,49 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
         <option value={0}>One Direction</option>
         <option value={1}>Other Direction</option>
       </select>
-      <RowContainer>
-        {showBlockId ? <CellContainer>Block ID</CellContainer> : <div />}
-        {filteredPatternStops.map((s, index) => (
-          <CellContainer key={index}>
-            <span
-              style={{
-                fontWeight: timepointStopIds.has(s.id) ? "bold" : "normal"
-              }}
-            >
-              {s.name}
-            </span>
-          </CellContainer>
-        ))}
-      </RowContainer>
-      <div>
-        {timetableTrips.map((t, index) => {
-          const rowValues = showBlockId ? [t.blockId] : [];
-          filteredPatternStops.forEach(patternStop => {
-            const stopDetail = t.stops.get(patternStop.id);
-            rowValues.push(
-              stopDetail
-                ? stopDetail.time.toLocaleTimeString("en-us", {
-                    timeZone,
-                    hour12: false,
-                    hour: "2-digit",
-                    minute: "2-digit"
-                  })
-                : "-"
-            );
-          });
+      <Table>
+        <thead>
+          <tr>
+            {(showBlockId ? [{ id: "blockIdHeader", name: "Block ID" }] : [])
+              .concat(filteredPatternStops)
+              .map((s, index) => {
+                return (
+                  <TH key={index} scope="col">
+                    {s.name}
+                  </TH>
+                );
+              })}
+          </tr>
+        </thead>
+        <TBody>
+          {timetableTrips.map((t, index) => {
+            const rowValues: string[] = showBlockId ? [t.blockId] : [];
+            filteredPatternStops.forEach(patternStop => {
+              const stopDetail = t.stops.get(patternStop.id);
+              rowValues.push(
+                stopDetail
+                  ? stopDetail.time.toLocaleTimeString("en-us", {
+                      timeZone,
+                      hour12: false,
+                      hour: "2-digit",
+                      minute: "2-digit" // use react intl for formatting
+                    })
+                  : "-"
+              );
+            });
 
-          return (
-            <TimeTableRow key={`${t.blockId}-${index}`} values={rowValues} />
-          );
-        })}
-      </div>
+            return (
+              <TR key={index}>
+                {rowValues.map((r, rowIndex) => (
+                  <TD key={rowIndex}>{r}</TD>
+                ))}
+              </TR>
+            );
+          })}
+        </TBody>
+      </Table>
     </>
   );
 };
 
-export { TimeTable, TimeTableRow };
+export { TimeTable };
