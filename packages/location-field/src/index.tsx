@@ -298,6 +298,7 @@ const LocationField = ({
   ],
   getCurrentPosition,
   hideExistingValue = false,
+  idForInputLabel,
   initialSearchResults = null,
   inputPlaceholder = null,
   isRequired = false,
@@ -1062,8 +1063,11 @@ const LocationField = ({
   let menuItemCount = indexedOptionLookup.length;
 
   /** the text input element * */
-  // Use this text for aria-label below.
-  const defaultPlaceholder = inputPlaceholder || locationType;
+  // Use this text for aria-label below if no user-provided label.
+  const defaultPlaceholder = idForInputLabel
+    ? inputPlaceholder || undefined
+    : inputPlaceholder || locationType;
+  const ariaLabel = idForInputLabel ? undefined : defaultPlaceholder;
   const placeholder =
     currentPosition && currentPosition.fetching
       ? intl.formatMessage({ id: "otpUi.LocationField.fetchingLocation" })
@@ -1081,10 +1085,11 @@ const LocationField = ({
       aria-expanded={isExpanded}
       aria-haspopup="listbox"
       aria-invalid={!isValid}
-      aria-label={defaultPlaceholder}
+      aria-label={ariaLabel}
       aria-required={isRequired}
       autoFocus={autoFocus}
       className={formControlClassname}
+      id={idForInputLabel}
       onChange={onTextInputChange}
       onClick={handleTextInputClick}
       onBlur={onFieldBlur}

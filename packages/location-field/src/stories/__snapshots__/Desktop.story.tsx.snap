@@ -690,6 +690,62 @@ exports[`LocationField/Desktop Context WithBadApiKeyHandlesBadAutocomplete smoke
 </div>
 `;
 
+exports[`LocationField/Desktop Context WithCustomLabel smoke-test 1`] = `
+<label for="location-field-1">
+  Search location
+</label>
+<div class="styled__InputGroup-sc-xahsq2-7 erfoji"
+     role="group"
+>
+  <button aria-controls="from-listbox"
+          aria-expanded="false"
+          aria-label="Toggle displaying the list of suggested locations"
+          tabindex="-1"
+          type="button"
+          class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
+  >
+    <svg viewbox="0 0 512 512"
+         height="13"
+         width="13"
+         aria-hidden="true"
+         focusable="false"
+         fill="currentColor"
+         xmlns="http://www.w3.org/2000/svg"
+         class="StyledIconBase-sc-ea9ulj-0 ebjPRL styled__FromIcon-sc-n5xcvc-0 dDqEuj"
+    >
+      <path fill="currentColor"
+            d="M160 256c0-53.9 42.1-96 96-96 53 0 96 42.1 96 96 0 53-43 96-96 96-53.9 0-96-43-96-96zm352 0c0 141.4-114.6 256-256 256S0 397.4 0 256 114.6 0 256 0s256 114.6 256 256zM256 48C141.1 48 48 141.1 48 256s93.1 208 208 208 208-93.1 208-208S370.9 48 256 48z"
+      >
+      </path>
+    </svg>
+  </button>
+  <input aria-autocomplete="list"
+         aria-controls="from-listbox"
+         aria-expanded="false"
+         aria-haspopup="listbox"
+         aria-invalid="false"
+         aria-required="false"
+         class="styled__Input-sc-xahsq2-6 axlAP from-form-control"
+         id="location-field-1"
+         spellcheck="false"
+         placeholder="Select from location"
+         role="combobox"
+         value
+  >
+  <span role="status"
+        class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
+  >
+  </span>
+  <ul aria-hidden="true"
+      aria-label="Suggested locations"
+      id="from-listbox"
+      role="listbox"
+      class="styled__MenuItemList-sc-xahsq2-5 eCrJvo"
+  >
+  </ul>
+</div>
+`;
+
 exports[`LocationField/Desktop Context WithCustomResultColorsAndIcons smoke-test 1`] = `
 <div class="styled__InputGroup-sc-xahsq2-7 erfoji"
      role="group"
