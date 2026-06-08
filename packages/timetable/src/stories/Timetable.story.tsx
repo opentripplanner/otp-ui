@@ -16,6 +16,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     args: {
         directionId: 0,
-        route: twinCitiesRouteMock.data.route
+        route: twinCitiesRouteMock.data.route,
+        timepointsOnly: true
     }
 }

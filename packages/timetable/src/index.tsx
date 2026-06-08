@@ -1,4 +1,4 @@
-import React, { ReactElement, useMemo, useState } from "react";
+import React, { ReactElement, useMemo } from "react";
 import { useIntl } from "react-intl";
 import styled from "styled-components";
 import toposort from "toposort";
@@ -174,6 +174,8 @@ interface TimeTableProps {
    */
   directionId: number;
   route: Route;
+  /** Whether to show only timepoint stops in the timetable */
+  timepointsOnly: boolean;
   /** If the topological sort of the stop IDs fails for any reason, a `false` value here
    * will cause the timetable to use a fallback "naive" stop sorting
    */
@@ -194,14 +196,13 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
     errorOnStopSorting,
     includeDwellStops,
     route,
-    showBlockId
+    showBlockId,
+    timepointsOnly
   } = props;
 
   const { patterns } = route;
 
   const intl = useIntl();
-
-  const [expanded, setExpanded] = useState(false);
 
   const [allTrips, timepointStopIds] = useMemo(() => {
     const trips = patterns
@@ -281,8 +282,10 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
 
   const filteredPatternStops = useMemo(
     () =>
-      patternStops.filter(s => (expanded ? true : timepointStopIds.has(s.id))),
-    [expanded, patternStops, timepointStopIds]
+      patternStops.filter(s =>
+        timepointsOnly ? timepointStopIds.has(s.id) : true
+      ),
+    [timepointsOnly, patternStops, timepointStopIds]
   );
 
   const timetableTrips: TimetableTrip[] = useMemo<TimetableTrip[]>(() => {
@@ -310,9 +313,6 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
 
   return (
     <>
-      <button type="button" onClick={() => setExpanded(!expanded)}>
-        {expanded ? "Show Timepoints Only" : "Show All Stops"}
-      </button>
       <Table>
         <thead>
           <tr>
