@@ -31,7 +31,7 @@ If the Storybook addon bar (a bar of controls at the bottom of the story) does n
 
 ### Storyshot testing
 
-This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows/snapshot-testing) Storybook addon to perform snapshot tests of every story in this monorepo. Whenever the script `pnpm unit` is ran, the Storyshot addon will be included along with all the other tests. It will compare the initial output of every story to the saved snapshot of that story. This provides a quick way to make sure nothing drastic has changed and that every single story is able to initially render without an error. Storyshot doesn't snapshot all possible changes that can be done while interacting with story components. Often times these snapshots will need to be updated and that can be accomplished by running `pnpm update-snapshots`.
+This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows/snapshot-testing) Storybook addon to perform snapshot tests of every story in this monorepo. Whenever the script `pnpm unit` is run, the Storyshot addon will be included along with all the other tests. It will compare the initial output of every story to the saved snapshot of that story. This provides a quick way to make sure nothing drastic has changed and that every single story is able to initially render without an error. Storyshot doesn't snapshot all possible changes that can be done while interacting with story components. Often times these snapshots will need to be updated and that can be accomplished by running `pnpm update-snapshots`.
 
 ## Stack
 
@@ -47,13 +47,26 @@ This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows
 
 ## Usage
 
-- `pnpm dev` - This starts Storybook for viewing all the components locally.
-- `pnpm install` - This installs all of the packages and links dependent packages together.
-- `pnpm preppublish` - This babelfies all of the packages and creates `/lib` and `/esm` folders for each one.
-- `pnpm unit` - Run jest unit tests.
-- `pnpm coverage` - Shows jest unit coverage.
-- `pnpm clean` - Deletes all files in the gitignore (note: this can delete local editor settings)
-- `pnpm pack-all` - Creates tarball packages for all non-private packages and displays their locations.
+- `pnpm dev` - Starts Storybook for viewing all the components locally.
+- `pnpm install` - Installs all of the packages and links dependent packages together.
+- `pnpm build-all` - Compiles TypeScript, then builds CJS (`/lib`) and ESM (`/esm`) outputs for all packages.
+- `pnpm build:cjs` - Builds CommonJS (`/lib`) output for all packages.
+- `pnpm build:esm` - Builds ES Module (`/esm`) output for all packages.
+- `pnpm typescript` - Runs TypeScript type checking across all packages.
+- `pnpm test` - Runs the full test suite: linting, i18n checks, TypeScript, unit tests, Storybook tests, and accessibility tests.
+- `pnpm unit` - Runs Jest unit tests only.
+- `pnpm coverage` - Shows Jest unit test coverage.
+- `pnpm lint` - Runs all linters (JS/TS, styles, and GraphQL).
+- `pnpm lint:js` - Lints JS/TS files with ESLint.
+- `pnpm lint:styles` - Lints styled-components with Stylelint.
+- `pnpm lint:graphql` - Lints GraphQL files.
+- `pnpm build-storybook` - Builds the Storybook static site.
+- `pnpm test-storybook` - Runs Storybook interaction tests (requires Storybook running on port 5555).
+- `pnpm update-snapshots` - Builds Storybook and updates all snapshot tests.
+- `pnpm check:i18n-all` - Checks i18n integrity for all languages.
+- `pnpm check:i18n-en-fr` - Checks i18n integrity for English (US) and French.
+- `pnpm clean` - Deletes all files in the gitignore (note: this can delete local editor settings).
+- `pnpm pack-all` - Builds all packages and creates tarball packages.
 - `npx lerna changed` - Show which packages have changed.
 - `npx lerna diff` - Show specifically what files have cause the packages to change.
 - `npx lerna create <packageName>` - Creates new package and walks through setting up package.json
