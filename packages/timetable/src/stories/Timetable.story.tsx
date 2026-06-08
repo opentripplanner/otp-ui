@@ -1,7 +1,7 @@
 // eslint-disable-next-line prettier/prettier
 import type { Meta, StoryObj } from "@storybook/react-vite"
 
-import { TimeTable } from ".."
+import TimeTable from ".."
 
 import twinCitiesRouteMock from "../../__mocks__/route-mock.json"
 
