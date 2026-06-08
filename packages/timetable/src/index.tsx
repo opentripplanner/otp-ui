@@ -1,4 +1,4 @@
-import React, { ChangeEvent, ReactElement, useMemo, useState } from "react";
+import React, { ReactElement, useMemo, useState } from "react";
 import { useIntl } from "react-intl";
 import styled from "styled-components";
 import toposort from "toposort";
@@ -77,14 +77,6 @@ interface Stoptime {
 interface Stop {
   gtfsId: string;
   name: string;
-}
-
-interface TimeTableProps {
-  route: Route;
-  includeDwellStops?: boolean;
-  showBlockId?: boolean;
-  errorOnStopSorting?: boolean;
-  timeZone?: string;
 }
 
 const createDwellStops = (trips: Trip[], timepoints: Set<string>): Trip[] => {
@@ -176,14 +168,39 @@ const naiveSortStops = (patterns: Pattern[], directionId: number): string[] => {
   return [...naiveStops];
 };
 
+interface TimeTableProps {
+  /** Direction of the route to show. Follows the format of the `direction_id` field of
+   * the `trips.txt` GTFS file: `0` for one direction, `1` for the opposite direction
+   */
+  directionId: number;
+  route: Route;
+  /** If the topological sort of the stop IDs fails for any reason, a `false` value here
+   * will cause the timetable to use a fallback "naive" stop sorting
+   */
+  errorOnStopSorting?: boolean;
+  /** Whether to include separate stops for entries in `stop_times.txt` that have different
+   * values for `arrival_time` and `departure_time`
+   */
+  includeDwellStops?: boolean;
+  /** Whether each trip/row entry in the timetable should show the block ID of the trip */
+  showBlockId?: boolean;
+  /** Time zone in which to display stop times */
+  timeZone?: string;
+}
+
 const TimeTable = (props: TimeTableProps): ReactElement => {
-  const { errorOnStopSorting, includeDwellStops, route, showBlockId } = props;
+  const {
+    directionId,
+    errorOnStopSorting,
+    includeDwellStops,
+    route,
+    showBlockId
+  } = props;
 
   const { patterns } = route;
 
   const intl = useIntl();
 
-  const [directionId, setDirectionId] = useState<number>(0);
   const [expanded, setExpanded] = useState(false);
 
   const [allTrips, timepointStopIds] = useMemo(() => {
@@ -291,21 +308,11 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
       .sort(comparator);
   }, [allTrips, comparator]);
 
-  const handleDirectionSelection = (e: ChangeEvent<HTMLSelectElement>) => {
-    const val = e.target.value;
-    const numVal = Number(val);
-    setDirectionId(numVal);
-  };
-
   return (
     <>
       <button type="button" onClick={() => setExpanded(!expanded)}>
         {expanded ? "Show Timepoints Only" : "Show All Stops"}
       </button>
-      <select id="direction-select" onChange={handleDirectionSelection}>
-        <option value={0}>One Direction</option>
-        <option value={1}>Other Direction</option>
-      </select>
       <Table>
         <thead>
           <tr>
