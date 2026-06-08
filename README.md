@@ -25,7 +25,7 @@ See:
 
 You can chat with the main OTP-RR developers in our [Gitter chat](https://gitter.im/opentripplanner/otp-react-redux). Support is not guaranteed, but we may be able to answer questions and assist people wishing to make contributions.
 
-Some packages in otp-ui depend on sibling packages (e.g., `@opentripplanner/core-utils` is used by many of its siblings). Internal dependencies are handled with the `workspace:*` version, which is a notation provided by pnpm. This allows us to always reference the current internal dependency version. Therefore, before the storybook can be run, it's necessary to run `pnpm prepublish` so that all internal packages are built.
+Some packages in otp-ui depend on sibling packages (e.g., `@opentripplanner/core-utils` is used by many of its siblings). Internal dependencies are handled with the `workspace:*` version, which is a notation provided by pnpm. This allows us to always reference the current internal dependency version. Therefore, before Storybook can be run or packages published, it's necessary to run `pnpm build-all` so that all internal packages are built first.
 
 If the Storybook addon bar (a bar of controls at the bottom of the story) does not appear, you may need to clear localStorage by opening the browser console and typing `localStorage.clear()`.
 

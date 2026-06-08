@@ -11,19 +11,57 @@ const baseItems = [
     label: "Union Station",
     lat: 45.528,
     lon: -122.673,
-    synonyms: ["Train Station"]
+    synonyms: ["Train Station", "عُود"]
   },
   { label: "Pioneer Courthouse Square", lat: 45.5189, lon: -122.6798 },
   {
-    label: "Portland State University",
+    label: "Portland State Üniversity",
     lat: 45.5118,
     lon: -122.6825,
-    synonyms: ["PSU"]
+    synonyms: ["PSÜ"]
   },
   { label: "Multnomah Falls", lat: 45.5762, lon: -122.1156, synonyms: [] }
 ];
 
 describe("offline geocoder", () => {
+  describe("unicode support", () => {
+    it("should find item that has unicode in its synonym", async () => {
+      const result = await autocomplete({ items: baseItems, text: "PSÜ" });
+      expect(result).toContainEqual(baseItems[3]);
+    });
+    it("should find item that has unicode in its synonym with non unicode search", async () => {
+      const result = await autocomplete({ items: baseItems, text: "PSU" });
+      expect(result).toContainEqual(baseItems[3]);
+    });
+
+    it("should find item that has unicode in its title", async () => {
+      const result = await autocomplete({
+        items: baseItems,
+        text: "Üniversity"
+      });
+      expect(result).toContainEqual(baseItems[3]);
+    });
+    it("should find item that has unicode in its title with non unicode search", async () => {
+      const result = await autocomplete({
+        items: baseItems,
+        text: "University"
+      });
+      expect(result).toContainEqual(baseItems[3]);
+    });
+    it("should find item that has non-latinizable string in its synonyms", async () => {
+      const resultWithUnicodeOff = await autocomplete({
+        items: baseItems,
+        text: "عُود"
+      });
+      const resultWithUnicodeOn = await autocomplete({
+        items: baseItems,
+        text: "عُود",
+        enableSlowFullUnicodeSupport: true
+      });
+      expect(resultWithUnicodeOff).toEqual([]);
+      expect(resultWithUnicodeOn).toContainEqual(baseItems[1]);
+    });
+  });
   describe("synonym support", () => {
     it("should find item by synonym", async () => {
       const result = await autocomplete({ items: baseItems, text: "PDX" });

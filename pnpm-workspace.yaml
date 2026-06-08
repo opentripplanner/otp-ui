@@ -1,3 +1,15 @@
+allowBuilds:
+  "@swc/core@1.7.42": true
+  core-js@2.6.12: true
+  esbuild@0.25.5: true
+  fsevents@1.2.13: true
+  fsevents@2.3.3: true
+  husky@2.7.0: true
+  msw@2.6.0: true
+  nx@20.0.7: true
+  puppeteer: true
+  unrs-resolver@1.11.1: true
+allowGit: none
 catalog:
   "@mapbox/polyline": ^1.1.1
   "@styled-icons/bootstrap": ^10.34.0
@@ -16,15 +28,14 @@ catalog:
   react-map-gl: ^8.0.4
   styled-components: ^5.3.0
   styled-icons: ^10.34.0
-onlyBuiltDependencies:
-  - "@swc/core"
-  - core-js
-  - esbuild
-  - fsevents
-  - husky
-  - msw
-  - nx
-  - puppeteer
-  - unrs-resolver
+ignoreScripts: true
+minReleaseAge: 7
+nodeLinker: hoisted
+overrides:
+  playwright: 1.60.0
+  playwright-core: 1.60.0
 packages:
   - packages/*
+preferOffline: false
+saveExact: true
+strictPeerDependencies: false

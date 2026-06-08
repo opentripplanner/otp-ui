@@ -10,11 +10,17 @@ import BasicPlaceName from "./basic-place-name";
 export default function PlaceName({
   config,
   interline,
+  leg,
   place
 }: PlaceNameProps): ReactElement {
   return (
     <>
-      <BasicPlaceName config={config} interline={interline} place={place} />
+      <BasicPlaceName
+        config={config}
+        interline={interline}
+        leg={leg}
+        place={place}
+      />
 
       {/* TODO: take another pass on this when working the Transit Leg */}
       {/* Place subheading: Transit stop */}

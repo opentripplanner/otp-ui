@@ -6,7 +6,13 @@
     "node": ">=12",
     "pnpm": ">=8"
   },
-  "packageManager": "pnpm@10.9.0",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.5.1",
+      "onFail": "download"
+    }
+  },
   "devDependencies": {
     "@anolilab/semantic-release-pnpm": "^5.0.0",
     "@babel/cli": "^7.10",
@@ -24,6 +30,7 @@
     "@formatjs/cli": "^4.2.32",
     "@graphql-eslint/eslint-plugin": "^3.19.1",
     "@modyfi/vite-plugin-yaml": "^1.1.1",
+    "@playwright/test": "1.60.0",
     "@semantic-release/git": "^10.0.1",
     "@storybook/addon-a11y": "^10.0.5",
     "@storybook/addon-docs": "^10.0.5",
@@ -31,7 +38,7 @@
     "@storybook/builder-vite": "^10.0.5",
     "@storybook/react-vite": "^10.0.5",
     "@storybook/storybook-deployer": "^2.8.10",
-    "@storybook/test-runner": "^0.24.1",
+    "@storybook/test-runner": "^0.24.4",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.0.0",
     "@types/styled-components": "^5.1.9",
@@ -39,7 +46,7 @@
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
     "@vitejs/plugin-react": "^4.7.0",
-    "axe-playwright": "^2.1.0",
+    "axe-playwright": "^2.2.2",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
@@ -96,13 +103,12 @@
     "yaml-sort": "^2.0.0"
   },
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
     "build:cjs": "lerna exec --parallel -- babel --extensions '.js,.ts,.tsx,.jsx,.snap' --ignore **/*.story.js,**/*.story.ts,**/*.story.d.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,**/__unpublished__/**,**/*.snap  --ignore **/__tests__/** -D --no-copy-ignored --root-mode upward --source-maps true src -d lib",
     "build:esm": "lerna exec --parallel -- cross-env BABEL_ENV=esm babel --extensions '.js,.ts,.tsx,.jsx,.snap' --ignore **/*.story.js,**/*.story.ts,**/*.story.d.ts,**/*.story.tsx,**/*.spec.js,**/*.spec.ts,**/*.test.js,**/*.test.ts,**/__tests__/**,**/__unpublished__/**,**/*.snap --ignore **/__tests__/** -D --no-copy-ignored --root-mode upward --source-maps true src -d esm",
     "check:i18n-all": "node packages/scripts/lib/run-validate-i18n.js packages/**/src packages/**/i18n",
     "check:i18n-en-fr": "node packages/scripts/lib/run-validate-i18n.js packages/**/src packages/**/i18n/en-US.yml packages/**/i18n/fr.yml",
     "clean": "git clean -Xdf",
-    "prepublish": "pnpm typescript && pnpm build:cjs && pnpm build:esm",
+    "build-all": "pnpm typescript && pnpm build:cjs && pnpm build:esm",
     "check-eslint-config": "eslint --print-config jestconfig.js | eslint-config-prettier-check",
     "coverage": "jest --coverage",
     "deploy-storybook": "storybook-to-ghpages",
@@ -121,7 +127,7 @@
     "test-storybook": "test-storybook --url http://localhost:5555",
     "update-snapshots": "pnpm build-storybook; npx concurrently -k -s first -n \"SB,TEST\" \"npx http-server storybook-static --port 5555 --silent\" \"npx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555 -u\"",
     "test-snapshots": "npx concurrently -k -s first -n \"SB,TEST\" \"npx http-server storybook-static --port 5555 --silent\" \"npx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555\"",
-    "pack-all": "pnpm prepublish && lerna exec --no-private -- sh ../../scripts/pack-and-extract-single.sh"
+    "pack-all": "pnpm build-all && lerna exec --no-private -- sh ../../scripts/pack-and-extract-single.sh"
   },
   "eslintConfig": {
     "env": {
