@@ -331,14 +331,7 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
           const rowValues: string[] = showBlockId ? [t.blockId] : [];
           filteredPatternStops.forEach(patternStop => {
             const stopDetail = t.stops.get(patternStop.id);
-            rowValues.push(
-              stopDetail
-                ? intl.formatTime(stopDetail.time, {
-                    timeStyle: "short",
-                    hourCycle: "h24"
-                  })
-                : "-"
-            );
+            rowValues.push(stopDetail ? intl.formatTime(stopDetail.time) : "-");
           });
 
           return (
