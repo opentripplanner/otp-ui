@@ -16,6 +16,7 @@ exports[`LocationField/Desktop Context AutoFocusWithMultipleControls smoke-test 
             aria-label="Toggle displaying the list of suggested locations"
             tabindex="-1"
             type="button"
+            aria-disabled="false"
             class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
     >
       <svg viewbox="0 0 512 512"
@@ -70,6 +71,7 @@ exports[`LocationField/Desktop Context Blank smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
+          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -123,6 +125,7 @@ exports[`LocationField/Desktop Context GeocoderNoResults smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
+          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -176,6 +179,7 @@ exports[`LocationField/Desktop Context GeocoderUnreachable smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
+          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -229,6 +233,7 @@ exports[`LocationField/Desktop Context HereGeocoder smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
+          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -282,6 +287,7 @@ exports[`LocationField/Desktop Context LocationUnavailable smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
+          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -342,6 +348,7 @@ exports[`LocationField/Desktop Context NoAutoFocusWithMultipleControls smoke-tes
             aria-label="Toggle displaying the list of suggested locations"
             tabindex="-1"
             type="button"
+            aria-disabled="false"
             class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
     >
       <svg viewbox="0 0 512 512"
@@ -396,6 +403,7 @@ exports[`LocationField/Desktop Context RequiredAndInvalidState smoke-test 1`] = 
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
+          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -449,6 +457,7 @@ exports[`LocationField/Desktop Context SelectedLocation smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
+          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 384 512"
@@ -521,6 +530,7 @@ exports[`LocationField/Desktop Context SelectedLocationCustomClear smoke-test 1`
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
+          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 384 512"
@@ -593,6 +603,7 @@ exports[`LocationField/Desktop Context SlowGeocoder smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
+          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -646,6 +657,7 @@ exports[`LocationField/Desktop Context WithBadApiKeyHandlesBadAutocomplete smoke
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
+          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -699,6 +711,7 @@ exports[`LocationField/Desktop Context WithCustomResultColorsAndIcons smoke-test
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
+          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -752,6 +765,7 @@ exports[`LocationField/Desktop Context WithCustomResultsOrder smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
+          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -1084,6 +1098,7 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
+          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -1416,6 +1431,7 @@ exports[`LocationField/Desktop Context WithUserSettings smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
+          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
