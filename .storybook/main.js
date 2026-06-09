@@ -66,20 +66,7 @@ export default {
       },
 
       optimizeDeps: {
-        include: ['hoist-non-react-statics'],
-        // Exclude workspace packages that import .yml files so they go through
-        // Vite's full plugin pipeline (which has ViteYaml) instead of esbuild pre-bundling.
-        exclude: [
-          '@opentripplanner/itinerary-body',
-          '@opentripplanner/endpoints-overlay',
-          '@opentripplanner/trip-form',
-          '@opentripplanner/location-field',
-          '@opentripplanner/transit-vehicle-overlay',
-          '@opentripplanner/trip-details',
-          '@opentripplanner/map-popup',
-          '@opentripplanner/building-blocks',
-          '@opentripplanner/from-to-location-picker',
-        ]
+        include: ['hoist-non-react-statics']
       },
 
       resolve: {
