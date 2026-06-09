@@ -312,47 +312,45 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
   }, [allTrips, comparator]);
 
   return (
-    <>
-      <Table>
-        <thead>
-          <tr>
-            {(showBlockId ? [{ id: "blockIdHeader", name: "Block ID" }] : [])
-              .concat(filteredPatternStops)
-              .map((s, index) => {
-                return (
-                  <TH key={index} scope="col">
-                    {s.name}
-                  </TH>
-                );
-              })}
-          </tr>
-        </thead>
-        <TBody>
-          {timetableTrips.map((t, index) => {
-            const rowValues: string[] = showBlockId ? [t.blockId] : [];
-            filteredPatternStops.forEach(patternStop => {
-              const stopDetail = t.stops.get(patternStop.id);
-              rowValues.push(
-                stopDetail
-                  ? intl.formatTime(stopDetail.time, {
-                      timeStyle: "short",
-                      hourCycle: "h24"
-                    })
-                  : "-"
+    <Table>
+      <thead>
+        <tr>
+          {(showBlockId ? [{ id: "blockIdHeader", name: "Block ID" }] : [])
+            .concat(filteredPatternStops)
+            .map((s, index) => {
+              return (
+                <TH key={index} scope="col">
+                  {s.name}
+                </TH>
               );
-            });
-
-            return (
-              <TR key={index}>
-                {rowValues.map((r, rowIndex) => (
-                  <TD key={rowIndex}>{r}</TD>
-                ))}
-              </TR>
+            })}
+        </tr>
+      </thead>
+      <TBody>
+        {timetableTrips.map((t, index) => {
+          const rowValues: string[] = showBlockId ? [t.blockId] : [];
+          filteredPatternStops.forEach(patternStop => {
+            const stopDetail = t.stops.get(patternStop.id);
+            rowValues.push(
+              stopDetail
+                ? intl.formatTime(stopDetail.time, {
+                    timeStyle: "short",
+                    hourCycle: "h24"
+                  })
+                : "-"
             );
-          })}
-        </TBody>
-      </Table>
-    </>
+          });
+
+          return (
+            <TR key={index}>
+              {rowValues.map((r, rowIndex) => (
+                <TD key={rowIndex}>{r}</TD>
+              ))}
+            </TR>
+          );
+        })}
+      </TBody>
+    </Table>
   );
 };
 
