@@ -15967,14 +15967,6 @@ snapshots:
 
   es6-promise@4.2.8: {}
 
-  esbuild-register@3.6.0(esbuild@0.25.5):
-    dependencies:
-      debug: 4.4.3
-      esbuild: 0.25.5
-    transitivePeerDependencies:
-      - supports-color
-    optional: true
-
   esbuild@0.25.5:
     optionalDependencies:
       '@esbuild/aix-ppc64': 0.25.5
@@ -17938,32 +17930,6 @@ snapshots:
       diffable-html: 4.1.0
 
   jest-serializer@24.9.0: {}
-
-  jest-snapshot@30.0.4:
-    dependencies:
-      '@babel/core': 7.28.0
-      '@babel/generator': 7.28.0
-      '@babel/plugin-syntax-jsx': 7.27.1(@babel/core@7.28.0)
-      '@babel/plugin-syntax-typescript': 7.27.1(@babel/core@7.28.0)
-      '@babel/types': 7.28.0
-      '@jest/expect-utils': 30.0.4
-      '@jest/get-type': 30.0.1
-      '@jest/snapshot-utils': 30.0.4
-      '@jest/transform': 30.0.4
-      '@jest/types': 30.0.1
-      babel-preset-current-node-syntax: 1.1.0(@babel/core@7.28.0)
-      chalk: 4.1.2
-      expect: 30.0.4
-      graceful-fs: 4.2.11
-      jest-diff: 30.0.4
-      jest-matcher-utils: 30.0.4
-      jest-message-util: 30.0.2
-      jest-util: 30.0.2
-      pretty-format: 30.0.2
-      semver: 7.7.4
-      synckit: 0.11.8
-    transitivePeerDependencies:
-      - supports-color
 
   jest-snapshot@30.2.0:
     dependencies:
