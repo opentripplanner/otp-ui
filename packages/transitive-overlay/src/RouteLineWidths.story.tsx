@@ -1,3 +1,4 @@
+// eslint-disable-next-line prettier/prettier
 import type { ExpressionSpecification } from "maplibre-gl";
 import { Meta, StoryObj } from "@storybook/react";
 import React from "react";
