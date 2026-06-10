@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Timetable Default smoke-test 1`] = `
-<table class="src__Table-sc-1glc48y-0 jGHfML">
+<table tabindex="0"
+       class="src__Table-sc-1glc48y-0 jGHfML"
+>
   <thead>
     <tr>
       <th scope="col"
