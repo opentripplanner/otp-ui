@@ -31,6 +31,9 @@ catalog:
 ignoreScripts: true
 minReleaseAge: 7
 nodeLinker: hoisted
+overrides:
+  playwright: 1.60.0
+  playwright-core: 1.60.0
 packages:
   - packages/*
 preferOffline: false

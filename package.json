@@ -9,7 +9,7 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": ">=11.0.0",
+      "version": "11.5.1",
       "onFail": "download"
     }
   },
@@ -30,6 +30,7 @@
     "@formatjs/cli": "^4.2.32",
     "@graphql-eslint/eslint-plugin": "^3.19.1",
     "@modyfi/vite-plugin-yaml": "^1.1.1",
+    "@playwright/test": "1.60.0",
     "@semantic-release/git": "^10.0.1",
     "@storybook/addon-a11y": "^10.0.5",
     "@storybook/addon-docs": "^10.0.5",
@@ -37,7 +38,7 @@
     "@storybook/builder-vite": "^10.0.5",
     "@storybook/react-vite": "^10.0.5",
     "@storybook/storybook-deployer": "^2.8.10",
-    "@storybook/test-runner": "^0.24.1",
+    "@storybook/test-runner": "^0.24.4",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.0.0",
     "@types/styled-components": "^5.1.9",
@@ -45,7 +46,7 @@
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
     "@vitejs/plugin-react": "^4.7.0",
-    "axe-playwright": "^2.1.0",
+    "axe-playwright": "^2.2.2",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.8.0",
     "babel-loader": "^8.0.6",
@@ -124,8 +125,8 @@
     "typescript": "lerna run tsc",
     "unit": "jest",
     "test-storybook": "test-storybook --url http://localhost:5555",
-    "update-snapshots": "pnpm build-storybook; npx concurrently -k -s first -n \"SB,TEST\" \"npx http-server storybook-static --port 5555 --silent\" \"npx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555 -u\"",
-    "test-snapshots": "npx concurrently -k -s first -n \"SB,TEST\" \"npx http-server storybook-static --port 5555 --silent\" \"npx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555\"",
+    "update-snapshots": "pnpm build-storybook; pnpx concurrently -k -s first -n \"SB,TEST\" \"pnpx http-server storybook-static --port 5555 --silent\" \"pnpx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555 -u\"",
+    "test-snapshots": "pnpx concurrently -k -s first -n \"SB,TEST\" \"pnpx http-server storybook-static --port 5555 --silent\" \"pnpx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555\"",
     "pack-all": "pnpm build-all && lerna exec --no-private -- sh ../../scripts/pack-and-extract-single.sh"
   },
   "eslintConfig": {
