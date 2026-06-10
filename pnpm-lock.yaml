@@ -257,10 +257,6 @@ catalogs:
       specifier: ^10.34.0
       version: 10.47.1
 
-overrides:
-  playwright: 1.60.0
-  playwright-core: 1.60.0
-
 importers:
 
   .:
@@ -317,9 +313,6 @@ importers:
       '@modyfi/vite-plugin-yaml':
         specifier: ^1.1.1
         version: 1.1.1(rollup@4.44.2)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.8.2))
-      '@playwright/test':
-        specifier: 1.60.0
-        version: 1.60.0
       '@semantic-release/git':
         specifier: ^10.0.1
         version: 10.0.1(semantic-release@25.0.3(typescript@5.9.3))
@@ -342,7 +335,7 @@ importers:
         specifier: ^2.8.10
         version: 2.8.16
       '@storybook/test-runner':
-        specifier: ^0.24.4
+        specifier: ^0.24.1
         version: 0.24.4(@types/node@15.14.9)(storybook@10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@5.9.3))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.8.2)))
       '@types/jest':
         specifier: ^26.0.23
@@ -366,7 +359,7 @@ importers:
         specifier: ^4.7.0
         version: 4.7.0(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.8.2))
       axe-playwright:
-        specifier: ^2.2.2
+        specifier: ^2.1.0
         version: 2.2.2(playwright@1.60.0)
       babel-eslint:
         specifier: ^10.0.3
@@ -3064,11 +3057,6 @@ packages:
     resolution: {integrity: sha512-YLT9Zo3oNPJoBjBc4q8G2mjU4tqIbf5CEOORbUUr48dCD9q3umJ3IPlVqOqDakPfd2HuwccBaqlGhN4Gmr5OWg==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@playwright/test@1.60.0':
-    resolution: {integrity: sha512-O71yZIbAh/PxDMNGns37GHBIfrVkEVyn+AXyIa5dOTfb4/xNvRWV+Vv/NMbNCtODB/pO7vLlF2OTmMVLhmr7Ag==}
-    engines: {node: '>=18'}
-    hasBin: true
-
   '@pnpm/config.env-replace@1.1.0':
     resolution: {integrity: sha512-htyl8TWnKL7K/ESFa1oW2UB5lVDxuF5DpM7tBi6Hu2LNL3mWkIzNLG6N4zoCUP1lCKNxWy/3iu8mS8MvToGd6w==}
     engines: {node: '>=12.22.0'}
@@ -4595,7 +4583,7 @@ packages:
   axe-playwright@2.2.2:
     resolution: {integrity: sha512-h350/grzDCPgpuWV7eEOqr/f61Xn07Gi9f9B3Ew4rW6/nFtpdEJYW6jgRATorgAGXjEAYFTnaY3sEys39wDw4A==}
     peerDependencies:
-      playwright: 1.60.0
+      playwright: '>1.0.0'
 
   axios@1.7.7:
     resolution: {integrity: sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==}
@@ -13113,10 +13101,6 @@ snapshots:
     optional: true
 
   '@pkgr/core@0.2.7': {}
-
-  '@playwright/test@1.60.0':
-    dependencies:
-      playwright: 1.60.0
 
   '@pnpm/config.env-replace@1.1.0': {}
 
