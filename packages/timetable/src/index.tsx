@@ -312,7 +312,7 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
   }, [allTrips, comparator]);
 
   return (
-    <Table>
+    <Table tabIndex={0}>
       <thead>
         <tr>
           {(showBlockId ? [{ id: "blockIdHeader", name: "Block ID" }] : [])
