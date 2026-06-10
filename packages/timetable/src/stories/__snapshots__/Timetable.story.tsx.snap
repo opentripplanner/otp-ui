@@ -1,0 +1,200 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Timetable Default smoke-test 1`] = `
+<table class="src__Table-sc-1glc48y-0 jGHfML">
+  <thead>
+    <tr>
+      <th scope="col"
+          class="src__TH-sc-1glc48y-2 AWHaq"
+      >
+        Pleasant Ave &amp; 50th St / Busch Terrace
+      </th>
+      <th scope="col"
+          class="src__TH-sc-1glc48y-2 AWHaq"
+      >
+        Nicollet Ave S &amp; 46th St E
+      </th>
+      <th scope="col"
+          class="src__TH-sc-1glc48y-2 AWHaq"
+      >
+        46th St &amp; I-35W
+      </th>
+      <th scope="col"
+          class="src__TH-sc-1glc48y-2 AWHaq"
+      >
+        4th Ave S &amp; 38th St E
+      </th>
+      <th scope="col"
+          class="src__TH-sc-1glc48y-2 AWHaq"
+      >
+        4th Ave S &amp; Lake St E
+      </th>
+      <th scope="col"
+          class="src__TH-sc-1glc48y-2 AWHaq"
+      >
+        3rd Ave S &amp; Franklin Ave E
+      </th>
+      <th scope="col"
+          class="src__TH-sc-1glc48y-2 AWHaq"
+      >
+        Nicollet Mall &amp; Alice Rainville Pl
+      </th>
+      <th scope="col"
+          class="src__TH-sc-1glc48y-2 AWHaq"
+      >
+        Nicollet Mall &amp; 7th St S
+      </th>
+      <th scope="col"
+          class="src__TH-sc-1glc48y-2 AWHaq"
+      >
+        Nicollet Mall &amp; 3rd St S
+      </th>
+      <th scope="col"
+          class="src__TH-sc-1glc48y-2 AWHaq"
+      >
+        Hennepin Ave E &amp; Wilder St
+      </th>
+      <th scope="col"
+          class="src__TH-sc-1glc48y-2 AWHaq"
+      >
+        Lowry Ave NE &amp; 2nd St / 1st St NE
+      </th>
+      <th scope="col"
+          class="src__TH-sc-1glc48y-2 AWHaq"
+      >
+        Grand St NE &amp; 29th Ave NE
+      </th>
+      <th scope="col"
+          class="src__TH-sc-1glc48y-2 AWHaq"
+      >
+        Columbia Heights Transit Center C
+      </th>
+    </tr>
+  </thead>
+  <tbody class="src__TBody-sc-1glc48y-1 bZEJyp">
+    <tr class="src__TR-sc-1glc48y-3 kosclq">
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        3:00 AM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        3:02 AM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        3:06 AM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        3:11 AM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        3:16 AM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        3:20 AM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        3:24 AM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        3:28 AM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        3:31 AM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        3:39 AM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        3:42 AM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        3:52 AM
+      </td>
+    </tr>
+    <tr class="src__TR-sc-1glc48y-3 kosclq">
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        1:10 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        1:26 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        1:31 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        1:36 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        -
+      </td>
+    </tr>
+    <tr class="src__TR-sc-1glc48y-3 kosclq">
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        10:37 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        10:39 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        10:43 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        10:47 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        10:52 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        10:56 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        11:00 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        11:13 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        11:15 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        11:23 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        11:26 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        11:36 PM
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
