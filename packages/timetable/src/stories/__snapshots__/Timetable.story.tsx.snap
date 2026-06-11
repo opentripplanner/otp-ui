@@ -79,122 +79,122 @@ exports[`Timetable Default smoke-test 1`] = `
         -
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        03:00
+        06:00
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        03:02
+        06:02
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        03:06
+        06:06
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        03:11
+        06:11
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        03:16
+        06:16
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        03:20
+        06:20
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        03:24
+        06:24
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        03:28
+        06:28
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        03:31
+        06:31
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        03:39
+        06:39
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        03:42
+        06:42
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        03:52
-      </td>
-    </tr>
-    <tr class="src__TR-sc-1glc48y-3 kosclq">
-      <td class="src__TD-sc-1glc48y-4 knlMQh">
-        13:10
-      </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh">
-        13:26
-      </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh">
-        13:31
-      </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh">
-        13:36
-      </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh">
-        -
+        06:52
       </td>
     </tr>
     <tr class="src__TR-sc-1glc48y-3 kosclq">
       <td class="src__TD-sc-1glc48y-4 knlMQh">
+        16:10
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
         -
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        22:37
+        16:26
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        22:39
+        16:31
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        22:43
+        16:36
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        22:47
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        22:52
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        22:56
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        23:00
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        23:13
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        23:15
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        23:23
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        23:26
+        -
+      </td>
+    </tr>
+    <tr class="src__TR-sc-1glc48y-3 kosclq">
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 knlMQh">
-        23:36
+        01:37
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        01:39
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        01:43
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        01:47
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        01:52
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        01:56
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        02:00
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        02:13
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        02:15
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        02:23
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        02:26
+      </td>
+      <td class="src__TD-sc-1glc48y-4 knlMQh">
+        02:36
       </td>
     </tr>
   </tbody>
