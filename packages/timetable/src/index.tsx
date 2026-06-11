@@ -1,4 +1,4 @@
-import React, { ReactElement, useMemo } from "react";
+import React, { useMemo } from "react";
 import { IntlShape } from "react-intl";
 import styled from "styled-components";
 import toposort from "toposort";
@@ -118,8 +118,8 @@ const createDwellStops = (trips: Trip[], timepoints: Set<string>): Trip[] => {
 const determineTimepoints = (trips: Trip[]): Set<string> => {
   const timepoints = new Set<string>();
 
-  // Timepoints are tied to stops on individual trips, so we need to
-  // loop through all trip stops to find all timepoints
+  // Timepoints are tied to stops on individual trips, so we need
+  // to loop through all trip stops to find all timepoints
   trips
     .flatMap(trip => trip.stoptimesForDate)
     .forEach(st => {
@@ -192,7 +192,7 @@ interface TimeTableProps {
   timeZone?: string;
 }
 
-const TimeTable = (props: TimeTableProps): ReactElement => {
+const TimeTable = (props: TimeTableProps): JSX.Element => {
   const {
     directionId,
     errorOnStopSorting,
