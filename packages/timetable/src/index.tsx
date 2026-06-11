@@ -118,8 +118,8 @@ const createDwellStops = (trips: Trip[], timepoints: Set<string>): Trip[] => {
 const determineTimepoints = (trips: Trip[]): Set<string> => {
   const timepoints = new Set<string>();
 
-  // Timepoints are tied to stops on individual trips, so we need to
-  // loop through all trip stops to find all timepoints
+  // Timepoints are tied to stops on individual trips, so we need
+  // to loop through all trip stops to find all timepoints
   trips
     .flatMap(trip => trip.stoptimesForDate)
     .forEach(st => {
