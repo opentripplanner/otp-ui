@@ -484,7 +484,7 @@ importers:
         version: 8.0.2(semantic-release@25.0.3(typescript@5.9.3))
       semver:
         specifier: ^7.3.2
-        version: 7.7.2
+        version: 7.7.4
       storybook:
         specifier: ^10.0.5
         version: 10.0.5(@testing-library/dom@10.4.0)(msw@2.6.0(@types/node@15.14.9)(typescript@5.9.3))(prettier@1.19.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)(vite@7.0.2(@types/node@15.14.9)(terser@5.36.0)(yaml@2.8.2))
@@ -1032,6 +1032,25 @@ importers:
       styled-icons:
         specifier: 'catalog:'
         version: 10.47.1(react@18.2.0)(styled-components@5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0))
+
+  packages/timetable:
+    dependencies:
+      react:
+        specifier: 'catalog:'
+        version: 18.2.0
+      react-intl:
+        specifier: 'catalog:'
+        version: 6.8.4(react@18.2.0)(typescript@5.9.3)
+      styled-components:
+        specifier: 'catalog:'
+        version: 5.3.11(react-dom@18.3.1(react@18.2.0))(react-is@18.3.1)(react@18.2.0)
+      toposort:
+        specifier: ^2.0.2
+        version: 2.0.2
+    devDependencies:
+      '@types/toposort':
+        specifier: ^2.0.7
+        version: 2.0.7
 
   packages/transit-vehicle-overlay:
     dependencies:
@@ -3954,6 +3973,9 @@ packages:
 
   '@types/supercluster@7.1.3':
     resolution: {integrity: sha512-Z0pOY34GDFl3Q6hUFYf3HkTwKEE02e7QgtJppBt+beEAxnyOpJua+voGFvxINBHa06GwLFFym7gRPY2SiKIfIA==}
+
+  '@types/toposort@2.0.7':
+    resolution: {integrity: sha512-sQNk65vbC36+UixCkcky+dCr7MlflHcVILg1FVGqlUntsLFv9xd9ToWIVko/gTuin+cVe16t+2YubEFkhnSuPQ==}
 
   '@types/tough-cookie@4.0.5':
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
@@ -9303,11 +9325,6 @@ packages:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
 
-  semver@7.7.2:
-    resolution: {integrity: sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   semver@7.7.4:
     resolution: {integrity: sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==}
     engines: {node: '>=10'}
@@ -11749,30 +11766,30 @@ snapshots:
   '@emnapi/core@1.3.1':
     dependencies:
       '@emnapi/wasi-threads': 1.0.1
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@emnapi/core@1.4.4':
     dependencies:
       '@emnapi/wasi-threads': 1.0.3
-      tslib: 2.8.0
+      tslib: 2.8.1
     optional: true
 
   '@emnapi/runtime@1.3.1':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@emnapi/runtime@1.4.4':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
     optional: true
 
   '@emnapi/wasi-threads@1.0.1':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@emnapi/wasi-threads@1.0.3':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
     optional: true
 
   '@emotion/is-prop-valid@1.3.1':
@@ -11898,17 +11915,17 @@ snapshots:
   '@formatjs/ecma402-abstract@1.11.4':
     dependencies:
       '@formatjs/intl-localematcher': 0.2.25
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@formatjs/ecma402-abstract@2.2.1':
     dependencies:
       '@formatjs/fast-memoize': 2.2.2
       '@formatjs/intl-localematcher': 0.5.6
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@formatjs/fast-memoize@2.2.2':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@formatjs/icu-messageformat-parser@2.1.0':
     dependencies:
@@ -11920,37 +11937,37 @@ snapshots:
     dependencies:
       '@formatjs/ecma402-abstract': 2.2.1
       '@formatjs/icu-skeleton-parser': 1.8.5
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@formatjs/icu-skeleton-parser@1.3.6':
     dependencies:
       '@formatjs/ecma402-abstract': 1.11.4
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@formatjs/icu-skeleton-parser@1.8.5':
     dependencies:
       '@formatjs/ecma402-abstract': 2.2.1
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@formatjs/intl-displaynames@6.8.1':
     dependencies:
       '@formatjs/ecma402-abstract': 2.2.1
       '@formatjs/intl-localematcher': 0.5.6
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@formatjs/intl-listformat@7.7.1':
     dependencies:
       '@formatjs/ecma402-abstract': 2.2.1
       '@formatjs/intl-localematcher': 0.5.6
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@formatjs/intl-localematcher@0.2.25':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@formatjs/intl-localematcher@0.5.6':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@formatjs/intl@2.10.11(typescript@5.9.3)':
     dependencies:
@@ -11960,7 +11977,7 @@ snapshots:
       '@formatjs/intl-displaynames': 6.8.1
       '@formatjs/intl-listformat': 7.7.1
       intl-messageformat: 10.7.3
-      tslib: 2.8.0
+      tslib: 2.8.1
     optionalDependencies:
       typescript: 5.9.3
 
@@ -12000,7 +12017,7 @@ snapshots:
       '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
       dataloader: 2.2.2
       graphql: 16.9.0
-      tslib: 2.8.0
+      tslib: 2.8.1
       value-or-promise: 1.0.12
 
   '@graphql-tools/code-file-loader@7.3.23(@babel/core@7.28.0)(graphql@16.9.0)':
@@ -12023,7 +12040,7 @@ snapshots:
       '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
       dataloader: 2.2.2
       graphql: 16.9.0
-      tslib: 2.8.0
+      tslib: 2.8.1
       value-or-promise: 1.0.12
 
   '@graphql-tools/executor-graphql-ws@0.0.14(graphql@16.9.0)':
@@ -12034,7 +12051,7 @@ snapshots:
       graphql: 16.9.0
       graphql-ws: 5.12.1(graphql@16.9.0)
       isomorphic-ws: 5.0.0(ws@8.13.0)
-      tslib: 2.8.0
+      tslib: 2.8.1
       ws: 8.13.0
     transitivePeerDependencies:
       - bufferutil
@@ -12049,7 +12066,7 @@ snapshots:
       extract-files: 11.0.0
       graphql: 16.9.0
       meros: 1.3.0(@types/node@15.14.9)
-      tslib: 2.8.0
+      tslib: 2.8.1
       value-or-promise: 1.0.12
     transitivePeerDependencies:
       - '@types/node'
@@ -12060,7 +12077,7 @@ snapshots:
       '@types/ws': 8.5.12
       graphql: 16.9.0
       isomorphic-ws: 5.0.0(ws@8.13.0)
-      tslib: 2.8.0
+      tslib: 2.8.1
       ws: 8.13.0
     transitivePeerDependencies:
       - bufferutil
@@ -12072,7 +12089,7 @@ snapshots:
       '@graphql-typed-document-node/core': 3.2.0(graphql@16.9.0)
       '@repeaterjs/repeater': 3.0.6
       graphql: 16.9.0
-      tslib: 2.8.0
+      tslib: 2.8.1
       value-or-promise: 1.0.12
 
   '@graphql-tools/graphql-file-loader@7.5.17(graphql@16.9.0)':
@@ -12081,7 +12098,7 @@ snapshots:
       '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
       globby: 11.1.0
       graphql: 16.9.0
-      tslib: 2.8.0
+      tslib: 2.8.1
       unixify: 1.0.0
 
   '@graphql-tools/graphql-tag-pluck@7.5.2(@babel/core@7.28.0)(graphql@16.9.0)':
@@ -12102,14 +12119,14 @@ snapshots:
       '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
       graphql: 16.9.0
       resolve-from: 5.0.0
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@graphql-tools/json-file-loader@7.4.18(graphql@16.9.0)':
     dependencies:
       '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
       globby: 11.1.0
       graphql: 16.9.0
-      tslib: 2.8.0
+      tslib: 2.8.1
       unixify: 1.0.0
 
   '@graphql-tools/load@7.8.14(graphql@16.9.0)':
@@ -12118,20 +12135,20 @@ snapshots:
       '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
       graphql: 16.9.0
       p-limit: 3.1.0
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@graphql-tools/merge@8.4.2(graphql@16.9.0)':
     dependencies:
       '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
       graphql: 16.9.0
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@graphql-tools/schema@9.0.19(graphql@16.9.0)':
     dependencies:
       '@graphql-tools/merge': 8.4.2(graphql@16.9.0)
       '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
       graphql: 16.9.0
-      tslib: 2.8.0
+      tslib: 2.8.1
       value-or-promise: 1.0.12
 
   '@graphql-tools/url-loader@7.17.18(@types/node@15.14.9)(encoding@0.1.13)(graphql@16.9.0)':
@@ -12147,7 +12164,7 @@ snapshots:
       '@whatwg-node/fetch': 0.8.8
       graphql: 16.9.0
       isomorphic-ws: 5.0.0(ws@8.18.0)
-      tslib: 2.8.0
+      tslib: 2.8.1
       value-or-promise: 1.0.12
       ws: 8.18.0
     transitivePeerDependencies:
@@ -12168,7 +12185,7 @@ snapshots:
       '@graphql-tools/schema': 9.0.19(graphql@16.9.0)
       '@graphql-tools/utils': 9.2.1(graphql@16.9.0)
       graphql: 16.9.0
-      tslib: 2.8.0
+      tslib: 2.8.1
       value-or-promise: 1.0.12
 
   '@graphql-typed-document-node/core@3.2.0(graphql@16.9.0)':
@@ -12629,7 +12646,7 @@ snapshots:
       read-cmd-shim: 4.0.0
       resolve-from: 5.0.0
       rimraf: 4.4.1
-      semver: 7.7.2
+      semver: 7.7.4
       set-blocking: 2.0.0
       signal-exit: 3.0.7
       slash: 3.0.0
@@ -12811,7 +12828,7 @@ snapshots:
       promise-all-reject-late: 1.0.1
       promise-call-limit: 3.0.2
       read-package-json-fast: 3.0.2
-      semver: 7.7.2
+      semver: 7.7.4
       ssri: 10.0.6
       treeverse: 3.0.0
       walk-up-path: 3.0.1
@@ -12821,7 +12838,7 @@ snapshots:
 
   '@npmcli/fs@3.1.1':
     dependencies:
-      semver: 7.7.2
+      semver: 7.7.4
 
   '@npmcli/git@5.0.8':
     dependencies:
@@ -12832,7 +12849,7 @@ snapshots:
       proc-log: 4.2.0
       promise-inflight: 1.0.1
       promise-retry: 2.0.1
-      semver: 7.7.2
+      semver: 7.7.4
       which: 4.0.0
     transitivePeerDependencies:
       - bluebird
@@ -12855,7 +12872,7 @@ snapshots:
       json-parse-even-better-errors: 3.0.2
       pacote: 18.0.6
       proc-log: 4.2.0
-      semver: 7.7.2
+      semver: 7.7.4
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -12872,7 +12889,7 @@ snapshots:
       json-parse-even-better-errors: 3.0.2
       normalize-package-data: 6.0.2
       proc-log: 4.2.0
-      semver: 7.7.2
+      semver: 7.7.4
     transitivePeerDependencies:
       - bluebird
 
@@ -12905,7 +12922,7 @@ snapshots:
       ignore: 5.3.2
       minimatch: 9.0.3
       nx: 20.0.7(@swc/core@1.7.42)
-      semver: 7.7.2
+      semver: 7.7.4
       tmp: 0.2.3
       tslib: 2.8.0
       yargs-parser: 21.1.1
@@ -13095,18 +13112,18 @@ snapshots:
     dependencies:
       asn1js: 3.0.5
       pvtsutils: 1.3.5
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@peculiar/json-schema@1.1.12':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@peculiar/webcrypto@1.5.0':
     dependencies:
       '@peculiar/asn1-schema': 2.3.13
       '@peculiar/json-schema': 1.1.12
       pvtsutils: 1.3.5
-      tslib: 2.8.0
+      tslib: 2.8.1
       webcrypto-core: 1.8.1
 
   '@pkgjs/parseargs@0.11.0':
@@ -13291,7 +13308,7 @@ snapshots:
       read-pkg: 10.0.0
       registry-auth-token: 5.1.0
       semantic-release: 25.0.3(typescript@5.9.3)
-      semver: 7.7.2
+      semver: 7.7.4
       tempy: 3.1.0
 
   '@semantic-release/release-notes-generator@14.1.0(semantic-release@25.0.3(typescript@5.9.3))':
@@ -13970,7 +13987,7 @@ snapshots:
 
   '@tybys/wasm-util@0.9.0':
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@types/aria-query@5.0.4': {}
 
@@ -14114,6 +14131,8 @@ snapshots:
     dependencies:
       '@types/geojson': 7946.0.16
 
+  '@types/toposort@2.0.7': {}
+
   '@types/tough-cookie@4.0.5': {}
 
   '@types/unist@2.0.11': {}
@@ -14162,7 +14181,7 @@ snapshots:
       functional-red-black-tree: 1.0.1
       ignore: 5.3.2
       regexpp: 3.2.0
-      semver: 7.7.2
+      semver: 7.7.4
       tsutils: 3.21.0(typescript@5.9.3)
     optionalDependencies:
       typescript: 5.9.3
@@ -14504,7 +14523,7 @@ snapshots:
       busboy: 1.6.0
       fast-querystring: 1.1.2
       fast-url-parser: 1.1.3
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@xtuc/ieee754@1.2.0': {}
 
@@ -14515,7 +14534,7 @@ snapshots:
   '@yarnpkg/parsers@3.0.0-rc.46':
     dependencies:
       js-yaml: 3.14.1
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   '@zkochan/js-yaml@0.0.7':
     dependencies:
@@ -14725,7 +14744,7 @@ snapshots:
     dependencies:
       pvtsutils: 1.3.5
       pvutils: 1.1.3
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   assertion-error@2.0.1: {}
 
@@ -14735,7 +14754,7 @@ snapshots:
 
   ast-types@0.16.1:
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   astral-regex@1.0.0: {}
 
@@ -15422,7 +15441,7 @@ snapshots:
       handlebars: 4.7.8
       json-stringify-safe: 5.0.1
       meow: 8.1.2
-      semver: 7.7.2
+      semver: 7.7.4
       split: 1.0.1
 
   conventional-changelog-writer@8.0.1:
@@ -15430,7 +15449,7 @@ snapshots:
       conventional-commits-filter: 5.0.0
       handlebars: 4.7.8
       meow: 13.2.0
-      semver: 7.7.2
+      semver: 7.7.4
 
   conventional-commits-filter@3.0.0:
     dependencies:
@@ -16164,7 +16183,7 @@ snapshots:
       optionator: 0.9.4
       progress: 2.0.3
       regexpp: 3.2.0
-      semver: 7.7.2
+      semver: 7.7.4
       strip-ansi: 6.0.1
       strip-json-comments: 3.1.1
       table: 6.8.2
@@ -16739,7 +16758,7 @@ snapshots:
   git-semver-tags@5.0.1:
     dependencies:
       meow: 8.1.2
-      semver: 7.7.2
+      semver: 7.7.4
 
   git-up@6.0.0:
     dependencies:
@@ -17174,7 +17193,7 @@ snapshots:
       npm-package-arg: 11.0.2
       promzard: 1.0.2
       read: 3.0.1
-      semver: 7.7.2
+      semver: 7.7.4
       validate-npm-package-license: 3.0.4
       validate-npm-package-name: 5.0.1
     transitivePeerDependencies:
@@ -17211,7 +17230,7 @@ snapshots:
       '@formatjs/ecma402-abstract': 2.2.1
       '@formatjs/fast-memoize': 2.2.2
       '@formatjs/icu-messageformat-parser': 2.9.1
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   into-stream@7.0.0:
     dependencies:
@@ -17532,7 +17551,7 @@ snapshots:
       '@babel/parser': 7.28.0
       '@istanbuljs/schema': 0.1.3
       istanbul-lib-coverage: 3.2.2
-      semver: 7.7.2
+      semver: 7.7.4
     transitivePeerDependencies:
       - supports-color
 
@@ -17933,7 +17952,7 @@ snapshots:
       jest-message-util: 30.2.0
       jest-util: 30.2.0
       pretty-format: 30.2.0
-      semver: 7.7.2
+      semver: 7.7.4
       synckit: 0.11.8
     transitivePeerDependencies:
       - supports-color
@@ -18201,7 +18220,7 @@ snapshots:
       read-cmd-shim: 4.0.0
       resolve-from: 5.0.0
       rimraf: 4.4.1
-      semver: 7.7.2
+      semver: 7.7.4
       set-blocking: 2.0.0
       signal-exit: 3.0.7
       slash: 3.0.0
@@ -18251,7 +18270,7 @@ snapshots:
       npm-package-arg: 11.0.2
       npm-registry-fetch: 17.1.0
       proc-log: 4.2.0
-      semver: 7.7.2
+      semver: 7.7.4
       sigstore: 2.3.1
       ssri: 10.0.6
     transitivePeerDependencies:
@@ -18474,7 +18493,7 @@ snapshots:
 
   make-dir@4.0.0:
     dependencies:
-      semver: 7.7.2
+      semver: 7.7.4
 
   make-fetch-happen@13.0.1:
     dependencies:
@@ -18879,7 +18898,7 @@ snapshots:
       make-fetch-happen: 13.0.1
       nopt: 7.2.1
       proc-log: 4.2.0
-      semver: 7.7.2
+      semver: 7.7.4
       tar: 6.2.1
       which: 4.0.0
     transitivePeerDependencies:
@@ -18910,13 +18929,13 @@ snapshots:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.15.1
-      semver: 7.7.2
+      semver: 7.7.4
       validate-npm-package-license: 3.0.4
 
   normalize-package-data@6.0.2:
     dependencies:
       hosted-git-info: 7.0.2
-      semver: 7.7.2
+      semver: 7.7.4
       validate-npm-package-license: 3.0.4
 
   normalize-package-data@8.0.0:
@@ -18947,7 +18966,7 @@ snapshots:
 
   npm-install-checks@6.3.0:
     dependencies:
-      semver: 7.7.2
+      semver: 7.7.4
 
   npm-normalize-package-bin@3.0.1: {}
 
@@ -18955,7 +18974,7 @@ snapshots:
     dependencies:
       hosted-git-info: 7.0.2
       proc-log: 4.2.0
-      semver: 7.7.2
+      semver: 7.7.4
       validate-npm-package-name: 5.0.1
 
   npm-packlist@8.0.2:
@@ -18971,7 +18990,7 @@ snapshots:
       npm-install-checks: 6.3.0
       npm-normalize-package-bin: 3.0.1
       npm-package-arg: 11.0.2
-      semver: 7.7.2
+      semver: 7.7.4
 
   npm-registry-fetch@17.1.0:
     dependencies:
@@ -19041,7 +19060,7 @@ snapshots:
       npm-run-path: 4.0.1
       open: 8.4.2
       ora: 5.3.0
-      semver: 7.7.2
+      semver: 7.7.4
       string-width: 4.2.3
       tar-stream: 2.2.0
       tmp: 0.2.3
@@ -19693,7 +19712,7 @@ snapshots:
 
   pvtsutils@1.3.5:
     dependencies:
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   pvutils@1.1.3: {}
 
@@ -19789,7 +19808,7 @@ snapshots:
       hoist-non-react-statics: 3.3.2
       intl-messageformat: 10.7.3
       react: 18.2.0
-      tslib: 2.8.0
+      tslib: 2.8.1
     optionalDependencies:
       typescript: 5.9.3
 
@@ -20272,7 +20291,7 @@ snapshots:
       p-reduce: 3.0.0
       read-package-up: 12.0.0
       resolve-from: 5.0.0
-      semver: 7.7.2
+      semver: 7.7.4
       signale: 1.4.0
       yargs: 18.0.0
     transitivePeerDependencies:
@@ -20286,8 +20305,6 @@ snapshots:
   semver@5.7.2: {}
 
   semver@6.3.1: {}
-
-  semver@7.7.2: {}
 
   semver@7.7.4: {}
 
@@ -20622,7 +20639,7 @@ snapshots:
       '@vitest/spy': 3.2.4
       esbuild: 0.25.5
       recast: 0.23.9
-      semver: 7.7.2
+      semver: 7.7.4
       ws: 8.18.0
     optionalDependencies:
       prettier: 1.19.1
@@ -21572,7 +21589,7 @@ snapshots:
       '@peculiar/json-schema': 1.1.12
       asn1js: 3.0.5
       pvtsutils: 1.3.5
-      tslib: 2.8.0
+      tslib: 2.8.1
 
   webidl-conversions@3.0.1: {}
 
