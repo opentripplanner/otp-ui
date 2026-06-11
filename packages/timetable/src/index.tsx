@@ -1,5 +1,5 @@
 import React, { ReactElement, useMemo } from "react";
-import { useIntl } from "react-intl";
+import { IntlShape } from "react-intl";
 import styled from "styled-components";
 import toposort from "toposort";
 
@@ -184,9 +184,11 @@ interface TimeTableProps {
    * values for `arrival_time` and `departure_time`
    */
   includeDwellStops?: boolean;
+  /** A react-intl object to use for time formatting */
+  intl?: IntlShape;
   /** Whether each trip/row entry in the timetable should show the block ID of the trip */
   showBlockId?: boolean;
-  /** Time zone in which to display stop times */
+  /** Time zone in which to display stop times if no intl object is provided */
   timeZone?: string;
 }
 
@@ -195,14 +197,14 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
     directionId,
     errorOnStopSorting,
     includeDwellStops,
+    intl,
     route,
     showBlockId,
-    timepointsOnly
+    timepointsOnly,
+    timeZone
   } = props;
 
   const { patterns } = route;
-
-  const intl = useIntl();
 
   const [allTrips, timepointStopIds] = useMemo(() => {
     const trips = patterns
@@ -331,7 +333,18 @@ const TimeTable = (props: TimeTableProps): ReactElement => {
           const rowValues: string[] = showBlockId ? [t.blockId] : [];
           filteredPatternStops.forEach(patternStop => {
             const stopDetail = t.stops.get(patternStop.id);
-            rowValues.push(stopDetail ? intl.formatTime(stopDetail.time) : "-");
+            rowValues.push(
+              stopDetail
+                ? intl
+                  ? intl.formatTime(stopDetail.time)
+                  : stopDetail.time.toLocaleTimeString("en-us", {
+                      timeZone,
+                      hour12: false,
+                      hour: "2-digit",
+                      minute: "2-digit"
+                    })
+                : "-"
+            );
           });
 
           return (
