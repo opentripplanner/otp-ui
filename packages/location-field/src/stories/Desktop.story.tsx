@@ -280,3 +280,19 @@ export const WithCustomResultsOrder = {
 
   parameters: a11yOverrideParameters
 };
+
+export const WithCustomLabel = (): JSX.Element => (
+  <>
+    {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+    <label htmlFor="location-field-1">Search location</label>
+    <LocationField
+      currentPosition={currentPosition}
+      geocoderConfig={geocoderConfig}
+      getCurrentPosition={getCurrentPosition}
+      idForInputLabel="location-field-1"
+      inputPlaceholder="Select from location"
+      locationType="from"
+      onLocationSelected={onLocationSelected}
+    />
+  </>
+);

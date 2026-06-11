@@ -130,6 +130,10 @@ export interface LocationFieldProps {
    */
   hideExistingValue?: boolean;
   /**
+   * Id for input so that custom label can be applied to location field
+   */
+  idForInputLabel?: string;
+  /**
    * Allows the component to be rendered with pre-filled results
    */
   initialSearchResults?: {
