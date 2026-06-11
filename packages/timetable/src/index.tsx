@@ -1,4 +1,4 @@
-import React, { ReactElement, useMemo } from "react";
+import React, { useMemo } from "react";
 import { IntlShape } from "react-intl";
 import styled from "styled-components";
 import toposort from "toposort";
@@ -192,7 +192,7 @@ interface TimeTableProps {
   timeZone?: string;
 }
 
-const TimeTable = (props: TimeTableProps): ReactElement => {
+const TimeTable = (props: TimeTableProps): JSX.Element => {
   const {
     directionId,
     errorOnStopSorting,
