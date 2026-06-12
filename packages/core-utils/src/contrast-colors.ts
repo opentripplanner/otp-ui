@@ -15,9 +15,9 @@ const MAX_ITERATIONS = 100;
  * Returns normalized '#rrggbb' or null if invalid.
  */
 const normalizeHex = (input: string | null | undefined): string | null => {
-    if (!input) return null;
-    const color = new TinyColor(input);
-    return color.isValid ? color.toHexString().toLowerCase() : null;
+  if (!input) return null;
+  const color = new TinyColor(input);
+  return color.isValid ? color.toHexString().toLowerCase() : null;
 };
 
 /**
@@ -25,11 +25,11 @@ const normalizeHex = (input: string | null | undefined): string | null => {
  * Defensive try/catch: return 0 if library throws.
  */
 const getContrast = (foreground: string, background: string): number => {
-    try {
-        return contrastRatio(foreground, background);
-    } catch {
-        return 0;
-    }
+  try {
+    return contrastRatio(foreground, background);
+  } catch {
+    return 0;
+  }
 };
 
 /**
@@ -44,49 +44,49 @@ const getContrast = (foreground: string, background: string): number => {
  * - Step lightness using tinycolor lighten/darken until contrast passes or limit reached
  */
 const adjustColorForContrast = (
-    hexColor: string,
-    backgroundColor: string,
-    threshold: number = WCAG_AA_NON_TEXT_CONTRAST
+  hexColor: string,
+  backgroundColor: string,
+  threshold: number = WCAG_AA_NON_TEXT_CONTRAST
 ): string | null => {
-    const fullHex = normalizeHex(hexColor);
-    const bgHex = normalizeHex(backgroundColor);
-    if (!fullHex || !bgHex) return null;
+  const fullHex = normalizeHex(hexColor);
+  const bgHex = normalizeHex(backgroundColor);
+  if (!fullHex || !bgHex) return null;
 
-    const initialContrast = getContrast(fullHex, bgHex);
-    if (initialContrast >= threshold) {
-        return null;
+  const initialContrast = getContrast(fullHex, bgHex);
+  if (initialContrast >= threshold) {
+    return null;
+  }
+
+  const fg = new TinyColor(fullHex);
+  const bg = new TinyColor(bgHex);
+
+  const isLightBackground = bg.isLight();
+  let working = fg.clone();
+
+  let iterations = 0;
+  while (iterations < MAX_ITERATIONS) {
+    iterations += 1;
+    working = isLightBackground
+      ? working.darken(LIGHTNESS_STEP_PERCENT)
+      : working.lighten(LIGHTNESS_STEP_PERCENT);
+
+    const adjustedHex = working.toHexString().toLowerCase();
+    const ratio = getContrast(adjustedHex, bgHex);
+    if (ratio >= threshold) {
+      return adjustedHex;
     }
 
-    const fg = new TinyColor(fullHex);
-    const bg = new TinyColor(bgHex);
-
-    const isLightBackground = bg.isLight();
-    let working = fg.clone();
-
-    let iterations = 0;
-    while (iterations < MAX_ITERATIONS) {
-        iterations += 1;
-        working = isLightBackground
-            ? working.darken(LIGHTNESS_STEP_PERCENT)
-            : working.lighten(LIGHTNESS_STEP_PERCENT);
-
-        const adjustedHex = working.toHexString().toLowerCase();
-        const ratio = getContrast(adjustedHex, bgHex);
-        if (ratio >= threshold) {
-            return adjustedHex;
-        }
-
-        // Stop if we've hit lightness extremes
-        const lightness = working.toHsl().l;
-        if (
-            (isLightBackground && lightness <= 0) ||
-            (!isLightBackground && lightness >= 1)
-        ) {
-            break;
-        }
+    // Stop if we've hit lightness extremes
+    const lightness = working.toHsl().l;
+    if (
+      (isLightBackground && lightness <= 0) ||
+      (!isLightBackground && lightness >= 1)
+    ) {
+      break;
     }
-    // Fallback: return extreme color for best contrast
-    return isLightBackground ? DARK_BACKGROUND : LIGHT_BACKGROUND;
+  }
+  // Fallback: return extreme color for best contrast
+  return isLightBackground ? DARK_BACKGROUND : LIGHT_BACKGROUND;
 };
 
 /**
@@ -95,14 +95,16 @@ const adjustColorForContrast = (
  * - null if original color already passes for that background
  * - hex string of adjusted color if modification was required
  */
-export const calculateContrastColors = (
-    hexColor: string
+const calculateContrastColors = (
+  hexColor: string
 ): {
-    light: string | null;
-    dark: string | null;
+  light: string | null;
+  dark: string | null;
 } => {
-    return {
-        light: adjustColorForContrast(hexColor, LIGHT_BACKGROUND),
-        dark: adjustColorForContrast(hexColor, DARK_BACKGROUND)
-    };
+  return {
+    light: adjustColorForContrast(hexColor, LIGHT_BACKGROUND),
+    dark: adjustColorForContrast(hexColor, DARK_BACKGROUND)
+  };
 };
+
+export default calculateContrastColors;

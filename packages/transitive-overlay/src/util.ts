@@ -5,7 +5,10 @@ import destination from "@turf/destination";
 import bearing from "@turf/bearing";
 import distance from "@turf/distance";
 
-import coreUtils from "@opentripplanner/core-utils";
+import coreUtils, {
+  calculateContrastColors
+} from "@opentripplanner/core-utils";
+
 import { getPlaceName } from "@opentripplanner/itinerary-body";
 import {
   Company,
@@ -171,10 +174,10 @@ function getPlaceId(
 function makeStop(stop: Place, coordinate?: number[]) {
   return coordinate
     ? {
-      ...stop,
-      lat: coordinate[0],
-      lon: coordinate[1]
-    }
+        ...stop,
+        lat: coordinate[0],
+        lon: coordinate[1]
+      }
     : stop;
 }
 
@@ -515,8 +518,6 @@ const drawArc = (straight: any) => {
     { steps: 500 }
   ).geometry;
 };
-
-const { calculateContrastColors } = coreUtils.contrastColors;
 
 export { drawArc, calculateContrastColors };
 export default { itineraryToTransitive };

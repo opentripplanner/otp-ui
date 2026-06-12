@@ -29,4 +29,5 @@ const core = {
 };
 
 export { SafeSuspense };
+export { default as calculateContrastColors } from "./contrast-colors";
 export default core;
