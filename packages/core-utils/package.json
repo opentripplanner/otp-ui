@@ -13,6 +13,7 @@
   "private": false,
   "dependencies": {
     "@conveyal/lonlat": "^1.4.1",
+    "@ctrl/tinycolor": "4.2.0",
     "@mapbox/polyline": "catalog:",
     "@opentripplanner/geocoder": "workspace:^",
     "@styled-icons/foundation": "catalog:",
@@ -22,7 +23,8 @@
     "date-fns-tz": "catalog:",
     "graphql": "^16.6.0",
     "lodash.clonedeep": "^4.5.0",
-    "qs": "^6.9.1"
+    "qs": "^6.9.1",
+    "wcag-contrast-utils": "1.0.2"
   },
   "gitHead": "0af1b7cda60bd4252b219dcf893e01c2acb2ed5d",
   "scripts": {
