@@ -10,35 +10,35 @@
   "bugs": {
     "url": "https://github.com/opentripplanner/otp-ui/issues"
   },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/opentripplanner/otp-ui.git"
   },
   "dependencies": {
-    "@mapbox/polyline": "^1.1.1",
+    "@mapbox/polyline": "catalog:",
+    "@opentripplanner/building-blocks": "workspace:^",
+    "@opentripplanner/core-utils": "workspace:^",
+    "@opentripplanner/itinerary-body": "workspace:^",
     "@turf/bbox": "^6.5.0",
     "@turf/bearing": "^6.5.0",
     "@turf/destination": "^6.5.0",
     "@turf/line-arc": "^6.5.0",
     "@turf/line-distance": "^4.7.3",
     "@turf/midpoint": "^6.5.0",
-    "lodash.isequal": "^4.5.0",
-    "@opentripplanner/building-blocks": "^3.1.1",
-    "@opentripplanner/core-utils": "file:../core-utils",
-    "@opentripplanner/itinerary-body": "^9.3.1"
+    "lodash.isequal": "^4.5.0"
   },
   "devDependencies": {
-    "maplibre-gl": "^5.6.1",
-    "@opentripplanner/endpoints-overlay": "^5.0.1",
-    "@opentripplanner/types": "^8.4.0"
+    "@opentripplanner/endpoints-overlay": "workspace:^",
+    "@opentripplanner/types": "workspace:^",
+    "maplibre-gl": "catalog:"
   },
   "peerDependencies": {
-    "react": "^18.2.0",
-    "react-map-gl": "^8.0.4",
-    "@opentripplanner/base-map": "^7.0.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc"
+    "@opentripplanner/base-map": "workspace:^",
+    "react": "catalog:",
+    "react-map-gl": "catalog:"
   }
 }
