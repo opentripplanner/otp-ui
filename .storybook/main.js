@@ -51,7 +51,7 @@ export default {
           plugins: []
         }
       },
-      
+
       assetsInclude: [
         // Add support for importing image files
         '**/*.png',

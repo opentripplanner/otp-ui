@@ -610,6 +610,7 @@ export type TransitiveRoute = {
   route_color?: string;
   route_id: string;
   route_long_name: string;
+  route_outline_contrast_color?: string;
   route_short_name: string;
   route_text_color?: string;
   route_type: number;

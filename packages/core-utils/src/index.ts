@@ -1,3 +1,4 @@
+import * as contrastColors from "./contrast-colors";
 import * as itinerary from "./itinerary";
 import * as map from "./map";
 // @ts-expect-error not typed
@@ -14,6 +15,7 @@ import * as queryGen from "./query-gen";
 import SafeSuspense from "./suspense";
 
 const core = {
+  contrastColors,
   itinerary,
   map,
   profile,
@@ -27,4 +29,5 @@ const core = {
 };
 
 export { SafeSuspense };
+export { default as calculateContrastColors } from "./contrast-colors";
 export default core;
