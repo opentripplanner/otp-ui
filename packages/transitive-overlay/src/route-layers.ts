@@ -30,9 +30,6 @@ export function patternToRouteFeature(
 
   const properties = {
     color: route.route_color ? `#${route.route_color}` : blue[900],
-    ...(route.route_outline_contrast_color
-      ? { contrastColor: `#${route.route_outline_contrast_color}` }
-      : {}),
     name: routeName,
     routeType: route.route_type,
     textColor: route.route_text_color ? `#${route.route_text_color}` : grey[50],

@@ -1,0 +1,44 @@
+{
+    "name": "@opentripplanner/transitive-overlay",
+    "version": "7.1.1",
+    "description": "A map overlay to show an itinerary based on transitive.js",
+    "main": "lib/index.js",
+    "module": "esm/index.js",
+    "author": "Evan Siroky",
+    "license": "MIT",
+    "homepage": "https://github.com/opentripplanner/otp-ui#readme",
+    "bugs": {
+        "url": "https://github.com/opentripplanner/otp-ui/issues"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "tsc": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/opentripplanner/otp-ui.git"
+    },
+    "dependencies": {
+        "@mapbox/polyline": "catalog:",
+        "@opentripplanner/building-blocks": "workspace:^",
+        "@opentripplanner/core-utils": "workspace:^",
+        "@opentripplanner/itinerary-body": "workspace:^",
+        "@turf/bbox": "^6.5.0",
+        "@turf/bearing": "^6.5.0",
+        "@turf/destination": "^6.5.0",
+        "@turf/line-arc": "^6.5.0",
+        "@turf/line-distance": "^4.7.3",
+        "@turf/midpoint": "^6.5.0",
+        "lodash.isequal": "^4.5.0"
+    },
+    "devDependencies": {
+        "@opentripplanner/endpoints-overlay": "workspace:^",
+        "@opentripplanner/types": "workspace:^",
+        "maplibre-gl": "catalog:"
+    },
+    "peerDependencies": {
+        "@opentripplanner/base-map": "workspace:^",
+        "react": "catalog:",
+        "react-map-gl": "catalog:"
+    }
+}

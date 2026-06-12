@@ -17,7 +17,7 @@ import colors from "@opentripplanner/building-blocks";
 import bbox from "@turf/bbox";
 
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
-import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
+import { drawArc, getFromToAnchors, itineraryToTransitive, calculateContrastColors } from "./util";
 import routeArrow from "./images/route_arrow.png";
 import capsule1 from "./images/01.png";
 import capsule3 from "./images/03.png";
@@ -213,7 +213,9 @@ const TransitiveCanvasOverlay = ({
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
-
+  const mapStyleName = map?.getStyle()?.name;
+  const isDark = mapStyleName === "TriMet Dark";
+  const isLight = mapStyleName === "TriMet";
   const mapImages: MapImage[] = [];
   // This is used to render arrows along the route
   // Only load if that option is enabled to save the bandwidth
@@ -381,11 +383,19 @@ const TransitiveCanvasOverlay = ({
                   }
                 } as GeoJSON.Feature)
             ),
-          ...(
-            transitiveData.patterns || []
-          ).flatMap((pattern: TransitivePattern) =>
-            patternToRouteFeature(pattern, transitiveData.routes)
-          )
+          ...(transitiveData.patterns || []).flatMap((pattern: TransitivePattern) => {
+            const feature = patternToRouteFeature(pattern, transitiveData.routes);
+            const routeColor = feature.properties.color as string;
+            let contrastColor: string | null = null;
+            if (isDark) {
+              contrastColor = calculateContrastColors(routeColor).dark;
+            } else if (isLight) {
+              contrastColor = calculateContrastColors(routeColor).light;
+            }
+            return contrastColor
+              ? { ...feature, properties: { ...feature.properties, contrastColor } }
+              : feature;
+          })
         ]
       : []
   };
