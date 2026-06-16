@@ -5,9 +5,7 @@ import destination from "@turf/destination";
 import bearing from "@turf/bearing";
 import distance from "@turf/distance";
 
-import coreUtils, {
-  calculateContrastColors
-} from "@opentripplanner/core-utils";
+import coreUtils from "@opentripplanner/core-utils";
 
 import { getPlaceName } from "@opentripplanner/itinerary-body";
 import {
@@ -519,5 +517,5 @@ const drawArc = (straight: any) => {
   ).geometry;
 };
 
-export { drawArc, calculateContrastColors };
+export { drawArc };
 export default { itineraryToTransitive };
