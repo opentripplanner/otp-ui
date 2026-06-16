@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/timetable",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A component to display a timetable for a given route pattern",
   "main": "lib/index.js",
   "module": "esm/index.js",
