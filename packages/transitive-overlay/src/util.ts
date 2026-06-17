@@ -171,10 +171,10 @@ function getPlaceId(
 function makeStop(stop: Place, coordinate?: number[]) {
   return coordinate
     ? {
-      ...stop,
-      lat: coordinate[0],
-      lon: coordinate[1]
-    }
+        ...stop,
+        lat: coordinate[0],
+        lon: coordinate[1]
+      }
     : stop;
 }
 
