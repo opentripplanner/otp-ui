@@ -215,7 +215,7 @@ const TransitiveCanvasOverlay = ({
 }: Props): JSX.Element => {
   const { current: map } = useMap();
   const mapStyleName = map?.getStyle()?.name.toLowerCase();
-  const isDark = mapStyleName?.includes('dark');  const mapImages: MapImage[] = [];
+  const isDark = mapStyleName?.includes("dark");  const mapImages: MapImage[] = [];
   // This is used to render arrows along the route
   // Only load if that option is enabled to save the bandwidth
   if (showRouteArrows) {
