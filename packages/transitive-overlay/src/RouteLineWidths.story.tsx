@@ -16,8 +16,8 @@ const CENTER: [number, number] = [45.519, -122.681];
 const ZOOM = 14;
 
 // Three sample horizontal lines at different latitudes
-const BUS_BASE_WIDTH = 6;
-const RAIL_BASE_WIDTH = 10;
+const BUS_BASE_WIDTH = 3;
+const RAIL_BASE_WIDTH = 3;
 
 type RouteLineWidthsArgs = {
   outlineWidthMultiplier: number;
@@ -41,8 +41,8 @@ const RouteLineWidthsDemo = ({
     "interpolate",
     ["linear"],
     ["zoom"],
-    ...ROUTE_LINE_WIDTH_BY_ZOOM.flatMap(([zoom, width]) => [
-      zoom,
+    ...Object.entries(ROUTE_LINE_WIDTH_BY_ZOOM).flatMap(([zoom, width]) => [
+      Number(zoom),
       width * selectedOutlineWidthMultiplier
     ])
   ];
@@ -51,7 +51,7 @@ const RouteLineWidthsDemo = ({
     "interpolate",
     ["linear"],
     ["zoom"],
-    ...ROUTE_LINE_WIDTH_BY_ZOOM.flatMap(([zoom, width]) => [zoom, width])
+    ...Object.entries(ROUTE_LINE_WIDTH_BY_ZOOM).flatMap(([zoom, width]) => [Number(zoom), width])
   ];
 
   const geojson: GeoJSON.FeatureCollection = {
@@ -192,7 +192,7 @@ Demonstrates the exported line-width constants used by \`TransitiveCanvasOverlay
 
 | Constant | Default | Purpose |
 |---|---|---|
-| \`ROUTE_LINE_WIDTH_BY_ZOOM\` | \`[[8,2],[10,4],[15,6.5],[19,20]]\` | Base zoom → px breakpoints for route lines |
+| \`ROUTE_LINE_WIDTH_BY_ZOOM\` | \`{8:1, 10:2, 15:4, 19:10}\` | Base zoom → px breakpoints for route lines |
 | \`OUTLINE_WIDTH_MULTIPLIER\` | \`${OUTLINE_WIDTH_MULTIPLIER}\` | Contrast outline width relative to the base route width |
 | \`SELECTED_OUTLINE_WIDTH_MULTIPLIER\` | \`${SELECTED_OUTLINE_WIDTH_MULTIPLIER}\` | Focused/selected route contrast outline relative to the zoom-interpolated route width |
 
