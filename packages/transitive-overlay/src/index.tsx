@@ -386,13 +386,8 @@ const TransitiveCanvasOverlay = ({
             const feature = patternToRouteFeature(pattern, transitiveData.routes);
             const routeColor = feature.properties.color as string;
             const contrastColor = adjustColorForContrast(routeColor, isDark);
-            return {
-              ...feature,
-              properties: {
-              ...feature.properties,
-              ...(contrastColor != null ? { contrastColor } : {})
-              }
-            };
+            if (!contrastColor) return feature;
+            return { ...feature, properties: { ...feature.properties, contrastColor } };
           })
         ]
       : []
