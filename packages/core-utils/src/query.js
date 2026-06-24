@@ -247,7 +247,7 @@ async function getFirstGeocodeResult(
     if (firstResult) {
       return geocoder.getLocationFromGeocodedFeature(firstResult);
     }
-    return null;
+    return { name: `(Geocoder failure) ${text}` };
   });
 }
 
