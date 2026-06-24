@@ -6,67 +6,67 @@ exports[`Timetable Default smoke-test 1`] = `
 >
   <thead class="timetable-thead">
     <tr>
-      <th class="src__TH-sc-1glc48y-2 AWHaq timetable-th"
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         Pleasant Ave &amp; 50th St / Busch Terrace
       </th>
-      <th class="src__TH-sc-1glc48y-2 AWHaq timetable-th"
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         Nicollet Ave S &amp; 46th St E
       </th>
-      <th class="src__TH-sc-1glc48y-2 AWHaq timetable-th"
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         46th St &amp; I-35W
       </th>
-      <th class="src__TH-sc-1glc48y-2 AWHaq timetable-th"
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         4th Ave S &amp; 38th St E
       </th>
-      <th class="src__TH-sc-1glc48y-2 AWHaq timetable-th"
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         4th Ave S &amp; Lake St E
       </th>
-      <th class="src__TH-sc-1glc48y-2 AWHaq timetable-th"
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         3rd Ave S &amp; Franklin Ave E
       </th>
-      <th class="src__TH-sc-1glc48y-2 AWHaq timetable-th"
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         Nicollet Mall &amp; Alice Rainville Pl
       </th>
-      <th class="src__TH-sc-1glc48y-2 AWHaq timetable-th"
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         Nicollet Mall &amp; 7th St S
       </th>
-      <th class="src__TH-sc-1glc48y-2 AWHaq timetable-th"
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         Nicollet Mall &amp; 3rd St S
       </th>
-      <th class="src__TH-sc-1glc48y-2 AWHaq timetable-th"
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         Hennepin Ave E &amp; Wilder St
       </th>
-      <th class="src__TH-sc-1glc48y-2 AWHaq timetable-th"
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         Lowry Ave NE &amp; 2nd St / 1st St NE
       </th>
-      <th class="src__TH-sc-1glc48y-2 AWHaq timetable-th"
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         Grand St NE &amp; 29th Ave NE
       </th>
-      <th class="src__TH-sc-1glc48y-2 AWHaq timetable-th"
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         Columbia Heights Transit Center C
@@ -75,125 +75,125 @@ exports[`Timetable Default smoke-test 1`] = `
   </thead>
   <tbody class="src__TBody-sc-1glc48y-1 bZEJyp timetable-tbody">
     <tr class="src__TR-sc-1glc48y-3 kosclq timetable-tr">
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         -
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         06:00
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         06:02
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         06:06
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         06:11
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         06:16
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         06:20
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         06:24
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         06:28
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         06:31
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         06:39
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         06:42
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         06:52
       </td>
     </tr>
     <tr class="src__TR-sc-1glc48y-3 kosclq timetable-tr">
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         16:10
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         -
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         16:26
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         16:31
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         16:36
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         -
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         -
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         -
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         -
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         -
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         -
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         -
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         -
       </td>
     </tr>
     <tr class="src__TR-sc-1glc48y-3 kosclq timetable-tr">
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         -
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         01:37
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         01:39
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         01:43
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         01:47
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         01:52
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         01:56
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         02:00
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         02:13
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         02:15
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         02:23
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         02:26
       </td>
-      <td class="src__TD-sc-1glc48y-4 knlMQh timetable-td">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         02:36
       </td>
     </tr>
