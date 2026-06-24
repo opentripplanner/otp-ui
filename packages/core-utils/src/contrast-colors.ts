@@ -19,9 +19,10 @@ export const DARK_BACKGROUND = "#1a364e";
  */
 const adjustColorForContrast = (
   hexColor: string,
-  backgroundColor: string,
+  isDark = false,
   iterationsLeft = MAX_ITERATIONS
 ): string | null => {
+  const backgroundColor = isDark ? DARK_BACKGROUND : LIGHT_BACKGROUND;
   if (!chroma.valid(hexColor) || !chroma.valid(backgroundColor)) return null;
 
   const colorHex = chroma(hexColor)
@@ -59,7 +60,7 @@ const adjustColorForContrast = (
   }
 
   return (
-    adjustColorForContrast(adjustedHex, backgroundColor, iterationsLeft - 1) ??
+    adjustColorForContrast(adjustedHex, isDark, iterationsLeft - 1) ??
     adjustedHex
   );
 };
