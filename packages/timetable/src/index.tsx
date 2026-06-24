@@ -15,9 +15,10 @@ const TBody = styled.tbody`
   white-space: nowrap;
 `;
 
-const TH = styled.th`
+const TH = styled.th<{ closed?: boolean }>`
   min-width: ${COLUMN_WIDTH};
   padding: 1rem;
+  text-decoration: ${props => (props.closed ? "line-through" : "")};
 `;
 
 const TR = styled.tr`
@@ -25,8 +26,9 @@ const TR = styled.tr`
   vertical-align: middle;
 `;
 
-const TD = styled.td`
+const TD = styled.td<{ closed?: boolean }>`
   padding: 1rem;
+  text-decoration: ${props => (props.closed ? "line-through" : "")};
 `;
 
 interface PatternStop {
@@ -176,6 +178,8 @@ interface TimeTableProps {
   route: Route;
   /** Whether to show only timepoint stops in the timetable */
   timepointsOnly: boolean;
+  /** A set of gtfsId values for stops that are closed and should be shown with strikethrough */
+  closedStops?: Set<string>;
   /** If the topological sort of the stop IDs fails for any reason, a `false` value here
    * will cause the timetable to use a fallback "naive" stop sorting
    */
@@ -194,6 +198,7 @@ interface TimeTableProps {
 
 const TimeTable = (props: TimeTableProps): JSX.Element => {
   const {
+    closedStops,
     directionId,
     errorOnStopSorting,
     includeDwellStops,
@@ -321,7 +326,12 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
             .concat(filteredPatternStops)
             .map((s, index) => {
               return (
-                <TH className="timetable-th" key={index} scope="col">
+                <TH
+                  className="timetable-th"
+                  key={index}
+                  scope="col"
+                  closed={closedStops && closedStops.has(s.id)}
+                >
                   {s.name}
                 </TH>
               );
@@ -330,11 +340,14 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
       </thead>
       <TBody className="timetable-tbody">
         {timetableTrips.map((t, index) => {
-          const rowValues: string[] = showBlockId ? [t.blockId] : [];
+          const rowValues: { closed: boolean; value: string }[] = showBlockId
+            ? [{ closed: false, value: t.blockId }]
+            : [];
           filteredPatternStops.forEach(patternStop => {
             const stopDetail = t.stops.get(patternStop.id);
-            rowValues.push(
-              stopDetail
+            rowValues.push({
+              closed: closedStops?.has(patternStop.id) || false,
+              value: stopDetail
                 ? intl
                   ? intl.formatTime(stopDetail.time)
                   : stopDetail.time.toLocaleTimeString("en-us", {
@@ -344,14 +357,14 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
                       minute: "2-digit"
                     })
                 : "-"
-            );
+            });
           });
 
           return (
             <TR className="timetable-tr" key={index}>
               {rowValues.map((r, rowIndex) => (
-                <TD className="timetable-td" key={rowIndex}>
-                  {r}
+                <TD className="timetable-td" key={rowIndex} closed={r.closed}>
+                  {r.value}
                 </TD>
               ))}
             </TR>
