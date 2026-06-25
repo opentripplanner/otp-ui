@@ -214,7 +214,6 @@ const TransitiveCanvasOverlay = ({
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
-  const isDark = map?.getStyle()?.name.toLowerCase()?.includes("dark");
   const mapImages: MapImage[] = [];
   // This is used to render arrows along the route
   // Only load if that option is enabled to save the bandwidth
@@ -385,7 +384,7 @@ const TransitiveCanvasOverlay = ({
           ...(transitiveData.patterns || []).flatMap((pattern: TransitivePattern) => {
             const feature = patternToRouteFeature(pattern, transitiveData.routes);
             const routeColor = feature.properties.color as string;
-            const contrastColor = adjustColorForContrast(routeColor, isDark);
+            const contrastColor = adjustColorForContrast(routeColor, map?.getStyle()?.name.toLowerCase()?.includes("dark"));
             if (!contrastColor) return feature;
             return { ...feature, properties: { ...feature.properties, contrastColor } };
           })
