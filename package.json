@@ -285,6 +285,7 @@
     "workerDirectory": "public"
   },
   "dependencies": {
-    "@storybook/icons": "^1.6.0"
+    "@storybook/icons": "^1.6.0",
+    "wcag-contrast-utils": "1.0.2"
   }
 }

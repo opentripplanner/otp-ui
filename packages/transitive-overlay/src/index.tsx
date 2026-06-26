@@ -1,5 +1,8 @@
+// eslint-disable-next-line prettier/prettier
+import type { ExpressionSpecification } from "maplibre-gl";
 import { FilterSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
+import adjustColorForContrast from "@opentripplanner/core-utils/src/contrast-colors";
 import React, { useEffect } from "react";
 import { Layer, MapRef, Source, useMap } from "react-map-gl/maplibre";
 import polyline from "@mapbox/polyline";
@@ -177,6 +180,32 @@ const loadImages = (map: MapRef, images: MapImage[]) => {
   });
 };
 
+
+// Route line widths (in px) by zoom level. Keys are zoom levels, values are thickness in px.
+export const ROUTE_LINE_WIDTH_BY_ZOOM: Record<number, number> = {
+  8: 1,
+  10: 2,
+  15: 4,
+  19: 10,
+};
+
+/** Multiplier for contrast outline width relative to the base outline width */
+export const OUTLINE_WIDTH_MULTIPLIER = 1.5;
+
+/** Multiplier for selected route contrast outline relative to focused route width */
+export const SELECTED_OUTLINE_WIDTH_MULTIPLIER = 1.2;
+
+/** Shared line-width for focused route contrast outlines */
+export const FOCUSED_ROUTE_OUTLINE_WIDTH: ExpressionSpecification = [
+  "interpolate",
+  ["linear"],
+  ["zoom"],
+  ...Object.entries(ROUTE_LINE_WIDTH_BY_ZOOM).flatMap(([zoom, width]) => [
+    Number(zoom),
+    width * SELECTED_OUTLINE_WIDTH_MULTIPLIER,
+  ]),
+];
+
 const TransitiveCanvasOverlay = ({
   activeLeg,
   accessLegColorOverride,
@@ -185,7 +214,6 @@ const TransitiveCanvasOverlay = ({
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
-
   const mapImages: MapImage[] = [];
   // This is used to render arrows along the route
   // Only load if that option is enabled to save the bandwidth
@@ -353,11 +381,13 @@ const TransitiveCanvasOverlay = ({
                   }
                 } as GeoJSON.Feature)
             ),
-          ...(
-            transitiveData.patterns || []
-          ).flatMap((pattern: TransitivePattern) =>
-            patternToRouteFeature(pattern, transitiveData.routes)
-          )
+          ...(transitiveData.patterns || []).flatMap((pattern: TransitivePattern) => {
+            const feature = patternToRouteFeature(pattern, transitiveData.routes);
+            const routeColor = feature.properties.color as string;
+            const contrastColor = adjustColorForContrast(routeColor, map?.getStyle()?.name.toLowerCase()?.includes("dark"));
+            if (!contrastColor) return feature;
+            return { ...feature, properties: { ...feature.properties, contrastColor } };
+          })
         ]
       : []
   };
@@ -433,6 +463,20 @@ const TransitiveCanvasOverlay = ({
         }}
         type="line"
       />
+      <Layer 
+        filter={["all", routeFilter, ["has", "contrastColor"]]}
+        type="line"
+        id="route-contrast-outlines"
+        layout={{
+          "line-cap": "round",
+          "line-join": "round"
+        }}
+        paint={{
+          "line-color": ["get", "contrastColor"],
+          "line-opacity": 1,
+          "line-width": 6 * OUTLINE_WIDTH_MULTIPLIER
+        }}
+      />
       <Layer
         filter={routeFilter}
         id="routes"
@@ -442,8 +486,7 @@ const TransitiveCanvasOverlay = ({
         }}
         paint={{
           "line-color": ["get", "color"],
-          // Apply a thinner line (width = 6) for bus routes (route_type = 3), set width to 10 otherwise.
-          "line-width": ["match", ["get", "routeType"], 3, 6, 10],
+          "line-width": 6,
           "line-opacity": 1
         }}
         type="line"

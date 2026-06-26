@@ -268,6 +268,9 @@ importers:
       '@storybook/icons':
         specifier: ^1.6.0
         version: 1.6.0(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
+      wcag-contrast-utils:
+        specifier: 1.0.2
+        version: 1.0.2
     devDependencies:
       '@anolilab/semantic-release-pnpm':
         specifier: ^5.0.0
@@ -609,6 +612,9 @@ importers:
       qs:
         specifier: ^6.9.1
         version: 6.14.0
+      wcag-contrast-utils:
+        specifier: 1.0.2
+        version: 1.0.2
     devDependencies:
       '@opentripplanner/types':
         specifier: workspace:^
@@ -10452,6 +10458,10 @@ packages:
   watchpack@2.4.2:
     resolution: {integrity: sha512-TnbFSbcOCcDgjZ4piURLCbJ3nJhznVh9kw6F6iokjiFPl8ONxe9A6nMDVXDiNbrSfLILs6vB07F7wLBrwPYzJw==}
     engines: {node: '>=10.13.0'}
+
+  wcag-contrast-utils@1.0.2:
+    resolution: {integrity: sha512-x5ty+bjLh5vCv1Iss07C8U1SV6q4687wlVYX0ZnXEXcqGBNKK0oZYc0TZntv1fOaGFgfqthhA+PSb/ddG0xMEA==}
+    engines: {node: '>=18'}
 
   wcwidth@1.0.1:
     resolution: {integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==}
@@ -21576,6 +21586,8 @@ snapshots:
     dependencies:
       glob-to-regexp: 0.4.1
       graceful-fs: 4.2.11
+
+  wcag-contrast-utils@1.0.2: {}
 
   wcwidth@1.0.1:
     dependencies:
