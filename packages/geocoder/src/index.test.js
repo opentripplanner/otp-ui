@@ -310,6 +310,31 @@ describe("geocoder", () => {
           });
           pelias.search({ text: "Mill Ends" });
         });
+        // Forward headers defined in config
+        it("should forward headers defined in config", () => {
+          const headerCheck = query => {
+            const { headers } = query.options;
+            expect(headers).not.toBeFalsy();
+            expect(headers["x-api-key"]).toEqual("key12345");
+            return Promise.resolve();
+          };
+          // create mock API to check query
+          const mockPeliasAPI = {
+            autocomplete: headerCheck,
+            search: headerCheck
+          };
+          const pelias = new PeliasGeocoder(mockPeliasAPI, {
+            ...geocoder,
+            options: {
+              headers: {
+                "x-api-key": "key12345"
+              }
+            }
+          });
+          const query = { options: { signal: {} }, text: "Mill Ends" };
+          pelias.autocomplete(query);
+          pelias.search(query);
+        });
       }
     });
   });

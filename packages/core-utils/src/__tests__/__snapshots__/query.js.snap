@@ -263,6 +263,10 @@ exports[`query parseLocationString should return location with coordinates as na
 
 exports[`query parseLocationString should return null for null input 1`] = `null`;
 
+exports[`query parseLocationString should return null with name as name with no coords (but with commas) for input 1`] = `null`;
+
+exports[`query parseLocationString should return null with name as name with no coords for input 1`] = `null`;
+
 exports[`query planParamsToQuery should parse a depart at query 1`] = `
 {
   "bannedRoutes": "897ABC",
