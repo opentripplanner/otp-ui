@@ -314,21 +314,21 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
   }, [allTrips, comparator]);
 
   return (
-    <Table tabIndex={0}>
-      <thead>
+    <Table className="timetable-table" tabIndex={0}>
+      <thead className="timetable-thead">
         <tr>
           {(showBlockId ? [{ id: "blockIdHeader", name: "Block ID" }] : [])
             .concat(filteredPatternStops)
             .map((s, index) => {
               return (
-                <TH key={index} scope="col">
+                <TH className="timetable-th" key={index} scope="col">
                   {s.name}
                 </TH>
               );
             })}
         </tr>
       </thead>
-      <TBody>
+      <TBody className="timetable-tbody">
         {timetableTrips.map((t, index) => {
           const rowValues: string[] = showBlockId ? [t.blockId] : [];
           filteredPatternStops.forEach(patternStop => {
@@ -348,9 +348,11 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
           });
 
           return (
-            <TR key={index}>
+            <TR className="timetable-tr" key={index}>
               {rowValues.map((r, rowIndex) => (
-                <TD key={rowIndex}>{r}</TD>
+                <TD className="timetable-td" key={rowIndex}>
+                  {r}
+                </TD>
               ))}
             </TR>
           );

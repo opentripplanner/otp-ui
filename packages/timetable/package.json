@@ -11,13 +11,13 @@
   "private": false,
   "peerDependencies": {
     "react": "catalog:",
+    "react-intl": "catalog:",
     "styled-components": "catalog:"
   },
   "scripts": {
     "tsc": "tsc"
   },
   "dependencies": {
-    "react-intl": "catalog:",
     "toposort": "^2.0.2"
   },
   "devDependencies": {
