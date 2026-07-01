@@ -612,9 +612,6 @@ importers:
       qs:
         specifier: ^6.9.1
         version: 6.14.0
-      wcag-contrast-utils:
-        specifier: 1.0.2
-        version: 1.0.2
     devDependencies:
       '@opentripplanner/types':
         specifier: workspace:^

@@ -2,7 +2,8 @@
 import type { ExpressionSpecification } from "maplibre-gl";
 import { FilterSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
-import adjustColorForContrast from "@opentripplanner/core-utils/src/contrast-colors";
+// import adjustColorForContrast from "@opentripplanner/core-utils/src/contrast-colors";
+import coreUtils from "@opentripplanner/core-utils";
 import React, { useEffect } from "react";
 import { Layer, MapRef, Source, useMap } from "react-map-gl/maplibre";
 import polyline from "@mapbox/polyline";
@@ -16,7 +17,7 @@ import {
 import colors from "@opentripplanner/building-blocks";
 
 import bbox from "@turf/bbox";
-
+const { adjustColorForContrast } = coreUtils.colors;
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
 import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
 import routeArrow from "./images/route_arrow.png";
