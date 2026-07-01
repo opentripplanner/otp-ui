@@ -1009,16 +1009,19 @@ importers:
       react:
         specifier: 'catalog:'
         version: 18.2.0
-      react-map-gl:
-        specifier: 'catalog:'
-        version: 8.0.4(maplibre-gl@5.6.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
     devDependencies:
       '@opentripplanner/types':
         specifier: workspace:^
         version: link:../types
-      '@types/node':
-        specifier: ^25.6.0
-        version: 25.6.0
+      '@types/mapbox__polyline':
+        specifier: ^1.0.5
+        version: 1.0.5
+      '@types/point-in-polygon':
+        specifier: ^1.1.5
+        version: 1.1.5
+      react-map-gl:
+        specifier: 'catalog:'
+        version: 8.0.4(maplibre-gl@5.6.1)(react-dom@18.3.1(react@18.2.0))(react@18.2.0)
 
   packages/scripts:
     dependencies:
@@ -4066,6 +4069,9 @@ packages:
   '@types/pbf@3.0.5':
     resolution: {integrity: sha512-j3pOPiEcWZ34R6a6mN07mUkM4o4Lwf6hPNt8eilOeZhTFbxFXmKhvXl9Y28jotFPaI1bpPDJsbCprUoNke6OrA==}
 
+  '@types/point-in-polygon@1.1.5':
+    resolution: {integrity: sha512-VYZQKsxOQCzemTWCvsdXbu6T+zbYHY5d/B34FFfcgGC3O8zDeTUcrhZOiW3+RIFVayUdewcSKF3trbvNCs3w0w==}
+
   '@types/prop-types@15.7.13':
     resolution: {integrity: sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==}
 
@@ -5261,6 +5267,7 @@ packages:
   conventional-changelog-core@5.0.1:
     resolution: {integrity: sha512-Rvi5pH+LvgsqGwZPZ3Cq/tz4ty7mjijhr3qR4m9IBXNbxGGYgTVVO+duXzz9aArmHxFtwZ+LRkrNIMDQzgoY4A==}
     engines: {node: '>=14'}
+    deprecated: Deprecated and no longer maintained. Please use conventional-changelog instead.
 
   conventional-changelog-preset-loader@3.0.0:
     resolution: {integrity: sha512-qy9XbdSLmVnwnvzEisjxdDiLA4OmV3o8db+Zdg4WiFw14fP3B6XNz98X0swPPpkTd/pc1K7+adKgEDM1JCUMiA==}
@@ -6455,7 +6462,7 @@ packages:
   git-raw-commits@3.0.0:
     resolution: {integrity: sha512-b5OHmZ3vAgGrDn/X0kS+9qCfNKWe4K/jFnhwzVWWg0/k5eLa3060tZShrRg8Dja5kPc+YjS0Gc6y7cRr44Lpjw==}
     engines: {node: '>=14'}
-    deprecated: This package is no longer maintained. For the JavaScript API, please use @conventional-changelog/git-client instead.
+    deprecated: Deprecated and no longer maintained. Use @conventional-changelog/git-client instead.
     hasBin: true
 
   git-remote-origin-url@2.0.0:
@@ -6465,7 +6472,7 @@ packages:
   git-semver-tags@5.0.1:
     resolution: {integrity: sha512-hIvOeZwRbQ+7YEUmCkHqo8FOLQZCEn18yevLHADlFPZY02KJGsu5FZt9YW/lybfK2uhWFI7Qg/07LekJiTv7iA==}
     engines: {node: '>=14'}
-    deprecated: This package is no longer maintained. For the JavaScript API, please use @conventional-changelog/git-client instead.
+    deprecated: Deprecated and no longer maintained. Use @conventional-changelog/git-client instead.
     hasBin: true
 
   git-up@6.0.0:
@@ -14296,6 +14303,8 @@ snapshots:
 
   '@types/pbf@3.0.5': {}
 
+  '@types/point-in-polygon@1.1.5': {}
+
   '@types/prop-types@15.7.13': {}
 
   '@types/react@18.3.12':
@@ -14749,7 +14758,7 @@ snapshots:
 
   agent-base@7.1.1:
     dependencies:
-      debug: 4.3.7(supports-color@5.5.0)
+      debug: 4.4.3
     transitivePeerDependencies:
       - supports-color
 
@@ -17795,7 +17804,7 @@ snapshots:
   istanbul-lib-source-maps@5.0.6:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.29
-      debug: 4.3.7(supports-color@5.5.0)
+      debug: 4.4.3
       istanbul-lib-coverage: 3.2.2
     transitivePeerDependencies:
       - supports-color
@@ -21779,11 +21788,11 @@ snapshots:
 
   wait-on@7.2.0:
     dependencies:
-      axios: 1.7.7
+      axios: 1.15.2
       joi: 17.13.3
-      lodash: 4.17.21
+      lodash: 4.18.1
       minimist: 1.2.8
-      rxjs: 7.8.1
+      rxjs: 7.8.2
     transitivePeerDependencies:
       - debug
 
