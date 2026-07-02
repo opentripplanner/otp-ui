@@ -130,9 +130,11 @@ export interface LocationFieldProps {
    */
   hideExistingValue?: boolean;
   /**
-   * Id for input so that custom label can be applied to location field
+   * Id for input so that a custom label can be applied to location field
+   * If this prop is provided, no aria-label will be applied to the field, 
+   * so you must provide a custom label in order for the input to have an accessible name
    */
-  idForInputLabel?: string;
+  inputIdForCustomLabel?: string;
   /**
    * Allows the component to be rendered with pre-filled results
    */
