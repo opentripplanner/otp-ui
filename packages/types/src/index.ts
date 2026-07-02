@@ -580,21 +580,22 @@ export type TransitivePlace = {
   placeId?: string;
   type: string;
 };
+export type TransitiveSegment = {
+  arc?: boolean;
+  from?: TransitivePlace;
+  patterns?: {
+    pattern_id: string;
+    from_stop_index: number;
+    to_stop_index: number;
+  }[];
+  streetEdges?: number[];
+  to?: TransitivePlace;
+  type: string;
+};
 export type TransitiveJourney = {
   journey_id: string;
   journey_name: string;
-  segments: {
-    arc?: boolean;
-    from: TransitivePlace;
-    patterns?: {
-      pattern_id: string;
-      from_stop_index: number;
-      to_stop_index: number;
-    }[];
-    streetEdges: number[];
-    to: TransitivePlace;
-    type: string;
-  }[];
+  segments: TransitiveSegment[];
 };
 export type TransitivePattern = {
   pattern_id: string;
@@ -616,7 +617,7 @@ export type TransitiveRoute = {
 };
 export type TransitiveStop = {
   stop_id: string;
-  stop_name: string;
+  stop_name?: string;
   stop_lat: number;
   stop_lon: number;
 };
