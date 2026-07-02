@@ -714,6 +714,7 @@ exports[`LocationField/Desktop Context WithCustomLabel smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
+          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
