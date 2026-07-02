@@ -298,7 +298,7 @@ const LocationField = ({
   ],
   getCurrentPosition,
   hideExistingValue = false,
-  inputIdForCustomLabel,
+  customLabelInputId,
   initialSearchResults = null,
   inputPlaceholder = null,
   isRequired = false,
@@ -1065,8 +1065,8 @@ const LocationField = ({
   /** the text input element * */
   // Use this text for aria-label below if no user-provided label.
   const defaultPlaceholder =
-    inputPlaceholder || (inputIdForCustomLabel ? undefined : locationType);
-  const ariaLabel = inputIdForCustomLabel ? undefined : defaultPlaceholder;
+    inputPlaceholder || (customLabelInputId ? undefined : locationType);
+  const ariaLabel = customLabelInputId ? undefined : defaultPlaceholder;
   const placeholder =
     currentPosition && currentPosition.fetching
       ? intl.formatMessage({ id: "otpUi.LocationField.fetchingLocation" })
@@ -1088,7 +1088,7 @@ const LocationField = ({
       aria-required={isRequired}
       autoFocus={autoFocus}
       className={formControlClassname}
-      id={inputIdForCustomLabel}
+      id={customLabelInputId}
       onChange={onTextInputChange}
       onClick={handleTextInputClick}
       onBlur={onFieldBlur}

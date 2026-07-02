@@ -289,7 +289,7 @@ export const WithCustomLabel = (): JSX.Element => (
       currentPosition={currentPosition}
       geocoderConfig={geocoderConfig}
       getCurrentPosition={getCurrentPosition}
-      inputIdForCustomLabel="location-field-1"
+      customLabelInputId="location-field-1"
       inputPlaceholder="Select from location"
       locationType="from"
       onLocationSelected={onLocationSelected}
