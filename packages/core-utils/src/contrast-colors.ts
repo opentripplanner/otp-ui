@@ -1,5 +1,4 @@
 import chroma from "chroma-js";
-import { contrastRatio } from "wcag-contrast-utils";
 
 const MAX_ITERATIONS = 100;
 
@@ -33,7 +32,7 @@ const adjustColorForContrast = (
     .toLowerCase();
 
   try {
-    if (contrastRatio(colorHex, bgHex) >= 3.5) return null;
+    if (chroma.contrast(colorHex, bgHex) >= 3.5) return null;
   } catch {
     // If the contrast check throws, continue adjusting
   }
