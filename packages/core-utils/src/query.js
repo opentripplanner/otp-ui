@@ -247,7 +247,7 @@ async function getFirstGeocodeResult(
     if (firstResult) {
       return geocoder.getLocationFromGeocodedFeature(firstResult);
     }
-    return null;
+    return { name: `(Geocoder failure) ${text}` };
   });
 }
 
@@ -265,7 +265,7 @@ export function parseLocationString(value) {
     ? stringToCoords(parts[1])
     : stringToCoords(parts[0]);
   const name = parts[1] ? parts[0] : coordsToString(coordinates);
-  return coordinates.length === 2
+  return coordinates.length === 2 && coordinates.every(c => !!c)
     ? {
         name: name || null,
         lat: coordinates[0] || null,

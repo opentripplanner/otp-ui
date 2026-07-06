@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/types",
-  "version": "8.4.0",
+  "version": "8.5.0",
   "description": "TypeScript types used across multiple OTP-UI packages",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -31,5 +31,8 @@
   "private": false,
   "scripts": {
     "tsc": "tsc"
+  },
+  "dependencies": {
+    "@types/geojson": "^7946.0.16"
   }
 }

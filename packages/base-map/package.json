@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/base-map",
-  "version": "7.0.1",
+  "version": "7.1.0",
   "description": "Base Map Component",
   "author": "@binh-dam-ibigroup",
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
@@ -9,13 +9,13 @@
   "module": "esm/index.js",
   "private": false,
   "dependencies": {
+    "@opentripplanner/building-blocks": "workspace:^",
     "maplibre-gl": "catalog:",
-    "react-map-gl": "catalog:",
-    "@opentripplanner/building-blocks": "workspace:^"
+    "react-map-gl": "catalog:"
   },
   "peerDependencies": {
-    "react": "catalog:",
     "@opentripplanner/types": "workspace:^",
+    "react": "catalog:",
     "styled-components": "catalog:"
   },
   "repository": {

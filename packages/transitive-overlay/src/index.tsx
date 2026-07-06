@@ -17,6 +17,12 @@ import colors from "@opentripplanner/building-blocks";
 
 import bbox from "@turf/bbox";
 
+import {
+  FeatureCollection,
+  GeoJsonProperties,
+  Geometry,
+  LineString
+} from "geojson";
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
 import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
 import routeArrow from "./images/route_arrow.png";
@@ -38,7 +44,7 @@ import capsule16 from "./images/16.png";
 import capsule17 from "./images/17.png";
 import rectangle from "./images/square.png";
 
-const CAPSULES = {
+const CAPSULES: Record<number, string> = {
   3: capsule3,
   4: capsule4,
   5: capsule5,
@@ -57,7 +63,7 @@ const CAPSULES = {
 };
 
 // These are based on the sprites in the image folder
-const WIDTH_IMAGE_SIZES = {
+const WIDTH_IMAGE_SIZES: Record<number, number> = {
   6: 1283,
   7: 1450,
   8: 1617,
@@ -82,7 +88,7 @@ const { blue, grey, red } = colors;
 const MICROMOBILITY_ORANGE = "#f5a729";
 
 // TODO: BETTER COLORS
-const modeColorMap = {
+const modeColorMap: Record<string, string> = {
   CAR: grey[500],
   BICYCLE: red[600],
   SCOOTER: MICROMOBILITY_ORANGE,
@@ -227,7 +233,7 @@ const TransitiveCanvasOverlay = ({
 
   function generateCapsulePadding(
     width: number
-  ): [number, number, number, number] {
+  ): [number, number, number, number] | undefined {
     // Low widths have no padding
     if (!WIDTH_IMAGE_SIZES[width]) {
       return undefined;
@@ -294,12 +300,12 @@ const TransitiveCanvasOverlay = ({
   });
 
   useEffect(() => {
-    loadImages(map, mapImages);
+    map && loadImages(map, mapImages);
   }, []);
 
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
-    Record<string, unknown>
+    GeoJsonProperties
   > = {
     type: "FeatureCollection",
     features: transitiveData
@@ -321,22 +327,27 @@ const TransitiveCanvasOverlay = ({
           ...(transitiveData.journeys || []).flatMap(
             (journey: TransitiveJourney) =>
               journey.segments
-                .filter(segment => segment.streetEdges?.length > 0)
+                .filter(
+                  segment =>
+                    segment.streetEdges?.length &&
+                    segment.streetEdges?.length > 0
+                )
                 .map(segment => ({
                   ...segment,
-                  geometries: segment.streetEdges.map(edge => {
-                    return transitiveData.streetEdges.find(
-                      entry => entry.edge_id === edge
+                  geometries: segment.streetEdges?.flatMap(edge => {
+                    const entry = transitiveData.streetEdges.find(
+                      e => e.edge_id === edge
                     );
+                    return entry ? [entry] : [];
                   })
                 }))
-                .flatMap(segment => {
-                  return segment.geometries.map(geometry => {
+                .flatMap(segment =>
+                  (segment.geometries ?? []).map(geometry => {
                     const straight = polyline.toGeoJSON(
                       geometry.geometry.points
                     );
                     return {
-                      type: "Feature",
+                      type: "Feature" as const,
                       properties: {
                         type: "street-edge",
                         color:
@@ -346,9 +357,9 @@ const TransitiveCanvasOverlay = ({
                         mode: segment.type
                       },
                       geometry: segment.arc ? drawArc(straight) : straight
-                    } as GeoJSON.Feature;
-                  });
-                })
+                    };
+                  })
+                )
           ),
           // Extract the first and last stops of each transit segment for display.
           ...(transitiveData.journeys || [])
@@ -356,7 +367,7 @@ const TransitiveCanvasOverlay = ({
             .filter(segment => segment.type === "TRANSIT")
             .map(segment =>
               transitiveData.patterns.find(
-                p => p.pattern_id === segment.patterns[0]?.pattern_id
+                p => p.pattern_id === segment.patterns?.[0]?.pattern_id
               )
             )
             .filter(pattern => !!pattern)
@@ -374,10 +385,10 @@ const TransitiveCanvasOverlay = ({
               stop =>
                 ({
                   type: "Feature",
-                  properties: { name: stop.stop_name, type: "stop" },
+                  properties: { name: stop?.stop_name, type: "stop" },
                   geometry: {
                     type: "Point",
-                    coordinates: [stop.stop_lon, stop.stop_lat]
+                    coordinates: [stop?.stop_lon, stop?.stop_lat]
                   }
                 } as GeoJSON.Feature)
             ),
@@ -392,7 +403,9 @@ const TransitiveCanvasOverlay = ({
       : []
   };
 
-  const zoomToGeoJSON = geoJson => {
+  const zoomToGeoJSON = (
+    geoJson: FeatureCollection<Geometry, GeoJsonProperties> | LineString
+  ) => {
     if (!boundsFitting) return;
     const b = bbox(geoJson);
     const bounds: [number, number, number, number] = [b[0], b[1], b[2], b[3]];

@@ -23,7 +23,7 @@ const MAP_CONTROL_TRANSLATION_KEYS = [
 const generateMapControlTranslations = (
   intl: IntlShape
 ): Record<string, string> => {
-  const languageObject = {};
+  const languageObject: Record<string, string> = {};
 
   MAP_CONTROL_TRANSLATION_KEYS.forEach(x => {
     languageObject[x] = intl.formatMessage({
