@@ -64,4 +64,5 @@ const adjustColorForContrast = (
   );
 };
 
+export { adjustColorForContrast };
 export default adjustColorForContrast;

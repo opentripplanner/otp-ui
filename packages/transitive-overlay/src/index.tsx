@@ -2,7 +2,7 @@
 import type { ExpressionSpecification } from "maplibre-gl";
 import { FilterSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
-import adjustColorForContrast from "@opentripplanner/core-utils/src/contrast-colors";
+import coreUtils from "@opentripplanner/core-utils";
 import React, { useEffect } from "react";
 import { Layer, MapRef, Source, useMap } from "react-map-gl/maplibre";
 import polyline from "@mapbox/polyline";
@@ -395,7 +395,7 @@ const TransitiveCanvasOverlay = ({
           ...(transitiveData.patterns || []).flatMap((pattern: TransitivePattern) => {
             const feature = patternToRouteFeature(pattern, transitiveData.routes);
             const routeColor = feature.properties.color as string;
-            const contrastColor = adjustColorForContrast(routeColor, map?.getStyle()?.name?.toLowerCase()?.includes("dark"));
+            const contrastColor = coreUtils.colors.adjustColorForContrast(routeColor, map?.getStyle()?.name?.toLowerCase()?.includes("dark"));
             if (!contrastColor) return feature;
             return { ...feature, properties: { ...feature.properties, contrastColor } };
           })
