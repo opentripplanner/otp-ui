@@ -4,12 +4,16 @@ import { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 import { Layer, Source } from "react-map-gl/maplibre";
 
+import coreUtils from "@opentripplanner/core-utils";
+
 import { withMap } from "../../../.storybook/base-map-wrapper";
 import {
   OUTLINE_WIDTH_MULTIPLIER,
   ROUTE_LINE_WIDTH_BY_ZOOM,
   SELECTED_OUTLINE_WIDTH_MULTIPLIER
 } from ".";
+
+const { adjustColorForContrast } = coreUtils.colors;
 
 // Centered on Portland to match other overlay stories
 const CENTER: [number, number] = [45.519, -122.681];
@@ -61,8 +65,8 @@ const RouteLineWidthsDemo = ({
         type: "Feature",
         properties: {
           kind: "bus",
-          color: "#CC0000",
-          contrastColor: "#000000"
+          color: "#FF7777",
+          contrastColor: adjustColorForContrast("#FF7777") ?? "#FF7777"
         },
         geometry: {
           type: "LineString",
@@ -76,8 +80,8 @@ const RouteLineWidthsDemo = ({
         type: "Feature",
         properties: {
           kind: "rail",
-          color: "#0033CC",
-          contrastColor: "#000000"
+          color: "#5588FF",
+          contrastColor: adjustColorForContrast("#5588FF") ?? "#5588FF"
         },
         geometry: {
           type: "LineString",
@@ -91,8 +95,8 @@ const RouteLineWidthsDemo = ({
         type: "Feature",
         properties: {
           kind: "focused",
-          color: "#008800",
-          contrastColor: "#4B0082"
+          color: "#55BB55",
+          contrastColor: adjustColorForContrast("#55BB55") ?? "#55BB55"
         },
         geometry: {
           type: "LineString",
@@ -199,7 +203,7 @@ Demonstrates the exported line-width constants used by \`TransitiveCanvasOverlay
 The three lines rendered here correspond to:
 1. **Red** — bus route (routeType 3, base width 6 px)
 2. **Blue** — rail route (routeType 1, base width 10 px)
-3. **Green** — focused/selected route (zoom-interpolated via \`ROUTE_LINE_WIDTH_BY_ZOOM\`, purple outline via \`FOCUSED_ROUTE_OUTLINE_WIDTH\`)
+3. **Green** — focused/selected route (zoom-interpolated via \`ROUTE_LINE_WIDTH_BY_ZOOM\`, contrast outline computed via \`adjustColorForContrast\`)
 
 Use the controls panel to adjust each multiplier and observe the contrast outline thickness change.
         `

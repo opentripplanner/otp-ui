@@ -44,6 +44,8 @@ import capsule16 from "./images/16.png";
 import capsule17 from "./images/17.png";
 import rectangle from "./images/square.png";
 
+const { adjustColorForContrast } = coreUtils.colors;
+
 const CAPSULES: Record<number, string> = {
   3: capsule3,
   4: capsule4,
@@ -395,7 +397,7 @@ const TransitiveCanvasOverlay = ({
           ...(transitiveData.patterns || []).flatMap((pattern: TransitivePattern) => {
             const feature = patternToRouteFeature(pattern, transitiveData.routes);
             const routeColor = feature.properties.color as string;
-            const contrastColor = coreUtils.colors.adjustColorForContrast(routeColor, map?.getStyle()?.name?.toLowerCase()?.includes("dark"));
+            const contrastColor = adjustColorForContrast(routeColor, map?.getStyle()?.name?.toLowerCase()?.includes("dark"));
             if (!contrastColor) return feature;
             return { ...feature, properties: { ...feature.properties, contrastColor } };
           })
