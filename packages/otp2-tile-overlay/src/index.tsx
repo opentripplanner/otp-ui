@@ -95,9 +95,10 @@ const OTP2TileLayerWithPopup = ({
   const [clickedEntity, setClickedEntity] = useState<any>(null);
 
   const defaultClickHandler = (event: MapLayerMouseEvent) => {
-    const sourceLayer = event.features?.[0].sourceLayer;
+    const sourceLayer = event.features?.[0]?.sourceLayer;
+    const properties = event.features?.[0]?.properties;
     const synthesizedEntity: Record<string, any> = {
-      ...event.features?.[0].properties,
+      ...properties,
       lat: event.lngLat.lat,
       lon: event.lngLat.lng,
       sourceLayer
