@@ -1,6 +1,12 @@
 // eslint-disable-next-line prettier/prettier
 import type { Location } from "@opentripplanner/types";
 
+export type FromToLocation = {
+    locationType: string,
+    location: Location,
+    reverseGeocode?: boolean
+  }
+
 export type FromToPickerProps = {
   /**
    * Specifies the label to be rendered, or if set to true, renders the default label "Plan a trip:".
@@ -26,12 +32,7 @@ export type FromToPickerProps = {
    * Passes an argument as follows:
    * { locationType: "from/to", location, reverseGeocode: false }
    */
-  setLocation?: (_: {
-    locationType: string,
-    // eslint-disable-next-line @typescript-eslint/no-shadow
-    location: Location,
-    reverseGeocode: boolean
-  }) => void;
+  setLocation?: (location: FromToLocation) => void;
   /**
    * Determines whether icons are shown on the "from" and "to" buttons.
    */
