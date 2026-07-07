@@ -917,6 +917,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:^
         version: link:../types
+      '@types/flat':
+        specifier: 'catalog:'
+        version: 5.0.5
 
   packages/otp2-tile-overlay:
     dependencies:
