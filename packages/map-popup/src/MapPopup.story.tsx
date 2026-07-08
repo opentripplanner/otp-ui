@@ -132,6 +132,16 @@ export const StopEntity = (): JSX.Element => (
   />
 );
 
+export const StopEntityHideViewStopButton = (): JSX.Element => (
+  <MapPopupContents
+    entity={STOP_WITH_CODE}
+    feeds={SAMPLE_FEEDS}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+    showViewStopButton={false}
+  />
+);
+
 export const StopEntityWithFeedName = (): JSX.Element => (
   <MapPopupContents
     entity={STOP_WITH_FEED_ID}

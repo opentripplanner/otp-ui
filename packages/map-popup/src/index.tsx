@@ -75,7 +75,7 @@ const StationHubDetails = ({ availableVehicles, availableSpaces }: { availableVe
   )
 }
 
-const StopDetails = ({ id, feedName, setViewedStop }: { id: string, feedName?: string, setViewedStop: () => void; }) => {
+const StopDetails = ({ id, feedName, setViewedStop, showViewStopButton = true }: { id: string, feedName?: string, setViewedStop?: () => void, showViewStopButton?: boolean; }) => {
   return (
     <Styled.PopupRow>
       {id &&
@@ -90,13 +90,13 @@ const StopDetails = ({ id, feedName, setViewedStop }: { id: string, feedName?: s
             }}
           />
         </strong>}
-      <ViewStopButton onClick={setViewedStop} stopId={id}> 
+      {showViewStopButton && <ViewStopButton onClick={setViewedStop} stopId={id}> 
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.MapPopup.stopViewer"]}
           description="Text for link that opens the stop viewer"
           id="otpUi.MapPopup.stopViewer"
         />
-      </ViewStopButton>
+      </ViewStopButton>}
     </Styled.PopupRow>
   )
 }
@@ -112,6 +112,7 @@ type Props = {
   feeds?: Feed[]
   setLocation?: ({ location, locationType }: { location: Location, locationType: string }) => void;
   setViewedStop?: StopEventHandler;
+  showViewStopButton?: boolean;
 };
 
 const entityIsStop = (entity: MapPopupEntity): entity is Stop => "gtfsId" in entity;
@@ -127,6 +128,7 @@ export function MapPopup({
   getEntityPrefix, 
   setLocation, 
   setViewedStop, 
+  showViewStopButton,
   feeds,
 }: Props): JSX.Element {
 
@@ -174,6 +176,7 @@ export function MapPopup({
           id={stopId}
           feedName={feedName}
           setViewedStop={useCallback(() => setViewedStop(entity as Stop), [entity])}
+          showViewStopButton={showViewStopButton}
         />
       )}
 
