@@ -7,10 +7,10 @@ import { defaultMessages } from "../util";
 
 /**
  * Helper method to generate bounding box from a location. Adding the WINDOW to the coordinate
- * creates a bounding box of approximately 1 meter around the coordinate, which is likely to
+ * creates a bounding box of approximately 2 meters around the coordinate, which is likely to
  * encompass any imagery available.
  * @param coord     The coordinate to convert to a bounding box
- * @returns         A bounding box 1 meter around the passed coordinate
+ * @returns         A bounding box 2 meters around the passed coordinate
  */
 const generateBoundingBoxFromCoordinate = ({
   lat,
@@ -19,7 +19,7 @@ const generateBoundingBoxFromCoordinate = ({
   lat: number;
   lon: number;
 }) => {
-  const WINDOW = 0.000075;
+  const WINDOW = 0.00011;
   const south = lat - WINDOW;
   const north = lat + WINDOW;
   const west = lon - WINDOW;
