@@ -7,6 +7,7 @@ query Plan(
   $fromPlace: String!
   $modes: [TransportMode]
   $numItineraries: Int
+  $omitCanceled: Boolean
   $time: String
   $toPlace: String!
   $unpreferred: InputUnpreferred
@@ -24,6 +25,7 @@ query Plan(
     # Currently only supporting EN locale, used for times and text
     locale: "en"
     numItineraries: $numItineraries
+    omitCanceled: $omitCanceled
     time: $time
     toPlace: $toPlace
     transportModes: $modes
