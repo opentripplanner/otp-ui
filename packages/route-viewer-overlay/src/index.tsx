@@ -252,7 +252,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
       // and/or the map skips/aborts fitting for any reason, try fitting bounds again after a short delay.
       const fitBounds = () => util.fitMapBounds(current, narrowedBounds);
       fitBounds();
-      timeout = setTimeout(fitBounds, 250);
+      timeout = window.setTimeout(fitBounds, 250);
       if (props.mapCenterCallback) {
         props.mapCenterCallback();
       }
