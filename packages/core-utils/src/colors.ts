@@ -26,8 +26,12 @@ const adjustColorForContrast = (
   const backgroundColor = isDark ? DARK_BACKGROUND : LIGHT_BACKGROUND;
   if (!chroma.valid(hexColor) || !chroma.valid(backgroundColor)) return null;
 
-  const colorHex = chroma(hexColor).hex().toLowerCase();
-  const bgHex = chroma(backgroundColor).hex().toLowerCase();
+  const colorHex = chroma(hexColor)
+    .hex()
+    .toLowerCase();
+  const bgHex = chroma(backgroundColor)
+    .hex()
+    .toLowerCase();
 
   try {
     if (chroma.contrast(colorHex, bgHex) >= CONTRAST_TARGET) return null;
@@ -46,7 +50,10 @@ const adjustColorForContrast = (
     return isLightBackground ? DARK_BACKGROUND : LIGHT_BACKGROUND;
   }
 
-  return chroma(colorHex).luminance(targetLuminance).hex().toLowerCase();
+  return chroma(colorHex)
+    .luminance(targetLuminance)
+    .hex()
+    .toLowerCase();
 };
 
 export { adjustColorForContrast };
