@@ -75,7 +75,7 @@ const StationHubDetails = ({ availableVehicles, availableSpaces }: { availableVe
   )
 }
 
-const StopDetails = ({ id, feedName, setViewedStop }: { id: string, feedName?: string, setViewedStop: () => void; }) => {
+const StopDetails = ({ id, feedName, setViewedStop }: { id?: string, feedName?: string, setViewedStop?: () => void; }) => {
   return (
     <Styled.PopupRow>
       {id &&
@@ -90,13 +90,13 @@ const StopDetails = ({ id, feedName, setViewedStop }: { id: string, feedName?: s
             }}
           />
         </strong>}
-      <ViewStopButton onClick={setViewedStop} stopId={id}> 
+      {setViewedStop && <ViewStopButton onClick={setViewedStop} stopId={id}> 
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.MapPopup.stopViewer"]}
           description="Text for link that opens the stop viewer"
           id="otpUi.MapPopup.stopViewer"
         />
-      </ViewStopButton>
+      </ViewStopButton>}
     </Styled.PopupRow>
   )
 }
@@ -168,12 +168,12 @@ export function MapPopup({
       {/* render dock info if it is available */}
       {entityIsStationHub && <StationHubDetails availableSpaces={entity.availableSpaces?.total} availableVehicles={entity.availableVehicles?.total} />}
 
-      {/* render stop viewer link if available */}
-      {setViewedStop && entityIsStop(entity) && (
+      {/* Show stop details if any are available */}
+      {entityIsStop(entity) && (!!stopId || !!setViewedStop) && (
         <StopDetails
           id={stopId}
           feedName={feedName}
-          setViewedStop={useCallback(() => setViewedStop(entity as Stop), [entity])}
+          setViewedStop={setViewedStop && useCallback(() => setViewedStop(entity as Stop), [entity])}
         />
       )}
 

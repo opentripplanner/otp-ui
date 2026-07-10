@@ -162,6 +162,15 @@ export const StopEntityNoStopCode = (): JSX.Element => (
   />
 );
 
+export const StopEntityNoViewedStopHandler = (): JSX.Element => (
+  <MapPopupContents
+    entity={STOP_WITH_CODE}
+    feeds={SAMPLE_FEEDS}
+    setLocation={action("setLocation")}
+    setViewedStop={undefined}
+  />
+);
+
 export const StationEntity = (): JSX.Element => (
   <MapPopupContents
     entity={VEHICLE_RENTAL_STATION}
