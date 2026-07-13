@@ -76,6 +76,7 @@ otpUi:
       escooter: Trottinette
       vehicle: Véhicule
   ItineraryBody:
+    canceled: Annulé
     common:
       durationShort: >-
         {approximatePrefix, select, true {Environ } other {}}{hours, plural, =0
