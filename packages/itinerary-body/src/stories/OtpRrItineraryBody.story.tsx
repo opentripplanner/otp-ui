@@ -131,6 +131,15 @@ export const WalkTransitWalkItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItinerary} />
 );
 
+const walkTransitWalkItineraryCanceled = { ...walkTransitWalkItinerary };
+walkTransitWalkItineraryCanceled.legs.forEach(leg => {
+  if (leg.transitLeg) leg.realtimeState = "CANCELED";
+});
+
+export const WalkTransitWalkItineraryCanceled = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItineraryCanceled} />
+);
+
 export const WalkTransitWalkItineraryMetric = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItinerary} metric />
 );

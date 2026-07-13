@@ -63,6 +63,18 @@ export const WalkTransitWalkItinerary = (): ReactElement => (
   />
 );
 
+const walkTransitWalkItineraryCanceled = { ...walkTransitWalkItinerary };
+walkTransitWalkItineraryCanceled.legs.forEach(leg => {
+  if (leg.transitLeg) leg.realtimeState = "CANCELED";
+});
+
+export const WalkTransitWalkItineraryCanceled = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItineraryCanceled}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
+);
+
 export const WalkTransitTransferWithA11yItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkTransitWalkA11yItinerary}
