@@ -14,7 +14,7 @@ import { PlaceNameProps, PlaceRowProps } from "../types";
 import { defaultMessages } from "../util";
 
 const CanceledTripMessage = styled.span`
-  color: red;
+  color: rgb(183, 38, 32);
 `;
 
 function getLegPlaceName(
