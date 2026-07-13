@@ -38,11 +38,7 @@ const adjustColorForContrast = (
     .hex()
     .toLowerCase();
 
-  try {
-    if (chroma.contrast(colorHex, bgHex) >= contrastTarget) return null;
-  } catch {
-    // If the contrast check throws, continue adjusting
-  }
+  if (chroma.contrast(colorHex, bgHex) >= contrastTarget) return null;
 
   const bgLuminance = chroma(bgHex).luminance();
   const isLightBackground = bgLuminance > 0.5;
