@@ -69,6 +69,7 @@ otpUi:
       escooter: E-scooter
       vehicle: Vehicle
   ItineraryBody:
+    canceled: Canceled
     common:
       durationShort: >-
         {approximatePrefix, select, true {About } other {}}{hours, plural, =0 {}

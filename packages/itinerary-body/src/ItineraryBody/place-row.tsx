@@ -3,6 +3,7 @@ import { Config, Leg } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 
+import styled from "styled-components";
 import DefaultTimeColumnContent from "../defaults/time-column-content";
 import AccessLegBody from "../AccessLegBody";
 import * as S from "../styled";
@@ -11,6 +12,10 @@ import TransitLegBody from "../TransitLegBody";
 import AccessibilityRating from "./accessibility-rating";
 import { PlaceNameProps, PlaceRowProps } from "../types";
 import { defaultMessages } from "../util";
+
+const CanceledTripMessage = styled.span`
+  color: red;
+`;
 
 function getLegPlaceName(
   leg: Leg,
@@ -45,6 +50,7 @@ export default function PlaceRow({
   AlertBodyIcon,
   AlertToggleIcon,
   alwaysCollapseAlerts,
+  canceled,
   config,
   defaultFareSelector,
   diagramVisible,
@@ -111,6 +117,11 @@ export default function PlaceRow({
     description: "Text describing the view-on-map button",
     id: "otpUi.ItineraryBody.viewOnMap"
   });
+  const canceledMessage = intl.formatMessage({
+    defaultMessage: defaultMessages["otpUi.ItineraryBody.canceled"],
+    description: "Text indicating a canceled trip",
+    id: "otpUi.ItineraryBody.canceled"
+  });
 
   return (
     <S.PlaceRowWrapper
@@ -131,11 +142,18 @@ export default function PlaceRow({
         />
       </S.LineColumn>
       <S.PlaceHeader>
-        <S.PlaceName aria-hidden className="place-row-place-name">
+        <S.PlaceName
+          aria-hidden
+          className="place-row-place-name"
+          strikethrough={canceled}
+        >
           {placeName}
         </S.PlaceName>
+        {canceled && (
+          <CanceledTripMessage>{canceledMessage}</CanceledTripMessage>
+        )}
       </S.PlaceHeader>
-      <S.TimeColumn>
+      <S.TimeColumn strikethrough={canceled}>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
         <TimeColumnContent isDestination={isDestination} leg={leg} />
         {!isDestination &&

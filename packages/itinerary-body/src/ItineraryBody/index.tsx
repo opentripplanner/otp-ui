@@ -70,6 +70,7 @@ const ItineraryBody = ({
           alwaysCollapseAlerts={alwaysCollapseAlerts}
           // eslint-disable-next-line react/no-array-index-key
           key={i + (isDestination ? 1 : 0)}
+          canceled={leg.realtimeState === "CANCELED"}
           config={config}
           defaultFareSelector={defaultFareSelector}
           diagramVisible={diagramVisible}
