@@ -11,6 +11,7 @@ export const DARK_BACKGROUND = "#1a364e";
  * - null if the color already meets contrast against the given background
  * - adjusted hex if modification was needed
  * - fallback color if the required luminance is out of the achievable range
+ * - throws if hexColor is not a valid color
  *
  * WCAG contrast formula: contrast = (L_lighter + 0.05) / (L_darker + 0.05)
  * Solving for the color's required luminance:
@@ -29,7 +30,7 @@ const adjustColorForContrast = (
   const contrastTarget = 3.5;
   const backgroundColor = isDark ? DARK_BACKGROUND : LIGHT_BACKGROUND;
   const fallbackColor = isDark ? LIGHT_BACKGROUND : DARK_BACKGROUND;
-  if (!chroma.valid(hexColor) || !chroma.valid(backgroundColor)) return null;
+  if (!chroma.valid(hexColor)) throw new Error(`Invalid color: "${hexColor}"`);
 
   const colorHex = chroma(hexColor)
     .hex()
