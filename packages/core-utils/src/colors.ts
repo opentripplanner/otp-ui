@@ -28,30 +28,21 @@ const adjustColorForContrast = (
   isDark = false
 ): string | null => {
   const contrastTarget = 3.5;
-  const backgroundColor = isDark ? DARK_BACKGROUND : LIGHT_BACKGROUND;
-  const fallbackColor = isDark ? LIGHT_BACKGROUND : DARK_BACKGROUND;
+  const bgColor = isDark ? DARK_BACKGROUND : LIGHT_BACKGROUND;
+
   if (!chroma.valid(hexColor)) throw new Error(`Invalid color: "${hexColor}"`);
+  // Color already meets contrast; no adjustment needed
+  if (chroma.contrast(hexColor, bgColor) >= contrastTarget) return null;
 
-  const colorHex = chroma(hexColor)
-    .hex()
-    .toLowerCase();
-  const bgHex = chroma(backgroundColor)
-    .hex()
-    .toLowerCase();
-
-  if (chroma.contrast(colorHex, bgHex) >= contrastTarget) return null;
-
-  const bgLuminance = chroma(bgHex).luminance();
-  const isLightBackground = bgLuminance > 0.5;
-
-  const factor = isLightBackground ? 1 / contrastTarget : contrastTarget;
+  const bgLuminance = chroma(bgColor).luminance();
+  const factor = bgLuminance > 0.5 ? 1 / contrastTarget : contrastTarget;
   const targetLuminance = (bgLuminance + 0.05) * factor - 0.05;
 
   if (targetLuminance < 0 || targetLuminance > 1) {
-    return fallbackColor;
+    return isDark ? LIGHT_BACKGROUND : DARK_BACKGROUND;
   }
 
-  return chroma(colorHex)
+  return chroma(hexColor)
     .luminance(targetLuminance)
     .hex()
     .toLowerCase();
