@@ -3,6 +3,9 @@
 exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="CAR"
@@ -527,6 +530,9 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -818,6 +824,9 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -1142,6 +1151,9 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -1477,6 +1489,9 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -1540,6 +1555,9 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui BikeOnlyItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BICYCLE"
@@ -1824,6 +1842,9 @@ exports[`ItineraryBody/otp-ui BikeOnlyItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -1887,6 +1908,9 @@ exports[`ItineraryBody/otp-ui BikeOnlyItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -2102,6 +2126,9 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   rented-bike">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BICYCLE"
@@ -2453,6 +2480,9 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -2706,6 +2736,9 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -2769,6 +2802,9 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -3022,6 +3058,9 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   rented-bike">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BICYCLE"
@@ -3487,6 +3526,9 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -3740,6 +3782,9 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -4096,6 +4141,9 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -4317,6 +4365,9 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   rented-bike">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BICYCLE"
@@ -4668,6 +4719,9 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -4883,6 +4937,9 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -4946,6 +5003,9 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -5123,6 +5183,9 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BICYCLE"
@@ -5416,6 +5479,9 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -5593,6 +5659,9 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -5861,6 +5930,9 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -6044,6 +6116,9 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BICYCLE"
@@ -6299,6 +6374,9 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -6362,6 +6440,9 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -6577,6 +6658,9 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -6599,18 +6683,15 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-48 fzhJOq">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-49 gXJapX place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-49 cayiSv place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-68 dcFAfM">
           ID 8383
         </span>
       </span>
-      <span class="place-row__CanceledTripMessage-sc-46esc9-0 cFTyoD">
-        Canceled
-      </span>
     </div>
-    <div class="styled__TimeColumn-sc-1q8npbl-43 loIsfK">
+    <div class="styled__TimeColumn-sc-1q8npbl-43 ieqiVK">
       3:46 PM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
@@ -6918,6 +6999,9 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -7215,6 +7299,9 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -7278,6 +7365,9 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -7493,6 +7583,9 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="MICROMOBILITY"
@@ -7711,6 +7804,9 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -7774,6 +7870,9 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -8094,6 +8193,9 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="MICROMOBILITY"
@@ -8569,6 +8671,9 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -8652,6 +8757,9 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -8865,6 +8973,9 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -9153,6 +9264,9 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="MICROMOBILITY"
@@ -9514,6 +9628,9 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -9577,6 +9694,9 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="CAR"
@@ -9691,6 +9811,9 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -9982,6 +10105,9 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -10306,6 +10432,9 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -10641,6 +10770,9 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -10704,6 +10836,9 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -11319,6 +11454,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -11493,6 +11631,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -11670,6 +11811,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -11832,6 +11976,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -12009,6 +12156,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -12187,6 +12337,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -12364,6 +12517,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -12573,6 +12729,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -12884,6 +13043,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -12947,6 +13109,9 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -13258,6 +13423,9 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -13495,6 +13663,9 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -13716,6 +13887,9 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -13921,6 +14095,9 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -14142,6 +14319,9 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -14253,6 +14433,9 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -14322,6 +14505,9 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -14575,6 +14761,9 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   rented-bike">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="SCOOTER"
@@ -15080,6 +15269,9 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   rented-bike">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -15143,6 +15335,9 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="CAR"
@@ -15667,6 +15862,9 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -15958,6 +16156,9 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -16282,6 +16483,9 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -16617,6 +16821,9 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -16680,6 +16887,9 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf demos__StyledItineraryBody-sc-1ckuiy0-0 fTPffU">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -16895,6 +17105,9 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -16917,18 +17130,15 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-48 fzhJOq">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-49 gXJapX place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-49 cayiSv place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-68 dcFAfM">
           ID 8383
         </span>
       </span>
-      <span class="place-row__CanceledTripMessage-sc-46esc9-0 cFTyoD">
-        Canceled
-      </span>
     </div>
-    <div class="styled__TimeColumn-sc-1q8npbl-43 loIsfK">
+    <div class="styled__TimeColumn-sc-1q8npbl-43 ieqiVK">
       3:46 PM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
@@ -17236,6 +17446,9 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -17533,6 +17746,9 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -17596,6 +17812,9 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -17811,6 +18030,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -17833,18 +18055,15 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-48 fzhJOq">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-49 gXJapX place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-49 cayiSv place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-68 dcFAfM">
           ID 8383
         </span>
       </span>
-      <span class="place-row__CanceledTripMessage-sc-46esc9-0 cFTyoD">
-        Canceled
-      </span>
     </div>
-    <div class="styled__TimeColumn-sc-1q8npbl-43 loIsfK">
+    <div class="styled__TimeColumn-sc-1q8npbl-43 ieqiVK">
       3:46 PM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
@@ -18152,6 +18371,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -18449,6 +18671,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -18512,6 +18737,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -18727,6 +18955,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -18749,18 +18980,15 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-48 fzhJOq">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-49 gXJapX place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-49 cayiSv place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-68 dcFAfM">
           ID 8383
         </span>
       </span>
-      <span class="place-row__CanceledTripMessage-sc-46esc9-0 cFTyoD">
-        Canceled
-      </span>
     </div>
-    <div class="styled__TimeColumn-sc-1q8npbl-43 loIsfK">
+    <div class="styled__TimeColumn-sc-1q8npbl-43 ieqiVK">
       3:46 PM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
@@ -19068,6 +19296,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -19365,6 +19596,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -19428,6 +19662,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -19643,6 +19880,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -19665,18 +19905,15 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-48 fzhJOq">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-49 gXJapX place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-49 cayiSv place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-68 dcFAfM">
           ID 8383
         </span>
       </span>
-      <span class="place-row__CanceledTripMessage-sc-46esc9-0 cFTyoD">
-        Canceled
-      </span>
     </div>
-    <div class="styled__TimeColumn-sc-1q8npbl-43 loIsfK">
+    <div class="styled__TimeColumn-sc-1q8npbl-43 ieqiVK">
       3:46 PM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
@@ -19984,6 +20221,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -20281,6 +20521,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -20344,6 +20587,9 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
 exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="CAR"
@@ -20451,6 +20697,9 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -20531,6 +20780,9 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -20683,6 +20935,9 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -20763,6 +21018,9 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="CAR"
@@ -20879,6 +21137,9 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -20942,6 +21203,9 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -21443,6 +21707,9 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -21614,6 +21881,9 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -21700,6 +21970,9 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -22047,6 +22320,9 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -22554,6 +22830,9 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -22617,6 +22896,9 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="CAR"
@@ -23141,6 +23423,9 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -23432,6 +23717,9 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -23756,6 +24044,9 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -24091,6 +24382,9 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -24154,6 +24448,9 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="CAR"
@@ -24678,6 +24975,9 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -24969,6 +25269,9 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -25314,6 +25617,9 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -25649,6 +25955,9 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -25712,6 +26021,9 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="CAR"
@@ -26236,6 +26548,9 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -26527,6 +26842,9 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -26851,6 +27169,9 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -27186,6 +27507,9 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -27249,6 +27573,9 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -27616,6 +27943,9 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -27801,6 +28131,9 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -27890,6 +28223,9 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -28090,6 +28426,9 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -28349,6 +28688,9 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -28621,6 +28963,9 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -28842,6 +29187,9 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -28905,6 +29253,9 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui WalkOnlyItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -29114,6 +29465,9 @@ exports[`ItineraryBody/otp-ui WalkOnlyItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -29177,6 +29531,9 @@ exports[`ItineraryBody/otp-ui WalkOnlyItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -29392,6 +29749,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -29573,6 +29933,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -29832,6 +30195,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -30013,6 +30379,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -30272,6 +30641,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -30335,6 +30707,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -30581,6 +30956,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -30796,6 +31174,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -31055,6 +31436,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -31270,6 +31654,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -31560,6 +31947,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -31623,6 +32013,9 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
 exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -31838,6 +32231,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -31860,18 +32256,15 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-48 fzhJOq">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-49 gXJapX place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-49 cayiSv place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-68 dcFAfM">
           ID 8383
         </span>
       </span>
-      <span class="place-row__CanceledTripMessage-sc-46esc9-0 cFTyoD">
-        Canceled
-      </span>
     </div>
-    <div class="styled__TimeColumn-sc-1q8npbl-43 loIsfK">
+    <div class="styled__TimeColumn-sc-1q8npbl-43 ieqiVK">
       3:46 PM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
@@ -32182,6 +32575,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -32479,6 +32875,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -32542,6 +32941,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryCanceled smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -32757,6 +33159,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryCanceled smoke-test 1`] = 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -32786,7 +33191,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryCanceled smoke-test 1`] = 
           ID 8383
         </span>
       </span>
-      <span class="place-row__CanceledTripMessage-sc-46esc9-0 cFTyoD">
+      <span aria-hidden="true"
+            class="place-row__CanceledTripMessage-sc-46esc9-0 bOghNT"
+      >
         Canceled
       </span>
     </div>
@@ -33101,6 +33508,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryCanceled smoke-test 1`] = 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -33398,6 +33808,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryCanceled smoke-test 1`] = 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -33461,6 +33874,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryCanceled smoke-test 1`] = 
 exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAccessLegFooter smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -33679,6 +34095,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAccessLegFooter smoke-
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -33701,18 +34120,15 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAccessLegFooter smoke-
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-48 fzhJOq">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-49 gXJapX place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-49 cayiSv place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-68 dcFAfM">
           ID 8383
         </span>
       </span>
-      <span class="place-row__CanceledTripMessage-sc-46esc9-0 cFTyoD">
-        Canceled
-      </span>
     </div>
-    <div class="styled__TimeColumn-sc-1q8npbl-43 loIsfK">
+    <div class="styled__TimeColumn-sc-1q8npbl-43 ieqiVK">
       3:46 PM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
@@ -34020,6 +34436,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAccessLegFooter smoke-
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -34320,6 +34739,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAccessLegFooter smoke-
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -34383,6 +34805,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAccessLegFooter smoke-
 exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -34598,6 +35023,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -34620,18 +35048,15 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-48 fzhJOq">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-49 gXJapX place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-49 cayiSv place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-68 dcFAfM">
           ID 8383
         </span>
       </span>
-      <span class="place-row__CanceledTripMessage-sc-46esc9-0 cFTyoD">
-        Canceled
-      </span>
     </div>
-    <div class="styled__TimeColumn-sc-1q8npbl-43 loIsfK">
+    <div class="styled__TimeColumn-sc-1q8npbl-43 ieqiVK">
       3:46 PM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
@@ -34953,6 +35378,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -35250,6 +35678,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -35313,6 +35744,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
 exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameComponent smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -35528,6 +35962,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -35550,15 +35987,12 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-48 fzhJOq">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-49 gXJapX place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-49 cayiSv place-row-place-name"
       >
         🎉✨🎊 Pioneer Square North MAX Station 🎉✨🎊
       </span>
-      <span class="place-row__CanceledTripMessage-sc-46esc9-0 cFTyoD">
-        Canceled
-      </span>
     </div>
-    <div class="styled__TimeColumn-sc-1q8npbl-43 loIsfK">
+    <div class="styled__TimeColumn-sc-1q8npbl-43 ieqiVK">
       3:46 PM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
@@ -35860,6 +36294,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -36151,6 +36588,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -36214,6 +36654,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
 exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummaryComponent smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -36429,6 +36872,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -36451,18 +36897,15 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-48 fzhJOq">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-49 gXJapX place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-49 cayiSv place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-68 dcFAfM">
           ID 8383
         </span>
       </span>
-      <span class="place-row__CanceledTripMessage-sc-46esc9-0 cFTyoD">
-        Canceled
-      </span>
     </div>
-    <div class="styled__TimeColumn-sc-1q8npbl-43 loIsfK">
+    <div class="styled__TimeColumn-sc-1q8npbl-43 ieqiVK">
       3:46 PM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
@@ -36772,6 +37215,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -37069,6 +37515,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -37132,6 +37581,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
 exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonActivatedAndCustomRouteAbbreviation smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -37347,6 +37799,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -37368,18 +37823,15 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-48 fzhJOq">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-49 gXJapX place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-49 cayiSv place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-68 dcFAfM">
           ID 8383
         </span>
       </span>
-      <span class="place-row__CanceledTripMessage-sc-46esc9-0 cFTyoD">
-        Canceled
-      </span>
     </div>
-    <div class="styled__TimeColumn-sc-1q8npbl-43 loIsfK">
+    <div class="styled__TimeColumn-sc-1q8npbl-43 ieqiVK">
       3:46 PM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
@@ -37692,6 +38144,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -37989,6 +38444,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -38052,6 +38510,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
 exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithTransitLegFooter smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -38267,6 +38728,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithTransitLegFooter smoke
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="TRAM"
@@ -38289,18 +38753,15 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithTransitLegFooter smoke
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-48 fzhJOq">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-49 gXJapX place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-49 cayiSv place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-68 dcFAfM">
           ID 8383
         </span>
       </span>
-      <span class="place-row__CanceledTripMessage-sc-46esc9-0 cFTyoD">
-        Canceled
-      </span>
     </div>
-    <div class="styled__TimeColumn-sc-1q8npbl-43 loIsfK">
+    <div class="styled__TimeColumn-sc-1q8npbl-43 ieqiVK">
       3:46 PM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
@@ -38611,6 +39072,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithTransitLegFooter smoke
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -38908,6 +39372,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithTransitLegFooter smoke
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -38971,6 +39438,9 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithTransitLegFooter smoke
 exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -39338,6 +39808,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -39523,6 +39996,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -39612,6 +40088,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -39812,6 +40291,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -40071,6 +40553,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -40343,6 +40828,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -40564,6 +41052,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -40627,6 +41118,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -40994,6 +41488,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -41179,6 +41676,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -41268,6 +41768,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -41468,6 +41971,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -41727,6 +42233,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -41999,6 +42508,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -42220,6 +42732,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
@@ -42283,6 +42798,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
 exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-22 hOYEJf">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -42650,6 +43168,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -42835,6 +43356,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -42924,6 +43448,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -43124,6 +43651,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -43383,6 +43913,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper transit  ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="BUS"
@@ -43655,6 +44188,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div mode="WALK"
@@ -43876,6 +44412,9 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-41 hmBdjd place-row-wrapper   ">
+    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-28 fYRzeA invisible-additional-details">
+      This trip has been canceled
+    </span>
     <div class="styled__LineColumn-sc-1q8npbl-39 bxYGTg">
       <div class="styled__LegLine-sc-1q8npbl-37 eWEzno">
         <div class="styled__LineBadgeContainer-sc-1q8npbl-38 lbsiJt">
