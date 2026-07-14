@@ -1,5 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { Config, Leg } from "@opentripplanner/types";
+import colors from "@opentripplanner/building-blocks";
 import React, { FunctionComponent, ReactElement } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 
@@ -14,7 +15,7 @@ import { PlaceNameProps, PlaceRowProps } from "../types";
 import { defaultMessages } from "../util";
 
 const CanceledTripMessage = styled.span`
-  color: rgb(183, 38, 32);
+  color: ${colors.red};
 `;
 
 function getLegPlaceName(
