@@ -151,7 +151,7 @@ export const StopEntityWithEntityPrefix = (): JSX.Element => (
 );
 
 export const StopEntityNoHandlers = (): JSX.Element => (
-  <MapPopupContents entity={STOP_WITH_CODE} />
+  <MapPopupContents entity={STOP_NO_CODE} />
 );
 
 export const StopEntityNoStopCode = (): JSX.Element => (
@@ -159,6 +159,15 @@ export const StopEntityNoStopCode = (): JSX.Element => (
     entity={STOP_NO_CODE}
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
+  />
+);
+
+export const StopEntityNoViewedStopHandler = (): JSX.Element => (
+  <MapPopupContents
+    entity={STOP_WITH_CODE}
+    feeds={SAMPLE_FEEDS}
+    setLocation={action("setLocation")}
+    setViewedStop={undefined}
   />
 );
 
