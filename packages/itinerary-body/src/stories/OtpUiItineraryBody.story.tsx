@@ -4,6 +4,7 @@ import { Bomb } from "@styled-icons/fa-solid/Bomb";
 import { Bolt } from "@styled-icons/fa-solid/Bolt";
 import styled from "styled-components";
 import { Meta } from "@storybook/react";
+import clone from "lodash.clonedeep";
 import DemoAccessLegFooter from "./access-leg-footer";
 import RouteDescriptionFooterWithWaitTimes from "./footer-with-wait-times";
 import DemoTransitLegFooter from "./transit-leg-footer";
@@ -63,7 +64,7 @@ export const WalkTransitWalkItinerary = (): ReactElement => (
   />
 );
 
-const walkTransitWalkItineraryCanceled = { ...walkTransitWalkItinerary };
+const walkTransitWalkItineraryCanceled = clone(walkTransitWalkItinerary);
 walkTransitWalkItineraryCanceled.legs.forEach(leg => {
   if (leg.transitLeg) leg.realtimeState = "CANCELED";
 });
