@@ -151,7 +151,7 @@ export const StopEntityWithEntityPrefix = (): JSX.Element => (
 );
 
 export const StopEntityNoHandlers = (): JSX.Element => (
-  <MapPopupContents entity={STOP_WITH_CODE} />
+  <MapPopupContents entity={STOP_NO_CODE} />
 );
 
 export const StopEntityNoStopCode = (): JSX.Element => (
