@@ -208,10 +208,10 @@ export const FOCUSED_ROUTE_OUTLINE_WIDTH: ExpressionSpecification = [
   "interpolate",
   ["linear"],
   ["zoom"],
-  ...Object.entries(ROUTE_LINE_WIDTH_BY_ZOOM).flatMap(([zoom, width]) => [
-    Number(zoom),
-    width * SELECTED_OUTLINE_WIDTH_MULTIPLIER,
-  ]),
+  8,  1  * SELECTED_OUTLINE_WIDTH_MULTIPLIER,
+  10, 2  * SELECTED_OUTLINE_WIDTH_MULTIPLIER,
+  15, 4  * SELECTED_OUTLINE_WIDTH_MULTIPLIER,
+  19, 10 * SELECTED_OUTLINE_WIDTH_MULTIPLIER,
 ];
 
 const TransitiveCanvasOverlay = ({
@@ -396,8 +396,7 @@ const TransitiveCanvasOverlay = ({
             ),
           ...(transitiveData.patterns || []).flatMap((pattern: TransitivePattern) => {
             const feature = patternToRouteFeature(pattern, transitiveData.routes);
-            const routeColor = feature.properties.color as string;
-            const contrastColor = adjustColorForContrast(routeColor, map?.getStyle()?.name?.toLowerCase()?.includes("dark"));
+            const contrastColor = adjustColorForContrast(feature.properties.color as string, map?.getStyle()?.name?.toLowerCase()?.includes("dark"));
             if (!contrastColor) return feature;
             return { ...feature, properties: { ...feature.properties, contrastColor } };
           })
