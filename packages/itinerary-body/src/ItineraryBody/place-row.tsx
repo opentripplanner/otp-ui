@@ -16,6 +16,7 @@ import { defaultMessages } from "../util";
 
 const CanceledTripMessage = styled.span`
   color: ${colors.red[700]};
+  padding-top: 3px;
 `;
 
 function getLegPlaceName(
@@ -118,10 +119,15 @@ export default function PlaceRow({
     description: "Text describing the view-on-map button",
     id: "otpUi.ItineraryBody.viewOnMap"
   });
-  const canceledMessage = intl.formatMessage({
+  const canceledText = intl.formatMessage({
     defaultMessage: defaultMessages["otpUi.ItineraryBody.canceled"],
     description: "Text indicating a canceled trip",
     id: "otpUi.ItineraryBody.canceled"
+  });
+  const canceledInvisibleMessage = intl.formatMessage({
+    defaultMessage: defaultMessages["otpUi.ItineraryBody.canceledMessage"],
+    description: "Screen reader text indicating a canceled trip",
+    id: "otpUi.ItineraryBody.canceledMessage"
   });
 
   return (
@@ -131,6 +137,9 @@ export default function PlaceRow({
       } ${leg.rentedBike ? "rented-bike" : ""}`}
       key={legIndex || "destination-place"}
     >
+      <S.InvisibleAdditionalDetails>
+        {canceledInvisibleMessage}
+      </S.InvisibleAdditionalDetails>
       <S.LineColumn>
         <LineColumnContent
           interline={interline}
@@ -151,7 +160,7 @@ export default function PlaceRow({
           {placeName}
         </S.PlaceName>
         {canceled && (
-          <CanceledTripMessage>{canceledMessage}</CanceledTripMessage>
+          <CanceledTripMessage aria-hidden>{canceledText}</CanceledTripMessage>
         )}
       </S.PlaceHeader>
       <S.TimeColumn strikethrough={canceled}>

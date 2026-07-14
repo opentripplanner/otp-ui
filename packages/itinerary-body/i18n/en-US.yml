@@ -70,6 +70,7 @@ otpUi:
       vehicle: Vehicle
   ItineraryBody:
     canceled: Canceled
+    canceledMessage: This trip has been canceled
     common:
       durationShort: >-
         {approximatePrefix, select, true {About } other {}}{hours, plural, =0 {}
