@@ -24,15 +24,16 @@ type InputPreferred = {
 
 type OTPQueryParams = {
   arriveBy: boolean;
+  banned?: InputBanned;
   date?: string;
   from: LonLatOutput & { name?: string };
   modes: TransportMode[];
   modeSettings: ModeSetting[];
-  time?: string;
   numItineraries?: number;
-  to: LonLatOutput & { name?: string };
-  banned?: InputBanned;
+  omitCanceled?: boolean;
   preferred?: InputPreferred;
+  time?: string;
+  to: LonLatOutput & { name?: string };
   unpreferred?: InputPreferred;
 };
 
