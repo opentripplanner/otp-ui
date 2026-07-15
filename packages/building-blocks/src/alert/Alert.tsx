@@ -14,7 +14,7 @@ interface Props {
   /* If true, adds a toggle that expands/collapses the alert content */
   collapsible?: boolean;
   children?: JSX.Element | string;
-  /* Icon displayed on Alert - default is Bell. "None" displays no icon */
+  /* Icon displayed on Alert - default is Bell. "no-icon" displays no icon */
   Icon?: StyledIcon | "no-icon";
 }
 
