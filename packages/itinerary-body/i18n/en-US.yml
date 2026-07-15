@@ -69,6 +69,8 @@ otpUi:
       escooter: E-scooter
       vehicle: Vehicle
   ItineraryBody:
+    canceled: Canceled
+    canceledMessage: The following trip has been canceled
     common:
       durationShort: >-
         {approximatePrefix, select, true {About } other {}}{hours, plural, =0 {}

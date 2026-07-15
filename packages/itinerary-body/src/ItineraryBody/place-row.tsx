@@ -1,8 +1,10 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { Config, Leg } from "@opentripplanner/types";
+import colors from "@opentripplanner/building-blocks";
 import React, { FunctionComponent, ReactElement } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 
+import styled from "styled-components";
 import DefaultTimeColumnContent from "../defaults/time-column-content";
 import AccessLegBody from "../AccessLegBody";
 import * as S from "../styled";
@@ -11,6 +13,12 @@ import TransitLegBody from "../TransitLegBody";
 import AccessibilityRating from "./accessibility-rating";
 import { PlaceNameProps, PlaceRowProps } from "../types";
 import { defaultMessages } from "../util";
+
+const CanceledTripMessage = styled.span`
+  color: ${colors.red[700]};
+  margin-left: 7px;
+  padding-top: 3px;
+`;
 
 function getLegPlaceName(
   leg: Leg,
@@ -45,6 +53,7 @@ export default function PlaceRow({
   AlertBodyIcon,
   AlertToggleIcon,
   alwaysCollapseAlerts,
+  canceled,
   config,
   defaultFareSelector,
   diagramVisible,
@@ -111,6 +120,16 @@ export default function PlaceRow({
     description: "Text describing the view-on-map button",
     id: "otpUi.ItineraryBody.viewOnMap"
   });
+  const canceledText = intl.formatMessage({
+    defaultMessage: defaultMessages["otpUi.ItineraryBody.canceled"],
+    description: "Text indicating a canceled trip",
+    id: "otpUi.ItineraryBody.canceled"
+  });
+  const canceledInvisibleMessage = intl.formatMessage({
+    defaultMessage: defaultMessages["otpUi.ItineraryBody.canceledMessage"],
+    description: "Screen reader text indicating a canceled trip",
+    id: "otpUi.ItineraryBody.canceledMessage"
+  });
 
   return (
     <S.PlaceRowWrapper
@@ -119,6 +138,9 @@ export default function PlaceRow({
       } ${leg.rentedBike ? "rented-bike" : ""}`}
       key={legIndex || "destination-place"}
     >
+      <S.InvisibleAdditionalDetails>
+        {canceledInvisibleMessage}
+      </S.InvisibleAdditionalDetails>
       <S.LineColumn>
         <LineColumnContent
           interline={interline}
@@ -131,11 +153,18 @@ export default function PlaceRow({
         />
       </S.LineColumn>
       <S.PlaceHeader>
-        <S.PlaceName aria-hidden className="place-row-place-name">
+        <S.PlaceName
+          aria-hidden
+          className="place-row-place-name"
+          strikethrough={canceled}
+        >
           {placeName}
         </S.PlaceName>
+        {canceled && (
+          <CanceledTripMessage aria-hidden>{canceledText}</CanceledTripMessage>
+        )}
       </S.PlaceHeader>
-      <S.TimeColumn>
+      <S.TimeColumn strikethrough={canceled}>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
         <TimeColumnContent isDestination={isDestination} leg={leg} />
         {!isDestination &&

@@ -368,6 +368,7 @@ export type Leg = {
     productName?: string;
   };
   realTime: boolean;
+  realtimeState?: "ADDED" | "CANCELED" | "MODIFIED" | "SCHEDULED" | "UPDATED";
   rentedBike: boolean;
   rentedCar: boolean;
   rentedVehicle: boolean;

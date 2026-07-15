@@ -129,6 +129,10 @@ interface ItineraryBodySharedProps {
   /** If true, alerts in a trip leg always open in a collapsed state. */
   alwaysCollapseAlerts: boolean;
   /**
+   * Enables correct styling for canceled transit trips within an itinerary
+   */
+  canceled?: boolean;
+  /**
    * Used for additional styling with styled components for example.
    */
   className?: string;

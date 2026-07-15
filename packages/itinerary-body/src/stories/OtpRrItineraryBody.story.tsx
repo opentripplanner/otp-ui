@@ -1,6 +1,7 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { FareProductSelector, Itinerary } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
+import clone from "lodash.clonedeep";
 
 import { Meta } from "@storybook/react";
 import ItineraryBody from "..";
@@ -129,6 +130,15 @@ export const BikeOnlyItinerary = (): ReactElement => (
 
 export const WalkTransitWalkItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItinerary} />
+);
+
+const walkTransitWalkItineraryCanceled = clone(walkTransitWalkItinerary);
+walkTransitWalkItineraryCanceled.legs.forEach(leg => {
+  if (leg.transitLeg) leg.realtimeState = "CANCELED";
+});
+
+export const WalkTransitWalkItineraryCanceled = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItineraryCanceled} />
 );
 
 export const WalkTransitWalkItineraryMetric = (): ReactElement => (

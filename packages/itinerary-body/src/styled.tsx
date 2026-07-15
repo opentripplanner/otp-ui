@@ -450,10 +450,11 @@ export const PreviewContainer = styled.div<PreviewContainerProps>`
   }
 `;
 
-export const TimeColumn = styled.div`
+export const TimeColumn = styled.div<{ strikethrough?: boolean }>`
   grid-column-start: 1;
   grid-row: 1 / span 2;
   padding-right: 5px;
+  text-decoration: ${props => (props.strikethrough ? "line-through" : "")};
   font-size: 0.9em;
 `;
 
@@ -493,7 +494,7 @@ export const PlaceHeader = styled.div`
   grid-column-start: 3;
 `;
 
-export const PlaceName = styled.span`
+export const PlaceName = styled.span<{ strikethrough?: boolean }>`
   /* text styling */
   font-size: inherit;
   font-weight: bold;
@@ -502,7 +503,8 @@ export const PlaceName = styled.span`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  flex: 1 1 auto;
+  text-decoration: ${props => (props.strikethrough ? "line-through" : "")};
+  flex: ${props => (props.strikethrough ? "" : "1 1 auto")};
   padding: 3px 0 10px 0;
 `;
 
