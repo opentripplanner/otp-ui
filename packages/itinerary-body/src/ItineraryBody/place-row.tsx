@@ -16,7 +16,7 @@ import { defaultMessages } from "../util";
 
 const CanceledTripMessage = styled.span`
   color: ${colors.red[700]};
-  margin-left: 5px;
+  margin-left: 7px;
   padding-top: 3px;
 `;
 
