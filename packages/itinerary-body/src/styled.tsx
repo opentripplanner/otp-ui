@@ -504,7 +504,7 @@ export const PlaceName = styled.span<{ strikethrough?: boolean }>`
   white-space: nowrap;
   text-overflow: ellipsis;
   text-decoration: ${props => (props.strikethrough ? "line-through" : "")};
-  flex: 1 1 auto;
+  flex: ${props => (props.strikethrough ? "" : "1 1 auto")};
   padding: 3px 0 10px 0;
 `;
 
