@@ -1,0 +1,36 @@
+name: Changeset Check
+
+on:
+  pull_request:
+    branches:
+      - master
+      - alpha
+      - beta
+      - next
+      - next-major
+      - "[0-9]+.[0-9]+.x"
+      - "[0-9]+.x.x"
+      - "[0-9]+.x"
+
+permissions:
+  contents: read
+
+jobs:
+  changeset-status:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@d882d12c64e032187b2edb46d3a0d003b7a43598 # v2.4.0
+        with:
+          version: 11
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24.x
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Require a changeset or explicit empty changeset
+        run: pnpm changeset:status --since="origin/${{ github.base_ref }}"

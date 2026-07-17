@@ -75,6 +75,10 @@ This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows
 
 This project uses semantic-release to create releases to NPM. It is expect that contributors create [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) messages. These are then parsed by semantic-release which will automatically create an appropriate release for each package whenever a branch is merged to master.
 
+During the Changesets trial, pull requests that change a publishable package must include a Changeset. Run `pnpm changeset`, select the affected packages and bump types, and describe the user-facing change. For work that does not need a package release, run `pnpm changeset --empty` instead.
+
+Changesets opens review-only version PRs after changes land on a release branch. Do not merge these PRs during the trial: semantic-release remains the only system that publishes packages and creates release tags. The `changeset-version-pr.yml` workflow creates a synthetic failing check-run named "Changesets Trial — Do Not Merge" on each trial version PR. Configure this check as a required status check in GitHub branch protection (or a repository ruleset) for every release branch, and ensure the protection applies to administrators and bypass actors. Version PRs remain as drafts and must not be made ready for review or merged.
+
 ## Local Testing
 
 Internal package dependencies are referenced using the `workspace` [protocol provided by pnpm](https://pnpm.io/workspaces). This allows us to depend on our internal packages without keeping versions up to date, but these versions must be replaced with the actual version numbers prior to release. pnpm handles this when publishing automatically. However, if you wish to rely on an otp-ui package in a local filesystem project using the `file` protocol, you need to use `pnpm pack` to create a tarball of the package, then reference that tarball in the other project's package.json.

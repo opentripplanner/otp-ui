@@ -1,0 +1,70 @@
+name: Changesets Version PR
+
+on:
+  push:
+    branches:
+      - master
+      - alpha
+      - beta
+      - next
+      - next-major
+      - "[0-9]+.[0-9]+.x"
+      - "[0-9]+.x.x"
+      - "[0-9]+.x"
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: write
+
+concurrency:
+  group: changesets-version-pr-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  version-pr:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@d882d12c64e032187b2edb46d3a0d003b7a43598 # v2.4.0
+        with:
+          version: 11
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24.x
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Create or update review-only version PR
+        id: changesets
+        uses: changesets/action@3841a0683d3cfa6dae0f9bb335290003010fe3f0 # v1.9.0
+        with:
+          version: pnpm version-packages && pnpm install --no-frozen-lockfile
+          commit: "chore: version packages (changesets trial)"
+          title: "chore: version packages (changesets trial)"
+          prDraft: always
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Enforce trial version PR guard
+        if: steps.changesets.outputs.pullRequestNumber != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          PR_NUMBER="${{ steps.changesets.outputs.pullRequestNumber }}"
+          HEAD_SHA=$(gh api "/repos/${{ github.repository }}/pulls/${PR_NUMBER}" --jq .head.sha)
+          gh api "/repos/${{ github.repository }}/check-runs" \
+            --method POST \
+            --input - <<EOF
+          {
+            "name": "Changesets Trial — Do Not Merge",
+            "head_sha": "${HEAD_SHA}",
+            "status": "completed",
+            "conclusion": "failure",
+            "output": {
+              "title": "Do Not Merge — Trial Version PR",
+              "summary": "This is a non-publishing POC version PR created by the Changesets trial. **It must not be merged.** semantic-release remains the sole publishing system. Configure this check as a required status check in branch protection or a repository ruleset for every release branch, and ensure protections apply to administrators and bypass actors."
+            }
+          }
+          EOF

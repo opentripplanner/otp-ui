@@ -1,0 +1,28 @@
+name: Changesets Version PR Guard
+
+on:
+  pull_request:
+    branches:
+      - master
+      - alpha
+      - beta
+      - next
+      - next-major
+      - "[0-9]+.[0-9]+.x"
+      - "[0-9]+.x.x"
+      - "[0-9]+.x"
+
+permissions:
+  contents: read
+
+jobs:
+  Changesets Trial — Do Not Merge:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Check head branch
+        run: |
+          if [[ "${{ github.head_ref }}" == changeset-release/* ]]; then
+            echo "::error::This is a trial Changesets version PR and must not be merged."
+            exit 1
+          fi
+          echo "Head branch '${{ github.head_ref }}' is not a changeset-release branch — this check passes."
