@@ -85,7 +85,7 @@ const modeButtonDefinitions: ModeButtonDefinition[] = [
         value: 2
       },
       {
-        addTransportMode: { mode: "BICYCLE", qualifier: "RENT" },
+        addTransportMode: { mode: "BICYCLE" },
         applicableMode: "BICYCLE",
         default: true,
         key: "allowBikeRental",
@@ -139,7 +139,7 @@ const modeSettingDefinitions: ModeSetting[] = [
     type: "SLIDER"
   },
   {
-    addTransportMode: { mode: "BICYCLE", qualifier: "RENT" },
+    addTransportMode: { mode: "BICYCLE" },
     applicableMode: "BICYCLE",
     default: true,
     key: "allowBikeRental",
@@ -287,33 +287,27 @@ describe("mode selector utils", () => {
   describe("find required options for transport mode", () => {
     type TransportModeCase = [
       string, // mode
-      string | undefined, // qualifier
       RequiredOptionsForTransportMode // expected result
     ];
 
     const cases: TransportModeCase[] = [
-      ["BUS", undefined, { modeSetting: undefined, modeButton: "TRANSIT" }],
-      ["WALK", undefined, { modeSetting: undefined, modeButton: "WALK" }],
-      ["BICYCLE", undefined, { modeSetting: undefined, modeButton: "BIKE" }],
-      [
-        "BICYCLE",
-        "RENT",
-        { modeSetting: "allowBikeRental", modeButton: "BIKE" }
-      ],
-      ["CAR", undefined, undefined]
+      ["BUS", { modeSetting: undefined, modeButton: "TRANSIT" }],
+      ["WALK", { modeSetting: undefined, modeButton: "WALK" }],
+      ["BICYCLE", { modeSetting: undefined, modeButton: "BIKE" }],
+      ["BICYCLE", { modeSetting: "allowBikeRental", modeButton: "BIKE" }],
+      ["CAR", undefined]
     ];
 
     it.each<TransportModeCase>(cases)(
       "when mode is %s and qualifier is %s, expect %s",
       (
         mode: string,
-        qualifier: string | undefined,
         expected: { modeSetting?: string; modeButton: string } | undefined
       ) => {
         const result = findRequiredOptionsForTransportMode(
           modeButtonDefinitions,
           modeSettingDefinitions,
-          { mode, qualifier }
+          { mode }
         );
         expect(result).toEqual(expected);
       }
