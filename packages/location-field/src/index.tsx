@@ -392,6 +392,7 @@ const LocationField = ({
         setAbortController([...abortControllers, newController]);
 
         getGeocoder(geocoderConfig)
+          // Other options such as headers will also be included in the autocomplete call.
           .autocomplete({ text, options: { signal: newController.signal } })
           // TODO: Better type?
           .then(
