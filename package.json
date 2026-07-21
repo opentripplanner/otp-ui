@@ -299,6 +299,5 @@
   "dependencies": {
     "@storybook/icons": "^1.6.0",
     "@styled-icons/styled-icon": "catalog:"
-  },
-  "packageManager": "pnpm@10.12.1+sha1.4bd977ce548dc9fcd1ca0c62838c55646cea6847"
+  }
 }
