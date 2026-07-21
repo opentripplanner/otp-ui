@@ -1,40 +1,29 @@
 query Plan(
-  $arriveBy: Boolean
-  $banned: InputBanned
-  $bikeReluctance: Float
-  $carReluctance: Float
-  $date: String
-  $fromPlace: String!
-  $modes: [TransportMode]
+  $transitFilter: [TransitFilterInput!]
+  $bikeReluctance: Reluctance
+  $carReluctance: Reluctance
+  $dateTime: PlanDateTimeInput
+  $origin: PlanLabeledLocationInput!
+  $modes: PlanModesInput
   $numItineraries: Int
-  $omitCanceled: Boolean
-  $time: String
-  $toPlace: String!
-  $unpreferred: InputUnpreferred
-  $walkReluctance: Float
-  $walkSpeed: Float
+  $includeRealTimeCancellations: Boolean
+  $destination: PlanLabeledLocationInput!
+  $walkReluctance: Reluctance
+  $walkSpeed: Speed
   $wheelchair: Boolean
 ) {
-  plan(
-    arriveBy: $arriveBy
-    banned: $banned
-    bikeReluctance: $bikeReluctance
-    carReluctance: $carReluctance
-    date: $date
-    fromPlace: $fromPlace
+  planConnection(
+    dateTime: $dateTime
+    destination: $destination
+    first: $numItineraries
     # Currently only supporting EN locale, used for times and text
     locale: "en"
-    numItineraries: $numItineraries
-    omitCanceled: $omitCanceled
-    time: $time
-    toPlace: $toPlace
-    transportModes: $modes
-    unpreferred: $unpreferred
-    walkReluctance: $walkReluctance
-    walkSpeed: $walkSpeed
-    wheelchair: $wheelchair
+    modes: $modes
+    origin: $origin
+    preferences: {accessibility: {wheelchair: {enabled: $wheelchair}}, street: {bicycle: {reluctance: $bikeReluctance}, car: {reluctance: $carReluctance}, walk: {speed: $walkSpeed, reluctance: $walkReluctance}}, transit: {filters: $transitFilter, timetable: {includeRealTimeCancellations: $includeRealTimeCancellations}}}
   ) {
-    itineraries {
+    edges{
+    node {
       accessibilityScore
       duration
       endTime
@@ -273,6 +262,7 @@ query Plan(
             }
             stopPosition
           }
+          blockId
           departureStoptime {
             stop {
               gtfsId
@@ -289,10 +279,10 @@ query Plan(
       waitingTime
       walkTime
     }
+  }
     routingErrors {
       code
       description
       inputField
     }
-  }
-}
+}}
