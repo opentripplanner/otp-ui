@@ -15,8 +15,8 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  checks: write
 
+# Prevent multiple changesets from running at once.
 concurrency:
   group: changesets-version-pr-${{ github.ref }}
   cancel-in-progress: false
@@ -47,24 +47,3 @@ jobs:
           title: "chore: version packages (changesets trial)"
           prDraft: always
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Enforce trial version PR guard
-        if: steps.changesets.outputs.pullRequestNumber != ''
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          PR_NUMBER="${{ steps.changesets.outputs.pullRequestNumber }}"
-          HEAD_SHA=$(gh api "/repos/${{ github.repository }}/pulls/${PR_NUMBER}" --jq .head.sha)
-          gh api "/repos/${{ github.repository }}/check-runs" \
-            --method POST \
-            --input - <<EOF
-          {
-            "name": "Changesets Trial — Do Not Merge",
-            "head_sha": "${HEAD_SHA}",
-            "status": "completed",
-            "conclusion": "failure",
-            "output": {
-              "title": "Do Not Merge — Trial Version PR",
-              "summary": "This is a non-publishing POC version PR created by the Changesets trial. **It must not be merged.** semantic-release remains the sole publishing system. Configure this check as a required status check in branch protection or a repository ruleset for every release branch, and ensure protections apply to administrators and bypass actors."
-            }
-          }
-          EOF
