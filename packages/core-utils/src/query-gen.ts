@@ -6,28 +6,15 @@ import {
   TransportMode
 } from "@opentripplanner/types";
 
-import { formatInTimeZone, getTimezoneOffset } from "date-fns-tz";
+import { formatInTimeZone } from "date-fns-tz";
 import DefaultPlanQuery from "./planQuery.graphql";
 import { isTransit } from "./itinerary";
-import { getUserTimezone } from "./time";
 
-type InputBanned = {
-  routes?: string;
-  agencies?: string;
-  trips?: string;
-  stops?: string;
-  stopsHard?: string;
-};
 
-type InputPreferred = {
-  routes?: string;
-  agencies?: string;
-  unpreferredCost?: string;
-};
 
 type OTPQueryParams = {
   arriveBy: boolean;
-  banned?: InputBanned;
+  bannedRoutes?: string[];
   date?: string;
   departArrive?: string;
   from: LonLatOutput & { name?: string };
@@ -35,10 +22,9 @@ type OTPQueryParams = {
   modeSettings: ModeSetting[];
   numItineraries?: number;
   omitCanceled?: boolean;
-  preferred?: InputPreferred;
   time?: string;
   to: LonLatOutput & { name?: string };
-  unpreferred?: InputPreferred;
+  requiredRoutes?: string[];
 };
 
 type GraphQLQuery = {
@@ -104,9 +90,9 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
 
   // @ts-expect-error types packagge fail
   return completeModeList
-  .filter(mode => !!mode.input)
-  // @ts-expect-error types packagge fail
-  .map(mode => ({ ...params, modes :{ ...mode.input, transit: { ...mode?.input?.transit, ...transitModes.length > 0 && { transit: transitModes } } } }));
+    .filter(mode => !!mode.input)
+    // @ts-expect-error types packagge fail
+    .map(mode => ({ ...params, modes: { ...mode.input, transit: { ...mode?.input?.transit, ...transitModes.length > 0 && { transit: transitModes } } } }));
 
 }
 
@@ -121,7 +107,7 @@ export function generateOtp2Query(
   homeTimezone: string,
   planQuery = DefaultPlanQuery
 ): GraphQLQuery {
-  const { departArrive, from, modeSettings, to, date, modes, time, arriveBy } = otpQueryParams;
+  const { bannedRoutes, departArrive, from, modeSettings, to, date, modes, time, arriveBy, omitCanceled } = otpQueryParams;
 
   // This extracts the values from the mode settings to key value pairs
   const modeSettingValues = modeSettings.reduce<
@@ -154,17 +140,21 @@ export function generateOtp2Query(
 
 
   // CALLTAKER:
-  // migrate unpreferred to banned (only for agencies)
- // change banned input to work correclty (and need less translation). THIs IS ALSO NEEDED FOR CUSTOM TRANSIT MODES
- // fix calltaker mode selector
+  // fix calltaker mode selector
   // fix via
-  
+  // fix calltaker banned rouets dropdown
+
   // can remove custom septa graphql, since the main file now has blockid
 
   // finally re-open that deprecated fields PR
 
   // TODO: instead of these shinanigans, don't TZ-convert times in the date-time picker
   const timezone = formatInTimeZone(new Date(`${date}T${time}`), homeTimezone, "XXX")
+
+  const transitFilter = []
+  if (bannedRoutes && bannedRoutes.length > 0) {
+    transitFilter.push({ exclude: [{ routes: bannedRoutes }] })
+  }
 
   return {
     query: print(planQuery),
@@ -175,6 +165,9 @@ export function generateOtp2Query(
       carReluctance,
       origin: { label: from.name, location: { coordinate: { latitude: from.lat, longitude: from.lon } } },
       destination: { label: to.name, location: { coordinate: { latitude: to.lat, longitude: to.lon } } },
+      // Plan had this flipped...
+      includeRealTimeCancellations: omitCanceled !== true,
+      transitFilter,
       walkReluctance,
       walkSpeed,
       wheelchair

@@ -1,11 +1,12 @@
 query Plan(
-  # $banned: TransitFilterSelectInput!
+  $transitFilter: [TransitFilterInput!]
   $bikeReluctance: Reluctance
   $carReluctance: Reluctance
   $dateTime: PlanDateTimeInput
   $origin: PlanLabeledLocationInput!
   $modes: PlanModesInput
   $numItineraries: Int
+  $includeRealTimeCancellations: Boolean
   $destination: PlanLabeledLocationInput!
   $walkReluctance: Reluctance
   $walkSpeed: Speed
@@ -19,7 +20,7 @@ query Plan(
     locale: "en"
     modes: $modes
     origin: $origin
-    preferences: {accessibility: {wheelchair: {enabled: $wheelchair}}, street: {bicycle: {reluctance: $bikeReluctance}, car: {reluctance: $carReluctance}, walk: {speed: $walkSpeed, reluctance: $walkReluctance}}} # , transit: {filters: {exclude: [$banned]}}}
+    preferences: {accessibility: {wheelchair: {enabled: $wheelchair}}, street: {bicycle: {reluctance: $bikeReluctance}, car: {reluctance: $carReluctance}, walk: {speed: $walkSpeed, reluctance: $walkReluctance}}, transit: {filters: $transitFilter, timetable: {includeRealTimeCancellations: $includeRealTimeCancellations}}}
   ) {
     edges{
     node {
