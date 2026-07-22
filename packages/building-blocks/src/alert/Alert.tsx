@@ -31,7 +31,7 @@ const AlertContainer = styled.div<{
     props.icon ? "50px auto auto" : "auto auto"};
   grid-template-rows: minmax(25px, auto) auto;
   column-gap: 1em;
-  padding: 1.5em;
+  padding: ${props => (props.icon ? "1.5em" : "1em")};
 
   .header {
     align-self: center;
