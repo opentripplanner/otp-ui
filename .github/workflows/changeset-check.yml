@@ -1,0 +1,35 @@
+# Validate that a changeset exists for this PR
+# Possibly remove this in the future, as enforcing a changeset is not necessarily good
+# practice. We're just using this to get used to writing them in the meantime.
+name: Changeset Check
+
+on:
+  pull_request:
+    branches:
+      - master
+      - alpha
+
+permissions:
+  contents: read
+
+jobs:
+  changeset-status:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 11
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+          cache: "pnpm"
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Require a changeset or explicit empty changeset
+        run: pnpm changeset:status --since="origin/${{ github.base_ref }}"

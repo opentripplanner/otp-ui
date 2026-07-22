@@ -1,0 +1,45 @@
+name: Changesets Version PR
+
+on:
+  push:
+    branches:
+      - master
+      - alpha
+
+permissions:
+  contents: write
+  pull-requests: write
+
+# Prevent multiple changesets from running at once.
+concurrency:
+  group: changesets-version-pr-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  version-pr:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 11
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+          cache: "pnpm"
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Create or update review-only version PR
+        id: changesets
+        uses: changesets/action@3841a0683d3cfa6dae0f9bb335290003010fe3f0 # v1.9.0
+        with:
+          version: pnpm version-packages && pnpm install --no-frozen-lockfile
+          commit: "chore: version packages (changesets trial)"
+          title: "chore: version packages (changesets trial)"
+          prDraft: always
+          github-token: ${{ secrets.GITHUB_TOKEN }}
