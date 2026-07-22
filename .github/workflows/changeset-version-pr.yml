@@ -19,17 +19,19 @@ jobs:
   version-pr:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/checkout@v2
         with:
+          persist-credentials: false
           fetch-depth: 0
-      - uses: pnpm/action-setup@d882d12c64e032187b2edb46d3a0d003b7a43598 # v2.4.0
+      - uses: pnpm/action-setup@v2
         with:
           version: 11
       - name: Use Node.js 24.x
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        uses: actions/setup-node@v4
         with:
           node-version: 24.x
-          cache: pnpm
+          cache: "pnpm"
+          registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Create or update review-only version PR
