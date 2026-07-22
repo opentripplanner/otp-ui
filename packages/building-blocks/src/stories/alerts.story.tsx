@@ -76,7 +76,7 @@ export const BasicAlertNoIcon = (): ReactElement => {
       <Alert
         alertHeader="Next trip starts on Wednesday April 17th"
         alertSubheader="Trip is due to begin at 7:43 AM (Realtime monitoring will being at 7:13 AM)"
-        Icon="no-icon"
+        Icon={null}
       >
         Here is more content
       </Alert>
@@ -105,7 +105,7 @@ export const CollapsibleAlertWithTransitAlertsNoIcon = (): ReactElement => {
       <Alert
         backgroundColor={red[50]}
         collapsible
-        Icon="no-icon"
+        Icon={null}
         alertHeader="Your trip has alerts"
       >
         <AlertContent />

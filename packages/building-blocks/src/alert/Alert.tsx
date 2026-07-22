@@ -15,20 +15,20 @@ interface Props {
   collapsible?: boolean;
   children?: JSX.Element | string;
   /* Icon displayed on Alert - default is Bell. "no-icon" displays no icon */
-  Icon?: StyledIcon | "no-icon";
+  Icon?: StyledIcon | null;
 }
 
 const AlertContainer = styled.div<{
   backgroundColor?: string;
   collapsible: boolean;
   expandAlert: boolean;
-  noIcon: boolean;
+  icon: boolean;
 }>`
   background-color: ${props =>
     props.backgroundColor ? props.backgroundColor : blue[50]};
   display: grid;
   grid-template-columns: ${props =>
-    props.noIcon ? "auto auto" : "50px auto auto"};
+    props.icon ? "50px auto auto" : "auto auto"};
   grid-template-rows: minmax(25px, auto) auto;
   column-gap: 1em;
   padding: 1.5em;
@@ -45,7 +45,7 @@ const AlertContainer = styled.div<{
   }
 
   .content-row {
-    grid-column: ${props => (props.noIcon ? 1 : 2)};
+    grid-column: ${props => (props.icon ? 2 : 1)};
   }
 
   .alert-body {
@@ -72,7 +72,7 @@ const AlertContainer = styled.div<{
 
   @media (max-width: 550px) {
     grid-template-columns: 40px auto auto;
-    padding: 1.25em 1.25em;
+    padding: 1.25em;
   }
 `;
 
@@ -103,15 +103,14 @@ const Alert = ({
     id: "otpUi.buildingBlocks.alert.expand",
     defaultMessage: "Expand"
   });
-  const noIcon = Icon === "no-icon";
   return (
     <AlertContainer
       backgroundColor={backgroundColor}
       expandAlert={expandAlert}
       collapsible={!!collapsible}
-      noIcon={noIcon}
+      icon={!!Icon}
     >
-      {!noIcon && <Icon size={24} />}
+      {!!Icon && <Icon size={24} />}
       <span className="header content-row">{alertHeader}</span>
       <ButtonContainer>
         {collapsible && (
