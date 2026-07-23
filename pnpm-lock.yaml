@@ -1159,6 +1159,9 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:^
         version: link:../types
+      '@types/lodash.memoize':
+        specifier: ^4.1.9
+        version: 4.1.9
 
   packages/transitive-overlay:
     dependencies:
@@ -4403,6 +4406,12 @@ packages:
 
   '@types/junit-report-builder@3.0.2':
     resolution: {integrity: sha512-R5M+SYhMbwBeQcNXYWNCZkl09vkVfAtcPIaCGdzIkkbeaTrVbGQ7HVgi4s+EmM/M1K4ZuWQH0jGcvMvNePfxYA==}
+
+  '@types/lodash.memoize@4.1.9':
+    resolution: {integrity: sha512-glY1nQuoqX4Ft8Uk+KfJudOD7DQbbEDF6k9XpGncaohW3RW4eSWBlx6AA0fZCrh40tZcQNH4jS/Oc59J6Eq+aw==}
+
+  '@types/lodash@4.17.24':
+    resolution: {integrity: sha512-gIW7lQLZbue7lRSWEFql49QJJWThrTFFeIMJdp3eH4tKoxm1OvEPg02rm4wCCSHS0cL3/Fizimb35b7k8atwsQ==}
 
   '@types/mapbox__point-geometry@0.1.4':
     resolution: {integrity: sha512-mUWlSxAmYLfwnRBmgYV86tgYmMIICX4kza8YnE/eIlywGe2XoOxlpVnXWwir92xRLjwyarqwpu2EJKD2pk0IUA==}
@@ -14936,6 +14945,12 @@ snapshots:
   '@types/json5@0.0.29': {}
 
   '@types/junit-report-builder@3.0.2': {}
+
+  '@types/lodash.memoize@4.1.9':
+    dependencies:
+      '@types/lodash': 4.17.24
+
+  '@types/lodash@4.17.24': {}
 
   '@types/mapbox__point-geometry@0.1.4': {}
 
