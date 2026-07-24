@@ -161,10 +161,7 @@ export const ArrivalTimeContainer = styled.button`
   text-align: inherit;
 `;
 
-export const CallAheadWarning = styled.div`
-  color: ${red[800]};
-  margin-top: 5px;
-`;
+export const CallAheadWarning = styled.div``;
 
 export const BookLaterContainer = styled.div`
   bottom: 0;
@@ -201,13 +198,33 @@ export const BookLaterText = styled.div`
   vertical-align: middle;
 `;
 
-export const BookTNCRideButton = styled(AnchorButton)``;
+export const BookRideButton = styled(AnchorButton)``;
 
-export const BookTNCRideButtonContainer = styled.div`
+export const BookFlexRideButton = styled(BookRideButton)``;
+
+export const BookTNCRideButton = styled(BookRideButton)``;
+
+export const BookRideButtonContainer = styled.div`
   height: 32px;
   margin-bottom: 10px;
   margin-top: 10px;
   position: relative;
+`;
+
+export const BookFlexRideButtonContainer = styled(BookRideButtonContainer)``;
+
+export const BookTNCRideButtonContainer = styled(BookRideButtonContainer)``;
+
+export const FlexAltBooking = styled.div`
+  /* TODO refactor link styles */
+  a {
+    color: ${blue[700]};
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
 `;
 
 export const TNCTravelTime = styled.div`

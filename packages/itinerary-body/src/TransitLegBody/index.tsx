@@ -75,42 +75,14 @@ function getFlexMessageValues(info: FlexBookingInfo) {
   // This will allow for displaying how many _hours_ before a trip it must be booked
 
   const leadDays = info?.latestBookingTime?.daysPrior;
-  const phoneNumber = info?.contactInfo?.phoneNumber;
-  const bookingUrl = info?.contactInfo?.bookingUrl;
 
-  let action = (
+  const action = (
     <FormattedMessage
-      defaultMessage={defaultMessages["otpUi.ItineraryBody.flexCallAhead"]}
-      description="For calling ahead."
-      id="otpUi.ItineraryBody.flexCallAhead"
+      defaultMessage={defaultMessages["otpUi.ItineraryBody.flexReserve"]}
+      description="For reserving flex trips"
+      id="otpUi.ItineraryBody.flexReserve"
     />
   );
-
-  if (phoneNumber) {
-    action = (
-      <FormattedMessage
-        defaultMessage={defaultMessages["otpUi.ItineraryBody.flexCallNumber"]}
-        description="For calling a phone number."
-        id="otpUi.ItineraryBody.flexCallNumber"
-        values={{ phoneNumber }}
-      />
-    );
-  }
-  if (bookingUrl) {
-    action = (
-      <FormattedMessage
-        defaultMessage={defaultMessages["otpUi.ItineraryBody.flexBookingUrl"]}
-        description="For booking via phone number."
-        id="otpUi.ItineraryBody.flexBookingUrl"
-        values={{
-          bookingUrl,
-          // eslint-disable-next-line react/display-name
-          link: contents => <a href={bookingUrl}>{contents}</a>
-        }}
-      />
-    );
-  }
-
   return {
     action,
     advanceNotice:
@@ -327,16 +299,60 @@ class TransitLegBody extends Component<Props, State> {
               </S.AgencyInfo>
             )}
             {isReservationRequired && leg.pickupBookingInfo && (
-              <S.CallAheadWarning>
-                <FormattedMessage
-                  defaultMessage={
-                    defaultMessages["otpUi.ItineraryBody.flexPickupMessage"]
-                  }
-                  description="Instructions for booking and boarding the flex (on-demand) transit service."
-                  id="otpUi.ItineraryBody.flexPickupMessage"
-                  values={getFlexMessageValues(leg.pickupBookingInfo)}
-                />
-              </S.CallAheadWarning>
+              <>
+                {/* The "Book Ride" button */}
+                <S.BookFlexRideButtonContainer>
+                  <S.BookFlexRideButton
+                    href={
+                      leg.pickupBookingInfo.contactInfo?.bookingUrl ||
+                      `tel:${leg.pickupBookingInfo.contactInfo?.phoneNumber}`
+                    }
+                    target={coreUtils.ui.isMobile() ? "_self" : "_blank"}
+                  >
+                    <FormattedMessage
+                      defaultMessage={
+                        defaultMessages["otpUi.AccessLegBody.TncLeg.bookRide"]
+                      }
+                      description="Action text to book a ride with a ride-hail company."
+                      id="otpUi.AccessLegBody.TncLeg.bookRide"
+                    />
+                  </S.BookFlexRideButton>
+                  {<S.BookLaterPointer />}
+                  {typeof leg.startTime === "number" && (
+                    <S.BookLaterContainer>
+                      <S.BookLaterInnerContainer>
+                        <S.BookLaterText>
+                          <S.CallAheadWarning>
+                            <FormattedMessage
+                              defaultMessage={
+                                defaultMessages[
+                                  "otpUi.ItineraryBody.flexPickupMessage"
+                                ]
+                              }
+                              description="Instructions for booking and boarding the flex (on-demand) transit service."
+                              id="otpUi.ItineraryBody.flexPickupMessage"
+                              values={getFlexMessageValues(
+                                leg.pickupBookingInfo
+                              )}
+                            />
+                          </S.CallAheadWarning>
+                        </S.BookLaterText>
+                      </S.BookLaterInnerContainer>
+                    </S.BookLaterContainer>
+                  )}
+                </S.BookFlexRideButtonContainer>
+                {leg.pickupBookingInfo.contactInfo?.phoneNumber &&
+                  leg.pickupBookingInfo.contactInfo?.bookingUrl && (
+                    <S.FlexAltBooking>
+                      <a
+                        href={`tel:${leg.pickupBookingInfo.contactInfo?.phoneNumber}`}
+                      >
+                        Book by phone:{" "}
+                        {leg.pickupBookingInfo.contactInfo?.phoneNumber}
+                      </a>
+                    </S.FlexAltBooking>
+                  )}
+              </>
             )}
             {/* Alerts toggle */}
             {alerts?.length > 0 &&
