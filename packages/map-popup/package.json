@@ -15,6 +15,7 @@
     "@opentripplanner/building-blocks": "workspace:^",
     "@opentripplanner/core-utils": "workspace:^",
     "@opentripplanner/from-to-location-picker": "workspace:^",
+    "@styled-icons/fa-solid": "catalog:",
     "flat": "catalog:"
   },
   "devDependencies": {
