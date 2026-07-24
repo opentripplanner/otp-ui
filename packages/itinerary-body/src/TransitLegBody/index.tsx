@@ -76,15 +76,7 @@ function getFlexMessageValues(info: FlexBookingInfo) {
 
   const leadDays = info?.latestBookingTime?.daysPrior;
 
-  const action = (
-    <FormattedMessage
-      defaultMessage={defaultMessages["otpUi.ItineraryBody.flexReserve"]}
-      description="For reserving flex trips"
-      id="otpUi.ItineraryBody.flexReserve"
-    />
-  );
   return {
-    action,
     advanceNotice:
       leadDays > 0 ? (
         <FormattedMessage
