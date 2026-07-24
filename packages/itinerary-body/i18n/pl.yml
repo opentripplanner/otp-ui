@@ -78,6 +78,7 @@ otpUi:
       durationShort: >-
         {approximatePrefix, select, true {Około } other {}}{hours, plural, =0 {}
         other {# h }}{minutes} min
+    externalLink: (Link zewnętrzny)
     flexAdvanceNotice: " co najmniej {leadDays, plural, one {# dni} other {# dni}}
       wcześniej"
     flexCallAhead: zadzwoń wcześniej
@@ -108,7 +109,6 @@ otpUi:
       today: Dzisiaj
       tomorrow: Jutro
       yesterday: Wczoraj
-    agencyExternalLink: "{agencyName} (Link zewnętrzny)"
     alertsHeader: "{alertCount, plural, =1 {# alert} other {# alerty}}"
     arriveAt: Przybycie do {place}
     disembarkAt: Wysiądź na {legDestination}

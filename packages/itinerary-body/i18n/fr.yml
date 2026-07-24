@@ -82,6 +82,7 @@ otpUi:
       durationShort: >-
         {approximatePrefix, select, true {Environ } other {}}{hours, plural, =0
         {} other {# h }}{minutes} min
+    externalLink: (Lien externe)
     flexAdvanceNotice: " au moins {leadDays, plural, one {# jour} other {# jours}}
       à l'avance"
     flexBookingUrl: <link>reserve your trip online</link>
@@ -113,7 +114,6 @@ otpUi:
       today: aujourd'hui
       tomorrow: demain
       yesterday: hier
-    agencyExternalLink: "{agencyName} (Lien externe)"
     alertsHeader: "{alertCount, plural, =0 {# alerte} =1 {# alerte} other {# alertes}}"
     arriveAt: Arrivée à {place}
     disembarkAt: Descendez à {legDestination}

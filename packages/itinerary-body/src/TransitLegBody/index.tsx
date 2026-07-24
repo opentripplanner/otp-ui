@@ -32,6 +32,7 @@ import { defaultMessages } from "../util";
 import AlertsBody from "./alerts-body";
 import IntermediateStops from "./intermediate-stops";
 import ViewTripButton from "./view-trip-button";
+import ExternalLinkHidden from "../defaults/external-link-hidden";
 
 interface Props {
   AlertBodyIcon?: FunctionComponent;
@@ -271,20 +272,13 @@ class TransitLegBody extends Component<Props, State> {
                   values={{
                     agencyLink: (
                       <a
-                        aria-label={intl.formatMessage(
-                          {
-                            id: "otpUi.TransitLegBody.agencyExternalLink"
-                          },
-                          {
-                            agencyName
-                          }
-                        )}
                         href={agencyUrl || "#"}
                         rel="noopener noreferrer"
                         target="_blank"
                       >
                         {transitOperatorName}
                         {logoUrl && <img alt="" src={logoUrl} height={25} />}
+                        <ExternalLinkHidden />
                       </a>
                     )
                   }}
@@ -308,6 +302,7 @@ class TransitLegBody extends Component<Props, State> {
                       description="Action text to book a ride with a ride-hail company."
                       id="otpUi.AccessLegBody.TncLeg.bookRide"
                     />
+                    <ExternalLinkHidden />
                   </S.BookFlexRideButton>
                   {<S.BookLaterPointer />}
                   {typeof leg.startTime === "number" && (

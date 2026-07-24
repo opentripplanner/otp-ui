@@ -76,6 +76,7 @@ otpUi:
       durationShort: >-
         {தோராயமான பிரீஃபிக்ச், தேர்ந்தெடு, உண்மை {About } பிற {}} {மணிநேரம்,
         பன்மை, = 0 {} பிற {# hr}} {minutes} min
+    externalLink: (வெளிப்புற இணைப்பு)
     flexAdvanceNotice: " குறைந்தது {லீட் டேச், பன்மை, ஒன்று {# நாள்} மற்ற {# நாட்கள்}}
       முன்கூட்டியே"
     flexCallAhead: முன்னால் அழைக்கவும்
@@ -106,7 +107,6 @@ otpUi:
       today: இன்று
       tomorrow: நாளை
       yesterday: நேற்று
-    agencyExternalLink: "{agencyName} (வெளிப்புற இணைப்பு)"
     alertsHeader: "{எச்சரிக்கை, பன்மை, = 1 {# எச்சரிக்கை} பிற {# எச்சரிக்கைகள்}}"
     arriveAt: "{place} க்கு வந்து சேருங்கள்"
     disembarkAt: "{legDestination}இல் இறங்குங்கள்"

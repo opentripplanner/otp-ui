@@ -73,6 +73,7 @@ otpUi:
       durationShort: >-
         {approximatePrefix, select, true {约 } other {}}{hours, plural, =0 {}
         other {# 시간 }}{minutes} 分钟
+    externalLink: (外部链接)
     flexAdvanceNotice: " 至少提前 {leadDays} 天"
     flexCallAhead: 提前打电话
     flexCallNumber: 拨打 {phoneNumber}
@@ -101,7 +102,6 @@ otpUi:
       alertLinkText: 查看 {agency} 网站上的提醒
       linkOpensNewWindow: （将在新窗口打开）
       noAgencyAlertLinkText: 查看机构网站上的提醒
-    agencyExternalLink: "{agencyName} (外部链接)"
     alertsHeader: "{alertCount} 个警报"
     arriveAt: 到达
     disembarkAt: "{legDestination} 下车"

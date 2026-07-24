@@ -71,6 +71,7 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {#小時}}{minutes}分鐘"
+    externalLink: (外部連結)
     flexAdvanceNotice: " 至少提前{leadDays}天"
     flexCallAhead: 撥打事先
     flexCallNumber: 撥打{phoneNumber}
@@ -99,7 +100,6 @@ otpUi:
       yesterday: 昨天
       noAgencyAlertLinkText: 請參閱機構網站上的警示
       alertLinkText: 請參閱 {agency} 網站上的警示
-    agencyExternalLink: "{agencyName} (外部連結)"
     alertsHeader: "{alertCount}則警示"
     expandDetails: (展開詳細資訊)
     fare: 票價：{fare}

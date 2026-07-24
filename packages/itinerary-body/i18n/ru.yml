@@ -76,6 +76,7 @@ otpUi:
       durationShort: >-
         {approximatePrefix, select, true {Около } other {}}{hours, plural, =0 {}
         other {# ч }}{minutes} мин
+    externalLink: (Ссылка на внешний источник)
     flexCallAhead: звоните заранее
     flexCallNumber: звоните {phoneNumber}
     flexPickupMessage: Чтобы воспользоваться этим маршрутом, 
@@ -107,7 +108,6 @@ otpUi:
       alertLinkText: См. предупреждение на сайте {agency}
       linkOpensNewWindow: (Открывает новое окно)
       noAgencyAlertLinkText: См. предупреждение на сайте агентства
-    agencyExternalLink: "{agencyName} (Ссылка на внешний источник)"
     alertsHeader: >-
       {alertCount, plural, =1 {# предупреждение!} other {Несколько
       предупреждений (#)!}}

@@ -75,6 +75,7 @@ otpUi:
       durationShort: >-
         {approximatePrefix, select, true {About } other {}}{hours, plural, =0 {}
         other {# hr }}{minutes} min
+    externalLink: (External Link)
     flexAdvanceNotice: " at least {leadDays, plural, one {# day} other {# days}} in advance"
     flexBookingUrl: <link>reserve your trip online</link>
     flexCallAhead: call ahead
@@ -104,7 +105,6 @@ otpUi:
       today: Today
       tomorrow: Tomorrow
       yesterday: Yesterday
-    agencyExternalLink: "{agencyName} (External Link)"
     alertsHeader: "{alertCount, plural, =1 {# alert} other {# alerts}}"
     arriveAt: Arrive at {place}
     disembarkAt: Disembark at {legDestination}

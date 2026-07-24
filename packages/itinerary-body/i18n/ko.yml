@@ -73,6 +73,7 @@ otpUi:
       durationShort: >-
         {approximatePrefix, select, true {약 } other {}}{hours, plural, =0 {}
         other {# 시간 }}{minutes} 분
+    externalLink: (외부 링크)
     flexAdvanceNotice: " 최소 {leadDays}일 전에"
     flexCallAhead: 미리 전화
     flexCallNumber: "{phoneNumber}에 전화"
@@ -101,7 +102,6 @@ otpUi:
       linkOpensNewWindow: (새 창 열림)
       alertLinkText: '{agency} 웹사이트에서 알림 확인'
       noAgencyAlertLinkText: 기관 웹사이트에서 알림 확인
-    agencyExternalLink: "{agencyName} (외부 링크)"
     alertsHeader: "{alertCount}개의 알림"
     arriveAt: "{place} 시장에 도착하다"
     disembarkAt: "{legDestination} 에서 하차"

@@ -76,6 +76,7 @@ otpUi:
   ItineraryBody:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} (na) minuto"
+    externalLink: (External na Link)
     flexCallAhead: tumawag nang maaga
     flexCallNumber: tumawag sa {phoneNumber}
     flexPickupMessage: Para gamitin ang rutang ito, {action}{advanceNotice}.
@@ -105,7 +106,6 @@ otpUi:
       alertLinkText: Tingnan ang alerto sa website ng {agency}
       linkOpensNewWindow: (Magbubukas sa bagong window)
       noAgencyAlertLinkText: Tingnan ang alerto sa website ng ahensya
-    agencyExternalLink: "{agencyName} (External na Link)"
     alertsHeader: "{alertCount, plural, =1 {# alert} other {# alerts}}"
     arriveAt: Darating nang {place}
     disembarkAt: Bumaba sa {legDestination}
