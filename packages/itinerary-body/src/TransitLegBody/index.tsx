@@ -154,6 +154,7 @@ class TransitLegBody extends Component<Props, State> {
     const isReservationRequired = coreUtils.itinerary.isReservationRequired(
       leg
     );
+    const contactInfo = leg.pickupBookingInfo?.contactInfo;
 
     // If the config contains an operator name, prefer that one over the
     // one provided by OTP
@@ -298,14 +299,13 @@ class TransitLegBody extends Component<Props, State> {
                 />
               </S.AgencyInfo>
             )}
-            {isReservationRequired && leg.pickupBookingInfo && (
+            {isReservationRequired && contactInfo && (
               <>
                 {/* The "Book Ride" button */}
                 <S.BookFlexRideButtonContainer>
                   <S.BookFlexRideButton
                     href={
-                      leg.pickupBookingInfo.contactInfo?.bookingUrl ||
-                      `tel:${leg.pickupBookingInfo.contactInfo?.phoneNumber}`
+                      contactInfo.bookingUrl || `tel:${contactInfo.phoneNumber}`
                     }
                     target={coreUtils.ui.isMobile() ? "_self" : "_blank"}
                   >
@@ -341,17 +341,13 @@ class TransitLegBody extends Component<Props, State> {
                     </S.BookLaterContainer>
                   )}
                 </S.BookFlexRideButtonContainer>
-                {leg.pickupBookingInfo.contactInfo?.phoneNumber &&
-                  leg.pickupBookingInfo.contactInfo?.bookingUrl && (
-                    <S.FlexAltBooking>
-                      <a
-                        href={`tel:${leg.pickupBookingInfo.contactInfo?.phoneNumber}`}
-                      >
-                        Book by phone:{" "}
-                        {leg.pickupBookingInfo.contactInfo?.phoneNumber}
-                      </a>
-                    </S.FlexAltBooking>
-                  )}
+                {contactInfo.phoneNumber && contactInfo.bookingUrl && (
+                  <S.FlexAltBooking>
+                    <a href={`tel:${contactInfo.phoneNumber}`}>
+                      Book by phone: {contactInfo.phoneNumber}
+                    </a>
+                  </S.FlexAltBooking>
+                )}
               </>
             )}
             {/* Alerts toggle */}
