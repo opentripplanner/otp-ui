@@ -94,6 +94,16 @@ export const LinkButton = styled(TransparentButton)`
   }
 `;
 
+const LinkContainer = styled.div`
+  a {
+    color: ${blue[700]};
+    text-decoration: none;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 interface ViewerButtonProps {
   showBeforeContent?: boolean;
 }
@@ -215,17 +225,7 @@ export const BookFlexRideButtonContainer = styled(BookRideButtonContainer)``;
 
 export const BookTNCRideButtonContainer = styled(BookRideButtonContainer)``;
 
-export const FlexAltBooking = styled.div`
-  /* TODO refactor link styles */
-  a {
-    color: ${blue[700]};
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-`;
+export const FlexAltBooking = styled(LinkContainer)``;
 
 export const TNCTravelTime = styled.div`
   /* no styling */
@@ -800,17 +800,8 @@ export const DefaultAlertBodyIcon = styled(ExclamationTriangle).attrs({
   size: 18
 })``;
 
-export const AgencyInfo = styled.div`
+export const AgencyInfo = styled(LinkContainer)`
   margin-top: 5px;
-
-  a {
-    color: ${blue[700]};
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
 
   img {
     margin-left: 5px;
