@@ -86,9 +86,6 @@ otpUi:
     externalLink: (Lien externe)
     flexAdvanceNotice: " au moins {leadDays, plural, one {# jour} other {# jours}}
       à l'avance"
-    flexBookingUrl: <link>reserve your trip online</link>
-    flexCallAhead: réserver au préalable
-    flexCallNumber: réserver au {phoneNumber}
     flexPickupMessage: Réservation obligatoire{advanceNotice}.
     stayOnBoard: Restez à bord à {place}
     travelBy: Trajet {mode}

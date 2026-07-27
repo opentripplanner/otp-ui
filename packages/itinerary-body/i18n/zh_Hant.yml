@@ -74,8 +74,6 @@ otpUi:
       durationShort: "{hours, plural, =0 {} other {#小時}}{minutes}分鐘"
     externalLink: (外部連結)
     flexAdvanceNotice: " 至少提前{leadDays}天"
-    flexCallAhead: 撥打事先
-    flexCallNumber: 撥打{phoneNumber}
     flexPickupMessage: 您必須撥打事先{advanceNotice}.
     stayOnBoard: 留在{place}車上
     travelBy: 透過{mode}旅行

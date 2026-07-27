@@ -78,8 +78,6 @@ otpUi:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} (na) minuto"
     externalLink: (External na Link)
-    flexCallAhead: tumawag nang maaga
-    flexCallNumber: tumawag sa {phoneNumber}
     flexPickupMessage: Para gamitin ang rutang ito, tumawag nang maaga{advanceNotice}.
     stayOnBoard: Manatiling on board sa {place}
     travelBy: Maglakbay sa pamamagitan ng {mode}

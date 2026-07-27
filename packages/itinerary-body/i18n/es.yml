@@ -76,8 +76,6 @@ otpUi:
         other {# hr. }}{minutes} min
     externalLink: (Enlace external)
     flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de antelación"
-    flexCallAhead: llama con anticipación
-    flexCallNumber: llama {phoneNumber}
     flexPickupMessage: Tiene que reserva{advanceNotice}.
     stayOnBoard: Quédate a bordo en {place}
     travelBy: Viajar {mode}
