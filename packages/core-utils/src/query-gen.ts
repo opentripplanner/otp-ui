@@ -12,6 +12,8 @@ import { isTransit } from "./itinerary";
 
 
 
+type OTPViaLocationInput = { coordinate: { latitude: string, longitude: string }, label: string }
+
 type OTPQueryParams = {
   arriveBy: boolean;
   bannedRoutes?: string[];
@@ -25,6 +27,7 @@ type OTPQueryParams = {
   time?: string;
   to: LonLatOutput & { name?: string };
   requiredRoutes?: string[];
+  via?: OTPViaLocationInput[]
 };
 
 type GraphQLQuery = {
@@ -93,7 +96,6 @@ export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
     .filter(mode => !!mode.input)
     // @ts-expect-error types packagge fail
     .map(mode => ({ ...params, modes: { ...mode.input, transit: { ...mode?.input?.transit, ...transitModes.length > 0 && { transit: transitModes } } } }));
-
 }
 
 /**
@@ -107,7 +109,7 @@ export function generateOtp2Query(
   homeTimezone: string,
   planQuery = DefaultPlanQuery
 ): GraphQLQuery {
-  const { bannedRoutes, departArrive, from, modeSettings, to, date, modes, time, arriveBy, omitCanceled } = otpQueryParams;
+  const { bannedRoutes, departArrive, from, modeSettings, to, date, modes, time, arriveBy, omitCanceled, via } = otpQueryParams;
 
   // This extracts the values from the mode settings to key value pairs
   const modeSettingValues = modeSettings.reduce<
@@ -140,10 +142,9 @@ export function generateOtp2Query(
 
 
   // CALLTAKER:
-  // fix calltaker mode selector
-  // fix via
-  // fix calltaker banned rouets dropdown
+  // find method for preferred?
 
+  // MIGRATE ALL CONFIGS:
   // can remove custom septa graphql, since the main file now has blockid
 
   // finally re-open that deprecated fields PR
@@ -170,7 +171,8 @@ export function generateOtp2Query(
       transitFilter,
       walkReluctance,
       walkSpeed,
-      wheelchair
+      wheelchair,
+      via: via?.filter(v => Object.keys(v).length > 0).map(v => ({ visit: v })) || []
     }
   };
 }
