@@ -22,8 +22,8 @@ export default function BookRide({
   text // defaults to "Book Ride"
 }: Props): ReactElement {
   return (
-    <S.BookTNCRideButtonContainer>
-      <S.BookTNCRideButton
+    <S.BookRideButtonContainer>
+      <S.BookRideButton
         href={href}
         target={coreUtils.ui.isMobile() ? "_self" : "_blank"}
       >
@@ -35,7 +35,7 @@ export default function BookRide({
           />
         )}
         <ExternalLinkHidden />
-      </S.BookTNCRideButton>
+      </S.BookRideButton>
       {instructions && (
         <>
           <S.BookLaterPointer />
@@ -46,6 +46,6 @@ export default function BookRide({
           </S.BookLaterContainer>
         </>
       )}
-    </S.BookTNCRideButtonContainer>
+    </S.BookRideButtonContainer>
   );
 }
