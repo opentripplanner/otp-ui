@@ -78,7 +78,7 @@ otpUi:
     flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de antelación"
     flexCallAhead: llama con anticipación
     flexCallNumber: llama {phoneNumber}
-    flexPickupMessage: Para tomar esta ruta, tiene que {action}{advanceNotice}.
+    flexPickupMessage: Tiene que reserva{advanceNotice}.
     stayOnBoard: Quédate a bordo en {place}
     travelBy: Viajar {mode}
     travelByMode:

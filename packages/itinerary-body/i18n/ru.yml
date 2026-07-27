@@ -80,8 +80,7 @@ otpUi:
     externalLink: (Ссылка на внешний источник)
     flexCallAhead: звоните заранее
     flexCallNumber: звоните {phoneNumber}
-    flexPickupMessage: Чтобы воспользоваться этим маршрутом, 
-      {action}{advanceNotice}.
+    flexPickupMessage: Требуется предварительное бронирование{advanceNotice}.
     stayOnBoard: Не выходите в месте {place}
     travelBy: Передвижение {mode}
     travelByMode:

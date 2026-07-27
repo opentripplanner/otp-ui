@@ -84,8 +84,7 @@ otpUi:
       wcześniej"
     flexCallAhead: zadzwoń wcześniej
     flexCallNumber: zadzwoń pod {phoneNumber}
-    flexPickupMessage: Aby skorzystać z tej trasy, musisz 
-      {action}{advanceNotice}.
+    flexPickupMessage: Wymagana rezerwacja{advanceNotice}.
     stayOnBoard: Zostań w pojeździe na {place}
     travelBy: Podróż {mode}
     travelByMode:

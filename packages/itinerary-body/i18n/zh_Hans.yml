@@ -78,7 +78,7 @@ otpUi:
     flexAdvanceNotice: " 至少提前 {leadDays} 天"
     flexCallAhead: 提前打电话
     flexCallNumber: 拨打 {phoneNumber}
-    flexPickupMessage: 要走这条路，你必须{action}{advanceNotice}
+    flexPickupMessage: 你必须提前打电话{advanceNotice}
     stayOnBoard: 留在 {place} 的巴士上
     travelBy: "{mode} 旅行"
     travelByMode:

@@ -89,8 +89,7 @@ otpUi:
     flexBookingUrl: <link>reserve your trip online</link>
     flexCallAhead: réserver au préalable
     flexCallNumber: réserver au {phoneNumber}
-    flexPickupMessage: Pour emprunter cette ligne, vous devez 
-      {action}{advanceNotice}.
+    flexPickupMessage: Réservation obligatoire{advanceNotice}.
     stayOnBoard: Restez à bord à {place}
     travelBy: Trajet {mode}
     travelByMode:

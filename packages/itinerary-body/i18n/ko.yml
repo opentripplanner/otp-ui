@@ -78,7 +78,7 @@ otpUi:
     flexAdvanceNotice: " 최소 {leadDays}일 전에"
     flexCallAhead: 미리 전화
     flexCallNumber: "{phoneNumber}에 전화"
-    flexPickupMessage: 이 경로를 이용하려면 {advanceNotice}{action}야 합니다.
+    flexPickupMessage: 이 경로를 이용하려면 {advanceNotice}미리 전화야 합니다
     stayOnBoard: "{place}에서는 그대로 타고 계십시오"
     travelBy: "{mode} 여행하다"
     travelByMode:

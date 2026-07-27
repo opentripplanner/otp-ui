@@ -79,7 +79,7 @@ otpUi:
     flexAdvanceNotice: " ít nhất trước {leadDays} ngày"
     flexCallAhead: gọi điện trước khi đi
     flexCallNumber: gọi {phoneNumber}
-    flexPickupMessage: Để đi tuyến đường này, bạn phải {action}{advanceNotice}.
+    flexPickupMessage: Bạn phải đặt chỗ trước{advanceNotice}.
     stayOnBoard: Ở trên xe tại {place}
     travelBy: Di chuyển {mode}
     travelByMode:

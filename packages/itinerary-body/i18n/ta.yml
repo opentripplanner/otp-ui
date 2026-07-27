@@ -82,8 +82,7 @@ otpUi:
       முன்கூட்டியே"
     flexCallAhead: முன்னால் அழைக்கவும்
     flexCallNumber: "{phoneNumber} ஐ அழைக்கவும்"
-    flexPickupMessage: இந்த வழியை எடுக்க, நீங்கள் 
-      {action}{advanceNotice}வேண்டும்.
+    flexPickupMessage: இந்த வழியை எடுக்க, நீங்கள் முன்னால் அழைக்கவும்{advanceNotice}வேண்டும்.
     stayOnBoard: "{place} இல் போர்டில் இருங்கள்"
     travelBy: பயணம் {mode}
     travelByMode:

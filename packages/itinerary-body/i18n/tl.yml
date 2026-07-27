@@ -80,7 +80,7 @@ otpUi:
     externalLink: (External na Link)
     flexCallAhead: tumawag nang maaga
     flexCallNumber: tumawag sa {phoneNumber}
-    flexPickupMessage: Para gamitin ang rutang ito, {action}{advanceNotice}.
+    flexPickupMessage: Para gamitin ang rutang ito, tumawag nang maaga{advanceNotice}.
     stayOnBoard: Manatiling on board sa {place}
     travelBy: Maglakbay sa pamamagitan ng {mode}
     travelByMode:
