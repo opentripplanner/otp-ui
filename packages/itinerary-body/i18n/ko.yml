@@ -69,6 +69,7 @@ otpUi:
       vehicle: 차량
     transfer: 환승{duration, select, undefined {} other {, 대기 {duration}}}
   ItineraryBody:
+    bookRide: 승차 예약
     common:
       durationShort: >-
         {approximatePrefix, select, true {약 } other {}}{hours, plural, =0 {}

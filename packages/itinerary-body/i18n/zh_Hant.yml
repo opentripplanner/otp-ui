@@ -69,6 +69,7 @@ otpUi:
       vehicle: 車輛
     transfer: 轉乘{duration, select, undefined {} other {, 等候 {duration}}}
   ItineraryBody:
+    bookRide: 預約乘車
     common:
       durationShort: "{hours, plural, =0 {} other {#小時}}{minutes}分鐘"
     externalLink: (外部連結)

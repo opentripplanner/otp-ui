@@ -70,6 +70,7 @@ otpUi:
       vehicle: Xe
     transfer: Chuyển{duration, select, undefined {} other {, đợi {duration}}}
   ItineraryBody:
+    bookRide: Đặt trước một chuyến đi
     common:
       durationShort: >-
         {approximatePrefix, select, true {Khoảng } other {}}{hours, plural, =0

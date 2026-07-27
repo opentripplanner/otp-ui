@@ -69,6 +69,7 @@ otpUi:
       vehicle: 车辆
     transfer: 换乘{duration, select, undefined {} other {, 等待{duration}}}
   ItineraryBody:
+    bookRide: 预订乘车
     common:
       durationShort: >-
         {approximatePrefix, select, true {约 } other {}}{hours, plural, =0 {}

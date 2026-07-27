@@ -72,6 +72,7 @@ otpUi:
       escooter: மின்-ச்கூட்டர்
       vehicle: வண்டி
   ItineraryBody:
+    bookRide: புத்தக சவாரி
     common:
       durationShort: >-
         {தோராயமான பிரீஃபிக்ச், தேர்ந்தெடு, உண்மை {About } பிற {}} {மணிநேரம்,

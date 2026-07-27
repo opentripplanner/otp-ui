@@ -69,6 +69,7 @@ otpUi:
       escooter: E-scooter
       vehicle: Vehicle
   ItineraryBody:
+    bookRide: Book Ride
     canceled: Canceled
     canceledMessage: The following trip has been canceled
     common:

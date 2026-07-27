@@ -74,6 +74,7 @@ otpUi:
       escooter: Hulajnoga elektryczna
       vehicle: Pojazd
   ItineraryBody:
+    bookRide: Zarezerwuj przejazd
     common:
       durationShort: >-
         {approximatePrefix, select, true {Około } other {}}{hours, plural, =0 {}

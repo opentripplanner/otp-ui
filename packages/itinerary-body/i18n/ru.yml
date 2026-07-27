@@ -72,6 +72,7 @@ otpUi:
     transfer: Пересадка{duration, select, undefined {} other {, подожди 
       {duration}}}
   ItineraryBody:
+    bookRide: Забронировать поездку
     common:
       durationShort: >-
         {approximatePrefix, select, true {Около } other {}}{hours, plural, =0 {}

@@ -74,6 +74,7 @@ otpUi:
     transfer: Paglilipat{duration, select, undefined {} other {, maghintay ng 
       {duration}}}
   ItineraryBody:
+    bookRide: Mag-book ng Ride
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} (na) minuto"
     externalLink: (External na Link)

@@ -76,6 +76,7 @@ otpUi:
       escooter: Trottinette
       vehicle: Véhicule
   ItineraryBody:
+    bookRide: Réserver
     canceled: Annulé
     canceledMessage: The following trip has been canceled
     common:
