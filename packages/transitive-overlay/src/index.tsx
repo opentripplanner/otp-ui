@@ -106,13 +106,22 @@ const defaultTextPaintParams = {
 /**
  * Common text settings.
  */
-const commonTextLayoutParams: SymbolLayerSpecification["layout"] = {
-  "symbol-placement": "point",
-  "text-allow-overlap": false,
-  "text-field": ["get", "name"],
-  "text-justify": "auto",
-  "text-radial-offset": 1,
-  "text-size": 15
+const commonTextLayoutParams = (
+  mapLayerFonts: string[]
+): SymbolLayerSpecification["layout"] => {
+  const regularFonts = mapLayerFonts.filter(font => font.includes("Regular"));
+  return {
+    "symbol-placement": "point",
+    "text-allow-overlap": false,
+    "text-field": ["get", "name"],
+    "text-justify": "auto",
+    "text-radial-offset": 1,
+    "text-size": 15,
+    "text-font": regularFonts || [
+      "Open Sans Regular",
+      "Arial Unicode MS Regular"
+    ]
+  };
 };
 
 /**
@@ -135,11 +144,16 @@ const defaultTextLayoutParams: SymbolLayerSpecification["layout"] = {
 /**
  * Default text + bold default fonts
  */
-const defaultBoldTextLayoutParams: SymbolLayerSpecification["layout"] = {
-  ...commonTextLayoutParams,
-  // FIXME: find a better way to set a bold font
-  "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
-  "text-overlap": "never"
+const defaultBoldTextLayoutParams = (
+  mapLayerFonts?: string[]
+): SymbolLayerSpecification["layout"] => {
+  const boldFonts = mapLayerFonts?.filter(font => font.includes("Bold"));
+  return {
+    ...commonTextLayoutParams,
+    // FIXME: find a better way to set a bold font
+    "text-font": boldFonts || ["Open Sans Bold", "Arial Unicode MS Bold"],
+    "text-overlap": "never"
+  };
 };
 
 const routeFilter: FilterSpecification = ["==", "type", "route"];
@@ -156,6 +170,8 @@ type Props = {
   activeLeg?: Leg;
   accessLegColorOverride?: string;
   boundsFitting?: boolean;
+  /* If applicable, pass a list of fonts supported by the custom base map layer */
+  mapLayerFonts?: string[];
   showRouteArrows?: boolean;
   transitiveData?: TransitiveData;
 };
@@ -187,6 +203,7 @@ const TransitiveCanvasOverlay = ({
   activeLeg,
   accessLegColorOverride,
   boundsFitting = true,
+  mapLayerFonts,
   showRouteArrows,
   transitiveData
 }: Props): JSX.Element => {
@@ -524,7 +541,7 @@ const TransitiveCanvasOverlay = ({
         // This layer renders transit route names (foreground).
         filter={routeFilter}
         id="routes-labels"
-        layout={getRouteLayerLayout("name")}
+        layout={getRouteLayerLayout("name", mapLayerFonts)}
         paint={{
           "icon-color": ["get", "color"],
           "text-color": ["get", "textColor"]
@@ -535,7 +552,7 @@ const TransitiveCanvasOverlay = ({
         filter={["==", "type", "from"]}
         id="from-label"
         layout={{
-          ...defaultBoldTextLayoutParams,
+          ...defaultBoldTextLayoutParams(mapLayerFonts),
           "text-anchor": fromAnchor
         }}
         paint={defaultTextPaintParams}

@@ -54,7 +54,8 @@ export function patternToRouteFeature(
  * Obtains common layout options for route label layers.
  */
 export function getRouteLayerLayout(
-  textField: string
+  textField: string,
+  mapLayerFonts?: string[]
 ): SymbolLayerSpecification["layout"] {
   // Generates a single icon based on the string length
   function generateIcon(length: number) {
@@ -71,6 +72,7 @@ export function getRouteLayerLayout(
     "rect"
   ];
 
+  const boldFonts = mapLayerFonts?.filter(font => font.includes("Bold"));
   // TODO: Tweak shape of roundels for perfect circle
   return {
     "icon-image": iconImage as ExpressionSpecification,
@@ -93,7 +95,7 @@ export function getRouteLayerLayout(
     ] as ExpressionSpecification,
     "text-allow-overlap": true,
     "text-field": ["get", textField],
-    "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+    "text-font": boldFonts || ["Open Sans Bold", "Arial Unicode MS Bold"],
     "text-ignore-placement": true,
     "text-justify": "left",
     "text-line-height": 0.5,
