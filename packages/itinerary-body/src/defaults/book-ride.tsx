@@ -5,18 +5,19 @@ import { FormattedMessage } from "react-intl";
 import * as S from "../styled";
 import { defaultMessages } from "../util";
 
+import ExternalLinkHidden from "./external-link-hidden";
+
 interface Props {
   href: string;
   instructions?: ReactNode;
-  secondaryLink?: ReactNode;
   text?: ReactNode;
 }
 
 /**
- * Component that groups links and instructions for booking rides.
+ * Component that groups a button-like link and instructions for booking rides.
  */
 export default function BookRide({
-  href,
+  href, // url is assumed external
   instructions,
   text // defaults to "Book Ride"
 }: Props): ReactElement {
@@ -33,6 +34,7 @@ export default function BookRide({
             id="otpUi.ItineraryBody.bookRide"
           />
         )}
+        <ExternalLinkHidden />
       </S.BookTNCRideButton>
       {instructions && (
         <>
