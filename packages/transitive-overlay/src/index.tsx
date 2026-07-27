@@ -107,9 +107,9 @@ const defaultTextPaintParams = {
  * Common text settings.
  */
 const commonTextLayoutParams = (
-  mapLayerFonts: string[]
+  mapLayerFonts?: string[]
 ): SymbolLayerSpecification["layout"] => {
-  const regularFonts = mapLayerFonts.filter(font => font.includes("Regular"));
+  const regularFonts = mapLayerFonts?.filter(font => font.includes("Regular"));
   return {
     "symbol-placement": "point",
     "text-allow-overlap": false,
@@ -151,7 +151,10 @@ const defaultBoldTextLayoutParams = (
   return {
     ...commonTextLayoutParams,
     // FIXME: find a better way to set a bold font
-    "text-font": boldFonts || ["Open Sans Bold", "Arial Unicode MS Bold"],
+    "text-font":
+      boldFonts?.length && boldFonts.length > 0
+        ? boldFonts
+        : ["Open Sans Bold", "Arial Unicode MS Bold"],
     "text-overlap": "never"
   };
 };
