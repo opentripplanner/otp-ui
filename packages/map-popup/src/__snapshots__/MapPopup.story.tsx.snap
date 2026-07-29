@@ -252,8 +252,10 @@ exports[`Map Popup StopEntityClosedStop smoke-test 1`] = `
     <header class="styled__PopupTitle-sc-12kjso7-3 jRNaQh">
       W Burnside &amp; SW 2nd
     </header>
-    <div class="src__ClosedAlertWrapper-sc-1nssq3h-0 dxDvDN">
+    <div class="src__ClosedAlertWrapper-sc-1nssq3h-0 zvCZy">
       <svg viewbox="0 0 512 512"
+           height="15"
+           width="15"
            aria-hidden="true"
            focusable="false"
            fill="currentColor"
