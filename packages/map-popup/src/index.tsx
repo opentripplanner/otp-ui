@@ -39,15 +39,11 @@ export type Feed = {
 };
 
 const ClosedAlertWrapper = styled.div`
-  display: flex;
   align-items: center;
   color: ${colors.red[700]};
-
-  svg {
-    height: 15px;
-    width: 15px;
-    margin-right: 5px;
-  }
+  display: flex;
+  font-size: 14px;
+  gap: 5px;
 `
 
 const generateLocation = (entity: MapPopupEntity, name: string) => {
@@ -184,7 +180,7 @@ export function MapPopup({
 
       {stopClosureInfoAvailable && entity.closed &&
         <ClosedAlertWrapper>
-          <ExclamationTriangle />
+          <ExclamationTriangle size={15} />
           <FormattedMessage
             defaultMessage={defaultMessages["otpUi.MapPopup.closedStop"]}
             description="Text alerting user that the stop is closed"
