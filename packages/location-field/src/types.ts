@@ -1,4 +1,4 @@
-import { SingleGeocoderResponse } from "@opentripplanner/geocoder";
+import { GeocoderConfig, SingleGeocoderResponse } from "@opentripplanner/geocoder";
 import { Location, Stop, UserLocation, UserPosition } from "@opentripplanner/types";
 import React, { ComponentType, ReactNode } from "react";
 // eslint-disable-next-line prettier/prettier
@@ -100,17 +100,7 @@ export interface LocationFieldProps {
   /**
    * A configuration object describing what geocoder should be used.
    */
-  geocoderConfig: {
-    baseUrl?: string;
-    boundary?: {
-      // TriMet-specific default
-      rect?: {
-        minLon?: number;
-        maxLon?: number;
-        minLat?: number;
-        maxLat?: number;
-      };
-    };
+  geocoderConfig: GeocoderConfig & {
     maxNearbyStops?: number;
     type: string;
   };
