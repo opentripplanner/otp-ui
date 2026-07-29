@@ -3,9 +3,6 @@
 exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -228,9 +225,6 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -600,9 +594,6 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -910,9 +901,6 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -968,9 +956,6 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
 exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -1193,9 +1178,6 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -1568,9 +1550,6 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -1878,9 +1857,6 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -1936,9 +1912,6 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
 exports[`ItineraryBody/otp-react-redux BikeOnlyItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 dncEaQ leg-line">
       </div>
@@ -2224,9 +2197,6 @@ exports[`ItineraryBody/otp-react-redux BikeOnlyItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -2282,9 +2252,6 @@ exports[`ItineraryBody/otp-react-redux BikeOnlyItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -2507,9 +2474,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   rented-bike">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 dncEaQ leg-line">
       </div>
@@ -2822,9 +2786,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -3071,9 +3032,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -3129,9 +3087,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -3392,9 +3347,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   rented-bike">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 dncEaQ leg-line">
       </div>
@@ -3821,9 +3773,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -4070,9 +4019,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -4467,9 +4413,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -4701,9 +4644,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   rented-bike">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 dncEaQ leg-line">
       </div>
@@ -5016,9 +4956,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -5227,9 +5164,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -5285,9 +5219,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
 exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -5472,9 +5403,6 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 dncEaQ leg-line">
       </div>
@@ -5770,9 +5698,6 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -5958,9 +5883,6 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -6263,9 +6185,6 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -6459,9 +6378,6 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 dncEaQ leg-line">
       </div>
@@ -6719,9 +6635,6 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -6777,9 +6690,6 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
 exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
       </div>
@@ -6907,9 +6817,6 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -7003,9 +6910,6 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -7219,9 +7123,6 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -7337,9 +7238,6 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
       </div>
@@ -7462,9 +7360,6 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -7540,9 +7435,6 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
 exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -7765,9 +7657,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kBTBwI leg-line">
       </div>
@@ -7974,9 +7863,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -8032,9 +7918,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalItinerary smoke-test 1`] = 
 exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -8362,9 +8245,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kBTBwI leg-line">
       </div>
@@ -8828,9 +8708,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -8907,9 +8784,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -9161,9 +9035,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -9462,9 +9333,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kBTBwI leg-line">
       </div>
@@ -9814,9 +9682,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -9872,9 +9737,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
 exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
       </div>
@@ -9986,9 +9848,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -10273,9 +10132,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -10634,9 +10490,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -10982,9 +10835,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -11040,9 +10890,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
 exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -11665,9 +11512,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 khbgHP leg-line">
       </div>
@@ -11892,9 +11736,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -12088,9 +11929,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 drgNNC leg-line">
       </div>
@@ -12303,9 +12141,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -12499,9 +12334,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 drgNNC leg-line">
       </div>
@@ -12730,9 +12562,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -12926,9 +12755,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -13189,9 +13015,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -13519,9 +13342,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -13577,9 +13397,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
 exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -13898,9 +13715,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kUZrSU leg-line">
       </div>
@@ -14172,9 +13986,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -14406,9 +14217,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fsbJne leg-line">
       </div>
@@ -14648,9 +14456,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -14882,9 +14687,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 guGJVk leg-line">
       </div>
@@ -15043,9 +14845,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -15101,9 +14900,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -15364,9 +15160,6 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   rented-bike">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kBTBwI leg-line">
       </div>
@@ -15859,9 +15652,6 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   rented-bike">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -15917,9 +15707,6 @@ exports[`ItineraryBody/otp-react-redux OTP2ScooterItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -16361,9 +16148,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 cSQuqh leg-line">
       </div>
@@ -16630,9 +16414,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -16978,9 +16759,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -17426,9 +17204,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -17765,9 +17540,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -17823,9 +17595,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
       </div>
@@ -18347,9 +18116,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -18634,9 +18400,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -18995,9 +18758,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -19343,9 +19103,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -19401,9 +19158,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 giaaKO leg-line">
       </div>
@@ -19639,9 +19393,6 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit interline ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kZUAHe leg-line">
       </div>
@@ -19853,9 +19604,6 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -19911,9 +19659,6 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-react-redux StopWithNoStopCode smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -20136,9 +19881,6 @@ exports[`ItineraryBody/otp-react-redux StopWithNoStopCode smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -20510,9 +20252,6 @@ exports[`ItineraryBody/otp-react-redux StopWithNoStopCode smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -20820,9 +20559,6 @@ exports[`ItineraryBody/otp-react-redux StopWithNoStopCode smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -20878,9 +20614,6 @@ exports[`ItineraryBody/otp-react-redux StopWithNoStopCode smoke-test 1`] = `
 exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -21103,9 +20836,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -21478,9 +21208,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -21788,9 +21515,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -21846,9 +21570,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
 exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -22071,9 +21792,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -22446,9 +22164,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -22756,9 +22471,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -22814,9 +22526,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
 exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -23039,9 +22748,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -23414,9 +23120,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -23724,9 +23427,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -23782,9 +23482,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
 exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
       </div>
@@ -23892,9 +23589,6 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -23971,9 +23665,6 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -24173,9 +23864,6 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -24275,9 +23963,6 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
       </div>
@@ -24380,9 +24065,6 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -24438,9 +24120,6 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -24949,9 +24628,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jLWJnR leg-line">
       </div>
@@ -25161,9 +24837,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -25260,9 +24933,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jLWJnR leg-line">
       </div>
@@ -25648,9 +25318,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -26168,9 +25835,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -26226,9 +25890,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
       </div>
@@ -26750,9 +26411,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -27037,9 +26695,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -27419,9 +27074,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -27767,9 +27419,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -27825,9 +27474,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
 exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
       </div>
@@ -28349,9 +27995,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -28636,9 +28279,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -28997,9 +28637,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -29345,9 +28982,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -29403,9 +29037,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
 exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fiFXVo leg-line">
       </div>
@@ -29927,9 +29558,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -30214,9 +29842,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -30575,9 +30200,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -30923,9 +30545,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -30981,9 +30600,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
 exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -31358,9 +30974,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fmJnmR leg-line">
       </div>
@@ -31580,9 +31193,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -31682,9 +31292,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -31920,9 +31527,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -32192,9 +31796,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -32502,9 +32103,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -32736,9 +32334,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -32794,9 +32389,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
 exports[`ItineraryBody/otp-react-redux WalkOnlyItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -33013,9 +32605,6 @@ exports[`ItineraryBody/otp-react-redux WalkOnlyItinerary smoke-test 1`] = `
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -33071,9 +32660,6 @@ exports[`ItineraryBody/otp-react-redux WalkOnlyItinerary smoke-test 1`] = `
 exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -33296,9 +32882,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -33518,9 +33101,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -33790,9 +33370,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -34012,9 +33589,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -34284,9 +33858,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -34342,9 +33913,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
 exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -34598,9 +34166,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -34851,9 +34416,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -35123,9 +34685,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -35376,9 +34935,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -35679,9 +35235,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -35737,9 +35290,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
 exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -35962,9 +35512,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -36337,9 +35884,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -36647,9 +36191,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -36705,9 +36246,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
 exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryCanceled smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -37310,9 +36848,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryCanceled smoke-te
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -37620,9 +37155,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryCanceled smoke-te
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -37678,9 +37210,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryCanceled smoke-te
 exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -37903,9 +37432,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 jA-dKKm leg-line">
       </div>
@@ -38278,9 +37804,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -38588,9 +38111,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -38646,9 +38166,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
 exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -39023,9 +38540,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fmJnmR leg-line">
       </div>
@@ -39245,9 +38759,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -39347,9 +38858,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -39585,9 +39093,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -39857,9 +39362,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -40167,9 +39669,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -40401,9 +39900,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -40459,9 +39955,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
 exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -40836,9 +40329,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fmJnmR leg-line">
       </div>
@@ -41058,9 +40548,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -41160,9 +40647,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -41398,9 +40882,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -41670,9 +41151,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -41980,9 +41458,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -42214,9 +41689,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
@@ -42272,9 +41744,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
 exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF itinerary-body__StyledItineraryBody-sc-1aqc6e3-0 jyGWIy">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -42649,9 +42118,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 fmJnmR leg-line">
       </div>
@@ -42871,9 +42337,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -42973,9 +42436,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -43211,9 +42671,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -43483,9 +42940,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper transit  ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kFSmkR leg-line">
       </div>
@@ -43793,9 +43247,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <div class="line-column-content__LegLine-sc-1wcbb7o-1 kLHuao leg-line">
       </div>
@@ -44027,9 +43478,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
     </div>
   </li>
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
-    <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
-      The following trip has been canceled
-    </span>
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
       <span class="line-column-content__IconStacker-sc-1wcbb7o-0 ldGHux">
         <svg viewbox="0 0 512 512"
