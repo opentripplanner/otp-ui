@@ -145,9 +145,8 @@ const defaultTextLayoutParams: SymbolLayerSpecification["layout"] = {
  * Default text + bold default fonts
  */
 const defaultBoldTextLayoutParams = (
-  mapLayerFonts?: string[]
+  boldFonts?: string[]
 ): SymbolLayerSpecification["layout"] => {
-  const boldFonts = mapLayerFonts?.filter(font => font.includes("Bold"));
   return {
     ...commonTextLayoutParams,
     // FIXME: find a better way to set a bold font
@@ -174,7 +173,7 @@ type Props = {
   accessLegColorOverride?: string;
   boundsFitting?: boolean;
   /* If applicable, pass a list of fonts supported by the custom base map layer */
-  mapLayerFonts?: string[];
+  vectorTileFonts?: string[];
   showRouteArrows?: boolean;
   transitiveData?: TransitiveData;
 };
@@ -206,7 +205,7 @@ const TransitiveCanvasOverlay = ({
   activeLeg,
   accessLegColorOverride,
   boundsFitting = true,
-  mapLayerFonts,
+  vectorTileFonts,
   showRouteArrows,
   transitiveData
 }: Props): JSX.Element => {
@@ -421,6 +420,8 @@ const TransitiveCanvasOverlay = ({
 
   const { fromAnchor, toAnchor } = getFromToAnchors(transitiveData);
 
+  const boldFonts = vectorTileFonts?.filter(font => font.includes("Bold"));
+
   // Generally speaking, text/symbol layers placed first will be rendered in a lower layer
   // (or, if it is text, rendered with a lower priority or not at all if higher-priority text overlaps).
   return (
@@ -544,7 +545,7 @@ const TransitiveCanvasOverlay = ({
         // This layer renders transit route names (foreground).
         filter={routeFilter}
         id="routes-labels"
-        layout={getRouteLayerLayout("name", mapLayerFonts)}
+        layout={getRouteLayerLayout("name", boldFonts)}
         paint={{
           "icon-color": ["get", "color"],
           "text-color": ["get", "textColor"]
@@ -555,7 +556,7 @@ const TransitiveCanvasOverlay = ({
         filter={["==", "type", "from"]}
         id="from-label"
         layout={{
-          ...defaultBoldTextLayoutParams(mapLayerFonts),
+          ...defaultBoldTextLayoutParams(boldFonts),
           "text-anchor": fromAnchor
         }}
         paint={defaultTextPaintParams}

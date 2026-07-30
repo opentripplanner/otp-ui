@@ -55,7 +55,7 @@ export function patternToRouteFeature(
  */
 export function getRouteLayerLayout(
   textField: string,
-  mapLayerFonts?: string[]
+  boldFonts?: string[]
 ): SymbolLayerSpecification["layout"] {
   // Generates a single icon based on the string length
   function generateIcon(length: number) {
@@ -72,7 +72,6 @@ export function getRouteLayerLayout(
     "rect"
   ];
 
-  const boldFonts = mapLayerFonts?.filter(font => font.includes("Bold"));
   // TODO: Tweak shape of roundels for perfect circle
   return {
     "icon-image": iconImage as ExpressionSpecification,
