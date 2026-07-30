@@ -31,6 +31,11 @@ const STOP_NO_CODE = {
   name: "W Burnside & SW 2nd"
 };
 
+const CLOSED_STOP = {
+  ...STOP_NO_CODE,
+  closed: true
+};
+
 const STOP_WITH_CODE = {
   flex: false,
   code: "9526",
@@ -126,6 +131,15 @@ const getEntityPrefixExample = (entity: Stop | VehicleRentalStation) => {
 export const StopEntity = (): JSX.Element => (
   <MapPopupContents
     entity={STOP_WITH_CODE}
+    feeds={SAMPLE_FEEDS}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+  />
+);
+
+export const StopEntityClosedStop = (): JSX.Element => (
+  <MapPopupContents
+    entity={CLOSED_STOP}
     feeds={SAMPLE_FEEDS}
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
