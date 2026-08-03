@@ -5,7 +5,9 @@ import {
   TransportMode
 } from "@opentripplanner/types";
 
-import { isTransit } from "@opentripplanner/core-utils/lib/itinerary";
+import coreUtils from "@opentripplanner/core-utils";
+
+const { isTransit } = coreUtils.itinerary;
 
 /**
  * Aggregates all the modes from the input mode button definitions
