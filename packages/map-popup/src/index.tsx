@@ -11,11 +11,13 @@ import type {
   StopEventHandler,
 } from "@opentripplanner/types";
 
-import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
+import colors, { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import { flatten } from "flat";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Styled } from "@opentripplanner/base-map";
 import coreUtils from "@opentripplanner/core-utils";
+import styled from "styled-components";
+import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle";
 
 import { makeDefaultGetEntityName, type StopIdAgencyMap } from "./util";
 import { ViewStopButton } from "./styled";
@@ -36,6 +38,13 @@ export type Feed = {
   };
 };
 
+const ClosedAlertWrapper = styled.div`
+  align-items: center;
+  color: ${colors.red[700]};
+  display: flex;
+  font-size: 14px;
+  gap: 5px;
+`
 
 const generateLocation = (entity: MapPopupEntity, name: string) => {
   // @ts-expect-error some of these values may be null, but that's ok
@@ -152,6 +161,7 @@ export function MapPopup({
   const entityIsStationHub = vehiclesAvailable && entity?.availableVehicles !== undefined;
   const stopId = entityIsStop(entity) ? entity.code : "";
   const id = `focus-${encodeURIComponent(entity.id).replace(/%/g, "")}-popup`
+  const stopClosureInfoAvailable = "closed" in entity;
 
   return (
     <Styled.MapOverlayPopup>
@@ -168,6 +178,15 @@ export function MapPopup({
       {/* render dock info if it is available */}
       {entityIsStationHub && <StationHubDetails availableSpaces={entity.availableSpaces?.total} availableVehicles={entity.availableVehicles?.total} />}
 
+      {stopClosureInfoAvailable && entity.closed &&
+        <ClosedAlertWrapper>
+          <ExclamationTriangle size={15} />
+          <FormattedMessage
+            defaultMessage={defaultMessages["otpUi.MapPopup.closedStop"]}
+            description="Text alerting user that the stop is closed"
+            id="otpUi.MapPopup.closedStop"
+          />
+        </ClosedAlertWrapper>}
       {/* Show stop details if any are available */}
       {entityIsStop(entity) && (!!stopId || !!setViewedStop) && (
         <StopDetails

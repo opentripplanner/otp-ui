@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/stops-overlay",
-  "version": "8.1.2",
+  "version": "8.2.0",
   "description": "A map overlay to show transit stops",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -22,11 +22,12 @@
     "@opentripplanner/base-map": "workspace:^",
     "@opentripplanner/from-to-location-picker": "workspace:^",
     "@opentripplanner/map-popup": "workspace:^",
-    "maplibre-gl": "catalog:",
-    "flat": "catalog:"
+    "flat": "catalog:",
+    "maplibre-gl": "catalog:"
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:^",
+    "maplibre-gl": "catalog:",
     "styled-icons": "catalog:"
   },
   "peerDependencies": {

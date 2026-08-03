@@ -138,9 +138,11 @@ export default function PlaceRow({
       } ${leg.rentedBike ? "rented-bike" : ""}`}
       key={legIndex || "destination-place"}
     >
-      <S.InvisibleAdditionalDetails>
-        {canceledInvisibleMessage}
-      </S.InvisibleAdditionalDetails>
+      {canceled && (
+        <S.InvisibleAdditionalDetails>
+          {canceledInvisibleMessage}
+        </S.InvisibleAdditionalDetails>
+      )}
       <S.LineColumn>
         <LineColumnContent
           interline={interline}
