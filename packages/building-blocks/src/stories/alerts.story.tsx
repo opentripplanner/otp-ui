@@ -57,59 +57,51 @@ const AlertContent = () => {
   );
 };
 
-export const BasicAlert = (): ReactElement => {
-  return (
-    <AlertContainer>
-      <Alert
-        alertHeader="Next trip starts on Wednesday April 17th"
-        alertSubheader="Trip is due to begin at 7:43 AM (Realtime monitoring will being at 7:13 AM)"
-      >
-        Here is more content
-      </Alert>
-    </AlertContainer>
-  );
-};
+export const BasicAlert = (): ReactElement => (
+  <AlertContainer>
+    <Alert
+      alertHeader="Next trip starts on Wednesday April 17th"
+      alertSubheader="Trip is due to begin at 7:43 AM (Realtime monitoring will being at 7:13 AM)"
+    >
+      Here is more content
+    </Alert>
+  </AlertContainer>
+);
 
-export const BasicAlertNoIcon = (): ReactElement => {
-  return (
-    <AlertContainer>
-      <Alert
-        alertHeader="Next trip starts on Wednesday April 17th"
-        alertSubheader="Trip is due to begin at 7:43 AM (Realtime monitoring will being at 7:13 AM)"
-        Icon={null}
-      >
-        Here is more content
-      </Alert>
-    </AlertContainer>
-  );
-};
+export const BasicAlertNoIcon = (): ReactElement => (
+  <AlertContainer>
+    <Alert
+      alertHeader="Next trip starts on Wednesday April 17th"
+      alertSubheader="Trip is due to begin at 7:43 AM (Realtime monitoring will being at 7:13 AM)"
+      Icon={null}
+    >
+      Here is more content
+    </Alert>
+  </AlertContainer>
+);
 
-export const CollapsibleAlertWithTransitAlerts = (): ReactElement => {
-  return (
-    <AlertContainer>
-      <Alert
-        backgroundColor={red[50]}
-        collapsible
-        Icon={ExclamationTriangle}
-        alertHeader="Your trip has alerts"
-      >
-        <AlertContent />
-      </Alert>
-    </AlertContainer>
-  );
-};
+export const CollapsibleAlertWithTransitAlerts = (): ReactElement => (
+  <AlertContainer>
+    <Alert
+      backgroundColor={red[50]}
+      collapsible
+      Icon={ExclamationTriangle}
+      alertHeader="Your trip has alerts"
+    >
+      <AlertContent />
+    </Alert>
+  </AlertContainer>
+);
 
-export const CollapsibleAlertWithTransitAlertsNoIcon = (): ReactElement => {
-  return (
-    <AlertContainer>
-      <Alert
-        backgroundColor={red[50]}
-        collapsible
-        Icon={null}
-        alertHeader="Your trip has alerts"
-      >
-        <AlertContent />
-      </Alert>
-    </AlertContainer>
-  );
-};
+export const CollapsibleAlertWithTransitAlertsNoIcon = (): ReactElement => (
+  <AlertContainer>
+    <Alert
+      backgroundColor={red[50]}
+      collapsible
+      Icon={null}
+      alertHeader="Your trip has alerts"
+    >
+      <AlertContent />
+    </Alert>
+  </AlertContainer>
+);

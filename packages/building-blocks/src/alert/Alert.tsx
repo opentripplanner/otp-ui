@@ -20,7 +20,7 @@ interface Props {
 
 const AlertContainer = styled.div<{
   backgroundColor?: string;
-  collapsible: boolean;
+  collapsible?: boolean;
   expandAlert: boolean;
   icon: boolean;
 }>`
@@ -71,8 +71,9 @@ const AlertContainer = styled.div<{
   }
 
   @media (max-width: 550px) {
-    grid-template-columns: 40px auto auto;
-    padding: 1.25em;
+    column-gap: 0.75em;
+    grid-template-columns: ${props => props.icon && "40px auto auto"};
+    padding: 1em;
   }
 `;
 
@@ -84,7 +85,7 @@ const ButtonContainer = styled.span`
 `;
 
 const ContentPadding = styled.div<{
-  collapsible: boolean;
+  collapsible?: boolean;
 }>`
   margin-top: ${props => (props.collapsible ? "1em" : ".5em")};
 `;
@@ -107,7 +108,7 @@ const Alert = ({
     <AlertContainer
       backgroundColor={backgroundColor}
       expandAlert={expandAlert}
-      collapsible={!!collapsible}
+      collapsible={collapsible}
       icon={!!Icon}
     >
       {!!Icon && <Icon size={24} />}
@@ -134,7 +135,7 @@ const Alert = ({
             duration={500}
             height={collapsible ? (expandAlert ? "auto" : 0) : "auto"}
           >
-            <ContentPadding collapsible={!!collapsible}>
+            <ContentPadding collapsible={collapsible}>
               {children}
             </ContentPadding>
           </AnimateHeight>
