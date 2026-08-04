@@ -2,7 +2,7 @@
 
 exports[`Building-Blocks/Alert BasicAlert smoke-test 1`] = `
 <div class="alertsstory__AlertContainer-sc-19s77d-0 fgnBDZ">
-  <div class="Alert__AlertContainer-sc-2vlo3n-0 hFhyUy">
+  <div class="Alert__AlertContainer-sc-2vlo3n-0 gtXlyS">
     <svg viewbox="0 0 16 16"
          height="24"
          width="24"
@@ -41,7 +41,7 @@ exports[`Building-Blocks/Alert BasicAlert smoke-test 1`] = `
 
 exports[`Building-Blocks/Alert BasicAlertNoIcon smoke-test 1`] = `
 <div class="alertsstory__AlertContainer-sc-19s77d-0 fgnBDZ">
-  <div class="Alert__AlertContainer-sc-2vlo3n-0 dgKxcT">
+  <div class="Alert__AlertContainer-sc-2vlo3n-0 heKxCf">
     <span class="header content-row">
       Next trip starts on Wednesday April 17th
     </span>
@@ -68,7 +68,7 @@ exports[`Building-Blocks/Alert BasicAlertNoIcon smoke-test 1`] = `
 
 exports[`Building-Blocks/Alert CollapsibleAlertWithTransitAlerts smoke-test 1`] = `
 <div class="alertsstory__AlertContainer-sc-19s77d-0 fgnBDZ">
-  <div class="Alert__AlertContainer-sc-2vlo3n-0 fRDRXF">
+  <div class="Alert__AlertContainer-sc-2vlo3n-0 ekMZt">
     <svg viewbox="0 0 16 16"
          height="24"
          width="24"
@@ -137,7 +137,7 @@ exports[`Building-Blocks/Alert CollapsibleAlertWithTransitAlerts smoke-test 1`] 
 
 exports[`Building-Blocks/Alert CollapsibleAlertWithTransitAlertsNoIcon smoke-test 1`] = `
 <div class="alertsstory__AlertContainer-sc-19s77d-0 fgnBDZ">
-  <div class="Alert__AlertContainer-sc-2vlo3n-0 kwLxBQ">
+  <div class="Alert__AlertContainer-sc-2vlo3n-0 bCTzvI">
     <span class="header content-row">
       Your trip has alerts
     </span>
