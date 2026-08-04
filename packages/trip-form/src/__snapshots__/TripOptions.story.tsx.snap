@@ -404,7 +404,7 @@ exports[`TripOptions Default smoke-test 1`] = `
       + Bike or Bike&nbsp;Rental
     </button>
     <button class="styled__Checkbox-sc-18bsv9u-15 dPevPY"
-            mode="CAR_HAIL"
+            mode="CAR_PARK"
             aria-checked="false"
             aria-label="+ Ridehail or Park&nbsp;&amp;&nbsp;Ride"
             role="checkbox"
