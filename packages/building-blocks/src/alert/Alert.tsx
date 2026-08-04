@@ -14,22 +14,43 @@ interface Props {
   /* If true, adds a toggle that expands/collapses the alert content */
   collapsible?: boolean;
   children?: JSX.Element | string;
-  /* Icon displayed on Alert - default is Bell */
-  Icon?: StyledIcon;
+  /* Icon displayed on Alert - default is Bell. Null displays no icon */
+  Icon?: StyledIcon | null;
 }
 
 const AlertContainer = styled.div<{
-  backgroundColor: string;
-  collapsible: boolean;
+  backgroundColor?: string;
+  collapsible?: boolean;
   expandAlert: boolean;
+  icon: boolean;
 }>`
   background-color: ${props =>
     props.backgroundColor ? props.backgroundColor : blue[50]};
   display: grid;
-  grid-template-columns: 50px auto auto;
+  grid-template-columns: ${props =>
+    props.icon ? "50px auto auto" : "auto auto"};
   grid-template-rows: minmax(25px, auto) auto;
   column-gap: 1em;
-  padding: 1.5em;
+  padding: ${props => (props.icon ? "1.5em" : "1em")};
+
+  .header {
+    align-self: center;
+    font-weight: 700;
+  }
+
+  .subheader {
+    align-self: center;
+    font-weight: 400;
+    margin-top: 0.3em;
+  }
+
+  .content-row {
+    grid-column: ${props => (props.icon ? 2 : 1)};
+  }
+
+  .alert-body {
+    grid-row: 3;
+  }
 
   svg {
     align-self: center;
@@ -50,8 +71,9 @@ const AlertContainer = styled.div<{
   }
 
   @media (max-width: 550px) {
-    grid-template-columns: 40px auto auto;
-    padding: 1.25em 1.25em;
+    column-gap: 0.75em;
+    grid-template-columns: ${props => props.icon && "40px auto auto"};
+    padding: 1em;
   }
 `;
 
@@ -62,24 +84,8 @@ const ButtonContainer = styled.span`
   justify-self: right;
 `;
 
-const AlertHeader = styled.span`
-  align-self: center;
-  font-weight: 700;
-  grid-column: 2;
-`;
-
-const AlertSubheader = styled(AlertHeader)`
-  font-weight: 400;
-  margin-top: 0.3em;
-`;
-
-const AlertContent = styled.div`
-  grid-column: 2;
-  grid-row: 3;
-`;
-
 const ContentPadding = styled.div<{
-  collapsible: boolean;
+  collapsible?: boolean;
 }>`
   margin-top: ${props => (props.collapsible ? "1em" : ".5em")};
 `;
@@ -103,9 +109,10 @@ const Alert = ({
       backgroundColor={backgroundColor}
       expandAlert={expandAlert}
       collapsible={collapsible}
+      icon={!!Icon}
     >
-      <Icon size={24} />
-      <AlertHeader>{alertHeader}</AlertHeader>
+      {!!Icon && <Icon size={24} />}
+      <span className="header content-row">{alertHeader}</span>
       <ButtonContainer>
         {collapsible && (
           <button
@@ -119,9 +126,11 @@ const Alert = ({
           </button>
         )}
       </ButtonContainer>
-      {alertSubheader && <AlertSubheader>{alertSubheader}</AlertSubheader>}
+      {alertSubheader && (
+        <span className="subheader content-row">{alertSubheader}</span>
+      )}
       {children && (
-        <AlertContent>
+        <div className="alert-body content-row">
           <AnimateHeight
             duration={500}
             height={collapsible ? (expandAlert ? "auto" : 0) : "auto"}
@@ -130,7 +139,7 @@ const Alert = ({
               {children}
             </ContentPadding>
           </AnimateHeight>
-        </AlertContent>
+        </div>
       )}
     </AlertContainer>
   );
