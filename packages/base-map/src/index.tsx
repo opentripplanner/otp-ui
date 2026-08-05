@@ -2,8 +2,13 @@ import maplibregl, {
   MapLayerMouseEvent,
   MapLayerTouchEvent
 } from "maplibre-gl";
-import React, { useCallback, useState } from "react";
-import { Map, MapProps, ViewStateChangeEvent } from "react-map-gl/maplibre";
+import React, { LegacyRef, useCallback, useState } from "react";
+import {
+  Map,
+  MapProps,
+  MapRef,
+  ViewStateChangeEvent
+} from "react-map-gl/maplibre";
 
 import { useIntl } from "react-intl";
 
@@ -36,6 +41,7 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   center?: [number, number];
   /** A unique identifier for the map (useful when using MapProvider) */
   id?: string;
+  innerRef?: LegacyRef<MapRef>;
   /** An object of props which should be passed down to MapLibre */
   mapLibreProps?: MapProps;
   /** The maximum zoom level the map should allow */
@@ -68,6 +74,7 @@ const BaseMap = ({
   center,
   children,
   id,
+  innerRef,
   mapLibreProps,
   maxZoom,
   onClick,
@@ -167,6 +174,7 @@ const BaseMap = ({
       onTouchCancel={clearLongPressTimer}
       onTouchEnd={clearLongPressTimer}
       onZoom={handleViewportChange}
+      ref={innerRef}
       style={style}
     >
       {(toggleableLayers.length > 0 ||

@@ -54,7 +54,8 @@ export function patternToRouteFeature(
  * Obtains common layout options for route label layers.
  */
 export function getRouteLayerLayout(
-  textField: string
+  textField: string,
+  boldFonts?: string[]
 ): SymbolLayerSpecification["layout"] {
   // Generates a single icon based on the string length
   function generateIcon(length: number) {
@@ -93,7 +94,10 @@ export function getRouteLayerLayout(
     ] as ExpressionSpecification,
     "text-allow-overlap": true,
     "text-field": ["get", textField],
-    "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+    "text-font":
+      boldFonts?.length && boldFonts.length > 0
+        ? boldFonts
+        : ["Open Sans Bold", "Arial Unicode MS Bold"],
     "text-ignore-placement": true,
     "text-justify": "left",
     "text-line-height": 0.5,
