@@ -2,6 +2,7 @@ otpUi:
   MapPopup:
     availableBikes: "Vélos disponibles : {value}"
     availableDocks: "Bornes disponibles : {value}"
+    closedStop: "Closed stop"
     floatingBike: "Vélo flottant : {name}"
     floatingCar: "Voiture : {name}"
     floatingEScooter: 'Trottinette : {name}'
