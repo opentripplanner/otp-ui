@@ -78,6 +78,7 @@ otpUi:
         other {# hr }}{minutes} min
     externalLink: (External Link)
     flexAdvanceNotice: " at least {leadDays, plural, one {# day} other {# days}} in advance"
+    flexBookByPhone: "Book by phone: "
     flexPickupMessage: Reservation required{advanceNotice}.
     stayOnBoard: Stay on Board at {place}
     travelBy: Travel {mode}

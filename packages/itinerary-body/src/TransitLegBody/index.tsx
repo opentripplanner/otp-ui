@@ -310,7 +310,14 @@ class TransitLegBody extends Component<Props, State> {
                 {contactInfo.phoneNumber && contactInfo.bookingUrl && (
                   <S.FlexAltBooking>
                     <a href={`tel:${contactInfo.phoneNumber}`}>
-                      Book by phone: {contactInfo.phoneNumber}
+                      <FormattedMessage
+                        defaultMessage={
+                          defaultMessages["otpUi.ItineraryBody.flexBookByPhone"]
+                        }
+                        description="Instructions for booking transit service by phone."
+                        id="otpUi.itineraryBody.flexBookByPhone"
+                      />
+                      {contactInfo.phoneNumber}
                     </a>
                   </S.FlexAltBooking>
                 )}
