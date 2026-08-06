@@ -834,12 +834,20 @@ export type ModeSettingValues = Record<string, number | string | boolean>;
 
 /**
  * TransportModes correspond with the OTP GraphQL TransportMode.
- * Could be anything from walk, bike (qualifier: rent) to transit, tram, or bus.
+ * Could be anything from walk, bike to transit, tram, or bus.
  */
-export type TransportMode = {
-  mode: string;
-  qualifier?: string;
-};
+export type TransportMode = { mode: string; input?: ModeInput };
+
+export type ModeInput =
+  | {
+      access: string[];
+      egress: string[];
+      transfer?: string[]; // Not actually, but for our config yes
+      transit: { mode: string }[];
+    }
+  | {
+      direct: string[];
+    };
 
 /**
  * This is a combination of transportation modes,

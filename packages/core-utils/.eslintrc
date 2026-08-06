@@ -1,0 +1,5 @@
+{
+    "rules": {
+        "@graphql-eslint/selection-set-depth": "off"
+    }
+}
