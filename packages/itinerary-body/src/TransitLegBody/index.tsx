@@ -6,7 +6,12 @@ import {
   LegIconComponent,
   TransitOperator
 } from "@opentripplanner/types";
-import React, { Component, FunctionComponent, ReactElement } from "react";
+import React, {
+  Component,
+  FunctionComponent,
+  ReactElement,
+  ReactNode
+} from "react";
 import AnimateHeight from "react-animate-height";
 import {
   FormattedMessage,
@@ -96,7 +101,7 @@ function getFlexMessageValues(info: FlexBookingInfo) {
 }
 
 class TransitLegBody extends Component<Props, State> {
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       alertsExpanded: false,
@@ -117,6 +122,49 @@ class TransitLegBody extends Component<Props, State> {
   onSummaryClick = () => {
     const { leg, legIndex, setActiveLeg } = this.props;
     setActiveLeg(legIndex, leg);
+  };
+
+  renderBookRide = (): ReactNode => {
+    const { leg } = this.props;
+    const { pickupBookingInfo } = leg;
+    if (!pickupBookingInfo) return null;
+
+    const { bookingUrl, phoneNumber } = pickupBookingInfo.contactInfo || {};
+    if (!bookingUrl && !phoneNumber) return null;
+
+    return (
+      <>
+        <BookRide
+          href={bookingUrl || `tel:${phoneNumber}`}
+          instructions={
+            <S.CallAheadWarning>
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages["otpUi.ItineraryBody.flexPickupMessage"]
+                }
+                description="Instructions for booking and boarding the flex (on-demand) transit service."
+                id="otpUi.ItineraryBody.flexPickupMessage"
+                values={getFlexMessageValues(pickupBookingInfo)}
+              />
+            </S.CallAheadWarning>
+          }
+        />
+        {phoneNumber && bookingUrl && (
+          <S.FlexAltBooking>
+            <a href={`tel:${phoneNumber}`}>
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages["otpUi.ItineraryBody.flexBookByPhone"]
+                }
+                description="Instructions for booking transit service by phone."
+                id="otpUi.ItineraryBody.flexBookByPhone"
+              />
+              {phoneNumber}
+            </a>
+          </S.FlexAltBooking>
+        )}
+      </>
+    );
   };
 
   render(): ReactElement {
@@ -148,7 +196,6 @@ class TransitLegBody extends Component<Props, State> {
     const isReservationRequired = coreUtils.itinerary.isReservationRequired(
       leg
     );
-    const contactInfo = leg.pickupBookingInfo?.contactInfo;
 
     // If the config contains an operator name, prefer that one over the
     // one provided by OTP
@@ -286,43 +333,7 @@ class TransitLegBody extends Component<Props, State> {
                 />
               </S.AgencyInfo>
             )}
-            {isReservationRequired && contactInfo && (
-              <>
-                <BookRide
-                  href={
-                    contactInfo.bookingUrl || `tel:${contactInfo.phoneNumber}`
-                  }
-                  instructions={
-                    <S.CallAheadWarning>
-                      <FormattedMessage
-                        defaultMessage={
-                          defaultMessages[
-                            "otpUi.ItineraryBody.flexPickupMessage"
-                          ]
-                        }
-                        description="Instructions for booking and boarding the flex (on-demand) transit service."
-                        id="otpUi.ItineraryBody.flexPickupMessage"
-                        values={getFlexMessageValues(leg.pickupBookingInfo)}
-                      />
-                    </S.CallAheadWarning>
-                  }
-                />
-                {contactInfo.phoneNumber && contactInfo.bookingUrl && (
-                  <S.FlexAltBooking>
-                    <a href={`tel:${contactInfo.phoneNumber}`}>
-                      <FormattedMessage
-                        defaultMessage={
-                          defaultMessages["otpUi.ItineraryBody.flexBookByPhone"]
-                        }
-                        description="Instructions for booking transit service by phone."
-                        id="otpUi.ItineraryBody.flexBookByPhone"
-                      />
-                      {contactInfo.phoneNumber}
-                    </a>
-                  </S.FlexAltBooking>
-                )}
-              </>
-            )}
+            {isReservationRequired && this.renderBookRide()}
             {/* Alerts toggle */}
             {alerts?.length > 0 &&
               (shouldOnlyShowAlertsExpanded ? (
