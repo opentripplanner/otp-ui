@@ -1,6 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
-import React, { ReactElement } from "react";
+import React, { ReactNode } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 
 import { Duration } from "../defaults";
@@ -34,8 +34,8 @@ export default function TNCLeg({
   onSummaryClick,
   showLegIcon,
   UBER_CLIENT_ID = ""
-}: Props): ReactElement {
-  const universalLinks = {
+}: Props): ReactNode {
+  const universalLinks: Record<string, string> = {
     uber: `https://m.uber.com/${
       coreUtils.ui.isMobile() ? "ul/" : ""
     }?client_id=${UBER_CLIENT_ID}&action=setPickup&pickup[latitude]=${
@@ -66,7 +66,7 @@ export default function TNCLeg({
             )?.label,
             minutes: followsTransit
               ? 0
-              : parseInt(parseOTP2Minute(leg.rideHailingEstimate.arrival), 10)
+              : parseInt(parseOTP2Minute(rideHailingEstimate.arrival), 10)
           }}
         />
       </S.PlaceSubheader>
