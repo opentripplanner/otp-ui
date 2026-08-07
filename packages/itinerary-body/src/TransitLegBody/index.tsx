@@ -47,7 +47,7 @@ interface Props {
   defaultFareSelector?: FareProductSelector;
   intl: IntlShape;
   leg: Leg;
-  legDestination: string;
+  legDestination: ReactNode;
   LegIcon: LegIconComponent;
   legIndex: number;
   nextLegInterlines?: boolean;
