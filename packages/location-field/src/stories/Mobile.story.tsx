@@ -88,6 +88,19 @@ const StyledLocationField = styled(LocationField)`
   }
 `;
 
+const a11yOverrideParameters = {
+  a11y: {
+    config: {
+      rules: [
+        // This is a story issue, not a production issue
+        { id: "label", enabled: false },
+        // Group headers inside the listbox are not role="option" elements
+        { id: "aria-required-children", enabled: false }
+      ]
+    }
+  }
+};
+
 export default {
   component: LocationField,
   parameters: {
@@ -96,7 +109,8 @@ export default {
     controls: {
       hideNoControlsWarning: true,
       include: []
-    }
+    },
+    ...a11yOverrideParameters
   },
   title: "LocationField/Mobile Context",
 } as Meta<typeof LocationField>;

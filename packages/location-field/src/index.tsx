@@ -1000,7 +1000,7 @@ const LocationField = ({
   let optionTitle;
   let positionUnavailable;
 
-  if (currentPosition && !currentPosition.error) {
+  if (currentPosition?.coords && !currentPosition.error) {
     // current position detected successfully
     locationSelected = useCurrentLocation;
     optionIcon = currentPositionIcon;
@@ -1029,10 +1029,12 @@ const LocationField = ({
 
   const optionId = `current-position`;
 
-  // Add to the selection handler lookup (for use in onKeyDown)
-  pushToIndexedOptions(locationSelected, optionId);
-
   if (!suppressNearby) {
+    if (!positionUnavailable) {
+      // Add to the selection handler lookup (for use in onKeyDown)
+      pushToIndexedOptions(locationSelected, optionId);
+    }
+
     // Create and add the option item to the menu items array
     menuItems.push(
       <Option
@@ -1059,9 +1061,8 @@ const LocationField = ({
     }
     statusMessages.push(message);
   }
-
   // Store the number of location-associated items for reference in the onKeyDown method
-  let menuItemCount = indexedOptionLookup.length;
+  const menuItemCount = indexedOptionLookup.length;
 
   /** the text input element * */
   // Use this text for aria-label below if no user-provided label.
@@ -1072,8 +1073,19 @@ const LocationField = ({
     currentPosition && currentPosition.fetching
       ? intl.formatMessage({ id: "otpUi.LocationField.fetchingLocation" })
       : defaultPlaceholder;
-  const hasNoEnabledOptions = menuItemCount === 0;
-  const isExpanded = isStatic || menuVisible;
+
+  // Disable the toggle when the only menu item is "Current location not available".
+  // Disabled rows are not added to indexedOptionLookup, so the lookup is empty here.
+  const toggleDisabled =
+    menuItemCount === 0 &&
+    (menuItems.length === 0 ||
+      (positionUnavailable && !suppressNearby && menuItems.length === 1));
+
+  const isMenuOpen = isStatic || menuVisible;
+  const isExpanded = isMenuOpen && !toggleDisabled;
+  const ariaDisabled = toggleDisabled ? "true" : undefined;
+  const showMenuList = isStatic || menuItems.length > 0;
+  const listBoxControls = showMenuList ? listBoxId : undefined;
 
   const textControl = (
     <S.Input
@@ -1081,7 +1093,7 @@ const LocationField = ({
         activeIndex !== null ? indexedOptionLookup[activeIndex]?.id : null
       }
       aria-autocomplete="list"
-      aria-controls={listBoxId}
+      aria-controls={listBoxControls}
       aria-expanded={isExpanded}
       aria-haspopup="listbox"
       aria-invalid={!isValid}
@@ -1123,7 +1135,8 @@ const LocationField = ({
   return (
     <S.InputGroup className={className} onBlur={onBlurFormGroup} role="group">
       <S.DropdownButton
-        aria-controls={listBoxId}
+        aria-controls={listBoxControls}
+        aria-disabled={ariaDisabled}
         aria-expanded={isExpanded}
         aria-label={intl.formatMessage({
           defaultMessage: "Open the list of location suggestions",
@@ -1134,7 +1147,6 @@ const LocationField = ({
         onClick={onDropdownToggle}
         tabIndex={-1}
         type="button"
-        aria-disabled={hasNoEnabledOptions}
       >
         <LocationIconComponent locationType={locationType} />
       </S.DropdownButton>
@@ -1145,7 +1157,7 @@ const LocationField = ({
       <S.HiddenContent role="status">
         {/* However, only render the status if the menu is expanded, so that
             assistive technology reminds user on how to navigate the options. */}
-        {isExpanded && (
+        {isMenuOpen && (
           <FormattedList
             // eslint-disable-next-line react/style-prop-object
             style="narrow"
@@ -1154,35 +1166,38 @@ const LocationField = ({
           />
         )}
       </S.HiddenContent>
-      <ItemList
-        // Hide the list from screen readers if no enabled options are shown.
-        aria-hidden={hasNoEnabledOptions || !menuVisible}
-        aria-label={intl.formatMessage({
-          defaultMessage: "Suggested locations",
-          description:
-            "Text to show as a label for the dropdown list of locations",
-          id: "otpUi.LocationField.suggestedLocations"
-        })}
-        id={listBoxId}
-      >
-        {isStatic ? (
-          menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
-            menuItems
+      {showMenuList && (
+        <ItemList
+          $menuOpen={isMenuOpen}
+          // Hide the list from screen readers if no enabled options are shown.
+          aria-hidden={toggleDisabled || !isMenuOpen}
+          aria-label={intl.formatMessage({
+            defaultMessage: "Suggested locations",
+            description:
+              "Text to show as a label for the dropdown list of locations",
+            id: "otpUi.LocationField.suggestedLocations"
+          })}
+          id={listBoxId}
+        >
+          {isStatic ? (
+            menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
+              menuItems
+            ) : (
+              <S.MenuGroupHeader as="div">
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.LocationField.beginTypingPrompt"]
+                  }
+                  description="Text to show as initial placeholder in location search field"
+                  id="otpUi.LocationField.beginTypingPrompt"
+                />
+              </S.MenuGroupHeader>
+            )
           ) : (
-            <S.MenuGroupHeader as="div">
-              <FormattedMessage
-                defaultMessage={
-                  defaultMessages["otpUi.LocationField.beginTypingPrompt"]
-                }
-                description="Text to show as initial placeholder in location search field"
-                id="otpUi.LocationField.beginTypingPrompt"
-              />
-            </S.MenuGroupHeader>
-          )
-        ) : (
-          menuVisible && menuItems
-        )}
-      </ItemList>
+            menuVisible && menuItems
+          )}
+        </ItemList>
+      )}
     </S.InputGroup>
   );
 };
