@@ -14822,7 +14822,7 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
               <div class="styled__BookLaterInnerContainer-sc-1q8npbl-10 bSjHON">
                 <div class="styled__BookLaterText-sc-1q8npbl-12 fmZMap">
                   <div class="styled__CallAheadWarning-sc-1q8npbl-8 ggYaJa">
-                    Reservation required at least 7 days in advance.
+                    Reservation required at least 7 days in advance
                   </div>
                 </div>
               </div>
