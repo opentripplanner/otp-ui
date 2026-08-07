@@ -78,6 +78,7 @@ otpUi:
         பன்மை, = 0 {} பிற {# hr}} {minutes} min
     externalLink: (வெளிப்புற இணைப்பு)
     flexAdvanceNotice: " குறைந்தது {லீட் டேச், பன்மை, ஒன்று {# நாள்} மற்ற {# நாட்கள்}} முன்கூட்டியே"
+    flexBookByPhone: "தொலைபேசி மூலம் முன்பதிவு செய்யுங்கள்: "
     flexPickupMessage: இந்த வழியை எடுக்க, நீங்கள் முன்னால் அழைக்கவும்{advanceNotice}வேண்டும்
     stayOnBoard: "{place} இல் போர்டில் இருங்கள்"
     travelBy: பயணம் {mode}

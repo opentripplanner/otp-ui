@@ -76,6 +76,7 @@ otpUi:
         other {# ч }}{minutes} мин
     externalLink: (Ссылка на внешний источник)
     flexAdvanceNotice: " не менее чем за {leadDays, plural, one {# day} other {# days}}"
+    flexBookByPhone: "Забронировать по телефону: "
     flexPickupMessage: Требуется предварительное бронирование{advanceNotice}
     stayOnBoard: Не выходите в месте {place}
     travelBy: Передвижение {mode}

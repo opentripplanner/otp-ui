@@ -78,6 +78,7 @@ otpUi:
         other {# h }}{minutes} min
     externalLink: (Link zewnętrzny)
     flexAdvanceNotice: " co najmniej {leadDays, plural, one {# dni} other {# dni}} wcześniej"
+    flexBookByPhone: "Rezerwacja telefoniczna: "
     flexPickupMessage: Wymagana rezerwacja{advanceNotice}
     stayOnBoard: Zostań w pojeździe na {place}
     travelBy: Podróż {mode}

@@ -315,7 +315,7 @@ class TransitLegBody extends Component<Props, State> {
                           defaultMessages["otpUi.ItineraryBody.flexBookByPhone"]
                         }
                         description="Instructions for booking transit service by phone."
-                        id="otpUi.itineraryBody.flexBookByPhone"
+                        id="otpUi.ItineraryBody.flexBookByPhone"
                       />
                       {contactInfo.phoneNumber}
                     </a>

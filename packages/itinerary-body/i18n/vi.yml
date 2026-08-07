@@ -76,6 +76,7 @@ otpUi:
         {} other {# giờ }}{minutes} phút
     externalLink: (Liên kết bên ngoài)
     flexAdvanceNotice: " ít nhất trước {leadDays} ngày"
+    flexBookByPhone: "Đặt chỗ qua điện thoại: "
     flexPickupMessage: Bạn phải đặt chỗ trước{advanceNotice}
     stayOnBoard: Ở trên xe tại {place}
     travelBy: Di chuyển {mode}
