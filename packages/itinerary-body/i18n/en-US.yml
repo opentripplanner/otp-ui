@@ -69,17 +69,17 @@ otpUi:
       escooter: E-scooter
       vehicle: Vehicle
   ItineraryBody:
+    bookRide: Book Ride
     canceled: Canceled
     canceledMessage: The following trip has been canceled
     common:
       durationShort: >-
         {approximatePrefix, select, true {About } other {}}{hours, plural, =0 {}
         other {# hr }}{minutes} min
+    externalLink: (External Link)
     flexAdvanceNotice: " at least {leadDays, plural, one {# day} other {# days}} in advance"
-    flexBookingUrl: <link>reserve your trip online</link>
-    flexCallAhead: call ahead
-    flexCallNumber: call {phoneNumber}
-    flexPickupMessage: To ride this route, you must {action}{advanceNotice}.
+    flexBookByPhone: "Book by phone: "
+    flexPickupMessage: Reservation required{advanceNotice}
     stayOnBoard: Stay on Board at {place}
     travelBy: Travel {mode}
     travelByMode:
@@ -104,7 +104,6 @@ otpUi:
       today: Today
       tomorrow: Tomorrow
       yesterday: Yesterday
-    agencyExternalLink: "{agencyName} (External Link)"
     alertsHeader: "{alertCount, plural, =1 {# alert} other {# alerts}}"
     arriveAt: Arrive at {place}
     disembarkAt: Disembark at {legDestination}
