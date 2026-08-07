@@ -190,7 +190,7 @@ class TransitLegBody extends Component<Props, State> {
       TransitLegSummary,
       transitOperator
     } = this.props;
-    const { agencyBrandingUrl, agencyName, agencyUrl, alerts = [] } = leg;
+    const { agencyBrandingUrl, agencyName, agencyUrl, alerts } = leg;
     const { alertsExpanded, stopsExpanded } = this.state;
 
     const isReservationRequired = coreUtils.itinerary.isReservationRequired(
@@ -209,11 +209,11 @@ class TransitLegBody extends Component<Props, State> {
         : agencyBrandingUrl;
 
     const shouldCollapseDueToAlertCount =
-      alerts.length > maximumAlertCountToShowUncollapsed;
+      alerts && alerts.length > maximumAlertCountToShowUncollapsed;
     // The alerts expansion triangle is shown when `!shouldOnlyShowAlertsExpanded`.
-    // `!leg.alerts` is needed here so the triangle isn't shown when there are 0 alerts.
+    // `!alerts` is needed here so the triangle isn't shown when there are 0 alerts.
     const shouldOnlyShowAlertsExpanded =
-      !(shouldCollapseDueToAlertCount || alwaysCollapseAlerts) || !leg.alerts;
+      !(shouldCollapseDueToAlertCount || alwaysCollapseAlerts) || !alerts;
     const expandAlerts = alertsExpanded || shouldOnlyShowAlertsExpanded;
 
     const legCost =
@@ -233,7 +233,7 @@ class TransitLegBody extends Component<Props, State> {
           description="Number of alerts header"
           id="otpUi.TransitLegBody.alertsHeader"
           values={{
-            alertCount: alerts.length
+            alertCount: alerts?.length
           }}
         />
       </>
@@ -335,7 +335,8 @@ class TransitLegBody extends Component<Props, State> {
             )}
             {isReservationRequired && this.renderBookRide()}
             {/* Alerts toggle */}
-            {alerts.length > 0 &&
+            {alerts &&
+              alerts.length > 0 &&
               (shouldOnlyShowAlertsExpanded ? (
                 <S.TransitAlertDiv className="alert-toggle">
                   {alertLabelContents}
@@ -359,7 +360,6 @@ class TransitLegBody extends Component<Props, State> {
                   </S.InvisibleAdditionalDetails>
                 </S.TransitAlertToggle>
               ))}
-
             {/* The Alerts body, if visible */}
             <AnimateHeight duration={500} height={expandAlerts ? "auto" : 0}>
               <AlertsBody
