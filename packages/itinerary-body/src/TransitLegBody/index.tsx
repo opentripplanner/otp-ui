@@ -81,7 +81,7 @@ function getFlexMessageValues(info: FlexBookingInfo) {
   // daysPrior (which can be done within react-intl)
   // This will allow for displaying how many _hours_ before a trip it must be booked
 
-  const leadDays = info?.latestBookingTime?.daysPrior;
+  const leadDays = info?.latestBookingTime?.daysPrior || 0;
 
   return {
     advanceNotice:
@@ -190,7 +190,7 @@ class TransitLegBody extends Component<Props, State> {
       TransitLegSummary,
       transitOperator
     } = this.props;
-    const { agencyBrandingUrl, agencyName, agencyUrl, alerts } = leg;
+    const { agencyBrandingUrl, agencyName, agencyUrl, alerts = [] } = leg;
     const { alertsExpanded, stopsExpanded } = this.state;
 
     const isReservationRequired = coreUtils.itinerary.isReservationRequired(
@@ -209,7 +209,7 @@ class TransitLegBody extends Component<Props, State> {
         : agencyBrandingUrl;
 
     const shouldCollapseDueToAlertCount =
-      leg.alerts?.length > maximumAlertCountToShowUncollapsed;
+      alerts.length > maximumAlertCountToShowUncollapsed;
     // The alerts expansion triangle is shown when `!shouldOnlyShowAlertsExpanded`.
     // `!leg.alerts` is needed here so the triangle isn't shown when there are 0 alerts.
     const shouldOnlyShowAlertsExpanded =
@@ -233,7 +233,7 @@ class TransitLegBody extends Component<Props, State> {
           description="Number of alerts header"
           id="otpUi.TransitLegBody.alertsHeader"
           values={{
-            alertCount: alerts?.length
+            alertCount: alerts.length
           }}
         />
       </>
@@ -335,7 +335,7 @@ class TransitLegBody extends Component<Props, State> {
             )}
             {isReservationRequired && this.renderBookRide()}
             {/* Alerts toggle */}
-            {alerts?.length > 0 &&
+            {alerts.length > 0 &&
               (shouldOnlyShowAlertsExpanded ? (
                 <S.TransitAlertDiv className="alert-toggle">
                   {alertLabelContents}
@@ -364,7 +364,7 @@ class TransitLegBody extends Component<Props, State> {
             <AnimateHeight duration={500} height={expandAlerts ? "auto" : 0}>
               <AlertsBody
                 agencyName={agencyName}
-                alerts={leg.alerts}
+                alerts={alerts}
                 AlertIcon={AlertBodyIcon}
                 showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
                 timeZone={timeZone}
