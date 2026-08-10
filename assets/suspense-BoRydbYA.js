@@ -1,0 +1,1 @@
+import{R as e,r as l}from"./iframe-Bpk3mz_R.js";var o=function(a){var n=a.children,r=a.fallback,t=window.navigator.userAgent.match(/StorybookTestRunner/);return t?e.createElement(e.Fragment,null,r):e.createElement(l.Suspense,{fallback:r},n)};export{o as S};

@@ -1,0 +1,1 @@
+const t={otpUi:{TransitVehicleOverlay:{defaultTooltip:"{route}: Cách đây {duration}",durationWithSeconds:"{hours, plural, =0 {} other {# giờ }}{minutes, plural, =0 {{seconds, plural, =0 {# phút} other {}}} other {# phút}}{seconds, plural, =0 {} other { # giây}}",routeTitle:"{type} {name}",transitLine:"Tuyến đường"}}};export{t as default};

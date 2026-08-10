@@ -1,0 +1,1 @@
+const o={otpUi:{EndpointsOverlay:{coordinates:"{lat, number, ::.00000}, {lon, number, ::.00000}",forgetHome:"집 설정 삭제",saveAsWork:"직장으로 저장",swapLocation:"{locationType} 위치로 변경",clearLocation:"{locationType} 위치 삭제",saveAsHome:"집으로 저장",forgetWork:"직장 설정 삭제",viewNearby:"근처 보기"}}};export{o as default};

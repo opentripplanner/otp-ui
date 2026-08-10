@@ -1,0 +1,1 @@
+import{j as o}from"./jsx-runtime-BHk-Pj2y.js";import"./iframe-Bpk3mz_R.js";import{B as a}from"./index-VtcAw9T0.js";import{S as i}from"./styled-D-tbovpV.js";const p=[45.5215,-122.686202],m=16,j=(r=p,t=m)=>s=>o.jsx(i,{children:o.jsx(a,{center:r,zoom:t,children:s()})});export{j as w};

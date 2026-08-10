@@ -1,0 +1,1 @@
+import"./styled-D-tbovpV.js";function d(t){var i=arguments.length>1&&arguments[1]!==void 0?arguments[1]:.1,n=t.getCanvas(),a=t.getPixelRatio(),e=n.width*i/a,r=n.height*i/a;return{bottom:r,left:e,right:e,top:r}}function o(t,i){t.fitBounds(i,{duration:500,padding:d(t)}),t.triggerRepaint()}export{o as f,d as g};

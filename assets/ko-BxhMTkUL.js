@@ -1,0 +1,1 @@
+const a={otpUi:{MapPopup:{availableBikes:"사용 가능한 자전거: {value}",availableDocks:"사용 가능한 도크: {value}",floatingBike:"프리-플로팅 자전거: {name}",floatingCar:"자동차: {name}",floatingEScooter:"전동스쿠터:{name}",popupTitle:"{stationNetwork, select, false {{name}} other {{stationNetwork} {name}}}",stopId:"정류장 ID: {stopId}",stopViewer:"정류장 뷰어"}}};export{a as default};

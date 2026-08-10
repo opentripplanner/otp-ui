@@ -1,0 +1,1 @@
+const o={otpUi:{FromToLocationPicker:{planATrip:"트립 계획하기:",to:"여기로 도착",from:"여기서 출발"}}};export{o as default};
