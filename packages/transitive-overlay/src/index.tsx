@@ -156,10 +156,7 @@ const defaultBoldTextLayoutParams = (
   return {
     ...commonTextLayoutParams,
     // FIXME: find a better way to set a bold font
-    "text-font":
-      boldFonts?.length && boldFonts.length > 0
-        ? boldFonts
-        : ["Open Sans Bold", "Arial Unicode MS Bold"],
+    "text-font": boldFonts,
     "text-overlap": "never"
   };
 };
@@ -438,7 +435,10 @@ const TransitiveCanvasOverlay = ({
 
   const { fromAnchor, toAnchor } = getFromToAnchors(transitiveData);
 
-  const boldFonts = vectorTileFonts?.bold;
+  const boldFonts =
+    vectorTileFonts?.bold.length && vectorTileFonts?.bold.length > 0
+      ? vectorTileFonts.bold
+      : ["Open Sans Bold", "Arial Unicode MS Bold"];
 
   // Generally speaking, text/symbol layers placed first will be rendered in a lower layer
   // (or, if it is text, rendered with a lower priority or not at all if higher-priority text overlaps).

@@ -94,10 +94,7 @@ export function getRouteLayerLayout(
     ] as ExpressionSpecification,
     "text-allow-overlap": true,
     "text-field": ["get", textField],
-    "text-font":
-      boldFonts?.length && boldFonts.length > 0
-        ? boldFonts
-        : ["Open Sans Bold", "Arial Unicode MS Bold"],
+    "text-font": boldFonts,
     "text-ignore-placement": true,
     "text-justify": "left",
     "text-line-height": 0.5,
