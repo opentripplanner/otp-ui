@@ -22,6 +22,7 @@ import {
 import { PositionAnchor } from "maplibre-gl";
 import { IntlShape } from "react-intl";
 import { LineString } from "geojson";
+import { MapRef } from "react-map-gl/maplibre";
 
 const {
   getLegBounds,
@@ -33,6 +34,12 @@ const {
 } = coreUtils.itinerary;
 
 const CAR_PARK_ITIN_PREFIX = "itin_car_";
+
+export type SortedFonts = {
+  bold: string[];
+  regular: string[];
+  italic: string[];
+};
 
 /**
  * Helper function to convert a stop from an itinerary leg
@@ -527,5 +534,33 @@ const drawArc = (straight: LineString) => {
   ).geometry;
 };
 
-export { drawArc };
+const getFontsFromVectorTiles = (map: MapRef): SortedFonts => {
+  const fonts: string[] = [];
+  const sortedFonts: SortedFonts = {
+    bold: [],
+    regular: [],
+    italic: []
+  };
+
+  map.getStyle()?.layers?.forEach((l: any) => {
+    const fontLayers = l.layout && l.layout["text-font"];
+    // There are often duplicates so first filter those out.
+    fontLayers?.forEach((f: string) => !fonts.includes(f) && fonts.push(f));
+  });
+  // Once we have a list of unique fonts, sort them into bold and regular buckets
+  fonts.forEach(f => {
+    const font = f.toLowerCase();
+    if (font.includes("italic")) {
+      sortedFonts.italic.push(f);
+    } else if (font.includes("bold")) {
+      sortedFonts.bold.push(f);
+    } else {
+      sortedFonts.regular.push(f);
+    }
+  });
+
+  return sortedFonts;
+};
+
+export { drawArc, getFontsFromVectorTiles };
 export default { itineraryToTransitive };

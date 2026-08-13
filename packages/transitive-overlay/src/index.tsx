@@ -1,6 +1,6 @@
 import { FilterSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
-import React, { useEffect } from "react";
+import React, { RefObject, useEffect, useState } from "react";
 import { Layer, MapRef, Source, useMap } from "react-map-gl/maplibre";
 import polyline from "@mapbox/polyline";
 import {
@@ -21,7 +21,13 @@ import {
   LineString
 } from "geojson";
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
-import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
+import {
+  drawArc,
+  getFromToAnchors,
+  itineraryToTransitive,
+  getFontsFromVectorTiles,
+  SortedFonts
+} from "./util";
 import routeArrow from "./images/route_arrow.png";
 import capsule1 from "./images/01.png";
 import capsule3 from "./images/03.png";
@@ -107,9 +113,9 @@ const defaultTextPaintParams = {
  * Common text settings.
  */
 const commonTextLayoutParams = (
-  mapLayerFonts?: string[]
+  vectorTileFonts?: SortedFonts
 ): SymbolLayerSpecification["layout"] => {
-  const regularFonts = mapLayerFonts?.filter(font => font.includes("Regular"));
+  const regularFonts = vectorTileFonts?.regular;
   return {
     "symbol-placement": "point",
     "text-allow-overlap": false,
@@ -172,8 +178,8 @@ type Props = {
   activeLeg?: Leg;
   accessLegColorOverride?: string;
   boundsFitting?: boolean;
-  /* If applicable, pass a list of fonts supported by the custom base map layer */
-  vectorTileFonts?: string[];
+  /* Reference to the map you're rendering the transitive layer onto */
+  mapRef?: RefObject<MapRef>;
   showRouteArrows?: boolean;
   transitiveData?: TransitiveData;
 };
@@ -205,11 +211,23 @@ const TransitiveCanvasOverlay = ({
   activeLeg,
   accessLegColorOverride,
   boundsFitting = true,
-  vectorTileFonts,
+  mapRef,
   showRouteArrows,
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
+  const [mapLoaded, setMapLoaded] = useState(false);
+  const [vectorTileFonts, setVectorTileFonts] = useState<
+    SortedFonts | undefined
+  >(undefined);
+
+  mapRef?.current?.on("load", () => setMapLoaded(true));
+
+  useEffect(() => {
+    const fonts =
+      mapRef?.current && mapLoaded && getFontsFromVectorTiles(mapRef?.current);
+    setVectorTileFonts(fonts || undefined);
+  }, [map, mapLoaded]);
 
   const mapImages: MapImage[] = [];
   // This is used to render arrows along the route
@@ -420,7 +438,7 @@ const TransitiveCanvasOverlay = ({
 
   const { fromAnchor, toAnchor } = getFromToAnchors(transitiveData);
 
-  const boldFonts = vectorTileFonts?.filter(font => font.includes("Bold"));
+  const boldFonts = vectorTileFonts?.bold;
 
   // Generally speaking, text/symbol layers placed first will be rendered in a lower layer
   // (or, if it is text, rendered with a lower priority or not at all if higher-priority text overlaps).
