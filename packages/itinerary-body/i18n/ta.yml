@@ -18,7 +18,8 @@ otpUi:
       bookRide: புத்தக சவாரி
       bookRideLater: "{Timemillis, time, short} புத்தகத்திற்கு காத்திருங்கள்"
       estimatedCost: "மதிப்பிடப்பட்ட செலவு: {minFare} - {maxFare}"
-      estimatedTravelTime: "மதிப்பிடப்பட்ட பயண நேரம்: {duration} (போக்குவரத்துக்கு கணக்கிடாது)"
+      estimatedTravelTime: "மதிப்பிடப்பட்ட பயண நேரம்: {duration} (போக்குவரத்துக்கு
+        கணக்கிடாது)"
       waitForPickup: "{நிமிடங்கள், பன்மை, = 0 {} பிற { # நிமிடங்கள்}} {company} இடும்"
     mapillaryTooltip: இந்த இடத்தில் தெரு படங்களைக் காட்டு
     step:
@@ -77,9 +78,11 @@ otpUi:
         {தோராயமான பிரீஃபிக்ச், தேர்ந்தெடு, உண்மை {About } பிற {}} {மணிநேரம்,
         பன்மை, = 0 {} பிற {# hr}} {minutes} min
     externalLink: (வெளிப்புற இணைப்பு)
-    flexAdvanceNotice: " குறைந்தது {லீட் டேச், பன்மை, ஒன்று {# நாள்} மற்ற {# நாட்கள்}} முன்கூட்டியே"
+    flexAdvanceNotice: " குறைந்தது {லீட் டேச், பன்மை, ஒன்று {# நாள்} மற்ற {# நாட்கள்}}
+      முன்கூட்டியே"
     flexBookByPhone: "தொலைபேசி மூலம் முன்பதிவு செய்யுங்கள்: "
-    flexPickupMessage: இந்த வழியை எடுக்க, நீங்கள் முன்னால் அழைக்கவும்{advanceNotice}வேண்டும்
+    flexPickupMessage: இந்த வழியை எடுக்க, நீங்கள் முன்னால் 
+      அழைக்கவும்{advanceNotice}வேண்டும்
     stayOnBoard: "{place} இல் போர்டில் இருங்கள்"
     travelBy: பயணம் {mode}
     travelByMode:
@@ -94,7 +97,6 @@ otpUi:
       likelyAccessible: அணுகக்கூடியது
       unclear: தெரியவில்லை
     viewOnMap: வரைபடத்தில் காண்க
-    flexBookingUrl: <link>உங்கள் பயணத்தை ஆன்லைனில் முன்பதிவு செய்யவும்</link>
   TransitLegBody:
     AlertsBody:
       alertLinkText: "{agency} இணையதளத்தில் எச்சரிக்கையைப் பார்க்கவும்"
