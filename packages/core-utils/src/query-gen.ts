@@ -141,13 +141,8 @@ export function generateOtp2Query(
   } = modeSettingValues;
 
 
-  // CALLTAKER:
+  // TODO CALLTAKER:
   // find method for preferred?
-
-  // MIGRATE ALL CONFIGS:
-  // can remove custom septa graphql, since the main file now has blockid
-
-  // finally re-open that deprecated fields PR
 
   // TODO: instead of these shinanigans, don't TZ-convert times in the date-time picker
   const timezone = formatInTimeZone(new Date(`${date}T${time}`), homeTimezone, "XXX")
