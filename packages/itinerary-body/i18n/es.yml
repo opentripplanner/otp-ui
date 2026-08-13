@@ -69,14 +69,15 @@ otpUi:
       escooter: Patineta
       vehicle: Vehículo
   ItineraryBody:
+    bookRide: Reservar un viaje
     common:
       durationShort: >-
         {approximatePrefix, select, true {Unos } other {}}{hours, plural, =0 {}
         other {# hr. }}{minutes} min
+    externalLink: (Enlace external)
     flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de antelación"
-    flexCallAhead: llama con anticipación
-    flexCallNumber: llama {phoneNumber}
-    flexPickupMessage: Para tomar esta ruta, tiene que {action}{advanceNotice}.
+    flexBookByPhone: "Reservar por teléfono: "
+    flexPickupMessage: Tiene que reserva{advanceNotice}
     stayOnBoard: Quédate a bordo en {place}
     travelBy: Viajar {mode}
     travelByMode:
@@ -101,7 +102,6 @@ otpUi:
       today: Hoy
       tomorrow: Mañana
       yesterday: Ayer
-    agencyExternalLink: "{agencyName} (Enlace external)"
     alertsHeader: "{alertCount, plural, =1 {# alerta} other {# alertas}}"
     arriveAt: Llegada a {place}
     disembarkAt: Disembarque a {legDestination}
