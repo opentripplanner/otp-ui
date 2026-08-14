@@ -549,13 +549,16 @@ const getFontsFromVectorTiles = (map: MapRef): SortedFonts => {
   });
   // Once we have a list of unique fonts, sort them into bold and regular buckets
   fonts.forEach(f => {
-    const font = f.toLowerCase();
-    if (font.includes("italic")) {
-      sortedFonts.italic.push(f);
-    } else if (font.includes("bold")) {
-      sortedFonts.bold.push(f);
-    } else {
-      sortedFonts.regular.push(f);
+    const fontLowerCase = f.toLowerCase();
+    switch (true) {
+      case fontLowerCase.includes("italic"):
+        sortedFonts.italic.push(f);
+        break;
+      case fontLowerCase.includes("bold"):
+        sortedFonts.bold.push(f);
+        break;
+      default:
+        sortedFonts.regular.push(f);
     }
   });
 

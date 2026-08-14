@@ -115,7 +115,6 @@ const defaultTextPaintParams = {
 const commonTextLayoutParams = (
   vectorTileFonts?: SortedFonts
 ): SymbolLayerSpecification["layout"] => {
-  const regularFonts = vectorTileFonts?.regular;
   return {
     "symbol-placement": "point",
     "text-allow-overlap": false,
@@ -123,7 +122,7 @@ const commonTextLayoutParams = (
     "text-justify": "auto",
     "text-radial-offset": 1,
     "text-size": 15,
-    "text-font": regularFonts || [
+    "text-font": vectorTileFonts?.regular || [
       "Open Sans Regular",
       "Arial Unicode MS Regular"
     ]
