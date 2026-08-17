@@ -535,7 +535,7 @@ const drawArc = (straight: LineString) => {
 };
 
 const getFontsFromVectorTiles = (map: MapRef): SortedFonts => {
-  const fonts: string[] = [];
+  const fonts: Set<string> = new Set();
   const sortedFonts: SortedFonts = {
     bold: [],
     regular: [],
@@ -545,7 +545,7 @@ const getFontsFromVectorTiles = (map: MapRef): SortedFonts => {
   map.getStyle()?.layers?.forEach((l: any) => {
     const fontLayers = l.layout && l.layout["text-font"];
     // There are often duplicates so first filter those out.
-    fontLayers?.forEach((f: string) => !fonts.includes(f) && fonts.push(f));
+    fontLayers?.forEach((f: string) => fonts.add(f));
   });
   // Once we have a list of unique fonts, sort them into bold and regular buckets
   fonts.forEach(f => {

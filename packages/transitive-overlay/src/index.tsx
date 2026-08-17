@@ -109,6 +109,9 @@ const defaultTextPaintParams = {
   "text-halo-width": 2
 };
 
+const DEFAULT_REGULAR_FONTS = ["Open Sans Regular", "Arial Unicode MS Regular"];
+const DEFAULT_BOLD_FONTS = ["Open Sans Bold", "Arial Unicode MS Bold"];
+
 /**
  * Common text settings.
  */
@@ -122,10 +125,7 @@ const commonTextLayoutParams = (
     "text-justify": "auto",
     "text-radial-offset": 1,
     "text-size": 15,
-    "text-font": vectorTileFonts?.regular || [
-      "Open Sans Regular",
-      "Arial Unicode MS Regular"
-    ]
+    "text-font": vectorTileFonts?.regular || DEFAULT_REGULAR_FONTS
   };
 };
 
@@ -437,7 +437,7 @@ const TransitiveCanvasOverlay = ({
   const boldFonts =
     vectorTileFonts?.bold.length && vectorTileFonts?.bold.length > 0
       ? vectorTileFonts.bold
-      : ["Open Sans Bold", "Arial Unicode MS Bold"];
+      : DEFAULT_BOLD_FONTS;
 
   // Generally speaking, text/symbol layers placed first will be rendered in a lower layer
   // (or, if it is text, rendered with a lower priority or not at all if higher-priority text overlaps).

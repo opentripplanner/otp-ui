@@ -41,6 +41,7 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   center?: [number, number];
   /** A unique identifier for the map (useful when using MapProvider) */
   id?: string;
+  /** Ref to pass so that map can be accessed by the consumer  */
   innerRef?: LegacyRef<MapRef>;
   /** An object of props which should be passed down to MapLibre */
   mapLibreProps?: MapProps;
