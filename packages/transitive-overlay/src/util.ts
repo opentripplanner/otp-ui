@@ -547,7 +547,7 @@ const getFontsFromVectorTiles = (map: MapRef): SortedFonts => {
     // There are often duplicates so first filter those out.
     fontLayers?.forEach((f: string) => fonts.add(f));
   });
-  // Once we have a list of unique fonts, sort them into bold and regular buckets
+  // Once we have a list of unique fonts, sort them into bold and regular buckets.
   fonts.forEach(f => {
     const fontLowerCase = f.toLowerCase();
     switch (true) {
