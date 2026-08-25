@@ -1,4 +1,3 @@
-import colors from "@opentripplanner/building-blocks";
 import { Place } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 
