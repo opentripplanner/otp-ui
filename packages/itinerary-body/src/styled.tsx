@@ -689,8 +689,8 @@ export const StopMarker = styled.div`
   color: #fff;
 `;
 
-export const StopName = styled.div`
-  color: ${grey[700]};
+export const StopName = styled.div<{ closed?: boolean }>`
+  color: ${props => (props.closed ? red[700] : grey[700])};
   margin-top: 3px;
 `;
 

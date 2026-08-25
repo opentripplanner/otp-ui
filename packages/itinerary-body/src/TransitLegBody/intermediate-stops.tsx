@@ -38,7 +38,7 @@ export default function IntermediateStops({
         return (
           <S.StopRow key={k}>
             <S.StopMarker>&bull;</S.StopMarker>
-            <S.StopName style={{ color: closed ? `${colors.red[700]}` : "" }}>
+            <S.StopName closed={closed}>
               {`${stop.name}${closed ? ` (${closedMessage})` : ""}`}
             </S.StopName>
           </S.StopRow>
