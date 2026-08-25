@@ -106,6 +106,7 @@ otpUi:
       yesterday: Yesterday
     alertsHeader: "{alertCount, plural, =1 {# alert} other {# alerts}}"
     arriveAt: Arrive at {place}
+    closed: Closed
     disembarkAt: Disembark at {legDestination}
     expandDetails: (Expand details)
     fare: "Fare: {fare}"
