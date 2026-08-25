@@ -146,7 +146,7 @@ const extractCoordinatesFromGeometry = (
  * Extends bounds with coordinates from any GeoJSON geometry
  * @param bounds - Current bounds object (or null)
  * @param geometry - GeoJSON geometry to extract bounds from
- * @returns Extended bounds object
+ * @returns Extended bounds object, undefined if
  */
 const extendBoundsWithGeometry = (
   bounds: LngLatBounds | undefined,
@@ -276,7 +276,7 @@ const RouteViewerOverlay = (props: Props): JSX.Element => {
     if (!objectExistsAndPopulated(pattern?.geometry) || !pattern?.stops) {
       return [];
     }
-    const pts = polyline.decode(pattern.geometry?.points);
+    const pts = polyline.decode(pattern.geometry.points);
     const clippedPts = clipToPatternStops
       ? removePointsInFlexZone(pattern?.stops, pts)
       : pts;
