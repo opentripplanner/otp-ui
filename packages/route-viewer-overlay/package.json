@@ -27,8 +27,10 @@
   },
   "devDependencies": {
     "@opentripplanner/types": "workspace:^",
-    "@types/node": "^25.6.0",
-    "point-in-polygon": "^1.1.0"
+    "@types/mapbox__polyline": "^1.0.5",
+    "@types/point-in-polygon": "^1.1.5",
+    "point-in-polygon": "^1.1.0",
+    "react-map-gl": "catalog:"
   },
   "peerDependencies": {
     "react": "catalog:",
