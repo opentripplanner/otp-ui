@@ -37,9 +37,10 @@ export default function IntermediateStops({
         return (
           <S.StopRow key={k}>
             <S.StopMarker>&bull;</S.StopMarker>
-            <S.StopName closed={closed}>
-              {`${stop.name}${closed ? ` (${closedMessage})` : ""}`}
-            </S.StopName>
+            <S.StopNameContainer>
+              <S.StopName closed={closed}>{stop.name}</S.StopName>
+              <S.StopClosed>{closed ? ` (${closedMessage})` : ""}</S.StopClosed>
+            </S.StopNameContainer>
           </S.StopRow>
         );
       })}
