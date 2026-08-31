@@ -39,7 +39,7 @@ export default function IntermediateStops({
             <S.StopMarker>&bull;</S.StopMarker>
             <S.StopNameContainer>
               <S.StopName closed={closed}>{stop.name}</S.StopName>
-              <S.StopClosed>{closed ? ` (${closedMessage})` : ""}</S.StopClosed>
+              {closed && <S.StopClosed>{closedMessage}</S.StopClosed>}
             </S.StopNameContainer>
           </S.StopRow>
         );
