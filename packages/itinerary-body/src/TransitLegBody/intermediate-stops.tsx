@@ -26,9 +26,9 @@ export default function IntermediateStops({
   });
   const intl = useIntl();
   const closedMessage = intl.formatMessage({
-    defaultMessage: defaultMessages["otpUi.TransitLegBody.closed"],
+    defaultMessage: defaultMessages["otpUi.TransitLegBody.stopIsClosed"],
     description: "Denotes a closed stop in the itinerary body",
-    id: "otpUi.TransitLegBody.closed"
+    id: "otpUi.TransitLegBody.stopIsClosed"
   });
   return (
     <S.IntermediateStops>
