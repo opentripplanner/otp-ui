@@ -44,6 +44,7 @@ interface Props {
   AlertBodyIcon?: FunctionComponent;
   AlertToggleIcon?: FunctionComponent;
   alwaysCollapseAlerts: boolean;
+  closedStopIds?: Set<string>;
   defaultFareSelector?: FareProductSelector;
   intl: IntlShape;
   leg: Leg;
@@ -172,6 +173,7 @@ class TransitLegBody extends Component<Props, State> {
       AlertBodyIcon,
       AlertToggleIcon = S.DefaultAlertToggleIcon,
       alwaysCollapseAlerts,
+      closedStopIds,
       defaultFareSelector,
       intl,
       leg,
@@ -398,7 +400,10 @@ class TransitLegBody extends Component<Props, State> {
                   height={stopsExpanded ? "auto" : 0}
                 >
                   <S.TransitLegExpandedBody>
-                    <IntermediateStops stops={leg.intermediateStops} />
+                    <IntermediateStops
+                      closedStopIds={closedStopIds}
+                      stops={leg.intermediateStops}
+                    />
                     {legCost?.price && (
                       <S.TransitLegFare>
                         <FormattedMessage

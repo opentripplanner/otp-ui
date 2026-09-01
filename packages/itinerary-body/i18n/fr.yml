@@ -112,6 +112,7 @@ otpUi:
       yesterday: hier
     alertsHeader: "{alertCount, plural, =0 {# alerte} =1 {# alerte} other {# alertes}}"
     arriveAt: Arrivée à {place}
+    stopIsClosed: Arrêt supprimé
     disembarkAt: Descendez à {legDestination}
     expandDetails: (Plus de détails)
     fare: "Tarif : {fare}"

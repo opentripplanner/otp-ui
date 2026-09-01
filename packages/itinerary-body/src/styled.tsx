@@ -677,6 +677,11 @@ export const StepLength = styled.span`
   padding-left: 1ch;
 `;
 
+export const StopClosed = styled.span`
+  color: ${red[700]};
+  margin-left: 3px;
+`;
+
 export const StopIdSpan = styled.span`
   font-weight: 200;
   font-size: 0.9em;
@@ -685,13 +690,18 @@ export const StopIdSpan = styled.span`
 
 export const StopMarker = styled.div`
   float: left;
-  margin-left: -36px;
+  margin-left: -22.45px;
   color: #fff;
 `;
 
-export const StopName = styled.div`
-  color: ${grey[700]};
-  margin-top: 3px;
+export const StopName = styled.div<{ closed?: boolean }>`
+  color: ${props => (props.closed ? red[700] : grey[700])};
+  text-decoration: ${props => (props.closed ? "line-through" : "")};
+`;
+
+export const StopNameContainer = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 export const StopRow = styled.li`

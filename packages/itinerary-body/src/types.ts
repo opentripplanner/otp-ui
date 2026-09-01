@@ -136,6 +136,8 @@ interface ItineraryBodySharedProps {
    * Used for additional styling with styled components for example.
    */
   className?: string;
+  /** A set of stop IDs for stops that should be marked as closed in the itinerary */
+  closedStopIds?: Set<string>;
   /** Contains OTP configuration details. */
   config: Config;
   /**
