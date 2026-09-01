@@ -581,8 +581,6 @@ exports[`ItineraryBody/otp-react-redux AlertNoEffectiveAsOfItinerary smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Galleria/SW 10th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -1541,8 +1539,6 @@ exports[`ItineraryBody/otp-react-redux ApproximatePrefixItinerary smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Galleria/SW 10th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -4323,8 +4319,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Sandy &amp; Lawrence
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -4335,8 +4329,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Sandy &amp; 28th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -4347,8 +4339,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Sandy &amp; 31st
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -4359,8 +4349,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Sandy &amp; 33rd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -4371,8 +4359,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Sandy &amp; Imperial
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -4383,8 +4369,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Sandy &amp; 38th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -4395,8 +4379,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Sandy &amp; 42nd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -4407,8 +4389,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Sandy &amp; 44th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -4419,8 +4399,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Sandy &amp; 48th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -4431,8 +4409,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Sandy &amp; 50th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -4443,8 +4419,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Sandy &amp; Sacramento
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -4455,8 +4429,6 @@ exports[`ItineraryBody/otp-react-redux BikeRentalTransitItinerary smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Sandy &amp; 54th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -6231,8 +6203,6 @@ exports[`ItineraryBody/otp-react-redux BikeTransitBikeItinerary smoke-test 1`] =
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Galleria/SW 10th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -7165,8 +7135,6 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           W Burnside &amp; SW 2nd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -7177,8 +7145,6 @@ exports[`ItineraryBody/otp-react-redux CustomTimeColumn smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 8th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -9037,8 +9003,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Broadway &amp; 32nd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -9049,8 +9013,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE 33rd &amp; Schuyler
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -9061,8 +9023,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE 33rd &amp; US Grant Pl
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -9073,8 +9033,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE 33rd &amp; Brazee
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -9085,8 +9043,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE 33rd &amp; Knott
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -9097,8 +9053,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE 33rd &amp; Stanton
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -9109,8 +9063,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE 33rd &amp; Siskiyou
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -9121,8 +9073,6 @@ exports[`ItineraryBody/otp-react-redux EScooterRentalTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE 33rd &amp; Alameda
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -10524,8 +10474,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Washington Park MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -10536,8 +10484,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Goose Hollow/SW Jefferson St MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -10548,8 +10494,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Kings Hill/SW Salmon St MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -10560,8 +10504,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Providence Park MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -10572,8 +10514,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Library/SW 9th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -10584,8 +10524,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Pioneer Square South MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -10596,8 +10534,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Mall/SW 4th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -10608,8 +10544,6 @@ exports[`ItineraryBody/otp-react-redux HideDrivingDirections smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Yamhill District MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -11831,8 +11765,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           South Mount Vernon Park &amp; Ride
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -11843,8 +11775,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Broadway - Everett Community College
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -11855,8 +11785,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Broadway &amp; 14th  (near hospital)
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -11867,8 +11795,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Broadway just South of the Event Center
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -12260,8 +12186,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Broadway &amp; 34th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -12272,8 +12196,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           South Everett Fwy Station Bay 3
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -12284,8 +12206,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Ash Way Park &amp; Ride Bay 1
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -12677,8 +12597,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Alderwood Mall Pkwy &amp; Beech Rd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -12689,8 +12607,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Alderwood Mall Pkwy &amp; 184th St SW
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -12701,8 +12617,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Canyon Park Fwy Station Bay 4
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -12713,8 +12627,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Beardslee Blvd &amp; Ross Rd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -12725,8 +12637,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           UW Bothell &amp; Cascadia College
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -13118,8 +13028,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Woodinville Dr &amp; Kaysner Way
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -13130,8 +13038,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Bothell Way NE &amp; NE 180th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -13142,8 +13048,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Bothell Way &amp; 96th Ave NE
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -13154,8 +13058,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Bothell Way &amp; 91st Ave NE
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -13166,8 +13068,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Bothell Way &amp; 83rd Pl NE
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -13178,8 +13078,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Bothell Way &amp; 80th Ave NE
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -13190,8 +13088,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Bothell Way &amp; 77th Ct NE
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -13202,8 +13098,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Bothell Way &amp; Kenmore Park &amp; Ride
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -13214,8 +13108,6 @@ exports[`ItineraryBody/otp-react-redux IndividualLegFareComponents smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           NE Bothell Way &amp; 68th Ave NE
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -14112,8 +14004,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           S Main St &amp; Ken Pratt Blvd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14124,8 +14014,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           S Main St &amp; Jersey Ave
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14136,8 +14024,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           S Main St &amp; Missouri Ave
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14148,8 +14034,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           S Main St &amp; Quebec Ave
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14160,8 +14044,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           US 287 &amp; Pike Rd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14172,8 +14054,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           US 287 &amp; Niwot Rd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14184,8 +14064,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           US 287 &amp; Hwy 52
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14196,8 +14074,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           US 287 &amp; Lookout Rd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14208,8 +14084,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           US 287 &amp; Dawson Dr
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14220,8 +14094,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           US 287 &amp; Goose Haven Dr
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14232,8 +14104,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           US 287 &amp; Isabelle Rd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -14658,8 +14528,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Arapahoe Rd &amp; US 287
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14670,8 +14538,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Arapahoe Rd &amp; 111th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14682,8 +14548,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Arapahoe Rd &amp; Hawkridge Rd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14694,8 +14558,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           2800 Block 119th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14706,8 +14568,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           119th St &amp; Austin Ave
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14718,8 +14578,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Erie Pkwy &amp; Brennan St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -14730,8 +14588,6 @@ exports[`ItineraryBody/otp-react-redux OTP2FlexItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Erie Pkwy &amp; Meller St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -16612,8 +16468,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Quatama MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -16624,8 +16478,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Willow Creek/SW 185th Ave TC MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -16636,8 +16488,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Elmonica/SW 170th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -16648,8 +16498,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Merlo Rd/SW 158th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -16660,8 +16508,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Beaverton Creek MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -16672,8 +16518,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Millikan Way MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -16684,8 +16528,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Beaverton Central MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -16696,8 +16538,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Beaverton TC MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -16708,8 +16548,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Sunset TC MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -16720,8 +16558,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Washington Park MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -16732,8 +16568,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Goose Hollow/SW Jefferson St MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -17278,8 +17112,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           W Burnside &amp; SW 15th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17290,8 +17122,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           W Burnside &amp; SW 13th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17302,8 +17132,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           W Burnside &amp; SW 10th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17314,8 +17142,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           W Burnside &amp; SW 6th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17326,8 +17152,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           W Burnside &amp; SW 2nd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17338,8 +17162,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; NE Grand
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17350,8 +17172,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 8th Ave
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17362,8 +17182,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 12th Ave
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17374,8 +17192,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 16th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17386,8 +17202,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 20th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17398,8 +17212,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 24th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17410,8 +17222,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 28th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17422,8 +17232,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 32nd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17434,8 +17242,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE Floral
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17446,8 +17252,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE Laurelhurst
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17458,8 +17262,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE Cesar Chavez Blvd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17470,8 +17272,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 41st
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17482,8 +17282,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 44th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17494,8 +17292,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 47th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17506,8 +17302,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 52nd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17518,8 +17312,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 55th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17530,8 +17322,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 57th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17542,8 +17332,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 60th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17554,8 +17342,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; 63rd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17566,8 +17352,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 67th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17578,8 +17362,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 69th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17590,8 +17372,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 72nd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17602,8 +17382,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 74th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17614,8 +17392,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 79th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17626,8 +17402,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 82nd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17638,8 +17412,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 87th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -17650,8 +17422,6 @@ exports[`ItineraryBody/otp-react-redux Otp24Itinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           9100 Block E Burnside
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -19152,8 +18922,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Washington Park MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -19164,8 +18932,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Goose Hollow/SW Jefferson St MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -19176,8 +18942,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Kings Hill/SW Salmon St MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -19188,8 +18952,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Providence Park MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -19200,8 +18962,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Library/SW 9th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -19212,8 +18972,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Pioneer Square South MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -19224,8 +18982,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Mall/SW 4th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -19236,8 +18992,6 @@ exports[`ItineraryBody/otp-react-redux ParkAndRideItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Yamhill District MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -19835,8 +19589,6 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; Halladay St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -19847,8 +19599,6 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; Lynn St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -19859,8 +19609,6 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; Crockett St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -19871,8 +19619,6 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; Galer St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -19883,8 +19629,6 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; Prospect St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -19895,8 +19639,6 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           7th Ave N &amp; Thomas St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -20070,8 +19812,6 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Bell St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -20082,8 +19822,6 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Virginia St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -20094,8 +19832,6 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Pike St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -20106,8 +19842,6 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Seneca St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -20118,8 +19852,6 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Cherry St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -20130,8 +19862,6 @@ exports[`ItineraryBody/otp-react-redux StayOnBoardItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave S &amp; S Main St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -20779,8 +20509,6 @@ exports[`ItineraryBody/otp-react-redux StopWithNoStopCode smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Galleria/SW 10th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -21739,8 +21467,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsAlwaysCollapsing smoke-test 1`
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Galleria/SW 10th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -22699,8 +22425,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsNotAlwaysCollapsing smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Galleria/SW 10th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -23659,8 +23383,6 @@ exports[`ItineraryBody/otp-react-redux ThreeAlertsWithoutCollapsingProp smoke-te
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Galleria/SW 10th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -24402,8 +24124,6 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           W Burnside &amp; SW 2nd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -24414,8 +24134,6 @@ exports[`ItineraryBody/otp-react-redux TncTransitItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           E Burnside &amp; SE 8th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -25375,8 +25093,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Philadelphia Airport Terminals E &amp; F
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25387,8 +25103,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Bartram Av &amp; 90th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25399,8 +25113,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           89th St &amp; Bartram Av - FS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -25692,8 +25404,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Tinicum Blvd &amp; 88th St - FS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25704,8 +25414,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Tinicum Blvd &amp; 86th St - MBFS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25716,8 +25424,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Bartram Av &amp; 84th St - MBNS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25728,8 +25434,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Bartram Av &amp; 84th St - MBFS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25740,8 +25444,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Island Av &amp; Penrose Av - MBNS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25752,8 +25454,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Island Av &amp; Penrose Av - MBFS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25764,8 +25464,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Island Av &amp; Escort Av - MBNS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25776,8 +25474,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Island Av &amp; Escort Av
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25788,8 +25484,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Island Av &amp; Escort Av - MBFS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25800,8 +25494,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Enterprise Av &amp; Executive Av
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25812,8 +25504,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Executive Av &amp; Enterprise Av - FS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25824,8 +25514,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Executive Av &amp; Escort Av
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25836,8 +25524,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Escort Av &amp; Island Av
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25848,8 +25534,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Island Av &amp; Penrose Av - MBNS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25860,8 +25544,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Island Av &amp; Penrose Av - MBNS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25872,8 +25554,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Penrose Av &amp; 26th St - MBNS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25884,8 +25564,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Penrose &amp; Pattison Av - MBNS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25896,8 +25574,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Penrose &amp; Pattison Av - FS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25908,8 +25584,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Penrose Av &amp; 20th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25920,8 +25594,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Penrose Av &amp; 20th St - FS
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25932,8 +25604,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Moyamensing Av &amp; Pollock St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25944,8 +25614,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Moyamensing Av &amp; 18th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25956,8 +25624,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Moyamensing Av &amp; 17th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25968,8 +25634,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Moyamensing Av &amp; 16th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -25980,8 +25644,6 @@ exports[`ItineraryBody/otp-react-redux TransferLegItinerary smoke-test 1`] = `
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Moyamensing Av &amp; 15th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -27684,8 +27346,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Washington Park MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -27696,8 +27356,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Goose Hollow/SW Jefferson St MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -27708,8 +27366,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Kings Hill/SW Salmon St MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -27720,8 +27376,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Providence Park MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -27732,8 +27386,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Library/SW 9th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -27744,8 +27396,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Pioneer Square South MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -27756,8 +27406,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Mall/SW 4th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -27768,8 +27416,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsAlwaysCollapsing smoke-test 1`] 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Yamhill District MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -29279,8 +28925,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Washington Park MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -29291,8 +28935,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Goose Hollow/SW Jefferson St MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -29303,8 +28945,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Kings Hill/SW Salmon St MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -29315,8 +28955,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Providence Park MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -29327,8 +28965,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Library/SW 9th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -29339,8 +28975,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Pioneer Square South MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -29351,8 +28985,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Mall/SW 4th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -29363,8 +28995,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsNotAlwaysCollapsing smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Yamhill District MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -30874,8 +30504,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Washington Park MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -30886,8 +30514,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Goose Hollow/SW Jefferson St MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -30898,8 +30524,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Kings Hill/SW Salmon St MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -30910,8 +30534,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Providence Park MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -30922,8 +30544,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Library/SW 9th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -30934,8 +30554,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Pioneer Square South MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -30946,8 +30564,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Mall/SW 4th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -30958,8 +30574,6 @@ exports[`ItineraryBody/otp-react-redux TwoAlertsWithoutCollapsingProp smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Yamhill District MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -31923,8 +31537,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Broadway &amp; 34th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -31935,8 +31547,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           South Everett Fwy Station Bay 3
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -31947,8 +31557,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Ash Way Park &amp; Ride Bay 1
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -31959,8 +31567,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Lynnwood Transit Center Bay D3
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -31971,8 +31577,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Mountlake Terrace Fwy Station Bay 6
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -32261,8 +31865,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           1st Ave NE &amp; NE 95th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32273,8 +31875,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           N 92nd St &amp; Corliss Ave N
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32285,8 +31885,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           College Way N &amp; N 97th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32297,8 +31895,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           College Way N &amp; N 103rd St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32309,8 +31905,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Meridian Ave N &amp; N 105th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32321,8 +31915,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           N Northgate Way &amp; Meridian Ave N
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32333,8 +31925,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           N Northgate Way &amp; Stone Ave N
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -32793,8 +32383,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 100th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32805,8 +32393,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 95th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32817,8 +32403,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 90th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32829,8 +32413,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 85th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32841,8 +32423,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 80th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32853,8 +32433,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 76th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32865,8 +32443,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 65th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32877,8 +32453,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 46th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32889,8 +32463,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; Lynn St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32901,8 +32473,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; Galer St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32913,8 +32483,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           7th Ave N &amp; Thomas St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32925,8 +32493,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Wall St &amp; 5th Ave
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32937,8 +32503,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Bell St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32949,8 +32513,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Virginia St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32961,8 +32523,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Pike St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -32973,8 +32533,6 @@ exports[`ItineraryBody/otp-react-redux WalkInterlinedTransitItinerary smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Seneca St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -33951,8 +33509,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Cesar Chavez Blvd &amp; Clinton
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -33963,8 +33519,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Cesar Chavez Blvd &amp; Division
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -33975,8 +33529,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Cesar Chavez Blvd &amp; Lincoln
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -33987,8 +33539,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Cesar Chavez Blvd &amp; Stephens
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -34455,8 +34005,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Hawthorne &amp; 37th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -34467,8 +34015,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Hawthorne &amp; 34th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -34479,8 +34025,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Hawthorne &amp; 32nd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -34491,8 +34035,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferItinerary smoke-test 1
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Hawthorne &amp; 30th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -35298,8 +34840,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Cesar Chavez Blvd &amp; Clinton
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -35310,8 +34850,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Cesar Chavez Blvd &amp; Division
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -35322,8 +34860,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Cesar Chavez Blvd &amp; Lincoln
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -35334,8 +34870,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Cesar Chavez Blvd &amp; Stephens
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -35833,8 +35367,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Hawthorne &amp; 37th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -35845,8 +35377,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Hawthorne &amp; 34th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -35857,8 +35387,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Hawthorne &amp; 32nd
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -35869,8 +35397,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitTransferWithA11yItinerary smok
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           SE Hawthorne &amp; 30th
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -36819,8 +36345,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItinerary smoke-test 1`] =
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Galleria/SW 10th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -37787,8 +37311,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryCanceled smoke-te
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Galleria/SW 10th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -38748,7 +38270,7 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryClosedStop smoke-
                           Galleria/SW 10th Ave MAX Station
                         </div>
                         <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                          (Closed)
+                          Closed
                         </span>
                       </div>
                     </li>
@@ -39708,8 +39230,6 @@ exports[`ItineraryBody/otp-react-redux WalkTransitWalkItineraryMetric smoke-test
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Galleria/SW 10th Ave MAX Station
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -40638,8 +40158,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Broadway &amp; 34th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -40650,8 +40168,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           South Everett Fwy Station Bay 3
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -40662,8 +40178,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Ash Way Park &amp; Ride Bay 1
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -40674,8 +40188,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Lynnwood Transit Center Bay D3
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -40686,8 +40198,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Mountlake Terrace Fwy Station Bay 6
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -40976,8 +40486,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           1st Ave NE &amp; NE 95th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -40988,8 +40496,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           N 92nd St &amp; Corliss Ave N
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41000,8 +40506,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           College Way N &amp; N 97th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41012,8 +40516,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           College Way N &amp; N 103rd St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41024,8 +40526,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Meridian Ave N &amp; N 105th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41036,8 +40536,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           N Northgate Way &amp; Meridian Ave N
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41048,8 +40546,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           N Northgate Way &amp; Stone Ave N
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -41508,8 +41004,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 100th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41520,8 +41014,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 95th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41532,8 +41024,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 90th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41544,8 +41034,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 85th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41556,8 +41044,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 80th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41568,8 +41054,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 76th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41580,8 +41064,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 65th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41592,8 +41074,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 46th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41604,8 +41084,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; Lynn St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41616,8 +41094,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; Galer St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41628,8 +41104,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           7th Ave N &amp; Thomas St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41640,8 +41114,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Wall St &amp; 5th Ave
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41652,8 +41124,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Bell St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41664,8 +41134,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Virginia St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41676,8 +41144,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Pike St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -41688,8 +41154,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsAlwaysCollapsing smoke-test 1`]
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Seneca St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -42539,8 +42003,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Broadway &amp; 34th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -42551,8 +42013,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           South Everett Fwy Station Bay 3
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -42563,8 +42023,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Ash Way Park &amp; Ride Bay 1
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -42575,8 +42033,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Lynnwood Transit Center Bay D3
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -42587,8 +42043,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Mountlake Terrace Fwy Station Bay 6
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -42877,8 +42331,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           1st Ave NE &amp; NE 95th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -42889,8 +42341,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           N 92nd St &amp; Corliss Ave N
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -42901,8 +42351,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           College Way N &amp; N 97th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -42913,8 +42361,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           College Way N &amp; N 103rd St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -42925,8 +42371,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Meridian Ave N &amp; N 105th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -42937,8 +42381,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           N Northgate Way &amp; Meridian Ave N
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -42949,8 +42391,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           N Northgate Way &amp; Stone Ave N
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -43409,8 +42849,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 100th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -43421,8 +42859,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 95th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -43433,8 +42869,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 90th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -43445,8 +42879,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 85th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -43457,8 +42889,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 80th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -43469,8 +42899,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 76th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -43481,8 +42909,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 65th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -43493,8 +42919,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 46th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -43505,8 +42929,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; Lynn St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -43517,8 +42939,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; Galer St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -43529,8 +42949,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           7th Ave N &amp; Thomas St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -43541,8 +42959,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Wall St &amp; 5th Ave
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -43553,8 +42969,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Bell St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -43565,8 +42979,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Virginia St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -43577,8 +42989,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Pike St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -43589,8 +42999,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsNotAlwaysCollapsing smoke-test 
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Seneca St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -44440,8 +43848,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Broadway &amp; 34th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -44452,8 +43858,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           South Everett Fwy Station Bay 3
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -44464,8 +43868,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Ash Way Park &amp; Ride Bay 1
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -44476,8 +43878,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Lynnwood Transit Center Bay D3
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -44488,8 +43888,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Mountlake Terrace Fwy Station Bay 6
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -44778,8 +44176,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           1st Ave NE &amp; NE 95th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -44790,8 +44186,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           N 92nd St &amp; Corliss Ave N
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -44802,8 +44196,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           College Way N &amp; N 97th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -44814,8 +44206,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           College Way N &amp; N 103rd St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -44826,8 +44216,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Meridian Ave N &amp; N 105th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -44838,8 +44226,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           N Northgate Way &amp; Meridian Ave N
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -44850,8 +44236,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           N Northgate Way &amp; Stone Ave N
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
@@ -45310,8 +44694,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 100th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -45322,8 +44704,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 95th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -45334,8 +44714,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 90th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -45346,8 +44724,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 85th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -45358,8 +44734,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 80th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -45370,8 +44744,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 76th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -45382,8 +44754,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 65th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -45394,8 +44764,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; N 46th St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -45406,8 +44774,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; Lynn St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -45418,8 +44784,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Aurora Ave N &amp; Galer St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -45430,8 +44794,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           7th Ave N &amp; Thomas St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -45442,8 +44804,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           Wall St &amp; 5th Ave
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -45454,8 +44814,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Bell St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -45466,8 +44824,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Virginia St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -45478,8 +44834,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Pike St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                     <li class="styled__StopRow-sc-1q8npbl-79 dQStbA">
@@ -45490,8 +44844,6 @@ exports[`ItineraryBody/otp-react-redux ZeroAlertsWithoutCollapsingProp smoke-tes
                         <div class="styled__StopName-sc-1q8npbl-77 zrQxV">
                           3rd Ave &amp; Seneca St
                         </div>
-                        <span class="styled__StopClosed-sc-1q8npbl-74 cRSTqr">
-                        </span>
                       </div>
                     </li>
                   </ol>
