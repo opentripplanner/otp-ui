@@ -3,7 +3,40 @@ import { IntlShape } from "react-intl";
 import styled from "styled-components";
 import toposort from "toposort";
 
+import colors from "@opentripplanner/building-blocks";
+
 const COLUMN_WIDTH = "85px";
+
+const NoticeSymbol = styled.span`
+  cursor: default;
+  border: solid black;
+  padding: 3px;
+  size: 15;
+`;
+
+const Notice = styled.div`
+  .hidden-child {
+    display: none;
+  }
+
+  :hover .hidden-child {
+    background-color: ${colors.grey[200]};
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+  }
+`;
+
+const GenerateNotice = (content: string[]) => (
+  <Notice>
+    <NoticeSymbol>{"\u2139"}</NoticeSymbol>
+    <div className="hidden-child">
+      {content.map(s => (
+        <span key={s}>{s}</span>
+      ))}
+    </div>
+  </Notice>
+);
 
 const Table = styled.table`
   display: block;
@@ -42,6 +75,7 @@ interface TimetableTrip {
    * day. Used for sorting trips by first stop time
    */
   firstStopTime: number;
+  gtfsId: string;
   /** A map of stop GTFS ID to stop detail */
   stops: Map<string, StopDetail>;
 }
@@ -63,6 +97,7 @@ interface Pattern {
 
 interface Trip {
   blockId: string;
+  gtfsId: string;
   stoptimesForDate: Stoptime[];
 }
 
@@ -111,6 +146,7 @@ const createDwellStops = (trips: Trip[], timepoints: Set<string>): Trip[] => {
     });
     withDwellStops.push({
       blockId: trip.blockId,
+      gtfsId: trip.gtfsId,
       stoptimesForDate: updatedStopTimes
     });
   });
@@ -194,6 +230,8 @@ interface TimeTableProps {
   showBlockId?: boolean;
   /** Time zone in which to display stop times if no intl object is provided */
   timeZone?: string;
+  /** Text notes that should be shown as a hoverable popup on each individual trip in the timetable */
+  tripNotes?: Map<string, string[]>;
 }
 
 const TimeTable = (props: TimeTableProps): JSX.Element => {
@@ -206,7 +244,8 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
     route,
     showBlockId,
     timepointsOnly,
-    timeZone
+    timeZone,
+    tripNotes
   } = props;
 
   const { patterns } = route;
@@ -302,6 +341,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
         return {
           blockId: t.blockId,
           firstStopTime: firstStop.serviceDay + firstStop.scheduledArrival,
+          gtfsId: t.gtfsId,
           stops: new Map(
             t.stoptimesForDate.map(st => {
               return [
@@ -318,31 +358,48 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
       .sort(comparator);
   }, [allTrips, comparator]);
 
+  const leadingColumns: { id: string; name: string }[] = useMemo(() => {
+    const arr: { id: string; name: string }[] = [];
+
+    if (tripNotes) arr.push({ id: "tripNotesHeader", name: "Trip Notes" });
+    if (showBlockId) arr.push({ id: "blockIdHeader", name: "Block ID" });
+
+    return arr;
+  }, [showBlockId, tripNotes]);
+
   return (
     <Table className="timetable-table" tabIndex={0}>
       <thead className="timetable-thead">
         <tr>
-          {(showBlockId ? [{ id: "blockIdHeader", name: "Block ID" }] : [])
-            .concat(filteredPatternStops)
-            .map((s, index) => {
-              return (
-                <TH
-                  className="timetable-th"
-                  key={index}
-                  scope="col"
-                  closed={closedStops && closedStops.has(s.id)}
-                >
-                  {s.name}
-                </TH>
-              );
-            })}
+          {leadingColumns.concat(filteredPatternStops).map((s, index) => {
+            return (
+              <TH
+                className="timetable-th"
+                key={index}
+                scope="col"
+                closed={closedStops && closedStops.has(s.id)}
+              >
+                {s.name}
+              </TH>
+            );
+          })}
         </tr>
       </thead>
       <TBody className="timetable-tbody">
         {timetableTrips.map((t, index) => {
-          const rowValues: { closed: boolean; value: string }[] = showBlockId
-            ? [{ closed: false, value: t.blockId }]
-            : [];
+          const rowValues: {
+            closed: boolean;
+            value: string | JSX.Element;
+          }[] = [];
+          if (tripNotes) {
+            const notes = tripNotes.get(t.gtfsId);
+            rowValues.push({
+              closed: false,
+              value: notes ? GenerateNotice(notes) : ""
+            });
+          }
+          if (showBlockId) rowValues.push({ closed: false, value: t.blockId });
+
           filteredPatternStops.forEach(patternStop => {
             const stopDetail = t.stops.get(patternStop.id);
             rowValues.push({
