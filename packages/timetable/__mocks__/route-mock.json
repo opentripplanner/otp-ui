@@ -1036,7 +1036,8 @@
                     "name": "Nicollet Ave S & 46th St E"
                   }
                 }
-              ]
+              ],
+              "gtfsId": "38863"
             },
             {
               "blockId": "169047",
@@ -2068,7 +2069,8 @@
                     "name": "Nicollet Ave S & 46th St E"
                   }
                 }
-              ]
+              ],
+              "gtfsId": "99796"
             },
             {
               "blockId": "168373",
@@ -3100,7 +3102,8 @@
                     "name": "Nicollet Ave S & 46th St E"
                   }
                 }
-              ]
+              ],
+              "gtfsId": "83504"
             }
           ]
         },
@@ -3384,7 +3387,8 @@
                     "name": "4th Ave S & Lake St E"
                   }
                 }
-              ]
+              ],
+              "gtfsId": "37153"
             }
           ]
         },
@@ -4448,7 +4452,8 @@
                     "name": "Columbia Heights Transit Center C"
                   }
                 }
-              ]
+              ],
+              "gtfsId": "15668"
             },
             {
               "blockId": "160633",
@@ -5506,7 +5511,8 @@
                     "name": "Columbia Heights Transit Center C"
                   }
                 }
-              ]
+              ],
+              "gtfsId": "34761"
             }
           ]
         },
@@ -6076,7 +6082,8 @@
                     "name": "Pleasant Ave & 50th St / Busch Terrace"
                   }
                 }
-              ]
+              ],
+              "gtfsId": "41121"
             }
           ]
         }
