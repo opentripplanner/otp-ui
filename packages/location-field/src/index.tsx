@@ -1013,6 +1013,7 @@ const LocationField = ({
     // If there is an error, concatenate the error message in parentheses.
     optionIcon = currentPositionUnavailableIcon;
     const locationUnavailableText = intl.formatMessage({
+      defaultMessage: "Current location not available",
       description: "Current location unavailable status",
       id: "otpUi.LocationField.currentLocationUnavailable"
     });
@@ -1064,28 +1065,56 @@ const LocationField = ({
   // Store the number of location-associated items for reference in the onKeyDown method
   const menuItemCount = indexedOptionLookup.length;
 
+  // Visual open state (CSS $menuOpen) is separate from aria-expanded.
+  const isMenuOpen = isStatic || menuVisible;
+
+  // Report expanded only when there are selectable options (keyboard + assistive technology).
+  const isExpanded = isMenuOpen && menuItemCount > 0;
+
+  // Disable the toggle only when there is nothing to show (e.g. suppressNearby with
+  // no other results). Informational rows such as "Current location not available"
+  // still count as menu content, so the toggle stays enabled in that case.
+  const toggleDisabled = menuItems.length === 0;
+  const ariaDisabled = toggleDisabled ? "true" : undefined;
+
+  // Avoid rendering an empty listbox shell when there are no menu rows.
+  const showMenuList = isStatic || menuItems.length > 0;
+  const listBoxControls = showMenuList ? listBoxId : undefined;
+
+  const statusAnnouncementText = statusMessages.filter(Boolean).join(". ");
+
+  // Assertive status when the menu is open but has no selectable options.
+  const hasStatusOnlyMenu =
+    isMenuOpen && menuItemCount === 0 && statusAnnouncementText.length > 0;
+
+  // Include status text in the accessible name when nothing is selectable
+  // (Mac VoiceOver does not reliably read aria-describedby on pin focus).
+  const showStatusDescription =
+    menuItemCount === 0 && statusAnnouncementText.length > 0;
+
+  const suggestedLocationsToggleLabel = intl.formatMessage({
+    defaultMessage: "Toggle displaying the list of suggested locations",
+    description:
+      "Text to show as a a11y label for the button that opens the dropdown list of locations",
+    id: "otpUi.LocationField.suggestedLocationsLong"
+  });
+  const toggleAriaLabel = showStatusDescription
+    ? `${suggestedLocationsToggleLabel}. ${statusAnnouncementText}`
+    : suggestedLocationsToggleLabel;
+
   /** the text input element * */
   // Use this text for aria-label below if no user-provided label.
   const defaultPlaceholder =
     inputPlaceholder || (customLabelInputId ? undefined : locationType);
   const ariaLabel = customLabelInputId ? undefined : defaultPlaceholder;
+  const comboboxAriaLabel =
+    showStatusDescription && ariaLabel
+      ? `${ariaLabel}. ${statusAnnouncementText}`
+      : ariaLabel;
   const placeholder =
     currentPosition && currentPosition.fetching
       ? intl.formatMessage({ id: "otpUi.LocationField.fetchingLocation" })
       : defaultPlaceholder;
-
-  // Disable the toggle when the only menu item is "Current location not available".
-  // Disabled rows are not added to indexedOptionLookup, so the lookup is empty here.
-  const toggleDisabled =
-    menuItemCount === 0 &&
-    (menuItems.length === 0 ||
-      (positionUnavailable && !suppressNearby && menuItems.length === 1));
-
-  const isMenuOpen = isStatic || menuVisible;
-  const isExpanded = isMenuOpen && !toggleDisabled;
-  const ariaDisabled = toggleDisabled ? "true" : undefined;
-  const showMenuList = isStatic || menuItems.length > 0;
-  const listBoxControls = showMenuList ? listBoxId : undefined;
 
   const textControl = (
     <S.Input
@@ -1097,7 +1126,7 @@ const LocationField = ({
       aria-expanded={isExpanded}
       aria-haspopup="listbox"
       aria-invalid={!isValid}
-      aria-label={ariaLabel}
+      aria-label={comboboxAriaLabel}
       aria-required={isRequired}
       autoFocus={autoFocus}
       className={formControlClassname}
@@ -1138,12 +1167,7 @@ const LocationField = ({
         aria-controls={listBoxControls}
         aria-disabled={ariaDisabled}
         aria-expanded={isExpanded}
-        aria-label={intl.formatMessage({
-          defaultMessage: "Open the list of location suggestions",
-          description:
-            "Text to show as a a11y label for the button that opens the dropdown list of locations",
-          id: "otpUi.LocationField.suggestedLocationsLong"
-        })}
+        aria-label={toggleAriaLabel}
         onClick={onDropdownToggle}
         tabIndex={-1}
         type="button"
@@ -1152,12 +1176,12 @@ const LocationField = ({
       </S.DropdownButton>
       {textControl}
       {clearButton}
-      {/* Note: always render this status tag regardless of the open state,
-          so that assistive technologies correctly set up status monitoring. */}
-      <S.HiddenContent role="status">
-        {/* However, only render the status if the menu is expanded, so that
-            assistive technology reminds user on how to navigate the options. */}
-        {isMenuOpen && (
+      {/* Live status when the menu is open (assertive when nothing is selectable). */}
+      <S.HiddenContent
+        aria-live={hasStatusOnlyMenu ? "assertive" : "polite"}
+        role="status"
+      >
+        {isMenuOpen && statusMessages.length > 0 && (
           <FormattedList
             // eslint-disable-next-line react/style-prop-object
             style="narrow"
@@ -1169,8 +1193,7 @@ const LocationField = ({
       {showMenuList && (
         <ItemList
           $menuOpen={isMenuOpen}
-          // Hide the list from screen readers if no enabled options are shown.
-          aria-hidden={toggleDisabled || !isMenuOpen}
+          aria-hidden={!isMenuOpen}
           aria-label={intl.formatMessage({
             defaultMessage: "Suggested locations",
             description:

@@ -46,7 +46,8 @@ exports[`LocationField/Desktop Context AutoFocusWithMultipleControls smoke-test 
            role="combobox"
            value
     >
-    <span role="status"
+    <span aria-live="polite"
+          role="status"
           class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
     >
     </span>
@@ -100,7 +101,8 @@ exports[`LocationField/Desktop Context Blank smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
@@ -153,7 +155,8 @@ exports[`LocationField/Desktop Context GeocoderNoResults smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
@@ -206,7 +209,8 @@ exports[`LocationField/Desktop Context GeocoderUnreachable smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
@@ -259,7 +263,8 @@ exports[`LocationField/Desktop Context HereGeocoder smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
@@ -278,9 +283,8 @@ exports[`LocationField/Desktop Context LocationUnavailable smoke-test 1`] = `
      role="group"
 >
   <button aria-controls="from-listbox"
-          aria-disabled="true"
           aria-expanded="false"
-          aria-label="Toggle displaying the list of suggested locations"
+          aria-label="Toggle displaying the list of suggested locations. Current location not available"
           tabindex="-1"
           type="button"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
@@ -305,7 +309,7 @@ exports[`LocationField/Desktop Context LocationUnavailable smoke-test 1`] = `
          aria-expanded="false"
          aria-haspopup="listbox"
          aria-invalid="false"
-         aria-label="Select from location"
+         aria-label="Select from location. Current location not available"
          aria-required="false"
          class="styled__Input-sc-xahsq2-6 axlAP from-form-control"
          spellcheck="false"
@@ -313,7 +317,8 @@ exports[`LocationField/Desktop Context LocationUnavailable smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
@@ -373,7 +378,8 @@ exports[`LocationField/Desktop Context NoAutoFocusWithMultipleControls smoke-tes
            role="combobox"
            value
     >
-    <span role="status"
+    <span aria-live="polite"
+          role="status"
           class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
     >
     </span>
@@ -427,7 +433,8 @@ exports[`LocationField/Desktop Context RequiredAndInvalidState smoke-test 1`] = 
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
@@ -499,7 +506,8 @@ exports[`LocationField/Desktop Context SelectedLocation smoke-test 1`] = `
       </path>
     </svg>
   </button>
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
@@ -571,7 +579,8 @@ exports[`LocationField/Desktop Context SelectedLocationCustomClear smoke-test 1`
       </path>
     </svg>
   </button>
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
@@ -624,7 +633,8 @@ exports[`LocationField/Desktop Context SlowGeocoder smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
@@ -676,7 +686,8 @@ exports[`LocationField/Desktop Context SupressNearby smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
@@ -722,7 +733,8 @@ exports[`LocationField/Desktop Context WithBadApiKeyHandlesBadAutocomplete smoke
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
@@ -778,7 +790,8 @@ exports[`LocationField/Desktop Context WithCustomLabel smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
@@ -831,7 +844,8 @@ exports[`LocationField/Desktop Context WithCustomResultColorsAndIcons smoke-test
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
@@ -884,7 +898,8 @@ exports[`LocationField/Desktop Context WithCustomResultsOrder smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
@@ -1216,7 +1231,8 @@ exports[`LocationField/Desktop Context WithPrefilledSearch smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
@@ -1548,7 +1564,8 @@ exports[`LocationField/Desktop Context WithUserSettings smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
