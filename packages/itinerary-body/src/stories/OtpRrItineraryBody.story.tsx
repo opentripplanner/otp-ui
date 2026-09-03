@@ -42,7 +42,7 @@ import transferLegItinerary from "../__mocks__/itineraries/otp2-transfer-leg.jso
 
 const { convertGraphQLResponseToLegacy } = coreUtils.itinerary;
 
-function withLegacyLegs(itinerary) {
+function withLegacyLegs(itinerary: Itinerary) {
   return {
     ...itinerary,
     legs: itinerary.legs.map(convertGraphQLResponseToLegacy)
