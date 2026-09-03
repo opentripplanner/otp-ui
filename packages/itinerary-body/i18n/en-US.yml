@@ -94,6 +94,15 @@ otpUi:
       likelyAccessible: likely accessible
       unclear: unknown
     viewOnMap: View on map
+  TextOnlyItinerary:
+    arriveAt: Arrive at {place} at {timeMillis, time, short}
+    departFrom: Depart from {place} at {timeMillis, time, short}
+    rideDurationAndStops: "Ride {route} for {duration}{numStops, plural, =1 {} other { / # stops}}"
+    routeDescription: "{routeName} to {headsign}"
+    transitArriveAt: "Arrive at {place} (Stop Id: {stopId}) at {timeMillis, time, short}"
+    transitDepartFrom: >-
+      Depart from {place} (Stop Id: {stopId}) at {timeMillis, time, short} on
+      {routeName} towards {headsign}
   TransitLegBody:
     AlertsBody:
       alertLinkText: See alert on {agency} website
