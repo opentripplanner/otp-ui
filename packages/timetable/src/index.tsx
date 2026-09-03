@@ -15,11 +15,11 @@ const NoticeSymbol = styled.span`
 `;
 
 const Notice = styled.div`
-  .hidden-child {
+  .trip-notice-hover-content {
     display: none;
   }
 
-  :hover .hidden-child {
+  :hover .trip-notice-hover-content {
     background-color: ${colors.grey[200]};
     display: flex;
     flex-direction: column;
@@ -29,8 +29,8 @@ const Notice = styled.div`
 
 const GenerateNotice = (content: string[]) => (
   <Notice>
-    <NoticeSymbol>{"\u2139"}</NoticeSymbol>
-    <div className="hidden-child">
+    <NoticeSymbol className="trip-notice-symbol">{"\u2139"}</NoticeSymbol>
+    <div className="trip-notice-hover-content">
       {content.map(s => (
         <span key={s}>{s}</span>
       ))}
@@ -78,6 +78,7 @@ interface TimetableTrip {
   gtfsId: string;
   /** A map of stop GTFS ID to stop detail */
   stops: Map<string, StopDetail>;
+  notices?: string[];
 }
 
 interface StopDetail {
@@ -99,6 +100,7 @@ interface Trip {
   blockId: string;
   gtfsId: string;
   stoptimesForDate: Stoptime[];
+  notices?: { text: string }[];
 }
 
 interface Stoptime {
@@ -145,8 +147,7 @@ const createDwellStops = (trips: Trip[], timepoints: Set<string>): Trip[] => {
       if (st.timepoint) timepoints.add(dwellStopId);
     });
     withDwellStops.push({
-      blockId: trip.blockId,
-      gtfsId: trip.gtfsId,
+      ...trip,
       stoptimesForDate: updatedStopTimes
     });
   });
@@ -230,8 +231,10 @@ interface TimeTableProps {
   showBlockId?: boolean;
   /** Time zone in which to display stop times if no intl object is provided */
   timeZone?: string;
-  /** Text notes that should be shown as a hoverable popup on each individual trip in the timetable */
-  tripNotes?: Map<string, string[]>;
+  /** Enable notices to be shown as a hoverable popup on each individual trip in the timetable. Requires
+   * notices field on each trip record. See https://github.com/google/transit/pull/638
+   */
+  showNotices?: boolean;
 }
 
 const TimeTable = (props: TimeTableProps): JSX.Element => {
@@ -245,7 +248,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
     showBlockId,
     timepointsOnly,
     timeZone,
-    tripNotes
+    showNotices
   } = props;
 
   const { patterns } = route;
@@ -336,7 +339,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
 
   const timetableTrips: TimetableTrip[] = useMemo<TimetableTrip[]>(() => {
     return allTrips
-      .map(t => {
+      .map<TimetableTrip>(t => {
         const firstStop = t.stoptimesForDate[0];
         return {
           blockId: t.blockId,
@@ -352,7 +355,8 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
                 }
               ];
             })
-          )
+          ),
+          notices: t.notices?.length ? t.notices.map(n => n.text) : undefined
         };
       })
       .sort(comparator);
@@ -361,11 +365,11 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
   const leadingColumns: { id: string; name: string }[] = useMemo(() => {
     const arr: { id: string; name: string }[] = [];
 
-    if (tripNotes) arr.push({ id: "tripNotesHeader", name: "Trip Notes" });
+    if (showNotices) arr.push({ id: "tripNotesHeader", name: "Notices" });
     if (showBlockId) arr.push({ id: "blockIdHeader", name: "Block ID" });
 
     return arr;
-  }, [showBlockId, tripNotes]);
+  }, [showBlockId, showNotices]);
 
   return (
     <Table className="timetable-table" tabIndex={0}>
@@ -391,11 +395,10 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
             closed: boolean;
             value: string | JSX.Element;
           }[] = [];
-          if (tripNotes) {
-            const notes = tripNotes.get(t.gtfsId);
+          if (showNotices) {
             rowValues.push({
               closed: false,
-              value: notes ? GenerateNotice(notes) : ""
+              value: t.notices ? GenerateNotice(t.notices) : ""
             });
           }
           if (showBlockId) rowValues.push({ closed: false, value: t.blockId });

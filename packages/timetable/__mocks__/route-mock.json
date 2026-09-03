@@ -8,6 +8,17 @@
           "tripsForDate": [
             {
               "blockId": "169111",
+              "notices": [
+                {
+                  "text": "Example notice"
+                },
+                {
+                  "text": "Exit through front door"
+                },
+                {
+                  "text": "Trip runs only on school days"
+                }
+              ],
               "stoptimesForDate": [
                 {
                   "serviceDay": 1780290000,
@@ -3113,6 +3124,14 @@
           "tripsForDate": [
             {
               "blockId": "153063",
+              "notices": [
+                {
+                  "text": "Example notice"
+                },
+                {
+                  "text": "Trip runs late on game days"
+                }
+              ],
               "stoptimesForDate": [
                 {
                   "serviceDay": 1780290000,

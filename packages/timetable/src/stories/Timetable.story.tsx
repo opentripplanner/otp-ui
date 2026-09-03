@@ -22,7 +22,7 @@ const meta = {
             control: "radio",
             options: [0, 1]
         },
-        tripNotes: {
+        showNotices: {
             control: "boolean",
         }
     }
@@ -31,18 +31,12 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const tripNotesMock = new Map<string, string[]>([
-        ["38863", ["Example notice", "Trips run late on game days"]],
-        ["37153", ["This is a trip notice", "Exit through front door", "Trip serves elementary school"]]
-    ]
-)
-
 export const Default: Story = {
     // eslint-disable-next-line react/display-name
     render: (args) => {
-        const { closedStops, tripNotes } = args;
+        const { closedStops, showNotices } = args;
         // eslint-disable-next-line react/jsx-props-no-spreading
-        return <TimeTable {...args} closedStops={new Set(closedStops)} tripNotes={tripNotes ? tripNotesMock : undefined} />
+        return <TimeTable {...args} closedStops={new Set(closedStops)} showNotices={showNotices} />
     },
     args: {
         directionId: 0,
