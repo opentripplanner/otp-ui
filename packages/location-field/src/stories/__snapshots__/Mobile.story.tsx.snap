@@ -9,7 +9,6 @@ exports[`LocationField/Mobile Context Blank smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -40,15 +39,16 @@ exports[`LocationField/Mobile Context Blank smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
-  <ul aria-hidden="true"
+  <ul aria-hidden="false"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 cwdAZq gGwGIV"
   >
     <li aria-live="off"
         id="current-position"
@@ -92,7 +92,6 @@ exports[`LocationField/Mobile Context GeocoderNoResults smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -123,15 +122,16 @@ exports[`LocationField/Mobile Context GeocoderNoResults smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
-  <ul aria-hidden="true"
+  <ul aria-hidden="false"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 cwdAZq gGwGIV"
   >
     <li aria-live="off"
         id="current-position"
@@ -175,7 +175,6 @@ exports[`LocationField/Mobile Context GeocoderUnreachable smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -206,15 +205,16 @@ exports[`LocationField/Mobile Context GeocoderUnreachable smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
-  <ul aria-hidden="true"
+  <ul aria-hidden="false"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 cwdAZq gGwGIV"
   >
     <li aria-live="off"
         id="current-position"
@@ -254,11 +254,10 @@ exports[`LocationField/Mobile Context LocationUnavailable smoke-test 1`] = `
      role="group"
 >
   <button aria-controls="from-listbox"
-          aria-expanded="true"
-          aria-label="Toggle displaying the list of suggested locations"
+          aria-expanded="false"
+          aria-label="Toggle displaying the list of suggested locations. Current location not available"
           tabindex="-1"
           type="button"
-          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -278,10 +277,10 @@ exports[`LocationField/Mobile Context LocationUnavailable smoke-test 1`] = `
   </button>
   <input aria-autocomplete="list"
          aria-controls="from-listbox"
-         aria-expanded="true"
+         aria-expanded="false"
          aria-haspopup="listbox"
          aria-invalid="false"
-         aria-label="from"
+         aria-label="from. Current location not available"
          aria-required="false"
          class="styled__Input-sc-xahsq2-6 axlAP from-form-control"
          spellcheck="false"
@@ -289,16 +288,17 @@ exports[`LocationField/Mobile Context LocationUnavailable smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="assertive"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
     Current location not available
   </span>
-  <ul aria-hidden="true"
+  <ul aria-hidden="false"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 cwdAZq gGwGIV"
   >
     <li aria-hidden="true"
         aria-live="off"
@@ -343,7 +343,6 @@ exports[`LocationField/Mobile Context SelectedLocation smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 384 512"
@@ -393,15 +392,16 @@ exports[`LocationField/Mobile Context SelectedLocation smoke-test 1`] = `
       </path>
     </svg>
   </button>
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
-  <ul aria-hidden="true"
+  <ul aria-hidden="false"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 cwdAZq gGwGIV"
   >
     <li aria-live="off"
         id="current-position"
@@ -445,7 +445,6 @@ exports[`LocationField/Mobile Context SelectedLocationCustomClear smoke-test 1`]
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 384 512"
@@ -495,15 +494,16 @@ exports[`LocationField/Mobile Context SelectedLocationCustomClear smoke-test 1`]
       </path>
     </svg>
   </button>
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
-  <ul aria-hidden="true"
+  <ul aria-hidden="false"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 cwdAZq gGwGIV"
   >
     <li aria-live="off"
         id="current-position"
@@ -547,7 +547,6 @@ exports[`LocationField/Mobile Context SlowGeocoder smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -578,15 +577,16 @@ exports[`LocationField/Mobile Context SlowGeocoder smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
-  <ul aria-hidden="true"
+  <ul aria-hidden="false"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 cwdAZq gGwGIV"
   >
     <li aria-live="off"
         id="current-position"
@@ -630,7 +630,6 @@ exports[`LocationField/Mobile Context Styled smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 512 512"
@@ -661,15 +660,16 @@ exports[`LocationField/Mobile Context Styled smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
-  <ul aria-hidden="true"
+  <ul aria-hidden="false"
       aria-label="Suggested locations"
       id="from-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 cwdAZq gGwGIV"
   >
     <li aria-live="off"
         id="current-position"
@@ -713,7 +713,6 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 640 512"
@@ -744,15 +743,16 @@ exports[`LocationField/Mobile Context WithCustomIcons smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
-  <ul aria-hidden="true"
+  <ul aria-hidden="false"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 cwdAZq gGwGIV"
   >
     <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 iDacNN">
       Nearby Stops
@@ -1028,7 +1028,6 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 384 512"
@@ -1059,15 +1058,16 @@ exports[`LocationField/Mobile Context WithNearbyStops smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
-  <ul aria-hidden="true"
+  <ul aria-hidden="false"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 cwdAZq gGwGIV"
   >
     <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 iDacNN">
       Nearby Stops
@@ -1192,7 +1192,6 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 384 512"
@@ -1223,15 +1222,16 @@ exports[`LocationField/Mobile Context WithSessionSearches smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
-  <ul aria-hidden="true"
+  <ul aria-hidden="false"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 cwdAZq gGwGIV"
   >
     <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 iDacNN">
       Recently Searched
@@ -1307,7 +1307,6 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
           aria-label="Toggle displaying the list of suggested locations"
           tabindex="-1"
           type="button"
-          aria-disabled="false"
           class="styled__BaseButton-sc-xahsq2-1 styled__DropdownButton-sc-xahsq2-4 hoozke dYRKXf"
   >
     <svg viewbox="0 0 384 512"
@@ -1338,15 +1337,16 @@ exports[`LocationField/Mobile Context WithUserSettings smoke-test 1`] = `
          role="combobox"
          value
   >
-  <span role="status"
+  <span aria-live="polite"
+        role="status"
         class="styled__HiddenContent-sc-xahsq2-0 iCqxXz"
   >
   </span>
-  <ul aria-hidden="true"
+  <ul aria-hidden="false"
       aria-label="Suggested locations"
       id="to-listbox"
       role="listbox"
-      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 eCrJvo GkRdl"
+      class="styled__MenuItemList-sc-xahsq2-5 styled__StaticMenuItemList-sc-xahsq2-16 cwdAZq gGwGIV"
   >
     <h2 class="styled__MenuGroupHeader-sc-xahsq2-8 iDacNN">
       My Places

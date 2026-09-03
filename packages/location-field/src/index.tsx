@@ -1000,7 +1000,7 @@ const LocationField = ({
   let optionTitle;
   let positionUnavailable;
 
-  if (currentPosition && !currentPosition.error) {
+  if (currentPosition?.coords && !currentPosition.error) {
     // current position detected successfully
     locationSelected = useCurrentLocation;
     optionIcon = currentPositionIcon;
@@ -1013,6 +1013,7 @@ const LocationField = ({
     // If there is an error, concatenate the error message in parentheses.
     optionIcon = currentPositionUnavailableIcon;
     const locationUnavailableText = intl.formatMessage({
+      defaultMessage: "Current location not available",
       description: "Current location unavailable status",
       id: "otpUi.LocationField.currentLocationUnavailable"
     });
@@ -1029,10 +1030,12 @@ const LocationField = ({
 
   const optionId = `current-position`;
 
-  // Add to the selection handler lookup (for use in onKeyDown)
-  pushToIndexedOptions(locationSelected, optionId);
-
   if (!suppressNearby) {
+    if (!positionUnavailable) {
+      // Add to the selection handler lookup (for use in onKeyDown)
+      pushToIndexedOptions(locationSelected, optionId);
+    }
+
     // Create and add the option item to the menu items array
     menuItems.push(
       <Option
@@ -1059,21 +1062,59 @@ const LocationField = ({
     }
     statusMessages.push(message);
   }
-
   // Store the number of location-associated items for reference in the onKeyDown method
-  let menuItemCount = indexedOptionLookup.length;
+  const menuItemCount = indexedOptionLookup.length;
+
+  // Visual open state (CSS $menuOpen) is separate from aria-expanded.
+  const isMenuOpen = isStatic || menuVisible;
+
+  // Report expanded only when there are selectable options (keyboard + assistive technology).
+  const isExpanded = isMenuOpen && menuItemCount > 0;
+
+  // Disable the toggle only when there is nothing to show (e.g. suppressNearby with
+  // no other results). Informational rows such as "Current location not available"
+  // still count as menu content, so the toggle stays enabled in that case.
+  const toggleDisabled = menuItems.length === 0;
+  const ariaDisabled = toggleDisabled ? "true" : undefined;
+
+  // Avoid rendering an empty listbox shell when there are no menu rows.
+  const showMenuList = isStatic || menuItems.length > 0;
+  const listBoxControls = showMenuList ? listBoxId : undefined;
+
+  const statusAnnouncementText = statusMessages.filter(Boolean).join(". ");
+
+  // Assertive status when the menu is open but has no selectable options.
+  const hasStatusOnlyMenu =
+    isMenuOpen && menuItemCount === 0 && statusAnnouncementText.length > 0;
+
+  // Include status text in the accessible name when nothing is selectable
+  // (Mac VoiceOver does not reliably read aria-describedby on pin focus).
+  const showStatusDescription =
+    menuItemCount === 0 && statusAnnouncementText.length > 0;
+
+  const suggestedLocationsToggleLabel = intl.formatMessage({
+    defaultMessage: "Toggle displaying the list of suggested locations",
+    description:
+      "Text to show as a a11y label for the button that opens the dropdown list of locations",
+    id: "otpUi.LocationField.suggestedLocationsLong"
+  });
+  const toggleAriaLabel = showStatusDescription
+    ? `${suggestedLocationsToggleLabel}. ${statusAnnouncementText}`
+    : suggestedLocationsToggleLabel;
 
   /** the text input element * */
   // Use this text for aria-label below if no user-provided label.
   const defaultPlaceholder =
     inputPlaceholder || (customLabelInputId ? undefined : locationType);
   const ariaLabel = customLabelInputId ? undefined : defaultPlaceholder;
+  const comboboxAriaLabel =
+    showStatusDescription && ariaLabel
+      ? `${ariaLabel}. ${statusAnnouncementText}`
+      : ariaLabel;
   const placeholder =
     currentPosition && currentPosition.fetching
       ? intl.formatMessage({ id: "otpUi.LocationField.fetchingLocation" })
       : defaultPlaceholder;
-  const hasNoEnabledOptions = menuItemCount === 0;
-  const isExpanded = isStatic || menuVisible;
 
   const textControl = (
     <S.Input
@@ -1081,11 +1122,11 @@ const LocationField = ({
         activeIndex !== null ? indexedOptionLookup[activeIndex]?.id : null
       }
       aria-autocomplete="list"
-      aria-controls={listBoxId}
+      aria-controls={listBoxControls}
       aria-expanded={isExpanded}
       aria-haspopup="listbox"
       aria-invalid={!isValid}
-      aria-label={ariaLabel}
+      aria-label={comboboxAriaLabel}
       aria-required={isRequired}
       autoFocus={autoFocus}
       className={formControlClassname}
@@ -1123,29 +1164,24 @@ const LocationField = ({
   return (
     <S.InputGroup className={className} onBlur={onBlurFormGroup} role="group">
       <S.DropdownButton
-        aria-controls={listBoxId}
+        aria-controls={listBoxControls}
+        aria-disabled={ariaDisabled}
         aria-expanded={isExpanded}
-        aria-label={intl.formatMessage({
-          defaultMessage: "Open the list of location suggestions",
-          description:
-            "Text to show as a a11y label for the button that opens the dropdown list of locations",
-          id: "otpUi.LocationField.suggestedLocationsLong"
-        })}
+        aria-label={toggleAriaLabel}
         onClick={onDropdownToggle}
         tabIndex={-1}
         type="button"
-        aria-disabled={hasNoEnabledOptions}
       >
         <LocationIconComponent locationType={locationType} />
       </S.DropdownButton>
       {textControl}
       {clearButton}
-      {/* Note: always render this status tag regardless of the open state,
-          so that assistive technologies correctly set up status monitoring. */}
-      <S.HiddenContent role="status">
-        {/* However, only render the status if the menu is expanded, so that
-            assistive technology reminds user on how to navigate the options. */}
-        {isExpanded && (
+      {/* Live status when the menu is open (assertive when nothing is selectable). */}
+      <S.HiddenContent
+        aria-live={hasStatusOnlyMenu ? "assertive" : "polite"}
+        role="status"
+      >
+        {isMenuOpen && statusMessages.length > 0 && (
           <FormattedList
             // eslint-disable-next-line react/style-prop-object
             style="narrow"
@@ -1154,35 +1190,37 @@ const LocationField = ({
           />
         )}
       </S.HiddenContent>
-      <ItemList
-        // Hide the list from screen readers if no enabled options are shown.
-        aria-hidden={hasNoEnabledOptions || !menuVisible}
-        aria-label={intl.formatMessage({
-          defaultMessage: "Suggested locations",
-          description:
-            "Text to show as a label for the dropdown list of locations",
-          id: "otpUi.LocationField.suggestedLocations"
-        })}
-        id={listBoxId}
-      >
-        {isStatic ? (
-          menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
-            menuItems
+      {showMenuList && (
+        <ItemList
+          $menuOpen={isMenuOpen}
+          aria-hidden={!isMenuOpen}
+          aria-label={intl.formatMessage({
+            defaultMessage: "Suggested locations",
+            description:
+              "Text to show as a label for the dropdown list of locations",
+            id: "otpUi.LocationField.suggestedLocations"
+          })}
+          id={listBoxId}
+        >
+          {isStatic ? (
+            menuItems.length > 0 ? ( // Show typing prompt to avoid empty screen
+              menuItems
+            ) : (
+              <S.MenuGroupHeader as="div">
+                <FormattedMessage
+                  defaultMessage={
+                    defaultMessages["otpUi.LocationField.beginTypingPrompt"]
+                  }
+                  description="Text to show as initial placeholder in location search field"
+                  id="otpUi.LocationField.beginTypingPrompt"
+                />
+              </S.MenuGroupHeader>
+            )
           ) : (
-            <S.MenuGroupHeader as="div">
-              <FormattedMessage
-                defaultMessage={
-                  defaultMessages["otpUi.LocationField.beginTypingPrompt"]
-                }
-                description="Text to show as initial placeholder in location search field"
-                id="otpUi.LocationField.beginTypingPrompt"
-              />
-            </S.MenuGroupHeader>
-          )
-        ) : (
-          menuVisible && menuItems
-        )}
-      </ItemList>
+            menuVisible && menuItems
+          )}
+        </ItemList>
+      )}
     </S.InputGroup>
   );
 };
