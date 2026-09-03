@@ -8,6 +8,17 @@
           "tripsForDate": [
             {
               "blockId": "169111",
+              "notices": [
+                {
+                  "text": "Example notice"
+                },
+                {
+                  "text": "Exit through front door"
+                },
+                {
+                  "text": "Trip runs only on school days"
+                }
+              ],
               "stoptimesForDate": [
                 {
                   "serviceDay": 1780290000,
@@ -1036,7 +1047,8 @@
                     "name": "Nicollet Ave S & 46th St E"
                   }
                 }
-              ]
+              ],
+              "gtfsId": "38863"
             },
             {
               "blockId": "169047",
@@ -2068,7 +2080,8 @@
                     "name": "Nicollet Ave S & 46th St E"
                   }
                 }
-              ]
+              ],
+              "gtfsId": "99796"
             },
             {
               "blockId": "168373",
@@ -3100,7 +3113,8 @@
                     "name": "Nicollet Ave S & 46th St E"
                   }
                 }
-              ]
+              ],
+              "gtfsId": "83504"
             }
           ]
         },
@@ -3110,6 +3124,14 @@
           "tripsForDate": [
             {
               "blockId": "153063",
+              "notices": [
+                {
+                  "text": "Example notice"
+                },
+                {
+                  "text": "Trip runs late on game days"
+                }
+              ],
               "stoptimesForDate": [
                 {
                   "serviceDay": 1780290000,
@@ -3384,7 +3406,8 @@
                     "name": "4th Ave S & Lake St E"
                   }
                 }
-              ]
+              ],
+              "gtfsId": "37153"
             }
           ]
         },
@@ -4448,7 +4471,8 @@
                     "name": "Columbia Heights Transit Center C"
                   }
                 }
-              ]
+              ],
+              "gtfsId": "15668"
             },
             {
               "blockId": "160633",
@@ -5506,7 +5530,8 @@
                     "name": "Columbia Heights Transit Center C"
                   }
                 }
-              ]
+              ],
+              "gtfsId": "34761"
             }
           ]
         },
@@ -6076,7 +6101,8 @@
                     "name": "Pleasant Ave & 50th St / Busch Terrace"
                   }
                 }
-              ]
+              ],
+              "gtfsId": "41121"
             }
           ]
         }

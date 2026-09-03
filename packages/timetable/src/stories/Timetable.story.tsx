@@ -12,15 +12,18 @@ const meta = {
     argTypes: {
         closedStops: {
             options: ["Grand St NE & 29th Ave NE (Direction: 1)", "46th St & I-35W (Direction: 0)"],
-            control: { type: "check" },
+            control: "check",
             mapping: {
                 "Grand St NE & 29th Ave NE (Direction: 1)": "2:14634",
                 "46th St & I-35W (Direction: 0)": "2:53545"
             }
         },
         directionId: {
-            control: { type: "radio" },
+            control: "radio",
             options: [0, 1]
+        },
+        showNotices: {
+            control: "boolean",
         }
     }
 } satisfies Meta<typeof TimeTable>;
@@ -31,9 +34,9 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     // eslint-disable-next-line react/display-name
     render: (args) => {
-        const { closedStops } = args;
+        const { closedStops, showNotices } = args;
         // eslint-disable-next-line react/jsx-props-no-spreading
-        return <TimeTable {...args} closedStops={new Set(closedStops)} />
+        return <TimeTable {...args} closedStops={new Set(closedStops)} showNotices={showNotices} />
     },
     args: {
         directionId: 0,
