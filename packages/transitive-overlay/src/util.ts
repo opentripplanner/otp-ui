@@ -549,17 +549,20 @@ const getFontsFromVectorTiles = (map: MapRef): SortedFonts => {
   });
   // Once we have a list of unique fonts, sort them into bold and regular buckets.
   fonts.forEach(f => {
-    const fontLowerCase = f.toLowerCase();
-    switch (true) {
-      case fontLowerCase.includes("italic"):
-        sortedFonts.italic.push(f);
-        break;
-      case fontLowerCase.includes("bold"):
-        sortedFonts.bold.push(f);
-        break;
-      default:
-        sortedFonts.regular.push(f);
+    if (typeof f === "string") {
+      // eslint-disable-next-line default-case
+      switch (true) {
+        case f?.toLowerCase().includes("italic"):
+          sortedFonts.italic.push(f);
+          return;
+        case f?.toLowerCase().includes("bold"):
+          sortedFonts.bold.push(f);
+          return;
+      }
     }
+
+    // Default case has to fire even if we can't do string operations
+    sortedFonts.regular.push(f);
   });
 
   return sortedFonts;
