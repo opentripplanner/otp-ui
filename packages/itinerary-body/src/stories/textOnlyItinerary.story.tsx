@@ -42,7 +42,11 @@ const TextItineraryStoryWrapper = ({
   itinerary: any;
   metric?: boolean;
 }) => {
-  const itineraryString = textOnlyItineraryString(itinerary, config, metric);
+  const metricConfig = { ...config, units: "metric" };
+
+  const configuration = metric ? metricConfig : config;
+
+  const itineraryString = textOnlyItineraryString(itinerary, configuration);
 
   return <div style={{ whiteSpace: "pre-line" }}>{itineraryString}</div>;
 };

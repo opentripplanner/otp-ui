@@ -1,5 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
-import { Config, Itinerary, Leg } from "@opentripplanner/types";
+import { Itinerary, Leg } from "@opentripplanner/types";
 import { useIntl } from "react-intl";
 import {
   humanizeDistanceStringImperial,
@@ -22,8 +22,7 @@ const convertLegToTextString = (
   leg: Leg,
   index: number,
   array: Leg[],
-  config?: Config,
-  metric?: boolean
+  config?: any
 ): string => {
   const intl = useIntl();
   const transitLeg = isTransitLeg(leg);
@@ -31,6 +30,8 @@ const convertLegToTextString = (
 
   const isLastLeg = index === array.length - 1;
   const isFirstLeg = index === 0;
+
+  const { units = "imperial" } = config;
 
   const { from, mode, rentedBike, to, duration } = leg;
   const { name: fromName, networks, vertexType } = from;
@@ -168,9 +169,10 @@ const convertLegToTextString = (
         intl.formatMessage(
           { id: "otpUi.AccessLegBody.summaryAndDistance" },
           {
-            distance: metric
-              ? humanizeDistanceStringMetric(leg.distance, intl)
-              : humanizeDistanceStringImperial(leg.distance, false, intl),
+            distance:
+              units === "metric"
+                ? humanizeDistanceStringMetric(leg.distance, intl)
+                : humanizeDistanceStringImperial(leg.distance, false, intl),
             mode: getSummaryMode(leg, intl),
             place: getPlaceName(leg.to, [], intl)
           }
@@ -231,14 +233,9 @@ const convertLegToTextString = (
   );
 };
 
-function textOnlyItineraryString(
-  itinerary: Itinerary,
-  config?: Config,
-  metric?: boolean
-): string[] {
+function textOnlyItineraryString(itinerary: Itinerary, config?: any): string[] {
   const { legs } = itinerary;
-
-  return legs.map((l, i, a) => convertLegToTextString(l, i, a, config, metric));
+  return legs.map((l, i, a) => convertLegToTextString(l, i, a, config));
 }
 
 export default textOnlyItineraryString;
