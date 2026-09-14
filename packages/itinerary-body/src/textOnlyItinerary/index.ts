@@ -1,10 +1,7 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { Itinerary, Leg } from "@opentripplanner/types";
 import { useIntl } from "react-intl";
-import {
-  humanizeDistanceStringImperial,
-  humanizeDistanceStringMetric
-} from "@opentripplanner/humanize-distance";
+import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { getSummaryMode } from "../defaults/access-leg-description";
 import { vehicleTypeString } from "../AccessLegBody/rented-vehicle-subheader";
 import { getPlaceName } from "../util";
@@ -21,14 +18,14 @@ const { toHoursMinutesSeconds, ensureAtLeastOneMinute } = coreUtils.time;
 const convertLegToTextString = (
   leg: Leg,
   index: number,
-  array: Leg[],
-  config?: any
+  allLegs: Leg[],
+  config: any
 ): string => {
   const intl = useIntl();
   const transitLeg = isTransitLeg(leg);
   const textStrings: any = [];
 
-  const isLastLeg = index === array.length - 1;
+  const isLastLeg = index === allLegs.length - 1;
   const isFirstLeg = index === 0;
 
   const { units = "imperial" } = config;
@@ -48,7 +45,7 @@ const convertLegToTextString = (
     );
   const vehicleName = isRental && leg.rentedCar && fromName ? fromName : "";
 
-  const interline = !isLastLeg && array[index + 1].interlineWithPreviousLeg;
+  const interline = !isLastLeg && allLegs[index + 1].interlineWithPreviousLeg;
 
   // Flex header
   if (isFlex(leg) && isReservationRequired(leg) && leg.pickupBookingInfo) {
@@ -76,10 +73,6 @@ const convertLegToTextString = (
           }
         )
       );
-    } else {
-      intl.formatMessage({
-        id: "otpUi.AccessLegBody.RentedVehicleSubheader.resumeRentalRide"
-      });
     }
   }
 
@@ -148,7 +141,8 @@ const convertLegToTextString = (
           }
         )
       );
-    } else if (!isLastLeg) {
+    }
+    if (!interline && !isLastLeg) {
       textStrings.push(
         intl.formatMessage(
           { id: "otpUi.TextOnlyItinerary.transitArriveAt" },
@@ -163,23 +157,8 @@ const convertLegToTextString = (
     }
   }
   if (!transitLeg) {
-    // Walk to next leg, unless stop Ids are the same...
-    if (to.stopId !== from.stopId) {
-      textStrings.push(
-        intl.formatMessage(
-          { id: "otpUi.AccessLegBody.summaryAndDistance" },
-          {
-            distance:
-              units === "metric"
-                ? humanizeDistanceStringMetric(leg.distance, intl)
-                : humanizeDistanceStringImperial(leg.distance, false, intl),
-            mode: getSummaryMode(leg, intl),
-            place: getPlaceName(leg.to, [], intl)
-          }
-        )
-      );
-      // ...In which case we transfer
-    } else if (!leg.rideHailingEstimate) {
+    // If the stops you're walking between are the same, it's a transfer
+    if (to.stopId && from.stopId && to.stopId === from.stopId) {
       textStrings.push(
         intl.formatMessage(
           { id: "otpUi.AccessLegBody.transfer" },
@@ -193,6 +172,21 @@ const convertLegToTextString = (
                 ...toHoursMinutesSeconds(durationSeconds)
               }
             )
+          }
+        )
+      );
+    } else {
+      textStrings.push(
+        intl.formatMessage(
+          { id: "otpUi.AccessLegBody.summaryAndDistance" },
+          {
+            distance: humanizeDistanceString(
+              leg.distance,
+              units === "metric",
+              intl
+            ),
+            mode: getSummaryMode(leg, intl),
+            place: getPlaceName(leg.to, [], intl)
           }
         )
       );
@@ -233,7 +227,7 @@ const convertLegToTextString = (
   );
 };
 
-function textOnlyItineraryString(itinerary: Itinerary, config?: any): string[] {
+function textOnlyItineraryString(itinerary: Itinerary, config: any): string[] {
   const { legs } = itinerary;
   return legs.map((l, i, a) => convertLegToTextString(l, i, a, config));
 }
