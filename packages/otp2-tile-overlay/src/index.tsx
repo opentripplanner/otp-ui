@@ -165,7 +165,7 @@ const OTP2TileLayerWithPopup = ({
       map?.off("mouseleave", `${id}-secondary`, onLayerLeave);
       map?.off("click", `${id}-secondary`, onMapClick || defaultClickHandler);
     };
-  }, [id, map]);
+  }, [closedStops, id, map]);
 
   let filter: FilterSpecification = ["all"];
   if (network) {

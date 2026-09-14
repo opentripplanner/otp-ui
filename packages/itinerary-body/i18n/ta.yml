@@ -18,8 +18,7 @@ otpUi:
       bookRide: புத்தக சவாரி
       bookRideLater: "{Timemillis, time, short} புத்தகத்திற்கு காத்திருங்கள்"
       estimatedCost: "மதிப்பிடப்பட்ட செலவு: {minFare} - {maxFare}"
-      estimatedTravelTime: "மதிப்பிடப்பட்ட பயண நேரம்: {duration} (போக்குவரத்துக்கு
-        கணக்கிடாது)"
+      estimatedTravelTime: "மதிப்பிடப்பட்ட பயண நேரம்: {duration} (போக்குவரத்துக்கு கணக்கிடாது)"
       waitForPickup: "{நிமிடங்கள், பன்மை, = 0 {} பிற { # நிமிடங்கள்}} {company} இடும்"
     mapillaryTooltip: இந்த இடத்தில் தெரு படங்களைக் காட்டு
     step:
@@ -72,16 +71,15 @@ otpUi:
       escooter: மின்-ச்கூட்டர்
       vehicle: வண்டி
   ItineraryBody:
+    bookRide: புத்தக சவாரி
     common:
       durationShort: >-
         {தோராயமான பிரீஃபிக்ச், தேர்ந்தெடு, உண்மை {About } பிற {}} {மணிநேரம்,
         பன்மை, = 0 {} பிற {# hr}} {minutes} min
-    flexAdvanceNotice: " குறைந்தது {லீட் டேச், பன்மை, ஒன்று {# நாள்} மற்ற {# நாட்கள்}}
-      முன்கூட்டியே"
-    flexCallAhead: முன்னால் அழைக்கவும்
-    flexCallNumber: "{phoneNumber} ஐ அழைக்கவும்"
-    flexPickupMessage: இந்த வழியை எடுக்க, நீங்கள் 
-      {action}{advanceNotice}வேண்டும்.
+    externalLink: (வெளிப்புற இணைப்பு)
+    flexAdvanceNotice: " குறைந்தது {லீட் டேச், பன்மை, ஒன்று {# நாள்} மற்ற {# நாட்கள்}} முன்கூட்டியே"
+    flexBookByPhone: "தொலைபேசி மூலம் முன்பதிவு செய்யுங்கள்: "
+    flexPickupMessage: இந்த வழியை எடுக்க, நீங்கள் முன்னால் அழைக்கவும்{advanceNotice}வேண்டும்
     stayOnBoard: "{place} இல் போர்டில் இருங்கள்"
     travelBy: பயணம் {mode}
     travelByMode:
@@ -106,7 +104,6 @@ otpUi:
       today: இன்று
       tomorrow: நாளை
       yesterday: நேற்று
-    agencyExternalLink: "{agencyName} (வெளிப்புற இணைப்பு)"
     alertsHeader: "{எச்சரிக்கை, பன்மை, = 1 {# எச்சரிக்கை} பிற {# எச்சரிக்கைகள்}}"
     arriveAt: "{place} க்கு வந்து சேருங்கள்"
     disembarkAt: "{legDestination}இல் இறங்குங்கள்"

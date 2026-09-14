@@ -94,6 +94,16 @@ export const LinkButton = styled(TransparentButton)`
   }
 `;
 
+const LinkContainer = styled.div`
+  a {
+    color: ${blue[700]};
+    text-decoration: none;
+  }
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 interface ViewerButtonProps {
   showBeforeContent?: boolean;
 }
@@ -161,10 +171,7 @@ export const ArrivalTimeContainer = styled.button`
   text-align: inherit;
 `;
 
-export const CallAheadWarning = styled.div`
-  color: ${red[800]};
-  margin-top: 5px;
-`;
+export const CallAheadWarning = styled.div``;
 
 export const BookLaterContainer = styled.div`
   bottom: 0;
@@ -201,14 +208,24 @@ export const BookLaterText = styled.div`
   vertical-align: middle;
 `;
 
-export const BookTNCRideButton = styled(AnchorButton)``;
+export const BookRideButton = styled(AnchorButton)``;
 
-export const BookTNCRideButtonContainer = styled.div`
+export const BookFlexRideButton = styled(BookRideButton)``;
+
+export const BookTNCRideButton = styled(BookRideButton)``;
+
+export const BookRideButtonContainer = styled.div`
   height: 32px;
   margin-bottom: 10px;
   margin-top: 10px;
   position: relative;
 `;
+
+export const BookFlexRideButtonContainer = styled(BookRideButtonContainer)``;
+
+export const BookTNCRideButtonContainer = styled(BookRideButtonContainer)``;
+
+export const FlexAltBooking = styled(LinkContainer)``;
 
 export const TNCTravelTime = styled.div`
   /* no styling */
@@ -660,6 +677,11 @@ export const StepLength = styled.span`
   padding-left: 1ch;
 `;
 
+export const StopClosed = styled.span`
+  color: ${red[700]};
+  margin-left: 3px;
+`;
+
 export const StopIdSpan = styled.span`
   font-weight: 200;
   font-size: 0.9em;
@@ -668,13 +690,18 @@ export const StopIdSpan = styled.span`
 
 export const StopMarker = styled.div`
   float: left;
-  margin-left: -36px;
+  margin-left: -22.45px;
   color: #fff;
 `;
 
-export const StopName = styled.div`
-  color: ${grey[700]};
-  margin-top: 3px;
+export const StopName = styled.div<{ closed?: boolean }>`
+  color: ${props => (props.closed ? red[700] : grey[700])};
+  text-decoration: ${props => (props.closed ? "line-through" : "")};
+`;
+
+export const StopNameContainer = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 export const StopRow = styled.li`
@@ -783,17 +810,8 @@ export const DefaultAlertBodyIcon = styled(ExclamationTriangle).attrs({
   size: 18
 })``;
 
-export const AgencyInfo = styled.div`
+export const AgencyInfo = styled(LinkContainer)`
   margin-top: 5px;
-
-  a {
-    color: ${blue[700]};
-    text-decoration: none;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
 
   img {
     margin-left: 5px;

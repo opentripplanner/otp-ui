@@ -1021,16 +1021,19 @@ importers:
       react:
         specifier: 'catalog:'
         version: 18.3.1
-      react-map-gl:
-        specifier: 'catalog:'
-        version: 8.1.1(maplibre-gl@5.6.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
     devDependencies:
       '@opentripplanner/types':
         specifier: workspace:^
         version: link:../types
-      '@types/node':
-        specifier: ^25.6.0
-        version: 25.9.5
+      '@types/mapbox__polyline':
+        specifier: ^1.0.5
+        version: 1.0.5
+      '@types/point-in-polygon':
+        specifier: ^1.1.5
+        version: 1.1.5
+      react-map-gl:
+        specifier: 'catalog:'
+        version: 8.1.1(maplibre-gl@5.6.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
 
   packages/scripts:
     dependencies:
@@ -1112,9 +1115,6 @@ importers:
       '@opentripplanner/types':
         specifier: workspace:^
         version: link:../types
-      maplibre-gl:
-        specifier: 'catalog:'
-        version: 5.6.1
       styled-icons:
         specifier: 'catalog:'
         version: 10.47.1(react@18.3.1)(styled-components@5.3.11(react-dom@18.3.1(react@18.3.1))(react-is@19.2.7)(react@18.3.1))
@@ -4561,6 +4561,9 @@ packages:
 
   '@types/pbf@3.0.5':
     resolution: {integrity: sha512-j3pOPiEcWZ34R6a6mN07mUkM4o4Lwf6hPNt8eilOeZhTFbxFXmKhvXl9Y28jotFPaI1bpPDJsbCprUoNke6OrA==}
+
+  '@types/point-in-polygon@1.1.5':
+    resolution: {integrity: sha512-VYZQKsxOQCzemTWCvsdXbu6T+zbYHY5d/B34FFfcgGC3O8zDeTUcrhZOiW3+RIFVayUdewcSKF3trbvNCs3w0w==}
 
   '@types/prop-types@15.7.15':
     resolution: {integrity: sha512-F6bEyamV9jKGAFBEmlQnesRPGOQqS2+Uwi0Em15xenOxHaf2hv6L8YCVn3rPdPJOiJfPiCnLIRyvwVaqMY3MIw==}
@@ -15355,6 +15358,8 @@ snapshots:
   '@types/normalize-package-data@2.4.4': {}
 
   '@types/pbf@3.0.5': {}
+
+  '@types/point-in-polygon@1.1.5': {}
 
   '@types/prop-types@15.7.15': {}
 

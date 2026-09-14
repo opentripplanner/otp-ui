@@ -6,7 +6,12 @@ import {
   LegIconComponent,
   TransitOperator
 } from "@opentripplanner/types";
-import React, { Component, FunctionComponent, ReactElement } from "react";
+import React, {
+  Component,
+  FunctionComponent,
+  ReactElement,
+  ReactNode
+} from "react";
 import AnimateHeight from "react-animate-height";
 import {
   FormattedMessage,
@@ -32,15 +37,18 @@ import { defaultMessages } from "../util";
 import AlertsBody from "./alerts-body";
 import IntermediateStops from "./intermediate-stops";
 import ViewTripButton from "./view-trip-button";
+import ExternalLinkHidden from "../defaults/external-link-hidden";
+import BookRide from "../defaults/book-ride";
 
 interface Props {
   AlertBodyIcon?: FunctionComponent;
   AlertToggleIcon?: FunctionComponent;
   alwaysCollapseAlerts: boolean;
+  closedStopIds?: Set<string>;
   defaultFareSelector?: FareProductSelector;
   intl: IntlShape;
   leg: Leg;
-  legDestination: string;
+  legDestination: ReactNode;
   LegIcon: LegIconComponent;
   legIndex: number;
   nextLegInterlines?: boolean;
@@ -82,7 +90,6 @@ export function getFlexMessageValues(
   // daysPrior (which can be done within react-intl)
   // This will allow for displaying how many _hours_ before a trip it must be booked
 
-  const leadDays = info?.latestBookingTime?.daysPrior;
   const phoneNumber = info?.contactInfo?.phoneNumber;
   const bookingUrl = info?.contactInfo?.bookingUrl;
 
@@ -133,8 +140,9 @@ export function getFlexMessageValues(
     );
   }
 
+  const leadDays = info?.latestBookingTime?.daysPrior || 0;
+
   return {
-    action,
     advanceNotice:
       leadDays && leadDays > 0 ? (
         string ? (
@@ -159,7 +167,7 @@ export function getFlexMessageValues(
 }
 
 class TransitLegBody extends Component<Props, State> {
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
     this.state = {
       alertsExpanded: false,
@@ -182,11 +190,55 @@ class TransitLegBody extends Component<Props, State> {
     setActiveLeg(legIndex, leg);
   };
 
+  renderBookRide = (): ReactNode => {
+    const { leg } = this.props;
+    const { pickupBookingInfo } = leg;
+    if (!pickupBookingInfo) return null;
+
+    const { bookingUrl, phoneNumber } = pickupBookingInfo.contactInfo || {};
+    if (!bookingUrl && !phoneNumber) return null;
+
+    return (
+      <>
+        <BookRide
+          href={bookingUrl || `tel:${phoneNumber}`}
+          instructions={
+            <S.CallAheadWarning>
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages["otpUi.ItineraryBody.flexPickupMessage"]
+                }
+                description="Instructions for booking and boarding the flex (on-demand) transit service."
+                id="otpUi.ItineraryBody.flexPickupMessage"
+                values={getFlexMessageValues(pickupBookingInfo)}
+              />
+            </S.CallAheadWarning>
+          }
+        />
+        {phoneNumber && bookingUrl && (
+          <S.FlexAltBooking>
+            <a href={`tel:${phoneNumber}`}>
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages["otpUi.ItineraryBody.flexBookByPhone"]
+                }
+                description="Instructions for booking transit service by phone."
+                id="otpUi.ItineraryBody.flexBookByPhone"
+              />
+              {phoneNumber}
+            </a>
+          </S.FlexAltBooking>
+        )}
+      </>
+    );
+  };
+
   render(): ReactElement {
     const {
       AlertBodyIcon,
       AlertToggleIcon = S.DefaultAlertToggleIcon,
       alwaysCollapseAlerts,
+      closedStopIds,
       defaultFareSelector,
       intl,
       leg,
@@ -224,11 +276,11 @@ class TransitLegBody extends Component<Props, State> {
         : agencyBrandingUrl;
 
     const shouldCollapseDueToAlertCount =
-      leg.alerts?.length > maximumAlertCountToShowUncollapsed;
+      alerts && alerts.length > maximumAlertCountToShowUncollapsed;
     // The alerts expansion triangle is shown when `!shouldOnlyShowAlertsExpanded`.
-    // `!leg.alerts` is needed here so the triangle isn't shown when there are 0 alerts.
+    // `!alerts` is needed here so the triangle isn't shown when there are 0 alerts.
     const shouldOnlyShowAlertsExpanded =
-      !(shouldCollapseDueToAlertCount || alwaysCollapseAlerts) || !leg.alerts;
+      !(shouldCollapseDueToAlertCount || alwaysCollapseAlerts) || !alerts;
     const expandAlerts = alertsExpanded || shouldOnlyShowAlertsExpanded;
 
     const legCost =
@@ -335,40 +387,23 @@ class TransitLegBody extends Component<Props, State> {
                   values={{
                     agencyLink: (
                       <a
-                        aria-label={intl.formatMessage(
-                          {
-                            id: "otpUi.TransitLegBody.agencyExternalLink"
-                          },
-                          {
-                            agencyName
-                          }
-                        )}
                         href={agencyUrl || "#"}
                         rel="noopener noreferrer"
                         target="_blank"
                       >
                         {transitOperatorName}
                         {logoUrl && <img alt="" src={logoUrl} height={25} />}
+                        <ExternalLinkHidden />
                       </a>
                     )
                   }}
                 />
               </S.AgencyInfo>
             )}
-            {isReservationRequired && leg.pickupBookingInfo && (
-              <S.CallAheadWarning>
-                <FormattedMessage
-                  defaultMessage={
-                    defaultMessages["otpUi.ItineraryBody.flexPickupMessage"]
-                  }
-                  description="Instructions for booking and boarding the flex (on-demand) transit service."
-                  id="otpUi.ItineraryBody.flexPickupMessage"
-                  values={getFlexMessageValues(leg.pickupBookingInfo)}
-                />
-              </S.CallAheadWarning>
-            )}
+            {isReservationRequired && this.renderBookRide()}
             {/* Alerts toggle */}
-            {alerts?.length > 0 &&
+            {alerts &&
+              alerts.length > 0 &&
               (shouldOnlyShowAlertsExpanded ? (
                 <S.TransitAlertDiv className="alert-toggle">
                   {alertLabelContents}
@@ -392,12 +427,11 @@ class TransitLegBody extends Component<Props, State> {
                   </S.InvisibleAdditionalDetails>
                 </S.TransitAlertToggle>
               ))}
-
             {/* The Alerts body, if visible */}
             <AnimateHeight duration={500} height={expandAlerts ? "auto" : 0}>
               <AlertsBody
                 agencyName={agencyName}
-                alerts={leg.alerts}
+                alerts={alerts}
                 AlertIcon={AlertBodyIcon}
                 showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
                 timeZone={timeZone}
@@ -431,7 +465,10 @@ class TransitLegBody extends Component<Props, State> {
                   height={stopsExpanded ? "auto" : 0}
                 >
                   <S.TransitLegExpandedBody>
-                    <IntermediateStops stops={leg.intermediateStops} />
+                    <IntermediateStops
+                      closedStopIds={closedStopIds}
+                      stops={leg.intermediateStops}
+                    />
                     {legCost?.price && (
                       <S.TransitLegFare>
                         <FormattedMessage

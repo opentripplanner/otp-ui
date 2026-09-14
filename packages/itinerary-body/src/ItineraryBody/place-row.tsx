@@ -54,6 +54,7 @@ export default function PlaceRow({
   AlertToggleIcon,
   alwaysCollapseAlerts,
   canceled,
+  closedStopIds,
   config,
   defaultFareSelector,
   diagramVisible,
@@ -209,6 +210,7 @@ export default function PlaceRow({
               AlertBodyIcon={AlertBodyIcon}
               AlertToggleIcon={AlertToggleIcon}
               alwaysCollapseAlerts={alwaysCollapseAlerts}
+              closedStopIds={closedStopIds}
               defaultFareSelector={defaultFareSelector}
               leg={leg}
               legDestination={legDestination}

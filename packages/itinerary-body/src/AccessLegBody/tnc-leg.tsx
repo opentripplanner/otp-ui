@@ -1,6 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { Config, Leg, LegIconComponent } from "@opentripplanner/types";
-import React, { ReactElement } from "react";
+import React, { ReactNode } from "react";
 import { FormattedMessage, FormattedNumber } from "react-intl";
 
 import { Duration } from "../defaults";
@@ -9,6 +9,7 @@ import * as S from "../styled";
 import { defaultMessages, parseOTP2Minute } from "../util";
 
 import AccessLegSummary from "./access-leg-summary";
+import BookRide from "../defaults/book-ride";
 
 const { ensureAtLeastOneMinute } = coreUtils.time;
 const { getCompanyForNetwork } = coreUtils.itinerary;
@@ -33,8 +34,8 @@ export default function TNCLeg({
   onSummaryClick,
   showLegIcon,
   UBER_CLIENT_ID = ""
-}: Props): ReactElement {
-  const universalLinks = {
+}: Props): ReactNode {
+  const universalLinks: Record<string, string> = {
     uber: `https://m.uber.com/${
       coreUtils.ui.isMobile() ? "ul/" : ""
     }?client_id=${UBER_CLIENT_ID}&action=setPickup&pickup[latitude]=${
@@ -65,7 +66,7 @@ export default function TNCLeg({
             )?.label,
             minutes: followsTransit
               ? 0
-              : parseInt(parseOTP2Minute(leg.rideHailingEstimate.arrival), 10)
+              : parseInt(parseOTP2Minute(rideHailingEstimate.arrival), 10)
           }}
         />
       </S.PlaceSubheader>
@@ -81,46 +82,35 @@ export default function TNCLeg({
         />
 
         {/* The "Book Ride" button */}
-        <S.BookTNCRideButtonContainer>
-          <S.BookTNCRideButton
-            href={universalLinks[rideHailingEstimate.provider.id]}
-            target={coreUtils.ui.isMobile() ? "_self" : "_blank"}
-          >
+        <BookRide
+          href={universalLinks[rideHailingEstimate.provider.id]}
+          instructions={
+            followsTransit &&
+            typeof leg.startTime === "number" && (
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages["otpUi.AccessLegBody.TncLeg.bookRideLater"]
+                }
+                description="Hint text to book a ride at a later time."
+                id="otpUi.AccessLegBody.TncLeg.bookRideLater"
+                values={{
+                  timeMillis:
+                    leg.startTime -
+                    parseInt(parseOTP2Minute(rideHailingEstimate.arrival), 10)
+                }}
+              />
+            )
+          }
+          text={
             <FormattedMessage
               defaultMessage={
                 defaultMessages["otpUi.AccessLegBody.TncLeg.bookRide"]
               }
-              description="Action text to book a ride with a ride-hail company."
+              description="Action text to book a ride."
               id="otpUi.AccessLegBody.TncLeg.bookRide"
             />
-          </S.BookTNCRideButton>
-          {followsTransit && <S.BookLaterPointer />}
-          {followsTransit && typeof leg.startTime === "number" && (
-            <S.BookLaterContainer>
-              <S.BookLaterInnerContainer>
-                <S.BookLaterText>
-                  <FormattedMessage
-                    defaultMessage={
-                      defaultMessages[
-                        "otpUi.AccessLegBody.TncLeg.bookRideLater"
-                      ]
-                    }
-                    description="Hint text to book a ride at a later time."
-                    id="otpUi.AccessLegBody.TncLeg.bookRideLater"
-                    values={{
-                      timeMillis:
-                        leg.startTime -
-                        parseInt(
-                          parseOTP2Minute(rideHailingEstimate.arrival),
-                          10
-                        )
-                    }}
-                  />
-                </S.BookLaterText>
-              </S.BookLaterInnerContainer>
-            </S.BookLaterContainer>
-          )}
-        </S.BookTNCRideButtonContainer>
+          }
+        />
 
         {/* The estimated travel time */}
         <S.TNCTravelTime>

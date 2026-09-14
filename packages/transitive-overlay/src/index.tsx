@@ -1,6 +1,6 @@
 import { FilterSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
-import React, { useEffect } from "react";
+import React, { RefObject, useEffect, useState } from "react";
 import { Layer, MapRef, Source, useMap } from "react-map-gl/maplibre";
 import polyline from "@mapbox/polyline";
 import {
@@ -21,7 +21,13 @@ import {
   LineString
 } from "geojson";
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
-import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
+import {
+  drawArc,
+  getFromToAnchors,
+  itineraryToTransitive,
+  getFontsFromVectorTiles,
+  SortedFonts
+} from "./util";
 import routeArrow from "./images/route_arrow.png";
 import capsule1 from "./images/01.png";
 import capsule3 from "./images/03.png";
@@ -103,16 +109,24 @@ const defaultTextPaintParams = {
   "text-halo-width": 2
 };
 
+const DEFAULT_REGULAR_FONTS = ["Open Sans Regular", "Arial Unicode MS Regular"];
+const DEFAULT_BOLD_FONTS = ["Open Sans Bold", "Arial Unicode MS Bold"];
+
 /**
  * Common text settings.
  */
-const commonTextLayoutParams: SymbolLayerSpecification["layout"] = {
-  "symbol-placement": "point",
-  "text-allow-overlap": false,
-  "text-field": ["get", "name"],
-  "text-justify": "auto",
-  "text-radial-offset": 1,
-  "text-size": 15
+const commonTextLayoutParams = (
+  vectorTileFonts?: SortedFonts
+): SymbolLayerSpecification["layout"] => {
+  return {
+    "symbol-placement": "point",
+    "text-allow-overlap": false,
+    "text-field": ["get", "name"],
+    "text-justify": "auto",
+    "text-radial-offset": 1,
+    "text-size": 15,
+    "text-font": vectorTileFonts?.regular || DEFAULT_REGULAR_FONTS
+  };
 };
 
 /**
@@ -135,11 +149,15 @@ const defaultTextLayoutParams: SymbolLayerSpecification["layout"] = {
 /**
  * Default text + bold default fonts
  */
-const defaultBoldTextLayoutParams: SymbolLayerSpecification["layout"] = {
-  ...commonTextLayoutParams,
-  // FIXME: find a better way to set a bold font
-  "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
-  "text-overlap": "never"
+const defaultBoldTextLayoutParams = (
+  boldFonts?: string[]
+): SymbolLayerSpecification["layout"] => {
+  return {
+    ...commonTextLayoutParams,
+    // FIXME: find a better way to set a bold font
+    "text-font": boldFonts,
+    "text-overlap": "never"
+  };
 };
 
 const routeFilter: FilterSpecification = ["==", "type", "route"];
@@ -156,6 +174,8 @@ type Props = {
   activeLeg?: Leg;
   accessLegColorOverride?: string;
   boundsFitting?: boolean;
+  /* Reference to the map you're rendering the transitive layer onto */
+  mapRef?: RefObject<MapRef>;
   showRouteArrows?: boolean;
   transitiveData?: TransitiveData;
 };
@@ -187,10 +207,23 @@ const TransitiveCanvasOverlay = ({
   activeLeg,
   accessLegColorOverride,
   boundsFitting = true,
+  mapRef,
   showRouteArrows,
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
+  const [mapLoaded, setMapLoaded] = useState(false);
+  const [vectorTileFonts, setVectorTileFonts] = useState<
+    SortedFonts | undefined
+  >(undefined);
+
+  mapRef?.current?.on("load", () => setMapLoaded(true));
+
+  useEffect(() => {
+    const fonts =
+      mapRef?.current && mapLoaded && getFontsFromVectorTiles(mapRef?.current);
+    setVectorTileFonts(fonts || undefined);
+  }, [map, mapLoaded]);
 
   const mapImages: MapImage[] = [];
   // This is used to render arrows along the route
@@ -401,6 +434,11 @@ const TransitiveCanvasOverlay = ({
 
   const { fromAnchor, toAnchor } = getFromToAnchors(transitiveData);
 
+  const boldFonts =
+    vectorTileFonts?.bold.length && vectorTileFonts?.bold.length > 0
+      ? vectorTileFonts.bold
+      : DEFAULT_BOLD_FONTS;
+
   // Generally speaking, text/symbol layers placed first will be rendered in a lower layer
   // (or, if it is text, rendered with a lower priority or not at all if higher-priority text overlaps).
   return (
@@ -524,7 +562,7 @@ const TransitiveCanvasOverlay = ({
         // This layer renders transit route names (foreground).
         filter={routeFilter}
         id="routes-labels"
-        layout={getRouteLayerLayout("name")}
+        layout={getRouteLayerLayout("name", boldFonts)}
         paint={{
           "icon-color": ["get", "color"],
           "text-color": ["get", "textColor"]
@@ -535,7 +573,7 @@ const TransitiveCanvasOverlay = ({
         filter={["==", "type", "from"]}
         id="from-label"
         layout={{
-          ...defaultBoldTextLayoutParams,
+          ...defaultBoldTextLayoutParams(boldFonts),
           "text-anchor": fromAnchor
         }}
         paint={defaultTextPaintParams}

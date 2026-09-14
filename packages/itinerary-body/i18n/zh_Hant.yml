@@ -58,6 +58,7 @@ otpUi:
       carHail: 乘車
       escooter: 騎車
       walk: 步行
+    transfer: 轉乘{duration, select, undefined {} other {, 等候 {duration}}}
     unnamedPath: 未命名路線
     unnamedRoad: 未命名道路
     vehicleTitle: "{company} {vehicleType}"
@@ -67,14 +68,14 @@ otpUi:
       car: 汽車
       escooter: 騎電動滑板車
       vehicle: 車輛
-    transfer: 轉乘{duration, select, undefined {} other {, 等候 {duration}}}
   ItineraryBody:
+    bookRide: 預約乘車
     common:
       durationShort: "{hours, plural, =0 {} other {#小時}}{minutes}分鐘"
+    externalLink: (外部連結)
     flexAdvanceNotice: " 至少提前{leadDays}天"
-    flexCallAhead: 撥打事先
-    flexCallNumber: 撥打{phoneNumber}
-    flexPickupMessage: 若要使用此路線，您必須{action}{advanceNotice}.
+    flexBookByPhone: 電話預訂：
+    flexPickupMessage: 您必須撥打事先{advanceNotice}
     stayOnBoard: 留在{place}車上
     travelBy: 透過{mode}旅行
     travelByMode:
@@ -91,16 +92,17 @@ otpUi:
     viewOnMap: 在地圖上檢視
   TransitLegBody:
     AlertsBody:
+      alertLinkText: 請參閱 {agency} 網站上的警示
       effectiveDate: 自{dateTime, date, long}起生效
       effectiveTimeAndDate: 自{dateTime, time, short}, {day}起生效
       linkOpensNewWindow: (開啟新視窗)
+      noAgencyAlertLinkText: 請參閱機構網站上的警示
       today: 今天
       tomorrow: 明天
       yesterday: 昨天
-      noAgencyAlertLinkText: 請參閱機構網站上的警示
-      alertLinkText: 請參閱 {agency} 網站上的警示
-    agencyExternalLink: "{agencyName} (外部連結)"
     alertsHeader: "{alertCount}則警示"
+    arriveAt: 抵達 {place}
+    disembarkAt: 在 {legDestination} 下車
     expandDetails: (展開詳細資訊)
     fare: 票價：{fare}
     fromLocation: 從{location}
@@ -115,5 +117,3 @@ otpUi:
     tripViewer: 行程檢視器
     typicalWait: 一般等待時間：{waitTime}
     zoomToLeg: 縮放至地圖上的路段
-    arriveAt: 抵達 {place}
-    disembarkAt: 在 {legDestination} 下車

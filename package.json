@@ -134,7 +134,7 @@
     "typescript": "lerna run tsc",
     "unit": "jest",
     "test-storybook": "test-storybook --url http://localhost:5555",
-    "update-snapshots": "pnpm build-storybook; pnpx concurrently -k -s first -n \"SB,TEST\" \"pnpx http-server storybook-static --port 5555 --silent\" \"pnpx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555 -u\"",
+    "update-snapshots": "pnpm build-all && pnpm install && pnpm build-storybook; pnpx concurrently -k -s first -n \"SB,TEST\" \"pnpx http-server storybook-static --port 5555 --silent\" \"pnpx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555 -u\"",
     "test-snapshots": "pnpx concurrently -k -s first -n \"SB,TEST\" \"pnpx http-server storybook-static --port 5555 --silent\" \"pnpx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555\"",
     "changeset": "changeset",
     "changeset:status": "changeset status",
