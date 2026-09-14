@@ -82,7 +82,6 @@ export function getFlexMessageValues(
   outputString?: boolean,
   intl?: IntlShape
 ): {
-  action: string | React.JSX.Element;
   advanceNotice: string | React.JSX.Element;
 } {
   // There used to be a variable `hasLeadTime` here. This should be brought back
@@ -90,55 +89,7 @@ export function getFlexMessageValues(
   // daysPrior (which can be done within react-intl)
   // This will allow for displaying how many _hours_ before a trip it must be booked
 
-  const phoneNumber = info?.contactInfo?.phoneNumber;
-  const bookingUrl = info?.contactInfo?.bookingUrl;
-
   const string = outputString && intl;
-
-  let action = string ? (
-    intl.formatMessage({ id: "otpUi.ItineraryBody.flexCallAhead" })
-  ) : (
-    <FormattedMessage
-      defaultMessage={defaultMessages["otpUi.ItineraryBody.flexCallAhead"]}
-      description="For calling ahead."
-      id="otpUi.ItineraryBody.flexCallAhead"
-    />
-  );
-
-  if (phoneNumber) {
-    action = string ? (
-      intl.formatMessage(
-        { id: "otpUi.ItineraryBody.flexCallNumber" },
-        { phoneNumber }
-      )
-    ) : (
-      <FormattedMessage
-        defaultMessage={defaultMessages["otpUi.ItineraryBody.flexCallNumber"]}
-        description="For calling a phone number."
-        id="otpUi.ItineraryBody.flexCallNumber"
-        values={{ phoneNumber }}
-      />
-    );
-  }
-  if (bookingUrl) {
-    action = string ? (
-      intl.formatMessage(
-        { id: "otpUi.ItineraryBody.flexBookingUrl" },
-        { bookingUrl, link: bookingUrl }
-      )
-    ) : (
-      <FormattedMessage
-        defaultMessage={defaultMessages["otpUi.ItineraryBody.flexBookingUrl"]}
-        description="For booking via phone number."
-        id="otpUi.ItineraryBody.flexBookingUrl"
-        values={{
-          bookingUrl,
-          // eslint-disable-next-line react/display-name
-          link: contents => <a href={bookingUrl}>{contents}</a>
-        }}
-      />
-    );
-  }
 
   const leadDays = info?.latestBookingTime?.daysPrior || 0;
 
