@@ -1,6 +1,6 @@
 import { Meta } from "@storybook/react-vite";
+import coreUtils from "@opentripplanner/core-utils";
 import React, { ReactElement } from "react";
-import { useIntl } from "react-intl";
 import textOnlyItineraryString from "../textOnlyItinerary/index";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
@@ -18,14 +18,31 @@ import walkOnlyItinerary from "../__mocks__/itineraries/walk-only.json";
 import walkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk.json";
 import walkTransitWalkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk-transit-walk.json";
 import walkTransitWalkTransitWalkA11yItinerary from "../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json";
+import stayOnBoardItinerary from "../__mocks__/itineraries/stay-on-board.json";
 import otp2ScooterItinerary from "../__mocks__/itineraries/otp2-scooter.json";
 import flexItinerary from "../__mocks__/itineraries/flex-itinerary.json";
 import otp24Itinerary from "../__mocks__/itineraries/otp2.4-transit-itinerary.json";
 import transferLegItinerary from "../__mocks__/itineraries/otp2-transfer-leg.json";
 
-const TextItineraryStoryWrapper = ({ itinerary }: { itinerary: any }) => {
-  const intl = useIntl();
-  const itineraryString = textOnlyItineraryString(intl, itinerary);
+import config from "../__mocks__/config.json";
+
+const { convertGraphQLResponseToLegacy } = coreUtils.itinerary;
+
+function withLegacyLegs(itinerary: any) {
+  return {
+    ...itinerary,
+    legs: itinerary.legs.map(convertGraphQLResponseToLegacy)
+  };
+}
+
+const TextItineraryStoryWrapper = ({
+  itinerary,
+  metric
+}: {
+  itinerary: any;
+  metric?: boolean;
+}) => {
+  const itineraryString = textOnlyItineraryString(itinerary, config, metric);
 
   return <div style={{ whiteSpace: "pre-line" }}>{itineraryString}</div>;
 };
@@ -57,7 +74,7 @@ export const WalkTransitWalkItinerary = (): ReactElement => (
 );
 
 export const WalkTransitWalkItineraryMetric = (): ReactElement => (
-  <TextItineraryStoryWrapper itinerary={walkTransitWalkItinerary} />
+  <TextItineraryStoryWrapper itinerary={walkTransitWalkItinerary} metric />
 );
 
 export const BikeTransitBikeItinerary = (): ReactElement => (
@@ -78,12 +95,20 @@ export const WalkTransitTransferWithA11yItinerary = (): ReactElement => (
   />
 );
 
+export const StayOnBoardItinerary = (): ReactElement => (
+  <TextItineraryStoryWrapper itinerary={withLegacyLegs(stayOnBoardItinerary)} />
+);
+
 export const BikeRentalItinerary = (): ReactElement => (
   <TextItineraryStoryWrapper itinerary={bikeRentalItinerary} />
 );
 
 export const EScooterRentalItinerary = (): ReactElement => (
   <TextItineraryStoryWrapper itinerary={eScooterRentalItinerary} />
+);
+
+export const TncTransitItinerary = (): ReactElement => (
+  <TextItineraryStoryWrapper itinerary={tncTransitTncItinerary} />
 );
 
 export const ParkAndRideItinerary = (): ReactElement => (

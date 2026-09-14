@@ -1,21 +1,94 @@
 import coreUtils from "@opentripplanner/core-utils";
-import { Itinerary } from "@opentripplanner/types";
-import { IntlShape } from "react-intl";
-import { humanizeDistanceStringImperial } from "@opentripplanner/humanize-distance";
+import { Config, Itinerary, Leg } from "@opentripplanner/types";
+import { useIntl } from "react-intl";
+import {
+  humanizeDistanceStringImperial,
+  humanizeDistanceStringMetric
+} from "@opentripplanner/humanize-distance";
 import { getSummaryMode } from "../defaults/access-leg-description";
+import { vehicleTypeString } from "../AccessLegBody/rented-vehicle-subheader";
+import { getPlaceName } from "../util";
+import { getFlexMessageValues } from "../TransitLegBody";
 
-const { isTransitLeg, getLegRouteName } = coreUtils.itinerary;
-const { toHoursMinutesSeconds } = coreUtils.time;
+const {
+  isTransitLeg,
+  getLegRouteName,
+  isFlex,
+  isReservationRequired
+} = coreUtils.itinerary;
+const { toHoursMinutesSeconds, ensureAtLeastOneMinute } = coreUtils.time;
 
 const convertLegToTextString = (
-  leg: any,
-  intl: IntlShape,
-  isFirstLeg: boolean,
-  isLastLeg: boolean
-): any => {
+  leg: Leg,
+  index: number,
+  array: Leg[],
+  config?: Config,
+  metric?: boolean
+): string => {
+  const intl = useIntl();
   const transitLeg = isTransitLeg(leg);
   const textStrings: any = [];
 
+  const isLastLeg = index === array.length - 1;
+  const isFirstLeg = index === 0;
+
+  const { from, mode, rentedBike, to, duration } = leg;
+  const { name: fromName, networks, vertexType } = from;
+  const modeType = mode === "SCOOTER" ? "VEHICLERENTAL" : vertexType;
+
+  const durationSeconds = ensureAtLeastOneMinute(duration);
+
+  const isRental = leg.rentedVehicle || leg.rentedBike || leg.rentedCar;
+  const company =
+    isRental &&
+    coreUtils.itinerary.getCompaniesLabelFromNetworks(
+      networks || [],
+      config?.companies
+    );
+  const vehicleName = isRental && leg.rentedCar && fromName ? fromName : "";
+
+  const interline = !isLastLeg && array[index + 1].interlineWithPreviousLeg;
+
+  // Flex header
+  if (isFlex(leg) && isReservationRequired(leg) && leg.pickupBookingInfo) {
+    textStrings.push(
+      intl.formatMessage(
+        { id: "otpUi.ItineraryBody.flexPickupMessage" },
+        getFlexMessageValues(leg.pickupBookingInfo, true, intl)
+      )
+    );
+  }
+
+  // Rental Micromobility Header
+  if (isRental) {
+    if (networks || rentedBike) {
+      // Add company and vehicle labels.
+      // Only show vehicle name for car rentals. For bikes and E-scooters, these
+      // IDs/names tend to be less relevant (or entirely useless) in this context.
+      textStrings.push(
+        intl.formatMessage(
+          { id: "otpUi.AccessLegBody.RentedVehicleSubheader.pickupRental" },
+          {
+            company,
+            vehicleName,
+            vehicleType: vehicleTypeString(modeType, intl)
+          }
+        )
+      );
+    } else {
+      intl.formatMessage({
+        id: "otpUi.AccessLegBody.RentedVehicleSubheader.resumeRentalRide"
+      });
+    }
+  }
+
+  // TNC Header
+  if (leg.rideHailingEstimate) {
+    // TODO: Currently we don't have any APIs from Uber, so when we get access to that this will have to be rewritten
+    textStrings.push("TNC leg");
+  }
+
+  // Access leg description
   if (isFirstLeg && !transitLeg) {
     textStrings.push(
       intl.formatMessage(
@@ -25,6 +98,7 @@ const convertLegToTextString = (
     );
   }
 
+  // Transit leg description
   if (transitLeg) {
     const routeName =
       getLegRouteName(leg) ||
@@ -34,14 +108,15 @@ const convertLegToTextString = (
       leg.route;
 
     textStrings.push(
-      // TODO: The stopCode needs to be conditional look at approxPrefix
       intl.formatMessage(
         { id: "otpUi.TextOnlyItinerary.transitDepartFrom" },
         {
-          place: leg.from.name,
-          stopId: leg.from.stop.code,
+          place: fromName,
+          stopId: from.stopCode,
+          hasStopId: !!from.stopCode,
           timeMillis: leg.startTime,
           routeName,
+          hasHeadsign: !!leg.headsign,
           headsign: leg.headsign
         }
       )
@@ -61,54 +136,109 @@ const convertLegToTextString = (
         }
       )
     );
-    // TODO: The stopCode needs to be conditional look at approxPrefix
-    textStrings.push(
-      intl.formatMessage(
-        { id: "otpUi.TextOnlyItinerary.transitArriveAt" },
-        {
-          timeMillis: leg.startTime,
-          place: leg.to.name,
-          stopId: leg.to.stop.code
-        }
-      )
-    );
+
+    // Stay on board instruction
+    if (interline) {
+      textStrings.push(
+        intl.formatMessage(
+          { id: "otpUi.ItineraryBody.stayOnBoard" },
+          {
+            place: leg.to.name
+          }
+        )
+      );
+    } else if (!isLastLeg) {
+      textStrings.push(
+        intl.formatMessage(
+          { id: "otpUi.TextOnlyItinerary.transitArriveAt" },
+          {
+            timeMillis: leg.endTime,
+            place: leg.to.name,
+            hasStopId: !!leg.to.stopCode,
+            stopId: leg.to.stopCode
+          }
+        )
+      );
+    }
   }
   if (!transitLeg) {
+    // Walk to next leg, unless stop Ids are the same...
+    if (to.stopId !== from.stopId) {
+      textStrings.push(
+        intl.formatMessage(
+          { id: "otpUi.AccessLegBody.summaryAndDistance" },
+          {
+            distance: metric
+              ? humanizeDistanceStringMetric(leg.distance, intl)
+              : humanizeDistanceStringImperial(leg.distance, false, intl),
+            mode: getSummaryMode(leg, intl),
+            place: getPlaceName(leg.to, [], intl)
+          }
+        )
+      );
+      // ...In which case we transfer
+    } else if (!leg.rideHailingEstimate) {
+      textStrings.push(
+        intl.formatMessage(
+          { id: "otpUi.AccessLegBody.transfer" },
+          {
+            duration: intl.formatMessage(
+              {
+                id: "otpUi.ItineraryBody.common.durationShort"
+              },
+              {
+                approximatePrefix: false,
+                ...toHoursMinutesSeconds(durationSeconds)
+              }
+            )
+          }
+        )
+      );
+    }
+  }
+  // End micromobility rental
+  if (isRental && !isLastLeg) {
     textStrings.push(
       intl.formatMessage(
-        { id: "otpUi.AccessLegBody.summaryAndDistance" },
+        { id: "otpUi.AccessLegBody.RentedVehicleSubheader.dropoffRental" },
         {
-          distance: humanizeDistanceStringImperial(leg.distance, false, intl),
-          mode: getSummaryMode(leg, intl),
-          place: leg.to.name
+          company,
+          vehicleName,
+          vehicleType: vehicleTypeString(modeType, intl),
+          dropoffLocation: leg.to.name
         }
       )
     );
   }
+  // Arrive at destination
   if (isLastLeg) {
     textStrings.push(
       intl.formatMessage(
         { id: "otpUi.TextOnlyItinerary.arriveAt" },
-        { timeMillis: leg.startTime, place: leg.to.name }
+        { timeMillis: leg.endTime, place: leg.to.name }
       )
     );
   }
 
-  return textStrings;
+  // DO NOT REFORMAT THIS, the template literals are adding line breaks between instructions and legs.
+  return textStrings.map((string: string, i: number) =>
+    i === 0 && !isFirstLeg
+      ? `
+  ${string}
+    `
+      : `${string}
+    `
+  );
 };
 
-function textOnlyItineraryString(intl: IntlShape, itinerary: Itinerary): any {
+function textOnlyItineraryString(
+  itinerary: Itinerary,
+  config?: Config,
+  metric?: boolean
+): string[] {
   const { legs } = itinerary;
 
-  return legs.map((leg, i, array) => {
-    const lastLeg = i === array.length - 1;
-    const firstLeg = i === 0;
-    return convertLegToTextString(leg, intl, firstLeg, lastLeg).map(
-      (string: string) => `
-            ${string}
-        `
-    );
-  });
+  return legs.map((l, i, a) => convertLegToTextString(l, i, a, config, metric));
 }
 
 export default textOnlyItineraryString;

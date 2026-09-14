@@ -67,8 +67,16 @@ const maximumAlertCountToShowUncollapsed = 2;
 
 /**
  * Helper function that assembles values for flex pickup/dropoff messages.
+ * To return text strings and not React fragments, pass outputString and intl
  */
-function getFlexMessageValues(info: FlexBookingInfo) {
+export function getFlexMessageValues(
+  info: FlexBookingInfo,
+  outputString?: boolean,
+  intl?: IntlShape
+): {
+  action: string | React.JSX.Element;
+  advanceNotice: string | React.JSX.Element;
+} {
   // There used to be a variable `hasLeadTime` here. This should be brought back
   // if the leadTime check is ever to be more than just checking the value of
   // daysPrior (which can be done within react-intl)
@@ -78,7 +86,11 @@ function getFlexMessageValues(info: FlexBookingInfo) {
   const phoneNumber = info?.contactInfo?.phoneNumber;
   const bookingUrl = info?.contactInfo?.bookingUrl;
 
-  let action = (
+  const string = outputString && intl;
+
+  let action = string ? (
+    intl.formatMessage({ id: "otpUi.ItineraryBody.flexCallAhead" })
+  ) : (
     <FormattedMessage
       defaultMessage={defaultMessages["otpUi.ItineraryBody.flexCallAhead"]}
       description="For calling ahead."
@@ -87,7 +99,12 @@ function getFlexMessageValues(info: FlexBookingInfo) {
   );
 
   if (phoneNumber) {
-    action = (
+    action = string ? (
+      intl.formatMessage(
+        { id: "otpUi.ItineraryBody.flexCallNumber" },
+        { phoneNumber }
+      )
+    ) : (
       <FormattedMessage
         defaultMessage={defaultMessages["otpUi.ItineraryBody.flexCallNumber"]}
         description="For calling a phone number."
@@ -97,7 +114,12 @@ function getFlexMessageValues(info: FlexBookingInfo) {
     );
   }
   if (bookingUrl) {
-    action = (
+    action = string ? (
+      intl.formatMessage(
+        { id: "otpUi.ItineraryBody.flexBookingUrl" },
+        { bookingUrl, link: bookingUrl }
+      )
+    ) : (
       <FormattedMessage
         defaultMessage={defaultMessages["otpUi.ItineraryBody.flexBookingUrl"]}
         description="For booking via phone number."
@@ -114,15 +136,22 @@ function getFlexMessageValues(info: FlexBookingInfo) {
   return {
     action,
     advanceNotice:
-      leadDays > 0 ? (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.ItineraryBody.flexAdvanceNotice"]
-          }
-          description="Advance notice for flex service."
-          id="otpUi.ItineraryBody.flexAdvanceNotice"
-          values={{ leadDays }}
-        />
+      leadDays && leadDays > 0 ? (
+        string ? (
+          intl.formatMessage(
+            { id: "otpUi.ItineraryBody.flexAdvanceNotice" },
+            { leadDays }
+          )
+        ) : (
+          <FormattedMessage
+            defaultMessage={
+              defaultMessages["otpUi.ItineraryBody.flexAdvanceNotice"]
+            }
+            description="Advance notice for flex service."
+            id="otpUi.ItineraryBody.flexAdvanceNotice"
+            values={{ leadDays }}
+          />
+        )
       ) : (
         ""
       )

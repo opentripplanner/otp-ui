@@ -1,7 +1,7 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { Config, Leg } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, IntlShape } from "react-intl";
 
 import * as S from "../styled";
 import { defaultMessages } from "../util";
@@ -77,6 +77,31 @@ function VehicleType({ type }: { type: string }) {
           id="otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.vehicle"
         />
       );
+  }
+}
+
+export function vehicleTypeString(type: string, intl: IntlShape): string {
+  switch (type) {
+    case "BIKEPARK":
+      return intl.formatMessage({
+        id: "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.bike"
+      });
+    case "BIKESHARE":
+      return intl.formatMessage({
+        id: "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.bikeshare"
+      });
+    case "CARSHARE":
+      return intl.formatMessage({
+        id: "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.car"
+      });
+    case "VEHICLERENTAL":
+      return intl.formatMessage({
+        id: "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.escooter"
+      });
+    default:
+      return intl.formatMessage({
+        id: "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.vehicle"
+      });
   }
 }
 
