@@ -63,6 +63,7 @@ if (!isTestRunner()) {
 
 interface StoryWrapperProps {
   alwaysCollapseAlerts?: boolean;
+  closedStopIds?: Set<string>;
   defaultFareSelector?: FareProductSelector;
   hideDrivingDirections?: boolean;
   itinerary: Itinerary;
@@ -74,6 +75,7 @@ interface StoryWrapperProps {
 
 function OtpRRItineraryBodyWrapper({
   alwaysCollapseAlerts,
+  closedStopIds,
   defaultFareSelector,
   hideDrivingDirections = false,
   itinerary,
@@ -85,6 +87,7 @@ function OtpRRItineraryBodyWrapper({
   return (
     <ItineraryBodyDefaultsWrapper
       alwaysCollapseAlerts={alwaysCollapseAlerts}
+      closedStopIds={closedStopIds}
       defaultFareSelector={defaultFareSelector}
       hideDrivingDirections={hideDrivingDirections}
       itinerary={itinerary}
@@ -139,6 +142,13 @@ walkTransitWalkItineraryCanceled.legs.forEach(leg => {
 
 export const WalkTransitWalkItineraryCanceled = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItineraryCanceled} />
+);
+
+export const WalkTransitWalkItineraryClosedStop = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    closedStopIds={new Set(["TriMet:8384"])}
+    itinerary={walkTransitWalkItinerary}
+  />
 );
 
 export const WalkTransitWalkItineraryMetric = (): ReactElement => (

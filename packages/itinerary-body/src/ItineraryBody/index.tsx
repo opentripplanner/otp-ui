@@ -17,6 +17,7 @@ const ItineraryBody = ({
   AlertToggleIcon,
   alwaysCollapseAlerts = false,
   className,
+  closedStopIds,
   config,
   defaultFareSelector,
   diagramVisible,
@@ -71,6 +72,7 @@ const ItineraryBody = ({
           // eslint-disable-next-line react/no-array-index-key
           key={i + (isDestination ? 1 : 0)}
           canceled={leg.realtimeState === "CANCELED"}
+          closedStopIds={closedStopIds}
           config={config}
           defaultFareSelector={defaultFareSelector}
           diagramVisible={diagramVisible}
