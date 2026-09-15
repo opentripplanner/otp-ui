@@ -28,7 +28,7 @@ const convertLegToTextString = (
   const isLastLeg = index === allLegs.length - 1;
   const isFirstLeg = index === 0;
 
-  const { units = "imperial" } = config;
+  const { units } = config;
 
   const { from, mode, rentedBike, to, duration } = leg;
   const { name: fromName, networks, vertexType } = from;
