@@ -79,41 +79,23 @@ const maximumAlertCountToShowUncollapsed = 2;
  */
 export function getFlexMessageValues(
   info: FlexBookingInfo,
-  outputString?: boolean,
-  intl?: IntlShape
-): {
-  advanceNotice: string | React.JSX.Element;
-} {
+  intl: IntlShape
+): { advanceNotice: string } {
   // There used to be a variable `hasLeadTime` here. This should be brought back
   // if the leadTime check is ever to be more than just checking the value of
   // daysPrior (which can be done within react-intl)
   // This will allow for displaying how many _hours_ before a trip it must be booked
 
-  const string = outputString && intl;
-
   const leadDays = info?.latestBookingTime?.daysPrior || 0;
 
   return {
     advanceNotice:
-      leadDays && leadDays > 0 ? (
-        string ? (
-          intl.formatMessage(
+      leadDays && leadDays > 0
+        ? intl.formatMessage(
             { id: "otpUi.ItineraryBody.flexAdvanceNotice" },
             { leadDays }
           )
-        ) : (
-          <FormattedMessage
-            defaultMessage={
-              defaultMessages["otpUi.ItineraryBody.flexAdvanceNotice"]
-            }
-            description="Advance notice for flex service."
-            id="otpUi.ItineraryBody.flexAdvanceNotice"
-            values={{ leadDays }}
-          />
-        )
-      ) : (
-        ""
-      )
+        : ""
   };
 }
 
@@ -142,7 +124,7 @@ class TransitLegBody extends Component<Props, State> {
   };
 
   renderBookRide = (): ReactNode => {
-    const { leg } = this.props;
+    const { leg, intl } = this.props;
     const { pickupBookingInfo } = leg;
     if (!pickupBookingInfo) return null;
 
@@ -161,7 +143,7 @@ class TransitLegBody extends Component<Props, State> {
                 }
                 description="Instructions for booking and boarding the flex (on-demand) transit service."
                 id="otpUi.ItineraryBody.flexPickupMessage"
-                values={getFlexMessageValues(pickupBookingInfo)}
+                values={getFlexMessageValues(pickupBookingInfo, intl)}
               />
             </S.CallAheadWarning>
           }

@@ -3,7 +3,7 @@ import { Itinerary, Leg } from "@opentripplanner/types";
 import { useIntl } from "react-intl";
 import { humanizeDistanceString } from "@opentripplanner/humanize-distance";
 import { getSummaryMode } from "../defaults/access-leg-description";
-import { vehicleTypeString } from "../AccessLegBody/rented-vehicle-subheader";
+import { vehicleType } from "../AccessLegBody/rented-vehicle-subheader";
 import { getPlaceName } from "../util";
 import { getFlexMessageValues } from "../TransitLegBody";
 
@@ -52,7 +52,7 @@ const convertLegToTextString = (
     textStrings.push(
       intl.formatMessage(
         { id: "otpUi.ItineraryBody.flexPickupMessage" },
-        getFlexMessageValues(leg.pickupBookingInfo, true, intl)
+        { ...getFlexMessageValues(leg.pickupBookingInfo, intl) }
       )
     );
   }
@@ -69,7 +69,7 @@ const convertLegToTextString = (
           {
             company,
             vehicleName,
-            vehicleType: vehicleTypeString(modeType, intl)
+            vehicleType: vehicleType(modeType, intl)
           }
         )
       );
@@ -200,7 +200,7 @@ const convertLegToTextString = (
         {
           company,
           vehicleName,
-          vehicleType: vehicleTypeString(modeType, intl),
+          vehicleType: vehicleType(modeType, intl),
           dropoffLocation: leg.to.name
         }
       )
