@@ -217,19 +217,17 @@ const convertLegToTextString = (
   }
 
   // DO NOT REFORMAT THIS, the template literals are adding line breaks between instructions and legs.
-  return textStrings.map((string: string, i: number) =>
-    i === 0 && !isFirstLeg
-      ? `
-  ${string}
-    `
-      : `${string}
-    `
-  );
+  return textStrings.join("\n");
 };
 
-function textOnlyItineraryString(itinerary: Itinerary, config: any): string[] {
+function textOnlyItineraryString(itinerary: Itinerary, config: any): string {
   const { legs } = itinerary;
-  return legs.map((l, i, a) => convertLegToTextString(l, i, a, config));
+  return (
+    legs
+      .map((l, i, a) => convertLegToTextString(l, i, a, config))
+      // Create a linebreak between legs
+      .join("\n \n")
+  );
 }
 
 export default textOnlyItineraryString;
