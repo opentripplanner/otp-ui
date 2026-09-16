@@ -1121,6 +1121,9 @@ importers:
 
   packages/timetable:
     dependencies:
+      '@opentripplanner/building-blocks':
+        specifier: workspace:^
+        version: link:../building-blocks
       react:
         specifier: 'catalog:'
         version: 18.3.1
