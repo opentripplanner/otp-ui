@@ -216,7 +216,6 @@ const convertLegToTextString = (
     );
   }
 
-  // DO NOT REFORMAT THIS, the template literals are adding line breaks between instructions and legs.
   return textStrings.join("\n");
 };
 
@@ -226,7 +225,7 @@ function textOnlyItineraryString(itinerary: Itinerary, config: any): string {
     legs
       .map((l, i, a) => convertLegToTextString(l, i, a, config))
       // Create a linebreak between legs
-      .join("\n \n")
+      .join("\n\n")
   );
 }
 
