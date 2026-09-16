@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 import colors from "@opentripplanner/building-blocks";
@@ -43,8 +43,29 @@ const Notice = (props: Props): JSX.Element => {
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Adding document event listeners allows us to close the notice
+  // when the user either clicks any part of the page that isn't the notice
+  // or presses the escape key
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent): void => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    const handleMouseEvent = (e: MouseEvent): void => {
+      if (!containerRef?.current?.contains(e.target as HTMLElement))
+        setIsOpen(false);
+    };
+    document.addEventListener("mousedown", handleMouseEvent);
+    document.addEventListener("keydown", handleKeyPress);
+    return () => {
+      document.removeEventListener("mousedown", handleMouseEvent);
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [containerRef]);
+
   return (
-    <NoticeContainer>
+    <NoticeContainer ref={containerRef}>
       <NoticeSymbol
         aria-label={isOpen ? "Close notice" : "Open notice"}
         className="trip-notice-symbol"
