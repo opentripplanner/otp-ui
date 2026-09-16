@@ -5,6 +5,7 @@ otpUi:
       noElevationData: Aucune information sur les dénivelés.
       toggleElevationChart: Afficher/masquer les dénivelés
     RentedVehicleSubheader:
+      dropoffRental: Drop off {company} {vehicleType} {vehicleName} at {dropoffLocation}
       pickupRental: Récupérez {vehicleType} {company} {vehicleName}
       resumeRentalRide: Continuez avec le véhicule loué
       vehicleType:
@@ -100,6 +101,16 @@ otpUi:
       likelyAccessible: probablement accessible
       unclear: inconnue
     viewOnMap: Afficher sur le plan
+  TextOnlyItinerary:
+    arriveAt: Arrive at {place} at {timeMillis, time, short}.
+    departFrom: Depart from {place} at {timeMillis, time, short}.
+    transitArriveAt: >-
+      Arrive at {place} {hasStopId, select, true {(Stop Id: {stopId})} other {}}
+      at {timeMillis, time, short}.
+    transitDepartFrom: >-
+      Depart from {place} {hasStopId, select, true {(Stop Id: {stopId})} other
+      {}} at {timeMillis, time, short} on {routeName}{hasHeadsign, select, true
+      { towards {headsign}} other {}}.
   TransitLegBody:
     AlertsBody:
       alertLinkText: Voir l'alerte sur le site de {agency}
@@ -112,7 +123,6 @@ otpUi:
       yesterday: hier
     alertsHeader: "{alertCount, plural, =0 {# alerte} =1 {# alerte} other {# alertes}}"
     arriveAt: Arrivée à {place}
-    stopIsClosed: Arrêt supprimé
     disembarkAt: Descendez à {legDestination}
     expandDetails: (Plus de détails)
     fare: "Tarif : {fare}"
@@ -124,6 +134,7 @@ otpUi:
     routeDescription: "{routeName} <toPrefix>vers</toPrefix> {headsign}"
     stopId: Arrêt n°{stopId}
     stopIdBasic: Arrêt n°{stopId}
+    stopIsClosed: Arrêt supprimé
     stopViewer: Info arrêt
     tripViewer: Info trajet
     typicalWait: "Attente habituelle : {waitTime}"

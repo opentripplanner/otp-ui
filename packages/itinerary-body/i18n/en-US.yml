@@ -98,8 +98,6 @@ otpUi:
   TextOnlyItinerary:
     arriveAt: Arrive at {place} at {timeMillis, time, short}.
     departFrom: Depart from {place} at {timeMillis, time, short}.
-    rideDurationAndStops: "Ride {route} for {duration}{numStops, plural, =1 {} other { / # stops}}."
-    routeDescription: "{routeName} to {headsign}"
     transitArriveAt: >-
       Arrive at {place} {hasStopId, select, true {(Stop Id: {stopId})} other {}}
       at {timeMillis, time, short}.
@@ -119,7 +117,6 @@ otpUi:
       yesterday: Yesterday
     alertsHeader: "{alertCount, plural, =1 {# alert} other {# alerts}}"
     arriveAt: Arrive at {place}
-    stopIsClosed: Closed
     disembarkAt: Disembark at {legDestination}
     expandDetails: (Expand details)
     fare: "Fare: {fare}"
@@ -131,6 +128,7 @@ otpUi:
     routeDescription: "{routeName} <toPrefix>to</toPrefix> {headsign}"
     stopId: Stop ID {stopId}
     stopIdBasic: ID {stopId}
+    stopIsClosed: Closed
     stopViewer: Stop Viewer
     tripViewer: Trip Viewer
     typicalWait: "Typical wait: {waitTime}"
