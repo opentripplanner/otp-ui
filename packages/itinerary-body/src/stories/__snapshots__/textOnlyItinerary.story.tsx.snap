@@ -1,0 +1,342 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`ItineraryBody/text-only-itinerary-string BikeOnlyItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from 503 SW Alder St, Portland, OR, USA 97204 at 3:42 PM.
+Bicycle 0.7 miles to 1737 SW Morrison St, Portland, OR, USA 97205
+Arrive at 1737 SW Morrison St, Portland, OR, USA 97205 at 3:49 PM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string BikeRentalItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from 2624 SE 30th Ave, Portland, OR, USA 97202 at 3:45 PM.
+Walk 498 feet to SE 30th at Division
+
+Pick up  shared bike 
+Bicycle 0.6 miles to SE 29th at Hawthorne
+Drop off  shared bike  at SE 29th at Hawthorne
+
+Walk 0.1 miles to 1415 SE 28th Ave, Portland, OR, USA 97214
+Arrive at 1415 SE 28th Ave, Portland, OR, USA 97214 at 3:58 PM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string BikeRentalTransitItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from 2943 SE Washington St, Portland, OR, USA 97214 at 3:50 PM.
+Walk 400 feet to SE 29th at Stark
+
+Pick up  shared bike 
+Bicycle 0.8 miles to NE Glisan at 24th
+Drop off  shared bike  at NE Glisan at 24th
+
+Walk 497 feet to NE Sandy &amp; 24th
+
+Depart from NE Sandy &amp; 24th (Stop Id: 5066) at 4:02 PM on 12 towards Parkrose TC.
+Ride 12 min / 13 stops
+Arrive at NE Sandy &amp; 57th (Stop Id: 5104) at 4:14 PM.
+
+Walk 279 feet to 0086 BIKETOWN
+
+Pick up  shared bike 
+Bicycle 1 mile to NE 60th at Cully 
+Drop off  shared bike  at NE 60th at Cully 
+
+Walk 494 feet to 5916 NE Going St, Portland, OR, USA 97218
+Arrive at 5916 NE Going St, Portland, OR, USA 97218 at 4:26 PM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string BikeTransitBikeItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from KGW Studio on the Sq, Portland, OR, USA at 3:44 PM.
+Walk 91 feet to corner of path and Pioneer Courthouse Sq (pedestrian street)
+
+Bicycle 0.1 miles to corner of path and Pioneer Sq N (path)
+
+Walk 22 feet to Pioneer Square North MAX Station
+
+Depart from Pioneer Square North MAX Station (Stop Id: 8383) at 3:46 PM on MAX Blue Line towards Hillsboro.
+Ride 3 min / 2 stops
+Arrive at Providence Park MAX Station (Stop Id: 9757) at 3:49 PM.
+
+Walk 19 feet to corner of path and Providence Park (path)
+
+Bicycle 230 feet to 1737 SW Morrison St, Portland, OR, USA 97205
+Arrive at 1737 SW Morrison St, Portland, OR, USA 97205 at 3:50 PM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string EScooterRentalItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from 600 SW 5th Ave, Portland, OR, USA 97204 at 3:45 PM.
+Walk 206 feet to EMAQ
+
+Pick up Razor E-scooter 
+Ride 0.3 miles to 205 SW Pine St, Portland, OR, USA 97204
+Arrive at 205 SW Pine St, Portland, OR, USA 97204 at 3:48 PM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string EScooterRentalTransitItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from 2943 SE Washington St, Portland, OR, USA 97214 at 3:45 PM.
+Walk 0.4 miles to  E-scooter
+
+Pick up Shared E-scooter 
+Ride 1.4 miles to NE Broadway
+Drop off Shared E-scooter  at NE Broadway
+
+Walk 0 feet to NE Broadway &amp; 28th
+
+Depart from NE Broadway &amp; 28th (Stop Id: 638) at 4:08 PM on 70 towards NE Sunderland.
+Ride 8 min / 9 stops
+Arrive at NE 33rd &amp; Shaver (Stop Id: 7393) at 4:17 PM.
+
+Walk 0.4 miles to  E-scooter
+
+Pick up Shared E-scooter 
+Ride 1 mile to 5112 NE 47th Pl, Portland, OR, USA 97218
+Arrive at 5112 NE 47th Pl, Portland, OR, USA 97218 at 4:31 PM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string OTP2FlexItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from 2nd Avenue, Longmont, CO, USA at 4:59 PM.
+Walk 0.3 miles to S Main St &amp; 1st Ave
+
+Depart from S Main St &amp; 1st Ave (Stop Id: 25633) at 5:06 PM on LD3 towards US36/Broomfield Stn.
+Ride 18 min / 12 stops
+Arrive at US 287 &amp; Arapahoe Rd (Stop Id: 33109) at 5:25 PM.
+
+Walk 0.2 miles to Arapahoe Rd &amp; Stonehenge Dr
+
+Depart from Arapahoe Rd &amp; Stonehenge Dr (Stop Id: 33465) at 6:00 PM on JUMP towards Erie Community Center.
+Ride 9 min / 8 stops
+Arrive at Erie Community Center (Stop Id: 33200) at 6:10 PM.
+
+Walk 124 feet to corner of path and Powers Street
+
+Reservation required at least 7 days in advance
+Depart from 60plusride-co-us:area_626  at 6:12 PM on 60+ Ride.
+Ride 24 min
+Arrive at 60plusride-co-us:area_626 at 6:37 PM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string OTP2ScooterItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from 300 Courtland St NE, Atlanta, GA 30303-12ND, United States at 9:15 AM.
+Walk 0.2 miles to  Shared bike
+
+Pick up Razor E-scooter 
+Ride 1 mile to 126 Mitchell St SW, Atlanta, GA 30303-3524, United States
+Arrive at 126 Mitchell St SW, Atlanta, GA 30303-3524, United States at 9:26 AM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string Otp24Itinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from 1375 NE Cherry Lane, Hillsboro at 7:54 AM.
+Walk 0.9 miles to Orenco MAX Station
+
+Depart from Orenco MAX Station (Stop Id: 9835) at 8:15 AM on MAX Blue Line towards Gresham.
+Ride 34 min / 12 stops
+Arrive at Providence Park MAX Station (Stop Id: 9758) at 8:49 AM.
+
+Walk 0.2 miles to W Burnside &amp; SW 18th
+
+Depart from W Burnside &amp; SW 18th (Stop Id: 9860) at 8:57 AM on 20 towards Gresham TC.
+Ride 28 min / 33 stops
+Arrive at E Burnside &amp; SE 94th (Stop Id: 822) at 9:25 AM.
+
+Walk 0.5 miles to 766 NE 94th Avenue, Portland
+Arrive at 766 NE 94th Avenue, Portland at 9:35 AM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string ParkAndRideItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from 330 SW Murray Blvd, Washington County, OR, USA 97005 at 3:50 PM.
+Drive 2.4 miles to P+R Sunset TC
+
+Walk 426 feet to Sunset TC MAX Station
+
+Depart from Sunset TC MAX Station (Stop Id: 2600) at 4:05 PM on MAX Blue Line towards Gresham.
+Ride 21 min / 9 stops
+Arrive at Oak/ SW 1st Ave MAX Station (Stop Id: 8337) at 4:27 PM.
+
+Walk 0.1 miles to 205 SW Pine St, Portland, OR, USA 97204
+Arrive at 205 SW Pine St, Portland, OR, USA 97204 at 4:29 PM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string StayOnBoardItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from Aurora Ave N &amp; N 38th St (Stop Id: 6050) at 6:46 AM on 5 towards Downtown Seattle Greenwood.
+Ride 7 min / 7 stops
+Stay on Board at Wall St &amp; 5th Ave
+
+Depart from Wall St &amp; 5th Ave (Stop Id: 7430) at 6:53 AM on 21 towards Westwood Village Via 35th Ave SW.
+Ride 16 min / 7 stops
+Arrive at 1st Ave S &amp; S Atlantic St at 7:09 AM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string StopWithNoStopCode smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from KGW Studio on the Sq, Portland, OR, USA at 3:44 PM.
+Walk 269 feet to Pioneer Square North MAX Station
+
+Depart from Pioneer Square North MAX Station  at 3:46 PM on MAX Blue Line towards Hillsboro.
+Ride 3 min / 2 stops
+Arrive at Providence Park MAX Station  at 3:49 PM.
+
+Walk 249 feet to 1737 SW Morrison St, Portland, OR, USA 97205
+Arrive at 1737 SW Morrison St, Portland, OR, USA 97205 at 3:50 PM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string TncTransitItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  TNC leg
+Depart from 128 NW 12th Ave, Portland at 10:58 AM.
+Ride 0.4 miles to West Burnside Street
+
+Walk 0 feet to W Burnside &amp; SW 6th
+
+Depart from W Burnside &amp; SW 6th  at 11:02 AM on 20.
+Ride 6 min / 3 stops
+Arrive at E Burnside &amp; SE 12th  at 11:08 AM.
+
+Walk 0 feet to East Burnside Street
+
+TNC leg
+Ride 0.2 miles to 407 NE 12th Ave, Portland
+Arrive at 407 NE 12th Ave, Portland at 11:10 AM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string TransferLegItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from Airport Terminal A (SEPTA) at 9:39 AM.
+Walk 0.4 miles to Philadelphia Airport Terminal D
+
+Depart from Philadelphia Airport Terminal D (Stop Id: 17105) at 9:50 AM on 108 towards 69th Street Transportation Center.
+Ride 8 min / 4 stops
+Arrive at PNC Center (Stop Id: 617) at 9:59 AM.
+
+Transfer, wait 5 min
+
+Depart from PNC Center (Stop Id: 617) at 10:04 AM on 68 towards Broad-Oregon.
+Ride 20 min / 26 stops
+Arrive at Oregon Av &amp; Broad St (Stop Id: 31308) at 10:24 AM.
+
+Walk 0.6 miles to 39.91179, -75.16543
+Arrive at 39.91179, -75.16543 at 10:37 AM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string WalkInterlinedTransitItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from 47.97767, -122.20034 at 12:57 PM.
+Walk 0.3 miles to Everett Station Bay C1
+
+Depart from Everett Station Bay C1 (Stop Id: 2345) at 1:04 PM on 512 towards Northgate Station.
+Ride 47 min / 6 stops
+Arrive at Northgate Station (Stop Id: 2191) at 1:51 PM.
+
+Walk 0 feet to Northgate Station - Bay 4
+
+Depart from Northgate Station - Bay 4 (Stop Id: 35318) at 1:55 PM on 40 towards Downtown Seattle Ballard.
+Ride 11 min / 8 stops
+Arrive at N 105th St &amp; Aurora Ave N (Stop Id: 40032) at 2:06 PM.
+
+Walk 259 feet to Aurora Ave N &amp; N 105th St
+
+Depart from Aurora Ave N &amp; N 105th St (Stop Id: 7080) at 2:07 PM on E Line towards Downtown Seattle.
+Ride 31 min / 17 stops
+Arrive at 3rd Ave &amp; Cherry St (Stop Id: 490) at 2:39 PM.
+
+Walk 443 feet to 208 James St, Seattle, WA 98104-2212, United States
+Arrive at 208 James St, Seattle, WA 98104-2212, United States at 2:41 PM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string WalkOnlyItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from KGW Studio on the Sq, Portland, OR, USA at 11:29 AM.
+Walk 166 feet to 701 SW 6th Ave, Portland, OR, USA 97204
+Arrive at 701 SW 6th Ave, Portland, OR, USA 97204 at 11:30 AM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string WalkTransitTransferItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from 3940 SE Brooklyn St, Portland, OR, USA 97202 at 3:46 PM.
+Walk 238 feet to SE Cesar Chavez Blvd &amp; Brooklyn (long address that spans multiple lines)
+
+Depart from SE Cesar Chavez Blvd &amp; Brooklyn (Stop Id: 7439) at 3:47 PM on 755X towards St. Johns via NAYA.
+Ride 4 min / 5 stops
+Arrive at SE Cesar Chavez Blvd &amp; Hawthorne (Stop Id: 7459) at 3:52 PM.
+
+Walk 440 feet to SE Hawthorne &amp; Cesar Chavez Blvd
+
+Depart from SE Hawthorne &amp; Cesar Chavez Blvd (Stop Id: 2626) at 4:00 PM on 1 towards Portland.
+Ride 4 min / 5 stops
+Arrive at SE Hawthorne &amp; 27th (Stop Id: 2613) at 4:04 PM.
+
+Walk 479 feet to 1415 SE 28th Ave, Portland, OR, USA 97214
+Arrive at 1415 SE 28th Ave, Portland, OR, USA 97214 at 4:06 PM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string WalkTransitTransferWithA11yItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from 3940 SE Brooklyn St, Portland, OR, USA 97202 at 3:46 PM.
+Walk 238 feet to SE Cesar Chavez Blvd &amp; Brooklyn (long address that spans multiple lines)
+
+Depart from SE Cesar Chavez Blvd &amp; Brooklyn (Stop Id: 7439) at 3:47 PM on 755X towards St. Johns via NAYA.
+Ride 4 min / 5 stops
+Arrive at SE Cesar Chavez Blvd &amp; Hawthorne (Stop Id: 7459) at 3:52 PM.
+
+Walk 440 feet to SE Hawthorne &amp; Cesar Chavez Blvd
+
+Depart from SE Hawthorne &amp; Cesar Chavez Blvd (Stop Id: 2626) at 4:00 PM on 1 towards Portland.
+Ride 4 min / 5 stops
+Arrive at SE Hawthorne &amp; 27th (Stop Id: 2613) at 4:04 PM.
+
+Walk 479 feet to 1415 SE 28th Ave, Portland, OR, USA 97214
+Arrive at 1415 SE 28th Ave, Portland, OR, USA 97214 at 4:06 PM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string WalkTransitWalkItinerary smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from KGW Studio on the Sq, Portland, OR, USA at 3:44 PM.
+Walk 269 feet to Pioneer Square North MAX Station
+
+Depart from Pioneer Square North MAX Station (Stop Id: 8383) at 3:46 PM on MAX Blue Line towards Hillsboro.
+Ride 3 min / 2 stops
+Arrive at Providence Park MAX Station (Stop Id: 9757) at 3:49 PM.
+
+Walk 249 feet to 1737 SW Morrison St, Portland, OR, USA 97205
+Arrive at 1737 SW Morrison St, Portland, OR, USA 97205 at 3:50 PM.
+</div>
+`;
+
+exports[`ItineraryBody/text-only-itinerary-string WalkTransitWalkItineraryMetric smoke-test 1`] = `
+<div style="white-space: pre-line;">
+  Depart from KGW Studio on the Sq, Portland, OR, USA at 3:44 PM.
+Walk 82 m to Pioneer Square North MAX Station
+
+Depart from Pioneer Square North MAX Station (Stop Id: 8383) at 3:46 PM on MAX Blue Line towards Hillsboro.
+Ride 3 min / 2 stops
+Arrive at Providence Park MAX Station (Stop Id: 9757) at 3:49 PM.
+
+Walk 76 m to 1737 SW Morrison St, Portland, OR, USA 97205
+Arrive at 1737 SW Morrison St, Portland, OR, USA 97205 at 3:50 PM.
+</div>
+`;
