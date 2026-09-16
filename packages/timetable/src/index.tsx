@@ -37,6 +37,13 @@ const TD = styled.td<{ closed?: boolean }>`
   text-decoration: ${props => (props.closed ? "line-through" : "")};
 `;
 
+const InvisibleText = styled.div`
+  clip: rect(0, 0, 0, 0);
+  height: 0;
+  overflow: hidden;
+  width: 0;
+`;
+
 interface PatternStop {
   id: string;
   name: string;
@@ -370,7 +377,6 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
           {leadingColumns.concat(filteredPatternStops).map(s => {
             return (
               <TH
-                aria-label={s.ariaLabel}
                 className={`timetable-th${
                   s.className ? ` ${s.className}` : ""
                 }`}
@@ -378,6 +384,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
                 scope="col"
                 closed={closedStops && closedStops.has(s.id)}
               >
+                <InvisibleText>{s.ariaLabel}</InvisibleText>
                 {s.name}
               </TH>
             );
