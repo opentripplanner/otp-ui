@@ -3,13 +3,14 @@ import styled from "styled-components";
 
 import colors from "@opentripplanner/building-blocks";
 
-const NoticeSymbol = styled.span`
+const NoticeSymbol = styled.button`
+  background-color: transparent;
   border: solid black;
   border-radius: 50%;
   cursor: pointer;
   display: block;
-  height: 20px;
-  width: 20px;
+  font-size: 1.3rem;
+  padding: 0 6px;
 `;
 
 const NoticeContent = styled.div`
@@ -45,9 +46,9 @@ const Notice = (props: Props): JSX.Element => {
   return (
     <NoticeContainer>
       <NoticeSymbol
+        aria-label={isOpen ? "Close notice" : "Open notice"}
         className="trip-notice-symbol"
         onClick={() => setIsOpen(!isOpen)}
-        role="button"
       >
         {"\u2139"}
       </NoticeSymbol>
