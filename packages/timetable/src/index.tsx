@@ -216,7 +216,8 @@ interface TimeTableProps {
   showBlockId?: boolean;
   /** Time zone in which to display stop times if no intl object is provided */
   timeZone?: string;
-  /** Enable notices to be shown as a hoverable popup on each individual trip in the timetable. Requires
+  /** Enable notices to be shown as an info icon on each individual trip in the timetable. When
+   * clicked, the notice is shown in a modal popup. Requires
    * notices field on each trip record. See https://github.com/google/transit/pull/638 for more information
    */
   showNotices?: boolean;
