@@ -75,8 +75,12 @@ const maximumAlertCountToShowUncollapsed = 2;
 
 /**
  * Helper function that assembles values for flex pickup/dropoff messages.
+ * To return text strings and not React fragments, pass outputString and intl
  */
-function getFlexMessageValues(info: FlexBookingInfo) {
+export function getFlexMessageValues(
+  info: FlexBookingInfo,
+  intl: IntlShape
+): { advanceNotice: string } {
   // There used to be a variable `hasLeadTime` here. This should be brought back
   // if the leadTime check is ever to be more than just checking the value of
   // daysPrior (which can be done within react-intl)
@@ -86,18 +90,12 @@ function getFlexMessageValues(info: FlexBookingInfo) {
 
   return {
     advanceNotice:
-      leadDays > 0 ? (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages["otpUi.ItineraryBody.flexAdvanceNotice"]
-          }
-          description="Advance notice for flex service."
-          id="otpUi.ItineraryBody.flexAdvanceNotice"
-          values={{ leadDays }}
-        />
-      ) : (
-        ""
-      )
+      leadDays && leadDays > 0
+        ? intl.formatMessage(
+            { id: "otpUi.ItineraryBody.flexAdvanceNotice" },
+            { leadDays }
+          )
+        : ""
   };
 }
 
@@ -126,7 +124,7 @@ class TransitLegBody extends Component<Props, State> {
   };
 
   renderBookRide = (): ReactNode => {
-    const { leg } = this.props;
+    const { leg, intl } = this.props;
     const { pickupBookingInfo } = leg;
     if (!pickupBookingInfo) return null;
 
@@ -145,7 +143,7 @@ class TransitLegBody extends Component<Props, State> {
                 }
                 description="Instructions for booking and boarding the flex (on-demand) transit service."
                 id="otpUi.ItineraryBody.flexPickupMessage"
-                values={getFlexMessageValues(pickupBookingInfo)}
+                values={getFlexMessageValues(pickupBookingInfo, intl)}
               />
             </S.CallAheadWarning>
           }

@@ -1,7 +1,7 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { Config, Leg } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, IntlShape, useIntl } from "react-intl";
 
 import * as S from "../styled";
 import { defaultMessages } from "../util";
@@ -15,68 +15,28 @@ interface Props {
  * Although similar to utils/getVehicleType, this version accommodates gendered articles
  * for Spanish and French, so sentences literally read like "Pickup the scooter ABC".
  */
-function VehicleType({ type }: { type: string }) {
+export function vehicleType(type: string, intl: IntlShape): string {
   switch (type) {
     case "BIKEPARK":
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages[
-              "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.bike"
-            ]
-          }
-          description="Bike vehicle type"
-          id="otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.bike"
-        />
-      );
+      return intl.formatMessage({
+        id: "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.bike"
+      });
     case "BIKESHARE":
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages[
-              "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.bikeshare"
-            ]
-          }
-          description="Bike vehicle type"
-          id="otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.bikeshare"
-        />
-      );
+      return intl.formatMessage({
+        id: "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.bikeshare"
+      });
     case "CARSHARE":
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages[
-              "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.car"
-            ]
-          }
-          description="Bike vehicle type"
-          id="otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.car"
-        />
-      );
+      return intl.formatMessage({
+        id: "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.car"
+      });
     case "VEHICLERENTAL":
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages[
-              "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.escooter"
-            ]
-          }
-          description="Bike vehicle type"
-          id="otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.escooter"
-        />
-      );
+      return intl.formatMessage({
+        id: "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.escooter"
+      });
     default:
-      return (
-        <FormattedMessage
-          defaultMessage={
-            defaultMessages[
-              "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.vehicle"
-            ]
-          }
-          description="Bike vehicle type"
-          id="otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.vehicle"
-        />
-      );
+      return intl.formatMessage({
+        id: "otpUi.AccessLegBody.RentedVehicleSubheader.vehicleType.vehicle"
+      });
   }
 }
 
@@ -101,6 +61,8 @@ export default function RentedVehicleSubheader({
   const { name: legName, networks, vertexType } = from;
   // in OTP2 scooters are BIKERENTALs, so we need to override this
   const modeType = mode === "SCOOTER" ? "VEHICLERENTAL" : vertexType;
+
+  const intl = useIntl();
 
   // Sometimes rented vehicles can be walked over things like stairs or other
   // ways that forbid the main mode of travel.
@@ -151,7 +113,7 @@ export default function RentedVehicleSubheader({
         values={{
           company,
           vehicleName,
-          vehicleType: <VehicleType type={modeType} />
+          vehicleType: vehicleType(modeType, intl)
         }}
       />
     );
