@@ -137,14 +137,6 @@ export const OTP2FlexItinerary = (): ReactElement => (
   <TextItineraryStoryWrapper itinerary={flexItinerary} />
 );
 
-export const CustomTimeColumn = (): ReactElement => (
-  <TextItineraryStoryWrapper itinerary={tncTransitTncItinerary} />
-);
-
-export const HideDrivingDirections = (): ReactElement => (
-  <TextItineraryStoryWrapper itinerary={parkAndRideItinerary} />
-);
-
 export const TransferLegItinerary = (): ReactElement => (
   <TextItineraryStoryWrapper itinerary={transferLegItinerary} />
 );

@@ -98,8 +98,7 @@ const convertLegToTextString = (
       getLegRouteName(leg) ||
       // Idk why I'm having to do this, when it should be handled by the coreutils func >:(
       leg.routeLongName ||
-      leg.routeShortName ||
-      leg.route;
+      leg.routeShortName;
 
     textStrings.push(
       intl.formatMessage(
