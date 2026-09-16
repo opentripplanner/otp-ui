@@ -58,22 +58,20 @@ const convertLegToTextString = (
   }
 
   // Rental Micromobility Header
-  if (isRental) {
-    if (networks || rentedBike) {
-      // Add company and vehicle labels.
-      // Only show vehicle name for car rentals. For bikes and E-scooters, these
-      // IDs/names tend to be less relevant (or entirely useless) in this context.
-      textStrings.push(
-        intl.formatMessage(
-          { id: "otpUi.AccessLegBody.RentedVehicleSubheader.pickupRental" },
-          {
-            company,
-            vehicleName,
-            vehicleType: vehicleType(modeType, intl)
-          }
-        )
-      );
-    }
+  if (isRental && (networks || rentedBike)) {
+    // Add company and vehicle labels.
+    // Only show vehicle name for car rentals. For bikes and E-scooters, these
+    // IDs/names tend to be less relevant (or entirely useless) in this context.
+    textStrings.push(
+      intl.formatMessage(
+        { id: "otpUi.AccessLegBody.RentedVehicleSubheader.pickupRental" },
+        {
+          company,
+          vehicleName,
+          vehicleType: vehicleType(modeType, intl)
+        }
+      )
+    );
   }
 
   // TNC Header
@@ -96,7 +94,7 @@ const convertLegToTextString = (
   if (transitLeg) {
     const routeName =
       getLegRouteName(leg) ||
-      // Idk why I'm having to do this, when it should be handled by the coreutils func >:(
+      // TODO: This should be handled by the coreutils func
       leg.routeLongName ||
       leg.routeShortName;
 
