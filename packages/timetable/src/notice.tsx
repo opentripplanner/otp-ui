@@ -29,9 +29,16 @@ const NoticeContainer = styled.div`
   display: flex;
 `;
 
-const CloseIcon = styled.div`
+const CloseIcon = styled.button`
+  background: transparent;
+  border: none;
   cursor: pointer;
-  padding: 10px;
+  display: flex;
+  font-size: 1.5rem;
+  height: 40px;
+  margin-right: 0.8rem;
+  padding: 0;
+  width: 40px;
 `;
 
 interface Props {
@@ -81,7 +88,9 @@ const Notice = (props: Props): JSX.Element => {
               <li key={s}>{s}</li>
             ))}
           </ul>
-          <CloseIcon onClick={() => setIsOpen(false)}>{"\u2715"}</CloseIcon>
+          <CloseIcon aria-label="Close notice" onClick={() => setIsOpen(false)}>
+            {"\u2715"}
+          </CloseIcon>
         </NoticeContent>
       ) : null}
     </NoticeContainer>
