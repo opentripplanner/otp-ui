@@ -54,6 +54,7 @@ const Notice = (props: Props): JSX.Element => {
       </NoticeSymbol>
       {isOpen ? (
         <NoticeContent>
+          {/* TODO: When notices open, the focus needs to be set to the first element in this container */}
           <ul>
             {content.map(s => (
               <li key={s}>{s}</li>
