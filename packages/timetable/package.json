@@ -18,6 +18,7 @@
     "tsc": "tsc"
   },
   "dependencies": {
+    "@opentripplanner/building-blocks": "workspace:^",
     "toposort": "^2.0.2"
   },
   "devDependencies": {
