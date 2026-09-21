@@ -9,7 +9,7 @@ export default {
 
 // TODO: Add a story to illustrate "color" prop passed from overlay.
 
-export const OtpTileLayerWithYourOwnServer = (): JSX.Element => {
+export const OtpTileLayerFromYourOwnServer = (): JSX.Element => {
   const [endpoint, setEndpoint] = useState("");
   return (
     <>
@@ -32,26 +32,20 @@ export const OtpTileLayerWithYourOwnServer = (): JSX.Element => {
   );
 };
 
-export const OtpStopTileLayerPHL = (): JSX.Element => (
-  <>
-    Mock stop tiles in downtown Philadelphia
-    <BaseMap center={[39.9526, -75.1652]} style={{ height: "80vh" }} zoom={14}>
-      {generateOTP2TileLayers(
-        [{ initiallyVisible: true, minZoom: 5, type: "stops" }],
-        "http://localhost:5555/phl/otp/routers/default/vectorTiles"
-      )}
-    </BaseMap>
-  </>
+export const MockStopTileLayerPHL = (): JSX.Element => (
+  <BaseMap center={[39.9526, -75.1652]} style={{ height: "80vh" }} zoom={14}>
+    {generateOTP2TileLayers(
+      [{ initiallyVisible: true, minZoom: 5, type: "stops" }],
+      "http://localhost:5555/phl/otp/routers/default/vectorTiles"
+    )}
+  </BaseMap>
 );
 
-export const OtpAreaStopTileLayerATL = (): JSX.Element => (
-  <>
-    Mock stop area tiles in East Atlanta area.
-    <BaseMap center={[33.719, -84.298]} style={{ height: "80vh" }} zoom={12}>
-      {generateOTP2TileLayers(
-        [{ initiallyVisible: true, minZoom: 5, type: "areaStops" }],
-        "http://localhost:5555/atl/otp/routers/default/vectorTiles"
-      )}
-    </BaseMap>
-  </>
+export const MockAreaStopTileLayerATL = (): JSX.Element => (
+  <BaseMap center={[33.719, -84.298]} style={{ height: "80vh" }} zoom={12}>
+    {generateOTP2TileLayers(
+      [{ initiallyVisible: true, minZoom: 5, type: "areaStops" }],
+      "http://localhost:5555/atl/otp/routers/default/vectorTiles"
+    )}
+  </BaseMap>
 );
