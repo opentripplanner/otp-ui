@@ -166,18 +166,12 @@ const OTP2TileLayerWithPopup = ({
   useEffect(() => {
     attachLayerEvents(id);
     attachLayerEvents(`${id}-secondary`);
-
-    map?.on("mouseenter", `${id}-secondary`, onLayerEnter);
-    map?.on("mouseleave", `${id}-secondary`, onLayerLeave);
-    map?.on("click", `${id}-secondary`, onMapClick || defaultClickHandler);
+    attachLayerEvents(`${id}-fill`);
 
     return () => {
       detachLayerEvents(id);
       detachLayerEvents(`${id}-secondary`);
-
-      map?.off("mouseenter", `${id}-secondary`, onLayerEnter);
-      map?.off("mouseleave", `${id}-secondary`, onLayerLeave);
-      map?.off("click", `${id}-secondary`, onMapClick || defaultClickHandler);
+      detachLayerEvents(`${id}-fill`);
     };
   }, [closedStops, id, map]);
 
