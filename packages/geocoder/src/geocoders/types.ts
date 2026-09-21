@@ -21,14 +21,14 @@ export type GeocoderConfig = {
   apiKey?: string;
   baseUrl?: string;
   boundary?: Boundary;
+  enableSlowFullUnicodeSupport?: boolean;
   focusPoint?: LonLatInput;
   layers?: string;
   options?: RequestInit;
-  sources?: string;
-  size?: number;
   reverseUseFeatureCollection?: boolean;
-  enableSlowFullUnicodeSupport?: boolean;
-  ignoreSecondariesForTypes?: string[]
+  size?: number;
+  sources?: string;
+  typesWithoutSecondaryLabel?: string[]
 };
 
 export type ReverseQuery = {

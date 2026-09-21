@@ -2,4 +2,4 @@
 "@opentripplanner/geocoder": minor
 ---
 
-add support for optional `ignoreSecondariesForTypes` OTP geocoder config param
+add support for optional `typesWithoutSecondaryLabel` OTP geocoder config param

@@ -53,10 +53,7 @@ export default class OTPGeocoder extends Geocoder {
   rewriteAutocompleteResponse(
     response: OTPGeocoderResponse
   ): MultiGeocoderResponse {
-    let { ignoreSecondariesForTypes } = this.geocoderConfig;
-    if (ignoreSecondariesForTypes === undefined) {
-      ignoreSecondariesForTypes = ["STATION"]
-    }
+    const { typesWithoutSecondaryLabel = ["STATION"] } = this.geocoderConfig
 
     return {
       features: response?.results?.map(stop => {
@@ -76,9 +73,9 @@ export default class OTPGeocoder extends Geocoder {
             modes: primary.modes,
             name: primary.name,
             label: generateLabel(primary),
-            // Only render labels if whitelisted to
+            // Only render labels when their type is whitelisted
             // TODO: filter out duplicates?
-            secondaryLabels: !ignoreSecondariesForTypes?.includes(primary.type) ? secondaries.map(s => generateLabel(s)) : []
+            secondaryLabels: !typesWithoutSecondaryLabel?.includes(primary.type) ? secondaries.map(s => generateLabel(s)) : []
           },
           type: "Feature"
         };
