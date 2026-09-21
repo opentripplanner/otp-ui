@@ -43,3 +43,15 @@ export const OtpStopTileLayerPHL = (): JSX.Element => (
     </BaseMap>
   </>
 );
+
+export const OtpAreaStopTileLayerATL = (): JSX.Element => (
+  <>
+    Mock stop area tiles in East Atlanta area.
+    <BaseMap center={[33.719, -84.298]} style={{ height: "80vh" }} zoom={12}>
+      {generateOTP2TileLayers(
+        [{ initiallyVisible: true, minZoom: 5, type: "areaStops" }],
+        "http://localhost:5555/atl/otp/routers/default/vectorTiles"
+      )}
+    </BaseMap>
+  </>
+);
