@@ -147,19 +147,33 @@ const OTP2TileLayerWithPopup = ({
     map.getCanvas().style.cursor = "";
   }, [map]);
 
+  const attachLayerEvents = (layerId: string) => {
+    if (map) {
+      map.on("mouseenter", layerId, onLayerEnter);
+      map.on("mouseleave", layerId, onLayerLeave);
+      map.on("click", layerId, onMapClick || defaultClickHandler);
+    }
+  };
+
+  const detachLayerEvents = (layerId: string) => {
+    if (map) {
+      map.off("mouseenter", layerId, onLayerEnter);
+      map.off("mouseleave", layerId, onLayerLeave);
+      map.off("click", layerId, onMapClick || defaultClickHandler);
+    }
+  };
+
   useEffect(() => {
-    map?.on("mouseenter", id, onLayerEnter);
-    map?.on("mouseleave", id, onLayerLeave);
-    map?.on("click", id, onMapClick || defaultClickHandler);
+    attachLayerEvents(id);
+    attachLayerEvents(`${id}-secondary`);
 
     map?.on("mouseenter", `${id}-secondary`, onLayerEnter);
     map?.on("mouseleave", `${id}-secondary`, onLayerLeave);
     map?.on("click", `${id}-secondary`, onMapClick || defaultClickHandler);
 
     return () => {
-      map?.off("mouseenter", id, onLayerEnter);
-      map?.off("mouseleave", id, onLayerLeave);
-      map?.off("click", id, onMapClick || defaultClickHandler);
+      detachLayerEvents(id);
+      detachLayerEvents(`${id}-secondary`);
 
       map?.off("mouseenter", `${id}-secondary`, onLayerEnter);
       map?.off("mouseleave", `${id}-secondary`, onLayerLeave);
