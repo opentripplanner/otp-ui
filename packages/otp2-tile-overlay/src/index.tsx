@@ -186,6 +186,7 @@ const OTP2TileLayerWithPopup = ({
     filter = ["in", ["get", "gtfsId"], ["literal", stopsWhitelist]];
   }
 
+  const layerMinZoom = stopsWhitelist ? 2 : minZoom;
   const isArea = AREA_TYPES.includes(type);
   const isStopsAndStations = type === STOPS_AND_STATIONS_TYPE;
   return (
@@ -194,7 +195,7 @@ const OTP2TileLayerWithPopup = ({
         <Layer
           filter={filter}
           id={`${id}-fill`}
-          minzoom={stopsWhitelist ? 2 : minZoom}
+          minzoom={layerMinZoom}
           paint={{
             "fill-color": ROUTE_COLOR_EXPRESSION,
             "fill-opacity": 0.2
@@ -209,7 +210,7 @@ const OTP2TileLayerWithPopup = ({
           filter={filter}
           id={`${id}-outline`}
           layout={{ "line-join": "round", "line-cap": "round" }}
-          minzoom={stopsWhitelist ? 2 : minZoom}
+          minzoom={layerMinZoom}
           paint={{
             "line-color": ROUTE_COLOR_EXPRESSION,
             "line-opacity": 0.8,
@@ -225,7 +226,7 @@ const OTP2TileLayerWithPopup = ({
           filter={filter}
           id={id}
           key={`${id}-stops`}
-          minzoom={stopsWhitelist ? 2 : minZoom}
+          minzoom={layerMinZoom}
           paint={generateLayerPaint(color).stops}
           source={SOURCE_ID}
           source-layer="stops"
@@ -237,7 +238,7 @@ const OTP2TileLayerWithPopup = ({
           filter={filter}
           id={`${id}-secondary`}
           key={`${id}-stations`}
-          minzoom={stopsWhitelist ? 2 : minZoom}
+          minzoom={layerMinZoom}
           paint={generateLayerPaint(color).stops}
           source={SOURCE_ID}
           source-layer="stations"
@@ -249,7 +250,7 @@ const OTP2TileLayerWithPopup = ({
           filter={filter}
           id={id}
           key={id}
-          minzoom={stopsWhitelist ? 2 : minZoom}
+          minzoom={layerMinZoom}
           paint={generateLayerPaint(color)[type]}
           source={SOURCE_ID}
           source-layer={type}
