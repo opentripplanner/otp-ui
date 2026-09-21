@@ -92,9 +92,6 @@ const OTP2TileLayerWithPopup = ({
   visible?: boolean;
 }): JSX.Element | undefined => {
   const { current: map } = useMap();
-  if (!map) {
-    return undefined;
-  }
 
   // TODO: handle this complex type: it can be a stop, a station, and some extra fields too
   const [clickedEntity, setClickedEntity] = useState<any>(null);
@@ -140,11 +137,15 @@ const OTP2TileLayerWithPopup = ({
   };
 
   const onLayerEnter = useCallback(() => {
-    map.getCanvas().style.cursor = "pointer";
+    if (map) {
+      map.getCanvas().style.cursor = "pointer";
+    }
   }, [map]);
 
   const onLayerLeave = useCallback(() => {
-    map.getCanvas().style.cursor = "";
+    if (map) {
+      map.getCanvas().style.cursor = "";
+    }
   }, [map]);
 
   const attachLayerEvents = (layerId: string) => {
