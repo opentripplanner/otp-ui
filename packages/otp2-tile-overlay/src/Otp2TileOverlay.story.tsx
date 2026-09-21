@@ -34,12 +34,11 @@ export const OtpTileLayerWithYourOwnServer = (): JSX.Element => {
 
 export const OtpStopTileLayerPHL = (): JSX.Element => (
   <>
-    <code>http://localhost:5555/otp</code> mocks some stop tiles in downtown
-    Philadelphia (near City Hall).
+    Mock stop tiles in downtown Philadelphia
     <BaseMap center={[39.9526, -75.1652]} style={{ height: "80vh" }} zoom={14}>
       {generateOTP2TileLayers(
         [{ initiallyVisible: true, minZoom: 5, type: "stops" }],
-        "http://localhost:5555/otp/routers/default/vectorTiles"
+        "http://localhost:5555/phl/otp/routers/default/vectorTiles"
       )}
     </BaseMap>
   </>

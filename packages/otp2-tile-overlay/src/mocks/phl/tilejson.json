@@ -6,7 +6,7 @@
   "name": "OpenTripPlanner",
   "attribution": "<a href='https://septa.org/'>SEPTA</a>",
   "tiles": [
-    "http://localhost:5555/otp/routers/default/vectorTiles/stops/{z}/{x}/{y}.pbf"
+    "http://localhost:5555/phl/otp/routers/default/vectorTiles/stops/{z}/{x}/{y}.pbf"
   ],
   "bounds": [-77.1319545, 39.588365, -74.3979875, 40.566152],
   "center": [-75.175743, 40.010383, 9.0]
