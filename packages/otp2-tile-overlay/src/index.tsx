@@ -148,11 +148,23 @@ const OTP2TileLayerWithPopup = ({
     }
   }, [map]);
 
+  const attachLayerClick = (layerId: string) => {
+    if (map) {
+      map.on("click", layerId, onMapClick || defaultClickHandler);
+    }
+  };
+
+  const detachLayerClick = (layerId: string) => {
+    if (map) {
+      map.off("click", layerId, onMapClick || defaultClickHandler);
+    }
+  };
+
   const attachLayerEvents = (layerId: string) => {
     if (map) {
       map.on("mouseenter", layerId, onLayerEnter);
       map.on("mouseleave", layerId, onLayerLeave);
-      map.on("click", layerId, onMapClick || defaultClickHandler);
+      attachLayerClick(layerId);
     }
   };
 
@@ -160,7 +172,7 @@ const OTP2TileLayerWithPopup = ({
     if (map) {
       map.off("mouseenter", layerId, onLayerEnter);
       map.off("mouseleave", layerId, onLayerLeave);
-      map.off("click", layerId, onMapClick || defaultClickHandler);
+      detachLayerClick(layerId);
     }
   };
 
@@ -168,11 +180,13 @@ const OTP2TileLayerWithPopup = ({
     attachLayerEvents(id);
     attachLayerEvents(`${id}-secondary`);
     attachLayerEvents(`${id}-fill`);
+    attachLayerClick(`${id}-outline`);
 
     return () => {
       detachLayerEvents(id);
       detachLayerEvents(`${id}-secondary`);
       detachLayerEvents(`${id}-fill`);
+      detachLayerClick(`${id}-outline`);
     };
   }, [closedStops, id, map]);
 
