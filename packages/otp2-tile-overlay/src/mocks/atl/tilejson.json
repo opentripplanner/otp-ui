@@ -6,7 +6,7 @@
   "name": "OpenTripPlanner",
   "attribution": "<a href='https://www.itsmarta.com/'>MARTA</a>",
   "tiles": [
-    "http://localhost:5555/atl/otp/routers/default/vectorTiles/areaStops/{z}/{x}/{y}.pbf"
+    "http://localhost:5555/atl/otp/routers/default/vectorTiles/stops,areaStops/{z}/{x}/{y}.pbf"
   ],
   "bounds": [-84.9523903, 33.272131, -83.6618736, 34.3579592],
   "center": [-84.361995, 33.763529, 9.0]

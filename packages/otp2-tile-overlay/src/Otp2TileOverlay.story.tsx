@@ -72,9 +72,12 @@ export const MockStopStationCombinedLayerPHL = (): JSX.Element => (
 );
 
 export const MockAreaStopTileLayerATL = (): JSX.Element => (
-  <BaseMap center={[33.719, -84.298]} style={{ height: "80vh" }} zoom={12}>
+  <BaseMap center={[33.76339, -84.44089]} style={{ height: "80vh" }} zoom={13}>
     {generateOTP2TileLayers(
-      [{ initiallyVisible: true, minZoom: 5, type: "areaStops" }],
+      [
+        { initiallyVisible: true, minZoom: 12, type: "stops" },
+        { initiallyVisible: true, minZoom: 12, type: "areaStops" }
+      ],
       "http://localhost:5555/atl/otp/routers/default/vectorTiles"
     )}
   </BaseMap>
