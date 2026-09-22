@@ -24,6 +24,9 @@ const meta = {
         },
         showNotices: {
             control: "boolean",
+        },
+        showTripShortName: {
+            control: "boolean",
         }
     }
 } satisfies Meta<typeof TimeTable>;
@@ -34,9 +37,9 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     // eslint-disable-next-line react/display-name
     render: (args) => {
-        const { closedStops, showNotices } = args;
+        const { closedStops, showNotices, showTripShortName } = args;
         // eslint-disable-next-line react/jsx-props-no-spreading
-        return <TimeTable {...args} closedStops={new Set(closedStops)} showNotices={showNotices} />
+        return <TimeTable {...args} closedStops={new Set(closedStops)} showNotices={showNotices} showTripShortName={showTripShortName} />
     },
     args: {
         directionId: 0,

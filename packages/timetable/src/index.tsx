@@ -59,6 +59,7 @@ interface TimetableTrip {
   /** A map of stop GTFS ID to stop detail */
   stops: Map<string, StopDetail>;
   notices?: string[];
+  tripShortName?: string;
 }
 
 interface StopDetail {
@@ -81,6 +82,7 @@ interface Trip {
   gtfsId: string;
   stoptimesForDate: Stoptime[];
   notices?: { text: string }[];
+  tripShortName?: string;
 }
 
 interface Stoptime {
@@ -228,6 +230,10 @@ interface TimeTableProps {
    * notices field on each trip record. See https://github.com/google/transit/pull/638 for more information
    */
   showNotices?: boolean;
+  /** Adds a column at the beginning of each trip row that displays the value for tripShortName on
+   * a given trip
+   */
+  showTripShortName?: boolean;
 }
 
 const TimeTable = (props: TimeTableProps): JSX.Element => {
@@ -241,7 +247,8 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
     showBlockId,
     timepointsOnly,
     timeZone,
-    showNotices
+    showNotices,
+    showTripShortName
   } = props;
 
   const { patterns } = route;
@@ -349,7 +356,8 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
               ];
             })
           ),
-          notices: t.notices?.length ? t.notices.map(n => n.text) : undefined
+          notices: t.notices?.length ? t.notices.map(n => n.text) : undefined,
+          tripShortName: t.tripShortName
         };
       })
       .sort(comparator);
@@ -366,9 +374,12 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
         name: ""
       });
     if (showBlockId) arr.push({ id: "blockIdHeader", name: "Block ID" });
+    if (showTripShortName) {
+      arr.push({ id: "tripShortNameHeader", name: "Trip Short Name" });
+    }
 
     return arr;
-  }, [showBlockId, showNotices]);
+  }, [showBlockId, showNotices, showTripShortName]);
 
   return (
     <Table className="timetable-table" tabIndex={0}>
@@ -404,6 +415,9 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
             });
           }
           if (showBlockId) rowValues.push({ closed: false, value: t.blockId });
+          if (showTripShortName) {
+            rowValues.push({ closed: false, value: t.tripShortName ?? "" });
+          }
 
           filteredPatternStops.forEach(patternStop => {
             const stopDetail = t.stops.get(patternStop.id);

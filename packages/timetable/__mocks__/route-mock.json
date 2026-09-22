@@ -22,6 +22,7 @@
                   "text": "This is a longer notice. The purpose of this notice is to ensure that acceptable standards of placement, readability, and formatting are achieved. This trip will be canceled if the sufficient layout and readability concerns are not addressed!"
                 }
               ],
+              "tripShortName": "A",
               "stoptimesForDate": [
                 {
                   "serviceDay": 1780290000,
@@ -1055,6 +1056,7 @@
             },
             {
               "blockId": "169047",
+              "tripShortName": "B",
               "stoptimesForDate": [
                 {
                   "serviceDay": 1780290000,
@@ -2102,6 +2104,7 @@
                   "text": "This is a longer notice. The purpose of this notice is to ensure that acceptable standards of placement, readability, and formatting are achieved. This trip will be canceled if the sufficient layout and readability concerns are not addressed!"
                 }
               ],
+              "tripShortName": "A",
               "stoptimesForDate": [
                 {
                   "serviceDay": 1780290000,
@@ -3155,6 +3158,7 @@
                   "text": "This is a longer notice. The purpose of this notice is to ensure that acceptable standards of placement, readability, and formatting are achieved. This trip will be canceled if the sufficient layout and readability concerns are not addressed!"
                 }
               ],
+              "tripShortName": "B",
               "stoptimesForDate": [
                 {
                   "serviceDay": 1780290000,
@@ -3440,6 +3444,7 @@
           "tripsForDate": [
             {
               "blockId": "169465",
+              "tripShortName": "A",
               "stoptimesForDate": [
                 {
                   "serviceDay": 1780290000,
@@ -4499,6 +4504,7 @@
             },
             {
               "blockId": "160633",
+              "tripShortName": "B",
               "stoptimesForDate": [
                 {
                   "serviceDay": 1780290000,
@@ -5564,6 +5570,7 @@
           "tripsForDate": [
             {
               "blockId": "160421",
+              "tripShortName": "A",
               "stoptimesForDate": [
                 {
                   "serviceDay": 1780290000,
