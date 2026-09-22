@@ -7,8 +7,6 @@ export default {
   title: "OTP2 Tile Layer"
 };
 
-// TODO: Add a story to illustrate "color" prop passed from overlay.
-
 export const OtpTileLayerFromYourOwnServer = (): JSX.Element => {
   const [endpoint, setEndpoint] = useState("");
   return (
@@ -32,14 +30,19 @@ export const OtpTileLayerFromYourOwnServer = (): JSX.Element => {
   );
 };
 
-export const MockStopTileLayerPHL = (): JSX.Element => (
+export const MockStopTileLayerPHL = (args: { color: string }): JSX.Element => (
   <BaseMap center={[39.9526, -75.1652]} style={{ height: "80vh" }} zoom={14}>
     {generateOTP2TileLayers(
-      [{ initiallyVisible: true, minZoom: 5, type: "stops" }],
+      [
+        { color: args.color, initiallyVisible: true, minZoom: 5, type: "stops" }
+      ],
       "http://localhost:5555/phl/otp/routers/default/vectorTiles"
     )}
   </BaseMap>
 );
+MockStopTileLayerPHL.args = {
+  color: "#fff"
+};
 
 export const MockAreaStopTileLayerATL = (): JSX.Element => (
   <BaseMap center={[33.719, -84.298]} style={{ height: "80vh" }} zoom={12}>
