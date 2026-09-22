@@ -34,7 +34,11 @@ function composeEntity(
     sourceLayer
   };
 
-  if (sourceLayer !== "stops" && sourceLayer !== "stations") {
+  if (
+    sourceLayer !== "stops" &&
+    sourceLayer !== "stations" &&
+    sourceLayer !== "areaStops"
+  ) {
     // For rental vehicles and rental stations, additional fields must be added in order to
     // be compatible with the RentalVehicle and VehicleRentalStation types from OTP2
     synthesizedEntity.name = synthesizedEntity.name ?? "";
