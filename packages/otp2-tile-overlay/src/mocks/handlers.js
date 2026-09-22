@@ -26,15 +26,15 @@ function fetchTile(tileLocalUrl) {
 export default [
   // PHL stop tiles
   http.get(
-    "http://localhost:5555/phl/otp/routers/default/vectorTiles/stops/tilejson.json",
+    "http://localhost:5555/phl/otp/routers/default/vectorTiles/stops,stations/tilejson.json",
     () => new Response(JSON.stringify(phlTilejson))
   ),
   http.get(
-    "http://localhost:5555/phl/otp/routers/default/vectorTiles/stops/14/4770/6205.pbf",
+    "http://localhost:5555/phl/otp/routers/default/vectorTiles/stops,stations/14/4770/6205.pbf",
     fetchTile(phl47706205)
   ),
   http.get(
-    "http://localhost:5555/phl/otp/routers/default/vectorTiles/stops/14/4771/6205.pbf",
+    "http://localhost:5555/phl/otp/routers/default/vectorTiles/stops,stations/14/4771/6205.pbf",
     fetchTile(phl47716205)
   ),
 

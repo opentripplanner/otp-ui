@@ -30,19 +30,46 @@ export const OtpTileLayerFromYourOwnServer = (): JSX.Element => {
   );
 };
 
-export const MockStopTileLayerPHL = (args: { color: string }): JSX.Element => (
+export const MockStopStationTileLayersPHL = (args: {
+  stationsColor: string;
+  stopsColor: string;
+}): JSX.Element => (
   <BaseMap center={[39.9526, -75.1652]} style={{ height: "80vh" }} zoom={14}>
     {generateOTP2TileLayers(
       [
-        { color: args.color, initiallyVisible: true, minZoom: 5, type: "stops" }
+        {
+          color: args.stopsColor,
+          initiallyVisible: true,
+          type: "stops"
+        },
+        {
+          color: args.stationsColor,
+          initiallyVisible: true,
+          type: "stations"
+        }
       ],
       "http://localhost:5555/phl/otp/routers/default/vectorTiles"
     )}
   </BaseMap>
 );
-MockStopTileLayerPHL.args = {
-  color: "#fff"
+MockStopStationTileLayersPHL.args = {
+  stationsColor: "#66ccff",
+  stopsColor: "#fff"
 };
+
+export const MockStopStationCombinedLayerPHL = (): JSX.Element => (
+  <BaseMap center={[39.9526, -75.1652]} style={{ height: "80vh" }} zoom={14}>
+    {generateOTP2TileLayers(
+      [
+        {
+          initiallyVisible: true,
+          type: "OTP-UI-stopsAndStations"
+        }
+      ],
+      "http://localhost:5555/phl/otp/routers/default/vectorTiles"
+    )}
+  </BaseMap>
+);
 
 export const MockAreaStopTileLayerATL = (): JSX.Element => (
   <BaseMap center={[33.719, -84.298]} style={{ height: "80vh" }} zoom={12}>
