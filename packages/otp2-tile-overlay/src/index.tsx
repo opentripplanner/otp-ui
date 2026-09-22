@@ -19,6 +19,44 @@ const SOURCE_ID = "otp2-tiles";
 const AREA_TYPES = ["areaStops"];
 const STOPS_AND_STATIONS_TYPE = "OTP-UI-stopsAndStations";
 
+function composeEntity(
+  event: MapLayerMouseEvent,
+  closedStops: Set<string> | undefined
+): Record<string, any> {
+  const sourceLayer = event.features?.[0]?.sourceLayer;
+  const properties = event.features?.[0]?.properties;
+  const stopGtfsId = sourceLayer === "stops" ? properties?.gtfsId : "";
+  const synthesizedEntity: Record<string, any> = {
+    ...properties,
+    closed: stopGtfsId && closedStops?.has(stopGtfsId),
+    lat: event.lngLat.lat,
+    lon: event.lngLat.lng,
+    sourceLayer
+  };
+
+  if (sourceLayer !== "stops" && sourceLayer !== "stations") {
+    // For rental vehicles and rental stations, additional fields must be added in order to
+    // be compatible with the RentalVehicle and VehicleRentalStation types from OTP2
+    synthesizedEntity.name = synthesizedEntity.name ?? "";
+    synthesizedEntity.vehicleType =
+      sourceLayer === "rentalVehicles" && "formFactor" in synthesizedEntity
+        ? { formFactor: synthesizedEntity.formFactor }
+        : sourceLayer === "rentalStations" && "formFactors" in synthesizedEntity
+        ? { formFactor: synthesizedEntity.formFactors }
+        : undefined;
+    synthesizedEntity.rentalNetwork =
+      "network" in synthesizedEntity
+        ? { networkId: synthesizedEntity.network }
+        : undefined;
+    if (sourceLayer === "rentalStations") {
+      synthesizedEntity.availableVehicles = undefined;
+      synthesizedEntity.availableSpaces = undefined;
+    }
+  }
+
+  return synthesizedEntity;
+}
+
 const OTP2TileLayerWithPopup = ({
   closedStops,
   color,
@@ -96,45 +134,13 @@ const OTP2TileLayerWithPopup = ({
   // TODO: handle this complex type: it can be a stop, a station, and some extra fields too
   const [clickedEntity, setClickedEntity] = useState<any>(null);
 
-  const defaultClickHandler = (event: MapLayerMouseEvent) => {
-    const sourceLayer = event.features?.[0]?.sourceLayer;
-    const properties = event.features?.[0]?.properties;
-    const stopGtfsId = sourceLayer === "stops" ? properties?.gtfsId : "";
-    const synthesizedEntity: Record<string, any> = {
-      ...properties,
-      closed: stopGtfsId && closedStops?.has(stopGtfsId),
-      lat: event.lngLat.lat,
-      lon: event.lngLat.lng,
-      sourceLayer
-    };
-
-    // TODO: once the popup converges into a single one that can handle
-    // stops, stations, and vehicles, this re-writing will not be needed
-    // See: https://github.com/opentripplanner/otp-ui/pull/472#discussion_r1023124055
-    if (sourceLayer === "stops" || sourceLayer === "stations") {
+  const defaultClickHandler = useCallback(
+    (event: MapLayerMouseEvent) => {
+      const synthesizedEntity = composeEntity(event, closedStops);
       setClickedEntity(synthesizedEntity);
-    }
-
-    // For rental vehicles and rental stations, additional fields must be added in order to
-    // be compatible with the RentalVehicle and VehicleRentalStation types from OTP2
-    synthesizedEntity.name = synthesizedEntity.name ?? "";
-    synthesizedEntity.vehicleType =
-      sourceLayer === "rentalVehicles" && "formFactor" in synthesizedEntity
-        ? { formFactor: synthesizedEntity.formFactor }
-        : sourceLayer === "rentalStations" && "formFactors" in synthesizedEntity
-        ? { formFactor: synthesizedEntity.formFactors }
-        : undefined;
-    synthesizedEntity.rentalNetwork =
-      "network" in synthesizedEntity
-        ? { networkId: synthesizedEntity.network }
-        : undefined;
-    if (sourceLayer === "rentalStations") {
-      synthesizedEntity.availableVehicles = undefined;
-      synthesizedEntity.availableSpaces = undefined;
-    }
-
-    setClickedEntity(synthesizedEntity);
-  };
+    },
+    [setClickedEntity, closedStops]
+  );
 
   const onLayerEnter = useCallback(() => {
     if (map) {
