@@ -59,7 +59,7 @@ interface TimetableTrip {
   /** A map of stop GTFS ID to stop detail */
   stops: Map<string, StopDetail>;
   notices?: string[];
-  shortName?: string;
+  tripShortName?: string;
 }
 
 interface StopDetail {
@@ -357,7 +357,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
             })
           ),
           notices: t.notices?.length ? t.notices.map(n => n.text) : undefined,
-          shortName: t.tripShortName
+          tripShortName: t.tripShortName
         };
       })
       .sort(comparator);
@@ -415,7 +415,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
           }
           if (showBlockId) rowValues.push({ closed: false, value: t.blockId });
           if (showTripShortName)
-            rowValues.push({ closed: false, value: t.shortName ?? "" });
+            rowValues.push({ closed: false, value: t.tripShortName ?? "" });
 
           filteredPatternStops.forEach(patternStop => {
             const stopDetail = t.stops.get(patternStop.id);
