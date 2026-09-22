@@ -374,8 +374,9 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
         name: ""
       });
     if (showBlockId) arr.push({ id: "blockIdHeader", name: "Block ID" });
-    if (showTripShortName)
+    if (showTripShortName) {
       arr.push({ id: "tripShortNameHeader", name: "Trip Short Name" });
+    }
 
     return arr;
   }, [showBlockId, showNotices, showTripShortName]);
@@ -414,8 +415,9 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
             });
           }
           if (showBlockId) rowValues.push({ closed: false, value: t.blockId });
-          if (showTripShortName)
+          if (showTripShortName) {
             rowValues.push({ closed: false, value: t.tripShortName ?? "" });
+          }
 
           filteredPatternStops.forEach(patternStop => {
             const stopDetail = t.stops.get(patternStop.id);
