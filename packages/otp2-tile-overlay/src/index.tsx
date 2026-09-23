@@ -10,6 +10,7 @@ import React, { useCallback, useState } from "react";
 import { Source } from "react-map-gl/maplibre";
 
 import OTP2TileLayerWithPopup, {
+  ClickedEntity,
   SOURCE_ID,
   STOPS_AND_STATIONS_TYPE
 } from "./otp2-tile-layer-with-popup";
@@ -22,6 +23,10 @@ interface LayerConfig {
   network?: string;
   overrideType?: string;
   type: string;
+}
+
+interface ClickedEntityState {
+  entity: ClickedEntity;
 }
 
 function withFinalType(
@@ -63,14 +68,16 @@ const generateOTP2TileLayers = (
   feeds?: Feed[],
   closedStops?: Set<string>
 ): JSX.Element[] => {
-  const [clickedEntity, setClickedEntity] = useState<any>(null);
+  const [clickedEntity, setClickedEntity] = useState<ClickedEntityState | null>(
+    null
+  );
   const handleLayerClick = useCallback(
-    (entity: any) => {
+    (entity: ClickedEntity) => {
       if (!(clickedEntity?.entity && entity.sourceLayer === "stops")) {
         setClickedEntity({ entity });
         // Calling setClickedEntity does not cause the layers to be rerendered
         // right away because this is not a component.
-        // HACK: Stop subsequent events by generating an error (clickedEntity original value is null).
+        // @ts-expect-error Stop subsequent events by generating an error (clickedEntity original value is null).
         clickedEntity.entity = entity;
       }
     },
@@ -101,6 +108,9 @@ const generateOTP2TileLayers = (
         type
       } = layer;
       const id = `${type}${network ? `-${network}` : ""}`;
+      const mutePopup = clickedEntityLayer
+        ? !finalType.split(",").includes(clickedEntityLayer)
+        : false;
       return (
         <OTP2TileLayerWithPopup
           closedStops={closedStops}
@@ -113,7 +123,7 @@ const generateOTP2TileLayers = (
           name={name || id}
           network={network}
           minZoom={minZoom}
-          mutePopup={!finalType.split(",").includes(clickedEntityLayer)}
+          mutePopup={mutePopup}
           onEntityClick={handleLayerClick}
           setLocation={setLocation}
           setViewedStop={setViewedStop}

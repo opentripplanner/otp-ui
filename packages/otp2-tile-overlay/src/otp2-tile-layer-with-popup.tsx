@@ -6,6 +6,7 @@ import {
   StopEventHandler
 } from "@opentripplanner/types";
 import {
+  FormFactor,
   RentalVehicle,
   VehicleRentalStation
 } from "@opentripplanner/types/otp2";
@@ -19,14 +20,40 @@ export const SOURCE_ID = "otp2-tiles";
 const AREA_TYPES = ["areaStops"];
 export const STOPS_AND_STATIONS_TYPE = "OTP-UI-stopsAndStations";
 
+interface VehicleTypeFromTile {
+  formFactor?: FormFactor;
+  formFactors?: FormFactor;
+  network?: string;
+}
+
+export type ClickedEntity = (
+  | Stop
+  | Omit<Partial<VehicleRentalStation>, "rentalNetwork">
+  | Omit<RentalVehicle, "rentalNetwork">
+) &
+  VehicleTypeFromTile & {
+    closed: boolean;
+    lat: number;
+    lon: number;
+    sourceLayer?: string;
+    rentalNetwork?: {
+      networkId?: string;
+      url?: string;
+    };
+    vehicleType?: {
+      formFactor?: FormFactor;
+    };
+  };
+
 function composeEntity(
   event: MapLayerMouseEvent,
   closedStops: Set<string> | undefined
-): Record<string, any> {
+): ClickedEntity {
   const sourceLayer = event.features?.[0]?.sourceLayer;
   const properties = event.features?.[0]?.properties;
   const stopGtfsId = sourceLayer === "stops" ? properties?.gtfsId : "";
-  const synthesizedEntity: Record<string, any> = {
+
+  const synthesizedEntity: ClickedEntity = {
     ...properties,
     closed: stopGtfsId && closedStops?.has(stopGtfsId),
     lat: event.lngLat.lat,
@@ -114,7 +141,7 @@ const OTP2TileLayerWithPopup = ({
   /**
    * Triggered when an entity is clicked on this layer.
    */
-  onEntityClick: (entity: any) => void;
+  onEntityClick: (entity: ClickedEntity) => void;
   /**
    * A method fired when a stop is selected as from or to in the default popup. If this method
    * is not passed, the from/to buttons will not be shown.
@@ -139,7 +166,9 @@ const OTP2TileLayerWithPopup = ({
   const { current: map } = useMap();
 
   // TODO: handle this complex type: it can be a stop, a station, and some extra fields too
-  const [clickedEntity, setClickedEntity] = useState<any>(null);
+  const [clickedEntity, setClickedEntity] = useState<ClickedEntity | null>(
+    null
+  );
 
   const defaultClickHandler = useCallback(
     (event: MapLayerMouseEvent) => {
@@ -305,8 +334,10 @@ const OTP2TileLayerWithPopup = ({
           <EntityPopup
             closePopup={() => setClickedEntity(null)}
             configCompanies={configCompanies}
+            // @ts-expect-error More type tightening needed.
             entity={{
               ...clickedEntity,
+              // @ts-expect-error More type tightening needed.
               id: clickedEntity?.id || clickedEntity?.gtfsId
             }}
             feeds={feeds}
