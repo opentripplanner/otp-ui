@@ -1,23 +1,18 @@
-import EntityPopup, { Feed } from "@opentripplanner/map-popup";
+import { Feed } from "@opentripplanner/map-popup";
 import {
   ConfiguredCompany,
   MapLocationActionArg,
   Stop,
   StopEventHandler
 } from "@opentripplanner/types";
-import {
-  RentalVehicle,
-  VehicleRentalStation
-} from "@opentripplanner/types/otp2";
-import React, { useCallback, useEffect, useState } from "react";
-import { FilterSpecification, MapLayerMouseEvent } from "maplibre-gl";
-import { Layer, Popup, Source, useMap } from "react-map-gl/maplibre";
+import { VehicleRentalStation } from "@opentripplanner/types/otp2";
+import React, { useCallback, useState } from "react";
+import { Source } from "react-map-gl/maplibre";
 
-import { generateLayerPaint, ROUTE_COLOR_EXPRESSION } from "./util";
-
-const SOURCE_ID = "otp2-tiles";
-const AREA_TYPES = ["areaStops"];
-const STOPS_AND_STATIONS_TYPE = "OTP-UI-stopsAndStations";
+import OTP2TileLayerWithPopup, {
+  SOURCE_ID,
+  STOPS_AND_STATIONS_TYPE
+} from "./otp2-tile-layer-with-popup";
 
 interface LayerConfig {
   color?: string;
@@ -27,48 +22,6 @@ interface LayerConfig {
   network?: string;
   overrideType?: string;
   type: string;
-}
-
-function composeEntity(
-  event: MapLayerMouseEvent,
-  closedStops: Set<string> | undefined
-): Record<string, any> {
-  const sourceLayer = event.features?.[0]?.sourceLayer;
-  const properties = event.features?.[0]?.properties;
-  const stopGtfsId = sourceLayer === "stops" ? properties?.gtfsId : "";
-  const synthesizedEntity: Record<string, any> = {
-    ...properties,
-    closed: stopGtfsId && closedStops?.has(stopGtfsId),
-    lat: event.lngLat.lat,
-    lon: event.lngLat.lng,
-    sourceLayer
-  };
-
-  if (
-    sourceLayer !== "stops" &&
-    sourceLayer !== "stations" &&
-    sourceLayer !== "areaStops"
-  ) {
-    // For rental vehicles and rental stations, additional fields must be added in order to
-    // be compatible with the RentalVehicle and VehicleRentalStation types from OTP2
-    synthesizedEntity.name = synthesizedEntity.name ?? "";
-    synthesizedEntity.vehicleType =
-      sourceLayer === "rentalVehicles" && "formFactor" in synthesizedEntity
-        ? { formFactor: synthesizedEntity.formFactor }
-        : sourceLayer === "rentalStations" && "formFactors" in synthesizedEntity
-        ? { formFactor: synthesizedEntity.formFactors }
-        : undefined;
-    synthesizedEntity.rentalNetwork =
-      "network" in synthesizedEntity
-        ? { networkId: synthesizedEntity.network }
-        : undefined;
-    if (sourceLayer === "rentalStations") {
-      synthesizedEntity.availableVehicles = undefined;
-      synthesizedEntity.availableSpaces = undefined;
-    }
-  }
-
-  return synthesizedEntity;
 }
 
 function withFinalType(
@@ -83,279 +36,6 @@ function withFinalType(
   };
 }
 
-const OTP2TileLayerWithPopup = ({
-  closedStops,
-  color,
-  configCompanies,
-  feeds,
-  getEntityPrefix,
-  id,
-  network,
-  minZoom = 14,
-  mutePopup,
-  onEntityClick,
-  setLocation,
-  setViewedStop,
-  stopsWhitelist,
-  type
-}: {
-  /** A set of gtfsIds for stops that are closed. When provided, the map popup for a closed stop will
-   * display a note indicating the cancellation
-   */
-  closedStops?: Set<string>;
-  color?: string;
-  /**
-   * Optional configuration item which allows for customizing properties of scooter and
-   * bikeshare companies. If this is provided, scooter/bikeshare company names can be rendered in the
-   * default scooter/bike popup
-   */
-  configCompanies?: ConfiguredCompany[];
-  /**
-   * A list of feeds from the GraphQL query. If specified, the feed publisher name will be used to
-   * display the name of the stop in the popup.
-   */
-  feeds?: Feed[];
-  getEntityPrefix?: (
-    entity: Stop | VehicleRentalStation | RentalVehicle
-  ) => JSX.Element;
-  id: string;
-  name?: string;
-  /**
-   * If `network` is specified, the layer will be filtered to only show vehicles from
-   * that network
-   */
-  network?: string;
-  /**
-   * The minimum zoom to show the layer at. Defaults to 14
-   */
-  minZoom?: number;
-  /**
-   * Whether to hide the popup if another one from another layer is already shown.
-   */
-  mutePopup: boolean;
-  /**
-   * Triggered when an entity is clicked on this layer.
-   */
-  onEntityClick: (entity: any) => void;
-  /**
-   * A method fired when a stop is selected as from or to in the default popup. If this method
-   * is not passed, the from/to buttons will not be shown.
-   */
-  setLocation?: (location: MapLocationActionArg) => void;
-  /**
-   * A method fired when the stop viewer is opened in the default popup. If this method is
-   * not passed, the stop viewer link will not be shown.
-   */
-  setViewedStop?: StopEventHandler;
-  /**
-   * A list of GTFS stop ids (with agency prepended). If specified, all stops that
-   * are NOT in this list will be HIDDEN.
-   */
-  stopsWhitelist?: string[];
-  /**
-   * Determines which layer of the OTP2 tile data to display. Also determines icon color.
-   */
-  type: string;
-  visible?: boolean;
-}): JSX.Element | undefined => {
-  const { current: map } = useMap();
-
-  // TODO: handle this complex type: it can be a stop, a station, and some extra fields too
-  const [clickedEntity, setClickedEntity] = useState<any>(null);
-
-  const defaultClickHandler = useCallback(
-    (event: MapLayerMouseEvent) => {
-      const synthesizedEntity = composeEntity(event, closedStops);
-      setClickedEntity(synthesizedEntity);
-      onEntityClick(synthesizedEntity);
-    },
-    [setClickedEntity, closedStops]
-  );
-
-  const onLayerEnter = useCallback(() => {
-    if (map) {
-      map.getCanvas().style.cursor = "pointer";
-    }
-  }, [map]);
-
-  const onLayerLeave = useCallback(() => {
-    if (map) {
-      map.getCanvas().style.cursor = "";
-    }
-  }, [map]);
-
-  const attachLayerClick = (layerId: string) => {
-    if (map) {
-      map.on("click", layerId, defaultClickHandler);
-    }
-  };
-
-  const detachLayerClick = (layerId: string) => {
-    if (map) {
-      map.off("click", layerId, defaultClickHandler);
-    }
-  };
-
-  const attachLayerEvents = (layerId: string) => {
-    if (map) {
-      map.on("mouseenter", layerId, onLayerEnter);
-      map.on("mouseleave", layerId, onLayerLeave);
-      attachLayerClick(layerId);
-    }
-  };
-
-  const detachLayerEvents = (layerId: string) => {
-    if (map) {
-      map.off("mouseenter", layerId, onLayerEnter);
-      map.off("mouseleave", layerId, onLayerLeave);
-      detachLayerClick(layerId);
-    }
-  };
-
-  useEffect(() => {
-    attachLayerEvents(id);
-    attachLayerEvents(`${id}-secondary`);
-    attachLayerEvents(`${id}-fill`);
-    attachLayerClick(`${id}-outline`);
-
-    return () => {
-      detachLayerEvents(id);
-      detachLayerEvents(`${id}-secondary`);
-      detachLayerEvents(`${id}-fill`);
-      detachLayerClick(`${id}-outline`);
-    };
-  }, [closedStops, id, map]);
-
-  let filter: FilterSpecification = ["all"];
-  if (network) {
-    filter = ["all", ["==", "network", network]];
-  }
-  if (
-    type === "stops" ||
-    type === "areaStops" ||
-    type === STOPS_AND_STATIONS_TYPE
-  ) {
-    filter = [
-      "all",
-      ["!", ["has", "parentStation"]],
-      ["!=", ["get", "routes"], ["literal", "[]"]]
-    ];
-  }
-  if (stopsWhitelist) {
-    filter = ["in", ["get", "gtfsId"], ["literal", stopsWhitelist]];
-  }
-
-  const layerMinZoom = stopsWhitelist ? 2 : minZoom;
-  const isArea = AREA_TYPES.includes(type);
-  const isStopsAndStations = type === STOPS_AND_STATIONS_TYPE;
-  return (
-    <>
-      {isArea && (
-        <Layer
-          filter={filter}
-          id={`${id}-fill`}
-          minzoom={layerMinZoom}
-          paint={{
-            "fill-color": ROUTE_COLOR_EXPRESSION,
-            "fill-opacity": 0.2
-          }}
-          source-layer={type}
-          source={SOURCE_ID}
-          type="fill"
-        />
-      )}
-      {isArea && (
-        <Layer
-          filter={filter}
-          id={`${id}-outline`}
-          layout={{ "line-join": "round", "line-cap": "round" }}
-          minzoom={layerMinZoom}
-          paint={{
-            "line-color": ROUTE_COLOR_EXPRESSION,
-            "line-opacity": 0.8,
-            "line-width": 3
-          }}
-          source-layer={type}
-          source={SOURCE_ID}
-          type="line"
-        />
-      )}
-      {isStopsAndStations && (
-        <Layer
-          filter={filter}
-          id={id}
-          key={`${id}-stops`}
-          minzoom={layerMinZoom}
-          paint={generateLayerPaint(color).stops}
-          source={SOURCE_ID}
-          source-layer="stops"
-          type="circle"
-        />
-      )}
-      {isStopsAndStations && (
-        <Layer
-          filter={filter}
-          id={`${id}-secondary`}
-          key={`${id}-stations`}
-          minzoom={layerMinZoom}
-          paint={generateLayerPaint(color).stops}
-          source={SOURCE_ID}
-          source-layer="stations"
-          type="circle"
-        />
-      )}
-      {!isArea && !isStopsAndStations && (
-        <Layer
-          filter={filter}
-          id={id}
-          key={id}
-          minzoom={layerMinZoom}
-          paint={generateLayerPaint(color)[type]}
-          source={SOURCE_ID}
-          source-layer={type}
-          type="circle"
-        />
-      )}
-      {clickedEntity && !mutePopup && (
-        <Popup
-          latitude={clickedEntity.lat}
-          longitude={clickedEntity.lon}
-          maxWidth="100%"
-          // TODO: only set null if the x is clicked, not a new stop
-          onClose={() => setClickedEntity(null)}
-        >
-          <EntityPopup
-            closePopup={() => setClickedEntity(null)}
-            configCompanies={configCompanies}
-            entity={{
-              ...clickedEntity,
-              id: clickedEntity?.id || clickedEntity?.gtfsId
-            }}
-            feeds={feeds}
-            getEntityPrefix={getEntityPrefix}
-            setLocation={
-              setLocation
-                ? location => {
-                    setClickedEntity(null);
-                    setLocation(location);
-                  }
-                : undefined
-            }
-            setViewedStop={
-              setViewedStop
-                ? stop => {
-                    setClickedEntity(null);
-                    setViewedStop(stop);
-                  }
-                : undefined
-            }
-          />
-        </Popup>
-      )}
-    </>
-  );
-};
-
 /**
  * Generates an array of MapLibreGL Source and Layer components with included popups for
  * rendering OTP2 tile data.
@@ -367,6 +47,9 @@ const OTP2TileLayerWithPopup = ({
  * @param setViewedStop   An optional method to make stop viewer button functional. See component for more detail.
  * @param stopsWhitelist  An optional list of stops to display singularly. See component for more detail.
  * @param configCompanies An optional list of companies used to prettify network information.
+ * @param getEntityPrefix An optional function to extract an entity prefix (e.g. to prepend a logo).
+ * @param feeds           An optional list of feeds with publisher info.
+ * @param closedStops     An optional list of OTP gtfsIds for stops to identify as closed.
  * @returns               Array of <Source> and <OTP2TileLayerWithPopup> components
  */
 const generateOTP2TileLayers = (
