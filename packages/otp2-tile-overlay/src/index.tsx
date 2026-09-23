@@ -400,7 +400,15 @@ const generateOTP2TileLayers = (
         .join(",")}/tilejson.json`}
     />,
     ...layers.map(layer => {
-      const { color, initiallyVisible, minZoom, name, network, type } = layer;
+      const {
+        color,
+        initiallyVisible,
+        minZoom,
+        name,
+        network,
+        overrideType,
+        type
+      } = layer;
       const id = `${type}${network ? `-${network}` : ""}`;
       return (
         <OTP2TileLayerWithPopup
@@ -414,7 +422,11 @@ const generateOTP2TileLayers = (
           name={name || id}
           network={network}
           minZoom={minZoom}
-          mutePopup={clickedEntity?.entity?.sourceLayer !== type}
+          mutePopup={
+            !(overrideType || type)
+              .split(",")
+              .includes(clickedEntity?.entity?.sourceLayer)
+          }
           onEntityClick={handleLayerClick}
           setLocation={setLocation}
           setViewedStop={setViewedStop}
