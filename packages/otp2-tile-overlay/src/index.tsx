@@ -11,7 +11,6 @@ import { Source } from "react-map-gl/maplibre";
 
 import OTP2TileLayerWithPopup, {
   ClickedEntity,
-  SOURCE_ID,
   STOPS_AND_STATIONS_TYPE
 } from "./otp2-tile-layer-with-popup";
 
@@ -28,6 +27,8 @@ interface LayerConfig {
 interface ClickedEntityState {
   entity: ClickedEntity;
 }
+
+const SOURCE_ID = "otp2-tiles";
 
 function withFinalType(
   layer: LayerConfig
@@ -127,6 +128,7 @@ const generateOTP2TileLayers = (
           onEntityClick={handleLayerClick}
           setLocation={setLocation}
           setViewedStop={setViewedStop}
+          sourceId={SOURCE_ID}
           stopsWhitelist={stopsWhitelist}
           type={type}
           visible={initiallyVisible}

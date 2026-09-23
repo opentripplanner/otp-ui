@@ -16,7 +16,6 @@ import { Layer, Popup, useMap } from "react-map-gl/maplibre";
 
 import { generateLayerPaint, ROUTE_COLOR_EXPRESSION } from "./util";
 
-export const SOURCE_ID = "otp2-tiles";
 const AREA_TYPES = ["areaStops"];
 export const STOPS_AND_STATIONS_TYPE = "OTP-UI-stopsAndStations";
 
@@ -101,6 +100,7 @@ const OTP2TileLayerWithPopup = ({
   onEntityClick,
   setLocation,
   setViewedStop,
+  sourceId,
   stopsWhitelist,
   type
 }: {
@@ -152,6 +152,10 @@ const OTP2TileLayerWithPopup = ({
    * not passed, the stop viewer link will not be shown.
    */
   setViewedStop?: StopEventHandler;
+  /**
+   * ID of the <Source> element for this layer.
+   */
+  sourceId: string;
   /**
    * A list of GTFS stop ids (with agency prepended). If specified, all stops that
    * are NOT in this list will be HIDDEN.
@@ -267,7 +271,7 @@ const OTP2TileLayerWithPopup = ({
             "fill-opacity": 0.2
           }}
           source-layer={type}
-          source={SOURCE_ID}
+          source={sourceId}
           type="fill"
         />
       )}
@@ -283,7 +287,7 @@ const OTP2TileLayerWithPopup = ({
             "line-width": 3
           }}
           source-layer={type}
-          source={SOURCE_ID}
+          source={sourceId}
           type="line"
         />
       )}
@@ -294,7 +298,7 @@ const OTP2TileLayerWithPopup = ({
           key={`${id}-stops`}
           minzoom={layerMinZoom}
           paint={generateLayerPaint(color).stops}
-          source={SOURCE_ID}
+          source={sourceId}
           source-layer="stops"
           type="circle"
         />
@@ -306,7 +310,7 @@ const OTP2TileLayerWithPopup = ({
           key={`${id}-stations`}
           minzoom={layerMinZoom}
           paint={generateLayerPaint(color).stops}
-          source={SOURCE_ID}
+          source={sourceId}
           source-layer="stations"
           type="circle"
         />
@@ -318,7 +322,7 @@ const OTP2TileLayerWithPopup = ({
           key={id}
           minzoom={layerMinZoom}
           paint={generateLayerPaint(color)[type]}
-          source={SOURCE_ID}
+          source={sourceId}
           source-layer={type}
           type="circle"
         />
