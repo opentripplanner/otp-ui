@@ -19,6 +19,16 @@ const SOURCE_ID = "otp2-tiles";
 const AREA_TYPES = ["areaStops"];
 const STOPS_AND_STATIONS_TYPE = "OTP-UI-stopsAndStations";
 
+interface LayerConfig {
+  color?: string;
+  initiallyVisible?: boolean;
+  minZoom?: number;
+  name?: string;
+  network?: string;
+  overrideType?: string;
+  type: string;
+}
+
 function composeEntity(
   event: MapLayerMouseEvent,
   closedStops: Set<string> | undefined
@@ -59,6 +69,18 @@ function composeEntity(
   }
 
   return synthesizedEntity;
+}
+
+function withFinalType(
+  layer: LayerConfig
+): LayerConfig & { finalType: string } {
+  return {
+    ...layer,
+    finalType:
+      layer.type === STOPS_AND_STATIONS_TYPE
+        ? "stops,stations"
+        : layer.overrideType || layer.type
+  };
 }
 
 const OTP2TileLayerWithPopup = ({
@@ -348,15 +370,7 @@ const OTP2TileLayerWithPopup = ({
  * @returns               Array of <Source> and <OTP2TileLayerWithPopup> components
  */
 const generateOTP2TileLayers = (
-  layers: {
-    color?: string;
-    initiallyVisible?: boolean;
-    minZoom?: number;
-    name?: string;
-    network?: string;
-    overrideType?: string;
-    type: string;
-  }[],
+  layers: LayerConfig[],
   endpoint: string,
   setLocation?: (location: MapLocationActionArg) => void,
   setViewedStop?: StopEventHandler,
@@ -373,20 +387,16 @@ const generateOTP2TileLayers = (
         setClickedEntity({ entity });
         // Calling setClickedEntity does not cause the layers to be rerendered
         // right away because this is not a component.
-        // The hack below "updates" the state till the next render.
+        // HACK: Stop subsequent events by generating an error (clickedEntity original value is null).
         clickedEntity.entity = entity;
       }
     },
     [clickedEntity, setClickedEntity]
   );
 
-  const fakeOtpUiLayerIndex = layers.findIndex(
-    l => l.type === STOPS_AND_STATIONS_TYPE
-  );
-  if (fakeOtpUiLayerIndex > -1) {
-    layers[fakeOtpUiLayerIndex].overrideType = "stops,stations";
-  }
-
+  const clickedEntityLayer = clickedEntity?.entity?.sourceLayer;
+  const editedLayers = layers.map(withFinalType);
+  const tileTypes = editedLayers.map(l => l.finalType).join(",");
   return [
     <Source
       // @ts-expect-error we use a nonstandard prop
@@ -395,18 +405,16 @@ const generateOTP2TileLayers = (
       key={SOURCE_ID}
       type="vector"
       // Only grab the data we need based on layers defined
-      url={`${endpoint}/${layers
-        .map(l => l.overrideType || l.type)
-        .join(",")}/tilejson.json`}
+      url={`${endpoint}/${tileTypes}/tilejson.json`}
     />,
-    ...layers.map(layer => {
+    ...editedLayers.map(layer => {
       const {
         color,
+        finalType,
         initiallyVisible,
         minZoom,
         name,
         network,
-        overrideType,
         type
       } = layer;
       const id = `${type}${network ? `-${network}` : ""}`;
@@ -422,11 +430,7 @@ const generateOTP2TileLayers = (
           name={name || id}
           network={network}
           minZoom={minZoom}
-          mutePopup={
-            !(overrideType || type)
-              .split(",")
-              .includes(clickedEntity?.entity?.sourceLayer)
-          }
+          mutePopup={!finalType.split(",").includes(clickedEntityLayer)}
           onEntityClick={handleLayerClick}
           setLocation={setLocation}
           setViewedStop={setViewedStop}
