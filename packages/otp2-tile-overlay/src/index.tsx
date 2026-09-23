@@ -70,7 +70,8 @@ const OTP2TileLayerWithPopup = ({
   id,
   network,
   minZoom = 14,
-  onMapClick,
+  mutePopup,
+  onEntityClick,
   setLocation,
   setViewedStop,
   stopsWhitelist,
@@ -107,11 +108,13 @@ const OTP2TileLayerWithPopup = ({
    */
   minZoom?: number;
   /**
-   * An optional method to override the map click handler. If a method is passed, NO POPUPS
-   * WILL APPEAR ON CLICK. The implementer will be responsible for handling all click events
-   * in accordance with the MapLibreGL api.
+   * Whether to hide the popup if another one from another layer is already shown.
    */
-  onMapClick?: (event: MapLayerMouseEvent) => void;
+  mutePopup: boolean;
+  /**
+   * Triggered when an entity is clicked on this layer.
+   */
+  onEntityClick: (entity: any) => void;
   /**
    * A method fired when a stop is selected as from or to in the default popup. If this method
    * is not passed, the from/to buttons will not be shown.
@@ -142,6 +145,7 @@ const OTP2TileLayerWithPopup = ({
     (event: MapLayerMouseEvent) => {
       const synthesizedEntity = composeEntity(event, closedStops);
       setClickedEntity(synthesizedEntity);
+      onEntityClick(synthesizedEntity);
     },
     [setClickedEntity, closedStops]
   );
@@ -160,13 +164,13 @@ const OTP2TileLayerWithPopup = ({
 
   const attachLayerClick = (layerId: string) => {
     if (map) {
-      map.on("click", layerId, onMapClick || defaultClickHandler);
+      map.on("click", layerId, defaultClickHandler);
     }
   };
 
   const detachLayerClick = (layerId: string) => {
     if (map) {
-      map.off("click", layerId, onMapClick || defaultClickHandler);
+      map.off("click", layerId, defaultClickHandler);
     }
   };
 
@@ -290,7 +294,7 @@ const OTP2TileLayerWithPopup = ({
           type="circle"
         />
       )}
-      {clickedEntity && (
+      {clickedEntity && !mutePopup && (
         <Popup
           latitude={clickedEntity.lat}
           longitude={clickedEntity.lon}
@@ -362,6 +366,20 @@ const generateOTP2TileLayers = (
   feeds?: Feed[],
   closedStops?: Set<string>
 ): JSX.Element[] => {
+  const [clickedEntity, setClickedEntity] = useState<any>(null);
+  const handleLayerClick = useCallback(
+    (entity: any) => {
+      if (!(clickedEntity?.entity && entity.sourceLayer === "stops")) {
+        setClickedEntity({ entity });
+        // Calling setClickedEntity does not cause the layers to be rerendered
+        // right away because this is not a component.
+        // The hack below "updates" the state till the next render.
+        clickedEntity.entity = entity;
+      }
+    },
+    [clickedEntity, setClickedEntity]
+  );
+
   const fakeOtpUiLayerIndex = layers.findIndex(
     l => l.type === STOPS_AND_STATIONS_TYPE
   );
@@ -396,6 +414,8 @@ const generateOTP2TileLayers = (
           name={name || id}
           network={network}
           minZoom={minZoom}
+          mutePopup={clickedEntity?.entity?.sourceLayer !== type}
+          onEntityClick={handleLayerClick}
           setLocation={setLocation}
           setViewedStop={setViewedStop}
           stopsWhitelist={stopsWhitelist}
