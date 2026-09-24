@@ -76,6 +76,7 @@ export const MockAreaStopTileLayerATL = (): JSX.Element => (
     {generateOTP2TileLayers(
       [
         { initiallyVisible: true, minZoom: 12, type: "stops" },
+        { initiallyVisible: true, minZoom: 12, type: "stations" },
         { initiallyVisible: true, minZoom: 12, type: "areaStops" }
       ],
       "http://localhost:5555/atl/otp/routers/default/vectorTiles"

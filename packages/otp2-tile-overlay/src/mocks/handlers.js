@@ -39,15 +39,15 @@ export default [
 
   // ATL areaStop tiles
   http.get(
-    "http://localhost:5555/atl/otp/routers/default/vectorTiles/stops,areaStops/tilejson.json",
+    "http://localhost:5555/atl/otp/routers/default/vectorTiles/stops,stations,areaStops/tilejson.json",
     () => new Response(JSON.stringify(atlTilejson))
   ),
   http.get(
-    "http://localhost:5555/atl/otp/routers/default/vectorTiles/stops,areaStops/13/2174/3278.pbf",
+    "http://localhost:5555/atl/otp/routers/default/vectorTiles/stops,stations,areaStops/13/2174/3278.pbf",
     fetchTile(atl21743278)
   ),
   http.get(
-    "http://localhost:5555/atl/otp/routers/default/vectorTiles/stops,areaStops/13/2174/3279.pbf",
+    "http://localhost:5555/atl/otp/routers/default/vectorTiles/stops,stations,areaStops/13/2174/3279.pbf",
     fetchTile(atl21743279)
   )
 ];

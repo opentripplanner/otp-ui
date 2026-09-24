@@ -44,6 +44,10 @@ export type ClickedEntity = (
     };
   };
 
+function isStopOrStation(type: string | undefined): boolean {
+  return type === "stops" || type === "stations";
+}
+
 function composeEntity(
   event: MapLayerMouseEvent,
   closedStops: Set<string> | undefined
@@ -60,11 +64,7 @@ function composeEntity(
     sourceLayer
   };
 
-  if (
-    sourceLayer !== "stops" &&
-    sourceLayer !== "stations" &&
-    sourceLayer !== "areaStops"
-  ) {
+  if (!isStopOrStation(sourceLayer) && sourceLayer !== "areaStops") {
     // For rental vehicles and rental stations, additional fields must be added in order to
     // be compatible with the RentalVehicle and VehicleRentalStation types from OTP2
     synthesizedEntity.name = synthesizedEntity.name ?? "";
@@ -171,10 +171,11 @@ const OTP2TileLayerWithPopup = ({
   const defaultClickHandler = useCallback(
     (event: MapLayerMouseEvent) => {
       const synthesizedEntity = composeEntity(event, closedStops);
+      const lastClickedEntity = clickedEntityByGroup[sourceId];
       if (
-        !clickedEntityByGroup[sourceId] ||
-        type === "stops" ||
-        clickedEntityByGroup[sourceId].sourceLayer !== "stops"
+        !lastClickedEntity ||
+        isStopOrStation(type) ||
+        !isStopOrStation(lastClickedEntity.sourceLayer)
       ) {
         clickedEntityByGroup[sourceId] = synthesizedEntity;
         setClickedEntity(synthesizedEntity);
