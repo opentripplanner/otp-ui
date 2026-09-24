@@ -6,11 +6,10 @@ import {
   StopEventHandler
 } from "@opentripplanner/types";
 import { VehicleRentalStation } from "@opentripplanner/types/otp2";
-import React, { useCallback, useState } from "react";
+import React from "react";
 import { Source } from "react-map-gl/maplibre";
 
 import OTP2TileLayerWithPopup, {
-  ClickedEntity,
   STOPS_AND_STATIONS_TYPE
 } from "./otp2-tile-layer-with-popup";
 
@@ -22,10 +21,6 @@ interface LayerConfig {
   network?: string;
   overrideType?: string;
   type: string;
-}
-
-interface ClickedEntityState {
-  entity: ClickedEntity;
 }
 
 const SOURCE_ID = "otp2-tiles";
@@ -69,23 +64,6 @@ const generateOTP2TileLayers = (
   feeds?: Feed[],
   closedStops?: Set<string>
 ): JSX.Element[] => {
-  const [clickedEntity, setClickedEntity] = useState<ClickedEntityState | null>(
-    null
-  );
-  const handleLayerClick = useCallback(
-    (entity: ClickedEntity) => {
-      if (!(clickedEntity?.entity && entity.sourceLayer === "stops")) {
-        setClickedEntity({ entity });
-        // Calling setClickedEntity does not cause the layers to be rerendered
-        // right away because this is not a component.
-        // @ts-expect-error Stop subsequent events by generating an error (clickedEntity original value is null).
-        clickedEntity.entity = entity;
-      }
-    },
-    [clickedEntity, setClickedEntity]
-  );
-
-  const clickedEntityLayer = clickedEntity?.entity?.sourceLayer;
   const editedLayers = layers.map(withFinalType);
   const tileTypes = editedLayers.map(l => l.finalType).join(",");
   return [
@@ -99,19 +77,8 @@ const generateOTP2TileLayers = (
       url={`${endpoint}/${tileTypes}/tilejson.json`}
     />,
     ...editedLayers.map(layer => {
-      const {
-        color,
-        finalType,
-        initiallyVisible,
-        minZoom,
-        name,
-        network,
-        type
-      } = layer;
+      const { color, initiallyVisible, minZoom, name, network, type } = layer;
       const id = `${type}${network ? `-${network}` : ""}`;
-      const mutePopup = clickedEntityLayer
-        ? !finalType.split(",").includes(clickedEntityLayer)
-        : false;
       return (
         <OTP2TileLayerWithPopup
           closedStops={closedStops}
@@ -124,8 +91,6 @@ const generateOTP2TileLayers = (
           name={name || id}
           network={network}
           minZoom={minZoom}
-          mutePopup={mutePopup}
-          onEntityClick={handleLayerClick}
           setLocation={setLocation}
           setViewedStop={setViewedStop}
           sourceId={SOURCE_ID}

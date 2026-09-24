@@ -87,6 +87,10 @@ function composeEntity(
   return synthesizedEntity;
 }
 
+// Not a great way to maintain shared state across multiple layers,
+// but because generateOtp2TileLayers is not a component, we can't store the state there.
+const clickedEntityByGroup: Record<string, ClickedEntity | null> = {};
+
 const OTP2TileLayerWithPopup = ({
   closedStops,
   color,
@@ -96,8 +100,6 @@ const OTP2TileLayerWithPopup = ({
   id,
   network,
   minZoom = 14,
-  mutePopup,
-  onEntityClick,
   setLocation,
   setViewedStop,
   sourceId,
@@ -135,14 +137,6 @@ const OTP2TileLayerWithPopup = ({
    */
   minZoom?: number;
   /**
-   * Whether to hide the popup if another one from another layer is already shown.
-   */
-  mutePopup: boolean;
-  /**
-   * Triggered when an entity is clicked on this layer.
-   */
-  onEntityClick: (entity: ClickedEntity) => void;
-  /**
    * A method fired when a stop is selected as from or to in the default popup. If this method
    * is not passed, the from/to buttons will not be shown.
    */
@@ -177,11 +171,22 @@ const OTP2TileLayerWithPopup = ({
   const defaultClickHandler = useCallback(
     (event: MapLayerMouseEvent) => {
       const synthesizedEntity = composeEntity(event, closedStops);
-      setClickedEntity(synthesizedEntity);
-      onEntityClick(synthesizedEntity);
+      if (
+        !clickedEntityByGroup[sourceId] ||
+        type === "stops" ||
+        clickedEntityByGroup[sourceId].sourceLayer !== "stops"
+      ) {
+        clickedEntityByGroup[sourceId] = synthesizedEntity;
+        setClickedEntity(synthesizedEntity);
+      }
     },
     [setClickedEntity, closedStops]
   );
+
+  const clearClickedEntity = useCallback(() => {
+    clickedEntityByGroup[sourceId] = null;
+    setClickedEntity(null);
+  }, [setClickedEntity]);
 
   const onLayerEnter = useCallback(() => {
     if (map) {
@@ -327,16 +332,16 @@ const OTP2TileLayerWithPopup = ({
           type="circle"
         />
       )}
-      {clickedEntity && !mutePopup && (
+      {clickedEntity && (
         <Popup
           latitude={clickedEntity.lat}
           longitude={clickedEntity.lon}
           maxWidth="100%"
           // TODO: only set null if the x is clicked, not a new stop
-          onClose={() => setClickedEntity(null)}
+          onClose={clearClickedEntity}
         >
           <EntityPopup
-            closePopup={() => setClickedEntity(null)}
+            closePopup={clearClickedEntity}
             configCompanies={configCompanies}
             // @ts-expect-error More type tightening needed.
             entity={{
@@ -349,7 +354,7 @@ const OTP2TileLayerWithPopup = ({
             setLocation={
               setLocation
                 ? location => {
-                    setClickedEntity(null);
+                    clearClickedEntity();
                     setLocation(location);
                   }
                 : undefined
@@ -357,7 +362,7 @@ const OTP2TileLayerWithPopup = ({
             setViewedStop={
               setViewedStop
                 ? stop => {
-                    setClickedEntity(null);
+                    clearClickedEntity();
                     setViewedStop(stop);
                   }
                 : undefined
