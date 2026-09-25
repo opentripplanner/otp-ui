@@ -24,8 +24,6 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
       - uses: pnpm/action-setup@v2
-        with:
-          version: 11
       - name: Use Node.js 24.x
         uses: actions/setup-node@v4
         with:
@@ -38,7 +36,7 @@ jobs:
         id: changesets
         uses: changesets/action@3841a0683d3cfa6dae0f9bb335290003010fe3f0 # v1.9.0
         with:
-          version: pnpm version-packages && pnpm install --no-frozen-lockfile
+          version: pnpm version-packages
           commit: "chore: version packages (changesets trial)"
           title: "chore: version packages (changesets trial)"
           prDraft: always

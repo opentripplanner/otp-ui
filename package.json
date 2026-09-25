@@ -6,13 +6,6 @@
     "node": ">=12",
     "pnpm": ">=8"
   },
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "11.5.1",
-      "onFail": "download"
-    }
-  },
   "devDependencies": {
     "@anolilab/semantic-release-pnpm": "^5.0.0",
     "@babel/cli": "^7.10",
@@ -299,5 +292,6 @@
   "dependencies": {
     "@storybook/icons": "^1.6.0",
     "@styled-icons/styled-icon": "catalog:"
-  }
+  },
+  "packageManager": "pnpm@11.5.1"
 }
