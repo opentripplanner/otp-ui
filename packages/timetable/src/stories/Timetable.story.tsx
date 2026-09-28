@@ -24,11 +24,12 @@ const meta = {
         },
         additionalColumns: {
             control: "check",
-            options: ["Block ID", "Notices", "Trip Headsign", "Trip Short Name"],
+            options: ["Block ID", "Notices", "Trip Headsign", "Trip ID", "Trip Short Name"],
             mapping: {
                 "Block ID": "BLOCK_ID",
                 "Notices": "NOTICES",
                 "Trip Headsign": "TRIP_HEADSIGN",
+                "Trip ID": "TRIP_ID",
                 "Trip Short Name": "TRIP_SHORT_NAME"
             }
         }

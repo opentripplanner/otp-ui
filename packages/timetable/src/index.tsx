@@ -120,6 +120,7 @@ type AdditionalColumn =
   | "BLOCK_ID"
   | "NOTICES"
   | "TRIP_HEADSIGN"
+  | "TRIP_ID"
   | "TRIP_SHORT_NAME";
 
 /** Describes the content of the header for a leading column. Leading
@@ -244,6 +245,11 @@ const createAdditionalColumnHeader = (
         id: "tripHeadsignHeader",
         name: "Headsign"
       };
+    case "TRIP_ID":
+      return {
+        id: "tripIdHeader",
+        name: "Trip ID"
+      };
     case "TRIP_SHORT_NAME":
     default:
       return {
@@ -272,6 +278,11 @@ const createAdditionalColumnRowValue = (
       return {
         closed: false,
         value: trip.tripHeadsign ?? ""
+      };
+    case "TRIP_ID":
+      return {
+        closed: false,
+        value: trip.gtfsId
       };
     case "TRIP_SHORT_NAME":
     default:
