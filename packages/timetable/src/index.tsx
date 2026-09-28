@@ -100,6 +100,17 @@ interface Stop {
   name: string;
 }
 
+/**
+ * BLOCK_ID: Shows the block ID of the trip
+ *
+ * NOTICES: Enables notices to be shown as an info icon on each individual trip in the timetable. When
+ * clicked, the notice is shown in a modal popup. Requires
+ * notices field on each trip record. See https://github.com/google/transit/pull/638 for more information
+ *
+ * TRIP_SHORT_NAME: Shows the value for tripShortName for the trip
+ */
+type AdditionalColumn = "BLOCK_ID" | "NOTICES" | "TRIP_SHORT_NAME";
+
 /** Describes the content of the header for a leading column. Leading
  * columns are optional columns that are appended to the beginning of
  * the timetable.
@@ -209,6 +220,8 @@ interface TimeTableProps {
   route: Route;
   /** Whether to show only timepoint stops in the timetable */
   timepointsOnly: boolean;
+  /** An array of optional additional columns to be added at the beginning of each trip row */
+  additionalColumns?: AdditionalColumn[];
   /** A set of gtfsId values for stops that are closed and should be shown with strikethrough */
   closedStops?: Set<string>;
   /** If the topological sort of the stop IDs fails for any reason, a `false` value here
@@ -221,34 +234,21 @@ interface TimeTableProps {
   includeDwellStops?: boolean;
   /** A react-intl object to use for time formatting */
   intl?: IntlShape;
-  /** Whether each trip/row entry in the timetable should show the block ID of the trip */
-  showBlockId?: boolean;
   /** Time zone in which to display stop times if no intl object is provided */
   timeZone?: string;
-  /** Enable notices to be shown as an info icon on each individual trip in the timetable. When
-   * clicked, the notice is shown in a modal popup. Requires
-   * notices field on each trip record. See https://github.com/google/transit/pull/638 for more information
-   */
-  showNotices?: boolean;
-  /** Adds a column at the beginning of each trip row that displays the value for tripShortName on
-   * a given trip
-   */
-  showTripShortName?: boolean;
 }
 
 const TimeTable = (props: TimeTableProps): JSX.Element => {
   const {
+    additionalColumns,
     closedStops,
     directionId,
     errorOnStopSorting,
     includeDwellStops,
     intl,
     route,
-    showBlockId,
     timepointsOnly,
-    timeZone,
-    showNotices,
-    showTripShortName
+    timeZone
   } = props;
 
   const { patterns } = route;
@@ -366,20 +366,22 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
   const leadingColumns: LeadingColumnHeader[] = useMemo(() => {
     const arr: LeadingColumnHeader[] = [];
 
-    if (showNotices)
+    if (additionalColumns?.includes("NOTICES"))
       arr.push({
         ariaLabel: "Notices",
         className: "notices-column",
         id: "tripNotesHeader",
         name: ""
       });
-    if (showBlockId) arr.push({ id: "blockIdHeader", name: "Block ID" });
-    if (showTripShortName) {
+    if (additionalColumns?.includes("BLOCK_ID")) {
+      arr.push({ id: "blockIdHeader", name: "Block ID" });
+    }
+    if (additionalColumns?.includes("TRIP_SHORT_NAME")) {
       arr.push({ id: "tripShortNameHeader", name: "Trip Short Name" });
     }
 
     return arr;
-  }, [showBlockId, showNotices, showTripShortName]);
+  }, [additionalColumns]);
 
   return (
     <Table className="timetable-table" tabIndex={0}>
@@ -408,14 +410,16 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
             closed: boolean;
             value: string | JSX.Element;
           }[] = [];
-          if (showNotices) {
+          if (additionalColumns?.includes("NOTICES")) {
             rowValues.push({
               closed: false,
               value: t.notices ? <Notice content={t.notices} /> : ""
             });
           }
-          if (showBlockId) rowValues.push({ closed: false, value: t.blockId });
-          if (showTripShortName) {
+          if (additionalColumns?.includes("BLOCK_ID")) {
+            rowValues.push({ closed: false, value: t.blockId });
+          }
+          if (additionalColumns?.includes("TRIP_SHORT_NAME")) {
             rowValues.push({ closed: false, value: t.tripShortName ?? "" });
           }
 

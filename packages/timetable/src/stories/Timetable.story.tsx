@@ -22,11 +22,14 @@ const meta = {
             control: "radio",
             options: [0, 1]
         },
-        showNotices: {
-            control: "boolean",
-        },
-        showTripShortName: {
-            control: "boolean",
+        additionalColumns: {
+            control: "check",
+            options: ["Block ID", "Notices", "Trip Short Name"],
+            mapping: {
+                "Block ID": "BLOCK_ID",
+                "Notices": "NOTICES",
+                "Trip Short Name": "TRIP_SHORT_NAME"
+            }
         }
     }
 } satisfies Meta<typeof TimeTable>;
@@ -37,9 +40,9 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     // eslint-disable-next-line react/display-name
     render: (args) => {
-        const { closedStops, showNotices, showTripShortName } = args;
+        const { closedStops, additionalColumns } = args;
         // eslint-disable-next-line react/jsx-props-no-spreading
-        return <TimeTable {...args} closedStops={new Set(closedStops)} showNotices={showNotices} showTripShortName={showTripShortName} />
+        return <TimeTable {...args} closedStops={new Set(closedStops)} additionalColumns={additionalColumns} />
     },
     args: {
         directionId: 0,
