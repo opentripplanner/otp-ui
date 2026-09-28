@@ -103,7 +103,7 @@ interface Stop {
 }
 
 interface RowValue {
-  closed: boolean;
+  closed?: boolean;
   value: string | JSX.Element;
 }
 
@@ -266,28 +266,23 @@ const createAdditionalColumnRowValue = (
   switch (additionalColumn) {
     case "NOTICES":
       return {
-        closed: false,
         value: trip.notices ? <Notice content={trip.notices} /> : ""
       };
     case "BLOCK_ID":
       return {
-        closed: false,
         value: trip.blockId
       };
     case "TRIP_HEADSIGN":
       return {
-        closed: false,
         value: trip.tripHeadsign ?? ""
       };
     case "TRIP_ID":
       return {
-        closed: false,
         value: trip.gtfsId
       };
     case "TRIP_SHORT_NAME":
     default:
       return {
-        closed: false,
         value: trip.tripShortName ?? ""
       };
   }
@@ -467,7 +462,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
                 }`}
                 key={s.id}
                 scope="col"
-                closed={closedStops && closedStops.has(s.id)}
+                closed={closedStops?.has(s.id)}
               >
                 <InvisibleText>{s.ariaLabel}</InvisibleText>
                 {s.name}
@@ -486,7 +481,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
           filteredPatternStops.forEach(patternStop => {
             const stopDetail = t.stops.get(patternStop.id);
             rowValues.push({
-              closed: closedStops?.has(patternStop.id) || false,
+              closed: closedStops?.has(patternStop.id),
               value: stopDetail
                 ? intl
                   ? intl.formatTime(stopDetail.time)
