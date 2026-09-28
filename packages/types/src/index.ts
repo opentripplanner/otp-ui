@@ -832,22 +832,30 @@ export type ModeSetting = (
   ModeSettingBase;
 export type ModeSettingValues = Record<string, number | string | boolean>;
 
-/**
- * TransportModes correspond with the OTP GraphQL TransportMode.
- * Could be anything from walk, bike to transit, tram, or bus.
- */
-export type TransportMode = { mode: string; input?: ModeInput };
+export type PlanModesInput = {
+  direct?: string[];
+  directOnly?: boolean;
+  transit?: PlanTransitModesInput;
+  transitOnly?: boolean;
+};
 
-export type ModeInput =
-  | {
-      access: string[];
-      egress: string[];
-      transfer?: string[]; // Not actually, but for our config yes
-      transit: { mode: string }[];
-    }
-  | {
-      direct: string[];
-    };
+export type PlanTransitModesInput = {
+  access?: string[];
+  egress?: string[];
+  transfer?: string[];
+  transit?: PlanTransitModePreferenceInput[];
+};
+
+export type PlanTransitModePreferenceInput = {
+  mode: string;
+  cost?: { reluctance: number };
+  replacement?: { requirement?: string };
+};
+
+/**
+ * A mode selected by the UI, with an optional PlanConnection input for a query.
+ */
+export type TransportMode = { mode: string; input?: PlanModesInput };
 
 /**
  * This is a combination of transportation modes,

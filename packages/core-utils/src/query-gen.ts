@@ -3,6 +3,7 @@ import { print } from "graphql";
 import {
   ModeSetting,
   ModeSettingValues,
+  PlanModesInput,
   TransportMode
 } from "@opentripplanner/types";
 
@@ -20,7 +21,7 @@ type OTPQueryParams = {
   date?: string;
   departArrive?: string;
   from: LonLatOutput & { name?: string };
-  modes: TransportMode[];
+  modes: PlanModesInput;
   modeSettings: ModeSetting[];
   numItineraries?: number;
   omitCanceled?: boolean;
@@ -28,6 +29,10 @@ type OTPQueryParams = {
   to: LonLatOutput & { name?: string };
   requiredRoutes?: string[];
   via?: OTPViaLocationInput[]
+};
+
+type GenerateCombinationsParams = Omit<OTPQueryParams, "modes"> & {
+  modes: TransportMode[];
 };
 
 type GraphQLQuery = {
@@ -78,24 +83,34 @@ export function extractAdditionalModes(
 
 /**
  * Generates a list of queries for OTP based on planConnection config
- * @param params OTP Query Params
+ * @param params OTP query params with mode definitions to expand
  * @returns Set of parameters to generate queries
  */
-export function generateCombinations(params: OTPQueryParams): OTPQueryParams[] {
+export function generateCombinations(
+  params: GenerateCombinationsParams
+): OTPQueryParams[] {
   const completeModeList = [
     ...extractAdditionalModes(params.modeSettings, params.modes),
     ...params.modes
   ];
 
   // List of the transit *submodes* that are included in the input params
-  const transitModes = completeModeList
-    .filter(mode => isTransit(mode.mode) && mode.mode !== "TRANSIT")
+  const transitModes = completeModeList.filter(
+    mode => isTransit(mode.mode) && mode.mode !== "TRANSIT"
+  );
 
-  // @ts-expect-error types packagge fail
   return completeModeList
     .filter(mode => !!mode.input)
-    // @ts-expect-error types packagge fail
-    .map(mode => ({ ...params, modes: { ...mode.input, transit: { ...mode?.input?.transit, ...transitModes.length > 0 && { transit: transitModes } } } }));
+    .map(mode => ({
+      ...params,
+      modes: {
+        ...mode.input,
+        transit: {
+          ...mode?.input?.transit,
+          ...(transitModes.length > 0 && { transit: transitModes })
+        }
+      }
+    }));
 }
 
 /**
