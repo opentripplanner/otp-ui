@@ -100,6 +100,11 @@ interface Stop {
   name: string;
 }
 
+interface RowValue {
+  closed: boolean;
+  value: string | JSX.Element;
+}
+
 /**
  * BLOCK_ID: Shows the block ID of the trip
  *
@@ -212,6 +217,55 @@ const naiveSortStops = (patterns: Pattern[], directionId: number): string[] => {
   return [...naiveStops];
 };
 
+const createAdditionalColumnHeader = (
+  additionalColumn: AdditionalColumn
+): LeadingColumnHeader => {
+  switch (additionalColumn) {
+    case "NOTICES":
+      return {
+        ariaLabel: "Notices",
+        className: "notices-column",
+        id: "tripNotesHeader",
+        name: ""
+      };
+    case "BLOCK_ID":
+      return {
+        id: "blockIdHeader",
+        name: "Block ID"
+      };
+    case "TRIP_SHORT_NAME":
+    default:
+      return {
+        id: "tripShortNameHeader",
+        name: "Trip Short Name"
+      };
+  }
+};
+
+const createAdditionalColumnRowValue = (
+  additionalColumn: AdditionalColumn,
+  trip: TimetableTrip
+): RowValue => {
+  switch (additionalColumn) {
+    case "NOTICES":
+      return {
+        closed: false,
+        value: trip.notices ? <Notice content={trip.notices} /> : ""
+      };
+    case "BLOCK_ID":
+      return {
+        closed: false,
+        value: trip.blockId
+      };
+    case "TRIP_SHORT_NAME":
+    default:
+      return {
+        closed: false,
+        value: trip.tripShortName ?? ""
+      };
+  }
+};
+
 interface TimeTableProps {
   /** Direction of the route to show. Follows the format of the `direction_id` field of
    * the `trips.txt` GTFS file: `0` for one direction, `1` for the opposite direction
@@ -220,7 +274,9 @@ interface TimeTableProps {
   route: Route;
   /** Whether to show only timepoint stops in the timetable */
   timepointsOnly: boolean;
-  /** An array of optional additional columns to be added at the beginning of each trip row */
+  /** An array of optional additional columns to be added at the beginning of each trip row. The
+   * columns will be added in the order they are presented in the array
+   */
   additionalColumns?: AdditionalColumn[];
   /** A set of gtfsId values for stops that are closed and should be shown with strikethrough */
   closedStops?: Set<string>;
@@ -365,21 +421,9 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
 
   const leadingColumns: LeadingColumnHeader[] = useMemo(() => {
     const arr: LeadingColumnHeader[] = [];
-
-    if (additionalColumns?.includes("NOTICES"))
-      arr.push({
-        ariaLabel: "Notices",
-        className: "notices-column",
-        id: "tripNotesHeader",
-        name: ""
-      });
-    if (additionalColumns?.includes("BLOCK_ID")) {
-      arr.push({ id: "blockIdHeader", name: "Block ID" });
-    }
-    if (additionalColumns?.includes("TRIP_SHORT_NAME")) {
-      arr.push({ id: "tripShortNameHeader", name: "Trip Short Name" });
-    }
-
+    additionalColumns?.forEach(ac =>
+      arr.push(createAdditionalColumnHeader(ac))
+    );
     return arr;
   }, [additionalColumns]);
 
@@ -406,22 +450,10 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
       </thead>
       <TBody className="timetable-tbody">
         {timetableTrips.map((t, index) => {
-          const rowValues: {
-            closed: boolean;
-            value: string | JSX.Element;
-          }[] = [];
-          if (additionalColumns?.includes("NOTICES")) {
-            rowValues.push({
-              closed: false,
-              value: t.notices ? <Notice content={t.notices} /> : ""
-            });
-          }
-          if (additionalColumns?.includes("BLOCK_ID")) {
-            rowValues.push({ closed: false, value: t.blockId });
-          }
-          if (additionalColumns?.includes("TRIP_SHORT_NAME")) {
-            rowValues.push({ closed: false, value: t.tripShortName ?? "" });
-          }
+          const rowValues: RowValue[] = [];
+          additionalColumns?.forEach(ac =>
+            rowValues.push(createAdditionalColumnRowValue(ac, t))
+          );
 
           filteredPatternStops.forEach(patternStop => {
             const stopDetail = t.stops.get(patternStop.id);
