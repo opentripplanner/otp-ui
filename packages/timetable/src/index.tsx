@@ -114,6 +114,10 @@ interface RowValue {
  * clicked, the notice is shown in a modal popup. Requires
  * notices field on each trip record. See https://github.com/google/transit/pull/638 for more information
  *
+ * TRIP_HEADSIGN: Shows the value for tripHeadsign for the trip
+ *
+ * TRIP_ID: Shows the value for gtfsId for the trip
+ *
  * TRIP_SHORT_NAME: Shows the value for tripShortName for the trip
  */
 type AdditionalColumn =
