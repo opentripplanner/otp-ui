@@ -22,6 +22,7 @@
                   "text": "This is a longer notice. The purpose of this notice is to ensure that acceptable standards of placement, readability, and formatting are achieved. This trip will be canceled if the sufficient layout and readability concerns are not addressed!"
                 }
               ],
+              "tripHeadsign": "Uptown",
               "tripShortName": "A",
               "stoptimesForDate": [
                 {
@@ -1056,6 +1057,7 @@
             },
             {
               "blockId": "169047",
+              "tripHeadsign": "Uptown",
               "tripShortName": "B",
               "stoptimesForDate": [
                 {
@@ -2104,6 +2106,7 @@
                   "text": "This is a longer notice. The purpose of this notice is to ensure that acceptable standards of placement, readability, and formatting are achieved. This trip will be canceled if the sufficient layout and readability concerns are not addressed!"
                 }
               ],
+              "tripHeadsign": "Uptown",
               "tripShortName": "A",
               "stoptimesForDate": [
                 {
@@ -3158,6 +3161,7 @@
                   "text": "This is a longer notice. The purpose of this notice is to ensure that acceptable standards of placement, readability, and formatting are achieved. This trip will be canceled if the sufficient layout and readability concerns are not addressed!"
                 }
               ],
+              "tripHeadsign": "Downtown",
               "tripShortName": "B",
               "stoptimesForDate": [
                 {
@@ -3444,6 +3448,7 @@
           "tripsForDate": [
             {
               "blockId": "169465",
+              "tripHeadsign": "Downtown",
               "tripShortName": "A",
               "stoptimesForDate": [
                 {
@@ -4504,6 +4509,7 @@
             },
             {
               "blockId": "160633",
+              "tripHeadsign": "Downtown",
               "tripShortName": "B",
               "stoptimesForDate": [
                 {
@@ -5570,6 +5576,7 @@
           "tripsForDate": [
             {
               "blockId": "160421",
+              "tripHeadsign": "Uptown",
               "tripShortName": "A",
               "stoptimesForDate": [
                 {

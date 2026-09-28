@@ -59,6 +59,7 @@ interface TimetableTrip {
   /** A map of stop GTFS ID to stop detail */
   stops: Map<string, StopDetail>;
   notices?: string[];
+  tripHeadsign?: string;
   tripShortName?: string;
 }
 
@@ -82,6 +83,7 @@ interface Trip {
   gtfsId: string;
   stoptimesForDate: Stoptime[];
   notices?: { text: string }[];
+  tripHeadsign?: string;
   tripShortName?: string;
 }
 
@@ -114,7 +116,11 @@ interface RowValue {
  *
  * TRIP_SHORT_NAME: Shows the value for tripShortName for the trip
  */
-type AdditionalColumn = "BLOCK_ID" | "NOTICES" | "TRIP_SHORT_NAME";
+type AdditionalColumn =
+  | "BLOCK_ID"
+  | "NOTICES"
+  | "TRIP_HEADSIGN"
+  | "TRIP_SHORT_NAME";
 
 /** Describes the content of the header for a leading column. Leading
  * columns are optional columns that are appended to the beginning of
@@ -233,6 +239,11 @@ const createAdditionalColumnHeader = (
         id: "blockIdHeader",
         name: "Block ID"
       };
+    case "TRIP_HEADSIGN":
+      return {
+        id: "tripHeadsignHeader",
+        name: "Headsign"
+      };
     case "TRIP_SHORT_NAME":
     default:
       return {
@@ -256,6 +267,11 @@ const createAdditionalColumnRowValue = (
       return {
         closed: false,
         value: trip.blockId
+      };
+    case "TRIP_HEADSIGN":
+      return {
+        closed: false,
+        value: trip.tripHeadsign ?? ""
       };
     case "TRIP_SHORT_NAME":
     default:
@@ -413,6 +429,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
             })
           ),
           notices: t.notices?.length ? t.notices.map(n => n.text) : undefined,
+          tripHeadsign: t.tripHeadsign,
           tripShortName: t.tripShortName
         };
       })
