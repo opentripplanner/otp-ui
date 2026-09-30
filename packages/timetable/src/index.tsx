@@ -189,7 +189,7 @@ const determineTimepoints = (trips: Trip[]): Set<string> => {
   return timepoints;
 };
 
-// Create a Directed Acyclic Graph (DAG) of all the trips, of the format [stop, nextStop].
+// Create a Directed Acyclic Graph (DAG) of all the trips, of the format [stop, nextStop]
 const createStopGraph = (
   trips: Trip[],
   stopIdToNameMap: Map<string, string>,
