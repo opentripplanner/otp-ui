@@ -105,122 +105,122 @@ exports[`Timetable Default smoke-test 1`] = `
         -
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        06:00
+        3:00 AM
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        06:02
+        3:02 AM
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        06:06
+        3:06 AM
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        06:11
+        3:11 AM
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        06:16
+        3:16 AM
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        06:20
+        3:20 AM
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        06:24
+        3:24 AM
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        06:28
+        3:28 AM
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        06:31
+        3:31 AM
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        06:39
+        3:39 AM
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        06:42
+        3:42 AM
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        06:52
-      </td>
-    </tr>
-    <tr class="src__TR-sc-1glc48y-3 kosclq timetable-tr">
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        16:10
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        16:26
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        16:31
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        16:36
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        -
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        -
+        3:52 AM
       </td>
     </tr>
     <tr class="src__TR-sc-1glc48y-3 kosclq timetable-tr">
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        1:10 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         -
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        01:37
+        1:26 PM
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        01:39
+        1:31 PM
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        01:43
+        1:36 PM
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        01:47
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        01:52
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        01:56
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        02:00
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        02:13
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        02:15
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        02:23
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        02:26
+        -
+      </td>
+    </tr>
+    <tr class="src__TR-sc-1glc48y-3 kosclq timetable-tr">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        -
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        02:36
+        10:37 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        10:39 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        10:43 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        10:47 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        10:52 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        10:56 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        11:00 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        11:13 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        11:15 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        11:23 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        11:26 PM
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        11:36 PM
       </td>
     </tr>
   </tbody>
