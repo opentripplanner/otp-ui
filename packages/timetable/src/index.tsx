@@ -112,6 +112,13 @@ interface LeadingColumnHeader {
   name: string;
 }
 
+/** Add a stop identifier to a stop's gtfsId for deduplication or dwell stop management */
+const addStopIdentifier = (stopId: string, identifier: string) =>
+  `${stopId}?${identifier}`;
+
+/** Strip away potential stop identifiers, leaving just the original stop gtfsId */
+const removeStopIdentifiers = (stopId: string) => stopId.split("?")[0];
+
 const createDwellStops = (trips: Trip[], timepoints: Set<string>): Trip[] => {
   // To accommodate "dwell stops" where arrival and departure time are different,
   // we need to look for such stops and create an additional "dwell stop" within
@@ -124,7 +131,7 @@ const createDwellStops = (trips: Trip[], timepoints: Set<string>): Trip[] => {
         updatedStopTimes.push(st);
         return;
       }
-      const dwellStopId = `${st.stop.gtfsId}:dwell`;
+      const dwellStopId = addStopIdentifier(st.stop.gtfsId, "d");
       const arrivalStopTime: Stoptime = {
         ...st,
         scheduledDeparture: st.scheduledArrival
@@ -162,6 +169,49 @@ const determineTimepoints = (trips: Trip[]): Set<string> => {
   return timepoints;
 };
 
+/** Identifies stop IDs that are repeated within a trip (most likely due to a route with one or more loops) and deduplicates them
+ * in the returned trips so the stop graph can still be sorted topologically
+ */
+const deduplicateStopIds = (trips: Trip[]): Trip[] => {
+  const updatedTrips: Trip[] = [];
+
+  // Iterate through all trips and identify which stops are visited multiple times in a trip
+  const repeatedStops = new Set<string>();
+  trips.forEach(trip => {
+    const set = new Set<string>();
+    trip.stoptimesForDate.forEach(stoptime => {
+      if (set.has(stoptime.stop.gtfsId))
+        repeatedStops.add(stoptime.stop.gtfsId);
+      set.add(stoptime.stop.gtfsId);
+    });
+  });
+
+  // Iterate through all trips and update stop IDs which are present in the repeatedStops set
+  trips.forEach(trip => {
+    // Counter to keep track of which occurrance of a repeated stop has been encountered
+    const repeatStopsCounters = new Map<string, number>();
+    const updatedStopTimes: Stoptime[] = [];
+
+    trip.stoptimesForDate.forEach(st => {
+      let stopId = st.stop.gtfsId;
+      if (repeatedStops.has(stopId)) {
+        repeatStopsCounters.set(
+          stopId,
+          (repeatStopsCounters.get(stopId) || 0) + 1
+        );
+        stopId = addStopIdentifier(
+          stopId,
+          String(repeatStopsCounters.get(stopId) || 1)
+        );
+      }
+      updatedStopTimes.push({ ...st, stop: { ...st.stop, gtfsId: stopId } });
+    });
+    updatedTrips.push({ ...trip, stoptimesForDate: updatedStopTimes });
+  });
+
+  return updatedTrips;
+};
+
 // Create a Directed Acyclic Graph (DAG) of all the trips, of the format [stop, nextStop].
 const createStopGraph = (
   trips: Trip[],
@@ -173,9 +223,10 @@ const createStopGraph = (
     const stopIds: string[] = [];
     const set = new Set<string>();
     trip.stoptimesForDate.forEach(st => {
-      stopIdToNameMap.set(st.stop.gtfsId, st.stop.name);
-      stopIds.push(st.stop.gtfsId);
-      set.add(st.stop.gtfsId);
+      const stopId = st.stop.gtfsId;
+      stopIdToNameMap.set(stopId, st.stop.name);
+      stopIds.push(stopId);
+      set.add(stopId);
     });
     tripStopSets.push(set);
     stopIds.forEach((stopId, index) => {
@@ -254,9 +305,11 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
   const { patterns } = route;
 
   const [allTrips, timepointStopIds] = useMemo(() => {
-    const trips = patterns
+    let trips = patterns
       .filter(p => p.directionId === directionId)
       .flatMap(p => p.tripsForDate);
+
+    trips = deduplicateStopIds(trips);
 
     const timepoints = determineTimepoints(trips);
 
@@ -393,7 +446,9 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
                 }`}
                 key={s.id}
                 scope="col"
-                closed={closedStops && closedStops.has(s.id)}
+                closed={
+                  closedStops && closedStops.has(removeStopIdentifiers(s.id))
+                }
               >
                 <InvisibleText>{s.ariaLabel}</InvisibleText>
                 {s.name}
@@ -422,7 +477,9 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
           filteredPatternStops.forEach(patternStop => {
             const stopDetail = t.stops.get(patternStop.id);
             rowValues.push({
-              closed: closedStops?.has(patternStop.id) || false,
+              closed:
+                closedStops?.has(removeStopIdentifiers(patternStop.id)) ||
+                false,
               value: stopDetail
                 ? intl
                   ? intl.formatTime(stopDetail.time)
