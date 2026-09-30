@@ -447,11 +447,9 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
   }, [allTrips, comparator]);
 
   const leadingColumns: LeadingColumnHeader[] = useMemo(() => {
-    const arr: LeadingColumnHeader[] = [];
-    additionalColumns?.forEach(ac =>
-      arr.push(createAdditionalColumnHeader(ac))
+    return (additionalColumns || []).map(ac =>
+      createAdditionalColumnHeader(ac)
     );
-    return arr;
   }, [additionalColumns]);
 
   return (
@@ -477,9 +475,8 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
       </thead>
       <TBody className="timetable-tbody">
         {timetableTrips.map((t, index) => {
-          const rowValues: RowValue[] = [];
-          additionalColumns?.forEach(ac =>
-            rowValues.push(createAdditionalColumnRowValue(ac, t))
+          const rowValues: RowValue[] = (additionalColumns || []).map(ac =>
+            createAdditionalColumnRowValue(ac, t)
           );
 
           filteredPatternStops.forEach(patternStop => {
