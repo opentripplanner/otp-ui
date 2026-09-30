@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { IntlShape } from "react-intl";
+import { IntlShape, useIntl } from "react-intl";
 import styled from "styled-components";
 import toposort from "toposort";
 
@@ -314,9 +314,7 @@ interface TimeTableProps {
    * values for `arrival_time` and `departure_time`
    */
   includeDwellStops?: boolean;
-  /** A react-intl object to use for time formatting */
-  intl?: IntlShape;
-  /** Time zone in which to display stop times if no intl object is provided */
+  /** Time zone in which to display stop times if component is not wrapped in an IntlProvider */
   timeZone?: string;
 }
 
@@ -327,13 +325,22 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
     directionId,
     errorOnStopSorting,
     includeDwellStops,
-    intl,
     route,
     timepointsOnly,
     timeZone
   } = props;
 
   const { patterns } = route;
+
+  let intl: IntlShape | undefined;
+
+  try {
+    intl = useIntl();
+  } catch (error) {
+    console.warn(
+      "Unable to localize time with useIntl. Wrap timetable component in an IntlProvider to control time localization. Falling back to provided timeZone prop if provided, or locale time zone on this machine"
+    );
+  }
 
   const [allTrips, timepointStopIds] = useMemo(() => {
     const trips = patterns
