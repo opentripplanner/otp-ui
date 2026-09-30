@@ -188,7 +188,7 @@ const deduplicateStopIds = (trips: Trip[]): Trip[] => {
 
   // Iterate through all trips and update stop IDs which are present in the repeatedStops set
   trips.forEach(trip => {
-    // Counter to keep track of which occurrance of a repeated stop has been encountered
+    // Counter to keep track of which occurrence of a repeated stop has been encountered
     const repeatStopsCounters = new Map<string, number>();
     const updatedStopTimes: Stoptime[] = [];
 
