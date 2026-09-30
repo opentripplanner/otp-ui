@@ -454,9 +454,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
   }, [allTrips, comparator]);
 
   const leadingColumns: LeadingColumnHeader[] = useMemo(() => {
-    return (additionalColumns || []).map(ac =>
-      createAdditionalColumnHeader(ac)
-    );
+    return (additionalColumns || []).map(createAdditionalColumnHeader);
   }, [additionalColumns]);
 
   return (
