@@ -120,7 +120,7 @@ interface RowValue {
  *
  * TRIP_SHORT_NAME: Shows the value for tripShortName for the trip
  */
-type AdditionalColumn =
+export type AdditionalColumn =
   | "BLOCK_ID"
   | "NOTICES"
   | "TRIP_HEADSIGN"

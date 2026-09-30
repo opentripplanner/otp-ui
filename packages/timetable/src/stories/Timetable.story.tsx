@@ -2,9 +2,12 @@
 import type { Meta, StoryObj } from "@storybook/react-vite"
 import React from "react";
 
-import TimeTable from ".."
+import TimeTable, { AdditionalColumn } from ".."
 
 import twinCitiesRouteMock from "../../__mocks__/route-mock.json"
+
+let oldSet = new Set();
+const additionalColumnsCheckTime = new Map<string, Date>()
 
 const meta = {
     component: TimeTable,
@@ -43,8 +46,24 @@ export const Default: Story = {
     // eslint-disable-next-line react/display-name
     render: (args) => {
         const { closedStops, additionalColumns } = args;
+        const newSet = new Set(additionalColumns)
+        if (newSet.size > oldSet.size) {
+            newSet.forEach(i => {
+                if (!oldSet.has(i)) {
+                    additionalColumnsCheckTime.set(i, new Date())
+                }
+            })
+        } else if (newSet.size < oldSet.size) {
+            oldSet.forEach(i => {
+                if (!newSet.has(i)) {
+                    additionalColumnsCheckTime.delete(i)
+                }
+            })
+        }
+        oldSet = newSet;
+        const sorted = Array.from(additionalColumnsCheckTime.entries()).sort((a, b) => a[1] - b[1]).map(e => e[0])
         // eslint-disable-next-line react/jsx-props-no-spreading
-        return <TimeTable {...args} closedStops={new Set(closedStops)} additionalColumns={additionalColumns} />
+        return <TimeTable {...args} closedStops={new Set(closedStops)} additionalColumns={sorted as unknown as AdditionalColumn[]} />
     },
     args: {
         directionId: 0,
