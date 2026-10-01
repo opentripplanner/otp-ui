@@ -1,7 +1,9 @@
 import React, { useMemo } from "react";
-import { IntlShape } from "react-intl";
+import { IntlShape, useIntl } from "react-intl";
 import styled from "styled-components";
 import toposort from "toposort";
+
+import Notice from "./notice";
 
 const COLUMN_WIDTH = "85px";
 
@@ -9,6 +11,10 @@ const Table = styled.table`
   display: block;
   overflow: auto;
   width: 100%;
+
+  th.notices-column {
+    min-width: 0;
+  }
 `;
 
 const TBody = styled.tbody`
@@ -31,6 +37,13 @@ const TD = styled.td<{ closed?: boolean }>`
   text-decoration: ${props => (props.closed ? "line-through" : "")};
 `;
 
+const InvisibleText = styled.div`
+  clip: rect(0, 0, 0, 0);
+  height: 0;
+  overflow: hidden;
+  width: 0;
+`;
+
 interface PatternStop {
   id: string;
   name: string;
@@ -42,8 +55,12 @@ interface TimetableTrip {
    * day. Used for sorting trips by first stop time
    */
   firstStopTime: number;
+  gtfsId: string;
   /** A map of stop GTFS ID to stop detail */
   stops: Map<string, StopDetail>;
+  notices?: string[];
+  tripHeadsign?: string;
+  tripShortName?: string;
 }
 
 interface StopDetail {
@@ -63,7 +80,11 @@ interface Pattern {
 
 interface Trip {
   blockId: string;
+  gtfsId: string;
   stoptimesForDate: Stoptime[];
+  notices?: { text: string }[];
+  tripHeadsign?: string;
+  tripShortName?: string;
 }
 
 interface Stoptime {
@@ -78,6 +99,43 @@ interface Stoptime {
 
 interface Stop {
   gtfsId: string;
+  name: string;
+}
+
+interface RowValue {
+  closed?: boolean;
+  value: string | JSX.Element;
+}
+
+/**
+ * BLOCK_ID: Shows the block ID of the trip
+ *
+ * NOTICES: Enables notices to be shown as an info icon on each individual trip in the timetable. When
+ * clicked, the notice is shown in a modal popup. Requires
+ * notices field on each trip record. See https://github.com/google/transit/pull/638 for more information
+ *
+ * TRIP_HEADSIGN: Shows the value for tripHeadsign for the trip
+ *
+ * TRIP_ID: Shows the value for gtfsId for the trip
+ *
+ * TRIP_SHORT_NAME: Shows the value for tripShortName for the trip
+ */
+export type AdditionalColumn =
+  | "BLOCK_ID"
+  | "NOTICES"
+  | "TRIP_HEADSIGN"
+  | "TRIP_ID"
+  | "TRIP_SHORT_NAME";
+
+/** Describes the content of the header for a leading column. Leading
+ * columns are optional columns that are appended to the beginning of
+ * the timetable.
+ */
+interface LeadingColumnHeader {
+  /** ARIA label to use for leading columns that don't have header text */
+  ariaLabel?: string;
+  className?: string;
+  id: string;
   name: string;
 }
 
@@ -110,7 +168,7 @@ const createDwellStops = (trips: Trip[], timepoints: Set<string>): Trip[] => {
       if (st.timepoint) timepoints.add(dwellStopId);
     });
     withDwellStops.push({
-      blockId: trip.blockId,
+      ...trip,
       stoptimesForDate: updatedStopTimes
     });
   });
@@ -131,7 +189,7 @@ const determineTimepoints = (trips: Trip[]): Set<string> => {
   return timepoints;
 };
 
-// Create a Directed Acyclic Graph (DAG) of all the trips, of the format [stop, nextStop].
+// Create a Directed Acyclic Graph (DAG) of all the trips, of the format [stop, nextStop]
 const createStopGraph = (
   trips: Trip[],
   stopIdToNameMap: Map<string, string>,
@@ -170,6 +228,70 @@ const naiveSortStops = (patterns: Pattern[], directionId: number): string[] => {
   return [...naiveStops];
 };
 
+const createAdditionalColumnHeader = (
+  additionalColumn: AdditionalColumn
+): LeadingColumnHeader => {
+  switch (additionalColumn) {
+    case "NOTICES":
+      return {
+        ariaLabel: "Notices",
+        className: "notices-column",
+        id: "tripNotesHeader",
+        name: ""
+      };
+    case "BLOCK_ID":
+      return {
+        id: "blockIdHeader",
+        name: "Block ID"
+      };
+    case "TRIP_HEADSIGN":
+      return {
+        id: "tripHeadsignHeader",
+        name: "Headsign"
+      };
+    case "TRIP_ID":
+      return {
+        id: "tripIdHeader",
+        name: "Trip ID"
+      };
+    case "TRIP_SHORT_NAME":
+    default:
+      return {
+        id: "tripShortNameHeader",
+        name: "Trip Short Name"
+      };
+  }
+};
+
+const createAdditionalColumnRowValue = (
+  additionalColumn: AdditionalColumn,
+  trip: TimetableTrip
+): RowValue => {
+  switch (additionalColumn) {
+    case "NOTICES":
+      return {
+        value: trip.notices ? <Notice content={trip.notices} /> : ""
+      };
+    case "BLOCK_ID":
+      return {
+        value: trip.blockId
+      };
+    case "TRIP_HEADSIGN":
+      return {
+        value: trip.tripHeadsign ?? ""
+      };
+    case "TRIP_ID":
+      return {
+        value: trip.gtfsId
+      };
+    case "TRIP_SHORT_NAME":
+    default:
+      return {
+        value: trip.tripShortName ?? ""
+      };
+  }
+};
+
 interface TimeTableProps {
   /** Direction of the route to show. Follows the format of the `direction_id` field of
    * the `trips.txt` GTFS file: `0` for one direction, `1` for the opposite direction
@@ -178,6 +300,10 @@ interface TimeTableProps {
   route: Route;
   /** Whether to show only timepoint stops in the timetable */
   timepointsOnly: boolean;
+  /** An array of optional additional columns to be added at the beginning of each trip row. The
+   * columns will be added in the order they are presented in the array
+   */
+  additionalColumns?: AdditionalColumn[];
   /** A set of gtfsId values for stops that are closed and should be shown with strikethrough */
   closedStops?: Set<string>;
   /** If the topological sort of the stop IDs fails for any reason, a `false` value here
@@ -188,28 +314,33 @@ interface TimeTableProps {
    * values for `arrival_time` and `departure_time`
    */
   includeDwellStops?: boolean;
-  /** A react-intl object to use for time formatting */
-  intl?: IntlShape;
-  /** Whether each trip/row entry in the timetable should show the block ID of the trip */
-  showBlockId?: boolean;
-  /** Time zone in which to display stop times if no intl object is provided */
+  /** Time zone in which to display stop times if component is not wrapped in an IntlProvider */
   timeZone?: string;
 }
 
 const TimeTable = (props: TimeTableProps): JSX.Element => {
   const {
+    additionalColumns,
     closedStops,
     directionId,
     errorOnStopSorting,
     includeDwellStops,
-    intl,
     route,
-    showBlockId,
     timepointsOnly,
     timeZone
   } = props;
 
   const { patterns } = route;
+
+  let intl: IntlShape | undefined;
+
+  try {
+    intl = useIntl();
+  } catch (error) {
+    console.warn(
+      "Unable to localize time with useIntl. Wrap timetable component in an IntlProvider to control time localization. Falling back to provided timeZone prop if provided, or locale time zone on this machine"
+    );
+  }
 
   const [allTrips, timepointStopIds] = useMemo(() => {
     const trips = patterns
@@ -297,11 +428,12 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
 
   const timetableTrips: TimetableTrip[] = useMemo<TimetableTrip[]>(() => {
     return allTrips
-      .map(t => {
+      .map<TimetableTrip>(t => {
         const firstStop = t.stoptimesForDate[0];
         return {
           blockId: t.blockId,
           firstStopTime: firstStop.serviceDay + firstStop.scheduledArrival,
+          gtfsId: t.gtfsId,
           stops: new Map(
             t.stoptimesForDate.map(st => {
               return [
@@ -312,41 +444,50 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
                 }
               ];
             })
-          )
+          ),
+          notices: t.notices?.length ? t.notices.map(n => n.text) : undefined,
+          tripHeadsign: t.tripHeadsign,
+          tripShortName: t.tripShortName
         };
       })
       .sort(comparator);
   }, [allTrips, comparator]);
 
+  const leadingColumns: LeadingColumnHeader[] = useMemo(() => {
+    return (additionalColumns || []).map(createAdditionalColumnHeader);
+  }, [additionalColumns]);
+
   return (
     <Table className="timetable-table" tabIndex={0}>
       <thead className="timetable-thead">
         <tr>
-          {(showBlockId ? [{ id: "blockIdHeader", name: "Block ID" }] : [])
-            .concat(filteredPatternStops)
-            .map((s, index) => {
-              return (
-                <TH
-                  className="timetable-th"
-                  key={index}
-                  scope="col"
-                  closed={closedStops && closedStops.has(s.id)}
-                >
-                  {s.name}
-                </TH>
-              );
-            })}
+          {leadingColumns.concat(filteredPatternStops).map(s => {
+            return (
+              <TH
+                className={`timetable-th${
+                  s.className ? ` ${s.className}` : ""
+                }`}
+                key={s.id}
+                scope="col"
+                closed={closedStops?.has(s.id)}
+              >
+                <InvisibleText>{s.ariaLabel}</InvisibleText>
+                {s.name}
+              </TH>
+            );
+          })}
         </tr>
       </thead>
       <TBody className="timetable-tbody">
         {timetableTrips.map((t, index) => {
-          const rowValues: { closed: boolean; value: string }[] = showBlockId
-            ? [{ closed: false, value: t.blockId }]
-            : [];
+          const rowValues: RowValue[] = (additionalColumns || []).map(ac =>
+            createAdditionalColumnRowValue(ac, t)
+          );
+
           filteredPatternStops.forEach(patternStop => {
             const stopDetail = t.stops.get(patternStop.id);
             rowValues.push({
-              closed: closedStops?.has(patternStop.id) || false,
+              closed: closedStops?.has(patternStop.id),
               value: stopDetail
                 ? intl
                   ? intl.formatTime(stopDetail.time)
