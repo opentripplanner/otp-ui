@@ -847,15 +847,15 @@ export type PlanTransitModesInput = {
 };
 
 export type PlanTransitModePreferenceInput = {
-  mode: string;
   cost?: { reluctance: number };
+  mode: string;
   replacement?: { requirement?: string };
 };
 
 /**
  * A mode selected by the UI, with an optional PlanConnection input for a query.
  */
-export type TransportMode = { mode: string; input?: PlanModesInput };
+export type TransportMode = { input?: PlanModesInput; mode: string };
 
 /**
  * This is a combination of transportation modes,
