@@ -14,6 +14,7 @@ export default function IntermediateStops({
   closedStopIds,
   stops
 }: Props): ReactElement {
+  // TODO: refactor below method to use core-utils methods
   // The closed stops are in the format {agencyId}:{stopId}, but the stops that are fed to this
   // component only use the {stopId} portion, so we need to strip off the agencyId prefix and the colon
   const closedStopsNumericCodes = new Set<string>();

@@ -22,14 +22,20 @@ import turfAlong from "@turf/along";
 
 // All OTP transit modes
 export const transitModes = [
+  "AIRPLANE",
+  "BUS",
+  "CABLE_CAR",
+  "FERRY",
+  "FUNICULAR",
+  "GONDOLA",
+  "MONORAIL",
+  "RAIL",
+  "SUBWAY",
   "TRAM",
   "TROLLEYBUS",
-  "BUS",
-  "SUBWAY",
-  "FERRY",
-  "RAIL",
-  "GONDOLA"
 ];
+
+export const nonTransitModes = ["BICYCLE", "BICYCLE_PARKING", "BICYCLE_RENTAL", "CAR", "CAR_PARKING", "CAR_RENTAL", "FLEX", "SCOOTER_RENTAL", "WALK"]
 
 /**
  * @param  {config} config OTP-RR configuration object
@@ -335,7 +341,7 @@ export function legElevationAtDistance(
         prevPointElevation +
         ((pointElevation - prevPointElevation) *
           (distance - prevPointDistance)) /
-          (pointDistance - prevPointDistance)
+        (pointDistance - prevPointDistance)
       );
     }
     return acc;
