@@ -34,7 +34,7 @@ export const DropdownButton = styled(BaseButton)`
 
 export const MenuItemList = styled.ul.attrs({
   role: "listbox"
-})`
+})<{ $menuOpen?: boolean }>`
   background-clip: padding-box;
   background-color: #fff;
   border-radius: 4px;
@@ -55,10 +55,8 @@ export const MenuItemList = styled.ul.attrs({
   /* this is an annoyingly high number, but is needed to be on top of some otp-rr components */
   z-index: 1000000;
 
-  /* If the associated input is not in an expanded state, hide the list. */
-  input[aria-expanded="false"] ~ & {
-    ${hiddenCss}
-  }
+  /* Hide visually when the menu is closed (separate from aria-expanded for AT). */
+  ${props => !props.$menuOpen && hiddenCss}
 `;
 
 export const Input = styled.input`
