@@ -34,12 +34,12 @@ export default function IntermediateStops({
   return (
     <S.IntermediateStops>
       {stops.map((stop, k) => {
-        const closed = closedStopsNumericCodes.has(stop.stopCode ?? "");
+        const closed = closedStopsNumericCodes.has(stop?.stopCode ?? "");
         return (
           <S.StopRow key={k}>
             <S.StopMarker>&bull;</S.StopMarker>
             <S.StopNameContainer>
-              <S.StopName closed={closed}>{stop.name}</S.StopName>
+              <S.StopName closed={closed}>{stop?.name}</S.StopName>
               {closed && <S.StopClosed>{closedMessage}</S.StopClosed>}
             </S.StopNameContainer>
           </S.StopRow>

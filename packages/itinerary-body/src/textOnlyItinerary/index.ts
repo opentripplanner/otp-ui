@@ -103,8 +103,8 @@ const convertLegToTextString = (
         { id: "otpUi.TextOnlyItinerary.transitDepartFrom" },
         {
           place: fromName,
-          stopId: from.stopCode,
-          hasStopId: !!from.stopCode,
+          stopId: from?.stopCode,
+          hasStopId: !!from?.stopCode,
           timeMillis: leg.startTime,
           routeName,
           hasHeadsign: !!leg.headsign,
@@ -146,8 +146,8 @@ const convertLegToTextString = (
           {
             timeMillis: leg.endTime,
             place: leg.to.name,
-            hasStopId: !!leg.to.stopCode,
-            stopId: leg.to.stopCode
+            hasStopId: !!leg.to?.stopCode,
+            stopId: leg.to?.stopCode
           }
         )
       );
