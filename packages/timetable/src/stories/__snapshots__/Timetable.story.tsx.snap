@@ -11,174 +11,180 @@ exports[`Timetable Default smoke-test 1`] = `
       >
         <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
         </div>
-        Westgate Station - Gate C
+        Pleasant Ave &amp; 50th St / Busch Terrace
       </th>
       <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
         </div>
-        University &amp; 23rd Ave Station
+        Nicollet Ave S &amp; 46th St E
       </th>
       <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
         </div>
-        15th Ave SE &amp; 4th St SE
+        46th St &amp; I-35W
       </th>
       <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
         </div>
-        Elm St SE &amp; 19th Ave SE
+        4th Ave S &amp; 38th St E
       </th>
       <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
         </div>
-        Kasota Ave SE &amp; Kasota Circle
+        4th Ave S &amp; Lake St E
       </th>
       <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
           scope="col"
       >
         <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
         </div>
-        Westgate Station - Gate C
+        3rd Ave S &amp; Franklin Ave E
+      </th>
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
+          scope="col"
+      >
+        <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
+        </div>
+        Nicollet Mall &amp; Alice Rainville Pl
+      </th>
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
+          scope="col"
+      >
+        <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
+        </div>
+        Nicollet Mall &amp; 7th St S
+      </th>
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
+          scope="col"
+      >
+        <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
+        </div>
+        Nicollet Mall &amp; 3rd St S
+      </th>
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
+          scope="col"
+      >
+        <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
+        </div>
+        Hennepin Ave E &amp; Wilder St
+      </th>
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
+          scope="col"
+      >
+        <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
+        </div>
+        Lowry Ave NE &amp; 2nd St / 1st St NE
+      </th>
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
+          scope="col"
+      >
+        <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
+        </div>
+        Grand St NE &amp; 29th Ave NE
+      </th>
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
+          scope="col"
+      >
+        <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
+        </div>
+        Columbia Heights Transit Center C
       </th>
     </tr>
   </thead>
   <tbody class="src__TBody-sc-1glc48y-1 bZEJyp timetable-tbody">
     <tr class="src__TR-sc-1glc48y-3 kosclq timetable-tr">
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            4:07 AM
+            3:00 AM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            4:11 AM
+            3:02 AM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            4:14 AM
+            3:06 AM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            4:17 AM
+            3:11 AM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            4:20 AM
+            3:16 AM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            4:26 AM
-          </span>
-        </div>
-      </td>
-    </tr>
-    <tr class="src__TR-sc-1glc48y-3 kosclq timetable-tr">
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        <div style="display: flex; flex-direction: column;">
-          <span>
-            4:37 AM
+            3:20 AM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            4:41 AM
+            3:24 AM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            4:44 AM
+            3:28 AM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            4:47 AM
+            3:31 AM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            4:50 AM
+            3:39 AM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            4:56 AM
-          </span>
-        </div>
-      </td>
-    </tr>
-    <tr class="src__TR-sc-1glc48y-3 kosclq timetable-tr">
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        <div style="display: flex; flex-direction: column;">
-          <span>
-            5:07 AM
+            3:42 AM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            5:11 AM
-          </span>
-        </div>
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        <div style="display: flex; flex-direction: column;">
-          <span>
-            5:14 AM
-          </span>
-        </div>
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        <div style="display: flex; flex-direction: column;">
-          <span>
-            5:17 AM
-          </span>
-        </div>
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        <div style="display: flex; flex-direction: column;">
-          <span>
-            5:20 AM
-          </span>
-        </div>
-      </td>
-      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        <div style="display: flex; flex-direction: column;">
-          <span>
-            5:26 AM
+            3:52 AM
           </span>
         </div>
       </td>
@@ -187,42 +193,144 @@ exports[`Timetable Default smoke-test 1`] = `
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            5:37 AM
+            1:10 PM
+          </span>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <span>
+            1:26 PM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            5:41 AM
+            1:31 PM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            5:44 AM
+            1:36 PM
+          </span>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        -
+      </td>
+    </tr>
+    <tr class="src__TR-sc-1glc48y-3 kosclq timetable-tr">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        -
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <span>
+            10:37 PM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            5:47 AM
+            10:39 PM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            5:50 AM
+            10:43 PM
           </span>
         </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         <div style="display: flex; flex-direction: column;">
           <span>
-            5:56 AM
+            10:47 PM
+          </span>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <span>
+            10:52 PM
+          </span>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <span>
+            10:56 PM
+          </span>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <span>
+            11:00 PM
+          </span>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <span>
+            11:13 PM
+          </span>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <span>
+            11:15 PM
+          </span>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <span>
+            11:23 PM
+          </span>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <span>
+            11:26 PM
+          </span>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <span>
+            11:36 PM
           </span>
         </div>
       </td>
