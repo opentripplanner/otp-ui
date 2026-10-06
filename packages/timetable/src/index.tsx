@@ -150,43 +150,64 @@ const determineTimepoints = (trips: Trip[]): Set<string> => {
   return timepoints;
 };
 
-const convertTripToPatternStops = (trip: Trip): PatternStop[] => {
-  const patternStops: PatternStop[] = [];
+/** Takes a trip and returns an array of "unique stop IDs" in the order they are visited
+ * in the trip. The unique stop ID is formed by combining the stop GTFS ID with the occurrence
+ * of that stop, for stops that are visited multiple times in the same trip. Also updates a map
+ * that tracks the linkage of unique stop IDs to pattern stop objects.
+ *
+ * @param trip The trip to be converted
+ * @param uniqueStopIdMap The map that tracks how unique stop IDs are linked to pattern stop objects
+ */
+const convertTripToUniqueStopIds = (
+  trip: Trip,
+  uniqueStopIdMap: Map<string, PatternStop>
+): string[] => {
+  const patternStopIds: string[] = [];
   const stopOccurrenceCounter: Map<string, number> = new Map();
   trip.stoptimesForDate.forEach(st => {
     const stopId = st.stop.gtfsId;
     const occurrenceIndex = stopOccurrenceCounter.get(stopId) || 0;
     stopOccurrenceCounter.set(stopId, occurrenceIndex + 1);
-    patternStops.push({
+    const patternStop = {
       id: stopId,
       name: st.stop.name,
       occurrenceIndex
-    });
+    };
+    const uniqueStopId = `${stopId}-${occurrenceIndex}`;
+    uniqueStopIdMap.set(uniqueStopId, patternStop);
+    patternStopIds.push(uniqueStopId);
   });
 
-  return patternStops;
+  return patternStopIds;
 };
 
-/** Creates a Directed Acyclic Graph (DAG) of all the trips, of the format [stop, nextStop]. Also
- * returns an array of sets; each set contains all of the unique stop IDs visited by each trip
+/** Creates a Directed Acyclic Graph (DAG) of all the trips, with each stop in a trip linked to
+ * the stop that follows it: [stop, nextStop][]. Each stop is represented as a unique ID, which
+ * combines the stop's GTFS ID and the stop occurrence (for stops that are repeated in a trip).
+ *
+ * Also returns an array of sets; each set contains all of the unique stop GTFS IDs visited by each trip
+ *
+ * Also returns a map that links each "unique stop ID" to the actual stop object that it represents
  */
 const createStopGraph = (
   trips: Trip[]
-): [[PatternStop, PatternStop][], Set<string>[]] => {
-  const stopGraph: [PatternStop, PatternStop][] = [];
+): [[string, string][], Set<string>[], Map<string, PatternStop>] => {
+  const stopGraph: [string, string][] = [];
   const tripStopSets: Set<string>[] = [];
+  const uniqueStopIdMap = new Map<string, PatternStop>();
   trips.forEach(trip => {
-    const patternStops = convertTripToPatternStops(trip);
+    const uniqueStopIds = convertTripToUniqueStopIds(trip, uniqueStopIdMap);
     // Create a set to keep track of all the unique stop IDs visited in this trip
     const tripStopSet = new Set<string>();
-    patternStops.forEach((patternStop, index) => {
-      tripStopSet.add(patternStop.id);
-      if (index !== patternStops.length - 1)
-        stopGraph.push([patternStop, patternStops[index + 1]]);
+    uniqueStopIds.forEach((uniqueId, index) => {
+      const originalStopId = uniqueStopIdMap.get(uniqueId)?.id;
+      if (originalStopId) tripStopSet.add(originalStopId);
+      if (index !== uniqueStopIds.length - 1)
+        stopGraph.push([uniqueId, uniqueStopIds[index + 1]]);
     });
     tripStopSets.push(tripStopSet);
   });
-  return [stopGraph, tripStopSets];
+  return [stopGraph, tripStopSets, uniqueStopIdMap];
 };
 
 /** Creates a master stop order using a "naive" method. While all stops are guaranteed to be
@@ -195,16 +216,18 @@ const createStopGraph = (
  * if the topological sort fails.
  */
 const naiveSortStops = (trips: Trip[]): PatternStop[] => {
-  const uniquePatternStops = new Set<string>();
+  const allStopIdsVisited = new Set<string>();
+  const uniqueStopIdMap = new Map<string, PatternStop>();
   const sorted: PatternStop[] = [];
   trips.forEach(t => {
-    const patternStops = convertTripToPatternStops(t);
-    patternStops.forEach(pt => uniquePatternStops.add(JSON.stringify(pt)));
+    const uniqueStopIds = convertTripToUniqueStopIds(t, uniqueStopIdMap);
+    uniqueStopIds.forEach(id => allStopIdsVisited.add(id));
   });
 
-  uniquePatternStops.forEach(patternStop =>
-    sorted.push(JSON.parse(patternStop))
-  );
+  allStopIdsVisited.forEach(stopId => {
+    const patternStop = uniqueStopIdMap.get(stopId);
+    if (patternStop) sorted.push(patternStop);
+  });
 
   return sorted;
 };
@@ -380,28 +403,36 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
   // Also determine the first stop ID that is used by every trip, for trip sorting later
   // TODO: Build the graph once and memoize it, then filter final results for each option change
   const [masterStopList, commonStopId] = useMemo(() => {
-    const [stopGraph, tripStopSets] = createStopGraph(allTrips);
+    const [stopGraph, tripStopSets, uniqueStopIdMap] = createStopGraph(
+      allTrips
+    );
 
-    let sorted: PatternStop[] = [];
+    let sortedPatternStops: PatternStop[] = [];
     try {
       // Topologically sort the stop graph to determine a valid order of stops for the entire timetable
       // The toposort function is technically able to take objects as nodes in the graph, but it treats "identical"
-      // objects (ones with the same keys and values) as not identical, so we need to stringify the node objects pre-sort
-      const sortedStrings = toposort(
-        stopGraph.map(s => [JSON.stringify(s[0]), JSON.stringify(s[1])])
+      // objects (ones with the same keys and values) as not identical, so we need to use a map that links unique
+      // stop ID strings to the actual stop objects they represent
+      const sortedStopIds = toposort(stopGraph);
+      sortedPatternStops = sortedStopIds.map(
+        stopId =>
+          uniqueStopIdMap.get(stopId) ?? {
+            id: "",
+            name: "",
+            occurrenceIndex: 0
+          }
       );
-      sorted = sortedStrings.map(s => JSON.parse(s));
     } catch (error) {
       console.warn("error topologically sorting stop graph", error);
       if (!errorOnStopSorting) {
-        sorted = naiveSortStops(allTrips);
+        sortedPatternStops = naiveSortStops(allTrips);
       }
     }
 
     let stopIdUsedInEveryTrip: string | undefined;
 
-    for (let i = 0; i < sorted.length; i++) {
-      const stopId = sorted[i].id;
+    for (let i = 0; i < sortedPatternStops.length; i++) {
+      const stopId = sortedPatternStops[i].id;
       const inAllTrips = tripStopSets.every(trip => trip.has(stopId));
       if (inAllTrips) {
         stopIdUsedInEveryTrip = stopId;
@@ -409,7 +440,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
       }
     }
 
-    return [sorted, stopIdUsedInEveryTrip];
+    return [sortedPatternStops, stopIdUsedInEveryTrip];
   }, [allTrips]);
 
   const comparator = useMemo(() => {
