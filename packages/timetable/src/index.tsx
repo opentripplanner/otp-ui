@@ -378,6 +378,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
 
   // Generate the master stop list to use for the header of the timetable
   // Also determine the first stop ID that is used by every trip, for trip sorting later
+  // TODO: Build the graph once and memoize it, then filter final results for each option change
   const [masterStopList, commonStopId] = useMemo(() => {
     const [stopGraph, tripStopSets] = createStopGraph(allTrips);
 
@@ -485,6 +486,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
       </thead>
       <TBody className="timetable-tbody">
         {timetableTrips.map((t, index) => {
+          // TODO: row values can be built outside of the render cycle and memoized
           const rowValues: RowValue[] = (additionalColumns || []).map(ac =>
             createAdditionalColumnRowValue(ac, t)
           );
