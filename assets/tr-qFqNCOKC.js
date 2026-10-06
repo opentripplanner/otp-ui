@@ -1,0 +1,1 @@
+const a={otpUi:{PrintableItinerary:{TncLeg:{estimatedTravelTime:"Tahmini seyahat süresi: <strong>{duration}</strong> (trafiği hesaba katmaz)",estimatedWaitTime:"Teslim alma için tahmini bekleme süresi: <strong>{duration}</strong>"},TransitLeg:{continuesAs:"{routeDescription} olarak devam et"}}}};export{a as default};

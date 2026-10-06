@@ -1,0 +1,1 @@
+const t={otpUi:{TransitVehicleOverlay:{defaultTooltip:"{route}: {duration} temu",durationWithSeconds:"{hours, plural, =0 {} other {# h }}{minutes, plural, =0 {{seconds, plural, =0 {# min} other {}}} other {# min}}{seconds, plural, =0 {} other { # s}}",routeTitle:"{type} {name}",transitLine:"Linia"}}};export{t as default};

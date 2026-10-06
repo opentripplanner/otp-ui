@@ -1,0 +1,1 @@
+import{_ as e}from"./typeof-CY0RTpPX.js";import{R as r}from"./iframe-CbmH3Sk6.js";import{L as s}from"./leg-icon-BNlYaNbn.js";import{C as a}from"./classic-mode-icon-C5e8QDpD.js";var f=function(o){return r.createElement(s,e({ModeIcon:a},o))};export{f as C};

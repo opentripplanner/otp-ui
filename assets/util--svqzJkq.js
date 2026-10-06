@@ -1,0 +1,1 @@
+function e(r){return Math.round(r*10)/10}function t(r){var a=r*3.28084;return a<528?{unit:"foot",value:Math.round(a)}:{unit:"mile",value:e(a/5280)}}function n(r){var a=r/1e3;return a>1?{unit:"kilometer",value:a>100?Math.round(a):e(a)}:{unit:"meter",value:Math.round(r)}}var u=function(a){return a==="imperial"};export{n as a,t as g,u as i};

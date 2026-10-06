@@ -1,0 +1,1 @@
+const o={otpUi:{FromToLocationPicker:{from:"Từ đây",planATrip:"Kế hoạch cho một chuyến đi:",to:"đến đây"}}};export{o as default};

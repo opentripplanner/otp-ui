@@ -1,0 +1,3 @@
+import{j as e}from"./jsx-runtime-I3b0MXVw.js";import"./iframe-CbmH3Sk6.js";import{S as r}from"./standard-mode-icon-CA6wLuHR.js";import{M as n}from"./mode-icon-renderer-Dtv1jABF.js";import"./preload-helper-D9Z9MdNV.js";import"./classic-walk-DlECyKAG.js";import"./icon-renderer-DLCFzDHS.js";import"./styled-components.browser.esm-uCYIMK6T.js";const I={title:"Icons/StandardModeIcon",component:r},o=()=>e.jsx(n,{component:r});o.__docgenInfo={description:"",methods:[],displayName:"StandardModeIconExamples"};o.parameters={...o.parameters,docs:{...o.parameters?.docs,source:{originalSource:`() => {
+  return <ModeIconRenderer component={StandardModeIcon} />;
+}`,...o.parameters?.docs?.source}}};export{o as StandardModeIconExamples,I as default};

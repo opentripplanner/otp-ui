@@ -1,0 +1,1 @@
+const t={otpUi:{TransitVehicleOverlay:{defaultTooltip:"{route}: {duration}前",durationWithSeconds:"{hours, plural, =0 {} other {#小时 }}{minutes, plural, =0 {{seconds, plural, =0 {#分钟} other {}}} other {#分钟}}{seconds, plural, =0 {} other { #秒}}",routeTitle:"{type} {name}",transitLine:"路线"}}};export{t as default};

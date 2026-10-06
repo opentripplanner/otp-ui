@@ -1,0 +1,1 @@
+const a={otpUi:{MapPopup:{availableBikes:"可用的自行车: {value}",availableDocks:"可用的充电座: {value}",floatingBike:"自由浮动的自行车: {name}",floatingCar:"汽车: {name}",floatingEScooter:"电动滑板车:{name}",popupTitle:"{stationNetwork, select, false {{name}} other {{stationNetwork} {name}}}",stopId:"车站 ID: {stopId}",stopViewer:"车站查看器"}}};export{a as default};

@@ -1,0 +1,1 @@
+const t={otpUi:{TransitVehicleOverlay:{defaultTooltip:"{route}: {duration} 전",durationWithSeconds:"{hours, plural, =0 {} other {# 시간 }}{minutes, plural, =0 {{seconds, plural, =0 {# 분} other {}}} other {# 분}}{seconds, plural, =0 {} other { # 초}}",routeTitle:"{type} {name}",transitLine:"선"}}};export{t as default};
