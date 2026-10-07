@@ -616,10 +616,10 @@ export function getDisplayedStopCode(
   placeOrStop: Place | Stop
 ): string | undefined {
   if ("stopId" in placeOrStop) {
-    return placeOrStop.stopCode ?? undefined;
+    return placeOrStop?.stopCode ?? undefined;
   }
   if ("id" in placeOrStop) {
-    return placeOrStop.code ?? undefined;
+    return placeOrStop?.code ?? undefined;
   }
   return undefined;
 }
