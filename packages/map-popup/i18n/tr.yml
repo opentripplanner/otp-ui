@@ -8,3 +8,4 @@ otpUi:
     popupTitle: "{stationNetwork, select, false {{name}} other {{stationNetwork} {name}}}"
     stopId: "Durak ID: {stopId}"
     stopViewer: Durak Gösterici
+    closedStop: Kapalı durak
