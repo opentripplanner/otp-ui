@@ -69,6 +69,5 @@ export const Default: Story = {
         directionId: 0,
         route: twinCitiesRouteMock.data.route,
         timepointsOnly: true,
-        timeZone: "America/New_York"
     }
 }

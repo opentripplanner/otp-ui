@@ -3,6 +3,7 @@ import { IntlShape, useIntl } from "react-intl";
 import styled from "styled-components";
 import toposort from "toposort";
 
+import defaultEnglishMessages from "../i18n/en-US.yml";
 import Notice from "./notice";
 
 const COLUMN_WIDTH = "85px";
@@ -232,39 +233,38 @@ const naiveSortStops = (trips: Trip[]): PatternStop[] => {
   return sorted;
 };
 
-const localizeMsTime = (time: number, timeZone?: string) => {
-  return new Date(time).toLocaleTimeString("en-us", {
-    timeZone,
-    hour12: false,
-    hour: "2-digit",
-    minute: "2-digit"
-  });
-};
-
 const formatStoptimeForDisplay = (
+  intl: IntlShape,
   stoptime?: Stoptime,
-  intl?: IntlShape,
-  dwellStop?: boolean,
-  timeZone?: string
+  dwellStop?: boolean
 ): string | JSX.Element => {
   if (!stoptime) return "-";
   const arrivalTimeMs =
     (stoptime.serviceDay + stoptime.scheduledArrival) * 1000;
 
-  let arrivalString = intl
-    ? intl.formatTime(arrivalTimeMs)
-    : localizeMsTime(arrivalTimeMs, timeZone);
+  let arrivalString = intl.formatTime(arrivalTimeMs);
 
   let departureString = "";
 
   if (dwellStop) {
-    arrivalString = `A: ${arrivalString}`;
+    arrivalString = intl.formatMessage(
+      {
+        defaultMessage: defaultEnglishMessages["otpUi.DwellStop.arrivalTime"],
+        description: "Arrival time for dwell stop",
+        id: "otpUi.DwellStop.arrivalTime"
+      },
+      { time: arrivalString }
+    );
     const departureTimeMs =
       (stoptime.serviceDay + stoptime.scheduledDeparture) * 1000;
-    departureString = intl
-      ? intl.formatTime(departureTimeMs)
-      : localizeMsTime(departureTimeMs, timeZone);
-    departureString = `D: ${departureString}`;
+    departureString = intl.formatMessage(
+      {
+        defaultMessage: defaultEnglishMessages["otpUi.DwellStop.departureTime"],
+        description: "Departure time for dwell stop",
+        id: "otpUi.DwellStop.departureTime"
+      },
+      { time: intl.formatTime(departureTimeMs) }
+    );
   }
 
   return (
@@ -361,8 +361,6 @@ interface TimeTableProps {
    * values for `arrival_time` and `departure_time`
    */
   includeDwellStops?: boolean;
-  /** Time zone in which to display stop times if component is not wrapped in an IntlProvider */
-  timeZone?: string;
 }
 
 const TimeTable = (props: TimeTableProps): JSX.Element => {
@@ -373,20 +371,20 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
     errorOnStopSorting,
     includeDwellStops,
     route,
-    timepointsOnly,
-    timeZone
+    timepointsOnly
   } = props;
 
   const { patterns } = route;
 
-  let intl: IntlShape | undefined;
+  let intl: IntlShape;
 
   try {
     intl = useIntl();
   } catch (error) {
-    console.warn(
-      "Unable to localize time with useIntl. Wrap timetable component in an IntlProvider to control time localization. Falling back to provided timeZone prop if provided, or locale time zone on this machine"
+    console.error(
+      "Unable to localize time with useIntl. Wrap timetable component in an IntlProvider to control time localization."
     );
+    return <span>Unable to localize time</span>;
   }
 
   const [allTrips, timepointStopIds] = useMemo(() => {
@@ -533,12 +531,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
               stoptime.scheduledArrival !== stoptime.scheduledDeparture;
             rowValues.push({
               closed: closedStops?.has(stop.id) || false,
-              value: formatStoptimeForDisplay(
-                stoptime,
-                intl,
-                dwellStop,
-                timeZone
-              )
+              value: formatStoptimeForDisplay(intl, stoptime, dwellStop)
             });
           });
 
