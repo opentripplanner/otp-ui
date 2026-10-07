@@ -401,6 +401,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
   // Also determine the first stop ID that is used by every trip, for trip sorting later
   // TODO: Build the graph once and memoize it, then filter final results for each option change
   const [masterStopList, commonStopId] = useMemo(() => {
+    // TODO: investigate alternative data structures and architecture to simplify overall logic
     const [stopGraph, tripStopSets, uniqueStopIdMap] = createStopGraph(
       allTrips
     );
