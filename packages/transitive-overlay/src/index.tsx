@@ -173,6 +173,7 @@ const accessLegFilter: FilterSpecification = [
 type Props = {
   activeLeg?: Leg;
   accessLegColorOverride?: string;
+  beforeId?: string;
   boundsFitting?: boolean;
   /* Reference to the map you're rendering the transitive layer onto */
   mapRef?: RefObject<MapRef>;
@@ -206,6 +207,7 @@ const loadImages = (map: MapRef, images: MapImage[]) => {
 const TransitiveCanvasOverlay = ({
   activeLeg,
   accessLegColorOverride,
+  beforeId,
   boundsFitting = true,
   mapRef,
   showRouteArrows,
@@ -466,6 +468,7 @@ const TransitiveCanvasOverlay = ({
           "line-width": 6
         }}
         type="line"
+        beforeId={beforeId || undefined}
       />
       <Layer
         // This layer is for other modes - dashed path
@@ -483,6 +486,7 @@ const TransitiveCanvasOverlay = ({
           "line-opacity": 0.9
         }}
         type="line"
+        beforeId={beforeId || undefined}
       />
       <Layer
         filter={routeFilter}
@@ -498,6 +502,7 @@ const TransitiveCanvasOverlay = ({
           "line-opacity": 1
         }}
         type="line"
+        beforeId={beforeId || undefined}
       />
       {showRouteArrows && (
         <Layer
@@ -568,6 +573,7 @@ const TransitiveCanvasOverlay = ({
           "text-color": ["get", "textColor"]
         }}
         type="symbol"
+        beforeId={beforeId || undefined}
       />
       <Layer
         filter={["==", "type", "from"]}
