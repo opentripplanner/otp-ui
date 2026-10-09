@@ -15,6 +15,7 @@ import OTP2TileLayerWithPopup, {
 
 interface LayerConfig {
   color?: string;
+  idOverride?: string;
   initiallyVisible?: boolean;
   minZoom?: number;
   name?: string;
@@ -77,8 +78,16 @@ const generateOTP2TileLayers = (
       url={`${endpoint}/${tileTypes}/tilejson.json`}
     />,
     ...editedLayers.map(layer => {
-      const { color, initiallyVisible, minZoom, name, network, type } = layer;
-      const id = `${type}${network ? `-${network}` : ""}`;
+      const {
+        color,
+        idOverride,
+        initiallyVisible,
+        minZoom,
+        name,
+        network,
+        type
+      } = layer;
+      const id = idOverride || `${type}${network ? `-${network}` : ""}`;
       return (
         <OTP2TileLayerWithPopup
           closedStops={closedStops}
