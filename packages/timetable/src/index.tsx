@@ -480,8 +480,8 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
           blockId: t.blockId,
           firstStopTime: firstStop.serviceDay + firstStop.scheduledArrival,
           gtfsId: t.gtfsId,
-          stops: stopsMap,
           notices: t.notices?.length ? t.notices.map(n => n.text) : undefined,
+          stops: stopsMap,
           tripHeadsign: t.tripHeadsign,
           tripShortName: t.tripShortName
         };
