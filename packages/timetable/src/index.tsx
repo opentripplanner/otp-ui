@@ -503,7 +503,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
                 className={`timetable-th${
                   s.className ? ` ${s.className}` : ""
                 }`}
-                key={s.id + index}
+                key={`${s.id}-${index}`}
                 scope="col"
                 closed={closedStops && closedStops.has(s.id)}
               >
