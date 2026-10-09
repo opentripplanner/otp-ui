@@ -1,7 +1,11 @@
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import coreUtils from "@opentripplanner/core-utils";
-import { FareProductSelector, Itinerary } from "@opentripplanner/types";
+import {
+  FareProductSelector,
+  Itinerary,
+  MediumRiderWhitelist
+} from "@opentripplanner/types";
 import { MoneyBillAlt } from "@styled-icons/fa-solid";
 import { flatten } from "flat";
 import * as S from "../styled";
@@ -17,6 +21,7 @@ export interface FaresProps {
   itinerary: Itinerary;
   FareDetails?: React.ElementType<FareDetailsProps>;
   defaultFareType?: FareProductSelector;
+  mediumRiderWhitelist?: MediumRiderWhitelist;
 }
 
 // HACK: We should flatten the messages loaded above because
@@ -28,7 +33,8 @@ const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 export default function Fares({
   itinerary,
   FareDetails,
-  defaultFareType
+  defaultFareType,
+  mediumRiderWhitelist
 }: FaresProps): ReactElement | null {
   // process the transit fare
   const fareResult = coreUtils.itinerary.calculateTncFares(itinerary);
@@ -99,6 +105,7 @@ export default function Fares({
         </summary>
         <FaresV2Table
           legs={itinerary.legs}
+          mediumRiderWhitelist={mediumRiderWhitelist}
           favoriteMediumId={
             Array.isArray(defaultFareType?.mediumId)
               ? defaultFareType?.mediumId[0]

@@ -903,6 +903,8 @@ export type FareProductSelector = {
   riderCategoryId?: string;
 };
 
+export type MediumRiderWhitelist = { medium: string; rider: string }[];
+
 /**
  * Options for units of mass (used in CO₂ calculation config)
  */
