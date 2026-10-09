@@ -105,57 +105,121 @@ exports[`Timetable Default smoke-test 1`] = `
         -
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        3:00 AM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            3:00 AM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        3:02 AM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            3:02 AM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        3:06 AM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            3:06 AM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        3:11 AM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            3:11 AM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        3:16 AM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            3:16 AM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        3:20 AM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            3:20 AM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        3:24 AM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            3:24 AM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        3:28 AM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            3:28 AM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        3:31 AM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            3:31 AM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        3:39 AM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            3:39 AM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        3:42 AM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            3:42 AM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        3:52 AM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            3:52 AM
+          </div>
+        </div>
       </td>
     </tr>
     <tr class="src__TR-sc-1glc48y-3 kosclq timetable-tr">
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        1:10 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            1:10 PM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         -
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        1:26 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            1:26 PM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        1:31 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            1:31 PM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        1:36 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            1:36 PM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
         -
@@ -187,40 +251,319 @@ exports[`Timetable Default smoke-test 1`] = `
         -
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        10:37 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            10:37 PM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        10:39 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            10:39 PM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        10:43 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            10:43 PM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        10:47 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            10:47 PM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        10:52 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            10:52 PM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        10:56 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            10:56 PM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        11:00 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            11:00 PM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        11:13 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            11:13 PM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        11:15 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            11:15 PM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        11:23 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            11:23 PM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        11:26 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            11:26 PM
+          </div>
+        </div>
       </td>
       <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
-        11:36 PM
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            11:36 PM
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Timetable LoopRoute smoke-test 1`] = `
+<table class="src__Table-sc-1glc48y-0 jRsBIJ timetable-table"
+       tabindex="0"
+>
+  <thead class="timetable-thead">
+    <tr>
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
+          scope="col"
+      >
+        <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
+        </div>
+        Westgate Station - Gate C
+      </th>
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
+          scope="col"
+      >
+        <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
+        </div>
+        University &amp; 23rd Ave Station
+      </th>
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
+          scope="col"
+      >
+        <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
+        </div>
+        15th Ave SE &amp; 4th St SE
+      </th>
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
+          scope="col"
+      >
+        <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
+        </div>
+        Elm St SE &amp; 19th Ave SE
+      </th>
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
+          scope="col"
+      >
+        <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
+        </div>
+        Kasota Ave SE &amp; Kasota Circle
+      </th>
+      <th class="src__TH-sc-1glc48y-2 gKSIbz timetable-th"
+          scope="col"
+      >
+        <div class="src__InvisibleText-sc-1glc48y-5 bVUHvX">
+        </div>
+        Westgate Station - Gate C
+      </th>
+    </tr>
+  </thead>
+  <tbody class="src__TBody-sc-1glc48y-1 bZEJyp timetable-tbody">
+    <tr class="src__TR-sc-1glc48y-3 kosclq timetable-tr">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            4:07 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            4:11 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            4:14 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            4:17 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            4:20 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            4:26 AM
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr class="src__TR-sc-1glc48y-3 kosclq timetable-tr">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            4:37 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            4:41 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            4:44 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            4:47 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            4:50 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            4:56 AM
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr class="src__TR-sc-1glc48y-3 kosclq timetable-tr">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            5:07 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            5:11 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            5:14 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            5:17 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            5:20 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            5:26 AM
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr class="src__TR-sc-1glc48y-3 kosclq timetable-tr">
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            5:37 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            5:41 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            5:44 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            5:47 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            5:50 AM
+          </div>
+        </div>
+      </td>
+      <td class="src__TD-sc-1glc48y-4 jGGfBz timetable-td">
+        <div style="display: flex; flex-direction: column;">
+          <div>
+            5:56 AM
+          </div>
+        </div>
       </td>
     </tr>
   </tbody>
