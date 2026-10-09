@@ -1,9 +1,7 @@
 import React, { useMemo } from "react";
-import { IntlShape, useIntl } from "react-intl";
+import { FormattedMessage, FormattedTime } from "react-intl";
 import styled from "styled-components";
 import toposort from "toposort";
-
-import defaultEnglishMessages from "../i18n/en-US.yml";
 import Notice from "./notice";
 
 const COLUMN_WIDTH = "85px";
@@ -234,7 +232,6 @@ const naiveSortStops = (trips: Trip[]): PatternStop[] => {
 };
 
 const formatStoptimeForDisplay = (
-  intl: IntlShape,
   stoptime?: Stoptime,
   dwellStop?: boolean
 ): string | JSX.Element => {
@@ -242,35 +239,30 @@ const formatStoptimeForDisplay = (
   const arrivalTimeMs =
     (stoptime.serviceDay + stoptime.scheduledArrival) * 1000;
 
-  let arrivalString = intl.formatTime(arrivalTimeMs);
-
-  let departureString = "";
+  let arrivalTime = <FormattedTime value={arrivalTimeMs} />;
+  let departureTime;
 
   if (dwellStop) {
-    arrivalString = intl.formatMessage(
-      {
-        defaultMessage: defaultEnglishMessages["otpUi.DwellStop.arrivalTime"],
-        description: "Arrival time for dwell stop",
-        id: "otpUi.DwellStop.arrivalTime"
-      },
-      { time: arrivalString }
+    arrivalTime = (
+      <FormattedMessage
+        id="otpUi.DwellStop.arrivalTime"
+        values={{ time: arrivalTime }}
+      />
     );
     const departureTimeMs =
       (stoptime.serviceDay + stoptime.scheduledDeparture) * 1000;
-    departureString = intl.formatMessage(
-      {
-        defaultMessage: defaultEnglishMessages["otpUi.DwellStop.departureTime"],
-        description: "Departure time for dwell stop",
-        id: "otpUi.DwellStop.departureTime"
-      },
-      { time: intl.formatTime(departureTimeMs) }
+    departureTime = (
+      <FormattedMessage
+        id="otpUi.DwellStop.departureTime"
+        values={{ time: <FormattedTime value={departureTimeMs} /> }}
+      />
     );
   }
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      <span>{arrivalString}</span>
-      {dwellStop && <span>{departureString}</span>}
+      <div>{arrivalTime}</div>
+      {dwellStop && departureTime && <div>{departureTime}</div>}
     </div>
   );
 };
@@ -375,17 +367,6 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
   } = props;
 
   const { patterns } = route;
-
-  let intl: IntlShape;
-
-  try {
-    intl = useIntl();
-  } catch (error) {
-    console.error(
-      "Unable to localize time with useIntl. Wrap timetable component in an IntlProvider to control time localization."
-    );
-    return <span>Unable to localize time</span>;
-  }
 
   const [allTrips, timepointStopIds] = useMemo(() => {
     const trips = patterns
@@ -532,7 +513,7 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
               stoptime.scheduledArrival !== stoptime.scheduledDeparture;
             rowValues.push({
               closed: closedStops?.has(stop.id) || false,
-              value: formatStoptimeForDisplay(intl, stoptime, dwellStop)
+              value: formatStoptimeForDisplay(stoptime, dwellStop)
             });
           });
 
