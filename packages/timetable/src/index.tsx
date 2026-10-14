@@ -1,8 +1,7 @@
 import React, { useMemo } from "react";
-import { IntlShape, useIntl } from "react-intl";
+import { FormattedMessage, FormattedTime } from "react-intl";
 import styled from "styled-components";
 import toposort from "toposort";
-
 import Notice from "./notice";
 
 const COLUMN_WIDTH = "85px";
@@ -47,8 +46,11 @@ const InvisibleText = styled.div`
 interface PatternStop {
   id: string;
   name: string;
+  /** If a stop occurs multiple times within a trip, this index marks which occurrence this stop is */
+  occurrenceIndex: number;
 }
 
+/** All of the information needed to display an individual trip in the timetable */
 interface TimetableTrip {
   blockId: string;
   /** The first stoptime of the trip, in seconds past midnight of the service
@@ -56,16 +58,10 @@ interface TimetableTrip {
    */
   firstStopTime: number;
   gtfsId: string;
-  /** A map of stop GTFS ID to stop detail */
-  stops: Map<string, StopDetail>;
+  stops: Map<string, Stoptime[]>;
   notices?: string[];
   tripHeadsign?: string;
   tripShortName?: string;
-}
-
-interface StopDetail {
-  time: Date;
-  timepoint: boolean;
 }
 
 interface Route {
@@ -139,42 +135,6 @@ interface LeadingColumnHeader {
   name: string;
 }
 
-const createDwellStops = (trips: Trip[], timepoints: Set<string>): Trip[] => {
-  // To accommodate "dwell stops" where arrival and departure time are different,
-  // we need to look for such stops and create an additional "dwell stop" within
-  // the trip
-  const withDwellStops: Trip[] = [];
-  trips.forEach(trip => {
-    const updatedStopTimes: Stoptime[] = [];
-    trip.stoptimesForDate.forEach(st => {
-      if (st.scheduledArrival === st.scheduledDeparture) {
-        updatedStopTimes.push(st);
-        return;
-      }
-      const dwellStopId = `${st.stop.gtfsId}:dwell`;
-      const arrivalStopTime: Stoptime = {
-        ...st,
-        scheduledDeparture: st.scheduledArrival
-      };
-      const departureStopTime: Stoptime = {
-        ...st,
-        scheduledArrival: st.scheduledDeparture,
-        stop: {
-          ...st.stop,
-          gtfsId: dwellStopId
-        }
-      };
-      updatedStopTimes.push(arrivalStopTime, departureStopTime);
-      if (st.timepoint) timepoints.add(dwellStopId);
-    });
-    withDwellStops.push({
-      ...trip,
-      stoptimesForDate: updatedStopTimes
-    });
-  });
-  return withDwellStops;
-};
-
 const determineTimepoints = (trips: Trip[]): Set<string> => {
   const timepoints = new Set<string>();
 
@@ -189,43 +149,122 @@ const determineTimepoints = (trips: Trip[]): Set<string> => {
   return timepoints;
 };
 
-// Create a Directed Acyclic Graph (DAG) of all the trips, of the format [stop, nextStop]
-const createStopGraph = (
-  trips: Trip[],
-  stopIdToNameMap: Map<string, string>,
-  tripStopSets: Set<string>[]
-): [string, string][] => {
-  const stopGraph: [string, string][] = [];
-  trips.forEach(trip => {
-    const stopIds: string[] = [];
-    const set = new Set<string>();
-    trip.stoptimesForDate.forEach(st => {
-      stopIdToNameMap.set(st.stop.gtfsId, st.stop.name);
-      stopIds.push(st.stop.gtfsId);
-      set.add(st.stop.gtfsId);
-    });
-    tripStopSets.push(set);
-    stopIds.forEach((stopId, index) => {
-      if (index !== stopIds.length - 1)
-        stopGraph.push([stopId, stopIds[index + 1]]);
-    });
+/** Takes a trip and returns an array of "unique stop IDs" in the order they are visited
+ * in the trip. The unique stop ID is formed by combining the stop GTFS ID with the occurrence
+ * of that stop, for stops that are visited multiple times in the same trip. Also updates a map
+ * that tracks the linkage of unique stop IDs to pattern stop objects.
+ *
+ * @param trip The trip to be converted
+ * @param uniqueStopIdMap The map that tracks how unique stop IDs are linked to pattern stop objects
+ */
+const convertTripToUniqueStopIds = (
+  trip: Trip,
+  uniqueStopIdMap: Map<string, PatternStop>
+): string[] => {
+  const patternStopIds: string[] = [];
+  const stopOccurrenceCounter: Map<string, number> = new Map();
+  trip.stoptimesForDate.forEach(st => {
+    const stopId = st.stop.gtfsId;
+    const occurrenceIndex = stopOccurrenceCounter.get(stopId) || 0;
+    stopOccurrenceCounter.set(stopId, occurrenceIndex + 1);
+    const patternStop = {
+      id: stopId,
+      name: st.stop.name,
+      occurrenceIndex
+    };
+    const uniqueStopId = `${stopId}-${occurrenceIndex}`;
+    uniqueStopIdMap.set(uniqueStopId, patternStop);
+    patternStopIds.push(uniqueStopId);
   });
-  return stopGraph;
+
+  return patternStopIds;
 };
 
-const naiveSortStops = (patterns: Pattern[], directionId: number): string[] => {
-  const naiveStops = new Set<string>();
-  patterns
-    .filter(p => p.directionId === directionId)
-    .forEach(p => {
-      p.tripsForDate.forEach(trip =>
-        trip.stoptimesForDate.forEach(st => {
-          naiveStops.add(st.stop.gtfsId);
-        })
-      );
+/** Creates a Directed Acyclic Graph (DAG) of all the trips, with each stop in a trip linked to
+ * the stop that follows it: [stop, nextStop][]. Each stop is represented as a unique ID, which
+ * combines the stop's GTFS ID and the stop occurrence (for stops that are repeated in a trip).
+ *
+ * Also returns an array of sets; each set contains all of the unique stop GTFS IDs visited by each trip
+ *
+ * Also returns a map that links each "unique stop ID" to the actual stop object that it represents
+ */
+const createStopGraph = (
+  trips: Trip[]
+): [[string, string][], Set<string>[], Map<string, PatternStop>] => {
+  const stopGraph: [string, string][] = [];
+  const tripStopSets: Set<string>[] = [];
+  const uniqueStopIdMap = new Map<string, PatternStop>();
+  trips.forEach(trip => {
+    const uniqueStopIds = convertTripToUniqueStopIds(trip, uniqueStopIdMap);
+    // Create a set to keep track of all the unique stop IDs visited in this trip
+    const tripStopSet = new Set<string>();
+    uniqueStopIds.forEach((uniqueId, index) => {
+      const originalStopId = uniqueStopIdMap.get(uniqueId)?.id;
+      if (originalStopId) tripStopSet.add(originalStopId);
+      if (index !== uniqueStopIds.length - 1)
+        stopGraph.push([uniqueId, uniqueStopIds[index + 1]]);
     });
+    tripStopSets.push(tripStopSet);
+  });
+  return [stopGraph, tripStopSets, uniqueStopIdMap];
+};
 
-  return [...naiveStops];
+/** Creates a master stop order using a "naive" method. While all stops are guaranteed to be
+ * represented, the order of stops is not guaranteed to be valid for all trips. This can result
+ * in a timetable row with non-chronological stoptimes, and should only be used as a last resort
+ * if the topological sort fails.
+ */
+const naiveSortStops = (trips: Trip[]): PatternStop[] => {
+  const allStopIdsVisited = new Set<string>();
+  const uniqueStopIdMap = new Map<string, PatternStop>();
+  const sorted: PatternStop[] = [];
+  trips.forEach(t => {
+    const uniqueStopIds = convertTripToUniqueStopIds(t, uniqueStopIdMap);
+    uniqueStopIds.forEach(id => allStopIdsVisited.add(id));
+  });
+
+  allStopIdsVisited.forEach(stopId => {
+    const patternStop = uniqueStopIdMap.get(stopId);
+    if (patternStop) sorted.push(patternStop);
+  });
+
+  return sorted;
+};
+
+const formatStoptimeForDisplay = (
+  stoptime?: Stoptime,
+  dwellStop?: boolean
+): string | JSX.Element => {
+  if (!stoptime) return "-";
+  const arrivalTimeMs =
+    (stoptime.serviceDay + stoptime.scheduledArrival) * 1000;
+
+  let arrivalTime = <FormattedTime value={arrivalTimeMs} />;
+  let departureTime;
+
+  if (dwellStop) {
+    arrivalTime = (
+      <FormattedMessage
+        id="otpUi.DwellStop.arrivalTime"
+        values={{ time: arrivalTime }}
+      />
+    );
+    const departureTimeMs =
+      (stoptime.serviceDay + stoptime.scheduledDeparture) * 1000;
+    departureTime = (
+      <FormattedMessage
+        id="otpUi.DwellStop.departureTime"
+        values={{ time: <FormattedTime value={departureTimeMs} /> }}
+      />
+    );
+  }
+
+  return (
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      <div>{arrivalTime}</div>
+      {dwellStop && departureTime && <div>{departureTime}</div>}
+    </div>
+  );
 };
 
 const createAdditionalColumnHeader = (
@@ -314,8 +353,6 @@ interface TimeTableProps {
    * values for `arrival_time` and `departure_time`
    */
   includeDwellStops?: boolean;
-  /** Time zone in which to display stop times if component is not wrapped in an IntlProvider */
-  timeZone?: string;
 }
 
 const TimeTable = (props: TimeTableProps): JSX.Element => {
@@ -326,21 +363,10 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
     errorOnStopSorting,
     includeDwellStops,
     route,
-    timepointsOnly,
-    timeZone
+    timepointsOnly
   } = props;
 
   const { patterns } = route;
-
-  let intl: IntlShape | undefined;
-
-  try {
-    intl = useIntl();
-  } catch (error) {
-    console.warn(
-      "Unable to localize time with useIntl. Wrap timetable component in an IntlProvider to control time localization. Falling back to provided timeZone prop if provided, or locale time zone on this machine"
-    );
-  }
 
   const [allTrips, timepointStopIds] = useMemo(() => {
     const trips = patterns
@@ -349,66 +375,62 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
 
     const timepoints = determineTimepoints(trips);
 
-    if (!includeDwellStops) return [trips, timepoints];
+    return [trips, timepoints];
+  }, [patterns, directionId]);
 
-    const withDwellStops = createDwellStops(trips, timepoints);
+  // Generate the master stop list to use for the header of the timetable
+  // Also determine the first stop ID that is used by every trip, for trip sorting later
+  // TODO: Build the graph once and memoize it, then filter final results for each option change
+  const [masterStopList, commonStopId] = useMemo(() => {
+    // TODO: investigate alternative data structures and architecture to simplify overall logic
+    const [stopGraph, tripStopSets, uniqueStopIdMap] = createStopGraph(
+      allTrips
+    );
 
-    return [withDwellStops, timepoints];
-  }, [patterns, directionId, includeDwellStops]);
-
-  const { patternStops, tripStopSets } = useMemo(() => {
-    // Array of sets; each set contains all of the stop IDs that are visited in a trip.
-    // This allows us to find a common stop to use for sorting trips without needing
-    // to iterate through all of the stoptimes again later on.
-    const sets: Set<string>[] = [];
-
-    // Used to extract stop names more efficiently later
-    const stopIdToNameMap = new Map<string, string>();
-
-    const stopGraph = createStopGraph(allTrips, stopIdToNameMap, sets);
-
-    let sorted: string[] = [];
+    let sortedPatternStops: PatternStop[] = [];
     try {
       // Topologically sort the stop graph to determine a valid order of stops for the entire timetable
-      sorted = toposort(stopGraph);
+      // The toposort function is technically able to take objects as nodes in the graph, but it treats "identical"
+      // objects (ones with the same keys and values) as not identical, so we need to use a map that links unique
+      // stop ID strings to the actual stop objects they represent
+      const sortedStopIds = toposort(stopGraph);
+      sortedPatternStops = sortedStopIds.map(
+        stopId =>
+          uniqueStopIdMap.get(stopId) ?? {
+            id: "",
+            name: "",
+            occurrenceIndex: 0
+          }
+      );
     } catch (error) {
       console.warn("error topologically sorting stop graph", error);
       if (!errorOnStopSorting) {
-        // If sorting fails, just create an array of all the unique stops visited
-        // across all trips
-        sorted = naiveSortStops(patterns, directionId);
+        sortedPatternStops = naiveSortStops(allTrips);
       }
     }
 
-    const patternStopsFromSorted: PatternStop[] = sorted.map(stopId => {
-      return {
-        id: stopId,
-        name: stopIdToNameMap.get(stopId) ?? ""
-      };
-    });
+    let stopIdUsedInEveryTrip: string | undefined;
 
-    return { patternStops: patternStopsFromSorted, tripStopSets: sets };
-  }, [allTrips]);
-
-  const commonStopId = useMemo(() => {
-    let result;
-    for (let i = 0; i < patternStops.length; i++) {
-      const stopId = patternStops[i].id;
+    for (let i = 0; i < sortedPatternStops.length; i++) {
+      const stopId = sortedPatternStops[i].id;
       const inAllTrips = tripStopSets.every(trip => trip.has(stopId));
       if (inAllTrips) {
-        result = stopId;
+        stopIdUsedInEveryTrip = stopId;
         break;
       }
     }
-    return result;
-  }, [patternStops, tripStopSets]);
+
+    return [sortedPatternStops, stopIdUsedInEveryTrip];
+  }, [allTrips]);
 
   const comparator = useMemo(() => {
     if (commonStopId) {
       // Sort by arrival time at common stop
       return (a: TimetableTrip, b: TimetableTrip) => {
-        const timeA = a.stops.get(commonStopId)?.time || new Date();
-        const timeB = b.stops.get(commonStopId)?.time || new Date();
+        const timeA =
+          a.stops.get(commonStopId)?.[0].scheduledArrival || new Date();
+        const timeB =
+          b.stops.get(commonStopId)?.[0].scheduledArrival || new Date();
         return timeA.valueOf() - timeB.valueOf();
       };
     }
@@ -418,34 +440,29 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
       a.firstStopTime - b.firstStopTime;
   }, [commonStopId]);
 
-  const filteredPatternStops = useMemo(
+  const filteredMasterStopList = useMemo(
     () =>
-      patternStops.filter(s =>
+      masterStopList.filter(s =>
         timepointsOnly ? timepointStopIds.has(s.id) : true
       ),
-    [timepointsOnly, patternStops, timepointStopIds]
+    [timepointsOnly, masterStopList, timepointStopIds]
   );
 
   const timetableTrips: TimetableTrip[] = useMemo<TimetableTrip[]>(() => {
     return allTrips
       .map<TimetableTrip>(t => {
         const firstStop = t.stoptimesForDate[0];
+        const stopsMap = new Map<string, Stoptime[]>();
+        t.stoptimesForDate.forEach(st => {
+          const stopId = st.stop.gtfsId;
+          stopsMap.set(stopId, (stopsMap.get(stopId) || []).concat(st));
+        });
         return {
           blockId: t.blockId,
           firstStopTime: firstStop.serviceDay + firstStop.scheduledArrival,
           gtfsId: t.gtfsId,
-          stops: new Map(
-            t.stoptimesForDate.map(st => {
-              return [
-                st.stop.gtfsId,
-                {
-                  time: new Date((st.serviceDay + st.scheduledArrival) * 1000),
-                  timepoint: st.timepoint
-                }
-              ];
-            })
-          ),
           notices: t.notices?.length ? t.notices.map(n => n.text) : undefined,
+          stops: stopsMap,
           tripHeadsign: t.tripHeadsign,
           tripShortName: t.tripShortName
         };
@@ -461,15 +478,15 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
     <Table className="timetable-table" tabIndex={0}>
       <thead className="timetable-thead">
         <tr>
-          {leadingColumns.concat(filteredPatternStops).map(s => {
+          {leadingColumns.concat(filteredMasterStopList).map((s, index) => {
             return (
               <TH
                 className={`timetable-th${
                   s.className ? ` ${s.className}` : ""
                 }`}
-                key={s.id}
+                key={`${s.id}-${index}`}
                 scope="col"
-                closed={closedStops?.has(s.id)}
+                closed={closedStops && closedStops.has(s.id)}
               >
                 <InvisibleText>{s.ariaLabel}</InvisibleText>
                 {s.name}
@@ -480,24 +497,23 @@ const TimeTable = (props: TimeTableProps): JSX.Element => {
       </thead>
       <TBody className="timetable-tbody">
         {timetableTrips.map((t, index) => {
+          // TODO: row values can be built outside of the render cycle and memoized
           const rowValues: RowValue[] = (additionalColumns || []).map(ac =>
             createAdditionalColumnRowValue(ac, t)
           );
 
-          filteredPatternStops.forEach(patternStop => {
-            const stopDetail = t.stops.get(patternStop.id);
+          filteredMasterStopList.forEach(stop => {
+            const stoptimes = t.stops.get(stop.id);
+            // If this stop is visited multiple times in this trip, grab
+            // the relevant stoptime value for this occurrence
+            const stoptime = stoptimes?.[stop.occurrenceIndex];
+            const dwellStop =
+              includeDwellStops &&
+              stoptime &&
+              stoptime.scheduledArrival !== stoptime.scheduledDeparture;
             rowValues.push({
-              closed: closedStops?.has(patternStop.id),
-              value: stopDetail
-                ? intl
-                  ? intl.formatTime(stopDetail.time)
-                  : stopDetail.time.toLocaleTimeString("en-us", {
-                      timeZone,
-                      hour12: false,
-                      hour: "2-digit",
-                      minute: "2-digit"
-                    })
-                : "-"
+              closed: closedStops?.has(stop.id) || false,
+              value: formatStoptimeForDisplay(stoptime, dwellStop)
             });
           });
 

@@ -1,0 +1,4 @@
+otpUi:
+  DwellStop:
+    arrivalTime: "A: {time}"
+    departureTime: "D: {time}"

@@ -5,6 +5,7 @@ import React from "react";
 import TimeTable, { AdditionalColumn } from ".."
 
 import twinCitiesRouteMock from "../../__mocks__/route-mock.json"
+import loopRouteMock from "../../__mocks__/loop-route-mock.json"
 
 let oldSet = new Set();
 const additionalColumnsCheckTime = new Map<string, Date>()
@@ -69,6 +70,13 @@ export const Default: Story = {
         directionId: 0,
         route: twinCitiesRouteMock.data.route,
         timepointsOnly: true,
-        timeZone: "America/New_York"
+    }
+}
+
+export const LoopRoute: Story = {
+    args: {
+        directionId: 0,
+        route: loopRouteMock.data.route,
+        timepointsOnly: true,
     }
 }

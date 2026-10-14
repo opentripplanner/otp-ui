@@ -18,6 +18,7 @@ const packages = [
   "location-field",
   "printable-itinerary",
   "map-popup",
+  "timetable",
   "transit-vehicle-overlay",
   "trip-details",
   "trip-form"

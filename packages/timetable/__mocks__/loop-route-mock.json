@@ -1,0 +1,3171 @@
+{
+  "data": {
+    "route": {
+      "shortName": "33",
+      "url": "https://www.metrotransit.org/route/33",
+      "desc": "Westgate Sta - Elm St - Kasota Av - SE Mpls Indust",
+      "patterns": [
+        {
+          "directionId": 1,
+          "name": "33 to Rollins Ave SE & #1410 (MT:57199)",
+          "tripsForDate": [
+            {
+              "blockId": "156162",
+              "gtfsId": "MT:1131466",
+              "tripHeadsign": "Elm-Kasota / Westgate Station",
+              "notices": [],
+              "tripShortName": null,
+              "stoptimesForDate": [
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 54660,
+                  "scheduledDeparture": 54660,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "NONE",
+                  "timepoint": true,
+                  "stopPositionInPattern": 0,
+                  "stop": {
+                    "gtfsId": "MT:57199",
+                    "name": "Rollins Ave SE & #1410",
+                    "id": "U3RvcDpNVDo1NzE5OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 54780,
+                  "scheduledDeparture": 54780,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 1,
+                  "stop": {
+                    "gtfsId": "MT:16161",
+                    "name": "Elm St SE & 19th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2MQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 54840,
+                  "scheduledDeparture": 54840,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 2,
+                  "stop": {
+                    "gtfsId": "MT:16164",
+                    "name": "Elm St SE & 22nd Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 54840,
+                  "scheduledDeparture": 54840,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 3,
+                  "stop": {
+                    "gtfsId": "MT:16166",
+                    "name": "Elm St SE & 24th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2Ng"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 54900,
+                  "scheduledDeparture": 54900,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 4,
+                  "stop": {
+                    "gtfsId": "MT:16167",
+                    "name": "Kasota Ave SE & #828",
+                    "id": "U3RvcDpNVDoxNjE2Nw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 54960,
+                  "scheduledDeparture": 54960,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 5,
+                  "stop": {
+                    "gtfsId": "MT:42332",
+                    "name": "Kasota Ave SE & Kasota Circle",
+                    "id": "U3RvcDpNVDo0MjMzMg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 54960,
+                  "scheduledDeparture": 54960,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 6,
+                  "stop": {
+                    "gtfsId": "MT:42333",
+                    "name": "Kasota Ave SE & #701",
+                    "id": "U3RvcDpNVDo0MjMzMw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 55020,
+                  "scheduledDeparture": 55020,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 7,
+                  "stop": {
+                    "gtfsId": "MT:42334",
+                    "name": "Kasota Ave SE & Bridal Veil Circle",
+                    "id": "U3RvcDpNVDo0MjMzNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 55020,
+                  "scheduledDeparture": 55020,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 8,
+                  "stop": {
+                    "gtfsId": "MT:16172",
+                    "name": "Kasota Ave SE & #500",
+                    "id": "U3RvcDpNVDoxNjE3Mg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 55080,
+                  "scheduledDeparture": 55080,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 9,
+                  "stop": {
+                    "gtfsId": "MT:16173",
+                    "name": "Kasota Ave SE & #2550",
+                    "id": "U3RvcDpNVDoxNjE3Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 55260,
+                  "scheduledDeparture": 55260,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 10,
+                  "stop": {
+                    "gtfsId": "MT:18640",
+                    "name": "Territorial Rd & Westgate Dr",
+                    "id": "U3RvcDpNVDoxODY0MA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 55320,
+                  "scheduledDeparture": 55320,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 11,
+                  "stop": {
+                    "gtfsId": "MT:15795",
+                    "name": "Westgate Station - Gate C",
+                    "id": "U3RvcDpNVDoxNTc5NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 55380,
+                  "scheduledDeparture": 55380,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 12,
+                  "stop": {
+                    "gtfsId": "MT:15883",
+                    "name": "University Ave & Bedford St SE",
+                    "id": "U3RvcDpNVDoxNTg4Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 55440,
+                  "scheduledDeparture": 55440,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 13,
+                  "stop": {
+                    "gtfsId": "MT:15884",
+                    "name": "University & Malcolm Station",
+                    "id": "U3RvcDpNVDoxNTg4NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 55440,
+                  "scheduledDeparture": 55440,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 14,
+                  "stop": {
+                    "gtfsId": "MT:15885",
+                    "name": "University Ave SE & 29th Ave SE",
+                    "id": "U3RvcDpNVDoxNTg4NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 55500,
+                  "scheduledDeparture": 55500,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 15,
+                  "stop": {
+                    "gtfsId": "MT:56521",
+                    "name": "University & 27th Ave Station",
+                    "id": "U3RvcDpNVDo1NjUyMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 55560,
+                  "scheduledDeparture": 55560,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 16,
+                  "stop": {
+                    "gtfsId": "MT:16569",
+                    "name": "University & 23rd Ave Station",
+                    "id": "U3RvcDpNVDoxNjU2OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 55620,
+                  "scheduledDeparture": 55620,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 17,
+                  "stop": {
+                    "gtfsId": "MT:16145",
+                    "name": "University Ave SE & Oak St SE",
+                    "id": "U3RvcDpNVDoxNjE0NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 55680,
+                  "scheduledDeparture": 55680,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 18,
+                  "stop": {
+                    "gtfsId": "MT:16154",
+                    "name": "4th St & Ridder Arena Station",
+                    "id": "U3RvcDpNVDoxNjE1NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 55740,
+                  "scheduledDeparture": 55740,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 19,
+                  "stop": {
+                    "gtfsId": "MT:16111",
+                    "name": "15th Ave SE & 4th St SE",
+                    "id": "U3RvcDpNVDoxNjExMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 55800,
+                  "scheduledDeparture": 55800,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 20,
+                  "stop": {
+                    "gtfsId": "MT:57014",
+                    "name": "15th Ave SE & 7th St SE",
+                    "id": "U3RvcDpNVDo1NzAxNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 55860,
+                  "scheduledDeparture": 55860,
+                  "pickupType": "NONE",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 21,
+                  "stop": {
+                    "gtfsId": "MT:57199",
+                    "name": "Rollins Ave SE & #1410",
+                    "id": "U3RvcDpNVDo1NzE5OQ"
+                  }
+                }
+              ]
+            },
+            {
+              "blockId": "156162",
+              "gtfsId": "MT:1131089",
+              "tripHeadsign": "Elm-Kasota / Westgate Station",
+              "notices": [],
+              "tripShortName": null,
+              "stoptimesForDate": [
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 56460,
+                  "scheduledDeparture": 56460,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "NONE",
+                  "timepoint": true,
+                  "stopPositionInPattern": 0,
+                  "stop": {
+                    "gtfsId": "MT:57199",
+                    "name": "Rollins Ave SE & #1410",
+                    "id": "U3RvcDpNVDo1NzE5OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 56580,
+                  "scheduledDeparture": 56580,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 1,
+                  "stop": {
+                    "gtfsId": "MT:16161",
+                    "name": "Elm St SE & 19th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2MQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 56640,
+                  "scheduledDeparture": 56640,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 2,
+                  "stop": {
+                    "gtfsId": "MT:16164",
+                    "name": "Elm St SE & 22nd Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 56640,
+                  "scheduledDeparture": 56640,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 3,
+                  "stop": {
+                    "gtfsId": "MT:16166",
+                    "name": "Elm St SE & 24th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2Ng"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 56700,
+                  "scheduledDeparture": 56700,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 4,
+                  "stop": {
+                    "gtfsId": "MT:16167",
+                    "name": "Kasota Ave SE & #828",
+                    "id": "U3RvcDpNVDoxNjE2Nw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 56760,
+                  "scheduledDeparture": 56760,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 5,
+                  "stop": {
+                    "gtfsId": "MT:42332",
+                    "name": "Kasota Ave SE & Kasota Circle",
+                    "id": "U3RvcDpNVDo0MjMzMg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 56760,
+                  "scheduledDeparture": 56760,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 6,
+                  "stop": {
+                    "gtfsId": "MT:42333",
+                    "name": "Kasota Ave SE & #701",
+                    "id": "U3RvcDpNVDo0MjMzMw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 56820,
+                  "scheduledDeparture": 56820,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 7,
+                  "stop": {
+                    "gtfsId": "MT:42334",
+                    "name": "Kasota Ave SE & Bridal Veil Circle",
+                    "id": "U3RvcDpNVDo0MjMzNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 56820,
+                  "scheduledDeparture": 56820,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 8,
+                  "stop": {
+                    "gtfsId": "MT:16172",
+                    "name": "Kasota Ave SE & #500",
+                    "id": "U3RvcDpNVDoxNjE3Mg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 56880,
+                  "scheduledDeparture": 56880,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 9,
+                  "stop": {
+                    "gtfsId": "MT:16173",
+                    "name": "Kasota Ave SE & #2550",
+                    "id": "U3RvcDpNVDoxNjE3Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 57060,
+                  "scheduledDeparture": 57060,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 10,
+                  "stop": {
+                    "gtfsId": "MT:18640",
+                    "name": "Territorial Rd & Westgate Dr",
+                    "id": "U3RvcDpNVDoxODY0MA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 57120,
+                  "scheduledDeparture": 57120,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 11,
+                  "stop": {
+                    "gtfsId": "MT:15795",
+                    "name": "Westgate Station - Gate C",
+                    "id": "U3RvcDpNVDoxNTc5NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 57180,
+                  "scheduledDeparture": 57180,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 12,
+                  "stop": {
+                    "gtfsId": "MT:15883",
+                    "name": "University Ave & Bedford St SE",
+                    "id": "U3RvcDpNVDoxNTg4Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 57240,
+                  "scheduledDeparture": 57240,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 13,
+                  "stop": {
+                    "gtfsId": "MT:15884",
+                    "name": "University & Malcolm Station",
+                    "id": "U3RvcDpNVDoxNTg4NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 57240,
+                  "scheduledDeparture": 57240,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 14,
+                  "stop": {
+                    "gtfsId": "MT:15885",
+                    "name": "University Ave SE & 29th Ave SE",
+                    "id": "U3RvcDpNVDoxNTg4NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 57300,
+                  "scheduledDeparture": 57300,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 15,
+                  "stop": {
+                    "gtfsId": "MT:56521",
+                    "name": "University & 27th Ave Station",
+                    "id": "U3RvcDpNVDo1NjUyMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 57360,
+                  "scheduledDeparture": 57360,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 16,
+                  "stop": {
+                    "gtfsId": "MT:16569",
+                    "name": "University & 23rd Ave Station",
+                    "id": "U3RvcDpNVDoxNjU2OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 57420,
+                  "scheduledDeparture": 57420,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 17,
+                  "stop": {
+                    "gtfsId": "MT:16145",
+                    "name": "University Ave SE & Oak St SE",
+                    "id": "U3RvcDpNVDoxNjE0NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 57480,
+                  "scheduledDeparture": 57480,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 18,
+                  "stop": {
+                    "gtfsId": "MT:16154",
+                    "name": "4th St & Ridder Arena Station",
+                    "id": "U3RvcDpNVDoxNjE1NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 57540,
+                  "scheduledDeparture": 57540,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 19,
+                  "stop": {
+                    "gtfsId": "MT:16111",
+                    "name": "15th Ave SE & 4th St SE",
+                    "id": "U3RvcDpNVDoxNjExMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 57600,
+                  "scheduledDeparture": 57600,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 20,
+                  "stop": {
+                    "gtfsId": "MT:57014",
+                    "name": "15th Ave SE & 7th St SE",
+                    "id": "U3RvcDpNVDo1NzAxNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 57660,
+                  "scheduledDeparture": 57660,
+                  "pickupType": "NONE",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 21,
+                  "stop": {
+                    "gtfsId": "MT:57199",
+                    "name": "Rollins Ave SE & #1410",
+                    "id": "U3RvcDpNVDo1NzE5OQ"
+                  }
+                }
+              ]
+            },
+            {
+              "blockId": "156162",
+              "gtfsId": "MT:1133718",
+              "tripHeadsign": "Elm-Kasota / Westgate Station",
+              "notices": [],
+              "tripShortName": null,
+              "stoptimesForDate": [
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 58260,
+                  "scheduledDeparture": 58260,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "NONE",
+                  "timepoint": true,
+                  "stopPositionInPattern": 0,
+                  "stop": {
+                    "gtfsId": "MT:57199",
+                    "name": "Rollins Ave SE & #1410",
+                    "id": "U3RvcDpNVDo1NzE5OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 58380,
+                  "scheduledDeparture": 58380,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 1,
+                  "stop": {
+                    "gtfsId": "MT:16161",
+                    "name": "Elm St SE & 19th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2MQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 58440,
+                  "scheduledDeparture": 58440,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 2,
+                  "stop": {
+                    "gtfsId": "MT:16164",
+                    "name": "Elm St SE & 22nd Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 58440,
+                  "scheduledDeparture": 58440,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 3,
+                  "stop": {
+                    "gtfsId": "MT:16166",
+                    "name": "Elm St SE & 24th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2Ng"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 58500,
+                  "scheduledDeparture": 58500,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 4,
+                  "stop": {
+                    "gtfsId": "MT:16167",
+                    "name": "Kasota Ave SE & #828",
+                    "id": "U3RvcDpNVDoxNjE2Nw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 58560,
+                  "scheduledDeparture": 58560,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 5,
+                  "stop": {
+                    "gtfsId": "MT:42332",
+                    "name": "Kasota Ave SE & Kasota Circle",
+                    "id": "U3RvcDpNVDo0MjMzMg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 58560,
+                  "scheduledDeparture": 58560,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 6,
+                  "stop": {
+                    "gtfsId": "MT:42333",
+                    "name": "Kasota Ave SE & #701",
+                    "id": "U3RvcDpNVDo0MjMzMw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 58620,
+                  "scheduledDeparture": 58620,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 7,
+                  "stop": {
+                    "gtfsId": "MT:42334",
+                    "name": "Kasota Ave SE & Bridal Veil Circle",
+                    "id": "U3RvcDpNVDo0MjMzNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 58620,
+                  "scheduledDeparture": 58620,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 8,
+                  "stop": {
+                    "gtfsId": "MT:16172",
+                    "name": "Kasota Ave SE & #500",
+                    "id": "U3RvcDpNVDoxNjE3Mg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 58680,
+                  "scheduledDeparture": 58680,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 9,
+                  "stop": {
+                    "gtfsId": "MT:16173",
+                    "name": "Kasota Ave SE & #2550",
+                    "id": "U3RvcDpNVDoxNjE3Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 58860,
+                  "scheduledDeparture": 58860,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 10,
+                  "stop": {
+                    "gtfsId": "MT:18640",
+                    "name": "Territorial Rd & Westgate Dr",
+                    "id": "U3RvcDpNVDoxODY0MA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 58920,
+                  "scheduledDeparture": 58920,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 11,
+                  "stop": {
+                    "gtfsId": "MT:15795",
+                    "name": "Westgate Station - Gate C",
+                    "id": "U3RvcDpNVDoxNTc5NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 58980,
+                  "scheduledDeparture": 58980,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 12,
+                  "stop": {
+                    "gtfsId": "MT:15883",
+                    "name": "University Ave & Bedford St SE",
+                    "id": "U3RvcDpNVDoxNTg4Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 59040,
+                  "scheduledDeparture": 59040,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 13,
+                  "stop": {
+                    "gtfsId": "MT:15884",
+                    "name": "University & Malcolm Station",
+                    "id": "U3RvcDpNVDoxNTg4NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 59040,
+                  "scheduledDeparture": 59040,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 14,
+                  "stop": {
+                    "gtfsId": "MT:15885",
+                    "name": "University Ave SE & 29th Ave SE",
+                    "id": "U3RvcDpNVDoxNTg4NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 59100,
+                  "scheduledDeparture": 59100,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 15,
+                  "stop": {
+                    "gtfsId": "MT:56521",
+                    "name": "University & 27th Ave Station",
+                    "id": "U3RvcDpNVDo1NjUyMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 59160,
+                  "scheduledDeparture": 59160,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 16,
+                  "stop": {
+                    "gtfsId": "MT:16569",
+                    "name": "University & 23rd Ave Station",
+                    "id": "U3RvcDpNVDoxNjU2OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 59220,
+                  "scheduledDeparture": 59220,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 17,
+                  "stop": {
+                    "gtfsId": "MT:16145",
+                    "name": "University Ave SE & Oak St SE",
+                    "id": "U3RvcDpNVDoxNjE0NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 59280,
+                  "scheduledDeparture": 59280,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 18,
+                  "stop": {
+                    "gtfsId": "MT:16154",
+                    "name": "4th St & Ridder Arena Station",
+                    "id": "U3RvcDpNVDoxNjE1NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 59340,
+                  "scheduledDeparture": 59340,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 19,
+                  "stop": {
+                    "gtfsId": "MT:16111",
+                    "name": "15th Ave SE & 4th St SE",
+                    "id": "U3RvcDpNVDoxNjExMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 59400,
+                  "scheduledDeparture": 59400,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 20,
+                  "stop": {
+                    "gtfsId": "MT:57014",
+                    "name": "15th Ave SE & 7th St SE",
+                    "id": "U3RvcDpNVDo1NzAxNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 59460,
+                  "scheduledDeparture": 59460,
+                  "pickupType": "NONE",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 21,
+                  "stop": {
+                    "gtfsId": "MT:57199",
+                    "name": "Rollins Ave SE & #1410",
+                    "id": "U3RvcDpNVDo1NzE5OQ"
+                  }
+                }
+              ]
+            },
+            {
+              "blockId": "156162",
+              "gtfsId": "MT:1134755",
+              "tripHeadsign": "Elm-Kasota / Westgate Station",
+              "notices": [],
+              "tripShortName": null,
+              "stoptimesForDate": [
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60060,
+                  "scheduledDeparture": 60060,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "NONE",
+                  "timepoint": true,
+                  "stopPositionInPattern": 0,
+                  "stop": {
+                    "gtfsId": "MT:57199",
+                    "name": "Rollins Ave SE & #1410",
+                    "id": "U3RvcDpNVDo1NzE5OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60180,
+                  "scheduledDeparture": 60180,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 1,
+                  "stop": {
+                    "gtfsId": "MT:16161",
+                    "name": "Elm St SE & 19th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2MQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60240,
+                  "scheduledDeparture": 60240,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 2,
+                  "stop": {
+                    "gtfsId": "MT:16164",
+                    "name": "Elm St SE & 22nd Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60240,
+                  "scheduledDeparture": 60240,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 3,
+                  "stop": {
+                    "gtfsId": "MT:16166",
+                    "name": "Elm St SE & 24th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2Ng"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60300,
+                  "scheduledDeparture": 60300,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 4,
+                  "stop": {
+                    "gtfsId": "MT:16167",
+                    "name": "Kasota Ave SE & #828",
+                    "id": "U3RvcDpNVDoxNjE2Nw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60360,
+                  "scheduledDeparture": 60360,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 5,
+                  "stop": {
+                    "gtfsId": "MT:42332",
+                    "name": "Kasota Ave SE & Kasota Circle",
+                    "id": "U3RvcDpNVDo0MjMzMg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60360,
+                  "scheduledDeparture": 60360,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 6,
+                  "stop": {
+                    "gtfsId": "MT:42333",
+                    "name": "Kasota Ave SE & #701",
+                    "id": "U3RvcDpNVDo0MjMzMw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60420,
+                  "scheduledDeparture": 60420,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 7,
+                  "stop": {
+                    "gtfsId": "MT:42334",
+                    "name": "Kasota Ave SE & Bridal Veil Circle",
+                    "id": "U3RvcDpNVDo0MjMzNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60420,
+                  "scheduledDeparture": 60420,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 8,
+                  "stop": {
+                    "gtfsId": "MT:16172",
+                    "name": "Kasota Ave SE & #500",
+                    "id": "U3RvcDpNVDoxNjE3Mg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60480,
+                  "scheduledDeparture": 60480,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 9,
+                  "stop": {
+                    "gtfsId": "MT:16173",
+                    "name": "Kasota Ave SE & #2550",
+                    "id": "U3RvcDpNVDoxNjE3Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60660,
+                  "scheduledDeparture": 60660,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 10,
+                  "stop": {
+                    "gtfsId": "MT:18640",
+                    "name": "Territorial Rd & Westgate Dr",
+                    "id": "U3RvcDpNVDoxODY0MA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60720,
+                  "scheduledDeparture": 60720,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 11,
+                  "stop": {
+                    "gtfsId": "MT:15795",
+                    "name": "Westgate Station - Gate C",
+                    "id": "U3RvcDpNVDoxNTc5NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60780,
+                  "scheduledDeparture": 60780,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 12,
+                  "stop": {
+                    "gtfsId": "MT:15883",
+                    "name": "University Ave & Bedford St SE",
+                    "id": "U3RvcDpNVDoxNTg4Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60840,
+                  "scheduledDeparture": 60840,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 13,
+                  "stop": {
+                    "gtfsId": "MT:15884",
+                    "name": "University & Malcolm Station",
+                    "id": "U3RvcDpNVDoxNTg4NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60840,
+                  "scheduledDeparture": 60840,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 14,
+                  "stop": {
+                    "gtfsId": "MT:15885",
+                    "name": "University Ave SE & 29th Ave SE",
+                    "id": "U3RvcDpNVDoxNTg4NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60900,
+                  "scheduledDeparture": 60900,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 15,
+                  "stop": {
+                    "gtfsId": "MT:56521",
+                    "name": "University & 27th Ave Station",
+                    "id": "U3RvcDpNVDo1NjUyMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 60960,
+                  "scheduledDeparture": 60960,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 16,
+                  "stop": {
+                    "gtfsId": "MT:16569",
+                    "name": "University & 23rd Ave Station",
+                    "id": "U3RvcDpNVDoxNjU2OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 61020,
+                  "scheduledDeparture": 61020,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 17,
+                  "stop": {
+                    "gtfsId": "MT:16145",
+                    "name": "University Ave SE & Oak St SE",
+                    "id": "U3RvcDpNVDoxNjE0NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 61080,
+                  "scheduledDeparture": 61080,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 18,
+                  "stop": {
+                    "gtfsId": "MT:16154",
+                    "name": "4th St & Ridder Arena Station",
+                    "id": "U3RvcDpNVDoxNjE1NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 61140,
+                  "scheduledDeparture": 61140,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 19,
+                  "stop": {
+                    "gtfsId": "MT:16111",
+                    "name": "15th Ave SE & 4th St SE",
+                    "id": "U3RvcDpNVDoxNjExMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 61200,
+                  "scheduledDeparture": 61200,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 20,
+                  "stop": {
+                    "gtfsId": "MT:57014",
+                    "name": "15th Ave SE & 7th St SE",
+                    "id": "U3RvcDpNVDo1NzAxNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 61260,
+                  "scheduledDeparture": 61260,
+                  "pickupType": "NONE",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 21,
+                  "stop": {
+                    "gtfsId": "MT:57199",
+                    "name": "Rollins Ave SE & #1410",
+                    "id": "U3RvcDpNVDo1NzE5OQ"
+                  }
+                }
+              ]
+            },
+            {
+              "blockId": "156162",
+              "gtfsId": "MT:1133040",
+              "tripHeadsign": "Elm-Kasota / Westgate Station",
+              "notices": [],
+              "tripShortName": null,
+              "stoptimesForDate": [
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 61860,
+                  "scheduledDeparture": 61860,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "NONE",
+                  "timepoint": true,
+                  "stopPositionInPattern": 0,
+                  "stop": {
+                    "gtfsId": "MT:57199",
+                    "name": "Rollins Ave SE & #1410",
+                    "id": "U3RvcDpNVDo1NzE5OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 61980,
+                  "scheduledDeparture": 61980,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 1,
+                  "stop": {
+                    "gtfsId": "MT:16161",
+                    "name": "Elm St SE & 19th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2MQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62040,
+                  "scheduledDeparture": 62040,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 2,
+                  "stop": {
+                    "gtfsId": "MT:16164",
+                    "name": "Elm St SE & 22nd Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62040,
+                  "scheduledDeparture": 62040,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 3,
+                  "stop": {
+                    "gtfsId": "MT:16166",
+                    "name": "Elm St SE & 24th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2Ng"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62100,
+                  "scheduledDeparture": 62100,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 4,
+                  "stop": {
+                    "gtfsId": "MT:16167",
+                    "name": "Kasota Ave SE & #828",
+                    "id": "U3RvcDpNVDoxNjE2Nw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62160,
+                  "scheduledDeparture": 62160,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 5,
+                  "stop": {
+                    "gtfsId": "MT:42332",
+                    "name": "Kasota Ave SE & Kasota Circle",
+                    "id": "U3RvcDpNVDo0MjMzMg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62160,
+                  "scheduledDeparture": 62160,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 6,
+                  "stop": {
+                    "gtfsId": "MT:42333",
+                    "name": "Kasota Ave SE & #701",
+                    "id": "U3RvcDpNVDo0MjMzMw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62220,
+                  "scheduledDeparture": 62220,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 7,
+                  "stop": {
+                    "gtfsId": "MT:42334",
+                    "name": "Kasota Ave SE & Bridal Veil Circle",
+                    "id": "U3RvcDpNVDo0MjMzNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62220,
+                  "scheduledDeparture": 62220,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 8,
+                  "stop": {
+                    "gtfsId": "MT:16172",
+                    "name": "Kasota Ave SE & #500",
+                    "id": "U3RvcDpNVDoxNjE3Mg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62280,
+                  "scheduledDeparture": 62280,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 9,
+                  "stop": {
+                    "gtfsId": "MT:16173",
+                    "name": "Kasota Ave SE & #2550",
+                    "id": "U3RvcDpNVDoxNjE3Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62460,
+                  "scheduledDeparture": 62460,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 10,
+                  "stop": {
+                    "gtfsId": "MT:18640",
+                    "name": "Territorial Rd & Westgate Dr",
+                    "id": "U3RvcDpNVDoxODY0MA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62520,
+                  "scheduledDeparture": 62520,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 11,
+                  "stop": {
+                    "gtfsId": "MT:15795",
+                    "name": "Westgate Station - Gate C",
+                    "id": "U3RvcDpNVDoxNTc5NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62580,
+                  "scheduledDeparture": 62580,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 12,
+                  "stop": {
+                    "gtfsId": "MT:15883",
+                    "name": "University Ave & Bedford St SE",
+                    "id": "U3RvcDpNVDoxNTg4Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62640,
+                  "scheduledDeparture": 62640,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 13,
+                  "stop": {
+                    "gtfsId": "MT:15884",
+                    "name": "University & Malcolm Station",
+                    "id": "U3RvcDpNVDoxNTg4NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62640,
+                  "scheduledDeparture": 62640,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 14,
+                  "stop": {
+                    "gtfsId": "MT:15885",
+                    "name": "University Ave SE & 29th Ave SE",
+                    "id": "U3RvcDpNVDoxNTg4NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62700,
+                  "scheduledDeparture": 62700,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 15,
+                  "stop": {
+                    "gtfsId": "MT:56521",
+                    "name": "University & 27th Ave Station",
+                    "id": "U3RvcDpNVDo1NjUyMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62760,
+                  "scheduledDeparture": 62760,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 16,
+                  "stop": {
+                    "gtfsId": "MT:16569",
+                    "name": "University & 23rd Ave Station",
+                    "id": "U3RvcDpNVDoxNjU2OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62820,
+                  "scheduledDeparture": 62820,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 17,
+                  "stop": {
+                    "gtfsId": "MT:16145",
+                    "name": "University Ave SE & Oak St SE",
+                    "id": "U3RvcDpNVDoxNjE0NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62880,
+                  "scheduledDeparture": 62880,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 18,
+                  "stop": {
+                    "gtfsId": "MT:16154",
+                    "name": "4th St & Ridder Arena Station",
+                    "id": "U3RvcDpNVDoxNjE1NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 62940,
+                  "scheduledDeparture": 62940,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 19,
+                  "stop": {
+                    "gtfsId": "MT:16111",
+                    "name": "15th Ave SE & 4th St SE",
+                    "id": "U3RvcDpNVDoxNjExMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 63000,
+                  "scheduledDeparture": 63000,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 20,
+                  "stop": {
+                    "gtfsId": "MT:57014",
+                    "name": "15th Ave SE & 7th St SE",
+                    "id": "U3RvcDpNVDo1NzAxNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 63060,
+                  "scheduledDeparture": 63060,
+                  "pickupType": "NONE",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 21,
+                  "stop": {
+                    "gtfsId": "MT:57199",
+                    "name": "Rollins Ave SE & #1410",
+                    "id": "U3RvcDpNVDo1NzE5OQ"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "directionId": 0,
+          "name": "33 to Westgate Station - Gate C (MT:15795)",
+          "tripsForDate": [
+            {
+              "blockId": "156289",
+              "gtfsId": "MT:1132776",
+              "tripHeadsign": "Elm-Kasota / Westgate Station",
+              "notices": [],
+              "tripShortName": null,
+              "stoptimesForDate": [
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22020,
+                  "scheduledDeparture": 22020,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "NONE",
+                  "timepoint": true,
+                  "stopPositionInPattern": 0,
+                  "stop": {
+                    "gtfsId": "MT:15795",
+                    "name": "Westgate Station - Gate C",
+                    "id": "U3RvcDpNVDoxNTc5NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22080,
+                  "scheduledDeparture": 22080,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 1,
+                  "stop": {
+                    "gtfsId": "MT:15883",
+                    "name": "University Ave & Bedford St SE",
+                    "id": "U3RvcDpNVDoxNTg4Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22140,
+                  "scheduledDeparture": 22140,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 2,
+                  "stop": {
+                    "gtfsId": "MT:15884",
+                    "name": "University & Malcolm Station",
+                    "id": "U3RvcDpNVDoxNTg4NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22140,
+                  "scheduledDeparture": 22140,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 3,
+                  "stop": {
+                    "gtfsId": "MT:15885",
+                    "name": "University Ave SE & 29th Ave SE",
+                    "id": "U3RvcDpNVDoxNTg4NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22200,
+                  "scheduledDeparture": 22200,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 4,
+                  "stop": {
+                    "gtfsId": "MT:56521",
+                    "name": "University & 27th Ave Station",
+                    "id": "U3RvcDpNVDo1NjUyMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22260,
+                  "scheduledDeparture": 22260,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 5,
+                  "stop": {
+                    "gtfsId": "MT:16569",
+                    "name": "University & 23rd Ave Station",
+                    "id": "U3RvcDpNVDoxNjU2OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22320,
+                  "scheduledDeparture": 22320,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 6,
+                  "stop": {
+                    "gtfsId": "MT:16145",
+                    "name": "University Ave SE & Oak St SE",
+                    "id": "U3RvcDpNVDoxNjE0NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22380,
+                  "scheduledDeparture": 22380,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 7,
+                  "stop": {
+                    "gtfsId": "MT:16154",
+                    "name": "4th St & Ridder Arena Station",
+                    "id": "U3RvcDpNVDoxNjE1NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22440,
+                  "scheduledDeparture": 22440,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 8,
+                  "stop": {
+                    "gtfsId": "MT:16111",
+                    "name": "15th Ave SE & 4th St SE",
+                    "id": "U3RvcDpNVDoxNjExMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22500,
+                  "scheduledDeparture": 22500,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 9,
+                  "stop": {
+                    "gtfsId": "MT:57014",
+                    "name": "15th Ave SE & 7th St SE",
+                    "id": "U3RvcDpNVDo1NzAxNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22560,
+                  "scheduledDeparture": 22560,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 10,
+                  "stop": {
+                    "gtfsId": "MT:16101",
+                    "name": "15th Ave SE & Rollins Ave",
+                    "id": "U3RvcDpNVDoxNjEwMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22620,
+                  "scheduledDeparture": 22620,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 11,
+                  "stop": {
+                    "gtfsId": "MT:16161",
+                    "name": "Elm St SE & 19th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2MQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22680,
+                  "scheduledDeparture": 22680,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 12,
+                  "stop": {
+                    "gtfsId": "MT:16164",
+                    "name": "Elm St SE & 22nd Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22680,
+                  "scheduledDeparture": 22680,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 13,
+                  "stop": {
+                    "gtfsId": "MT:16166",
+                    "name": "Elm St SE & 24th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2Ng"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22740,
+                  "scheduledDeparture": 22740,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 14,
+                  "stop": {
+                    "gtfsId": "MT:16167",
+                    "name": "Kasota Ave SE & #828",
+                    "id": "U3RvcDpNVDoxNjE2Nw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22800,
+                  "scheduledDeparture": 22800,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 15,
+                  "stop": {
+                    "gtfsId": "MT:42332",
+                    "name": "Kasota Ave SE & Kasota Circle",
+                    "id": "U3RvcDpNVDo0MjMzMg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22800,
+                  "scheduledDeparture": 22800,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 16,
+                  "stop": {
+                    "gtfsId": "MT:42333",
+                    "name": "Kasota Ave SE & #701",
+                    "id": "U3RvcDpNVDo0MjMzMw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22860,
+                  "scheduledDeparture": 22860,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 17,
+                  "stop": {
+                    "gtfsId": "MT:42334",
+                    "name": "Kasota Ave SE & Bridal Veil Circle",
+                    "id": "U3RvcDpNVDo0MjMzNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22860,
+                  "scheduledDeparture": 22860,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 18,
+                  "stop": {
+                    "gtfsId": "MT:16172",
+                    "name": "Kasota Ave SE & #500",
+                    "id": "U3RvcDpNVDoxNjE3Mg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 22920,
+                  "scheduledDeparture": 22920,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 19,
+                  "stop": {
+                    "gtfsId": "MT:16173",
+                    "name": "Kasota Ave SE & #2550",
+                    "id": "U3RvcDpNVDoxNjE3Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 23100,
+                  "scheduledDeparture": 23100,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 20,
+                  "stop": {
+                    "gtfsId": "MT:18640",
+                    "name": "Territorial Rd & Westgate Dr",
+                    "id": "U3RvcDpNVDoxODY0MA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 23160,
+                  "scheduledDeparture": 23160,
+                  "pickupType": "NONE",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 21,
+                  "stop": {
+                    "gtfsId": "MT:15795",
+                    "name": "Westgate Station - Gate C",
+                    "id": "U3RvcDpNVDoxNTc5NQ"
+                  }
+                }
+              ]
+            },
+            {
+              "blockId": "156289",
+              "gtfsId": "MT:1135025",
+              "tripHeadsign": "Elm-Kasota / Westgate Station",
+              "notices": [],
+              "tripShortName": null,
+              "stoptimesForDate": [
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 23820,
+                  "scheduledDeparture": 23820,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "NONE",
+                  "timepoint": true,
+                  "stopPositionInPattern": 0,
+                  "stop": {
+                    "gtfsId": "MT:15795",
+                    "name": "Westgate Station - Gate C",
+                    "id": "U3RvcDpNVDoxNTc5NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 23880,
+                  "scheduledDeparture": 23880,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 1,
+                  "stop": {
+                    "gtfsId": "MT:15883",
+                    "name": "University Ave & Bedford St SE",
+                    "id": "U3RvcDpNVDoxNTg4Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 23940,
+                  "scheduledDeparture": 23940,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 2,
+                  "stop": {
+                    "gtfsId": "MT:15884",
+                    "name": "University & Malcolm Station",
+                    "id": "U3RvcDpNVDoxNTg4NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 23940,
+                  "scheduledDeparture": 23940,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 3,
+                  "stop": {
+                    "gtfsId": "MT:15885",
+                    "name": "University Ave SE & 29th Ave SE",
+                    "id": "U3RvcDpNVDoxNTg4NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24000,
+                  "scheduledDeparture": 24000,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 4,
+                  "stop": {
+                    "gtfsId": "MT:56521",
+                    "name": "University & 27th Ave Station",
+                    "id": "U3RvcDpNVDo1NjUyMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24060,
+                  "scheduledDeparture": 24060,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 5,
+                  "stop": {
+                    "gtfsId": "MT:16569",
+                    "name": "University & 23rd Ave Station",
+                    "id": "U3RvcDpNVDoxNjU2OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24120,
+                  "scheduledDeparture": 24120,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 6,
+                  "stop": {
+                    "gtfsId": "MT:16145",
+                    "name": "University Ave SE & Oak St SE",
+                    "id": "U3RvcDpNVDoxNjE0NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24180,
+                  "scheduledDeparture": 24180,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 7,
+                  "stop": {
+                    "gtfsId": "MT:16154",
+                    "name": "4th St & Ridder Arena Station",
+                    "id": "U3RvcDpNVDoxNjE1NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24240,
+                  "scheduledDeparture": 24240,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 8,
+                  "stop": {
+                    "gtfsId": "MT:16111",
+                    "name": "15th Ave SE & 4th St SE",
+                    "id": "U3RvcDpNVDoxNjExMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24300,
+                  "scheduledDeparture": 24300,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 9,
+                  "stop": {
+                    "gtfsId": "MT:57014",
+                    "name": "15th Ave SE & 7th St SE",
+                    "id": "U3RvcDpNVDo1NzAxNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24360,
+                  "scheduledDeparture": 24360,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 10,
+                  "stop": {
+                    "gtfsId": "MT:16101",
+                    "name": "15th Ave SE & Rollins Ave",
+                    "id": "U3RvcDpNVDoxNjEwMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24420,
+                  "scheduledDeparture": 24420,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 11,
+                  "stop": {
+                    "gtfsId": "MT:16161",
+                    "name": "Elm St SE & 19th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2MQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24480,
+                  "scheduledDeparture": 24480,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 12,
+                  "stop": {
+                    "gtfsId": "MT:16164",
+                    "name": "Elm St SE & 22nd Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24480,
+                  "scheduledDeparture": 24480,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 13,
+                  "stop": {
+                    "gtfsId": "MT:16166",
+                    "name": "Elm St SE & 24th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2Ng"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24540,
+                  "scheduledDeparture": 24540,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 14,
+                  "stop": {
+                    "gtfsId": "MT:16167",
+                    "name": "Kasota Ave SE & #828",
+                    "id": "U3RvcDpNVDoxNjE2Nw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24600,
+                  "scheduledDeparture": 24600,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 15,
+                  "stop": {
+                    "gtfsId": "MT:42332",
+                    "name": "Kasota Ave SE & Kasota Circle",
+                    "id": "U3RvcDpNVDo0MjMzMg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24600,
+                  "scheduledDeparture": 24600,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 16,
+                  "stop": {
+                    "gtfsId": "MT:42333",
+                    "name": "Kasota Ave SE & #701",
+                    "id": "U3RvcDpNVDo0MjMzMw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24660,
+                  "scheduledDeparture": 24660,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 17,
+                  "stop": {
+                    "gtfsId": "MT:42334",
+                    "name": "Kasota Ave SE & Bridal Veil Circle",
+                    "id": "U3RvcDpNVDo0MjMzNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24660,
+                  "scheduledDeparture": 24660,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 18,
+                  "stop": {
+                    "gtfsId": "MT:16172",
+                    "name": "Kasota Ave SE & #500",
+                    "id": "U3RvcDpNVDoxNjE3Mg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24720,
+                  "scheduledDeparture": 24720,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 19,
+                  "stop": {
+                    "gtfsId": "MT:16173",
+                    "name": "Kasota Ave SE & #2550",
+                    "id": "U3RvcDpNVDoxNjE3Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24900,
+                  "scheduledDeparture": 24900,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 20,
+                  "stop": {
+                    "gtfsId": "MT:18640",
+                    "name": "Territorial Rd & Westgate Dr",
+                    "id": "U3RvcDpNVDoxODY0MA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 24960,
+                  "scheduledDeparture": 24960,
+                  "pickupType": "NONE",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 21,
+                  "stop": {
+                    "gtfsId": "MT:15795",
+                    "name": "Westgate Station - Gate C",
+                    "id": "U3RvcDpNVDoxNTc5NQ"
+                  }
+                }
+              ]
+            },
+            {
+              "blockId": "156289",
+              "gtfsId": "MT:1132196",
+              "tripHeadsign": "Elm-Kasota / Westgate Station",
+              "notices": [],
+              "tripShortName": null,
+              "stoptimesForDate": [
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 25620,
+                  "scheduledDeparture": 25620,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "NONE",
+                  "timepoint": true,
+                  "stopPositionInPattern": 0,
+                  "stop": {
+                    "gtfsId": "MT:15795",
+                    "name": "Westgate Station - Gate C",
+                    "id": "U3RvcDpNVDoxNTc5NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 25680,
+                  "scheduledDeparture": 25680,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 1,
+                  "stop": {
+                    "gtfsId": "MT:15883",
+                    "name": "University Ave & Bedford St SE",
+                    "id": "U3RvcDpNVDoxNTg4Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 25740,
+                  "scheduledDeparture": 25740,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 2,
+                  "stop": {
+                    "gtfsId": "MT:15884",
+                    "name": "University & Malcolm Station",
+                    "id": "U3RvcDpNVDoxNTg4NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 25740,
+                  "scheduledDeparture": 25740,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 3,
+                  "stop": {
+                    "gtfsId": "MT:15885",
+                    "name": "University Ave SE & 29th Ave SE",
+                    "id": "U3RvcDpNVDoxNTg4NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 25800,
+                  "scheduledDeparture": 25800,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 4,
+                  "stop": {
+                    "gtfsId": "MT:56521",
+                    "name": "University & 27th Ave Station",
+                    "id": "U3RvcDpNVDo1NjUyMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 25860,
+                  "scheduledDeparture": 25860,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 5,
+                  "stop": {
+                    "gtfsId": "MT:16569",
+                    "name": "University & 23rd Ave Station",
+                    "id": "U3RvcDpNVDoxNjU2OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 25920,
+                  "scheduledDeparture": 25920,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 6,
+                  "stop": {
+                    "gtfsId": "MT:16145",
+                    "name": "University Ave SE & Oak St SE",
+                    "id": "U3RvcDpNVDoxNjE0NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 25980,
+                  "scheduledDeparture": 25980,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 7,
+                  "stop": {
+                    "gtfsId": "MT:16154",
+                    "name": "4th St & Ridder Arena Station",
+                    "id": "U3RvcDpNVDoxNjE1NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 26040,
+                  "scheduledDeparture": 26040,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 8,
+                  "stop": {
+                    "gtfsId": "MT:16111",
+                    "name": "15th Ave SE & 4th St SE",
+                    "id": "U3RvcDpNVDoxNjExMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 26100,
+                  "scheduledDeparture": 26100,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 9,
+                  "stop": {
+                    "gtfsId": "MT:57014",
+                    "name": "15th Ave SE & 7th St SE",
+                    "id": "U3RvcDpNVDo1NzAxNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 26160,
+                  "scheduledDeparture": 26160,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 10,
+                  "stop": {
+                    "gtfsId": "MT:16101",
+                    "name": "15th Ave SE & Rollins Ave",
+                    "id": "U3RvcDpNVDoxNjEwMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 26220,
+                  "scheduledDeparture": 26220,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 11,
+                  "stop": {
+                    "gtfsId": "MT:16161",
+                    "name": "Elm St SE & 19th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2MQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 26280,
+                  "scheduledDeparture": 26280,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 12,
+                  "stop": {
+                    "gtfsId": "MT:16164",
+                    "name": "Elm St SE & 22nd Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 26280,
+                  "scheduledDeparture": 26280,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 13,
+                  "stop": {
+                    "gtfsId": "MT:16166",
+                    "name": "Elm St SE & 24th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2Ng"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 26340,
+                  "scheduledDeparture": 26340,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 14,
+                  "stop": {
+                    "gtfsId": "MT:16167",
+                    "name": "Kasota Ave SE & #828",
+                    "id": "U3RvcDpNVDoxNjE2Nw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 26400,
+                  "scheduledDeparture": 26400,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 15,
+                  "stop": {
+                    "gtfsId": "MT:42332",
+                    "name": "Kasota Ave SE & Kasota Circle",
+                    "id": "U3RvcDpNVDo0MjMzMg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 26400,
+                  "scheduledDeparture": 26400,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 16,
+                  "stop": {
+                    "gtfsId": "MT:42333",
+                    "name": "Kasota Ave SE & #701",
+                    "id": "U3RvcDpNVDo0MjMzMw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 26460,
+                  "scheduledDeparture": 26460,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 17,
+                  "stop": {
+                    "gtfsId": "MT:42334",
+                    "name": "Kasota Ave SE & Bridal Veil Circle",
+                    "id": "U3RvcDpNVDo0MjMzNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 26460,
+                  "scheduledDeparture": 26460,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 18,
+                  "stop": {
+                    "gtfsId": "MT:16172",
+                    "name": "Kasota Ave SE & #500",
+                    "id": "U3RvcDpNVDoxNjE3Mg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 26520,
+                  "scheduledDeparture": 26520,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 19,
+                  "stop": {
+                    "gtfsId": "MT:16173",
+                    "name": "Kasota Ave SE & #2550",
+                    "id": "U3RvcDpNVDoxNjE3Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 26700,
+                  "scheduledDeparture": 26700,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 20,
+                  "stop": {
+                    "gtfsId": "MT:18640",
+                    "name": "Territorial Rd & Westgate Dr",
+                    "id": "U3RvcDpNVDoxODY0MA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 26760,
+                  "scheduledDeparture": 26760,
+                  "pickupType": "NONE",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 21,
+                  "stop": {
+                    "gtfsId": "MT:15795",
+                    "name": "Westgate Station - Gate C",
+                    "id": "U3RvcDpNVDoxNTc5NQ"
+                  }
+                }
+              ]
+            },
+            {
+              "blockId": "156289",
+              "gtfsId": "MT:1132650",
+              "tripHeadsign": "Elm-Kasota / Westgate Station",
+              "notices": [],
+              "tripShortName": null,
+              "stoptimesForDate": [
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 27420,
+                  "scheduledDeparture": 27420,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "NONE",
+                  "timepoint": true,
+                  "stopPositionInPattern": 0,
+                  "stop": {
+                    "gtfsId": "MT:15795",
+                    "name": "Westgate Station - Gate C",
+                    "id": "U3RvcDpNVDoxNTc5NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 27480,
+                  "scheduledDeparture": 27480,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 1,
+                  "stop": {
+                    "gtfsId": "MT:15883",
+                    "name": "University Ave & Bedford St SE",
+                    "id": "U3RvcDpNVDoxNTg4Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 27540,
+                  "scheduledDeparture": 27540,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 2,
+                  "stop": {
+                    "gtfsId": "MT:15884",
+                    "name": "University & Malcolm Station",
+                    "id": "U3RvcDpNVDoxNTg4NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 27540,
+                  "scheduledDeparture": 27540,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 3,
+                  "stop": {
+                    "gtfsId": "MT:15885",
+                    "name": "University Ave SE & 29th Ave SE",
+                    "id": "U3RvcDpNVDoxNTg4NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 27600,
+                  "scheduledDeparture": 27600,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 4,
+                  "stop": {
+                    "gtfsId": "MT:56521",
+                    "name": "University & 27th Ave Station",
+                    "id": "U3RvcDpNVDo1NjUyMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 27660,
+                  "scheduledDeparture": 27660,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 5,
+                  "stop": {
+                    "gtfsId": "MT:16569",
+                    "name": "University & 23rd Ave Station",
+                    "id": "U3RvcDpNVDoxNjU2OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 27720,
+                  "scheduledDeparture": 27720,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 6,
+                  "stop": {
+                    "gtfsId": "MT:16145",
+                    "name": "University Ave SE & Oak St SE",
+                    "id": "U3RvcDpNVDoxNjE0NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 27780,
+                  "scheduledDeparture": 27780,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 7,
+                  "stop": {
+                    "gtfsId": "MT:16154",
+                    "name": "4th St & Ridder Arena Station",
+                    "id": "U3RvcDpNVDoxNjE1NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 27840,
+                  "scheduledDeparture": 27840,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 8,
+                  "stop": {
+                    "gtfsId": "MT:16111",
+                    "name": "15th Ave SE & 4th St SE",
+                    "id": "U3RvcDpNVDoxNjExMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 27900,
+                  "scheduledDeparture": 27900,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 9,
+                  "stop": {
+                    "gtfsId": "MT:57014",
+                    "name": "15th Ave SE & 7th St SE",
+                    "id": "U3RvcDpNVDo1NzAxNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 27960,
+                  "scheduledDeparture": 27960,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 10,
+                  "stop": {
+                    "gtfsId": "MT:16101",
+                    "name": "15th Ave SE & Rollins Ave",
+                    "id": "U3RvcDpNVDoxNjEwMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 28020,
+                  "scheduledDeparture": 28020,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 11,
+                  "stop": {
+                    "gtfsId": "MT:16161",
+                    "name": "Elm St SE & 19th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2MQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 28080,
+                  "scheduledDeparture": 28080,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 12,
+                  "stop": {
+                    "gtfsId": "MT:16164",
+                    "name": "Elm St SE & 22nd Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 28080,
+                  "scheduledDeparture": 28080,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 13,
+                  "stop": {
+                    "gtfsId": "MT:16166",
+                    "name": "Elm St SE & 24th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2Ng"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 28140,
+                  "scheduledDeparture": 28140,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 14,
+                  "stop": {
+                    "gtfsId": "MT:16167",
+                    "name": "Kasota Ave SE & #828",
+                    "id": "U3RvcDpNVDoxNjE2Nw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 28200,
+                  "scheduledDeparture": 28200,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 15,
+                  "stop": {
+                    "gtfsId": "MT:42332",
+                    "name": "Kasota Ave SE & Kasota Circle",
+                    "id": "U3RvcDpNVDo0MjMzMg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 28200,
+                  "scheduledDeparture": 28200,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 16,
+                  "stop": {
+                    "gtfsId": "MT:42333",
+                    "name": "Kasota Ave SE & #701",
+                    "id": "U3RvcDpNVDo0MjMzMw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 28260,
+                  "scheduledDeparture": 28260,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 17,
+                  "stop": {
+                    "gtfsId": "MT:42334",
+                    "name": "Kasota Ave SE & Bridal Veil Circle",
+                    "id": "U3RvcDpNVDo0MjMzNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 28260,
+                  "scheduledDeparture": 28260,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 18,
+                  "stop": {
+                    "gtfsId": "MT:16172",
+                    "name": "Kasota Ave SE & #500",
+                    "id": "U3RvcDpNVDoxNjE3Mg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 28320,
+                  "scheduledDeparture": 28320,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 19,
+                  "stop": {
+                    "gtfsId": "MT:16173",
+                    "name": "Kasota Ave SE & #2550",
+                    "id": "U3RvcDpNVDoxNjE3Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 28500,
+                  "scheduledDeparture": 28500,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 20,
+                  "stop": {
+                    "gtfsId": "MT:18640",
+                    "name": "Territorial Rd & Westgate Dr",
+                    "id": "U3RvcDpNVDoxODY0MA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 28560,
+                  "scheduledDeparture": 28560,
+                  "pickupType": "NONE",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 21,
+                  "stop": {
+                    "gtfsId": "MT:15795",
+                    "name": "Westgate Station - Gate C",
+                    "id": "U3RvcDpNVDoxNTc5NQ"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "directionId": 1,
+          "name": "33 to 15th Ave SE & 4th St SE (MT:16111)",
+          "tripsForDate": [
+            {
+              "blockId": "156162",
+              "gtfsId": "MT:1134677",
+              "tripHeadsign": "Elm-Kasota / Westgate Station",
+              "notices": [],
+              "tripShortName": null,
+              "stoptimesForDate": [
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 63660,
+                  "scheduledDeparture": 63660,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "NONE",
+                  "timepoint": true,
+                  "stopPositionInPattern": 0,
+                  "stop": {
+                    "gtfsId": "MT:57199",
+                    "name": "Rollins Ave SE & #1410",
+                    "id": "U3RvcDpNVDo1NzE5OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 63780,
+                  "scheduledDeparture": 63780,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 1,
+                  "stop": {
+                    "gtfsId": "MT:16161",
+                    "name": "Elm St SE & 19th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2MQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 63840,
+                  "scheduledDeparture": 63840,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 2,
+                  "stop": {
+                    "gtfsId": "MT:16164",
+                    "name": "Elm St SE & 22nd Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 63840,
+                  "scheduledDeparture": 63840,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 3,
+                  "stop": {
+                    "gtfsId": "MT:16166",
+                    "name": "Elm St SE & 24th Ave SE",
+                    "id": "U3RvcDpNVDoxNjE2Ng"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 63900,
+                  "scheduledDeparture": 63900,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 4,
+                  "stop": {
+                    "gtfsId": "MT:16167",
+                    "name": "Kasota Ave SE & #828",
+                    "id": "U3RvcDpNVDoxNjE2Nw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 63960,
+                  "scheduledDeparture": 63960,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 5,
+                  "stop": {
+                    "gtfsId": "MT:42332",
+                    "name": "Kasota Ave SE & Kasota Circle",
+                    "id": "U3RvcDpNVDo0MjMzMg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 63960,
+                  "scheduledDeparture": 63960,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 6,
+                  "stop": {
+                    "gtfsId": "MT:42333",
+                    "name": "Kasota Ave SE & #701",
+                    "id": "U3RvcDpNVDo0MjMzMw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 64020,
+                  "scheduledDeparture": 64020,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 7,
+                  "stop": {
+                    "gtfsId": "MT:42334",
+                    "name": "Kasota Ave SE & Bridal Veil Circle",
+                    "id": "U3RvcDpNVDo0MjMzNA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 64020,
+                  "scheduledDeparture": 64020,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 8,
+                  "stop": {
+                    "gtfsId": "MT:16172",
+                    "name": "Kasota Ave SE & #500",
+                    "id": "U3RvcDpNVDoxNjE3Mg"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 64080,
+                  "scheduledDeparture": 64080,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 9,
+                  "stop": {
+                    "gtfsId": "MT:16173",
+                    "name": "Kasota Ave SE & #2550",
+                    "id": "U3RvcDpNVDoxNjE3Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 64260,
+                  "scheduledDeparture": 64260,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 10,
+                  "stop": {
+                    "gtfsId": "MT:18640",
+                    "name": "Territorial Rd & Westgate Dr",
+                    "id": "U3RvcDpNVDoxODY0MA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 64320,
+                  "scheduledDeparture": 64320,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 11,
+                  "stop": {
+                    "gtfsId": "MT:15795",
+                    "name": "Westgate Station - Gate C",
+                    "id": "U3RvcDpNVDoxNTc5NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 64380,
+                  "scheduledDeparture": 64380,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 12,
+                  "stop": {
+                    "gtfsId": "MT:15883",
+                    "name": "University Ave & Bedford St SE",
+                    "id": "U3RvcDpNVDoxNTg4Mw"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 64440,
+                  "scheduledDeparture": 64440,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 13,
+                  "stop": {
+                    "gtfsId": "MT:15884",
+                    "name": "University & Malcolm Station",
+                    "id": "U3RvcDpNVDoxNTg4NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 64440,
+                  "scheduledDeparture": 64440,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 14,
+                  "stop": {
+                    "gtfsId": "MT:15885",
+                    "name": "University Ave SE & 29th Ave SE",
+                    "id": "U3RvcDpNVDoxNTg4NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 64500,
+                  "scheduledDeparture": 64500,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 15,
+                  "stop": {
+                    "gtfsId": "MT:56521",
+                    "name": "University & 27th Ave Station",
+                    "id": "U3RvcDpNVDo1NjUyMQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 64560,
+                  "scheduledDeparture": 64560,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 16,
+                  "stop": {
+                    "gtfsId": "MT:16569",
+                    "name": "University & 23rd Ave Station",
+                    "id": "U3RvcDpNVDoxNjU2OQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 64620,
+                  "scheduledDeparture": 64620,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 17,
+                  "stop": {
+                    "gtfsId": "MT:16145",
+                    "name": "University Ave SE & Oak St SE",
+                    "id": "U3RvcDpNVDoxNjE0NQ"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 64680,
+                  "scheduledDeparture": 64680,
+                  "pickupType": "SCHEDULED",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": false,
+                  "stopPositionInPattern": 18,
+                  "stop": {
+                    "gtfsId": "MT:16154",
+                    "name": "4th St & Ridder Arena Station",
+                    "id": "U3RvcDpNVDoxNjE1NA"
+                  }
+                },
+                {
+                  "serviceDay": 1794290400,
+                  "scheduledArrival": 64740,
+                  "scheduledDeparture": 64740,
+                  "pickupType": "NONE",
+                  "dropoffType": "SCHEDULED",
+                  "timepoint": true,
+                  "stopPositionInPattern": 19,
+                  "stop": {
+                    "gtfsId": "MT:16111",
+                    "name": "15th Ave SE & 4th St SE",
+                    "id": "U3RvcDpNVDoxNjExMQ"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
