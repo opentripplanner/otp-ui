@@ -361,6 +361,39 @@ describe("util > itinerary", () => {
         })
       ).toBe("15");
     });
+
+    it("should append a trip short name from an OTP1 leg", () => {
+      expect(
+        getLegRouteShortName({
+          route: "15",
+          trip: { id: "test", tripShortName: "H" }
+        })
+      ).toBe("15 (H)");
+      expect(
+        getLegRouteShortName({
+          route: "15",
+          routeShortName: "31",
+          trip: { id: "test", tripShortName: "H" }
+        })
+      ).toBe("31 (H)");
+    });
+
+    it("should append a trip short name from an OTP2 leg", () => {
+      expect(
+        getLegRouteShortName({
+          route: { id: "test", shortName: "15" },
+          routeShortName: "31",
+          trip: { id: "test", tripShortName: "H" }
+        })
+      ).toBe("15 (H)");
+      expect(
+        getLegRouteShortName({
+          route: "15",
+          routeShortName: "31",
+          trip: { id: "test", tripShortName: "H" }
+        })
+      ).toBe("31 (H)");
+    });
   });
   describe("getLegRouteLongName", () => {
     it("should extract a route long name from an OTP1 leg", () => {
@@ -369,6 +402,16 @@ describe("util > itinerary", () => {
         getLegRouteLongName({ route: "15", routeLongName: "Candler Road" })
       ).toBe("Candler Road");
     });
+    it("should append a trip short name from an OTP1 leg", () => {
+      expect(getLegRouteLongName({ route: "15" })).toBeUndefined();
+      expect(
+        getLegRouteLongName({
+          route: "15",
+          routeLongName: "Candler Road",
+          trip: { id: "test", tripShortName: "H" }
+        })
+      ).toBe("Candler Road (H)");
+    });
     it("should extract a route long name from an OTP2 leg", () => {
       expect(
         getLegRouteLongName({
@@ -376,6 +419,15 @@ describe("util > itinerary", () => {
           routeLongName: "31"
         })
       ).toBe("15");
+    });
+    it("should append a trip short name from an OTP2 leg", () => {
+      expect(
+        getLegRouteLongName({
+          route: { id: "id15", longName: "15" },
+          routeLongName: "31",
+          trip: { id: "test", tripShortName: "H" }
+        })
+      ).toBe("15 (H)");
     });
   });
   describe("getLegRouteName", () => {
