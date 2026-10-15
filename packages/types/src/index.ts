@@ -396,6 +396,7 @@ export type Leg = {
     gtfsId?: string;
     id: string;
     tripHeadsign?: string;
+    tripShortName?: string;
   };
   tripBlockId?: string;
   tripId?: string;
