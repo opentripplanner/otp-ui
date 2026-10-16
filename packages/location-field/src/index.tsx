@@ -1099,7 +1099,18 @@ const LocationField = ({
     id: "otpUi.LocationField.suggestedLocationsLong"
   });
   const toggleAriaLabel = showStatusDescription
-    ? `${suggestedLocationsToggleLabel}. ${statusAnnouncementText}`
+    ? intl.formatMessage(
+        {
+          defaultMessage: "{toggleLabel}. {statusAnnouncementText}",
+          description:
+            "Accessible label for the locations dropdown button, including its current status",
+          id: "otpUi.LocationField.suggestedLocationsWithStatus"
+        },
+        {
+          toggleLabel: suggestedLocationsToggleLabel,
+          statusAnnouncementText
+        }
+      )
     : suggestedLocationsToggleLabel;
 
   /** the text input element * */
@@ -1109,7 +1120,18 @@ const LocationField = ({
   const ariaLabel = customLabelInputId ? undefined : defaultPlaceholder;
   const comboboxAriaLabel =
     showStatusDescription && ariaLabel
-      ? `${ariaLabel}. ${statusAnnouncementText}`
+      ? intl.formatMessage(
+          {
+            defaultMessage: "{inputLabel}. {statusAnnouncementText}",
+            description:
+              "Accessible label for the location text input, including its current status",
+            id: "otpUi.LocationField.inputWithStatus"
+          },
+          {
+            inputLabel: ariaLabel,
+            statusAnnouncementText
+          }
+        )
       : ariaLabel;
   const placeholder =
     currentPosition && currentPosition.fetching
