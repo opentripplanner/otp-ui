@@ -1,0 +1,4 @@
+otpUi:
+  coreUtils:
+    legRouteName:
+      withTripShortName: '{routeName} ({tripShortName})'

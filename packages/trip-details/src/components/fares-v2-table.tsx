@@ -136,7 +136,7 @@ const FaresV2Table = ({
       </th>,
       ...transitLegs.map(leg => (
         <th key={leg.tripId} scope="col">
-          {getLegRouteName(leg)}
+          {getLegRouteName(leg, intl)}
         </th>
       )),
       transitLegs.length > 1 ? (

@@ -1,4 +1,5 @@
 import { ElevationProfile } from "@opentripplanner/types";
+import { createIntlCache, createIntl } from "react-intl";
 import {
   calculateTncFares,
   descope,
@@ -34,6 +35,16 @@ const basePlace = {
 };
 
 describe("util > itinerary", () => {
+  const cache = createIntlCache();
+  const mockIntl = createIntl(
+    {
+      locale: "en",
+      messages: {
+        "otpUi.coreUtils.legRouteName.withTripShortName": "{routeName} ({tripShortName})"
+      }
+    },
+    cache
+  );
   describe("descope", () => {
     it("should return the descope'd part for standard scoped strings", () => {
       expect(descope("agency:cash")).toBe("cash");
@@ -361,39 +372,6 @@ describe("util > itinerary", () => {
         })
       ).toBe("15");
     });
-
-    it("should append a trip short name from an OTP1 leg", () => {
-      expect(
-        getLegRouteShortName({
-          route: "15",
-          trip: { id: "test", tripShortName: "H" }
-        })
-      ).toBe("15 (H)");
-      expect(
-        getLegRouteShortName({
-          route: "15",
-          routeShortName: "31",
-          trip: { id: "test", tripShortName: "H" }
-        })
-      ).toBe("31 (H)");
-    });
-
-    it("should append a trip short name from an OTP2 leg", () => {
-      expect(
-        getLegRouteShortName({
-          route: { id: "test", shortName: "15" },
-          routeShortName: "31",
-          trip: { id: "test", tripShortName: "H" }
-        })
-      ).toBe("15 (H)");
-      expect(
-        getLegRouteShortName({
-          route: "15",
-          routeShortName: "31",
-          trip: { id: "test", tripShortName: "H" }
-        })
-      ).toBe("31 (H)");
-    });
   });
   describe("getLegRouteLongName", () => {
     it("should extract a route long name from an OTP1 leg", () => {
@@ -401,16 +379,6 @@ describe("util > itinerary", () => {
       expect(
         getLegRouteLongName({ route: "15", routeLongName: "Candler Road" })
       ).toBe("Candler Road");
-    });
-    it("should append a trip short name from an OTP1 leg", () => {
-      expect(getLegRouteLongName({ route: "15" })).toBeUndefined();
-      expect(
-        getLegRouteLongName({
-          route: "15",
-          routeLongName: "Candler Road",
-          trip: { id: "test", tripShortName: "H" }
-        })
-      ).toBe("Candler Road (H)");
     });
     it("should extract a route long name from an OTP2 leg", () => {
       expect(
@@ -420,49 +388,80 @@ describe("util > itinerary", () => {
         })
       ).toBe("15");
     });
-    it("should append a trip short name from an OTP2 leg", () => {
-      expect(
-        getLegRouteLongName({
-          route: { id: "id15", longName: "15" },
-          routeLongName: "31",
-          trip: { id: "test", tripShortName: "H" }
-        })
-      ).toBe("15 (H)");
-    });
   });
   describe("getLegRouteName", () => {
     it("should extract a route name from an OTP1 leg where a route short name is provided", () => {
       expect(
-        getLegRouteName({
-          route: "15",
-          routeShortName: "31",
-          routeLongName: "Route 31"
-        })
+        getLegRouteName(
+          {
+            route: "15",
+            routeShortName: "31",
+            routeLongName: "Route 31"
+          },
+          mockIntl
+        )
       ).toBe("31");
     });
     it("should extract a route name from an OTP1 leg where a route short name is not provided", () => {
       expect(
-        getLegRouteName({
-          routeLongName: "Route 31"
-        })
+        getLegRouteName(
+          {
+            routeLongName: "Route 31"
+          },
+          mockIntl
+        )
       ).toBe("Route 31");
+    });
+    it("should append a trip short name from on OTP1 leg when provided", () => {
+      expect(
+        getLegRouteName(
+          {
+            route: "15",
+            routeShortName: "31",
+            routeLongName: "Route 31",
+            trip: {
+              id: "test",
+              tripShortName: "H"
+            }
+          },
+          mockIntl
+        )
+      ).toBe("31 (H)");
     });
     it("should extract a route name from an OTP2 leg where a route short name is provided", () => {
       expect(
-        getLegRouteName({
-          route: { id: "id15", longName: "15", shortName: "10" },
-          routeLongName: "31"
-        })
+        getLegRouteName(
+          {
+            route: { id: "id15", longName: "15", shortName: "10" },
+            routeLongName: "31"
+          },
+          mockIntl
+        )
       ).toBe("10");
     });
     it("should extract a route name from an OTP2 leg where a route short name is not provided", () => {
       expect(
-        getLegRouteName({
-          route: { id: "id15", longName: "15" },
-          routeLongName: "31",
-          routeShortName: "31"
-        })
+        getLegRouteName(
+          {
+            route: { id: "id15", longName: "15" },
+            routeLongName: "31",
+            routeShortName: "31"
+          },
+          mockIntl
+        )
       ).toBe("15");
+    });
+    it("should append a trip short name from an OTP2 leg when provided", () => {
+      expect(
+        getLegRouteName(
+          {
+            route: { id: "id15", longName: "15", shortName: "10" },
+            routeLongName: "31",
+            trip: { id: "test", tripShortName: "H" }
+          },
+          mockIntl
+        )
+      ).toBe("10 (H)");
     });
   });
 
