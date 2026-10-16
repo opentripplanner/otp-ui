@@ -10,6 +10,7 @@ otpUi:
     howToAccessResults: >-
       Используйте клавишу со стрелкой вниз для просмотра списка результатов. Для
       выбора результата используйте клавишу «Вход».
+    inputWithStatus: "{inputLabel}. {statusAnnouncementText}"
     myPlaces: Мои места
     nearby: Остановки поблизости
     noResults: Нет результатов
@@ -26,5 +27,6 @@ otpUi:
     stops: Остановки
     suggestedLocations: Рекомендуемые места
     suggestedLocationsLong: Переключить отображение списка предлагаемых мест
+    suggestedLocationsWithStatus: "{toggleLabel}. {statusAnnouncementText}"
     useCurrentLocation: Использовать текущее местоположение
     workLocation: Работа

@@ -10,6 +10,7 @@ otpUi:
     howToAccessResults: >-
       Sonuçlar listesine göz atmak için aşağı ok tuşunu kullanın. Bir sonucu
       seçmek için Enter tuşunu kullanın.
+    inputWithStatus: "{inputLabel}. {statusAnnouncementText}"
     myPlaces: Yerlerim
     nearby: Yakındaki Duraklar
     noResults: Sonuç yok
@@ -24,5 +25,6 @@ otpUi:
     stops: Duraklar
     suggestedLocations: Önerilen konumlar
     suggestedLocationsLong: Önerilen konumların listesini görüntülemeyi açın/kapatın
+    suggestedLocationsWithStatus: "{toggleLabel}. {statusAnnouncementText}"
     useCurrentLocation: Mevcut Konumu Kullan
     workLocation: İş
