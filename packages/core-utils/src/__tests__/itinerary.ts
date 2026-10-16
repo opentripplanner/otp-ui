@@ -40,7 +40,8 @@ describe("util > itinerary", () => {
     {
       locale: "en",
       messages: {
-        "otpUi.coreUtils.legRouteName.withTripShortName": "{routeName} ({tripShortName})"
+        "otpUi.coreUtils.legRouteName.withTripShortName":
+          "{routeName} ({tripShortName})"
       }
     },
     cache
