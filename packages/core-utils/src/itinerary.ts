@@ -19,6 +19,7 @@ import {
   TncFare
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
+import { IntlShape } from "react-intl";
 
 // All OTP transit modes
 export const transitModes = [
@@ -904,7 +905,21 @@ export const getLegRouteLongName = (
  * This is happens with Seattle area streetcars and ferries.
  */
 export const getLegRouteName = (
-  leg: Pick<Leg, "route" | "routeLongName" | "routeShortName">
+  leg: Pick<Leg, "route" | "routeLongName" | "routeShortName" | "trip">,
+  intl: IntlShape
 ): string | undefined => {
-  return getLegRouteShortName(leg) || getLegRouteLongName(leg);
+  const { trip } = leg;
+  let routeName = getLegRouteShortName(leg) || getLegRouteLongName(leg);
+  // if there's a trip short name present, add it to the route name result
+  if (routeName && trip?.tripShortName) routeName = intl.formatMessage(
+    {
+      description: "Route name with trip short name added",
+      id: "otpUi.coreUtils.legRouteName.withTripShortName"
+    },
+    {
+      routeName,
+      tripShortName: trip.tripShortName
+    }
+  )
+  return routeName
 };
