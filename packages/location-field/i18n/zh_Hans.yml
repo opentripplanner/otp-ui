@@ -8,6 +8,7 @@ otpUi:
     geocoderUnreachable: 无法获取建议
     homeLocation: 家位置
     howToAccessResults: 使用向下箭头键浏览结果列表。 要选择结果，请使用 Enter 键。
+    inputWithStatus: "{inputLabel}. {statusAnnouncementText}"
     myPlaces: 我的地方
     nearby: 附近的车站
     noResults: 未找到结果
@@ -22,5 +23,6 @@ otpUi:
     stops: 车站
     suggestedLocations: 建议地点
     suggestedLocationsLong: 切换显示建议位置列表
+    suggestedLocationsWithStatus: "{toggleLabel}. {statusAnnouncementText}"
     useCurrentLocation: 使用当前位置
     workLocation: 工作场所

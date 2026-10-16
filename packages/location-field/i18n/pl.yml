@@ -10,6 +10,7 @@ otpUi:
     howToAccessResults: >-
       Użyj klawisza strzałki w dół, aby przeglądać listę wyników. Aby wybrać
       wynik, użyj klawisza Enter.
+    inputWithStatus: "{inputLabel}. {statusAnnouncementText}"
     myPlaces: Moje miejsca
     nearby: Przystanki w pobliżu
     noResults: Brak wyników
@@ -24,5 +25,6 @@ otpUi:
     stops: Przystanki
     suggestedLocations: Sugerowane lokalizacje
     suggestedLocationsLong: Przełącz wyświetlanie listy sugerowanych lokalizacji
+    suggestedLocationsWithStatus: "{toggleLabel}. {statusAnnouncementText}"
     useCurrentLocation: Użyj bieżącej lokalizacji
     workLocation: Praca

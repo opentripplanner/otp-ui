@@ -10,6 +10,7 @@ otpUi:
     howToAccessResults: >-
       Gamitin ang key na pababang arrow para mag-browse sa listahan ng mga
       resulta. Para pumili ng resulta, gamitin ang Enter key.
+    inputWithStatus: "{inputLabel}. {statusAnnouncementText}"
     myPlaces: Aking Mga Lugar
     nearby: Mga Hintuan sa Malapit
     noResults: Walang nakitang resulta
@@ -26,5 +27,6 @@ otpUi:
     stops: Mga Hintuan
     suggestedLocations: Mga iminungkahing lokasyon
     suggestedLocationsLong: I-toggle ang pagpapakita ng listahan ng mga iminumungkahing lokasyon
+    suggestedLocationsWithStatus: "{toggleLabel}. {statusAnnouncementText}"
     useCurrentLocation: Gamitin ang Kasalukuyang Lokasyon
     workLocation: Trabaho

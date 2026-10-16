@@ -8,6 +8,7 @@ otpUi:
     geocoderUnreachable: 제안을 가져올 수 없습니다
     homeLocation: 집
     howToAccessResults: 아래쪽 화살표 키를 사용하여 결과 목록을 찾습니다. 결과를 선택하려면 Enter 키를 사용하십시오.
+    inputWithStatus: "{inputLabel}. {statusAnnouncementText}"
     myPlaces: 내 장소
     nearby: 근처 정류장
     noResults: 검색된 결과가 없
@@ -22,5 +23,6 @@ otpUi:
     stops: 정류장
     suggestedLocations: 제안된 위치
     suggestedLocationsLong: 추천 위치 목록 표시 전환
+    suggestedLocationsWithStatus: "{toggleLabel}. {statusAnnouncementText}"
     useCurrentLocation: 현재 위치 사용
     workLocation: 직장
