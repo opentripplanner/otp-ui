@@ -30,7 +30,7 @@ const getGeocoder = memoize((geocoderConfig: GeocoderConfig & { type: string }) 
     case "ARCGIS":
       return new ArcGISGeocoder(arcgis, geocoderConfig);
     case "ARCGIS-11":
-      return new ArcGISGeocoder(arcgis11, geocoderConfig);
+      return new ArcGIS11Geocoder(arcgis11, geocoderConfig);
     case "PELIAS":
       return new PeliasGeocoder(pelias, geocoderConfig);
     case "HERE":

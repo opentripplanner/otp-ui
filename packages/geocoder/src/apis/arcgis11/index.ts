@@ -1,50 +1,54 @@
-import GeocoderArcGIS from "geocoder-arcgis"
-import type { GeoJSON } from "geojson"
-import { toCoordinates, toString, toPoint } from "@conveyal/lonlat"
-import type { LonLatInput } from "@conveyal/lonlat"
+import GeocoderArcGIS from "geocoder-arcgis";
+import { GeoJSON } from "geojson";
+import {
+  toCoordinates,
+  toString,
+  toPoint,
+  LonLatInput
+} from "@conveyal/lonlat";
 
 type Point = {
-  x: number
-  y: number
-}
+  x: number;
+  y: number;
+};
 
 type GeocodersMap = {
-  [key: string]: GeocoderArcGIS
-}
+  [key: string]: GeocoderArcGIS;
+};
 
 type Boundary = {
   rect: {
-    maxLat: number
-    maxLon: number
-    minLat: number
-    minLon: number
-  }
-}
+    maxLat: number;
+    maxLon: number;
+    minLat: number;
+    minLon: number;
+  };
+};
 /**
  * A geocoding candidate as received from either the findAddressCandidates or geocodeAddresses endpoint.
  * See info about some attributes here: https://developers.arcgis.com/rest/geocode/api-reference/geocoding-service-output.htm
  */
 type Candidate = {
-  attributes: Record<string, string | number>
+  attributes: Record<string, string | number>;
   location: {
-    x: number
-    y: number
-  }
-}
+    x: number;
+    y: number;
+  };
+};
 
 type BaseQuery = {
-  clientId?: string
-  clientSecret?: string
-  url?: string
-}
+  clientId?: string;
+  clientSecret?: string;
+  url?: string;
+};
 
 type SuggestOption = {
-  isCollection: boolean
-  magicKey: string
-  text: string
-}
+  isCollection: boolean;
+  magicKey: string;
+  text: string;
+};
 
-const arcGisGeocoders: GeocodersMap = {}
+const arcGisGeocoders: GeocodersMap = {};
 
 function boundaryToSearchExtent(boundary: Boundary): string {
   return [
@@ -52,7 +56,7 @@ function boundaryToSearchExtent(boundary: Boundary): string {
     boundary.rect.maxLat,
     boundary.rect.maxLon,
     boundary.rect.minLat
-  ].join(",")
+  ].join(",");
 }
 
 function getGeocoder(
@@ -61,18 +65,18 @@ function getGeocoder(
   endpoint?: string
 ): GeocoderArcGIS {
   const geocoderKey: string = [clientId, clientSecret, endpoint]
-    .map((s) => String(s))
-    .join("-")
+    .map(s => String(s))
+    .join("-");
 
   if (!arcGisGeocoders[geocoderKey]) {
     arcGisGeocoders[geocoderKey] = new GeocoderArcGIS({
       client_id: clientId,
       client_secret: clientSecret,
       endpoint
-    })
+    });
   }
 
-  return arcGisGeocoders[geocoderKey]
+  return arcGisGeocoders[geocoderKey];
 }
 
 /**
@@ -99,11 +103,11 @@ function candidateToGeojson(candidate: Candidate): GeoJSON {
         resultId: candidate.attributes.ResultID // this only appears in bulk geocode results
       },
       type: "Feature"
-    }
+    };
   }
 
   if (typeof candidate.attributes.Score !== "number") {
-    candidate.attributes.Score = parseInt(candidate.attributes.Score, 10)
+    candidate.attributes.Score = parseInt(candidate.attributes.Score, 10);
   }
 
   return {
@@ -124,7 +128,7 @@ function candidateToGeojson(candidate: Candidate): GeoJSON {
       resultId: candidate.attributes.ResultID // this only appears in bulk geocode results
     },
     type: "Feature"
-  }
+  };
 }
 
 /**
@@ -150,19 +154,19 @@ export function autocomplete({
   text,
   url
 }: BaseQuery & {
-  boundary?: Boundary
-  focusPoint?: Point
-  text?: string
+  boundary?: Boundary;
+  focusPoint?: Point;
+  text?: string;
 }): Promise<{ features: Array<SuggestOption>; query: { text: string } }> {
-  const geocoder: GeocoderArcGIS = getGeocoder(clientId, clientSecret, url)
-  const options: { location?: string; searchExtent?: string } = {}
+  const geocoder: GeocoderArcGIS = getGeocoder(clientId, clientSecret, url);
+  const options: { location?: string; searchExtent?: string } = {};
 
   if (focusPoint) {
-    options.location = toString(focusPoint)
+    options.location = toString(focusPoint);
   }
 
   if (boundary) {
-    options.searchExtent = boundaryToSearchExtent(boundary)
+    options.searchExtent = boundaryToSearchExtent(boundary);
   }
 
   // make request to arcgis
@@ -175,8 +179,8 @@ export function autocomplete({
         query: {
           text
         }
-      }
-    })
+      };
+    });
 }
 
 /**
@@ -203,28 +207,28 @@ export function bulk({
   focusPoint,
   url
 }: BaseQuery & {
-  addresses: Array<string>
-  boundary?: Boundary
-  focusPoint?: Point
-  text?: string
+  addresses: Array<string>;
+  boundary?: Boundary;
+  focusPoint?: Point;
+  text?: string;
 }): Promise<
   GeoJSON.FeatureCollection & {
-    query: { addresses: string[] }
+    query: { addresses: string[] };
   }
 > {
-  const geocoder: GeocoderArcGIS = getGeocoder(clientId, clientSecret, url)
-  let addressesQuery: Array<string | Record<string, string>> = [...addresses]
-  const options: Record<string, string> = {}
+  const geocoder: GeocoderArcGIS = getGeocoder(clientId, clientSecret, url);
+  let addressesQuery: Array<string | Record<string, string>> = [...addresses];
+  const options: Record<string, string> = {};
 
   if (boundary || focusPoint) {
-    const addressOptions: { location?: string; searchExtent?: string } = {}
+    const addressOptions: { location?: string; searchExtent?: string } = {};
 
     if (boundary) {
-      addressOptions.searchExtent = boundaryToSearchExtent(boundary)
+      addressOptions.searchExtent = boundaryToSearchExtent(boundary);
     }
 
     if (focusPoint) {
-      addressOptions.location = toString(focusPoint)
+      addressOptions.location = toString(focusPoint);
     }
 
     addressesQuery = addresses.map(
@@ -233,12 +237,12 @@ export function bulk({
         if (typeof address === "string") {
           address = {
             address
-          }
+          };
         }
 
-        return { ...addressOptions, ...address }
+        return { ...addressOptions, ...address };
       }
-    )
+    );
   }
 
   // make request to arcgis
@@ -252,8 +256,8 @@ export function bulk({
         query: {
           addresses: addressesQuery
         }
-      }
-    })
+      };
+    });
 }
 
 /**
@@ -266,7 +270,7 @@ export function bulk({
  * @param {Object} $0
  * @param {string} [$0.clientId]
  * @param {string} [$0.clientSecret]
- * @param {boolean} [$0.forStorage=false]        Specifies whether result is inteded to be stored
+ * @param {boolean} [$0.forStorage=false]        Specifies whether result is intended to be stored
  * @param {{lat: number, lon: number}} $0.point Point to reverse geocode
  * @param {string} [$0.url]                     optional URL to override ESRI reverseGeocode endpoint
  * @return {Promise}                            A Promise that'll get resolved with reverse geocode result
@@ -278,13 +282,13 @@ export function reverse({
   point,
   url
 }: BaseQuery & {
-  forStorage?: boolean
-  point: LonLatInput
+  forStorage?: boolean;
+  point: LonLatInput;
 }): Promise<GeoJSON.FeatureCollection & { query: Point }> {
-  const geocoder = getGeocoder(clientId, clientSecret, url)
-  const options: { forStorage?: boolean } = {}
+  const geocoder = getGeocoder(clientId, clientSecret, url);
+  const options: { forStorage?: boolean } = {};
   if (forStorage) {
-    options.forStorage = true
+    options.forStorage = true;
   }
 
   // make request to arcgis
@@ -292,8 +296,8 @@ export function reverse({
     .reverse(toString(point), options)
     .then(
       (response: {
-        address: Record<string, string>
-        location: LonLatInput
+        address: Record<string, string>;
+        location: LonLatInput;
       }): GeoJSON | { query: Point } => {
         // translate response
         // ArcGIS returns only a single response for reverse geocoding
@@ -317,9 +321,9 @@ export function reverse({
             }
           ],
           query: toPoint(point)
-        }
+        };
       }
-    )
+    );
 }
 
 /**
@@ -332,7 +336,7 @@ export function reverse({
  * @param {string} [$0.clientSecret]
  * @param  {Object} [$0.boundary]
  * @param  {Object} [$0.focusPoint]
- * @param {boolean} [$0.forStorage=false]       Specifies whether result is inteded to be stored
+ * @param {boolean} [$0.forStorage=false]       Specifies whether result is intended to be stored
  * @param {string} [$0.magicKey]                magicKey to use in searching as obtained from `suggest` results
  * @param {number} [$0.size=10]
  * @param {string} $0.text                      The address text to query for
@@ -350,45 +354,45 @@ export function search({
   text,
   url
 }: BaseQuery & {
-  boundary?: Boundary
-  focusPoint?: Point
-  forStorage?: boolean
-  magicKey?: string
-  size?: number
-  text?: string
+  boundary?: Boundary;
+  focusPoint?: Point;
+  forStorage?: boolean;
+  magicKey?: string;
+  size?: number;
+  text?: string;
 }): Promise<{ features: GeoJSON.FeatureCollection; query: { text: string } }> {
-  const geocoder: GeocoderArcGIS = getGeocoder(clientId, clientSecret, url)
+  const geocoder: GeocoderArcGIS = getGeocoder(clientId, clientSecret, url);
   const options: {
-    forStorage?: boolean
-    location?: string
-    magicKey?: string
-    maxLocations?: number
-    outFields?: string
-    outSR?: string
-    searchExtent?: string
-  } = {}
-  options.outFields = "*"
+    forStorage?: boolean;
+    location?: string;
+    magicKey?: string;
+    maxLocations?: number;
+    outFields?: string;
+    outSR?: string;
+    searchExtent?: string;
+  } = {};
+  options.outFields = "*";
   // "regular" coordinates
-  options.outSR = "4326"
+  options.outSR = "4326";
 
   if (boundary) {
-    options.searchExtent = boundaryToSearchExtent(boundary)
+    options.searchExtent = boundaryToSearchExtent(boundary);
   }
 
   if (focusPoint) {
-    options.location = toString(focusPoint)
+    options.location = toString(focusPoint);
   }
 
   if (forStorage) {
-    options.forStorage = true
+    options.forStorage = true;
   }
 
   if (magicKey) {
-    options.magicKey = magicKey
+    options.magicKey = magicKey;
   }
 
   if (size) {
-    options.maxLocations = size
+    options.maxLocations = size;
   }
 
   // make request to arcgis
@@ -402,6 +406,6 @@ export function search({
         query: {
           text
         }
-      }
-    })
+      };
+    });
 }
