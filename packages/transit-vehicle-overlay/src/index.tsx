@@ -107,8 +107,8 @@ const TransitVehicleOverlay = ({
       vehicle.lat &&
       vehicle.lon && (
         <MarkerWithPopup
-          key={vehicle.vehicleId}
           autoOffset={iconPixels / 2 + iconPadding + 4}
+          key={vehicle.vehicleId}
           popupProps={{
             padding: { left: 100, right: 100, top: 250, bottom: 250 }
           }}

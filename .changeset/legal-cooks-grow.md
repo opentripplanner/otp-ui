@@ -3,4 +3,4 @@
 "@opentripplanner/location-field": patch
 ---
 
-Enable TS strict mopde in transit-vehicle-overlay package.
+Enable TS strict mode in transit-vehicle-overlay package.
