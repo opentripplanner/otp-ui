@@ -511,8 +511,12 @@ export const PlaceHeader = styled.div`
   grid-column-start: 3;
 `;
 
-export const PlaceName = styled.span<{ strikethrough?: boolean }>`
+export const PlaceName = styled.span<{
+  red?: boolean;
+  strikethrough?: boolean;
+}>`
   /* text styling */
+  color: ${props => (props.red ? red[700] : "")};
   font-size: inherit;
   font-weight: bold;
   height: 1.2em;

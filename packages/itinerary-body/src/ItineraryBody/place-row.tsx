@@ -20,6 +20,11 @@ const CanceledTripMessage = styled.span`
   padding-top: 3px;
 `;
 
+const ClosedStopMessage = styled.span`
+  color: ${colors.red[700]};
+  padding: 3px 3px 10px;
+`;
+
 function getLegPlaceName(
   leg: Leg,
   isDestination: boolean,
@@ -107,6 +112,8 @@ export default function PlaceRow({
   const legDestination = nextPlaceName || (
     <PlaceName config={config} leg={leg} place={leg.to} />
   );
+  const stopId = place.stop?.gtfsId || place.stopId;
+  const closed = closedStopIds?.has(stopId || "");
 
   // OTP2 marks both bikes and scooters as BIKESHARE in the vertextype
   // To get the right label, we need to fix scooters to be "VEHICLERENTAL"
@@ -130,6 +137,11 @@ export default function PlaceRow({
     defaultMessage: defaultMessages["otpUi.ItineraryBody.canceledMessage"],
     description: "Screen reader text indicating a canceled trip",
     id: "otpUi.ItineraryBody.canceledMessage"
+  });
+  const closedText = intl.formatMessage({
+    defaultMessage: defaultMessages["otpUi.ItineraryBody.stopIsClosed"],
+    description: "Denotes a closed stop in the itinerary body",
+    id: "otpUi.ItineraryBody.stopIsClosed"
   });
 
   return (
@@ -159,13 +171,15 @@ export default function PlaceRow({
         <S.PlaceName
           aria-hidden
           className="place-row-place-name"
-          strikethrough={canceled}
+          red={closed}
+          strikethrough={canceled || closed}
         >
           {placeName}
         </S.PlaceName>
         {canceled && (
           <CanceledTripMessage aria-hidden>{canceledText}</CanceledTripMessage>
         )}
+        {closed && <ClosedStopMessage>{closedText}</ClosedStopMessage>}
       </S.PlaceHeader>
       <S.TimeColumn strikethrough={canceled}>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
