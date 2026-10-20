@@ -35,7 +35,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         330 SW Murray Blvd, Washington County, OR, USA 97005
       </span>
@@ -554,7 +554,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         P+R Sunset TC
       </span>
@@ -840,7 +840,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Sunset TC MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -1185,7 +1185,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Oak/ SW 1st Ave MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -1517,7 +1517,7 @@ exports[`ItineraryBody/otp-ui ApproximatePrefixItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         205 SW Pine St, Portland, OR, USA 97204
       </span>
@@ -1585,7 +1585,7 @@ exports[`ItineraryBody/otp-ui BikeOnlyItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         503 SW Alder St, Portland, OR, USA 97204
       </span>
@@ -1864,7 +1864,7 @@ exports[`ItineraryBody/otp-ui BikeOnlyItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
@@ -1930,7 +1930,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         2624 SE 30th Ave, Portland, OR, USA 97202
       </span>
@@ -2173,7 +2173,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         SE 30th at Division
       </span>
@@ -2496,7 +2496,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         SE 29th at Hawthorne
       </span>
@@ -2746,7 +2746,7 @@ exports[`ItineraryBody/otp-ui BikeRentalItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1415 SE 28th Ave, Portland, OR, USA 97214
       </span>
@@ -2812,7 +2812,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         2943 SE Washington St, Portland, OR, USA 97214
       </span>
@@ -3093,7 +3093,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         SE 29th at Stark
       </span>
@@ -3530,7 +3530,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         NE Glisan at 24th
       </span>
@@ -3778,7 +3778,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         NE Sandy &amp; 24th
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -4163,7 +4163,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         NE Sandy &amp; 57th
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -4412,7 +4412,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         0086 BIKETOWN
       </span>
@@ -4735,7 +4735,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         NE 60th at Cully
       </span>
@@ -4947,7 +4947,7 @@ exports[`ItineraryBody/otp-ui BikeRentalTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         5916 NE Going St, Portland, OR, USA 97218
       </span>
@@ -5013,7 +5013,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -5192,7 +5192,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         corner of path and Pioneer Courthouse Sq (pedestrian street)
       </span>
@@ -5483,7 +5483,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         corner of path and Pioneer Sq N (path)
       </span>
@@ -5655,7 +5655,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -5930,7 +5930,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Providence Park MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -6115,7 +6115,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         corner of path and Providence Park (path)
       </span>
@@ -6365,7 +6365,7 @@ exports[`ItineraryBody/otp-ui BikeTransitBikeItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
@@ -6431,7 +6431,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -6641,7 +6641,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -6986,7 +6986,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Providence Park MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -7280,7 +7280,7 @@ exports[`ItineraryBody/otp-ui CustomAlertIconsItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
@@ -7346,7 +7346,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         600 SW 5th Ave, Portland, OR, USA 97204
       </span>
@@ -7561,7 +7561,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         EMAQ
       </span>
@@ -7776,7 +7776,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         205 SW Pine St, Portland, OR, USA 97204
       </span>
@@ -7842,7 +7842,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         2943 SE Washington St, Portland, OR, USA 97214
       </span>
@@ -8162,7 +8162,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Shared E-scooter
       </span>
@@ -8637,7 +8637,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         NE Broadway
       </span>
@@ -8715,7 +8715,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         NE Broadway &amp; 28th
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -8949,7 +8949,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         NE 33rd &amp; Shaver
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -9237,7 +9237,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Shared E-scooter
       </span>
@@ -9595,7 +9595,7 @@ exports[`ItineraryBody/otp-ui EScooterRentalTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         5112 NE 47th Pl, Portland, OR, USA 97218
       </span>
@@ -9666,7 +9666,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         330 SW Murray Blvd, Washington County, OR, USA 97005
       </span>
@@ -9775,7 +9775,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         P+R Sunset TC
       </span>
@@ -10061,7 +10061,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Sunset TC MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -10406,7 +10406,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Oak/ SW 1st Ave MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -10738,7 +10738,7 @@ exports[`ItineraryBody/otp-ui HideDrivingDirections smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         205 SW Pine St, Portland, OR, USA 97204
       </span>
@@ -10804,7 +10804,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         100 South 11th Street, Mount Vernon, WA, USA
       </span>
@@ -11414,7 +11414,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Skagit Station Gate 3
       </span>
@@ -11601,7 +11601,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Everett Station
       </span>
@@ -11773,7 +11773,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Everett Station Bay C1
       </span>
@@ -11946,7 +11946,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Lynnwood Transit Center Bay D3
       </span>
@@ -12118,7 +12118,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Lynnwood Transit Center Bay D1
       </span>
@@ -12311,7 +12311,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Bothell Park &amp; Ride Bay 2
       </span>
@@ -12482,7 +12482,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Kaysner Way &amp; Woodinville Dr
       </span>
@@ -12715,7 +12715,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         NE Bothell Way &amp; 61st Ave NE
       </span>
@@ -13023,7 +13023,7 @@ exports[`ItineraryBody/otp-ui IndividualLegFareComponents smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         18311 57th Avenue NE, Kenmore, WA, USA
       </span>
@@ -13089,7 +13089,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         2nd Avenue, Longmont, CO, USA
       </span>
@@ -13395,7 +13395,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         S Main St &amp; 1st Ave
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -13659,7 +13659,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         US 287 &amp; Arapahoe Rd
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -13875,7 +13875,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Arapahoe Rd &amp; Stonehenge Dr
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -14099,7 +14099,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Erie Community Center
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -14315,7 +14315,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         60plusride-co-us:area_626
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -14452,7 +14452,7 @@ exports[`ItineraryBody/otp-ui OTP2FlexItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         60plusride-co-us:area_626
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -14524,7 +14524,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         300 Courtland St NE, Atlanta, GA 30303-12ND, United States
       </span>
@@ -14778,7 +14778,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Razor E-scooter
       </span>
@@ -15279,7 +15279,7 @@ exports[`ItineraryBody/otp-ui OTP2ScooterItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         126 Mitchell St SW, Atlanta, GA 30303-3524, United States
       </span>
@@ -15350,7 +15350,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         330 SW Murray Blvd, Washington County, OR, USA 97005
       </span>
@@ -15869,7 +15869,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         P+R Sunset TC
       </span>
@@ -16155,7 +16155,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Sunset TC MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -16500,7 +16500,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Oak/ SW 1st Ave MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -16832,7 +16832,7 @@ exports[`ItineraryBody/otp-ui ParkAndRideItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         205 SW Pine St, Portland, OR, USA 97204
       </span>
@@ -16898,7 +16898,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -17108,7 +17108,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -17453,7 +17453,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Providence Park MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -17747,7 +17747,7 @@ exports[`ItineraryBody/otp-ui StyledWalkTransitWalkItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
@@ -17813,7 +17813,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -18023,7 +18023,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -18368,7 +18368,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Providence Park MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -18662,7 +18662,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
@@ -18728,7 +18728,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -18938,7 +18938,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -19283,7 +19283,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Providence Park MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -19577,7 +19577,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
@@ -19643,7 +19643,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -19853,7 +19853,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -20198,7 +20198,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Providence Park MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -20492,7 +20492,7 @@ exports[`ItineraryBody/otp-ui ThreeAlertsWithoutCollapsingProp smoke-test 1`] = 
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
@@ -20563,7 +20563,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         128 NW 12th Ave, Portland
       </span>
@@ -20668,7 +20668,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         West Burnside Street
       </span>
@@ -20743,7 +20743,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         W Burnside &amp; SW 6th
       </span>
@@ -20904,7 +20904,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         E Burnside &amp; SE 12th
       </span>
@@ -20989,7 +20989,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         East Burnside Street
       </span>
@@ -21100,7 +21100,7 @@ exports[`ItineraryBody/otp-ui TncTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         407 NE 12th Ave, Portland
       </span>
@@ -21166,7 +21166,7 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Airport Terminal A (SEPTA)
       </span>
@@ -21662,7 +21662,7 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Philadelphia Airport Terminal D
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -21844,7 +21844,7 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         PNC Center
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -21925,7 +21925,7 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         PNC Center
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -22327,7 +22327,7 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Oregon Av &amp; Broad St
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -22831,7 +22831,7 @@ exports[`ItineraryBody/otp-ui TransferLegItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         39.91179, -75.16543
       </span>
@@ -22902,7 +22902,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         330 SW Murray Blvd, Washington County, OR, USA 97005
       </span>
@@ -23421,7 +23421,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         P+R Sunset TC
       </span>
@@ -23707,7 +23707,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Sunset TC MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -24052,7 +24052,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Oak/ SW 1st Ave MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -24384,7 +24384,7 @@ exports[`ItineraryBody/otp-ui TwoAlertWithoutCollapsingProp smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         205 SW Pine St, Portland, OR, USA 97204
       </span>
@@ -24455,7 +24455,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         330 SW Murray Blvd, Washington County, OR, USA 97005
       </span>
@@ -24974,7 +24974,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         P+R Sunset TC
       </span>
@@ -25260,7 +25260,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Sunset TC MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -25626,7 +25626,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Oak/ SW 1st Ave MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -25958,7 +25958,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         205 SW Pine St, Portland, OR, USA 97204
       </span>
@@ -26029,7 +26029,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         330 SW Murray Blvd, Washington County, OR, USA 97005
       </span>
@@ -26548,7 +26548,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         P+R Sunset TC
       </span>
@@ -26834,7 +26834,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Sunset TC MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -27179,7 +27179,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Oak/ SW 1st Ave MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -27511,7 +27511,7 @@ exports[`ItineraryBody/otp-ui TwoAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         205 SW Pine St, Portland, OR, USA 97204
       </span>
@@ -27577,7 +27577,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         47.97767, -122.20034
       </span>
@@ -27939,7 +27939,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Everett Station Bay C1
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -28139,7 +28139,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Northgate Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -28222,7 +28222,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Northgate Station - Bay 4
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -28442,7 +28442,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         N 105th St &amp; Aurora Ave N
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -28695,7 +28695,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Aurora Ave N &amp; N 105th St
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -29005,7 +29005,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         3rd Ave &amp; Cherry St
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -29223,7 +29223,7 @@ exports[`ItineraryBody/otp-ui WalkInterlinedTransitItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         208 James St, Seattle, WA 98104-2212, United States
       </span>
@@ -29289,7 +29289,7 @@ exports[`ItineraryBody/otp-ui WalkOnlyItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -29495,7 +29495,7 @@ exports[`ItineraryBody/otp-ui WalkOnlyItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         701 SW 6th Ave, Portland, OR, USA 97204
       </span>
@@ -29561,7 +29561,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         3940 SE Brooklyn St, Portland, OR, USA 97202
       </span>
@@ -29771,7 +29771,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         SE Cesar Chavez Blvd &amp; Brooklyn
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -29965,7 +29965,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         SE Cesar Chavez Blvd &amp; Hawthorne
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -30219,7 +30219,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         SE Hawthorne &amp; Cesar Chavez Blvd
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -30413,7 +30413,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         SE Hawthorne &amp; 27th
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -30669,7 +30669,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1415 SE 28th Ave, Portland, OR, USA 97214
       </span>
@@ -30735,7 +30735,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         3940 SE Brooklyn St, Portland, OR, USA 97202
       </span>
@@ -30976,7 +30976,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         SE Cesar Chavez Blvd &amp; Brooklyn
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -31204,7 +31204,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         SE Cesar Chavez Blvd &amp; Hawthorne
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -31458,7 +31458,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         SE Hawthorne &amp; Cesar Chavez Blvd
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -31686,7 +31686,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         SE Hawthorne &amp; 27th
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -31973,7 +31973,7 @@ exports[`ItineraryBody/otp-ui WalkTransitTransferWithA11yItinerary smoke-test 1`
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1415 SE 28th Ave, Portland, OR, USA 97214
       </span>
@@ -32039,7 +32039,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -32249,7 +32249,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -32597,7 +32597,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Providence Park MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -32891,7 +32891,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItinerary smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
@@ -32957,7 +32957,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryCanceled smoke-test 1`] = 
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -33170,7 +33170,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryCanceled smoke-test 1`] = 
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 dWLmtN place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 jzOzRk place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -33523,7 +33523,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryCanceled smoke-test 1`] = 
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Providence Park MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -33817,7 +33817,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryCanceled smoke-test 1`] = 
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
@@ -33853,7 +33853,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryCanceled smoke-test 1`] = 
 </ol>
 `;
 
-exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryClosedStop smoke-test 1`] = `
+exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryClosedStops smoke-test 1`] = `
 <ol class="styled__ItineraryBody-sc-1q8npbl-28 gVbIVF">
   <li class="styled__PlaceRowWrapper-sc-1q8npbl-47 keGMkz place-row-wrapper   ">
     <div class="styled__LineColumn-sc-1q8npbl-45 kGfRfT">
@@ -33883,7 +33883,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryClosedStop smoke-test 1`] 
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -34093,12 +34093,15 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryClosedStop smoke-test 1`] 
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 cSyOpP place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
           ID 8383
         </span>
+      </span>
+      <span class="place-row__ClosedStopMessage-sc-46esc9-1 fApDto">
+        Closed
       </span>
     </div>
     <div class="styled__TimeColumn-sc-1q8npbl-49 kSAQNU">
@@ -34444,12 +34447,15 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryClosedStop smoke-test 1`] 
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 cSyOpP place-row-place-name"
       >
         Providence Park MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
           ID 9757
         </span>
+      </span>
+      <span class="place-row__ClosedStopMessage-sc-46esc9-1 fApDto">
+        Closed
       </span>
     </div>
     <div class="styled__TimeColumn-sc-1q8npbl-49 kSAQNU">
@@ -34738,7 +34744,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryClosedStop smoke-test 1`] 
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
@@ -34804,7 +34810,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAccessLegFooter smoke-
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -35017,7 +35023,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAccessLegFooter smoke-
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -35362,7 +35368,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAccessLegFooter smoke-
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Providence Park MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -35659,7 +35665,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAccessLegFooter smoke-
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
@@ -35725,7 +35731,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -35935,7 +35941,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -36296,7 +36302,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Providence Park MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -36590,7 +36596,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithAgencyInformation smok
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
@@ -36656,7 +36662,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         🎉✨🎊 KGW Studio on the Sq, Portland, OR, USA 🎉✨🎊
       </span>
@@ -36866,7 +36872,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         🎉✨🎊 Pioneer Square North MAX Station 🎉✨🎊
       </span>
@@ -37202,7 +37208,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         🎉✨🎊 Providence Park MAX Station 🎉✨🎊
       </span>
@@ -37490,7 +37496,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomPlaceNameCompone
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         🎉✨🎊 1737 SW Morrison St, Portland, OR, USA 97205 🎉✨🎊
       </span>
@@ -37556,7 +37562,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -37766,7 +37772,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -38113,7 +38119,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Providence Park MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -38407,7 +38413,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomTransitLegSummar
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
@@ -38473,7 +38479,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -38682,7 +38688,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -39032,7 +39038,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Providence Park MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -39326,7 +39332,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithCustomViewTripButtonAc
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
@@ -39392,7 +39398,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithTransitLegFooter smoke
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         KGW Studio on the Sq, Portland, OR, USA
       </span>
@@ -39602,7 +39608,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithTransitLegFooter smoke
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Pioneer Square North MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -39950,7 +39956,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithTransitLegFooter smoke
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Providence Park MAX Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -40244,7 +40250,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryWithTransitLegFooter smoke
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         1737 SW Morrison St, Portland, OR, USA 97205
       </span>
@@ -40310,7 +40316,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         47.97767, -122.20034
       </span>
@@ -40672,7 +40678,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Everett Station Bay C1
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -40872,7 +40878,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Northgate Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -40955,7 +40961,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Northgate Station - Bay 4
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -41175,7 +41181,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         N 105th St &amp; Aurora Ave N
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -41428,7 +41434,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Aurora Ave N &amp; N 105th St
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -41738,7 +41744,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         3rd Ave &amp; Cherry St
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -41956,7 +41962,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         208 James St, Seattle, WA 98104-2212, United States
       </span>
@@ -42022,7 +42028,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         47.97767, -122.20034
       </span>
@@ -42384,7 +42390,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Everett Station Bay C1
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -42584,7 +42590,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Northgate Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -42667,7 +42673,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Northgate Station - Bay 4
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -42887,7 +42893,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         N 105th St &amp; Aurora Ave N
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -43140,7 +43146,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Aurora Ave N &amp; N 105th St
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -43450,7 +43456,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         3rd Ave &amp; Cherry St
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -43668,7 +43674,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsNotAlwaysCollapsing smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         208 James St, Seattle, WA 98104-2212, United States
       </span>
@@ -43734,7 +43740,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         47.97767, -122.20034
       </span>
@@ -44096,7 +44102,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Everett Station Bay C1
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -44296,7 +44302,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Northgate Station
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -44379,7 +44385,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Northgate Station - Bay 4
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -44599,7 +44605,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         N 105th St &amp; Aurora Ave N
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -44852,7 +44858,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         Aurora Ave N &amp; N 105th St
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -45162,7 +45168,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         3rd Ave &amp; Cherry St
         <span class="styled__StopIdSpan-sc-1q8npbl-75 gURBTs">
@@ -45380,7 +45386,7 @@ exports[`ItineraryBody/otp-ui ZeroAlertsWithoutCollapsingProp smoke-test 1`] = `
     </div>
     <div class="styled__PlaceHeader-sc-1q8npbl-54 hMGsin">
       <span aria-hidden="true"
-            class="styled__PlaceName-sc-1q8npbl-55 cgulMm place-row-place-name"
+            class="styled__PlaceName-sc-1q8npbl-55 eiKcTD place-row-place-name"
       >
         208 James St, Seattle, WA 98104-2212, United States
       </span>
