@@ -1,5 +1,5 @@
 ---
-"@opentripplanner/transit-vehicle-overlay": major
+"@opentripplanner/transit-vehicle-overlay": minor
 "@opentripplanner/location-field": patch
 ---
 
