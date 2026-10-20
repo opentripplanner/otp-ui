@@ -26,6 +26,8 @@ import flexItinerary from "../../../itinerary-body/src/__mocks__/itineraries/fle
 import faresv2Itinerary from "../../../itinerary-body/src/__mocks__/itineraries/fares-v2-fare-components.json";
 import legFareProdcuts from "../../../itinerary-body/src/__mocks__/itineraries/leg-fare-products.json";
 
+import defaultEnglishMessages from "../../i18n/en-US.yml";
+
 global.structuredClone = val => JSON.parse(JSON.stringify(val));
 
 const basePlace = {
@@ -41,7 +43,9 @@ describe("util > itinerary", () => {
       locale: "en",
       messages: {
         "otpUi.coreUtils.legRouteName.withTripShortName":
-          "{routeName} ({tripShortName})"
+          defaultEnglishMessages[
+            "otpUi.coreUtils.legRouteName.withTripShortName"
+          ]
       }
     },
     cache
