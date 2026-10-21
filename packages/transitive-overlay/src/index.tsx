@@ -430,7 +430,6 @@ const TransitiveCanvasOverlay = ({
     zoomToGeoJSON(polyline.toGeoJSON(activeLeg.legGeometry.points));
   }, [activeLeg]);
 
-
   const { fromAnchor, toAnchor } = transitiveData
     ? getFromToAnchors(transitiveData)
     : {};
