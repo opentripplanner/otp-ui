@@ -34104,7 +34104,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryClosedStops smoke-test 1`]
         Closed
       </span>
     </div>
-    <div class="styled__TimeColumn-sc-1q8npbl-49 kSAQNU">
+    <div class="styled__TimeColumn-sc-1q8npbl-49 kWWkLE">
       3:46 PM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
@@ -34458,7 +34458,7 @@ exports[`ItineraryBody/otp-ui WalkTransitWalkItineraryClosedStops smoke-test 1`]
         Closed
       </span>
     </div>
-    <div class="styled__TimeColumn-sc-1q8npbl-49 kSAQNU">
+    <div class="styled__TimeColumn-sc-1q8npbl-49 kWWkLE">
       3:49 PM
     </div>
     <span class="styled__InvisibleAdditionalDetails-sc-1q8npbl-34 fVKoeN invisible-additional-details">
