@@ -64,6 +64,18 @@ export const WalkTransitWalkItinerary = (): ReactElement => (
   />
 );
 
+const walkTransitWalkItineraryTripShortName = clone(walkTransitWalkItinerary);
+walkTransitWalkItineraryTripShortName.legs.forEach(leg => {
+  if (leg.transitLeg) leg.trip = { tripShortName: "Train 123" };
+});
+
+export const WalkTransitWalkItineraryTripShortName = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItineraryTripShortName}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
+);
+
 const walkTransitWalkItineraryCanceled = clone(walkTransitWalkItinerary);
 walkTransitWalkItineraryCanceled.legs.forEach(leg => {
   if (leg.transitLeg) leg.realtimeState = "CANCELED";
