@@ -902,7 +902,7 @@ export const getLegRouteLongName = (
 
 /**
  * Returns the route short name, or the route long name if no short name is provided.
- * This is happens with Seattle area streetcars and ferries.
+ * This happens with Seattle area streetcars and ferries.
  */
 export const getLegRouteName = (
   leg: Pick<Leg, "route" | "routeLongName" | "routeShortName" | "trip">,
