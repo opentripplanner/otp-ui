@@ -181,7 +181,7 @@ export default function PlaceRow({
         )}
         {closed && <ClosedStopMessage>{closedText}</ClosedStopMessage>}
       </S.PlaceHeader>
-      <S.TimeColumn strikethrough={canceled}>
+      <S.TimeColumn strikethrough={canceled || closed}>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
         <TimeColumnContent isDestination={isDestination} leg={leg} />
         {!isDestination &&
