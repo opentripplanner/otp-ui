@@ -430,9 +430,10 @@ const TransitiveCanvasOverlay = ({
     zoomToGeoJSON(polyline.toGeoJSON(activeLeg.legGeometry.points));
   }, [activeLeg]);
 
-  if (!transitiveData) return <></>;
 
-  const { fromAnchor, toAnchor } = getFromToAnchors(transitiveData);
+  const { fromAnchor, toAnchor } = transitiveData
+    ? getFromToAnchors(transitiveData)
+    : {};
 
   const boldFonts =
     vectorTileFonts?.bold.length && vectorTileFonts?.bold.length > 0
