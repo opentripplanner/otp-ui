@@ -26,6 +26,7 @@ import { MapRef } from "react-map-gl/maplibre";
 
 const {
   getLegBounds,
+  getLegRouteName,
   getLegRouteShortName,
   isAccessMode,
   isFlex,
@@ -451,6 +452,8 @@ export function itineraryToTransitive(
       const routeLabel =
         (typeof getRouteLabel === "function"
           ? getRouteLabel(leg)
+          : intl
+          ? getLegRouteName(leg, intl)
           : getLegRouteShortName(leg)) || "";
 
       const basicRouteAttributes = {

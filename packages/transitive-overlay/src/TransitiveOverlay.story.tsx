@@ -3,6 +3,7 @@ import EndpointsOverlay from "@opentripplanner/endpoints-overlay";
 import React from "react";
 import { action } from "storybook/actions";
 import { injectIntl } from "react-intl";
+import clone from "lodash.clonedeep";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 import bikeOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json";
@@ -105,6 +106,19 @@ export const WalkTransitWalkItinerary = {
 
   args: {
     itinerary: walkTransitWalkItinerary
+  }
+};
+
+const walkTransitWalkItineraryTripShortName = clone(walkTransitWalkItinerary);
+walkTransitWalkItineraryTripShortName.legs.forEach(leg => {
+  if (leg.transitLeg) leg.trip = { tripShortName: "Train 123" };
+});
+
+export const WalkTransitWalkItineraryTripShortName = {
+  render: Template,
+
+  args: {
+    itinerary: walkTransitWalkItineraryTripShortName
   }
 };
 
