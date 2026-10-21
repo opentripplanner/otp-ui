@@ -43,9 +43,7 @@ describe("util > itinerary", () => {
       locale: "en",
       messages: {
         "otpUi.coreUtils.legRouteName.withTripShortName":
-          defaultEnglishMessages[
-            "otpUi.coreUtils.legRouteName.withTripShortName"
-          ]
+          defaultEnglishMessages.otpUi.coreUtils.legRouteName.withTripShortName
       }
     },
     cache
