@@ -124,7 +124,7 @@ const FaresV2Table = ({
     mediums.push({ name: "Regular", id: null });
   }
 
-  // Keep track of seen fare ids to indicate transfers
+  // Keep track of seen fare ids to indicate transfers.
   const productUseIds: Set<string> = new Set();
 
   const rows = [
