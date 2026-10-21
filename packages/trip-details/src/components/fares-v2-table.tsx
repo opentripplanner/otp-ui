@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from "react";
-import { Leg } from "@opentripplanner/types";
+import { Leg, MediumRiderWhitelist } from "@opentripplanner/types";
 import coreUtils from "@opentripplanner/core-utils";
 import { FormattedMessage, useIntl } from "react-intl";
 import styled from "styled-components";
@@ -72,15 +72,16 @@ const categorySorter = (favoriteId?: string) => (
   return aId > bId ? 1 : -1;
 };
 
-// TODO: This component currently can only show one type of fare per medium
 const FaresV2Table = ({
   legs,
   favoriteMediumId,
-  favoriteRiderCategoryId
+  favoriteRiderCategoryId,
+  mediumRiderWhitelist
 }: {
   legs: Leg[];
   favoriteMediumId?: string;
   favoriteRiderCategoryId?: string;
+  mediumRiderWhitelist?: MediumRiderWhitelist;
 }): JSX.Element => {
   const intl = useIntl();
 
@@ -114,6 +115,13 @@ const FaresV2Table = ({
           fp.product?.riderCategory?.id === rmp.rider?.id &&
           fp.product?.medium?.id === rmp.medium?.id
       )
+    )
+    .filter(
+      pair =>
+        !mediumRiderWhitelist ||
+        mediumRiderWhitelist?.find(
+          p => p.medium === pair.medium?.id && p.rider === pair.rider?.id
+        )
     );
 
   // Ensure we have at least one rider/medium
