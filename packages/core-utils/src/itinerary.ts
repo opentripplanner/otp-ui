@@ -909,9 +909,9 @@ export const getLegRouteName = (
   intl: IntlShape
 ): string | undefined => {
   const { trip } = leg;
-  let routeName = getLegRouteShortName(leg) || getLegRouteLongName(leg);
+  const routeName = getLegRouteShortName(leg) || getLegRouteLongName(leg);
   // if there's a trip short name present, add it to the route name result
-  if (routeName && trip?.tripShortName) routeName = intl.formatMessage(
+  if (routeName && trip?.tripShortName) return intl.formatMessage(
     {
       description: "Route name with trip short name added",
       id: "otpUi.coreUtils.legRouteName.withTripShortName"
