@@ -3,7 +3,6 @@ import EndpointsOverlay from "@opentripplanner/endpoints-overlay";
 import React from "react";
 import { action } from "storybook/actions";
 import { injectIntl } from "react-intl";
-import clone from "lodash.clonedeep";
 
 // import mock itinaries. These are all trip plan outputs from OTP.
 import bikeOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-only.json";
@@ -17,6 +16,7 @@ import tncTransitTncItinerary from "@opentripplanner/itinerary-body/src/__mocks_
 import walkInterlinedTransitItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-interlined-transit-walk.json";
 import walkOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json";
 import walkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkTripShortNameItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-trip-short-name.json";
 import walkTransitWalkItineraryNoIntermediateStops from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-no-intermediate-stops.json";
 import walkTransitWalkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
 import flexItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
@@ -109,16 +109,11 @@ export const WalkTransitWalkItinerary = {
   }
 };
 
-const walkTransitWalkItineraryTripShortName = clone(walkTransitWalkItinerary);
-walkTransitWalkItineraryTripShortName.legs.forEach(leg => {
-  if (leg.transitLeg) leg.trip = { tripShortName: "Train 123" };
-});
-
 export const WalkTransitWalkItineraryTripShortName = {
   render: Template,
 
   args: {
-    itinerary: walkTransitWalkItineraryTripShortName
+    itinerary: walkTransitWalkTripShortNameItinerary
   }
 };
 

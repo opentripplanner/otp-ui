@@ -36,7 +36,6 @@
     "@opentripplanner/endpoints-overlay": "workspace:^",
     "@opentripplanner/types": "workspace:^",
     "@types/mapbox__polyline": "^1.0.5",
-    "lodash.clonedeep": "^4.5.0",
     "maplibre-gl": "catalog:"
   },
   "peerDependencies": {

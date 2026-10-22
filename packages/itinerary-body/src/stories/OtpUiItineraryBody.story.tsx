@@ -4,7 +4,6 @@ import { Bomb } from "@styled-icons/fa-solid/Bomb";
 import { Bolt } from "@styled-icons/fa-solid/Bolt";
 import styled from "styled-components";
 import { Meta } from "@storybook/react";
-import clone from "lodash.clonedeep";
 import DemoAccessLegFooter from "./access-leg-footer";
 import RouteDescriptionFooterWithWaitTimes from "./footer-with-wait-times";
 import DemoTransitLegFooter from "./transit-leg-footer";
@@ -29,6 +28,8 @@ import tncTransitTncItinerary from "../__mocks__/itineraries/tnc-transit-tnc.jso
 import walkInterlinedTransitItinerary from "../__mocks__/itineraries/walk-interlined-transit-walk.json";
 import walkOnlyItinerary from "../__mocks__/itineraries/walk-only.json";
 import walkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkTripShortNameItinerary from "../__mocks__/itineraries/walk-transit-walk-trip-short-name.json";
+import walkTransitWalkCanceledItinerary from "../__mocks__/itineraries/walk-transit-walk-canceled.json";
 import walkTransitWalkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk-transit-walk.json";
 import fareProductsItinerary from "../__mocks__/itineraries/leg-fare-products.json";
 import walkTransitWalkTransitWalkA11yItinerary from "../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json";
@@ -64,26 +65,16 @@ export const WalkTransitWalkItinerary = (): ReactElement => (
   />
 );
 
-const walkTransitWalkItineraryTripShortName = clone(walkTransitWalkItinerary);
-walkTransitWalkItineraryTripShortName.legs.forEach(leg => {
-  if (leg.transitLeg) leg.trip = { tripShortName: "Train 123" };
-});
-
 export const WalkTransitWalkItineraryTripShortName = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
-    itinerary={walkTransitWalkItineraryTripShortName}
+    itinerary={walkTransitWalkTripShortNameItinerary}
     RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
 
-const walkTransitWalkItineraryCanceled = clone(walkTransitWalkItinerary);
-walkTransitWalkItineraryCanceled.legs.forEach(leg => {
-  if (leg.transitLeg) leg.realtimeState = "CANCELED";
-});
-
 export const WalkTransitWalkItineraryCanceled = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
-    itinerary={walkTransitWalkItineraryCanceled}
+    itinerary={walkTransitWalkCanceledItinerary}
     RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />
 );
