@@ -168,14 +168,18 @@ export default function PlaceRow({
         />
       </S.LineColumn>
       <S.PlaceHeader>
-        <S.PlaceName
-          aria-hidden
-          className="place-row-place-name"
-          red={closed}
-          strikethrough={canceled || closed}
-        >
-          {placeName}
-        </S.PlaceName>
+        {canceled || closed ? (
+          <S.ClosedOrCanceledPlaceName
+            aria-hidden
+            className="place-row-place-name"
+          >
+            {placeName}
+          </S.ClosedOrCanceledPlaceName>
+        ) : (
+          <S.PlaceName aria-hidden className="place-row-place-name">
+            {placeName}
+          </S.PlaceName>
+        )}
         {canceled && (
           <CanceledTripMessage aria-hidden>{canceledText}</CanceledTripMessage>
         )}
