@@ -6,14 +6,14 @@ import RouteLongName from "../defaults/route-long-name";
 import * as S from "../styled";
 import { RouteDescriptionProps } from "../types";
 
-const { getLegRouteName } = coreUtils.itinerary;
+const { getLegRouteShortName } = coreUtils.itinerary;
 
 export default function RouteDescription({
   leg,
   LegIcon
 }: RouteDescriptionProps): ReactElement {
   const intl = useIntl();
-  const routeShortName = getLegRouteName(leg, intl);
+  const routeShortName = getLegRouteShortName(leg, intl);
   return (
     <S.LegDescriptionForTransit>
       <S.LegIconAndRouteShortName>

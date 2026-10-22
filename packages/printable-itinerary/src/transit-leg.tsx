@@ -13,7 +13,7 @@ import AccessibilityAnnotation from "./accessibility-annotation";
 import * as S from "./styled";
 import { defaultMessages, strongText } from "./util";
 
-const { getDisplayedStopCode, getLegRouteName } = coreUtils.itinerary;
+const { getDisplayedStopCode, getLegRouteShortName } = coreUtils.itinerary;
 
 interface Props extends LegHeadingProp {
   accessibilityScoreGradationMap?: GradationMap;
@@ -42,7 +42,7 @@ export default function TransitLeg({
 
   const routeDescription = (
     <>
-      <strong>{getLegRouteName(leg, intl)}</strong>{" "}
+      <strong>{getLegRouteShortName(leg, intl)}</strong>{" "}
       <S.RouteLongName leg={leg} />
     </>
   );
