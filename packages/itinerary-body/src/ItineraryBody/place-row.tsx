@@ -138,11 +138,6 @@ export default function PlaceRow({
     description: "Screen reader text indicating a canceled trip",
     id: "otpUi.ItineraryBody.canceledMessage"
   });
-  const closedText = intl.formatMessage({
-    defaultMessage: defaultMessages["otpUi.ItineraryBody.stopIsClosed"],
-    description: "Denotes a closed stop in the itinerary body",
-    id: "otpUi.ItineraryBody.stopIsClosed"
-  });
 
   return (
     <S.PlaceRowWrapper
@@ -183,7 +178,19 @@ export default function PlaceRow({
         {canceled && (
           <CanceledTripMessage aria-hidden>{canceledText}</CanceledTripMessage>
         )}
-        {closed && <ClosedStopMessage>{closedText}</ClosedStopMessage>}
+        {closed && (
+          <ClosedStopMessage>
+            {
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages["otpUi.ItineraryBody.stopIsClosed"]
+                }
+                description="Denotes a closed stop in the itinerary body"
+                id="otpUi.ItineraryBody.stopIsClosed"
+              />
+            }
+          </ClosedStopMessage>
+        )}
       </S.PlaceHeader>
       <S.TimeColumn strikethrough={canceled || closed}>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
