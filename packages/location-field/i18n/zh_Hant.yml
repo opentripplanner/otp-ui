@@ -5,8 +5,10 @@ otpUi:
     currentLocationUnavailable: 目前的位置無法使用
     fetchingLocation: 正在擷取位置……
     fetchingSuggestions: 正在擷取建議…
+    geocoderUnreachable: 無法獲取建議
     homeLocation: 住家
     howToAccessResults: 使用向下箭頭鍵瀏覽結果清單。若要選取結果，請使用Enter鍵。
+    inputWithStatus: "{inputLabel}. {statusAnnouncementText}"
     myPlaces: 我的地點
     nearby: 附近的車站
     noResults: 找不到符合
@@ -21,6 +23,6 @@ otpUi:
     stops: 車站
     suggestedLocations: 建議地點
     suggestedLocationsLong: 顯示/不顯示建議位置清單
+    suggestedLocationsWithStatus: "{toggleLabel}. {statusAnnouncementText}"
     useCurrentLocation: 使用目前位置
     workLocation: 工作
-    geocoderUnreachable: 無法獲取建議
