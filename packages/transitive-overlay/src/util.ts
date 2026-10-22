@@ -26,7 +26,6 @@ import { MapRef } from "react-map-gl/maplibre";
 
 const {
   getLegBounds,
-  getLegRouteName,
   getLegRouteShortName,
   isAccessMode,
   isFlex,
