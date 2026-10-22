@@ -1,7 +1,7 @@
 ---
 "@opentripplanner/itinerary-body": minor
 "@opentripplanner/trip-details": minor
-"@opentripplanner/core-utils": major
+"@opentripplanner/core-utils": minor
 "@opentripplanner/printable-itinerary": minor
 "@opentripplanner/transitive-overlay": minor
 ---
