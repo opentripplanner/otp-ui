@@ -76,9 +76,9 @@ export const WalkTransitWalkItineraryCanceled = (): ReactElement => (
   />
 );
 
-export const WalkTransitWalkItineraryClosedStop = (): ReactElement => (
+export const WalkTransitWalkItineraryClosedStops = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
-    closedStopIds={new Set(["TriMet:8384"])}
+    closedStopIds={new Set(["TriMet:8383", "TriMet:8384", "TriMet:9757"])}
     itinerary={walkTransitWalkItinerary}
     RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
   />

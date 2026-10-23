@@ -88,6 +88,7 @@ otpUi:
     flexBookByPhone: "Réserver par téléphone : "
     flexPickupMessage: Réservation obligatoire{advanceNotice}
     stayOnBoard: Restez à bord à {place}
+    stopIsClosed: Arrêt supprimé
     travelBy: Trajet {mode}
     travelByMode:
       bike: en vélo
