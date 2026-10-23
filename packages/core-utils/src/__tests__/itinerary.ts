@@ -37,17 +37,13 @@ const basePlace = {
 };
 
 describe("util > itinerary", () => {
-  const cache = createIntlCache();
-  const mockIntl = createIntl(
-    {
-      locale: "en",
-      messages: {
-        "otpUi.coreUtils.legRouteName.withTripShortName":
-          defaultEnglishMessages.otpUi.coreUtils.legRouteName.withTripShortName
-      }
-    },
-    cache
-  );
+  const mockIntl = createIntl({
+    locale: "en",
+    messages: {
+      "otpUi.coreUtils.legRouteName.withTripShortName":
+        defaultEnglishMessages.otpUi.coreUtils.legRouteName.withTripShortName
+    }
+  });
   describe("descope", () => {
     it("should return the descope'd part for standard scoped strings", () => {
       expect(descope("agency:cash")).toBe("cash");
