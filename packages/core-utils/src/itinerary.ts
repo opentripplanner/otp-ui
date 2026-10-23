@@ -880,6 +880,19 @@ export const convertGraphQLResponseToLegacy = (leg: any): Leg => ({
   tripId: leg.trip?.gtfsId
 });
 
+const formatTripShortName = (intl: IntlShape, routeName: string, tripShortName: string) => (
+  intl.formatMessage(
+    {
+      description: "Route name with trip short name added",
+      id: "otpUi.coreUtils.legRouteName.withTripShortName"
+    },
+    {
+      routeName,
+      tripShortName
+    }
+  )
+)
+
 /** Extracts the route number for a leg returned from OTP1 or OTP2. If an intl object is provided,
  * will attempt to append the trip short name to the result if one exists. */
 export const getLegRouteShortName = (
@@ -892,16 +905,7 @@ export const getLegRouteShortName = (
     ? route?.shortName
     : routeShortName || route;
   // if there's a trip short name present, add it to the route name result
-  if (intl && routeName && trip?.tripShortName) return intl.formatMessage(
-    {
-      description: "Route name with trip short name added",
-      id: "otpUi.coreUtils.legRouteName.withTripShortName"
-    },
-    {
-      routeName,
-      tripShortName: trip.tripShortName
-    }
-  )
+  if (intl && routeName && trip?.tripShortName) return formatTripShortName(intl, routeName, trip.tripShortName);
   return routeName;
 };
 
@@ -915,16 +919,7 @@ export const getLegRouteLongName = (
   // typeof route === "object" denotes newer OTP2 responses. routeLongName is OTP1.
   const routeName = typeof route === "object" ? route?.longName : routeLongName;
   // if there's a trip short name present, add it to the route name result
-  if (intl && routeName && trip?.tripShortName) return intl.formatMessage(
-    {
-      description: "Route name with trip short name added",
-      id: "otpUi.coreUtils.legRouteName.withTripShortName"
-    },
-    {
-      routeName,
-      tripShortName: trip.tripShortName
-    }
-  )
+  if (intl && routeName && trip?.tripShortName) return formatTripShortName(intl, routeName, trip.tripShortName);
   return routeName;
 };
 
