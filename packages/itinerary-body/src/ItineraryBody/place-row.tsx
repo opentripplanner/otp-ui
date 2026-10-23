@@ -113,7 +113,7 @@ export default function PlaceRow({
     <PlaceName config={config} leg={leg} place={leg.to} />
   );
   const stopId = place.stop?.gtfsId || place.stopId;
-  const closed = closedStopIds?.has(stopId || "");
+  const closed = stopId && closedStopIds?.has(stopId);
 
   // OTP2 marks both bikes and scooters as BIKESHARE in the vertextype
   // To get the right label, we need to fix scooters to be "VEHICLERENTAL"
