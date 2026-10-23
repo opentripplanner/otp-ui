@@ -6,4 +6,4 @@
 "@opentripplanner/transitive-overlay": minor
 ---
 
-Include trip short name in route name display when present. Breaking change due to getLegRouteName requiring intl parameter
+Include trip short name in route name display when present.
