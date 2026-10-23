@@ -1,5 +1,5 @@
 import { ElevationProfile } from "@opentripplanner/types";
-import { createIntlCache, createIntl } from "react-intl";
+import { createIntl } from "react-intl";
 import {
   calculateTncFares,
   descope,
