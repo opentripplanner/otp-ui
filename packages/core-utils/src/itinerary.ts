@@ -905,13 +905,27 @@ export const getLegRouteShortName = (
   return routeName;
 };
 
-/** Extract the route long name for a leg returned from OTP1 or OTP2. */
+/** Extract the route long name for a leg returned from OTP1 or OTP2. If an intl object is provided,
+ * will attempt to append the trip short name to the result if one exists. */
 export const getLegRouteLongName = (
-  leg: Pick<Leg, "route" | "routeLongName">
+  leg: Pick<Leg, "route" | "routeLongName" | "trip">,
+  intl?: IntlShape
 ): string | undefined => {
-  const { route, routeLongName } = leg;
+  const { route, routeLongName, trip } = leg;
   // typeof route === "object" denotes newer OTP2 responses. routeLongName is OTP1.
-  return typeof route === "object" ? route?.longName : routeLongName;
+  const routeName = typeof route === "object" ? route?.longName : routeLongName;
+  // if there's a trip short name present, add it to the route name result
+  if (intl && routeName && trip?.tripShortName) return intl.formatMessage(
+    {
+      description: "Route name with trip short name added",
+      id: "otpUi.coreUtils.legRouteName.withTripShortName"
+    },
+    {
+      routeName,
+      tripShortName: trip.tripShortName
+    }
+  )
+  return routeName;
 };
 
 /**
@@ -923,20 +937,5 @@ export const getLegRouteName = (
   leg: Pick<Leg, "route" | "routeLongName" | "routeShortName" | "trip">,
   intl?: IntlShape
 ): string | undefined => {
-  const { trip } = leg;
-  const shortName = getLegRouteShortName(leg, intl);
-  if (shortName) return shortName;
-  const longName = getLegRouteLongName(leg);
-  // if there's a trip short name present, add it to the route name result
-  if (intl && longName && trip?.tripShortName) return intl.formatMessage(
-    {
-      description: "Route name with trip short name added",
-      id: "otpUi.coreUtils.legRouteName.withTripShortName"
-    },
-    {
-      routeName: longName,
-      tripShortName: trip.tripShortName
-    }
-  )
-  return longName
+  return getLegRouteShortName(leg, intl) || getLegRouteLongName(leg, intl);
 };

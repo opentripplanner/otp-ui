@@ -415,6 +415,32 @@ describe("util > itinerary", () => {
         })
       ).toBe("15");
     });
+
+    it("should append a trip long name from an OTP1 leg when provided", () => {
+      expect(
+        getLegRouteLongName(
+          {
+            route: "15",
+            routeLongName: "Candler Road",
+            trip: { id: "test", tripShortName: "Train 123" }
+          },
+          mockIntl
+        )
+      ).toBe("Candler Road (Train 123)");
+    });
+
+    it("should append a trip long name from an OTP2 leg when provided", () => {
+      expect(
+        getLegRouteLongName(
+          {
+            route: { id: "id15", longName: "15" },
+            routeLongName: "31",
+            trip: { id: "test", tripShortName: "Train 123" }
+          },
+          mockIntl
+        )
+      ).toBe("15 (Train 123)");
+    });
   });
   describe("getLegRouteName", () => {
     it("should extract a route name from an OTP1 leg where a route short name is provided", () => {
