@@ -16,6 +16,7 @@ import tncTransitTncItinerary from "@opentripplanner/itinerary-body/src/__mocks_
 import walkInterlinedTransitItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-interlined-transit-walk.json";
 import walkOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json";
 import walkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkTripShortNameItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-trip-short-name.json";
 import walkTransitWalkItineraryNoIntermediateStops from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-no-intermediate-stops.json";
 import walkTransitWalkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
 import flexItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
@@ -105,6 +106,14 @@ export const WalkTransitWalkItinerary = {
 
   args: {
     itinerary: walkTransitWalkItinerary
+  }
+};
+
+export const WalkTransitWalkItineraryTripShortName = {
+  render: Template,
+
+  args: {
+    itinerary: walkTransitWalkTripShortNameItinerary
   }
 };
 

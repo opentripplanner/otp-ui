@@ -19,6 +19,7 @@ import {
   TncFare
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
+import { IntlShape } from "react-intl";
 
 // All OTP transit modes
 export const transitModes = [
@@ -879,32 +880,57 @@ export const convertGraphQLResponseToLegacy = (leg: any): Leg => ({
   tripId: leg.trip?.gtfsId
 });
 
-/** Extracts the route number for a leg returned from OTP1 or OTP2. */
+const formatTripShortName = (intl: IntlShape, routeName: string, tripShortName: string) => (
+  intl.formatMessage(
+    {
+      description: "Route name with trip short name added",
+      id: "otpUi.coreUtils.legRouteName.withTripShortName"
+    },
+    {
+      routeName,
+      tripShortName
+    }
+  )
+)
+
+/** Extracts the route number for a leg returned from OTP1 or OTP2. If an intl object is provided,
+ * will attempt to append the trip short name to the result if one exists. */
 export const getLegRouteShortName = (
-  leg: Pick<Leg, "route" | "routeShortName">
-): string | null => {
-  const { route, routeShortName } = leg;
+  leg: Pick<Leg, "route" | "routeShortName" | "trip">,
+  intl?: IntlShape
+): string | undefined => {
+  const { route, routeShortName, trip } = leg;
   // typeof route === "object" denotes newer OTP2 responses. routeShortName and route as string is OTP1.
-  return typeof route === "object"
+  const routeName = typeof route === "object"
     ? route?.shortName
-    : routeShortName || (route as string);
+    : routeShortName || route;
+  // if there's a trip short name present, add it to the route name result
+  if (intl && routeName && trip?.tripShortName) return formatTripShortName(intl, routeName, trip.tripShortName);
+  return routeName;
 };
 
-/** Extract the route long name for a leg returned from OTP1 or OTP2. */
+/** Extract the route long name for a leg returned from OTP1 or OTP2. If an intl object is provided,
+ * will attempt to append the trip short name to the result if one exists. */
 export const getLegRouteLongName = (
-  leg: Pick<Leg, "route" | "routeLongName">
+  leg: Pick<Leg, "route" | "routeLongName" | "trip">,
+  intl?: IntlShape
 ): string | undefined => {
-  const { route, routeLongName } = leg;
+  const { route, routeLongName, trip } = leg;
   // typeof route === "object" denotes newer OTP2 responses. routeLongName is OTP1.
-  return typeof route === "object" ? route?.longName : routeLongName;
+  const routeName = typeof route === "object" ? route?.longName : routeLongName;
+  // if there's a trip short name present, add it to the route name result
+  if (intl && routeName && trip?.tripShortName) return formatTripShortName(intl, routeName, trip.tripShortName);
+  return routeName;
 };
 
 /**
  * Returns the route short name, or the route long name if no short name is provided.
- * This is happens with Seattle area streetcars and ferries.
+ * This happens with Seattle area streetcars and ferries. If an intl object is provided,
+ * will attempt to append the trip short name to the result if one exists.
  */
 export const getLegRouteName = (
-  leg: Pick<Leg, "route" | "routeLongName" | "routeShortName">
+  leg: Pick<Leg, "route" | "routeLongName" | "routeShortName" | "trip">,
+  intl?: IntlShape
 ): string | undefined => {
-  return getLegRouteShortName(leg) || getLegRouteLongName(leg);
+  return getLegRouteShortName(leg, intl) || getLegRouteLongName(leg, intl);
 };
