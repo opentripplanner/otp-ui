@@ -139,6 +139,9 @@ export default function PlaceRow({
     id: "otpUi.ItineraryBody.canceledMessage"
   });
 
+  const PlaceNameComponent =
+    canceled || closed ? S.ClosedOrCanceledPlaceName : S.PlaceName;
+
   return (
     <S.PlaceRowWrapper
       className={`place-row-wrapper ${leg.transitLeg ? "transit" : ""} ${
@@ -163,18 +166,9 @@ export default function PlaceRow({
         />
       </S.LineColumn>
       <S.PlaceHeader>
-        {canceled || closed ? (
-          <S.ClosedOrCanceledPlaceName
-            aria-hidden
-            className="place-row-place-name"
-          >
-            {placeName}
-          </S.ClosedOrCanceledPlaceName>
-        ) : (
-          <S.PlaceName aria-hidden className="place-row-place-name">
-            {placeName}
-          </S.PlaceName>
-        )}
+        <PlaceNameComponent aria-hidden className="place-row-place-name">
+          {placeName}
+        </PlaceNameComponent>
         {canceled && (
           <CanceledTripMessage aria-hidden>{canceledText}</CanceledTripMessage>
         )}
