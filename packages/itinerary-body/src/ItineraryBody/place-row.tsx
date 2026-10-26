@@ -20,6 +20,11 @@ const CanceledTripMessage = styled.span`
   padding-top: 3px;
 `;
 
+const ClosedStopMessage = styled.span`
+  color: ${colors.red[700]};
+  padding: 3px 3px 10px;
+`;
+
 function getLegPlaceName(
   leg: Leg,
   isDestination: boolean,
@@ -107,6 +112,8 @@ export default function PlaceRow({
   const legDestination = nextPlaceName || (
     <PlaceName config={config} leg={leg} place={leg.to} />
   );
+  const stopId = place.stop?.gtfsId || place.stopId;
+  const closed = stopId && closedStopIds?.has(stopId);
 
   // OTP2 marks both bikes and scooters as BIKESHARE in the vertextype
   // To get the right label, we need to fix scooters to be "VEHICLERENTAL"
@@ -132,6 +139,9 @@ export default function PlaceRow({
     id: "otpUi.ItineraryBody.canceledMessage"
   });
 
+  const PlaceNameComponent =
+    canceled || closed ? S.ClosedOrCanceledPlaceName : S.PlaceName;
+
   return (
     <S.PlaceRowWrapper
       className={`place-row-wrapper ${leg.transitLeg ? "transit" : ""} ${
@@ -156,18 +166,27 @@ export default function PlaceRow({
         />
       </S.LineColumn>
       <S.PlaceHeader>
-        <S.PlaceName
-          aria-hidden
-          className="place-row-place-name"
-          strikethrough={canceled}
-        >
+        <PlaceNameComponent aria-hidden className="place-row-place-name">
           {placeName}
-        </S.PlaceName>
+        </PlaceNameComponent>
         {canceled && (
           <CanceledTripMessage aria-hidden>{canceledText}</CanceledTripMessage>
         )}
+        {closed && (
+          <ClosedStopMessage>
+            {
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages["otpUi.ItineraryBody.stopIsClosed"]
+                }
+                description="Denotes a closed stop in the itinerary body"
+                id="otpUi.ItineraryBody.stopIsClosed"
+              />
+            }
+          </ClosedStopMessage>
+        )}
       </S.PlaceHeader>
-      <S.TimeColumn strikethrough={canceled}>
+      <S.TimeColumn strikethrough={canceled || closed}>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
         <TimeColumnContent isDestination={isDestination} leg={leg} />
         {!isDestination &&

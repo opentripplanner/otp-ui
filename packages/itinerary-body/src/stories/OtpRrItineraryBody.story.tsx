@@ -146,9 +146,9 @@ export const WalkTransitWalkItineraryCanceled = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkCanceledItinerary} />
 );
 
-export const WalkTransitWalkItineraryClosedStop = (): ReactElement => (
+export const WalkTransitWalkItineraryClosedStops = (): ReactElement => (
   <OtpRRItineraryBodyWrapper
-    closedStopIds={new Set(["TriMet:8384"])}
+    closedStopIds={new Set(["TriMet:8383", "TriMet:8384", "TriMet:9757"])}
     itinerary={walkTransitWalkItinerary}
   />
 );

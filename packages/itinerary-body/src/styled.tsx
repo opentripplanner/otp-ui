@@ -511,7 +511,7 @@ export const PlaceHeader = styled.div`
   grid-column-start: 3;
 `;
 
-export const PlaceName = styled.span<{ strikethrough?: boolean }>`
+export const PlaceName = styled.span`
   /* text styling */
   font-size: inherit;
   font-weight: bold;
@@ -520,9 +520,14 @@ export const PlaceName = styled.span<{ strikethrough?: boolean }>`
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  text-decoration: ${props => (props.strikethrough ? "line-through" : "")};
-  flex: ${props => (props.strikethrough ? "" : "1 1 auto")};
+  flex: 1 1 auto;
   padding: 3px 0 10px 0;
+`;
+
+export const ClosedOrCanceledPlaceName = styled(PlaceName)`
+  color: ${red[700]};
+  flex: none;
+  text-decoration: line-through;
 `;
 
 export const PlaceSubheader = styled.div`
