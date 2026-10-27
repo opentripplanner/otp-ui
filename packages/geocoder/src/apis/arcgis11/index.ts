@@ -159,23 +159,28 @@ export function autocomplete({
   text?: string;
 }): Promise<{ features: Array<SuggestOption>; query: { text: string } }> {
   const geocoder: GeocoderArcGIS = getGeocoder(clientId, clientSecret, url);
-  const options: { location?: string; searchExtent?: string } = {};
+  const options: {
+    location?: string;
+    searchExtent?: string;
+    outFields?: string;
+    outSR?: string;
+  } = {};
+  options.outFields = "*";
+  // "regular" coordinates
+  options.outSR = "4326";
 
   if (focusPoint) {
     options.location = toString(focusPoint);
   }
 
-  if (boundary) {
-    options.searchExtent = boundaryToSearchExtent(boundary);
-  }
-
   // make request to arcgis
   return geocoder
-    .suggest(text, options)
-    .then((response: { suggestions: SuggestOption[] }) => {
+    .findAddressCandidates(text, options)
+    .then((response: { candidates: Candidate[] }) => {
       // translate response
+      // ArcGIS returns only a single response for reverse geocoding
       return {
-        features: response.suggestions,
+        features: response.candidates.map(candidateToGeojson),
         query: {
           text
         }

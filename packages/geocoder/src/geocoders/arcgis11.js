@@ -78,26 +78,6 @@ export default class ArcGISGeocoder extends Geocoder {
   }
 
   /**
-   * Rewrite an autocomplete response into an application specific data format.
-   * Also, filter out any results that are collections.
-   */
-  rewriteAutocompleteResponse(response) {
-    return {
-      // remove any autocomplete results that are collections
-      // (eg multiple Starbucks)
-      features: response.features
-        .filter(feature => !feature.isCollection)
-        // add label property so location-field can handle things ok
-        .map(feature => ({
-          ...feature,
-          properties: {
-            label: feature.text
-          }
-        }))
-    };
-  }
-
-  /**
    * Rewrite the response into an application-specific data format using the
    * first feature returned from the geocoder.
    */
