@@ -1,0 +1,16 @@
+# @opentripplanner/transitive-overlay
+
+## 8.0.0
+
+### Minor Changes
+
+- [#989](https://github.com/opentripplanner/otp-ui/pull/989) [`1bf54c7`](https://github.com/opentripplanner/otp-ui/commit/1bf54c7bc44a5054232507bc2713870214d445fe) Thanks [@miles-grant-ibigroup](https://github.com/miles-grant-ibigroup)! - avoid crash on non-string font name
+
+* [#1004](https://github.com/opentripplanner/otp-ui/pull/1004) [`43f92f7`](https://github.com/opentripplanner/otp-ui/commit/43f92f73127845172a50b3064391d392035f5cc0) Thanks [@alec-georgoff](https://github.com/alec-georgoff)! - Include trip short name in route name display when present.
+
+### Patch Changes
+
+- Updated dependencies [[`dbcbbae`](https://github.com/opentripplanner/otp-ui/commit/dbcbbae304185b855f6e985939eb3b1faffdf89c), [`4347fa1`](https://github.com/opentripplanner/otp-ui/commit/4347fa18fb553ba4a11fbae41b2b8a7353a0eac7), [`712aeb3`](https://github.com/opentripplanner/otp-ui/commit/712aeb359564c7e0bb955b2323d625a517bbd67a), [`43f92f7`](https://github.com/opentripplanner/otp-ui/commit/43f92f73127845172a50b3064391d392035f5cc0), [`29f8a4e`](https://github.com/opentripplanner/otp-ui/commit/29f8a4e31a050a260348527c70dab4dda4ffd2f2), [`c4159ab`](https://github.com/opentripplanner/otp-ui/commit/c4159ab1ef6d49f4f53edb04ad90be3437263774), [`22b439a`](https://github.com/opentripplanner/otp-ui/commit/22b439aba8b725590ad730c8b69da9095891a13f), [`9a1b1d9`](https://github.com/opentripplanner/otp-ui/commit/9a1b1d975400f72dbd9c293179faca61b0d5ff7c)]:
+  - @opentripplanner/core-utils@17.0.0
+  - @opentripplanner/itinerary-body@9.10.0
+  - @opentripplanner/base-map@8.0.0
