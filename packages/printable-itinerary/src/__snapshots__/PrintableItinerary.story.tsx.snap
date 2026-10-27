@@ -4848,23 +4848,23 @@ exports[`PrintableItinerary WalkTransitWalkItineraryTripShortName smoke-test 1`]
       </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kqHbQt">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 gLXdCk">
             Head northwest on
-            <span class="styled__StepStreetName-sc-1q8npbl-72 iJrUDA">
+            <span class="styled__StepStreetName-sc-1q8npbl-73 kPpVSF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-73 cCaIgd">
+            <span class="styled__StepLength-sc-1q8npbl-74 iVsNRq">
               167 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kqHbQt">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 gLXdCk">
             Left on
-            <span class="styled__StepStreetName-sc-1q8npbl-72 iJrUDA">
+            <span class="styled__StepStreetName-sc-1q8npbl-73 kPpVSF">
               Pioneer Sq N (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-73 cCaIgd">
+            <span class="styled__StepLength-sc-1q8npbl-74 iVsNRq">
               101 feet
             </span>
           </span>
@@ -4940,45 +4940,45 @@ exports[`PrintableItinerary WalkTransitWalkItineraryTripShortName smoke-test 1`]
       </h2>
       <div class="styled__LegDetails-sc-1fqxr7x-4 zBmoA">
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kqHbQt">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 gLXdCk">
             Head west on
-            <span class="styled__StepStreetName-sc-1q8npbl-72 iJrUDA">
+            <span class="styled__StepStreetName-sc-1q8npbl-73 kPpVSF">
               Providence Park (path)
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-73 cCaIgd">
+            <span class="styled__StepLength-sc-1q8npbl-74 iVsNRq">
               19 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kqHbQt">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 gLXdCk">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-72 iJrUDA">
+            <span class="styled__StepStreetName-sc-1q8npbl-73 kPpVSF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-73 cCaIgd">
+            <span class="styled__StepLength-sc-1q8npbl-74 iVsNRq">
               104 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kqHbQt">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 gLXdCk">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-72 iJrUDA">
+            <span class="styled__StepStreetName-sc-1q8npbl-73 kPpVSF">
               Unnamed Path
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-73 cCaIgd">
+            <span class="styled__StepLength-sc-1q8npbl-74 iVsNRq">
               27 feet
             </span>
           </span>
         </div>
         <div class="styled__LegDetail-sc-1fqxr7x-3 evLizd">
-          <span class="styled__AccessLegStep-sc-1fqxr7x-8 kqHbQt">
+          <span class="styled__AccessLegStep-sc-1fqxr7x-8 gLXdCk">
             Right on
-            <span class="styled__StepStreetName-sc-1q8npbl-72 iJrUDA">
+            <span class="styled__StepStreetName-sc-1q8npbl-73 kPpVSF">
               SW Morrison St
             </span>
-            <span class="styled__StepLength-sc-1q8npbl-73 cCaIgd">
+            <span class="styled__StepLength-sc-1q8npbl-74 iVsNRq">
               99 feet
             </span>
           </span>
