@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 
+import { Leg } from "@opentripplanner/types";
 import AccessibilityRating from "./accessibility-rating";
 import PlaceRow from "./place-row";
 import * as S from "../styled";
@@ -17,6 +18,7 @@ const ItineraryBody = ({
   AlertToggleIcon,
   alwaysCollapseAlerts = false,
   className,
+  closedStopIds,
   config,
   defaultFareSelector,
   diagramVisible,
@@ -52,15 +54,15 @@ const ItineraryBody = ({
     trigger a rerender of this component itinerary is also another criteria
     that is used to trigger a rerender but has more reuse than companies here
   */
-  const rows = [];
+  const rows: ReactElement[] = [];
   let followsTransit = false;
-  let lastLeg;
-  let nextLeg;
+  let lastLeg: Leg | undefined;
+  let nextLeg: Leg | undefined;
   itinerary.legs.forEach((leg, i) => {
     const isLastLeg = i === itinerary.legs.length - 1;
     nextLeg = isLastLeg ? undefined : itinerary.legs[i + 1];
 
-    function createPlaceRow(isDestination) {
+    function createPlaceRow(isDestination: boolean) {
       // Create a row containing this leg's start place and leg traversal details
       rows.push(
         <PlaceRow
@@ -71,6 +73,7 @@ const ItineraryBody = ({
           // eslint-disable-next-line react/no-array-index-key
           key={i + (isDestination ? 1 : 0)}
           canceled={leg.realtimeState === "CANCELED"}
+          closedStopIds={closedStopIds}
           config={config}
           defaultFareSelector={defaultFareSelector}
           diagramVisible={diagramVisible}

@@ -1,12 +1,14 @@
 import * as arcgis from "@conveyal/geocoder-arcgis-geojson";
 import * as pelias from "isomorphic-mapzen-search";
 import memoize from "lodash.memoize";
+import * as arcgis11 from "./apis/arcgis11"
 import * as here from "./apis/here";
 import * as photon from "./apis/photon";
 import * as otp from "./apis/otp";
 import * as offline from "./apis/offline";
 
 import ArcGISGeocoder from "./geocoders/arcgis";
+import ArcGIS11Geocoder from "./geocoders/arcgis11";
 import NoApiGeocoder from "./geocoders/noapi";
 import PeliasGeocoder from "./geocoders/pelias";
 import HereGeocoder from "./geocoders/here";
@@ -27,6 +29,8 @@ const getGeocoder = memoize((geocoderConfig: GeocoderConfig & { type: string }) 
   switch (type) {
     case "ARCGIS":
       return new ArcGISGeocoder(arcgis, geocoderConfig);
+    case "ARCGIS-11":
+      return new ArcGIS11Geocoder(arcgis11, geocoderConfig);
     case "PELIAS":
       return new PeliasGeocoder(pelias, geocoderConfig);
     case "HERE":

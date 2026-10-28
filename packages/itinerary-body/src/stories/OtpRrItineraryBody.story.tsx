@@ -1,7 +1,6 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { FareProductSelector, Itinerary } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
-import clone from "lodash.clonedeep";
 
 import { Meta } from "@storybook/react";
 import ItineraryBody from "..";
@@ -32,6 +31,8 @@ import tncTransitTncItinerary from "../__mocks__/itineraries/tnc-transit-tnc.jso
 import walkInterlinedTransitItinerary from "../__mocks__/itineraries/walk-interlined-transit-walk.json";
 import walkOnlyItinerary from "../__mocks__/itineraries/walk-only.json";
 import walkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkTripShortNameItinerary from "../__mocks__/itineraries/walk-transit-walk-trip-short-name.json";
+import walkTransitWalkCanceledItinerary from "../__mocks__/itineraries/walk-transit-walk-canceled.json";
 import walkTransitWalkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk-transit-walk.json";
 import walkTransitWalkTransitWalkA11yItinerary from "../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json";
 import stayOnBoardItinerary from "../__mocks__/itineraries/stay-on-board.json";
@@ -42,7 +43,7 @@ import transferLegItinerary from "../__mocks__/itineraries/otp2-transfer-leg.jso
 
 const { convertGraphQLResponseToLegacy } = coreUtils.itinerary;
 
-function withLegacyLegs(itinerary) {
+function withLegacyLegs(itinerary: Itinerary) {
   return {
     ...itinerary,
     legs: itinerary.legs.map(convertGraphQLResponseToLegacy)
@@ -63,6 +64,7 @@ if (!isTestRunner()) {
 
 interface StoryWrapperProps {
   alwaysCollapseAlerts?: boolean;
+  closedStopIds?: Set<string>;
   defaultFareSelector?: FareProductSelector;
   hideDrivingDirections?: boolean;
   itinerary: Itinerary;
@@ -74,6 +76,7 @@ interface StoryWrapperProps {
 
 function OtpRRItineraryBodyWrapper({
   alwaysCollapseAlerts,
+  closedStopIds,
   defaultFareSelector,
   hideDrivingDirections = false,
   itinerary,
@@ -85,6 +88,7 @@ function OtpRRItineraryBodyWrapper({
   return (
     <ItineraryBodyDefaultsWrapper
       alwaysCollapseAlerts={alwaysCollapseAlerts}
+      closedStopIds={closedStopIds}
       defaultFareSelector={defaultFareSelector}
       hideDrivingDirections={hideDrivingDirections}
       itinerary={itinerary}
@@ -132,13 +136,21 @@ export const WalkTransitWalkItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItinerary} />
 );
 
-const walkTransitWalkItineraryCanceled = clone(walkTransitWalkItinerary);
-walkTransitWalkItineraryCanceled.legs.forEach(leg => {
-  if (leg.transitLeg) leg.realtimeState = "CANCELED";
-});
+export const WalkTransitWalkItineraryTripShortName = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkTripShortNameItinerary}
+  />
+);
 
 export const WalkTransitWalkItineraryCanceled = (): ReactElement => (
-  <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItineraryCanceled} />
+  <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkCanceledItinerary} />
+);
+
+export const WalkTransitWalkItineraryClosedStops = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    closedStopIds={new Set(["TriMet:8383", "TriMet:8384", "TriMet:9757"])}
+    itinerary={walkTransitWalkItinerary}
+  />
 );
 
 export const WalkTransitWalkItineraryMetric = (): ReactElement => (

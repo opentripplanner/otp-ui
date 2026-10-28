@@ -18,8 +18,7 @@ otpUi:
       bookRide: Đặt trước một chuyến đi
       bookRideLater: Chờ cho đến {timeMillis, time, short} để đặt chỗ
       estimatedCost: "Chi phí ước tính: {minFare} - {maxFare}"
-      estimatedTravelTime: "Thời gian di chuyển ước tính: {duration} (không tính đến
-        giao thông)"
+      estimatedTravelTime: "Thời gian di chuyển ước tính: {duration} (không tính đến giao thông)"
       waitForPickup: "Chờ{minutes, plural, =0 {} other { # phút}} cho {company} đón"
     mapillaryTooltip: Hiển thị hình ảnh đường phố tại vị trí này
     step:
@@ -59,6 +58,7 @@ otpUi:
       carHail: Ngồi trên xe
       escooter: Đi xe tay ga điện
       walk: Đi bộ
+    transfer: Chuyển{duration, select, undefined {} other {, đợi {duration}}}
     unnamedPath: Con đường không tên
     unnamedRoad: Con đường không tên
     vehicleTitle: "{vehicleType} {company}"
@@ -68,16 +68,16 @@ otpUi:
       car: Xe hơi
       escooter: Xe tay ga điện
       vehicle: Xe
-    transfer: Chuyển{duration, select, undefined {} other {, đợi {duration}}}
   ItineraryBody:
+    bookRide: Đặt trước một chuyến đi
     common:
       durationShort: >-
         {approximatePrefix, select, true {Khoảng } other {}}{hours, plural, =0
         {} other {# giờ }}{minutes} phút
+    externalLink: (Liên kết bên ngoài)
     flexAdvanceNotice: " ít nhất trước {leadDays} ngày"
-    flexCallAhead: gọi điện trước khi đi
-    flexCallNumber: gọi {phoneNumber}
-    flexPickupMessage: Để đi tuyến đường này, bạn phải {action}{advanceNotice}.
+    flexBookByPhone: "Đặt chỗ qua điện thoại: "
+    flexPickupMessage: Bạn phải đặt chỗ trước{advanceNotice}
     stayOnBoard: Ở trên xe tại {place}
     travelBy: Di chuyển {mode}
     travelByMode:
@@ -87,22 +87,21 @@ otpUi:
       walk: bằng cách đi bộ
     tripAccessibility:
       inaccessible: không thể tiếp cận
-      itineraryAccessibility: "Khả năng tiếp cận của xe lăn trong chuyến đi này: "
-      legAccessibility: "Khả năng tiếp cận của xe lăn trong đoạn này của chuyến đi: "
+      itineraryAccessibility: "Khả năng tiếp cận của xe lăn trong chuyến đi này:\_"
+      legAccessibility: "Khả năng tiếp cận của xe lăn trong đoạn này của chuyến đi:\_"
       likelyAccessible: có thể tiếp cận
       unclear: không rõ
     viewOnMap: Xem trên bản đồ
   TransitLegBody:
     AlertsBody:
+      alertLinkText: Xem cảnh báo trên trang web {agency}
       effectiveDate: Có hiệu lực kể từ {dateTime, date, long}
       effectiveTimeAndDate: Có hiệu lực kể từ {dateTime, time, short}, {day}
+      linkOpensNewWindow: (Mở cửa sổ mới)
+      noAgencyAlertLinkText: Xem cảnh báo trên trang web cơ quan
       today: Hôm nay
       tomorrow: Ngày mai
       yesterday: Hôm qua
-      alertLinkText: Xem cảnh báo trên trang web {agency}
-      linkOpensNewWindow: (Mở cửa sổ mới)
-      noAgencyAlertLinkText: Xem cảnh báo trên trang web cơ quan
-    agencyExternalLink: "{agencyName} (Liên kết bên ngoài)"
     alertsHeader: "{alertCount} cảnh báo"
     arriveAt: Đến {place}
     disembarkAt: Xuống xe ở {legDestination}
@@ -112,8 +111,7 @@ otpUi:
     legDetails: Chi tiết sân khấu
     operatedBy: Dịch vụ được điều hành bởi {agencyLink}
     ride: Đi đường
-    rideDurationAndStops: "Đi {duration}{numStops, plural, =1 {} other { / # điểm
-      dừng}}"
+    rideDurationAndStops: "Đi {duration}{numStops, plural, =1 {} other { / # điểm dừng}}"
     routeDescription: "{routeName} <toPrefix>hướng</toPrefix> {headsign}"
     stopId: Điểm dừng số {stopId}
     stopIdBasic: Điểm dừng số {stopId}

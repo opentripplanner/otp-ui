@@ -20,7 +20,7 @@ export default function VehicleTooltip({
 
   let name: JSX.Element = <>{routeName}</>;
   // This condition avoids processing long route names such as "Portland Streetcar".
-  if (routeName?.length <= 5) {
+  if (routeName && routeName.length <= 5) {
     // This produces text such as "MAX Green", "BUS 157",
     // or "Line A" if no routeType is provided.
     name = (

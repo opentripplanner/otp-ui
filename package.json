@@ -6,13 +6,6 @@
     "node": ">=12",
     "pnpm": ">=8"
   },
-  "devEngines": {
-    "packageManager": {
-      "name": "pnpm",
-      "version": "11.5.1",
-      "onFail": "download"
-    }
-  },
   "devDependencies": {
     "@anolilab/semantic-release-pnpm": "^5.0.0",
     "@babel/cli": "^7.10",
@@ -75,11 +68,12 @@
     "jest-file-loader": "^1.0.3",
     "jest-haste-map": "^30.2.0",
     "jest-resolve": "^30.2.0",
+    "jest-transform-yaml": "1.2.0",
     "js-yaml": "^4.1.0",
     "json-loader": "^0.5.7",
     "lerna": "^8.1.9",
     "lint-staged": "^8.2.0",
-    "maplibre-gl": "5.6.1",
+    "maplibre-gl": "5.16.0",
     "msw": "^2.3.1",
     "nock": "^14.0.5",
     "playwright": "^1.59.1",
@@ -107,7 +101,6 @@
     "vite": "7.0.2",
     "vite-plugin-graphql-loader": "^4.0.4",
     "wait-on": "^9.0.5",
-    "yaml-jest": "^1.2.0",
     "yaml-loader": "^0.8.1",
     "yaml-sort": "^2.0.0"
   },
@@ -134,7 +127,7 @@
     "typescript": "lerna run tsc",
     "unit": "jest",
     "test-storybook": "test-storybook --url http://localhost:5555",
-    "update-snapshots": "pnpm build-storybook; pnpx concurrently -k -s first -n \"SB,TEST\" \"pnpx http-server storybook-static --port 5555 --silent\" \"pnpx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555 -u\"",
+    "update-snapshots": "pnpm build-all && pnpm install && pnpm build-storybook; pnpx concurrently -k -s first -n \"SB,TEST\" \"pnpx http-server storybook-static --port 5555 --silent\" \"pnpx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555 -u\"",
     "test-snapshots": "pnpx concurrently -k -s first -n \"SB,TEST\" \"pnpx http-server storybook-static --port 5555 --silent\" \"pnpx wait-on tcp:5555 && pnpm test-storybook --url http://localhost:5555\"",
     "changeset": "changeset",
     "changeset:status": "changeset status",
@@ -299,5 +292,6 @@
   "dependencies": {
     "@storybook/icons": "^1.6.0",
     "@styled-icons/styled-icon": "catalog:"
-  }
+  },
+  "packageManager": "pnpm@11.5.1"
 }

@@ -58,6 +58,7 @@ otpUi:
       carHail: 타다
       escooter: 타다
       walk: 걷기
+    transfer: 환승{duration, select, undefined {} other {, 대기 {duration}}}
     unnamedPath: 이름 없는 경로
     unnamedRoad: 이름 없는 길
     vehicleTitle: "{company} {vehicleType}"
@@ -67,16 +68,16 @@ otpUi:
       car: 자동차
       escooter: 전기 스쿠터
       vehicle: 차량
-    transfer: 환승{duration, select, undefined {} other {, 대기 {duration}}}
   ItineraryBody:
+    bookRide: 승차 예약
     common:
       durationShort: >-
         {approximatePrefix, select, true {약 } other {}}{hours, plural, =0 {}
         other {# 시간 }}{minutes} 분
+    externalLink: (외부 링크)
     flexAdvanceNotice: " 최소 {leadDays}일 전에"
-    flexCallAhead: 미리 전화
-    flexCallNumber: "{phoneNumber}에 전화"
-    flexPickupMessage: 이 경로를 이용하려면 {advanceNotice}{action}야 합니다.
+    flexBookByPhone: "전화로 예약하기: "
+    flexPickupMessage: 이 경로를 이용하려면 {advanceNotice}미리 전화야 합니다
     stayOnBoard: "{place}에서는 그대로 타고 계십시오"
     travelBy: "{mode} 여행하다"
     travelByMode:
@@ -86,22 +87,21 @@ otpUi:
       walk: 걸어서
     tripAccessibility:
       inaccessible: 액세스 불가
-      itineraryAccessibility: "이 이동편의 휠체어 액세스 가능 여부: "
-      legAccessibility: "이 이동편 구간의 휠체어 액세스 가능 여부: "
+      itineraryAccessibility: "이 이동편의 휠체어 액세스 가능 여부:\_"
+      legAccessibility: "이 이동편 구간의 휠체어 액세스 가능 여부:\_"
       likelyAccessible: 액세스 가능 확률 높음
       unclear: 알 수 없음
     viewOnMap: 지도 보기
   TransitLegBody:
     AlertsBody:
+      alertLinkText: "{agency} 웹사이트에서 알림 확인"
       effectiveDate: "{dateTime, date, long}자로 유효"
       effectiveTimeAndDate: "{day} {dateTime, time, short}자로 유효"
+      linkOpensNewWindow: (새 창 열림)
+      noAgencyAlertLinkText: 기관 웹사이트에서 알림 확인
       today: 오늘
       tomorrow: 내일
       yesterday: 어제
-      linkOpensNewWindow: (새 창 열림)
-      alertLinkText: '{agency} 웹사이트에서 알림 확인'
-      noAgencyAlertLinkText: 기관 웹사이트에서 알림 확인
-    agencyExternalLink: "{agencyName} (외부 링크)"
     alertsHeader: "{alertCount}개의 알림"
     arriveAt: "{place} 시장에 도착하다"
     disembarkAt: "{legDestination} 에서 하차"
