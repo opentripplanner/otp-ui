@@ -5,6 +5,7 @@ import type {
   Itinerary, 
   Leg, 
   MassUnitOption,
+  MediumRiderWhitelist,
   Money
  } from "@opentripplanner/types";
 
@@ -59,6 +60,10 @@ export interface TripDetailsProps {
    * Itinerary that the user has selected to view, contains multiple legs.
    */
   itinerary: Itinerary;
+  /**
+   * A whitelist of medium-rider pairs to be shown. All others will be hidden.
+   */
+  mediumRiderWhitelist: MediumRiderWhitelist;
   /**
    * show the '~' symbol in the trip details panel
    */
