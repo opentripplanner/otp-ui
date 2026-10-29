@@ -1,6 +1,6 @@
 import { FilterSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
-import React, { RefObject, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Layer, MapRef, Source, useMap } from "react-map-gl/maplibre";
 import polyline from "@mapbox/polyline";
 import {
@@ -25,7 +25,6 @@ import {
   drawArc,
   getFromToAnchors,
   itineraryToTransitive,
-  getFontsFromVectorTiles,
   SortedFonts
 } from "./util";
 import routeArrow from "./images/route_arrow.png";
@@ -112,54 +111,6 @@ const defaultTextPaintParams = {
 const DEFAULT_REGULAR_FONTS = ["Open Sans Regular", "Arial Unicode MS Regular"];
 const DEFAULT_BOLD_FONTS = ["Open Sans Bold", "Arial Unicode MS Bold"];
 
-/**
- * Common text settings.
- */
-const commonTextLayoutParams = (
-  vectorTileFonts?: SortedFonts
-): SymbolLayerSpecification["layout"] => {
-  return {
-    "symbol-placement": "point",
-    "text-allow-overlap": false,
-    "text-field": ["get", "name"],
-    "text-justify": "auto",
-    "text-radial-offset": 1,
-    "text-size": 15,
-    "text-font": vectorTileFonts?.regular || DEFAULT_REGULAR_FONTS
-  };
-};
-
-/**
- * Text size and layout that lets maplibre relocate text space permitting.
- */
-const defaultTextLayoutParams: SymbolLayerSpecification["layout"] = {
-  ...commonTextLayoutParams,
-  "text-variable-anchor": [
-    "left",
-    "right",
-    "top",
-    "bottom",
-    "top-left",
-    "top-right",
-    "bottom-left",
-    "bottom-right"
-  ]
-};
-
-/**
- * Default text + bold default fonts
- */
-const defaultBoldTextLayoutParams = (
-  boldFonts?: string[]
-): SymbolLayerSpecification["layout"] => {
-  return {
-    ...commonTextLayoutParams,
-    // FIXME: find a better way to set a bold font
-    "text-font": boldFonts,
-    "text-overlap": "never"
-  };
-};
-
 const routeFilter: FilterSpecification = ["==", "type", "route"];
 const stopFilter: FilterSpecification = ["==", "type", "stop"];
 const accessLegFilter: FilterSpecification = [
@@ -171,11 +122,10 @@ const accessLegFilter: FilterSpecification = [
 ];
 
 type Props = {
-  activeLeg?: Leg;
   accessLegColorOverride?: string;
+  activeLeg?: Leg;
   boundsFitting?: boolean;
-  /* Reference to the map you're rendering the transitive layer onto */
-  mapRef?: RefObject<MapRef>;
+  fontOverride?: SortedFonts;
   showRouteArrows?: boolean;
   transitiveData?: TransitiveData;
 };
@@ -206,24 +156,12 @@ const loadImages = (map: MapRef, images: MapImage[]) => {
 const TransitiveCanvasOverlay = ({
   activeLeg,
   accessLegColorOverride,
+  fontOverride,
   boundsFitting = true,
-  mapRef,
   showRouteArrows,
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
-  const [mapLoaded, setMapLoaded] = useState(false);
-  const [vectorTileFonts, setVectorTileFonts] = useState<
-    SortedFonts | undefined
-  >(undefined);
-
-  mapRef?.current?.on("load", () => setMapLoaded(true));
-
-  useEffect(() => {
-    const fonts =
-      mapRef?.current && mapLoaded && getFontsFromVectorTiles(mapRef?.current);
-    setVectorTileFonts(fonts || undefined);
-  }, [map, mapLoaded]);
 
   const mapImages: MapImage[] = [];
   // This is used to render arrows along the route
@@ -430,14 +368,50 @@ const TransitiveCanvasOverlay = ({
     zoomToGeoJSON(polyline.toGeoJSON(activeLeg.legGeometry.points));
   }, [activeLeg]);
 
-  if (!transitiveData) return <></>;
+  const { fromAnchor, toAnchor } = transitiveData
+    ? getFromToAnchors(transitiveData)
+    : {};
 
-  const { fromAnchor, toAnchor } = getFromToAnchors(transitiveData);
+  const boldFonts = fontOverride?.bold || DEFAULT_BOLD_FONTS;
 
-  const boldFonts =
-    vectorTileFonts?.bold.length && vectorTileFonts?.bold.length > 0
-      ? vectorTileFonts.bold
-      : DEFAULT_BOLD_FONTS;
+  /**
+   * Common text settings.
+   */
+  const commonTextLayoutParams: SymbolLayerSpecification["layout"] = {
+    "symbol-placement": "point",
+    "text-allow-overlap": false,
+    "text-field": ["get", "name"],
+    "text-justify": "auto",
+    "text-radial-offset": 1,
+    "text-size": 15,
+    "text-font": fontOverride?.regular || DEFAULT_REGULAR_FONTS
+  };
+
+  /**
+   * Default text + bold default fonts
+   */
+  const defaultBoldTextLayoutParams: SymbolLayerSpecification["layout"] = {
+    ...commonTextLayoutParams,
+    "text-font": boldFonts,
+    "text-overlap": "never"
+  };
+
+  /**
+   * Text size and layout that lets maplibre relocate text space permitting.
+   */
+  const defaultTextLayoutParams: SymbolLayerSpecification["layout"] = {
+    ...commonTextLayoutParams,
+    "text-variable-anchor": [
+      "left",
+      "right",
+      "top",
+      "bottom",
+      "top-left",
+      "top-right",
+      "bottom-left",
+      "bottom-right"
+    ]
+  };
 
   // Generally speaking, text/symbol layers placed first will be rendered in a lower layer
   // (or, if it is text, rendered with a lower priority or not at all if higher-priority text overlaps).
@@ -573,7 +547,7 @@ const TransitiveCanvasOverlay = ({
         filter={["==", "type", "from"]}
         id="from-label"
         layout={{
-          ...defaultBoldTextLayoutParams(boldFonts),
+          ...defaultBoldTextLayoutParams,
           "text-anchor": fromAnchor
         }}
         paint={defaultTextPaintParams}
