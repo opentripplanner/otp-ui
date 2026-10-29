@@ -1,10 +1,6 @@
-import {
-  FilterSpecification,
-  PositionAnchor,
-  SymbolLayerSpecification
-} from "maplibre-gl";
+import { FilterSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
-import React, { RefObject, useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Layer, MapRef, Source, useMap } from "react-map-gl/maplibre";
 import polyline from "@mapbox/polyline";
 import {
@@ -29,7 +25,6 @@ import {
   drawArc,
   getFromToAnchors,
   itineraryToTransitive,
-  getFontsFromVectorTiles,
   SortedFonts
 } from "./util";
 import routeArrow from "./images/route_arrow.png";
