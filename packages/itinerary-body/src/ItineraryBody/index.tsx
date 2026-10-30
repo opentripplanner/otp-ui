@@ -18,7 +18,6 @@ const ItineraryBody = ({
   AlertToggleIcon,
   alwaysCollapseAlerts = false,
   className,
-  closedStopIds,
   config,
   defaultFareSelector,
   diagramVisible,
@@ -58,6 +57,19 @@ const ItineraryBody = ({
   let followsTransit = false;
   let lastLeg: Leg | undefined;
   let nextLeg: Leg | undefined;
+
+  const closedStopsForItinerary = new Set<string>();
+
+  itinerary.legs.forEach(leg => {
+    leg.alerts
+      ?.filter(a => a.alertEffect === "NO_SERVICE")
+      .forEach(a => {
+        a.entities?.forEach(e => {
+          if (e.stop?.gtfsId) closedStopsForItinerary.add(e.stop.gtfsId);
+        });
+      });
+  });
+
   itinerary.legs.forEach((leg, i) => {
     const isLastLeg = i === itinerary.legs.length - 1;
     nextLeg = isLastLeg ? undefined : itinerary.legs[i + 1];
@@ -73,7 +85,7 @@ const ItineraryBody = ({
           // eslint-disable-next-line react/no-array-index-key
           key={i + (isDestination ? 1 : 0)}
           canceled={leg.realtimeState === "CANCELED"}
-          closedStopIds={closedStopIds}
+          closedStopIds={closedStopsForItinerary}
           config={config}
           defaultFareSelector={defaultFareSelector}
           diagramVisible={diagramVisible}
