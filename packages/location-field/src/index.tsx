@@ -1105,7 +1105,7 @@ const LocationField = ({
       "Text to show as a a11y label for the button that opens the dropdown list of locations",
     id: "otpUi.LocationField.suggestedLocationsLong"
   });
-  const toggleAriaLabel = showStatusDescription
+  const toggleAriaLabel = (showStatusDescription
     ? intl.formatMessage(
         {
           defaultMessage: "{toggleLabel}. {statusAnnouncementText}",
@@ -1118,28 +1118,27 @@ const LocationField = ({
           statusAnnouncementText
         }
       )
-    : suggestedLocationsToggleLabel;
+    : suggestedLocationsToggleLabel) as string;
 
   /** the text input element * */
   // Use this text for aria-label below if no user-provided label.
   const defaultPlaceholder =
     inputPlaceholder || (customLabelInputId ? undefined : locationType);
   const ariaLabel = customLabelInputId ? undefined : defaultPlaceholder;
-  const comboboxAriaLabel =
-    showStatusDescription && ariaLabel
-      ? intl.formatMessage(
-          {
-            defaultMessage: "{inputLabel}. {statusAnnouncementText}",
-            description:
-              "Accessible label for the location text input, including its current status",
-            id: "otpUi.LocationField.inputWithStatus"
-          },
-          {
-            inputLabel: ariaLabel,
-            statusAnnouncementText
-          }
-        )
-      : ariaLabel;
+  const comboboxAriaLabel = (showStatusDescription && ariaLabel
+    ? intl.formatMessage(
+        {
+          defaultMessage: "{inputLabel}. {statusAnnouncementText}",
+          description:
+            "Accessible label for the location text input, including its current status",
+          id: "otpUi.LocationField.inputWithStatus"
+        },
+        {
+          inputLabel: ariaLabel,
+          statusAnnouncementText
+        }
+      )
+    : ariaLabel) as string | undefined;
   const placeholder =
     currentPosition && currentPosition.fetching
       ? intl.formatMessage({ id: "otpUi.LocationField.fetchingLocation" })
