@@ -1081,7 +1081,14 @@ const LocationField = ({
   const showMenuList = isStatic || menuItems.length > 0;
   const listBoxControls = showMenuList ? listBoxId : undefined;
 
-  const statusAnnouncementText = statusMessages.filter(Boolean).join(". ");
+  // Same strings as FormattedList in the live region; formatList avoids join(". ") for RTL locales.
+  const statusAnnouncementText =
+    statusMessages.length > 0
+      ? intl.formatList(statusMessages, {
+          style: "narrow",
+          type: "conjunction"
+        })
+      : "";
 
   // Assertive status when the menu is open but has no selectable options.
   const hasStatusOnlyMenu =

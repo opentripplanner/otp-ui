@@ -10,7 +10,6 @@ otpUi:
     howToAccessResults: >-
       முடிவுகள் பட்டியலை உலவ பேரூர் அம்பு விசையைப் பயன்படுத்தவும். ஒரு முடிவைத்
       தேர்ந்தெடுக்க, ENTER விசையைப் பயன்படுத்தவும்.
-    inputWithStatus: "{inputLabel}. {statusAnnouncementText}"
     myPlaces: என் இடங்கள்
     nearby: அருகிலுள்ள நிறுத்தங்கள்
     noResults: முடிவுகள் இல்லை
@@ -25,6 +24,5 @@ otpUi:
     stops: நிறுத்தங்கள்
     suggestedLocations: பரிந்துரைக்கப்பட்ட இடங்கள்
     suggestedLocationsLong: பரிந்துரைக்கப்பட்ட இடங்களின் பட்டியலைக் காண்பிப்பதை மாற்றவும்
-    suggestedLocationsWithStatus: "{toggleLabel}. {statusAnnouncementText}"
     useCurrentLocation: தற்போதைய இருப்பிடத்தைப் பயன்படுத்தவும்
     workLocation: வேலை
