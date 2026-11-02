@@ -34,8 +34,4 @@ otpUi:
     bikeOnly: Solo bicicleta
     escooterOnly: Solo scooters eléctricos
     takeTransit: Tomar tránsito
-    travelPreferences: Preferencias de viaje
-    use: Usar
-    useCompanies: Usar las empresas
     walkOnly: Solo caminar
-  
