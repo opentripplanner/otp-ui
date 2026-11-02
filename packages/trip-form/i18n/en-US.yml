@@ -36,40 +36,4 @@ otpUi:
     bikeOnly: Bike Only
     escooterOnly: E-scooter Only
     takeTransit: Take Transit
-    travelPreferences: Travel Preferences
-    use: Use
-    useCompanies: Use companies
     walkOnly: Walk Only
-  TripOptions:
-    openApp: Open app
-    transitOnly: Go by Transit
-  queryParameters:
-    bikeSpeed: Bicycle Speed
-    distanceInMiles: |
-      {centimiles, select, 
-        10 {1/10 mile}
-        25 {1/4 mile}
-        50 {1/2 mile}
-        75 {3/4 mile}
-        other {{miles, number, :: unit/mile unit-width-full-name}}
-      }
-    maxBikeDistance: Maximum Bike
-    maxBikeTime: Max Bike Time
-    maxEScooterDistance: Maximum E-scooter Distance
-    maxWalkDistance: Maximum Walk
-    maxWalkTime: Max Walk Time
-    optimizeBikeFlat: Flat Trip
-    optimizeBikeFriendly: Bike-Friendly Trip
-    optimizeBikeSpeed: Speed
-    optimizeFor: Optimize for
-    speedInMilesPerHour: "{mph} MPH"
-    walkReluctance: Walking Avoidance
-    walkReluctanceHigh: More Transit
-    walkReluctanceLow: More Walking
-    walkSpeed: Walk Speed
-    watts: E-scooter Power
-    watts125kidsHoverboard: Kid's hoverboard (6 mph)
-    watts1500powerfulEscooter: Powerful E-scooter (24 mph)
-    watts250entryLevelEscooter: Entry-level scooter (11 mph)
-    watts500robustEscooter: Robust E-scooter (18 mph)
-    wheelchair: Prefer Wheelchair Accessible Routes

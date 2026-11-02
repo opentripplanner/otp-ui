@@ -2,12 +2,8 @@ import * as Icons from "@opentripplanner/icons";
 import React, { ReactElement } from "react";
 import { action } from "storybook/actions";
 
-import commonModes from "./__mocks__/modes-en";
-import modeOptions from "./__mocks__/mode-options";
 import submodeOptions from "./__mocks__/submode-options";
 import trimet from "./__mocks__/trimet-styled";
-
-import { SettingsSelectorPanel } from "./styled";
 
 import * as Core from ".";
 
@@ -36,19 +32,6 @@ function makeStory(Component?: React.ElementType, args: StoryArgs) {
   return BoundComponent;
 }
 
-const GeneralSettingsTemplate = (args: StoryArgs) => (
-  <Core.GeneralSettingsPanel
-    onQueryParamChange={onQueryParamChange}
-    query={{
-      mode: args.mode,
-      otp2: args.otp2,
-      routingType: "ITINERARY"
-    }}
-    queryParamMessages={args.queryParamMessages}
-    supportedModes={commonModes}
-  />
-);
-
 export default {
   argTypes: {
     timeZone: {
@@ -56,7 +39,6 @@ export default {
       options: ["America/New_York", "America/Los_Angeles"]
     }
   },
-  component: SettingsSelectorPanel,
   decorators: [decorator],
   parameters: {
     // Hide all controls
@@ -68,38 +50,6 @@ export default {
   },
   title: "Trip Form Components"
 } as Meta;
-
-// Custom general settings messages.
-// You can customize as little or as much, depending on your needs
-// (Tweaking a message requires fewer entries, and providing translations requires more entries below).
-const queryParamMessages = {
-  maxWalkDistance: {
-    label: "Max Walk Distance In Meters (custom)",
-    options: [
-      {
-        text: "200 m (custom)",
-        value: 200
-      },
-      {
-        text: "500 m (custom)",
-        value: 500
-      }
-    ]
-  },
-  optimize: {
-    label: "Walk settings (custom)",
-    options: [
-      {
-        text: "Quickest trip (custom)",
-        value: "QUICK"
-      },
-      {
-        text: "Prefer fewer transfers (custom)",
-        value: "TRANSFERS"
-      }
-    ]
-  }
-};
 
 export const checkboxSelector = makeStory(Core.CheckboxSelector, {
   label: "Check me.",
@@ -162,35 +112,6 @@ export const dropdownSelector = makeStory(Core.DropdownSelector, {
   style: { display: "inline-block", width: "250px" },
   value: "Value2"
 });
-
-export const generalSettingsPanel = makeStory(GeneralSettingsTemplate, {
-  mode: "WALK,BUS,TRAM,SUBWAY"
-});
-
-export const generalSettingsPanelWithOtp2 = makeStory(GeneralSettingsTemplate, {
-  mode: "WALK,BUS,TRAM,SUBWAY",
-  otp2: true
-});
-// This error may be raised by us rendering two copies of each story.
-generalSettingsPanelWithOtp2.parameters = {
-  a11y: {
-    config: {
-      rules: [
-        { id: "duplicate-id-active", reviewOnFail: true },
-        { id: "duplicate-id-aria", reviewOnFail: true }
-      ]
-    }
-  }
-};
-
-export const generalSettingsPanelWithCustomMessages = makeStory(
-  GeneralSettingsTemplate,
-  {
-    mode: "WALK,BUS,TRAM,SUBWAY",
-    queryParamMessages
-  }
-);
-
 const Space = () => (
   <span
     style={{
@@ -235,11 +156,6 @@ export const modeButtons = (): ReactElement => (
     </div>
   </div>
 );
-
-export const modeSelector = (): ReactElement => (
-  <Core.ModeSelector modes={modeOptions} onChange={onChange} />
-);
-
 export const submodeSelector = makeStory(Core.SubmodeSelector, {
   inline: false,
   label: "Submodes:",
