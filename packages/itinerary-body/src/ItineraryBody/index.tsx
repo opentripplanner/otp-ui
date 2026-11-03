@@ -58,6 +58,10 @@ const ItineraryBody = ({
   let lastLeg: Leg | undefined;
   let nextLeg: Leg | undefined;
 
+  // Because the PlaceRow that is rendered for the alighting of at transit leg
+  // is tied to the subsequent walk leg, it won't have access to the relevant transit
+  // itinerary alerts. All of the closed stops for the entire itinerary are precompiled
+  // so the walk legs can accurately reflect closed stops as well.
   const closedStopsForItinerary = new Set<string>();
 
   itinerary.legs.forEach(leg => {
