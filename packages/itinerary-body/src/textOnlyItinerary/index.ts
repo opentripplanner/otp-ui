@@ -93,7 +93,7 @@ const convertLegToTextString = (
   // Transit leg description
   if (transitLeg) {
     const routeName =
-      getLegRouteName(leg) ||
+      getLegRouteName(leg, intl) ||
       // TODO: This should be handled by the coreutils func
       leg.routeLongName ||
       leg.routeShortName;

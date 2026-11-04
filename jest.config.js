@@ -38,7 +38,7 @@ module.exports = {
   ],
   transform: {
     "\\.[jt]sx?$": "babel-jest",
-    "\\.ya?ml$": "yaml-jest",
+    "\\.ya?ml$": "jest-transform-yaml",
     "\\.graphql$": "jest-file-loader"
   },
   transformIgnorePatterns: ["/node_modules/(?!(chroma-js)/)"]

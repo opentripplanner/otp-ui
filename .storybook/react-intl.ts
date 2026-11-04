@@ -11,6 +11,7 @@ const locales = ["en-US", "fr", "es", "vi", "ko", "zh", "unknown"];
  */ 
 const packages = [
   "base-map",
+  "core-utils",
   "endpoints-overlay",
   "from-to-location-picker",
   "humanize-distance",

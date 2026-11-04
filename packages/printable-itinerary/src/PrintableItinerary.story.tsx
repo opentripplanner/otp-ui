@@ -17,6 +17,7 @@ import tncTransitTncItinerary from "@opentripplanner/itinerary-body/src/__mocks_
 import walkInterlinedTransitItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-interlined-transit-walk.json";
 import walkOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json";
 import walkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkTripShortNameItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-trip-short-name.json";
 import walkTransitWalkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
 import walkTransitWalkTransitWalkA11yItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json";
 import config from "@opentripplanner/itinerary-body/src/__mocks__/config.json";
@@ -66,6 +67,14 @@ export const WalkTransitWalkItinerary = () => (
   <PrintableItinerary
     config={config}
     itinerary={walkTransitWalkItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+export const WalkTransitWalkItineraryTripShortName = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={walkTransitWalkTripShortNameItinerary}
     LegIcon={TriMetLegIcon}
   />
 );

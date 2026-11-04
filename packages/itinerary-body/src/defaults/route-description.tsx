@@ -1,6 +1,7 @@
 import coreUtils from "@opentripplanner/core-utils";
 import React, { ReactElement } from "react";
 
+import { useIntl } from "react-intl";
 import * as S from "../styled";
 import { RouteDescriptionProps } from "../types";
 
@@ -11,7 +12,8 @@ const { getLegRouteShortName } = coreUtils.itinerary;
 export default function RouteDescription({
   leg
 }: RouteDescriptionProps): ReactElement {
-  const routeShortName = getLegRouteShortName(leg);
+  const intl = useIntl();
+  const routeShortName = getLegRouteShortName(leg, intl);
   return (
     <S.LegDescriptionForTransit>
       {routeShortName && (

@@ -451,7 +451,7 @@ export function itineraryToTransitive(
       const routeLabel =
         (typeof getRouteLabel === "function"
           ? getRouteLabel(leg)
-          : getLegRouteShortName(leg)) || "";
+          : getLegRouteShortName(leg, intl)) || "";
 
       const basicRouteAttributes = {
         agency_id: leg.agencyId ?? "",

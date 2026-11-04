@@ -7,7 +7,7 @@ import {
   LegHeadingProp
 } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 import AccessibilityAnnotation from "./accessibility-annotation";
 import * as S from "./styled";
@@ -29,6 +29,7 @@ export default function TransitLeg({
   interlineFollows,
   headingAs
 }: Props): ReactElement {
+  const intl = useIntl();
   // TODO: some mocks in itinerary-body have legs with null values for from/to.stop
   const stopCodeFrom = getDisplayedStopCode(leg.from.stop ?? leg.from);
   const stopCodeTo = getDisplayedStopCode(leg.to.stop ?? leg.to);
@@ -41,7 +42,8 @@ export default function TransitLeg({
 
   const routeDescription = (
     <>
-      <strong>{getLegRouteShortName(leg)}</strong> <S.RouteLongName leg={leg} />
+      <strong>{getLegRouteShortName(leg, intl)}</strong>{" "}
+      <S.RouteLongName leg={leg} />
     </>
   );
 
