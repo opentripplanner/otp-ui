@@ -11,6 +11,7 @@ import ArcGISGeocoder from "./geocoders/arcgis";
 import ArcGIS11Geocoder from "./geocoders/arcgis11";
 import NoApiGeocoder from "./geocoders/noapi";
 import PeliasGeocoder from "./geocoders/pelias";
+import PeliasWithARCGISResolverGeocoder from "./geocoders/pelias-witharcgis";
 import HereGeocoder from "./geocoders/here";
 import PhotonGeocoder from "./geocoders/photon";
 import OTPGeocoder from "./geocoders/otp";
@@ -33,6 +34,10 @@ const getGeocoder = memoize((geocoderConfig: GeocoderConfig & { type: string }) 
       return new ArcGIS11Geocoder(arcgis11, geocoderConfig);
     case "PELIAS":
       return new PeliasGeocoder(pelias, geocoderConfig);
+    // This is a very specific case where a pelias stitch instance needs to use the
+    // magicKey against an esri instance
+    case "PELIAS-ARCGIS-RESOLVER":
+      return new PeliasWithARCGISResolverGeocoder(pelias, geocoderConfig);
     case "HERE":
       return new HereGeocoder(here, geocoderConfig);
     case "PHOTON":
