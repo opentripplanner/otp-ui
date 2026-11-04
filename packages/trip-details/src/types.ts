@@ -63,7 +63,7 @@ export interface TripDetailsProps {
   /**
    * A whitelist of medium-rider pairs to be shown. All others will be hidden.
    */
-  mediumRiderWhitelist: MediumRiderWhitelist;
+  mediumRiderWhitelist?: MediumRiderWhitelist;
   /**
    * show the '~' symbol in the trip details panel
    */
