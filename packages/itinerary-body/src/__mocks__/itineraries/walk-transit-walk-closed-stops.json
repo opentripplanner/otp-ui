@@ -211,6 +211,8 @@
         },
         {
           "alertEffect": "NO_SERVICE",
+          "alertDescriptionText": "Stop 8383 is closed until further notice",
+          "effectiveStartDate": 1576471800,
           "entities": [
             {
               "stop": {
@@ -221,6 +223,8 @@
         },
         {
           "alertEffect": "NO_SERVICE",
+          "alertDescriptionText": "Stop 8384 is closed until further notice",
+          "effectiveStartDate": 1576471800,
           "entities": [
             {
               "stop": {
@@ -231,6 +235,8 @@
         },
         {
           "alertEffect": "NO_SERVICE",
+          "alertDescriptionText": "Stop 9757 is closed until further notice",
+          "effectiveStartDate": 1576471800,
           "entities": [
             {
               "stop": {
