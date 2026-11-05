@@ -216,11 +216,26 @@ export type ElevationData = {
   second: number;
 }[];
 
+export type AlertEffect =
+  | "ACCESSIBILITY_ISSUE"
+  | "ADDITIONAL_SERVICE"
+  | "DETOUR"
+  | "MODIFIED_SERVICE"
+  | "NO_EFFECT"
+  | "NO_SERVICE"
+  | "OTHER_EFFECT"
+  | "REDUCED_SERVICE"
+  | "SIGNIFICANT_DELAYS"
+  | "STOP_MOVED"
+  | "UNKNOWN_EFFECT";
+
 export type Alert = {
-  alertHeaderText?: string;
   alertDescriptionText?: string;
+  alertEffect?: AlertEffect;
+  alertHeaderText?: string;
   alertUrl?: string;
   effectiveStartDate?: number;
+  entities?: { stop?: { gtfsId?: string } }[];
   /** Returned by OTP2 graphql queries, but not by OTP1 */
   id?: string;
 };

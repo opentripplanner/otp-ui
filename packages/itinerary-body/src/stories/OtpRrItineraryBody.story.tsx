@@ -31,6 +31,7 @@ import tncTransitTncItinerary from "../__mocks__/itineraries/tnc-transit-tnc.jso
 import walkInterlinedTransitItinerary from "../__mocks__/itineraries/walk-interlined-transit-walk.json";
 import walkOnlyItinerary from "../__mocks__/itineraries/walk-only.json";
 import walkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkClosedStopsItinerary from "../__mocks__/itineraries/walk-transit-walk-closed-stops.json";
 import walkTransitWalkTripShortNameItinerary from "../__mocks__/itineraries/walk-transit-walk-trip-short-name.json";
 import walkTransitWalkCanceledItinerary from "../__mocks__/itineraries/walk-transit-walk-canceled.json";
 import walkTransitWalkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk-transit-walk.json";
@@ -147,10 +148,7 @@ export const WalkTransitWalkItineraryCanceled = (): ReactElement => (
 );
 
 export const WalkTransitWalkItineraryClosedStops = (): ReactElement => (
-  <OtpRRItineraryBodyWrapper
-    closedStopIds={new Set(["TriMet:8383", "TriMet:8384", "TriMet:9757"])}
-    itinerary={walkTransitWalkItinerary}
-  />
+  <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkClosedStopsItinerary} />
 );
 
 export const WalkTransitWalkItineraryMetric = (): ReactElement => (
