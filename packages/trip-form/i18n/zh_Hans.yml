@@ -34,7 +34,4 @@ otpUi:
     bikeOnly: 仅限单车
     escooterOnly: 仅限电动滑板车
     takeTransit: 乘坐公共交通工具
-    travelPreferences: 出行偏好
-    use: 使用
-    useCompanies: 使用公司
     walkOnly: 仅步行
