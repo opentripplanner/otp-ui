@@ -25,4 +25,7 @@ otpUi:
     transitFare: Tarif en transports
     transitFareEntry: "{name} : <strong>{value}</strong>"
     transitFareTable: Transit fares for this itinerary
+    transitTime: >-
+      Temps à bord : <strong>{minutes, plural, one {# minute} other {#
+      minutes}}</strong>
     tripIncludesFlex: Ce trajet comprend un service à la demande (Flex). {extraMessage}

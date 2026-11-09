@@ -18,15 +18,15 @@ import defaultEnglishMessages from "../../i18n/en-US.yml";
 const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 
 interface DepartureDateProps {
-  itinerary: Itinerary;
+  startTime: Itinerary["startTime"];
   DepartureDetails?: React.ElementType<DepartureDetailsProps>;
 }
 
 export default function DepartureDate({
-  itinerary,
+  startTime,
   DepartureDetails
 }: DepartureDateProps): ReactElement {
-  const departureDate = new Date(itinerary.startTime);
+  const departureDate = new Date(startTime);
   return (
     <TripDetail
       className="departure-date"

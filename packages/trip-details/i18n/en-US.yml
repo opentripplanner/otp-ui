@@ -27,4 +27,7 @@ otpUi:
     transitFare: Transit Fare
     transitFareEntry: "{name}: <strong>{value}</strong>"
     transitFareTable: Transit fares for this itinerary
+    transitTime: >-
+      Transit Time: <strong>{minutes, plural, one {# minute} other {#
+      minutes}}</strong>
     tripIncludesFlex: This trip includes flexible routes. {extraMessage}
