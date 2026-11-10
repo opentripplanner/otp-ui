@@ -1,1 +1,6 @@
-{}
+otpUi:
+  TransitVehicleOverlay:
+    durationWithSeconds: ''
+    routeTitle: ''
+    defaultTooltip: ''
+    transitLine: ''
