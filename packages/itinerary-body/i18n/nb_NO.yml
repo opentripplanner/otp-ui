@@ -3,22 +3,127 @@ otpUi:
     LegDiagramPreview:
       elevationChart: Høydediagram
       noElevationData: Ingen høydedata tilgjengelig.
+      toggleElevationChart: ''
     stepElevator: Ta heisen til {street}
     step:
       right: Høyre
       left: Venstre
       continue: Fortsett
+      slightlyRight: ''
+      hardLeft: ''
+      circleClockwise: ''
+      slightlyLeft: ''
+      uTurnLeft: ''
+      uTurnRight: ''
+      circleCounterClockwise: ''
+      enterStation: ''
+      hardRight: ''
+      exitStation: ''
     RentedVehicleSubheader:
       vehicleType:
         escooter: E-scooter
+        bike: ''
+        car: ''
+        bikeshare: ''
+        vehicle: ''
+      pickupRental: ''
+      resumeRentalRide: ''
+      walkVehicle: ''
+      dropoffRental: ''
     vehicleType:
       bike: Sykkel
+      vehicle: ''
+      car: ''
+      escooter: ''
+      bikeshare: ''
     summaryMode:
       bike: Sykkel
+      walk: ''
+      bikeshare: ''
+      escooter: ''
+      carDrive: ''
+      carHail: ''
     summary: '{mode} til {place}'
+    unnamedRoad: ''
+    stepHeading:
+      southwest: ''
+      south: ''
+      southeast: ''
+      northwest: ''
+      northeast: ''
+      north: ''
+      west: ''
+      east: ''
+    TncLeg:
+      waitForPickup: ''
+      estimatedTravelTime: ''
+      estimatedCost: ''
+      bookRideLater: ''
+      bookRide: ''
+    transfer: ''
+    stepDepart: ''
+    stepFollowSigns: ''
+    stepGeneric: ''
+    stepStation: ''
+    mapillaryTooltip: ''
+    summaryAndDistance: ''
+    unnamedPath: ''
+    vehicleTitle: ''
   TransitLegBody:
     routeDescription: '{routeName} <toPrefix>til</toPrefix> {headsign}'
     AlertsBody:
       today: I dag
       yesterday: I går
       tomorrow: I morgen
+      effectiveTimeAndDate: ''
+      alertLinkText: ''
+      noAgencyAlertLinkText: ''
+      linkOpensNewWindow: ''
+      effectiveDate: ''
+    fare: ''
+    stopIsClosed: ''
+    rideDurationAndStops: ''
+    arriveAt: ''
+    stopViewer: ''
+    tripViewer: ''
+    stopId: ''
+    disembarkAt: ''
+    alertsHeader: ''
+    legDetails: ''
+    typicalWait: ''
+    stopIdBasic: ''
+    fromLocation: ''
+    expandDetails: ''
+    operatedBy: ''
+    zoomToLeg: ''
+    ride: ''
+  ItineraryBody:
+    flexPickupMessage: ''
+    tripAccessibility:
+      inaccessible: ''
+      unclear: ''
+      legAccessibility: ''
+      likelyAccessible: ''
+      itineraryAccessibility: ''
+    viewOnMap: ''
+    canceled: ''
+    bookRide: ''
+    flexBookByPhone: ''
+    stopIsClosed: ''
+    flexAdvanceNotice: ''
+    travelByMode:
+      car: ''
+      bike: ''
+      escooter: ''
+      walk: ''
+    stayOnBoard: ''
+    common:
+      durationShort: ''
+    canceledMessage: ''
+    travelBy: ''
+    externalLink: ''
+  TextOnlyItinerary:
+    departFrom: ''
+    arriveAt: ''
+    transitArriveAt: ''
+    transitDepartFrom: ''
