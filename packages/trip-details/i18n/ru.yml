@@ -25,7 +25,10 @@ otpUi:
       Стоимость проезда в компаниях {companies}: <strong>{minTNCFare} —
       {maxTNCFare}</strong>
     total: Всего
-    transferDiscountExplanation: Применяется скидка на пересадку в размере {transferAmount}
+    transferDiscountExplanation: Применяется скидка на пересадку в размере 
+      {transferAmount}
     transitFare: Стоимость проезда в общественном транспорте
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: Эта поездка включает гибкие маршруты. {extraMessage}
+    transitFareTable: ''
+    fareCategory: ''
