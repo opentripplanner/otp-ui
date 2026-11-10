@@ -5,5 +5,9 @@ otpUi:
         Tahmini seyahat süresi: <strong>{duration}</strong> (trafiği hesaba
         katmaz)
       estimatedWaitTime: "Teslim alma için tahmini bekleme süresi: <strong>{duration}</strong>"
+      header: ''
     TransitLeg:
       continuesAs: "{routeDescription} olarak devam et"
+      board: ''
+      alight: ''
+    depart: ''
