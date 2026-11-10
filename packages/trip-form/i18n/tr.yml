@@ -5,6 +5,7 @@ otpUi:
     depart: Kalkış saati
     now: Şimdi Git
     time: Zaman
+    arrive: ''
   ModeSelector:
     labels:
       bicycle: Bisiklet
@@ -12,6 +13,8 @@ otpUi:
       rent: Kira
       transit: Geçiş
       walk: Yürüme
+      subsettingsExpanded: ''
+      subsettingsCollapsed: ''
     settings:
       bikeTolerance-label: Bisiklet Toleransı
       bus-label: Otobüs
@@ -19,3 +22,18 @@ otpUi:
       rail-label: Tren
       subway-label: Metro
       tram-label: Tramvay
+      carTolerance-label: ''
+      walkTolerance-labelHigh: ''
+      bikeTolerance-labelLow: ''
+      bikeTolerance-labelHigh: ''
+      walkReluctance-label: ''
+      carTolerance-labelHigh: ''
+      walkTolerance-labelLow: ''
+      walkTolerance-label: ''
+      wheelchair-label: ''
+      carTolerance-labelLow: ''
+  SettingsSelectorPanel:
+    bikeOnly: ''
+    takeTransit: ''
+    walkOnly: ''
+    escooterOnly: ''
