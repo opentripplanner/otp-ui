@@ -14,6 +14,7 @@ otpUi:
         escooter: 전기 스쿠터
         vehicle: 차량
       walkVehicle: "{place}을(를) 따라 차량을 움직이기"
+      dropoffRental: ''
     TncLeg:
       bookRide: 승차 예약
       bookRideLater: 예약하려면 {timeMillis, time, short}까지 대기
@@ -87,11 +88,14 @@ otpUi:
       walk: 걸어서
     tripAccessibility:
       inaccessible: 액세스 불가
-      itineraryAccessibility: "이 이동편의 휠체어 액세스 가능 여부:\_"
-      legAccessibility: "이 이동편 구간의 휠체어 액세스 가능 여부:\_"
+      itineraryAccessibility: "이 이동편의 휠체어 액세스 가능 여부: "
+      legAccessibility: "이 이동편 구간의 휠체어 액세스 가능 여부: "
       likelyAccessible: 액세스 가능 확률 높음
       unclear: 알 수 없음
     viewOnMap: 지도 보기
+    canceled: ''
+    stopIsClosed: ''
+    canceledMessage: ''
   TransitLegBody:
     AlertsBody:
       alertLinkText: "{agency} 웹사이트에서 알림 확인"
@@ -119,3 +123,9 @@ otpUi:
     tripViewer: 트립 뷰어
     typicalWait: "일반 대기 시간: {waitTime}"
     zoomToLeg: 지도에서 다리 확대
+    stopIsClosed: ''
+  TextOnlyItinerary:
+    departFrom: ''
+    arriveAt: ''
+    transitArriveAt: ''
+    transitDepartFrom: ''
