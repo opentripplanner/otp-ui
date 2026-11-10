@@ -13,6 +13,8 @@ otpUi:
       rent: 렌탈
       transit: 대중 교통
       walk: 걷기
+      subsettingsExpanded: ''
+      subsettingsCollapsed: ''
     settings:
       bikeTolerance-label: 자전거 허용 오차
       bikeTolerance-labelHigh: 더 많은 자전거 타기
@@ -34,8 +36,4 @@ otpUi:
     bikeOnly: 자전거 전용
     escooterOnly: 전동스쿠터 전용
     takeTransit: 대중 교통 이용
-    travelPreferences: 이동 환경설정
-    use: 이용
-    useCompanies: 회사 이용
     walkOnly: 도보 전용
- 
