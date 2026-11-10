@@ -1,1 +1,11 @@
-{}
+otpUi:
+  MapPopup:
+    availableDocks: ''
+    floatingBike: ''
+    stopViewer: ''
+    closedStop: ''
+    popupTitle: ''
+    stopId: ''
+    floatingCar: ''
+    availableBikes: ''
+    floatingEScooter: ''
