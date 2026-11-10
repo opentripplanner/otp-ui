@@ -13,6 +13,8 @@ otpUi:
       rent: வாடகை
       transit: போக்குவரத்து
       walk: நடை
+      subsettingsExpanded: ''
+      subsettingsCollapsed: ''
     settings:
       bikeTolerance-label: பைக்கிங் சகிப்புத்தன்மை
       bikeTolerance-labelHigh: மேலும் பைக்கிங்
