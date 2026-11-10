@@ -13,6 +13,8 @@ otpUi:
       rent: Alquiler
       transit: Transportes
       walk: Andar
+      subsettingsExpanded: ''
+      subsettingsCollapsed: ''
     settings:
       bikeTolerance-label: Tolerancia para la bicicleta
       bikeTolerance-labelHigh: Más bicicleta
@@ -34,8 +36,4 @@ otpUi:
     bikeOnly: Solo bicicleta
     escooterOnly: Solo scooters eléctricos
     takeTransit: Tomar tránsito
-    travelPreferences: Preferencias de viaje
-    use: Usar
-    useCompanies: Usar las empresas
     walkOnly: Solo caminar
-  

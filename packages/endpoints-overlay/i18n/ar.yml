@@ -1,1 +1,10 @@
-{}
+otpUi:
+  EndpointsOverlay:
+    forgetWork: ''
+    swapLocation: ''
+    saveAsWork: ''
+    forgetHome: ''
+    viewNearby: ''
+    coordinates: ''
+    clearLocation: ''
+    saveAsHome: ''

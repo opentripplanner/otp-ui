@@ -14,12 +14,15 @@ otpUi:
         escooter: Электросамокат
         vehicle: транспортное средство
       walkVehicle: Проведите средство вдоль места «{place}»
+      dropoffRental: ''
     TncLeg:
       bookRide: Забронировать поездку
       bookRideLater: Для бронирования подождите до {timeMillis, time, short}
-      estimatedCost: "Предполагаемая стоимость: {minFare}\_— {maxFare}"
-      estimatedTravelTime: "Предполагаемое время поездки: {duration} (без учета дорожного движения)"
-      waitForPickup: "Подождите{minutes, plural, =0 {} other { # мин}} до приезда {company}"
+      estimatedCost: "Предполагаемая стоимость: {minFare} — {maxFare}"
+      estimatedTravelTime: "Предполагаемое время поездки: {duration} (без учета дорожного
+        движения)"
+      waitForPickup: "Подождите{minutes, plural, =0 {} other { # мин}} до приезда
+        {company}"
     mapillaryTooltip: Показать изображения улиц для этого местоположения
     step:
       circleClockwise: Двигайтесь по кругу по часовой стрелке
@@ -58,7 +61,8 @@ otpUi:
       carHail: Поездка
       escooter: Электросамокат
       walk: Пешком
-    transfer: Пересадка{duration, select, undefined {} other {, подожди {duration}}}
+    transfer: Пересадка{duration, select, undefined {} other {, подожди 
+      {duration}}}
     unnamedPath: Неизвестный путь
     unnamedRoad: Неизвестная дорога
     vehicleTitle: "{vehicleType} «{company}»"
@@ -87,11 +91,15 @@ otpUi:
       walk: пешком
     tripAccessibility:
       inaccessible: недоступно
-      itineraryAccessibility: "Доступность для инвалидных колясок на этом отрезке поездки: \_"
+      itineraryAccessibility: "Доступность для инвалидных колясок на этом отрезке
+        поездки:  "
       legAccessibility: "Доступность для инвалидных колясок на этом отрезке поездки: "
       likelyAccessible: Скорее всего доступно
       unclear: неизвестно
     viewOnMap: Просмотреть на карте
+    canceled: ''
+    stopIsClosed: ''
+    canceledMessage: ''
   TransitLegBody:
     AlertsBody:
       alertLinkText: См. предупреждение на сайте {agency}
@@ -113,7 +121,8 @@ otpUi:
     legDetails: Детальное описание отрезка маршрута
     operatedBy: Услуги, предоставляемые агентством «{agencyLink}»
     ride: Поездка
-    rideDurationAndStops: "Поездка: {duration}{numStops, plural, =1 {} other { / остановки (#)}}"
+    rideDurationAndStops: "Поездка: {duration}{numStops, plural, =1 {} other { / остановки
+      (#)}}"
     routeDescription: "{routeName} <toPrefix>—</toPrefix> {headsign}"
     stopId: Идентификатор остановки {stopId}
     stopIdBasic: Идентификатор {stopId}
@@ -121,3 +130,9 @@ otpUi:
     tripViewer: Средство просмотра поездки
     typicalWait: "Типичное время ожидания: {waitTime}"
     zoomToLeg: Приблизить отрезок на карте
+    stopIsClosed: ''
+  TextOnlyItinerary:
+    departFrom: ''
+    arriveAt: ''
+    transitArriveAt: ''
+    transitDepartFrom: ''

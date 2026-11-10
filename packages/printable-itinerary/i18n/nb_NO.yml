@@ -2,4 +2,10 @@ otpUi:
   PrintableItinerary:
     TncLeg:
       header: <strong>Ta {company}</strong> til <strong>{place}</strong>
+      estimatedWaitTime: ''
+      estimatedTravelTime: ''
     depart: <strong>Avreise</strong> fra <strong>{place}</strong>
+    TransitLeg:
+      continuesAs: ''
+      board: ''
+      alight: ''

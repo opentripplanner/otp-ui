@@ -13,6 +13,8 @@ otpUi:
       rent: Thuê xe
       transit: Giao thông công cộng
       walk: Đi bộ
+      subsettingsExpanded: ''
+      subsettingsCollapsed: ''
     settings:
       bikeTolerance-label: Sức chịu đựng đi xe đạp
       bikeTolerance-labelHigh: Đi xe đạp nhiều hơn
@@ -34,7 +36,4 @@ otpUi:
     bikeOnly: Chỉ dành cho xe đạp
     escooterOnly: Chỉ xe tay ga điện
     takeTransit: Sử dụng phương tiện công cộng
-    travelPreferences: Sở thích Du lịch
-    use: Sử dụng
-    useCompanies: Sử dụng các công ty
     walkOnly: Chỉ đi bộ

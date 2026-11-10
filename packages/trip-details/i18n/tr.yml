@@ -11,3 +11,15 @@ otpUi:
     hideDetail: Detayları gizle
     showDetail: Detayları göster
     title: Yolculuk detayları
+    transferDiscountExplanation: ''
+    transitFareEntry: ''
+    legMissingFareInfo: ''
+    tncFare: ''
+    timeActiveDescription: ''
+    tripIncludesFlex: ''
+    transitFareTable: ''
+    fareCategory: ''
+    total: ''
+    missingFareTotal: ''
+    minutesActive: ''
+    transitFare: ''

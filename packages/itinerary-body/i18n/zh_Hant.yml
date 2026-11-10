@@ -14,6 +14,7 @@ otpUi:
         escooter: 電動滑板車
         vehicle: 車輛
       walkVehicle: 沿著{place}牽車步行
+      dropoffRental: ''
     TncLeg:
       bookRide: 預約乘車
       bookRideLater: 等到{timeMillis, time, short}再預約
@@ -90,6 +91,9 @@ otpUi:
       likelyAccessible: 可能可以到達
       unclear: 未知
     viewOnMap: 在地圖上檢視
+    canceled: ''
+    stopIsClosed: ''
+    canceledMessage: ''
   TransitLegBody:
     AlertsBody:
       alertLinkText: 請參閱 {agency} 網站上的警示
@@ -117,3 +121,9 @@ otpUi:
     tripViewer: 行程檢視器
     typicalWait: 一般等待時間：{waitTime}
     zoomToLeg: 縮放至地圖上的路段
+    stopIsClosed: ''
+  TextOnlyItinerary:
+    departFrom: ''
+    arriveAt: ''
+    transitArriveAt: ''
+    transitDepartFrom: ''

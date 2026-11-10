@@ -8,3 +8,4 @@ otpUi:
     popupTitle: "{stationNetwork, select, false {{name}} other {{stationNetwork} {name}}}"
     stopId: Điểm dừng số {stopId}
     stopViewer: Xem điểm dừng
+    closedStop: ''

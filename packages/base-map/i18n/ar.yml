@@ -1,0 +1,19 @@
+otpUi:
+  mapControls:
+    ScaleControl:
+      Kilometers: ''
+      NauticalMiles: ''
+      Meters: ''
+      Miles: ''
+      Feet: ''
+    CooperativeGesturesHandler:
+      MacHelpText: ''
+      MobileHelpText: ''
+      WindowsHelpText: ''
+    GeolocateControl:
+      LocationNotAvailable: ''
+      FindMyLocation: ''
+    NavigationControl:
+      ResetBearing: ''
+      ZoomOut: ''
+      ZoomIn: ''

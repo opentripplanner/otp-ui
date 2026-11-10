@@ -1,1 +1,20 @@
-{}
+otpUi:
+  TripDetails:
+    transferDiscountExplanation: ''
+    transitFareEntry: ''
+    legMissingFareInfo: ''
+    tncFare: ''
+    departure: ''
+    showDetail: ''
+    co2description: ''
+    timeActiveDescription: ''
+    tripIncludesFlex: ''
+    transitFareTable: ''
+    fareCategory: ''
+    total: ''
+    missingFareTotal: ''
+    minutesActive: ''
+    co2: ''
+    title: ''
+    hideDetail: ''
+    transitFare: ''
