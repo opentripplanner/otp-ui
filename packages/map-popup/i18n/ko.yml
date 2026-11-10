@@ -8,3 +8,4 @@ otpUi:
     popupTitle: "{stationNetwork, select, false {{name}} other {{stationNetwork} {name}}}"
     stopId: "정류장 ID: {stopId}"
     stopViewer: 정류장 뷰어
+    closedStop: ''
