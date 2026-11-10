@@ -14,6 +14,7 @@ otpUi:
         escooter: 电动滑板车
         vehicle: 车辆
       walkVehicle: 沿着 {place} 推车辆
+      dropoffRental: ''
     TncLeg:
       bookRide: 预订乘车
       bookRideLater: 等到 {timeMillis, time, short} 进行预订
@@ -92,6 +93,9 @@ otpUi:
       likelyAccessible: 可能可访问
       unclear: 未知
     viewOnMap: 在地图上查看
+    canceled: ''
+    stopIsClosed: ''
+    canceledMessage: ''
   TransitLegBody:
     AlertsBody:
       alertLinkText: 查看 {agency} 网站上的提醒
@@ -119,3 +123,9 @@ otpUi:
     tripViewer: 行程查看器
     typicalWait: "典型的等待时间: {waitTime}"
     zoomToLeg: 在地图上放大到腿
+    stopIsClosed: ''
+  TextOnlyItinerary:
+    departFrom: ''
+    arriveAt: ''
+    transitArriveAt: ''
+    transitDepartFrom: ''
