@@ -13,6 +13,8 @@ otpUi:
       rent: Magrenta
       transit: Pampublikong Transportasyon
       walk: Paglalakad
+      subsettingsExpanded: ''
+      subsettingsCollapsed: ''
     settings:
       bikeTolerance-label: Tolerance sa Pagbibisikleta
       bikeTolerance-labelHigh: Mas Maraming Pagbibisikleta
