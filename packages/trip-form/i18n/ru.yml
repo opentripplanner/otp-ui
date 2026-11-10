@@ -13,6 +13,8 @@ otpUi:
       rent: Прокат
       transit: Общественный транспорт
       walk: Прогулка
+      subsettingsExpanded: ''
+      subsettingsCollapsed: ''
     settings:
       bikeTolerance-label: Выносливость для езды на велосипеде
       bikeTolerance-labelHigh: Больше на велосипеде
