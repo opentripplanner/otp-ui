@@ -14,16 +14,20 @@ otpUi:
         escooter: la patineta
         vehicle: el vehículo
       walkVehicle: Caminar vehículo por la {place}
+      dropoffRental: ''
     TncLeg:
       bookRide: Reservar un viaje
       bookRideLater: Espere hasta las {timeMillis, time, short} para reservar
       estimatedCost: "Costo estimado: {minFare} - {maxFare}"
-      estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta el tráfico)"
-      waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other { # minutos}}"
+      estimatedTravelTime: "Tiempo de viaje estimado: {duration} (no tiene en cuenta
+        el tráfico)"
+      waitForPickup: "Espera al conductor {company}{minutes, plural, =0 {} other {
+        # minutos}}"
     mapillaryTooltip: Mostrar imágenes de la calle en esta ubicación
     step:
       circleClockwise: Siga el círculo en el sentido de las agujas del reloj
-      circleCounterClockwise: Siga el círculo en sentido contrario a las agujas del reloj
+      circleCounterClockwise: Siga el círculo en sentido contrario a las agujas 
+        del reloj
       continue: Continuar
       enterStation: Entrar a la estación
       exitStation: Salir de la estación
@@ -58,7 +62,8 @@ otpUi:
       carHail: Paseo
       escooter: Patineta
       walk: Caminar
-    transfer: Transferir{duration, select, undefined {} other {, esperar {duration}}}
+    transfer: Transferir{duration, select, undefined {} other {, esperar 
+      {duration}}}
     unnamedPath: Sendero sin nombre
     unnamedRoad: Calle sin nombre
     vehicleTitle: "{vehicleType} {company}"
@@ -75,7 +80,8 @@ otpUi:
         {approximatePrefix, select, true {Unos } other {}}{hours, plural, =0 {}
         other {# hr. }}{minutes} min
     externalLink: (Enlace external)
-    flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de antelación"
+    flexAdvanceNotice: " al menos {leadDays, plural, one {# día} other {# días}} de
+      antelación"
     flexBookByPhone: "Reservar por teléfono: "
     flexPickupMessage: Tiene que reserva{advanceNotice}
     stayOnBoard: Quédate a bordo en {place}
@@ -92,6 +98,9 @@ otpUi:
       likelyAccessible: probablemente accesible
       unclear: desconocido
     viewOnMap: Ver en el mapa
+    canceled: ''
+    stopIsClosed: ''
+    canceledMessage: ''
   TransitLegBody:
     AlertsBody:
       alertLinkText: Ver la alerta en la web {agency}
@@ -119,3 +128,9 @@ otpUi:
     tripViewer: Visor de viajes
     typicalWait: "Tiempo de espera regular: {waitTime}"
     zoomToLeg: Acercar el mapa a este etapa
+    stopIsClosed: ''
+  TextOnlyItinerary:
+    departFrom: ''
+    arriveAt: ''
+    transitArriveAt: ''
+    transitDepartFrom: ''
