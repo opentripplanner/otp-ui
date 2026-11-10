@@ -8,3 +8,4 @@ otpUi:
     popupTitle: "{stationNetwork, select, false {{name}} other {{stationNetwork} {name}}}"
     stopId: "Stopp-ID: {stopId}"
     stopViewer: Stopp-viser
+    closedStop: ''
