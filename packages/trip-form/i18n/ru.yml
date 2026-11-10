@@ -34,7 +34,4 @@ otpUi:
     bikeOnly: Только велосипед
     escooterOnly: Только электросамокат
     takeTransit: Воспользуйтесь общественным транспортом
-    travelPreferences: Параметры поездок
-    use: Воспользоваться
-    useCompanies: Воспользоваться услугами компаний
     walkOnly: Только пешком
