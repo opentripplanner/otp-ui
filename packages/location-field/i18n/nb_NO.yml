@@ -5,3 +5,22 @@ otpUi:
     stations: Stasjoner
     stops: Stopp
     workLocation: Arbeid
+    myPlaces: ''
+    noResults: ''
+    fetchingSuggestions: ''
+    suggestedLocationsLong: ''
+    beginTypingPrompt: ''
+    stationCount: ''
+    resultsFound: ''
+    other: ''
+    stopCount: ''
+    recentlySearched: ''
+    otherCount: ''
+    nearby: ''
+    currentLocationUnavailable: ''
+    howToAccessResults: ''
+    suggestedLocations: ''
+    clearLocation: ''
+    parenthesisFormat: ''
+    geocoderUnreachable: ''
+    useCurrentLocation: ''
