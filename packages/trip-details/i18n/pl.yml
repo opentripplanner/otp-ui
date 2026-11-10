@@ -27,3 +27,6 @@ otpUi:
     transitFare: Opłata za przejazd
     transitFareEntry: "{name}: <strong>{value}</strong>"
     tripIncludesFlex: Ta wycieczka obejmuje elastyczne trasy. {extraMessage}
+    transitFareTable: ''
+    fareCategory: ''
+    total: ''
