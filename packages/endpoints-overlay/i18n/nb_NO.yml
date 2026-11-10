@@ -5,3 +5,6 @@ otpUi:
     saveAsHome: Lagre som hjem
     forgetWork: Glem arbeid
     forgetHome: Glem hjem
+    swapLocation: ''
+    viewNearby: ''
+    coordinates: ''
