@@ -1,1 +1,11 @@
-{}
+otpUi:
+  PrintableItinerary:
+    TncLeg:
+      estimatedWaitTime: ''
+      estimatedTravelTime: ''
+      header: ''
+    TransitLeg:
+      continuesAs: ''
+      board: ''
+      alight: ''
+    depart: ''
