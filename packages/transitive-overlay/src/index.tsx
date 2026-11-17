@@ -370,7 +370,7 @@ const TransitiveCanvasOverlay = ({
 
   const { fromAnchor, toAnchor } = transitiveData
     ? getFromToAnchors(transitiveData)
-    : {};
+    : { fromAnchor: "top", toAnchor: "top" };
 
   const boldFonts = fontOverride?.bold || DEFAULT_BOLD_FONTS;
 
