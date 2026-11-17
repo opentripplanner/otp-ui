@@ -155,7 +155,3 @@ export const SliderSelector = styled.div`
     width: 100%;
   }
 `;
-
-export const GeneralSettingsPanel = styled.div``;
-
-export const SettingsSelectorPanel = styled.div``;

@@ -60,9 +60,17 @@ query Plan(
           }
           alerts {
             alertDescriptionText
+            alertEffect
             alertHeaderText
             alertUrl
             effectiveStartDate
+            entities {
+              ... on StopOnRoute {
+                stop {
+                  gtfsId
+                }
+              }
+            }
             id
           }
           arrivalDelay

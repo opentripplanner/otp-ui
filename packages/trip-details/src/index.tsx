@@ -33,6 +33,7 @@ export function TripDetails({
   DepartureDetails = null,
   FareDetails = null,
   itinerary,
+  mediumRiderWhitelist,
   showApproximateMinutesActive,
   TimeActiveDetails = DefaultTimeActiveDetails
 }: TripDetailsProps): ReactElement {
@@ -56,6 +57,7 @@ export function TripDetails({
           itinerary={itinerary}
           FareDetails={FareDetails}
           defaultFareType={defaultFareType}
+          mediumRiderWhitelist={mediumRiderWhitelist}
         />
         <TimeActive
           itinerary={itinerary}

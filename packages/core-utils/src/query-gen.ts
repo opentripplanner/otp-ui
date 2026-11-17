@@ -124,7 +124,7 @@ export function generateOtp2Query(
   homeTimezone: string,
   planQuery = DefaultPlanQuery
 ): GraphQLQuery {
-  const { bannedRoutes, departArrive, from, modeSettings, to, date, modes, time, arriveBy, omitCanceled, via } = otpQueryParams;
+  const { bannedRoutes, departArrive, from, modeSettings, numItineraries, to, date, modes, time, arriveBy, omitCanceled, via } = otpQueryParams;
 
   // This extracts the values from the mode settings to key value pairs
   const modeSettingValues = modeSettings.reduce<
@@ -178,6 +178,7 @@ export function generateOtp2Query(
       destination: { label: to.name, location: { coordinate: { latitude: to.lat, longitude: to.lon } } },
       // Plan had this flipped...
       includeRealTimeCancellations: omitCanceled !== true,
+      numItineraries,
       transitFilter,
       walkReluctance,
       walkSpeed,
