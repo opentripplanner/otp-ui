@@ -64,6 +64,7 @@ query Plan(
             ... on StopOnRoute {
               stop {
                 gtfsId
+                id: gtfsId
               }
             }
           }
