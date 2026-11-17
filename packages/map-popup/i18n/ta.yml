@@ -9,3 +9,4 @@ otpUi:
       {name}}}}'
     stopId: 'ஐடியை நிறுத்து: {stopId}'
     stopViewer: பார்வையாளரை நிறுத்துங்கள்
+    closedStop: ''
