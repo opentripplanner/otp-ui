@@ -7,7 +7,8 @@ import {
 
 import coreUtils from "@opentripplanner/core-utils";
 
-const { isTransit } = coreUtils.itinerary;
+const { queryGen } = coreUtils;
+const { TRANSIT_SUBMODES_AND_TRANSIT } = queryGen;
 
 /**
  * Aggregates all the modes from the input mode button definitions
@@ -145,7 +146,7 @@ export function checkIfModeSettingApplies(
   mode: TransportMode
 ): boolean {
   if (setting.applicableMode === "TRANSIT") {
-    return isTransit(mode.mode);
+    return TRANSIT_SUBMODES_AND_TRANSIT.includes(mode.mode);
   }
   return setting.applicableMode === mode.mode;
 }
@@ -213,7 +214,10 @@ export const findRequiredOptionsForTransportMode = (
 ): RequiredOptionsForTransportMode => {
   // If there's a mode button with the mode we need, then just return that. No mode setting necessary!
   const modeButtonOnly = modeButtons.find(mb =>
-    mb.modes?.some(m => m.mode === transportMode.mode)
+    mb.modes?.some(
+      m =>
+        m.mode === transportMode.mode && m.qualifier === transportMode.qualifier
+    )
   );
 
   if (modeButtonOnly) {
@@ -228,7 +232,11 @@ export const findRequiredOptionsForTransportMode = (
 
     return [ms.addTransportMode]
       .flat() // addTransportMode can be a single TransportMode or an array of them
-      .some(m => m.mode === transportMode.mode);
+      .some(
+        m =>
+          m.mode === transportMode.mode &&
+          m.qualifier === transportMode.qualifier
+      );
   });
 
   if (!modeSetting) return undefined;
