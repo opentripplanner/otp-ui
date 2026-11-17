@@ -1,4 +1,8 @@
-import { FilterSpecification, SymbolLayerSpecification } from "maplibre-gl";
+import {
+  DataDrivenPropertyValueSpecification,
+  FilterSpecification,
+  SymbolLayerSpecification
+} from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
 import React, { useEffect } from "react";
 import { Layer, MapRef, Source, useMap } from "react-map-gl/maplibre";
@@ -370,7 +374,10 @@ const TransitiveCanvasOverlay = ({
 
   const { fromAnchor, toAnchor } = transitiveData
     ? getFromToAnchors(transitiveData)
-    : { fromAnchor: "top", toAnchor: "top" };
+    : {
+        fromAnchor: "top" as DataDrivenPropertyValueSpecification<"top">,
+        toAnchor: "top" as DataDrivenPropertyValueSpecification<"top">
+      };
 
   const boldFonts = fontOverride?.bold || DEFAULT_BOLD_FONTS;
 
