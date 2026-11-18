@@ -1,13 +1,22 @@
+name: Node.js CI
+
+"on":
+  pull_request: null
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
 jobs:
   test-build-release:
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           persist-credentials: false
       - uses: pnpm/action-setup@v2
-      # OIDC tokens are supported from npm 11.5.1 (Node >= 24),
-      # see https://github.com/semantic-release/npm/issues/1054#issuecomment-3723415001
       - name: Use Node.js 24.x
         uses: actions/setup-node@v4
         with:
@@ -47,25 +56,38 @@ jobs:
       #     npx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
       #       "npx http-server storybook-static --port 5555 --silent" \
       #       "npx wait-on tcp:5555 && pnpm run test-storybook --ci"
-      - env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        name: Semantic Release
-        run: |
-          echo "@OpenTripPlanner:registry=https://registry.npmjs.org/" >> ~/.npmrc
-          pnpm run semantic-release
-name: Node.js CI
-"on":
-  pull_request: null
-  push:
-    branches:
-      - master
-      - alpha
-      - beta
-      - next
-      - next-major
-      - "[0-9]+.[0-9]+.x"
-      - "[0-9]+.x.x"
-      - "[0-9]+.x"
-permissions:
-  id-token: write # Required for OIDC for generating NPM tokens
-  contents: write # Required to publish a GitHub release and write version numbers in package files.
+
+  release:
+    needs: test-build-release
+    if: >-
+      github.event_name == 'push' &&
+      github.repository == 'opentripplanner/otp-ui' &&
+      github.ref == 'refs/heads/master'
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+    concurrency:
+      group: changesets-version-pr-${{ github.ref }}
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v2
+      - name: Use Node.js 24.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Open a version PR or publish packages
+        uses: changesets/action@3841a0683d3cfa6dae0f9bb335290003010fe3f0 # v1.9.0
+        with:
+          version: pnpm version-packages
+          publish: pnpm run release
+          commit: "chore: version packages"
+          title: "chore: version packages"
+          github-token: ${{ secrets.GITHUB_TOKEN }}

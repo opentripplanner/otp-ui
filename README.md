@@ -73,7 +73,11 @@ This repo utilizes the [Storyshot](https://storybook.js.org/docs/react/workflows
 
 ## Releasing
 
-This project uses semantic-release to create releases to NPM. It is expect that contributors create [Conventional Commit](https://www.conventionalcommits.org/en/v1.0.0/) messages. These are then parsed by semantic-release which will automatically create an appropriate release for each package whenever a branch is merged to master.
+For a package change, run `pnpm changeset` and commit the generated file with your PR. Choose a patch for bug fixes, a minor for backward-compatible features, or a major for breaking changes. Write a short note for package consumers. If a package change requires no release, run `pnpm changeset add --empty`.
+
+After changes merge into `master` and CI passes, Changesets opens or updates the version PR with the proposed package versions and changelogs. Review direct and dependent package bumps together. If GitHub requests approval to run checks on the bot PR, approve the workflows and wait for CI to pass before merging.
+
+Merging the version PR publishes the packages to npm after CI passes on `master`. The release job uses npm trusted publishing and creates GitHub releases. If a publish run fails, check npm for packages that already shipped, then rerun the failed job to publish any missing versions.
 
 ## Local Testing
 
