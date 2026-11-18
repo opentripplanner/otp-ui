@@ -1,6 +1,5 @@
 ---
-"@opentripplanner/transit-vehicle-overlay": minor
 "@opentripplanner/location-field": patch
 ---
 
-Enable TS strict mode in transit-vehicle-overlay package.
+Use the shared geocoder configuration type for location field props.

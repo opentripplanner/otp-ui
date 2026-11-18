@@ -1,22 +1,23 @@
-# Validate that a changeset exists for this PR
-# Possibly remove this in the future, as enforcing a changeset is not necessarily good
-# practice. We're just using this to get used to writing them in the meantime.
 name: Changeset Check
 
 on:
   pull_request:
     branches:
       - master
-      - alpha
 
 permissions:
   contents: read
 
 jobs:
   changeset-status:
+    # The version PR consumes changesets and is covered by Node.js CI.
+    if: >-
+      github.event.pull_request.user.login != 'github-actions[bot]' ||
+      github.event.pull_request.head.repo.full_name != github.repository ||
+      github.head_ref != 'changeset-release/master'
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           persist-credentials: false
           fetch-depth: 0
@@ -30,4 +31,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Require a changeset or explicit empty changeset
-        run: pnpm changeset:status --since="origin/${{ github.base_ref }}"
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: pnpm changeset:status --since="origin/$BASE_REF"
