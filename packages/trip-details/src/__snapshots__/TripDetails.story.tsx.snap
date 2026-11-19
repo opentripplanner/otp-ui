@@ -3751,6 +3751,319 @@ exports[`TripDetails TncTransitItineraryWithCustomMessages smoke-test 1`] = `
 </div>
 `;
 
+exports[`TripDetails TransitTimingItinerary smoke-test 1`] = `
+<div class="styled__TripDetails-sc-6q2ok2-17 bkRgZI trip-details">
+  <h2 id="trip-details-header"
+      class="styled__TripDetailsHeader-sc-6q2ok2-19 fxsUFT"
+  >
+    Trip Details
+  </h2>
+  <div class="styled__TripDetailsBody-sc-6q2ok2-18 ljKmZo">
+    <div role="group"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU departure-date"
+    >
+      <div role="presentation"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
+      >
+        <svg viewbox="0 0 448 512"
+             height="17"
+             width="17"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+        >
+          <path fill="currentColor"
+                d="M128 0c17.7 0 32 14.3 32 32v32h128V32c0-17.7 14.3-32 32-32s32 14.3 32 32v32h48c26.5 0 48 21.5 48 48v48H0v-48c0-26.5 21.5-48 48-48h48V32c0-17.7 14.3-32 32-32zM0 192h448v272c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm64 80v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm128 0v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16h-32zM64 400v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16H80c-8.8 0-16 7.2-16 16zm144-16c-8.8 0-16 7.2-16 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16h-32zm112 16v32c0 8.8 7.2 16 16 16h32c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16z"
+          >
+          </path>
+        </svg>
+      </div>
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__Timing-sc-6q2ok2-10 QXYlJ">
+          Board
+          <strong>
+            November 13, 2019
+          </strong>
+          at
+          <strong>
+            3:47 PM
+          </strong>
+        </span>
+      </div>
+      <div aria-hidden="true"
+           class="rah-static rah-static--height-zero "
+           style="height: 0px; overflow: hidden;"
+      >
+        <div style="display: none;">
+          <div aria-labelledby="expand-button"
+               id="mocked_id"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
+          >
+            <button role="presentation"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
+            >
+              <svg viewbox="0 0 512 512"
+                   height="0.92em"
+                   width="0.92em"
+                   aria-hidden="true"
+                   focusable="false"
+                   fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg"
+                   class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+              >
+                <path fill="currentColor"
+                      d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-81-337c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
+                >
+                </path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div role="group"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU transit-time"
+    >
+      <div role="presentation"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
+      >
+        <svg viewbox="0 0 512 512"
+             height="17"
+             width="17"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+        >
+          <path fill="currentColor"
+                d="M256 512C114.6 512 0 397.4 0 256S114.6 0 256 0s256 114.6 256 256-114.6 256-256 256zm-24-392v136c0 8 4 15.5 10.7 20l96 64c11 7.4 25.9 4.4 33.3-6.7s4.4-25.9-6.7-33.3L280 243.2V120c0-13.3-10.7-24-24-24s-24 10.7-24 24z"
+          >
+          </path>
+        </svg>
+      </div>
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        Transit Time:
+        <strong>
+          9 minutes
+        </strong>
+      </div>
+      <div aria-hidden="true"
+           class="rah-static rah-static--height-zero "
+           style="height: 0px; overflow: hidden;"
+      >
+        <div style="display: none;">
+          <div aria-labelledby="expand-button"
+               id="mocked_id"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
+          >
+            <button role="presentation"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
+            >
+              <svg viewbox="0 0 512 512"
+                   height="0.92em"
+                   width="0.92em"
+                   aria-hidden="true"
+                   focusable="false"
+                   fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg"
+                   class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+              >
+                <path fill="currentColor"
+                      d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-81-337c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
+                >
+                </path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div role="group"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU time-active"
+    >
+      <div role="presentation"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
+      >
+        <svg viewbox="0 0 512 512"
+             height="17"
+             width="17"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+        >
+          <path fill="currentColor"
+                d="M228.3 469.1 47.6 300.4c-4.2-3.9-8.2-8.1-11.9-12.4h87c22.6 0 43-13.6 51.7-34.5l10.5-25.2 49.3 109.5c3.8 8.5 12.1 14 21.4 14.1s17.8-5 22-13.3l42.4-84.9 1.7 3.4c9.5 19 28.9 31 50.1 31h104.5c-3.7 4.3-7.7 8.5-11.9 12.4L283.7 469.1c-7.5 7-17.4 10.9-27.7 10.9s-20.2-3.9-27.7-10.9zM503.7 240h-132c-3 0-5.8-1.7-7.2-4.4l-23.2-46.3c-4.1-8.1-12.4-13.3-21.5-13.3s-17.4 5.1-21.5 13.3l-41.4 82.8-51-113.9c-3.9-8.7-12.7-14.3-22.2-14.1s-18.1 5.9-21.8 14.8l-31.8 76.3c-1.2 3-4.2 4.9-7.4 4.9H16c-2.6 0-5 .4-7.3 1.1-5.7-16-8.7-33-8.7-50.3v-5.8c0-69.9 50.5-129.5 119.4-141 45.6-7.6 92 7.3 124.6 39.9l12 12 12-12c32.6-32.6 79-47.5 124.6-39.9 68.9 11.5 119.4 71.1 119.4 141v5.8c0 16.9-2.8 33.5-8.3 49.1z"
+          >
+          </path>
+        </svg>
+      </div>
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        Time Spent Active:
+        <strong>
+          2 minutes
+        </strong>
+        <button aria-label="Show details"
+                aria-controls="mocked_id"
+                aria-expanded="false"
+                id="expand-button"
+                tabindex="0"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
+        >
+          <svg viewbox="0 0 512 512"
+               height="0.92em"
+               width="0.92em"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+          >
+            <path fill="currentColor"
+                  d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"
+            >
+            </path>
+          </svg>
+        </button>
+      </div>
+      <div aria-hidden="true"
+           class="rah-static rah-static--height-zero "
+           style="height: 0px; overflow: hidden;"
+      >
+        <div style="display: none;">
+          <div aria-labelledby="expand-button"
+               id="mocked_id"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
+          >
+            <button role="presentation"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
+            >
+              <svg viewbox="0 0 512 512"
+                   height="0.92em"
+                   width="0.92em"
+                   aria-hidden="true"
+                   focusable="false"
+                   fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg"
+                   class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+              >
+                <path fill="currentColor"
+                      d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-81-337c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
+                >
+                </path>
+              </svg>
+            </button>
+            By taking this trip, you'll spend
+            <strong>
+              2 minutes
+            </strong>
+            walking and
+            <strong>
+              0 minutes
+            </strong>
+            biking.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div role="group"
+         class="styled__TripDetail-sc-6q2ok2-14 gNQyHU emissions"
+    >
+      <div role="presentation"
+           class="styled__TripDetailIcon-sc-6q2ok2-16 hauLWc"
+      >
+        <svg viewbox="0 0 512 512"
+             height="17"
+             width="17"
+             aria-hidden="true"
+             focusable="false"
+             fill="currentColor"
+             xmlns="http://www.w3.org/2000/svg"
+             class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+        >
+          <path fill="currentColor"
+                d="M272 96c-78.6 0-145.1 51.5-167.7 122.5 33.6-17 71.5-26.5 111.7-26.5h88c8.8 0 16 7.2 16 16s-7.2 16-16 16h-88c-16.6 0-32.7 1.9-48.3 5.4-25.9 5.9-49.9 16.4-71.4 30.7C38.3 298.8 0 364.9 0 440v16c0 13.3 10.7 24 24 24s24-10.7 24-24v-16c0-48.7 20.7-92.5 53.8-123.2C121.6 392.3 190.3 448 272 448h1c132.1-.7 239-130.9 239-291.4 0-42.6-7.5-83.1-21.1-119.6-2.6-6.9-12.7-6.6-16.2-.1C455.9 72.1 418.7 96 376 96H272z"
+          >
+          </path>
+        </svg>
+      </div>
+      <div class="styled__TripDetailSummary-sc-6q2ok2-20 jMnFLu">
+        <span class="styled__CO2Summary-sc-6q2ok2-4 ctvvFS">
+          CO₂ Emitted:
+          <strong>
+            219g
+          </strong>
+        </span>
+        <button aria-label="Show details"
+                aria-controls="mocked_id"
+                aria-expanded="false"
+                id="expand-button"
+                tabindex="0"
+                class="styled__BaseButton-sc-6q2ok2-2 styled__ExpandButton-sc-6q2ok2-5 bZXrLi dfkWTA"
+        >
+          <svg viewbox="0 0 512 512"
+               height="0.92em"
+               width="0.92em"
+               aria-hidden="true"
+               focusable="false"
+               fill="currentColor"
+               xmlns="http://www.w3.org/2000/svg"
+               class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+          >
+            <path fill="currentColor"
+                  d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM288 352c0 17.7-14.3 32-32 32s-32-14.3-32-32 14.3-32 32-32 32 14.3 32 32z"
+            >
+            </path>
+          </svg>
+        </button>
+      </div>
+      <div aria-hidden="true"
+           class="rah-static rah-static--height-zero "
+           style="height: 0px; overflow: hidden;"
+      >
+        <div style="display: none;">
+          <div aria-labelledby="expand-button"
+               id="mocked_id"
+               class="styled__TripDetailDescription-sc-6q2ok2-15 emGeSO"
+          >
+            <button role="presentation"
+                    class="styled__BaseButton-sc-6q2ok2-2 styled__HideButton-sc-6q2ok2-7 bZXrLi fABSVY"
+            >
+              <svg viewbox="0 0 512 512"
+                   height="0.92em"
+                   width="0.92em"
+                   aria-hidden="true"
+                   focusable="false"
+                   fill="currentColor"
+                   xmlns="http://www.w3.org/2000/svg"
+                   class="StyledIconBase-sc-ea9ulj-0 ebjPRL"
+              >
+                <path fill="currentColor"
+                      d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0 0 114.6 0 256s114.6 256 256 256zm-81-337c9.4-9.4 24.6-9.4 33.9 0l47 47 47-47c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-47 47 47 47c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-47-47-47 47c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l47-47-47-47c-9.4-9.4-9.4-24.6 0-33.9z"
+                >
+                </path>
+              </svg>
+            </button>
+            CO₂ intensity is calculated by multiplying the distance of each leg of a trip by the CO₂ intensity of each mode. CO₂ intensity of each mode is derived from
+            <a href="https://www.itf-oecd.org/sites/default/files/life-cycle-assessment-calculations-2020.xlsx"
+               rel="noopener noreferrer"
+               target="_blank"
+            >
+              this spreadsheet
+            </a>
+            .
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`TripDetails WalkOnlyItinerary smoke-test 1`] = `
 <div class="styled__TripDetails-sc-6q2ok2-17 bkRgZI trip-details">
   <h2 id="trip-details-header"

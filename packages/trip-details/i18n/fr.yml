@@ -1,5 +1,8 @@
 otpUi:
   TripDetails:
+    boarding: >-
+      Embarquement le <strong>{departureDate, date, long}</strong> à
+      <strong>{departureDate, time, short}</strong>
     co2: "CO₂ émis : <strong>{co2}</strong>"
     co2description: >-
       L'intensité carbone est calculée en multipliant la distance de chaque
@@ -25,4 +28,7 @@ otpUi:
     transitFare: Tarif en transports
     transitFareEntry: "{name} : <strong>{value}</strong>"
     transitFareTable: Transit fares for this itinerary
+    transitTime: >-
+      Temps à bord : <strong>{minutes, plural, one {# minute} other {#
+      minutes}}</strong>
     tripIncludesFlex: Ce trajet comprend un service à la demande (Flex). {extraMessage}
