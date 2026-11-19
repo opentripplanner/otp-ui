@@ -61,6 +61,7 @@ export function TripDetails({
         <DepartureDate
           startTime={timing.startTime}
           DepartureDetails={DepartureDetails}
+          isBoarding={transitOnly && timing.legs[0]?.transitLeg === true}
         />
         {showTransitTime && <TransitTime legs={itinerary.legs} />}
         <Fares

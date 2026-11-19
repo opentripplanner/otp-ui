@@ -20,13 +20,17 @@ const defaultMessages: Record<string, string> = flatten(defaultEnglishMessages);
 interface DepartureDateProps {
   startTime: Itinerary["startTime"];
   DepartureDetails?: React.ElementType<DepartureDetailsProps>;
+  isBoarding: boolean;
 }
 
 export default function DepartureDate({
   startTime,
-  DepartureDetails
+  DepartureDetails,
+  isBoarding
 }: DepartureDateProps): ReactElement {
   const departureDate = new Date(startTime);
+  const values = { departureDate, strong: boldText };
+
   return (
     <TripDetail
       className="departure-date"
@@ -37,15 +41,21 @@ export default function DepartureDate({
       icon={<CalendarAlt size={17} />}
       summary={
         <S.Timing>
-          <FormattedMessage
-            defaultMessage={defaultMessages["otpUi.TripDetails.departure"]}
-            description="Text showing the departure date/time for a trip."
-            id="otpUi.TripDetails.departure"
-            values={{
-              departureDate,
-              strong: boldText
-            }}
-          />
+          {isBoarding ? (
+            <FormattedMessage
+              defaultMessage={defaultMessages["otpUi.TripDetails.boarding"]}
+              description="Text showing when to board the first transit leg."
+              id="otpUi.TripDetails.boarding"
+              values={values}
+            />
+          ) : (
+            <FormattedMessage
+              defaultMessage={defaultMessages["otpUi.TripDetails.departure"]}
+              description="Text showing the departure date/time for a trip."
+              id="otpUi.TripDetails.departure"
+              values={values}
+            />
+          )}
         </S.Timing>
       }
     />

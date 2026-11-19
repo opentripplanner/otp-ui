@@ -1,5 +1,8 @@
 otpUi:
   TripDetails:
+    boarding: >-
+      Embarquement le <strong>{departureDate, date, long}</strong> à
+      <strong>{departureDate, time, short}</strong>
     co2: "CO₂ émis : <strong>{co2}</strong>"
     co2description: >-
       L'intensité carbone est calculée en multipliant la distance de chaque

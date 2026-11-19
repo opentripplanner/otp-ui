@@ -1,5 +1,8 @@
 otpUi:
   TripDetails:
+    boarding: >-
+      Board <strong>{departureDate, date, long}</strong> at
+      <strong>{departureDate, time, short}</strong>
     co2: "CO₂ Emitted: <strong>{co2}</strong>"
     co2description: >-
       CO₂ intensity is calculated by multiplying the distance of each leg of a
