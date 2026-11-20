@@ -18,8 +18,16 @@ const { isTransit } = coreUtils.itinerary;
 export function aggregateModes(
   modeButtonDefinitions: ModeButtonDefinition[]
 ): TransportMode[] {
+  const buttonKeys = (modeButtonDefinitions || []).map(mb => mb.key);
   return modeButtonDefinitions.reduce<Array<TransportMode>>((array, combo) => {
-    combo?.modes?.forEach(mode => array.push(mode));
+    combo?.modes?.forEach(mode => {
+      if (
+        !mode.requiredModeButtonKey ||
+        buttonKeys.includes(mode.requiredModeButtonKey)
+      ) {
+        array.push(mode);
+      }
+    });
     return array;
   }, new Array<TransportMode>());
 }
