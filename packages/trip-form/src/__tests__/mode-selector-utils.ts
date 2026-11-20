@@ -96,6 +96,30 @@ const modeButtonDefinitions: ModeButtonDefinition[] = [
   }
 ];
 
+const bicycleOnlyMode = {
+  mode: "BICYCLE",
+  input: {
+    direct: ["BICYCLE"],
+    directOnly: true
+  }
+};
+
+const bicycleTransitMode = {
+  mode: "BICYCLE",
+  // id of the button/check box that has to be selected
+  // for this mode combination to be used.
+  requiredModeButtonKey: "TRANSIT",
+  input: {
+    direct: ["BICYCLE"],
+    transit: {
+      access: ["BICYCLE"],
+      egress: ["BICYCLE"],
+      transfer: ["BICYCLE"]
+    },
+    transitOnly: false
+  }
+};
+
 // Mode definitions are a little bit different using planConnection
 const modeButtonDefinitionsPlanConnection: ModeButtonDefinition[] = [
   {
@@ -121,32 +145,7 @@ const modeButtonDefinitionsPlanConnection: ModeButtonDefinition[] = [
     Icon: React.Component,
     iconName: "biking icon",
     key: "BIKE",
-    modes: [
-      {
-        // bicycle only
-        mode: "BICYCLE",
-        input: {
-          direct: ["BICYCLE"],
-          directOnly: true
-        }
-      },
-      {
-        // bicycle + transit
-        mode: "BICYCLE",
-        // id of the button/check box that has to be selected
-        // for this mode combination to be used.
-        requiredModeButtonKey: "TRANSIT",
-        input: {
-          direct: ["BICYCLE"],
-          transit: {
-            access: ["BICYCLE"],
-            egress: ["BICYCLE"],
-            transfer: ["BICYCLE"]
-          },
-          transitOnly: false
-        }
-      }
-    ]
+    modes: [bicycleOnlyMode, bicycleTransitMode]
   }
 ];
 
@@ -243,41 +242,14 @@ describe("mode selector utils", () => {
     it("should include or exclude a mode that has requiredModeButtonKey set", () => {
       // Only the bicycle button is selected
       expect(aggregateModes([modeButtonDefinitionsPlanConnection[1]])).toEqual([
-        {
-          mode: "BICYCLE",
-          input: {
-            direct: ["BICYCLE"],
-            directOnly: true
-          }
-        }
+        bicycleOnlyMode
       ]);
       // Both transit and bicycle buttons are selected
       expect(
         aggregateModes(modeButtonDefinitionsPlanConnection).filter(
           m => m.mode === "BICYCLE"
         )
-      ).toEqual([
-        {
-          mode: "BICYCLE",
-          input: {
-            direct: ["BICYCLE"],
-            directOnly: true
-          }
-        },
-        {
-          mode: "BICYCLE",
-          requiredModeButtonKey: "TRANSIT",
-          input: {
-            direct: ["BICYCLE"],
-            transit: {
-              access: ["BICYCLE"],
-              egress: ["BICYCLE"],
-              transfer: ["BICYCLE"]
-            },
-            transitOnly: false
-          }
-        }
-      ]);
+      ).toEqual([bicycleOnlyMode, bicycleTransitMode]);
     });
   });
   describe("filter mode buttons by key", () => {
