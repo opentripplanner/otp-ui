@@ -64,7 +64,7 @@ const MapillaryButton = ({
       if (fetchedId) setImageId(fetchedId);
     };
 
-    if (!imageId && !!mapillaryKey) getMapillaryId();
+    if (!imageId && !!(mapillaryKey || mapillaryProvider)) getMapillaryId();
   }, [coords]);
 
   const handleClick = () => {
