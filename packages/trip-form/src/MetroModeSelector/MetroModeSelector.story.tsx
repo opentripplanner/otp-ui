@@ -26,7 +26,6 @@ function pipe<T>(...fns: Array<(arg: T) => T>) {
 const MetroModeSelectorComponent = ({
   fillModeIcons,
   modeButtonDefinitions,
-  onSetModeSettingValue,
   onToggleModeButton
 }: {
   fillModeIcons?: boolean;
@@ -34,11 +33,9 @@ const MetroModeSelectorComponent = ({
   onSetModeSettingValue: (event: QueryParamChangeEvent) => void;
   onToggleModeButton: (key: string, newState: boolean) => void;
 }): ReactElement => {
-  const [modeSettingValues, setModeSettingValues] = useState({});
   const modeSettingValuesWithDefaults = {
     ...extractModeSettingDefaultsToObject(modeSettingDefinitionsWithDropdown),
-    ...initialState.modeSettingValues,
-    ...modeSettingValues
+    ...initialState.modeSettingValues
   };
 
   const [activeModeButtonKeys, setModeButtonKeys] = useState(
@@ -74,18 +71,11 @@ const MetroModeSelectorComponent = ({
     onToggleModeButton(key, newState);
   };
 
-  const setModeSettingValueAction = (event: QueryParamChangeEvent) => {
-    setModeSettingValues({ ...modeSettingValues, ...event });
-    // Storybook Action:
-    onSetModeSettingValue(event);
-  };
-
   return (
     <Core.MetroModeSelector
       fillModeIcons={fillModeIcons}
       label="Select a transit mode"
       modeButtons={processedModeButtons}
-      onSettingsUpdate={setModeSettingValueAction}
       onToggleModeButton={toggleModeButtonAction}
     />
   );
