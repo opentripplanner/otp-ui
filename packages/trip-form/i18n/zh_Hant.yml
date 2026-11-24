@@ -13,6 +13,8 @@ otpUi:
       rent: 租用
       transit: 公共交通
       walk: 步行
+      subsettingsExpanded: ''
+      subsettingsCollapsed: ''
     settings:
       bikeTolerance-label: 自行車接受度
       bikeTolerance-labelHigh: 自行車騎乘較多
@@ -34,7 +36,4 @@ otpUi:
     bikeOnly: 僅限自行車
     escooterOnly: 僅限電動滑板車
     takeTransit: 使用公共交通
-    travelPreferences: 旅行偏好
-    use: 使用
-    useCompanies: 使用公司
     walkOnly: 僅限步行

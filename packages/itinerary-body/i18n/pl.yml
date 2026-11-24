@@ -14,11 +14,14 @@ otpUi:
         escooter: hulajnoga elektryczna
         vehicle: pojazd
       walkVehicle: Przeprowadź pojazd wzdłuż {place}
+      dropoffRental: ''
     TncLeg:
       bookRide: Zarezerwuj przejazd
-      bookRideLater: Poczekaj do {timeMillis, time, short}, aby dokonać rezerwacji
+      bookRideLater: Poczekaj do {timeMillis, time, short}, aby dokonać 
+        rezerwacji
       estimatedCost: "Szacowany koszt: {minFare} - {maxFare}"
-      estimatedTravelTime: "Szacowany czas podróży: {duration} (nie uwzględnia natężenia ruchu)"
+      estimatedTravelTime: "Szacowany czas podróży: {duration} (nie uwzględnia natężenia
+        ruchu)"
       waitForPickup: >-
         Poczekaj{minutes, plural, =0 { # minuty} other { # minut}} na odbiór
         przez firmę {company}
@@ -60,7 +63,8 @@ otpUi:
       carHail: Jedź
       escooter: Jedź
       walk: Idź
-    transfer: Transfer{duration, select, undefined {} other {, czekaj {duration}}}
+    transfer: Transfer{duration, select, undefined {} other {, czekaj 
+      {duration}}}
     unnamedPath: Nienazwana ścieżka
     unnamedRoad: Droga bez nazwy
     vehicleTitle: "{company} {vehicleType}"
@@ -77,7 +81,8 @@ otpUi:
         {approximatePrefix, select, true {Około } other {}}{hours, plural, =0 {}
         other {# h }}{minutes} min
     externalLink: (Link zewnętrzny)
-    flexAdvanceNotice: " co najmniej {leadDays, plural, one {# dni} other {# dni}} wcześniej"
+    flexAdvanceNotice: " co najmniej {leadDays, plural, one {# dni} other {# dni}}
+      wcześniej"
     flexBookByPhone: "Rezerwacja telefoniczna: "
     flexPickupMessage: Wymagana rezerwacja{advanceNotice}
     stayOnBoard: Zostań w pojeździe na {place}
@@ -94,6 +99,9 @@ otpUi:
       likelyAccessible: prawdopodobnie dostępny
       unclear: nieznany
     viewOnMap: Zobacz na mapie
+    canceled: ''
+    stopIsClosed: ''
+    canceledMessage: ''
   TransitLegBody:
     AlertsBody:
       alertLinkText: Zobacz alert na stronie internetowej {agency}
@@ -121,3 +129,9 @@ otpUi:
     tripViewer: Informacje o podróży
     typicalWait: "Typowy czas oczekiwania: {waitTime}"
     zoomToLeg: Pokaż odcinek na mapie
+    stopIsClosed: ''
+  TextOnlyItinerary:
+    departFrom: ''
+    arriveAt: ''
+    transitArriveAt: ''
+    transitDepartFrom: ''

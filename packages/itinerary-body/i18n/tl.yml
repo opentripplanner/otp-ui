@@ -14,6 +14,7 @@ otpUi:
         escooter: E-scooter
         vehicle: sasakyan
       walkVehicle: Dumaan sa {place}
+      dropoffRental: ''
     TncLeg:
       bookRide: Mag-book ng Ride
       bookRideLater: Maghintay hanggang {timeMillis, time, short} para mag-book
@@ -79,8 +80,10 @@ otpUi:
     common:
       durationShort: "{hours, plural, =0 {} other {# hr }}{minutes} (na) minuto"
     externalLink: (External na Link)
-    flexAdvanceNotice: " kahit na mas maaga nang {leadDays, plural, one {# day} other {# days}}"
-    flexPickupMessage: Para gamitin ang rutang ito, tumawag nang maaga{advanceNotice}
+    flexAdvanceNotice: " kahit na mas maaga nang {leadDays, plural, one {# day} other
+      {# days}}"
+    flexPickupMessage: Para gamitin ang rutang ito, tumawag nang 
+      maaga{advanceNotice}
     stayOnBoard: Manatiling on board sa {place}
     travelBy: Maglakbay sa pamamagitan ng {mode}
     travelByMode:
@@ -90,11 +93,15 @@ otpUi:
       walk: walking
     tripAccessibility:
       inaccessible: hindi ma-access
-      itineraryAccessibility: "Pagiging accessible sa wheelchair ng biyaheng ito:\_"
-      legAccessibility: "Pagiging accessible sa wheelchair ng leg ng biyaheng ito:\_"
+      itineraryAccessibility: "Pagiging accessible sa wheelchair ng biyaheng ito: "
+      legAccessibility: "Pagiging accessible sa wheelchair ng leg ng biyaheng ito: "
       likelyAccessible: malamang na naa-access
       unclear: hindi alam
     viewOnMap: Tingnan sa mapa
+    canceled: ''
+    flexBookByPhone: ''
+    stopIsClosed: ''
+    canceledMessage: ''
   TransitLegBody:
     AlertsBody:
       alertLinkText: Tingnan ang alerto sa website ng {agency}
@@ -122,3 +129,9 @@ otpUi:
     tripViewer: Viewer ng Biyahe
     typicalWait: "Karaniwang tagal ng paghihintay: {waitTime}"
     zoomToLeg: Mag-zoom sa leg sa mapa
+    stopIsClosed: ''
+  TextOnlyItinerary:
+    departFrom: ''
+    arriveAt: ''
+    transitArriveAt: ''
+    transitDepartFrom: ''
