@@ -47,6 +47,7 @@ export const getImageIdForProvider = {
     if (json?.data?.length > 0) {
       return json.data[0].id;
     }
+    return "";
   }
 };
 
