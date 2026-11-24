@@ -3,6 +3,7 @@ import coreUtils from "@opentripplanner/core-utils";
 import React, { Component, FunctionComponent, ReactElement } from "react";
 import AnimateHeight from "react-animate-height";
 import { FormattedMessage } from "react-intl";
+import { MapillaryProvider } from "@opentripplanner/core-utils/lib/mapillary";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
@@ -41,6 +42,7 @@ interface Props {
   legIndex: number;
   mapillaryCallback?: (id: string) => void;
   mapillaryKey?: string;
+  mapillaryProvider?: MapillaryProvider;
   setActiveLeg: SetActiveLegFunction;
   setLegDiagram: (leg: Leg) => void;
   showApproximateTravelTime?: boolean;
@@ -84,6 +86,7 @@ class AccessLegBody extends Component<Props, State> {
       LegIcon,
       mapillaryCallback,
       mapillaryKey,
+      mapillaryProvider,
       setLegDiagram,
       showApproximateTravelTime,
       showElevationProfile,
@@ -116,6 +119,7 @@ class AccessLegBody extends Component<Props, State> {
         clickCallback={mapillaryCallback}
         coords={leg.from}
         mapillaryKey={mapillaryKey}
+        mapillaryProvider={mapillaryProvider}
       />
     );
     return (
@@ -182,6 +186,7 @@ class AccessLegBody extends Component<Props, State> {
                     <AccessLegSteps
                       mapillaryCallback={mapillaryCallback}
                       mapillaryKey={mapillaryKey}
+                      mapillaryProvider={mapillaryProvider}
                       steps={leg.steps}
                       units={config.units}
                     />

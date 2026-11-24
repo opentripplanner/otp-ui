@@ -73,6 +73,7 @@ export default function PlaceRow({
   LineColumnContent,
   mapillaryCallback,
   mapillaryKey,
+  mapillaryProvider,
   nextLeg,
   PlaceName,
   RouteDescription,
@@ -263,6 +264,7 @@ export default function PlaceRow({
               legIndex={legIndex}
               mapillaryCallback={mapillaryCallback}
               mapillaryKey={mapillaryKey}
+              mapillaryProvider={mapillaryProvider}
               setActiveLeg={setActiveLeg}
               setLegDiagram={setLegDiagram}
               showApproximateTravelTime={showApproximateAccessLegTravelTimes}

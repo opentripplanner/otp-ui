@@ -1,5 +1,6 @@
 import * as itinerary from "./itinerary";
 import * as map from "./map";
+import * as mapillary from "./mapillary";
 // @ts-expect-error not typed
 import * as profile from "./profile";
 // @ts-expect-error not typed
@@ -17,6 +18,7 @@ const core = {
   itinerary,
   map,
   profile,
+  mapillary,
   query,
   queryGen,
   queryParams,
