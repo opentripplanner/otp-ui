@@ -36,6 +36,7 @@ const MarkerWithPopup = ({
       style={{ cursor: popupContents ? "pointer" : "inherit" }}
     >
       <span
+        aria-hidden
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
       >
