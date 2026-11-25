@@ -40,6 +40,7 @@ export default function DepartureDate({
       }
       icon={<CalendarAlt size={17} />}
       summary={
+        // TODO: is there a way to do this without `isBoarding`?
         <S.Timing>
           {isBoarding ? (
             <FormattedMessage

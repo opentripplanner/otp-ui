@@ -72,6 +72,7 @@ export function getItinerarySummaryTiming(
   const firstTransitIndex = itinerary.legs.findIndex(isTransitLeg);
   if (firstTransitIndex === -1) return itinerary;
 
+  // TODO: itinerary.legs.findLast
   const lastTransitIndex = itinerary.legs.reduce(
     (lastIndex, leg, index) => (isTransitLeg(leg) ? index : lastIndex),
     firstTransitIndex
