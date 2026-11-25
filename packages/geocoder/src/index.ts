@@ -23,9 +23,11 @@ import OfflineGeocoder from "./geocoders/offline";
 
 // Create a memoized getter to avoid recreating new geocoders each time.
 const getGeocoder = memoize((geocoderConfig: GeocoderConfig) => {
+  // @ts-expect-error alpha troubles
   if (!geocoderConfig || !geocoderConfig.type) {
     return new NoApiGeocoder();
   }
+  // @ts-expect-error alpha troubles
   const { type } = geocoderConfig;
   switch (type) {
     case "ARCGIS":
