@@ -10,6 +10,7 @@ otpUi:
     howToAccessResults: >-
       Utilisez la touche Flèche bas pour parcourir la liste des résultats. Pour
       sélectioner un résultat, utilisez la touche Entrée.
+    inputWithStatus: "{inputLabel}. {statusAnnouncementText}"
     myPlaces: Mes lieux
     nearby: Arrêts à proximité
     noResults: Aucun résultat
@@ -24,5 +25,6 @@ otpUi:
     stops: Arrêts
     suggestedLocations: Lieux suggérés
     suggestedLocationsLong: Basculer l'affichage de la liste de lieux suggérés
+    suggestedLocationsWithStatus: "{toggleLabel}. {statusAnnouncementText}"
     useCurrentLocation: Utiliser ma position actuelle
     workLocation: Lieu de travail
