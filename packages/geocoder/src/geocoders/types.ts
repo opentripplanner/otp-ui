@@ -21,14 +21,14 @@ export type GeocoderConfig = {
   apiKey?: string;
   baseUrl?: string;
   boundary?: Boundary;
+  enableSlowFullUnicodeSupport?: boolean;
   focusPoint?: LonLatInput;
   layers?: string;
   options?: RequestInit;
-  sources?: string;
-  size?: number;
   reverseUseFeatureCollection?: boolean;
-  // Type used to denote which geocoder to use in getGeocoder
-  type?: string;
+  size?: number;
+  sources?: string;
+  typesWithoutSecondaryLabel?: string[]
 };
 
 export type ReverseQuery = {
@@ -49,7 +49,7 @@ export type AutocompleteQuery = {
   layers?: string;
   options?: RequestInit;
   size?: number;
-  sources?: string;
+  sources?: string | null;
   text?: string;
   url?: string;
 };
@@ -64,7 +64,7 @@ export type SearchQuery = {
   size?: number;
   text?: string;
   url?: string;
-  sources?: string;
+  sources?: string | null;
 };
 
 export type AnyGeocoderQuery = SearchQuery & AutocompleteQuery & ReverseQuery;

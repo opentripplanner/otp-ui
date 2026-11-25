@@ -1,8 +1,10 @@
 import { ElevationProfile } from "@opentripplanner/types";
+import { createIntl } from "react-intl";
 import {
   calculateTncFares,
+  descope,
   getCompanyFromLeg,
-  getDisplayedStopId,
+  getDisplayedStopCode,
   getElevationProfile,
   getItineraryCost,
   getLegCost,
@@ -11,6 +13,7 @@ import {
   getLegRouteShortName,
   isFlex,
   isTransit,
+  legElevationAtDistance,
   mapOldElevationComponentToNew
 } from "../itinerary";
 
@@ -18,8 +21,12 @@ import bikeRentalItinerary from "./__mocks__/bike-rental-itinerary.json";
 import tncItinerary from "./__mocks__/tnc-itinerary.json";
 import fareProductItinerary from "./__mocks__/fare-products-itinerary.json";
 import complexItinerary from "./__mocks__/complex-fares.json";
+import tripleItinerary from "./__mocks__/three-transfer-itinerary.json";
 import flexItinerary from "../../../itinerary-body/src/__mocks__/itineraries/flex-itinerary.json";
 import faresv2Itinerary from "../../../itinerary-body/src/__mocks__/itineraries/fares-v2-fare-components.json";
+import legFareProdcuts from "../../../itinerary-body/src/__mocks__/itineraries/leg-fare-products.json";
+
+import defaultEnglishMessages from "../../i18n/en-US.yml";
 
 global.structuredClone = val => JSON.parse(JSON.stringify(val));
 
@@ -30,6 +37,37 @@ const basePlace = {
 };
 
 describe("util > itinerary", () => {
+  const mockIntl = createIntl({
+    locale: "en",
+    messages: {
+      "otpUi.coreUtils.legRouteName.withTripShortName":
+        defaultEnglishMessages.otpUi.coreUtils.legRouteName.withTripShortName
+    }
+  });
+  describe("descope", () => {
+    it("should return the descope'd part for standard scoped strings", () => {
+      expect(descope("agency:cash")).toBe("cash");
+      expect(descope("foo:bar")).toBe("bar");
+    });
+
+    it("should return the input if it is not scoped", () => {
+      expect(descope("cash")).toBe("cash");
+      expect(descope("")).toBe("");
+    });
+
+    it("should only return the segment after the first ':'", () => {
+      expect(descope("aaaa:bbbb:cccc")).toBe("bbbb:cccc");
+      expect(descope(":value")).toBe("value");
+      expect(descope("value:")).toBe("");
+      expect(descope(":")).toBe("");
+    });
+
+    it("should handle null and undefined", () => {
+      expect(descope(null)).toBeNull();
+      expect(descope(undefined)).toBeUndefined();
+    });
+  });
+
   describe("getElevationProfile", () => {
     it("should work with REST legacy data and GraphQL elevationProfile", () => {
       const legacyOutput = getElevationProfile(
@@ -88,47 +126,35 @@ describe("util > itinerary", () => {
     });
   });
 
-  describe("getDisplayedStopId", () => {
+  describe("getDisplayedStopCode", () => {
     it("should return the stop code if one is provided", () => {
       const place = {
         ...basePlace,
         stopCode: "code123",
         stopId: "xagency:id123"
       };
-      expect(getDisplayedStopId(place)).toEqual("code123");
+      expect(getDisplayedStopCode(place)).toEqual("code123");
       const stop = {
         ...basePlace,
         code: "code123",
         id: "xagency:id123"
       };
-      expect(getDisplayedStopId(stop)).toEqual("code123");
+      expect(getDisplayedStopCode(stop)).toEqual("code123");
     });
-    it("should return the id part of stopId it contains and agencyId (and no stopCode is provided)", () => {
+    it("should return undefined if id is present and no stopCode is provided", () => {
       const place = {
         ...basePlace,
         stopId: "xagency:id123"
       };
-      expect(getDisplayedStopId(place)).toEqual("id123");
+      expect(getDisplayedStopCode(place)).toBeFalsy();
       const stop = {
         ...basePlace,
         id: "xagency:id123"
       };
-      expect(getDisplayedStopId(stop)).toEqual("id123");
+      expect(getDisplayedStopCode(stop)).toBeFalsy();
     });
-    it("should return the whole stopId it does not contain an agency part (and no stopCode is provided)", () => {
-      const place = {
-        ...basePlace,
-        stopId: "wholeid123"
-      };
-      expect(getDisplayedStopId(place)).toEqual("wholeid123");
-      const stop = {
-        ...basePlace,
-        stopId: "wholeid123"
-      };
-      expect(getDisplayedStopId(stop)).toEqual("wholeid123");
-    });
-    it("should return null if stopId is null (and no stopCode is provided)", () => {
-      expect(getDisplayedStopId(basePlace)).toBeFalsy();
+    it("should return undefined if stopId is null (and no stopCode is provided)", () => {
+      expect(getDisplayedStopCode(basePlace)).toBeFalsy();
     });
   });
 
@@ -247,25 +273,33 @@ describe("util > itinerary", () => {
         "cash",
         "regular"
       );
-      expect(result.amount).toEqual(5.75);
-      expect(result.currency).toEqual({
+      expect(result?.amount).toEqual(5.75);
+      expect(result?.currency).toEqual({
         code: "USD",
         digits: 2
       });
     });
     it("should calculate the total cost of an itinerary using fares v2", () => {
       const result = getItineraryCost(faresv2Itinerary.legs, "3", "ADULT");
-      expect(result.amount).toEqual(2.8);
+      expect(result?.amount).toEqual(2.8);
       const complexResult = getItineraryCost(
         faresv2Itinerary.legs,
         ["0", "0"],
         ["ADULT", "ADULT"]
       );
-      expect(complexResult.amount).toEqual(2.8 * 2);
+      expect(complexResult?.amount).toEqual(2.8 * 2);
     });
     it("should calculate the total cost of an itinerary with multiple v2 fares & transfers", () => {
       const result = getItineraryCost(complexItinerary.legs, "0", "ADULT");
       expect(result.amount).toEqual(3.0);
+    });
+    it("should calculate the total cost of an itinerary with three different fares v2 transfers with different rider categories", () => {
+      const result = getItineraryCost(
+        tripleItinerary.legs,
+        ["0", "0"],
+        ["ADULT", null]
+      );
+      expect(result?.amount).toEqual(11.55);
     });
     it("should calculate the individual leg cost of a fares v2 legs", () => {
       const firstLegResult = getLegCost(faresv2Itinerary.legs[1], "3", "ADULT");
@@ -286,13 +320,20 @@ describe("util > itinerary", () => {
         2.8
       );
     });
-    it("should calculate the total cost of an itinerary will null ids", () => {
+    it("should calculate the total cost of an itinerary with null ids", () => {
       const result = getItineraryCost(fareProductItinerary.legs, null, null);
       expect(result.amount).toEqual(2.75);
       expect(result.currency).toEqual({
         code: "USD",
         digits: 2
       });
+      const resultWithDashEnabled = getItineraryCost(
+        legFareProdcuts.legs,
+        "orca",
+        "youth",
+        true
+      );
+      expect(resultWithDashEnabled).toEqual(undefined);
     });
     it("should return undefined when the keys are invalid", () => {
       const result = getItineraryCost(
@@ -330,6 +371,30 @@ describe("util > itinerary", () => {
         })
       ).toBe("15");
     });
+
+    it("should append a trip short name from an OTP1 leg when provided", () => {
+      expect(
+        getLegRouteShortName(
+          {
+            route: "15",
+            trip: { id: "test", tripShortName: "Train 123" }
+          },
+          mockIntl
+        )
+      ).toBe("15 (Train 123)");
+    });
+
+    it("should append a trip short name from an OTP2 leg when provided", () => {
+      expect(
+        getLegRouteShortName(
+          {
+            route: { id: "id15", shortName: "15" },
+            trip: { id: "test", tripShortName: "Train 123" }
+          },
+          mockIntl
+        )
+      ).toBe("15 (Train 123)");
+    });
   });
   describe("getLegRouteLongName", () => {
     it("should extract a route long name from an OTP1 leg", () => {
@@ -346,40 +411,155 @@ describe("util > itinerary", () => {
         })
       ).toBe("15");
     });
+
+    it("should append a trip long name from an OTP1 leg when provided", () => {
+      expect(
+        getLegRouteLongName(
+          {
+            route: "15",
+            routeLongName: "Candler Road",
+            trip: { id: "test", tripShortName: "Train 123" }
+          },
+          mockIntl
+        )
+      ).toBe("Candler Road (Train 123)");
+    });
+
+    it("should append a trip long name from an OTP2 leg when provided", () => {
+      expect(
+        getLegRouteLongName(
+          {
+            route: { id: "id15", longName: "15" },
+            routeLongName: "31",
+            trip: { id: "test", tripShortName: "Train 123" }
+          },
+          mockIntl
+        )
+      ).toBe("15 (Train 123)");
+    });
   });
   describe("getLegRouteName", () => {
     it("should extract a route name from an OTP1 leg where a route short name is provided", () => {
       expect(
-        getLegRouteName({
-          route: "15",
-          routeShortName: "31",
-          routeLongName: "Route 31"
-        })
+        getLegRouteName(
+          {
+            route: "15",
+            routeShortName: "31",
+            routeLongName: "Route 31"
+          },
+          mockIntl
+        )
       ).toBe("31");
     });
     it("should extract a route name from an OTP1 leg where a route short name is not provided", () => {
       expect(
-        getLegRouteName({
-          routeLongName: "Route 31"
-        })
+        getLegRouteName(
+          {
+            routeLongName: "Route 31"
+          },
+          mockIntl
+        )
       ).toBe("Route 31");
+    });
+    it("should append a trip short name from on OTP1 leg when provided", () => {
+      expect(
+        getLegRouteName(
+          {
+            route: "15",
+            routeShortName: "31",
+            routeLongName: "Route 31",
+            trip: {
+              id: "test",
+              tripShortName: "H"
+            }
+          },
+          mockIntl
+        )
+      ).toBe("31 (H)");
     });
     it("should extract a route name from an OTP2 leg where a route short name is provided", () => {
       expect(
-        getLegRouteName({
-          route: { id: "id15", longName: "15", shortName: "10" },
-          routeLongName: "31"
-        })
+        getLegRouteName(
+          {
+            route: { id: "id15", longName: "15", shortName: "10" },
+            routeLongName: "31"
+          },
+          mockIntl
+        )
       ).toBe("10");
     });
     it("should extract a route name from an OTP2 leg where a route short name is not provided", () => {
       expect(
-        getLegRouteName({
-          route: { id: "id15", longName: "15" },
-          routeLongName: "31",
-          routeShortName: "31"
-        })
+        getLegRouteName(
+          {
+            route: { id: "id15", longName: "15" },
+            routeLongName: "31",
+            routeShortName: "31"
+          },
+          mockIntl
+        )
       ).toBe("15");
+    });
+    it("should append a trip short name from an OTP2 leg when provided", () => {
+      expect(
+        getLegRouteName(
+          {
+            route: { id: "id15", longName: "15", shortName: "10" },
+            routeLongName: "31",
+            trip: { id: "test", tripShortName: "H" }
+          },
+          mockIntl
+        )
+      ).toBe("10 (H)");
+    });
+  });
+
+  describe("legElevationAtDistance", () => {
+    it("should interpolate elevation within a segment", () => {
+      const points: any = [
+        [0, 100],
+        [10, 110],
+        [20, 120]
+      ];
+      // halfway between 100 and 110
+      expect(legElevationAtDistance(points, 5)).toBe(105);
+      expect(legElevationAtDistance(points, 15)).toBe(115);
+    });
+
+    it("should return start elevation at distance 0", () => {
+      const points: any = [
+        [0, 42],
+        [10, 52]
+      ];
+      expect(legElevationAtDistance(points, 0)).toBe(42);
+    });
+
+    it("should return end elevation at the segment boundary", () => {
+      const points: any = [
+        [0, 100],
+        [10, 110],
+        [20, 120]
+      ];
+      expect(legElevationAtDistance(points, 10)).toBe(110);
+      expect(legElevationAtDistance(points, 20)).toBe(120);
+    });
+
+    it("should return undefined when distance is before the profile", () => {
+      const points: any = [
+        [0, 100],
+        [10, 110],
+        [20, 120]
+      ];
+      expect(legElevationAtDistance(points, -1)).toBeUndefined();
+      expect(legElevationAtDistance(points, 21)).toBeUndefined();
+    });
+
+    it("should return undefined when first point is not at zero", () => {
+      const points: any = [
+        [5, 100],
+        [15, 110]
+      ];
+      expect(legElevationAtDistance(points, 4)).toBeUndefined();
     });
   });
 });

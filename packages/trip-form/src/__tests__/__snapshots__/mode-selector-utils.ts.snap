@@ -85,7 +85,6 @@ exports[`mode selector utils check add settings to button should add applicable 
       {
         "addTransportMode": {
           "mode": "BICYCLE",
-          "qualifier": "RENT",
         },
         "applicableMode": "BICYCLE",
         "default": true,
@@ -158,7 +157,6 @@ exports[`mode selector utils populate mode settings with values should populate 
   {
     "addTransportMode": {
       "mode": "BICYCLE",
-      "qualifier": "RENT",
     },
     "applicableMode": "BICYCLE",
     "default": true,

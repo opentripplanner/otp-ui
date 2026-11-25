@@ -1,11 +1,14 @@
 import polyline from "@mapbox/polyline";
 import { ExpressionSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { TransitivePattern, TransitiveRoute } from "@opentripplanner/types";
+import colors from "@opentripplanner/building-blocks";
 
 import { drawArc } from "./util";
 
+const { blue, grey } = colors;
+
 /**
- * Create a labeled-line feature for the given transit route pattern.
+ * Create a labeled-line feature for the given transit route pattern
  */
 export function patternToRouteFeature(
   pattern: TransitivePattern,
@@ -15,21 +18,23 @@ export function patternToRouteFeature(
   // Concatenate geometries (arrays of coordinates) to help maplibre spread out labels (not perfect).
   const concatenatedLines = pattern.stops
     .map(stop => stop.geometry)
-    .filter(geometry => !!geometry)
-    .reduce((result, geom, index) => {
+    .filter((geo): geo is string => !!geo)
+    .reduce<[number, number][]>((result, geom, index) => {
       const coords = polyline.decode(geom);
       // Remove the first element (except for the first array) because it is a duplicate
       // of the last element of the previous array.
       if (index !== 0) coords.shift();
       return result.concat(coords);
     }, []);
-  const routeName = route.route_short_name || route.route_long_name || "";
+  const routeName = route?.route_short_name || route?.route_long_name || "";
 
   const properties = {
-    color: `#${route.route_color || "000080"}`,
+    color: route?.route_color ? `#${route.route_color}` : blue[900],
     name: routeName,
-    routeType: route.route_type,
-    textColor: `#${route.route_text_color || "eee"}`,
+    routeType: route?.route_type,
+    textColor: route?.route_text_color
+      ? `#${route.route_text_color}`
+      : grey[50],
     type: "route"
   };
 
@@ -49,7 +54,8 @@ export function patternToRouteFeature(
  * Obtains common layout options for route label layers.
  */
 export function getRouteLayerLayout(
-  textField: string
+  textField: string,
+  boldFonts?: string[]
 ): SymbolLayerSpecification["layout"] {
   // Generates a single icon based on the string length
   function generateIcon(length: number) {
@@ -66,23 +72,35 @@ export function getRouteLayerLayout(
     "rect"
   ];
 
+  // TODO: Tweak shape of roundels for perfect circle
   return {
     "icon-image": iconImage as ExpressionSpecification,
     "icon-optional": false,
-    "icon-allow-overlap": true,
+    "icon-allow-overlap": false,
     "icon-rotation-alignment": "viewport",
-    "icon-text-fit-padding": [17, 17.5, 17, 17.5],
+    "icon-text-fit-padding": [11, 10, 11, 10],
     "icon-text-fit": "both",
     "symbol-placement": "line-center",
+    "symbol-spacing": [
+      "interpolate",
+      ["linear"],
+      ["zoom"],
+      0,
+      250,
+      10,
+      225,
+      20,
+      220
+    ] as ExpressionSpecification,
     "text-allow-overlap": true,
     "text-field": ["get", textField],
-    "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
+    "text-font": boldFonts,
     "text-ignore-placement": true,
     "text-justify": "left",
     "text-line-height": 0.5,
     "text-letter-spacing": 0,
     "text-padding": 0,
     "text-rotation-alignment": "viewport",
-    "text-size": 16
+    "text-size": 13
   };
 }

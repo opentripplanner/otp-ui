@@ -31,6 +31,11 @@ const STOP_NO_CODE = {
   name: "W Burnside & SW 2nd"
 };
 
+const CLOSED_STOP = {
+  ...STOP_NO_CODE,
+  closed: true
+};
+
 const STOP_WITH_CODE = {
   flex: false,
   code: "9526",
@@ -132,6 +137,15 @@ export const StopEntity = (): JSX.Element => (
   />
 );
 
+export const StopEntityClosedStop = (): JSX.Element => (
+  <MapPopupContents
+    entity={CLOSED_STOP}
+    feeds={SAMPLE_FEEDS}
+    setLocation={action("setLocation")}
+    setViewedStop={action("setViewedStop")}
+  />
+);
+
 export const StopEntityWithFeedName = (): JSX.Element => (
   <MapPopupContents
     entity={STOP_WITH_FEED_ID}
@@ -151,7 +165,7 @@ export const StopEntityWithEntityPrefix = (): JSX.Element => (
 );
 
 export const StopEntityNoHandlers = (): JSX.Element => (
-  <MapPopupContents entity={STOP_WITH_CODE} />
+  <MapPopupContents entity={STOP_NO_CODE} />
 );
 
 export const StopEntityNoStopCode = (): JSX.Element => (
@@ -159,6 +173,15 @@ export const StopEntityNoStopCode = (): JSX.Element => (
     entity={STOP_NO_CODE}
     setLocation={action("setLocation")}
     setViewedStop={action("setViewedStop")}
+  />
+);
+
+export const StopEntityNoViewedStopHandler = (): JSX.Element => (
+  <MapPopupContents
+    entity={STOP_WITH_CODE}
+    feeds={SAMPLE_FEEDS}
+    setLocation={action("setLocation")}
+    setViewedStop={undefined}
   />
 );
 

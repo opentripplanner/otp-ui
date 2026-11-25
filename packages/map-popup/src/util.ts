@@ -13,10 +13,10 @@ export function getNetwork(entity: Entity, configCompanies: Company[]): string {
   return (
     "rentalNetwork" in entity &&
     (coreUtils.itinerary.getCompaniesLabelFromNetworks(
-      entity.rentalNetwork.networkId,
+      entity?.rentalNetwork?.networkId,
       configCompanies
     ) ||
-      entity.rentalNetwork.networkId)
+      entity?.rentalNetwork?.networkId)
   );
 }
 

@@ -5,21 +5,25 @@ import type { AutocompleteQuery, SearchQuery } from "..";
 import { MultiGeocoderResponse } from "./types";
 import { OfflineResponse } from "../apis/offline";
 
+type OfflineQueryExtras = { enableSlowFullUnicodeSupport?: boolean }
+
 /**
  * Geocoder implementation for an offline geocoder.
  *
  * @extends Geocoder
  */
 export default class OfflineGeocoder extends Geocoder {
-  getAutocompleteQuery(query: AutocompleteQuery): AutocompleteQuery {
+  getAutocompleteQuery(query: AutocompleteQuery): AutocompleteQuery & OfflineQueryExtras  {
     return {
-      ...query
+      ...query,
+      enableSlowFullUnicodeSupport: this.geocoderConfig.enableSlowFullUnicodeSupport
     };
   }
 
-  getSearchQuery(query: SearchQuery): SearchQuery {
+  getSearchQuery(query: SearchQuery): SearchQuery & OfflineQueryExtras {
     return {
-      ...query
+      ...query,
+      enableSlowFullUnicodeSupport: this.geocoderConfig.enableSlowFullUnicodeSupport
     };
   }
 
@@ -28,11 +32,13 @@ export default class OfflineGeocoder extends Geocoder {
       features: response?.map((r, index) => ({
         geometry: { type: "Point", coordinates: [r.lon, r.lat] },
         properties: {
+          ...r,
           id: `custom-${index}`,
           label: r.label,
-          layer: "custom",
+          // If enough address info is present, enable clients to read result as a venue
+          layer: r?.street || r?.neighbourhood || r?.locality || r?.region_a ? "venue" : "custom",
           name: r.label,
-          source: "offline",
+          source: "offline"
         },
         type: "Feature"
       })),

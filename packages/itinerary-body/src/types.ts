@@ -64,6 +64,7 @@ export interface LineColumnContentProps extends LegSharedProps {
 export interface PlaceNameProps {
   config: Config;
   interline?: boolean;
+  leg: Leg;
   place: Place;
 }
 
@@ -96,6 +97,16 @@ export interface TransitLegSummaryProps {
   stopsExpanded: boolean;
 }
 
+export interface TransitLegFooterProps {
+  /** Contains details about the leg object */
+  leg: Leg;
+}
+
+export interface AccessLegFooterProps {
+  /** Contains details about the leg object */
+  leg: Leg;
+}
+
 /**
  * Shared props for various components that render itinerary data.
  */
@@ -118,9 +129,15 @@ interface ItineraryBodySharedProps {
   /** If true, alerts in a trip leg always open in a collapsed state. */
   alwaysCollapseAlerts: boolean;
   /**
+   * Enables correct styling for canceled transit trips within an itinerary
+   */
+  canceled?: boolean;
+  /**
    * Used for additional styling with styled components for example.
    */
   className?: string;
+  /** A set of stop IDs for stops that should be marked as closed in the itinerary */
+  closedStopIds?: Set<string>;
   /** Contains OTP configuration details. */
   config: Config;
   /**
@@ -225,12 +242,25 @@ interface ItineraryBodySharedProps {
   /** Converts a route's ID to its accepted badge abbreviation */
   toRouteAbbreviation?: ToRouteAbbreviationFunction;
   /**
+   * An optional custom component for rendering a footer below an access leg
+   * (e.g., walk, bike, scooter, car).
+   * The component is sent the following props:
+   * - leg: the access leg
+   */
+  AccessLegFooter?: FunctionComponent<AccessLegFooterProps>;
+  /**
    * An optional custom component for rendering a subheader on transit legs.
    * * The component is sent the following props:
    * - leg: the transit leg
    * - onStopClick: triggered when the optional stop icon is clicked.
    */
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
+  /**
+   * An optional custom component for rendering a footer below a transit leg.
+   * The component is sent the following props:
+   * - leg: the transit leg
+   */
+  TransitLegFooter?: FunctionComponent<TransitLegFooterProps>;
   /**
    * A custom component for rendering the summary of a transit leg.
    * The component is sent 2 props:

@@ -13,7 +13,7 @@ import {
   SkullCrossbones,
   Star,
   Train,
-} from "styled-icons/fa-solid";
+} from "@styled-icons/fa-solid";
 
 import { GeocodedFeature, Stop } from "@opentripplanner/types";
 import LocationField from "..";

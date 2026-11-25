@@ -183,15 +183,15 @@ const VehicleRentalOverlay = ({
         entity =>
           // Include specified companies only if companies is specified and network info is available
           !companies ||
-          !entity.rentalNetwork.networkId ||
-          companies.includes(entity.rentalNetwork.networkId)
+          !entity?.rentalNetwork?.networkId ||
+          companies.includes(entity?.rentalNetwork?.networkId)
       )
       .map(entity => ({
         type: "Feature",
         geometry: { type: "Point", coordinates: [entity.lon, entity.lat] },
         properties: {
           ...entity,
-          networks: entity.rentalNetwork.networkId,
+          networks: entity?.rentalNetwork?.networkId,
           "stroke-width": entityIsStation(entity) ? 1 : 2,
           color: getColorForEntity(entity)
         }

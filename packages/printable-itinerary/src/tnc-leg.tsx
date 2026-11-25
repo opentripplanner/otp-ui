@@ -1,6 +1,11 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { Defaults, parseOTP2Minute } from "@opentripplanner/itinerary-body";
-import { GradationMap, Leg, LegIconComponent } from "@opentripplanner/types";
+import {
+  GradationMap,
+  Leg,
+  LegIconComponent,
+  LegHeadingProp
+} from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 
@@ -10,7 +15,7 @@ import { defaultMessages, strongText } from "./util";
 
 const { getCompanyForNetwork } = coreUtils.itinerary;
 
-interface Props {
+interface Props extends LegHeadingProp {
   accessibilityScoreGradationMap?: GradationMap;
   leg: Leg;
   LegIcon: LegIconComponent;
@@ -19,7 +24,8 @@ interface Props {
 export default function TNCLeg({
   accessibilityScoreGradationMap,
   leg,
-  LegIcon
+  LegIcon,
+  headingAs
 }: Props): ReactElement {
   const { rideHailingEstimate } = leg;
   if (!rideHailingEstimate) return null;
@@ -33,7 +39,7 @@ export default function TNCLeg({
         LegIcon={LegIcon}
       />
       <S.LegBody>
-        <S.LegHeader>
+        <S.LegHeader as={headingAs}>
           <FormattedMessage
             defaultMessage={
               defaultMessages["otpUi.PrintableItinerary.TncLeg.header"]

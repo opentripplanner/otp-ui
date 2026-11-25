@@ -45,6 +45,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
   render(): ReactElement {
     const {
       alwaysCollapseAlerts,
+      closedStopIds,
       defaultFareSelector,
       hideDrivingDirections = false,
       itinerary,
@@ -63,6 +64,8 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
       styledItinerary,
       TimeColumnContent,
       toRouteAbbreviation = r => r?.toString()?.substr(0, 2),
+      AccessLegFooter,
+      TransitLegFooter,
       TransitLegSubheader,
       TransitLegSummary,
       AlertToggleIcon,
@@ -91,6 +94,7 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         AlertBodyIcon={AlertBodyIcon}
         AlertToggleIcon={AlertToggleIcon}
         alwaysCollapseAlerts={alwaysCollapseAlerts}
+        closedStopIds={closedStopIds}
         config={config}
         defaultFareSelector={defaultFareSelector}
         diagramVisible={diagramVisible}
@@ -119,6 +123,8 @@ export default class ItineraryBodyDefaultsWrapper extends Component<
         showViewTripButton={showViewTripButton}
         TimeColumnContent={TimeColumnContent}
         toRouteAbbreviation={toRouteAbbreviation}
+        AccessLegFooter={AccessLegFooter}
+        TransitLegFooter={TransitLegFooter}
         TransitLegSubheader={TransitLegSubheader}
         TransitLegSummary={TransitLegSummary || DefaultTransitLegSummary}
       />

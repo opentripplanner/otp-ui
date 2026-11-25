@@ -6,10 +6,12 @@ otpUi:
       header: <strong>乘坐 {company}</strong> 前往 <strong>{place}</strong>
     TransitLeg:
       alight: >-
-        <strong>{time, time, short}</strong> 在 <strong>{place}</strong>
-        ({stopId}) 下车
+        <strong>{time, time, short}</strong> 在
+        <strong>{place}</strong>{stopCode, select, undefined {} other {
+        ({stopCode})}} 下车
       board: >-
-        <strong>{time, time, short}</strong> 在 <strong>{place}</strong>
-        ({stopId}) 上车
+        <strong>{time, time, short}</strong> 在
+        <strong>{place}</strong>{stopCode, select, undefined {} other {
+        ({stopCode})}} 上车
       continuesAs: 继续作为 {routeDescription}
     depart: 从 <strong>{place}</strong> <strong>出发</strong>

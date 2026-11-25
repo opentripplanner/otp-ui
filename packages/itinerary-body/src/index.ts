@@ -21,12 +21,15 @@ import type {
   FrameLegFunction,
   TripSection,
   SetViewedTripFunction,
+  AccessLegFooterProps,
+  TransitLegFooterProps,
   TransitLegSubheaderProps,
   TransitLegSummaryProps,
   PlaceRowProps,
   ItineraryBodyProps
 } from "./types";
 import * as Types from "./types";
+import textOnlyItineraryString from "./textOnlyItinerary";
 
 export default ItineraryBody;
 
@@ -41,6 +44,7 @@ export {
   TransitLegBody,
   getPlaceName,
   parseOTP2Minute,
+  textOnlyItineraryString,
   RouteDescriptionProps,
   RouteDescriptionFooterProps,
   ToRouteAbbreviationFunction,
@@ -53,6 +57,8 @@ export {
   FrameLegFunction,
   TripSection,
   SetViewedTripFunction,
+  AccessLegFooterProps,
+  TransitLegFooterProps,
   TransitLegSubheaderProps,
   TransitLegSummaryProps,
   PlaceRowProps,

@@ -8,5 +8,6 @@
     "skipLibCheck": true
   },
   "jsx": "react",
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["**/*.story.tsx", "**/*.story.ts", "src/stories/**/*"]
 }

@@ -1,6 +1,6 @@
 import { FilterSpecification, SymbolLayerSpecification } from "maplibre-gl";
 import { util } from "@opentripplanner/base-map";
-import React, { useEffect } from "react";
+import React, { RefObject, useEffect, useState } from "react";
 import { Layer, MapRef, Source, useMap } from "react-map-gl/maplibre";
 import polyline from "@mapbox/polyline";
 import {
@@ -10,10 +10,24 @@ import {
   TransitivePattern,
   TransitivePlace
 } from "@opentripplanner/types";
+import colors from "@opentripplanner/building-blocks";
+
 import bbox from "@turf/bbox";
 
+import {
+  FeatureCollection,
+  GeoJsonProperties,
+  Geometry,
+  LineString
+} from "geojson";
 import { getRouteLayerLayout, patternToRouteFeature } from "./route-layers";
-import { drawArc, getFromToAnchors, itineraryToTransitive } from "./util";
+import {
+  drawArc,
+  getFromToAnchors,
+  itineraryToTransitive,
+  getFontsFromVectorTiles,
+  SortedFonts
+} from "./util";
 import routeArrow from "./images/route_arrow.png";
 import capsule1 from "./images/01.png";
 import capsule3 from "./images/03.png";
@@ -33,7 +47,7 @@ import capsule16 from "./images/16.png";
 import capsule17 from "./images/17.png";
 import rectangle from "./images/square.png";
 
-const CAPSULES = {
+const CAPSULES: Record<number, string> = {
   3: capsule3,
   4: capsule4,
   5: capsule5,
@@ -52,7 +66,7 @@ const CAPSULES = {
 };
 
 // These are based on the sprites in the image folder
-const WIDTH_IMAGE_SIZES = {
+const WIDTH_IMAGE_SIZES: Record<number, number> = {
   6: 1283,
   7: 1450,
   8: 1617,
@@ -70,14 +84,20 @@ const HEIGHT_IMAGE_SIZE = 533;
 
 export { itineraryToTransitive };
 
+const { blue, grey, red } = colors;
+
+// These color variables correspond to those in the itinerary-body package
+// TODO: Move these into building-blocks
+const MICROMOBILITY_ORANGE = "#f5a729";
+
 // TODO: BETTER COLORS
-const modeColorMap = {
-  CAR: "#888",
-  BICYCLE: "#f00",
-  SCOOTER: "#f5a729",
-  MICROMOBILITY: "#f5a729",
-  MICROMOBILITY_RENT: "#f5a729",
-  WALK: "#86cdf9"
+const modeColorMap: Record<string, string> = {
+  CAR: grey[500],
+  BICYCLE: red[600],
+  SCOOTER: MICROMOBILITY_ORANGE,
+  MICROMOBILITY: MICROMOBILITY_ORANGE,
+  MICROMOBILITY_RENT: MICROMOBILITY_ORANGE,
+  WALK: blue[400]
 };
 
 /**
@@ -89,16 +109,24 @@ const defaultTextPaintParams = {
   "text-halo-width": 2
 };
 
+const DEFAULT_REGULAR_FONTS = ["Open Sans Regular", "Arial Unicode MS Regular"];
+const DEFAULT_BOLD_FONTS = ["Open Sans Bold", "Arial Unicode MS Bold"];
+
 /**
  * Common text settings.
  */
-const commonTextLayoutParams: SymbolLayerSpecification["layout"] = {
-  "symbol-placement": "point",
-  "text-allow-overlap": false,
-  "text-field": ["get", "name"],
-  "text-justify": "auto",
-  "text-radial-offset": 1,
-  "text-size": 15
+const commonTextLayoutParams = (
+  vectorTileFonts?: SortedFonts
+): SymbolLayerSpecification["layout"] => {
+  return {
+    "symbol-placement": "point",
+    "text-allow-overlap": false,
+    "text-field": ["get", "name"],
+    "text-justify": "auto",
+    "text-radial-offset": 1,
+    "text-size": 15,
+    "text-font": vectorTileFonts?.regular || DEFAULT_REGULAR_FONTS
+  };
 };
 
 /**
@@ -121,11 +149,15 @@ const defaultTextLayoutParams: SymbolLayerSpecification["layout"] = {
 /**
  * Default text + bold default fonts
  */
-const defaultBoldTextLayoutParams: SymbolLayerSpecification["layout"] = {
-  ...commonTextLayoutParams,
-  // FIXME: find a better way to set a bold font
-  "text-font": ["Open Sans Bold", "Arial Unicode MS Bold"],
-  "text-overlap": "never"
+const defaultBoldTextLayoutParams = (
+  boldFonts?: string[]
+): SymbolLayerSpecification["layout"] => {
+  return {
+    ...commonTextLayoutParams,
+    // FIXME: find a better way to set a bold font
+    "text-font": boldFonts,
+    "text-overlap": "never"
+  };
 };
 
 const routeFilter: FilterSpecification = ["==", "type", "route"];
@@ -142,6 +174,8 @@ type Props = {
   activeLeg?: Leg;
   accessLegColorOverride?: string;
   boundsFitting?: boolean;
+  /* Reference to the map you're rendering the transitive layer onto */
+  mapRef?: RefObject<MapRef>;
   showRouteArrows?: boolean;
   transitiveData?: TransitiveData;
 };
@@ -173,10 +207,23 @@ const TransitiveCanvasOverlay = ({
   activeLeg,
   accessLegColorOverride,
   boundsFitting = true,
+  mapRef,
   showRouteArrows,
   transitiveData
 }: Props): JSX.Element => {
   const { current: map } = useMap();
+  const [mapLoaded, setMapLoaded] = useState(false);
+  const [vectorTileFonts, setVectorTileFonts] = useState<
+    SortedFonts | undefined
+  >(undefined);
+
+  mapRef?.current?.on("load", () => setMapLoaded(true));
+
+  useEffect(() => {
+    const fonts =
+      mapRef?.current && mapLoaded && getFontsFromVectorTiles(mapRef?.current);
+    setVectorTileFonts(fonts || undefined);
+  }, [map, mapLoaded]);
 
   const mapImages: MapImage[] = [];
   // This is used to render arrows along the route
@@ -191,7 +238,7 @@ const TransitiveCanvasOverlay = ({
 
   function generateCapsulePadding(
     width: number
-  ): [number, number, number, number] {
+  ): [number, number, number, number] | undefined {
     // Low widths have no padding
     if (!WIDTH_IMAGE_SIZES[width]) {
       return undefined;
@@ -258,12 +305,12 @@ const TransitiveCanvasOverlay = ({
   });
 
   useEffect(() => {
-    loadImages(map, mapImages);
+    map && loadImages(map, mapImages);
   }, []);
 
   const geojson: GeoJSON.FeatureCollection<
     GeoJSON.Geometry,
-    Record<string, unknown>
+    GeoJsonProperties
   > = {
     type: "FeatureCollection",
     features: transitiveData
@@ -272,7 +319,7 @@ const TransitiveCanvasOverlay = ({
             return {
               type: "Feature",
               properties: {
-                color: modeColorMap[place.type] || "#008",
+                color: modeColorMap[place.type] || blue[900],
                 name: place.place_name,
                 type: place.type || "place"
               },
@@ -285,34 +332,39 @@ const TransitiveCanvasOverlay = ({
           ...(transitiveData.journeys || []).flatMap(
             (journey: TransitiveJourney) =>
               journey.segments
-                .filter(segment => segment.streetEdges?.length > 0)
+                .filter(
+                  segment =>
+                    segment.streetEdges?.length &&
+                    segment.streetEdges?.length > 0
+                )
                 .map(segment => ({
                   ...segment,
-                  geometries: segment.streetEdges.map(edge => {
-                    return transitiveData.streetEdges.find(
-                      entry => entry.edge_id === edge
+                  geometries: segment.streetEdges?.flatMap(edge => {
+                    const entry = transitiveData.streetEdges.find(
+                      e => e.edge_id === edge
                     );
+                    return entry ? [entry] : [];
                   })
                 }))
-                .flatMap(segment => {
-                  return segment.geometries.map(geometry => {
+                .flatMap(segment =>
+                  (segment.geometries ?? []).map(geometry => {
                     const straight = polyline.toGeoJSON(
                       geometry.geometry.points
                     );
                     return {
-                      type: "Feature",
+                      type: "Feature" as const,
                       properties: {
                         type: "street-edge",
                         color:
                           accessLegColorOverride ||
                           modeColorMap[segment.type] ||
-                          "#008",
+                          blue[900],
                         mode: segment.type
                       },
                       geometry: segment.arc ? drawArc(straight) : straight
-                    } as GeoJSON.Feature;
-                  });
-                })
+                    };
+                  })
+                )
           ),
           // Extract the first and last stops of each transit segment for display.
           ...(transitiveData.journeys || [])
@@ -320,7 +372,7 @@ const TransitiveCanvasOverlay = ({
             .filter(segment => segment.type === "TRANSIT")
             .map(segment =>
               transitiveData.patterns.find(
-                p => p.pattern_id === segment.patterns[0]?.pattern_id
+                p => p.pattern_id === segment.patterns?.[0]?.pattern_id
               )
             )
             .filter(pattern => !!pattern)
@@ -338,10 +390,10 @@ const TransitiveCanvasOverlay = ({
               stop =>
                 ({
                   type: "Feature",
-                  properties: { name: stop.stop_name, type: "stop" },
+                  properties: { name: stop?.stop_name, type: "stop" },
                   geometry: {
                     type: "Point",
-                    coordinates: [stop.stop_lon, stop.stop_lat]
+                    coordinates: [stop?.stop_lon, stop?.stop_lat]
                   }
                 } as GeoJSON.Feature)
             ),
@@ -354,7 +406,9 @@ const TransitiveCanvasOverlay = ({
       : []
   };
 
-  const zoomToGeoJSON = geoJson => {
+  const zoomToGeoJSON = (
+    geoJson: FeatureCollection<Geometry, GeoJsonProperties> | LineString
+  ) => {
     if (!boundsFitting) return;
     const b = bbox(geoJson);
     const bounds: [number, number, number, number] = [b[0], b[1], b[2], b[3]];
@@ -379,6 +433,11 @@ const TransitiveCanvasOverlay = ({
   if (!transitiveData) return <></>;
 
   const { fromAnchor, toAnchor } = getFromToAnchors(transitiveData);
+
+  const boldFonts =
+    vectorTileFonts?.bold.length && vectorTileFonts?.bold.length > 0
+      ? vectorTileFonts.bold
+      : DEFAULT_BOLD_FONTS;
 
   // Generally speaking, text/symbol layers placed first will be rendered in a lower layer
   // (or, if it is text, rendered with a lower priority or not at all if higher-priority text overlaps).
@@ -503,7 +562,7 @@ const TransitiveCanvasOverlay = ({
         // This layer renders transit route names (foreground).
         filter={routeFilter}
         id="routes-labels"
-        layout={getRouteLayerLayout("name")}
+        layout={getRouteLayerLayout("name", boldFonts)}
         paint={{
           "icon-color": ["get", "color"],
           "text-color": ["get", "textColor"]
@@ -514,7 +573,7 @@ const TransitiveCanvasOverlay = ({
         filter={["==", "type", "from"]}
         id="from-label"
         layout={{
-          ...defaultBoldTextLayoutParams,
+          ...defaultBoldTextLayoutParams(boldFonts),
           "text-anchor": fromAnchor
         }}
         paint={defaultTextPaintParams}
@@ -529,7 +588,7 @@ const TransitiveCanvasOverlay = ({
         }}
         paint={{
           ...defaultTextPaintParams,
-          "text-color": "#910818"
+          "text-color": red[900]
         }}
         type="symbol"
       />

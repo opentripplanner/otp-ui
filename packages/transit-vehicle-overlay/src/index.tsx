@@ -27,7 +27,7 @@ type Props = {
    * Containing component in which route icons/numbers are rendered.
    * Can optionally support a vehicle prop.
    */
-  IconContainer?: FC;
+  IconContainer?: FC<VehicleComponentProps>;
 
   /**
    * Sets the padding between component and icon in IconContainer instances that support it.
@@ -102,27 +102,33 @@ const TransitVehicleOverlay = ({
     iconPixels
   );
 
-  return validVehicles?.map(vehicle => (
-    <MarkerWithPopup
-      key={vehicle.vehicleId}
-      // @ts-expect-error the prop override doesn't require all props to be present
-      popupProps={{ offset: [-iconPixels / 2 - iconPadding, 0] }}
-      position={[vehicle.lat, vehicle.lon]}
-      tooltipContents={
-        (vehicle.routeShortName || vehicle.routeLongName) && (
-          <TooltipSlot vehicle={vehicle} />
-        )
-      }
-    >
-      <StyledContainer vehicle={vehicle}>
-        <VehicleIcon
-          defaultMode={defaultMode}
-          ModeIcon={ModeIcon}
-          vehicle={vehicle}
-        />
-      </StyledContainer>
-    </MarkerWithPopup>
-  ));
+  return validVehicles?.map(
+    vehicle =>
+      vehicle.lat &&
+      vehicle.lon && (
+        <MarkerWithPopup
+          autoOffset={iconPixels / 2 + iconPadding + 4}
+          key={vehicle.vehicleId}
+          popupProps={{
+            padding: { left: 100, right: 100, top: 250, bottom: 250 }
+          }}
+          position={[vehicle.lat, vehicle.lon]}
+          tooltipContents={
+            (vehicle.routeShortName || vehicle.routeLongName) && (
+              <TooltipSlot vehicle={vehicle} />
+            )
+          }
+        >
+          <StyledContainer vehicle={vehicle}>
+            <VehicleIcon
+              defaultMode={defaultMode}
+              ModeIcon={ModeIcon}
+              vehicle={vehicle}
+            />
+          </StyledContainer>
+        </MarkerWithPopup>
+      )
+  );
 };
 
 export default TransitVehicleOverlay;

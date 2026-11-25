@@ -1,16 +1,21 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { Defaults } from "@opentripplanner/itinerary-body";
-import { GradationMap, Leg, LegIconComponent } from "@opentripplanner/types";
+import {
+  GradationMap,
+  Leg,
+  LegIconComponent,
+  LegHeadingProp
+} from "@opentripplanner/types";
 import React, { ReactElement } from "react";
-import { FormattedMessage } from "react-intl";
+import { FormattedMessage, useIntl } from "react-intl";
 
 import AccessibilityAnnotation from "./accessibility-annotation";
 import * as S from "./styled";
 import { defaultMessages, strongText } from "./util";
 
-const { getDisplayedStopId, getLegRouteShortName } = coreUtils.itinerary;
+const { getDisplayedStopCode, getLegRouteShortName } = coreUtils.itinerary;
 
-interface Props {
+interface Props extends LegHeadingProp {
   accessibilityScoreGradationMap?: GradationMap;
   interlineFollows?: boolean;
   leg: Leg;
@@ -21,11 +26,13 @@ export default function TransitLeg({
   accessibilityScoreGradationMap,
   leg,
   LegIcon,
-  interlineFollows
+  interlineFollows,
+  headingAs
 }: Props): ReactElement {
+  const intl = useIntl();
   // TODO: some mocks in itinerary-body have legs with null values for from/to.stop
-  const stopIdFrom = getDisplayedStopId(leg.from.stop ?? leg.from);
-  const stopIdTo = getDisplayedStopId(leg.to.stop ?? leg.to);
+  const stopCodeFrom = getDisplayedStopCode(leg.from.stop ?? leg.from);
+  const stopCodeTo = getDisplayedStopCode(leg.to.stop ?? leg.to);
 
   // TODO: core-utils needs some larger-scale type fixes
   // null is an object, so we need to redefine it as undefined to prevent
@@ -35,7 +42,8 @@ export default function TransitLeg({
 
   const routeDescription = (
     <>
-      <strong>{getLegRouteShortName(leg)}</strong> <S.RouteLongName leg={leg} />
+      <strong>{getLegRouteShortName(leg, intl)}</strong>{" "}
+      <S.RouteLongName leg={leg} />
     </>
   );
 
@@ -48,19 +56,19 @@ export default function TransitLeg({
       id="otpUi.PrintableItinerary.TransitLeg.alight"
       values={{
         place: leg.to.name,
-        stopId: stopIdTo,
+        stopCode: stopCodeTo,
         strong: strongText,
         time: leg.endTime
       }}
     />
   );
 
-  // Handle case of transit leg interlined w/ previous
+  // Handle case of transit leg interlined w/ previous.
   if (leg.interlineWithPreviousLeg) {
     return (
       <S.CollapsedTop>
         <S.LegBody>
-          <S.LegHeader>
+          <S.LegHeader as={headingAs}>
             <FormattedMessage
               defaultMessage={
                 defaultMessages[
@@ -89,7 +97,7 @@ export default function TransitLeg({
         LegIcon={LegIcon}
       />
       <S.LegBody>
-        <S.LegHeader>{routeDescription}</S.LegHeader>
+        <S.LegHeader as={headingAs}>{routeDescription}</S.LegHeader>
         <S.LegDetails>
           <S.LegDetail>
             <FormattedMessage
@@ -100,7 +108,7 @@ export default function TransitLeg({
               id="otpUi.PrintableItinerary.TransitLeg.board"
               values={{
                 place: leg.from.name,
-                stopId: stopIdFrom,
+                stopCode: stopCodeFrom,
                 strong: strongText,
                 time: leg.startTime
               }}

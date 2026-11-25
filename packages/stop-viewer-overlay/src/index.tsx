@@ -24,7 +24,9 @@ const StopViewerOverlay = ({
    * in the viewer.
    */
   useEffect(() => {
-    current?.flyTo({ center: [stop.lon, stop.lat] });
+    if (stop.lon && stop.lat) {
+      current?.flyTo({ center: [stop.lon, stop.lat] });
+    }
   }, [stop.lat, stop.lon]);
 
   // Null can't be returned here -- react-map-gl dislikes null values as children

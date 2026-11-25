@@ -7,7 +7,7 @@ import ItineraryBody from "..";
 import {
   CustomTimeColumnContent,
   WrappedOtpRRTransitLegSubheader
-} from "../demos";
+} from "../demos/index";
 import OtpRRLineColumnContent from "../otp-react-redux/line-column-content";
 import { PlaceName as OtpRRPlaceName } from "../otp-react-redux";
 import OtpRRRouteDescription from "../otp-react-redux/route-description";
@@ -25,11 +25,15 @@ import bikeTransitBikeItinerary from "../__mocks__/itineraries/bike-transit-bike
 import eScooterRentalItinerary from "../__mocks__/itineraries/e-scooter-rental.json";
 import eScooterRentalTransiteScooterRentalItinerary from "../__mocks__/itineraries/e-scooter-transit-e-scooter.json";
 import fareProductsItinerary from "../__mocks__/itineraries/leg-fare-products.json";
+import legNoStopCodeItinerary from "../__mocks__/itineraries/leg-no-stop-code.json";
 import parkAndRideItinerary from "../__mocks__/itineraries/park-and-ride.json";
 import tncTransitTncItinerary from "../__mocks__/itineraries/tnc-transit-tnc.json";
 import walkInterlinedTransitItinerary from "../__mocks__/itineraries/walk-interlined-transit-walk.json";
 import walkOnlyItinerary from "../__mocks__/itineraries/walk-only.json";
 import walkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkClosedStopsItinerary from "../__mocks__/itineraries/walk-transit-walk-closed-stops.json";
+import walkTransitWalkTripShortNameItinerary from "../__mocks__/itineraries/walk-transit-walk-trip-short-name.json";
+import walkTransitWalkCanceledItinerary from "../__mocks__/itineraries/walk-transit-walk-canceled.json";
 import walkTransitWalkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk-transit-walk.json";
 import walkTransitWalkTransitWalkA11yItinerary from "../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json";
 import stayOnBoardItinerary from "../__mocks__/itineraries/stay-on-board.json";
@@ -40,7 +44,7 @@ import transferLegItinerary from "../__mocks__/itineraries/otp2-transfer-leg.jso
 
 const { convertGraphQLResponseToLegacy } = coreUtils.itinerary;
 
-function withLegacyLegs(itinerary) {
+function withLegacyLegs(itinerary: Itinerary) {
   return {
     ...itinerary,
     legs: itinerary.legs.map(convertGraphQLResponseToLegacy)
@@ -61,6 +65,7 @@ if (!isTestRunner()) {
 
 interface StoryWrapperProps {
   alwaysCollapseAlerts?: boolean;
+  closedStopIds?: Set<string>;
   defaultFareSelector?: FareProductSelector;
   hideDrivingDirections?: boolean;
   itinerary: Itinerary;
@@ -72,6 +77,7 @@ interface StoryWrapperProps {
 
 function OtpRRItineraryBodyWrapper({
   alwaysCollapseAlerts,
+  closedStopIds,
   defaultFareSelector,
   hideDrivingDirections = false,
   itinerary,
@@ -83,6 +89,7 @@ function OtpRRItineraryBodyWrapper({
   return (
     <ItineraryBodyDefaultsWrapper
       alwaysCollapseAlerts={alwaysCollapseAlerts}
+      closedStopIds={closedStopIds}
       defaultFareSelector={defaultFareSelector}
       hideDrivingDirections={hideDrivingDirections}
       itinerary={itinerary}
@@ -128,6 +135,20 @@ export const BikeOnlyItinerary = (): ReactElement => (
 
 export const WalkTransitWalkItinerary = (): ReactElement => (
   <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkItinerary} />
+);
+
+export const WalkTransitWalkItineraryTripShortName = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper
+    itinerary={walkTransitWalkTripShortNameItinerary}
+  />
+);
+
+export const WalkTransitWalkItineraryCanceled = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkCanceledItinerary} />
+);
+
+export const WalkTransitWalkItineraryClosedStops = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={walkTransitWalkClosedStopsItinerary} />
 );
 
 export const WalkTransitWalkItineraryMetric = (): ReactElement => (
@@ -286,4 +307,8 @@ export const AlertNoEffectiveAsOfItinerary = (): ReactElement => (
     itinerary={walkTransitWalkItinerary}
     showAlertEffectiveDateTimeText={false}
   />
+);
+
+export const StopWithNoStopCode = (): ReactElement => (
+  <OtpRRItineraryBodyWrapper itinerary={legNoStopCodeItinerary} />
 );

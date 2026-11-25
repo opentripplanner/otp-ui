@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/itinerary-body",
-  "version": "8.2.3-alpha.3",
+  "version": "9.11.0",
   "description": "A component for displaying an itinerary body of a trip planning result",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -10,12 +10,14 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "@opentripplanner/core-utils": "workspace:*",
-    "@opentripplanner/humanize-distance": "workspace:*",
-    "@opentripplanner/icons": "workspace:*",
-    "@opentripplanner/location-icon": "workspace:*",
+    "@opentripplanner/building-blocks": "workspace:^",
+    "@opentripplanner/core-utils": "workspace:^",
+    "@opentripplanner/humanize-distance": "workspace:^",
+    "@opentripplanner/icons": "workspace:^",
+    "@opentripplanner/location-icon": "workspace:^",
     "@styled-icons/fa-solid": "catalog:",
     "@styled-icons/foundation": "catalog:",
+    "@styled-icons/styled-icon": "catalog:",
     "date-fns": "catalog:",
     "date-fns-tz": "catalog:",
     "flat": "catalog:",
@@ -24,8 +26,9 @@
     "string-similarity": "^4.0.4"
   },
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*",
-    "@types/flat": "catalog:"
+    "@opentripplanner/types": "workspace:^",
+    "@types/flat": "catalog:",
+    "react-intl": "catalog:"
   },
   "peerDependencies": {
     "react": "catalog:",

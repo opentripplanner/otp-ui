@@ -1,13 +1,21 @@
-import React, { useCallback, useState } from "react";
-import { Map, MapProps } from "react-map-gl/maplibre";
-import maplibregl, { MapLayerMouseEvent } from "maplibre-gl";
+import maplibregl, {
+  MapLayerMouseEvent,
+  MapLayerTouchEvent
+} from "maplibre-gl";
+import React, { LegacyRef, useCallback, useState } from "react";
+import {
+  Map,
+  MapProps,
+  MapRef,
+  ViewStateChangeEvent
+} from "react-map-gl/maplibre";
 
 import { useIntl } from "react-intl";
 
-import * as Styled from "./styled";
-import * as util from "./util";
 import MarkerWithPopup from "./MarkerWithPopup";
 import generateMapControlTranslations from "./mapControlLocale";
+import * as Styled from "./styled";
+import * as util from "./util";
 
 /**
  * The BaseMap component renders a MapLibre map
@@ -33,14 +41,18 @@ type Props = React.ComponentPropsWithoutRef<React.ElementType> & {
   center?: [number, number];
   /** A unique identifier for the map (useful when using MapProvider) */
   id?: string;
+  /** Ref to pass so that map can be accessed by the consumer  */
+  innerRef?: LegacyRef<MapRef>;
   /** An object of props which should be passed down to MapLibre */
   mapLibreProps?: MapProps;
   /** The maximum zoom level the map should allow */
   maxZoom?: number;
   /** A callback method which is fired when the map is clicked with the left mouse button/tapped */
   onClick?: (e: MapLayerMouseEvent) => void;
+  /** A callback method which is fired when the layer selector component is clicked with the left mouse button/tapped */
+  onClickLayerSelector?: () => void;
   /** A callback method which is fired when the map is clicked with the right mouse button/long tapped */
-  onContextMenu?: (e: MapLayerMouseEvent) => void;
+  onContextMenu?: (e: MapLayerMouseEvent | MapLayerTouchEvent) => void;
   /** A callback method which is fired when the map zoom or map bounds change */
   onViewportChanged?: (e: State) => void;
   /** When set to true, all hidden layers will be removed. No layers will be uncheckable until
@@ -64,9 +76,11 @@ const BaseMap = ({
   center,
   children,
   id,
+  innerRef,
   mapLibreProps,
   maxZoom,
   onClick,
+  onClickLayerSelector,
   onContextMenu,
   showEverything,
   onViewportChanged,
@@ -78,7 +92,7 @@ const BaseMap = ({
   // Firefox and Safari on iOS: hover is not triggered when the user touches the layer selector
   // (unlike Firefox or Chromium on Android), so we have to detect touch and trigger hover ourselves.
   const [fakeMobileHover, setFakeHover] = useState(false);
-  const [longPressTimer, setLongPressTimer] = useState(null);
+  const [longPressTimer, setLongPressTimer] = useState<number | undefined>();
 
   const toggleableLayers = Array.isArray(children)
     ? children
@@ -106,12 +120,14 @@ const BaseMap = ({
     typeof baseLayer === "object" ? baseLayer?.[0] : baseLayer
   );
 
-  const clearLongPressTimer = useCallback(() => clearTimeout(longPressTimer), [
-    longPressTimer
-  ]);
+  const clearLongPressTimer = useCallback(() => {
+    if (longPressTimer) {
+      clearTimeout(longPressTimer);
+    }
+  }, [longPressTimer]);
 
   const handleViewportChange = useCallback(
-    evt => {
+    (evt: ViewStateChangeEvent) => {
       onViewportChanged && onViewportChanged(evt.viewState);
       clearLongPressTimer();
     },
@@ -151,17 +167,8 @@ const BaseMap = ({
         // Start detecting long presses on screens when there is only one touch point.
         // If the user is pinching the map or does other multi-touch actions, cancel long-press detection.
         const touchPointCount = e.points.length;
-        if (touchPointCount === 1) {
-          setLongPressTimer(
-            setTimeout(
-              // In practice, MapLayerTouchEvent and MapTouchEvent behave as if they were
-              // subclasses of MapLayerMouseEvent and MapMouseEvent, respectively,
-              // so the conversion from touch to mouse event works, with the caveat that
-              // the `type` prop takes different string values between mouse and touch events.
-              () => onContextMenu((e as unknown) as MapLayerMouseEvent),
-              600
-            )
-          );
+        if (touchPointCount === 1 && onContextMenu) {
+          setLongPressTimer(window.setTimeout(() => onContextMenu(e), 600));
         } else {
           clearLongPressTimer();
         }
@@ -169,6 +176,7 @@ const BaseMap = ({
       onTouchCancel={clearLongPressTimer}
       onTouchEnd={clearLongPressTimer}
       onZoom={handleViewportChange}
+      ref={innerRef}
       style={style}
     >
       {(toggleableLayers.length > 0 ||
@@ -179,8 +187,15 @@ const BaseMap = ({
           className="filter-group"
           id="filter-group"
           onBlur={() => setFakeHover(false)}
-          onFocus={() => setFakeHover(true)}
-          onTouchEnd={() => setFakeHover(true)}
+          onClick={onClickLayerSelector}
+          onFocus={() => {
+            setFakeHover(true);
+            if (onClickLayerSelector) onClickLayerSelector();
+          }}
+          onTouchEnd={() => {
+            setFakeHover(true);
+            if (onClickLayerSelector) onClickLayerSelector();
+          }}
         >
           <ul
             className={`maplibregl-ctrl-group layers-list ${

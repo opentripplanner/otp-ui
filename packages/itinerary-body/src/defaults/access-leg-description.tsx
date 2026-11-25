@@ -10,9 +10,10 @@ import Distance from "./default-distance";
 
 const { ensureAtLeastOneMinute, toHoursMinutesSeconds } = coreUtils.time;
 
-interface Props extends HTMLAttributes<HTMLSpanElement> {
+interface Props extends HTMLAttributes<HTMLElement> {
   config: Config;
   leg: Leg;
+  headingAs?: React.ElementType;
 }
 
 /**
@@ -75,7 +76,8 @@ export default function AccessLegDescription({
   className,
   config,
   leg,
-  style
+  style,
+  headingAs
 }: Props): ReactElement {
   const intl = useIntl();
   const { companies, formatDuration, units } = config;
@@ -98,10 +100,20 @@ export default function AccessLegDescription({
   // TODO: is this causing issues with TNC legs? Do walk legs leading to a TNC
   // trip really have the same `to.stopId` as `from.stopId`?
   const isTransferLeg = to.stopId === from.stopId;
+
   return (
     // Return an HTML element which is passed a className (and style props)
     // for styled-components support.
-    <span className={className} style={style}>
+    <S.AccessLegDescriptionHeading
+      as={headingAs ?? "span"}
+      className={[
+        className,
+        isTransferLeg && distance === 0 ? "transfer-leg" : "walk-leg"
+      ]
+        .filter(Boolean)
+        .join(" ")}
+      style={style}
+    >
       {distance > 0 ? (
         <FormattedMessage
           defaultMessage="{mode} {distance} to {place}"
@@ -112,7 +124,7 @@ export default function AccessLegDescription({
             // This is not used by the default string,
             // but supplying it allows a user who is overriding the string to use it
             // This relies on `formatDuration` being passed into the itinerary body config.
-            // That method is used to generate the duration string
+            // That method is used to generate the duration string.
             duration:
               formatDuration && formatDuration(durationSeconds, intl, false),
             mode: modeContent,
@@ -147,6 +159,6 @@ export default function AccessLegDescription({
           }}
         />
       )}
-    </span>
+    </S.AccessLegDescriptionHeading>
   );
 }

@@ -6,6 +6,7 @@ import {
   Currency,
   ElevationProfile,
   ElevationProfileComponent,
+  FareProduct,
   FlexBookingInfo,
   ItineraryOnlyLegsRequired,
   LatLngArray,
@@ -18,17 +19,24 @@ import {
   TncFare
 } from "@opentripplanner/types";
 import turfAlong from "@turf/along";
+import { IntlShape } from "react-intl";
 
 // All OTP transit modes
 export const transitModes = [
+  "AIRPLANE",
+  "BUS",
+  "CABLE_CAR",
+  "FERRY",
+  "FUNICULAR",
+  "GONDOLA",
+  "MONORAIL",
+  "RAIL",
+  "SUBWAY",
   "TRAM",
   "TROLLEYBUS",
-  "BUS",
-  "SUBWAY",
-  "FERRY",
-  "RAIL",
-  "GONDOLA"
 ];
+
+export const nonTransitModes = ["BICYCLE", "BICYCLE_PARKING", "BICYCLE_RENTAL", "CAR", "CAR_PARKING", "CAR_RENTAL", "FLEX", "SCOOTER_RENTAL", "WALK"]
 
 /**
  * @param  {config} config OTP-RR configuration object
@@ -86,11 +94,12 @@ export function startsWithGeometry(leg: Leg): boolean {
 export function legContainsGeometry(leg: Leg): boolean {
   return endsWithGeometry(leg) || startsWithGeometry(leg);
 }
-export function isAdvanceBookingRequired(info: FlexBookingInfo): boolean {
-  return info?.latestBookingTime?.daysPrior > 0;
+export function isAdvanceBookingRequired(info?: FlexBookingInfo): boolean {
+  const daysPrior = info?.latestBookingTime?.daysPrior;
+  return typeof daysPrior === "number" && daysPrior > 0;
 }
 export function legDropoffRequiresAdvanceBooking(leg: Leg): boolean {
-  return isAdvanceBookingRequired(leg?.dropOffBookingInfo);
+  return isAdvanceBookingRequired(leg.dropOffBookingInfo);
 }
 
 /**
@@ -201,6 +210,7 @@ export function hasRental(modesStr: string): boolean {
 }
 
 export function getMapColor(mode: string): string {
+  // @ts-expect-error this is not typed
   mode = mode || this.get("mode");
   if (mode === "WALK") return "#444";
   if (mode === "BICYCLE") return "#0073e5";
@@ -226,7 +236,7 @@ export function toSentenceCase(str: string): string {
 /**
  * Derive the company string based on mode and network associated with leg.
  */
-export function getCompanyFromLeg(leg: Leg): string {
+export function getCompanyFromLeg(leg?: Leg): string | null {
   if (!leg) return null;
   const {
     from,
@@ -236,14 +246,20 @@ export function getCompanyFromLeg(leg: Leg): string {
     rentedVehicle,
     rideHailingEstimate
   } = leg;
+
+  const firstNetwork =
+    Array.isArray(from.networks) && from.networks.length > 0
+      ? from.networks[0]
+      : null;
+
   if (mode === "CAR" && rentedCar) {
-    return from.networks[0];
+    return firstNetwork;
   }
   if (mode === "CAR" && rideHailingEstimate) {
     return rideHailingEstimate.provider.id;
   }
-  if (mode === "BICYCLE" && rentedBike && from.networks) {
-    return from.networks[0];
+  if (mode === "BICYCLE" && rentedBike) {
+    return firstNetwork;
   }
   if (from.rentalVehicle) {
     return from.rentalVehicle.network;
@@ -251,12 +267,8 @@ export function getCompanyFromLeg(leg: Leg): string {
   if (from.vehicleRentalStation?.rentalNetwork) {
     return from.vehicleRentalStation.rentalNetwork.networkId;
   }
-  if (
-    (mode === "MICROMOBILITY" || mode === "SCOOTER") &&
-    rentedVehicle &&
-    from.networks
-  ) {
-    return from.networks[0];
+  if ((mode === "MICROMOBILITY" || mode === "SCOOTER") && rentedVehicle) {
+    return firstNetwork;
   }
   return null;
 }
@@ -264,12 +276,12 @@ export function getCompanyFromLeg(leg: Leg): string {
 export function getItineraryBounds(
   itinerary: ItineraryOnlyLegsRequired
 ): LatLngArray[] {
-  let coords = [];
+  const coords: LatLngArray[] = [];
   itinerary.legs.forEach(leg => {
     const legCoords = polyline
       .toGeoJSON(leg.legGeometry.points)
-      .coordinates.map((c: number[]) => [c[1], c[0]]);
-    coords = [...coords, ...legCoords];
+      .coordinates.map((c): LatLngArray => [c[1], c[0]]);
+    coords.push(...legCoords);
   });
   return coords;
 }
@@ -292,62 +304,56 @@ export function getLegBounds(leg: Leg): number[][] {
 }
 
 /* Returns an interpolated lat-lon at a specified distance along a leg */
-
-export function legLocationAtDistance(leg: Leg, distance: number): number[] {
-  if (!leg.legGeometry) return null;
+export function legLocationAtDistance(
+  leg: Leg,
+  distance: number
+): LatLngArray | undefined | null {
+  if (!leg.legGeometry) return undefined;
 
   try {
     const line = polyline.toGeoJSON(leg.legGeometry.points);
     const pt = turfAlong(line, distance, { units: "meters" });
-    if (pt && pt.geometry && pt.geometry.coordinates) {
-      return [pt.geometry.coordinates[1], pt.geometry.coordinates[0]];
-    }
-  } catch (e) {
-    // FIXME handle error!
+    const coords = pt?.geometry?.coordinates;
+    return [coords[1], coords[0]];
+  } catch {
+    // This is designed to catch the toGeoJSON from throwing if the geometry is not in the correct format
   }
 
   return null;
 }
 
-/* Returns an interpolated elevation at a specified distance along a leg */
+/**
+ * Returns an interpolated elevation at a specified distance along a leg
+ * @param points - The points of the elevation profile. Each point is a tuple of [distance, elevation].
+ * @param distance - The distance along the leg to interpolate the elevation at
+ * @returns The interpolated elevation at the specified distance
+ */
 
 export function legElevationAtDistance(
-  points: number[][],
+  points: [number, number][],
   distance: number
-): number {
-  // Iterate through the combined elevation profile
-  let traversed = 0;
-  // If first point distance is not zero, insert starting point at zero with
-  // null elevation. Encountering this value should trigger the warning below.
-  if (points[0][0] > 0) {
-    points.unshift([0, null]);
-  }
-  for (let i = 1; i < points.length; i++) {
-    const start = points[i - 1];
-    const elevDistanceSpan = points[i][0] - start[0];
-    if (distance >= traversed && distance <= traversed + elevDistanceSpan) {
-      // Distance falls within this point and the previous one;
-      // compute & return interpolated elevation value
-      if (start[1] === null) {
-        console.warn(
-          "Elevation value does not exist for distance.",
-          distance,
-          traversed
-        );
-        return null;
-      }
-      const pct = (distance - traversed) / elevDistanceSpan;
-      const elevSpan = points[i][1] - start[1];
-      return start[1] + elevSpan * pct;
+): number | undefined {
+  const elevation = points.reduce<number | undefined>((acc, point, index) => {
+    const prevPoint = points[index - 1];
+    // at the first index there is no previous point
+    if (!prevPoint) return acc;
+    const [pointDistance, pointElevation] = point;
+    const [prevPointDistance, prevPointElevation] = prevPoint;
+    if (distance >= prevPointDistance && distance <= pointDistance) {
+      return (
+        prevPointElevation +
+        ((pointElevation - prevPointElevation) *
+          (distance - prevPointDistance)) /
+        (pointDistance - prevPointDistance)
+      );
     }
-    traversed += elevDistanceSpan;
+    return acc;
+  }, undefined);
+  if (elevation === undefined) {
+    console.warn("Elevation value does not exist for distance.", distance);
+    return undefined;
   }
-  console.warn(
-    "Elevation value does not exist for distance.",
-    distance,
-    traversed
-  );
-  return null;
+  return elevation;
 }
 
 export function mapOldElevationComponentToNew(oldElev: {
@@ -372,7 +378,7 @@ export function getElevationProfile(
   let gain = 0;
   let loss = 0;
   let previous: ElevationProfileComponent | null = null;
-  const points = [];
+  const points: [number, number][] = [];
   steps.forEach(step => {
     // Support for old REST response data (in step.elevation)
     const stepElevationProfile =
@@ -432,6 +438,7 @@ export function getTextWidth(text: string, font = "22px Arial"): number {
     (getTextWidth as GetTextWidth).canvas ||
     ((getTextWidth as GetTextWidth).canvas = document.createElement("canvas"));
   const context = canvas.getContext("2d");
+  if (!context) return 0;
   context.font = font;
   const metrics = context.measureText(text);
   return metrics.width;
@@ -444,7 +451,7 @@ export function getTextWidth(text: string, font = "22px Arial"): number {
 export function getCompanyForNetwork(
   networkString: string,
   companies: Company[] = []
-): Company {
+): Company | undefined {
   const company = companies.find(co => co.id === networkString);
   if (!company) {
     console.warn(
@@ -475,7 +482,10 @@ export function getCompaniesLabelFromNetworks(
     .join("/");
 }
 
-export function getTNCLocation(leg: Leg, type: string): string {
+export function getTNCLocation(
+  leg: Pick<Leg, "from" | "to">,
+  type: "from" | "to"
+): string {
   const location = leg[type];
   return `${location.lat.toFixed(5)},${location.lon.toFixed(5)}`;
 }
@@ -511,15 +521,21 @@ export function calculateTncFares(
   itinerary: ItineraryOnlyLegsRequired
 ): TncFare {
   return itinerary.legs
-    .filter(leg => leg.mode === "CAR" && leg.rideHailingEstimate)
-    .reduce(
-      ({ maxTNCFare, minTNCFare }, { rideHailingEstimate }) => {
-        const { minPrice, maxPrice } = rideHailingEstimate;
+    .filter(
+      (
+        leg
+      ): leg is Leg & {
+        rideHailingEstimate: NonNullable<Leg["rideHailingEstimate"]>;
+      } => leg.mode === "CAR" && !!leg?.rideHailingEstimate
+    )
+    .reduce<TncFare>(
+      (acc, leg) => {
+        const { minPrice, maxPrice } = leg.rideHailingEstimate;
         return {
           // Assumes a single currency for entire itinerary.
           currencyCode: minPrice.currency.code,
-          maxTNCFare: maxTNCFare + maxPrice.amount,
-          minTNCFare: minTNCFare + minPrice.amount
+          maxTNCFare: acc.maxTNCFare + maxPrice.amount,
+          minTNCFare: acc.minTNCFare + minPrice.amount
         };
       },
       {
@@ -537,7 +553,7 @@ export function calculateTncFares(
  * - https://www.itf-oecd.org/sites/default/files/life-cycle-assessment-calculations-2020.xlsx
  * Other values extrapolated.
  */
-const CARBON_INTENSITY_DEFAULTS = {
+const CARBON_INTENSITY_DEFAULTS: Record<string, number> = {
   walk: 0.026,
   bicycle: 0.017,
   car: 0.162,
@@ -597,28 +613,30 @@ export function calculateEmissions(
 }
 
 /**
- * Returns the user-facing stop id to display for a stop or place, using the following priority:
- * 1. stop code,
- * 2. stop id without the agency id portion, if stop id contains an agency portion,
- * 3. stop id, whether null or not (this is the fallback case).
+ * Returns the user-facing stop code to display for a stop or place
  */
-export function getDisplayedStopId(placeOrStop: Place | Stop): string {
-  let stopId;
-  let stopCode;
+export function getDisplayedStopCode(
+  placeOrStop: Place | Stop
+): string | undefined {
   if ("stopId" in placeOrStop) {
-    ({ stopCode, stopId } = placeOrStop);
-  } else if ("id" in placeOrStop) {
-    ({ code: stopCode, id: stopId } = placeOrStop);
+    return placeOrStop?.stopCode ?? undefined;
   }
-  return stopCode || stopId?.split(":")[1] || stopId;
+  if ("id" in placeOrStop) {
+    return placeOrStop?.code ?? undefined;
+  }
+  return undefined;
 }
 
 /**
- * Removes the first part of the OTP standard scope (":"), if it is present
+ * Removes the first part of the OTP standard scope (":"), if it is present.
  * @param item String that is potentially scoped with `:` character
  * @returns    descoped string
  */
-export const descope = (item: string): string => item?.split(":")?.[1];
+export const descope = (item?: string | null): string | null | undefined => {
+  if (!item) return item;
+  const index = item.indexOf(":");
+  return index === -1 ? item : item.substring(index + 1);
+};
 
 export type ExtendedMoney = Money & { originalAmount?: number };
 
@@ -626,6 +644,8 @@ export const zeroDollars = (currency: Currency): Money => ({
   amount: 0,
   currency
 });
+
+type FareProductWithPrice = FareProduct & { price: Money };
 
 /**
  * Extracts useful data from the fare products on a leg, such as the leg cost and transfer info.
@@ -640,9 +660,9 @@ export const zeroDollars = (currency: Currency): Money => ({
  */
 export function getLegCost(
   leg: Leg,
-  mediumId: string | null,
-  riderCategoryId: string | null,
-  seenFareIds?: string[]
+  mediumId?: string | null,
+  riderCategoryId?: string | null,
+  seenFareIds?: string[] | null
 ): {
   alternateFareProducts?: AppliedFareProduct[];
   appliedFareProduct?: AppliedFareProduct;
@@ -664,6 +684,7 @@ export function getLegCost(
 
       const productMediaId =
         descope(product?.medium?.id) || product?.medium?.id || null;
+
       return (
         productRiderCategoryId === riderCategoryId &&
         productMediaId === mediumId &&
@@ -672,14 +693,22 @@ export function getLegCost(
         product?.price
       );
     })
+    // Make sure there's a price
+    // Some fare products don't have a price at all.
+    .filter(
+      (fare): fare is { id: string; product: FareProductWithPrice } =>
+        fare.product?.price !== undefined
+    )
     .map(fare => {
-      const alreadySeen = seenFareIds?.indexOf(fare.id) > -1;
-      const { currency } = fare.product.price;
+      const alreadySeen = !!seenFareIds && seenFareIds?.indexOf(fare.id) > -1;
       return {
         id: fare.id,
         product: {
           ...fare.product,
-          legPrice: alreadySeen ? zeroDollars(currency) : fare.product.price
+          legPrice:
+            alreadySeen && fare.product.price
+              ? zeroDollars(fare.product.price.currency)
+              : fare.product.price
         } as AppliedFareProduct
       };
     })
@@ -707,42 +736,66 @@ export function getLegCost(
  * @param category Rider category (youth, regular, senior)
  * @param container Fare container (cash, electronic)
  * @param seenFareIds List of fare product IDs that have already been seen on prev legs.
+ * @param nulledTotalFareOnAnyMissingFare If this is set to true, the total fare
+ * will be null if *any* fare is missing. If false, the total will be the total
+ * fare with the missing fares ignored.
  * @returns Money object for the total itinerary cost.
  */
 export function getItineraryCost(
   legs: Leg[],
-  mediumId: string | string[] | null,
-  riderCategoryId: string | string[] | null
+  mediumId?: string | (string | null)[] | null,
+  riderCategoryId?: string | (string | null)[] | null,
+  nulledTotalFareOnAnyMissingFare = false
 ): Money | undefined {
-  // TODO: Better input type handling
   if (Array.isArray(mediumId) || Array.isArray(riderCategoryId)) {
-    if (mediumId?.length !== riderCategoryId.length) {
-      console.warn(
-        "Invalid input types, only using first item. medium id list and rider category list must have same number of items"
-      );
-      return getItineraryCost(legs, mediumId[0], riderCategoryId[0]);
-    }
-
-    let total = { amount: 0, currency: null };
-    for (let i = 0; i < mediumId.length; i++) {
-      const newCost = getItineraryCost(legs, mediumId[i], riderCategoryId[i]);
-      if (newCost) {
-        total = {
-          amount: total?.amount + (newCost?.amount || 0),
-          currency: total.currency ?? newCost?.currency
-        };
+    // TODO: Better input type handling
+    if (Array.isArray(mediumId) && Array.isArray(riderCategoryId)) {
+      if (mediumId.length !== riderCategoryId.length) {
+        console.warn(
+          "Invalid input types, only using first item. medium id list and rider category list must have same number of items"
+        );
+        return getItineraryCost(legs, mediumId[0], riderCategoryId[0]);
       }
+
+      const total = mediumId.reduce<Money>(
+        (acc, currentMediumId, index) => {
+          const newCost = getItineraryCost(
+            legs,
+            currentMediumId,
+            riderCategoryId[index]
+          );
+          if (!newCost) return acc;
+
+          return {
+            amount: acc.amount + (newCost.amount || 0),
+            currency:
+              acc.currency.code !== ""
+                ? acc.currency
+                : newCost.currency ?? acc.currency
+          };
+        },
+        { amount: 0, currency: { code: "", digits: 0 } }
+      );
+
+      if (!total.currency?.code) return undefined;
+      return total;
     }
-    if (total.currency === null) return undefined;
-    return total;
+    console.warn(
+      "Invalid input types, only using first item. medium id list and rider category list must have same number of items"
+    );
+    return undefined;
   }
 
   const legCosts = legs
     // Only legs with fares (no walking legs)
-    .filter(leg => leg.fareProducts?.length > 0)
+    .filter(leg => leg.fareProducts?.length && leg.fareProducts.length > 0)
     // Get the leg cost object of each leg
     .reduce<{ seenIds: string[]; legCosts: AppliedFareProduct[] }>(
       (acc, leg) => {
+        // getLegCost handles filtering out duplicate use IDs
+        // One fare product can be used on multiple legs,
+        // and we don't want to count it more than once.
+        // Use an object keyed by productUseId to deduplicate, then extract prices
         const { appliedFareProduct, productUseId } = getLegCost(
           leg,
           mediumId,
@@ -750,6 +803,7 @@ export function getItineraryCost(
           acc.seenIds
         );
         if (!appliedFareProduct) return acc;
+        if (!productUseId) return acc;
         return {
           legCosts: [...acc.legCosts, appliedFareProduct],
           seenIds: [...acc.seenIds, productUseId]
@@ -758,29 +812,27 @@ export function getItineraryCost(
       { seenIds: [], legCosts: [] }
     )
     .legCosts.map(lc => lc.legPrice);
-  // Filter out duplicate use IDs
-  // One fare product can be used on multiple legs,
-  // and we don't want to count it more than once.
-  // Use an object keyed by productUseId to deduplicate, then extract prices
-  // .reduce<{ [productUseId: string]: Money }>((acc, cur) => {
-  //   if (cur.productUseId && acc[cur.productUseId] === undefined) {
-  //     acc[cur.productUseId] = cur.appliedFareProduct?.legPrice;
-  //   }
-  //   return acc;
-  // }, {});
+
+  if (
+    nulledTotalFareOnAnyMissingFare &&
+    legs.filter(l => l.transitLeg).length !== legCosts.length
+  ) {
+    return undefined;
+  }
 
   if (legCosts.length === 0) return undefined;
   // Calculate the total
   return legCosts.reduce<Money>(
     (prev, cur) => ({
       amount: prev.amount + cur?.amount || 0,
-      currency: prev.currency ?? cur?.currency
+      currency: prev.currency.code !== "" ? prev.currency : cur.currency
     }),
-    { amount: 0, currency: null }
+    // eslint-disable-next-line prettier/prettier -- old eslint doesn't know satisfies
+    { amount: 0, currency: { code: "", digits: 0 } satisfies Currency }
   );
 }
 
-const pickupDropoffTypeToOtp1 = otp2Type => {
+const pickupDropoffTypeToOtp1 = (otp2Type: string): string | null => {
   switch (otp2Type) {
     case "COORDINATE_WITH_DRIVER":
       return "coordinateWithDriver";
@@ -795,7 +847,7 @@ const pickupDropoffTypeToOtp1 = otp2Type => {
   }
 };
 
-export const convertGraphQLResponseToLegacy = (leg: any): any => ({
+export const convertGraphQLResponseToLegacy = (leg: any): Leg => ({
   ...leg,
   agencyBrandingUrl: leg.agency?.url,
   agencyId: leg.agency?.id,
@@ -805,7 +857,7 @@ export const convertGraphQLResponseToLegacy = (leg: any): any => ({
   boardRule: pickupDropoffTypeToOtp1(leg.pickupType),
   bookingRuleInfo: {
     dropOff: leg?.dropOffBookingInfo || {},
-    pickUp: leg?.pickUpBookingInfo || {}
+    pickUp: leg?.pickupBookingInfo || {}
   },
   dropOffBookingInfo: {
     latestBookingTime: leg.dropOffBookingInfo
@@ -830,32 +882,57 @@ export const convertGraphQLResponseToLegacy = (leg: any): any => ({
   tripId: leg.trip?.gtfsId
 });
 
-/** Extracts the route number for a leg returned from OTP1 or OTP2. */
+const formatTripShortName = (intl: IntlShape, routeName: string, tripShortName: string) => (
+  intl.formatMessage(
+    {
+      description: "Route name with trip short name added",
+      id: "otpUi.coreUtils.legRouteName.withTripShortName"
+    },
+    {
+      routeName,
+      tripShortName
+    }
+  )
+)
+
+/** Extracts the route number for a leg returned from OTP1 or OTP2. If an intl object is provided,
+ * will attempt to append the trip short name to the result if one exists. */
 export const getLegRouteShortName = (
-  leg: Pick<Leg, "route" | "routeShortName">
-): string | null => {
-  const { route, routeShortName } = leg;
+  leg: Pick<Leg, "route" | "routeShortName" | "trip">,
+  intl?: IntlShape
+): string | undefined => {
+  const { route, routeShortName, trip } = leg;
   // typeof route === "object" denotes newer OTP2 responses. routeShortName and route as string is OTP1.
-  return typeof route === "object"
+  const routeName = typeof route === "object"
     ? route?.shortName
-    : routeShortName || (route as string);
+    : routeShortName || route;
+  // if there's a trip short name present, add it to the route name result
+  if (intl && routeName && trip?.tripShortName) return formatTripShortName(intl, routeName, trip.tripShortName);
+  return routeName;
 };
 
-/** Extract the route long name for a leg returned from OTP1 or OTP2. */
+/** Extract the route long name for a leg returned from OTP1 or OTP2. If an intl object is provided,
+ * will attempt to append the trip short name to the result if one exists. */
 export const getLegRouteLongName = (
-  leg: Pick<Leg, "route" | "routeLongName">
-): string | null => {
-  const { route, routeLongName } = leg;
+  leg: Pick<Leg, "route" | "routeLongName" | "trip">,
+  intl?: IntlShape
+): string | undefined => {
+  const { route, routeLongName, trip } = leg;
   // typeof route === "object" denotes newer OTP2 responses. routeLongName is OTP1.
-  return typeof route === "object" ? route?.longName : routeLongName;
+  const routeName = typeof route === "object" ? route?.longName : routeLongName;
+  // if there's a trip short name present, add it to the route name result
+  if (intl && routeName && trip?.tripShortName) return formatTripShortName(intl, routeName, trip.tripShortName);
+  return routeName;
 };
 
 /**
  * Returns the route short name, or the route long name if no short name is provided.
- * This is happens with Seattle area streetcars and ferries.
+ * This happens with Seattle area streetcars and ferries. If an intl object is provided,
+ * will attempt to append the trip short name to the result if one exists.
  */
 export const getLegRouteName = (
-  leg: Pick<Leg, "route" | "routeLongName" | "routeShortName">
-): string => {
-  return getLegRouteShortName(leg) || getLegRouteLongName(leg);
+  leg: Pick<Leg, "route" | "routeLongName" | "routeShortName" | "trip">,
+  intl?: IntlShape
+): string | undefined => {
+  return getLegRouteShortName(leg, intl) || getLegRouteLongName(leg, intl);
 };

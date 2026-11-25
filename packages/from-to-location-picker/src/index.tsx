@@ -6,10 +6,12 @@ import React, { ReactElement } from "react";
 import * as S from "./styled";
 
 // eslint-disable-next-line prettier/prettier
-import type { FromToPickerProps } from "./types";
+import type { FromToPickerProps, FromToLocation } from "./types";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
+
+export { FromToLocation }
 
 const iconSize = "0.9em";
 

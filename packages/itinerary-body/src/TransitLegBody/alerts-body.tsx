@@ -1,5 +1,5 @@
 import { differenceInCalendarDays } from "date-fns";
-import { toDate, utcToZonedTime } from "date-fns-tz";
+import { toDate, toZonedTime } from "date-fns-tz";
 import coreUtils from "@opentripplanner/core-utils";
 import { Alert } from "@opentripplanner/types";
 import React, { FunctionComponent, ReactElement } from "react";
@@ -92,7 +92,7 @@ export default function AlertsBody({
             // Note: Previously, we used moment.diff(..., "days"), which reports the number of whole 24-hour periods
             // between two timestamps/dates (not considering timezones or daylight time changes).
             const today = toDate(getCurrentDate(timeZone));
-            const compareDate = utcToZonedTime(
+            const compareDate = toZonedTime(
               new Date(effectiveStartDate),
               timeZone
             );

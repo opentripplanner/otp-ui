@@ -1,4 +1,4 @@
-import { SingleGeocoderResponse } from "@opentripplanner/geocoder";
+import { GeocoderConfig, SingleGeocoderResponse } from "@opentripplanner/geocoder";
 import { Location, Stop, UserLocation, UserPosition } from "@opentripplanner/types";
 import React, { ComponentType, ReactNode } from "react";
 // eslint-disable-next-line prettier/prettier
@@ -100,17 +100,7 @@ export interface LocationFieldProps {
   /**
    * A configuration object describing what geocoder should be used.
    */
-  geocoderConfig: {
-    baseUrl?: string;
-    boundary?: {
-      // TriMet-specific default
-      rect?: {
-        minLon?: number;
-        maxLon?: number;
-        minLat?: number;
-        maxLat?: number;
-      };
-    };
+  geocoderConfig: GeocoderConfig & {
     maxNearbyStops?: number;
     type: string;
   };
@@ -129,6 +119,12 @@ export interface LocationFieldProps {
    * initial render.
    */
   hideExistingValue?: boolean;
+  /**
+   * Id for input so that a custom label can be applied to location field
+   * If this prop is provided, no aria-label will be applied to the field, 
+   * so you must provide a custom label in order for the input to have an accessible name
+   */
+  customLabelInputId?: string;
   /**
    * Allows the component to be rendered with pre-filled results
    */
@@ -189,6 +185,14 @@ export interface LocationFieldProps {
    * must be referenceable in the stopsIndex prop.
    */
   nearbyStops?: string[];
+  /**
+   * A callback to be fired when the location field loses focus
+   */
+  onBlur?: () => void;
+  /**
+   * A callback to be fired when the location field gains focus
+   */
+  onFocus?: () => void;
   /**
    * A function to handle when a location is selected. This is always dispatched
    * with an object of type LocationSelectedEvent, with the following fields:

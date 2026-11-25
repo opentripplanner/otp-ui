@@ -218,6 +218,13 @@ describe("query", () => {
         parseLocationString("33.983929829,-87.3892387982")
       ).toMatchSnapshot();
     });
+
+    it("should return null with name as name with no coords for input", () => {
+      expect(parseLocationString("1 cool street")).toMatchSnapshot();
+    });
+    it("should return null with name as name with no coords (but with commas) for input", () => {
+      expect(parseLocationString("148, se street")).toMatchSnapshot();
+    });
   });
 
   describe("planParamsToQuery", () => {

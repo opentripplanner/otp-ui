@@ -58,7 +58,7 @@ otpUi:
       carHail: Ngồi trên xe
       escooter: Đi xe tay ga điện
       walk: Đi bộ
-    transfer: Chuyển{duration, select, undefined {} other {, wait {duration}}}
+    transfer: Chuyển{duration, select, undefined {} other {, đợi {duration}}}
     unnamedPath: Con đường không tên
     unnamedRoad: Con đường không tên
     vehicleTitle: "{vehicleType} {company}"
@@ -69,14 +69,15 @@ otpUi:
       escooter: Xe tay ga điện
       vehicle: Xe
   ItineraryBody:
+    bookRide: Đặt trước một chuyến đi
     common:
       durationShort: >-
         {approximatePrefix, select, true {Khoảng } other {}}{hours, plural, =0
         {} other {# giờ }}{minutes} phút
+    externalLink: (Liên kết bên ngoài)
     flexAdvanceNotice: " ít nhất trước {leadDays} ngày"
-    flexCallAhead: gọi điện trước khi đi
-    flexCallNumber: gọi {phoneNumber}
-    flexPickupMessage: Để đi tuyến đường này, bạn phải {action}{advanceNotice}.
+    flexBookByPhone: "Đặt chỗ qua điện thoại: "
+    flexPickupMessage: Bạn phải đặt chỗ trước{advanceNotice}
     stayOnBoard: Ở trên xe tại {place}
     travelBy: Di chuyển {mode}
     travelByMode:
@@ -101,7 +102,6 @@ otpUi:
       today: Hôm nay
       tomorrow: Ngày mai
       yesterday: Hôm qua
-    agencyExternalLink: "{agencyName} (Liên kết bên ngoài)"
     alertsHeader: "{alertCount} cảnh báo"
     arriveAt: Đến {place}
     disembarkAt: Xuống xe ở {legDestination}

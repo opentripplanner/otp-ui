@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Trip Form Components/Metro Mode Selector MetroModeSelector smoke-test 1`] = `
 <fieldset class="MetroModeSelector__ModeBar-sc-n9bu6a-1 iqPwcr metro-mode-selector">

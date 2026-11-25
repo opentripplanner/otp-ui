@@ -1,6 +1,6 @@
 {
   "name": "@opentripplanner/building-blocks",
-  "version": "3.0.2-alpha.1",
+  "version": "3.2.0",
   "description": "Styling and UI Component Library",
   "author": "@binh-dam-ibigroup",
   "homepage": "https://github.com/opentripplanner/otp-ui/#readme",
@@ -9,8 +9,8 @@
   "module": "esm/index.js",
   "private": false,
   "devDependencies": {
-    "@opentripplanner/types": "workspace:*",
-    "@opentripplanner/core-utils": "workspace:*"
+    "@opentripplanner/core-utils": "workspace:^",
+    "@opentripplanner/types": "workspace:^"
   },
   "peerDependencies": {
     "react": "catalog:",

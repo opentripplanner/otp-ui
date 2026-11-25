@@ -1,8 +1,8 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "./lib",
-    "preserveSymlinks": true
+    "outDir": "./lib"
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["**/*.story.tsx", "**/*.story.ts", "src/stories/**/*"]
 }

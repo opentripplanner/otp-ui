@@ -1,6 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from "react";
-import { Leg } from "@opentripplanner/types";
+import { Leg, MediumRiderWhitelist } from "@opentripplanner/types";
 import coreUtils from "@opentripplanner/core-utils";
 import { FormattedMessage, useIntl } from "react-intl";
 import styled from "styled-components";
@@ -9,7 +9,6 @@ import { Transfer } from "@styled-icons/boxicons-regular/Transfer";
 import { renderFare } from "../utils";
 import { InvisibleA11yCaption, InvisibleA11yLabel } from "../styled";
 
-// TODO: inline this import? (@opentripplanner/core-utils/src/itinerary)
 const {
   getLegCost,
   getItineraryCost,
@@ -73,15 +72,16 @@ const categorySorter = (favoriteId?: string) => (
   return aId > bId ? 1 : -1;
 };
 
-// TODO: This component currently can only show one type of fare per medium
 const FaresV2Table = ({
   legs,
   favoriteMediumId,
-  favoriteRiderCategoryId
+  favoriteRiderCategoryId,
+  mediumRiderWhitelist
 }: {
   legs: Leg[];
   favoriteMediumId?: string;
   favoriteRiderCategoryId?: string;
+  mediumRiderWhitelist?: MediumRiderWhitelist;
 }): JSX.Element => {
   const intl = useIntl();
 
@@ -93,14 +93,36 @@ const FaresV2Table = ({
   // Reduce these into mediums and riders
   const mediums = fareProducts
     .map(fp => fp.product?.medium)
-    .filter(m => m !== null)
     .reduce(categoryReducer, [])
     .sort(categorySorter(favoriteMediumId));
   const riders = fareProducts
     .map(fp => fp.product?.riderCategory)
-    .filter(r => r !== null)
     .reduce(categoryReducer, [])
     .sort(categorySorter(favoriteRiderCategoryId));
+
+  // Generate the pairs of riders and mediums, but filter out ones
+  // that never occur in the FareProducts
+  const riderMediumPairs = mediums
+    .flatMap(medium =>
+      riders.map(rider => ({
+        medium,
+        rider
+      }))
+    )
+    .filter(rmp =>
+      fareProducts.some(
+        fp =>
+          fp.product?.riderCategory?.id === rmp.rider?.id &&
+          fp.product?.medium?.id === rmp.medium?.id
+      )
+    )
+    .filter(
+      pair =>
+        !mediumRiderWhitelist ||
+        mediumRiderWhitelist?.find(
+          p => p.medium === pair.medium?.id && p.rider === pair.rider?.id
+        )
+    );
 
   // Ensure we have at least one rider/medium
   if (riders.length === 0) {
@@ -110,7 +132,7 @@ const FaresV2Table = ({
     mediums.push({ name: "Regular", id: null });
   }
 
-  // Keep track of seen fare ids to indicate transfers
+  // Keep track of seen fare ids to indicate transfers.
   const productUseIds: Set<string> = new Set();
 
   const rows = [
@@ -122,7 +144,7 @@ const FaresV2Table = ({
       </th>,
       ...transitLegs.map(leg => (
         <th key={leg.tripId} scope="col">
-          {getLegRouteName(leg)}
+          {getLegRouteName(leg, intl)}
         </th>
       )),
       transitLegs.length > 1 ? (
@@ -139,113 +161,118 @@ const FaresV2Table = ({
 
   // non-transit legs don't have fares
   transitLegs.forEach((leg, index) => {
-    mediums.forEach((medium, mediumIndex) => {
-      riders.forEach((rider, riderIndex) => {
-        if (!medium || !rider) return;
-        const {
-          alternateFareProducts,
-          isDependent,
-          appliedFareProduct,
-          productUseId
-        } = getLegCost(
-          leg,
-          descope(medium.id) || null,
-          descope(rider.id) || null,
-          Array.from(productUseIds)
-        );
-        const legPrice = appliedFareProduct?.legPrice;
+    riderMediumPairs.forEach((rmp, currentRowIndex) => {
+      const { medium, rider } = rmp;
+      const {
+        alternateFareProducts,
+        isDependent,
+        appliedFareProduct,
+        productUseId
+      } = getLegCost(
+        leg,
+        descope(medium?.id ?? null),
+        descope(rider?.id ?? null),
+        Array.from(productUseIds)
+      );
+      const legPrice = appliedFareProduct?.legPrice;
 
-        productUseIds.add(productUseId);
+      productUseIds.add(productUseId);
 
-        // Only consider alternateFareProducts if current product is dependent
-        const dependentAlternateFareProducts =
-          isDependent && alternateFareProducts;
+      // Only consider alternateFareProducts if current product is dependent
+      const dependentAlternateFareProducts =
+        isDependent && alternateFareProducts;
 
-        // Calculate pre-tranfer amount either via alternate fare or fare-id matching (price.originalAmount)
-        const originalAmount =
-          dependentAlternateFareProducts?.[0]?.price.amount -
-            legPrice?.amount ||
-          appliedFareProduct?.price.amount - legPrice?.amount;
+      // Calculate pre-tranfer amount either via alternate fare or fare-id matching (price.originalAmount)
+      const originalAmount =
+        dependentAlternateFareProducts?.[0]?.price.amount - legPrice?.amount ||
+        appliedFareProduct?.price.amount - legPrice?.amount;
 
-        const newCell = (
-          <>
-            {/* Only render the list of fare types once */}
-            {index === 0 && (
-              <th style={{ textAlign: "left" }} scope="row">
-                <FormattedMessage
-                  id={`config.fares.media.${descope(medium.id)}`}
-                  defaultMessage={medium.name}
-                />{" "}
+      const newCell = (
+        <>
+          {/* Only render the list of fare types once */}
+          {index === 0 && (
+            <th style={{ textAlign: "left" }} scope="row">
+              {medium?.id && (
+                <>
+                  <FormattedMessage
+                    id={`config.fares.media.${descope(medium.id)}`}
+                    defaultMessage={medium.name}
+                  />{" "}
+                </>
+              )}
+              {rider?.id && (
                 <FormattedMessage
                   id={`config.fares.riderCategory.${descope(rider.id)}`}
                   defaultMessage={rider.name}
                 />
-              </th>
-            )}
-            <td
-              style={{ textAlign: legPrice ? "right" : "center" }}
-              title={
-                !Number.isNaN(originalAmount) &&
-                originalAmount > 0 &&
-                index > 0 &&
-                intl.formatMessage(
-                  {
-                    description:
-                      "Text explaining the transfer discount applied to this fare.",
-                    id: "otpUi.TripDetails.transferDiscountExplanation"
-                  },
-                  {
-                    transferAmount: intl.formatNumber(originalAmount, {
-                      currency: legPrice?.currency?.code,
-                      currencyDisplay: "narrowSymbol",
-                      style: "currency"
-                    })
-                  }
-                )
-              }
-            >
-              {!Number.isNaN(originalAmount) &&
-                originalAmount > 0 &&
-                index > 0 && <TransferIcon size={16} />}
-              {/* Leg Price will always be defined if the fare product has a price */}
-              {legPrice
-                ? renderFare(legPrice?.currency?.code, legPrice?.amount)
-                : FailDash}
-            </td>
-          </>
-        );
-        const currentRowIndex = 1 + riderIndex + riders.length * mediumIndex;
-        if (!rows[currentRowIndex]) {
-          rows[currentRowIndex] = [];
-        }
-        rows[currentRowIndex].push(newCell);
+              )}
+              {!medium?.id && !rider?.id ? FailDash : null}
+            </th>
+          )}
+          <td
+            style={{ textAlign: legPrice ? "right" : "center" }}
+            title={
+              !Number.isNaN(originalAmount) &&
+              originalAmount > 0 &&
+              index > 0 &&
+              intl.formatMessage(
+                {
+                  description:
+                    "Text explaining the transfer discount applied to this fare.",
+                  id: "otpUi.TripDetails.transferDiscountExplanation"
+                },
+                {
+                  transferAmount: intl.formatNumber(originalAmount, {
+                    currency: legPrice?.currency?.code,
+                    currencyDisplay: "narrowSymbol",
+                    style: "currency"
+                  })
+                }
+              )
+            }
+          >
+            {!Number.isNaN(originalAmount) &&
+              originalAmount > 0 &&
+              index > 0 && <TransferIcon size={16} />}
+            {/* Leg Price will always be defined if the fare product has a price */}
+            {legPrice
+              ? renderFare(legPrice?.currency?.code, legPrice?.amount)
+              : FailDash}
+          </td>
+        </>
+      );
+      const nextRowIndex = currentRowIndex + 1;
+      if (!rows[nextRowIndex]) {
+        rows[nextRowIndex] = [];
+      }
+      rows[nextRowIndex].push(newCell);
 
-        // Generate final column
-        if (index === transitLegs.length - 1 && transitLegs.length > 1) {
-          const fare = getItineraryCost(
-            legs,
-            descope(medium.id) || null,
-            descope(rider.id) || null
-          );
-          rows[currentRowIndex].push(
-            <td
-              style={{ textAlign: fare?.amount ? "right" : "center" }}
-              title={
-                !fare?.amount &&
-                intl.formatMessage({
-                  id: "otpUi.TripDetails.missingFareTotal"
-                })
-              }
-            >
-              <em>
-                {fare?.amount
-                  ? renderFare(fare?.currency.code, fare?.amount)
-                  : FailDash}
-              </em>
-            </td>
-          );
-        }
-      });
+      // Generate final column
+      if (index === transitLegs.length - 1 && transitLegs.length > 1) {
+        const fare = getItineraryCost(
+          legs,
+          descope(medium?.id ?? null),
+          descope(rider?.id ?? null),
+          true
+        );
+        rows[nextRowIndex].push(
+          <td
+            style={{ textAlign: fare?.amount ? "right" : "center" }}
+            title={
+              fare?.amount === undefined &&
+              intl.formatMessage({
+                id: "otpUi.TripDetails.missingFareTotal"
+              })
+            }
+          >
+            <em>
+              {fare?.amount !== undefined
+                ? renderFare(fare?.currency.code, fare?.amount)
+                : FailDash}
+            </em>
+          </td>
+        );
+      }
     });
   });
 

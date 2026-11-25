@@ -11,11 +11,13 @@ import type {
   StopEventHandler,
 } from "@opentripplanner/types";
 
-import { FocusTrapWrapper } from "@opentripplanner/building-blocks";
+import colors, { FocusTrapWrapper } from "@opentripplanner/building-blocks";
 import { flatten } from "flat";
 import { FormattedMessage, useIntl } from "react-intl";
 import { Styled } from "@opentripplanner/base-map";
 import coreUtils from "@opentripplanner/core-utils";
+import styled from "styled-components";
+import { ExclamationTriangle } from "@styled-icons/fa-solid/ExclamationTriangle";
 
 import { makeDefaultGetEntityName, type StopIdAgencyMap } from "./util";
 import { ViewStopButton } from "./styled";
@@ -36,6 +38,13 @@ export type Feed = {
   };
 };
 
+const ClosedAlertWrapper = styled.div`
+  align-items: center;
+  color: ${colors.red[700]};
+  display: flex;
+  font-size: 14px;
+  gap: 5px;
+`
 
 const generateLocation = (entity: MapPopupEntity, name: string) => {
   // @ts-expect-error some of these values may be null, but that's ok
@@ -75,7 +84,7 @@ const StationHubDetails = ({ availableVehicles, availableSpaces }: { availableVe
   )
 }
 
-const StopDetails = ({ id, feedName, setViewedStop }: { id: string, feedName?: string, setViewedStop: () => void; }) => {
+const StopDetails = ({ id, feedName, setViewedStop }: { id?: string, feedName?: string, setViewedStop?: () => void; }) => {
   return (
     <Styled.PopupRow>
       {id &&
@@ -90,13 +99,13 @@ const StopDetails = ({ id, feedName, setViewedStop }: { id: string, feedName?: s
             }}
           />
         </strong>}
-      <ViewStopButton onClick={setViewedStop} stopId={id}> 
+      {setViewedStop && <ViewStopButton onClick={setViewedStop} stopId={id}> 
         <FormattedMessage
           defaultMessage={defaultMessages["otpUi.MapPopup.stopViewer"]}
           description="Text for link that opens the stop viewer"
           id="otpUi.MapPopup.stopViewer"
         />
-      </ViewStopButton>
+      </ViewStopButton>}
     </Styled.PopupRow>
   )
 }
@@ -146,12 +155,13 @@ export function MapPopup({
   const name = getNameFunc(entity, configCompanies, feedName);
   const titleName = getNameFunc(entity, configCompanies, feedName, false);
 
-  const stationNetwork = "rentalNetwork" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.rentalNetwork.networkId, configCompanies) || entity?.rentalNetwork.networkId);
+  const stationNetwork = "rentalNetwork" in entity && (coreUtils.itinerary.getCompaniesLabelFromNetworks(entity?.rentalNetwork?.networkId, configCompanies) || entity?.rentalNetwork?.networkId);
 
   const vehiclesAvailable = "availableVehicles" in entity;
   const entityIsStationHub = vehiclesAvailable && entity?.availableVehicles !== undefined;
   const stopId = entityIsStop(entity) ? entity.code : "";
   const id = `focus-${encodeURIComponent(entity.id).replace(/%/g, "")}-popup`
+  const stopClosureInfoAvailable = "closed" in entity;
 
   return (
     <Styled.MapOverlayPopup>
@@ -168,12 +178,21 @@ export function MapPopup({
       {/* render dock info if it is available */}
       {entityIsStationHub && <StationHubDetails availableSpaces={entity.availableSpaces?.total} availableVehicles={entity.availableVehicles?.total} />}
 
-      {/* render stop viewer link if available */}
-      {setViewedStop && entityIsStop(entity) && (
+      {stopClosureInfoAvailable && entity.closed &&
+        <ClosedAlertWrapper>
+          <ExclamationTriangle size={15} />
+          <FormattedMessage
+            defaultMessage={defaultMessages["otpUi.MapPopup.closedStop"]}
+            description="Text alerting user that the stop is closed"
+            id="otpUi.MapPopup.closedStop"
+          />
+        </ClosedAlertWrapper>}
+      {/* Show stop details if any are available */}
+      {entityIsStop(entity) && (!!stopId || !!setViewedStop) && (
         <StopDetails
           id={stopId}
           feedName={feedName}
-          setViewedStop={useCallback(() => setViewedStop(entity as Stop), [entity])}
+          setViewedStop={setViewedStop && useCallback(() => setViewedStop(entity as Stop), [entity])}
         />
       )}
 

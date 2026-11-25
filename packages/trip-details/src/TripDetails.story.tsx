@@ -90,8 +90,9 @@ function createTripDetailsTemplate(
     DepartureDetails,
     FareDetails,
     itinerary,
-    TimeActiveDetails,
-    showApproximateMinutesActive
+    mediumRiderWhitelist,
+    showApproximateMinutesActive,
+    TimeActiveDetails
   }: TripDetailsProps): ReactElement => {
     return (
       <Component
@@ -100,6 +101,7 @@ function createTripDetailsTemplate(
         DepartureDetails={DepartureDetails}
         FareDetails={FareDetails}
         itinerary={itinerary}
+        mediumRiderWhitelist={mediumRiderWhitelist}
         showApproximateMinutesActive={showApproximateMinutesActive}
         TimeActiveDetails={TimeActiveDetails}
       />
@@ -165,6 +167,16 @@ export const LegFareProductsItinerary = makeStory({
   itinerary: otp2FareProducts,
   defaultFareType: { mediumId: "electronic", riderCategoryId: "regular" }
 });
+
+// export const LegFareProductsWithSpecialFareTableFeatures = makeStory({
+//   itinerary:  TODO: MISSING DATA!,
+//   defaultFareType: { mediumId: "electronic", riderCategoryId: "regular" },
+//   showApproximateMinutesActive: true,
+//   mediumRiderWhitelist: [
+//     { medium: "electronic", rider: "regular" },
+//     { medium: "electronic", rider: "senior" }
+//   ]
+// });
 
 // The render of this itinerary is uninteresting, but the test
 // is if we can parse an OTP2 itinerary without crashing

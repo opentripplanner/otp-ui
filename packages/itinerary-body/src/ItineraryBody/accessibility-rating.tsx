@@ -3,7 +3,10 @@ import React, { ReactElement } from "react";
 import styled from "styled-components";
 import { Wheelchair } from "@styled-icons/foundation/Wheelchair";
 import { useIntl } from "react-intl";
+import colors from "@opentripplanner/building-blocks";
 import { InvisibleAdditionalDetails } from "../styled";
+
+const { red, blue } = colors;
 
 interface WrapperProps {
   border: boolean;
@@ -64,14 +67,14 @@ const AccessibilityRating = ({
       ? gradationMap
       : {
           0.0: {
-            color: "#ffe4e5",
+            color: red[50],
             icon: "❌",
             text: intl.formatMessage({
               id: `otpUi.ItineraryBody.tripAccessibility.inaccessible`
             })
           },
           0.5: {
-            color: "#dbe9ff",
+            color: blue[50],
             icon: "？",
             text: intl.formatMessage({
               id: `otpUi.ItineraryBody.tripAccessibility.unclear`

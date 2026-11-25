@@ -2,7 +2,6 @@
 
 Place a `ZoomBasedMarkers` component inside a react-leaflet `FeatureGroup`, `Map` or an OTP-UI's `BaseMap`
 to render `entities` with different `symbols` depending on the `zoom` level.
-
 Example using a `FeatureGroup`:
 
 ```jsx

@@ -11,11 +11,13 @@ import bikeRentalTransitBikeRentalItinerary from "@opentripplanner/itinerary-bod
 import bikeTransitBikeItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/bike-transit-bike.json";
 import eScooterRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/e-scooter-rental.json";
 import eScooterRentalTransiteScooterRentalItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/e-scooter-transit-e-scooter.json";
+import legNoStopCodeItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/leg-no-stop-code.json";
 import parkAndRideItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/park-and-ride.json";
 import tncTransitTncItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/tnc-transit-tnc.json";
 import walkInterlinedTransitItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-interlined-transit-walk.json";
 import walkOnlyItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-only.json";
 import walkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkTripShortNameItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-trip-short-name.json";
 import walkTransitWalkTransitWalkItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk.json";
 import walkTransitWalkTransitWalkA11yItinerary from "@opentripplanner/itinerary-body/src/__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json";
 import config from "@opentripplanner/itinerary-body/src/__mocks__/config.json";
@@ -65,6 +67,14 @@ export const WalkTransitWalkItinerary = () => (
   <PrintableItinerary
     config={config}
     itinerary={walkTransitWalkItinerary}
+    LegIcon={TriMetLegIcon}
+  />
+);
+
+export const WalkTransitWalkItineraryTripShortName = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={walkTransitWalkTripShortNameItinerary}
     LegIcon={TriMetLegIcon}
   />
 );
@@ -178,5 +188,13 @@ export const OTP2ScooterItinerary = () => (
     config={config}
     itinerary={otp2ScooterItinerary}
     LegIcon={ClassicLegIcon}
+  />
+);
+
+export const StopsWithNoStopCode = () => (
+  <PrintableItinerary
+    config={config}
+    itinerary={legNoStopCodeItinerary}
+    LegIcon={TriMetLegIcon}
   />
 );

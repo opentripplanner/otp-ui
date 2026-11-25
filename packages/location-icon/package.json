@@ -11,7 +11,8 @@
   "private": false,
   "dependencies": {
     "@styled-icons/fa-regular": "catalog:",
-    "@styled-icons/fa-solid": "catalog:"
+    "@styled-icons/fa-solid": "catalog:",
+    "@styled-icons/styled-icon": "catalog:"
   },
   "peerDependencies": {
     "react": "catalog:",

@@ -2,7 +2,7 @@ import { LatLngArray, Location, UserPosition } from "@opentripplanner/types";
 
 export function currentPositionToLocation(
   currentPosition: UserPosition
-): Location {
+): Location | null {
   if (currentPosition.error || !currentPosition.coords) {
     console.warn(
       "Cannot construct location from current position due to geolocation error or missing coordinates."
@@ -18,8 +18,10 @@ export function currentPositionToLocation(
 
 // TRICKY: This method is used in query.js and in the context of
 // otp-rr actions where the intl context is not available/does not apply.
-export function coordsToString(coords: number[]): string {
-  return coords.length && coords.map(c => (+c).toFixed(5)).join(", ");
+export function coordsToString(coords: number[]): string | undefined {
+  return coords.length > 0
+    ? coords.map(c => (+c).toFixed(5)).join(", ")
+    : undefined;
 }
 
 export function stringToCoords(str: string): number[] {

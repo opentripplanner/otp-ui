@@ -44,7 +44,7 @@ const StyledModeSettingsButton = styled.div<{
     margin-top: -2px;
     padding: 0 10px;
 
-    span.invisible {
+    span.screenreader-only {
       ${invisibleCss}
     }
   }
@@ -144,7 +144,7 @@ const AdvancedModeSettingsButton = ({
         <label htmlFor={checkboxId}>
           <modeButton.Icon />
           {containsSubsettings && (
-            <span className="invisible">{accessibilityLabel}</span>
+            <span className="screenreader-only">{accessibilityLabel}</span>
           )}
           <span aria-hidden={containsSubsettings}>{label}</span>
           {modeButton.enabled && <Check2 />}

@@ -1,5 +1,5 @@
 import coreUtils from "@opentripplanner/core-utils";
-import { Leg } from "@opentripplanner/types";
+import { ElevationProfile, Leg } from "@opentripplanner/types";
 import React, { Component, ReactElement } from "react";
 import { FormattedMessage, injectIntl, IntlShape } from "react-intl";
 import ReactResizeDetector from "react-resize-detector";
@@ -22,7 +22,7 @@ interface State {
 
 const METERS_TO_FEET = 3.28084;
 
-function generateSvg(profile, width) {
+function generateSvg(profile: ElevationProfile, width: number) {
   const height = 30;
   const { points: ptArr, traversed } = profile;
   let { minElev, maxElev } = profile;
@@ -124,7 +124,7 @@ class LegDiagramPreview extends Component<Props, State> {
             </S.PreviewDiagramElevationLoss>
           </S.PreviewDiagramTitle>
           {profile.points.length > 0 ? (
-            generateSvg(profile, IS_TEST_RUNNER ? "245" : width)
+            generateSvg(profile, IS_TEST_RUNNER ? 245 : width)
           ) : (
             <FormattedMessage
               defaultMessage={

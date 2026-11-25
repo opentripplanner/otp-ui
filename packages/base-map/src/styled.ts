@@ -1,13 +1,54 @@
 import { Popup as MapGlPopup } from "react-map-gl/maplibre";
+
 import styled from "styled-components";
 
 /**
- * Adds a box shadow and tweaks border radius to make popups easier to read.
+ * First chunk adds a box shadow and tweaks border radius to make popups easier to read.
+ * 
+ * Second chunk corrects custom border-radiuses on corner positions.
+ *
+ * Final chunk implements our "autoOffset" prop, which allows for a dynamic offset
+ * in whichever direction the popup is anchored.
+
  */
-export const Popup = styled(MapGlPopup)`
-  & > .maplibregl-popup-content {
+export const Popup = styled(MapGlPopup)<{ autoOffset?: number }>`
+  .maplibregl-popup-content {
     border-radius: 10px;
     box-shadow: 0 3px 14px 4px rgb(0 0 0 / 20%);
+  }
+
+  &.maplibregl-popup-anchor-bottom-left {
+    .maplibregl-popup-content {
+      border-bottom-left-radius: 0;
+    }
+  }
+  &.maplibregl-popup-anchor-top-left {
+    .maplibregl-popup-content {
+      border-top-left-radius: 0;
+    }
+  }
+  &.maplibregl-popup-anchor-bottom-right {
+    .maplibregl-popup-content {
+      border-bottom-right-radius: 0;
+    }
+  }
+  &.maplibregl-popup-anchor-top-right {
+    .maplibregl-popup-content {
+      border-top-right-radius: 0;
+    }
+  }
+
+  &[class$="right"] {
+    margin-left: -${props => props?.autoOffset || "0"}px;
+  }
+  &[class$="left"] {
+    margin-left: ${props => props?.autoOffset || "0"}px;
+  }
+  &[class$="bottom"] {
+    margin-top: -${props => props?.autoOffset || "0"}px;
+  }
+  &[class$="top"] {
+    margin-top: ${props => props?.autoOffset || "0"}px;
   }
 `;
 

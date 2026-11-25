@@ -216,11 +216,26 @@ export type ElevationData = {
   second: number;
 }[];
 
+export type AlertEffect =
+  | "ACCESSIBILITY_ISSUE"
+  | "ADDITIONAL_SERVICE"
+  | "DETOUR"
+  | "MODIFIED_SERVICE"
+  | "NO_EFFECT"
+  | "NO_SERVICE"
+  | "OTHER_EFFECT"
+  | "REDUCED_SERVICE"
+  | "SIGNIFICANT_DELAYS"
+  | "STOP_MOVED"
+  | "UNKNOWN_EFFECT";
+
 export type Alert = {
-  alertHeaderText?: string;
   alertDescriptionText?: string;
+  alertEffect?: AlertEffect;
+  alertHeaderText?: string;
   alertUrl?: string;
   effectiveStartDate?: number;
+  entities?: { stop?: { gtfsId?: string } }[];
   /** Returned by OTP2 graphql queries, but not by OTP1 */
   id?: string;
 };
@@ -368,6 +383,7 @@ export type Leg = {
     productName?: string;
   };
   realTime: boolean;
+  realtimeState?: "ADDED" | "CANCELED" | "MODIFIED" | "SCHEDULED" | "UPDATED";
   rentedBike: boolean;
   rentedCar: boolean;
   rentedVehicle: boolean;
@@ -395,6 +411,7 @@ export type Leg = {
     gtfsId?: string;
     id: string;
     tripHeadsign?: string;
+    tripShortName?: string;
   };
   tripBlockId?: string;
   tripId?: string;
@@ -465,7 +482,7 @@ export type ItineraryOnlyLegsRequired = Partial<Itinerary> &
 export type ElevationProfile = {
   maxElev: number;
   minElev: number;
-  points: number[];
+  points: [number, number][];
   traversed: number;
   gain: number;
   loss: number;
@@ -539,6 +556,27 @@ export type Agency = {
   phone?: string;
   fareUrl?: string;
 };
+
+/**
+ * Transit modes that correspond with OTP GraphQL `TransitMode`.
+ */
+export type TransitMode =
+  | "AIRPLANE"
+  | "BUS"
+  | "CABLE_CAR"
+  | "CARPOOL"
+  | "COACH"
+  | "FERRY"
+  | "FUNICULAR"
+  | "GONDOLA"
+  | "MONORAIL"
+  | "RAIL"
+  | "SNOW_AND_ICE"
+  | "SUBWAY"
+  | "TAXI"
+  | "TRAM"
+  | "TROLLEYBUS";
+
 export type Route = BasicRouteInfo & {
   agency: Agency;
   agencyId?: string | number;
@@ -546,7 +584,7 @@ export type Route = BasicRouteInfo & {
   // TODO: Add support for enum values, see /packages/core-utils/src/otpSchema.json#L1289
   bikesAllowed?: ZeroOrOne;
   eligibilityRestricted?: ZeroOrOne;
-  mode?: string;
+  mode?: TransitMode;
   routeBikesAllowed?: ZeroOrOne;
   sortOrder: number;
   sortOrderSet: boolean;
@@ -559,21 +597,22 @@ export type TransitivePlace = {
   placeId?: string;
   type: string;
 };
+export type TransitiveSegment = {
+  arc?: boolean;
+  from?: TransitivePlace;
+  patterns?: {
+    pattern_id: string;
+    from_stop_index: number;
+    to_stop_index: number;
+  }[];
+  streetEdges?: number[];
+  to?: TransitivePlace;
+  type: string;
+};
 export type TransitiveJourney = {
   journey_id: string;
   journey_name: string;
-  segments: {
-    arc?: boolean;
-    from: TransitivePlace;
-    patterns?: {
-      pattern_id: string;
-      from_stop_index: number;
-      to_stop_index: number;
-    }[];
-    streetEdges: number[];
-    to: TransitivePlace;
-    type: string;
-  }[];
+  segments: TransitiveSegment[];
 };
 export type TransitivePattern = {
   pattern_id: string;
@@ -595,7 +634,7 @@ export type TransitiveRoute = {
 };
 export type TransitiveStop = {
   stop_id: string;
-  stop_name: string;
+  stop_name?: string;
   stop_lat: number;
   stop_lon: number;
 };
@@ -659,7 +698,7 @@ export type GeocodedFeature = {
 };
 
 export type TncFare = {
-  currencyCode: string;
+  currencyCode: string | null;
   maxTNCFare: number;
   minTNCFare: number;
 };
@@ -809,14 +848,30 @@ export type ModeSetting = (
   ModeSettingBase;
 export type ModeSettingValues = Record<string, number | string | boolean>;
 
-/**
- * TransportModes correspond with the OTP GraphQL TransportMode.
- * Could be anything from walk, bike (qualifier: rent) to transit, tram, or bus.
- */
-export type TransportMode = {
-  mode: string;
-  qualifier?: string;
+export type PlanModesInput = {
+  direct?: string[];
+  directOnly?: boolean;
+  transit?: PlanTransitModesInput;
+  transitOnly?: boolean;
 };
+
+export type PlanTransitModesInput = {
+  access?: string[];
+  egress?: string[];
+  transfer?: string[];
+  transit?: PlanTransitModePreferenceInput[];
+};
+
+export type PlanTransitModePreferenceInput = {
+  cost?: { reluctance: number };
+  mode: string;
+  replacement?: { requirement?: string };
+};
+
+/**
+ * A mode selected by the UI, with an optional PlanConnection input for a query.
+ */
+export type TransportMode = { input?: PlanModesInput; mode: string };
 
 /**
  * This is a combination of transportation modes,
@@ -864,7 +919,29 @@ export type FareProductSelector = {
   riderCategoryId?: string;
 };
 
+export type MediumRiderWhitelist = { medium: string; rider: string }[];
+
 /**
  * Options for units of mass (used in CO₂ calculation config)
  */
 export type MassUnitOption = "ounce" | "kilogram" | "pound" | "gram";
+
+/**
+ * Options for Heading for PrintableItinerary and ItineraryBody
+ */
+export type HeadingAs = "h1" | "h2" | "h3" | "h4" | "span" | "div";
+
+/**
+ * Options for Heading for PrintableItinerary
+ */
+export type LegHeadingConfig = {
+  titleHeading?: HeadingAs;
+  legHeading?: HeadingAs;
+};
+
+/**
+ * LegHeadingProp type for headingAs
+ */
+export type LegHeadingProp = {
+  headingAs?: HeadingAs;
+};

@@ -32,18 +32,22 @@ export default class PeliasGeocoder extends Geocoder {
       options,
       sources
     } = this.geocoderConfig;
+    const combinedOptions = {
+      ...options,
+      ...query.options
+    }
     return {
       apiKey,
       boundary,
       focusPoint,
       layers,
-      options,
       // explicitly send over null for sources if provided sources is not truthy
       // in order to avoid default isomorphic-mapzen-search sources form being
       // applied
       sources: sources || null,
       url: baseUrl ? `${baseUrl}/autocomplete` : undefined,
-      ...query
+      ...query,
+      options: combinedOptions
     };
   }
 
@@ -63,19 +67,23 @@ export default class PeliasGeocoder extends Geocoder {
       options,
       sources
     } = this.geocoderConfig;
+    const combinedOptions = {
+      ...options,
+      ...query.options
+    }
     return {
       apiKey,
       boundary,
       layers,
       focusPoint,
-      options,
       // explicitly send over null for sources if provided sources is not truthy
       // in order to avoid default isomorphic-mapzen-search sources form being
       // applied
       sources: sources || null,
       url: baseUrl ? `${baseUrl}/search` : undefined,
       format: false, // keep as returned GeoJSON,
-      ...query
+      ...query,
+      options: combinedOptions
     };
   }
 

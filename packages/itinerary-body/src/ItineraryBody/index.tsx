@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 
+import { Itinerary, Leg } from "@opentripplanner/types";
 import AccessibilityRating from "./accessibility-rating";
 import PlaceRow from "./place-row";
 import * as S from "../styled";
@@ -10,6 +11,25 @@ function noop() {}
 function defaultRouteAbbr(arg: string | number): string {
   return arg.toString();
 }
+
+/** Goes through each leg of an itinerary and compiles all of the stop
+ * IDs for stops that are closed via a NO_SERVICE alert
+ */
+const compileClosedStopsForItinerary = (itinerary: Itinerary) => {
+  const closedStopsForItinerary = new Set<string>();
+
+  itinerary.legs.forEach(leg => {
+    leg.alerts
+      ?.filter(a => a.alertEffect === "NO_SERVICE")
+      .forEach(a => {
+        a.entities?.forEach(e => {
+          if (e.stop?.gtfsId) closedStopsForItinerary.add(e.stop.gtfsId);
+        });
+      });
+  });
+
+  return closedStopsForItinerary;
+};
 
 const ItineraryBody = ({
   accessibilityScoreGradationMap,
@@ -42,6 +62,8 @@ const ItineraryBody = ({
   showViewTripButton,
   TimeColumnContent,
   toRouteAbbreviation = defaultRouteAbbr,
+  AccessLegFooter,
+  TransitLegFooter,
   TransitLegSubheader,
   TransitLegSummary
 }: ItineraryBodyProps): ReactElement => {
@@ -50,15 +72,22 @@ const ItineraryBody = ({
     trigger a rerender of this component itinerary is also another criteria
     that is used to trigger a rerender but has more reuse than companies here
   */
-  const rows = [];
+  const rows: ReactElement[] = [];
   let followsTransit = false;
-  let lastLeg;
-  let nextLeg;
+  let lastLeg: Leg | undefined;
+  let nextLeg: Leg | undefined;
+
+  // Because the PlaceRow that is rendered for the alighting of a transit leg
+  // is tied to the subsequent walk leg, it won't have access to the relevant transit
+  // itinerary alerts. All of the closed stops for the entire itinerary are precompiled
+  // so the walk legs can accurately reflect closed stops as well.
+  const closedStopsForItinerary = compileClosedStopsForItinerary(itinerary);
+
   itinerary.legs.forEach((leg, i) => {
     const isLastLeg = i === itinerary.legs.length - 1;
     nextLeg = isLastLeg ? undefined : itinerary.legs[i + 1];
 
-    function createPlaceRow(isDestination) {
+    function createPlaceRow(isDestination: boolean) {
       // Create a row containing this leg's start place and leg traversal details
       rows.push(
         <PlaceRow
@@ -68,6 +97,8 @@ const ItineraryBody = ({
           alwaysCollapseAlerts={alwaysCollapseAlerts}
           // eslint-disable-next-line react/no-array-index-key
           key={i + (isDestination ? 1 : 0)}
+          canceled={leg.realtimeState === "CANCELED"}
+          closedStopIds={closedStopsForItinerary}
           config={config}
           defaultFareSelector={defaultFareSelector}
           diagramVisible={diagramVisible}
@@ -100,6 +131,8 @@ const ItineraryBody = ({
           showViewTripButton={showViewTripButton}
           TimeColumnContent={TimeColumnContent}
           toRouteAbbreviation={toRouteAbbreviation}
+          AccessLegFooter={AccessLegFooter}
+          TransitLegFooter={TransitLegFooter}
           TransitLegSubheader={TransitLegSubheader}
           TransitLegSummary={TransitLegSummary}
         />

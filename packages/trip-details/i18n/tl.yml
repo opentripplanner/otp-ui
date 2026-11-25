@@ -22,6 +22,7 @@ otpUi:
       minuto</strong> sa pagbibisikleta.
     title: Mga Detalye ng Biyahe
     tncFare: "{companies} Pamasahe: <strong>{minTNCFare} - {maxTNCFare}</strong>"
+    total: Kabuuan
     transferDiscountExplanation: Inilapat ang diskwento sa paglipat na {transferAmount}
     transitFare: Pamasahe sa Pampublikong Transportasyon
     transitFareEntry: "{name}: <strong>{value}</strong>"

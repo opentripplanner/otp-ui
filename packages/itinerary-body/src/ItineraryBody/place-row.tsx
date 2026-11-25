@@ -1,8 +1,10 @@
 import coreUtils from "@opentripplanner/core-utils";
 import { Config, Leg } from "@opentripplanner/types";
+import colors from "@opentripplanner/building-blocks";
 import React, { FunctionComponent, ReactElement } from "react";
 import { FormattedMessage, useIntl } from "react-intl";
 
+import styled from "styled-components";
 import DefaultTimeColumnContent from "../defaults/time-column-content";
 import AccessLegBody from "../AccessLegBody";
 import * as S from "../styled";
@@ -11,6 +13,17 @@ import TransitLegBody from "../TransitLegBody";
 import AccessibilityRating from "./accessibility-rating";
 import { PlaceNameProps, PlaceRowProps } from "../types";
 import { defaultMessages } from "../util";
+
+const CanceledTripMessage = styled.span`
+  color: ${colors.red[700]};
+  margin-left: 7px;
+  padding-top: 3px;
+`;
+
+const ClosedStopMessage = styled.span`
+  color: ${colors.red[700]};
+  padding: 3px 3px 10px;
+`;
 
 function getLegPlaceName(
   leg: Leg,
@@ -26,7 +39,7 @@ function getLegPlaceName(
   const interline = !!(!isDestination && leg.interlineWithPreviousLeg);
   const place = isDestination ? { ...leg.to } : { ...leg.from };
   const placeName = (
-    <PlaceName config={config} interline={interline} place={place} />
+    <PlaceName config={config} interline={interline} leg={leg} place={place} />
   );
 
   return {
@@ -45,6 +58,8 @@ export default function PlaceRow({
   AlertBodyIcon,
   AlertToggleIcon,
   alwaysCollapseAlerts,
+  canceled,
+  closedStopIds,
   config,
   defaultFareSelector,
   diagramVisible,
@@ -74,6 +89,8 @@ export default function PlaceRow({
   showViewTripButton,
   TimeColumnContent = DefaultTimeColumnContent,
   toRouteAbbreviation,
+  AccessLegFooter,
+  TransitLegFooter,
   TransitLegSubheader,
   TransitLegSummary
 }: PlaceRowProps): ReactElement {
@@ -93,8 +110,10 @@ export default function PlaceRow({
     placeName: nextPlaceName = undefined
   } = nextLeg ? getLegPlaceName(nextLeg, false, PlaceName, config) : {};
   const legDestination = nextPlaceName || (
-    <PlaceName config={config} place={leg.to} />
+    <PlaceName config={config} leg={leg} place={leg.to} />
   );
+  const stopId = place.stop?.gtfsId || place.stopId;
+  const closed = stopId && closedStopIds?.has(stopId);
 
   // OTP2 marks both bikes and scooters as BIKESHARE in the vertextype
   // To get the right label, we need to fix scooters to be "VEHICLERENTAL"
@@ -109,6 +128,19 @@ export default function PlaceRow({
     description: "Text describing the view-on-map button",
     id: "otpUi.ItineraryBody.viewOnMap"
   });
+  const canceledText = intl.formatMessage({
+    defaultMessage: defaultMessages["otpUi.ItineraryBody.canceled"],
+    description: "Text indicating a canceled trip",
+    id: "otpUi.ItineraryBody.canceled"
+  });
+  const canceledInvisibleMessage = intl.formatMessage({
+    defaultMessage: defaultMessages["otpUi.ItineraryBody.canceledMessage"],
+    description: "Screen reader text indicating a canceled trip",
+    id: "otpUi.ItineraryBody.canceledMessage"
+  });
+
+  const PlaceNameComponent =
+    canceled || closed ? S.ClosedOrCanceledPlaceName : S.PlaceName;
 
   return (
     <S.PlaceRowWrapper
@@ -117,6 +149,11 @@ export default function PlaceRow({
       } ${leg.rentedBike ? "rented-bike" : ""}`}
       key={legIndex || "destination-place"}
     >
+      {canceled && (
+        <S.InvisibleAdditionalDetails>
+          {canceledInvisibleMessage}
+        </S.InvisibleAdditionalDetails>
+      )}
       <S.LineColumn>
         <LineColumnContent
           interline={interline}
@@ -129,11 +166,27 @@ export default function PlaceRow({
         />
       </S.LineColumn>
       <S.PlaceHeader>
-        <S.PlaceName aria-hidden className="place-row-place-name">
+        <PlaceNameComponent aria-hidden className="place-row-place-name">
           {placeName}
-        </S.PlaceName>
+        </PlaceNameComponent>
+        {canceled && (
+          <CanceledTripMessage aria-hidden>{canceledText}</CanceledTripMessage>
+        )}
+        {closed && (
+          <ClosedStopMessage>
+            {
+              <FormattedMessage
+                defaultMessage={
+                  defaultMessages["otpUi.ItineraryBody.stopIsClosed"]
+                }
+                description="Denotes a closed stop in the itinerary body"
+                id="otpUi.ItineraryBody.stopIsClosed"
+              />
+            }
+          </ClosedStopMessage>
+        )}
       </S.PlaceHeader>
-      <S.TimeColumn>
+      <S.TimeColumn strikethrough={canceled || closed}>
         {/* Custom rendering of the departure/arrival time of the specified leg. */}
         <TimeColumnContent isDestination={isDestination} leg={leg} />
         {!isDestination &&
@@ -176,6 +229,7 @@ export default function PlaceRow({
               AlertBodyIcon={AlertBodyIcon}
               AlertToggleIcon={AlertToggleIcon}
               alwaysCollapseAlerts={alwaysCollapseAlerts}
+              closedStopIds={closedStopIds}
               defaultFareSelector={defaultFareSelector}
               leg={leg}
               legDestination={legDestination}
@@ -190,6 +244,7 @@ export default function PlaceRow({
               showAlertEffectiveDateTimeText={showAlertEffectiveDateTimeText}
               showViewTripButton={showViewTripButton}
               timeZone={config.homeTimezone}
+              TransitLegFooter={TransitLegFooter}
               TransitLegSubheader={TransitLegSubheader}
               TransitLegSummary={TransitLegSummary}
               transitOperator={coreUtils.route.getTransitOperatorFromLeg(
@@ -213,6 +268,7 @@ export default function PlaceRow({
               showApproximateTravelTime={showApproximateAccessLegTravelTimes}
               showElevationProfile={showElevationProfile}
               showLegIcon={showLegIcon}
+              AccessLegFooter={AccessLegFooter}
               TransitLegSubheader={TransitLegSubheader}
             />
           ))}

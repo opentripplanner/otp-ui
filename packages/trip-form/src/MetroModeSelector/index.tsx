@@ -143,7 +143,6 @@ interface ModeButtonProps {
   fillModeIcons?: boolean;
   id: string;
   modeButton: ModeButtonDefinition;
-  onSettingsUpdate: (QueryParamChangeEvent) => void;
   onToggle: () => void;
 }
 
@@ -212,11 +211,6 @@ interface Props {
    */
   modeButtons?: ModeButtonDefinition[];
   /**
-   * Event handler for settings changes
-   * @param QueryParamChangeEvent Event from when the mode settings change
-   */
-  onSettingsUpdate: (QueryParamChangeEvent) => void;
-  /**
    * Event for when a mode button is toggled
    * @param key Mode button to be toggled
    */
@@ -229,7 +223,6 @@ export default function ModeSelector({
   fillModeIcons,
   label,
   modeButtons = [],
-  onSettingsUpdate,
   onToggleModeButton
 }: Props): ReactElement {
   return (
@@ -243,7 +236,6 @@ export default function ModeSelector({
           id={button.key}
           key={button.label}
           modeButton={button}
-          onSettingsUpdate={onSettingsUpdate}
           onToggle={useCallback(() => {
             onToggleModeButton(button.key, !button.enabled);
           }, [button, onToggleModeButton])}

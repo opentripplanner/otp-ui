@@ -4,14 +4,16 @@ import { Bomb } from "@styled-icons/fa-solid/Bomb";
 import { Bolt } from "@styled-icons/fa-solid/Bolt";
 import styled from "styled-components";
 import { Meta } from "@storybook/react";
+import DemoAccessLegFooter from "./access-leg-footer";
 import RouteDescriptionFooterWithWaitTimes from "./footer-with-wait-times";
+import DemoTransitLegFooter from "./transit-leg-footer";
 
 import ItineraryBody from "..";
 import {
   CustomPlaceName,
   customToRouteAbbreviation,
   CustomTransitLegSummary
-} from "../demos";
+} from "../demos/index";
 import ItineraryBodyDefaultsWrapper from "./itinerary-body-defaults-wrapper";
 
 // import mock itineraries. These are all trip plan outputs from OTP.
@@ -26,6 +28,9 @@ import tncTransitTncItinerary from "../__mocks__/itineraries/tnc-transit-tnc.jso
 import walkInterlinedTransitItinerary from "../__mocks__/itineraries/walk-interlined-transit-walk.json";
 import walkOnlyItinerary from "../__mocks__/itineraries/walk-only.json";
 import walkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk.json";
+import walkTransitWalkClosedStopsItinerary from "../__mocks__/itineraries/walk-transit-walk-closed-stops.json";
+import walkTransitWalkTripShortNameItinerary from "../__mocks__/itineraries/walk-transit-walk-trip-short-name.json";
+import walkTransitWalkCanceledItinerary from "../__mocks__/itineraries/walk-transit-walk-canceled.json";
 import walkTransitWalkTransitWalkItinerary from "../__mocks__/itineraries/walk-transit-walk-transit-walk.json";
 import fareProductsItinerary from "../__mocks__/itineraries/leg-fare-products.json";
 import walkTransitWalkTransitWalkA11yItinerary from "../__mocks__/itineraries/walk-transit-walk-transit-walk-with-accessibility-scores.json";
@@ -61,6 +66,27 @@ export const WalkTransitWalkItinerary = (): ReactElement => (
   />
 );
 
+export const WalkTransitWalkItineraryTripShortName = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkTripShortNameItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
+);
+
+export const WalkTransitWalkItineraryCanceled = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkCanceledItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
+);
+
+export const WalkTransitWalkItineraryClosedStops = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkClosedStopsItinerary}
+    RouteDescriptionFooter={RouteDescriptionFooterWithWaitTimes}
+  />
+);
+
 export const WalkTransitTransferWithA11yItinerary = (): ReactElement => (
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkTransitWalkA11yItinerary}
@@ -89,6 +115,20 @@ export const WalkTransitWalkItineraryWithCustomTransitLegSummaryComponent = (): 
   <ItineraryBodyDefaultsWrapper
     itinerary={walkTransitWalkItinerary}
     TransitLegSummary={CustomTransitLegSummary}
+  />
+);
+
+export const WalkTransitWalkItineraryWithTransitLegFooter = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    TransitLegFooter={DemoTransitLegFooter}
+  />
+);
+
+export const WalkTransitWalkItineraryWithAccessLegFooter = (): ReactElement => (
+  <ItineraryBodyDefaultsWrapper
+    itinerary={walkTransitWalkItinerary}
+    AccessLegFooter={DemoAccessLegFooter}
   />
 );
 

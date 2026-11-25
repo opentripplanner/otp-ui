@@ -1,6 +1,6 @@
 import { Config } from "@opentripplanner/types";
 import { startOfDay, add, format } from "date-fns";
-import { utcToZonedTime } from "date-fns-tz";
+import { toZonedTime } from "date-fns-tz";
 
 // Date/time formats (per date-fns) when sending/receiving date from OTP
 // regardless of whatever the user has configured as the display format.
@@ -55,7 +55,7 @@ export function getLongDateFormat(config: Config): string {
  * Offsets a time according to the provided time options
  * and returns the result.
  */
-export function offsetTime(ms, options) {
+export function offsetTime(ms: number, options?: { offset: number }): number {
   return ms + (options?.offset || 0);
 }
 
@@ -79,8 +79,9 @@ export function formatSecondsAfterMidnight(
  * GMT+0 if the Intl API is unavailable.
  */
 export function getUserTimezone(fallbackTimezone = "Etc/Greenwich"): string {
-  if (process.env.NODE_ENV === "test") return process.env.TZ;
-  return Intl?.DateTimeFormat().resolvedOptions().timeZone || fallbackTimezone;
+  if (process.env.NODE_ENV === "test")
+    return process.env.TZ ?? fallbackTimezone;
+  return Intl?.DateTimeFormat().resolvedOptions().timeZone ?? fallbackTimezone;
 }
 
 /**
@@ -88,7 +89,7 @@ export function getUserTimezone(fallbackTimezone = "Etc/Greenwich"): string {
  * The conversion to the user's timezone is needed for testing purposes.
  */
 export function getCurrentTime(timezone = getUserTimezone()): string {
-  return format(utcToZonedTime(Date.now(), timezone), OTP_API_TIME_FORMAT);
+  return format(toZonedTime(Date.now(), timezone), OTP_API_TIME_FORMAT);
 }
 
 /**
@@ -96,5 +97,5 @@ export function getCurrentTime(timezone = getUserTimezone()): string {
  * The conversion to the user's timezone is needed for testing purposes.
  */
 export function getCurrentDate(timezone = getUserTimezone()): string {
-  return format(utcToZonedTime(Date.now(), timezone), OTP_API_DATE_FORMAT);
+  return format(toZonedTime(Date.now(), timezone), OTP_API_DATE_FORMAT);
 }
