@@ -8,6 +8,7 @@ import {
   ElevationProfileComponent,
   FareProduct,
   FlexBookingInfo,
+  Itinerary,
   ItineraryOnlyLegsRequired,
   LatLngArray,
   Leg,
@@ -54,6 +55,43 @@ export function getTransitModes(config: Config): string[] {
 
 export function isTransitLeg(leg: Leg): boolean {
   return leg.transitLeg;
+}
+
+/**
+ * Timing for an itinerary summary. In transit-only mode, include everything
+ * from the first boarding to the final alighting, including transfers and waits.
+ * Trips without transit retain their full-journey timing. The itinerary and its
+ * legs are never modified.
+ */
+export function getItinerarySummaryTiming(
+  itinerary: Itinerary,
+  transitOnly = false
+): Pick<Itinerary, "startTime" | "endTime" | "duration" | "walkTime" | "legs"> {
+  if (!transitOnly) return itinerary;
+
+  const firstTransitIndex = itinerary.legs.findIndex(isTransitLeg);
+  if (firstTransitIndex === -1) return itinerary;
+
+  // TODO: itinerary.legs.findLast
+  const lastTransitIndex = itinerary.legs.reduce(
+    (lastIndex, leg, index) => (isTransitLeg(leg) ? index : lastIndex),
+    firstTransitIndex
+  );
+  const legs = itinerary.legs.slice(firstTransitIndex, lastTransitIndex + 1);
+  const startTime = new Date(legs[0].startTime).getTime();
+  const endTime = legs[legs.length - 1].endTime;
+
+  return {
+    startTime,
+    endTime,
+    duration: (endTime - startTime) / 1000,
+    walkTime: legs.reduce(
+      (seconds, leg) =>
+        seconds + (leg.mode.startsWith("WALK") ? leg.duration : 0),
+      0
+    ),
+    legs
+  };
 }
 
 export function isTransit(mode: string): boolean {

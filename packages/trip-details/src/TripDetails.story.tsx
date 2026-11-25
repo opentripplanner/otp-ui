@@ -92,7 +92,9 @@ function createTripDetailsTemplate(
     itinerary,
     mediumRiderWhitelist,
     showApproximateMinutesActive,
-    TimeActiveDetails
+    showTransitTime,
+    TimeActiveDetails,
+    transitOnly
   }: TripDetailsProps): ReactElement => {
     return (
       <Component
@@ -103,7 +105,9 @@ function createTripDetailsTemplate(
         itinerary={itinerary}
         mediumRiderWhitelist={mediumRiderWhitelist}
         showApproximateMinutesActive={showApproximateMinutesActive}
+        showTransitTime={showTransitTime}
         TimeActiveDetails={TimeActiveDetails}
+        transitOnly={transitOnly}
       />
     );
   };
@@ -125,14 +129,27 @@ function makeStory(
 }
 
 export default {
+  args: {
+    showTransitTime: false,
+    transitOnly: false
+  },
+  argTypes: {
+    showTransitTime: {
+      control: "boolean",
+      description:
+        "Show time on board transit vehicles, excluding transfers and waiting."
+    },
+    transitOnly: {
+      control: "boolean",
+      description:
+        "Use the first transit departure and count active time only between the first and last transit legs."
+    }
+  },
   component: TripDetails,
   parameters: {
     date: new Date("March 10, 2021 10:00:00"),
-    // Hide all controls
-    // (there are no args that the user can interactively change for this component).
     controls: {
-      hideNoControlsWarning: true,
-      include: []
+      include: ["showTransitTime", "transitOnly"]
     }
   },
   title: "TripDetails"
@@ -153,6 +170,12 @@ export const BikeOnlyItinerary = makeStory({
 
 export const WalkTransitWalkItinerary = makeStory({
   itinerary: walkTransitWalkItinerary
+});
+
+export const TransitTimingItinerary = makeStory({
+  itinerary: walkTransitWalkTransitWalkItinerary,
+  showTransitTime: true,
+  transitOnly: true
 });
 
 export const StyledItinerary = makeStory(
