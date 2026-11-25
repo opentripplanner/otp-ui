@@ -96,6 +96,59 @@ const modeButtonDefinitions: ModeButtonDefinition[] = [
   }
 ];
 
+const bicycleOnlyMode = {
+  mode: "BICYCLE",
+  input: {
+    direct: ["BICYCLE"],
+    directOnly: true
+  }
+};
+
+const bicycleTransitMode = {
+  mode: "BICYCLE",
+  // id of the button/check box that has to be selected
+  // for this mode combination to be used.
+  requiredModeButtonKey: "TRANSIT",
+  input: {
+    direct: ["BICYCLE"],
+    transit: {
+      access: ["BICYCLE"],
+      egress: ["BICYCLE"],
+      transfer: ["BICYCLE"]
+    },
+    transitOnly: false
+  }
+};
+
+// Mode definitions are a little bit different using planConnection
+const modeButtonDefinitionsPlanConnection: ModeButtonDefinition[] = [
+  {
+    enabled: true,
+    key: "TRANSIT",
+    label: "Transit",
+    modes: [
+      { mode: "TRANSIT" },
+      {
+        mode: "WALK",
+        input: {
+          direct: ["WALK"],
+          directOnly: true
+        }
+      }
+    ],
+    iconName: "transit icon",
+    Icon: React.Component
+  },
+  {
+    enabled: true,
+    label: "Bike",
+    Icon: React.Component,
+    iconName: "biking icon",
+    key: "BIKE",
+    modes: [bicycleOnlyMode, bicycleTransitMode]
+  }
+];
+
 const modeButtonsWithoutSettings = modeButtonDefinitions.map(b => ({
   ...b,
   modeSettings: undefined
@@ -185,6 +238,18 @@ describe("mode selector utils", () => {
       expect(aggregateModes(modeButtonDefinitions)).toEqual(
         stringsToTransportModes(["BUS", "RAIL", "WALK", "BICYCLE"])
       );
+    });
+    it("should include or exclude a mode that has requiredModeButtonKey set", () => {
+      // Only the bicycle button is selected
+      expect(aggregateModes([modeButtonDefinitionsPlanConnection[1]])).toEqual([
+        bicycleOnlyMode
+      ]);
+      // Both transit and bicycle buttons are selected
+      expect(
+        aggregateModes(modeButtonDefinitionsPlanConnection).filter(
+          m => m.mode === "BICYCLE"
+        )
+      ).toEqual([bicycleOnlyMode, bicycleTransitMode]);
     });
   });
   describe("filter mode buttons by key", () => {

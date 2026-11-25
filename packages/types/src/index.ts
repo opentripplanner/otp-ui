@@ -871,7 +871,15 @@ export type PlanTransitModePreferenceInput = {
 /**
  * A mode selected by the UI, with an optional PlanConnection input for a query.
  */
-export type TransportMode = { input?: PlanModesInput; mode: string };
+export type TransportMode = {
+  input?: PlanModesInput;
+  mode: string;
+  /**
+   * If specified and matches the key attribute of a ModeButtonDefinition,
+   * this mode will be applied for the trip query. Otherwise, this mode will be ignored.
+   */
+  requiredModeButtonKey?: string;
+};
 
 /**
  * This is a combination of transportation modes,
