@@ -1,9 +1,9 @@
 // Prettier does not recognize the import type syntax.
 // eslint-disable-next-line prettier/prettier
-import type { 
-  FareProductSelector, 
-  Itinerary, 
-  Leg, 
+import type {
+  FareProductSelector,
+  Itinerary,
+  Leg,
   MassUnitOption,
   MediumRiderWhitelist,
   Money
@@ -69,7 +69,17 @@ export interface TripDetailsProps {
    */
   showApproximateMinutesActive?: boolean;
   /**
+   * Show time on board transit vehicles, excluding transfers and waiting.
+   */
+  showTransitTime?: boolean;
+  /**
    * Slot for a custom component to render the expandable section for time active.
    */
   TimeActiveDetails?: React.ElementType<TimeActiveDetailsProps>;
+  /**
+   * Use the first transit departure and count only transfer activity between
+   * the first and last transit legs.
+   * Defaults to false. Trips without transit retain their full-journey timing.
+   */
+  transitOnly?: boolean;
 }

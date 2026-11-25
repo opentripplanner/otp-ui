@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import { flatten } from "flat";
+import coreUtils from "@opentripplanner/core-utils";
 import * as S from "./styled";
 import { TripDetailsProps } from "./types";
 import FlexBookingInfo from "./components/flex-booking-info";
@@ -9,6 +10,7 @@ import Emissions from "./components/emissions";
 import Fares from "./components/fares";
 import TimeActive, { DefaultTimeActiveDetails } from "./components/time-active";
 import DepartureDate from "./components/departure-date";
+import TransitTime from "./components/transit-time";
 
 // Load the default messages.
 import defaultEnglishMessages from "../i18n/en-US.yml";
@@ -35,8 +37,15 @@ export function TripDetails({
   itinerary,
   mediumRiderWhitelist,
   showApproximateMinutesActive,
-  TimeActiveDetails = DefaultTimeActiveDetails
+  showTransitTime = false,
+  TimeActiveDetails = DefaultTimeActiveDetails,
+  transitOnly = false
 }: TripDetailsProps): ReactElement {
+  const timing = coreUtils.itinerary.getItinerarySummaryTiming(
+    itinerary,
+    transitOnly
+  );
+
   return (
     <S.TripDetails className={cn(className, "trip-details")}>
       {/* this can be presentation as S.TripDetails is already labeled by this */}
@@ -50,9 +59,11 @@ export function TripDetails({
 
       <S.TripDetailsBody>
         <DepartureDate
-          itinerary={itinerary}
+          startTime={timing.startTime}
           DepartureDetails={DepartureDetails}
+          isBoarding={transitOnly && timing.legs[0]?.transitLeg === true}
         />
+        {showTransitTime && <TransitTime legs={itinerary.legs} />}
         <Fares
           itinerary={itinerary}
           FareDetails={FareDetails}
@@ -60,7 +71,7 @@ export function TripDetails({
           mediumRiderWhitelist={mediumRiderWhitelist}
         />
         <TimeActive
-          itinerary={itinerary}
+          legs={timing.legs}
           TimeActiveDetails={TimeActiveDetails}
           showApproximateMinutesActive={showApproximateMinutesActive}
         />

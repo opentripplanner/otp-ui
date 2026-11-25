@@ -1,5 +1,8 @@
 otpUi:
   TripDetails:
+    boarding: >-
+      Board <strong>{departureDate, date, long}</strong> at
+      <strong>{departureDate, time, short}</strong>
     co2: "CO₂ Emitted: <strong>{co2}</strong>"
     co2description: >-
       CO₂ intensity is calculated by multiplying the distance of each leg of a
@@ -27,4 +30,7 @@ otpUi:
     transitFare: Transit Fare
     transitFareEntry: "{name}: <strong>{value}</strong>"
     transitFareTable: Transit fares for this itinerary
+    transitTime: >-
+      Transit Time: <strong>{minutes, plural, one {# minute} other {#
+      minutes}}</strong>
     tripIncludesFlex: This trip includes flexible routes. {extraMessage}

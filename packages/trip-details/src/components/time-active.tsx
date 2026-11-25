@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { FormattedMessage } from "react-intl";
 import { Heartbeat } from "@styled-icons/fa-solid/Heartbeat";
-import { Itinerary } from "@opentripplanner/types";
+import { Leg } from "@opentripplanner/types";
 import flatten from "flat";
 import TripDetail from "../trip-detail";
 import { boldText } from "../utils";
@@ -41,17 +41,17 @@ export function DefaultTimeActiveDetails({
 }
 
 export default function TimeActive({
-  itinerary,
+  legs,
   TimeActiveDetails,
   showApproximateMinutesActive
 }: {
-  itinerary: Itinerary;
+  legs: Leg[];
   TimeActiveDetails: React.ComponentType<TimeActiveDetailsProps>;
   showApproximateMinutesActive: boolean;
 }): JSX.Element | null {
   let walkDurationSeconds = 0;
   let bikeDurationSeconds = 0;
-  itinerary.legs.forEach(leg => {
+  legs.forEach(leg => {
     if (leg.mode.startsWith("WALK")) walkDurationSeconds += leg.duration;
     if (leg.mode.startsWith("BICYCLE")) bikeDurationSeconds += leg.duration;
   });
