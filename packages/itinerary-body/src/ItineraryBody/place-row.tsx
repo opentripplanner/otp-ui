@@ -87,6 +87,7 @@ export default function PlaceRow({
   showLegIcon,
   showMapButtonColumn,
   showViewTripButton,
+  streetImageryProvider,
   TimeColumnContent = DefaultTimeColumnContent,
   toRouteAbbreviation,
   AccessLegFooter,
@@ -263,6 +264,7 @@ export default function PlaceRow({
               legIndex={legIndex}
               mapillaryCallback={mapillaryCallback}
               mapillaryKey={mapillaryKey}
+              streetImageryProvider={streetImageryProvider}
               setActiveLeg={setActiveLeg}
               setLegDiagram={setLegDiagram}
               showApproximateTravelTime={showApproximateAccessLegTravelTimes}

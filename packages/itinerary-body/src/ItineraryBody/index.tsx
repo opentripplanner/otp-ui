@@ -60,6 +60,7 @@ const ItineraryBody = ({
   showLegIcon,
   showMapButtonColumn = true,
   showViewTripButton,
+  streetImageryProvider,
   TimeColumnContent,
   toRouteAbbreviation = defaultRouteAbbr,
   AccessLegFooter,
@@ -112,6 +113,7 @@ const ItineraryBody = ({
           LineColumnContent={LineColumnContent}
           mapillaryCallback={mapillaryCallback}
           mapillaryKey={mapillaryKey}
+          streetImageryProvider={streetImageryProvider}
           nextLeg={nextLeg}
           PlaceName={PlaceName}
           RouteDescription={RouteDescription}

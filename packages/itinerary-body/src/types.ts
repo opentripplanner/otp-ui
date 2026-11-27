@@ -11,6 +11,7 @@ import {
   Stop,
   TransitOperator
 } from "@opentripplanner/types";
+import { StreetImageryProvider } from "@opentripplanner/core-utils/lib/streetImagery";
 
 export interface RouteDescriptionProps {
   /** Contains details about leg object that is being displayed */
@@ -182,6 +183,8 @@ interface ItineraryBodySharedProps {
    * https://www.mapillary.com/dashboard/developers
    */
   mapillaryKey?: string;
+  /** Which street imagery provider to use as defined in core-utils/streetImagery */
+  streetImageryProvider?: StreetImageryProvider;
   /**
    * A custom component for rendering the place name of legs.
    * The component is sent 3 props:

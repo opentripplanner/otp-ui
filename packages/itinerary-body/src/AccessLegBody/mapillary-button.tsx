@@ -2,30 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useIntl } from "react-intl";
 import styled from "styled-components";
 import { StreetView } from "@styled-icons/fa-solid/StreetView";
+import coreUtils from "@opentripplanner/core-utils";
 
+import { StreetImageryProvider } from "@opentripplanner/core-utils/lib/streetImagery";
 import { defaultMessages } from "../util";
 
-/**
- * Helper method to generate bounding box from a location. Adding the WINDOW to the coordinate
- * creates a bounding box of approximately 2 meters around the coordinate, which is likely to
- * encompass any imagery available.
- * @param coord     The coordinate to convert to a bounding box
- * @returns         A bounding box 2 meters around the passed coordinate
- */
-const generateBoundingBoxFromCoordinate = ({
-  lat,
-  lon
-}: {
-  lat: number;
-  lon: number;
-}) => {
-  const WINDOW = 0.00011;
-  const south = lat - WINDOW;
-  const north = lat + WINDOW;
-  const west = lon - WINDOW;
-  const east = lon + WINDOW;
-  return [west, south, east, north];
-};
+const { streetImagery } = coreUtils;
 
 const Container = styled.a`
   &:hover {
@@ -53,18 +35,22 @@ const Icon = styled(StreetView)`
  * A component which shows a "street view" button if a Mapillary image is available for a
  * passed coordinate
  *
- * @param coords        The coordinates to find imagery for in the format [lat, lon]
- * @param mapillaryKey  A Mapillary api key used to check for imagery.
- * @param clickCallback A method to fire when the button is clicked, which accepts an ID.
+ * @param coords            The coordinates to find imagery for in the format [lat, lon]
+ * @param mapillaryKey      A Mapillary api key used to check for imagery.
+ * @param streetImageryProvider A provider (defined in core-utils/streetImagery) which displays street
+ * imagery
+ * @param clickCallback     A method to fire when the button is clicked, which accepts an ID.
  *  If it is not passed, a popup window will be opened. */
 const MapillaryButton = ({
   clickCallback,
   coords,
-  mapillaryKey
+  mapillaryKey,
+  streetImageryProvider = "MAPILLARY"
 }: {
   clickCallback?: (id: string) => void;
   coords: { lat: number; lon: number };
   mapillaryKey: string;
+  streetImageryProvider?: StreetImageryProvider;
 }): JSX.Element => {
   const [imageId, setImageId] = useState(null);
   const intl = useIntl();
@@ -72,27 +58,25 @@ const MapillaryButton = ({
   useEffect(() => {
     // useEffect only supports async actions as a child function
     const getMapillaryId = async () => {
-      const bounds = generateBoundingBoxFromCoordinate(coords).join(",");
-      const raw = await fetch(
-        `https://graph.mapillary.com/images?fields=id&limit=1&access_token=${mapillaryKey}&bbox=${bounds}`
-      );
-      const json = await raw.json();
-      if (json?.data?.length > 0) {
-        setImageId(json.data[0].id);
-      }
+      const fetchedId = await streetImagery.getImageIdForProvider[
+        streetImageryProvider
+      ](coords, mapillaryKey);
+      if (fetchedId) setImageId(fetchedId);
     };
 
-    if (!imageId && !!mapillaryKey) getMapillaryId();
+    if (!imageId && !!(mapillaryKey || streetImageryProvider)) getMapillaryId();
   }, [coords]);
 
   const handleClick = () => {
-    if (clickCallback) clickCallback(imageId);
-    else {
-      window.open(
-        `https://www.mapillary.com/embed?image_key=${imageId}`,
-        "_blank",
-        "location=no,height=600,width=600,scrollbars=no,status=no"
-      );
+    if (imageId) {
+      if (clickCallback) clickCallback(imageId);
+      else {
+        window.open(
+          streetImagery.generateUrlForProvider[streetImageryProvider](imageId),
+          "_blank",
+          "location=no,height=600,width=600,scrollbars=no,status=no"
+        );
+      }
     }
   };
 

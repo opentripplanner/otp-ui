@@ -3,6 +3,7 @@ import coreUtils from "@opentripplanner/core-utils";
 import React, { Component, FunctionComponent, ReactElement } from "react";
 import AnimateHeight from "react-animate-height";
 import { FormattedMessage } from "react-intl";
+import { StreetImageryProvider } from "@opentripplanner/core-utils/lib/streetImagery";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
@@ -35,6 +36,7 @@ interface Props {
    * has been selected and is active.
    */
   diagramVisible?: Leg;
+  AccessLegFooter?: FunctionComponent<AccessLegFooterProps>;
   followsTransit?: boolean;
   leg: Leg;
   LegIcon: LegIconComponent;
@@ -46,7 +48,7 @@ interface Props {
   showApproximateTravelTime?: boolean;
   showElevationProfile: boolean;
   showLegIcon: boolean;
-  AccessLegFooter?: FunctionComponent<AccessLegFooterProps>;
+  streetImageryProvider?: StreetImageryProvider;
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
 }
 
@@ -88,6 +90,7 @@ class AccessLegBody extends Component<Props, State> {
       showApproximateTravelTime,
       showElevationProfile,
       showLegIcon,
+      streetImageryProvider,
       AccessLegFooter,
       TransitLegSubheader
     } = this.props;
@@ -116,6 +119,7 @@ class AccessLegBody extends Component<Props, State> {
         clickCallback={mapillaryCallback}
         coords={leg.from}
         mapillaryKey={mapillaryKey}
+        streetImageryProvider={streetImageryProvider}
       />
     );
     return (
@@ -182,6 +186,7 @@ class AccessLegBody extends Component<Props, State> {
                     <AccessLegSteps
                       mapillaryCallback={mapillaryCallback}
                       mapillaryKey={mapillaryKey}
+                      streetImageryProvider={streetImageryProvider}
                       steps={leg.steps}
                       units={config.units}
                     />
