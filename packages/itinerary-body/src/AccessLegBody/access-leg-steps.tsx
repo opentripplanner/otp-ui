@@ -4,7 +4,7 @@ import { DirectionIcon } from "@opentripplanner/icons";
 import { Step, UnitSystem } from "@opentripplanner/types";
 import React, { ReactElement } from "react";
 
-import { MapillaryProvider } from "@opentripplanner/core-utils/lib/mapillary";
+import { StreetImageryProvider } from "@opentripplanner/core-utils/lib/streetImagery";
 import * as S from "../styled";
 import AccessLegStep from "../defaults/access-leg-step";
 
@@ -13,8 +13,8 @@ import MapillaryButton from "./mapillary-button";
 interface Props {
   mapillaryCallback?: (id: string) => void;
   mapillaryKey?: string;
-  mapillaryProvider?: MapillaryProvider;
   steps: Step[];
+  streetImageryProvider?: StreetImageryProvider;
   units: UnitSystem;
 }
 
@@ -24,8 +24,8 @@ interface Props {
 export default function AccessLegSteps({
   mapillaryCallback,
   mapillaryKey,
-  mapillaryProvider,
   steps,
+  streetImageryProvider,
   units
 }: Props): ReactElement {
   return (
@@ -44,7 +44,7 @@ export default function AccessLegSteps({
                 clickCallback={mapillaryCallback}
                 coords={{ lat, lon }}
                 mapillaryKey={mapillaryKey}
-                mapillaryProvider={mapillaryProvider}
+                streetImageryProvider={streetImageryProvider}
               />
             </S.StepDescriptionContainer>
           </S.StepRow>

@@ -3,7 +3,7 @@ import coreUtils from "@opentripplanner/core-utils";
 import React, { Component, FunctionComponent, ReactElement } from "react";
 import AnimateHeight from "react-animate-height";
 import { FormattedMessage } from "react-intl";
-import { MapillaryProvider } from "@opentripplanner/core-utils/lib/mapillary";
+import { StreetImageryProvider } from "@opentripplanner/core-utils/lib/streetImagery";
 import { Duration } from "../defaults";
 
 import * as S from "../styled";
@@ -36,19 +36,19 @@ interface Props {
    * has been selected and is active.
    */
   diagramVisible?: Leg;
+  AccessLegFooter?: FunctionComponent<AccessLegFooterProps>;
   followsTransit?: boolean;
   leg: Leg;
   LegIcon: LegIconComponent;
   legIndex: number;
   mapillaryCallback?: (id: string) => void;
   mapillaryKey?: string;
-  mapillaryProvider?: MapillaryProvider;
   setActiveLeg: SetActiveLegFunction;
   setLegDiagram: (leg: Leg) => void;
   showApproximateTravelTime?: boolean;
   showElevationProfile: boolean;
   showLegIcon: boolean;
-  AccessLegFooter?: FunctionComponent<AccessLegFooterProps>;
+  streetImageryProvider?: StreetImageryProvider;
   TransitLegSubheader?: FunctionComponent<TransitLegSubheaderProps>;
 }
 
@@ -86,11 +86,11 @@ class AccessLegBody extends Component<Props, State> {
       LegIcon,
       mapillaryCallback,
       mapillaryKey,
-      mapillaryProvider,
       setLegDiagram,
       showApproximateTravelTime,
       showElevationProfile,
       showLegIcon,
+      streetImageryProvider,
       AccessLegFooter,
       TransitLegSubheader
     } = this.props;
@@ -119,7 +119,7 @@ class AccessLegBody extends Component<Props, State> {
         clickCallback={mapillaryCallback}
         coords={leg.from}
         mapillaryKey={mapillaryKey}
-        mapillaryProvider={mapillaryProvider}
+        streetImageryProvider={streetImageryProvider}
       />
     );
     return (
@@ -186,7 +186,7 @@ class AccessLegBody extends Component<Props, State> {
                     <AccessLegSteps
                       mapillaryCallback={mapillaryCallback}
                       mapillaryKey={mapillaryKey}
-                      mapillaryProvider={mapillaryProvider}
+                      streetImageryProvider={streetImageryProvider}
                       steps={leg.steps}
                       units={config.units}
                     />

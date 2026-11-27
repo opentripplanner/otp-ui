@@ -1,4 +1,4 @@
-export type MapillaryProvider = "GOOGLE" | "MAPILLARY";
+export type StreetImageryProvider = "GOOGLE" | "MAPILLARY";
 
 /**
  * Helper method to generate bounding box from a location. Adding the WINDOW to the coordinate

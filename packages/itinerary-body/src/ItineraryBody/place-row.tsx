@@ -73,7 +73,6 @@ export default function PlaceRow({
   LineColumnContent,
   mapillaryCallback,
   mapillaryKey,
-  mapillaryProvider,
   nextLeg,
   PlaceName,
   RouteDescription,
@@ -88,6 +87,7 @@ export default function PlaceRow({
   showLegIcon,
   showMapButtonColumn,
   showViewTripButton,
+  streetImageryProvider,
   TimeColumnContent = DefaultTimeColumnContent,
   toRouteAbbreviation,
   AccessLegFooter,
@@ -264,7 +264,7 @@ export default function PlaceRow({
               legIndex={legIndex}
               mapillaryCallback={mapillaryCallback}
               mapillaryKey={mapillaryKey}
-              mapillaryProvider={mapillaryProvider}
+              streetImageryProvider={streetImageryProvider}
               setActiveLeg={setActiveLeg}
               setLegDiagram={setLegDiagram}
               showApproximateTravelTime={showApproximateAccessLegTravelTimes}
