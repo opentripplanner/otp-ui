@@ -183,7 +183,7 @@ interface ItineraryBodySharedProps {
    * https://www.mapillary.com/dashboard/developers
    */
   mapillaryKey?: string;
-  /** Which street imagery provider to use as defined in core-utils/mapillary */
+  /** Which street imagery provider to use as defined in core-utils/streetImagery */
   streetImageryProvider?: StreetImageryProvider;
   /**
    * A custom component for rendering the place name of legs.
