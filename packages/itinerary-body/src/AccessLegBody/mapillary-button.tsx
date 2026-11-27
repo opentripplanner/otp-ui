@@ -7,7 +7,7 @@ import coreUtils from "@opentripplanner/core-utils";
 import { StreetImageryProvider } from "@opentripplanner/core-utils/lib/streetImagery";
 import { defaultMessages } from "../util";
 
-const { mapillary } = coreUtils;
+const { streetImagery } = coreUtils;
 
 const Container = styled.a`
   &:hover {
@@ -37,7 +37,7 @@ const Icon = styled(StreetView)`
  *
  * @param coords            The coordinates to find imagery for in the format [lat, lon]
  * @param mapillaryKey      A Mapillary api key used to check for imagery.
- * @param streetImageryProvider A provider (defined in core-utils/mapillary) which displays street
+ * @param streetImageryProvider A provider (defined in core-utils/streetImagery) which displays street
  * imagery
  * @param clickCallback     A method to fire when the button is clicked, which accepts an ID.
  *  If it is not passed, a popup window will be opened. */
@@ -58,7 +58,7 @@ const MapillaryButton = ({
   useEffect(() => {
     // useEffect only supports async actions as a child function
     const getMapillaryId = async () => {
-      const fetchedId = await mapillary.getImageIdForProvider[
+      const fetchedId = await streetImagery.getImageIdForProvider[
         streetImageryProvider
       ](coords, mapillaryKey);
       if (fetchedId) setImageId(fetchedId);
@@ -72,7 +72,7 @@ const MapillaryButton = ({
       if (clickCallback) clickCallback(imageId);
       else {
         window.open(
-          mapillary.generateUrlForProvider[streetImageryProvider](imageId),
+          streetImagery.generateUrlForProvider[streetImageryProvider](imageId),
           "_blank",
           "location=no,height=600,width=600,scrollbars=no,status=no"
         );
