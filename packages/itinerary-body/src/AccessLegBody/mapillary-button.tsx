@@ -45,7 +45,7 @@ const MapillaryButton = ({
   clickCallback,
   coords,
   mapillaryKey,
-  streetImageryProvider
+  streetImageryProvider = "MAPILLARY"
 }: {
   clickCallback?: (id: string) => void;
   coords: { lat: number; lon: number };
@@ -59,7 +59,7 @@ const MapillaryButton = ({
     // useEffect only supports async actions as a child function
     const getMapillaryId = async () => {
       const fetchedId = await mapillary.getImageIdForProvider[
-        streetImageryProvider || "MAPILLARY"
+        streetImageryProvider
       ](coords, mapillaryKey);
       if (fetchedId) setImageId(fetchedId);
     };
@@ -72,9 +72,7 @@ const MapillaryButton = ({
       if (clickCallback) clickCallback(imageId);
       else {
         window.open(
-          mapillary.generateUrlForProvider[
-            streetImageryProvider || "MAPILLARY"
-          ](imageId),
+          mapillary.generateUrlForProvider[streetImageryProvider](imageId),
           "_blank",
           "location=no,height=600,width=600,scrollbars=no,status=no"
         );
